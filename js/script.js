@@ -170,9 +170,9 @@ var iChrome = function(refresh) {
 		$("body").removeClass("unloaded");
 	}, 300);
 
-	setTimeout(function() {
+	// setTimeout(function() {
 		iChrome.deferred(refresh);
-	}, 400);
+	// }, 400);
 
 	localStorage.uses = (localStorage.uses || 0) + 1;
 
