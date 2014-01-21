@@ -1,0 +1,45 @@
+{
+	"content_scripts": [
+		{
+			"js": [ "oauth2/oauth2_inject.js" ],
+			"matches": [ "http://ichrome.uservoice.com/robots.txt*", "http://www.google.com/ichrome/robots.txt*" ],
+			"run_at": "document_start"
+		},
+		{
+			"css": [ "css/gmailfix.css" ],
+			"matches": [ "https://mail.google.com/*" ],
+			"all_frames": true
+		}
+	],
+	"web_accessible_resources": [
+		"oauth2/oauth2.html",
+		"index.html"
+	],
+	"background": {
+		"scripts": ["js/background.js"]
+	},
+	"icons": {
+		"16": "icon/16.png",
+		"48": "icon/48.png",
+		"128": "icon/128.png"
+	},
+	"permissions": [
+		"storage",
+		"topSites",
+		"http://*/",
+		"https://*/",
+		"management",
+		"webRequest",
+		"chrome://favicon/",
+		"webRequestBlocking"
+	],
+	"version": "2.0.8",
+	"manifest_version": 2,
+	"short_name": "iChrome",
+	"offline_enabled": true,
+	"minimum_chrome_version": "29.0",
+	"name": "iChrome: your homepage, for chrome (beta)",
+	"update_url": "http://clients2.google.com/service/update2/crx",
+	"description": "Your homepage, for Chrome: an iGoogle replacement homepage for Google Chrome modeled after Google Now",
+	"content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com https://*.uservoice.com https://www.google.com; object-src 'self'"
+}

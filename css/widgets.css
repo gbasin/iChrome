@@ -1,0 +1,1766 @@
+/*---------------------------------------------
+	/ Fonts
+*/
+@font-face {
+	font-style: normal;
+	font-weight: normal;
+	font-family: "Entypo";
+	src: url("../fonts/entypo.woff");
+}
+
+@font-face {
+	font-style: normal;
+	font-weight: normal;
+	font-family: "Climacons";
+	src: url("../fonts/climacons.woff");
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Widget Globals
+*/
+.widget .header {
+	color: #666;
+	font-size: 16px;
+	margin-bottom: 10px;
+	font-family: Open Sans, sans-serif;
+}
+
+.widget.tiny .header {
+	font-size: 15px;
+	line-height: 15px;
+	margin-bottom: 15px;
+}
+
+.widget .details {
+	display: flex;
+	margin-top: 25px;
+	flex-flow: row wrap;
+}
+
+.widget .details div {
+	flex: 1;
+	color: #666;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.widget .details div:after,
+.widget .mainval:after {
+	color: #666;
+	display: block;
+	font-size: 13px;
+	text-align: center;
+	font-weight: normal;
+	content: attr(data-label);
+}
+
+.widget .mainval {
+	color: #1C9C40;
+	display: block;
+	font-size: 100px;
+	text-align: center;
+	line-height: 110px;
+	text-decoration: none;
+	font-family: Open Sans, sans-serif;
+}
+
+.widget .mainval:before { /* Without this :after won't be pushed down properly */
+	content: "";
+	font-size: 65%;
+}
+
+.widget .mainval:after {
+	font-size: 18px;
+	line-height: 25px;
+}
+
+.widget .mainval b {
+	font-size: 65%;
+	font-weight: 600;
+}
+
+.widget.tiny .mainval {
+	font-size: 55px;
+	line-height: 50px;
+}
+
+.widget.tiny .mainval:after {
+	font-size: 16px;
+}
+
+.widget [contenteditable]:focus {
+	outline: 0;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Store Detail Overrides
+*/
+.store .detail .widget .handle,
+.store .detail .widget .settings {
+	display: none;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Weather
+*/
+.weather .cond {
+	width: 100px;
+	margin-left: 20px;
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-image: url("/images/weather/unknown.svg");
+}
+
+.weather .cond:before {
+	width: 100px;
+	height: 100px;
+	margin-bottom: 10px;
+	display: inline-block;
+	vertical-align: bottom;
+}
+
+.weather .cond.clear,
+.weather .cond.sunny {
+	background-image: url("/images/weather/sun.svg");
+}
+
+.weather .cond.fog,
+.weather .cond.hazy {
+	background-image: url("/images/weather/fog.svg");
+}
+
+.weather .cond.flurries,
+.weather .cond.chanceflurries {
+	background-image: url("/images/weather/flurries.svg");
+}
+
+.weather .cond.rain,
+.weather .cond.sleet,
+.weather .cond.chancerain,
+.weather .cond.chancesleet {
+	background-image: url("/images/weather/rain.svg");
+}
+
+.weather .cond.snow,
+.weather .cond.chancesnow {
+	background-image: url("/images/weather/snow.svg");
+}
+
+.weather .cond.tstorms,
+.weather .cond.chancetstorms {
+	background-image: url("/images/weather/tstorm.svg");
+}
+
+.weather .cond.cloudy {
+	background-image: url("/images/weather/cloud.svg");
+}
+
+.weather .cond.drizzle {
+	background-image: url("/images/weather/drizzle.svg");
+}
+
+.weather .cond.mostlycloudy,
+.weather .cond.mostlysunny,
+.weather .cond.partlycloudy,
+.weather .cond.partlysunny {
+	background-image: url("/images/weather/partcloud.svg");
+}
+
+.weather .cond:after {
+	color: #67A9E2;
+	margin-top: 100px;
+	font-weight: bold;
+	white-space: nowrap;
+	display: inline-block;
+	content: attr(data-label);
+}
+
+/*
+.weather .cond.clear:after			{ content: "Clear"; }
+.weather .cond.flurries:after		{ content: "Flurries"; }
+.weather .cond.fog:after			{ content: "Fog"; }
+.weather .cond.hazy:after			{ content: "Haze"; }
+.weather .cond.rain:after			{ content: "Rain"; }
+.weather .cond.sleet:after			{ content: "Sleet"; }
+.weather .cond.snow:after			{ content: "Snow"; }
+.weather .cond.sunny:after			{ content: "Sunny"; }
+.weather .cond.tstorms:after		{ content: "T-Storms"; }
+.weather .cond.cloudy:after			{ content: "Cloudy"; }
+.weather .cond.mostlycloudy:after	{ content: "Mostly Cloudy"; }
+.weather .cond.mostlysunny:after	{ content: "Mostly Sunny"; }
+.weather .cond.partlycloudy:after	{ content: "Partly Cloudy"; }
+.weather .cond.partlysunny:after	{ content: "Partly Sunny"; }
+.weather .cond.chanceflurries:after	{ content: "Chance Flurries"; }
+.weather .cond.chancerain:after		{ content: "Chance Rain"; }
+.weather .cond.chancesleet:after	{ content: "Chance Sleet"; }
+.weather .cond.chancesnow:after		{ content: "Chance Snow"; }
+.weather .cond.chancetstorms:after	{ content: "Chance T-Storms"; }
+*/
+
+.weather .temp {
+	font-size: 64px;
+	line-height: 45px;
+	margin-left: 15px;
+	display: inline-block;
+	vertical-align: middle;
+	font-family: Open Sans, sans-serif;
+}
+
+.weather .temp .f:after {
+	content: "\00b0 F";
+}
+
+.weather .temp .c:after {
+	content: "\00b0 C";
+}
+
+.weather .temp .f + sup a:after {
+	content: "C";
+}
+
+.weather .temp .c + sup a:after {
+	content: "F";
+}
+
+.weather sup {
+	top: -15px;
+	margin-left: -10px;
+	font-size: 20px;
+	vertical-align: super;
+}
+
+.weather .details {
+	color: #666;
+	font-size: 0;
+	display: flex;
+	padding: 0 25px;
+	margin-top: 20px;
+	justify-content: space-between;
+}
+
+.weather .details span {
+	font-size: 14px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.weather .details span:before {
+	font-weight: 400;
+	line-height: 14px;
+	margin-right: 7px;
+	font-family: "Climacons";
+	vertical-align: text-top;
+}
+
+.weather .details .wind:before {
+	color: #555;
+	font-size: 45px;
+	content: "\e021";
+}
+
+.weather .details .chill:before {
+	color: #AAA;
+	font-size: 35px;
+	content: "\e038";
+}
+
+.weather .details .humidity:before {
+	color: #76B3E9;
+	font-size: 20px;
+	content: "\1f4a6";
+	font-family: Entypo!important;
+}
+
+
+
+
+/*---------------------------------------------
+	/ Weather / Forecast
+*/
+.weather .forecast {
+	display: flex;
+	flex-flow: row wrap;
+	padding: 10px 30px 15px;
+	margin: 20px -15px -15px;
+	justify-content: space-between;
+	background: rgba(0, 0, 0, 0.04);
+	border-top: 1px solid rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px rgba(255, 255, 255, 0.7);
+}
+
+.weather .forecast .day {
+	text-align: center;
+}
+
+.weather .forecast .cond {
+	width: 40px;
+	height: 40px;
+	display: block;
+	margin: 5px auto;
+}
+
+.weather .forecast .cond:after {
+	content: "";
+}
+
+.weather .forecast span:after {
+	content: "\00b0";
+}
+
+.weather .forecast .low {
+	color: #888;
+}
+
+
+
+
+/*---------------------------------------------
+	/ Weather / Tiny
+*/
+.weather.tiny .temp {
+	font-size: 55px;
+	line-height: 40px;
+	margin-left: 0px;
+}
+
+.weather.tiny sup {
+	font-size: 18px;
+	margin-left: -15px;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Stocks
+*/
+.stocks .info {
+	margin: 20px 0;
+}
+
+.stocks .info > div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.stocks .info .stock span {
+	width: 115px;
+	color: #666;
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	margin-right: 10px;
+}
+
+.stocks .info .relative {
+	color: #444;
+	font-size: 15px;
+	font-weight: bold;
+	margin: 10px 0 0 15px;
+}
+
+.stocks .val {
+	font-size: 55px;
+	line-height: 45px;
+	font-family: Open Sans, sans-serif;
+}
+
+.stocks .val b {
+	font-size: 65%;
+	font-weight: 600;
+}
+
+.stocks .val.up,
+.stocks .current.up {
+	color: #1C9C40;
+}
+
+.stocks .val.down,
+.stocks .current.down {
+	color: #E23C3C;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Stocks / Tiny
+*/
+.stocks.tiny .val {
+	font-size: 40px;
+	line-height: 40px;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ News, RSS, Reddit and Feedly shared
+*/
+.widget.rss h2.header,
+.widget.news h2.header,
+.widget.reddit h2.header,
+.widget.feedly h2.header {
+	margin-bottom: 25px;
+}
+
+.rss .items,
+.news .items,
+.reddit .items,
+.feedly .items {
+	margin: 0;
+	padding: 0;
+	margin: -15px;
+}
+
+.rss .item,
+.news .item,
+.reddit .item,
+.feedly .item {
+	color: #777;
+	max-height: 95px;
+	display: block;
+	overflow: hidden;
+	padding: 10px 15px;
+	text-decoration: none;
+}
+
+.rss .item .excerpt,
+.news .item .excerpt,
+.reddit .item .content,
+.feedly .item .content {
+	max-height: 75px;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+.rss .item .title,
+.news .item .title,
+.reddit .item .title,
+.feedly .item .title {
+	color: #28C;
+	display: block;
+	font-size: 13px;
+	overflow: hidden;
+	max-height: 35px;
+	font-weight: bold;
+}
+
+.rss .item img,
+.news .item img,
+.reddit .item .img,
+.feedly .item .img {
+	float: left;
+	margin-right: 10px;
+	border-radius: 4px;
+	height: calc(100% - 20px);
+}
+
+.rss .item .desc,
+.news .item .desc,
+.reddit .item .desc,
+.feedly .item .desc {
+	margin-top: 5px;
+}
+
+.rss .item:hover,
+.news .item:hover,
+.reddit .item:hover,
+.feedly .item:hover {
+	background: rgba(0, 0, 0, 0.03);
+}
+
+.news .more,
+.reddit .more,
+.feedly .more {
+	margin: -15px;
+	color: #404040;
+	display: block;
+	padding: 12px 0;
+	font-size: 13px;
+	margin-top: 15px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.news .more:hover,
+.reddit .more:hover,
+.feedly .more:hover {
+	background: rgba(0, 0, 0, 0.03);
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ News
+*/
+.news .item img {
+	height: 75px;
+}
+
+.news .item.featured {
+	max-height: initial;
+}
+
+.news .item.featured .excerpt {
+	max-height: 85px;
+}
+
+.news .item.featured img {
+	height: 80px;
+	margin: 5px 10px 0 0;
+}
+
+.news .item.featured .desc {
+	margin-top: 0;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ RSS
+*/
+.rss .item .img {
+	float: left;
+	width: 70px;
+	height: 70px;
+	margin-right: 10px;
+	border-radius: 4px;
+	background-size: cover;
+	background-position: center;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Reddit
+*/
+.reddit .item .img {
+	width: 70px;
+	height: 70px;
+	background: #DDD no-repeat center;
+	background-size: auto 100%;
+}
+
+.reddit .item .title {
+	margin-bottom: 5px;
+}
+
+.reddit .item .img + .content .title {
+	height: 40px;
+	margin-bottom: 15px;
+}
+
+.reddit .item .nested-link:hover {
+	color: #428BCA;
+	text-decoration: none;
+}
+
+.reddit .item .domain {
+	color: #AAA;
+	font-size: 12px;
+	font-weight: normal;
+	word-break: break-all;
+}
+
+.reddit .item .domain:before {
+	content: "(";
+}
+
+.reddit .item .domain:after {
+	content: ")";
+}
+
+.reddit .item .specs {
+	font-size: 13px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.reddit .item .specs span {
+	color: #777;
+	margin-right: 10px;
+}
+
+.reddit .item .specs span:before {
+	font-size: 14px;
+	margin-right: 5px;
+	line-height: 18px;
+	font-family: FontAwesome;
+}
+
+.reddit .item .specs .score:before {
+	content: "\f062";
+	font-size: 12px;
+	line-height: 16px;
+	vertical-align: text-top;
+}
+
+.reddit .item .specs .score.down:before {
+	content: "\f062";
+}
+
+.reddit .item .posted:before {
+	content: "\f017";
+}
+
+.reddit .item .comments:before {
+	content: "\f086";
+}
+
+.reddit .item .subreddit:before {
+	content: "\f03c";
+}
+
+.reddit .item .user:before {
+	content: "\f007";
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Feedly
+*/
+.feedly .items {
+	outline: 0;
+	overflow: auto;
+	max-height: 475px;
+	position: relative;
+}
+
+.feedly .item.read .title {
+	color: #777;
+}
+
+.feedly .item .img {
+	width: 70px;
+	height: 70px;
+	background: #DDD no-repeat center;
+	background-size: cover;
+}
+
+.feedly .item .img img {
+	width: 60%;
+	visibility: hidden;
+}
+
+.feedly .item .content {
+	max-height: 55px;
+}
+
+.feedly .item .specs {
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+.feedly .item .recommendations {
+	color: #00B900;
+}
+
+.feedly .item .source {
+	max-width: 50%;
+	overflow: hidden;
+	white-space: nowrap;
+	vertical-align: top;
+	display: inline-block;
+	text-overflow: ellipsis;
+}
+
+.feedly .item .author {
+	display: none;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Feedly / Card View
+*/
+.feedly .items.cards {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.feedly .cards .item {
+	width: 90%;
+	text-align: left;
+	max-height: 100%;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	vertical-align: top;
+	display: inline-block;
+	border: 1px solid #E0E0E0;
+}
+
+.feedly .cards .item .img {
+	float: none;
+	height: auto;
+	border-radius: 0;
+	width: calc(100% + 31px); /* Fix 1px bug */
+	margin: -10px -15px 10px;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Feedly / Dual Card View
+*/
+.feedly .cards.dual .column {
+	min-width: 0;
+	max-width: 100%;
+	vertical-align: top;
+	display: inline-block;
+	width: calc(50% - 30px);
+}
+
+.feedly .cards.dual .column:first-child {
+	margin-right: 15px;
+}
+
+.feedly .cards.dual .item {
+	width: 100%;
+	padding: 10px;
+}
+
+.feedly .cards.dual .item .title,
+.feedly .cards.dual .item .content {
+	max-height: 100%;
+}
+
+.feedly .cards.dual .item .img {
+	margin: -10px -10px 10px;
+	width: calc(100% + 21px); /* Fix 1px bug */
+}
+
+.feedly .cards.dual .item .age,
+.feedly .cards.dual .item .desc,
+.feedly .cards.dual .item .source {
+	display: none;
+}
+
+.feedly .cards.dual .item .author {
+	display: inline;
+}
+
+.feedly .cards.dual .item .recommendations {
+	float: right;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Feedly / List View
+*/
+.feedly .list .img,
+.feedly .list .desc,
+.feedly .list span:not(.recommendations) {
+	display: none;
+}
+
+.feedly .list .content,
+.feedly .list .title,
+.feedly .list .specs {
+	display: inline;
+}
+
+.feedly .list .recommendations {
+	margin-left: 5px;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Clock
+*/
+.clock .time {
+	color: #555;
+	font-size: 85px;
+	font-weight: 300;
+	text-align: center;
+	line-height: 115px;
+	font-family: Open Sans, sans-serif;
+}
+
+.clock .time:after {
+	color: #67A9E2;
+	font-size: 25px;
+	line-height: 25px;
+	vertical-align: top;
+}
+
+.clock .time.am:after {
+	content: "AM";
+}
+
+.clock .time.pm:after {
+	content: "PM";
+}
+
+.clock .date {
+	color: #428BCA;
+	font-size: 18px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Clock / Tiny
+*/
+.clock.tiny {
+	padding: 0;
+}
+
+.widget.clock.tiny h2.header {
+	margin: 15px 15px -5px;
+}
+
+.clock.tiny .time {
+	font-size: 55px;
+	line-height: 85px;
+}
+
+.clock.tiny .time:after {
+	content: none;
+}
+
+.clock.tiny .time.full {
+	font-size: 65px;
+}
+
+.clock.tiny .time span {
+	height: 55px;
+	max-width: 35px;
+	font-size: 30px;
+	margin-top: 5px;
+	line-height: 20px;
+	margin-left: 5px;
+	display: inline-flex;
+	vertical-align: text-top;
+	justify-content: space-between;
+	flex-direction: column-reverse;
+}
+
+.clock.tiny .time span:after {
+	color: #67A9E2;
+	font-size: 20px;
+}
+
+.clock.tiny .time.am span:after {
+	content: "AM";
+}
+
+.clock.tiny .time.pm span:after {
+	content: "PM";
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Traffic
+*/
+.widget.traffic {
+	cursor: pointer;
+}
+
+.widget.traffic .dest {
+	font-size: 16px;
+	margin-top: 10px;
+	line-height: 15px;
+	text-align: center;
+	font-family: Open Sans, sans-serif;
+}
+
+.widget.traffic .time {
+	color: #E43431;
+	font-size: 48px;
+	line-height: 65px;
+	text-align: center;
+	margin-bottom: 20px;
+	font-family: Open Sans, sans-serif;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Traffic / Tiny
+*/
+.widget.traffic.tiny .time {
+	font-size: 45px;
+	margin-bottom: 0;
+	line-height: 50px;
+	white-space: nowrap;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Analytics
+*/
+.analytics .mainval {
+	font-size: 95px;
+	margin-bottom: 15px;
+}
+
+.analytics .no-profile.header {
+	margin: 5px;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Analytics / Tiny
+*/
+.analytics.tiny .mainval {
+	margin-bottom: 0;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ iFrame
+*/
+.widget.iframe {
+	padding: 0!important;
+}
+
+.iframe iframe {
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Calendar
+*/
+.widget.calendar h2.header {
+	margin-bottom: 25px;
+}
+
+.calendar .events {
+	margin: -15px;
+}
+
+.calendar .events.no-header {
+	margin-top: -15px;
+}
+
+.calendar .event {
+	color: #428BCA;
+	display: block;
+	overflow: hidden;
+	padding: 10px 20px;
+	text-decoration: none;
+	font-family: Open Sans, sans-serif;
+}
+
+.calendar .event:hover {
+	background: rgba(0, 0, 0, 0.03);
+}
+
+.calendar .event.no-events {
+	color: #555;
+}
+
+.calendar .event .title {
+	display: block;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.calendar .event .time {
+	color: #333;
+}
+
+.calendar .event .location {
+	color: #666;
+	display: block;
+	font-size: 15px;
+	margin-top: 5px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Apps
+*/
+.apps .list {
+	font-size: 0;
+	display: block;
+	overflow: auto;
+	max-height: 365px;
+}
+
+.apps .app {
+	width: 50%;
+	color: #666;
+	margin: 6px 0;
+	font-size: 14px;
+	display: inline-block;
+	text-decoration: none;
+	font-family: Open Sans, sans-serif;
+}
+
+.apps .app.unavailable {
+	color: #888;
+}
+
+.apps .thumb {
+	width: 32px;
+	margin-right: 5px;
+	border-radius: 2px;
+}
+
+.apps .list .title {
+	overflow: hidden;
+	white-space: nowrap;
+	display: inline-block;
+	text-overflow: ellipsis;
+	width: calc(100% - 45px);
+	vertical-align: text-bottom;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Apps / Tile View
+*/
+.apps .tiles {
+	display: flex;
+	padding: 0 15px;
+	flex-flow: row wrap;
+}
+
+.apps .tiles .app {
+	flex: 1;
+	margin: 10px;
+	min-width: 64px;
+	text-align: center;
+}
+
+.apps .tiles .thumb {
+	width: 64px;
+	margin-right: 0;
+	border-radius: 4px;
+}
+
+.apps .tiles .title {
+	display: block;
+	margin-top: 5px;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Top Sites
+*/
+.widget.topsites h2.header {
+	margin-bottom: 25px;
+}
+
+.topsites .sites {
+	margin: -15px;
+	display: block;
+}
+
+.topsites .site {
+	color: #666;
+	display: block;
+	padding: 10px 15px;
+	text-decoration: none;
+	font-family: Open Sans, sans-serif;
+}
+
+.topsites .site:hover {
+	background: rgba(0, 0, 0, 0.03);
+}
+
+.topsites .favicon {
+	width: 16px;
+	margin-right: 5px;
+	border-radius: 2px;
+}
+
+.topsites .title {
+	overflow: hidden;
+	white-space: nowrap;
+	display: inline-block;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	width: calc(100% - 25px);
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Notes
+*/
+.notes .note {
+	margin: -15px;
+	padding: 15px;
+}
+
+.notes .note.yellow	{ background: #FFFFB5; }
+.notes .note.blue	{ background: #B5E4FF; }
+.notes .note.red	{ background: #FFB5B5; }
+.notes .note.orange	{ background: #FFD280; }
+.notes .note.green	{ background: #99DA99; }
+
+
+.notes .note input.header {
+	border: 0!important;
+	padding: 0!important;
+	background: transparent;
+	font-family: Open Sans, sans-serif!important;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Notes / Content Overrides
+*/
+.notes .note * {
+	font-family: Arial, sans-serif!important;
+}
+
+.notes img {
+	max-width: 100%!important;
+}
+
+.notes ul {
+	padding-left: 20px!important;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Wolfram Alpha
+*/
+.wolfram form {
+	padding: 15px;
+	margin-top: 10px;
+	text-align: center;
+	border-radius: 10px;
+	border: 1px solid #FDA566;
+	box-shadow: 0 0 3px 1px #CCC;
+}
+
+.wolfram img {
+	width: 150px;
+	margin-top: -50px;
+	box-shadow: 0 0 15px 10px #FFF;
+	background: rgba(255, 255, 255, 1.7);
+}
+
+.wolfram input,
+.wolfram input:hover,
+.wolfram input:focus {
+	top: -5px;
+	width: 100%;
+	margin-top: -50px;
+	line-height: 16px;
+	position: relative;
+	border-radius: 6px;
+	border: 1px solid #FA6800!important;
+	box-shadow: 0 0 0 2px #FED36E,0 0 0 4px #FFC104!important;
+}
+
+
+
+
+
+/*------------------------------
+	/ Sports
+*/
+.widget.sports h2.header {
+	margin-bottom: 25px;
+}
+
+.sports .games {
+	margin: -15px;
+}
+
+.sports .game {
+	color: #333;
+	display: block;
+	font-size: 15px;
+	padding: 10px 15px;
+	text-decoration: none;
+	font-family: Open Sans, sans-serif;
+}
+
+.sports .game:hover,
+.sports .no-games:hover {
+	background: rgba(0, 0, 0, 0.03);
+}
+
+.sports .team {
+	width: 60%;
+	line-height: 30px;
+	display: inline-block;
+}
+
+.sports .team .icon {
+	width: 25px;
+	height: 25px;
+	margin-right: 5px;
+}
+
+.sports .team .name {
+	overflow: hidden;
+	white-space: nowrap;
+	display: inline-block;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	width: calc(100% - 60px);
+}
+
+.sports .team .score {
+	display: inline-block;
+}
+
+.sports .status,
+.sports .team .score {
+	color: #666;
+	font-weight: bold;
+	text-align: right;
+}
+
+.sports .status {
+	width: 40%;
+	float: right;
+	overflow: hidden;
+	line-height: 30px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.sports .no-games {
+	color: #444;
+	display: block;
+	padding: 15px 0;
+	margin-top: 25px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.sports .no-games .text {
+	padding: 15px;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Sports / Tiny
+*/
+.sports.tiny {
+	padding: 0;
+}
+
+.widget.sports.tiny h2.header {
+	overflow: hidden;
+	text-align: center;
+	line-height: 20px;
+	white-space: nowrap;
+	margin: -5px -10px 15px;
+	text-overflow: ellipsis;
+}
+
+.sports.tiny a {
+	padding: 15px;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}
+
+.sports.tiny .score {
+	color: #4897DB;
+	font-size: 40px;
+	font-weight: 600;
+	line-height: 40px;
+	font-family: Open Sans, sans-serif;
+}
+
+.sports.tiny .no-games {
+	padding: 10px;
+	margin-top: 0;
+}
+
+.sports.tiny .no-games .text {
+	padding: 10px;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Bookmarks
+*/
+.widget.bookmarks h2.header {
+	margin-bottom: 25px!important;
+}
+
+.bookmarks .new {
+	opacity: 0;
+	float: right;
+	font-size: 14px;
+	margin-right: 10px;
+	transition: opacity .3s ease-in-out;
+}
+
+.bookmarks .list {
+	font-size: 0;
+	margin: -15px;
+	display: block;
+}
+
+.bookmarks .link {
+	color: #666;
+	height: 40px;
+	display: block;
+	font-size: 14px;
+	padding: 10px 15px;
+	position: relative;
+	text-decoration: none;
+	font-family: Open Sans, sans-serif;
+}
+
+.bookmarks .link:hover {
+	background: rgba(0, 0, 0, 0.03);
+}
+
+.bookmarks .link.dragged {
+	background: #F7F7F7;
+	position: absolute;
+}
+
+.bookmarks .list.two-column .link {
+	width: 50%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.bookmarks .link.holder {
+	border: 1px solid #F3F3F3;
+	border-width: 1px 0;
+}
+
+.bookmarks .favicon {
+	width: 16px;
+	margin-right: 5px;
+	border-radius: 2px;
+}
+
+.bookmarks .title {
+	overflow: hidden;
+	white-space: nowrap;
+	display: inline-block;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	width: calc(100% - 25px);
+}
+
+.bookmarks .link:hover .title {
+	width: calc(100% - 100px);
+}
+
+.bookmarks .tools {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	font-size: 20px;
+	line-height: 20px;
+	position: absolute;
+	font-family: Entypo;
+	padding: 10px 10px 10px 0;
+}
+
+.bookmarks:hover .new,
+.bookmarks .link:hover .tools,
+.bookmarks .link.dragged .tools {
+	opacity: 1;
+}
+
+.bookmarks .tools span {
+	padding: 0 5px;
+}
+
+.bookmarks .tools .edit:hover	{ color: #428BCA; }
+.bookmarks .tools .delete:hover	{ color: #E43431; }
+.bookmarks .tools .move:hover	{ cursor: move; }
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Bookmarks / Modal
+*/
+.modal.bookmarks-modal form {
+	overflow: auto;
+	padding: 0 25px;
+	height: calc(100% - 110px);
+}
+
+.modal.bookmarks-modal input[type="tel"],
+.modal.bookmarks-modal input[type="text"],
+.modal.bookmarks-modal input[type="email"],
+.modal.bookmarks-modal input[type="search"],
+.modal.bookmarks-modal select,
+.modal.bookmarks-modal textarea {
+	width: 100%;
+}
+
+.modal.bookmarks-modal .form-group:last-child {
+	margin-bottom: 0;
+}
+
+.modal.bookmarks-modal .btn {
+	float: right;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+
+
+
+/*---------------------------------------------
+	/ Bookmarks / Link Drop
+*/
+.bookmarks .drop {
+	z-index: 9;
+	display: none;
+	background: rgba(255, 255, 255, .8);
+}
+
+.bookmarks .drop.active {
+	display: block;
+}
+
+.bookmarks .drop,
+.bookmarks .drop > div {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+}
+
+.bookmarks .drop .text {
+	margin: auto;
+	width: 200px;
+	height: 30px;
+	font-size: 16px;
+	line-height: 30px;
+	text-align: center;
+	font-family: Open Sans, sans-serif;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.bookmarks .drop .catch {
+	opacity: 0;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ To do
+*/
+.widget.todo h2.header {
+	margin-bottom: 25px;
+}
+
+.todo .new {
+	opacity: 0;
+	float: right;
+	font-size: 14px;
+	margin-right: 10px;
+	transition: opacity .3s ease-in-out;
+}
+
+.todo:hover .new {
+	opacity: 1;
+}
+
+.todo .list {
+	margin: -15px;
+	display: block;
+}
+
+.todo .item {
+	color: #666;
+	height: 40px;
+	display: block;
+	padding: 10px 15px;
+	position: relative;
+	text-decoration: none;
+	font-family: Open Sans, sans-serif;
+}
+
+.todo .item:hover {
+	background: rgba(0, 0, 0, 0.03);
+}
+
+.todo .item.dragged {
+	background: #F7F7F7;
+}
+
+.todo .item.dragged {
+	position: absolute;
+}
+
+.todo .item.holder {
+	border: 1px solid #F3F3F3;
+	border-width: 1px 0;
+}
+
+.todo .check {
+	font-size: 16px;
+	margin-right: 10px;
+	font-family: Entypo;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.todo .check:hover {
+	cursor: pointer;
+}
+
+.todo .title {
+	overflow: hidden;
+	border: 0!important;
+	padding: 0!important;
+	display: inline-block;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	background: rgba(0, 0, 0, 0);
+	width: calc(100% - 25px)!important;
+	font-family: Open Sans, sans-serif!important;
+}
+
+.todo .item:hover .title {
+	width: calc(100% - 100px)!important;
+}
+
+.todo .tools {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	font-size: 20px;
+	line-height: 20px;
+	position: absolute;
+	font-family: Entypo;
+	padding: 10px 10px 10px 0;
+}
+
+.todo .item:hover .tools,
+.todo .item.dragged .tools {
+	opacity: 1;
+}
+
+.todo .tools span {
+	padding: 0 5px;
+}
+
+.todo .tools .delete:hover,
+.todo .tools .important:hover,
+.todo .important .tools .important {
+	color: #E43431;
+	cursor: pointer;
+}
+
+.todo .tools .move:hover {
+	cursor: move;
+}
+
+
+
+
+
+
+/*---------------------------------------------
+	/ To do / Done and Important styles
+*/
+.todo .item.done .check {
+	color: #AAA;
+}
+
+.todo .item.done .title,
+.todo .item.important.done .title {
+	color: #AAA;
+	text-decoration: line-through;
+}
+
+.todo .item.important {
+	background-color: #FFECEC;
+}
+
+.todo .item.important .title {
+	color: #E40400;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Translate
+*/
+.translate textarea {
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+	font-size: 13px;
+	min-height: 70px;
+	max-height: 400px;
+	border-radius: 2px;
+	margin: 10px 0 15px;
+	padding: 5px 8px!important;
+}
+
+.translate .selectbar {
+	float: left;
+	font-size: 13px;
+	line-height: 34px;
+	text-align: center;
+	width: calc(100% - 105px);
+}
+
+.translate select {
+	float: left;
+	height: 34px;
+	font-size: 13px;
+	width: calc(50% - 15px);
+	padding: 5px 6px!important;
+}
+
+.translate select:last-child {
+	float: right;
+}
+
+.translate button {
+	float: right;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Currency
+*/
+.currency .selectbar,
+.currency .inputs {
+	width: 100%;
+	font-size: 13px;
+	position: relative;
+	text-align: center;
+	display: inline-block;
+}
+
+.currency .inputs {
+	margin: 5px 0;
+}
+
+.currency select,
+.currency input {
+	z-index: 1;
+	float: left;
+	height: 34px;
+	font-size: 13px;
+	position: relative;
+	width: calc(50% - 15px);
+	padding: 5px 6px!important;
+}
+
+.currency select:last-child,
+.currency input:last-child {
+	float: right;
+}
+
+.currency span.to {
+	left: 0;
+	z-index: 0;
+	width: 100%;
+	bottom: -14px;
+	position: absolute;
+}
