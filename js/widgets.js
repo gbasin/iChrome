@@ -3918,7 +3918,7 @@ var Widgets = {
 			if (this.config.source == "feed/http://feeds.gawker.com/lifehacker/vip/") var auth = $.ajax;
 			else var auth = this.authorize;
 
-			auth({
+			auth.call(this, {
 				type: "GET",
 				url: "http://cloud.feedly.com/v3/streams/contents?count=10&streamId=" + encodeURIComponent(this.config.source) + (this.config.show == "unread" ? "&unreadOnly=true" : "") + "&ranked=" + this.config.sort,
 				beforeSend: function(xhr) {
@@ -4177,6 +4177,10 @@ var Widgets = {
 		config: {
 			size: "small"
 		},
+		data: {
+			from: "auto",
+			to: "en"
+		},
 		desc: "Contains a small inline Google Translate textbox.",
 		render: function() {
 			this.utils.render();
@@ -4194,9 +4198,12 @@ var Widgets = {
 
 					btn.text("Untranslate");
 
+					this.data.from = from.val();
+					this.data.to = to.val();
+
 					$.ajax({
 						type: "GET",
-						url: "http://translate.google.com/translate_a/t?client=ichrome&sl=" + encodeURIComponent(from.val()) + "&tl=" + encodeURIComponent(to.val()) + "&q=" + encodeURIComponent(textarea.val()) + "",
+						url: "http://translate.google.com/translate_a/t?client=ichrome&sl=" + encodeURIComponent(this.data.from) + "&tl=" + encodeURIComponent(this.data.from) + "&q=" + encodeURIComponent(textarea.val()) + "",
 						complete: function(d) {
 							d = d.responseText;
 
@@ -4235,7 +4242,9 @@ var Widgets = {
 							}
 						}
 					});
-				},
+
+					this.utils.saveData(this.data);
+				}.bind(this),
 				autochange = function(e) {
 					if (autochanged) {
 						auto.text("Auto");
@@ -4260,6 +4269,9 @@ var Widgets = {
 				}
 			});
 
+			from.val(this.data.from);
+			to.val(this.data.to);
+
 			from.add(to).on("keydown", function(e) {
 				e.preventDefault();
 
@@ -4282,6 +4294,10 @@ var Widgets = {
 		sizes: ["small"],
 		config: {
 			size: "small"
+		},
+		data: {
+			from: "USD",
+			to: "USD"
 		},
 		desc: "Let's you convert between any two of 169 currencies.",
 		render: function() {
@@ -4311,6 +4327,9 @@ var Widgets = {
 					});
 				},
 				convert = function(reverse) {
+					this.data.from = from.val();
+					this.data.to = to.val();
+
 					var rev = false,
 						conv = 0;
 
@@ -4346,8 +4365,16 @@ var Widgets = {
 					}
 
 					t.val(conv);
-				};
+
+					this.utils.saveData(this.data);
+				}.bind(this);
 				
+
+			from.val(this.data.from);
+			to.val(this.data.to);
+
+			load(this.data.from, this.data.to, convert);
+
 
 			inputs.on("keydown", function(e) {
 				if (e.which == 17) {

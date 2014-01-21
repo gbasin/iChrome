@@ -788,7 +788,7 @@
 */
 .feedly .list .img,
 .feedly .list .desc,
-.feedly .list span:not(.recommendations) {
+.feedly .list span:not(.recommendations):not(.title) {
 	display: none;
 }
 

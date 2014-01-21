@@ -329,7 +329,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 	else if (details.reason == "update") {
 		if (details.previousVersion.indexOf("2") === 0 && !localStorage["help"]) {
 			//localStorage["help"] = "true";
-			localStorage["whatsNew"] = "true";
+			//localStorage["whatsNew"] = "true";
 		}
 		else {
 			chrome.storage.local.get(function(d) {
@@ -339,7 +339,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 					localStorage["updated"] = "true";
 				}
 				else {
-					localStorage["whatsNew"] = "true";
+					//localStorage["whatsNew"] = "true";
 				}
 			});
 		}
