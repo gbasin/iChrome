@@ -147,7 +147,7 @@ var iChrome = function(refresh) {
 
 	iChrome.CSS();
 	
-	$(".toolbar").addClass(iChrome.Storage.settings.toolbar ? " hidden" : "").html(iChrome.render("toolbar", iChrome.Storage.settings));
+	$(".toolbar").addClass(iChrome.Storage.settings.toolbar ? "" : " show").html(iChrome.render("toolbar", iChrome.Storage.settings));
 
 	iChrome.Tabs();
 
