@@ -85,8 +85,12 @@ var Widgets = {
 		},
 		getLoc: function(cb) {
 			$.get("http://query.yahooapis.com/v1/public/yql?q=select%20name%2C%20country.content%2C%20woeid%20from%20geo.places%20where%20text%3D%22" + encodeURIComponent(this.config.location.replace(/[^A-z0-9,\- ]/, "")) + "%22&format=json", function(d) {
-				if (d && d.query && d.query.results && d.query.results.place && d.query.results.place[0] && d.query.results.place[0].woeid) {
-					var m = d.query.results.place[0];
+				if (d && d.query && d.query.results && d.query.results.place && ((d.query.results.place[0] && d.query.results.place[0].woeid) || d.query.results.place.woeid)) {
+					var m = d.query.results.place;
+
+					if (m[0]) {
+						m = m[0];
+					}
 
 					var loc = (m.name ? m.name : "") + (m.country && m.country !== "United States" ? ", " + m.country : "");
 
