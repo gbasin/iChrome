@@ -254,16 +254,18 @@ form:not(.form-horizontal) .color label {
 	padding: 15px 25px;
 	background: #F1F1F1;
 	display: inline-block;
-}
-
-.toolbar.hidden {
-	top: 0;
 	opacity: 0;
+        transition: opacity .2s ease-in-out;
+        top: 0;
 	position: absolute;
-	transition: opacity .2s ease-in-out;
 }
 
-.toolbar.hidden:hover {
+.toolbar.show {
+        opacity: 1;
+	position: relative;
+}
+
+.toolbar:hover {
 	opacity: 1;
 }
 
