@@ -327,6 +327,8 @@ chrome.runtime.onInstalled.addListener(function(details) {
 		});
 	}
 	else if (details.reason == "update") {
+		delete localStorage.uses;
+		
 		if (details.previousVersion.indexOf("2") === 0 && !localStorage["help"]) {
 			//localStorage["help"] = "true";
 			//localStorage["whatsNew"] = "true";

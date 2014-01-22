@@ -166,7 +166,7 @@ var iChrome = function(refresh) {
 		iChrome.WhatsNew();
 	}
 
-	localStorage.uses = (localStorage.uses || 0) + 1;
+	localStorage.uses = parseInt(localStorage.uses || 0) + 1;
 
 	setTimeout(function() {
 		$("body").removeClass("unloaded");
