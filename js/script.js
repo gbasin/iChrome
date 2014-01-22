@@ -147,7 +147,7 @@ var iChrome = function(refresh) {
 
 	iChrome.CSS();
 	
-	$(".toolbar").addClass(iChrome.Storage.settings.toolbar ? " hidden" : "").html(iChrome.render("toolbar", iChrome.Storage.settings));
+	$(".toolbar").addClass(iChrome.Storage.settings.toolbar ? "hidden" : "").html(iChrome.render("toolbar", iChrome.Storage.settings));
 
 	iChrome.Tabs();
 
@@ -166,15 +166,13 @@ var iChrome = function(refresh) {
 		iChrome.WhatsNew();
 	}
 
+	localStorage.uses = (localStorage.uses || 0) + 1;
+
 	setTimeout(function() {
 		$("body").removeClass("unloaded");
-	}, 300);
 
-	setTimeout(function() {
 		iChrome.deferred(refresh);
-	}, 400);
-
-	localStorage.uses = (localStorage.uses || 0) + 1;
+	}, 200);
 
 	iChrome.Status.log("Page generation done");
 };

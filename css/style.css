@@ -263,6 +263,10 @@ form:not(.form-horizontal) .color label {
 	transition: opacity .2s ease-in-out;
 }
 
+.unloaded .toolbar.hidden {
+	transition: none;
+}
+
 .toolbar.hidden:hover {
 	opacity: 1;
 }
@@ -960,7 +964,7 @@ body > .widgets-container {
 */
 .unloaded .widgets-container .widget {
 	-webkit-transform-origin: top center;
-	-webkit-animation: fly-in-from-bottom .3s ease-in-out both;
+	-webkit-animation: fly-in-from-bottom .2s ease-in-out both;
 }
 
 .unloaded .widgets-container .column:first-child .widget {
