@@ -2813,7 +2813,9 @@ var Widgets = {
 				height: 290,
 				html: modalHTML,
 				classes: "bookmarks-modal"
-			});
+			}, function() {
+				this.adding = false;
+			}.bind(this));
 
 			this.modal.save = function() {};
 
