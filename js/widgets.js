@@ -2815,6 +2815,8 @@ var Widgets = {
 				classes: "bookmarks-modal"
 			}, function() {
 				this.adding = false;
+
+				this.modal.hide();
 			}.bind(this));
 
 			this.modal.save = function() {};
