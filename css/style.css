@@ -259,6 +259,7 @@ form:not(.form-horizontal) .color label {
 .toolbar.hidden {
 	top: 0;
 	opacity: 0;
+	z-index: 2;
 	position: absolute;
 	transition: opacity .2s ease-in-out;
 }
@@ -449,6 +450,20 @@ form:not(.form-horizontal) .color label {
 	opacity: 1;
 	visibility: visible;
 	-webkit-transform: translateY(0px);
+	transition: opacity .3s ease-in-out,
+				-webkit-transform .3s ease-in-out,
+				visibility 0s 0s;
+}
+
+.toolbar.hidden .suggestions.visible {
+	visibility: hidden;
+	transition: opacity .3s ease-in-out,
+				-webkit-transform .3s ease-in-out,
+				visibility 0s .3s;
+}
+
+.toolbar.hidden:hover .suggestions.visible {
+	visibility: visible;
 	transition: opacity .3s ease-in-out,
 				-webkit-transform .3s ease-in-out,
 				visibility 0s 0s;
