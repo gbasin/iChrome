@@ -186,7 +186,9 @@ iChrome.deferred = function(refresh) {
 
 	iChrome.Tabs.draggable();
 
-	iChrome.Tabs.Nav.last = iChrome.Tabs.parent.children().length;
+	iChrome.Tabs.Nav.last = iChrome.Tabs.parent.children(".tab").length;
+
+	iChrome.Tabs.Nav.buttons();
 
 	iChrome.Tabs.Nav(parseInt(iChrome.Storage.settings.def || 1));
 
@@ -412,14 +414,16 @@ iChrome.initTooltips = function() {
 iChrome.refresh = function(all) {
 	iChrome.Status.log("Refreshing...");
 
+	clearTimeout(iChrome.deferredTimeout);
+
 	$(".widgets-container .column").sortable("destroy");
 
 	$("body").off().find(".remove, .toolbar, .widgets-container, .tab-container, .modal, .modal-overlay, .sp-container, .customcss").remove().end()
-		.find("*:not(#support)").off().end()
+		.find("*:not(.footer *)").off().end()
 		.prepend('<div class="remove">Remove</div>' +
 			'<header class="toolbar"></header>' +
 			'<div class="widgets-container"></div>' +
-			'<div class="tab-container" tabindex="-1"></div>');
+			'<div class="tab-container" tabindex="-1"><div class="tab-nav"><nav class="prev"></nav><nav class="next"></nav></div></div>');
 
 	iChrome.Tabs.parent = $(".tab-container");
 	iChrome.Widgets.active = [];
@@ -1693,7 +1697,7 @@ iChrome.Tabs = function() {
 iChrome.Tabs.parent = $(".tab-container");
 
 iChrome.Tabs.render = function() {
-	var container = iChrome.Tabs.parent.html(""),
+	var container = iChrome.Tabs.parent.html('<div class="tab-nav"><nav class="prev"></nav><nav class="next"></nav></div>'),
 		panel = iChrome.Tabs.panel.html(""),
 		sizes = {
 			1: "tiny",
@@ -2161,6 +2165,26 @@ iChrome.Tabs.Nav = function(which) {
 };
 
 iChrome.Tabs.Nav.current = 1;
+
+iChrome.Tabs.Nav.buttons = function() {
+	if (iChrome.Tabs.Nav.last == 1) {
+		$(".tab-container").addClass("one-tab");
+	}
+
+	var timeout;
+
+	$(".tab-container").on("click", ".tab-nav > nav", function() {
+		iChrome.Tabs.Nav($(this).attr("class"));
+	}).on("mouseover", ".tab-nav > nav", function() {
+		if ($("body").hasClass("dragging")) {
+			timeout = setTimeout(function() {
+				iChrome.Tabs.Nav($(this).attr("class"));
+			}.bind(this), 500);
+		}
+	}).on("mouseout", ".tab-nav > nav", function() {
+		clearTimeout(timeout);
+	});
+};
 
 
 iChrome.Tabs.Menu = function() {
