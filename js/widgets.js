@@ -1793,26 +1793,56 @@ var Widgets = {
 			color: "yellow",
 			size: "variable"
 		},
-		data: {
+		syncData: {
 			title: "Sample note title",
-			content: 'This is sample note content.<div><br></div><div>This note widget can contain and display many things including images, <a>links</a>, <b>bold</b>, <i>italic</i>&nbsp;and <u>underlined</u>&nbsp;text.</div><div><br></div><div>Via the settings menu (click the wrench icon in the top right) you can set the note color, font face and font size.</div><div><br></div><div>Have fun!</div>'
+			content: 'This is sample note content.<br><br>This note widget can contain and display many things including images, <a href="http://www.google.com">links</a>, <b>bold</b>, <i>italic</i>&nbsp;and <u>underlined</u>&nbsp;text.<br><br>Via the settings menu (click the wrench icon in the top right) you can set the note color, font face and font size.<br><br>Have fun!'
 		},
 		saveNote: function() {
 			if (this.titleElm && this.noteElm) {
 				clearTimeout(this.timeout);
 
-				this.data.title = this.titleElm.val();
-				this.data.content = this.noteElm.html();
+				// Speed is of the essence, use mostly vanilla JS here
+				this.div.innerHTML = this.noteElm[0].innerHTML;
+
+				[].forEach.call(this.div.querySelectorAll("div"), function(e, i) {
+					$(e).replaceWith("<br>" + e.innerHTML);
+				});
+
+				[].forEach.call(this.div.querySelectorAll(":not(pre):not(blockquote):not(figure):not(hr):not(a):not(b):not(u):not(i):not(img):not(strong):not(p):not(sub):not(sup):not(br)"), function(e, i) {
+					$(e).replaceWith(e.innerHTML);
+				});
+
+				[].forEach.call(this.div.querySelectorAll("pre, blockquote, figure, hr, a, b, u, i, img, strong, p, sub, sup, br"), function(e, i) {
+					[].forEach.call(e.attributes, function(a, i) {
+						if (a.name == "style" && a.value.indexOf("block;") !== -1) {
+							e.innerHTML = "<br>" + e.innerHTML;
+
+							e.removeAttribute(a.name);
+						}
+						else if (a.name !== "href") {
+							e.removeAttribute(a.name);
+						}
+					});
+				});
+
+				this.syncData.title = this.titleElm.val();
+				this.syncData.content = this.div.innerHTML;
 
 				this.timeout = setTimeout(function() {
-					this.utils.saveData(this.data);
+					this.utils.saveConfig(this.syncData);
 				}.bind(this), 500);
 			}
 		},
 		render: function() {
+			if (this.data && !this.syncData) {
+				this.syncData = $.extend(true, {}, this.data);
+
+				delete this.data;
+			}
+
 			var data = {
-				title: this.data.title,
-				content: this.data.content
+				title: this.syncData.title,
+				content: this.syncData.content
 			},
 			faces = {
 				arial: "Arial, sans-serif",
@@ -2717,7 +2747,7 @@ var Widgets = {
 			size: "variable",
 			columns: "one"
 		},
-		data: {
+		syncData: {
 			bookmarks: [
 				{
 					title: "Google",
@@ -2779,7 +2809,13 @@ var Widgets = {
 		},
 		adding: false,
 		render: function() {
-			var data = $.extend({}, this.data || {});
+			if (this.data && !this.syncData) {
+				this.syncData = $.extend(true, {}, this.data);
+
+				delete this.data;
+			}
+
+			var data = $.extend({}, this.syncData || {});
 
 			if (this.config.title && this.config.title !== "") {
 				data.title = this.config.title;
@@ -2936,7 +2972,7 @@ var Widgets = {
 			title: "To-do list",
 			size: "variable"
 		},
-		data: {
+		syncData: {
 			items: [
 				{
 					title: "These are sample to-do items"
@@ -2955,9 +2991,9 @@ var Widgets = {
 			]
 		},
 		save: function() {
-			this.data.items = this.sortable.sortable("serialize").get();
+			this.syncData.items = this.sortable.sortable("serialize").get();
 
-			this.utils.saveData(this.data);
+			this.utils.saveConfig(this.data);
 		},
 		addItem: function(title, after) {
 			if (typeof title !== "string") {
@@ -2975,7 +3011,13 @@ var Widgets = {
 			this.save();
 		},
 		render: function() {
-			var data = $.extend({}, this.data || {});
+			if (this.data && !this.syncData) {
+				this.syncData = $.extend(true, {}, this.data);
+
+				delete this.data;
+			}
+
+			var data = $.extend({}, this.syncData || {});
 
 			if (this.config.title && this.config.title !== "") {
 				data.title = this.config.title;

@@ -1659,6 +1659,7 @@ iChrome.Tabs = function() {
 				$.extend(true, widget, Widgets[e.id], e);
 
 				if (e.data) widget.data = e.data;
+				if (e.syncData) widget.syncData = e.syncData;
 
 				widget.config.size = sizes[widget.size];
 
@@ -2620,10 +2621,10 @@ iChrome.Widgets.Utils.error = function(msg) {
 };
 
 iChrome.Widgets.Utils.saveConfig = function(config) {
-	clearTimeout(iChrome.Tabs.saveTimeout);
+	clearTimeout(iChrome.Tabs.syncTimeout);
 
-	iChrome.Tabs.saveTimeout = setTimeout(function() {
-		iChrome.Tabs.saveTimeout = null;
+	iChrome.Tabs.syncTimeout = setTimeout(function() {
+		iChrome.Tabs.syncTimeout = null;
 
 		iChrome.Tabs.save();
 	}, 200);
@@ -2661,36 +2662,6 @@ iChrome.Storage = function(cb) {
 
 		iChrome.Storage.Originals.tabs = JSON.parse(JSON.stringify(d.tabs || iChrome.Storage.Defaults.tabs));
 
-		chrome.storage.sync.get(["tabs", "settings", "themes"], function(d) {
-			if (d.tabs && d.tabs.length && iChrome.Storage.getJSON(iChrome.Storage.Originals.tabs) !== iChrome.Storage.getJSON(d.tabs)) {
-				var tabs = d.tabs;
-			}
-
-			if (d.themes && d.themes.length && JSON.stringify(iChrome.Storage.themes) !== JSON.stringify(d.themes)) {
-				var themes = d.themes;
-			}
-
-			if (d.settings && d.settings.length && JSON.stringify(iChrome.Storage.settings) !== JSON.stringify(d.settings)) {
-				var settings = d.settings;
-			}
-
-			chrome.storage.local.set(iChrome.Storage.setData({
-				tabs: iChrome.Storage.Originals.tabs,
-				themes: iChrome.Storage.themes,
-				settings: iChrome.Storage.settings
-			}, {
-				tabs: tabs || iChrome.Storage.Originals.tabs,
-				themes: themes || iChrome.Storage.themes,
-				settings: settings || iChrome.Storage.settings
-			}));
-
-			if (tabs || themes || settings) {
-				iChrome.Status.log("Detected different settings from sync, refreshing");
-
-				iChrome.refresh(true);
-			}
-		});
-
 		if (typeof cb == "function") {
 			cb();
 		}
@@ -2699,57 +2670,77 @@ iChrome.Storage = function(cb) {
 
 iChrome.Storage.timeout = "";
 
-iChrome.Storage.setData = function(local, sync) {
-	var data = {};
-
-	if (local && local.tabs && local.tabs.length && sync && sync.tabs && sync.tabs.length) {
-		local.tabs.forEach(function(tab, i) {
-			if (tab.columns) {
-				tab.columns.forEach(function(column, i) {
-					column.forEach(function(widget, i) {
-						if (widget.data && widget.id) {
-							if (!data[widget.id]) {
-								data[widget.id] = [];
-							}
-							
-							data[widget.id].push(widget.data);
-						}
-					});
-				});
-			}
-		});
-
-		sync.tabs.forEach(function(tab, i) {
-			if (tab.columns) {
-				tab.columns.forEach(function(column, i) {
-					column.forEach(function(widget, i) {
-						if (widget.id && data[widget.id] && data[widget.id].length) {
-							widget.data = data[widget.id].shift();
-						}
-					});
-				});
-			}
-		});
-	}
-
-	return sync;
-};
-
 iChrome.Storage.sync = function(now) {
 	iChrome.Status.log("Starting sync save");
 
 	clearTimeout(iChrome.Storage.timeout);
 
 	var save = function() {
+		iChrome.Storage.timeout = null;
+
 		var sync = {},
 			local = {};
 
 		sync.themes = local.themes = iChrome.Storage.themes;
 		sync.settings = local.settings = iChrome.Storage.settings;
 		sync.tabs = iChrome.Storage.tabsSync;
+		sync.lastChanged = new Date().getTime() + "-" + iChrome.uid;
+
+		var arr = chunk(JSON.stringify(sync.tabs), 2000); // Less than half the max item size since it has to re-escape quotes, etc.
+
+		arr.forEach(function(e, i) {
+			sync["tabs" + (i ? i : "")] = e;
+		});
+
+		chrome.storage.sync.get(function(d) {
+			var max = 0,
+				key;
+
+			for (key in d) {
+				if (key.indexOf("tabs") == 0 && max < key.substr(4) || 0) {
+					max = (key.substr(4) || 0);
+				}
+			}
+
+			if (max >= arr.length) {
+				var keys = [];
+
+				for (var i = arr.length; i <= max; i++) {
+					keys.push("tabs" + i);
+				}
+
+				chrome.storage.sync.remove(keys);
+			}
+		});
 
 		chrome.storage.sync.set(sync);
 		chrome.storage.local.set(local);
+
+		chrome.storage.sync.getBytesInUse(function(bytes) {
+			if ((bytes / chrome.storage.sync.QUOTA_BYTES) > 0.90) {
+				alert(
+					"You have used more than 90% of the total synchronized storage space available.\r\nIf" + 
+					" you reach the limit, iChrome will stop syncing your data and may stop working.\r\n" + 
+					"You can shrink the amount of space you use by deleting custom themes, notes and to-" + 
+					"do lists you don't use."
+				);
+			}
+		});
+	},
+	chunk = function(str, size) {
+		str = str || "";
+		size = size || 4;
+
+		var slength = str.length,
+			chunks = [];
+
+		for (var i = size; i < slength; i += size) {
+			chunks.push(str.slice(i - size, i));
+		}
+
+		chunks.push(str.slice(slength - (size - slength % size)));
+
+		return chunks;
 	};
 
 	if (!now) iChrome.Storage.timeout = setTimeout(save, 2000);
@@ -2761,7 +2752,7 @@ iChrome.Storage.getJSON = function(tabs) {
 
 	tabs.forEach(function(t, i) {
 		var tab = {},
-			allowed = ["id", "size"],
+			allowed = ["id", "size", "syncData"],
 			key;
 
 		for (key in t) {
