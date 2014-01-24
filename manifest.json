@@ -33,13 +33,14 @@
 		"chrome://favicon/",
 		"webRequestBlocking"
 	],
-	"version": "2.0.8",
+	"version": "2.0.10",
 	"manifest_version": 2,
 	"short_name": "iChrome",
 	"offline_enabled": true,
 	"minimum_chrome_version": "29.0",
 	"name": "iChrome: your homepage, for chrome (beta)",
 	"update_url": "http://clients2.google.com/service/update2/crx",
+	"key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCNyJlz1NfUOvI1q7YiXjTvStaC99OmJCfnfo07UVF6N7/5coAGTUAASUYmdFd5LxTt4GOrODbzbbdOKO3iEuDtUZFklgvMO81tmoRPJNMf0cb1rpSfnmmB33xtgi2CWzmlVzx3pdbbkGwo2R+rwbeAQkG+zXvzgmnHDSt1a5zqjwIDAQAB",
 	"description": "Your homepage, for Chrome: an iGoogle replacement homepage for Google Chrome modeled after Google Now",
 	"content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com https://*.uservoice.com https://www.google.com; object-src 'self'"
 }
