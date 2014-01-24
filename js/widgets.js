@@ -2863,7 +2863,7 @@ var Widgets = {
 			this.modal.url = this.modal.elm.find("#bookmark-url");
 			this.modal.btn = this.modal.elm.find(".btn").click(function(e) {
 				this.modal.save(e);
-			});
+			}.bind(this));
 
 			this.modal.title.add(this.modal.url).on("keydown", function(e) {
 				if (e.which == 13) {
