@@ -140,6 +140,8 @@ $.unextend = function(obj1, obj2) {
 	return newObj;
 };
 
+window._gaq = window._gaq || [];
+
 
 // Main iChrome init
 var iChrome = function(refresh) {
@@ -168,7 +170,7 @@ var iChrome = function(refresh) {
 
 	localStorage.uses = parseInt(localStorage.uses || 0) + 1;
 
-	setTimeout(function() {
+	iChrome.deferredTimeout = setTimeout(function() {
 		$("body").removeClass("unloaded");
 
 		iChrome.deferred(refresh);
@@ -176,6 +178,8 @@ var iChrome = function(refresh) {
 
 	iChrome.Status.log("Page generation done");
 };
+
+iChrome.deferredTimeout = "";
 
 iChrome.deferred = function(refresh) {
 	iChrome.Status.log("Starting deferred generation");
@@ -225,12 +229,14 @@ iChrome.deferred = function(refresh) {
 	iChrome.Donate();
 
 	window.onbeforeunload = function() {
-		iChrome.Storage.sync(true);
+		if (iChrome.Storage.timeout !== null) {
+			iChrome.Storage.sync(true);
+		}
 
 		chrome.extension.getBackgroundPage().setReload();
 	};
 
-	$("#donate").on("click", function(e) {
+	$("#donate").off().on("click", function(e) {
 		e.preventDefault();
 
 		iChrome.Donate.modal.show();
@@ -242,9 +248,17 @@ iChrome.deferred = function(refresh) {
 		var href = this.getAttribute("href");
 
 		chrome.tabs.getCurrent(function(d) {
-			chrome.tabs.update(d.id, {
-				url: href
-			});
+			if (e.which == 2) {
+				chrome.tabs.create({
+					url: href,
+					index: d.index + 1
+				});
+			}
+			else {
+				chrome.tabs.update(d.id, {
+					url: href
+				});
+			}
 		});
 	});
 
@@ -291,7 +305,6 @@ iChrome.deferred = function(refresh) {
 
 	// Init Uservoice and analytics
 	if (!refresh) {
-		window._gaq = window._gaq || [];
 		window._gaq.push(["_setAccount", "UA-41131844-2"]);
 		window._gaq.push(["_trackPageview", "/"]);
 
@@ -321,7 +334,7 @@ iChrome.deferred = function(refresh) {
 		}]);
 
 		UserVoice.push(["identify", {
-			id: localStorage.uid || (localStorage.uid = (new Date().getTime()).toString(16) + Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1))
+			id: iChrome.uid
 		}]);
 
 		window.UserVoice.push(["addTrigger", "#support", { mode: "contact" }]);
@@ -335,6 +348,8 @@ iChrome.deferred = function(refresh) {
 		iChrome.Status.log("Uservoice done");
 	}
 };
+
+iChrome.uid = localStorage.uid || (localStorage.uid = (new Date().getTime()).toString(16) + Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1));
 
 iChrome.initTooltips = function() {
 	if (!$("body").find(".tip-container").length) $("body").append('<div class="tip-container" />');
@@ -1433,25 +1448,25 @@ iChrome.Donate = function() {
 
 		link.click();
 
-		_gaq.push(["_trackEvent", "Donate", "PayPal", localStorage.uid]);
+		_gaq.push(["_trackEvent", "Donate", "PayPal", iChrome.uid]);
 	});
 
 	modal.elm.find(".bitcoin").on("click", function() {
 		prompt("Please send Bitcoins to:", "1LoVCTBLBGbgFxchXtt7MhNov1VD1yrMYu");
 
-		_gaq.push(["_trackEvent", "Donate", "Bitcoin", localStorage.uid]);
+		_gaq.push(["_trackEvent", "Donate", "Bitcoin", iChrome.uid]);
 	});
 
 	modal.elm.find(".litecoin").on("click", function() {
 		prompt("Please send Litecoins to:", "LWUgLkXhbVromJzxkL82wPidBV8Fq9pC3p");
 
-		_gaq.push(["_trackEvent", "Donate", "Litecoin", localStorage.uid]);
+		_gaq.push(["_trackEvent", "Donate", "Litecoin", iChrome.uid]);
 	});
 
 	modal.elm.find(".dogecoin").on("click", function() {
 		prompt("Please send much Doge to:", "DMiN376ndrx8gZivpNiREGnPMZHPc65aSq");
 
-		_gaq.push(["_trackEvent", "Donate", "Dogecoin", localStorage.uid]);
+		_gaq.push(["_trackEvent", "Donate", "Dogecoin", iChrome.uid]);
 	});
 };
 
@@ -2048,7 +2063,7 @@ iChrome.Tabs.save = function(noSync) {
 		iChrome.Storage.tabs.forEach(function(t, i) {
 			var tab = {},
 				stab = {},
-				allowed = ["id", "size"],
+				allowed = ["id", "size", "syncData"],
 				t = $.unextend({
 					alignment: iChrome.Storage.settings.alignment,
 					theme: iChrome.Storage.settings.theme,
@@ -2124,6 +2139,7 @@ iChrome.Tabs.save = function(noSync) {
 	}
 };
 
+iChrome.Tabs.syncTimeout = "";
 iChrome.Tabs.saveTimeout = "";
 
 iChrome.Tabs.defaults = {
@@ -2267,7 +2283,7 @@ iChrome.Tabs.Menu = function() {
 	}).on("mouseout", ".panel li", function() {
 		clearTimeout(timeout);
 	});
-}
+};
 
 
 // Widgets
@@ -2892,6 +2908,10 @@ iChrome.Storage.Defaults = {
 iChrome.Search = function() {
 	iChrome.Search.box = $(".search input");
 	iChrome.Search.Suggestions.elm = $(".search .suggestions");
+
+	$(".search .btn").click(function(e) {
+		iChrome.Search.submit();
+	});
 
 	var box = iChrome.Search.box;
 

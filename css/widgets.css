@@ -1593,6 +1593,7 @@
 }
 
 .todo .check {
+	width: 10px;
 	font-size: 16px;
 	margin-right: 10px;
 	font-family: Entypo;

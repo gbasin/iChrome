@@ -1075,7 +1075,7 @@ var Widgets = {
 
 			item.image = html.find("img[data-src]").first().attr("data-src");
 
-			if (!item.image || item.image == "") {window.itm = itm;
+			if (!item.image || item.image == "") {
 				if (html.find("iframe[data-chomp-id]").length) {
 					item.image = "http://img.youtube.com/vi/" + html.find("iframe[data-chomp-id]").attr("data-chomp-id") + "/1.jpg";
 				}
@@ -1861,6 +1861,8 @@ var Widgets = {
 
 			this.titleElm = this.elm.find("input.header").on("input", this.saveNote.bind(this));
 			this.noteElm = this.elm.find(".note .content").on("input", this.saveNote.bind(this));
+
+			this.div = document.createElement("div");
 		}
 	},
 	14: {
@@ -2859,7 +2861,7 @@ var Widgets = {
 
 			this.modal.title = this.modal.elm.find("#bookmark-title");
 			this.modal.url = this.modal.elm.find("#bookmark-url");
-			this.modal.btn = this.modal.elm.find(".btn").click(function() {
+			this.modal.btn = this.modal.elm.find(".btn").click(function(e) {
 				this.modal.save(e);
 			});
 
@@ -4253,7 +4255,7 @@ var Widgets = {
 
 					$.ajax({
 						type: "GET",
-						url: "http://translate.google.com/translate_a/t?client=ichrome&sl=" + encodeURIComponent(this.data.from) + "&tl=" + encodeURIComponent(this.data.from) + "&q=" + encodeURIComponent(textarea.val()) + "",
+						url: "http://translate.google.com/translate_a/t?client=ichrome&sl=" + encodeURIComponent(this.data.from) + "&tl=" + encodeURIComponent(this.data.to) + "&q=" + encodeURIComponent(textarea.val()) + "",
 						complete: function(d) {
 							d = d.responseText;
 
@@ -4296,6 +4298,10 @@ var Widgets = {
 					this.utils.saveData(this.data);
 				}.bind(this),
 				autochange = function(e) {
+					untranslate = false;
+
+					btn.text("Translate");
+
 					if (autochanged) {
 						auto.text("Auto");
 
@@ -4331,6 +4337,12 @@ var Widgets = {
 			});
 
 			from.on("change", autochange);
+
+			to.on("change", function() {
+				untranslate = false;
+
+				btn.text("Translate");
+			});
 
 			textarea.on("input", autochange);
 		}

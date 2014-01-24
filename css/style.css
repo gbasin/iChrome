@@ -427,7 +427,7 @@ form:not(.form-horizontal) .color label {
 .search .suggestions {
 	top: 100%;
 	left: 5px;
-	z-index: 1;
+	z-index: 2;
 	opacity: 0;
 	right: 80px;
 	cursor: pointer;
