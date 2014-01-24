@@ -2742,14 +2742,14 @@ var Widgets = {
 			]
 		},
 		save: function() {
-			this.data.bookmarks = this.sortable.sortable("serialize").get();
+			this.syncData.bookmarks = this.sortable.sortable("serialize").get();
 
-			this.utils.saveData(this.data);
+			this.utils.saveData(this.syncData);
 		},
 		addItem: function(data) {
 			var html = '<a class="link" href="' + data.url + '"><img class="favicon" src="chrome://favicon/' +
 				data.url + '" /><span class="title">' + data.title + '</span><div class="tools"><span class="' + 
-				'edit">&#x270E;</span><span class="delete">&#x2715;</span><span class="move">&#xE005;</span></div>';
+				'edit">	&#xE606;</span><span class="delete">&#xE678;</span><span class="move">&#xE693;</span></div>';
 
 			this.editItem($(html).appendTo(this.sortable));
 

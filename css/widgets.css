@@ -284,7 +284,7 @@
 .weather .details .humidity:before {
 	color: #76B3E9;
 	font-size: 20px;
-	content: "\1f4a6";
+	content: "\e66d";
 	font-family: Entypo!important;
 }
 

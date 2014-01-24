@@ -120,7 +120,7 @@ body.dragging .remove {
 
 .remove:after {
 	font-size: 20px;
-	content: "\e729";
+	content: "\e6A1";
 	margin-left: 10px;
 	font-family: Entypo;
 }

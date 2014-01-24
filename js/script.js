@@ -1711,7 +1711,7 @@ iChrome.Tabs.render = function() {
 		var tabElm = $('<div class="tab' + (i == parseInt(iChrome.Storage.settings.def || 1) ? " active" : "") + '"><main class="widgets-container' + (tab.fixed ? " fixed" : "") + (tab.alignment == "left" ? " left" : tab.alignment == "right" ? " right" : "") + '"></main></div>').appendTo(container),
 			widgetContainer = tabElm.find(".widgets-container");
 
-		$('<li></li>').attr("data-id", tab.id).text(tab.name).append('<span class="move">&#xE005;</span>').appendTo(panel);
+		$('<li></li>').attr("data-id", tab.id).text(tab.name).append('<span class="move">&#xE693;</span>').appendTo(panel);
 
 		if (parseInt(iChrome.Storage.settings.def || 1)) {
 			tabElm.attr("data-id", tab.id).add(document.body).attr("style", iChrome.Tabs.getCSS(tab));
