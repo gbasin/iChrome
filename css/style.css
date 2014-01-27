@@ -2029,8 +2029,8 @@ body > .widgets-container {
 
 .settings .tab {
 	left: -100%;
-	overflow: auto;
 	position: absolute;
+	overflow-x: hidden;
 	width: calc(100% - 20px);
 	max-height: calc(100% - 130px);
 	transition: left .5s ease-in-out;
