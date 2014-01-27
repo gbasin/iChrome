@@ -306,7 +306,7 @@ iChrome.deferred = function(refresh) {
 	// Init Uservoice and analytics
 	if (!refresh) {
 		window._gaq.push(["_setAccount", "UA-41131844-2"]);
-		window._gaq.push(["_trackPageview", "/"]);
+		window._gaq.push(["_trackPageview", "/v" + chrome.runtime.getManifest().version]);
 
 		(function() {
 			var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
@@ -676,7 +676,7 @@ iChrome.Settings.handlers = function(modal, settings) {
 
 			_gaq.push(["_trackEvent", "Tabs", "Remove", iChrome.Storage.tabs.length + ""]);
 
-			modal.hide();
+			modal.modal.add(modal.overlay).removeClass("visible");
 
 			iChrome.Settings.save();
 		}
@@ -1728,7 +1728,7 @@ iChrome.Tabs.render = function() {
 		};
 
 	iChrome.Storage.tabs.forEach(function(tab, i) {
-		var tabElm = $('<div class="tab' + (i == parseInt(iChrome.Storage.settings.def || 1) ? " active" : "") + '"><main class="widgets-container' + (tab.fixed ? " fixed" : "") + (tab.alignment == "left" ? " left" : tab.alignment == "right" ? " right" : "") + '"></main></div>').appendTo(container),
+		var tabElm = $('<div class="tab' + (i == (parseInt(iChrome.Storage.settings.def || 1) - 1) ? " active" : "") + '"><main class="widgets-container' + (tab.fixed ? " fixed" : "") + (tab.alignment == "left" ? " left" : tab.alignment == "right" ? " right" : "") + '"></main></div>').appendTo(container),
 			widgetContainer = tabElm.find(".widgets-container");
 
 		$('<li></li>').attr("data-id", tab.id).text(tab.name).append('<span class="move">&#xE693;</span>').appendTo(panel);
