@@ -2,7 +2,7 @@
 	"content_scripts": [
 		{
 			"js": [ "oauth2/oauth2_inject.js" ],
-			"matches": [ "http://ichrome.uservoice.com/robots.txt*", "http://www.google.com/ichrome/robots.txt*" ],
+			"matches": [ "https://ichrome.uservoice.com/robots.txt*", "https://www.google.com/ichrome/robots.txt*" ],
 			"run_at": "document_start"
 		},
 		{
@@ -33,7 +33,7 @@
 		"chrome://favicon/",
 		"webRequestBlocking"
 	],
-	"version": "2.0.10",
+	"version": "2.0.11",
 	"manifest_version": 2,
 	"short_name": "iChrome",
 	"offline_enabled": true,
