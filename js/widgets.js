@@ -479,7 +479,7 @@ var Widgets = {
 		},
 		oAuth: new OAuth2("google", {
 			client_id: "559765430405-5rvu6sms3mc111781cfgp1atb097rrph.apps.googleusercontent.com",
-			client_secret: "noop",
+			client_secret: "",
 			api_scope: "https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/analytics"
 		}),
 		getProfiles: function(cb) {
@@ -1448,7 +1448,7 @@ var Widgets = {
 		},
 		oAuth: new OAuth2("google2", {
 			client_id: "559765430405-2710gl95r9js4c6m4q9nveijgjji50b8.apps.googleusercontent.com",
-			client_secret: "noop",
+			client_secret: "",
 			api_scope: "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar"
 		}),
 		getCalendars: function(cb) {
@@ -1834,7 +1834,7 @@ var Widgets = {
 			}
 		},
 		render: function() {
-			if (this.data && !this.syncData) {
+			if (this.data) {
 				this.syncData = $.extend(true, {}, this.data);
 
 				delete this.data;
@@ -2811,7 +2811,7 @@ var Widgets = {
 		},
 		adding: false,
 		render: function() {
-			if (this.data && !this.syncData) {
+			if (this.data) {
 				this.syncData = $.extend(true, {}, this.data);
 
 				delete this.data;
@@ -3013,7 +3013,7 @@ var Widgets = {
 			this.save();
 		},
 		render: function() {
-			if (this.data && !this.syncData) {
+			if (this.data) {
 				this.syncData = $.extend(true, {}, this.data);
 
 				delete this.data;
@@ -3764,7 +3764,7 @@ var Widgets = {
 		},
 		oAuth: new OAuth2("feedly", {
 			client_id: "ichrome",
-			client_secret: "noop",
+			client_secret: "",
 			api_scope: "https://cloud.feedly.com/subscriptions"
 		}, function(tab) {
 			chrome.webRequest.onBeforeRequest.addListener(
@@ -3805,7 +3805,7 @@ var Widgets = {
 				var categories = {};
 					
 				categories["user/" + oAuth.get().userId + "/category/global.all"] = "All",
-				categories["user/" + oAuth.get().userId + "/category/global.saved"] = "Saved for later",
+				categories["user/" + oAuth.get().userId + "/tag/global.saved"] = "Saved for later",
 				categories["user/" + oAuth.get().userId + "/category/global.uncategorized"] = "Uncategorized";
 
 				$.ajax({
