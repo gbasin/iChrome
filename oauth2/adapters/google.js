@@ -13,7 +13,7 @@ OAuth2.adapter('google', {
   },
 
   redirectURL: function(config) {
-    return 'http://www.google.com/ichrome/robots.txt';
+    return 'https://www.google.com/ichrome/robots.txt';
   },
 
   parseAuthorizationCode: function(url) {

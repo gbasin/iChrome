@@ -456,14 +456,14 @@ form:not(.form-horizontal) .color label {
 				visibility 0s 0s;
 }
 
-.toolbar.hidden .suggestions.visible {
+.toolbar.hidden .suggestions {
 	visibility: hidden;
 	transition: opacity .3s ease-in-out,
 				-webkit-transform .3s ease-in-out,
 				visibility 0s .3s;
 }
 
-.toolbar.hidden:hover .suggestions.visible {
+.toolbar.hidden:hover .suggestions {
 	visibility: visible;
 	transition: opacity .3s ease-in-out,
 				-webkit-transform .3s ease-in-out,
