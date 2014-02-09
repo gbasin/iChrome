@@ -317,6 +317,21 @@ chrome.runtime.onInstalled.addListener(function(details) {
 
 		chrome.storage.sync.get(function(d) {
 			if (d.tabs) {
+				var tabs = [],
+					key,
+					data = {
+						settings: d.settings,
+						themes: d.themes
+					};
+
+				for (key in d) {
+					if (key.indexOf("tabs") == 0) {
+						tabs[key.substr(4) || 0] = d[key];
+					}
+				}
+
+				data.tabs = JSON.parse(tabs.join(""));
+
 				chrome.storage.local.set(d);
 			}
 			else {
@@ -327,24 +342,42 @@ chrome.runtime.onInstalled.addListener(function(details) {
 		});
 	}
 	else if (details.reason == "update") {
-		delete localStorage.uses;
-
-		if (details.previousVersion.indexOf("2") === 0 && !localStorage["help"]) {
-			//localStorage["help"] = "true";
-			//localStorage["whatsNew"] = "true";
-		}
-		else {
-			chrome.storage.local.get(function(d) {
+		chrome.storage.local.get(function(d) {
+			if (details.previousVersion.indexOf("2") === 0 && !localStorage["help"]) {
+				//localStorage["help"] = "true";
+				//localStorage["whatsNew"] = "true";
+			}
+			else {
 				if (d.ActiveAppIds) {
 					migrate(d);
 
 					localStorage["updated"] = "true";
 				}
+				else if (typeof d.tabs == "string") {
+					chrome.storage.sync.get(function(d) {
+						var tabs = [],
+							key,
+							data = {
+								settings: d.settings,
+								themes: d.themes
+							};
+							
+						for (key in d) {
+							if (key.indexOf("tabs") == 0) {
+								tabs[key.substr(4) || 0] = d[key];
+							}
+						}
+
+						data.tabs = JSON.parse(tabs.join(""));
+
+						chrome.storage.local.set(d);
+					});
+				}
 				else {
 					//localStorage["whatsNew"] = "true";
 				}
-			});
-		}
+			}
+		});
 	}
 });
 
@@ -490,6 +523,15 @@ chrome.storage.onChanged.addListener(function(d, area) {
 							});
 						});
 					}
+				});
+			}
+			else if (JSON.stringify(newData) !== JSON.stringify(o) && (d.lastChanged || "olderVersion").split("-")[1] !== uid) {
+				chrome.storage.local.set(newData, function() {
+					chrome.extension.getViews().forEach(function(e, i) {
+						if (e.iChrome && e.iChrome.refresh) {
+							e.iChrome.refresh(true);
+						}
+					});
 				});
 			}
 		});
