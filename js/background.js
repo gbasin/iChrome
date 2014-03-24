@@ -345,7 +345,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 		chrome.storage.local.get(function(d) {
 			if (details.previousVersion.indexOf("2") === 0 && !localStorage["help"]) {
 				localStorage["help"] = "true";
-				//localStorage["whatsNew"] = "true";
+				localStorage["whatsNew"] = "true";
 			}
 			else {
 				if (d.ActiveAppIds) {
@@ -374,7 +374,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 					});
 				}
 				else {
-					//localStorage["whatsNew"] = "true";
+					localStorage["whatsNew"] = "true";
 				}
 			}
 		});
