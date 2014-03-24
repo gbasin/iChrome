@@ -1274,6 +1274,7 @@ body > .widgets-container {
 	bottom: 15px;
 	margin: auto;
 	width: 400px;
+	height: 220px;
 	z-index: 99999;
 	position: fixed;
 	overflow: hidden;
@@ -1283,7 +1284,7 @@ body > .widgets-container {
 	visibility: hidden;
 	border-radius: 2px;
 	max-height: 500px;
-	height: calc(100% - 30px);
+	/*height: calc(100% - 30px);*/
 	font-family: Open Sans, sans-serif;
 	-webkit-transform: translateY(50px) translateZ(0);
 	transition: all .25s ease-in-out, visibility 0s .25s;
