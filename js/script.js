@@ -148,7 +148,7 @@ String.prototype.parseUrl = function() {
 		return "http://" + this;
 	}
 	else {
-		return this;
+		return this.toString();
 	}
 };
 
