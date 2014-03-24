@@ -763,7 +763,7 @@ var Widgets = {
 		refresh: function() {
 			var config = this.config;
 
-			$.get((config.custom && config.custom !== "") ? config.custom : ("https://news.google.com/news/feeds?ned=" + config.edition + "&topic=" + (config.topic !== "top" ? config.topic : "") + "&output=rss"), function(d) {
+			$.get((config.custom && config.custom !== "") ? config.custom.parseUrl() : ("https://news.google.com/news/feeds?ned=" + config.edition + "&topic=" + (config.topic !== "top" ? config.topic : "") + "&output=rss"), function(d) {
 				d = $(d);
 
 				var items = d.find("item"),
@@ -965,7 +965,7 @@ var Widgets = {
 		},
 		render: function() {
 			this.utils.render({
-				url: this.config.url || "http://mail.google.com/mail/mu/mp/?source=ig&mui=igh",
+				url: (this.config.url && this.config.url.parseUrl()) || "http://mail.google.com/mail/mu/mp/?source=ig&mui=igh",
 				padding: (this.config.padding === "true"),
 				height: this.config.height || 400
 			});
@@ -1142,6 +1142,9 @@ var Widgets = {
 
 			if (!url || url == "") {
 				url = "http://feeds.gawker.com/lifehacker/full";
+			}
+			else {
+				url = url.parseUrl();
 			}
 
 			$.get(url, function(d) {
@@ -2805,9 +2808,9 @@ var Widgets = {
 
 				modal.hide();
 
-				item.attr("href", modal.url.val().trim())
+				item.attr("href", modal.url.val().trim().parseUrl())
 					.find(".title").text(modal.title.val().trim()).end()
-					.find(".favicon").attr("src", "chrome://favicon/" + modal.url.val().trim());
+					.find(".favicon").attr("src", "chrome://favicon/" + modal.url.val().trim().parseUrl());
 
 				this.save();
 			}.bind(this);

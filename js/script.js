@@ -140,6 +140,18 @@ $.unextend = function(obj1, obj2) {
 	return newObj;
 };
 
+String.prototype.parseUrl = function() {
+	if (this.indexOf("://") == 0) {
+		return "https" + this;
+	}
+	else if (this.indexOf("://") == -1) {
+		return "http://" + this;
+	}
+	else {
+		return this;
+	}
+};
+
 window._gaq = window._gaq || [];
 
 
