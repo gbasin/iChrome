@@ -1925,7 +1925,7 @@ var Widgets = {
 		refresh: function() {
 			$.ajax({
 				type: "GET",
-				url: "https://clients1.google.com/finance/info?client=ob&infotype=infoonebox&q=" + encodeURIComponent(this.config.symbol || "NASDAG:GOOG"),
+				url: "https://clients1.google.com/finance/info?client=ob&hl=en&infotype=infoonebox&q=" + encodeURIComponent(this.config.symbol || "NASDAG:GOOG"),
 				success: function(d) {
 					d = JSON.parse(d.replace("// [", "["))[0];
 
