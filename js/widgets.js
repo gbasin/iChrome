@@ -1149,7 +1149,12 @@ var Widgets = {
 
 			$.get(url, function(d) {
 				try {
-					d = $($.parseXML(d));
+					if (typeof d == "object") {
+						d = $(d);
+					}
+					else {
+						d = $($.parseXML(d));
+					}
 
 					var items = d.find("item"),
 						that = this,
