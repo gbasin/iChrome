@@ -344,7 +344,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 	else if (details.reason == "update") {
 		chrome.storage.local.get(function(d) {
 			if (details.previousVersion.indexOf("2") === 0 && !localStorage["help"]) {
-				//localStorage["help"] = "true";
+				localStorage["help"] = "true";
 				//localStorage["whatsNew"] = "true";
 			}
 			else {
