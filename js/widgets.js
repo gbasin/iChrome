@@ -1079,8 +1079,8 @@ var Widgets = {
 				if (html.find("iframe[data-chomp-id]").length) {
 					item.image = "http://img.youtube.com/vi/" + html.find("iframe[data-chomp-id]").attr("data-chomp-id") + "/1.jpg";
 				}
-				else if (itm.find("media\\:content[url], media\\:thumbnail[url]").length) {
-					item.image = itm.find("media\\:content[url], media\\:thumbnail[url]").attr("url");
+				else if (itm.find("media\\:content[url], media\\:thumbnail[url], enclosure[url][type^=image]").length) {
+					item.image = itm.find("media\\:content[url], media\\:thumbnail[url], enclosure[url][type^=image]").attr("url");
 				}
 				else {
 					delete item.image;
@@ -1145,29 +1145,34 @@ var Widgets = {
 			}
 
 			$.get(url, function(d) {
-				d = $(d);
+				try {
+					d = $($.parseXML(d));
 
-				var items = d.find("item"),
-					that = this,
-					rss = {
-						items: []
-					};
+					var items = d.find("item"),
+						that = this,
+						rss = {
+							items: []
+						};
 
-				if (!items.length) {
-					items = d.find("entry");
+					if (!items.length) {
+						items = d.find("entry");
+					}
+
+					items.each(function(i) {
+						if (i > 19) return;
+
+						rss.items.push(that.getItem($(this)));
+					});
+
+					this.data = rss;
+
+					this.render.call(this);
+
+					this.utils.saveData(this.data);
 				}
-
-				items.each(function(i) {
-					if (i > 19) return;
-
-					rss.items.push(that.getItem($(this)));
-				});
-
-				this.data = rss;
-
-				this.render.call(this);
-
-				this.utils.saveData(this.data);
+				catch(e) {
+					alert("An error occurred while trying to fetch the feed at: " + url + ".\r\nPlease double check the URL and/or modify the widget settings.");
+				}
 			}.bind(this));
 		},
 		render: function() {
