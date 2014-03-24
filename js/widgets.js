@@ -4252,6 +4252,7 @@ var Widgets = {
 
 			var from = this.elm.find("select.from"),
 				to = this.elm.find("select.to"),
+				swap = this.elm.find(".switch"),
 				btn = this.elm.find(".btn.translate"),
 				auto = from.find('option[value="auto"]'),
 				textarea = this.elm.find("textarea"),
@@ -4342,9 +4343,9 @@ var Widgets = {
 			to.val(this.data.to);
 
 			from.add(to).on("keydown", function(e) {
-				e.preventDefault();
-
 				if (e.which == 13 && (!untranslate || untranslate == "")) {
+					e.preventDefault();
+
 					submit(e);
 				}
 			});
@@ -4355,6 +4356,20 @@ var Widgets = {
 				untranslate = false;
 
 				btn.text("Translate");
+			});
+
+			swap.click(function(e) {
+				e.preventDefault();
+
+				var f = from.val(),
+					t = to.val();
+
+				if (f == "auto") {
+					f = "en";
+				}
+
+				from.val(t);
+				to.val(f);
 			});
 
 			textarea.on("input", autochange);

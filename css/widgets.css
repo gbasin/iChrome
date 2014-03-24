@@ -1700,10 +1700,18 @@
 
 .translate .selectbar {
 	float: left;
-	font-size: 13px;
+	height: 34px;
 	line-height: 34px;
 	text-align: center;
 	width: calc(100% - 105px);
+}
+
+.translate .switch {
+	color: #000; /* See below */
+	cursor: pointer;
+	font-size: 18px;
+	font-family: Entypo;
+	text-shadow: 0 0 #000; /* Helps with font-scaling issues a bit, just enough that it looks OK. */
 }
 
 .translate select {
