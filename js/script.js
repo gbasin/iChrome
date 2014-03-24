@@ -447,18 +447,19 @@ iChrome.refresh = function(all) {
 	if (all) {
 		chrome.storage.local.get(["tabs", "settings", "themes"], function(d) {
 			iChrome.Storage.tabs = d.tabs || iChrome.Storage.Defaults.tabs;
-			iChrome.Storage.tabsSync = JSON.parse(iChrome.Storage.getJSON(d.tabs || iChrome.Storage.Defaults.tabs));
 			iChrome.Storage.themes = d.themes || iChrome.Storage.Defaults.themes;
 			iChrome.Storage.settings = d.settings || iChrome.Storage.Defaults.settings;
 
-			if (typeof iChrome.Storage.tabs == "string") {
+			if (typeof d.tabs == "string") {
 				try {
-					iChrome.Storage.tabs = JSON.parse(iChrome.Storage.tabs);
+					iChrome.Storage.tabs = JSON.parse(d.tabs);
 				}
 				catch(e) {
 					alert("An error occurred while trying to load your homepage, please try again or reinstall iChrome.");
 				}
 			}
+
+			iChrome.Storage.tabsSync = JSON.parse(iChrome.Storage.getJSON(iChrome.Storage.tabs));
 
 			iChrome(true);
 		});
@@ -2705,9 +2706,9 @@ iChrome.Storage = function(cb) {
 		iChrome.Storage.themes = d.themes || iChrome.Storage.Defaults.themes;
 		iChrome.Storage.settings = {};
 
-		if (typeof iChrome.Storage.tabs == "string") {
+		if (typeof d.tabs == "string") {
 			try {
-				iChrome.Storage.tabs = JSON.parse(iChrome.Storage.tabs);
+				iChrome.Storage.tabs = JSON.parse(d.tabs);
 			}
 			catch(e) {
 				alert("An error occurred while trying to load your homepage, please try again or reinstall iChrome.");
@@ -2716,7 +2717,7 @@ iChrome.Storage = function(cb) {
 
 		$.extend(true, iChrome.Storage.settings, iChrome.Storage.Defaults.settings, d.settings || iChrome.Storage.Defaults.settings);
 
-		iChrome.Storage.tabsSync = JSON.parse(iChrome.Storage.getJSON(d.tabs || iChrome.Storage.Defaults.tabs));
+		iChrome.Storage.tabsSync = JSON.parse(iChrome.Storage.getJSON(iChrome.Storage.tabs));
 
 		iChrome.Storage.Originals.tabs = JSON.parse(JSON.stringify(d.tabs || iChrome.Storage.Defaults.tabs));
 
