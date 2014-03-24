@@ -1584,26 +1584,75 @@ body > .widgets-container {
 
 
 /*---------------------------------------------
-	/ Help needed modal
+	/ Help/Donate Modal
 */
-.help .description {
+.help .desc {
 	overflow: auto;
 	padding: 0 25px;
-	font-size: 15px;
-	line-height: 25px;
-	height: calc(100% - 100px);
+	height: calc(100% - 90px); 
 }
 
-.help .nav {
-	margin-top: 20px;
-	margin-right: 20px;
+.help ul {
+	margin-top: 10px;
+	line-height: 25px;
+	margin-bottom: 15px;
+}
+
+.help .btns {
 	text-align: right;
+	padding-right: 20px;
+}
+
+.help .ok.hidden {
+	display: none;
 }
 
 .help .no {
 	float: left;
 	margin-left: 20px;
 	border: 1px solid #DDD;
+}
+
+.help .donate:not(.visible) {
+	display: none;
+}
+
+.help .donate .btn {
+	margin-right: 15px;
+}
+
+.help .donate svg {
+	height: 22px;
+	vertical-align: middle;
+}
+
+.help .donate .paypal svg {
+	width: 60px;
+	height: 16px;
+}
+
+.help .donate .bitcoin:not(:hover) {
+	background-color: #F7931B;
+}
+
+.help .donate .bitcoin svg {
+	width: 85px;
+}
+
+.help .donate .litecoin svg {
+	width: 90px;
+}
+
+.help .donate .dogecoin {
+	background-color: #B2D234;
+}
+
+.help .donate .dogecoin:hover {
+	background: #A9C92C;
+}
+
+.help .donate .dogecoin svg {
+	width: 100px;
 }
 
 

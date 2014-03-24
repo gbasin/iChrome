@@ -155,10 +155,11 @@ var iChrome = function(refresh) {
 
 	iChrome.Status.log("Tabs rendered");
 
-	if (localStorage["help"] == "true") {
+	if (localStorage["help"] == "true" && new Date().getTime() >= 1395806400000) {
 		iChrome.HelpUs();
 	}
-	else if (localStorage["updated"] == "true") {
+	
+	if (localStorage["updated"] == "true") {
 		iChrome.Updated();
 	}
 	else if (localStorage["installed"] == "true") {
@@ -1507,7 +1508,7 @@ iChrome.Updated = function() {
 // Help needed
 iChrome.HelpUs = function() {
 	var close = function() {
-			if (confirm("Please reconsider!  iChrome is offered completely free to thousands of users.\r\nCouldn't you just take a couple of seconds to help out?")) {
+			if (confirm("Please reconsider!\r\nEven if you can only give a few dollars, everything helps.")) {
 				modal.elm.find(".btn.ok").click();
 			}
 			else {
@@ -1517,8 +1518,8 @@ iChrome.HelpUs = function() {
 			}
 		},
 		modal = this.HelpUs.modal = new iChrome.Modal({
-			width: 600,
-			height: 420,
+			width: 950,
+			height: 565,
 			html: iChrome.render("help"),
 			classes: "help"
 		}, close);
@@ -1526,20 +1527,54 @@ iChrome.HelpUs = function() {
 	modal.elm.on("click", ".btn.ok", function(e) {
 		e.preventDefault();
 
-		var link = document.createElement("a");
+		modal.elm.find(".donate").addClass("visible");
 
-		link.setAttribute("href", "https://chrome.google.com/webstore/detail/ichrome-your-homepage-for/oghkljobbhapacbahlneolfclkniiami/reviews");
-		link.setAttribute("target", "_blank");
-
-		link.click();
-
-		localStorage["help"] = "false";
-
-		modal.hide();
+		$(this).addClass("hidden");
 	}).on("click", ".btn.no", function(e) {
 		e.preventDefault();
 
 		close();
+	});
+
+	modal.elm.find(".paypal").on("click", function() {
+		var link = document.createElement("a");
+
+		link.setAttribute("href", "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L6P25ZLBKAGMG");
+		link.setAttribute("target", "_blank");
+
+		link.click();
+
+		modal.hide();
+		localStorage["help"] = "false";
+
+		_gaq.push(["_trackEvent", "DonateHelp", "PayPal", iChrome.uid]);
+	});
+
+	modal.elm.find(".bitcoin").on("click", function() {
+		prompt("Please send Bitcoins to:", "1LoVCTBLBGbgFxchXtt7MhNov1VD1yrMYu");
+
+		modal.hide();
+		localStorage["help"] = "false";
+
+		_gaq.push(["_trackEvent", "DonateHelp", "Bitcoin", iChrome.uid]);
+	});
+
+	modal.elm.find(".litecoin").on("click", function() {
+		prompt("Please send Litecoins to:", "LWUgLkXhbVromJzxkL82wPidBV8Fq9pC3p");
+
+		modal.hide();
+		localStorage["help"] = "false";
+
+		_gaq.push(["_trackEvent", "DonateHelp", "Litecoin", iChrome.uid]);
+	});
+
+	modal.elm.find(".dogecoin").on("click", function() {
+		prompt("Please send Dogecoins to:", "DMiN376ndrx8gZivpNiREGnPMZHPc65aSq");
+
+		modal.hide();
+		localStorage["help"] = "false";
+
+		_gaq.push(["_trackEvent", "DonateHelp", "Dogecoin", iChrome.uid]);
 	});
 
 	modal.show();
