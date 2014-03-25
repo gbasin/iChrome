@@ -362,12 +362,13 @@ var Widgets = {
 				}
 			},
 			{
-				type: "radio",
+				type: "select",
 				nicename: "format",
-				label: "Clock Format",
+				label: "Clock View",
 				options: {
-					ampm: "AM/PM",
-					full: "24 Hour"
+					ampm: "AM/PM - Digital",
+					full: "24 Hour - Digital",
+					analog: "12 Hour - Analog"
 				}
 			}
 		],
@@ -377,6 +378,7 @@ var Widgets = {
 			timezone: "auto",
 			format: "ampm"
 		},
+		isAnalog: false,
 		getHTML: function() {
 			var html = '<div class="time',
 				dt = new Date();
@@ -417,24 +419,52 @@ var Widgets = {
 		},
 		refresh: function(settings) {
 			if (settings) {
+				this.elm.removeClass("analog");
+				
 				this.render();
 			}
-			else {
+			else if (!this.isAnalog) {
 				this.clockElm.innerHTML = this.getHTML();
 			}
 		},
 		render: function() {
 			var data = {
-				html: this.getHTML()
+				analog: this.config.format == "analog"
 			};
 
-			if (this.config.title && !(this.config.title === "" || (this.config.size === "tiny" && this.config.title === "Time in New York, NY"))) {
-				data.title = this.config.title;
+			this.isAnalog = data.analog;
+
+			if (data.analog) {
+				var dt = new Date();
+
+				if (this.config.timezone !== "auto") {
+					dt = new Date(dt.getTime() + dt.getTimezoneOffset() * 60000 + parseInt(this.config.timezone) * 60000);
+				}
+
+				var min = dt.getMinutes();
+
+				data = {
+					analog: true,
+					mPos: min * 6 + (dt.getSeconds() / 60 * 6),
+					hPos: dt.getHours() * 30 + (min / 60 * 30),
+					sPos: dt.getSeconds() * 6
+				};
+
+				this.elm.addClass("analog");
+
+				this.utils.render(data);
 			}
+			else {
+				data.html = this.getHTML();
 
-			this.utils.render(data);
+				if (this.config.title && !(this.config.title === "" || (this.config.size === "tiny" && this.config.title === "Time in New York, NY"))) {
+					data.title = this.config.title;
+				}
 
-			this.clockElm = this.elm.find(".clock")[0];
+				this.utils.render(data);
+
+				this.clockElm = this.elm.find(".clock")[0];
+			}
 		}
 	},
 	3: {
