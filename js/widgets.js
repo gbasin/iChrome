@@ -838,9 +838,9 @@ var Widgets = {
 		id: 6,
 		size: 2,
 		order: 6,
-		name: "Gmail",
+		name: "Unread",
 		interval: 120000,
-		nicename: "gmail",
+		nicename: "unread",
 		sizes: ["tiny", "small"],
 		desc: "Displays the current number of unread emails in your Gmail inbox.",
 		settings: [
@@ -902,7 +902,7 @@ var Widgets = {
 					this.utils.saveData(this.data);
 				}
 				catch (e) {
-					this.utils.error("An error occurred while trying to update the Gmail widget!");
+					this.utils.error("An error occurred while trying to update the Unread widget!");
 				}
 			}.bind(this));
 		},
@@ -925,6 +925,7 @@ var Widgets = {
 			this.utils.render(data);
 		}
 	},
+
 	7: {
 		id: 7,
 		size: 4,
