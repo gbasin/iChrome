@@ -943,7 +943,10 @@ body > .widgets-container {
 	cursor: move;
 	background: #666;
 	border-radius: 1px;
-	box-shadow: 0 6px #666, 0 -6px #666;
+	box-shadow: 0 0 3px rgba(255, 255, 255, 0.8),
+				0 6px #666, 0 -6px #666,
+				0 6px 3px rgba(255, 255, 255, 0.8),
+				0 -6px 3px rgba(255, 255, 255, 0.8);
 }
 
 .widget-preview .widget:hover .handle,
@@ -975,8 +978,7 @@ body > .widgets-container {
 	cursor: pointer;
 	font-size: 17px;
 	font-family: FontAwesome;
-	background: rgba(255, 255, 255, .4);
-	box-shadow: 0 0 20px rgba(255, 255, 255, .8);
+	text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
 }
 
 .widget-preview .widget .settings:before,
