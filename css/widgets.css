@@ -1950,3 +1950,19 @@
 	bottom: -14px;
 	position: absolute;
 }
+
+
+
+
+
+/*---------------------------------------------
+	/ Keep
+*/
+.widget.keep {
+	padding: 0!important;
+}
+
+.keep iframe {
+	width: 100%;
+	height: 100%;
+}
