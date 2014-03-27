@@ -856,8 +856,8 @@
 .clock.analog .clock {
 	top: 50%;
 	left: 50%;
-	width: 180px;
-	height: 180px;
+	width: 150px;
+	height: 150px;
 	font-size: 48px;
 	background: #FFF;
 	transition: none;
@@ -865,7 +865,7 @@
 	position: relative;
 	box-sizing: border-box;
 	border: 4px solid #FFF;
-	margin: -90px 0 0 -90px;
+	margin: -75px 0 0 -75px;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.3),
 				inset 0 0 8px rgba(0, 0, 0, 0.3),
 				inset 0 0 55px rgba(0, 0, 0, 0.1);
@@ -897,25 +897,25 @@
 }
 
 .clock.analog .ticks div {
-	left: 72px;
+	left: 57px; /* Half of 114px which is 150px clock size - (4px border * 2) - (10px tick length * 2) - (4px padding * 2) */
 	width: 10px;
 	height: 2px;
 	background: #333;
 	position: absolute;
 	box-sizing: border-box;
-	-webkit-transform-origin: -72px 0;
+	-webkit-transform-origin: -57px 0;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
-.clock.analog .ticks div:nth-child(1)		{ -webkit-transform: rotate(0deg); }
-.clock.analog .ticks div:nth-child(2)		{ -webkit-transform: rotate(30deg); }
-.clock.analog .ticks div:nth-child(3)		{ -webkit-transform: rotate(60deg); }
-.clock.analog .ticks div:nth-child(4)		{ -webkit-transform: rotate(90deg); }
-.clock.analog .ticks div:nth-child(5)		{ -webkit-transform: rotate(120deg); }
-.clock.analog .ticks div:nth-child(6)		{ -webkit-transform: rotate(150deg); }
-.clock.analog .ticks div:nth-child(7)		{ -webkit-transform: rotate(180deg); }
-.clock.analog .ticks div:nth-child(8)		{ -webkit-transform: rotate(210deg); }
-.clock.analog .ticks div:nth-child(9)		{ -webkit-transform: rotate(240deg); }
+.clock.analog .ticks div:nth-child(1)	{ -webkit-transform: rotate(0deg); }
+.clock.analog .ticks div:nth-child(2)	{ -webkit-transform: rotate(30deg); }
+.clock.analog .ticks div:nth-child(3)	{ -webkit-transform: rotate(60deg); }
+.clock.analog .ticks div:nth-child(4)	{ -webkit-transform: rotate(90deg); }
+.clock.analog .ticks div:nth-child(5)	{ -webkit-transform: rotate(120deg); }
+.clock.analog .ticks div:nth-child(6)	{ -webkit-transform: rotate(150deg); }
+.clock.analog .ticks div:nth-child(7)	{ -webkit-transform: rotate(180deg); }
+.clock.analog .ticks div:nth-child(8)	{ -webkit-transform: rotate(210deg); }
+.clock.analog .ticks div:nth-child(9)	{ -webkit-transform: rotate(240deg); }
 .clock.analog .ticks div:nth-child(10)	{ -webkit-transform: rotate(270deg); }
 .clock.analog .ticks div:nth-child(11)	{ -webkit-transform: rotate(300deg); }
 .clock.analog .ticks div:nth-child(12)	{ -webkit-transform: rotate(330deg); }
@@ -932,46 +932,46 @@
 	border-radius: 50%;
 
 	/* The minute ticks */
-	box-shadow:81.5508px		8.57134px		#333,	80.2081px		17.04877px		#333,	77.98663px		25.3394px		#333,
-				74.91072px		33.35242px		#333,	66.33938px		48.19841px		#333,	60.93786px		54.86873px		#333,
-				54.86869px		60.9379px		#333,	48.19836px		66.33941px		#333,	33.35237px		74.91074px		#333,
-				25.33935px		77.98665px		#333,	17.04871px		80.20811px		#333,	8.57128px		81.5508px		#333,
-				-8.57139px		81.55079px		#333,	-17.04882px		80.20809px		#333,	-25.33946px		77.98661px		#333,
-				-33.35247px		74.9107px		#333,	-48.19845px		66.33935px		#333,	-54.86877px		60.93782px		#333,
-				-60.93793px		54.86865px		#333,	-66.33945px		48.19832px		#333,	-74.91077px		33.35232px		#333,
-				-77.98667px		25.3393px		#333,	-80.20812px		17.04866px		#333,	-81.55081px		8.57123px		#333,
-				-81.55078px		-8.57145px		#333,	-80.20808px		-17.04887px		#333,	-77.9866px		-25.33951px		#333,
-				-74.91068px		-33.35252px		#333,	-66.33932px		-48.1985px		#333,	-60.93778px		-54.86881px		#333,
-				-54.86861px		-60.93797px		#333,	-48.19827px		-66.33948px		#333,	-33.35227px		-74.91079px		#333,
-				-25.33925px		-77.98668px		#333,	-17.0486px		-80.20814px		#333,	-8.57117px		-81.55081px		#333,
-				8.5715px		-81.55078px		#333,	17.04893px		-80.20807px		#333,	25.33956px		-77.98658px		#333,
-				33.35257px		-74.91065px		#333,	48.19854px		-66.33928px		#333,	54.86885px		-60.93775px		#333,
-				60.93801px		-54.86856px		#333,	66.33951px		-48.19823px		#333,	74.91081px		-33.35222px		#333,
-				77.9867px		-25.33919px		#333,	80.20815px		-17.04855px		#333,	81.55082px		-8.57112px		#333;
+	box-shadow: 65.63844px	6.89888px	#333,	64.55774px	13.72218px	#333,	62.76973px	20.39513px	#333,
+				60.294px	26.84463px	#333,	53.39511px	38.79384px	#333,	49.04754px	44.16264px	#333,
+				44.1626px	49.04757px	#333,	38.79381px	53.39514px	#333,	26.84459px	60.29401px	#333,
+				20.39509px	62.76974px	#333,	13.72213px	64.55775px	#333,	6.89884px	65.63845px	#333,
+				-6.89893px	65.63844px	#333,	-13.72222px	64.55773px	#333,	-20.39517px	62.76971px	#333,
+				-26.84467px	60.29398px	#333,	-38.79388px	53.39509px	#333,	-44.16267px	49.04751px	#333,
+				-49.0476px	44.16257px	#333,	-53.39516px	38.79377px	#333,	-60.29403px	26.84455px	#333,	
+				-62.76975px	20.39505px	#333,	-64.55776px	13.72209px	#333,	-65.63845px	6.89879px	#333,
+				-65.63844px	-6.89897px	#333,	-64.55772px	-13.72226px	#333,	-62.7697px	-20.39521px	#333,
+				-60.29396px	-26.84471px	#333,	-53.39506px	-38.79391px	#333,	-49.04749px	-44.1627px	#333,
+				-44.16254px	-49.04763px	#333,	-38.79373px	-53.39519px	#333,	-26.84451px	-60.29405px	#333,
+				-20.395px	-62.76977px	#333,	-13.72205px	-64.55777px	#333,	-6.89875px	-65.63846px	#333,
+				6.89901px	-65.63843px	#333,	13.72231px	-64.55771px	#333,	20.39526px	-62.76969px	#333,
+				26.84475px	-60.29394px	#333,	38.79395px	-53.39503px	#333,	44.16273px	-49.04746px	#333,
+				49.04766px	-44.1625px	#333,	53.39522px	-38.7937px	#333,	60.29407px	-26.84447px	#333,
+				62.76978px	-20.39496px	#333,	64.55778px	-13.722px	#333,	65.63846px	-6.8987px	#333;
 }
 
 .clock.analog .holder {
-	position: absolute;
 	width: 100%;
 	height: 100%;
+	position: absolute;
 }
 
 .clock.analog .hand {
-	position: absolute;
-	width: 100%;
-	height: 100%;
 	top: 0;
 	left: 0;
 	z-index: 2;
-	box-sizing: border-box;
 	padding: 5%;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	box-sizing: border-box;
 }
 
 .clock.analog .hand div {
-	position: relative;
-	left: 50%;
 	top: 5%;
+	left: 50%;
 	background: #333;
+	position: relative;
 }
 
 .clock.analog .hour .hand { -webkit-animation: clock-rotate 43200s normal infinite linear; }
@@ -1005,11 +1005,11 @@
 }
 
 .clock.analog .shadow {
-	position: absolute;
-	width: 100%;
-	height: 100%;
 	top: 1px;
 	left: 1px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
 }
 
 .clock.analog .shadow .hand div {
