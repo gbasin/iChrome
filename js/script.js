@@ -783,6 +783,18 @@ iChrome.Settings.handlers = function(modal, settings) {
 		catch(e) {
 			alert("An error occurred while trying to parse the provided data, please make sure you entered the EXACT text you backed up.");
 		}
+	}).on("click", ".reset", function(e) {
+		e.preventDefault();
+
+		if (!confirm("Are you really sure you want to reset iChrome?\r\nThis will erase all local" + 
+					 " and synced data, there is no backup and no way to undo this.  You will lose your" +
+					 " ENTIRE current configuration on all computers signed into this Google account.")) {
+			return;
+		}
+
+		$("#backup").val(JSON.stringify(iChrome.Storage.Defaults.tabs));
+
+		modal.elm.find(".btn.restore").click();
 	})
 	.find("#alignment").val(settings.alignment).end()
 	.find("input[name=columns][value='" + settings.columns + "']").attr("checked", true).end()

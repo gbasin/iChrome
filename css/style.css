@@ -2083,7 +2083,7 @@ body > .widgets-container {
 	left: -100%;
 	position: absolute;
 	overflow-x: hidden;
-	padding-bottom: 25px;
+	padding-bottom: 10px;
 	width: calc(100% - 20px);
 	max-height: calc(100% - 130px);
 	transition: left .5s ease-in-out;
@@ -2407,6 +2407,10 @@ body > .widgets-container {
 /*---------------------------------------------
 	/ Settings / Advanced
 */
+.settings .advanced label {
+	width: 20%;
+}
+
 .settings .backup .btn {
 	margin-top: 15px;
 }
@@ -2416,9 +2420,14 @@ body > .widgets-container {
 }
 
 .settings .backup #backup {
-	width: 100%;
+	width: 80%;
 	height: 80px;
 	margin-top: 15px;
+}
+
+.settings .advanced .reset {
+	float: left;
+	color: #D43F3A;
 }
 
 
