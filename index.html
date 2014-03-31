@@ -368,6 +368,7 @@
 				<li data-tab="general" class="active"><a>General</a></li>
 				<li data-tab="visual"><a>Visual</a></li>
 				<li data-tab="specific"><a>Tab Specific</a></li>
+				<li data-tab="advanced"><a>Advanced</a></li>
 			</ul>
 
 			<div class="tab general active">
@@ -379,11 +380,6 @@
 							<span class="info">This is the URL that the search box should submit searches to. Put <b>%s</b> where the search query should go.</span>
 							<input type="text" id="search-url" name="search-url" value="{{search-url}}" />
 						</div>
-
-						<div class="checkbox col-sm-9">
-							{{#stab}}<label><input type="checkbox" name="stab" checked /> Open search results in a new tab</label>{{/stab}}
-							{{^stab}}<label><input type="checkbox" name="stab" /> Open search results in a new tab</label>{{/stab}}
-						</div>
 					</div>
 
 					<div class="form-group">
@@ -391,15 +387,6 @@
 
 						<div class="col-sm-9">
 							<input type="text" id="logo-url" name="logo-url" value="{{logo-url}}" />
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="control-label col-sm-2">Tabs</label>
-
-						<div class="checkbox col-sm-9">
-							{{#tabs}}<label><input type="checkbox" name="tabs" checked /> Show Tabs Menu</label>{{/tabs}}
-							{{^tabs}}<label><input type="checkbox" name="tabs" /> Show Tabs Menu</label>{{/tabs}}
 						</div>
 					</div>
 
@@ -589,20 +576,6 @@
 							{{^toolbar}}<label><input type="checkbox" name="toolbar" /> Enable hidden mode</label>{{/toolbar}}
 						</div>
 					</div>
-
-					<div class="form-group colors">
-						<label class="control-label col-sm-2">Colors</label>
-
-						<div class="col-sm-9">
-							<span class="info">Click a swatch to select a color</span>
-
-							<label class="color">Widgets:</label>
-							<input type="text" class="color" id="wcolor" name="wcolor" value="{{wcolor}}" />
-
-							<label class="color">Header Bar:</label>
-							<input type="text" class="color" id="hcolor" name="hcolor" value="{{hcolor}}" />
-						</div>
-					</div>
 				</form>
 				
 				<div class="col-sm-11 btns">
@@ -679,6 +652,58 @@
 
 					<button class="btn btn-primary default">Set as default</button>
 
+					<button class="btn btn-primary save">Save</button>
+				</div>
+			</div>
+
+			<div class="tab advanced">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="control-label col-sm-2">Tabs Menu</label>
+
+						<div class="checkbox col-sm-9">
+							{{#tabs}}<label><input type="checkbox" name="tabs" checked /> Show the Tabs Menu</label>{{/tabs}}
+							{{^tabs}}<label><input type="checkbox" name="tabs" /> Show the Tabs Menu</label>{{/tabs}}
+						</div>
+					</div>
+
+					<div class="form-group colors">
+						<label class="control-label col-sm-2">Search Results</label>
+
+						<div class="checkbox col-sm-9">
+							{{#stab}}<label><input type="checkbox" name="stab" checked /> Open search results in a new tab</label>{{/stab}}
+							{{^stab}}<label><input type="checkbox" name="stab" /> Open search results in a new tab</label>{{/stab}}
+						</div>
+					</div>
+
+					<div class="form-group colors">
+						<label class="control-label col-sm-2">Colors</label>
+
+						<div class="col-sm-9">
+							<span class="info">Click a swatch to select a color</span>
+
+							<label class="color">Widgets:</label>
+							<input type="text" class="color" id="wcolor" name="wcolor" value="{{wcolor}}" />
+
+							<label class="color">Header Bar:</label>
+							<input type="text" class="color" id="hcolor" name="hcolor" value="{{hcolor}}" />
+						</div>
+					</div>
+
+					<div class="form-group backup">
+						<label class="control-label col-sm-2" for="backup">Backup / Restore</label>
+
+						<div class="col-sm-9">
+							<span class="info"><b>To backup:</b> Click the Backup button and copy what appears in the field below.<br /><b>To restore:</b> Paste the text you saved or copied before and click the Restore button below.</span>
+
+							<button class="btn btn-primary backup">Backup</button> <button class="btn btn-primary restore">Restore</button>
+
+							<textarea id="backup" name="backup"></textarea>
+						</div>
+					</div>
+				</form>
+
+				<div class="col-sm-11 btns">
 					<button class="btn btn-primary save">Save</button>
 				</div>
 			</div>

@@ -733,6 +733,56 @@ iChrome.Settings.handlers = function(modal, settings) {
 		that.siblings().add(forms).removeClass("active");
 
 		that.add(forms.filter("[data-tab='" + that.attr("data-id") + "']")).addClass("active");
+	}).on("click", ".btn.backup", function(e) {
+		e.preventDefault();
+
+		$("#backup").val(JSON.stringify({
+			themes: iChrome.Storage.themes,
+			settings: iChrome.Storage.settings,
+			tabs: iChrome.Storage.tabsSync
+		}));
+	}).on("click", ".btn.restore", function(e) {
+		e.preventDefault();
+
+		if (!confirm("Are you really, really sure you want to do this?\r\nThis will overwrite all local" + 
+					 " and synced data, there is no backup and no way to undo this.  You will lose your" +
+					 " ENTIRE current configuration on all computers signed into this Google account.")) {
+			return;
+		}
+
+		try {
+			var settings = JSON.parse($("#backup").val());
+
+			chrome.storage.local.set({
+				tabs: settings.tabs || iChrome.Storage.tabs,
+				themes: settings.themes || iChrome.Storage.themes,
+				settings: settings.settings || iChrome.Storage.settings
+			}, function() {
+				chrome.storage.local.get(["tabs", "settings", "themes"], function(d) {
+					iChrome.Storage.tabs = d.tabs || iChrome.Storage.Defaults.tabs;
+					iChrome.Storage.themes = d.themes || iChrome.Storage.Defaults.themes;
+					iChrome.Storage.settings = d.settings || iChrome.Storage.Defaults.settings;
+
+					if (typeof d.tabs == "string") {
+						try {
+							iChrome.Storage.tabs = JSON.parse(d.tabs);
+						}
+						catch(e) {
+							alert("An error occurred while trying to load your homepage, please try again or reinstall iChrome.");
+						}
+					}
+
+					iChrome.Storage.tabsSync = JSON.parse(iChrome.Storage.getJSON(iChrome.Storage.tabs));
+
+					iChrome.Storage.sync();
+
+					iChrome.refresh();
+				});
+			});
+		}
+		catch(e) {
+			alert("An error occurred while trying to parse the provided data, please make sure you entered the EXACT text you backed up.");
+		}
 	})
 	.find("#alignment").val(settings.alignment).end()
 	.find("input[name=columns][value='" + settings.columns + "']").attr("checked", true).end()
@@ -789,7 +839,7 @@ iChrome.Settings.save = function() {
 		booleans = ["ok", "tabs", "apps", "plus", "voice", "gmail", "toolbar"],
 		key;
 
-	iChrome.Settings.modal.elm.find(".general form, .visual form").serializeArray().forEach(function(e, i) {
+	iChrome.Settings.modal.elm.find(".general form, .visual form, .advanced form").serializeArray().forEach(function(e, i) {
 		if (booleans.indexOf(e.name) !== -1) settings[e.name] = true;
 		else if (e.value !== "") settings[e.name] = e.value;
 	});

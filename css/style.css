@@ -1229,7 +1229,7 @@ body > .widgets-container {
 	opacity: 1;
 	visibility: visible;
 	-webkit-transform: translateY(0) translateZ(0);
-	transition: all .25s ease-in-out, visibility 0s 0s;
+	transition: all .3s ease-in-out, visibility 0s 0s;
 }
 
 .modal > .title,
@@ -2398,6 +2398,27 @@ body > .widgets-container {
 .settings .columns .five .column {
 	margin: 0 14px;
 	position: relative;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Settings / Advanced
+*/
+.settings .backup .btn {
+	margin-top: 15px;
+}
+
+.settings .backup .restore {
+	margin-left: 15px;
+}
+
+.settings .backup #backup {
+	width: 100%;
+	height: 80px;
+	margin-top: 15px;
 }
 
 
