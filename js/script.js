@@ -1600,7 +1600,7 @@ iChrome.render = function(template, data) {
 	if (!compiled) {
 		if (iChrome.Templates.raw[template]) {
 			try {
-				compiled = Hogan.compile(iChrome.Templates.raw[template]);
+				compiled = iChrome.Templates.cache[template] = Hogan.compile(iChrome.Templates.raw[template]);
 			}
 			catch (e) {
 				iChrome.Status.error("An error occurred while trying to render the " + template + " template!")
