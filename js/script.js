@@ -813,6 +813,7 @@ iChrome.Settings.save = function() {
 			tabSettings = {},
 			number, layout, columns, key;
 
+		if (!tab) return;
 
 		$(this).serializeArray().forEach(function(e, i) {
 			if (e.value !== "") tabSettings[e.name] = e.value;
@@ -2766,7 +2767,7 @@ iChrome.Storage = function(cb) {
 
 		iChrome.Storage.tabsSync = JSON.parse(iChrome.Storage.getJSON(iChrome.Storage.tabs));
 
-		iChrome.Storage.Originals.tabs = JSON.parse(JSON.stringify(d.tabs || iChrome.Storage.Defaults.tabs));
+		iChrome.Storage.Originals.tabs = JSON.parse(JSON.stringify(iChrome.Storage.tabs));
 
 		if (typeof cb == "function") {
 			cb();
