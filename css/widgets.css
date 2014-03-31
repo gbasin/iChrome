@@ -390,13 +390,50 @@
 }
 
 .stocks .val.up,
-.stocks .current.up {
+.stocks .current.up,
+.stocks table .change.up {
 	color: #1C9C40;
 }
 
 .stocks .val.down,
-.stocks .current.down {
+.stocks .current.down,
+.stocks table .change.down {
 	color: #E23C3C;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Stocks / Multiple
+*/
+.stocks table {
+	margin: 15px 10px 0;
+	table-layout: fixed;
+	width: calc(100% - 20px);
+}
+
+.stocks table td {
+	text-align: right;
+	line-height: 30px;
+	font-family: Open Sans, sans-serif;
+}
+
+.stocks table .ticker {
+	color: #666;
+	font-size: 15px;
+	text-align: left;
+}
+
+.stocks table .price {
+	color: #52A9CA;
+	font-size: 16px;
+}
+
+.stocks table .change {
+	width: 36%;
+	font-weight: 600;
 }
 
 
@@ -848,7 +885,7 @@
 	/ Clock / Analog
 */
 .clock.analog {
-	height: 180px; /* Unfortunately hardcoded since I can't find a way to make the clock scale. */
+	height: 150px; /* Unfortunately hardcoded since I can't find a way to make the clock scale. */
 	box-shadow: none;
 	background: rgba(0, 0, 0, 0)!important;
 }

@@ -1940,7 +1940,7 @@ var Widgets = {
 			size: "small",
 			symbol: "NASDAQ:GOOG"
 		},
-		data: {
+		data: [{
 			value: "1<b>,</b>100.62",
 			ticker: "GOOG",
 			exchange: "NASDAQ",
@@ -1952,37 +1952,44 @@ var Widgets = {
 			low: "1088.00",
 			volume: "3.27M",
 			extra: false
-		},
+		}],
 		refresh: function() {
 			$.ajax({
 				type: "GET",
-				url: "https://clients1.google.com/finance/info?client=ob&hl=en&infotype=infoonebox&q=" + encodeURIComponent(this.config.symbol || "NASDAG:GOOG"),
+				url: "https://clients1.google.com/finance/info?client=ob&hl=en&infotype=infoonebox&q=" + encodeURIComponent((this.config.symbol || "NASDAG:GOOG").trim()),
 				success: function(d) {
-					d = JSON.parse(d.replace("// [", "["))[0];
+					d = JSON.parse(d.replace("// [", "["));
 
-					var stock = {
-						value: parseFloat((d.el_fix || d.l_fix).replace(/[^0-9\.\-]/g, "")),
-						ticker: d.t,
-						exchange: d.e,
-						up: (d.ec || d.c).indexOf("-") !== 0,
-						date: moment(d.elt || d.lt).format("MMM Do h:mm A"),
-						change: (d.ec || d.c) + " (" + (d.ecp_fix || d.cp_fix) + "%)",
-						open: parseFloat((d.op || "0").replace(/[^0-9\.\-]/g, "")),
-						high: parseFloat((d.hi || "0").replace(/[^0-9\.\-]/g, "")),
-						low: parseFloat((d.lo || "0").replace(/[^0-9\.\-]/g, "")),
-						volume: parseFloat(d.vo.replace(/[^0-9\.\-]/g, "")),
-						extra: (d.s == "1" ? "Pre Market" : d.s == "2" ? "After Hours" : false)
-					};
+					var stocks = [],
+						stock;
 
-					stock.value = ((stock.value || 0) < 10000 ? $.formatNumber((stock.value || 0), { locale: navigator.locale }) : (stock.value || 0).abbr(10000)).replace(/,/g, "<b>,</b>");
+					d.forEach(function(e, i) {
+						stock = {
+							value: parseFloat((e.el_fix || e.l_fix).replace(/[^0-9\.\-]/g, "")),
+							ticker: e.t,
+							exchange: e.e,
+							up: (e.ec || e.c).indexOf("-") !== 0,
+							date: moment(e.elt || e.lt).format("MMM Do h:mm A"),
+							change: (e.ec || e.c) + " (" + (e.ecp_fix || e.cp_fix) + "%)",
+							open: parseFloat((e.op || "0").replace(/[^0-9\.\-]/g, "")),
+							high: parseFloat((e.hi || "0").replace(/[^0-9\.\-]/g, "")),
+							low: parseFloat((e.lo || "0").replace(/[^0-9\.\-]/g, "")),
+							volume: parseFloat(e.vo.replace(/[^0-9\.\-]/g, "")),
+							extra: (e.s == "1" ? "Pre Market" : e.s == "2" ? "After Hours" : false)
+						};
 
-					stock.open = $.formatNumber((stock.open || 0), { locale: navigator.locale, format: "#0.00" });
-					stock.high = $.formatNumber((stock.high || 0), { locale: navigator.locale, format: "#0.00" });
-					stock.low = $.formatNumber((stock.low || 0), { locale: navigator.locale, format: "#0.00" });
+						stock.value = ((stock.value || 0) < 10000 ? $.formatNumber((stock.value || 0), { locale: navigator.locale }) : (stock.value || 0).abbr(10000)).replace(/,/g, "<b>,</b>");
 
-					stock.volume = (stock.volume || 0).abbr(1000000);
+						stock.open = $.formatNumber((stock.open || 0), { locale: navigator.locale, format: "#0.00" });
+						stock.high = $.formatNumber((stock.high || 0), { locale: navigator.locale, format: "#0.00" });
+						stock.low = $.formatNumber((stock.low || 0), { locale: navigator.locale, format: "#0.00" });
 
-					this.data = stock;
+						stock.volume = (stock.volume || 0).abbr(1000000);
+
+						stocks.push(stock);
+					});
+
+					this.data = stocks;
 
 					this.render();
 
@@ -1992,7 +1999,20 @@ var Widgets = {
 			});
 		},
 		render: function() {
-			var data = $.extend({}, this.data || {});
+			if (Array.isArray(this.data)) {
+				if (this.data.length > 1) {
+					var data = {
+						multiple: true,
+						stocks: $.extend({}, { data: this.data || [] }).data
+					};
+				}
+				else {
+					var data = $.extend({}, { data: this.data || [] }).data[0];
+				}
+			}
+			else {
+				var data = $.extend({}, this.data || {});
+			}
 
 			if (this.config.title && this.config.title !== "") {
 				data.title = this.config.title;

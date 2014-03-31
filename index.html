@@ -1600,45 +1600,65 @@
 			{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
 
 			{{#tiny}}
-				<div class="val {{#up}}up{{/up}}{{^up}}down{{/up}}" data-tooltip="{{change}} as of {{date}} (Exchange Time){{#extra}} ({{extra}}){{/extra}}">{{{value}}}</div>
+				{{#multiple}}
+					<div class="val {{#stocks.0.up}}up{{/stocks.0.up}}{{^stocks.0.up}}down{{/stocks.0.up}}" data-tooltip="{{stocks.0.change}} as of {{stocks.0.date}} (Exchange Time){{#stocks.0.extra}} ({{stocks.0.extra}}){{/stocks.0.extra}}">{{{stocks.0.value}}}</div>
+				{{/multiple}}
+				{{^multiple}}
+					<div class="val {{#up}}up{{/up}}{{^up}}down{{/up}}" data-tooltip="{{change}} as of {{date}} (Exchange Time){{#extra}} ({{extra}}){{/extra}}">{{{value}}}</div>
+				{{/multiple}}
 			{{/tiny}}
 			{{^tiny}}
-				<div class="info">
-					<div class="stock">
-						<span class="exchange">{{exchange}}</span>
-						<span class="ticker">{{ticker}}</span>
+				{{#multiple}}
+					<table>
+						<tbody>
+							<!-- {{#stocks}} Commented since it's invalid markup otherwise. -->
+								<tr data-tooltip="As of {{date}} (Exchange Time){{#extra}} ({{extra}}){{/extra}}">
+									<td class="ticker">{{ticker}}</td>
+									<td class="price">{{{value}}}</td>
+									<td class="change {{#up}}up{{/up}}{{^up}}down{{/up}}">{{change}}</td>
+								</tr>
+							<!-- {{/stocks}} -->
+						</tbody>
+					</table>
+				{{/multiple}}
+				{{^multiple}}
+					<div class="info">
+						<div class="stock">
+							<span class="exchange">{{exchange}}</span>
+							<span class="ticker">{{ticker}}</span>
+						</div>
+
+						<div class="current {{#up}}up{{/up}}{{^up}}down{{/up}}" data-tooltip="As of {{date}} (Exchange Time){{#extra}} ({{extra}}){{/extra}}">
+							<div class="val">{{{value}}}</div>
+							<div class="relative">{{change}}</div>
+						</div>
 					</div>
 
-					<div class="current {{#up}}up{{/up}}{{^up}}down{{/up}}" data-tooltip="As of {{date}} (Exchange Time){{#extra}} ({{extra}}){{/extra}}">
-						<div class="val">{{{value}}}</div>
-						<div class="relative">{{change}}</div>
+					<div class="details">
+						<div data-label="open">{{open}}</div>
+						<div data-label="high">{{high}}</div>
+						<div data-label="low">{{low}}</div>
+						<div data-label="volume">{{volume}}</div>
 					</div>
-				</div>
-
-				<div class="details">
-					<div data-label="open">{{open}}</div>
-					<div data-label="high">{{high}}</div>
-					<div data-label="low">{{low}}</div>
-					<div data-label="volume">{{volume}}</div>
-				</div>
+				{{/multiple}}
 			{{/tiny}}
 		</template>
 
 		<template id="template.widgets.stocks.desc">
-			The Stocks widget displays the latest prices and other information for a given stock symbol.<br />
+			The Stocks widget displays the latest prices and other information for given stock symbols.<br />
 			<br />
-			To select a stock symbol:<br />
+			To select stock symbols:<br />
 			<br />
 			<ol>
 				<li>Install the widget in your preferred size</li>
 				<li>Hover over the widget and click the settings icon that appears</li>
-				<li>Enter the stock symbol in the EXCHANGE:TICKER format</li>
+				<li>Enter the stock symbols in a comma-separated EXCHANGE:TICKER format</li>
 				<li>Click "Save"</li>
 			</ol>
 			Variations:<br />
 			<br />
 			Tiny: Displays the most recent trade price and a tooltip with the relative change.<br />
-			Small: Displays the most recent trade absolute and relative prices, opening, high and low prices and the volume.
+			Small: Displays the most recent trade absolute and relative prices, opening, high and low prices and the volume. Alternatively, if multiple stocks have been entered, displays a table of symbols, current prices and change amounts.
 		</template>
 
 		<template id="template.widgets.clock">
