@@ -2083,6 +2083,7 @@ body > .widgets-container {
 	left: -100%;
 	position: absolute;
 	overflow-x: hidden;
+	padding-bottom: 25px;
 	width: calc(100% - 20px);
 	max-height: calc(100% - 130px);
 	transition: left .5s ease-in-out;
