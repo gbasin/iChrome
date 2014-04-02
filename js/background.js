@@ -437,7 +437,7 @@ var unextend = function(obj1, obj2) {
 
 		tabs.forEach(function(t, i) {
 			var tab = {},
-				allowed = ["id", "size", "syncData"],
+				allowed = ["id", "size", "syncData", "loc"],
 				key;
 
 			for (key in t) {

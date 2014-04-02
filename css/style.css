@@ -901,6 +901,61 @@ body > .widgets-container {
 
 
 
+
+/*---------------------------------------------
+	/ Widgets Layout / Medley
+*/
+.medley .widgets-container {
+	margin: 0;
+	display: block;
+	position: relative;
+}
+
+.medley .widgets-container > .widget {
+	margin: 0;
+	width: 400px;
+	min-width: 0;
+	position: absolute;
+	max-width: 100%!important;
+}
+
+.medley .widgets-container > .widget:hover {
+	z-index: 2;
+}
+
+.medley .widget .resize {
+	opacity: 0;
+	right: 2px;
+	width: 7px;
+	bottom: 2px;
+	height: 7px;
+	position: absolute;
+	cursor: nwse-resize;
+	transition: opacity .3s ease-in-out;
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAO0lEQVQIW2NkwAHS0tL+M2KTA0nMmjWLEUMSJgHShCKJLIEimZ6e/n/mzJlwxSA+mINNAqSQEd0oZIUA4SYkbYptwU0AAAAASUVORK5CYII=");
+}
+
+.medley .widget:hover .resize {
+	opacity: 1;
+}
+
+.medley .widgets-container .placeholder {
+	display: none;
+}
+
+body.dragging .medley,
+body.resizing .medley {
+	-webkit-user-select: none;
+	background-size: 10px 10px!important;
+	background-position: -1px -1px!important;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3) 1px, rgba(0, 0, 0, 0) 1px),
+		linear-gradient(90deg, rgba(0, 0, 0, 0.3) 1px, rgba(0, 0, 0, 0) 1px)!important;
+}
+
+
+
+
+
 /*---------------------------------------------
 	/ Widgets Layout / Widgets
 */

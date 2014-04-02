@@ -213,6 +213,8 @@ iChrome.deferred = function(refresh) {
 
 	iChrome.initTooltips();
 
+	iChrome.initResize();
+
 	if (iChrome.Storage.settings.ok || iChrome.Storage.settings.voice) {
 		iChrome.Search.Speech();
 
@@ -439,6 +441,52 @@ iChrome.initTooltips = function() {
 	});
 };
 
+iChrome.initResize = function() {
+	var db = $(document.body);
+
+	db.on("mousedown.widgetResize", ".medley .widget .resize", function(e) {
+		var startX = e.pageX,
+			startY = e.pageY,
+			widget = $(this.parentNode),
+			startWidth = widget.width(),
+			startHeight = widget.height(),
+
+			grid = widget.parent(),
+			tc = $("body > .tab-container"),
+			gridMax = tc.outerHeight() - 50,
+			tcOTop = $("body > .tab-container").offset().top,
+			h;
+
+		grid.find(".widget").each(function() {
+			h = this.offsetTop + this.offsetHeight;
+
+			if (h >= gridMax) { gridMax = h; }
+		});
+
+		db.addClass("resizing").on("mousemove.widgetResize", function(e) {
+			e.preventDefault();
+
+			widget.width((10 * Math.round((startWidth + (e.pageX - startX)) / 10)) - 1); // Minus 1 so it lines up with the insides of the grid squares
+			widget.height((10 * Math.round((startHeight + (e.pageY - startY)) / 10)) - 1);
+
+
+			var max = widget[0].offsetTop + widget[0].offsetHeight;
+
+			if (gridMax > max) {
+				max = gridMax;
+			}
+
+			grid[0].style.height = (max + 50) + "px";
+		}).on("mouseup.widgetResize", function() {
+			db.removeClass("resizing").off("mousemove.widgetResize mouseup.widgetResize");
+		
+			iChrome.Storage.tabs = iChrome.Tabs.serialize();
+
+			iChrome.Tabs.save();
+		});
+	});
+};
+
 iChrome.refresh = function(all) {
 	iChrome.Status.log("Refreshing...");
 
@@ -622,7 +670,7 @@ iChrome.Settings = function() {
 			id: tab.id,
 			fixed: !!tab.fixed,
 			alignment: tab.alignment || "center",
-			columns: tab.columns.length || 3,
+			columns: (tab.medley ? "medley" : (tab.columns.length || 3)),
 			active: (i == 0 ? "active" : ""),
 			wcolor: iChrome.Storage.settings.theme || "#FFF",
 			hcolor: iChrome.Storage.settings.theme || "#F1F1F1"
@@ -646,7 +694,7 @@ iChrome.Settings = function() {
 
 	settings.tabForms.forEach(function(tab, i) {
 		modal.elm.find("form[data-tab='" + tab.id + "']")
-			.find("#columns" + tab.id).val(tab.columns + (tab.fixed ? "-fixed" : "-fluid")).end()
+			.find("#columns" + tab.id).val(tab.columns == "medley" ? "medley" : tab.columns + (tab.fixed ? "-fixed" : "-fluid")).end()
 			.find("#alignment" + tab.id).val(tab.alignment);
 	});
 };
@@ -792,7 +840,7 @@ iChrome.Settings.handlers = function(modal, settings) {
 			return;
 		}
 
-		$("#backup").val(JSON.stringify(iChrome.Storage.Defaults.tabs));
+		$("#backup").val(JSON.stringify(iChrome.Storage.Defaults));
 
 		modal.elm.find(".btn.restore").click();
 	})
@@ -901,11 +949,38 @@ iChrome.Settings.save = function() {
 					columns = tabSettings.columns.split("-");
 				}
 
+				if (columns[0] == "medley") {
+					columns = ["1", "fixed"];
+
+					if (!tab.medley && !confirm("Are you sure you want to change this to a grid-based tab?\r\nYou will lose all of your columns, everything will be moved to the top right corner.")) {
+						continue;
+					}
+
+					tab.medley = true;
+				}
+				else {
+					if (tab.medley && !confirm("Are you sure you want to change this to a column-based tab?\r\nYou will lose all of your widget positioning, everything will be moved to the first column of the new tab.")) {
+						continue;
+					}
+
+					var wasMedley = true;
+
+					tab.medley = false;
+				}
+
 				number = parseInt(columns[0] || "0");
 
 				tab.fixed = (columns[1] && columns[1] == "fixed");
 
 				if (tab.columns.length == number) {
+					if (wasMedley) {
+						tab.columns[0].forEach(function(w, i) {
+							delete w.loc;
+
+							tab.columns[0][i] = w;
+						});
+					}
+
 					continue;
 				}
 				else if (tab.columns.length < number) {
@@ -919,6 +994,16 @@ iChrome.Settings.save = function() {
 					}
 
 					tab.columns.splice(number);
+				}
+
+				if (wasMedley) {
+					tab.columns.forEach(function(col, i1) {
+						col.forEach(function(w, i) {
+							delete w.loc;
+
+							tab.columns[i1][i] = w;
+						});
+					});
 				}
 			}
 		}
@@ -1848,7 +1933,7 @@ iChrome.Tabs.render = function() {
 		};
 
 	iChrome.Storage.tabs.forEach(function(tab, i) {
-		var tabElm = $('<div class="tab' + (i == (parseInt(iChrome.Storage.settings.def || 1) - 1) ? " active" : "") + '"><main class="widgets-container' + (tab.fixed ? " fixed" : "") + (tab.alignment == "left" ? " left" : tab.alignment == "right" ? " right" : "") + '"></main></div>').appendTo(container),
+		var tabElm = $('<div class="tab' + (i == (parseInt(iChrome.Storage.settings.def || 1) - 1) ? " active" : "") + (tab.medley ? " medley" : "") + '"><main class="widgets-container' + (tab.fixed && !tab.medley ? " fixed" : "") + (tab.alignment == "left" ? " left" : tab.alignment == "right" ? " right" : "") + '"></main></div>').appendTo(container),
 			widgetContainer = tabElm.find(".widgets-container");
 
 		$('<li></li>').attr("data-id", tab.id).text(tab.name).append('<span class="move">&#xE693;</span>').appendTo(panel);
@@ -1861,13 +1946,29 @@ iChrome.Tabs.render = function() {
 		}
 
 		tab.columns.forEach(function(e, i) {
-			var column = $('<div class="column"></div>').appendTo(widgetContainer);
+			if (tab.medley) {
+				var column = widgetContainer;
+			}
+			else {
+				var column = $('<div class="column"></div>').appendTo(widgetContainer);
+			}
 
 			e.forEach(function(widget, i) {
 				widget.elm = widget.utils.elm = $('<section class="widget"></section>')
 					.addClass(widget.nicename).addClass(sizes[widget.size])
 					.attr("data-name", widget.nicename).attr("data-size", sizes[widget.size]).attr("data-id", widget.internalID)
 				.appendTo(column);
+
+				if (tab.medley && widget.loc) {
+					widget.elm.css({
+						top: widget.loc[0] * 10,
+						left: widget.loc[1] * 10,
+						width: widget.loc[2] * 10 - 1,
+						height: widget.loc[3] * 10 - 1
+					});
+
+					widget.utils.medley = true;
+				}
 
 				if (widget.config) {
 					widget.config.size = sizes[widget.size];
@@ -1887,6 +1988,17 @@ iChrome.Tabs.render = function() {
 				}
 			});
 		});
+
+		var max = tabElm.height(),
+			h;
+
+		widgetContainer.find(".widget").each(function() {
+			h = this.offsetTop + this.offsetHeight;
+
+			if (h >= max) { max = h; }
+		});
+
+		widgetContainer.css("height", max);
 	});
 
 	panel.append('<li data-id="new">New Tab...</li>');
@@ -1895,7 +2007,10 @@ iChrome.Tabs.render = function() {
 };
 
 iChrome.Tabs.draggable = function() {
-	var timeout,
+	var timeout, grid, gridMax,
+		onGrid = false,
+		tcOTop = 0,
+		tcHeight = 0,
 		body = $(document.body),
 		scroll = {
 			getViewport: function() {
@@ -1955,7 +2070,7 @@ iChrome.Tabs.draggable = function() {
 		};
 	
 
-	$("body > .remove, .widgets-container .column").sortable({
+	$("body > .remove, .widgets-container .column, .medley .widgets-container").sortable({
 		group: "columns",
 		handle: ".handle",
 		itemSelector: "section",
@@ -1963,10 +2078,10 @@ iChrome.Tabs.draggable = function() {
 		placeholder: "<section class=\"placeholder\"/>",
 		onDragStart: function(item, container, _super) {
 			var css = {
-				height: item.outerHeight(),
-				width: item.outerWidth(),
-				minWidth: item.outerWidth(),
-				maxWidth: item.outerWidth()
+				height: item[0].offsetHeight,
+				width: item[0].offsetWidth,
+				minWidth: item[0].offsetWidth,
+				maxWidth: item[0].offsetWidth
 			};
 
 			if (item.hasClass("handle")) {
@@ -2037,17 +2152,34 @@ iChrome.Tabs.draggable = function() {
 
 			item.before('<section id="originalLoc"></section>').css(css).addClass("dragged").appendTo("body > .widgets-container");
 
-			$("body").addClass("dragging");
+			var tc = $("body").addClass("dragging").children(".tab-container")[0];
+
+			tcOTop = tc.offsetTop;
+			tcHeight = tc.offsetHeight;
 
 			// scroll.init();
 		},
 		onDrag: function(item, position, _super) {
 			if (item.context) {
-				position.top -= $(item.context).position().top;
-				position.left -= $(item.context).position().left;
+				position.top -= item.context.offsetTop;
+				position.left -= item.context.offsetLeft;
 			}
 
-			item.css(position);
+			if (onGrid) {
+				position.left = 10 * Math.round(position.left / 10); // Rounded to nearest 10
+				position.top = 10 * Math.round((position.top - tcOTop) / 10) + tcOTop;
+
+				var max = position.top + item[0].offsetHeight - tcOTop;
+
+				if (gridMax > max) {
+					max = gridMax;
+				}
+
+				grid[0].style.height = (max + 50) + "px";
+			}
+
+			item[0].style.top = position.top + "px";
+			item[0].style.left = position.left + "px";
 		},
 		onBeforeDrop: function(item, placeholder, group, _super) {
 			if (placeholder.parent() && placeholder.parent().is(".remove")) {
@@ -2060,6 +2192,19 @@ iChrome.Tabs.draggable = function() {
 				}
 				else {
 					item.insertBefore("#originalLoc");
+
+					var widget = iChrome.Widgets.active[item.attr("data-id")];
+
+					if (widget && widget.loc) {
+						item.css({
+							top: widget.loc[0] * 10,
+							left: widget.loc[1] * 10,
+							width: widget.loc[2] * 10 - 1,
+							height: widget.loc[3] * 10 - 1
+						});
+
+						item.isMoved = true;
+					}
 				}
 
 				return false;
@@ -2070,7 +2215,39 @@ iChrome.Tabs.draggable = function() {
 		onDrop: function(item, container, _super) {
 			// scroll.destroy();
 
+			if (item.isMoved) {
+				var css = {
+					top: item.css("top"),
+					left: item.css("left"),
+					width: item.css("width"),
+					height: item.css("height")
+				};
+			}
+			else {
+				var css = {
+					top: item.position().top - tcOTop,
+					left: item.position().left,
+					width: Math.round(item.outerWidth() / 10) * 10 - 1,
+					height: Math.round(item.outerHeight() / 10) * 10 - 1
+				};
+			}
+
 			_super(item, container);
+
+			if (item.parent().parent().hasClass("medley")) {
+				item.css(css);
+
+				(iChrome.Widgets.active[item.attr("data-id")] || {utils:{}}).utils.medley = true;
+
+				if (!item.children(".resize").length) {
+					item.append('<div class="resize"></div>');
+				}
+			}
+			else {
+				(iChrome.Widgets.active[item.attr("data-id")] || {utils:{}}).utils.medley = false;
+
+				item.children(".resize").remove();
+			}
 
 			if (item.parent().length && item.hasClass("handle")) {
 				try {
@@ -2090,14 +2267,33 @@ iChrome.Tabs.draggable = function() {
 			iChrome.Tabs.save();
 		},
 		afterMove: function(placeholder, container) {
-			placeholder.width(container.group.item.outerWidth());
-			placeholder.height(container.group.item.outerHeight());
+			if (container.el[0].className.indexOf("widgets-container") == -1) {
+				onGrid = false;
 
-			if (container.group.item.hasClass("tiny")) {
-				placeholder.addClass("tiny");
+				placeholder.width(container.group.item.outerWidth());
+				placeholder.height(container.group.item.outerHeight());
+
+				if (container.group.item.hasClass("tiny")) {
+					placeholder.addClass("tiny");
+				}
+				else {
+					placeholder.removeClass("tiny");
+				}
 			}
 			else {
-				placeholder.removeClass("tiny");
+				onGrid = true;
+
+				grid = container.el;
+
+				gridMax = tcHeight - 50;
+
+				var h;
+
+				[].forEach.call(grid[0].querySelectorAll(".widget"), function(e) {
+					h = e.offsetTop + e.offsetHeight;
+
+					if (h >= gridMax) { gridMax = h; }
+				});
 			}
 		}
 	});
@@ -2159,15 +2355,38 @@ iChrome.Tabs.serialize = function() {
 
 		tab.columns = [];
 
-		elm.find(".widgets-container > .column").each(function() {
-			var column = [];
+		if (tab.medley) {
+			tab.columns.push([]);
 
-			$(this).find(".widget").each(function() {
-				column.push(iChrome.Widgets.active[$(this).attr("data-id")]);
+			elm.find(".widget").each(function() {
+				var that = $(this);
+
+				var widget = iChrome.Widgets.active[that.attr("data-id")];
+
+				widget.loc = [Math.round(that.position().top / 10), Math.round(that.position().left / 10), Math.round(that.outerWidth() / 10), Math.round(that.outerHeight() / 10)];
+
+				if (widget.loc[0] < 0) {
+					widget.loc[0] = 0;
+				}
+
+				if (widget.loc[1] < 0) {
+					widget.loc[1] = 0;
+				}
+
+				tab.columns[0].push(widget);
 			});
+		}
+		else {
+			elm.find(".widgets-container > .column").each(function() {
+				var column = [];
 
-			tab.columns.push(column);
-		});
+				$(this).find(".widget").each(function() {
+					column.push(iChrome.Widgets.active[$(this).attr("data-id")]);
+				});
+
+				tab.columns.push(column);
+			});
+		}
 
 		tabs.push(tab);
 	});
@@ -2183,7 +2402,7 @@ iChrome.Tabs.save = function(noSync) {
 		iChrome.Storage.tabs.forEach(function(t, i) {
 			var tab = {},
 				stab = {},
-				allowed = ["id", "size", "syncData"],
+				allowed = ["id", "size", "syncData", "loc"],
 				t = $.unextend({
 					alignment: iChrome.Storage.settings.alignment,
 					theme: iChrome.Storage.settings.theme,
@@ -2198,7 +2417,7 @@ iChrome.Tabs.save = function(noSync) {
 					tab.columns = [];
 					stab.columns = [];
 
-					t[key].forEach(function(c, i) {
+					t.columns.forEach(function(c, i) {
 						var column = [],
 							scolumn = [];
 
@@ -2805,7 +3024,7 @@ iChrome.Widgets.Utils.render = function(data) {
 
 	data[this.size] = true;
 
-	this.elm.html('<div class="handle"></div>' + (this.settings ? '\r\n<div class="settings">&#xF0AD;</div>' : "") + iChrome.render("widgets." + this.name, data));
+	this.elm.html('<div class="handle"></div>' + (this.settings ? '\r\n<div class="settings">&#xF0AD;</div>' : "") + iChrome.render("widgets." + this.name, data) + (this.medley ? '\r\n<div class="resize"></div>' : ""));
 };
 
 
@@ -2832,7 +3051,12 @@ iChrome.Storage = function(cb) {
 		iChrome.Storage.Originals.tabs = JSON.parse(JSON.stringify(iChrome.Storage.tabs));
 
 		if (typeof cb == "function") {
-			cb();
+			try {
+				cb();
+			}
+			catch(e) {
+				console.error(e);
+			}
 		}
 	});
 };
@@ -2921,7 +3145,7 @@ iChrome.Storage.getJSON = function(tabs) {
 
 	tabs.forEach(function(t, i) {
 		var tab = {},
-			allowed = ["id", "size", "syncData"],
+			allowed = ["id", "size", "syncData", "loc"],
 			key;
 
 		for (key in t) {
