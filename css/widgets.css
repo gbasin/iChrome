@@ -691,8 +691,8 @@
 .feedly .items {
 	outline: 0;
 	overflow: auto;
-	max-height: 475px;
 	position: relative;
+	height: calc(100% - 54px);
 }
 
 .feedly .item.read .title {
@@ -1378,6 +1378,7 @@
 .notes .note {
 	margin: -15px;
 	padding: 15px;
+	height: calc(100% + 30px);
 }
 
 .notes .note.yellow	{ background: #FFFFB5; }
@@ -1386,12 +1387,16 @@
 .notes .note.orange	{ background: #FFD280; }
 .notes .note.green	{ background: #99DA99; }
 
-
 .notes .note input.header {
 	border: 0!important;
 	padding: 0!important;
 	background: transparent;
 	font-family: Open Sans, sans-serif!important;
+}
+
+.notes .note .content {
+	overflow: auto;
+	max-height: calc(100% - 35px);
 }
 
 
@@ -1900,15 +1905,19 @@
 /*---------------------------------------------
 	/ Translate
 */
+.translate form {
+	height: calc(100% - 30px);
+}
+
 .translate textarea {
 	width: 100%;
 	min-width: 100%;
 	max-width: 100%;
 	font-size: 13px;
 	min-height: 70px;
-	max-height: 400px;
 	border-radius: 2px;
 	margin: 10px 0 15px;
+	height: calc(100% - 55px);
 	padding: 5px 8px!important;
 }
 

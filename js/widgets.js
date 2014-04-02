@@ -420,7 +420,7 @@ var Widgets = {
 		refresh: function(settings) {
 			if (settings) {
 				this.elm.removeClass("analog");
-				
+
 				this.render();
 			}
 			else if (!this.isAnalog) {
@@ -955,7 +955,6 @@ var Widgets = {
 			this.utils.render(data);
 		}
 	},
-
 	7: {
 		id: 7,
 		size: 4,
@@ -4020,7 +4019,7 @@ var Widgets = {
 				}
 
 				if (e.origin) {
-					article.source = names[e.origin.streamId || ""] || e.title;
+					article.source = names[e.origin.streamId || ""] || e.origin.title || e.title;
 				}
 
 				article.image = getImage(article);
@@ -4670,7 +4669,7 @@ var Widgets = {
 		name: "Keep",
 		nicename: "keep",
 		sizes: ["variable"],
-		desc: "Embeds Google Keep in a widget.",
+		desc: "Embeds Google Keep in a widget",
 		settings: [
 			{
 				type: "number",
