@@ -822,9 +822,9 @@ iChrome.Settings.handlers = function(modal, settings) {
 
 					iChrome.Storage.tabsSync = JSON.parse(iChrome.Storage.getJSON(iChrome.Storage.tabs));
 
-					iChrome.Storage.sync();
+					iChrome.Storage.sync(true);
 
-					iChrome.refresh();
+					iChrome.refresh(true); // For some reason, unless this is set to refetch data, it reverts back to the old settings.
 				});
 			});
 		}
