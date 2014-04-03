@@ -3055,7 +3055,7 @@ iChrome.Storage = function(cb) {
 				cb();
 			}
 			catch(e) {
-				console.error(e);
+				console.error(e.stack);
 			}
 		}
 	});

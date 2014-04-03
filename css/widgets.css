@@ -2012,3 +2012,165 @@
 	width: 100%;
 	height: 100%;
 }
+
+
+
+
+
+/*---------------------------------------------
+	/ Now
+*/
+.widgets-container .widget.now,
+.preview-container .widget.now {
+	border: none!important;
+	box-shadow: none!important;
+	background: transparent!important;
+}
+
+.now .cards {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	align-content: flex-start;
+}
+
+.now .card {
+	z-index: 9;
+	color: #333;
+	flex: 1 100%;
+	overflow: hidden;
+	background: #FFF;
+	position: relative;
+	border-radius: 2px;
+	text-decoration: none;
+	box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1);
+}
+
+.now .card:not(:first-child) {
+	margin-top: 15px;
+}
+
+.now .card.btns {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.now .card .dismiss {
+	top: 2px;
+	right: 4px;
+	opacity: 0;
+	color: #777;
+	cursor: pointer;
+	position: absolute;
+	font-family: Entypo;
+}
+
+.now .card .dismiss:hover {
+	color: #555;
+}
+
+.now .card:hover .dismiss {
+	opacity: 1;
+}
+
+.now .card .icon {
+	float: left;
+	width: 80px;
+	height: 80px;
+	margin-right: 15px;
+	background: #F5F5F5 center no-repeat;
+}
+
+.now .card h2 {
+	font-size: 14px;
+	overflow: hidden;
+	margin-top: 10px;
+	max-height: 40px;
+	line-height: 20px;
+	margin-left: 15px;
+	padding-right: 5px;
+	margin-bottom: 8px;
+	font-family: Roboto;
+}
+
+.now .card .desc {
+	font-size: 12px;
+	overflow: hidden;
+	max-height: 36px;
+	line-height: 18px;
+	font-family: Roboto;
+	margin: -4px 5px 8px 15px;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Now / Card Buttons
+*/
+.now .cards .buttons {
+	width: 100%;
+	z-index: 10;
+	display: flex;
+	overflow: hidden;
+	background: #FFF;
+	position: relative;
+	border-top: 1px solid #EAEAEA;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1);
+}
+
+.now .cards .buttons a {
+	flex: 1;
+	color: #333;
+	display: block;
+	font-size: 13px;
+	padding: 10px 15px;
+	font-family: Roboto;
+	text-decoration: none;
+}
+
+.now .cards .buttons a:hover {
+	color: #006AD1;
+	background: #F7F7F7;
+}
+
+.now .buttons img {
+	width: 16px;
+	height: 16px;
+	margin-right: 10px;
+	display: inline-block;
+	background: transparent;
+	vertical-align: text-bottom;
+}
+
+
+
+
+/*---------------------------------------------
+	/ Now / Card Variations
+*/
+.now .card .image {
+	clear: both;
+	width: 100%;
+	height: 240px;
+	background: center no-repeat;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Now / Authorize
+*/
+.now .authorize {
+	text-align: center;
+}
+
+.now .authorize .btn {
+	margin: 15px 0;
+	width: calc(100% - 35px);
+}
