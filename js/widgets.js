@@ -2990,11 +2990,15 @@ var Widgets = {
 
 					item.addClass("dragged");
 
-					$("body").addClass("dragging");
+					$(document.body).addClass("dragging");
 				},
 				onDrag: function(item, position, _super) {
-					position.top -= $(item.context).position().top + $(item.context).parent().position().top + 10;
-					position.left -= $(item.context).position().left + $(item.context).parent().position().left + 10;
+					var ctx = $(item.context),
+						ctp = ctx.position(),
+						ctpp = ctx.parent().position();
+
+					position.top -= ctp.top + ctpp.top + 10;
+					position.left -= ctp.left + ctpp.left + 10;
 
 					item.css(position);
 				},
@@ -3128,11 +3132,15 @@ var Widgets = {
 
 					item.addClass("dragged");
 
-					$("body").addClass("dragging");
+					$(document.body).addClass("dragging");
 				},
 				onDrag: function(item, position, _super) {
-					position.top -= $(item.context).position().top + $(item.context).parent().position().top + 10;
-					position.left -= $(item.context).position().left + $(item.context).parent().position().left + 10;
+					var ctx = $(item.context),
+						ctp = ctx.position(),
+						ctpp = ctx.parent().position();
+
+					position.top -= ctp.top + ctpp.top + 10;
+					position.left -= ctp.left + ctpp.left + 10;
 
 					item.css(position);
 				},

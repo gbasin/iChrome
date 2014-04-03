@@ -184,7 +184,7 @@ var iChrome = function(refresh) {
 	localStorage.uses = parseInt(localStorage.uses || 0) + 1;
 
 	iChrome.deferredTimeout = setTimeout(function() {
-		$("body").removeClass("unloaded");
+		$(document.body).removeClass("unloaded");
 
 		iChrome.deferred(refresh);
 	}, 200);
@@ -283,18 +283,18 @@ iChrome.deferred = function(refresh) {
 		if (!panel.hasClass("visible")) {
 			var elms = $(this).find("*");
 
-			$("body").on("click.apps", function(e) {
+			$(document.body).on("click.apps", function(e) {
 				if (!elms.is(e.target)) {
 					panel.removeClass("visible");
 
-					$("body").off("click.apps");
+					$(document.body).off("click.apps");
 				}
 			});
 
 			panel.addClass("visible");
 		}
 		else {
-			$("body").off("click.apps");
+			$(document.body).off("click.apps");
 
 			panel.removeClass("visible");
 		}
@@ -304,7 +304,7 @@ iChrome.deferred = function(refresh) {
 		e.preventDefault();
 	});
 
-	$("body").on("click", "span.nested-link[data-href]", function(e) {
+	$(document.body).on("click", "span.nested-link[data-href]", function(e) {
 		e.preventDefault();
 
 		var a = document.createElement("a"),
@@ -367,12 +367,12 @@ iChrome.deferred = function(refresh) {
 iChrome.uid = localStorage.uid || (localStorage.uid = (new Date().getTime()).toString(16) + Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1));
 
 iChrome.initTooltips = function() {
-	if (!$("body").find(".tip-container").length) $("body").append('<div class="tip-container" />');
+	if (!$(document.body).find(".tip-container").length) $(document.body).append('<div class="tip-container" />');
 
 	var tip = $(".tip-container"),
 		tipTime, maxHeight;
 
-	$("body").on("mouseenter", "[data-tooltip]", function() {
+	$(document.body).on("mouseenter", "[data-tooltip]", function() {
 		var elm = $(this),
 			offset = elm.offset();
 
@@ -494,7 +494,7 @@ iChrome.refresh = function(all) {
 
 	$(".widgets-container .column").sortable("destroy");
 
-	$("body").off().find(".remove, .toolbar, .widgets-container, .tab-container, .modal, .modal-overlay, .sp-container, .customcss").remove().end()
+	$(document.body).off().find(".remove, .toolbar, .widgets-container, .tab-container, .modal, .modal-overlay, .sp-container, .customcss").remove().end()
 		.find("*:not(.footer *)").off().end()
 		.prepend('<div class="remove">Remove</div>' +
 			'<header class="toolbar"></header>' +
@@ -881,7 +881,7 @@ iChrome.Settings.showThemes = function(elm) {
 		iChrome.Settings.modal.hide();
 		iChrome.Settings.Themes.modal.hide();
 
-	}.bind($("body")));
+	}.bind($(document.body)));
 };
 
 iChrome.Settings.save = function() {
@@ -1804,7 +1804,7 @@ iChrome.Tabs = function() {
 				width: item.outerWidth()
 			}).addClass("dragged").siblings("[data-id=new]").remove();
 
-			//$("body").addClass("dragging");
+			//$(document.body).addClass("dragging");
 		},
 		onDrag: function(item, position, _super) {
 			var ctx = $(item.context);
@@ -1845,11 +1845,11 @@ iChrome.Tabs = function() {
 				panel = menu.find(".panel"),
 				elms = menu.find("*");
 
-			$("body").on("click.tabs", function(e) {
+			$(document.body).on("click.tabs", function(e) {
 				if (!elms.is(e.target)) {
 					panel.removeClass("visible");
 
-					$("body").off("click.tabs");
+					$(document.body).off("click.tabs");
 				}
 			});
 
@@ -2049,17 +2049,17 @@ iChrome.Tabs.draggable = function() {
 				$(".next").on("mouseenter", rscroll);
 				$(".prev").on("mouseenter", lscroll);
 				$(".next,.prev").on("mouseleave", function() {
-					$("body").stop();
+					$(document.body).stop();
 				});
 				
 				function rscroll() {
-					$("body").animate({
+					$(document.body).animate({
 						scrollLeft: "+=25"
 					}, 10, rscroll);
 				}
 				
 				function lscroll() {
-					$("body").animate({
+					$(document.body).animate({
 						scrollLeft: "-=25"
 					}, 10, lscroll);
 				}
@@ -2152,7 +2152,7 @@ iChrome.Tabs.draggable = function() {
 
 			item.before('<section id="originalLoc"></section>').css(css).addClass("dragged").appendTo("body > .widgets-container");
 
-			var tc = $("body").addClass("dragging").children(".tab-container")[0];
+			var tc = $(document.body).addClass("dragging").children(".tab-container")[0];
 
 			tcOTop = tc.offsetTop;
 			tcHeight = tc.offsetHeight;
@@ -2531,7 +2531,7 @@ iChrome.Tabs.Nav.buttons = function() {
 	$(".tab-container").on("click", ".tab-nav > nav", function() {
 		iChrome.Tabs.Nav($(this).attr("class"));
 	}).on("mouseover", ".tab-nav > nav", function() {
-		if ($("body").hasClass("dragging")) {
+		if ($(document.body).hasClass("dragging")) {
 			timeout = setTimeout(function() {
 				iChrome.Tabs.Nav($(this).attr("class"));
 			}.bind(this), 500);
@@ -2587,18 +2587,18 @@ iChrome.Tabs.Menu = function() {
 		if (!panel.hasClass("visible")) {
 			var elms = $(this).find("*");
 
-			$("body").on("click.tabs", function(e) {
+			$(document.body).on("click.tabs", function(e) {
 				if (!elms.is(e.target)) {
 					panel.removeClass("visible");
 
-					$("body").off("click.tabs");
+					$(document.body).off("click.tabs");
 				}
 			});
 
 			panel.addClass("visible");
 		}
 		else {
-			$("body").off("click.tabs");
+			$(document.body).off("click.tabs");
 
 			panel.removeClass("visible");
 		}
@@ -2614,7 +2614,7 @@ iChrome.Tabs.Menu = function() {
 	}).on("mouseover", ".panel li", function() {
 		var id = $(this).attr("data-id");
 
-		if ($("body").hasClass("dragging") && id !== "new") {
+		if ($(document.body).hasClass("dragging") && id !== "new") {
 			timeout = setTimeout(function() {
 				iChrome.Tabs.Nav(parseInt(id));
 			}, 500);
