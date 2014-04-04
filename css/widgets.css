@@ -900,6 +900,7 @@
 
 .clock .time.no-seconds {
 	font-size: 120px;
+	line-height: 150px;
 }
 
 .clock .date {
