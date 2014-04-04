@@ -1039,6 +1039,15 @@ var Widgets = {
 				max: 20
 			},
 			{
+				type: "select",
+				nicename: "view",
+				label: "View",
+				options: {
+					images: "Image friendly",
+					"default": "Default"
+				}
+			},
+			{
 				type: "radio",
 				nicename: "images",
 				label: "Images",
@@ -1061,6 +1070,7 @@ var Widgets = {
 			title: "Lifehacker",
 			link: "",
 			number: 5,
+			view: "default",
 			images: "true",
 			desc: "true",
 			size: "variable",
@@ -1243,7 +1253,17 @@ var Widgets = {
 				rss.link = this.config.link.parseUrl();
 			}
 
+			if (this.config.view && this.config.view == "images") {
+				rss.images = true;
+			}
+
 			this.utils.render(rss);
+
+			if (rss.images) {
+				this.elm.find("img").on("error", function(e) {
+					this.style.height = "20px";
+				});
+			}
 		}
 	},
 	9: {

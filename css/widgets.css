@@ -607,6 +607,24 @@
 
 
 /*---------------------------------------------
+	/ RSS / Images view
+*/
+.rss .images .item {
+	max-height: 100%;
+}
+
+.rss .images img {
+	float: none;
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+
+
+
+
+/*---------------------------------------------
 	/ Reddit
 */
 .reddit .item .img {

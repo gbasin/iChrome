@@ -1810,10 +1810,13 @@
 				{{^link}}<h2 class="header">{{title}}</h2>{{/link}}
 			{{/title}}
 
-			<div class="items">
+			<div class="items{{#images}} images{{/images}}">
 				{{#items}}
 					<a href="{{url}}" class="item" target="_blank">
-						{{#image}}<div class="img" style="background-image: url('{{image}}');"></div>{{/image}}
+						{{#image}}
+							{{#images}}<img src="{{image}}" alt="Loading..." />{{/images}}
+							{{^images}}<div class="img" style="background-image: url('{{image}}');"></div>{{/images}}
+						{{/image}}
 
 						<div class="excerpt">
 							<span class="title">{{title}}</span>
