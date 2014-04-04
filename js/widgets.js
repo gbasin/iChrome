@@ -1021,6 +1021,12 @@ var Widgets = {
 			},
 			{
 				type: "text",
+				nicename: "link",
+				label: "Title Link",
+				placeholder: "Enter a link for the widget title"
+			},
+			{
+				type: "text",
 				nicename: "url",
 				label: "Feed URL",
 				placeholder: "The URL of the RSS feed to be displayed"
@@ -1053,6 +1059,7 @@ var Widgets = {
 		],
 		config: {
 			title: "Lifehacker",
+			link: "",
 			number: 5,
 			images: "true",
 			desc: "true",
@@ -1230,6 +1237,10 @@ var Widgets = {
 
 			if (this.config.title && this.config.title !== "") {
 				rss.title = this.config.title;
+			}
+
+			if (this.config.link && this.config.link !== "") {
+				rss.link = this.config.link.parseUrl();
 			}
 
 			this.utils.render(rss);

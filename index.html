@@ -1805,7 +1805,10 @@
 		</template>
 
 		<template id="template.widgets.rss">
-			{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+			{{#title}}
+				{{#link}}<a class="header" href="{{link}}">{{title}}</a>{{/link}}
+				{{^link}}<h2 class="header">{{title}}</h2>{{/link}}
+			{{/title}}
 
 			<div class="items">
 				{{#items}}
@@ -2899,6 +2902,67 @@
 			<br />
 			This widget also loads from a third-party site that is not as optimized as iChrome, it may cause iChrome to load slowly.<br />
 			<br />
+			There are no variations available for this widget.
+		</template>
+
+		<template id="template.widgets.now">
+			<div class="cards">
+				{{#cards}}
+					{{#link}}
+						<a class="card{{#btns}} btns{{/btns}}" data-index="{{index}}" href="{{link}}" target="_blank">
+					{{/link}}
+					{{^link}}
+						<div class="card{{#btns}} btns{{/btns}}" data-index="{{index}}">
+					{{/link}}
+						<div class="dismiss">&#xE678;</div>
+						
+						{{#icon}}<div class="icon" style="background-image: url('{{icon}}');"></div>{{/icon}}
+						
+						{{#title}}<h2>{{title}}</h2>{{/title}}
+						{{#desc}}<p class="desc">{{desc}}</p>{{/desc}}
+
+						{{#image}}<div class="image" style="background-image: url('{{image}}')"></div>{{/image}}
+					{{^link}}
+						</div>
+					{{/link}}
+					{{#link}}
+						</a>
+					{{/link}}
+
+					{{#btns}}
+						<div class="buttons">
+							{{#buttons}}
+								<a href="{{link}}" target="_blank" class="button">{{#btnIcon}}<img src="{{btnIcon}}" />{{/btnIcon}}{{title}}</a>
+							{{/buttons}}
+						</div>
+					{{/btns}}
+				{{/cards}}
+				{{^cards}}
+					{{#authorize}}
+						<div class="card authorize">
+							<h2>You'll need to give iChrome permission to view your Google Now cards before anything will show up here.</h2>
+							<button type="button" class="btn btn-lg btn-primary">Authorize</button>
+						</div>
+					{{/authorize}}
+					{{^authorize}}
+						<div class="card no-cards">
+							<h2>All caught up, nothing here.</h2>
+						</div>
+					{{/authorize}}
+				{{/cards}}
+			</div>
+		</template>
+
+		<template id="template.widgets.now.desc">
+			The Now widget displays cards from Google Now.<br />
+			<br />
+			Setup:<br />
+			<br />
+			<ol>
+				<li>Install the widget in your preferred size</li>
+				<li>Click the blue Authorize button</li>
+				<li>Follow the prompts and allow access</li>
+			</ol>
 			There are no variations available for this widget.
 		</template>
 
