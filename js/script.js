@@ -1933,7 +1933,15 @@ iChrome.Tabs.render = function() {
 		};
 
 	iChrome.Storage.tabs.forEach(function(tab, i) {
-		var tabElm = $('<div class="tab' + (i == (parseInt(iChrome.Storage.settings.def || 1) - 1) ? " active" : "") + (tab.medley ? " medley" : "") + '"><main class="widgets-container' + (tab.fixed && !tab.medley ? " fixed" : "") + (tab.alignment == "left" ? " left" : tab.alignment == "right" ? " right" : "") + '"></main></div>').appendTo(container),
+		var tabElm = $(
+				'<div class="tab' +
+					(i == (parseInt(iChrome.Storage.settings.def || 1) - 1) ? " active" : "") +
+					(tab.medley ? " medley" : "") +
+				'"><main class="widgets-container' +
+					(tab.fixed && !tab.medley ? " fixed" : "") +
+					(tab.alignment == "left" ? " left" : tab.alignment == "right" ? " right" : "") +
+				'"></main></div>'
+			).appendTo(container),
 			widgetContainer = tabElm.find(".widgets-container");
 
 		$('<li></li>').attr("data-id", tab.id).text(tab.name).append('<span class="move">&#xE693;</span>').appendTo(panel);
@@ -1989,16 +1997,19 @@ iChrome.Tabs.render = function() {
 			});
 		});
 
-		var max = tabElm.height(),
-			h;
+		
+		if (tab.medley) {
+			var max = tabElm.height(),
+				h;
 
-		widgetContainer.find(".widget").each(function() {
-			h = this.offsetTop + this.offsetHeight;
+			widgetContainer.find(".widget").each(function() {
+				h = this.offsetTop + this.offsetHeight;
 
-			if (h >= max) { max = h; }
-		});
+				if (h >= max) { max = h; }
+			});
 
-		widgetContainer.css("height", max);
+			widgetContainer.css("height", max);
+		}
 	});
 
 	panel.append('<li data-id="new">New Tab...</li>');
