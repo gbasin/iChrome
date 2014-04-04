@@ -2055,6 +2055,7 @@
 */
 .widgets-container .widget.now,
 .preview-container .widget.now {
+	padding: 0!important;
 	border: none!important;
 	box-shadow: none!important;
 	background: transparent!important;
@@ -2206,4 +2207,20 @@
 .now .authorize .btn {
 	margin: 15px 0;
 	width: calc(100% - 35px);
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Gmail
+*/
+.widget.gmail {
+	padding: 0!important;
+}
+
+.gmail iframe {
+	width: 100%;
+	height: 100%;
 }
