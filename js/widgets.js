@@ -368,7 +368,9 @@ var Widgets = {
 				options: {
 					ampm: "AM/PM - Digital",
 					full: "24 Hour - Digital",
-					analog: "12 Hour - Analog"
+					analog: "12 Hour - Analog",
+					ampms: "AM/PM - Digital, No Seconds",
+					fulls: "24 Hour - Digital, No Seconds"
 				}
 			}
 		],
@@ -392,27 +394,31 @@ var Widgets = {
 				seconds = dt.getSeconds(),
 				am = hours < 12;
 
-			if (this.config.format == "ampm") {
+			if (this.config.format.indexOf("ampm") == 0) {
 				hours = (hours > 12 ? hours - 12 : hours);
 
 				if (hours == 0) hours = 12;
 
-				html += (am ? " am" : " pm");
+				html += (am ? " am" : " pm") + (this.config.format == "ampms" ? " no-seconds" : "");
 			}
 			else {
-				html += " full";
+				html += " full" + (this.config.format == "fulls" ? " no-seconds" : "");
 			}
 			
 			html += '">' + hours + ":" + minutes.pad();
 
-			if (this.config.size == "tiny" && this.config.format == "ampm") {
-				html += "<span>" + seconds.pad() + "</span>" + "</div>";
+			if (this.config.size == "tiny" && this.config.format.indexOf("ampm") == 0) {
+				html += "<span>" + (this.config.format == "ampm" ? seconds.pad() : "") + "</span></div>";
 			}
 			else if (this.config.size != "tiny") {
 				// moment(dt) is slower so avoid it when possible
 				var date = (this.config.timezone !== "auto" ? moment(dt).format("dddd, MMMM Do YYYY") : moment().format("dddd, MMMM Do YYYY"));
 
-				html += ":" + seconds.pad() + '</div><div class="date">' + date + "</div>";
+				if (this.config.format == "ampm" || this.config.format == "full") {
+					html += ":" + seconds.pad();
+				}
+
+				html += '</div><div class="date">' + date + "</div>";
 			}
 
 			return html;
