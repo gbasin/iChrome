@@ -1930,8 +1930,8 @@ var Widgets = {
 			{
 				type: "text",
 				nicename: "symbol",
-				label: "Stock Symbol",
-				placeholder: "A stock symbol in the EXCHANGE:TICKER format"
+				label: "Stock Symbol(s), comma separated",
+				placeholder: "e.g. NASDAQ:GOOG, NASDAQ:AAPL, NYSE:S"
 			}
 		],
 		config: {
