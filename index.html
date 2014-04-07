@@ -2153,7 +2153,7 @@
 
 			<div class="list{{#two}} two-column{{/two}}">
 				{{#bookmarks}}
-					<a class="link" href="{{url}}">
+					<a class="link" href="{{url}}"{{#newTab}} target="_blank"{{/newTab}}>
 						<img class="favicon" src="chrome://favicon/{{url}}" />
 						<span class="title">{{title}}</span>
 
@@ -2984,6 +2984,61 @@
 				<li>Install the widget in your preferred size</li>
 				<li>Hover over the widget and click the settings icon that appears</li>
 				<li>Enter an account ID (an explanation is available under the question mark icon)</li>
+				<li>Click "Save"</li>
+			</ol>
+			There are no variations available for this widget.
+		</template>
+
+		<template id="template.widgets.twitter">
+			{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+			<div class="tweets">
+				{{#tweets}}
+					<div class="tweet nested-link" data-href="https://twitter.com/{{username}}/status/{{id}}" target="_blank">
+						<div class="topbar">
+							<a href="https://twitter.com/{{username}}" target="_blank" class="user"><b>{{user}}</b> <span class="tweeter">@{{username}}</span></a>
+							<span class="age">{{age}}</span>
+						</div>
+
+						<div class="content">
+							<a href="https://twitter.com/{{username}}" target="_blank" class="user"><img src="{{image}}" /></a>
+							
+							{{{content}}}
+						</div>
+
+						<div class="tools">
+							<a class="more" href="https://twitter.com/{{username}}/status/{{id}}" target="_blank">More</a>
+							<a class="reply" href="https://twitter.com/intent/tweet?in_reply_to={{id}}" target="_blank">Reply</a>
+							<a class="retweet" href="https://twitter.com/intent/retweet?tweet_id={{id}}" target="_blank">Retweet</a>
+							<a class="favorite" href="https://twitter.com/intent/favorite?tweet_id={{id}}" target="_blank">Favorite</a>
+						</div>
+					</div>
+				{{/tweets}}
+				{{^tweets}}
+					{{#authorize}}
+						<div class="authorize">
+							You'll need to give iChrome permission to view tweets from your account before anything will show up here.
+							<button type="button" class="btn btn-lg btn-primary">Authorize</button>
+						</div>
+					{{/authorize}}
+					{{^authorize}}
+						<div class="no-tweets">
+							"No moe!" There don't seem to be any tweets here...
+						</div>
+					{{/authorize}}
+				{{/tweets}}
+			</div>
+		</template>
+
+		<template id="template.widgets.twitter.desc">
+			The Twitter widget displays a list of events from your Google twitter.<br />
+			<br />
+			Setup:<br />
+			<br />
+			<ol>
+				<li>Install the widget in your preferred size</li>
+				<li>Hover over the widget and click the settings icon that appears</li>
+				<li>Under twitter select the twitter that you would like to be shown</li>
 				<li>Click "Save"</li>
 			</ol>
 			There are no variations available for this widget.

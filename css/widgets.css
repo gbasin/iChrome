@@ -2224,3 +2224,136 @@
 	width: 100%;
 	height: 100%;
 }
+
+
+
+
+
+/*---------------------------------------------
+	/ Twitter
+*/
+.twitter h2.header {
+	margin-bottom: 25px;
+}
+
+.twitter .tweets {
+	margin: -15px;
+	overflow: hidden;
+	max-height: 600px;
+}
+
+.twitter .tweet {
+	color: #777;
+	padding: 15px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.twitter .tweet:hover {
+	background: rgba(0, 0, 0, .03);
+}
+
+.twitter .tweet .topbar {
+	color: #333;
+	line-height: 10px;
+	margin-bottom: 9px;
+}
+
+.twitter .topbar a.user {
+	color: #333;
+	text-decoration: none;
+}
+
+.twitter .topbar a.user:hover {
+	color: #428BCA;
+}
+
+.twitter .tweet .tweeter {
+	color: #666;
+	padding-left: 5px;
+}
+
+.twitter .tweet .age {
+	color: #777;
+	float: right;
+	font-size: 12px;
+}
+
+.twitter .tweet .content {
+	font-size: 13px;
+}
+
+.twitter .tweet img {
+	float: left;
+	border-radius: 3px;
+	margin: 4px 15px 4px 0;
+}
+
+.twitter .tweet .tools {
+	font-size: 12px;
+	margin-top: 5px;
+	text-align: right;
+	margin-bottom: -7px;
+}
+
+.twitter .tools a {
+	opacity: 0;
+	color: #777;
+	padding: 0 5px;
+	text-decoration: none;
+}
+
+.twitter .tools a:hover {
+	color: #3E85C2;
+}
+
+.twitter .tweet:hover .tools a {
+	opacity: 1;
+}
+
+.twitter .tools a:before {
+	font-size: 14px;
+	line-height: 15px;
+	padding-right: 5px;
+	font-family: Entypo;
+	vertical-align: bottom;
+}
+
+.twitter .tools .reply:before {
+	content: "\e60a";
+}
+
+.twitter .tools .retweet:before {
+	content: "\e68e";
+}
+
+.twitter .tools .favorite:before {
+	content: "\e61b";
+}
+
+.twitter .tools .more {
+	float: left;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Twitter / Authorize & No Tweets
+*/
+.twitter .no-tweets {
+	padding: 25px 0;
+	text-align: center;
+	font-family: Open Sans, sans-serif;
+}
+
+.twitter .authorize {
+	padding: 20px;
+	text-align: center;
+}
+
+.twitter .authorize .btn {
+	width: 100%;
+	margin-top: 15px;
+}

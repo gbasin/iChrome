@@ -304,7 +304,7 @@ iChrome.deferred = function(refresh) {
 		e.preventDefault();
 	});
 
-	$(document.body).on("click", "span.nested-link[data-href]", function(e) {
+	$(document.body).on("click", ".nested-link[data-href]", function(e) {
 		e.preventDefault();
 
 		var a = document.createElement("a"),
@@ -2686,7 +2686,7 @@ iChrome.Widgets.Settings = function() {
 			this.widget.utils.size = settings.size;
 		}
 
-		this.widget.config = settings;
+		this.widget.config = $.extend(this.widget.config, settings);
 		
 		if (this.widget.refresh) this.widget.refresh(true);
 		else this.widget.render();
