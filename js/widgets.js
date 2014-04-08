@@ -4930,9 +4930,20 @@ var Widgets = {
 				return this.elm.find(".authorize").on("click", this.authorize.bind(this));
 			}
 
+			var that = this; // Can't use .bind() since we need the element from this
+
 			this.elm.off("click", ".dismiss, a.card").on("click", ".dismiss, a.card", function(e) {
-				var elm = $(this),
-					card = this.data.cards[elm.attr("data-index")];
+				var elm = $(this);
+
+				if (elm.hasClass("dismiss")) {
+					elm = elm.parent();
+
+					e.stopPropagation();
+
+					e.preventDefault();
+				}
+
+				var card = that.data.cards[elm.attr("data-index")];
 
 				if (!card) return;
 
@@ -4954,10 +4965,12 @@ var Widgets = {
 							}
 
 							this.utils.saveData(this.data);
+
+							this.utils.render(this.data);
 						}.bind(this)
 					});
-				}.bind(this));
-			}.bind(this));
+				}.bind(that));
+			});
 
 			this.utils.render(this.data);
 		}
