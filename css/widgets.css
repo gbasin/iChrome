@@ -719,7 +719,12 @@
 .feedly .items {
 	outline: 0;
 	overflow: auto;
+	max-height: 475px;
 	position: relative;
+}
+
+.medley .feedly .items {
+	max-height: 100%;
 	height: calc(100% - 54px);
 }
 
