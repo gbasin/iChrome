@@ -2243,7 +2243,7 @@
 
 .twitter .tweets {
 	margin: -15px;
-	overflow: hidden;
+	overflow: auto;
 	max-height: 600px;
 }
 
@@ -2359,6 +2359,88 @@
 }
 
 .twitter .authorize .btn {
+	width: 100%;
+	margin-top: 15px;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Drive
+*/
+.drive h2.header {
+	margin-bottom: 25px;
+}
+
+.drive .files {
+	margin: -15px;
+	overflow: auto;
+	max-height: 605px;
+}
+
+.drive .file {
+	color: #333;
+	display: block;
+	min-height: 75px;
+	position: relative;
+	text-decoration: none;
+	border-top: 1px solid #EEE;
+}
+
+.drive .file:hover {
+	background-color: rgba(0, 0, 0, 0.01);
+}
+
+.drive .file:hover:after {
+	right: 15px;
+	color: #888;
+	font-size: 30px;
+	content: "\e6d4";
+	line-height: 15px;
+	position: absolute;
+	font-family: Entypo;
+	top: calc(50% - (15px / 2));
+}
+
+.drive .file .info {
+	padding: 15px;
+}
+
+.drive .file h2 {
+	font-size: 18px;
+	line-height: 20px;
+	font-weight: normal;
+}
+
+.drive .file .modified {
+	font-size: 12px;
+	padding-top: 5px;
+}
+
+.drive .file .icon {
+	float: left;
+	width: 75px;
+	height: 75px;
+	margin-right: 15px;
+	background: #F5F5F5 center no-repeat;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAB0SURBVFiF7dSxDYAwDERRj5cxWIY5MkrGocwIBroIEXIRnEVxln5rv8rm7taW1s1flm0w7T37CFBnEAxAOVpQBAVwLkYRNACKoAIQBB0wQoQAnhBhgB4iFHCHCAdcEaxPWIAqCzCVAAIIIIAAAggggAC/Auz27D1Yc1xjaQAAAABJRU5ErkJggg==");
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Drive / Authorize
+*/
+.drive .authorize {
+	padding: 20px;
+	text-align: center;
+}
+
+.drive .authorize .btn {
 	width: 100%;
 	margin-top: 15px;
 }
