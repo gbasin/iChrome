@@ -219,6 +219,65 @@ form:not(.form-horizontal) .color label {
 
 
 /*---------------------------------------------
+	/ Forms / Checkbox and Radio Styles
+*/
+input[type="radio"],
+input[type="checkbox"] {
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	background: #F5F5F5;
+	-webkit-appearance: none;
+	vertical-align: text-bottom;
+	box-shadow: inset 0 0 0 1px #DDD;
+}
+
+input[type="checkbox"] {
+	margin-right: 5px;
+	border-radius: 2px;
+	position: relative;
+}
+
+input[type="radio"] {
+	border-radius: 50%;
+}
+
+input[type="checkbox"]:after {
+	top: 4px;
+	left: 3px;
+	width: 10px;
+	height: 6px;
+	position: absolute;
+	border: 3px solid #FFF;
+	border-width: 0 0 3px 3px;
+	-webkit-transform: rotate(-45deg);
+}
+
+input[type="checkbox"]:checked:after {
+	content: "";
+}
+input[type="radio"]:active,
+input[type="checkbox"]:active,
+input[type="checkbox"]:checked {
+	box-shadow: none;
+	background: #1ABC9C;
+}
+
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+	outline: 0;
+}
+
+input[type="radio"]:checked {
+	background: #FFF;
+	box-shadow: inset 0 0 0 4px #1ABC9C;
+}
+
+
+
+
+
+/*---------------------------------------------
 	/ Tooltip Styles
 */
 .tip-container {
@@ -1241,6 +1300,11 @@ body.resizing .medley {
 	width: 100%;
 }
 
+.widget-settings input[type="radio"]:not(:active),
+.widget-settings input[type="checkbox"]:not(:active):not(:checked) {
+	background: #FFF;
+}
+
 .create-theme select[size],
 .create-theme select[multiple],
 
@@ -2128,38 +2192,220 @@ body.resizing .medley {
 /*---------------------------------------------
 	/ Settings
 */
-.settings .title {
-	padding-bottom: 20px;
+.modal.settings {
+	padding: 0;
+	margin: 15px;
+	max-width: 100%;
+	max-height: 100%;
+	background: #FFF;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.settings .close {
+	top: 0;
+	right: 0;
+	width: 70px;
+	height: 70px;
+	z-index: 9;
+	line-height: 70px;
+	text-align: center;
+	-webkit-text-stroke: 2px #FFF;
+}
+
+.settings .close:hover {
+	color: #666;
+	background: #EEE;
+	-webkit-text-stroke: 2px #EEE;
+}
+
+.settings .close:before {
+	content: "\E678";
+	font-size: 35px;
+	font-family: Entypo;
 }
 
 .settings .nav {
-	margin-left: 30px;
-	margin-bottom: 20px;
-}
-
-.settings .nav a {
-	padding: 8px 15px;
-}
-
-
-.settings .tab {
-	left: -100%;
+	left: 0;
+	top: 70px;
+	bottom: 0;
+	width: 20%;
+	z-index: 1;
 	position: absolute;
 	overflow-x: hidden;
-	padding-bottom: 10px;
-	width: calc(100% - 20px);
-	max-height: calc(100% - 130px);
-	transition: left .5s ease-in-out;
+	border-top: 1px solid #EEE;
+}
+
+.settings .nav li {
+	color: #428BCA;
+	cursor: pointer;
+	padding: 15px 20px;
+	padding-left: 35px;
+}
+
+.settings .nav li:hover {
+	background: #EEE;
+}
+
+.settings .nav li.active {
+	color: #333;
+	background: #FFF;
+	margin-right: -1px;
+	box-shadow: inset 0 -1px #EEE;
+}
+
+.settings .nav li:not(:first-child).active {
+	box-shadow: inset 0 1px #EEE, inset 0 -1px #EEE;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Settings / Nested Nav
+*/
+.settings .nav li.nested:hover {
+	background: #FFF;
+}
+
+.settings .nav li.nested h3 {
+	font-size: 14px;
+	margin: -15px -20px 0 -35px;
+	padding: 15px 20px 15px 35px;
+}
+
+.settings .nav li.nested h3:hover {
+	background: #EEE;
+}
+
+.settings .nav li.nested ul {
+	padding: 0;
+}
+
+.settings .nav li.nested li {
+	display: block;
+	padding: 5px 15px;
+}
+
+.settings .nav li.nested li.active {
+	color: #428BCA;
+	box-shadow: none;
+}
+
+.settings .nav li.nested.active li.active {
+	color: #333;
+	background: #EEE;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Settings / Styling
+*/
+.settings > .content > .title {
+	line-height: 20px;
+	padding: 25px 30px;
+	border-bottom: 1px solid #EEE;
+	font-family: Open Sans, sans-serif;
+}
+
+.settings .btn.save {
+	top: 20px;
+	z-index: 9;
+	right: 90px;
+	position: absolute;
+}
+
+.settings .btn {
+	font-size: 14px;
+	font-weight: 300;
+	border-radius: 2px;
+	font-family: Open Sans, sans-serif;
+}
+
+.settings .btn-primary {
+	background: #5BA4E5;
+}
+
+.settings .btn-primary:hover {
+	background: #2F8CDE;
+}
+
+.settings .btn-primary:active {
+	box-shadow: rgba(0, 0, 0, .3) 0 1px 3px inset;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Settings / Tabs Layout
+*/
+.settings .tabs {
+	top: 0;
+	right: 0;
+	width: 80%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	border-left: 1px solid #EDECE4;
+}
+
+.settings .tab {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	z-index: 0;
+	overflow: hidden;
+	position: absolute;
+	visibility: hidden;
+	transition: all .15s ease-in-out, visibility 0s .15s linear;
 }
 
 .settings .tab.active {
-	left: 10px;
+	opacity: 1;
+	z-index: 1;
+	visibility: visible;
+	transition: all .15s ease-in-out, visibility 0s 0s linear;
 }
 
-.settings .tab.active ~ .tab {
-	left: 100%;
+.settings .tab .content {
+	overflow: auto;
+	padding: 25px 0;
+	height: calc(100% - 70px);
 }
 
+.settings .tab .content::-webkit-scrollbar-thumb {
+	border-radius: 0;
+}
+
+.settings .tab .header {
+	height: 70px;
+	font-size: 20px;
+	padding: 25px 30px;
+	font-family: Open Sans, sans-serif;
+}
+
+.settings .tab form {
+	overflow: hidden;
+	min-height: calc(100% - 40px);
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Settings / Tab Styling
+*/
+.settings .tab .form-group {
+	margin-bottom: 25px;
+}
 
 .settings .tab .info {
 	color: #444;
@@ -2178,18 +2424,8 @@ body.resizing .medley {
 }
 
 .settings .tab .btns {
-	text-align: right;
 	margin-top: 10px;
-}
-
-.settings .tab .btns .guide {
-	float: left;
-}
-
-.settings .tab .btns .btn.delete,
-.settings .tab .btns .btn.default {
-	float: left;
-	margin-left: 175px;
+	margin-left: 20px;
 }
 
 .settings .tab .btns .btn.default {
@@ -2200,8 +2436,15 @@ body.resizing .medley {
 	height: 34px;
 }
 
-.settings .visual .form-group {
-	margin-bottom: 25px;
+.settings input[type="tel"],
+.settings input[type="text"],
+.settings input[type="time"],
+.settings input[type="email"],
+.settings input[type="search"],
+.settings input[type="number"],
+.settings select,
+.settings textarea {
+	border-radius: 2px;
 }
 
 
@@ -2297,6 +2540,7 @@ body.resizing .medley {
 	width: 78%;
 	opacity: 0;
 	float: right;
+	min-height: 0;
 	overflow: hidden;
 	transition: opacity .3s 0 ease-in-out, height 0 .3s linear;
 }
@@ -2304,6 +2548,7 @@ body.resizing .medley {
 .settings .specific form.active {
 	opacity: 1;
 	height: auto;
+	margin-bottom: 40px;
 	transition: opacity .3s 0 ease-in-out, height 0 0 linear;
 }
 
@@ -2340,12 +2585,13 @@ body.resizing .medley {
 	height: 55px;
 	padding: 5px;
 	font-size: 0;
-	text-align: center;
-	background: #FFF;
-	border-radius: 4px;
 	margin-left: 5px;
+	border-radius: 4px;
+	text-align: center;
+	background: #FBFBFB;
 	display: inline-block;
 	vertical-align: middle;
+	box-shadow: inset 0 0 0 1px #EEE;
 }
 
 .settings .columns .icon:before,
@@ -2470,7 +2716,7 @@ body.resizing .medley {
 /*---------------------------------------------
 	/ Settings / Advanced
 */
-.settings .advanced label {
+.settings .advanced .form-group > label {
 	width: 20%;
 }
 
@@ -2486,6 +2732,7 @@ body.resizing .medley {
 	width: 80%;
 	height: 80px;
 	margin-top: 15px;
+	margin-right: 20%;
 }
 
 .settings .advanced .reset {

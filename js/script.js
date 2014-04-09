@@ -700,11 +700,11 @@ iChrome.Settings = function() {
 };
 
 iChrome.Settings.handlers = function(modal, settings) {
-	modal.elm.on("click", ".nav:nth-child(2) li", function(e) {
+	modal.elm.on("click", ".nav > li", function(e) {
 		var that = $(this),
-			tabs = modal.elm.children(".tab");
+			tabs = modal.elm.find(".tabs .tab");
 
-		that.siblings().add(tabs).removeClass("active");
+		modal.elm.find(".nav > li").add(tabs).removeClass("active");
 
 		that.add(tabs.filter("." + that.attr("data-tab"))).addClass("active");
 	}).on("click", ".btn.theme", function(e) {
@@ -714,14 +714,12 @@ iChrome.Settings.handlers = function(modal, settings) {
 
 		_gaq.push(["_trackPageview", "/themes"]);
 	}).on("change", ".links .options label:first-child input", function(e) {
-
 		if ($(this).is(":checked")) {
 			$(this).parents("div").first().addClass("visible");
 		}
 		else {
 			$(this).parents("div").first().removeClass("visible").find("input").val("");
 		}
-
 	}).on("keydown", "input:not([type=radio], [type=checkbox]), textarea, select", function(e) {
 		if (e.which == 13) {
 			e.preventDefault();
@@ -768,15 +766,19 @@ iChrome.Settings.handlers = function(modal, settings) {
 		e.preventDefault();
 
 		iChrome.Guide();
-	}).on("click", ".btns .btn.save", function(e) {
+	}).on("click", ".btn.save", function(e) {
 		e.preventDefault();
 
 		iChrome.Settings.save();
 
 		modal.hide();
-	}).on("click", ".specific .nav li", function(e) {
+	}).on("click", ".nav li.specific li", function(e) {
 		var that = $(this),
 			forms = modal.elm.find(".specific form");
+
+		if (that.parents("li").first().hasClass("active")) {
+			e.stopPropagation();
+		}
 
 		that.siblings().add(forms).removeClass("active");
 
