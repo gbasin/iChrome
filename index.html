@@ -121,50 +121,51 @@
 				{{#apps}}
 					<div class="apps">
 						<a href="http://www.google.com/intl/en/options/" class="icon">&#xF00A;</a>
+						
 						<div class="panel">
 							<div class="items">
 								<a href="https://plus.google.com/">
-									<img src="images/icons/plus.png">
+									<img data-src="images/icons/plus.png" />
 									<span>+Me</span>
 								</a>
 								
 								<a href="https://www.google.com/webhp">
-									<img src="images/icons/search.png">
+									<img data-src="images/icons/search.png" />
 									<span>Search</span>
 								</a>
 								
 								<a href="https://www.youtube.com/">
-									<img src="images/icons/youtube.png">
+									<img data-src="images/icons/youtube.png" />
 									<span>YouTube</span>
 								</a>
 								
 								<a href="https://maps.google.com/">
-									<img src="images/icons/maps.png">
+									<img data-src="images/icons/maps.png" />
 									<span>Maps</span>
 								</a>
 								
 								<a href="https://play.google.com/">
-									<img src="images/icons/play.png">
+									<img data-src="images/icons/play.png" />
 									<span>Play</span>
 								</a>
 								
 								<a href="https://news.google.com/">
-									<img src="images/icons/news.png">
+									<img data-src="images/icons/news.png" />
 									<span>News</span>
 								</a>
 								
 								<a href="https://mail.google.com/">
-									<img src="images/icons/gmail.png">
+									<img data-src="images/icons/gmail.png" />
 									<span>Gmail</span>
 								</a>
 								
 								<a href="https://drive.google.com/">
-									<img src="images/icons/drive.png">
+									<img data-src="images/icons/drive.png" />
 									<span>Drive</span>
 								</a>
 								
 								<a href="https://www.google.com/calendar">
-									<img src="images/icons/calendar.png">
+									<img data-src="images/icons/calendar.png" />
 									<span>Calendar</span>
 								</a>
 							</div>
@@ -180,7 +181,7 @@
 		</template>
 
 		<template id="template.store">
-			<h2 class="title">Get New Widgets</h2>
+			<h2 class="title">Widgets</h2>
 
 			<div class="content">
 				{{#widgets}}
@@ -189,10 +190,7 @@
 
 						<h2 class="title">{{name}}</h2>
 
-						<div class="info">
-							<h2>{{name}}</h2>
-							<span class="desc">{{desc}}</span>
-						</div>
+						<div class="desc">{{desc}}</div>
 					</div>
 				{{/widgets}}
 			</div>
@@ -201,73 +199,99 @@
 			</div>
 		</template>
 
-		<template id="template.themes">
-			<h2 class="title">Themes</h2>
+		<template id="template.store-detail">
+			<h3 class="title">{{name}}</h3>
 
-			<div class="container">
-				<div data-id="custom" class="theme custom">
-					<div class="text">
-						<h2>Create your own</h2>
-					</div>
+			<div class="desc-container">
+				<h4>Installation <span class="legend">Drag and drop any size onto your homepage</span></h4>
+
+				{{#sizes}}
+					<section class="handle" data-size="{{0}}">{{1}}</section>
+				{{/sizes}}
+
+				<h4>Description</h4>
+
+				<div class="desc">
+					{{{desc}}}
 				</div>
-
-				{{#themes}}
-					<div data-id="{{id}}" class="theme">
-						<div class="push" style="{{#color}}background-color: {{color}};{{/color}}{{#image}}background-image: url('{{#offline}}/images/bgs/thumbs/{{/offline}}{{image}}');{{/image}}"></div>
-
-						<div class="caption">
-							<h2>
-								<div class="features">
-									{{#offline}}<span class="offline" title="This theme is available offline"></span>{{/offline}}
-									{{#random}}<span class="random" title="This theme rotates through a set of images"></span>{{/random}}
-									{{#time}}<span class="time" title="This theme changes depending on the time of day"></span>{{/time}}
-								</div>
-
-								{{name}}
-							</h2>
-
-							<div class="specs">
-								{{#resolution}}<span class="resolution">{{resolution}}</span>{{/resolution}}
-							</div>
-
-							<button class="btn btn-success use">Use</button>
-
-							{{^resolution}}
-								<button class="btn btn-danger delete">Delete</button>
-								<button class="btn btn-info edit">Edit</button>
-							{{/resolution}}
-
-							<button class="btn btn-primary preview">Preview</button>
-						</div>
-					</div>
-				{{/themes}}
 			</div>
 
-			<div class="modal-overlay"></div>
+			<div class="preview-container">
+				<h4>Preview</h4>
 
-			<div class="modal create-theme">
-				<div class="close"></div>
+				<div class="preview">
+					{{{widget}}}
+				</div>
 			</div>
 		</template>
 
-		<template id="template.themes.create">
+		<template id="template.themes">
+			<h2 class="title">Themes</h2>
+
+			<ul class="nav">
+				<li class="active" data-id="all">All</li>
+				{{#categories}}
+					<li data-id="{{id}}">{{name}}</li>
+				{{/categories}}
+				<li data-id="custom">Custom</li>
+
+				<li class="create">
+					<button class="btn btn-primary">Create a theme</button>
+				</li>
+			</ul>
+
+			<div class="container">
+			</div>
+		</template>
+
+		<template id="template.themes.listing">
+			{{#themes}}
+				<div data-id="{{id}}" class="theme{{#custom}} custom{{/custom}}">
+					<div class="push lazy" style="{{#color}}background-color: {{color}};{{/color}}{{#image}}background-image: url('{{image}}');{{/image}}"></div>
+
+					<div class="caption">
+						{{#offline}}<span class="cached">Cached</span>{{/offline}}
+
+						{{#name}}<h2>{{name}}</h2>{{/name}}
+
+						<div class="specs">
+							{{#resolution}}<span><b>Resolution:</b> {{resolution}}</span>{{/resolution}}
+							{{#categories}}<span><b>Categories:</b> {{categories}}</span>{{/categories}}
+						</div>
+
+						{{#custom}}
+							<button class="btn btn-warning edit">Edit</button>
+							<button class="btn btn-danger delete">Delete</button>
+						{{/custom}}
+
+						<button class="btn btn-success use">Use</button>
+
+						<button class="btn btn-primary preview">Preview</button>
+					</div>
+				</div>
+			{{/themes}}
+		</template>
+
+		<template id="template.themes.custom">
 			{{#edit}}<h2 class="title">Edit Theme</h2>{{/edit}}
 			{{^edit}}<h2 class="title">Create Theme</h2>{{/edit}}
 
 			<form>
-				{{#edit}}<input type="hidden" value="{{id}}" name="id" />{{/edit}}
-
 				<div class="form-group">
-					<label for="theme-name">Theme Name</label>
+					<label for="name">Theme Name</label>
 
-					{{#name}}<input type="text" class="form-control" id="theme-name" name="theme-name" placeholder="Enter a theme name" value="{{name}}" />{{/name}}
-					{{^name}}<input type="text" class="form-control" id="theme-name" name="theme-name" placeholder="Enter a theme name" value="New Theme" />{{/name}}
+					{{#name}}<input type="text" class="form-control" id="name" name="name" placeholder="Enter a theme name" value="{{name}}" />{{/name}}
+					{{^name}}<input type="text" class="form-control" id="name" name="name" placeholder="Enter a theme name" value="New Theme" />{{/name}}
 				</div>
 
 				<div class="form-group">
 					<label for="image">Image URL</label>
 
-					<input type="text" class="form-control" id="image" name="image" placeholder="Enter a background image URL" value="{{image}}" />
+					<div>
+						<div class="upload">or<input type="file" class="btn btn-primary" id="upload" /></div>
+
+						<input type="text" class="form-control" id="image" name="image" placeholder="Enter a background image URL" value="{{image}}" />
+					</div>
 				</div>
 
 				<div class="form-group color">
@@ -297,7 +321,7 @@
 						<option value="cover">Auto</option>
 						<option value="100% auto">Full Width</option>
 						<option value="auto 100%">Full Height</option>
-						<option value="auto">No Scaling</option>
+						<option value="auto">No Scaling (preview may be inaccurate)</option>
 					</select>
 				</div>
 
@@ -328,36 +352,11 @@
 				</div>
 			</form>
 
-			<button class="btn btn-primary save">Save</button>
-		</template>
+			<div class="preview"></div>
 
-		<template id="template.store-detail">
-			<h3 class="title">{{name}}</h3>
-
-			<div class="sizes">
-				<h3>Sizes: </h3>
-
-				{{#sizes}}
-					<section class="handle" data-size="{{0}}">{{1}}</section>
-				{{/sizes}}
-
-				<p class="legend">To install: drag and drop any size onto your homepage</p>
-			</div>
-
-			<div class="desc-container">
-				<h4>Description</h4>
-
-				<div class="desc">
-					{{{desc}}}
-				</div>
-			</div>
-
-			<div class="preview-container">
-				<h4>Preview</h4>
-
-				<div class="preview">
-					{{{widget}}}
-				</div>
+			<div class="buttons">
+				<button class="btn btn-success preview">Preview</button>
+				<button class="btn btn-primary save">Save &amp; Close</button>
 			</div>
 		</template>
 
@@ -490,67 +489,19 @@
 								<label class="control-label col-sm-2">Layout</label>
 
 								<div class="col-sm-9">
-									<div class="columns">
-										<label class="one fixed" title="One column, fixed width">
-											<input type="radio" name="columns" value="1-fixed" />
-
-											<div class="icon"><div class="column"></div></div>
-										</label>
-
-										<label class="two fixed" title="Two columns, fixed width">
-											<input type="radio" name="columns" value="2-fixed" />
-
-											<div class="icon"><div class="column"></div></div>
-										</label>
-
-										<label class="three fixed" title="Three columns, fixed width">
-											<input type="radio" name="columns" value="3-fixed" checked />
-
-											<div class="icon"><div class="column"></div></div>
-										</label>
-
-										<label class="four fixed" title="Four columns, fixed width">
-											<input type="radio" name="columns" value="4-fixed" />
-
-											<div class="icon"><div class="column"></div></div>
-										</label>
-
-										<label class="five fixed" title="Five columns, fixed width">
-											<input type="radio" name="columns" value="5-fixed" />
-
-											<div class="icon"><div class="column"></div></div>
-										</label>
-
-										<label class="one fluid" title="One column, fluid width">
-											<input type="radio" name="columns" value="1-fluid" />
-
-											<div class="icon"><div class="column"></div></div>
-										</label>
-
-										<label class="two fluid" title="Two columns, fluid width">
-											<input type="radio" name="columns" value="2-fluid" />
-
-											<div class="icon"><div class="column"></div></div>
-										</label>
-
-										<label class="three fluid" title="Three columns, fluid width">
-											<input type="radio" name="columns" value="3-fluid" />
-
-											<div class="icon"><div class="column"></div></div>
-										</label>
-
-										<label class="four fluid" title="Four columns, fluid width">
-											<input type="radio" name="columns" value="4-fluid" />
-
-											<div class="icon"><div class="column"></div></div>
-										</label>
-
-										<label class="five fluid" title="Five columns, fluid width">
-											<input type="radio" name="columns" value="5-fluid" />
-
-											<div class="icon"><div class="column"></div></div>
-										</label>
-									</div>
+									<select id="columns" name="columns">
+										<option value="1-fixed">One column, fixed width</option>
+										<option value="1-fluid">One column, fluid width</option>
+										<option value="2-fixed">Two columns, fixed width</option>
+										<option value="2-fluid">Two columns, fluid width</option>
+										<option value="3-fixed">Three columns, fixed width</option>
+										<option value="3-fluid">Three columns, fluid width</option>
+										<option value="4-fixed">Four columns, fixed width</option>
+										<option value="4-fluid">Four columns, fluid width</option>
+										<option value="5-fixed">Five columns, fixed width</option>
+										<option value="5-fluid">Five columns, fluid width</option>
+										<option value="medley">Grid-based, customizable width</option>
+									</select>
 								</div>
 							</div>
 
@@ -710,6 +661,16 @@
 									<button class="btn btn-primary backup">Backup</button> <button class="btn btn-primary restore">Restore</button>
 
 									<textarea id="backup" name="backup"></textarea>
+								</div>
+							</div>
+
+							<div class="form-group css">
+								<label class="control-label col-sm-2" for="custom-css">Custom CSS</label>
+
+								<div class="col-sm-9">
+									<span class="info">You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN</a>).<br /><br />Since this will be synced, you can only enter a maximum of 1000 characters including whitespace.</span>
+
+									<textarea id="custom-css" name="custom-css" maxlength="1000">{{custom-css}}</textarea>
 								</div>
 							</div>
 						</form>
@@ -2163,7 +2124,7 @@
 
 			<div class="list{{#two}} two-column{{/two}}">
 				{{#bookmarks}}
-					<a class="link" href="{{url}}"{{#newTab}} target="_blank"{{/newTab}}>
+					<a class="link" href="{{url}}{{#newTab}}" target="_blank{{/newTab}}">
 						<img class="favicon" src="chrome://favicon/{{url}}" />
 						<span class="title">{{title}}</span>
 
@@ -2319,7 +2280,7 @@
 			<br />
 			Articles can be displayed as full width cards, half width cards (two columns), a list or a "magazine" view like the News or RSS widgets.<br />
 			<br />
-			You can also optionally select to show only unread articles, sort articles oldest first and mark articles as read when either click or scroll past.<br />
+			You can also optionally select to show only unread articles, sort articles oldest first and mark articles as read when either clicked or scrolled past.<br />
 			<br />
 			To save an article and recommend it just click the recommendation count that's displayed in green on every article.<br />
 			<br />

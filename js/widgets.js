@@ -513,12 +513,17 @@ var Widgets = {
 			completions: 4853,
 			pagesVisit: 8.54
 		},
-		oAuth: new OAuth2("google", {
-			client_id: "559765430405-5rvu6sms3mc111781cfgp1atb097rrph.apps.googleusercontent.com",
-			client_secret: "",
-			api_scope: "https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/analytics"
-		}),
+		oAuth: false,
+		setOAuth: function() {
+			this.oAuth = new OAuth2("google", {
+				client_id: "559765430405-5rvu6sms3mc111781cfgp1atb097rrph.apps.googleusercontent.com",
+				client_secret: "",
+				api_scope: "https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/analytics"
+			});
+		},
 		getProfiles: function(cb) {
+			if (!this.oAuth) this.setOAuth();
+
 			var done = 0,
 				errors = 0,
 				profiles = [],
@@ -606,6 +611,8 @@ var Widgets = {
 			});
 		},
 		refresh: function() {
+			if (!this.oAuth) this.setOAuth();
+
 			if (!this.config.profile) {
 				return false;
 			}
@@ -1526,12 +1533,17 @@ var Widgets = {
 				}
 			]
 		},
-		oAuth: new OAuth2("google2", {
-			client_id: "559765430405-2710gl95r9js4c6m4q9nveijgjji50b8.apps.googleusercontent.com",
-			client_secret: "",
-			api_scope: "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar"
-		}),
+		oAuth: false,
+		setOAuth: function() {
+			this.oAuth = new OAuth2("google2", {
+				client_id: "559765430405-2710gl95r9js4c6m4q9nveijgjji50b8.apps.googleusercontent.com",
+				client_secret: "",
+				api_scope: "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar"
+			});
+		},
 		getCalendars: function(cb) {
+			if (!this.oAuth) this.setOAuth();
+
 			this.oAuth.authorize.call(this.oAuth, function() {
 				$.ajax({
 					type: "GET",
@@ -1555,6 +1567,8 @@ var Widgets = {
 			}.bind(this));
 		},
 		refresh: function() {
+			if (!this.oAuth) this.setOAuth();
+
 			if (!this.config.calendar) {
 				return false;
 			}
@@ -1724,7 +1738,10 @@ var Widgets = {
 				switch (this.config.sort) {
 					case "alpha":
 						list.sort(function(a, b) {
-							return a.shortName.toLowerCase().localeCompare(b.shortName.toLowerCase());
+							var c = a.shortName.toLowerCase(),
+								d = b.shortName.toLowerCase();
+
+							return c < d ? -1 : c > d;
 						});
 					break;
 					case "offline":
@@ -1968,7 +1985,8 @@ var Widgets = {
 				type: "text",
 				nicename: "symbol",
 				label: "Stock Symbol(s), comma separated",
-				placeholder: "e.g. NASDAQ:GOOG, NASDAQ:AAPL, NYSE:S"
+				placeholder: "e.g. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
+				help: "These are the stocks you'd like shown in a TICKER:EXCHANGE format.<br /><br />For indexes, please use the tickers and exchanges as shown on <a href=\"https://www.google.com/finance\" target=\"_blank\">Google Finance</a>. For example, the Dow Jones index is <b>INDEXDJX:.DJI</b> and NYSE is <b>INDEXNYSEGIS:NYA</b>."
 			}
 		],
 		config: {
@@ -1994,10 +2012,21 @@ var Widgets = {
 				type: "GET",
 				url: "https://clients1.google.com/finance/info?client=ob&hl=en&infotype=infoonebox&q=" + encodeURIComponent((this.config.symbol || "NASDAG:GOOG").trim()),
 				success: function(d) {
-					d = JSON.parse(d.replace("// [", "["));
+					d = JSON.parse(d
+							.replace("// [", "[") // Undo Google's escaping
+							.replace(/\\x([A-z0-9]{2})/g, function(match, $1) { // This replaces \x escapes so the JSON doesn't have to be eval'd
+								try {
+									return String.fromCharCode(parseInt($1, 16));
+								}
+								catch(e) {
+									return "?";
+								}
+							})
+						);
 
 					var stocks = [],
-						stock;
+						stock,
+						min = (d.length > 1 ? 1000000 : 10000);
 
 					d.forEach(function(e, i) {
 						stock = {
@@ -2014,7 +2043,7 @@ var Widgets = {
 							extra: (e.s == "1" ? "Pre Market" : e.s == "2" ? "After Hours" : false)
 						};
 
-						stock.value = ((stock.value || 0) < 10000 ? $.formatNumber((stock.value || 0), { locale: navigator.locale }) : (stock.value || 0).abbr(10000)).replace(/,/g, "<b>,</b>");
+						stock.value = ((stock.value || 0) < min ? $.formatNumber((stock.value || 0), { locale: navigator.locale }) : (stock.value || 0).abbr(min)).replace(/,/g, "<b>,</b>");
 
 						stock.open = $.formatNumber((stock.open || 0), { locale: navigator.locale, format: "#0.00" });
 						stock.high = $.formatNumber((stock.high || 0), { locale: navigator.locale, format: "#0.00" });
@@ -2065,7 +2094,7 @@ var Widgets = {
 		nicename: "sports",
 		interval: 180000,
 		sizes: ["tiny", "variable"],
-		desc: "Displays sports scores and game information for selected leagues and/or teams.",
+		desc: "Displays scores and game information for selected leagues and/or teams.",
 		settings: [
 			{
 				type: "text",
@@ -3884,43 +3913,50 @@ var Widgets = {
 			"feed/http://www.etsy.com/shop/dawndishawceramics/rss": "Dawn Dishaw Ceramics",
 			"feed/http://www.etsy.com/shop/sarapaloma/rss": "Sara Paloma Pottery"
 		},
-		oAuth: new OAuth2("feedly", {
-			client_id: "ichrome",
-			client_secret: "",
-			api_scope: "https://cloud.feedly.com/subscriptions"
-		}, function(tab) {
-			chrome.webRequest.onBeforeRequest.addListener(
-				function extract(info) {
-					if (!new RegExp("state=").test(info.url)) {
-						return;
-					}
+		oAuth: false,
+		setOAuth: function() {
+			this.oAuth = new OAuth2("feedly", {
+				client_id: "ichrome",
+				client_secret: "",
+				api_scope: "https://cloud.feedly.com/subscriptions"
+			}, function(tab) {
+				chrome.webRequest.onBeforeRequest.addListener(
+					function extract(info) {
+						if (!new RegExp("state=").test(info.url)) {
+							return;
+						}
 
-					var url = info.url,
-						params = "?",
-						index = url.indexOf(params);
+						var url = info.url,
+							params = "?",
+							index = url.indexOf(params);
 
-					if (index > -1) {
-						params = url.substring(index);
-					}
+						if (index > -1) {
+							params = url.substring(index);
+						}
 
-					chrome.webRequest.onBeforeRequest.removeListener(extract);
+						chrome.webRequest.onBeforeRequest.removeListener(extract);
 
-					chrome.tabs.update(info.tabId, {
-						url: chrome.extension.getURL("oauth2/oauth2.html") + params + "&from=" + encodeURIComponent(url)
-					});
-				},
-				{
-					urls: [ "http://localhost/*" ]
-				},
-				["blocking", "requestBody"]
-			);
-		}),
+						chrome.tabs.update(info.tabId, {
+							url: chrome.extension.getURL("oauth2/oauth2.html") + params + "&from=" + encodeURIComponent(url)
+						});
+					},
+					{
+						urls: [ "http://localhost/*" ]
+					},
+					["blocking", "requestBody"]
+				);
+			});
+		},
 		authorize: function(config) {
+			if (!this.oAuth) this.setOAuth();
+
 			this.oAuth.authorize(function() {
 				$.ajax(config);
 			});
 		},
 		getSources: function(cb) {
+			if (!this.oAuth) this.setOAuth();
+
 			var oAuth = this.oAuth;
 
 			oAuth.authorize(function() {
@@ -3957,6 +3993,8 @@ var Widgets = {
 			});
 		},
 		getArticles: function(d) {
+			if (!this.oAuth) this.setOAuth();
+
 			var names = this.names,
 				articles = [],
 				oAuth = this.oAuth,
@@ -4117,6 +4155,8 @@ var Widgets = {
 			});
 		},
 		setHandlers: function() {
+			if (!this.oAuth) this.setOAuth();
+
 			var loading = false,
 				that = this,
 				last = 0,
@@ -5294,7 +5334,7 @@ var Widgets = {
 
 			// Build base string
 			var baseString = method + "&" + encodeURIComponent(url) + "&" +
-				encodeURIComponent(params.sort(function(a, b) { return a.localeCompare(b); }).join("&"));
+				encodeURIComponent(params.sort(function(a, b) { return a < b ? -1 : a > b; }).join("&"));
 
 			// Generate signature
 			var signature = CryptoJS.HmacSHA1(baseString, "" + "&" + encodeURIComponent(secret)).toString(CryptoJS.enc.Base64);
@@ -5556,12 +5596,17 @@ var Widgets = {
 				}
 			]
 		},
-		oAuth: new OAuth2("drive", {
-			client_id: "559765430405-jtbjv5ivuc17nenpsl4dfk9r53a3q0hg.apps.googleusercontent.com",
-			client_secret: "uzvC025Z3R12syGZ52hFDyHx",
-			api_scope: "https://www.googleapis.com/auth/drive.readonly"
-		}),
+		oAuth: false,
+		setOAuth: function() {
+			this.oAuth = new OAuth2("drive", {
+				client_id: "559765430405-jtbjv5ivuc17nenpsl4dfk9r53a3q0hg.apps.googleusercontent.com",
+				client_secret: "",
+				api_scope: "https://www.googleapis.com/auth/drive.readonly"
+			});
+		},
 		refresh: function() {
+			if (!this.oAuth) this.setOAuth();
+
 			if (!this.oAuth.getAccessToken()) {
 				return this.render("authorize");
 			}
@@ -5613,6 +5658,8 @@ var Widgets = {
 			}.bind(this));
 		},
 		render: function(key) {
+			if (!this.oAuth) this.setOAuth();
+
 			if (key == "authorize" || (!key && !this.oAuth.getAccessToken())) {
 				this.utils.render({
 					authorize: true,

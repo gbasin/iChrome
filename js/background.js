@@ -1,311 +1,133 @@
-var migrate = function(data) {
-	var ids = data.ActiveAppIds,
-		columns = data.columns,
-		widgets = data.ActiveAppSettings,
-		prefs = data.prefs;
+var cached = {};
 
-	var tabs = [
-			{
-				id: 1,
-				name: "Home",
-				columns: []
-			}
-		],
-		settings = {},
-		themes = [],
-		theme = "",
-		local = ["beach", "grass", "greenfalls", "greenwater", "header", "jupiter", "mountains", "ocean", "pebbles", "trees", "treetops", "wood"];
-
-	if (prefs && prefs.bg) {
-		if (prefs.bg.url && local.indexOf(theme = prefs.bg.url.replace("/images/bgs/", "").replace(".jpg", "")) !== -1) {
-			if (theme !== "beach") {
-				tabs[0].theme = theme;
-			}
-		}
-		else {
-			theme = {
-				name: "Migrated Theme"
-			};
-
-			if (prefs.bg.url && prefs.bg.url !== "") {
-				theme.image = prefs.bg.url;
-			}
-
-			if (prefs.bg.color && prefs.bg.color !== "#EEE") {
-				theme.color = prefs.bg.color;
-			}
-
-			if (prefs.bg.pos && prefs.bg.pos !== "center" && prefs.bg.pos !== "top center") {
-				theme.position = prefs.bg.pos;
-			}
-
-			if (prefs.bg.repeat && prefs.bg.repeat !== "no-repeat") {
-				theme.repeat = prefs.bg.repeat;
-			}
-
-			if (prefs.bg.scale && prefs.bg.scale !== "cover") {
-				theme.scaling = prefs.bg.scale;
-			}
-
-			if (prefs.bg.style && prefs.bg.style !== "scroll") {
-				theme.fixed = prefs.bg.style;
-			}
-
-			themes.push(theme);
-
-			tabs[0].theme = "custom0";
-		}
-	}
-
-	if (prefs && prefs.layout) {
-		if (prefs.layout["page-align"] && prefs.layout["page-align"] !== "0 auto") {
-			if (prefs.layout["page-align"] == "0") {
-				settings.align = "left";
-			}
-			else {
-				settings.align = "right";
-			}
-		}
-
-		if (prefs.layout["search-url"] && prefs.layout["search-url"] !== "https://www.google.com/search?q=%s") {
-			settings["search-url"] = prefs.layout["search-url"];
-		}
-
-		if (prefs.layout["logo-image-url"] && prefs.layout["logo-image-url"] !== "/images/logo3w.png") {
-			settings["logo-url"] = prefs.layout["logo-image-url"];
-		}
-	}
-
-
-	columns.forEach(function(column, i) {
-		var ncolumn = [];
-
-		column.forEach(function(widget, i) {
-			var id = ids[widget];
-
-			if (id && widgets[widget] && migrators[ids[widget]]) {
-				try {
-					ncolumn.push(migrators[ids[widget]](widgets[widget]));
-				}
-				catch (e) {}
-			}
-			else if (id && migrators[ids[widget]]) {
-				try {
-					ncolumn.push(migrators[ids[widget]]({}));
-				}
-				catch (e) {}
-			}
-		});
-
-		tabs[0].columns.push(ncolumn);
-	});
-
-	chrome.storage.local.clear(function() {
-		chrome.storage.local.set({
-			tabs: tabs,
-			themes: themes,
-			settings: settings
-		});
-	});
+var themes = {
+	mossrivers:			{ id: 1 },
+	grass:				{ id: 2 },
+	beachcliff:			{ id: 3 },
+	newzealand:			{ id: 4 },
+	greenwater:			{ id: 5 },
+	nautical:			{ id: 6 },
+	shallowparadise:	{ id: 7 },
+	header: {
+		id: 8,
+		scaling: "auto",
+		position: "top center"
+	},
+	purelyfuzzy:		{ id: 9 },
+	beach:				{ id: 10 },
+	ocean:				{ id: 11 },
+	mountains:			{ id: 12 },
+	greenfalls:			{ id: 13 },
+	jupiter:			{ id: 14 },
+	pebbles:			{ id: 15 },
+	trees:				{ id: 16 },
+	treetops:			{ id: 17 },
+	wood:				{ id: 18 },
+	bluewaves:			{ id: 19 },
+	quantumbeachballs:	{ id: 20 },
+	tinfoil:			{ id: 21 },
+	evenlyrough:		{ id: 22 },
+	nexus:				{ id: 23 },
+	rainbowcauseway:	{ id: 24 },
+	thelens:			{ id: 25 },
+	icecreamsandwich:	{ id: 26 }
 };
 
-var migrators = {
-	1: function(s) {
-		var ret = {
-			id: 1,
-			size: 3,
-			config: {}
-		};
+var cache = function(theme, cb) {
+	var err = function(e) {
+			if (e.name == "InvalidStateError") {
+				return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) { // The full 500MB probably won't be used, but the caching will fail if it does.
+					window.fs = fs;
 
-		if (s.location) {
-			ret.config.title = s.location;
-			ret.config.location = s.location;
-		}
-		
-		if (s.units && s.units == "c") {
-			ret.config.units = "metric";
-		}
-
-		return ret;
-	},
-	2: function(s) {
-		return {
-			id: 2,
-			size: 2
-		};
-	},
-	3: function(s) {
-		var ret = {
-			id: 3,
-			size: 3,
-			config: {
+					cache(theme, cb);
+				}, err);
 			}
+
+			cb();
 		};
 
-		if (s.profile) {
-			ret.config.profile = s.profile;
-		}
+	if (!window.fs) {
+		return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+			window.fs = fs;
 
-		return ret;
-	},
-	4: function(s) {
-		var ret = {
-			id: 4,
-			size: 3,
-			config: {
-			}
-		};
-
-		if (s.title && s.title !== "News") {
-			ret.config.title = s.title;
-		}
-
-		if (s.edition && s.edition !== "&ned=us") {
-			ret.config.edition = s.edition.replace("&ned=", "");
-		}
-
-		if (s.topic && s.topic !== "") {
-			ret.config.topic = s.topic.replace("&tc=", "");
-		}
-
-		if (s.footerLink && s.footerLink !== "http://news.google.com") {
-			ret.config.link = s.footerLink;
-		}
-
-		if (s.source && s.source.indexOf("https://news.google.com/news/feeds?output=rss") !== 0) {
-			ret.config.custom = s.source;
-		}
-
-		return ret;
-	},
-	5: function(s) {
-		return {
-			id: 5,
-			size: 2
-		};
-	},
-	6: function(s) {
-		return {
-			id: 6,
-			size: 2
-		};
-	},
-	7: function(s) {
-		var ret = {
-			id: 7,
-			size: 5,
-			config: {}
-		};
-
-		if (s.height && s.height !== "400px") {
-			ret.config.height = parseInt(s.height.replace("px", ""));
-		}
-
-		if (s.url && s.url !== "http://mail.google.com/mail/mu/mp/?source=ig&mui=igh") {
-			ret.config.url = s.url;
-		}
-
-		if (s.padding && s.padding !== false) {
-			ret.config.padding = "true";
-		}
-
-		return ret;
-	},
-	8: function(s) {
-		var ret = {
-			id: 8,
-			size: 5,
-			config: {}
-		};
-
-		if (s.source && s.source !== "") {
-			ret.config.url = s.source;
-		}
-
-		if (s.title && s.title !== "") {
-			ret.config.title = s.title;
-		}
-
-		if (s.images && s.images !== true) {
-			ret.config.images = "false";
-		}
-
-		return ret;
-	},
-	9: function(s) {
-		var ret = {
-			id: 9,
-			size: 2,
-			config: {}
-		};
-
-		if (s.home && s.home.address && s.home.address !== "" && s.home.address !== "1601 Willow Rd, Menlo Park, CA 94025-1452") {
-			ret.config.home = s.home.address;
-		}
-
-		if (s.work && s.work.address && s.work.address !== "" && s.work.address !== "1600 Amphitheatre Pkwy, Mountain View, CA 94043-1351") {
-			ret.config.work = s.work.address;
-		}
-
-		return ret;
-	},
-	10: function(s) {
-		var ret = {
-			id: 10,
-			size: 5,
-			config: {}
-		};
-
-		if (s.calendar && s.calendar !== "") {
-			ret.config.calendar = s.calendar;
-		}
-
-		if (s.num) {
-			ret.config.events = s.num;
-		}
-
-		return ret;
-	},
-	11: function(s) {
-		return {
-			id: 11,
-			size: 5
-		};
-	},
-	12: function(s) {
-		var ret = {
-			id: 12,
-			size: 5,
-			config: {}
-		};
-
-		if (s.num) {
-			ret.config.show = s.num;
-		}
-
-		return ret;
-	},
-	13: function(s) {
-		var ret = {
-			id: 13,
-			size: 5,
-			data: {}
-		};
-
-		if (s.title && s.title !== "Welcome Note") {
-			d = document.createElement("div");
-
-			d.innerHTML = s.title;
-
-			ret.data.title = d.innerText;
-		}
-
-		if (s.content && s.content !== "") {
-			ret.data.content = s.content;
-		}
-
-		return ret;
+			cache(theme, cb);
+		}, err);
 	}
+	
+	var fs = window.fs,
+		xhr = new XMLHttpRequest();
+
+	xhr.open("GET", "https://s3.amazonaws.com/iChrome/Themes/Images/" + theme.id + ".jpg");
+
+	xhr.responseType = "blob";
+
+	fs.root.getDirectory("Themes", { create: true }, function(dir) {
+		dir.getFile(theme.id + ".jpg", { create: true }, function(fe) {
+			xhr.onload = function(e) {
+				if (xhr.status !== 200) {
+					return err();
+				}
+
+				var blob = xhr.response;
+
+				fe.createWriter(function(writer) {
+					writer.onwrite = function(e) {
+						theme.image = fe.toURL();
+
+						theme.offline = true;
+
+						cached[theme.id] = theme;
+
+						cb();
+					};
+
+					writer.onerror = err;
+
+					writer.write(blob);
+				}, err);
+			};
+
+			xhr.send();
+		}, err);
+	}, err);
+};
+
+var migrateThemes = function() {
+	chrome.storage.local.get(["settings", "tabs"], function(d) {
+		var queue = [];
+
+		if (d.settings.theme && themes[d.settings.theme]) {
+			queue.push(d.settings.theme);
+
+			// The theme reference will be broken regardless of whether or not the caching succeeds, so there's no harm in setting it now
+			d.settings.theme = themes[d.settings.theme].id + "";
+		}
+
+		d.tabs.forEach(function(e, i) {
+			if (e.theme && themes[e.theme]) {
+				if (queue.indexOf(e.theme) == -1) queue.push(e.theme);
+
+				d.tabs[i].theme = themes[e.theme].id + "";
+			}
+		});
+
+		queue.forEach(function(e, i) {
+			queue[i] = themes[e];
+		});
+
+		(function next() {
+			if (queue.length) {
+				cache(queue.pop(), next);
+			}
+			else {
+				chrome.storage.local.set({
+					tabs: d.tabs,
+					cached: cached,
+					settings: d.settings
+				});
+			}
+		})();
+	});
 };
 
 chrome.runtime.onInstalled.addListener(function(details) {
@@ -342,42 +164,11 @@ chrome.runtime.onInstalled.addListener(function(details) {
 		});
 	}
 	else if (details.reason == "update") {
-		chrome.storage.local.get(function(d) {
-			if (details.previousVersion.indexOf("2") === 0 && !localStorage["help"]) {
-				localStorage["help"] = "true";
-				localStorage["whatsNew"] = "true";
-			}
-			else {
-				if (d.ActiveAppIds) {
-					migrate(d);
-
-					localStorage["updated"] = "true";
-				}
-				else if (typeof d.tabs == "string") {
-					chrome.storage.sync.get(function(d) {
-						var tabs = [],
-							key,
-							data = {
-								settings: d.settings,
-								themes: d.themes
-							};
-							
-						for (key in d) {
-							if (key.indexOf("tabs") == 0) {
-								tabs[key.substr(4) || 0] = d[key];
-							}
-						}
-
-						data.tabs = JSON.parse(tabs.join(""));
-
-						chrome.storage.local.set(d);
-					});
-				}
-				else {
-					localStorage["whatsNew"] = "true";
-				}
-			}
-		});
+		if (details.previousVersion.indexOf("2.1") !== 0) {
+			migrateThemes();
+		}
+		
+		localStorage["whatsNew"] = "true";
 	}
 });
 
@@ -486,12 +277,18 @@ var unextend = function(obj1, obj2) {
 
 chrome.storage.onChanged.addListener(function(d, area) {
 	if (area == "sync") {
-		chrome.storage.local.get(["tabs", "themes", "settings"], function(o) {
+		chrome.storage.local.get(["tabs", "themes", "settings", "cached"], function(old) {
+			var o = {
+				tabs: old.tabs,
+				themes: old.themes,
+				settings: old.settings
+			};
+
 			var newData = {
-					tabs: o.tabs,
-					themes: o.themes,
-					settings: o.settings
-				};
+				tabs: o.tabs,
+				themes: o.themes,
+				settings: o.settings
+			};
 
 			if (d.themes && d.themes.newValue && JSON.stringify(o.themes) !== JSON.stringify(d.themes.newValue)) {
 				newData.themes = d.themes.newValue;
@@ -500,6 +297,83 @@ chrome.storage.onChanged.addListener(function(d, area) {
 			if (d.settings && d.settings.newValue && JSON.stringify(o.settings) !== JSON.stringify(d.settings.newValue)) {
 				newData.settings = d.settings.newValue;
 			}
+
+			var save = function() {
+				var queue = [];
+
+				cached = old.cached;
+
+				if (newData.settings.theme) {
+					if (themes[newData.settings.theme]) {
+						queue.push(themes[newData.settings.theme].id);
+
+						newData.settings.theme = themes[newData.settings.theme].id + "";
+					}
+					else if (parseInt(newData.settings.theme) /* Not a custom theme */ && !old.cached[newData.settings.theme]) {
+						queue.push(newData.settings.theme);
+					}
+				}
+
+				newData.tabs.forEach(function(e, i) {
+					if (e.theme) {
+						if (themes[e.theme]) {
+							queue.push(themes[e.theme].id);
+
+							newData.tabs[i].theme = themes[e.theme].id + "";
+						}
+						else if (parseInt(e.theme) && !old.cached[e.theme]) {
+							queue.push(e.theme);
+						}
+					}
+				});
+
+				var next = function() {
+					if (queue.length) {
+						cache(mThemes[index[queue.pop()]], next);
+					}
+					else {
+						newData.cached = cached; // Has to be set here otherwise earlier difference checks will fail
+
+						chrome.storage.local.set(newData, function() {
+							chrome.extension.getViews().forEach(function(e, i) {
+								if (e.iChrome && e.iChrome.refresh) {
+									e.iChrome.refresh(true);
+								}
+							});
+						});
+					}
+				},
+				mThemes = [],
+				index = {};
+
+				if (queue.length) {
+					var xhr = new XMLHttpRequest();
+
+					xhr.open("GET", "https://s3.amazonaws.com/iChrome/Themes/manifest.json", true);
+
+					xhr.onreadystatechange = function() {
+						if (xhr.readyState == 4 && xhr.status == 200) {
+							var d = JSON.parse(xhr.responseText).images;
+
+							d.forEach(function(e, i) {
+								index[e.id] = mThemes.length;
+
+								delete e.resolution;
+								delete e.categories;
+
+								mThemes.push(e);
+							});
+
+							next();
+						}
+					};
+
+					xhr.send(null);
+				}
+				else {
+					next();
+				}
+			};
 
 			if (Object.keys(d).join("").indexOf("tabs") !== -1) {
 				chrome.storage.sync.get(function(sd) {
@@ -514,25 +388,13 @@ chrome.storage.onChanged.addListener(function(d, area) {
 
 					if (tabs.length) newData.tabs = JSON.parse(tabs.join(""));
 
-					if (JSON.stringify(newData) !== JSON.stringify(o) && (sd.lastChanged || "olderVersion").split("-")[1] !== uid) {
-						chrome.storage.local.set(newData, function() {
-							chrome.extension.getViews().forEach(function(e, i) {
-								if (e.iChrome && e.iChrome.refresh) {
-									e.iChrome.refresh(true);
-								}
-							});
-						});
+					if (JSON.stringify(newData) !== JSON.stringify(o) && ((sd.lastChanged && sd.lastChanged.split) ? sd.lastChanged : "older-Version").split("-")[1] !== uid) {
+						save();
 					}
 				});
 			}
-			else if (JSON.stringify(newData) !== JSON.stringify(o) && (d.lastChanged || "olderVersion").split("-")[1] !== uid) {
-				chrome.storage.local.set(newData, function() {
-					chrome.extension.getViews().forEach(function(e, i) {
-						if (e.iChrome && e.iChrome.refresh) {
-							e.iChrome.refresh(true);
-						}
-					});
-				});
+			else if (JSON.stringify(newData) !== JSON.stringify(o) && ((d.lastChanged && d.lastChanged.split) ? d.lastChanged : "older-Version").split("-")[1] !== uid) {
+				save();
 			}
 		});
 	}

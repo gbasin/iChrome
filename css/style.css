@@ -60,6 +60,10 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: top center;
+
+	/* Disable selection since it gives iChrome a more app-like feel and users should never end up copying text. */
+	cursor: default;
+	-webkit-user-select: none;
 }
 
 :not(select)::-webkit-scrollbar {
@@ -68,7 +72,6 @@ body {
 }
 
 :not(select)::-webkit-scrollbar-thumb {
-	border-radius: 4px;
 	background: rgba(0, 0, 0, .2);
 }
 
@@ -101,6 +104,10 @@ span.nested-link[data-href]:focus {
 	color: #2A6496;
 	cursor: pointer;
 	text-decoration: underline;
+}
+
+iframe[seamless] {
+	border: 0; /* This fixes the Chrome 33 - 34 loss of support for seamless iframes */
 }
 
 .remove {
@@ -1012,7 +1019,6 @@ body > .widgets-container {
 
 body.dragging .medley,
 body.resizing .medley {
-	-webkit-user-select: none;
 	background-size: 10px 10px!important;
 	background-position: -1px -1px!important;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.3) 1px, rgba(0, 0, 0, 0) 1px),
@@ -1243,17 +1249,15 @@ body.resizing .medley {
 
 
 /*---------------------------------------------
-	/ Widget Settings and Create Theme
+	/ Widget Settings
 */
-.widget-settings form,
-.create-theme form {
+.widget-settings form {
 	overflow: auto;
 	padding: 0 25px;
 	height: calc(100% - 110px);
 }
 
-.widget-settings .form-group:last-child,
-.create-theme .form-group:last-child {
+.widget-settings .form-group:last-child {
 	margin-bottom: 0;
 }
 
@@ -1280,15 +1284,6 @@ body.resizing .medley {
 	font-family: FontAwesome;
 }
 
-.create-theme select,
-.create-theme textarea,
-.create-theme input[type="tel"],
-.create-theme input[type="text"],
-.create-theme input[type="time"],
-.create-theme input[type="email"],
-.create-theme input[type="search"],
-.create-theme input[type="number"],
-
 .widget-settings select,
 .widget-settings textarea,
 .widget-settings input[type="tel"],
@@ -1305,16 +1300,12 @@ body.resizing .medley {
 	background: #FFF;
 }
 
-.create-theme select[size],
-.create-theme select[multiple],
-
 .widget-settings select[size],
 .widget-settings select[multiple] {
 	padding: 10px!important;
 }
 
-.widget-settings .btn.save,
-.create-theme .btn.save {
+.widget-settings .btn.save {
 	float: right;
 	margin-right: 20px;
 	margin-top: 20px;
@@ -1345,7 +1336,9 @@ body.resizing .medley {
 	background: #F5F5F5;
 	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 	-webkit-transform: translateY(-50px) translateZ(0);
-	transition: all .25s ease-in-out, visibility 0s .25s;
+
+	/* For some reason manually setting -webkit-transform and opacity transitions instead of `all` seems to fix popping-in issues. */
+	transition: -webkit-transform .3s ease-in-out, opacity .3s ease-in-out, visibility 0s .3s;
 }
 
 .modal:not(.visible) * {
@@ -1356,7 +1349,7 @@ body.resizing .medley {
 	opacity: 1;
 	visibility: visible;
 	-webkit-transform: translateY(0) translateZ(0);
-	transition: all .3s ease-in-out, visibility 0s 0s;
+	transition: -webkit-transform .3s ease-in-out, opacity .3s ease-in-out, visibility 0s 0s; /* See above */
 }
 
 .modal > .title,
@@ -1822,80 +1815,118 @@ body.resizing .medley {
 
 /*---------------------------------------------
 	/ Widget Store
-	All of these need to use direct child selectors so nothing messes up the widget preview
+	These are direct selectors so they don't interfere with the widget previews
 */
+.modal.store {
+	padding: 0;
+	background: #FFF;
+	overflow: visible; /* This fixes the 1px white gap above the close button caused by subpixel rounding in the automatic modal centering. */
+	max-width: 1200px;
+	max-height: 700px;
+}
+
+.store > .title,
+.store > .detail > .title {
+	z-index: 9;
+	height: 70px;
+	font-size: 20px;
+	padding: 25px 30px;
+	border-bottom: 1px solid #EEE;
+	font-family: Open Sans, sans-serif;
+}
+
 .store > .title {
-	margin-right: 13px;
+	box-shadow: 0 4px 3px -2px rgba(0, 0, 0, .05);
+}
+
+.store > .close {
+	top: 0;
+	right: 0;
+	width: 70px;
+	height: 70px;
+	z-index: 999;
+	line-height: 70px;
+	text-align: center;
+	-webkit-text-stroke: 2px #FFF;
+}
+
+.store > .close:hover {
+	color: #666;
+	background: #EEE;
+	-webkit-text-stroke: 2px #EEE;
+}
+
+.store > .close:before {
+	font-size: 35px;
+	content: "\E678";
+	font-family: Entypo;
 }
 
 .store > .content,
-.store > h2.title {
-	right: 0;
+.store > .title {
 	position: relative;
-	transition: right .5s ease-in-out;
 }
 
 .store > .content {
 	overflow: auto;
-	padding-right: 5px;
+	padding: 10px 15px;
+	background: #F5F5F5;
 	height: calc(100% - 70px);
 }
 
-.store > .content > .widget {
+.store > .content:before {
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 4px;
+	z-index: 99;
+	content: "";
+	position: absolute;
+	background: #F5F5F5;
+}
+
+.store > .content .widget {
 	margin: 5px;
 	cursor: pointer;
 	overflow: hidden;
 	background: #FFF;
 	position: relative;
-	text-align: center;
 	border-radius: 3px;
 	display: inline-block;
-	padding: 10px 5px 10px;
-	width: calc((100% / 6) - 13.33px);
-	border: 1px solid rgba(0, 0, 0, 0.05);
+	width: calc((100% / 4) - 13.33px);
 	box-shadow: 0 1px 2px rgba(102, 102, 102, 0.1);
 }
 
-.store > .content > .widget > img {
+.store > .content .widget:hover {
+	background: #FCFCFC;
+}
+
+.store > .content .widget img {
 	width: 80px;
-	border-radius: 4px;
-	margin-bottom: 10px;
-	display: inline-block;
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+	float: left;
+	margin: 10px;
+	margin-right: 15px;
+	border-radius: 2px;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 
-.store > .content > .widget > h2.title {
-	font-size: 15px;
-	line-height: 20px;
-	font-family: Open Sans, sans-serif;
-}
-
-.store > .content > .widget > .info {
-	top: 0;
-	left: 0;
-	opacity: 0;
-	height: 100%;
-	background: #FFF;
-	padding: 15px 10px;
-	position: absolute;
-	transition: all .15s ease-in-out;
-}
-
-.store > .content > .widget:hover > .info {
-	opacity: 1;
-}
-
-.store > .content > .widget > .title,
-.store > .content > .widget > .info > h2 {
+.store > .content .widget h2.title {
 	font-size: 16px;
+	overflow: hidden;
 	line-height: 20px;
-	margin-bottom: 5px;
+	margin: 8px 0 4px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 	font-family: Open Sans, sans-serif;
 }
 
-.store > .content > .widget > .info > .desc {
+.store > .content .widget .desc {
 	color: #666;
 	font-size: 12px;
+	overflow: hidden;
+	max-height: 60px;
+	line-height: 20px;
+	padding-right: 10px;
 	font-family: Open Sans, sans-serif;
 }
 
@@ -1905,50 +1936,53 @@ body.resizing .medley {
 
 /*---------------------------------------------
 	/ Store Detail
+	These ALL need to be direct selectors so they don't interfere with the previews
 */
-.store.detail > .close:after {
-	float: left;
-	color: #428BCA;
-	margin-right: 10px;
-	content: "Back to store";
-}
-
-.store.detail > .content,
-.store.detail > h2.title {
-	right: calc(100% + 10px);
-}
-
 .store.detail > .detail {
-	left: 10px;
+	visibility: visible;
+	-webkit-transform: scale(1) translateZ(0);
+	transition: -webkit-transform .3s 0s ease-in-out, visibility 0s 0s linear;
 }
 
 .store > .detail {
-	top: 20px;
-	left: 100%;
-	bottom: 10px;
-	padding: 0 10px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 99; /* Just over the store, but under the close button so the JS is simpler */
+	background: #FFF;
 	position: absolute;
-	width: calc(100% - 20px);
-	transition: left .5s ease-in-out;
+	visibility: hidden;
+	-webkit-transform: scale(0) translateZ(0);
+	transition: -webkit-transform .3s 0s ease-in-out, visibility 0s .3s linear;
 }
 
-.store > .detail > h3.title {
-	border-bottom: 0;
-	padding-left: 5px;
-	padding-bottom: 15px;
+.store > .detail > div > h4 {
+	font-size: 13px;
+	margin-top: 25px;
+	min-height: 16px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+	font-family: Open Sans, sans-serif;
 }
 
-.store > .detail > .sizes {
-	margin-left: 15px;
+.store > .detail > .desc-container {
+	float: left;
+	margin-left: 25px;
+	width: calc(100% - 550px);
+	height: calc(100% - 85px);
 }
 
-.store > .detail > .sizes > h3 {
-	font-size: 15px;
-	margin-right: 5px;
-	display: inline-block;
+.store > .detail > .desc-container h4 .legend {
+	float: right;
+	font-size: 13px;
+	font-weight: 400;
+	padding-right: 25px;
+	text-transform: none;
 }
 
-.store > .detail > .sizes > section {
+.store > .detail > .desc-container .handle {
 	background: #FFF;
 	padding: 10px 25px;
 	margin-right: 10px;
@@ -1959,56 +1993,35 @@ body.resizing .medley {
 	box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1);
 }
 
-.store > .detail > .sizes > section:hover {
+.store > .detail > .desc-container .handle:first-of-type {
+	margin-left: 20px;
+}
+
+.store > .detail > .desc-container .handle:hover {
 	opacity: .8;
 	cursor: move;
 	background-color: #FAFAFA;
 }
 
-.store > .detail > .sizes > p.legend {
-	display: block;
-	font-size: 12px;
-	margin-top: 10px;
-}
-
-.store > .detail > div > h4 {
-	font-size: 15px;
-	margin-top: 30px;
-	min-height: 16px;
-	font-weight: bold;
-	margin-bottom: 15px;
-}
-
-.store > .detail > .desc-container {
-	width: 53%;
-	float: left;
-	display: flex;
-	flex-flow: column;
-	max-height: calc(100% - 125px);
-}
-
-.store > .detail > .desc-container > .desc {
+.store > .detail > .desc-container .desc {
 	overflow: auto;
 	margin-left: 15px;
-	padding-right: 15px;
 	margin-right: 5px;
+	padding-right: 15px;
+	height: calc(100% - 155px);
 }
 
 .store > .detail > .preview-container {
-	width: 45.5%;
+	width: 440px;
 	float: right;
-	display: flex;
-	flex-flow: column;
-	max-height: calc(100% - 125px);
-}
-
-.store > .detail > .preview-container > h4 {
-	margin-top: 20px;
+	margin-right: 25px;
+	height: calc(100% - 85px);
 }
 
 .store > .detail > .preview-container > .preview {
-	overflow: auto;
+	overflow-x: hidden;
 	padding-right: 15px;
+	height: calc(100% - 55px);
 }
 
 .store > .detail > .preview-container > .preview > .widget {
@@ -2036,60 +2049,177 @@ body.resizing .medley {
 /*---------------------------------------------
 	/ Themes
 */
+.modal.themes + .modal-overlay {
+	z-index: 999998; /* Just under the themes modal but over the settings */
+}
+
 .modal.themes {
+	top: 25px;
+	left: 25px;
+	padding: 0;
+	right: 25px;
+	bottom: 25px;
+	cursor: default;
 	z-index: 999999;
+	background: #FFF;
+	max-width: 1400px;
+	max-height: 700px;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 .modal.themes .content > .title {
-	padding-bottom: 10px;
-}
-
-.themes .container {
-	padding: 0;
-	width: 100%;
-	display: flex;
-	overflow: auto;
-	flex-flow: row wrap;
-	height: calc(100% - 25px);
-}
-
-.themes .theme {
-	flex: 1 25%;
-	margin: 10px;
-	overflow: hidden;
-	max-width: 222px;
+	z-index: 1;
+	line-height: 20px;
 	position: relative;
-	background-size: 100% auto;
+	padding: 25px 30px;
+	border-bottom: 1px solid #EEE;
+	font-family: Open Sans, sans-serif;
+	box-shadow: 0 4px 3px -2px rgba(0, 0, 0, 0.1);
 }
 
-.themes .custom .text {
+.themes .close {
 	top: 0;
+	right: 0;
+	width: 70px;
+	height: 70px;
+	z-index: 9;
+	line-height: 70px;
+	text-align: center;
+	-webkit-text-stroke: 2px #FFF;
+}
+
+.themes .close:hover {
+	color: #666;
+	background: #EEE;
+	-webkit-text-stroke: 2px #EEE;
+}
+
+.themes .close:before {
+	content: "\E678";
+	font-size: 35px;
+	font-family: Entypo;
+}
+
+.themes .btn {
+	font-size: 14px;
+	font-weight: 300;
+	border-radius: 2px;
+	font-family: Open Sans, sans-serif;
+}
+
+.themes .btn-primary {
+	background: #5BA4E5;
+}
+
+.themes .btn-primary:hover {
+	background: #2F8CDE;
+}
+
+.themes .btn-primary:active {
+	box-shadow: rgba(0, 0, 0, .3) 0 1px 3px inset;
+}
+
+.themes .nav {
+	left: 0;
+	top: 70px;
+	bottom: 0;
+	width: 18%;
+	z-index: 1;
+	background: #FFF;
+	position: absolute;
+	overflow-x: hidden;
+	border-top: 1px solid #EEE;
+}
+
+.themes .nav li {
+	color: #428BCA;
+	cursor: pointer;
+	padding: 15px 20px;
+	padding-left: 35px;
+}
+
+.themes .nav li:hover {
+	background: #EEE;
+}
+
+.themes .nav li.active {
+	color: #333;
+	background: #FFF;
+	margin-right: -1px;
+	box-shadow: inset 0 -1px #EEE;
+}
+
+.themes .nav li:not(:first-child).active {
+	box-shadow: inset 0 1px #EEE, inset 0 -1px #EEE;
+}
+
+.themes .nav li.create {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	padding: 10px;
-	cursor: pointer;
-	background: #EEE;
+	cursor: default;
+	padding: 15px 20px;
 	position: absolute;
-	border: 1px solid rgba(0, 0, 0, 0.03);
+	background: transparent!important;
 }
 
-.themes .custom .text:hover {
-	background: #E5E5E5;
+.themes .nav li.create .btn {
+	width: 100%;
+	padding: 12px;
 }
 
-.themes .custom .text:before {
-	content: "+";
-	font-size: 85px;
-	line-height: 80px;
-	text-align: center;
+.themes .container {
+	top: 70px;
+	right: 0;
+	bottom: 0;
+	width: 82%;
+	opacity: 1;
+	display: flex;
+	position: absolute;
+	overflow-x: hidden;
+	flex-flow: row wrap;
+	padding: 8px 5px 8px 8px;
+	align-content: flex-start;
+	border-left: 1px solid #EEE;
+	transition: opacity .25s ease-in-out;
+}
+
+.themes .container:after {
+	display: none;
+}
+
+.themes .container.fadeout {
+	opacity: 0;
+}
+
+.themes .container:before {
+	left: 0;
+	top: 1px; /* So the border still shows */
+	right: 0;
+	height: 4px;
+	z-index: 99;
+	content: "";
 	display: block;
+	background: #FFF;
+	position: absolute;
 }
 
-.themes .custom h2 {
-	color: #555;
-	font-size: 18px;
-	text-align: center;
+
+
+
+
+/*---------------------------------------------
+	/ Themes / Theme
+*/
+.themes .theme {
+	flex: 1 20%;
+	height: 125px;
+	overflow: hidden;
+	max-width: 222px;
+	position: relative;
+	margin: 0 3px 3px 0;
+	background-size: 100% auto;
+	box-shadow: 0 1px 1px -1px rgba(0, 0, 0, .3);
 }
 
 .themes .theme .push {
@@ -2097,91 +2227,174 @@ body.resizing .medley {
 	background-size: cover;
 }
 
+.themes .theme .push.lazy {
+	background-color: #EEE;
+	background-image: none!important;
+}
+
 .themes .theme .caption {
+	top: 0;
 	left: 0;
 	right: 0;
+	bottom: 0;
+	opacity: 0;
 	padding: 10px;
 	position: absolute;
-	top: calc(100% - 35px);
-	bottom: calc(-100% + 35px);
-	transition: all .2s ease-in-out;
-	background: rgba(245, 245, 245, 0.8);
+	background: #F5F5F5;
+	transition: opacity .2s ease-in-out;
 }
 
 .themes .theme:hover .caption {
-	top: 0;
-	bottom: 0;
+	opacity: 1;
 }
 
 .themes .theme .caption h2 {
 	font-size: 15px;
-	line-height: 18px;
-	margin-bottom: 10px;
 	font-weight: 600;
-	font-family: open sans, sans-serif;
+	line-height: 18px;
+	font-family: Open Sans, sans-serif;
 }
 
-.themes .theme .features {
+.themes .theme .cached {
+	color: #666;
 	float: right;
-	font-size: 14px;
-	margin-right: -6px;
-	font-weight: 400;
-}
-
-.themes .features .offline:before {
-	content: "\f0ed";
-}
-
-.themes .features .time:before {
-	content: "\f017";
-}
-
-.themes .features .random:before {
-	content: "\f074";
+	font-size: 12px;
+	font-weight: 600;
+	font-family: Open Sans, sans-serif;
 }
 
 .themes .theme .specs {
-	margin: 15px 0;
 	font-size: 13px;
 }
 
-.themes .specs span:before,
-.themes .features span:before {
-	margin: 0 6px;
-	font-family: FontAwesome;
+.themes .theme .caption h2 + .specs {
+	margin-top: 10px;
 }
 
-.themes .specs .resolution:before {
-	content: "\f0b2";
+.themes .theme .specs span:not(:first-child) {
+	display: block;
+	padding-top: 5px;
 }
 
 .themes .theme .btn {
-	bottom: 10px;
+	left: 0;
+	bottom: 0;
+	width: 50%;
+	font-size: 14px;
+	font-weight: 300;
+	border-radius: 0;
 	position: absolute;
+	font-family: Open Sans, sans-serif;
 }
 
 .themes .theme .btn.preview {
-	right: 10px;
+	right: 0;
+	left: 50%;
 }
 
 .themes .theme .btn.edit {
-	position: static;
+	bottom: 32px;
 }
 
 .themes .theme .btn.delete {
-	position: static;
-	float: right;
+	right: 0;
+	left: 50%;
+	bottom: 32px;
 }
+
+
 
 
 
 
 /*---------------------------------------------
-	/ Themes / Create Theme
+	/ Themes / Create
 */
-.modal.create-theme {
-	width: 400px;
-	max-height: 500px;
+.themes.create .content .title {
+	box-shadow: none;
+}
+
+.themes.create form {
+	width: 35%;
+	float: left;
+	overflow: auto;
+	padding: 25px 40px;
+	padding-right: 25px;
+	height: calc(100% - 135px);
+}
+
+.themes.create select,
+.themes.create input[type="text"] {
+	width: 100%;
+	border-radius: 2px;
+}
+
+.themes.create #image {
+	width: 60%;
+}
+
+.themes.create .upload {
+	width: 40%;
+	float: right;
+	line-height: 35px;
+	padding-left: 15px;
+}
+
+.themes.create .upload input {
+	float: right;
+	padding: 6px 0;
+	width: calc(100% - 30px);
+	-webkit-appearance: none;
+}
+
+.themes.create .upload input:after {
+	display: block;
+	text-align: center;
+	content: "Upload an image";
+}
+
+.themes.create .upload input::-webkit-file-upload-button {
+	display: none;
+}
+
+.themes.create .content > .preview {
+	float: right;
+	margin: 25px 30px;
+	position: relative;
+	border-radius: 8px;
+	width: calc(65% - 70px);
+	border: 20px solid #555;
+	height: calc(100% - 205px);
+
+	/* Tab background defaults */
+	background-size: cover;
+	background-color: #EEE;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: top center;
+}
+
+.themes.create .content > .preview:before {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: "";
+	position: absolute;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-image: url(/images/preview.png);
+	box-shadow: inset 0 -12px rgba(241, 241, 241, 0.8); /* The footer isn't included in the default image. */
+}
+
+.themes.create .buttons {
+	clear: both;
+	text-align: right;
+	padding: 10px 40px;
+}
+
+.themes.create .buttons .preview {
+	margin-right: 25px;
 }
 
 
@@ -2351,7 +2564,7 @@ body.resizing .medley {
 	height: 100%;
 	overflow: hidden;
 	position: absolute;
-	border-left: 1px solid #EDECE4;
+	border-left: 1px solid #EEE;
 }
 
 .settings .tab {
@@ -2364,24 +2577,20 @@ body.resizing .medley {
 	overflow: hidden;
 	position: absolute;
 	visibility: hidden;
-	transition: all .15s ease-in-out, visibility 0s .15s linear;
+	transition: opacity .2s ease-in-out, visibility 0s .2s linear;
 }
 
 .settings .tab.active {
 	opacity: 1;
 	z-index: 1;
 	visibility: visible;
-	transition: all .15s ease-in-out, visibility 0s 0s linear;
+	transition: opacity .2s ease-in-out, visibility 0s 0s linear;
 }
 
 .settings .tab .content {
 	overflow: auto;
 	padding: 25px 0;
 	height: calc(100% - 70px);
-}
-
-.settings .tab .content::-webkit-scrollbar-thumb {
-	border-radius: 0;
 }
 
 .settings .tab .header {
@@ -2565,154 +2774,6 @@ body.resizing .medley {
 
 
 
-
-/*---------------------------------------------
-	/ Settings / Columns
-*/
-.settings .columns {
-	font-size: 0;
-}
-
-.settings .columns label {
-	width: 125px;
-	margin-bottom: 10px;
-	margin-right: 10px;
-	font-size: 14px;
-}
-
-.settings .columns .icon {
-	width: 100px;
-	height: 55px;
-	padding: 5px;
-	font-size: 0;
-	margin-left: 5px;
-	border-radius: 4px;
-	text-align: center;
-	background: #FBFBFB;
-	display: inline-block;
-	vertical-align: middle;
-	box-shadow: inset 0 0 0 1px #EEE;
-}
-
-.settings .columns .icon:before,
-.settings .columns .icon:after,
-.settings .columns .icon .column,
-.settings .columns .icon .column:before,
-.settings .columns .icon .column:after {
-	height: 100%;
-	margin: 0 2px;
-	border-radius: 2px;
-	background: #59BD81;
-	display: inline-block;
-}
-
-.settings .columns .one.fluid .column {
-	width: 87px;
-}
-
-.settings .columns .one.fixed .column {
-	width: 25px;
-}
-
-.settings .columns .two .column,
-.settings .columns .two .icon:before {
-	content: "";
-	width: 25px;
-}
-
-.settings .columns .two.fluid .column,
-.settings .columns .two.fluid .icon:before {
-	width: 41px;
-}
-
-.settings .columns .three .column,
-.settings .columns .three .icon:before,
-.settings .columns .three .icon:after {
-	content: "";
-	width: 19px;
-}
-
-.settings .columns .three.fluid .column,
-.settings .columns .three.fluid .icon:before,
-.settings .columns .three.fluid .icon:after {
-	width: 26px;
-}
-
-.settings .columns .four .column,
-.settings .columns .four .icon:before,
-.settings .columns .four .icon:after,
-.settings .columns .four .column:before {
-	content: "";
-	width: 14px;
-}
-
-.settings .columns .four.fluid .column,
-.settings .columns .four.fluid .icon:before,
-.settings .columns .four.fluid .icon:after,
-.settings .columns .four.fluid .column:before {
-	width: 19px;
-}
-
-.settings .columns .four.fluid .column {
-	margin-left: 23px;
-}
-
-.settings .columns .four .column:before {
-	left: -100%;
-	height: 100%;
-	margin-left: -3px;
-	position: absolute;
-}
-
-.settings .columns .four .column {
-	margin-left: 18px;
-	position: relative;
-}
-
-.settings .columns .five .column,
-.settings .columns .five .icon:before,
-.settings .columns .five .icon:after,
-.settings .columns .five .column:before,
-.settings .columns .five .column:after {
-	content: "";
-	width: 10px;
-}
-
-.settings .columns .five.fluid .column,
-.settings .columns .five.fluid .icon:before,
-.settings .columns .five.fluid .icon:after,
-.settings .columns .five.fluid .column:before,
-.settings .columns .five.fluid .column:after {
-	width: 14.6px;
-}
-
-.settings .columns .five.fluid .column {
-	margin: 0 19px;
-}
-
-.settings .columns .five .column:before,
-.settings .columns .five .column:after {
-	left: -100%;
-	height: 100%;
-	margin-left: -3px;
-	position: absolute;
-}
-
-.settings .columns .five .column:after {
-	left: 100%;
-	margin-left: 3px;
-	margin-right: -3px;
-}
-
-.settings .columns .five .column {
-	margin: 0 14px;
-	position: relative;
-}
-
-
-
-
-
 /*---------------------------------------------
 	/ Settings / Advanced
 */
@@ -2733,6 +2794,12 @@ body.resizing .medley {
 	height: 80px;
 	margin-top: 15px;
 	margin-right: 20%;
+}
+
+.settings .css textarea {
+	width: 70%;
+	height: 120px;
+	margin-top: 10px;
 }
 
 .settings .advanced .reset {
@@ -2799,7 +2866,6 @@ body.resizing .medley {
 .sp-clear { display: none; }
 .sp-clear.sp-clear-display { background-position: center; }
 .sp-clear-enabled .sp-clear { display: block; position:absolute; top:0px; right:0; bottom:0; left:84%; height: 28px; }
-.sp-container, .sp-replacer, .sp-preview, .sp-dragger, .sp-slider, .sp-alpha, .sp-clear, .sp-alpha-handle, .sp-container.sp-dragging .sp-input, .sp-container button { -webkit-user-select:none; user-select: none; }
 .sp-palette-disabled .sp-palette-container { display: none; }
 .sp-initial-disabled .sp-initial { display: none; }
 .sp-sat { background-image: linear-gradient(to right, #fff, rgba(204, 154, 129, 0)); }

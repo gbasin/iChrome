@@ -362,7 +362,7 @@
 }
 
 .stocks .info .stock span {
-	width: 115px;
+	width: 135px;
 	color: #666;
 	display: block;
 	font-size: 18px;
@@ -470,6 +470,8 @@
 	margin: 0;
 	padding: 0;
 	margin: -15px;
+	max-height: 600px;
+	overflow-x: hidden;
 }
 
 .rss .item,
@@ -718,7 +720,6 @@
 */
 .feedly .items {
 	outline: 0;
-	overflow: auto;
 	max-height: 475px;
 	position: relative;
 }
@@ -1433,7 +1434,8 @@
 }
 
 .notes .note .content {
-	overflow: auto;
+	cursor: text;
+	overflow-x: hidden;
 	max-height: calc(100% - 35px);
 }
 
@@ -2074,7 +2076,6 @@
 }
 
 .now .card {
-	z-index: 9;
 	color: #333;
 	flex: 1 100%;
 	overflow: hidden;
@@ -2086,6 +2087,7 @@
 }
 
 .now .card:not(:first-child) {
+	z-index: 9;
 	margin-top: 15px;
 }
 
@@ -2102,6 +2104,10 @@
 	cursor: pointer;
 	position: absolute;
 	font-family: Entypo;
+}
+
+.now .card:first-child .dismiss {
+	right: 20px;
 }
 
 .now .card .dismiss:hover {
@@ -2397,7 +2403,7 @@
 	right: 15px;
 	color: #888;
 	font-size: 30px;
-	content: "\e6d4";
+	content: "\E6D4";
 	line-height: 15px;
 	position: absolute;
 	font-family: Entypo;
@@ -2410,8 +2416,11 @@
 
 .drive .file h2 {
 	font-size: 18px;
+	overflow: hidden;
 	line-height: 20px;
+	white-space: nowrap;
 	font-weight: normal;
+	text-overflow: ellipsis;
 }
 
 .drive .file .modified {

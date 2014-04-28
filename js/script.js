@@ -9,7 +9,7 @@ Number.prototype.abbr = function(min, precision) {
 
 	if (value >= min) {
 		var suffixes = ["", "K", "M", "B","T"],
-			suffixNum = Math.floor(("" + value).length / 3),
+			suffixNum = Math.floor(("" + parseInt(value)).length / 3),
 			shortValue = "";
 
 		for (var length = precision; length >= 1; length--) {
@@ -144,6 +144,9 @@ String.prototype.parseUrl = function() {
 	if (this.indexOf("://") == 0) {
 		return "https" + this;
 	}
+	else if (this.indexOf("data:") == 0 || this.indexOf("filesystem:") == 0 || this.indexOf("blob:") == 0) {
+		return this.toString();
+	}
 	else if (this.indexOf("://") == -1) {
 		return "http://" + this;
 	}
@@ -221,6 +224,10 @@ iChrome.deferred = function(refresh) {
 		iChrome.Status.log("Speech done");
 	}
 
+	iChrome.Themes();
+
+	iChrome.Status.log("Themes modal done");
+
 	iChrome.Settings();
 
 	iChrome.Status.log("Settings done");
@@ -277,10 +284,22 @@ iChrome.deferred = function(refresh) {
 		});
 	});
 
+	var appsLoaded = false;
+
 	$(".apps").on("click", function() {
 		var panel = $(this).find(".panel");
 
 		if (!panel.hasClass("visible")) {
+			if (!appsLoaded) {
+				$(this).find("img[data-src]").each(function(e, i) {
+					this.setAttribute("src", this.getAttribute("data-src"));
+
+					this.setAttribute("data-src", null);
+				});
+
+				appsLoaded = true;
+			}
+
 			var elms = $(this).find("*");
 
 			$(document.body).on("click.apps", function(e) {
@@ -506,9 +525,10 @@ iChrome.refresh = function(all) {
 	iChrome.Tabs.Nav.current = parseInt(iChrome.Storage.settings.def || 1);
 
 	if (all) {
-		chrome.storage.local.get(["tabs", "settings", "themes"], function(d) {
+		chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
 			iChrome.Storage.tabs = d.tabs || iChrome.Storage.Defaults.tabs;
 			iChrome.Storage.themes = d.themes || iChrome.Storage.Defaults.themes;
+			iChrome.Storage.cached = d.cached || iChrome.Storage.Defaults.cached;
 			iChrome.Storage.settings = d.settings || iChrome.Storage.Defaults.settings;
 
 			if (typeof d.tabs == "string") {
@@ -538,7 +558,7 @@ iChrome.refresh = function(all) {
 // Internal log
 iChrome.Status = function() {
 	if (iChrome.Logs.error.length) {
-		return "There are " + (iChrome.Logs.error.length + 1) + " errors in the log.";
+		return "There are " + iChrome.Logs.error.length + " errors in the log.";
 	}
 	
 	return "Everything looks good, there are no errors in the log.";
@@ -573,7 +593,7 @@ iChrome.Status.log = function(msg) {
 iChrome.Status.error = function(msg) {
 	iChrome.Logs.error.push([new Date().getTime(), msg]);
 
-	console.log("There are " + (iChrome.Logs.error.length + 1) + " errors in the log.");
+	console.log("There are " + iChrome.Logs.error.length + " errors in the log.");
 };
 
 iChrome.Status.info = function(msg) {
@@ -594,7 +614,7 @@ iChrome.CSS = function() {
 	$(document.body).append(iChrome.render("css", {
 		wcolor: iChrome.Storage.settings.wcolor || "#FFF",
 		hcolor: iChrome.Storage.settings.hcolor || "#F1F1F1",
-		custom: ""
+		custom: iChrome.Storage.settings["custom-css"] || ""
 	}));
 
 	iChrome.Status.log("CSS generated");
@@ -660,13 +680,13 @@ iChrome.Settings = function() {
 	var settings = $.extend({}, iChrome.Storage.settings);
 
 	settings.tabForms = [];
-	settings.themename = (iChrome.Settings.Themes.themes[settings.theme] || iChrome.Storage.themes[settings.theme.replace("custom", "")] || {}).name;
+	settings.themename = (iChrome.Storage.cached[settings.theme] || iChrome.Storage.themes[settings.theme.replace("custom", "")] || {}).name;
 
 	iChrome.Storage.tabs.forEach(function(tab, i) {
 		settings.tabForms.push({
 			name: tab.name || "Home",
-			theme: tab.theme || iChrome.Storage.settings.theme || "mossrivers",
-			themename: (iChrome.Settings.Themes.themes[tab.theme] || iChrome.Storage.themes[tab.theme.replace("custom", "")] || {}).name,
+			theme: tab.theme || iChrome.Storage.settings.theme || "default",
+			themename: (iChrome.Storage.cached[tab.theme] || iChrome.Storage.themes[tab.theme.replace("custom", "")] || {}).name,
 			id: tab.id,
 			fixed: !!tab.fixed,
 			alignment: tab.alignment || "center",
@@ -681,8 +701,6 @@ iChrome.Settings = function() {
 		classes: "settings",
 		html: iChrome.render("settings", settings)
 	});
-
-	iChrome.Settings.Themes();
 
 	$(".icon.settings").on("click", function(e) {
 		modal.show();
@@ -808,9 +826,10 @@ iChrome.Settings.handlers = function(modal, settings) {
 				themes: settings.themes || iChrome.Storage.themes,
 				settings: settings.settings || iChrome.Storage.settings
 			}, function() {
-				chrome.storage.local.get(["tabs", "settings", "themes"], function(d) {
+				chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
 					iChrome.Storage.tabs = d.tabs || iChrome.Storage.Defaults.tabs;
 					iChrome.Storage.themes = d.themes || iChrome.Storage.Defaults.themes;
+					iChrome.Storage.cached = d.cached || iChrome.Storage.Defaults.cached;
 					iChrome.Storage.settings = d.settings || iChrome.Storage.Defaults.settings;
 
 					if (typeof d.tabs == "string") {
@@ -842,12 +861,65 @@ iChrome.Settings.handlers = function(modal, settings) {
 			return;
 		}
 
-		$("#backup").val(JSON.stringify(iChrome.Storage.Defaults));
+		chrome.storage.sync.clear(function() {
+			chrome.storage.local.clear(function() {
+				var next = function() {
+					var uses = localStorage.uses,
+						uid = localStorage.uid;
 
-		modal.elm.find(".btn.restore").click();
+					localStorage.clear();
+
+					if (uses) localStorage.uses = uses;
+					if (uid) localStorage.uid = uid;
+
+					chrome.storage.local.set(iChrome.Storage.Defaults, function() {
+						chrome.storage.sync.set(iChrome.Storage.Defaults, function() {
+							window.onbeforeunload = null;
+
+							chrome.extension.getBackgroundPage().setReload();
+
+							location.reload();
+						});
+					});
+				};
+
+				window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+					var reader = fs.root.createReader(),
+						length = 0, found;
+
+					(function read() { // Recursive and self executing, necessary as per the specs
+						reader.readEntries(function(results) {
+							if (results.length) {
+								results.forEach(function(e, i) {
+									length++;
+
+									if (e.isDirectory) {
+										e.removeRecursively();
+									}
+									else {
+										e.remove(function() {
+											length--;
+
+											if (!length) {
+												next();
+											}
+										});
+									}
+								});
+
+								read();
+							}
+							else if (!length) {
+								next();
+							}
+						}, next);
+					})();
+				}, next);
+			});
+		});
 	})
 	.find("#alignment").val(settings.alignment).end()
-	.find("input[name=columns][value='" + settings.columns + "']").attr("checked", true).end()
+	.find("#columns").val(settings.columns).end()
 	.find("input.color").spectrum({
 		showInput: true,
 		showAlpha: true,
@@ -859,30 +931,23 @@ iChrome.Settings.handlers = function(modal, settings) {
 };
 
 iChrome.Settings.showThemes = function(elm) {
-	iChrome.Settings.Themes.elm = elm;
+	iChrome.Themes.elm = elm;
 
-	iChrome.Settings.Themes.show(function(theme) {
+	iChrome.Themes.show(function(theme, id) {
+		this.prev("input").val(id || theme.id).end()
+			.next(".current").text(theme.name || (typeof theme.id == "number" ? "Theme " + theme.id : ""));
 
-		this.prev("input").val(theme).end()
-			.next(".current").text((iChrome.Settings.Themes.themes[theme] ||
-								iChrome.Storage.themes[theme.replace("custom", "")] || {name:""}).name);
-
-		iChrome.Settings.Themes.modal.modal.removeClass("visible");
-
+		iChrome.Themes.hide();
 	}.bind($(elm)), function(theme) {
-
 		this.attr("data-style", this.attr("style")).attr("style", iChrome.Tabs.getCSS({theme:theme}));
 
-		iChrome.Settings.Themes.overlay.addClass("visible").one("click", function() {
-			iChrome.Settings.modal.show();
-			iChrome.Settings.Themes.modal.modal.addClass("visible");
+		iChrome.Themes.overlay.addClass("visible").one("click", function() {
+			$(".modal.previewHidden, .modal-overlay.previewHidden").removeClass("previewHidden").addClass("visible");
 
 			this.attr("style", this.attr("data-style")).attr("data-style", "");
 		}.bind(this));
 
-		iChrome.Settings.modal.hide();
-		iChrome.Settings.Themes.modal.hide();
-
+		$(".modal.visible, .modal-overlay.visible").removeClass("visible").addClass("previewHidden");
 	}.bind($(document.body)));
 };
 
@@ -1018,132 +1083,22 @@ iChrome.Settings.save = function() {
 	iChrome.refresh();
 };
 
-iChrome.Settings.Themes = function() {
-	var custom = $.extend(true, {}, {themes: iChrome.Storage.themes}).themes,
-		themes = $.extend(true, {}, iChrome.Settings.Themes.themes),
-		merged = [],
-		key;
 
-	custom.forEach(function(e, i) {
-		custom[i] = $.extend({}, iChrome.Settings.Themes.defaults, e);
-
-		custom[i].id = "custom" + i;
-	});
-
-	for (key in themes) {
-		themes[key].id = key;
-
-		themes[key].image = themes[key].image.replace("jpg", "png");
-
-		merged.push(themes[key]);
-	}
-
+// Themes
+iChrome.Themes = function() {
 	var modal = this.Themes.modal = new iChrome.Modal({
 			classes: "themes",
-			html: iChrome.render("themes", {
-				themes: custom.concat(merged)
-			})
-		}),
-		use = function(theme) {console.log("Default use handler used on a theme!!!! " + theme)},
-		preview = function(theme) {console.log("Default preview handler used on a theme!!!! " + theme)};
+			html: iChrome.render("themes")
+		});
 
-	modal.elm.on("click", ".btn.use", function(e) {
-		e.preventDefault();
-
-		var id = $(this).parents(".theme").first().attr("data-id");
-
-		_gaq.push(["_trackEvent", "Themes", "Use", id + ""]);
-
-		use(id);
-	}).on("click", ".btn.preview", function(e) {
-		e.preventDefault();
-
-		preview($(this).parents(".theme").first().attr("data-id"));
-	}).on("click", ".btn.delete", function(e) {
-		e.preventDefault();
-
-		var id = $(this).parents(".theme").first().attr("data-id").replace("custom-", "");
-
-		iChrome.Storage.themes.splice(id, 1);
-
-		iChrome.Storage.sync();
-
-		modal.destroy();
-
-		iChrome.Settings.Themes();
-
-		iChrome.Settings.Themes.modal.show();
-	}).on("click", ".btn.edit", function(e) {
-		e.preventDefault();
-
-		var id = $(this).parents(".theme").first().attr("data-id").replace("custom", ""),
-			data = $.extend(true, {}, iChrome.Settings.Themes.defaults, iChrome.Storage.themes[id]);
-
-		data.edit = true;
-		data.id = id;
-
-		modal.elm.find(".modal")
-			.children(":not(.close)").remove().end()
-			.append(iChrome.render("themes.create", data))
-			.find("#position").val(data.position).end()
-			.find("#scaling").val(data.scaling).end()
-			.find("#repeat").val(data.repeat).end()
-			.find("#color").spectrum({
-				showInput: true,
-				showAlpha: true,
-				showInitial: true,
-				showButtons: false,
-				preferredFormat: "rgb",
-				clickoutFiresChange: true
-			}).end()
-			.add(modal.elm.find(".modal-overlay")).addClass("visible");
-	}).on("click", ".theme.custom", function() {
-		modal.elm
-			.find(".modal").children(":not(.close)").remove().end()
-			.append(iChrome.render("themes.create", iChrome.Settings.Themes.defaults))
-			.find("#color").spectrum({
-				showInput: true,
-				showAlpha: true,
-				showInitial: true,
-				showButtons: false,
-				preferredFormat: "rgb",
-				clickoutFiresChange: true
-			}).end()
-			.add(modal.elm.find(".modal-overlay")).addClass("visible");
+	this.Themes.Custom.modal = new iChrome.Modal({
+		classes: "themes create",
+		html: ""
 	});
 
-	modal.elm.find(".modal").on("keydown", "input:not([type=radio], [type=checkbox]), textarea, select", function(e) {
-		if (e.which == 13) {
-			e.preventDefault();
+	this.Themes.Custom.handlers(this.Themes.Custom.modal);
 
-			iChrome.Settings.Themes.create(modal.elm.find(".modal form"));
-		}
-	}).on("click", ".btn.save", function(e) {
-		e.preventDefault();
-
-		if (modal.elm.find("input[type='hidden']").length) {
-			iChrome.Settings.Themes.edit(modal.elm.find(".modal form"));
-		}
-		else {
-			iChrome.Settings.Themes.create(modal.elm.find(".modal form"));
-		}
-	}).on("click", ".close", function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-
-		modal.elm.find(".modal, .modal-overlay").removeClass("visible");
-	});
-
-	modal.elm.find(".modal-overlay").on("click", function() {
-		modal.elm.find(".modal, .modal-overlay").removeClass("visible");
-	});
-
-	this.Themes.show = function(cb, prev) {
-		use = cb;
-		preview = prev;
-
-		modal.show();
-	};
+	this.Themes.handlers(modal);
 
 	this.Themes.hide = function() {
 		modal.hide();
@@ -1152,222 +1107,762 @@ iChrome.Settings.Themes = function() {
 	this.Themes.overlay = $(".preview-overlay").on("click", function() {
 		$(this).removeClass("visible");
 	});
+
+	this.Themes.themes = false; // These are here to handle iChrome in-page refreshes.
+	this.Themes.isLoaded = false;
 };
 
-iChrome.Settings.Themes.create = function(form) {
-	var theme = {};
+iChrome.Themes.show = function(cb, prev) {
+	this.use = cb;
+	this.preview = prev;
 
-	form.serializeArray().forEach(function(e, i) {
-		if (e.value !== "") theme[e.name.replace("theme-", "")] = e.value;
+	this.modal.show();
+
+	if (!this.isLoaded) {
+		this.load(this.refresh.bind(this));
+	}
+};
+
+iChrome.Themes.cache = function(theme, cb) {
+	if (iChrome.Storage.cached[theme.id]) { // If already cached
+		return cb(iChrome.Storage.cached[theme.id]);
+	}
+
+	var that = this,
+		err = function(e) {
+			if (e.name == "InvalidStateError") {
+				return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) { // The full 500MB probably won't be used, but the caching will fail if it does.
+					that.fs = fs;
+
+					that.cache(theme, cb);
+				}, err);
+			}
+
+			iChrome.Status.error(e);
+
+			alert("An error occurred while trying to cache the theme you selected, please try again later.");
+		};
+
+	if (!this.fs) {
+		return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+			that.fs = fs;
+
+			that.cache(theme, cb);
+		}, err);
+	}
+	
+	var fs = this.fs,
+		xhr = new XMLHttpRequest();
+
+	xhr.open("GET", "https://s3.amazonaws.com/iChrome/Themes/Images/" + theme.id + ".jpg");
+
+	xhr.responseType = "blob";
+
+	fs.root.getDirectory("Themes", { create: true }, function(dir) {
+		dir.getFile(theme.id + ".jpg", { create: true }, function(fe) {
+			xhr.onload = function(e) {
+				if (xhr.status !== 200) {
+					return err();
+				}
+
+				var blob = xhr.response;
+
+				fe.createWriter(function(writer) {
+					writer.onwrite = function(e) {
+						theme.image = fe.toURL();
+
+						theme.offline = true;
+
+						delete theme.resolution;
+						delete theme.categories;
+						delete theme.filterCategories;
+
+						iChrome.Storage.cached[theme.id] = theme;
+
+						chrome.storage.local.set({
+							cached: iChrome.Storage.cached
+						});
+
+						cb(theme);
+					};
+
+					writer.onerror = err;
+
+					writer.write(blob);
+				}, err);
+			};
+
+			xhr.send();
+		}, err);
+	}, err);
+};
+
+iChrome.Themes.use = function() {};
+iChrome.Themes.preview = function() {};
+
+iChrome.Themes.handlers = function(modal) {
+	var that = this;
+
+	modal.elm.on("click", ".btn.use", function(e) {
+		e.preventDefault();
+
+		var parent = $(this).parents(".theme").first(),
+			id = parseInt(parent.attr("data-id") || 0);
+
+		if (parent.hasClass("custom")) {
+			that.use(iChrome.Storage.themes[id], "custom" + id);
+
+			return _gaq.push(["_trackEvent", "Themes", "Use", "custom" + id]);
+		}
+
+		var id = that.themeIndex[id],
+			theme = $.extend(true, {}, that.themes[id]);
+
+		if (theme) {
+			_gaq.push(["_trackEvent", "Themes", "Use", theme.id + ""]);
+
+			that.cache(theme, that.use);
+		}
+	}).on("click", ".btn.preview", function(e) {
+		e.preventDefault();
+
+		var parent = $(this).parents(".theme").first(),
+			id = parseInt(parent.attr("data-id") || 0);
+
+		if (parent.hasClass("custom")) {
+			that.preview(iChrome.Storage.themes[id], "custom" + id);
+
+			return _gaq.push(["_trackEvent", "Themes", "Preview", "custom" + id]);
+		}
+
+		var id = that.themeIndex[id],
+			theme = $.extend(true, {}, that.themes[id]);
+
+		if (!theme) return;
+
+		if (iChrome.Storage.cached[id]) { // If already cached don't load remote
+			theme.image = iChrome.Storage.cached[id].image;
+		}
+		else {
+			theme.image = "https://s3.amazonaws.com/iChrome/Themes/Images/" + theme.id + ".jpg";
+		}
+
+		that.preview(theme);
+
+		_gaq.push(["_trackEvent", "Themes", "Preview", theme.id + ""]);
+	}).on("click", ".btn.delete", function(e) {
+		e.preventDefault();
+
+		if (!confirm("Are you really sure you would like to delete this theme?\r\nThis action is not reversible, the entire theme will be permanently lost.")) {
+			return false;
+		}
+
+		var id = $(this).parents(".theme").first().attr("data-id").replace("custom-", "");
+
+		iChrome.Themes.Custom.deleteImg(id, function() {
+			iChrome.Themes.Custom.reEnumerate(id, function() {
+				iChrome.Storage.themes.splice(id, 1);
+
+				iChrome.Storage.sync();
+
+				iChrome.Themes.refresh();
+			});
+		});
+	}).on("click", ".btn.edit", function(e) {
+		e.preventDefault();
+
+		var id = parseInt($(this).parents(".theme").first().attr("data-id"));
+		
+		that.Custom.edit(id);
+	}).on("click", "li.create .btn", function() {
+		that.Custom();
+	}).on("click", ".nav li[data-id]", function() {
+		var elm = $(this),
+			id = elm.attr("data-id"),
+			themes = [];
+
+		if (id == "custom") {
+			themes = that.custom;
+		}
+		else if ((id = parseInt(id)) || id === 0) {
+			themes = that.themes.filter(function(e) {
+				return e.filterCategories && e.filterCategories.indexOf(id) !== -1;
+			});
+		}
+		else {
+			themes = that.custom.concat(that.themes);
+		}
+
+		var container = that.modal.elm.find(".container").addClass("fadeout");
+
+		setTimeout(function() {
+			container.html(iChrome.render("themes.listing", {
+				themes: themes
+			})).removeClass("fadeout");
+
+			that.images = modal.elm.find(".theme .push").toArray();
+
+			container.triggerHandler("scroll", [true]);
+		}, 250);
+
+		elm.addClass("active").siblings().removeClass("active");
+	});
+};
+
+iChrome.Themes.load = function(cb) {
+	var that = this;
+
+	$.get("https://s3.amazonaws.com/iChrome/Themes/manifest.json", function(d) {
+		var themes = [],
+			cached = [],
+			themeIndex = {}, key;
+
+		for (key in iChrome.Storage.cached) {
+			cached.push(parseInt(key));
+		}
+
+		d.images.forEach(function(e, i) {
+			var theme = e;
+
+			theme.filterCategories = e.categories;
+			theme.offline = cached.indexOf(e.id) !== -1;
+			theme.image = "https://s3.amazonaws.com/iChrome/Themes/Thumbnails/" + e.id + ".png";
+			theme.resolution = (e.resolution ? e.resolution[0] + "x" + e.resolution[1] : "Unknown");
+
+			if (e.name) {
+				theme.name = e.name;
+			}
+
+			var categories = [];
+
+			e.categories.forEach(function(e, i) {
+				if (d.categories[e]) {
+					categories.push(d.categories[e]);
+				}
+			});
+
+			theme.categories = categories.join(", ");
+
+			themeIndex[e.id] = themes.length;
+
+			themes.push(theme);
+		});
+
+		that.themes = themes;
+		that.themeIndex = themeIndex;
+
+		that.isLoaded = true;
+
+		var key,
+			categories = [];
+
+		for (key in d.categories) {
+			categories.push({
+				id: parseInt(key),
+				name: d.categories[key]
+			});
+		}
+
+		that.modal.elm.html(iChrome.render("themes", {
+			categories: categories.sort(function(a, b) { return a - b; })
+		}));
+
+
+		// Initialize lazy-loading, needs to be done after HTML is replaced
+		that.images = [];
+
+		var coords, timeout, img, length,
+			poll = function() {
+				length = that.images.length;
+
+				for (var i = 0; i < length; i++) { // forEach doesn't play well with element removal, so for needs to be used here
+					img = that.images[i];
+
+					coords = img.getBoundingClientRect();
+
+					if (((coords.top >= 0 && coords.left >= 0 && coords.top) <= window.innerHeight)) {
+						img.className = "push";
+
+						that.images.splice(i, 1);
+
+						length = that.images.length;
+
+						i--;
+					}
+				}
+			};
+
+		that.modal.elm.find(".container").on("scroll", function(now) {
+			clearTimeout(timeout);
+
+			if (now === true) {
+				poll();
+			}
+			else {
+				timeout = setTimeout(poll, 100);
+			}
+		});
+
+		cb();
+	});
+};
+
+iChrome.Themes.refresh = function() {
+	var custom = $.extend(true, {}, {themes: iChrome.Storage.themes}).themes;
+
+	custom.forEach(function(e, i) {
+		custom[i] = $.extend({}, iChrome.Themes.defaults, e);
+
+		custom[i].id = i;
+
+		custom[i].custom = true;
 	});
 
-	theme = $.unextend(iChrome.Settings.Themes.defaults, theme);
+	this.custom = custom;
 
-	iChrome.Storage.themes.push(theme);
+	var container = this.modal.elm.find(".container").html(iChrome.render("themes.listing", {
+		themes: custom.concat(this.themes)
+	}));
 
-	iChrome.Storage.sync();
+	this.images = this.modal.elm.find(".theme .push").toArray();
 
-	iChrome.Settings.Themes.modal.destroy();
-
-	iChrome.Settings.Themes();
-
-	iChrome.Settings.showThemes(iChrome.Settings.Themes.elm);
-
-	_gaq.push(["_trackEvent", "Themes", "Create", "custom" + iChrome.Storage.themes.length]);
+	container.triggerHandler("scroll", [true]);
 };
 
-iChrome.Settings.Themes.edit = function(form) {
+iChrome.Themes.Custom = function() {
+	this.Custom.spectrum(this.Custom.modal.elm
+		.html(iChrome.render("themes.custom", iChrome.Themes.defaults))
+		.find("#color"));
+
+	this.editing = false;
+
+	this.Custom.modal.show();
+};
+
+iChrome.Themes.Custom.handlers = function(modal) {
+	var that = this;
+
+	modal.elm.on("keydown", "input:not([type=radio], [type=checkbox]), textarea, select", function(e) {
+		if (e.which == 13) {
+			e.preventDefault();
+
+			that.save();
+		}
+	}).on("click", ".btn.save", function(e) {
+		e.preventDefault();
+
+		that.save();
+	}).on("click", ".btn.preview", function(e) {
+		e.preventDefault();
+
+		var image, upload,
+			cb = function(url) {
+				var body = $(document.body);
+
+				body.attr("data-style", body.attr("style")).attr("style", "").css({
+					backgroundColor: $("#color").val(),
+					backgroundSize: $("#scaling").val(),
+					backgroundRepeat: $("#repeat").val(),
+					backgroundAttachment: $("#fixed").val(),
+					backgroundPosition: $("#position").val(),
+					backgroundImage: "url(\"" + (url || "") + "\")"
+				});
+
+				iChrome.Themes.overlay.addClass("visible").one("click", function() {
+					$(".modal.previewHidden, .modal-overlay.previewHidden").removeClass("previewHidden").addClass("visible");
+
+					body.attr("style", body.attr("data-style")).attr("data-style", "");
+				}.bind(body));
+
+				$(".modal.visible, .modal-overlay.visible").removeClass("visible").addClass("previewHidden");
+			};
+
+		if (image = $("#image").val()) {
+			cb(image);
+		}
+		else if ((upload = $("#upload")[0].files).length) {
+			var fr = new FileReader();
+
+			fr.onloadend = function() {
+				if (fr.error) {
+					cb();
+				}
+				else {
+					cb(fr.result);
+				}
+			};
+
+			fr.readAsDataURL(upload[0]);
+		}
+		else {
+			cb();
+		}
+	}).on("change", "#color, #image, #upload, #position, #scaling, #repeat", function() {
+		var image, upload,
+			cb = function(url) {
+				that.modal.elm.find(".preview").first().css({
+					backgroundColor: $("#color").val(),
+					backgroundSize: $("#scaling").val(),
+					backgroundRepeat: $("#repeat").val(),
+					backgroundAttachment: $("#fixed").val(),
+					backgroundPosition: $("#position").val(),
+					backgroundImage: "url(\"" + (url || "") + "\")"
+				});
+			};
+
+		if (image = $("#image").val()) {
+			cb(image);
+		}
+		else if ((upload = $("#upload")[0].files).length) {
+			var fr = new FileReader();
+
+			fr.onloadend = function() {
+				if (fr.error) {
+					cb();
+				}
+				else {
+					cb(fr.result);
+				}
+			};
+
+			fr.readAsDataURL(upload[0]);
+		}
+		else {
+			cb();
+		}
+	});
+};
+
+iChrome.Themes.Custom.spectrum = function(jq) {
+	var preview = this.modal.elm.find(".preview")[0];
+
+	return jq.spectrum({
+		showInput: true,
+		showAlpha: true,
+		showInitial: true,
+		showButtons: false,
+		preferredFormat: "rgb",
+		clickoutFiresChange: true,
+		move: function(color) {
+			preview.style.backgroundColor = color;
+		}
+	});
+};
+
+iChrome.Themes.Custom.cache = function(theme, id, cb) {
+	if (theme.image.indexOf("data:") == 0 || theme.image.indexOf("filesystem:") == 0 || theme.image.indexOf("/images") == 0) {
+		theme.offline = true;
+
+		return cb(theme);
+	}
+
+	var that = this,
+		err = function(e) {
+			if (e && e.name && e.name == "InvalidStateError") {
+				return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+					iChrome.Themes.fs = fs;
+
+					that.cache(theme, id, cb);
+				}, err);
+			}
+
+			theme.image = false;
+
+			cb(theme);
+		},
+		url = theme.image.parseUrl(),
+		ext = url.match(/\.([0-9a-z]+)(?:[\?#]|$)/i);
+
+	if (ext && ext[1] && !ext[1].match(/^(jpg|png|gif|svg|webp|bmp)$/i)) {
+		err();
+	}
+
+	if (!iChrome.Themes.fs) {
+		return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+			iChrome.Themes.fs = fs;
+
+			that.cache(theme, id, cb);
+		}, err);
+	}
+	
+	var fs = iChrome.Themes.fs,
+		xhr = new XMLHttpRequest();
+
+	xhr.open("GET", url);
+
+	xhr.responseType = "blob";
+
+	fs.root.getDirectory("Themes", { create: true }, function(tDir) {
+		tDir.getDirectory("Custom", { create: true }, function(dir) {
+			dir.getFile(id, { create: true }, function(fe) {
+				xhr.onload = function(e) {
+					if (xhr.status !== 200) {
+						return err();
+					}
+
+					var blob = xhr.response;
+
+					fe.createWriter(function(writer) {
+						writer.onwrite = function(e) {
+							theme.image = fe.toURL();
+
+							theme.offline = true;
+
+							cb(theme);
+						};
+
+						writer.onerror = err;
+
+						writer.write(blob);
+					}, err);
+				};
+
+				xhr.send();
+			}, err);
+		}, err);
+	}, err);
+};
+
+iChrome.Themes.Custom.upload = function(theme, file, id, cb) {
+	var that = this,
+		err = function(e) {
+			if (e && e.name && e.name == "InvalidStateError") {
+				return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+					iChrome.Themes.fs = fs;
+
+					that.upload(theme, file, id, cb);
+				}, err);
+			}
+
+			theme.image = false;
+
+			cb(theme);
+		};
+
+	if (!iChrome.Themes.fs) {
+		return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+			iChrome.Themes.fs = fs;
+
+			that.upload(theme, file, id, cb);
+		}, err);
+	}
+	
+	var fs = iChrome.Themes.fs;
+
+	fs.root.getDirectory("Themes", { create: true }, function(tDir) {
+		tDir.getDirectory("Custom", { create: true }, function(dir) {
+			dir.getFile(id, { create: true }, function(fe) {
+				var fr = new FileReader();
+
+				fr.onloadend = function() {
+					if (fr.error) {
+						return err();
+					}
+
+					fe.createWriter(function(writer) {
+						writer.onwrite = function(e) {
+							theme.image = fe.toURL();
+
+							theme.offline = true;
+
+							cb(theme);
+						};
+
+						writer.onerror = err;
+
+						writer.write(new Blob([fr.result], { type: file.type }));
+					}, err);
+				}
+
+				fr.readAsArrayBuffer(file);
+			}, err);
+		}, err);
+	}, err);
+};
+
+iChrome.Themes.Custom.deleteImg = function(id, cb) {
+	var that = this,
+		err = function(e) {
+			if (e && e.name && e.name == "InvalidStateError") {
+				return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+					iChrome.Themes.fs = fs;
+
+					that.deleteImg(id, cb);
+				}, err);
+			}
+
+			cb();
+		};
+
+	if (!iChrome.Themes.fs) {
+		return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+			iChrome.Themes.fs = fs;
+
+			that.deleteImg(id, cb);
+		}, err);
+	}
+	
+	var fs = iChrome.Themes.fs;
+
+	fs.root.getDirectory("Themes", { create: true }, function(tDir) {
+		tDir.getDirectory("Custom", { create: true }, function(dir) {
+			dir.getFile(id, { create: false }, function(fe) {
+				fe.remove(function() {
+					cb();
+				}, err);
+			}, err);
+		}, err);
+	}, err);
+};
+
+iChrome.Themes.Custom.reEnumerate = function(id, cb) {
+	var that = this,
+		err = function(e) {
+			if (e && e.name && e.name == "InvalidStateError") {
+				return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+					iChrome.Themes.fs = fs;
+
+					that.reEnumerate(id, cb);
+				}, err);
+			}
+
+			cb();
+		};
+
+	if (!iChrome.Themes.fs) {
+		return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+			iChrome.Themes.fs = fs;
+
+			that.reEnumerate(id, cb);
+		}, err);
+	}
+	
+	var fs = iChrome.Themes.fs;
+
+	fs.root.getDirectory("Themes", { create: true }, function(tDir) {
+		tDir.getDirectory("Custom", { create: true }, function(dir) {
+			var entries = [],
+				rename = function() {
+					var length = entries.length,
+						done = 0;
+
+					entries.forEach(function(e, i) {
+						var nName = parseInt(e.name);
+
+						if (nName && e.name > id && iChrome.Storage.themes[nName] && (nName + "").length == e.name.length) { // Name is just a number
+							e.moveTo(dir, nName - 1, function(fe) {
+								iChrome.Storage.themes[nName].image = fe.toURL();
+
+								done++;
+
+								if (done == length) {
+									cb();
+								}
+							});
+						}
+					});
+				},
+				reader = dir.createReader();
+			
+			(function read() { // Recursive and self executing, necessary as per the specs
+				reader.readEntries(function(results) {
+					if (!results.length) {
+						entries.sort(function(a, b) {
+							return a.name < b.name ? -1 : a.name > b.name; // 400x faster than localeCompare
+						});
+
+						rename();
+					}
+					else {
+						entries = entries.concat(Array.prototype.slice.call(results, 0));
+
+						read();
+					}
+				}, err);
+			})();
+		}, err);
+	}, err);
+};
+
+iChrome.Themes.Custom.edit = function(id) {
+	if (iChrome.Storage.themes[id]) {
+		var theme = $.extend(true, {}, iChrome.Themes.defaults, iChrome.Storage.themes[id]);
+
+		theme.edit = true;
+
+		this.spectrum(this.modal.elm
+			.html(iChrome.render("themes.custom", theme))
+			.find("#position").val(theme.position).end()
+			.find("#scaling").val(theme.scaling).end()
+			.find("#repeat").val(theme.repeat).end()
+			.find("#color")).trigger("change");
+
+		this.editing = id;
+
+		this.modal.show();
+	}
+};
+
+iChrome.Themes.Custom.save = function() {
 	var theme = {},
-		id = false;
+		that = this,
+		editing = typeof this.editing == "number",
+		editId = editing ? this.editing : false,
+		key, upload;
 
-	form.serializeArray().forEach(function(e, i) {
-		if (e.name == "id") {
-			id = parseInt(e.value.replace("custom", ""));
-		}
-		else if (e.value !== "") {
-			theme[e.name.replace("theme-", "")] = e.value;
-		}
+	this.modal.elm.find("form").serializeArray().forEach(function(e, i) {
+		if (e.value) theme[e.name] = e.value;
 	});
 
-	if (typeof id == "number") {
-		theme = $.unextend(iChrome.Settings.Themes.defaults, theme);
+	var id = (editing ? editId : iChrome.Storage.themes.length),
+		cb = function(theme) {
+			theme = $.unextend(iChrome.Themes.defaults, theme);
 
-		iChrome.Storage.themes[id] = theme;
+			if (editing && iChrome.Storage.themes[editId]) {
+				iChrome.Storage.themes[editId] = theme;
+			}
+			else {
+				iChrome.Storage.themes.push(theme);
+			}
 
-		iChrome.Storage.sync();
+			iChrome.Storage.sync();
 
-		iChrome.Settings.Themes.modal.destroy();
+			that.modal.hide();
 
-		iChrome.Settings.Themes();
+			iChrome.Themes.refresh();
 
-		iChrome.Settings.showThemes(iChrome.Settings.Themes.elm);
+			_gaq.push(["_trackEvent", "Themes", (editing ? "Edit" : "Create"), "custom" + id]);
+		};
 
-		_gaq.push(["_trackEvent", "Themes", "Edit", "custom" + id]);
+	if (theme.image && typeof theme.image == "string") {
+		try { // This is a user-provided URL, anything could happen
+			this.cache(theme, id, cb);
+		}
+		catch(e) {
+			alert("An error occurred while trying to cache the image you provided, please double-check the URL.");
+		}
+	}
+	else if ((upload = $("#upload")[0].files).length) {
+		try { // Again, who knows what could go wrong
+			this.upload(theme, upload[0], id, cb);
+		}
+		catch(e) {
+			alert("An error occurred while trying to upload the file you provided, please make sure that it's a reasonable size and an image.");
+		}
+	}
+	else {
+		theme.image = false;
+
+		if (editing) { // If editing there might be a previously cached image, delete it.
+			this.deleteImg(id, cb);
+		}
+		else {
+			cb();
+		}
 	}
 };
 
-iChrome.Settings.Themes.themes = {
-	mossrivers: {
-		name: "Moss Rivers",
-		image: "mossrivers.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	grass: {
-		name: "Grass",
-		image: "grass.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	beachcliff: {
-		name: "Beach Cliff",
-		image: "beachcliff.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	newzealand: {
-		name: "New Zealand",
-		image: "newzealand.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	greenwater: {
-		name: "Green Water",
-		image: "greenwater.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	nautical: {
-		name: "Nautical",
-		image: "nautical.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	shallowparadise: {
-		name: "Shallow Paradise",
-		image: "shallowparadise.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	header: {
-		name: "Google Now",
-		image: "header.jpg",
-		offline: true,
-		scaling: "100% auto",
-		position: "top center",
-		resolution: "1920 x 1200"
-	},
-	purelyfuzzy: {
-		name: "Purely Fuzzy",
-		image: "purelyfuzzy.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	beach: {
-		name: "Beach",
-		image: "beach.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	ocean: {
-		name: "Ocean",
-		image: "ocean.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	mountains: {
-		name: "Mountains",
-		image: "mountains.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	greenfalls: {
-		name: "Green Falls",
-		image: "greenfalls.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	jupiter: {
-		name: "Jupiter",
-		image: "jupiter.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	pebbles: {
-		name: "Pebbles",
-		image: "pebbles.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	trees: {
-		name: "Trees",
-		image: "trees.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	treetops: {
-		name: "Tree Tops",
-		image: "treetops.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	wood: {
-		name: "Wood",
-		image: "wood.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	bluewaves: {
-		name: "Blue Waves",
-		image: "android/bluewaves.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	quantumbeachballs: {
-		name: "Quantum Beachballs",
-		image: "android/quantumbeachballs.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	tinfoil: {
-		name: "Tin Foil",
-		image: "android/tinfoil.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	evenlyrough: {
-		name: "Evenly Rough",
-		image: "android/evenlyrough.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	nexus: {
-		name: "Nexus",
-		image: "android/nexus.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	rainbowcauseway: {
-		name: "Rainbow Causeway",
-		image: "android/rainbowcauseway.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	thelens: {
-		name: "The Lens",
-		image: "android/thelens.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	},
-	icecreamsandwich: {
-		name: "Ice Cream Sandwich",
-		image: "android/icecreamsandwich.jpg",
-		offline: true,
-		resolution: "1920 x 1200"
-	}
-};
-
-iChrome.Settings.Themes.defaults = {
+iChrome.Themes.defaults = {
 	name: "New Theme",
 	images: false,
 	offline: false,
@@ -1384,6 +1879,17 @@ iChrome.Settings.Themes.defaults = {
 
 // Store
 iChrome.Store = function() {
+	$(".icon.widgets").on("click", function(e) {
+		if (this.modal) {
+			this.modal.show();
+		}
+		else {
+			this.render();
+		}
+	}.bind(this.Store));
+};
+
+iChrome.Store.render = function() {
 	var widgets = [];
 
 	for (var key in Widgets) {
@@ -1402,7 +1908,7 @@ iChrome.Store = function() {
 		return a.order - b.order;
 	});
 
-	var modal = this.Store.modal = new iChrome.Modal({
+	var modal = this.modal = new iChrome.Modal({
 		html: "",
 		classes: "store"
 	}, function() {
@@ -1419,14 +1925,13 @@ iChrome.Store = function() {
 	}));
 
 	iChrome.Store.handlers();
+
+	// Wait till end of current stack (repaints, etc.) so the transition is smooth.  This causes a slight delay but it's preferable to popping-in.
+	setTimeout(modal.show, 0);
 };
 
 iChrome.Store.handlers = function() {
 	var modal = this.modal;
-
-	$(".icon.widgets").on("click", function(e) {
-		modal.show();
-	});
 
 	modal.modal.find(".widget").on("click", function(e) {
 		var that = $(this),
@@ -1465,7 +1970,7 @@ iChrome.Store.handlers = function() {
 
 		widget.render.call(widget, true);
 
-		modal.modal.addClass("detail").find(".detail .sizes").sortable({
+		modal.modal.addClass("detail").find(".detail .desc-container").sortable({
 			group: "columns",
 			itemSelector: "div",
 			drop: false
@@ -1762,7 +2267,7 @@ iChrome.render = function(template, data) {
 		}
 	}
 	
-	return compiled.render(data);
+	return compiled.render(data || {});
 };
 
 iChrome.Templates = function(cb) {
@@ -1948,7 +2453,7 @@ iChrome.Tabs.render = function() {
 
 		$('<li></li>').attr("data-id", tab.id).text(tab.name).append('<span class="move">&#xE693;</span>').appendTo(panel);
 
-		if (parseInt(iChrome.Storage.settings.def || 1)) {
+		if (i == (parseInt(iChrome.Storage.settings.def || 1) - 1)) {
 			tabElm.attr("data-id", tab.id).add(document.body).attr("style", iChrome.Tabs.getCSS(tab));
 		}
 		else {
@@ -2116,7 +2621,7 @@ iChrome.Tabs.draggable = function() {
 
 				widget.internalID = iChrome.Widgets.active.length - 1;
 
-				iChrome.Store.modal.modal.find(".detail .sizes").last().data("sortable").group.item = item =
+				iChrome.Store.modal.modal.find(".detail .desc-container").last().data("sortable").group.item = item =
 					widget.elm
 						.attr("class", "widget")
 						.addClass("handle")
@@ -2196,7 +2701,7 @@ iChrome.Tabs.draggable = function() {
 		},
 		onBeforeDrop: function(item, placeholder, group, _super) {
 			if (placeholder.parent() && placeholder.parent().is(".remove")) {
-				if (item.hasClass("handle") || confirm("Are you really sure you would like to delete this widget?\r\nThis action is not reversible and all data from this widget will be permanentely lost.")) {
+				if (item.hasClass("handle") || confirm("Are you really sure you would like to delete this widget?\r\nThis action is not reversible and all data from this widget will be permanently lost.")) {
 					item.remove();
 
 					if (!item.hasClass("handle")) {
@@ -2329,14 +2834,24 @@ iChrome.Tabs.getCSS = function(tab) {
 	var css = "";
 
 	if (tab.theme) {
-		var theme = (iChrome.Settings.Themes.themes[tab.theme] || iChrome.Storage.themes[tab.theme.replace("custom", "")] || {});
-
+		if (typeof tab.theme == "object") {
+			var theme = tab.theme;
+		}
+		else if (tab.theme == "default") {
+			var theme = {
+				image: "/images/defaulttheme.jpg"
+			};
+		}
+		else {
+			var theme = (iChrome.Storage.cached[tab.theme] || iChrome.Storage.themes[tab.theme.replace("custom", "")] || {});
+		}
+		
 		if (theme.color) {
 			css += "background-color: " + theme.color + ";";
 		}
 
 		if (theme.image) {
-			css += "background-image: url(\"" + (theme.offline ? "/images/bgs/" + theme.image : theme.image) + "\");";
+			css += "background-image: url(\"" + theme.image + "\");";
 		}
 
 		if (theme.scaling) {
@@ -2353,6 +2868,10 @@ iChrome.Tabs.getCSS = function(tab) {
 
 		if (theme.fixed) {
 			css += "background-attachment: " + theme.fixed + ";";
+		}
+
+		if (theme["inline-css"]) {
+			css += theme["inline-css"];
 		}
 	}
 	
@@ -2497,7 +3016,7 @@ iChrome.Tabs.saveTimeout = "";
 iChrome.Tabs.defaults = {
 	name: "Home",
 	fixed: true,
-	theme: "mossrivers",
+	theme: "default",
 	alignment: "center"
 };
 
@@ -3043,9 +3562,10 @@ iChrome.Widgets.Utils.render = function(data) {
 
 // Storage Manager
 iChrome.Storage = function(cb) {
-	chrome.storage.local.get(["tabs", "settings", "themes"], function(d) {
+	chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
 		iChrome.Storage.tabs = d.tabs || iChrome.Storage.Defaults.tabs;
 		iChrome.Storage.themes = d.themes || iChrome.Storage.Defaults.themes;
+		iChrome.Storage.cached = d.cached || iChrome.Storage.Defaults.cached;
 		iChrome.Storage.settings = {};
 
 		if (typeof d.tabs == "string") {
@@ -3259,14 +3779,16 @@ iChrome.Storage.Defaults = {
 		gmail: true,
 		toolbar: false,
 		wcolor: "#FFF",
+		theme: "default",
 		hcolor: "#F1F1F1",
 		columns: "3-fixed",
-		theme: "mossrivers",
 		alignment: "center",
+		"custom-css": "",
 		"logo-url": "/images/logo.png",
 		"search-url": "https://google.com/search?q=%s"
 	},
-	themes: []
+	themes: [],
+	cached: {}
 };
 
 
