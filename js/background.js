@@ -35,8 +35,8 @@ var themes = {
 
 var cache = function(theme, cb) {
 	var err = function(e) {
-			if (e.name == "InvalidStateError") {
-				return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) { // The full 500MB probably won't be used, but the caching will fail if it does.
+			if (e && e.name == "InvalidStateError") {
+				return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
 					window.fs = fs;
 
 					cache(theme, cb);
@@ -88,6 +88,137 @@ var cache = function(theme, cb) {
 			};
 
 			xhr.send();
+		}, err);
+	}, err);
+};
+
+var cacheCustom = function(arr, cb) {
+	id = arr[0];
+	image = arr[1];
+
+	if (image.indexOf("data:") == 0 || image.indexOf("filesystem:") == 0 || image.indexOf("/images") == 0) {
+		return cb(image, id);
+	}
+
+	var err = function(e) {
+			if (e && e.name == "InvalidStateError") {
+				return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+					window.fs = fs;
+
+					cacheCustom(arr, cb);
+				}, err);
+			}
+
+			cb();
+		},
+		ext = image.match(/\.([0-9a-z]+)(?:[\?#]|$)/i);
+
+	if (ext && ext[1] && !ext[1].match(/^(jpg|png|gif|svg|webp|bmp)$/i)) {
+		err();
+	}
+
+	if (!window.fs) {
+		return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+			window.fs = fs;
+
+			cacheCustom(arr, cb);
+		}, err);
+	}
+	
+	var fs = window.fs,
+	xhr = new XMLHttpRequest();
+
+	xhr.open("GET", image);
+
+	xhr.responseType = "blob";
+
+	fs.root.getDirectory("Themes", { create: true }, function(tDir) {
+		tDir.getDirectory("Custom", { create: true }, function(dir) {
+			dir.getFile(id, { create: true }, function(fe) {
+				xhr.onload = function(e) {
+					if (xhr.status !== 200) {
+						return err();
+					}
+
+					var blob = xhr.response;
+
+					fe.createWriter(function(writer) {
+						writer.onwrite = function(e) {
+							cb(fe.toURL() + "#OrigURL:" + image, id);
+						};
+
+						writer.onerror = err;
+
+						writer.write(blob);
+					}, err);
+				};
+
+				xhr.send();
+			}, err);
+		}, err);
+	}, err);
+};
+
+var deleteCustom = function(which, cb) {
+	var err = function(e) {
+			if (e && e.name == "InvalidStateError") {
+				return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+					window.fs = fs;
+
+					deleteCustom(which, cb);
+				}, err);
+			}
+
+			cb();
+		};
+
+	if (!window.fs) {
+		return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+			window.fs = fs;
+
+			deleteCustom(which, cb);
+		}, err);
+	}
+	
+	var fs = window.fs;
+
+	fs.root.getDirectory("Themes", { create: true }, function(tDir) {
+		tDir.getDirectory("Custom", { create: true }, function(dir) {
+			if (which === true) {
+				dir.removeRecursively(function() { cb(); });
+			}
+			else if (which.length) {
+				var reader = dir.createReader(),
+					length = 0;
+
+				(function read() {
+					reader.readEntries(function(results) {
+						if (results.length) {
+							results.forEach(function(e, i) {
+								if (which.indexOf(e.name) !== -1) {
+									length++;
+
+									e.remove(function() {
+										length--;
+
+										if (!length) {
+											cb();
+										}
+									});
+								}
+							});
+
+							read();
+						}
+						else if (!length) {
+							cb();
+						}
+					}, err);
+				})();
+			}
+			else {
+				cb();
+			}
 		}, err);
 	}, err);
 };
@@ -282,7 +413,7 @@ chrome.storage.onChanged.addListener(function(d, area) {
 				tabs: old.tabs,
 				themes: old.themes,
 				settings: old.settings
-			};
+			}, themesChanged;
 
 			var newData = {
 				tabs: o.tabs,
@@ -292,6 +423,8 @@ chrome.storage.onChanged.addListener(function(d, area) {
 
 			if (d.themes && d.themes.newValue && JSON.stringify(o.themes) !== JSON.stringify(d.themes.newValue)) {
 				newData.themes = d.themes.newValue;
+
+				themesChanged = true;
 			}
 
 			if (d.settings && d.settings.newValue && JSON.stringify(o.settings) !== JSON.stringify(d.settings.newValue)) {
@@ -332,15 +465,98 @@ chrome.storage.onChanged.addListener(function(d, area) {
 						cache(mThemes[index[queue.pop()]], next);
 					}
 					else {
-						newData.cached = cached; // Has to be set here otherwise earlier difference checks will fail
+						var write = function() {
+							newData.cached = cached; // Has to be set here otherwise earlier difference checks will fail
 
-						chrome.storage.local.set(newData, function() {
-							chrome.extension.getViews().forEach(function(e, i) {
-								if (e.iChrome && e.iChrome.refresh) {
-									e.iChrome.refresh(true);
+							chrome.storage.local.set(newData, function() {
+								chrome.extension.getViews().forEach(function(e, i) {
+									if (e.iChrome && e.iChrome.refresh) {
+										e.iChrome.refresh(true);
+									}
+								});
+							});
+						};
+
+						if (themesChanged) {
+							var urls = [],
+								nUrls = [],
+								cUrls = [],
+								del = [];
+
+							o.themes.forEach(function(e, i) {
+								if (e.image && e.image.indexOf("#OrigURL:") !== -1) {
+									urls.push([i, e.image.split("#OrigURL:")[1]]);
+								}
+								else {
+									urls.push([i, null]);
 								}
 							});
-						});
+
+							newData.themes.forEach(function(e, i) {
+								if (e.image && (e.image.indexOf("#OrigURL:") !== -1 || e.image.indexOf("http") == 0)) {
+									if (e.image.indexOf("http") == 0) {
+										nUrls.push([i, e.image]);
+									}
+									else {
+										nUrls.push([i, e.image.split("#OrigURL:")[1]]);
+									}
+								}
+								else {
+									nUrls.push([i, null]);
+								}
+							});
+
+							// Sort both arrays so the join will be accurate
+							urls.sort(function(a, b) { return a[0] - b[0]; });
+							nUrls.sort(function(a, b) { return a[0] - b[0]; });
+
+							// There's no way to know if two have been deleted and one added, etc.  The safest thing to do is simply recache all themes.
+							if (urls.length !== nUrls.length) {
+								var cUrls = nUrls.filter(function(e) { return !!e[1]; }), // Filter out nulls
+									del = true;
+							}
+							else if (urls.join() !== nUrls.join()) {
+								urls.forEach(function(e, i) {
+									if (e[1] !== nUrls[i][1]) {
+										if (!nUrls[i][1]) { // The image is null, therefore it was deleted
+											del.push(i);
+										}
+										else {
+											cUrls.push(nUrls[i]);
+										}
+									}
+								});
+							}
+							else {
+								write();
+							}
+
+							var loop = function(image, id) {
+								if (image && typeof id !== "undefined") {
+									newData.themes[id].image = image;
+								}
+
+								if (cUrls.length) {
+									cacheCustom(cUrls.pop(), loop);
+								}
+								else {
+									write();
+								}
+							};
+
+							if (del === true || del.length) {
+								deleteCustom(del, loop);
+							}
+							else if (cUrls.length) {
+								loop();
+							}
+							else {
+								write();
+							}
+						}
+						else {
+							write();
+						}
 					}
 				},
 				mThemes = [],

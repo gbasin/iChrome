@@ -2330,7 +2330,7 @@ body.resizing .medley {
 }
 
 .themes.create #image {
-	width: 60%;
+	width: 56%;
 }
 
 .themes.create .upload {
@@ -2355,6 +2355,22 @@ body.resizing .medley {
 
 .themes.create .upload input::-webkit-file-upload-button {
 	display: none;
+}
+
+.themes.create .help {
+	top: -8px;
+	width: 2%;
+	color: #777;
+	float: right;
+	cursor: help;
+	margin-left: 8px;
+	position: relative;
+}
+
+.themes.create .help:before {
+	font-size: 14px;
+	content: "\f059";
+	font-family: FontAwesome;
 }
 
 .themes.create .content > .preview {

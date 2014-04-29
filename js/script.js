@@ -265,23 +265,25 @@ iChrome.deferred = function(refresh) {
 	});
 
 	$(".toolbar .custom-link").on("click", function(e) {
-		e.preventDefault();
-
 		var href = this.getAttribute("href");
 
-		chrome.tabs.getCurrent(function(d) {
-			if (e.which == 2) {
-				chrome.tabs.create({
-					url: href,
-					index: d.index + 1
-				});
-			}
-			else {
-				chrome.tabs.update(d.id, {
-					url: href
-				});
-			}
-		});
+		if (href.indexOf("chrome") == 0) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
+			e.preventDefault();
+
+			chrome.tabs.getCurrent(function(d) {
+				if (e.which == 2) {
+					chrome.tabs.create({
+						url: href,
+						index: d.index + 1
+					});
+				}
+				else {
+					chrome.tabs.update(d.id, {
+						url: href
+					});
+				}
+			});
+		}
 	});
 
 	var appsLoaded = false;
@@ -885,7 +887,7 @@ iChrome.Settings.handlers = function(modal, settings) {
 
 				window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
 					var reader = fs.root.createReader(),
-						length = 0, found;
+						length = 0;
 
 					(function read() { // Recursive and self executing, necessary as per the specs
 						reader.readEntries(function(results) {
@@ -894,7 +896,13 @@ iChrome.Settings.handlers = function(modal, settings) {
 									length++;
 
 									if (e.isDirectory) {
-										e.removeRecursively();
+										e.removeRecursively(function() {
+											length--;
+
+											if (!length) {
+												next();
+											}
+										});
 									}
 									else {
 										e.remove(function() {
@@ -1611,7 +1619,7 @@ iChrome.Themes.Custom.cache = function(theme, id, cb) {
 
 					fe.createWriter(function(writer) {
 						writer.onwrite = function(e) {
-							theme.image = fe.toURL();
+							theme.image = fe.toURL() + "#OrigURL:" + url;
 
 							theme.offline = true;
 
