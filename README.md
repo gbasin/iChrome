@@ -29,7 +29,13 @@ The code's somewhat messy, but I'm thinking of restructuring it using Backbone i
 
 ### V2.2
  - A widgets store that other developers can contribute to
- - iChrome Pro: Unlimited custom themes, unlimited syncing on iChrome servers, shareable tabs, prioritized support and suggestions and more, I'm still thinking it through
+ - iChrome Pro:
+   - Shareable tabs
+   - Unlimited custom themes
+   - Unlimited syncing on iChrome servers
+   - Prioritized support and suggestions
+   - The ability to create custom dynamic themes (slideshows, time and date dependent)
+   - More, I'm still thinking it through
 
 ## Contributing
 
