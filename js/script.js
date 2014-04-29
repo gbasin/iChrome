@@ -738,7 +738,7 @@ iChrome.Settings.handlers = function(modal, settings) {
 		else {
 			$(this).parents("div").first().removeClass("visible").find("input").val("");
 		}
-	}).on("keydown", "input:not([type=radio], [type=checkbox]), textarea, select", function(e) {
+	}).on("keydown", "input:not([type=radio], [type=checkbox]), select", function(e) {
 		if (e.which == 13) {
 			e.preventDefault();
 
@@ -967,8 +967,15 @@ iChrome.Settings.save = function() {
 		key;
 
 	iChrome.Settings.modal.elm.find(".general form, .visual form, .advanced form").serializeArray().forEach(function(e, i) {
-		if (booleans.indexOf(e.name) !== -1) settings[e.name] = true;
-		else if (e.value !== "") settings[e.name] = e.value;
+		if (booleans.indexOf(e.name) !== -1) {
+			settings[e.name] = true;
+		}
+		else if (e.name == "custom-css") {
+			settings["custom-css"] = e.value.replace("</", "<\\/").replace("javascript:", "javascript :").slice(0, 1000);
+		}
+		else if (e.value !== "") {
+			settings[e.name] = e.value;
+		}
 	});
 
 	for (var i = 0; i < 3; i++) {
