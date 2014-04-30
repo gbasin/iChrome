@@ -688,14 +688,18 @@ iChrome.Settings = function() {
 		settings.tabForms.push({
 			name: tab.name || "Home",
 			theme: tab.theme || iChrome.Storage.settings.theme || "default",
-			themename: (iChrome.Storage.cached[tab.theme] || iChrome.Storage.themes[tab.theme.replace("custom", "")] || {}).name,
 			id: tab.id,
 			fixed: !!tab.fixed,
 			alignment: tab.alignment || "center",
 			columns: (tab.medley ? "medley" : (tab.columns.length || 3)),
 			active: (i == 0 ? "active" : ""),
-			wcolor: iChrome.Storage.settings.theme || "#FFF",
-			hcolor: iChrome.Storage.settings.theme || "#F1F1F1"
+			themename: (
+				(tab.theme || iChrome.Storage.settings.theme || "default") == "default" ?
+					"Default Theme" :
+				(
+					iChrome.Storage.cached[tab.theme] || iChrome.Storage.themes[tab.theme.replace("custom", "")] || {}
+				).name
+			)
 		});
 	});
 
@@ -798,6 +802,10 @@ iChrome.Settings.handlers = function(modal, settings) {
 
 		if (that.parents("li").first().hasClass("active")) {
 			e.stopPropagation();
+		}
+
+		if (that.attr("data-id") == "new") {
+			return iChrome.Settings.createTab(modal.elm.find(".specific .btns"), that, forms);
 		}
 
 		that.siblings().add(forms).removeClass("active");
@@ -936,6 +944,57 @@ iChrome.Settings.handlers = function(modal, settings) {
 		preferredFormat: "rgb",
 		clickoutFiresChange: true
 	});
+};
+
+iChrome.Settings.createTab = function(btns, item, forms) {
+	var id = iChrome.Storage.tabs.length + 1,
+		tab = $.extend(true, {}, iChrome.Tabs.defaults, {
+			id: id,
+			columns: [],
+			name: "New Tab",
+			fixed: iChrome.Storage.settings.columns.split("-")[1] == "fixed"
+		});
+
+	if (iChrome.Storage.settings.columns.split("-")[0] == "medley") {
+		var medley = true;
+
+		tab.columns.push([]);
+	}
+	else {
+		for (var i = iChrome.Storage.settings.columns.split("-")[0]; i > 0; i--) {
+			tab.columns.push([]);
+		}
+	}
+
+	iChrome.Storage.tabs.push(tab);
+
+	var rTab = {
+		id: id,
+		fixed: tab.fixed,
+		theme: iChrome.Storage.settings.theme || "default",
+		columns: (medley ? "medley" : (tab.columns.length || 3)),
+		alignment: iChrome.Storage.settings.alignment || "center",
+		themename: (
+			!iChrome.Storage.settings.theme ? "Default Theme" :
+			(
+				iChrome.Storage.cached[iChrome.Storage.settings.theme] || iChrome.Storage.themes[iChrome.Storage.settings.theme.replace("custom", "")] || {}
+			).name
+		)
+	};
+
+	btns.before(iChrome.render("settings.new-tab", rTab));
+
+	var form = this.modal.elm.find("form[data-tab='" + id + "']")
+		.find("#columns" + id).val(medley ? "medley" : rTab.columns + (rTab.fixed ? "-fixed" : "-fluid")).end()
+		.find("#alignment" + id).val(rTab.alignment).end();
+
+	console.log(this.modal.elm.find("form[data-tab='" + id + "']"), form.find("#columns" + id));
+
+	item.siblings().add(forms).removeClass("active");
+
+	$('<li data-id="' + id + '">New Tab</li>').insertBefore(item).add(form).addClass("active");
+
+	_gaq.push(["_trackEvent", "Tabs", "Add", "settings-" + iChrome.Storage.tabs.length]);
 };
 
 iChrome.Settings.showThemes = function(elm) {
@@ -2312,8 +2371,13 @@ iChrome.Tabs = function() {
 		},
 		emptyTab = [];
 
-	for (var i = iChrome.Storage.settings.columns.split("-")[0]; i > 0; i--) {
+	if (iChrome.Storage.settings.columns.split("-")[0] == "medley") {
 		emptyTab.push([]);
+	}
+	else {
+		for (var i = iChrome.Storage.settings.columns.split("-")[0]; i > 0; i--) {
+			emptyTab.push([]);
+		}
 	}
 
 	iChrome.Tabs.panel = $(".tabs-menu .panel ul").sortable({
