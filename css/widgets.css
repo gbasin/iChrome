@@ -2453,3 +2453,77 @@
 	width: 100%;
 	margin-top: 15px;
 }
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Calculator
+*/
+.widget.calc {
+	padding: 0!important;
+}
+
+.calc .display {
+	width: 100%;
+	font-size: 35px;
+	font-weight: 300;
+	border: 0!important;
+	padding: 25px!important;
+	font-family: Open Sans, sans-serif;
+}
+
+.calc .buttons {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.calc button {
+	border: 0;
+	margin: 0;
+	outline: 0;
+	width: 25%;
+	color: #444;
+	height: 75px;
+	font-size: 25px;
+	background: #EEE;
+	font-weight: 300;
+	transition: background .1s;
+	font-family: Open Sans, sans-serif;
+	box-shadow: inset 1px 1px rgba(0, 0, 0, 0.06);
+}
+
+.calc .buttons button:hover {
+	background: #8BE;
+	box-shadow: inset 1px 1px 0 0 rgba(0, 0, 0, .06), inset -1px 0 0 rgba(0, 0, 0, .06);
+}
+
+.calc .buttons button:active,
+.calc button[data-id="equals"] {
+	background: #67A9E2;
+}
+
+.calc button:hover + button:not(:nth-child(4n + 1)) {
+	box-shadow: inset 0 1px rgba(0, 0, 0, .06);
+}
+
+.calc button[data-id="minus"] {
+	font-size: 20px;
+}
+
+.calc button.larger {
+	font-size: 30px;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Calculator / Medium
+*/
+.calc.medium button[data-id="equals"] {
+	width: 50%;
+}

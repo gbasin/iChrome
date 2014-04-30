@@ -3054,6 +3054,55 @@
 			There are no variations available for this widget.
 		</template>
 
+		<template id="template.widgets.calc">
+			<input type="text" placeholder="0" class="display" />
+
+			{{^tiny}}
+				<div class="buttons">
+					{{#medium}}
+						<button data-id="clear">C</button>
+						<button data-id="oparen">(</button>
+						<button data-id="cparen">)</button>
+						<button data-id="divide" class="larger">&divide;</button>
+						<button data-id="9">9</button>
+						<button data-id="8">8</button>
+						<button data-id="7">7</button>
+						<button data-id="multiply" class="larger">&times;</button>
+						<button data-id="6">6</button>
+						<button data-id="5">5</button>
+						<button data-id="4">4</button>
+						<button data-id="minus">&mdash;</button>
+						<button data-id="3">3</button>
+						<button data-id="2">2</button>
+						<button data-id="1">1</button>
+						<button data-id="plus" class="larger">&plus;</button>
+						<button data-id="0">0</button>
+						<button data-id="decimal">.</button>
+						<button data-id="equals" class="larger">=</button>
+					{{/medium}}
+					
+					{{#small}}
+						<button data-id="clear">C</button>
+						<button data-id="multiply" class="larger">&times;</button>
+						<button data-id="divide" class="larger">&divide;</button>
+						<button data-id="equals" class="larger">=</button>
+					{{/small}}
+				</div>
+			{{/tiny}}
+		</template>
+
+		<template id="template.widgets.calc.desc">
+			The Calculator widget displays a simple, calculator.<br />
+			<br />
+			No setup is neccessary for this widget.<br />
+			<br />
+			Variations:<br />
+			<br />
+			Tiny: Displays only an input box where you can enter simple problems.<br />
+			Small: Displays an input box plus keys that can't be entered easily through the keyboard.<br />
+			Medium: Displays an input box, full keypad and basic functions (add, subtract, multiply, divide, parentheses).
+		</template>
+
 		<!-- Templates end -->
 
 		<script type="text/javascript" src="js/plugins.js"></script>
