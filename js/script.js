@@ -1197,77 +1197,291 @@ iChrome.Themes.show = function(cb, prev) {
 	}
 };
 
-iChrome.Themes.cache = function(theme, cb) {
-	if (iChrome.Storage.cached[theme.id]) { // If already cached
-		return cb(iChrome.Storage.cached[theme.id]);
+iChrome.Themes.getFeed = function(theme, cb, parent, next) {
+	if (iChrome.Storage.cached[theme.id]) { // Theme is cached
+		theme.offline = true;
+		theme.image = iChrome.Storage.cached[theme.id].image;
+
+		delete theme.size;
+		delete theme.stats;
+		delete theme.resolution;
+		delete theme.categories;
+		delete theme.filterCategories;
+
+		iChrome.Storage.cached[theme.id] = theme;
+
+		chrome.storage.local.set({
+			cached: iChrome.Storage.cached
+		});
+
+		return cb(theme);
+	}
+
+	if (!theme.url || !theme.format) {
+		return false;
 	}
 
 	var that = this,
+		specs = parent.find(".specs").first(),
+		oHtml = specs.html(),
+		utils = {
+			Math: {
+				rand: function() {
+					return function(max) {
+						return Math.floor(Math.random() * max);
+					};
+				},
+				drand: function() {
+					return function(max) {
+						var rand = Math.sin(new Date().setHours(0, 0, 0, 0)) * 10000;
+
+						return Math.floor((rand - Math.floor(rand)) * max);
+					};
+				}
+			}
+		};
+
+	// These are utilities that the URL and image parse are rendered with. With them the URL can incorporate things like a random number.
+	Object.getOwnPropertyNames(Math).forEach(function(e, i) {
+		if (typeof Math[e] == "function") {
+			utils.Math[e] = function() {
+				return function(args) {
+					return Math[e].apply(window, args.split(", "));
+				};
+			};
+		}
+		else {
+			utils.Math[e] = Math[e];
+		}
+	});
+
+	specs.html("<span>Please wait, fetching feed...</span>");
+
+	$.get(Hogan.compile(theme.url).render(utils), function(d) {
+		try {
+			if (theme.selector && theme.attr) {
+				var url = $(d).find(theme.selector);
+
+				if (theme.attr == "text") {
+					url = url.text();
+				}
+				else if (theme.attr == "html") {
+					url = url.html();
+				}
+				else {
+					url = url.attr(theme.attr);
+				}
+
+				utils.res = url;
+			}
+			else {
+				if (typeof d == "object") {
+					utils.res = d;
+				}
+				else {
+					utils.res = JSON.parse(d);
+				}
+			}
+
+			theme.image = Hogan.compile(theme.format).render(utils);
+
+			theme.lastFetched = new Date().getTime();
+
+			if (next) {
+				next(theme, cb, parent);
+			}
+			else {
+				specs.html(oHtml);
+
+				cb(theme);
+			}
+		}
+		catch(e) {
+			iChrome.Status.error(e);
+
+			specs.html("<span>Something went wrong while trying to fetch the feed, please try again later.</span>");
+
+			setTimeout(function() {
+				specs.html(oHtml);
+			}, 7000);
+		}
+	}).fail(function() {
+		specs.html("<span>Something went wrong while trying to fetch the feed, please try again later.</span>");
+
+		setTimeout(function() {
+			specs.html(oHtml);
+		}, 7000);
+	});
+};
+
+iChrome.Themes.cache = function(theme, cb, parent) {
+	if (iChrome.Storage.cached[theme.id]) { // Theme is cached
+		// New images might have been added to the theme, so loop through and make sure they're all there. If not, cache them.
+		var ids = [];
+
+		if (theme.images) {
+			ids = theme.images.filter(function(e) {
+				return !iChrome.Storage.cached[e];
+			});
+		}
+	}
+	else {
+		if (theme.images) {
+			var ids = theme.images.filter(function(e) {
+				return !iChrome.Storage.cached[e];
+			});
+		}
+		else {
+			var ids = [theme.id];
+		}
+	}
+
+	/*
+		If this is a dynamic theme and all images are cached, skip the fs entirely and just process and return.
+
+		This will run even if the cache check above was true.
+	*/
+	if (!ids.length) {
+		if (iChrome.Storage.cached[theme.id] && iChrome.Storage.cached[theme.id].image) {
+			theme.image = iChrome.Storage.cached[theme.id].image;
+		}
+		else {
+			delete theme.image;
+		}
+
+		if (theme.oType) {
+			theme.type = theme.oType;
+
+			delete theme.oType;
+		}
+
+		theme.offline = true;
+
+		delete theme.size;
+		delete theme.stats;
+		delete theme.resolution;
+		delete theme.categories;
+		delete theme.filterCategories;
+
+		iChrome.Storage.cached[theme.id] = theme;
+
+		chrome.storage.local.set({
+			cached: iChrome.Storage.cached
+		});
+
+		return cb(theme);
+	}
+
+	var that = this,
+		specs = parent.find(".specs").first(),
+		oHtml = specs.html(),
 		err = function(e) {
-			if (e.name == "InvalidStateError") {
+			if (e && e.name == "InvalidStateError") {
 				return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) { // The full 500MB probably won't be used, but the caching will fail if it does.
 					that.fs = fs;
 
-					that.cache(theme, cb);
+					that.cache(theme, cb, parent);
 				}, err);
 			}
+
+			specs.html(oHtml);
 
 			iChrome.Status.error(e);
 
 			alert("An error occurred while trying to cache the theme you selected, please try again later.");
 		};
 
+	var length = ids.length;
+
+	specs.html("<span>Please wait, caching theme...</span><span>0 of " + length + " images cached</span>");
+
 	if (!this.fs) {
 		return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
 			that.fs = fs;
 
-			that.cache(theme, cb);
+			that.cache(theme, cb, parent);
 		}, err);
 	}
 	
-	var fs = this.fs,
-		xhr = new XMLHttpRequest();
-
-	xhr.open("GET", "https://s3.amazonaws.com/iChrome/Themes/Images/" + theme.id + ".jpg");
-
-	xhr.responseType = "blob";
+	var fs = this.fs;
 
 	fs.root.getDirectory("Themes", { create: true }, function(dir) {
-		dir.getFile(theme.id + ".jpg", { create: true }, function(fe) {
-			xhr.onload = function(e) {
-				if (xhr.status !== 200) {
-					return err();
-				}
+		var active = 0;
 
-				var blob = xhr.response;
+		ids.forEach(function(id, i) {
+			active++;
 
-				fe.createWriter(function(writer) {
-					writer.onwrite = function(e) {
-						theme.image = fe.toURL();
+			dir.getFile(id + ".jpg", { create: true }, function(fe) {
+				var xhr = new XMLHttpRequest();
 
-						theme.offline = true;
+				xhr.open("GET", (id == theme.id && theme.oType == "feed" ? theme.image : "http://themes.ichro.me/images/" + id + ".jpg"));
 
-						delete theme.resolution;
-						delete theme.categories;
-						delete theme.filterCategories;
+				xhr.responseType = "blob";
 
-						iChrome.Storage.cached[theme.id] = theme;
+				xhr.onload = function(e) {
+					if (xhr.status !== 200) {
+						return err();
+					}
 
-						chrome.storage.local.set({
-							cached: iChrome.Storage.cached
-						});
+					var blob = xhr.response;
 
-						cb(theme);
-					};
+					fe.createWriter(function(writer) {
+						writer.onwrite = function(e) {
+							active--;
 
-					writer.onerror = err;
+							// This stores the image as a theme
+							iChrome.Storage.cached[id] = {
+								id: id,
+								offline: true,
+								image: fe.toURL()
+							};
 
-					writer.write(blob);
-				}, err);
-			};
+							if (active == 0) {
+								specs.html(oHtml);
 
-			xhr.send();
-		}, err);
+								if (!theme.images) {
+									theme.image = fe.toURL();
+								}
+								else {
+									delete theme.image;
+								}
+
+								if (theme.oType) {
+									theme.type = theme.oType;
+
+									delete theme.oType;
+								}
+
+								theme.offline = true;
+
+								delete theme.size;
+								delete theme.stats;
+								delete theme.resolution;
+								delete theme.categories;
+								delete theme.filterCategories;
+
+								iChrome.Storage.cached[theme.id] = theme;
+
+								chrome.storage.local.set({
+									cached: iChrome.Storage.cached
+								});
+
+								cb(theme);
+							}
+							else {
+								specs.html("<span>Please wait, caching theme...</span><span>" + (length - active) + " of " + length + " images cached</span>");
+							}
+						};
+
+						writer.onerror = err;
+
+						writer.write(blob);
+					}, err);
+				};
+
+				xhr.send();
+			}, err);
+		});
 	}, err);
 };
 
@@ -1295,7 +1509,12 @@ iChrome.Themes.handlers = function(modal) {
 		if (theme) {
 			_gaq.push(["_trackEvent", "Themes", "Use", theme.id + ""]);
 
-			that.cache(theme, that.use);
+			if (theme.oType == "feed") {
+				iChrome.Themes.getFeed(theme, that.use, parent, that.cache.bind(that));
+			}
+			else {
+				that.cache(theme, that.use, parent);
+			}
 		}
 	}).on("click", ".btn.preview", function(e) {
 		e.preventDefault();
@@ -1309,16 +1528,28 @@ iChrome.Themes.handlers = function(modal) {
 			return _gaq.push(["_trackEvent", "Themes", "Preview", "custom" + id]);
 		}
 
-		var id = that.themeIndex[id],
-			theme = $.extend(true, {}, that.themes[id]);
+		var index = that.themeIndex[id],
+			theme = $.extend(true, {}, that.themes[index]);
 
 		if (!theme) return;
 
-		if (iChrome.Storage.cached[id]) { // If already cached don't load remote
-			theme.image = iChrome.Storage.cached[id].image;
+		if (iChrome.Storage.cached[theme.id]) { // If already cached don't load remote
+			theme.image = iChrome.Themes.getImage(iChrome.Storage.cached[theme.id]);
 		}
 		else {
-			theme.image = "https://s3.amazonaws.com/iChrome/Themes/Images/" + theme.id + ".jpg";
+			if (theme.images) {
+				theme.image = "http://themes.ichro.me/images/" + theme.images[Math.floor(Math.random() * theme.images.length)] + ".jpg";
+			}
+			else if (theme.oType == "feed") {
+				return iChrome.Themes.getFeed(theme, function(theme) {
+					that.preview(theme);
+
+					_gaq.push(["_trackEvent", "Themes", "Preview", theme.id + ""]);
+				}, parent);
+			}
+			else {
+				theme.image = "http://themes.ichro.me/images/" + theme.id + ".jpg";
+			}
 		}
 
 		that.preview(theme);
@@ -1386,22 +1617,62 @@ iChrome.Themes.handlers = function(modal) {
 iChrome.Themes.load = function(cb) {
 	var that = this;
 
-	$.get("https://s3.amazonaws.com/iChrome/Themes/manifest.json", function(d) {
+	$.get("http://themes.ichro.me/manifest.json", function(d) {
 		var themes = [],
 			cached = [],
-			themeIndex = {}, key;
+			themeIndex = {}, key,
+			types = {
+				random: {
+					icon: "&#xE69C;",
+					entypo: "entypo",
+					desc: "This theme displays a random image every time you load the page"
+				},
+				random_daily: {
+					icon: "&#xF073;",
+					desc: "This theme displays a randomly picked image every day"
+				},
+				feed: {
+					icon :"&#xF09E;",
+					desc: "This theme displays an image selected daily from an external feed"
+				}
+			};
 
 		for (key in iChrome.Storage.cached) {
 			cached.push(parseInt(key));
 		}
 
-		d.images.forEach(function(e, i) {
-			var theme = e;
+		d.themes.forEach(function(e, i) {
+			var theme = $.extend({}, e);
 
 			theme.filterCategories = e.categories;
 			theme.offline = cached.indexOf(e.id) !== -1;
-			theme.image = "https://s3.amazonaws.com/iChrome/Themes/Thumbnails/" + e.id + ".png";
-			theme.resolution = (e.resolution ? e.resolution[0] + "x" + e.resolution[1] : "Unknown");
+			theme.image = "http://themes.ichro.me/thumbnails/" + e.id + ".png";
+
+			if (e.resolution) {
+				theme.resolution = e.resolution[0] + "x" + e.resolution[1];
+			}
+
+			if (e.images || e.size) {
+				theme.stats = "";
+
+				if (e.images) {
+					theme.stats += e.images.length + " images" + (e.size ? ", " : "");
+				}
+
+				if (e.size) {
+					theme.stats += e.size;
+				}
+			}
+
+			if (e.type && types[e.type]) {
+				theme.type = types[e.type];
+
+				theme.oType = e.type;
+			}
+
+			if (e.source) {
+				theme.source = e.source;
+			}
 
 			if (e.name) {
 				theme.name = e.name;
@@ -1501,6 +1772,29 @@ iChrome.Themes.refresh = function() {
 	this.images = this.modal.elm.find(".theme .push").toArray();
 
 	container.triggerHandler("scroll", [true]);
+};
+
+iChrome.Themes.getImage = function(theme) {
+	var image = false;
+
+	if (theme.image) {
+		image = theme.image;
+	}
+	else if (theme.images) {
+		switch (theme.type) {
+			case "random_daily":
+				// Because of the way this is done, all themes will show the same image on different computers on the same day!
+				var rand = Math.sin(new Date().setHours(0, 0, 0, 0)) * 10000;
+
+				image = iChrome.Storage.cached[theme.images[Math.floor((rand - Math.floor(rand)) * theme.images.length)]].image;
+			break;
+			case "random": default:
+				image = iChrome.Storage.cached[theme.images[Math.floor(Math.random() * theme.images.length)]].image;
+			break;
+		}
+	}
+
+	return image;
 };
 
 iChrome.Themes.Custom = function() {
@@ -2924,13 +3218,15 @@ iChrome.Tabs.getCSS = function(tab) {
 		else {
 			var theme = (iChrome.Storage.cached[tab.theme] || iChrome.Storage.themes[tab.theme.replace("custom", "")] || {});
 		}
+
+		var image = iChrome.Themes.getImage(theme);
 		
 		if (theme.color) {
 			css += "background-color: " + theme.color + ";";
 		}
 
-		if (theme.image) {
-			css += "background-image: url(\"" + theme.image + "\");";
+		if (image) {
+			css += "background-image: url(\"" + image + "\");";
 		}
 
 		if (theme.scaling) {

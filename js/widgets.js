@@ -4527,7 +4527,7 @@ var Widgets = {
 	21: {
 		id: 21,
 		size: 1,
-		order: 15.5,
+		order: 15.25,
 		name: "Currency",
 		nicename: "currency",
 		sizes: ["small"],

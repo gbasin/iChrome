@@ -2250,17 +2250,36 @@ body.resizing .medley {
 
 .themes .theme .caption h2 {
 	font-size: 15px;
+	margin-top: -2px; /* To fix for 18px => 20px line-height change */
 	font-weight: 600;
-	line-height: 18px;
+	line-height: 20px;
+	margin-right: -2px;
 	font-family: Open Sans, sans-serif;
 }
 
-.themes .theme .cached {
+/* Custom themes can wrap since there's nothing below */
+.themes .theme:not(.custom) .caption h2 {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.themes .theme h2 span {
 	color: #666;
 	float: right;
-	font-size: 12px;
-	font-weight: 600;
-	font-family: Open Sans, sans-serif;
+	font-size: 14px;
+	margin-top: -2px;
+	font-weight: normal;
+	font-family: FontAwesome;
+}
+
+.themes .theme h2 span:not(:first-child) {
+	margin-right: 8px;
+}
+
+.themes .theme h2 .entypo {
+	font-size: 15px;
+	font-family: Entypo;
 }
 
 .themes .theme .specs {

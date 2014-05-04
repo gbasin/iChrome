@@ -250,13 +250,37 @@
 					<div class="push lazy" style="{{#color}}background-color: {{color}};{{/color}}{{#image}}background-image: url('{{image}}');{{/image}}"></div>
 
 					<div class="caption">
-						{{#offline}}<span class="cached">Cached</span>{{/offline}}
+						{{#name}}
+							<h2 title="{{name}}">
+								{{#offline}}<span class="cached" title="This theme has been cached and is available offline">&#xF0E7;</span>{{/offline}}
 
-						{{#name}}<h2>{{name}}</h2>{{/name}}
+								{{#type}}<span class="type {{entypo}}" title="{{desc}}">{{{icon}}}</span>{{/type}}
+
+								{{name}}
+							</h2>
+						{{/name}}
 
 						<div class="specs">
-							{{#resolution}}<span><b>Resolution:</b> {{resolution}}</span>{{/resolution}}
-							{{#categories}}<span><b>Categories:</b> {{categories}}</span>{{/categories}}
+							{{#stats}}
+								<span>{{stats}}</span>
+							{{/stats}}
+							{{^stats}}
+								{{#resolution}}<span><b>Resolution:</b> {{resolution}}</span>{{/resolution}}
+							{{/stats}}
+
+							{{#source}}
+								{{^stats}}
+									{{^resolution}}
+										{{#categories}}<span><b>Categories:</b> {{categories}}</span>{{/categories}}
+									{{/resolution}}
+								{{/stats}}
+
+								{{#url}}<span><b>By:</b> <a href="{{url}}" target="_blank">{{name}}</a></span>{{/url}}
+								{{^url}}<span><b>By:</b> {{source}}</span>{{/url}}
+							{{/source}}
+							{{^source}}
+								{{#categories}}<span><b>Categories:</b> {{categories}}</span>{{/categories}}
+							{{/source}}
 						</div>
 
 						{{#custom}}
@@ -3139,7 +3163,7 @@
 						<button data-id="decimal">.</button>
 						<button data-id="equals" class="larger">=</button>
 					{{/medium}}
-					
+
 					{{#small}}
 						<button data-id="clear">C</button>
 						<button data-id="multiply" class="larger">&times;</button>
