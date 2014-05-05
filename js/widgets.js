@@ -2929,7 +2929,7 @@ var Widgets = {
 			this.utils.saveData(this.syncData);
 		},
 		addItem: function(data) {
-			var html = '<a class="link" href="' + data.url + '"><img class="favicon" src="chrome://favicon/' +
+			var html = '<a class="link drag" href="' + data.url + '"><img class="favicon" src="chrome://favicon/' +
 				data.url + '" /><span class="title">' + data.title + '</span><div class="tools"><span class="' + 
 				'edit">	&#xE606;</span><span class="delete">&#xE678;</span><span class="move">&#xE693;</span></div>';
 
@@ -2981,7 +2981,9 @@ var Widgets = {
 				data.newTab = true;
 			}
 
-			this.utils.render(data);
+			this.utils.render(data, {
+				listing: this.utils.getTemplate("listing")
+			});
 
 
 			var modalHTML = '<h2 class="title">Edit Bookmark</h2>\
@@ -3039,6 +3041,40 @@ var Widgets = {
 				e.preventDefault();
 
 				that.editItem.call(that, $(this).parent().parent());
+			}).on("click", ".folder", function(e) {
+				if ($(e.target).is(".folder, .name")) {
+					e.preventDefault();
+					e.stopPropagation();
+
+					$(this).toggleClass("active");
+				}
+			}).on("click", ".folder > .tools .delete", function(e) {
+				e.preventDefault();
+
+				$(this).parents(".folder").first().slideUp(function() {
+					$(this).remove();
+
+					that.save.call(that);
+				});
+			}).on("click", ".folder > .tools .edit", function(e) {
+				e.preventDefault();
+
+				$(this).parents(".folder")
+					.first()
+					.children(".name")
+					.attr("disabled", false)
+					.focus()
+					.on("click", function(e) {
+						e.stopPropagation();
+					}).one("focusout", function() {
+						$(this).attr("disabled", true);
+
+						that.save.call(that);
+					}).on("keydown", function(e) {
+						if (e.which == 13) {
+							$(this).off("click keydown").focusout();
+						}
+					});
 			}).on("dragenter dragover", function() {
 
 				$(this).find(".drop").addClass("active");
@@ -3060,18 +3096,31 @@ var Widgets = {
 				}
 
 				link.end().end().html("").parent().removeClass("active");
-			}).on("click", ".new", function(e) {
+			}).on("click", ".new > a", function(e) {
 				if (!that.adding) {
-					that.adding = true;
+					if ($(this).attr("data-type") == "folder") {
+						var html = '<div class="folder drag"><input type="text" class="name" disabled /><div class="tools"><span class="' + 
+							'edit">	&#xE606;</span><span class="delete">&#xE678;</span><span class="move">&#xE693;</span><div class="items"></div></div>';
 
-					that.addItem.call(that, {
-						title: "",
-						url: ""
-					});
+						$(html).appendTo(that.sortable).find(".edit").click();
+
+						that.save.call(that);
+					}
+					else {
+						that.adding = true;
+
+						that.addItem.call(that, {
+							title: "",
+							url: ""
+						});
+					}
 				}
 			}).find(".list").sortable({
 				handle: ".move",
-				itemSelector: "a",
+				group: "bookmarks",
+				itemSelector: ".drag",
+				dynamicDimensions: true,
+				containerSelector: ".folder .items, .list",
 				placeholder: "<a class=\"link holder\"/>",
 				onDragStart: function(item, container, _super) {
 					item.css({
@@ -3080,8 +3129,6 @@ var Widgets = {
 					});
 
 					item.addClass("dragged");
-
-					$(document.body).addClass("dragging");
 				},
 				onDrag: function(item, position, _super) {
 					var ctx = $(item.context),
@@ -3103,10 +3150,18 @@ var Widgets = {
 						return children;
 					}
 					else {
-						return {
-							title: item.find(".title").text().trim().slice(0, 255),
-							url: item.attr("href").trim().slice(0, 500)
-						};
+						if (item.hasClass("folder")) {
+							return {
+								name: item.find(".name").val().trim().slice(0, 255),
+								items: children[0] ? children : []
+							};
+						}
+						else {
+							return {
+								title: item.find(".title").text().trim().slice(0, 255),
+								url: item.attr("href").trim().slice(0, 500)
+							};
+						}
 					}
 				},
 			});

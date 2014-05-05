@@ -1661,7 +1661,7 @@
 	background: rgba(0, 0, 0, 0.03);
 }
 
-.bookmarks .link.dragged {
+.bookmarks .drag.dragged {
 	background: #F7F7F7;
 	position: absolute;
 }
@@ -1710,7 +1710,7 @@
 
 .bookmarks:hover .new,
 .bookmarks .link:hover .tools,
-.bookmarks .link.dragged .tools {
+.bookmarks .drag.dragged .tools {
 	opacity: 1;
 }
 
@@ -1721,6 +1721,68 @@
 .bookmarks .tools .edit:hover	{ color: #428BCA; }
 .bookmarks .tools .delete:hover	{ color: #E43431; }
 .bookmarks .tools .move:hover	{ cursor: move; }
+
+
+
+
+
+/*---------------------------------------------
+	/ Bookmarks / Folders
+*/
+.bookmarks .folder {
+	color: #666;
+	cursor: pointer;
+	position: relative;
+}
+
+.bookmarks .folder:before {
+	color: #777;
+	font-size: 14px;
+	content: "\F0DA";
+	margin-left: 15px;
+	font-family: FontAwesome;
+}
+
+.bookmarks .folder.active:before {
+	content: "\F0D7";
+}
+
+.bookmarks .folder .tools:hover,
+.bookmarks .folder .name:hover + .tools {
+	opacity: 1;
+}
+
+.bookmarks .folder .name {
+	color: #444;
+	cursor: pointer;
+	font-size: 15px;
+	position: relative;
+	border: 0!important;
+	width: calc(100% - 30px);
+	padding: 10px 15px!important;
+	padding-left: 10px!important;
+	font-family: Open Sans, sans-serif;
+}
+
+.bookmarks .folder .name:hover {
+	color: #666;
+}
+
+.bookmarks .folder > .items {
+	display: none;
+}
+
+.bookmarks .folder.active > .items {
+	display: block;
+}
+
+.bookmarks .folder .folder {
+	padding-left: 10px;
+}
+
+.bookmarks .folder .link {
+	padding-left: 25px;
+}
 
 
 

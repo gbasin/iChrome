@@ -2652,13 +2652,13 @@ iChrome.Updated = function() {
 
 
 // Templates
-iChrome.render = function(template, data) {
+iChrome.render = function(template, data, partials) {
 	var compiled = iChrome.Templates.cache[template];
 
 	if (!compiled) {
 		if (iChrome.Templates.raw[template]) {
 			try {
-				compiled = iChrome.Templates.cache[template] = Hogan.compile(iChrome.Templates.raw[template]);
+				compiled = iChrome.Templates.cache[template] = Hogan.compile(iChrome.Templates.raw[template].replace("{{&gt;", "{{>"));
 			}
 			catch (e) {
 				iChrome.Status.error("An error occurred while trying to render the " + template + " template!")
@@ -2670,7 +2670,7 @@ iChrome.render = function(template, data) {
 		}
 	}
 	
-	return compiled.render(data || {});
+	return compiled.render(data || {}, partials);
 };
 
 iChrome.Templates = function(cb) {
@@ -3961,12 +3961,16 @@ iChrome.Widgets.Utils.saveData = function(data) {
 	}, 200);
 };
 
-iChrome.Widgets.Utils.render = function(data) {
+iChrome.Widgets.Utils.render = function(data, partials) {
 	data = $.extend({}, data || {});
 
 	data[this.size] = true;
 
-	this.elm.html('<div class="handle"></div>' + (this.settings ? '\r\n<div class="settings">&#xF0AD;</div>' : "") + iChrome.render("widgets." + this.name, data) + (this.medley ? '\r\n<div class="resize"></div>' : ""));
+	this.elm.html('<div class="handle"></div>' + (this.settings ? '\r\n<div class="settings">&#xF0AD;</div>' : "") + iChrome.render("widgets." + this.name, data, partials) + (this.medley ? '\r\n<div class="resize"></div>' : ""));
+};
+
+iChrome.Widgets.Utils.getTemplate = function(name) {
+	return iChrome.Templates.raw["widgets." + this.name + (name ? "." + name : "")].replace("{{&gt;", "{{>");
 };
 
 

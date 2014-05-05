@@ -1881,22 +1881,45 @@
 				<div class="catch" contenteditable></div>
 			</div>
 
-			<h2 class="header">{{title}}{{^title}}&nbsp;{{/title}}<a class="new">New...</a></h2>
+			<h2 class="header">{{title}}{{^title}}&nbsp;{{/title}}<div class="new">New: <a data-type="bookmark">Bookmark</a> <a data-type="folder">Folder</a></div></h2>
 
 			<div class="list{{#two}} two-column{{/two}}">
 				{{#bookmarks}}
-					<a class="link" href="{{url}}{{#newTab}}" target="_blank{{/newTab}}">
-						<img class="favicon" src="chrome://favicon/{{url}}" />
-						<span class="title">{{title}}</span>
-
-						<div class="tools">
-							<span class="edit">&#xE606;</span>
-							<span class="delete">&#xE678;</span>
-							<span class="move">&#xE693;</span>
-						</div>
-					</a>
+					{{>listing}}
 				{{/bookmarks}}
 			</div>
+		</template>
+
+		<template id="template.widgets.bookmarks.listing">
+			{{#url}}
+				<a class="link drag" href="{{url}}{{#newTab}}" target="_blank{{/newTab}}">
+					<img class="favicon" src="chrome://favicon/{{url}}" />
+					<span class="title">{{title}}</span>
+
+					<div class="tools">
+						<span class="edit">&#xE606;</span>
+						<span class="delete">&#xE678;</span>
+						<span class="move">&#xE693;</span>
+					</div>
+				</a>
+			{{/url}}
+			{{^url}}
+				<div class="folder drag">
+					<input type="text" class="name" value="{{name}}" disabled />
+
+					<div class="tools">
+						<span class="edit">&#xE606;</span>
+						<span class="delete">&#xE678;</span>
+						<span class="move">&#xE693;</span>
+					</div>
+
+					<div class="items">
+						{{#items}}
+							{{>listing}}
+						{{/items}}
+					</div>
+				</div>
+			{{/url}}
 		</template>
 
 		<template id="template.widgets.bookmarks.desc">
