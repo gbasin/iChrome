@@ -264,12 +264,20 @@ iChrome.deferred = function(refresh) {
 		iChrome.Donate.modal.show();
 	});
 
+	var themeOut = null;
+
 	$(document.body).on("mouseenter", ".tab-container > .theme-view", function(e) {
-		$("body").prepend('<style id="theme-view-style-elm">body > * { transition: opacity .3s ease-in-out!important; opacity: 0!important; }</style>');
+		clearTimeout(themeOut);
+
+		themeOut = setTimeout(function() {
+			$("body").prepend('<style id="theme-view-style-elm">body > * { transition: opacity .3s ease-in-out!important; opacity: 0!important; }</style>');
+		}, 500);
 	}).on("mouseleave", ".tab-container > .theme-view", function(e) {
+		clearTimeout(themeOut);
+
 		var tStyle = $("#theme-view-style-elm").html("body > * { transition: opacity .3s ease-in-out!important; }");
 
-		setTimeout(function() { tStyle.remove(); }, 300);
+		themeOut = setTimeout(function() { tStyle.remove(); }, 300);
 	});
 
 	$(".toolbar .custom-link").on("click", function(e) {
@@ -632,12 +640,12 @@ iChrome.CSS = function() {
 
 
 // Modals
-iChrome.Modal = function(options, close) {
+iChrome.Modal = function(ops, close) {
 	var options = $.extend({}, {
 			width: "",
 			height: "",
 			html: "This is some sample modal content!!"
-		}, options || {}),
+		}, ops || {}),
 		css = {
 			width: options.width,
 			maxHeight: options.height
@@ -647,16 +655,20 @@ iChrome.Modal = function(options, close) {
 		css.height = options.realHeight;
 	}
 
-	var modal = this.modal = $('<div class="modal"><div class="close"></div><div class="content"></div></div>').appendTo("body").css(css);
+	var modal = this.modal = $('<div class="modal" tabindex="-1"><div class="close"></div><div class="content"></div></div>').appendTo("body").css(css);
 
 	if (options.classes) {
 		this.modal.addClass(options.classes);
 	}
 
+	if (ops.width && ops.width <= 700) {
+		this.modal.addClass("small");
+	}
+
 	this.elm = this.modal.find(".content").html(options.html);
 
 	var that = this,
-		overlay = this.overlay = $('<div class="modal-overlay"></div>').appendTo("body").add(this.modal.children(".close")).on("click", function(e) {
+		overlay = this.overlay = $('<div class="modal-overlay" tabindex="-1"></div>').appendTo("body").add(this.modal.children(".close")).on("click", function(e) {
 			if (typeof close == "function") {
 				close(e);
 			}
@@ -666,7 +678,7 @@ iChrome.Modal = function(options, close) {
 		}).end();
 
 	this.show = function() {
-		modal.add(overlay).addClass("visible");
+		modal.add(overlay).addClass("visible").end().focus();
 
 		return that;
 	};
@@ -682,6 +694,25 @@ iChrome.Modal = function(options, close) {
 
 		delete that;
 	};
+
+	/*
+		This isn't perfect since it relies on the modal having focus, but it should be pretty good.
+	
+		The alternative is to try to keep an array of open modals and attach the keydown to the body.  Then when it gets a match, pop()
+		the array until an open one is found and close it.
+
+		But, that would slow down iChrome (the keydown) and use more memory (the array).
+	*/
+	modal.add(overlay).on("keydown", function(e) {
+		if (e.keyCode == 27) {
+			if (typeof close == "function") {
+				close(e);
+			}
+			else {
+				that.hide();
+			}
+		}
+	});
 };
 
 
@@ -3533,7 +3564,7 @@ iChrome.Tabs.Menu = function() {
 	var createTab = function() {
 			var modal = new iChrome.Modal({
 					width: 400,
-					height: 210,
+					height: 230,
 					classes: "new-tab",
 					html: iChrome.render("new-tab")
 				}),
@@ -3630,7 +3661,7 @@ iChrome.Widgets.refresh = function() {
 iChrome.Widgets.Settings = function() {
 	this.Settings.modal = new iChrome.Modal({
 		width: 400,
-		height: 500,
+		height: 535,
 		html: iChrome.render("widget-settings"),
 		classes: "widget-settings"
 	});
