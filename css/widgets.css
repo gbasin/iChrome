@@ -1666,7 +1666,7 @@
 	position: absolute;
 }
 
-.bookmarks .list.two-column .link {
+.bookmarks .list.two-column > .drag {
 	width: 50%;
 	display: inline-block;
 	vertical-align: middle;
@@ -1758,6 +1758,7 @@
 	font-size: 15px;
 	position: relative;
 	border: 0!important;
+	text-overflow: ellipsis;
 	width: calc(100% - 30px);
 	padding: 10px 15px!important;
 	padding-left: 10px!important;
@@ -1766,6 +1767,10 @@
 
 .bookmarks .folder .name:hover {
 	color: #666;
+}
+
+.bookmarks .folder:hover .name {
+	width: calc(100% - 100px);
 }
 
 .bookmarks .folder > .items {
