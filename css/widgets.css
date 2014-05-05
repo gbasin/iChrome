@@ -1732,6 +1732,7 @@
 .bookmarks .folder {
 	color: #666;
 	cursor: pointer;
+	background: #FFF;
 	position: relative;
 }
 
@@ -1747,6 +1748,10 @@
 	content: "\F0D7";
 }
 
+.bookmarks .folder .tools {
+	background: inherit;
+}
+
 .bookmarks .folder .tools:hover,
 .bookmarks .folder .name:hover + .tools {
 	opacity: 1;
@@ -1758,7 +1763,6 @@
 	font-size: 15px;
 	position: relative;
 	border: 0!important;
-	text-overflow: ellipsis;
 	width: calc(100% - 30px);
 	padding: 10px 15px!important;
 	padding-left: 10px!important;
@@ -1769,7 +1773,7 @@
 	color: #666;
 }
 
-.bookmarks .folder:hover .name {
+.bookmarks .folder .name:hover {
 	width: calc(100% - 100px);
 }
 
