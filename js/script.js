@@ -266,13 +266,13 @@ iChrome.deferred = function(refresh) {
 
 	var themeOut = null;
 
-	$(document.body).on("mouseenter", ".tab-container > .theme-view", function(e) {
+	$(document.body).on("mouseenter", ".theme-view", function(e) {
 		clearTimeout(themeOut);
 
 		themeOut = setTimeout(function() {
 			$("body").prepend('<style id="theme-view-style-elm">body > * { transition: opacity .3s ease-in-out!important; opacity: 0!important; }</style>');
 		}, 500);
-	}).on("mouseleave", ".tab-container > .theme-view", function(e) {
+	}).on("mouseleave", ".theme-view", function(e) {
 		clearTimeout(themeOut);
 
 		var tStyle = $("#theme-view-style-elm").html("body > * { transition: opacity .3s ease-in-out!important; }");
@@ -536,7 +536,7 @@ iChrome.refresh = function(all) {
 		.prepend('<div class="remove">Remove</div>' +
 			'<header class="toolbar"></header>' +
 			'<div class="widgets-container"></div>' +
-			'<div class="tab-container" tabindex="-1"><div class="theme-view">&#xE63C;</div><div class="tab-nav"><nav class="prev"></nav><nav class="next"></nav></div></div>');
+			'<div class="tab-container" tabindex="-1"><div class="tab-nav"><nav class="prev"></nav><nav class="next"></nav></div></div>');
 
 	iChrome.Tabs.parent = $(".tab-container");
 	iChrome.Widgets.active = [];
@@ -2832,7 +2832,7 @@ iChrome.Tabs = function() {
 iChrome.Tabs.parent = $(".tab-container");
 
 iChrome.Tabs.render = function() {
-	var container = iChrome.Tabs.parent.html('<div class="theme-view">&#xE63C;</div><div class="tab-nav"><nav class="prev"></nav><nav class="next"></nav></div>'),
+	var container = iChrome.Tabs.parent.html('<div class="tab-nav"><nav class="prev"></nav><nav class="next"></nav></div>'),
 		panel = iChrome.Tabs.panel.html(""),
 		sizes = {
 			1: "tiny",
