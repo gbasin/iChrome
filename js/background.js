@@ -436,7 +436,9 @@ chrome.runtime.onInstalled.addListener(function(details) {
 			migrateThemes();
 		}
 		
-		localStorage["whatsNew"] = "true";
+		localStorage["updated"] = "true";
+
+		//localStorage["whatsNew"] = "true";
 	}
 });
 
