@@ -1733,7 +1733,7 @@
 */
 .modal.bookmarks-modal form {
 	overflow: auto;
-	padding: 0 25px;
+	padding: 20px 25px;
 	height: calc(100% - 110px);
 }
 
@@ -1752,7 +1752,6 @@
 
 .modal.bookmarks-modal .btn {
 	float: right;
-	margin-top: 20px;
 	margin-right: 20px;
 }
 
