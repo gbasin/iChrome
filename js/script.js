@@ -267,7 +267,9 @@ iChrome.deferred = function(refresh) {
 	$(document.body).on("mouseenter", ".tab-container > .theme-view", function(e) {
 		$("body").prepend('<style id="theme-view-style-elm">body > * { transition: opacity .3s ease-in-out!important; opacity: 0!important; }</style>');
 	}).on("mouseleave", ".tab-container > .theme-view", function(e) {
-		$("#theme-view-style-elm").remove();
+		var tStyle = $("#theme-view-style-elm").html("body > * { transition: opacity .3s ease-in-out!important; }");
+
+		setTimeout(function() { tStyle.remove(); }, 300);
 	});
 
 	$(".toolbar .custom-link").on("click", function(e) {

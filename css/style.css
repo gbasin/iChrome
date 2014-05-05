@@ -1917,6 +1917,7 @@ body.resizing .medley {
 .store > .content .widget img {
 	width: 80px;
 	float: left;
+	height: 80px;
 	margin: 10px;
 	margin-right: 15px;
 	border-radius: 2px;
