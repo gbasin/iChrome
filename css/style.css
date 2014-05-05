@@ -821,6 +821,19 @@ input[type="radio"]:checked {
 	flex-direction: row;
 }
 
+.tab-container .theme-view {
+	top: 0;
+	right: 0;
+	z-index: 99;
+	padding: 0 5px;
+	cursor: pointer;
+	font-size: 20px;
+	position: absolute;
+	font-family: Entypo;
+	color: rgba(0, 0, 0, 0.1);
+	text-shadow: 0 0 rgba(255, 255, 255, 0.1);
+}
+
 .tab-container .tab {
 	top: 0;
 	flex: 1;

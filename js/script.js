@@ -264,6 +264,12 @@ iChrome.deferred = function(refresh) {
 		iChrome.Donate.modal.show();
 	});
 
+	$(document.body).on("mouseenter", ".tab-container > .theme-view", function(e) {
+		$("body").prepend('<style id="theme-view-style-elm">body > * { transition: opacity .3s ease-in-out!important; opacity: 0!important; }</style>');
+	}).on("mouseleave", ".tab-container > .theme-view", function(e) {
+		$("#theme-view-style-elm").remove();
+	});
+
 	$(".toolbar .custom-link").on("click", function(e) {
 		var href = this.getAttribute("href");
 
@@ -520,7 +526,7 @@ iChrome.refresh = function(all) {
 		.prepend('<div class="remove">Remove</div>' +
 			'<header class="toolbar"></header>' +
 			'<div class="widgets-container"></div>' +
-			'<div class="tab-container" tabindex="-1"><div class="tab-nav"><nav class="prev"></nav><nav class="next"></nav></div></div>');
+			'<div class="tab-container" tabindex="-1"><div class="theme-view">&#xE63C;</div><div class="tab-nav"><nav class="prev"></nav><nav class="next"></nav></div></div>');
 
 	iChrome.Tabs.parent = $(".tab-container");
 	iChrome.Widgets.active = [];
@@ -1512,6 +1518,14 @@ iChrome.Themes.handlers = function(modal) {
 			if (theme.oType == "feed") {
 				iChrome.Themes.getFeed(theme, that.use, parent, that.cache.bind(that));
 			}
+			else if (theme.oType == "sunrise_sunset") {
+				navigator.geolocation.getCurrentPosition(function(pos) {console.log(pos);
+					localStorage.lat = parseFloat(pos.coords.latitude.toFixed(2));
+					localStorage.lon = parseFloat(pos.coords.longitude.toFixed(2));
+
+					that.cache(theme, that.use, parent);
+				});
+			}
 			else {
 				that.cache(theme, that.use, parent);
 			}
@@ -1631,21 +1645,22 @@ iChrome.Themes.load = function(cb) {
 					icon: "&#xF073;",
 					desc: "This theme displays a randomly picked image every day"
 				},
+				sunrise_sunset: {
+					entypo: "entypo",
+					icon: "&#xE63D;",
+					desc: "This theme displays an image based on the time of day"
+				},
 				feed: {
 					icon :"&#xF09E;",
 					desc: "This theme displays an image selected daily from an external feed"
 				}
 			};
 
-		for (key in iChrome.Storage.cached) {
-			cached.push(parseInt(key));
-		}
-
 		d.themes.forEach(function(e, i) {
 			var theme = $.extend({}, e);
 
 			theme.filterCategories = e.categories;
-			theme.offline = cached.indexOf(e.id) !== -1;
+			theme.offline = !iChrome.Storage.cached[e.id];
 			theme.image = "http://themes.ichro.me/thumbnails/" + e.id + ".png";
 
 			if (e.resolution) {
@@ -1787,6 +1802,69 @@ iChrome.Themes.getImage = function(theme) {
 				var rand = Math.sin(new Date().setHours(0, 0, 0, 0)) * 10000;
 
 				image = iChrome.Storage.cached[theme.images[Math.floor((rand - Math.floor(rand)) * theme.images.length)]].image;
+			break;
+			case "sunrise_sunset":
+				if (!iChrome.Themes.SunCalc) {
+					/*
+						(c) 2011-2014, Vladimir Agafonkin
+						SunCalc is a JavaScript library for calculating sun/mooon position and light phases.
+						https://github.com/mourner/suncalc
+
+						Modified by Avi Kohn to only include necessary data and functions
+					*/
+					iChrome.Themes.SunCalc=function(){var g=Math.PI,a=Math.sin,l=Math.cos,v=Math.asin,w=Math.acos,c=g/180,q=23.4397*c,r=[[-6,"dawn","dusk"],
+					[6,"gHEnd","gH"]];return function(x,y){var n=c*-y,z=c*x,s=Math.round((new Date).valueOf()/864E5-0.5+2440588-2451545-9E-4-n/(2*g)),h=9E-4
+					+(0+n)/(2*g)+s,e=c*(357.5291+0.98560028*h),f;f=c*(1.9148*a(e)+0.02*a(2*e)+3E-4*a(3*e));f=e+f+102.9372*c+g;var t;t=v(a(0)*l(q)+l(0)*a(q)*
+					a(f));var h=2451545+h+0.0053*a(e)-0.0069*a(2*f),p={},k,u,m,b,d;k=0;for(u=r.length;k<u;k+=1)m=r[k],b=z,d=t,b=w((a(m[0]*c)-a(b)*a(d))/(l(b)
+					*l(d))),d=f,b=2451545+(9E-4+(b+n)/(2*g)+s)+0.0053*a(e)-0.0069*a(2*d),d=h-(b-h),p[m[1]]=new Date(864E5*(d+0.5-2440588)),p[m[2]]=new Date(
+					864E5*(b+0.5-2440588));return p}}();
+				}
+
+				var lat = localStorage.lat,
+					lon = localStorage.lon;
+
+				if (lat && lon) {
+					var times = iChrome.Themes.SunCalc(lat, lon);
+				}
+				else { // If lat and lon aren't set, default to Chicago. This should be roughly accurate for most users.
+					var times = iChrome.Themes.SunCalc(41.85, -87.65);
+				}
+
+
+				times = [times.dawn.getTime() - 18E5, times.gHEnd.getTime() + 72E5, times.gH.getTime() - 36E5, times.dusk.getTime()];
+
+
+				var dt = new Date().getTime(),
+					rand = Math.sin(new Date().setHours(0, 0, 0, 0)) * 10000;
+
+
+				// If after sunrise start and before sunrise end
+				if (dt >= times[0] && dt < times[1]) {
+					var sunrise = theme.images.slice(0, theme.groups[0]); // Then slice images at indicated groups
+
+					image = iChrome.Storage.cached[sunrise[Math.floor((rand - Math.floor(rand)) * sunrise.length)]].image; // And pick randomly
+				}
+
+				// If after sunrise end and before sunset start
+				else if (dt >= times[1] && dt < times[2]) {
+					var daytime = theme.images.slice(theme.groups[0], theme.groups[1]);
+
+					image = iChrome.Storage.cached[daytime[Math.floor((rand - Math.floor(rand)) * daytime.length)]].image;
+				}
+
+				// If after sunset start and before sunset end
+				else if (dt >= times[2] && dt < times[3]) {
+					var sunset = theme.images.slice(theme.groups[1], theme.groups[2]);
+
+					image = iChrome.Storage.cached[sunset[Math.floor((rand - Math.floor(rand)) * sunset.length)]].image;
+				}
+
+				// Otherwise, it's nighttime
+				else {
+					var nighttime = theme.images.slice(theme.groups[2], theme.groups[3]);
+
+					image = iChrome.Storage.cached[nighttime[Math.floor((rand - Math.floor(rand)) * nighttime.length)]].image;
+				}
 			break;
 			case "random": default:
 				image = iChrome.Storage.cached[theme.images[Math.floor(Math.random() * theme.images.length)]].image;
@@ -2797,7 +2875,7 @@ iChrome.Tabs = function() {
 iChrome.Tabs.parent = $(".tab-container");
 
 iChrome.Tabs.render = function() {
-	var container = iChrome.Tabs.parent.html('<div class="tab-nav"><nav class="prev"></nav><nav class="next"></nav></div>'),
+	var container = iChrome.Tabs.parent.html('<div class="theme-view">&#xE63C;</div><div class="tab-nav"><nav class="prev"></nav><nav class="next"></nav></div>'),
 		panel = iChrome.Tabs.panel.html(""),
 		sizes = {
 			1: "tiny",
