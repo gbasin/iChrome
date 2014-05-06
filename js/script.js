@@ -9,7 +9,7 @@ Number.prototype.abbr = function(min, precision) {
 
 	if (value >= min) {
 		var suffixes = ["", "K", "M", "B","T"],
-			suffixNum = Math.floor(("" + parseInt(value)).length / 3),
+			suffixNum = Math.floor((("" + parseInt(value)).length - 1) / 3),
 			shortValue = "";
 
 		for (var length = precision; length >= 1; length--) {
