@@ -2885,6 +2885,51 @@
 			Medium: Displays an input box, full keypad and basic functions (add, subtract, multiply, divide, parentheses).
 		</template>
 
+		<template id="template.widgets.youtube">
+			{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+			<form class="searchbox" action="https://www.youtube.com/results" method="GET{{#newTab}}" target="_blank{{/newTab}}">
+				<input type="text" placeholder="Search YouTube" name="search_query" />
+
+				<button class="submit">&#xE624;</button>
+			</form>
+
+			{{#featured}}
+				<a class="featured video" href="{{url}}">
+					<div class="thumb" style="background-image: url({{thumb}});" data-duration="{{duration}}"></div>
+
+					<h2 title="{{title}}">{{title}}</h2>
+
+					<span class="author">{{uploader}}</span>
+					<span class="views">{{views}} views</span>
+				</a>
+			{{/featured}}
+
+			<div class="videos">
+				{{#videos}}
+					<a class="video" href="{{url}}">
+						<div class="thumb" style="background-image: url({{thumb}});" data-duration="{{duration}}"></div>
+
+						<h2 title="{{title}}">{{title}}</h2>
+
+						<span class="author">{{uploader}}</span>
+
+						<span class="views">{{views}} views</span>
+					</a>
+				{{/videos}}
+			</div>
+		</template>
+
+		<template id="template.widgets.youtube.desc">
+			The YouTube widget displays a searchbox and videos from either the worldwide "Popular on YouTube" channel or a specified username.<br />
+			<br />
+			You can choose for videos to be displayed as one large video, optionally with 2 or 4 small ones or 4/6 small videos.<br />
+			<br />
+			No setup is neccessary for this widget.<br />
+			<br />
+			There are no variations available for this widget.
+		</template>
+
 		<!-- Templates end -->
 
 		<script type="text/javascript" src="js/plugins.js"></script>
