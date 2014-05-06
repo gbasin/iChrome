@@ -1552,9 +1552,11 @@ iChrome.Themes.handlers = function(modal) {
 				iChrome.Themes.getFeed(theme, that.use, parent, that.cache.bind(that));
 			}
 			else if (theme.oType == "sunrise_sunset") {
-				navigator.geolocation.getCurrentPosition(function(pos) {console.log(pos);
-					localStorage.lat = parseFloat(pos.coords.latitude.toFixed(2));
-					localStorage.lon = parseFloat(pos.coords.longitude.toFixed(2));
+				navigator.geolocation.getCurrentPosition(function(pos) {
+					if (pos && pos.coords) {
+						localStorage.lat = parseFloat(pos.coords.latitude.toFixed(2));
+						localStorage.lon = parseFloat(pos.coords.longitude.toFixed(2));
+					}
 
 					that.cache(theme, that.use, parent);
 				});
@@ -1861,6 +1863,14 @@ iChrome.Themes.getImage = function(theme) {
 				}
 				else { // If lat and lon aren't set, default to Chicago. This should be roughly accurate for most users.
 					var times = iChrome.Themes.SunCalc(41.85, -87.65);
+
+					// Then attempt to get a location and save, this needs to be here for synced sunrise themes.  It can't be in the background page since it needs permission.
+					navigator.geolocation.getCurrentPosition(function(pos) {
+						if (pos && pos.coords) {
+							localStorage.lat = parseFloat(pos.coords.latitude.toFixed(2));
+							localStorage.lon = parseFloat(pos.coords.longitude.toFixed(2));
+						}
+					});
 				}
 
 
