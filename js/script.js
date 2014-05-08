@@ -4561,10 +4561,10 @@ iChrome.Search.Suggestions.setHandlers = function() {
 		}
 	});
 
-	this.elm.on("click", function(e) {
+	this.elm.on("mousedown", function(e) {
 		var target = $(e.target);
 
-		if (target.is("div")) {
+		if (target.is("div") && !target.is(".suggestions")) {
 			iChrome.Search.box.val(target.text());
 			iChrome.Search.submit();
 		}
