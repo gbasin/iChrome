@@ -6,6 +6,12 @@
 			"run_at": "document_start"
 		},
 		{
+			"js": [ "js/wunderlistfix.js" ],
+			"matches": [ "https://*.wunderlist.com/webapp*", "http://*.wunderlist.com/webapp*" ],
+			"run_at": "document_start",
+			"all_frames": true
+		},
+		{
 			"css": [ "css/gmailfix.css" ],
 			"matches": [ "https://mail.google.com/*" ],
 			"all_frames": true
