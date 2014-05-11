@@ -1013,7 +1013,7 @@ var Widgets = {
 				height: this.config.height || 400
 			});
 
-			this.elm.addClass("tabbed");
+			this.elm.addClass("tabbed").css("height", this.config.height || 400); // This prevents a weird 5px gap at the bottom of the widget
 		}
 	},
 	8: {
