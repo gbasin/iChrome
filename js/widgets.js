@@ -12,19 +12,13 @@ var Widgets = {
 		desc: "Displays the current weather and a forecast for the next 4 days.",
 		settings: [
 			{
-				type: "text",
-				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide"
-			},
-			{
 				type: "size"
 			},
 			{
-				type: "text",
+				type: "list",
 				nicename: "location",
-				label: "Location",
-				placeholder: "Enter a location to retrieve weather for"
+				label: "Location(s)",
+				placeholder: "Enter a location and press Enter"
 			},
 			{
 				type: "radio",
@@ -37,76 +31,92 @@ var Widgets = {
 			}
 		],
 		config: {
-			title: "San Francisco",
 			size: "medium",
-			location: "San Francisco, CA",
+			location: ["San Francisco, CA"],
 			units: "standard",
-			woeid: "2487956",
-			woeloc: "San Francisco, CA"
+			woeid: ["2487956"],
+			woeloc: ["San Francisco, CA"]
 		},
 		data: {
-			conditions: "partlycloudy",
-			temp: 59,
-			wind: "8",
-			chill: "59",
-			humidity: "44",
-			forecast: [
+			weather: [
 				{
-					date: "Today",
-					high: "64",
-					low: "45",
-					conditions: "sunny"
-				},
-				{
-					date: "Mon",
-					high: "65",
-					low: "46",
-					conditions: "sunny"
-				},
-				{
-					date: "Tue",
-					high: "65",
-					low: "45",
-					conditions: "partlycloudy"
-				},
-				{
-					date: "Wed",
-					high: "65",
-					low: "43",
-					conditions: "sunny"
-				},
-				{
-					date: "Thu",
-					high: "67",
-					low: "44",
-					conditions: "sunny"
+					conditions: "partlycloudy",
+					temp: 59,
+					wind: "8",
+					chill: "59",
+					humidity: "44",
+					forecast: [
+						{
+							date: "Today",
+							high: "64",
+							low: "45",
+							conditions: "sunny"
+						},
+						{
+							date: "Mon",
+							high: "65",
+							low: "46",
+							conditions: "sunny"
+						},
+						{
+							date: "Tue",
+							high: "65",
+							low: "45",
+							conditions: "partlycloudy"
+						},
+						{
+							date: "Wed",
+							high: "65",
+							low: "43",
+							conditions: "sunny"
+						},
+						{
+							date: "Thu",
+							high: "67",
+							low: "44",
+							conditions: "sunny"
+						}
+					]
 				}
 			]
 		},
-		getLoc: function(cb) {
-			$.get("http://query.yahooapis.com/v1/public/yql?q=select%20name%2C%20country.content%2C%20woeid%20from%20geo.places%20where%20text%3D%22" + encodeURIComponent(this.config.location.replace(/[^A-z0-9,\- ]/, "")) + "%22&format=json", function(d) {
-				if (d && d.query && d.query.results && d.query.results.place && ((d.query.results.place[0] && d.query.results.place[0].woeid) || d.query.results.place.woeid)) {
-					var m = d.query.results.place;
+		getLocs: function(cb) {
+			var arr = this.config.location.slice();
 
-					if (m[0]) {
-						m = m[0];
+			arr.forEach(function(e, i, a) { a[i] = e.replace(/"/g, ""); });
+
+			// Switched to placefinder instead of places since it handles punctuation and special characters much better. i.e. Strathmore, Alberta, Canada and Córdoba, Argentina
+			$.get("http://query.yahooapis.com/v1/public/yql?q=select%20city%2C%20statecode%2C%20country%2C%20woeid%20from%20geo.placefinder%20where%20" +
+					encodeURIComponent('woeid in (select woeid from geo.placefinder where text="' + arr.join('" limit 1) or woeid in (select woeid from geo.placefinder where text="') + '" limit 1)') + "&format=json",
+			function(d) {
+				if (d && d.query && d.query.results && d.query.results.Result && (d.query.results.Result.woeid || (d.query.results.Result[0] && d.query.results.Result[0].woeid))) {
+					if (d.query.results.Result.woeid) {
+						d.query.results.Result = [d.query.results.Result];
 					}
+					
+					var m = d.query.results.Result;
 
-					var loc = (m.name ? m.name : "") + (m.country && m.country !== "United States" ? ", " + m.country : "");
+					this.config.woeloc = [];
+					this.config.location = [];
+					this.config.woeid = [];
 
-					this.config.woeloc = loc;
-					this.config.location = loc;
-					this.config.woeid = m.woeid;
+					m.forEach(function(e, i) {
+						var loc = (e.city ? e.city : "") + (e.country || e.statecode ? ", " : "") + (e.statecode || "") + (e.country && e.country !== "United States" ? (e.statecode ? " " : "") + e.country : "");
+
+						this.config.woeloc.push(loc);
+						this.config.location.push(loc);
+						this.config.woeid.push(e.woeid);
+					}.bind(this));
 				}
 				else {
-					this.config.woeid = "2487956";
+					this.config.woeid = ["2487956"];
 
-					this.config.loc = "San Francisco, CA";
-					this.config.woeloc = "San Francisco, CA";
+					this.config.location = ["San Francisco, CA"];
+					this.config.woeloc = ["San Francisco, CA"];
 				}
 
 				cb.call(this);
-			}.bind(this));0
+			}.bind(this));
 		},
 		getCondition: function(code) {
 			if (typeof code == "string") {
@@ -202,35 +212,48 @@ var Widgets = {
 		refresh: function() {
 			var config = this.config,
 				get = function() {
-					$.get("https://my.yahoo.com/_td_api/resource/weather;unit=f;woeids=" + encodeURIComponent(this.config.woeid || "2487956"), function(res) {
-						var weather = {};
+					$.get("https://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20weather.forecast%20where%20"
+							+ encodeURIComponent("woeid=" + (this.config.woeid || ["2487956"]).join(" or woeid=")),
+					function(res) {
+						var weather = [];
 
-						if (!(res && (res = res[0]) && res.current && res.current.condition && res.current.condition.code)) {
+						if (!(res && res.query && res.query.results && res.query.results.channel)) {
 							return this.utils.error.call(this, "An error occurred while trying to fetch the weather.");
 						}
 
-						weather = {
-							conditions: this.getCondition(res.current.condition.code) || "unknown",
-							status: res.current.condition.description || "Unknown",
-							temp: Math.round(res.current.temp.now) || 0,
-							wind: res.current.atmosphere.wind_speed || 0,
-							chill: res.current.atmosphere.wind_chill || "0",
-							humidity: res.current.atmosphere.humidity || 0
-						};
+						(res.query.results.channel.length ? res.query.results.channel : [res.query.results.channel]).forEach(function(res, i) {
+							if (!(res && res.item && res.item.condition && res.item.condition.code)) {
+								return this.utils.error.call(this, "An error occurred while trying to fetch the weather.");
+							}
 
-						weather.forecast = [];
+							var w = {
+									wind: res.wind.speed || 0,
+									chill: res.wind.chill || "0",
+									humidity: res.atmosphere.humidity || 0,
+									temp: parseInt(res.item.condition.temp || 0),
+									status: res.item.condition.text || "Unknown",
+									conditions: this.getCondition(res.item.condition.code) || "unknown",
 
-						res.forecast.day.forEach(function(e, i) {
-							weather.forecast.push({
-								date: e.label || "NA",
-								high: e.temp.high || 0,
-								low: e.temp.low || 0,
-								status: e.condition.description || "Unknown",
-								conditions: this.getCondition(e.condition.code) || "unknown"
-							});
+									location: (res.location.city ? res.location.city : (res.location.region ? res.location.region : (res.location.country ? res.location.country : "Unknown"))),
+									forecast: []
+								};
+
+							res.item.forecast.forEach(function(e, i) {
+								w.forecast.push({
+									date: e.day || "NA",
+									high: e.high || 0,
+									low: e.low || 0,
+									status: e.text || "Unknown",
+									conditions: this.getCondition(e.code) || "unknown"
+								});
+							}.bind(this));
+
+							weather.push(w);
 						}.bind(this));
 
-						this.data = weather;
+						this.data = {
+							weather: weather
+						};
 
 						this.utils.saveData(weather);
 
@@ -238,41 +261,67 @@ var Widgets = {
 					}.bind(this));
 				}.bind(this);
 
-			if (config.woeid && config.woeloc == config.location) {
+			if (typeof config.woeid == "string") {
+				this.config.woeid = config.woeid = [config.woeid];
+			}
+
+			if (typeof config.woeloc == "string") {
+				this.config.woeloc = config.woeloc = [config.woeloc];
+			}
+
+			if (typeof config.location == "string") {
+				this.config.location = config.location = [config.location];
+			}
+
+			if (config.woeid && config.woeloc.join("") == config.location.join("")) {
 				get();
 			}
 			else {
-				this.getLoc(get);
+				this.getLocs(get);
 			}
 		},
 		render: function() {
 			var data = $.extend(true, {}, this.data);
 
-			if (this.config.units == "metric") {
-				data.metric = true;
-				data.temp = Math.round(((data.temp - 32) * 5) / 9);
-				data.wind = Math.round(data.wind * 1.609344) + " kph";
-				data.chill = Math.round(((data.chill - 32) * 5) / 9);
-
-				data.forecast.forEach(function(e, i) {
-					e.high = Math.round(((e.high - 32) * 5) / 9);
-					e.low = Math.round(((e.low - 32) * 5) / 9);
-
-					data.forecast[i] = e;
-				});
-			}
-			else {
-				data.wind += " mph";
+			if (data.temp) {
+				data = {
+					weather: [data]
+				};
 			}
 
-			switch (this.config.size) {
-				case "small":
-					delete data.forecast;
-				break;
-				case "medium":
-					data.forecast = data.forecast.slice(0, 5);
-				break;
+			if (!data.weather) {
+				data.weather = [];
 			}
+
+			data.weather.forEach(function(loc, i) {
+				if (this.config.units == "metric") {
+					loc.metric = true;
+					loc.temp = Math.round(((loc.temp - 32) * 5) / 9);
+					loc.wind = Math.round(loc.wind * 1.609344) + " kph";
+					loc.chill = Math.round(((loc.chill - 32) * 5) / 9);
+
+					loc.forecast.forEach(function(e, i) {
+						e.high = Math.round(((e.high - 32) * 5) / 9);
+						e.low = Math.round(((e.low - 32) * 5) / 9);
+
+						loc.forecast[i] = e;
+					});
+				}
+				else {
+					loc.wind += " mph";
+				}
+
+				switch (this.config.size) {
+					case "small":
+						delete loc.forecast;
+					break;
+					case "medium":
+						loc.forecast = loc.forecast.slice(0, 5);
+					break;
+				}
+
+				data.weather[i] = loc;
+			}.bind(this));
 
 			if (this.config.title && this.config.title !== "") {
 				data.title = this.config.title;
@@ -517,7 +566,7 @@ var Widgets = {
 		setOAuth: function() {
 			this.oAuth = new OAuth2("google", {
 				client_id: "559765430405-5rvu6sms3mc111781cfgp1atb097rrph.apps.googleusercontent.com",
-				client_secret: "",
+				client_secret: "", // !! Remove key before commiting
 				api_scope: "https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/analytics"
 			});
 		},
@@ -1537,7 +1586,7 @@ var Widgets = {
 		setOAuth: function() {
 			this.oAuth = new OAuth2("google2", {
 				client_id: "559765430405-2710gl95r9js4c6m4q9nveijgjji50b8.apps.googleusercontent.com",
-				client_secret: "",
+				client_secret: "", // !! Remove key before commiting
 				api_scope: "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar"
 			});
 		},
@@ -3983,7 +4032,7 @@ var Widgets = {
 		setOAuth: function() {
 			this.oAuth = new OAuth2("feedly", {
 				client_id: "ichrome",
-				client_secret: "",
+				client_secret: "", // !! Remove key before commiting
 				api_scope: "https://cloud.feedly.com/subscriptions"
 			}, function(tab) {
 				chrome.webRequest.onBeforeRequest.addListener(
@@ -5403,7 +5452,7 @@ var Widgets = {
 				encodeURIComponent(params.sort(function(a, b) { return a < b ? -1 : a > b; }).join("&"));
 
 			// Generate signature
-			var signature = CryptoJS.HmacSHA1(baseString, "" + "&" + encodeURIComponent(secret)).toString(CryptoJS.enc.Base64);
+			var signature = CryptoJS.HmacSHA1(baseString, "" /* !! Remove key before commiting */ + "&" + encodeURIComponent(secret)).toString(CryptoJS.enc.Base64);
 
 			// Generate OAuth header
 			options.beforeSend = function(xhr) {
@@ -5666,7 +5715,7 @@ var Widgets = {
 		setOAuth: function() {
 			this.oAuth = new OAuth2("drive", {
 				client_id: "559765430405-jtbjv5ivuc17nenpsl4dfk9r53a3q0hg.apps.googleusercontent.com",
-				client_secret: "",
+				client_secret: "", // !! Remove key before commiting
 				api_scope: "https://www.googleapis.com/auth/drive.readonly"
 			});
 		},

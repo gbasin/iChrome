@@ -1374,6 +1374,70 @@ body.resizing .medley {
 
 
 /*---------------------------------------------
+	/ Widget Settings / List Input
+*/
+.widget-settings .list > div > input {
+	border-radius: 0;
+	position: relative;
+}
+
+.widget-settings .list .item {
+	height: 35px;
+	position: relative;
+	font-family: Open Sans, sans-serif;
+}
+
+.widget-settings .list .item input {
+	left: 0;
+	right: 0;
+	top: -1px;
+	bottom: 0;
+	z-index: 0;
+	border-radius: 0;
+	position: absolute;
+}
+
+.widget-settings .list input:hover {
+	z-index: 1;
+}
+
+.widget-settings .list input:focus {
+	z-index: 2;
+}
+
+.widget-settings .list .tools {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	opacity: 0;
+	color: #555;
+	font-size: 20px;
+	line-height: 15px;
+	position: absolute;
+	font-family: Entypo;
+	padding: 10px 10px 10px 0;
+}
+
+.widget-settings .list .item:hover .tools,
+.widget-settings .list .item input:focus + .tools {
+	opacity: 1;
+}
+
+.widget-settings .list .tools span:hover {
+	color: #428BCA;
+	cursor: pointer;
+}
+
+.widget-settings .list .tools .delete:hover {
+	color: #E43431;
+}
+
+
+
+
+
+/*---------------------------------------------
 	/ Modal Styles
 */
 .modal {

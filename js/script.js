@@ -3617,7 +3617,18 @@ iChrome.Widgets.Settings = function() {
 			};
 
 		this.form.serializeArray().forEach(function(e, i) {
-			settings[e.name.replace("widget-", "")] = e.value;
+			var n = e.name.replace("widget-", "");
+
+			if (!Array.isArray(settings[n]) && typeof settings[n] !== "undefined") {
+				settings[n] = [settings[n]];
+			}
+
+			if (Array.isArray(settings[n])) {
+				settings[n].push(e.value);
+			}
+			else {
+				settings[n] = e.value;
+			}
 		});
 
 		if (settings.size && this.widget.config.size && this.widget.config.size !== settings.size) {
@@ -3742,6 +3753,77 @@ iChrome.Widgets.Settings.inputs = {
 		}
 
 		elm.find("select").change();
+	},
+	list: function(input, elm, widget) {
+		var template = 
+			'<label for="widget-{{nicename}}">{{label}}{{{help}}}</label>' +
+			
+			'<div>' +
+				'<input type="text" placeholder="{{placeholder}}" id="widget-{{nicename}}" />' +
+
+				'<div class="items">' +
+					'{{{items}}}'
+				'</div>' +
+			'</div>',
+			item = 
+			'<div class="item">' +
+				'<input type="text" name="widget-{{nicename}}" value="{{value}}" />' +
+
+				'<div class="tools">' +
+					'<span class="up">&#xE6CF;</span>' +
+					'<span class="down">&#xE6CE;</span>' +
+					'<span class="delete">&#xE678;</span>' +
+				'</div>' +
+			'</div>',
+			iterate = function(items) {
+				var html = "",
+					itm = item.replace("{{nicename}}", this.escape(input.nicename));
+
+				items.forEach(function(e, i) {
+					html += itm.replace("{{value}}", this.escape(e));
+				}.bind(this));
+
+				return html;
+			}.bind(this);
+
+		var html = template
+			.replace(/{{label}}/g,		this.escape(input.label))
+			.replace(/{{{help}}}/g,		(input.help ? '<div class="help" data-tooltip="' + this.escape(input.help) + '"></div>' : ""))
+			.replace(/{{nicename}}/g,	this.escape(input.nicename))
+			.replace(/{{placeholder}}/g,this.escape(input.placeholder))
+			.replace(/{{{items}}}/g,		iterate.call(this, input.value || []));
+
+		var esc = this.escape;
+
+		elm.html(html).addClass("list").on("click", ".tools span", function() {
+			var t = $(this),
+				p = t.parents(".item").first();
+
+			if (t.hasClass("up")) {
+				p.insertBefore(p.prev());
+			}
+			else if (t.hasClass("down")) {
+				p.insertAfter(p.next());
+			}
+			else if (t.hasClass("delete")) {
+				p.slideUp(function() {
+					p.remove();
+				});
+			}
+		}).on("keydown", "#widget-" + input.nicename, function(e) {
+			if (e.which == 13) {
+				e.preventDefault();
+				e.stopPropagation();
+
+				elm.find(".items").append(
+					item
+						.replace("{{nicename}}", esc(input.nicename))
+						.replace("{{value}}", esc($(this).val()))
+				);
+
+				$(this).val("");
+			}
+		});
 	},/*
 	multiple: function(input, elm, widget) {
 		var template =
