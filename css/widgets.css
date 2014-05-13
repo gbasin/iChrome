@@ -1680,8 +1680,9 @@
 }
 
 .bookmarks .drag.dragged {
-	background: #F7F7F7;
+	cursor: move;
 	position: absolute;
+	background: #F7F7F7;
 }
 
 .bookmarks .list.two-column > .drag {
@@ -1691,8 +1692,8 @@
 }
 
 .bookmarks .link.holder {
-	border: 1px solid #F3F3F3;
 	border-width: 1px 0;
+	border: 1px solid #F3F3F3;
 }
 
 .bookmarks .favicon {
@@ -1931,11 +1932,9 @@
 }
 
 .todo .item.dragged {
-	background: #F7F7F7;
-}
-
-.todo .item.dragged {
+	cursor: pointer;
 	position: absolute;
+	background: #F7F7F7;
 }
 
 .todo .item.holder {

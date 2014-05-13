@@ -3366,8 +3366,6 @@ var Widgets = {
 					});
 
 					item.addClass("dragged");
-
-					$(document.body).addClass("dragging");
 				},
 				onDrag: function(item, position, _super) {
 					var ctx = $(item.context),
@@ -3406,7 +3404,7 @@ var Widgets = {
 
 						return ret;
 					}
-				},
+				}
 			});
 		}
 	},
