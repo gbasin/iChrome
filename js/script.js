@@ -4205,30 +4205,39 @@ iChrome.Storage.sync = function(now) {
 		sync.tabs = iChrome.Storage.tabsSync;
 		sync.lastChanged = new Date().getTime() + "-" + iChrome.uid;
 
-		var arr = chunk(JSON.stringify(sync.tabs), 2000); // Less than half the max item size since it has to re-escape quotes, etc.
+		var sTabs = JSON.stringify(sync.tabs),
+			syncTabs = false;
 
-		arr.forEach(function(e, i) {
-			sync["tabs" + (i ? i : "")] = e;
-		});
+		if (sTabs !== JSON.stringify(iChrome.Storage.Defaults.tabs)) { // Don't sync tabs if this is the default installation, only accept incoming syncs
+			syncTabs = true;
+
+			var arr = chunk(JSON.stringify(sync.tabs), 2000); // Less than half the max item size since it has to re-escape quotes, etc.
+
+			arr.forEach(function(e, i) {
+				sync["tabs" + (i ? i : "")] = e;
+			});
+		}
 
 		chrome.storage.sync.get(function(d) {
-			var max = 0,
-				key;
+			if (syncTabs) {
+				var max = 0,
+					key;
 
-			for (key in d) {
-				if (key.indexOf("tabs") == 0 && max < key.substr(4) || 0) {
-					max = (key.substr(4) || 0);
-				}
-			}
-
-			if (max >= arr.length) {
-				var keys = [];
-
-				for (var i = arr.length; i <= max; i++) {
-					keys.push("tabs" + i);
+				for (key in d) {
+					if (key.indexOf("tabs") == 0 && max < key.substr(4) || 0) {
+						max = (key.substr(4) || 0);
+					}
 				}
 
-				chrome.storage.sync.remove(keys);
+				if (max >= arr.length) {
+					var keys = [];
+
+					for (var i = arr.length; i <= max; i++) {
+						keys.push("tabs" + i);
+					}
+
+					chrome.storage.sync.remove(keys);
+				}
 			}
 		});
 
@@ -4252,6 +4261,10 @@ iChrome.Storage.sync = function(now) {
 
 		var slength = str.length,
 			chunks = [];
+
+		if (slength <= size) {
+			return [str];
+		}
 
 		for (var i = size; i < slength; i += size) {
 			chunks.push(str.slice(i - size, i));
