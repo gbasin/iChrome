@@ -1433,6 +1433,15 @@ body.resizing .medley {
 	color: #E43431;
 }
 
+.widget-settings .list .sp-preview {
+	height: 34px;
+}
+
+.widget-settings .list .sp-replacer + input {
+	left: 35px;
+	width: calc(100% - 35px);
+}
+
 
 
 

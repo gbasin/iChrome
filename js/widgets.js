@@ -566,7 +566,7 @@ var Widgets = {
 		setOAuth: function() {
 			this.oAuth = new OAuth2("google", {
 				client_id: "559765430405-5rvu6sms3mc111781cfgp1atb097rrph.apps.googleusercontent.com",
-				client_secret: "", // !! Remove key before commiting
+				client_secret: "", // !! Remove key before committing
 				api_scope: "https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/analytics"
 			});
 		},
@@ -1586,7 +1586,7 @@ var Widgets = {
 		setOAuth: function() {
 			this.oAuth = new OAuth2("google2", {
 				client_id: "559765430405-2710gl95r9js4c6m4q9nveijgjji50b8.apps.googleusercontent.com",
-				client_secret: "", // !! Remove key before commiting
+				client_secret: "", // !! Remove key before committing
 				api_scope: "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar"
 			});
 		},
@@ -3230,11 +3230,29 @@ var Widgets = {
 				nicename: "title",
 				label: "Widget Title",
 				placeholder: "Enter a widget title or leave blank to hide"
+			},
+			{
+				type: "radio",
+				nicename: "font",
+				label: "Font Color",
+				options: {
+					light: "Light",
+					dark: "Dark"
+				}
+			},
+			{
+				type: "list",
+				color: true,
+				nicename: "tags",
+				label: "Tags",
+				placeholder: "Enter a tag name and press Enter"
 			}
 		],
 		config: {
 			title: "To-do list",
-			size: "variable"
+			size: "variable",
+			tags: [],
+			font: "dark"
 		},
 		syncData: {
 			items: [
@@ -3265,9 +3283,14 @@ var Widgets = {
 				title = "";
 			}
 
-			var html = '<div class="item"><div class="check">&#x2713;</div><input class="title" type="text" maxlength="255" value="' +
-				title + '" /><div class="tools"><span class="important">&#x1F4A5;</span><span class="delete">&#x2715;</span><span c' +
-				'lass="move">&#xE005;</span></div></div>';
+			var html = '<div class="item"><div class="check">&#xE677;</div><input class="title" type="text" maxlength="255" value="' +
+				title + '" /><div class="tools"><span class="tag">&#xE629;</span><span class="delete">&#xE678;</span><span class="m' +
+						'ove">&#xE693;</span><div class="tags"><div data-color="none">None</div><div data-color="important" style="' +
+						'background-color: #FFECEC;">Important</div>' +
+							this.config.tags.map(function(e) {
+								return '<div data-color="' + e.color + '" style="background-color: ' + e.color + ';">' + e.name + '</div>';
+							}) +
+						'</div></div></div>';
 
 			if (after) $(html).insertAfter(after).find(".title").focus();
 			else $(html).appendTo(this.sortable).find(".title").focus();
@@ -3283,8 +3306,15 @@ var Widgets = {
 
 			var data = $.extend({}, this.syncData || {});
 
+			data.tags = this.config.tags;
+
 			if (this.config.title && this.config.title !== "") {
 				data.title = this.config.title;
+			}
+
+			if (this.config.font == "light") {
+				data.font = "#FAFAFA";
+				data.ifont = "#FFF";
 			}
 
 			this.utils.render(data);
@@ -3297,8 +3327,18 @@ var Widgets = {
 
 					that.save.call(that);
 				});
-			}).on("click", ".item .important", function(e) {
-				$(this).parent().parent().toggleClass("important");
+			}).on("click", ".item .tags div", function(e) {
+				var color = $(this).attr("data-color");
+
+				if (color == "none") {
+					$(this).parents(".item").attr("data-color", "").attr("style", "").removeClass("important");
+				}
+				else if (color == "important") {
+					$(this).parents(".item").attr("data-color", "").attr("style", "").addClass("important");
+				}
+				else {
+					$(this).parents(".item").first().removeClass("important").attr("data-color", color).css("background-color", color);
+				}
 
 				that.save.call(that);
 			}).on("click", ".item .check", function(e) {
@@ -3353,7 +3393,10 @@ var Widgets = {
 							title: item.find(".title").val().trim().slice(0, 255)
 						};
 
-						if (item.hasClass("important")) {
+						if (item.attr("data-color")) {
+							ret.color = item.attr("data-color");
+						}
+						else if (item.hasClass("important")) {
 							ret.important = true;
 						}
 
@@ -4032,7 +4075,7 @@ var Widgets = {
 		setOAuth: function() {
 			this.oAuth = new OAuth2("feedly", {
 				client_id: "ichrome",
-				client_secret: "", // !! Remove key before commiting
+				client_secret: "", // !! Remove key before committing
 				api_scope: "https://cloud.feedly.com/subscriptions"
 			}, function(tab) {
 				chrome.webRequest.onBeforeRequest.addListener(
@@ -5452,7 +5495,7 @@ var Widgets = {
 				encodeURIComponent(params.sort(function(a, b) { return a < b ? -1 : a > b; }).join("&"));
 
 			// Generate signature
-			var signature = CryptoJS.HmacSHA1(baseString, "" /* !! Remove key before commiting */ + "&" + encodeURIComponent(secret)).toString(CryptoJS.enc.Base64);
+			var signature = CryptoJS.HmacSHA1(baseString, "" /* !! Remove key before committing */ + "&" + encodeURIComponent(secret)).toString(CryptoJS.enc.Base64);
 
 			// Generate OAuth header
 			options.beforeSend = function(xhr) {
@@ -5715,7 +5758,7 @@ var Widgets = {
 		setOAuth: function() {
 			this.oAuth = new OAuth2("drive", {
 				client_id: "559765430405-jtbjv5ivuc17nenpsl4dfk9r53a3q0hg.apps.googleusercontent.com",
-				client_secret: "", // !! Remove key before commiting
+				client_secret: "", // !! Remove key before committing
 				api_scope: "https://www.googleapis.com/auth/drive.readonly"
 			});
 		},

@@ -1891,6 +1891,10 @@
 /*---------------------------------------------
 	/ To do
 */
+.widget.todo {
+	overflow: visible;
+}
+
 .widget.todo h2.header {
 	margin-bottom: 25px;
 }
@@ -1908,12 +1912,12 @@
 }
 
 .todo .list {
+	color: #666;
 	margin: -15px;
 	display: block;
 }
 
 .todo .item {
-	color: #666;
 	height: 40px;
 	display: block;
 	padding: 10px 15px;
@@ -1989,9 +1993,7 @@
 	padding: 0 5px;
 }
 
-.todo .tools .delete:hover,
-.todo .tools .important:hover,
-.todo .important .tools .important {
+.todo .tools .delete:hover {
 	color: #E43431;
 	cursor: pointer;
 }
@@ -2024,6 +2026,46 @@
 
 .todo .item.important .title {
 	color: #E40400;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ To do / Tags
+*/
+.todo .tags {
+	top: 85%;
+	z-index: 1;
+	opacity: 0;
+	color: #444;
+	font-size: 12px;
+	min-width: 100px;
+	background: #FFF;
+	line-height: 15px;
+	position: absolute;
+	visibility: hidden;
+	right: calc(100% - 30px);
+	font-family: Open Sans, sans-serif;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+	transition: opacity .2s .2s, visibility 0s .4s;
+}
+
+.todo .tags:hover,
+.todo .tools .tag:hover ~ .tags {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity .2s 0s, visibility 0s 0s;
+}
+
+.todo .tags div {
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.todo .tags div:hover {
+	background: #F7F7F7!important;
 }
 
 

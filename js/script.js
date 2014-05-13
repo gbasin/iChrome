@@ -3614,22 +3614,64 @@ iChrome.Widgets.Settings = function() {
 				medium: 3,
 				large: 4,
 				variable: 5
-			};
+			}, key;
 
 		this.form.serializeArray().forEach(function(e, i) {
-			var n = e.name.replace("widget-", "");
+			var rn = e.name.replace("widget-", "").split("."),
+				n = rn[0];
 
-			if (!Array.isArray(settings[n]) && typeof settings[n] !== "undefined") {
-				settings[n] = [settings[n]];
+			if (!rn[1] && !Array.isArray(settings[n]) && typeof settings[n] !== "undefined") {
+				settings[n] = [settings[n], e.value];
 			}
-
-			if (Array.isArray(settings[n])) {
+			else if (Array.isArray(settings[n])) {
 				settings[n].push(e.value);
+			}
+			else if (rn[1] && !settings[n]) {
+				settings[n] = {};
+
+				settings[n][rn[1]] = [e.value];
+
+				return;
+			}
+			else if (rn[1]) {
+				settings[n][rn[1]] = (settings[n][rn[1]] || []).concat([e.value]);
+
+				return;
 			}
 			else {
 				settings[n] = e.value;
 			}
 		});
+
+		for (key in settings) {
+			if (typeof settings[key] == "object" && !Array.isArray(settings[key])) {
+				var nKeys = Object.keys(settings[key]),
+					mLength = 0,
+					objArr = [],
+					max, mKey;
+
+				nKeys.forEach(function(nKey, i) {
+					var l = settings[key][nKey].length;
+
+					if (l >= mLength) {
+						mLength = l;
+						max = nKey;
+					}
+				});
+
+				settings[key] = settings[key][max].map(function(e, i) {
+					var ret = {};
+
+					nKeys.forEach(function(e) {
+						if (settings[key][e][i]) {
+							ret[e] = settings[key][e][i];
+						}
+					});
+
+					return ret;
+				});
+			}
+		}
 
 		if (settings.size && this.widget.config.size && this.widget.config.size !== settings.size) {
 			this.widget.elm.attr("class", "widget").addClass(this.widget.nicename).addClass(settings.size).attr("data-size", settings.size);
@@ -3767,6 +3809,8 @@ iChrome.Widgets.Settings.inputs = {
 			'</div>',
 			item = 
 			'<div class="item">' +
+				'{{{color}}}' +
+
 				'<input type="text" name="widget-{{nicename}}" value="{{value}}" />' +
 
 				'<div class="tools">' +
@@ -3775,12 +3819,28 @@ iChrome.Widgets.Settings.inputs = {
 					'<span class="delete">&#xE678;</span>' +
 				'</div>' +
 			'</div>',
+			color = '<input type="text" class="color" name="widget-{{nicename}}.color" value="{{color}}" />',
 			iterate = function(items) {
 				var html = "",
-					itm = item.replace("{{nicename}}", this.escape(input.nicename));
+					itm = item.replace("{{nicename}}", this.escape(input.nicename) + (input.color ? ".name" : "")),
+					clr = color.replace("{{nicename}}", this.escape(input.nicename));
 
 				items.forEach(function(e, i) {
-					html += itm.replace("{{value}}", this.escape(e));
+					if (typeof e == "object") {
+						if (input.color) {
+							html += itm
+								.replace("{{value}}", this.escape(e.name))
+								.replace("{{{color}}}", clr
+									.replace("{{color}}", e.color || "#EEE")
+								);
+						}
+						else {
+							html += itm.replace("{{value}}", this.escape(e.name));
+						}
+					}
+					else {
+						html += itm.replace("{{value}}", this.escape(e));
+					}
 				}.bind(this));
 
 				return html;
@@ -3791,7 +3851,7 @@ iChrome.Widgets.Settings.inputs = {
 			.replace(/{{{help}}}/g,		(input.help ? '<div class="help" data-tooltip="' + this.escape(input.help) + '"></div>' : ""))
 			.replace(/{{nicename}}/g,	this.escape(input.nicename))
 			.replace(/{{placeholder}}/g,this.escape(input.placeholder))
-			.replace(/{{{items}}}/g,		iterate.call(this, input.value || []));
+			.replace(/{{{items}}}/g,	iterate.call(this, input.value || []));
 
 		var esc = this.escape;
 
@@ -3815,14 +3875,41 @@ iChrome.Widgets.Settings.inputs = {
 				e.preventDefault();
 				e.stopPropagation();
 
-				elm.find(".items").append(
-					item
-						.replace("{{nicename}}", esc(input.nicename))
-						.replace("{{value}}", esc($(this).val()))
-				);
+				if (input.color) {
+					elm.find(".items").append(
+						item
+							.replace("{{nicename}}", esc(input.nicename) + (input.color ? ".name" : ""))
+							.replace("{{value}}", esc($(this).val()))
+							.replace("{{{color}}}", color
+								.replace("{{nicename}}", esc(input.nicename))
+								.replace("{{color}}", "#EEE")
+							)
+					).find("input.color").last().spectrum({
+						showInput: true,
+						showAlpha: true,
+						showInitial: true,
+						showButtons: false,
+						preferredFormat: "rgb",
+						clickoutFiresChange: true
+					});
+				}
+				else {
+					elm.find(".items").append(
+						item
+							.replace("{{nicename}}", esc(input.nicename) + (input.color ? ".name" : ""))
+							.replace("{{value}}", esc($(this).val()))
+					);
+				}
 
 				$(this).val("");
 			}
+		}).find("input.color").spectrum({
+			showInput: true,
+			showAlpha: true,
+			showInitial: true,
+			showButtons: false,
+			preferredFormat: "rgb",
+			clickoutFiresChange: true
 		});
 	},/*
 	multiple: function(input, elm, widget) {
