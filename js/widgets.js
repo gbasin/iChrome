@@ -6255,6 +6255,35 @@ var Widgets = {
 
 			this.utils.render(data);
 		}
+	},
+	30: {
+		id: 30,
+		size: 4,
+		order: 7.75,
+		name: "Google+",
+		nicename: "plus",
+		sizes: ["variable"],
+		desc: "Embeds Google Plus in a widget",
+		settings: [
+			{
+				type: "number",
+				label: "Widget Height",
+				nicename: "height",
+				min: 100,
+				max: 800
+			}
+		],
+		config: {
+			height: 500,
+			size: "variable"
+		},
+		render: function() {
+			this.utils.render({
+				height: this.config.height || 400
+			});
+
+			this.elm.addClass("tabbed");
+		}
 	}
 };
 

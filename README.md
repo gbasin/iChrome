@@ -1,6 +1,6 @@
 # iChrome
 
-iChrome is a highly customizable, iGoogle homepage replacement extension influenced by Google Now. It includes almost 100 HD themes, 27 widgets (soon to be more) and support for multiple tabs, "OK Google" hotword detection and voice search and almost complete customization.
+iChrome is a highly customizable, iGoogle homepage replacement extension influenced by Google Now. It includes almost 100 HD themes, 30 widgets (soon to be more) and support for multiple tabs, "OK Google" hotword detection and voice search and almost complete customization.
 
 This is the full source for iChrome except for API secrets which have been replaced with empty strings (`""`).
 
@@ -22,7 +22,7 @@ The code's somewhat messy, but I'm thinking of restructuring it using Backbone i
  - Code cleanup and restructuring, most likely using Backbone.js
 
 #### V2.1.3
- - Internationalization with support for (at least): Russian, German, Ukrainian, French, Spanish and Portuguese
+ - Internationalization with support for (at least): Russian, German, Ukrainian, French, Spanish, Chinese and Portuguese 
 
 #### V2.1.x
  - A real website
@@ -34,7 +34,7 @@ The code's somewhat messy, but I'm thinking of restructuring it using Backbone i
    - Unlimited custom themes
    - Unlimited syncing on iChrome servers
    - Prioritized support and suggestions
-   - The ability to create custom dynamic themes (slideshows, time and date dependent)
+   - The ability to create unlimited custom dynamic themes (slideshows, time and date dependent) that are hosted on iChrome servers
    - More, I'm still thinking it through
 
 ## Contributing

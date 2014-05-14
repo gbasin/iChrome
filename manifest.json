@@ -15,6 +15,11 @@
 			"css": [ "css/gmailfix.css" ],
 			"matches": [ "https://mail.google.com/*" ],
 			"all_frames": true
+		},
+		{
+			"css": [ "css/gplus.css" ],
+			"matches": [ "https://plus.google.com/app/basic*" ],
+			"all_frames": true
 		}
 	],
 	"web_accessible_resources": [

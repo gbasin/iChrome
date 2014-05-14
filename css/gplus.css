@@ -1,0 +1,22 @@
+#PAGE {
+	padding-top: 35px;
+}
+
+.dH {
+	top: 0;
+	width: 100%;
+	z-index: 9999;
+	position: fixed;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .6);
+}
+
+.o9a {
+	top: 35px;
+	background: #FFF;
+	margin-top: -35px;
+	position: relative;
+}
+
+#cardscontainer {
+	padding: 35px 10px 1px;
+}
