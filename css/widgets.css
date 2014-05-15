@@ -2171,15 +2171,17 @@
 
 
 /*---------------------------------------------
-	/ Keep & Plus shared
+	/ Keep, Plus and Facebook shared
 */
 .widget.keep,
-.widget.plus {
+.widget.plus,
+.widget.facebook {
 	padding: 0!important;
 }
 
 .keep iframe,
-.plus iframe {
+.plus iframe,
+.facebook iframe {
 	width: 100%;
 	height: 100%;
 }

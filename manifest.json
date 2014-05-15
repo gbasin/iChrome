@@ -20,6 +20,12 @@
 			"css": [ "css/gplus.css" ],
 			"matches": [ "https://plus.google.com/app/basic*" ],
 			"all_frames": true
+		},
+		{
+			"js": [ "js/facebook.js" ],
+			"matches": [ "https://m.facebook.com/*" ],
+			"run_at": "document_start",
+			"all_frames": true
 		}
 	],
 	"web_accessible_resources": [

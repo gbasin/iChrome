@@ -771,7 +771,7 @@ chrome.storage.onChanged.addListener(function(d, area) {
 var setReload = function() {
 	setTimeout(function() {
 		location.reload();
-	}, 100);
+	}, 800); // This leaves time for the onHeadersReceived listener to still function when reloading the page
 };
 
 var refreshFeeds = function() {
