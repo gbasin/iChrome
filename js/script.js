@@ -3195,11 +3195,8 @@ iChrome.Tabs.draggable = function() {
 						chrome.permissions.request({
 							permissions: widget.permissions
 						}, function(granted) {
-							widget.render();
+							(widget.refresh || widget.render)();
 						});
-					}
-					else {
-						widget.render();
 					}
 				}
 				catch (e) {
