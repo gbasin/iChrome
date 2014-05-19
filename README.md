@@ -1,6 +1,6 @@
 # iChrome
 
-iChrome is a highly customizable, iGoogle homepage replacement extension influenced by Google Now. It includes almost 100 HD themes, 30 widgets (soon to be more) and support for multiple tabs, "OK Google" hotword detection and voice search and almost complete customization.
+iChrome is a highly customizable, iGoogle homepage replacement extension influenced by Google Now. It includes almost 100 HD themes, over 30 widgets, support for multiple tabs, "OK Google" hotword detection and voice search and almost complete customization.
 
 This is the full source for iChrome except for API secrets which have been replaced with empty strings (`""`).
 
