@@ -3187,7 +3187,18 @@ iChrome.Tabs.draggable = function() {
 
 			if (item.parent().length && item.hasClass("handle")) {
 				try {
-					iChrome.Widgets.active[item.attr("data-id")].render();
+					var widget = iChrome.Widgets.active[item.attr("data-id")];
+
+					if (widget.permissions) {
+						chrome.permissions.request({
+							permissions: widget.permissions
+						}, function(granted) {
+							widget.render();
+						});
+					}
+					else {
+						widget.render();
+					}
 				}
 				catch (e) {
 					iChrome.Status.error("An error occurred while trying to render the " + iChrome.Widgets.active[item.attr("data-id")].name + " widget!");

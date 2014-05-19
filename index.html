@@ -2966,6 +2966,25 @@
 			There are no variations available for this widget.
 		</template>
 
+		<template id="template.widgets.recentlyclosed">
+			{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+			<div class="items">
+				{{#tabs}}
+					<a class="item" href="{{url}}{{#newTab}}" target="_blank{{/newTab}}">
+						<img class="favicon" src="chrome://favicon/{{url}}" />
+						<span class="title">{{title}}</span>
+					</a>
+				{{/tabs}}
+			</div>
+		</template>
+
+		<template id="template.widgets.recentlyclosed.desc">
+			The Recently Closed widget displays a list of your recently closed tabs.<br />
+			<br />
+			Until Chrome has a stable official API for this, the widget needs to record what tabs you open and close.  Because of this it will only be able to show tabs that have been closed after it's been installed the first time.
+		</template>
+
 		<!-- Templates end -->
 
 		<script type="text/javascript" src="js/plugins.js"></script>

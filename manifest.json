@@ -60,6 +60,7 @@
 	"manifest_version": 2,
 	"short_name": "iChrome",
 	"offline_enabled": true,
+	"optional_permissions": ["tabs"],
 	"minimum_chrome_version": "29.0",
 	"name": "iChrome: your homepage, for chrome (beta)",
 	"update_url": "http://clients2.google.com/service/update2/crx",

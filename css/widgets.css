@@ -2801,3 +2801,46 @@
 .youtube .featured.video .views {
 	font-size: 13px;
 }
+
+
+
+
+
+/*---------------------------------------------
+	/ Recently Closed
+*/
+.widget.recentlyclosed h2.header {
+	margin-bottom: 25px;
+}
+
+.recentlyclosed .items {
+	margin: -15px;
+	display: block;
+}
+
+.recentlyclosed .item {
+	color: #666;
+	display: block;
+	padding: 10px 15px;
+	text-decoration: none;
+	font-family: Open Sans, sans-serif;
+}
+
+.recentlyclosed .item:hover {
+	background: rgba(0, 0, 0, 0.03);
+}
+
+.recentlyclosed .favicon {
+	width: 16px;
+	margin-right: 5px;
+	border-radius: 2px;
+}
+
+.recentlyclosed .title {
+	overflow: hidden;
+	white-space: nowrap;
+	display: inline-block;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	width: calc(100% - 25px);
+}
