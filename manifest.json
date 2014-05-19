@@ -59,7 +59,7 @@
 		"client_id": "1092601450132-rsgske9erdebomsgtbp0sa2sj0qh3md3.apps.googleusercontent.com",
 		"scopes": ["https://www.googleapis.com/auth/googlenow"]
 	},
-	"version": "2.0.13",
+	"version": "2.1.0",
 	"manifest_version": 2,
 	"short_name": "iChrome New Tab",
 	"offline_enabled": true,
