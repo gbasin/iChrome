@@ -82,6 +82,12 @@
 					}
 				{{/hcolor}}
 
+				{{^animation}}
+					.unloaded .widgets-container .widget {
+						-webkit-animation: none!important;
+					}
+				{{/animation}}
+
 				{{{custom}}}
 			</style>
 		</template>
@@ -417,7 +423,7 @@
 								<label class="control-label col-sm-2" for="search-url">Search URL</label>
 
 								<div class="col-sm-9">
-									<span class="info">This is the URL that the search box should submit searches to. Put <b>%s</b> where the search query should go.</span>
+									<span class="info">This is the URL that the search box will submit searches to. Put <b>%s</b> where the search query should go</span>
 									<input type="text" id="search-url" name="search-url" value="{{search-url}}" />
 								</div>
 							</div>
@@ -426,6 +432,8 @@
 								<label class="control-label col-sm-2" for="logo-url">Logo URL</label>
 
 								<div class="col-sm-9">
+									<span class="info">This is the image shown at the left of the toolbar.  The default is <b>/images/logo.png</b></span>
+									
 									<input type="text" id="logo-url" name="logo-url" value="{{logo-url}}" />
 								</div>
 							</div>
@@ -535,7 +543,7 @@
 							</div>
 
 							<div class="form-group">
-								<label class="control-label col-sm-2" for="theme-btn">Theme</label>
+								<label class="control-label col-sm-2" for="theme-btn">Default Theme</label>
 
 								<div class="col-sm-9">
 									<input type="hidden" name="theme" value="{{theme}}" />
@@ -564,10 +572,32 @@
 								<label class="control-label col-sm-2" for="toolbar">Toolbar</label>
 
 								<div class="col-sm-9">
-									<span class="info">This setting will hide the toolbar unless you hover over where it would normally be for 0.5 seconds</span>
+									<span class="info">When enabled, this will hide the toolbar unless you hover over where it would normally be for 0.5 seconds</span>
 
 									{{#toolbar}}<label><input type="checkbox" name="toolbar" checked /> Enable hidden mode</label>{{/toolbar}}
 									{{^toolbar}}<label><input type="checkbox" name="toolbar" /> Enable hidden mode</label>{{/toolbar}}
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label col-sm-2">Tabs Menu</label>
+
+								<div class="col-sm-9">
+									<span class="info">Show or hide the tabs menu shown at the top left of the page</span>
+
+									{{#tabs}}<label><input type="checkbox" name="tabs" checked /> Show the Tabs Menu</label>{{/tabs}}
+									{{^tabs}}<label><input type="checkbox" name="tabs" /> Show the Tabs Menu</label>{{/tabs}}
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="animation">Slide-in Animation</label>
+
+								<div class="col-sm-9">
+									<span class="info">Enable or disable the slide-in animation run when you load the page</span>
+
+									{{#animation}}<label><input type="checkbox" name="animation" checked /> Enable the animation</label>{{/animation}}
+									{{^animation}}<label><input type="checkbox" name="animation" /> Enable the animation</label>{{/animation}}
 								</div>
 							</div>
 						</form>
@@ -649,15 +679,6 @@
 
 					<div class="content">
 						<form class="form-horizontal">
-							<div class="form-group">
-								<label class="control-label col-sm-2">Tabs Menu</label>
-
-								<div class="checkbox col-sm-9">
-									{{#tabs}}<label><input type="checkbox" name="tabs" checked /> Show the Tabs Menu</label>{{/tabs}}
-									{{^tabs}}<label><input type="checkbox" name="tabs" /> Show the Tabs Menu</label>{{/tabs}}
-								</div>
-							</div>
-
 							<div class="form-group colors">
 								<label class="control-label col-sm-2">Search Results</label>
 

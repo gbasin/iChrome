@@ -630,6 +630,7 @@ iChrome.CSS = function() {
 	$("style.customcss").remove();
 
 	$(document.body).append(iChrome.render("css", {
+		animation: iChrome.Storage.settings.animation,
 		wcolor: iChrome.Storage.settings.wcolor || "#FFF",
 		hcolor: iChrome.Storage.settings.hcolor || "#F1F1F1",
 		custom: iChrome.Storage.settings["custom-css"] || ""
@@ -1067,9 +1068,10 @@ iChrome.Settings.save = function() {
 			voice: false,
 			gmail: false,
 			toolbar: false,
+			animation: false,
 			def: parseInt(iChrome.Storage.settings.def || 1)
 		},
-		booleans = ["ok", "tabs", "apps", "plus", "voice", "gmail", "toolbar"],
+		booleans = ["ok", "tabs", "apps", "plus", "voice", "gmail", "toolbar", "animation"],
 		key;
 
 	iChrome.Settings.modal.elm.find(".general form, .visual form, .advanced form").serializeArray().forEach(function(e, i) {
@@ -4395,6 +4397,7 @@ iChrome.Storage.Defaults = {
 		voice: true,
 		gmail: true,
 		toolbar: false,
+		animation: true,
 		wcolor: "#FFF",
 		theme: "default",
 		hcolor: "#F1F1F1",
