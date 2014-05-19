@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>iChrome</title>
+		<title>iChrome New Tab</title>
 		
 		<meta charset="utf-8" />
 		<meta name="google" value="notranslate" />
@@ -108,7 +108,7 @@
 			<img src="{{logo-url}}" />
 
 			<div class="search">
-				<input type="search" autocomplete="off" placeholder="Search..." autofocus="autofocus" />
+				<input type="search" autocomplete="off" placeholder="Search..." />
 
 				<button class="btn btn-primary">&#xF002;</button>
 
@@ -1510,7 +1510,7 @@
 			<div class="items">
 				{{#items}}
 					{{#featured}}
-						<a class="item featured" href="{{url}}" target="_blank">
+						<a class="item featured" href="{{url}}">
 							<span class="title">{{title}}</span>
 
 							<div class="excerpt">
@@ -1521,7 +1521,7 @@
 						</a>
 					{{/featured}}
 					{{^featured}}
-						<a class="item" href="{{url}}" target="_blank">
+						<a class="item" href="{{url}}">
 							{{#image}}<img src="{{image}}" />{{/image}}
 
 							<div class="excerpt">
@@ -1567,7 +1567,7 @@
 
 			<div class="items{{#images}} images{{/images}}">
 				{{#items}}
-					<a href="{{url}}" class="item" target="_blank">
+					<a href="{{url}}" class="item">
 						{{#image}}
 							{{#images}}<img src="{{image}}" alt="Loading..." />{{/images}}
 							{{^images}}<div class="img" style="background-image: url('{{image}}');"></div>{{/images}}
@@ -1666,7 +1666,7 @@
 		</template>
 
 		<template id="template.widgets.unread">
-			<a class="mainval" href="https://mail.google.com/?authuser={{user}}" target="_blank" data-label="{{label}}" data-tooltip="{{#messages}}<b>{{subject}}</b><br />{{excerpt}}<br /><br />{{/messages}}">{{count}}</a>
+			<a class="mainval" href="https://mail.google.com/?authuser={{user}}" data-label="{{label}}" data-tooltip="{{#messages}}<b>{{subject}}</b><br />{{excerpt}}<br /><br />{{/messages}}">{{count}}</a>
 		</template>
 
 		<template id="template.widgets.unread.desc">
@@ -2010,18 +2010,18 @@
 
 			<div class="items">
 				{{#links}}
-					<a class="item" href="{{link}}" target="_blank">
+					<a class="item" href="{{link}}">
 						{{#image}}<div class="img" style="background-image: url('{{image}}');"></div>{{/image}}
 
 						<div class="content">
-							<span class="title">{{title}}&nbsp;&#8203;<span class="nested-link domain" data-href="http://www.reddit.com/domain/{{domain}}" data-target="_blank">{{domain}}</span></span>
+							<span class="title">{{title}}&nbsp;&#8203;<span class="nested-link domain" data-href="http://www.reddit.com/domain/{{domain}}">{{domain}}</span></span>
 
 							<div class="specs">
 								<span class="score{{direction}}">{{score}}</span>
 								<span class="posted">{{created}}</span>
-								<span class="comments nested-link" data-href="http://www.reddit.com{{permalink}}" data-target="_blank">{{comments}}</span>
-								{{#subreddit}}<span class="subreddit nested-link" data-href="http://www.reddit.com/r/{{subreddit}}" data-target="_blank" title="{{subreddit}}">{{subreddit}}</span>{{/subreddit}}
-								<span class="user nested-link" data-href="http://www.reddit.com/user/{{user}}" data-target="_blank" title="{{user}}">{{user}}</span>
+								<span class="comments nested-link" data-href="http://www.reddit.com{{permalink}}">{{comments}}</span>
+								{{#subreddit}}<span class="subreddit nested-link" data-href="http://www.reddit.com/r/{{subreddit}}" title="{{subreddit}}">{{subreddit}}</span>{{/subreddit}}
+								<span class="user nested-link" data-href="http://www.reddit.com/user/{{user}}" title="{{user}}">{{user}}</span>
 
 							</div>
 						</div>
@@ -2069,7 +2069,7 @@
 
 		<template id="template.widgets.feedly.articles">
 			{{#articles}}
-				<a class="item{{^unread}} read{{/unread}}" href="{{link}}" target="_blank" data-id="{{id}}">
+				<a class="item{{^unread}} read{{/unread}}" href="{{link}}" data-id="{{id}}">
 					{{#image}}<div class="img" style="background-image: url('{{image}}');"><img src="/icon/16.png" /></div>{{/image}}
 
 					<div class="content">
@@ -2658,7 +2658,7 @@
 		</template>
 
 		<template id="template.widgets.voice">
-			<a class="mainval" href="https://www.google.com/voice/b/{{user}}/" target="_blank" data-label="missed in Voice" data-tooltip="<b><span style=&quot;float:right&quot;>{{texts}} unread text messages</span>{{missed}} missed calls&nbsp;&nbsp;&nbsp;</b><br /><br />{{#messages}}<b>{{type}} from: {{from}}<span style=&quot;float:right&quot;>{{date}}</span></b><br />{{#excerpt}}<span style=&quot;display:inline-block;max-height:60px;overflow:hidden&quot;>{{excerpt}}</span><br />{{/excerpt}}<br />{{/messages}}">{{count}}</a>
+			<a class="mainval" href="https://www.google.com/voice/b/{{user}}/" data-label="missed in Voice" data-tooltip="<b><span style=&quot;float:right&quot;>{{texts}} unread text messages</span>{{missed}} missed calls&nbsp;&nbsp;&nbsp;</b><br /><br />{{#messages}}<b>{{type}} from: {{from}}<span style=&quot;float:right&quot;>{{date}}</span></b><br />{{#excerpt}}<span style=&quot;display:inline-block;max-height:60px;overflow:hidden&quot;>{{excerpt}}</span><br />{{/excerpt}}<br />{{/messages}}">{{count}}</a>
 		</template>
 
 		<template id="template.widgets.voice.desc">
@@ -2696,7 +2696,7 @@
 			<div class="cards">
 				{{#cards}}
 					{{#link}}
-						<a class="card{{#btns}} btns{{/btns}}" data-index="{{index}}" href="{{link}}" target="_blank">
+						<a class="card{{#btns}} btns{{/btns}}" data-index="{{index}}" href="{{link}}">
 					{{/link}}
 					{{^link}}
 						<div class="card{{#btns}} btns{{/btns}}" data-index="{{index}}">
@@ -2719,7 +2719,7 @@
 					{{#btns}}
 						<div class="buttons">
 							{{#buttons}}
-								<a href="{{link}}" target="_blank" class="button">{{#btnIcon}}<img src="{{btnIcon}}" />{{/btnIcon}}{{title}}</a>
+								<a href="{{link}}" class="button">{{#btnIcon}}<img src="{{btnIcon}}" />{{/btnIcon}}{{title}}</a>
 							{{/buttons}}
 						</div>
 					{{/btns}}
@@ -2778,23 +2778,23 @@
 
 			<div class="tweets">
 				{{#tweets}}
-					<div class="tweet nested-link" data-href="https://twitter.com/{{username}}/status/{{id}}" target="_blank">
+					<div class="tweet nested-link" data-href="https://twitter.com/{{username}}/status/{{id}}">
 						<div class="topbar">
-							<a href="https://twitter.com/{{username}}" target="_blank" class="user"><b>{{user}}</b> <span class="tweeter">@{{username}}</span></a>
+							<a href="https://twitter.com/{{username}}" class="user"><b>{{user}}</b> <span class="tweeter">@{{username}}</span></a>
 							<span class="age">{{age}}</span>
 						</div>
 
 						<div class="content">
-							<a href="https://twitter.com/{{username}}" target="_blank" class="user"><img src="{{image}}" /></a>
+							<a href="https://twitter.com/{{username}}" class="user"><img src="{{image}}" /></a>
 							
 							{{{content}}}
 						</div>
 
 						<div class="tools">
-							<a class="more" href="https://twitter.com/{{username}}/status/{{id}}" target="_blank">More</a>
-							<a class="reply" href="https://twitter.com/intent/tweet?in_reply_to={{id}}" target="_blank">Reply</a>
-							<a class="retweet" href="https://twitter.com/intent/retweet?tweet_id={{id}}" target="_blank">Retweet</a>
-							<a class="favorite" href="https://twitter.com/intent/favorite?tweet_id={{id}}" target="_blank">Favorite</a>
+							<a class="more" href="https://twitter.com/{{username}}/status/{{id}}">More</a>
+							<a class="reply" href="https://twitter.com/intent/tweet?in_reply_to={{id}}">Reply</a>
+							<a class="retweet" href="https://twitter.com/intent/retweet?tweet_id={{id}}">Retweet</a>
+							<a class="favorite" href="https://twitter.com/intent/favorite?tweet_id={{id}}">Favorite</a>
 						</div>
 					</div>
 				{{/tweets}}

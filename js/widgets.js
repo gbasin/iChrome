@@ -1758,7 +1758,7 @@ var Widgets = {
 			sort: "id",
 			show: "all",
 			view: "list",
-			target: "_blank",
+			target: "_self",
 			size: "variable"
 		},
 		refresh: function() {
@@ -6107,7 +6107,7 @@ var Widgets = {
 			title: "YouTube",
 			size: "variable",
 			view: "large_2",
-			target: "_blank",
+			target: "_self",
 			user: ""
 		},
 		data: {
@@ -6350,7 +6350,7 @@ var Widgets = {
 		],
 		config: {
 			tabs: 5,
-			target: "_blank",
+			target: "_self",
 			size: "variable",
 			title: "Recently Closed"
 		},
