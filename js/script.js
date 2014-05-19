@@ -3057,7 +3057,7 @@ iChrome.Tabs.draggable = function() {
 				}
 
 				if (widget.interval) {
-					widget.interval = setInterval(widget.refresh.bind(widget), widget.interval);
+					widget.interval = setInterval((widget.refresh || widget.render).bind(widget), widget.interval);
 				}
 
 				try {
