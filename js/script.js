@@ -2910,7 +2910,7 @@ iChrome.Tabs.render = function() {
 				if (widget.interval) {
 					clearInterval(widget.rInterval);
 
-					widget.rInterval = setInterval(widget.refresh.bind(widget), widget.interval);
+					widget.rInterval = setInterval((widget.refresh || widget.render).bind(widget), widget.interval);
 				}
 
 				try {
