@@ -56,7 +56,7 @@
 		"webRequestBlocking"
 	],
 	"oauth2": {
-		"client_id": "1092601450132-2pni2cojh4j7edu2p5ejjqec7cp6qvqq.apps.googleusercontent.com",
+		"client_id": "1092601450132-rsgske9erdebomsgtbp0sa2sj0qh3md3.apps.googleusercontent.com",
 		"scopes": ["https://www.googleapis.com/auth/googlenow"]
 	},
 	"version": "2.0.13",
