@@ -150,6 +150,39 @@ body.dragging .remove {
 
 
 /*---------------------------------------------
+	/ Loading
+*/
+body > .loading {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999;
+	position: fixed;
+	background: #F5F5F5;
+}
+
+body > .loading span {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	height: 93px; /* 20px line-height * 3 lines + (1.1 line-height * 30px font-size = 33px) * 1 h2 line */
+	text-align: center;
+	position: absolute;
+	font-family: Open Sans, Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif; /* Fonts probably haven't loaded yet */
+}
+
+body > .loading h2 {
+	font-family: inherit;
+}
+
+
+
+
+
+/*---------------------------------------------
 	/ Forms
 */
 input[type="tel"],
