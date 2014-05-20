@@ -4771,6 +4771,8 @@ iChrome.Status.log("Main JS loaded and processed, starting storage fetching");
 iChrome.Storage(function() {
 	iChrome.Status.log("Storage fetching complete");
 
+	document.body.removeChild(document.querySelector("body > .loading"));
+
 	iChrome.Templates();
 
 	iChrome.Status.log("Templates done");
