@@ -2370,6 +2370,8 @@ iChrome.Themes.defaults = {
 
 // Store
 iChrome.Store = function() {
+	delete this.Store.modal; // For refreshes
+
 	$(".icon.widgets").on("click", function(e) {
 		if (this.modal) {
 			this.modal.show();
