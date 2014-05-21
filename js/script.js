@@ -2644,7 +2644,8 @@ iChrome.Donate = function() {
 iChrome.Updated = function() {
 	var modal = this.Updated.modal = new iChrome.Modal({
 		html: iChrome.render("updated"),
-		classes: "updated"
+		classes: "updated",
+		height: 640
 	}, function() {
 		localStorage["updated"] = "false";
 
