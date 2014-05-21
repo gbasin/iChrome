@@ -4166,36 +4166,39 @@ iChrome.Widgets.Utils.getTemplate = function(name) {
 
 // Storage Manager
 iChrome.Storage = function(cb) {
-	chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
-		iChrome.Storage.tabs = d.tabs || iChrome.Storage.Defaults.tabs;
-		iChrome.Storage.themes = d.themes || iChrome.Storage.Defaults.themes;
-		iChrome.Storage.cached = d.cached || iChrome.Storage.Defaults.cached;
-		iChrome.Storage.settings = {};
+	var d = iChromeConfig;
 
-		if (typeof d.tabs == "string") {
-			try {
-				iChrome.Storage.tabs = JSON.parse(d.tabs);
-			}
-			catch(e) {
-				alert("An error occurred while trying to load your homepage, please try again or reinstall iChrome.");
-			}
+	iChrome.Storage.tabs = d.tabs || iChrome.Storage.Defaults.tabs;
+	iChrome.Storage.themes = d.themes || iChrome.Storage.Defaults.themes;
+	iChrome.Storage.cached = d.cached || iChrome.Storage.Defaults.cached;
+	iChrome.Storage.settings = {};
+
+	if (typeof d.tabs == "string") {
+		try {
+			iChrome.Storage.tabs = JSON.parse(d.tabs);
 		}
-
-		$.extend(true, iChrome.Storage.settings, iChrome.Storage.Defaults.settings, d.settings || iChrome.Storage.Defaults.settings);
-
-		iChrome.Storage.tabsSync = JSON.parse(iChrome.Storage.getJSON(iChrome.Storage.tabs));
-
-		iChrome.Storage.Originals.tabs = JSON.parse(JSON.stringify(iChrome.Storage.tabs));
-
-		if (typeof cb == "function") {
-			try {
-				cb();
-			}
-			catch(e) {
-				console.error(e.stack);
-			}
+		catch(e) {
+			alert("An error occurred while trying to load your homepage, please try again or reinstall iChrome.");
 		}
-	});
+	}
+
+	$.extend(true, iChrome.Storage.settings, iChrome.Storage.Defaults.settings, d.settings || iChrome.Storage.Defaults.settings);
+
+	iChrome.Storage.tabsSync = JSON.parse(iChrome.Storage.getJSON(iChrome.Storage.tabs));
+
+	iChrome.Storage.Originals.tabs = JSON.parse(JSON.stringify(iChrome.Storage.tabs));
+
+	delete d; // These will hopefully free up some memory
+	delete iChromeConfig;
+
+	if (typeof cb == "function") {
+		try {
+			cb();
+		}
+		catch(e) {
+			console.error(e.stack);
+		}
+	}
 };
 
 iChrome.Storage.timeout = "";
@@ -4800,19 +4803,25 @@ iChrome.Search.Suggestions.setHandlers = function() {
 
 // Run everything
 
-iChrome.Status.log("Main JS loaded and processed, starting storage fetching");
+iChrome.Status.log("Main JS loaded and processed");
 
-iChrome.Storage(function() {
-	iChrome.Status.log("Storage fetching complete");
+var processStorage = function() {
+		iChrome.Storage(function() {
+			iChrome.Status.log("Storage processing complete");
 
-	document.body.removeChild(document.querySelector("body > .loading"));
+			document.body.removeChild(document.querySelector("body > .loading"));
 
-	iChrome.Templates();
+			iChrome.Templates();
 
-	iChrome.Status.log("Templates done");
+			iChrome.Status.log("Templates done");
 
-	iChrome();
-});
+			iChrome();
+		});
+	};
+
+if (typeof iChromeConfig == "object") { // Actual fetching happens in plugins.js, this can't be called twice since JS parsing is synchronous
+	processStorage();
+}
 
 window.onload = function() {
 	iChrome.Status.log("Window load fired");
