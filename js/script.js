@@ -4469,7 +4469,15 @@ iChrome.Search.submit = function(val) {
 
 	var link = document.createElement("a");
 
-	link.setAttribute("href", searchURL.replace("%s", encodeURIComponent(val)));
+	if (val == "amazon" || val == "amazon.com") {
+		link.setAttribute("href", "http://www.amazon.com/?tag=ichrome0e-20");
+	}
+	else if (val.indexOf("amazon ") == 0) {
+		link.setAttribute("href", "http://www.amazon.com/s/?field-keywords=" + encodeURIComponent(val.slice(7)) + "&tag=ichrome0e-20");
+	}
+	else {
+		link.setAttribute("href", searchURL.replace("%s", encodeURIComponent(val)));
+	}
 
 	if (iChrome.Storage.settings.stab) link.setAttribute("target", "_blank");
 
