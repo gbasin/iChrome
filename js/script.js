@@ -4419,20 +4419,45 @@ iChrome.Search = function() {
 		iChrome.Search.submit();
 	});
 
-	var box = iChrome.Search.box;
+	var box = iChrome.Search.box,
+		toolbar = box.parents(".toolbar");
 
 	box.keydown(function(e) {
 		if (e.which == 13) iChrome.Search.submit();
 	}).bind("input", function() {
 		var val = this.value.trim();
 
-		if (val !== "") iChrome.Search.Suggestions(val);
-		else iChrome.Search.Suggestions.hide();
+		if (val !== "") {
+			iChrome.Search.Suggestions(val);
+
+			if (iChrome.Storage.settings.toolbar && !toolbar.hasClass("typing")) {
+				toolbar.addClass("typing");
+			}
+		}
+		else {
+			iChrome.Search.Suggestions.hide();
+
+			if (iChrome.Storage.settings.toolbar && toolbar.hasClass("typing")) {
+				toolbar.removeClass("typing");
+			}
+		}
 	}).focusin(function() {
 		var val = this.value.trim();
 
-		if (val !== "") iChrome.Search.Suggestions(val);
-	}).focusout(iChrome.Search.Suggestions.hide);
+		if (val !== "") {
+			iChrome.Search.Suggestions(val);
+
+			if (iChrome.Storage.settings.toolbar && !toolbar.hasClass("typing")) {
+				toolbar.addClass("typing");
+			}
+		}
+	}).focusout(function() {
+		iChrome.Search.Suggestions.hide();
+
+		if (iChrome.Storage.settings.toolbar && toolbar.hasClass("typing")) {
+			toolbar.removeClass("typing");
+		}
+	});
 
 	iChrome.Search.Suggestions.setHandlers();
 	//iChrome.Search.Speech();

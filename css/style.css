@@ -525,6 +525,22 @@ input[type="radio"]:checked {
 
 
 
+
+/*---------------------------------------------
+	/ Toolbar / Typing
+*/
+.toolbar.hidden.typing {
+	opacity: 1;
+}
+
+.toolbar.hidden.typing .suggestions {
+	visibility: visible;
+}
+
+
+
+
+
 /*---------------------------------------------
 	/ Toolbar / Search
 */
