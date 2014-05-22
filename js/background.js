@@ -471,7 +471,7 @@ xhr.onreadystatechange = function() {
 	}
 };
 
-xhr.open("HEAD", "chrome-extension://oghkljobbhapacbahlneolfclkniiami/manifest.json"); // The manifest is the fastest resource
+xhr.open("HEAD", "chrome-extension://oghkljobbhapacbahlneolfclkniiami/index.html");
 
 xhr.send();
 
