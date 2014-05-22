@@ -5896,7 +5896,7 @@ var Widgets = {
 					.replace(/×/g, "*") // Multiplication symbol with *
 					.replace(/x/gi, "*") // x with *
 					.replace(/÷/g, "/") // Division symbol with /
-					.replace(/[^ +\-()1234567890*\/]|[\-+\/\*\.]{2}/g, "") // Replace all invalid characters
+					.replace(/[^ +\-()1234567890*\/\.]|[\-+\/\*\.]{2}/g, "") // Replace all invalid characters
 					.replace(/ {1,}/g, " ") // Multiple spaces
 					.replace(/([0-9]) ([0-9])/g, "$1$2") // Spaces in numbers
 					.replace(/[0-9\.]+/g, function(match) { // Handle multiple decimal places within a number
