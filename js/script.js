@@ -2370,6 +2370,8 @@ iChrome.Themes.defaults = {
 
 // Store
 iChrome.Store = function() {
+	delete this.Store.modal; // For refreshes
+
 	$(".icon.widgets").on("click", function(e) {
 		if (this.modal) {
 			this.modal.show();
@@ -2644,7 +2646,8 @@ iChrome.Donate = function() {
 iChrome.Updated = function() {
 	var modal = this.Updated.modal = new iChrome.Modal({
 		html: iChrome.render("updated"),
-		classes: "updated"
+		classes: "updated",
+		height: 640
 	}, function() {
 		localStorage["updated"] = "false";
 
@@ -3206,6 +3209,11 @@ iChrome.Tabs.draggable = function() {
 				item.removeClass("handle");
 			}
 
+			// Trigger a repaint so the tabs height is correct, jQuery oddly seems to be the only thing that gets a flicker-free one.
+			$(document.body).hide(0, function() {
+				$(this).show();
+			});
+
 			$("#originalLoc").remove();
 
 			iChrome.Storage.tabs = iChrome.Tabs.serialize();
@@ -3241,6 +3249,11 @@ iChrome.Tabs.draggable = function() {
 					if (h >= gridMax) { gridMax = h; }
 				});
 			}
+
+			// Again, see above
+			$(document.body).hide(0, function() {
+				$(this).show();
+			});
 		}
 	});
 
@@ -4165,36 +4178,39 @@ iChrome.Widgets.Utils.getTemplate = function(name) {
 
 // Storage Manager
 iChrome.Storage = function(cb) {
-	chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
-		iChrome.Storage.tabs = d.tabs || iChrome.Storage.Defaults.tabs;
-		iChrome.Storage.themes = d.themes || iChrome.Storage.Defaults.themes;
-		iChrome.Storage.cached = d.cached || iChrome.Storage.Defaults.cached;
-		iChrome.Storage.settings = {};
+	var d = iChromeConfig;
 
-		if (typeof d.tabs == "string") {
-			try {
-				iChrome.Storage.tabs = JSON.parse(d.tabs);
-			}
-			catch(e) {
-				alert("An error occurred while trying to load your homepage, please try again or reinstall iChrome.");
-			}
+	iChrome.Storage.tabs = d.tabs || iChrome.Storage.Defaults.tabs;
+	iChrome.Storage.themes = d.themes || iChrome.Storage.Defaults.themes;
+	iChrome.Storage.cached = d.cached || iChrome.Storage.Defaults.cached;
+	iChrome.Storage.settings = {};
+
+	if (typeof d.tabs == "string") {
+		try {
+			iChrome.Storage.tabs = JSON.parse(d.tabs);
 		}
-
-		$.extend(true, iChrome.Storage.settings, iChrome.Storage.Defaults.settings, d.settings || iChrome.Storage.Defaults.settings);
-
-		iChrome.Storage.tabsSync = JSON.parse(iChrome.Storage.getJSON(iChrome.Storage.tabs));
-
-		iChrome.Storage.Originals.tabs = JSON.parse(JSON.stringify(iChrome.Storage.tabs));
-
-		if (typeof cb == "function") {
-			try {
-				cb();
-			}
-			catch(e) {
-				console.error(e.stack);
-			}
+		catch(e) {
+			alert("An error occurred while trying to load your homepage, please try again or reinstall iChrome.");
 		}
-	});
+	}
+
+	$.extend(true, iChrome.Storage.settings, iChrome.Storage.Defaults.settings, d.settings || iChrome.Storage.Defaults.settings);
+
+	iChrome.Storage.tabsSync = JSON.parse(iChrome.Storage.getJSON(iChrome.Storage.tabs));
+
+	iChrome.Storage.Originals.tabs = JSON.parse(JSON.stringify(iChrome.Storage.tabs));
+
+	delete d; // These will hopefully free up some memory
+	delete iChromeConfig;
+
+	if (typeof cb == "function") {
+		try {
+			cb();
+		}
+		catch(e) {
+			console.error(e.stack);
+		}
+	}
 };
 
 iChrome.Storage.timeout = "";
@@ -4418,20 +4434,45 @@ iChrome.Search = function() {
 		iChrome.Search.submit();
 	});
 
-	var box = iChrome.Search.box;
+	var box = iChrome.Search.box,
+		toolbar = box.parents(".toolbar");
 
 	box.keydown(function(e) {
 		if (e.which == 13) iChrome.Search.submit();
 	}).bind("input", function() {
 		var val = this.value.trim();
 
-		if (val !== "") iChrome.Search.Suggestions(val);
-		else iChrome.Search.Suggestions.hide();
+		if (val !== "") {
+			iChrome.Search.Suggestions(val);
+
+			if (iChrome.Storage.settings.toolbar && !toolbar.hasClass("typing")) {
+				toolbar.addClass("typing");
+			}
+		}
+		else {
+			iChrome.Search.Suggestions.hide();
+
+			if (iChrome.Storage.settings.toolbar && toolbar.hasClass("typing")) {
+				toolbar.removeClass("typing");
+			}
+		}
 	}).focusin(function() {
 		var val = this.value.trim();
 
-		if (val !== "") iChrome.Search.Suggestions(val);
-	}).focusout(iChrome.Search.Suggestions.hide);
+		if (val !== "") {
+			iChrome.Search.Suggestions(val);
+
+			if (iChrome.Storage.settings.toolbar && !toolbar.hasClass("typing")) {
+				toolbar.addClass("typing");
+			}
+		}
+	}).focusout(function() {
+		iChrome.Search.Suggestions.hide();
+
+		if (iChrome.Storage.settings.toolbar && toolbar.hasClass("typing")) {
+			toolbar.removeClass("typing");
+		}
+	});
 
 	iChrome.Search.Suggestions.setHandlers();
 	//iChrome.Search.Speech();
@@ -4443,7 +4484,15 @@ iChrome.Search.submit = function(val) {
 
 	var link = document.createElement("a");
 
-	link.setAttribute("href", searchURL.replace("%s", encodeURIComponent(val)));
+	if (val == "amazon" || val == "amazon.com") {
+		link.setAttribute("href", "http://www.amazon.com/?tag=ichrome0e-20");
+	}
+	else if (val.indexOf("amazon ") == 0) {
+		link.setAttribute("href", "http://www.amazon.com/s/?field-keywords=" + encodeURIComponent(val.slice(7)) + "&tag=ichrome0e-20");
+	}
+	else {
+		link.setAttribute("href", searchURL.replace("%s", encodeURIComponent(val)));
+	}
 
 	if (iChrome.Storage.settings.stab) link.setAttribute("target", "_blank");
 
@@ -4766,19 +4815,25 @@ iChrome.Search.Suggestions.setHandlers = function() {
 
 // Run everything
 
-iChrome.Status.log("Main JS loaded and processed, starting storage fetching");
+iChrome.Status.log("Main JS loaded and processed");
 
-iChrome.Storage(function() {
-	iChrome.Status.log("Storage fetching complete");
+var processStorage = function() {
+		iChrome.Storage(function() {
+			iChrome.Status.log("Storage processing complete");
 
-	document.body.removeChild(document.querySelector("body > .loading"));
+			document.body.removeChild(document.querySelector("body > .loading"));
 
-	iChrome.Templates();
+			iChrome.Templates();
 
-	iChrome.Status.log("Templates done");
+			iChrome.Status.log("Templates done");
 
-	iChrome();
-});
+			iChrome();
+		});
+	};
+
+if (typeof iChromeConfig == "object") { // Actual fetching happens in plugins.js, this can't be called twice since JS parsing is synchronous
+	processStorage();
+}
 
 window.onload = function() {
 	iChrome.Status.log("Window load fired");

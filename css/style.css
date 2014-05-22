@@ -527,6 +527,21 @@ input[type="radio"]:checked {
 
 
 /*---------------------------------------------
+	/ Toolbar / Typing
+*/
+.toolbar.hidden.typing {
+	opacity: 1;
+}
+
+.toolbar.hidden.typing .suggestions {
+	visibility: visible;
+}
+
+
+
+
+
+/*---------------------------------------------
 	/ Toolbar / Search
 */
 .toolbar .search {
@@ -1889,18 +1904,30 @@ body.resizing .medley {
 /*---------------------------------------------
 	/ Upgrade guide
 */
-.updated .description {
+.updated .desc {
 	overflow: auto;
-	padding: 0 25px;
-	font-size: 15px;
-	line-height: 25px;
-	height: calc(100% - 100px);
+	padding: 15px 25px;
+	background: #FCFCFC;
+	height: calc(100% - 70px);
 }
 
 .updated .nav {
-	margin-top: 20px;
-	margin-right: 20px;
 	text-align: right;
+	margin-top: -50px;
+	margin-right: 20px;
+}
+
+.updated ul {
+	margin: 10px 0;
+}
+
+.updated .widgets li {
+	width: 20%;
+	display: inline-block;
+}
+
+.updated .widgets li:nth-child(2n) {
+	width: 60%;
 }
 
 
