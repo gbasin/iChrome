@@ -3209,6 +3209,11 @@ iChrome.Tabs.draggable = function() {
 				item.removeClass("handle");
 			}
 
+			// Trigger a repaint so the tabs height is correct, jQuery oddly seems to be the only thing that gets a flicker-free one.
+			$(document.body).hide(0, function() {
+				$(this).show();
+			});
+
 			$("#originalLoc").remove();
 
 			iChrome.Storage.tabs = iChrome.Tabs.serialize();
@@ -3244,6 +3249,11 @@ iChrome.Tabs.draggable = function() {
 					if (h >= gridMax) { gridMax = h; }
 				});
 			}
+
+			// Again, see above
+			$(document.body).hide(0, function() {
+				$(this).show();
+			});
 		}
 	});
 
