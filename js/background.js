@@ -828,7 +828,7 @@ chrome.permissions.contains({
 
 		chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 			if (changeInfo.status && tab.url && tab.title && tab.windowId &&
-				tab.url !== "chrome-extension://oghkljobbhapacbahlneolfclkniiami/index.html" && tab.url !== "chrome://newtab" &&
+				tab.url !== "chrome-extension://oghkljobbhapacbahlneolfclkniiami/index.html" && tab.url !== "chrome://newtab/" &&
 				tab.url !== "chrome-extension://iccjgbbjckehppnpajnmplcccjcgbdep/index.html") {
 				tabs[tabId] = [tab.title, tab.url, tab.windowId];
 
@@ -867,7 +867,7 @@ chrome.permissions.contains({
 
 					res.forEach(function(tab, i) {
 						if (tab.id && tab.title && tab.windowId && tab.url &&
-							tab.url !== "chrome-extension://oghkljobbhapacbahlneolfclkniiami/index.html" && tab.url !== "chrome://newtab" &&
+							tab.url !== "chrome-extension://oghkljobbhapacbahlneolfclkniiami/index.html" && tab.url !== "chrome://newtab/" &&
 							tab.url !== "chrome-extension://iccjgbbjckehppnpajnmplcccjcgbdep/index.html") {
 							ts[tab.id] = [tab.title, tab.url, tab.windowId];
 						}
