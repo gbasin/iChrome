@@ -255,6 +255,11 @@ iChrome.deferred = function(refresh) {
 			iChrome.Storage.sync(true);
 		}
 
+		// This removes iFrames so no onbeforeunloads can be fired, it's in Vanilla JS so it's faster.
+		[].forEach.call(document.querySelectorAll("iframe"), function(e, i) {
+			e.parentNode.removeChild(e);
+		});
+
 		chrome.extension.getBackgroundPage().setReload();
 	};
 
@@ -2475,11 +2480,19 @@ iChrome.Store.handlers = function() {
 // Getting Started
 iChrome.Guide = function() {
 	var widgets = [],
-		defaults = [1, 2, 4, 6, 12],
+		defaults = [9, 14, 1, 11, 17, 4],
 		id, widget;
 
 	for (id in Widgets) {
+		if (widgets.length >= 28) {
+			break;
+		}
+
 		widget = Widgets[id];
+
+		if (widget.permissions) {
+			continue;
+		}
 
 		if (defaults.indexOf(parseInt(id)) !== -1) {
 			widgets.push({
