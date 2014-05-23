@@ -4499,9 +4499,13 @@ iChrome.Search.submit = function(val) {
 
 	if (val == "amazon" || val == "amazon.com") {
 		link.setAttribute("href", "http://www.amazon.com/?tag=ichrome0e-20");
+
+		_gaq.push(["_trackEvent", "Amazon", "General"]);
 	}
 	else if (val.indexOf("amazon ") == 0) {
 		link.setAttribute("href", "http://www.amazon.com/s/?field-keywords=" + encodeURIComponent(val.slice(7)) + "&tag=ichrome0e-20");
+
+		_gaq.push(["_trackEvent", "Amazon", "Search"]);
 	}
 	else {
 		link.setAttribute("href", searchURL.replace("%s", encodeURIComponent(val)));
