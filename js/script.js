@@ -255,6 +255,11 @@ iChrome.deferred = function(refresh) {
 			iChrome.Storage.sync(true);
 		}
 
+		// This removes iFrames so no onbeforeunloads can be fired, it's in Vanilla JS so it's faster.
+		[].forEach.call(document.querySelectorAll("iframe"), function(e, i) {
+			e.parentNode.removeChild(e);
+		});
+
 		chrome.extension.getBackgroundPage().setReload();
 	};
 
