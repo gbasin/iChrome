@@ -2518,10 +2518,10 @@ iChrome.Guide = function() {
 			localStorage["installed"] = "false";
 
 			modal.hide();
+
+			$(document.body).removeClass("guide");
 		}
 	});
-
-	if (window.UserVoice && window.UserVoice.scan) window.UserVoice.scan();
 
 	modal.elm.on("click", ".btn:not(.disabled)", function(e) {
 		e.preventDefault();
@@ -2545,9 +2545,24 @@ iChrome.Guide = function() {
 
 			iChrome.refresh();
 		}
+	}).on("click", ".share .buttons a", function(e) {
+		e.preventDefault();
+
+		chrome.windows.create({
+			width: 550,
+			height: 550,
+			type: "detached_panel",
+			url: this.getAttribute("href")
+		});
+
+		_gaq.push(["_trackEvent", "GSShare", this.getAttribute("data-which")]);
+	}).on("click", ".share input", function() {
+		this.select();
 	});
 
 	modal.show();
+
+	$(document.body).addClass("guide");
 
 	_gaq.push(["_trackPageview", "/guide"]);
 };
