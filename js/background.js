@@ -814,6 +814,31 @@ refreshFeeds();
 
 
 
+// Settings migration
+if (chrome.app.getDetails().id == "oghkljobbhapacbahlneolfclkniiami") {
+	chrome.runtime.onMessageExternal.addListener(function(msg, sender, res) {
+		if (sender.id == "iccjgbbjckehppnpajnmplcccjcgbdep") {
+			chrome.storage.sync.get(function(d) {
+				var migrate = {
+						lastChanged: "just-migrated"
+					},
+					key;
+
+				for (key in d) {
+					if (key == "themes" || key == "settings" || key == "lastChanged" || key.indexOf("tabs") == 0) {
+						migrate[key] = d[key];
+					}
+				}
+
+				res(migrate);
+			});
+
+			return true;
+		}
+	});
+}
+
+
 
 
 
