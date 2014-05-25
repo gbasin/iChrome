@@ -2688,6 +2688,35 @@ iChrome.Updated = function() {
 		localStorage["updated"] = "false";
 
 		modal.hide();
+	}).on("click", ".buttons button", function(e) {
+		e.preventDefault();
+
+		var elm = $(this),
+			enabled = !this.disabled;
+
+		if (enabled && elm.attr("data-which") == "migrate") {
+			chrome.runtime.sendMessage("oghkljobbhapacbahlneolfclkniiami", {}, function(res) {console.log(res);
+				if (!res) {
+					alert("iChrome didn't respond to the request for settings.  Please make sure it's installed, enabled and at least version 2.1.\n\nIf this button does not work after that, you may have to manually migrate with the new backup and restore buttons in the settings.");
+				}
+				else if (res.settings || res.tabs || res.themes) {
+					chrome.storage.sync.set(res, function() {
+						setTimeout(function() { // The background page will trigger a refresh, therefore this needs to set a timeout and select the new button.
+							$(".updated .buttons button[data-which='migrate']").attr("disabled", true);
+						}, 400);
+					});
+
+					_gaq.push(["_trackEvent", "NewTab", "Migrated"]);
+				}
+			});
+		}
+		else if (enabled && confirm("Are you sure you want to uninstall iChrome?\n\nThis will permanently erase your entire configuration, make sure you've successfully migrated or backed up your settings.")) {
+			chrome.management.uninstall("oghkljobbhapacbahlneolfclkniiami", function() {
+				elm.attr("disabled", true);
+			});
+
+			_gaq.push(["_trackEvent", "NewTab", "Uninstall"]);
+		}
 	});
 
 	modal.show();

@@ -2036,6 +2036,15 @@ body.guide .toolbar .settings {
 	margin-right: 20px;
 }
 
+.updated .buttons {
+	margin-top: 15px;
+	padding-left: 20px;
+}
+
+.updated .buttons button:last-child {
+	margin-left: 15px;
+}
+
 .updated ul {
 	margin: 10px 0;
 }

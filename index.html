@@ -826,11 +826,11 @@
 				</form>
 
 				<div class="description">
-					iChrome is a highly customizable, Google Now influenced, iGoogle homepage replacement.<br />
+					iChrome is a highly customizable, Google Now influenced, iGoogle and new tab page replacement.<br />
 					<br />
-					If you'd like to use iChrome as your new tab page or as both your home and new tab pages, please install <a href="https://chrome.google.com/webstore/detail/iccjgbbjckehppnpajnmplcccjcgbdep">iChrome New Tab</a> <b>instead</b>.<br />
+					If you'd like to use it exclusively as your homepage, please install <a href="https://chrome.google.com/webstore/detail/oghkljobbhapacbahlneolfclkniiami">iChrome</a> <b>instead</b>.<br />
 					<br />
-					Otherwise, if you just want it as a homepage, you'll need to set this URL as your home and/or start pages: <a href="chrome-extension://{{id}}/index.html" target="_blank">chrome-extension://{{id}}/index.html</a>. Instructions for this can be found <a href="https://support.google.com/chrome/answer/95421" target="_blank">here</a> and <a href="https://support.google.com/chrome/answer/95314" target="_blank">here</a>.
+					Otherwise, if you'd like it as your home, new tab and/or start pages, you'll need to set this URL in your Chrome settings: <a href="chrome-extension://{{id}}/index.html" target="_blank">chrome-extension://{{id}}/index.html</a>. Instructions for this can be found <a href="https://support.google.com/chrome/answer/95421" target="_blank">here</a> and <a href="https://support.google.com/chrome/answer/95314" target="_blank">here</a>.
 					<br />
 					<br />
 					This guide consists of 3 sections and should only take a minute to read. It will help you get your homepage set up and show you some basic features.<br />
@@ -935,13 +935,13 @@
 					<h2>Share it!</h2>
 
 					<div class="buttons">
-						<a href="https://twitter.com/intent/tweet?text=I%20just%20installed%20%23iChrome%2C%20the%20best%20iGoogle%20replacement.%20You%20can%20customize%20almost%20anything%20and%20it%20looks%20great!&amp;url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fichrome-your-homepage-for%2Foghkljobbhapacbahlneolfclkniiami%3Futm_source%3DTW" target="_blank" data-which="Twitter" class="twitter"></a>
-						<a href="https://plus.google.com/share?url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fichrome-your-homepage-for%2Foghkljobbhapacbahlneolfclkniiami%3Futm_source%3DGP" target="_blank" data-which="GPlus" class="gplus"></a>
-						<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fichrome-your-homepage-for%2Foghkljobbhapacbahlneolfclkniiami%3Futm_source%3DFB" target="_blank" data-which="Facebook" class="facebook"></a>
-						<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fichrome-your-homepage-for%2Foghkljobbhapacbahlneolfclkniiami%3Futm_source%3DLI" target="_blank" data-which="LinkedIn" class="linkedin"></a>
+						<a href="https://twitter.com/intent/tweet?text=I%20just%20installed%20%23iChrome%2C%20the%20best%20iGoogle%20replacement.%20You%20can%20customize%20almost%20anything%20and%20it%20looks%20great!&amp;url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fichrome-new-tab%2Ficcjgbbjckehppnpajnmplcccjcgbdep%3Futm_source%3DTW" target="_blank" data-which="Twitter" class="twitter"></a>
+						<a href="https://plus.google.com/share?url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fichrome-new-tab%2Ficcjgbbjckehppnpajnmplcccjcgbdep%3Futm_source%3DGP" target="_blank" data-which="GPlus" class="gplus"></a>
+						<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fichrome-new-tab%2Ficcjgbbjckehppnpajnmplcccjcgbdep%3Futm_source%3DFB" target="_blank" data-which="Facebook" class="facebook"></a>
+						<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fichrome-new-tab%2Ficcjgbbjckehppnpajnmplcccjcgbdep%3Futm_source%3DLI" target="_blank" data-which="LinkedIn" class="linkedin"></a>
 					</div>
 
-					<input type="text" value="http://ichro.me/w" readonly />
+					<input type="text" value="http://ichro.me/n" readonly />
 				</div>
 
 				<div class="description">
@@ -1268,7 +1268,17 @@
 			<h2 class="title">Welcome to iChrome V2.1!</h2>
 
 			<div class="desc">
-				V2.1 comes with a lot of improvements, new widgets and features, here's an overview:<br />
+				V2.1 comes with a lot of improvements, new widgets and features, the most important of which is that the Omnibox issue has been fixed.<br />
+				<br />
+				iChrome and iChrome New Tab are now separate from each other so you'll need to migrate your settings from iChrome and will probably want to uninstall the main iChrome extension.  You can use these buttons to do both:<br />
+
+				<div class="buttons">
+					<button class="btn btn-primary" data-which="migrate">Migrate my settings</button>
+					<button class="btn btn-primary" data-which="uninstall">Uninstall iChrome</button>
+				</div>
+
+				<br />
+				Here's an overview of the other changes:<br />
 				<br />
 
 				<b>New Widgets:</b><br />
@@ -1291,8 +1301,7 @@
 				<b>New Features:</b><br />
 
 				<ul>
-					<li>The Omnibox issue has been fixed, the new tab extension is now separate from iChrome</li>
-					<li>Hundreds of new themes including random, RSS and time-and-date dependant ones have been added</li>
+					<li>Hundreds of new themes including random, RSS and time-and-date dependent ones have been added</li>
 					<li>Many parts of iChrome have been redesigned to be less cluttered and easier to use, namely modals and the settings</li>
 					<li>An analog clock view</li>
 					<li>The ability to backup, restore and reset your configuration</li>
@@ -2955,7 +2964,7 @@
 		<template id="template.widgets.calc.desc">
 			The Calculator widget displays a simple, calculator.<br />
 			<br />
-			No setup is neccessary for this widget.<br />
+			No setup is necessary for this widget.<br />
 			<br />
 			Variations:<br />
 			<br />
@@ -3004,7 +3013,7 @@
 			<br />
 			You can choose for videos to be displayed as one large video, optionally with 2 or 4 small ones or 4/6 small videos.<br />
 			<br />
-			No setup is neccessary for this widget.<br />
+			No setup is necessary for this widget.<br />
 			<br />
 			There are no variations available for this widget.
 		</template>
@@ -3018,7 +3027,7 @@
 			<br />
 			<b>This widget is not available offline and, since it loads from a third-party site that is not as optimized as iChrome, it may cause iChrome to load slowly.</b><br />
 			<br />
-			No setup is neccessary for this widget.<br />
+			No setup is necessary for this widget.<br />
 			<br />
 			There are no variations available for this widget.
 		</template>
@@ -3032,7 +3041,7 @@
 			<br />
 			<b>This widget is not available offline and, since it loads from a third-party site that is not as optimized as iChrome, it may cause iChrome to load slowly.</b><br />
 			<br />
-			No setup is neccessary for this widget.<br />
+			No setup is necessary for this widget.<br />
 			<br />
 			There are no variations available for this widget.
 		</template>
