@@ -1702,7 +1702,7 @@ iChrome.Themes.load = function(cb) {
 			var theme = $.extend({}, e);
 
 			theme.filterCategories = e.categories;
-			theme.offline = !iChrome.Storage.cached[e.id];
+			theme.offline = !!iChrome.Storage.cached[e.id];
 			theme.image = "http://themes.ichro.me/thumbnails/" + e.id + ".png";
 
 			if (e.resolution) {
