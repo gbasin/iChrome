@@ -170,10 +170,6 @@ var iChrome = function(refresh) {
 
 	iChrome.Status.log("Tabs rendered");
 
-	if (localStorage["help"] == "true" && new Date().getTime() >= 1395806400000) {
-		iChrome.HelpUs();
-	}
-	
 	if (localStorage["updated"] == "true") {
 		iChrome.Updated();
 	}
@@ -3290,6 +3286,11 @@ iChrome.Tabs.draggable = function() {
 				else {
 					placeholder.removeClass("tiny");
 				}
+
+				// Again, see above
+				$(document.body).hide(0, function() {
+					$(this).show();
+				});
 			}
 			else {
 				onGrid = true;
@@ -3306,11 +3307,6 @@ iChrome.Tabs.draggable = function() {
 					if (h >= gridMax) { gridMax = h; }
 				});
 			}
-
-			// Again, see above
-			$(document.body).hide(0, function() {
-				$(this).show();
-			});
 		}
 	});
 
