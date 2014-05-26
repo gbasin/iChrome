@@ -5028,24 +5028,65 @@ var Widgets = {
 				}
 			]
 		},
-		authorize: function(e) {
-			e.preventDefault();
+		setOAuth: function() {
+			var keys = [ /* !! Remove keys before committing */
+				],
+				ls = localStorage.oauth2_now,
+				key;
 
-			chrome.identity.getAuthToken({ interactive: true }, this.refresh);
+			if (ls) {
+				key = keys.filter(function(e) {
+					return ls.indexOf(e[0]) !== -1;
+				});
+			}
+
+			if (!key) {
+				key = keys[Math.floor(Math.random() * keys.length)];
+			}
+
+			this.oAuth = new OAuth2("now", {
+				client_id: key[0],
+				client_secret: key[1],
+				api_scope: "https://www.googleapis.com/auth/googlenow"
+			}, function(tab) {
+				chrome.webRequest.onBeforeRequest.addListener(
+					function extract(info) {
+						var url = info.url,
+							params = "?",
+							index = url.indexOf(params);
+
+						if (index > -1) {
+							params = url.substring(index);
+						}
+
+						chrome.webRequest.onBeforeRequest.removeListener(extract);
+
+						chrome.tabs.update(info.tabId, {
+							url: chrome.extension.getURL("oauth2/oauth2.html") + params + "&from=" + encodeURIComponent(url)
+						});
+					},
+					{
+						urls: [ "http://ichro.me/auth/*" ]
+					},
+					["blocking", "requestBody"]
+				);
+			});
 		},
 		refresh: function() {
-			chrome.identity.getAuthToken(function(token) {
-				if (!token) {
-					return this.render("authorize");
-				}
+			if (!this.oAuth) this.setOAuth();
 
+			if (!this.oAuth.getAccessToken()) {
+				return this.render("authorize");
+			}
+
+			this.oAuth.authorize.call(this.oAuth, function() {
 				$.ajax({
 					type: "GET",
 					dataType: "json",
 					url: "https://www.googleapis.com/chromenow/v1/notifications",
 					beforeSend: function(xhr) {
-						xhr.setRequestHeader("Authorization", "OAuth " + token);
-					},
+						xhr.setRequestHeader("Authorization", "OAuth " + this.oAuth.getAccessToken());
+					}.bind(this),
 					success: function(d) {
 						var cards = [];
 
@@ -5120,10 +5161,16 @@ var Widgets = {
 			}.bind(this));
 		},
 		render: function(key) {
+			if (!this.oAuth) this.setOAuth();
+
 			if (key == "authorize") {
 				this.utils.render({ authorize: true });
 
-				return this.elm.find(".authorize").on("click", this.authorize.bind(this));
+				return this.elm.find(".authorize").on("click", function(e) {
+					e.preventDefault();
+
+					this.oAuth.authorize.call(this.oAuth, this.refresh.bind(this));
+				}.bind(this));
 			}
 
 			var that = this; // Can't use .bind() since we need the element from this
@@ -5143,13 +5190,13 @@ var Widgets = {
 
 				if (!card) return;
 
-				chrome.identity.getAuthToken(function(token) {
+				that.oAuth.authorize.call(that.oAuth, function() {
 					$.ajax({
 						type: "DELETE",
 						url: "https://www.googleapis.com/chromenow/v1/notifications/" + card.id + "?chromeNotificationId=" + encodeURIComponent(card.cnId) + "&age=29&duration=" + card.duration,
 						beforeSend: function(xhr) {
-							xhr.setRequestHeader("Authorization", "OAuth " + token);
-						},
+							xhr.setRequestHeader("Authorization", "OAuth " + this.oAuth.getAccessToken());
+						}.bind(this),
 						success: function(d) {
 							delete this.data.cards[elm.attr("data-index")];
 						

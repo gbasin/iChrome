@@ -52,19 +52,15 @@
 		"chrome://favicon/",
 		"webRequestBlocking"
 	],
-	"oauth2": {
-		"client_id": "1092601450132-2pni2cojh4j7edu2p5ejjqec7cp6qvqq.apps.googleusercontent.com",
-		"scopes": ["https://www.googleapis.com/auth/googlenow"]
-	},
 	"version": "2.1.0",
 	"manifest_version": 2,
 	"short_name": "iChrome",
 	"offline_enabled": true,
 	"optional_permissions": ["tabs"],
 	"minimum_chrome_version": "29.0",
-	"name": "iChrome: your homepage, for chrome (beta)",
+	"name": "iChrome - your homepage, for chrome",
 	"update_url": "http://clients2.google.com/service/update2/crx",
 	"key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCNyJlz1NfUOvI1q7YiXjTvStaC99OmJCfnfo07UVF6N7/5coAGTUAASUYmdFd5LxTt4GOrODbzbbdOKO3iEuDtUZFklgvMO81tmoRPJNMf0cb1rpSfnmmB33xtgi2CWzmlVzx3pdbbkGwo2R+rwbeAQkG+zXvzgmnHDSt1a5zqjwIDAQAB",
-	"description": "Your homepage, for Chrome: an iGoogle replacement homepage for Google Chrome modeled after Google Now",
+	"description": "The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
 	"content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com https://*.uservoice.com https://www.google.com; object-src 'self'"
 }
