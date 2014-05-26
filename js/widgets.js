@@ -5985,7 +5985,7 @@ var Widgets = {
 					}
 
 					if (!check(problem)) {
-						alert("There appear to be mismatched parentheses in your problem! Please double-check it.");
+						d0.value = "Mismatched parentheses";
 					}
 				}
 
@@ -6003,7 +6003,7 @@ var Widgets = {
 					}
 				}
 				catch(e) {
-					alert("Something went wrong while trying to solve your problem! Please double-check it.");
+					d0.value = "Error!";
 				}
 
 				overwrite = true;
@@ -6013,10 +6013,13 @@ var Widgets = {
 				e.preventDefault();
 
 				var which = this.getAttribute("data-id"),
-					value;
+					value,
+					num = false;
 
 				if (nums.indexOf(which) !== -1) {
 					value = which;
+
+					num = true;
 				}
 				else {
 					switch (which) {
@@ -6051,7 +6054,7 @@ var Widgets = {
 				}
 
 				if (value) {
-					if (!overwrite) {
+					if ((overwrite && !num) || !overwrite) {
 						/*var start = d0.selectionStart;
 
 						d0.value = d0.value.slice(0, start) + value + d0.value.slice(d0.selectionEnd);
@@ -6062,9 +6065,9 @@ var Widgets = {
 					}
 					else {
 						d0.value = value;
-
-						overwrite = false;
 					}
+
+					overwrite = false;
 					
 					d0.focus();
 				}
