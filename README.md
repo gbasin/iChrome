@@ -8,13 +8,6 @@ The code's somewhat messy, but I'm thinking of restructuring it using Backbone i
 
 ## Roadmap
 
-### V2.1 - WIP
- - Time and date dependent, RSS and slideshow themes.
- - New widgets: Google Keep, Drive, Now, Facebook, Google+, Twitter, YouTube, Calculator and Recently Closed
- - Settings import/export/backup
- - A grid based layout option
- - Custom CSS support
-
 #### V2.1.1
  - This will probably be a bugfix release
 
