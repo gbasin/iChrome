@@ -45,7 +45,6 @@
 	},
 	"permissions": [
 		"storage",
-		"identity",
 		"topSites",
 		"http://*/",
 		"https://*/",
@@ -55,7 +54,7 @@
 		"chrome://favicon/",
 		"webRequestBlocking"
 	],
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"manifest_version": 2,
 	"short_name": "iChrome New Tab",
 	"offline_enabled": true,
