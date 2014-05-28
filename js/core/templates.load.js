@@ -9,6 +9,7 @@ var templates = [
 		"widget-settings",	"getting-started",	"donate",
 		"updated",			"new-tab",			"whats-new",
 		
+		// I plan on changing these to be dynamically read from the widget manifest later
 		"widgets.weather",				"widgets.weather.desc",
 		"widgets.stocks",				"widgets.stocks.desc",
 		"widgets.clock",				"widgets.clock.desc",
