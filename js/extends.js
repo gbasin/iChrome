@@ -1,157 +1,158 @@
 /**
  * These are various prototype and jQuery extends and utilities
  */
+require(["jquery"], function($) {
+	Number.prototype.abbr = function(min, precision) {
+		var value = this,
+			newValue = value,
+			min = min || 1000,
+			precision = precision || 3;
 
-Number.prototype.abbr = function(min, precision) {
-	var value = this,
-		newValue = value,
-		min = min || 1000,
-		precision = precision || 3;
+		if (value >= min) {
+			var suffixes = ["", "K", "M", "B","T"],
+				suffixNum = Math.floor((("" + parseInt(value)).length - 1) / 3),
+				shortValue = "";
 
-	if (value >= min) {
-		var suffixes = ["", "K", "M", "B","T"],
-			suffixNum = Math.floor((("" + parseInt(value)).length - 1) / 3),
-			shortValue = "";
+			for (var length = precision; length >= 1; length--) {
+				shortValue = parseFloat((suffixNum != 0 ? (value / Math.pow(1000, suffixNum)) : value).toPrecision(length));
 
-		for (var length = precision; length >= 1; length--) {
-			shortValue = parseFloat((suffixNum != 0 ? (value / Math.pow(1000, suffixNum)) : value).toPrecision(length));
+				var dotLessShortValue = (shortValue + "").replace(/[^A-z0-9 ]+/g, "");
 
-			var dotLessShortValue = (shortValue + "").replace(/[^A-z0-9 ]+/g, "");
-
-			if (dotLessShortValue.length <= precision) break;
-		}
-
-		if (shortValue % 1 != 0) shortNum = shortValue.toFixed(1);
-
-		newValue = shortValue + suffixes[suffixNum];
-	}
-	else {
-		newValue = newValue.toLocaleString();
-	}
-
-	return newValue;
-};
-
-Number.prototype.pad = function(width, char) {
-	char = char || "0";
-	num = this + "";
-	width = width || 2;
-
-	return ((num.length >= width) ? num : new Array(width - num.length + 1).join(char) + num);
-};
-
-$.animateNumber = function(from, to, speed, elm, prefix) {
-	elm = $(elm)[0];
-
-	precision = (to + "").split(".")[1].length;
-
-	prefix = prefix || "";
-
-	$({
-		currNum: from
-	}).animate({
-		currNum: to
-	}, {
-		duration: speed,
-		step: function() {
-			elm.innerHTML = prefix + this.currNum.toFixed(precision);
-		},
-		complete: function() {
-			elm.innerHTML = prefix + to.toFixed(precision);
-		}
-	});
-};
-
-
-// This $.extend alternative is 11.3 times faster than jQuery's native one, but it's buggy, rework it later
-/*(function() {
-	function localExtend(target, source) {
-		var sourceMeta, tCurr, sCurr, key;
-
-		for (key in source) {
-			if (source.hasOwnProperty(key)) {
-				tCurr = target[key];
-				sCurr = source[key];
-				sourceMeta = setMeta(sCurr);
-
-				if (sCurr !== tCurr && sourceMeta && setMeta(tCurr) === sourceMeta) {
-					target[key] = extend(tCurr, sCurr);
-				}
-				else if (0 !== sourceMeta) {
-					target[key] = sCurr;
-				}
+				if (dotLessShortValue.length <= precision) break;
 			}
-			else {
-				break;
-			}
+
+			if (shortValue % 1 != 0) shortNum = shortValue.toFixed(1);
+
+			newValue = shortValue + suffixes[suffixNum];
+		}
+		else {
+			newValue = newValue.toLocaleString();
 		}
 
-		return target;
-	}
-
-	var setMeta = function(value) {
-		if (void 0 === value) {
-			return 0;
-		}
-
-		if ("object" !== typeof value) {
-			return false;
-		}
-
-		return true;
+		return newValue;
 	};
 
-	window.extend = function(target) {
-		var args = arguments,
-			l = args.length;
+	Number.prototype.pad = function(width, char) {
+		char = char || "0";
+		num = this + "";
+		width = width || 2;
 
-		for (var i = 1; i < l; i++){
-			localExtend(target, args[i]);
-		}
-
-		return target;
+		return ((num.length >= width) ? num : new Array(width - num.length + 1).join(char) + num);
 	};
-})();*/
+
+	$.animateNumber = function(from, to, speed, elm, prefix) {
+		elm = $(elm)[0];
+
+		precision = (to + "").split(".")[1].length;
+
+		prefix = prefix || "";
+
+		$({
+			currNum: from
+		}).animate({
+			currNum: to
+		}, {
+			duration: speed,
+			step: function() {
+				elm.innerHTML = prefix + this.currNum.toFixed(precision);
+			},
+			complete: function() {
+				elm.innerHTML = prefix + to.toFixed(precision);
+			}
+		});
+	};
 
 
-$.unextend = function(obj1, obj2) {
-	var newObj = {};
+	// This $.extend alternative is 11.3 times faster than jQuery's native one, but it's buggy, rework it later
+	/*(function() {
+		function localExtend(target, source) {
+			var sourceMeta, tCurr, sCurr, key;
 
-	for (var k in obj2) {
-		var e = obj2[k],
-			c = obj1[k];
+			for (key in source) {
+				if (source.hasOwnProperty(key)) {
+					tCurr = target[key];
+					sCurr = source[key];
+					sourceMeta = setMeta(sCurr);
 
-		if (typeof e == "undefined") {
-			continue;
+					if (sCurr !== tCurr && sourceMeta && setMeta(tCurr) === sourceMeta) {
+						target[key] = extend(tCurr, sCurr);
+					}
+					else if (0 !== sourceMeta) {
+						target[key] = sCurr;
+					}
+				}
+				else {
+					break;
+				}
+			}
+
+			return target;
 		}
-		else if (typeof c == "undefined") {
-			newObj[k] = e;
-		}
-		else if (typeof e == "object" && typeof e.length == "number" && JSON.stringify(e) !== JSON.stringify(c)) {
-			newObj[k] = e;
-		}
-		else if (typeof e == "object" && typeof e.length == "undefined" && JSON.stringify(e) !== JSON.stringify(c)) {
-			newObj[k] = $.unextend(c, e);
-		}
-		else if (e.toString() !== c.toString()) {
-			newObj[k] = e;
-		}
-	}
 
-	return newObj;
-};
+		var setMeta = function(value) {
+			if (void 0 === value) {
+				return 0;
+			}
 
-String.prototype.parseUrl = function() {
-	if (this.indexOf("://") == 0) {
-		return "https" + this;
-	}
-	else if (this.indexOf("data:") == 0 || this.indexOf("filesystem:") == 0 || this.indexOf("blob:") == 0) {
-		return this.toString();
-	}
-	else if (this.indexOf("://") == -1) {
-		return "http://" + this;
-	}
-	else {
-		return this.toString();
-	}
-};
+			if ("object" !== typeof value) {
+				return false;
+			}
+
+			return true;
+		};
+
+		window.extend = function(target) {
+			var args = arguments,
+				l = args.length;
+
+			for (var i = 1; i < l; i++){
+				localExtend(target, args[i]);
+			}
+
+			return target;
+		};
+	})();*/
+
+
+	$.unextend = function(obj1, obj2) {
+		var newObj = {};
+
+		for (var k in obj2) {
+			var e = obj2[k],
+				c = obj1[k];
+
+			if (typeof e == "undefined") {
+				continue;
+			}
+			else if (typeof c == "undefined") {
+				newObj[k] = e;
+			}
+			else if (typeof e == "object" && typeof e.length == "number" && JSON.stringify(e) !== JSON.stringify(c)) {
+				newObj[k] = e;
+			}
+			else if (typeof e == "object" && typeof e.length == "undefined" && JSON.stringify(e) !== JSON.stringify(c)) {
+				newObj[k] = $.unextend(c, e);
+			}
+			else if (e.toString() !== c.toString()) {
+				newObj[k] = e;
+			}
+		}
+
+		return newObj;
+	};
+
+	String.prototype.parseUrl = function() {
+		if (this.indexOf("://") == 0) {
+			return "https" + this;
+		}
+		else if (this.indexOf("data:") == 0 || this.indexOf("filesystem:") == 0 || this.indexOf("blob:") == 0) {
+			return this.toString();
+		}
+		else if (this.indexOf("://") == -1) {
+			return "http://" + this;
+		}
+		else {
+			return this.toString();
+		}
+	};
+});

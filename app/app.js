@@ -11,7 +11,6 @@ require.config({
 		"jquery.sortable": ["jquery"],
 		"jquery.numberformatter": ["jquery", "jshashtable"],
 		"jquery.spectrum": ["jquery"],
-		"extends": ["jquery"],
 
 		// This is temporarily in the shim till it's restructured
 		"app/script": ["moment", "app/storage", "app/widgets", "jquery.spectrum", "jquery.sortable"],
