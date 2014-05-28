@@ -1,0 +1,18 @@
+<template id="template.store">
+    <h2 class="title">Widgets</h2>
+
+    <div class="content">
+        {{#widgets}}
+            <div data-id="{{id}}" class="widget">
+                <img src="icons/{{nicename}}.png" />
+
+                <h2 class="title">{{name}}</h2>
+
+                <div class="desc">{{desc}}</div>
+            </div>
+        {{/widgets}}
+    </div>
+
+    <div class="detail">
+    </div>
+</template>

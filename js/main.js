@@ -14,4 +14,4 @@ require.config({
 /**
  * Load these modules using the paths from above.
  */
-require(["plugins","oauth2","widgets","app/script"]);
+require(["plugins","oauth2","widgets","app/script","app/templates"]);

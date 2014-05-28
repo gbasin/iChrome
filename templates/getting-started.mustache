@@ -1,0 +1,153 @@
+<template id="template.getting-started">
+    <div class="content tab active">
+        <h2 class="title">Welcome to iChrome!</h2>
+
+        <form>
+            <div class="form-group{{#second}} disabled{{/second}}">
+                <label for="widget-title">Select your widgets (optional){{#second}} - Disabled{{/second}}</label>
+
+                <div class="checkboxes">
+                    {{#widgets}}
+                        {{#name}}<label title="{{desc}}"><input type="checkbox" name="widget-{{id}}" checked />&nbsp;{{name}}</label>{{/name}}
+                        {{^name}}<label title="{{2}}"><input type="checkbox" name="widget-{{0}}" />&nbsp;{{1}}</label>{{/name}}
+                    {{/widgets}}
+                </div>
+            </div>
+        </form>
+
+        <div class="description">
+            iChrome is a highly customizable, Google Now influenced, iGoogle homepage replacement.<br />
+            <br />
+            If you'd like to use iChrome as your new tab page or as both your home and new tab pages, please install <a href="https://chrome.google.com/webstore/detail/iccjgbbjckehppnpajnmplcccjcgbdep">iChrome New Tab</a> <b>instead</b>.<br />
+            <br />
+            Otherwise, if you just want it as a homepage, you'll need to set this URL as your home and/or start pages: <a href="chrome-extension://{{id}}/index.html" target="_blank">chrome-extension://{{id}}/index.html</a>. Instructions for this can be found <a href="https://support.google.com/chrome/answer/95421" target="_blank">here</a> and <a href="https://support.google.com/chrome/answer/95314" target="_blank">here</a>.
+            <br />
+            <br />
+            This guide consists of 3 sections and should only take a minute to read. It will help you get your homepage set up and show you some basic features.<br />
+            <br />
+            You can reshow it any time by hitting "Installation guide" from the main settings dialog.<br />
+            <br />
+            When you're ready, please hit "Next" below.
+        </div>
+
+        <div class="nav">
+            <button class="btn btn-primary prev" disabled>Previous</button>
+            Step 1 of 3
+            <button class="btn btn-primary next">Next</button>
+        </div>
+    </div>
+
+    <div class="content tab">
+        <h2 class="title">Widgets</h2>
+
+        <div class="widget-preview">
+            <section class="widget weather medium">
+                <div class="handle"></div>
+                <div class="settings">&#xF0AD;</div>
+
+                <h2 class="header">San Francisco, CA</h2>
+
+                <div class="cond mostlycloudy"></div>
+
+                <div class="temp">
+                    <span class="f">57</span>
+                    <sup>&nbsp;| <a></a></sup>
+                </div>
+
+                <div class="details">
+                    <span class="wind" title="Wind speed">0 mph</span>
+                    <span class="chill" title="Wind Chill">57&deg;F</span>
+                    <span class="humidity" title="Humidity">53%</span>
+                </div>
+
+                <div class="forecast">
+                    <div class="day">
+                        <div class="date">Today</div>
+                        <div class="cond partlycloudy"></div>
+                        <span class="high">65</span>
+                        <span class="low">45</span>
+                    </div>
+
+                    <div class="day">
+                        <div class="date">Tue</div>
+                        <div class="cond partlycloudy"></div>
+                        <span class="high">67</span>
+                        <span class="low">44</span>
+                    </div>
+
+                    <div class="day">
+                        <div class="date">Wed</div>
+                        <div class="cond partlycloudy"></div>
+                        <span class="high">58</span>
+                        <span class="low">43</span>
+                    </div>
+
+                    <div class="day">
+                        <div class="date">Thu</div>
+                        <div class="cond partlycloudy"></div>
+                        <span class="high">56</span>
+                        <span class="low">40</span>
+                    </div>
+
+                    <div class="day">
+                        <div class="date">Fri</div>
+                        <div class="cond sunny"></div>
+                        <span class="high">60</span>
+                        <span class="low">43</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="description tab2">
+            <b>Adding:</b> Click the second icon <span class="icon">&#xF01A;</span> from the right on the toolbar to open the store.  There you can add any of over 30 completely free widgets, most of which are customizable and/or work offline, to your tabs.<br />
+            <br />
+            <b>Moving:</b> Grab any widget by the handle <span class="icon handle"></span> that appears at the top right when you hover over it and drag it wherever you want. To move one to another tab, just hold it over one the navigation bars that appears at the side of the tab and drop it wherever you like.<br />
+            <br />
+            <b>Customizing:</b> Clicking the wrench icon <span class="icon">&#xF0AD;</span> that appears just below the handle at the top right of the widget will open a small dialog where you can change any of the widget settings.<br />
+            <br />
+            <b>Removing:</b> Start dragging any widget like you're moving it and drop it onto the red bar that appears along the top of the window. A confirmation dialog will show, hit "Yes, I'm sure" if you'd really like to remove it.
+        </div>
+
+        <div class="nav">
+            <button class="btn btn-primary prev">Previous</button>
+            Step 2 of 3
+            <button class="btn btn-primary next">Next</button>
+        </div>
+    </div>
+
+    <div class="content tab">
+        <h2 class="title">Configuring iChrome</h2>
+
+        <div class="share">
+            <h3>Love iChrome already?</h3>
+
+            <h2>Share it!</h2>
+
+            <div class="buttons">
+                <a href="https://twitter.com/intent/tweet?text=I%20just%20installed%20%23iChrome%2C%20the%20best%20iGoogle%20replacement.%20You%20can%20customize%20almost%20anything%20and%20it%20looks%20great!&amp;url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fichrome-your-homepage-for%2Foghkljobbhapacbahlneolfclkniiami%3Futm_source%3DTW" target="_blank" data-which="Twitter" class="twitter"></a>
+                <a href="https://plus.google.com/share?url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fichrome-your-homepage-for%2Foghkljobbhapacbahlneolfclkniiami%3Futm_source%3DGP" target="_blank" data-which="GPlus" class="gplus"></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fichrome-your-homepage-for%2Foghkljobbhapacbahlneolfclkniiami%3Futm_source%3DFB" target="_blank" data-which="Facebook" class="facebook"></a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fichrome-your-homepage-for%2Foghkljobbhapacbahlneolfclkniiami%3Futm_source%3DLI" target="_blank" data-which="LinkedIn" class="linkedin"></a>
+            </div>
+
+            <input type="text" value="http://ichro.me/w" readonly />
+        </div>
+
+        <div class="description">
+            <b>Configuring iChrome:</b> Clicking the wrench icon <span class="icon">&#xF0AD;</span> at the right of the toolbar will open a window where you can customize almost any part of iChrome. You can also configure most settings on a tab-by-tab basis.<br />
+            <br />
+            Options include the number of columns on a given tab (or a grid-based layout!), the ability to change the search engine, enable "OK Google" hotword detection and hundreds of themes to choose from.<br />
+            <br />
+            <b>That's it.</b> There's help text all around and if you ever have any trouble or don't know how to use something, just click the "Support" link in the footer bar or go to <a href="http://ichrome.uservoice.com/" target="_blank">the support portal</a>.<br />
+            <br />
+            Have fun!
+        </div>
+
+        <div class="nav">
+            <button class="btn btn-primary prev">Previous</button>
+            Step 3 of 3
+            <button class="btn btn-primary next">OK, got it</button>
+        </div>
+    </div>
+</template>

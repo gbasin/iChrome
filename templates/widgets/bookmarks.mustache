@@ -1,0 +1,14 @@
+<template id="template.widgets.bookmarks">
+    <div class="drop">
+        <div class="text">Drop link here</div>
+        <div class="catch" contenteditable></div>
+    </div>
+
+    <h2 class="header">{{title}}{{^title}}&nbsp;{{/title}}<div class="new">New: <a data-type="bookmark">Bookmark</a> <a data-type="folder">Folder</a></div></h2>
+
+    <div class="list{{#two}} two-column{{/two}}">
+        {{#bookmarks}}
+            {{>listing}}
+        {{/bookmarks}}
+    </div>
+</template>

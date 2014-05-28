@@ -1,0 +1,24 @@
+<template id="template.widgets.analytics">
+    {{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+    {{#noProfile}}
+        <div class="no-profile header">
+            It doesn't look like you selected a profile yet!<br />
+            <br />
+            Try selecting one via the wrench icon in the top right.
+        </div>
+    {{/noProfile}}
+    {{^noProfile}}
+        {{#tiny}}<div class="mainval" data-label="visits" data-tooltip="&lt;b&gt;Pageviews&lt;/b&gt;: {{pageviews}}&lt;br /&gt;&lt;b&gt;Pages per visit&lt;/b&gt;: {{pagesVisit}}&lt;br /&gt;&lt;b&gt;Bounce Rate&lt;/b&gt;: {{bounceRate}}&lt;br /&gt;&lt;b&gt;Completions&lt;/b&gt;: {{completions}}">{{{visits}}}</div>{{/tiny}}
+        {{^tiny}}
+            <div class="mainval" data-label="visits">{{{visits}}}</div>
+
+            <div class="details">
+                <div data-label="pageviews">{{pageviews}}</div>
+                <div data-label="pages/visit">{{pagesVisit}}</div>
+                <div data-label="bounce rate">{{bounceRate}}</div>
+                <div data-label="completions">{{completions}}</div>
+            </div>
+        {{/tiny}}
+    {{/noProfile}}
+</template>

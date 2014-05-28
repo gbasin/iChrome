@@ -1,0 +1,89 @@
+<template id="template.themes.custom">
+    {{#edit}}<h2 class="title">Edit Theme</h2>{{/edit}}
+    {{^edit}}<h2 class="title">Create Theme</h2>{{/edit}}
+
+    <form>
+        <div class="form-group">
+            <label for="name">Theme Name</label>
+
+            {{#name}}<input type="text" class="form-control" id="name" name="name" placeholder="Enter a theme name" value="{{name}}" />{{/name}}
+            {{^name}}<input type="text" class="form-control" id="name" name="name" placeholder="Enter a theme name" value="New Theme" />{{/name}}
+        </div>
+
+        <div class="form-group">
+            <label for="image">Image URL</label>
+
+            <div>
+                <div class="help" data-tooltip="Uploaded images <b>cannot be synced</b> between computers.<br /><br />If this is important to you, please upload your image to a service such as <a href=&quot;http://imgur.com/&quot; target=&quot;_blank&quot;>imgur</a>. Then copy and paste the URL ending with an extension (i.e. jpg) and paste it into the field on the left."></div>
+
+                <div class="upload">or<input type="file" class="btn btn-primary" id="upload" /></div>
+
+                <input type="text" class="form-control" id="image" name="image" placeholder="Enter a background image URL" value="{{image}}" />
+            </div>
+        </div>
+
+        <div class="form-group color">
+            <label for="color">Fallback Color</label>
+
+            <input type="text" class="form-control" id="color" name="color" placeholder="Any color name or hex value: #ABCDEF, red, #AAA" value="{{color}}" />
+        </div>
+
+        <div class="form-group">
+            <label for="position">Position</label>
+
+            <select class="form-control" id="position" name="position">
+                <option value="center">Center</option>
+                <option value="top left">Top Left</option>
+                <option value="top center" selected>Top Center</option>
+                <option value="top right">Top Right</option>
+                <option value="bottom left">Bottom Left</option>
+                <option value="bottom center">Bottom Center</option>
+                <option value="bottom right">Bottom Right</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="scaling">Scaling</label>
+
+            <select class="form-control" id="scaling" name="scaling">
+                <option value="cover">Auto</option>
+                <option value="100% auto">Full Width</option>
+                <option value="auto 100%">Full Height</option>
+                <option value="auto">No Scaling (preview may be inaccurate)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="repeat">Image Repeat</label>
+
+            <select class="form-control" id="repeat" name="repeat">
+                <option value="no-repeat">No Repeat</option>
+                <option value="repeat-x">Repeat Horizontally</option>
+                <option value="repeat-y">Repeat Vertically</option>
+                <option value="repeat">Repeat both</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Attach Image To</label>
+
+            <div>
+                {{#fixed}}
+                    <label class="checkbox-inline"><input type="radio" name="fixed" value="scroll" checked /> The tab</label>
+                    <label class="checkbox-inline"><input type="radio" name="fixed" value="fixed" /> The window</label>
+                {{/fixed}}
+                {{^fixed}}
+                    <label class="checkbox-inline"><input type="radio" name="fixed" value="scroll" /> The tab</label>
+                    <label class="checkbox-inline"><input type="radio" name="fixed" value="fixed" checked /> The window</label>
+                {{/fixed}}
+            </div>
+        </div>
+    </form>
+
+    <div class="preview"></div>
+
+    <div class="buttons">
+        <button class="btn btn-success preview">Preview</button>
+        <button class="btn btn-primary save">Save &amp; Close</button>
+    </div>
+</template>

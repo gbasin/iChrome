@@ -1,0 +1,48 @@
+<template id="template.widgets.clock">
+    {{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+    {{#analog}}
+        <div class="clock">
+            <!-- Hands -->
+            <div class="hour holder" style="-webkit-transform: rotate({{hPos}}deg);">
+                <div class="hand"><div></div></div>
+            </div>
+
+            <div class="minute holder" style="-webkit-transform: rotate({{mPos}}deg);">
+                <div class="hand"><div></div></div>
+            </div>
+
+            <div class="second holder" style="-webkit-transform: rotate({{sPos}}deg);">
+                <div class="hand"><div></div></div>
+            </div>
+
+            <!-- Hand Shadows -->
+            <div class="shadow">
+                <div class="hour holder" style="-webkit-transform: rotate({{hPos}}deg);">
+                    <div class="hand"><div></div></div>
+                </div>
+
+                <div class="minute holder" style="-webkit-transform: rotate({{mPos}}deg);">
+                    <div class="hand"><div></div></div>
+                </div>
+
+                <div class="second holder" style="-webkit-transform: rotate({{sPos}}deg);">
+                    <div class="hand"><div></div></div>
+                </div>
+            </div>
+
+            <!-- Ticks -->
+            <div class="ticks">
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+            </div>
+
+            <div class="mticks"></div>
+        </div>
+    {{/analog}}
+    {{^analog}}
+        <div class="clock">{{{html}}}</div>
+    {{/analog}}
+</template>

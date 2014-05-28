@@ -1,0 +1,52 @@
+<template id="template.widgets.sports">
+    {{#tiny}}
+        {{#games}}
+            <a href="{{link}}">
+                <h2 class="header" title="{{home_first}} {{home_last}} vs {{away_first}} {{away_last}}">{{home_last}} vs {{away_last}}</h2>
+
+                <div class="score" data-tooltip="{{detail}}">{{status}}</div>
+            </a>
+        {{/games}}
+        {{^games}}
+            <a class="no-games" href="http://sports.yahoo.com/">
+                <div class="text" data-tooltip="Go to Yahoo! Sports">No Games Scheduled</div>
+            </a>
+        {{/games}}
+    {{/tiny}}
+    {{^tiny}}
+        {{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+        <div class="games">
+            {{#games}}
+                <a class="game" href="{{link}}">
+                    <div class="status" data-tooltip="{{status}}">{{{status}}}</div>
+
+                    <div class="team home">
+                        <img class="icon" src="/images/sports/{{home_id}}.png" />
+
+                        <div class="name" title="{{home_first}} {{home_last}}">{{home_first}} {{home_last}}</div>
+
+                        {{#home_score}}
+                            <div class="score">{{home_score}}</div>
+                        {{/home_score}}
+                    </div>
+
+                    <div class="team away">
+                        <img class="icon" src="/images/sports/{{away_id}}.png" />
+
+                        <div class="name" title="{{away_first}} {{away_last}}">{{away_first}} {{away_last}}</div>
+
+                        {{#away_score}}
+                            <div class="score">{{away_score}}</div>
+                        {{/away_score}}
+                    </div>
+                </a>
+            {{/games}}
+            {{^games}}
+                <a class="no-games" href="http://sports.yahoo.com/">
+                    <div class="text" data-tooltip="Go to Yahoo! Sports">No Games Scheduled</div>
+                </a>
+            {{/games}}
+        </div>
+    {{/tiny}}
+</template>

@@ -1,0 +1,20 @@
+<template id="template.widgets.feedly">
+    {{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+    <div class="items {{class}}" tabindex="-1">
+        {{#column2}}
+            <div class="column">
+                {{{articles}}}
+            </div>
+
+            <div class="column">
+                {{{column2}}}
+            </div>
+        {{/column2}}
+        {{^column2}}
+            {{{articles}}}
+        {{/column2}}
+    </div>
+
+    {{#link}}<a class="more" href="http://www.feedly.com/">Go To Feedly</a>{{/link}}
+</template>

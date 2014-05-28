@@ -1,0 +1,18 @@
+<template id="template.themes">
+    <h2 class="title">Themes</h2>
+
+    <ul class="nav">
+        <li class="active" data-id="all">All</li>
+        {{#categories}}
+            <li data-id="{{id}}">{{name}}</li>
+        {{/categories}}
+        <li data-id="custom">Custom</li>
+
+        <li class="create">
+            <button class="btn btn-primary">Create a theme</button>
+        </li>
+    </ul>
+
+    <div class="container">
+    </div>
+</template>

@@ -1,0 +1,338 @@
+<template id="template.settings">
+<h2 class="title">Settings</h2>
+
+<button class="btn btn-primary save">Save &amp; Close</button>
+
+<ul class="nav">
+    <li data-tab="general" class="active">General</li>
+    <li data-tab="visual">Visual</li>
+    <li data-tab="specific" class="specific nested">
+        <h3>Tab Specific</h3>
+
+        <ul>
+            {{#tabForms}}<li data-id="{{id}}" class="{{active}}">{{name}}</li>{{/tabForms}}
+            <li data-id="new">Create New</li>
+        </ul>
+    </li>
+    <li data-tab="advanced">Advanced</li>
+</ul>
+
+<div class="tabs">
+<div class="tab general active">
+    <h2 class="header">General</h2>
+
+    <div class="content">
+        <form class="form-horizontal">
+            <div class="form-group search-url">
+                <label class="control-label col-sm-2" for="search-url">Search URL</label>
+
+                <div class="col-sm-9">
+                    <span class="info">This is the URL that the search box will submit searches to. Put <b>%s</b> where the search query should go</span>
+                    <input type="text" id="search-url" name="search-url" value="{{search-url}}" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="logo-url">Logo URL</label>
+
+                <div class="col-sm-9">
+                    <span class="info">This is the image shown at the left of the toolbar.  The default is <b>/images/logo.png</b></span>
+
+                    <input type="text" id="logo-url" name="logo-url" value="{{logo-url}}" />
+                </div>
+            </div>
+
+            <div class="form-group voice">
+                <label class="control-label col-sm-2">Voice Search</label>
+
+                <div class="checkboxes col-sm-9">
+                    {{#voice}}<label><input type="checkbox" name="voice" checked /> Enable voice search</label>{{/voice}}
+                    {{#ok}}<label><input type="checkbox" name="ok" checked /> Enable "OK Google" hotword detection</label>{{/ok}}
+
+                    {{^voice}}<label><input type="checkbox" name="voice" /> Enable voice search</label>{{/voice}}
+                    {{^ok}}<label><input type="checkbox" name="ok" /> Enable "OK Google" hotword detection</label>{{/ok}}
+                </div>
+            </div>
+
+            <div class="form-group links">
+                <label class="control-label col-sm-2">Toolbar Links</label>
+
+                <div class="col-sm-9 container">
+                    <span class="info">Here you can choose which links will show in the right section of the toolbar:</span>
+
+                    {{#plus}}<label><input type="checkbox" name="plus" checked /> Google Plus</label>{{/plus}}
+                    {{#gmail}}<label><input type="checkbox" name="gmail" checked /> Gmail</label>{{/gmail}}
+                    {{#apps}}<label><input type="checkbox" name="apps" checked /> Google Apps</label>{{/apps}}
+
+                    {{^plus}}<label><input type="checkbox" name="plus" /> Google Plus</label>{{/plus}}
+                    {{^gmail}}<label><input type="checkbox" name="gmail" /> Gmail</label>{{/gmail}}
+                    {{^apps}}<label><input type="checkbox" name="apps" /> Google Apps</label>{{/apps}}
+
+                    <hr class="sep" />
+
+                    <div class="form-inline options{{#links.0}} visible{{/links.0}}">
+                        {{#links.0}}<label><input type="checkbox" name="custom0" checked /> Custom Link 1</label>{{/links.0}}
+                        {{^links.0}}<label><input type="checkbox" name="custom0" /> Custom Link 1</label>{{/links.0}}
+
+                        <div class="form-group">
+                            {{#links.0.text}}<input type="text" name="custom0-text" placeholder="Link text" value="{{links.0.text}}" />{{/links.0.text}}
+                            {{^links.0.text}}<input type="text" name="custom0-text" placeholder="Link text" value="{{links.0.text}}" />{{/links.0.text}}
+                        </div>
+                        <div class="form-group">
+                            {{#links.0.link}}<input type="text" name="custom0-url" placeholder="Link URL, i.e. http://www.google.com/" value="{{links.0.link}}" />{{/links.0.link}}
+                            {{^links.0.link}}<input type="text" name="custom0-url" placeholder="Link URL, i.e. http://www.google.com/" value="{{links.0.link}}" />{{/links.0.link}}
+                        </div>
+                    </div>
+
+                    <div class="form-inline options{{#links.1}} visible{{/links.1}}">
+                        {{#links.1}}<label><input type="checkbox" name="custom1" checked /> Custom Link 2</label>{{/links.1}}
+                        {{^links.1}}<label><input type="checkbox" name="custom1" /> Custom Link 2</label>{{/links.1}}
+
+                        <div class="form-group">
+                            {{#links.1.text}}<input type="text" name="custom1-text" placeholder="Link text" value="{{links.1.text}}" />{{/links.1.text}}
+                            {{^links.1.text}}<input type="text" name="custom1-text" placeholder="Link text" value="{{links.1.text}}" />{{/links.1.text}}
+                        </div>
+                        <div class="form-group">
+                            {{#links.1.link}}<input type="text" name="custom1-url" placeholder="Link URL, i.e. http://www.google.com/" value="{{links.1.link}}" />{{/links.1.link}}
+                            {{^links.1.link}}<input type="text" name="custom1-url" placeholder="Link URL, i.e. http://www.google.com/" value="{{links.1.link}}" />{{/links.1.link}}
+                        </div>
+                    </div>
+
+                    <div class="form-inline options{{#links.2}} visible{{/links.2}}">
+                        {{#links.2}}<label><input type="checkbox" name="custom2" checked /> Custom Link 3</label>{{/links.2}}
+                        {{^links.2}}<label><input type="checkbox" name="custom2" /> Custom Link 3</label>{{/links.2}}
+
+                        <div class="form-group">
+                            {{#links.2.text}}<input type="text" name="custom2-text" placeholder="Link text" value="{{links.2.text}}" />{{/links.2.text}}
+                            {{^links.2.text}}<input type="text" name="custom2-text" placeholder="Link text" value="{{links.2.text}}" />{{/links.2.text}}
+                        </div>
+                        <div class="form-group">
+                            {{#links.2.link}}<input type="text" name="custom2-url" placeholder="Link URL, i.e. http://www.google.com/" value="{{links.2.link}}" />{{/links.2.link}}
+                            {{^links.2.link}}<input type="text" name="custom2-url" placeholder="Link URL, i.e. http://www.google.com/" value="{{links.2.link}}" />{{/links.2.link}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="col-sm-11 btns">
+            <a class="guide" title="Show the installation guide">Installation guide</a>
+        </div>
+    </div>
+</div>
+
+<div class="tab visual">
+    <h2 class="header">Visual</h2>
+
+    <div class="content">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2">Layout</label>
+
+                <div class="col-sm-9">
+                    <select id="columns" name="columns">
+                        <option value="1-fixed">One column, fixed width</option>
+                        <option value="1-fluid">One column, fluid width</option>
+                        <option value="2-fixed">Two columns, fixed width</option>
+                        <option value="2-fluid">Two columns, fluid width</option>
+                        <option value="3-fixed">Three columns, fixed width</option>
+                        <option value="3-fluid">Three columns, fluid width</option>
+                        <option value="4-fixed">Four columns, fixed width</option>
+                        <option value="4-fluid">Four columns, fluid width</option>
+                        <option value="5-fixed">Five columns, fixed width</option>
+                        <option value="5-fluid">Five columns, fluid width</option>
+                        <option value="medley">Grid-based, customizable width</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="theme-btn">Default Theme</label>
+
+                <div class="col-sm-9">
+                    <input type="hidden" name="theme" value="{{theme}}" />
+
+                    <button class="btn btn-primary theme" id="theme-btn">Select a theme</button>
+
+                    <span class="current">{{themename}}</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="alignment">Alignment</label>
+
+                <div class="col-sm-9">
+                    <span class="info">This will change the alignment of the widget columns</span>
+
+                    <select id="alignment" name="alignment">
+                        <option value="left">Left</option>
+                        <option value="center" selected>Center</option>
+                        <option value="right">Right</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="toolbar">Toolbar</label>
+
+                <div class="col-sm-9">
+                    <span class="info">When enabled, this will hide the toolbar unless you hover over where it would normally be for 0.5 seconds</span>
+
+                    {{#toolbar}}<label><input type="checkbox" name="toolbar" checked /> Enable hidden mode</label>{{/toolbar}}
+                    {{^toolbar}}<label><input type="checkbox" name="toolbar" /> Enable hidden mode</label>{{/toolbar}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Tabs Menu</label>
+
+                <div class="col-sm-9">
+                    <span class="info">Show or hide the tabs menu shown at the top left of the page</span>
+
+                    {{#tabs}}<label><input type="checkbox" name="tabs" checked /> Show the Tabs Menu</label>{{/tabs}}
+                    {{^tabs}}<label><input type="checkbox" name="tabs" /> Show the Tabs Menu</label>{{/tabs}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="animation">Slide-in Animation</label>
+
+                <div class="col-sm-9">
+                    <span class="info">Enable or disable the slide-in animation run when you load the page</span>
+
+                    {{#animation}}<label><input type="checkbox" name="animation" checked /> Enable the animation</label>{{/animation}}
+                    {{^animation}}<label><input type="checkbox" name="animation" /> Enable the animation</label>{{/animation}}
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="tab specific">
+    <h2 class="header">Tab Specific</h2>
+
+    <div class="content">
+        {{#tabForms}}
+            <form class="form-horizontal {{active}}" data-tab="{{id}}">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="name{{id}}">Tab Name</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" id="name{{id}}" name="name" value="{{name}}" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="columns{{id}}">Layout</label>
+
+                    <div class="col-sm-9">
+                        <select id="columns{{id}}" name="columns">
+                            <option value="1-fixed">One column, fixed width</option>
+                            <option value="1-fluid">One column, fluid width</option>
+                            <option value="2-fixed">Two columns, fixed width</option>
+                            <option value="2-fluid">Two columns, fluid width</option>
+                            <option value="3-fixed">Three columns, fixed width</option>
+                            <option value="3-fluid">Three columns, fluid width</option>
+                            <option value="4-fixed">Four columns, fixed width</option>
+                            <option value="4-fluid">Four columns, fluid width</option>
+                            <option value="5-fixed">Five columns, fixed width</option>
+                            <option value="5-fluid">Five columns, fluid width</option>
+                            <option value="medley">Grid-based, customizable width</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="theme-btn{{id}}">Theme</label>
+
+                    <div class="col-sm-9">
+                        <input type="hidden" name="theme" value="{{theme}}" />
+
+                        <button class="btn btn-primary theme" id="theme-btn{{id}}">Select a theme</button>
+
+                        <span class="current">{{themename}}</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="alignment{{id}}">Alignment</label>
+
+                    <div class="col-sm-9">
+                        <span class="info">This will change the alignment of the widget columns</span>
+
+                        <select id="alignment{{id}}" name="alignment">
+                            <option value="left">Left</option>
+                            <option value="center" selected>Center</option>
+                            <option value="right">Right</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        {{/tabForms}}
+
+        <div class="col-sm-11 btns">
+            <button class="btn btn-danger delete">Delete tab</button>
+
+            <button class="btn btn-primary default">Set as default</button>
+        </div>
+    </div>
+</div>
+
+<div class="tab advanced">
+    <h2 class="header">Advanced</h2>
+
+    <div class="content">
+        <form class="form-horizontal">
+            <div class="form-group colors">
+                <label class="control-label col-sm-2">Search Results</label>
+
+                <div class="checkbox col-sm-9">
+                    {{#stab}}<label><input type="checkbox" name="stab" checked /> Open search results in a new tab</label>{{/stab}}
+                    {{^stab}}<label><input type="checkbox" name="stab" /> Open search results in a new tab</label>{{/stab}}
+                </div>
+            </div>
+
+            <div class="form-group colors">
+                <label class="control-label col-sm-2">Colors</label>
+
+                <div class="col-sm-9">
+                    <span class="info">Click a swatch to select a color</span>
+
+                    <label class="color">Widgets:</label>
+                    <input type="text" class="color" id="wcolor" name="wcolor" value="{{wcolor}}" />
+
+                    <label class="color">Header Bar:</label>
+                    <input type="text" class="color" id="hcolor" name="hcolor" value="{{hcolor}}" />
+                </div>
+            </div>
+
+            <div class="form-group backup">
+                <label class="control-label col-sm-2" for="backup">Backup / Restore</label>
+
+                <div class="col-sm-9">
+                    <span class="info"><b>To backup:</b> Click the Backup button and copy what appears in the field below.<br /><b>To restore:</b> Paste the text you saved or copied before and click the Restore button below.</span>
+
+                    <button class="btn btn-primary backup">Backup</button> <button class="btn btn-primary restore">Restore</button>
+
+                    <textarea id="backup" name="backup"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group css">
+                <label class="control-label col-sm-2" for="custom-css">Custom CSS</label>
+
+                <div class="col-sm-9">
+                    <span class="info">You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN</a>).<br /><br />Since this will be synced, you can only enter a maximum of 1000 characters including whitespace.</span>
+
+                    <textarea id="custom-css" name="custom-css" maxlength="1000">{{custom-css}}</textarea>
+                </div>
+            </div>
+        </form>
+
+        <div class="col-sm-11 btns">
+            <a class="reset">Reset iChrome</a>
+        </div>
+    </div>
+</div>
+</div>
+</template>
