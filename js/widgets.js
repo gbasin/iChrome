@@ -5037,7 +5037,7 @@ var Widgets = {
 			if (ls) {
 				key = keys.filter(function(e) {
 					return ls.indexOf(e[0]) !== -1;
-				});
+				})[0];
 			}
 
 			if (!key) {
