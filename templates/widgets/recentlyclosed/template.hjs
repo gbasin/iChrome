@@ -1,0 +1,13 @@
+{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+<div class="items">
+	{{#tabs}}
+		<a class="item" href="{{url}}{{#newTab}}" target="_blank{{/newTab}}">
+			<img class="favicon" src="chrome://favicon/{{url}}" />
+			<span class="title">{{title}}</span>
+		</a>
+	{{/tabs}}
+	{{^tabs}}
+		<div class="item no-items">Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed.</div>
+	{{/tabs}}
+</div>

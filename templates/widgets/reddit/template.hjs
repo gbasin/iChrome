@@ -1,0 +1,24 @@
+{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+<div class="items">
+	{{#links}}
+		<a class="item" href="{{link}}" target="_blank">
+			{{#image}}<div class="img" style="background-image: url('{{image}}');"></div>{{/image}}
+
+			<div class="content">
+				<span class="title">{{title}}&nbsp;&#8203;<span class="nested-link domain" data-href="http://www.reddit.com/domain/{{domain}}" data-target="_blank">{{domain}}</span></span>
+
+				<div class="specs">
+					<span class="score{{direction}}">{{score}}</span>
+					<span class="posted">{{created}}</span>
+					<span class="comments nested-link" data-href="http://www.reddit.com{{permalink}}" data-target="_blank">{{comments}}</span>
+					{{#subreddit}}<span class="subreddit nested-link" data-href="http://www.reddit.com/r/{{subreddit}}" data-target="_blank" title="{{subreddit}}">{{subreddit}}</span>{{/subreddit}}
+					<span class="user nested-link" data-href="http://www.reddit.com/user/{{user}}" data-target="_blank" title="{{user}}">{{user}}</span>
+
+				</div>
+			</div>
+		</a>
+	{{/links}}
+</div>
+
+{{#link}}<a class="more" href="{{link}}">More</a>{{/link}}

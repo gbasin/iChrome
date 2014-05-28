@@ -1,0 +1,55 @@
+<form class="form-horizontal active" data-tab="{{id}}">
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="name{{id}}">Tab Name</label>
+
+		<div class="col-sm-9">
+			<input type="text" id="name{{id}}" name="name" value="New Tab" />
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="columns{{id}}">Layout</label>
+
+		<div class="col-sm-9">
+			<select id="columns{{id}}" name="columns">
+				<option value="1-fixed">One column, fixed width</option>
+				<option value="1-fluid">One column, fluid width</option>
+				<option value="2-fixed">Two columns, fixed width</option>
+				<option value="2-fluid">Two columns, fluid width</option>
+				<option value="3-fixed">Three columns, fixed width</option>
+				<option value="3-fluid">Three columns, fluid width</option>
+				<option value="4-fixed">Four columns, fixed width</option>
+				<option value="4-fluid">Four columns, fluid width</option>
+				<option value="5-fixed">Five columns, fixed width</option>
+				<option value="5-fluid">Five columns, fluid width</option>
+				<option value="medley">Grid-based, customizable width</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="theme-btn{{id}}">Theme</label>
+
+		<div class="col-sm-9">
+			<input type="hidden" name="theme" value="{{theme}}" />
+			
+			<button class="btn btn-primary theme" id="theme-btn{{id}}">Select a theme</button>
+
+			<span class="current">{{themename}}</span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="alignment{{id}}">Alignment</label>
+
+		<div class="col-sm-9">
+			<span class="info">This will change the alignment of the widget columns</span>
+
+			<select id="alignment{{id}}" name="alignment">
+				<option value="left">Left</option>
+				<option value="center" selected>Center</option>
+				<option value="right">Right</option>
+			</select>
+		</div>
+	</div>
+</form>

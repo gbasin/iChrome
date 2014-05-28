@@ -1,0 +1,32 @@
+{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+<form class="searchbox" action="https://www.youtube.com/results" method="GET{{#newTab}}" target="_blank{{/newTab}}">
+	<input type="text" placeholder="Search YouTube" name="search_query" />
+
+	<button class="submit">&#xE624;</button>
+</form>
+
+{{#featured}}
+	<a class="featured video" href="{{url}}">
+		<div class="thumb" style="background-image: url({{thumb}});" data-duration="{{duration}}"></div>
+
+		<h2 title="{{title}}">{{title}}</h2>
+
+		<span class="author">{{uploader}}</span>
+		<span class="views">{{views}} views</span>
+	</a>
+{{/featured}}
+
+<div class="videos">
+	{{#videos}}
+		<a class="video" href="{{url}}">
+			<div class="thumb" style="background-image: url({{thumb}});" data-duration="{{duration}}"></div>
+
+			<h2 title="{{title}}">{{title}}</h2>
+
+			<span class="author">{{uploader}}</span>
+
+			<span class="views">{{views}} views</span>
+		</a>
+	{{/videos}}
+</div>

@@ -1,0 +1,18 @@
+{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+<div class="events{{^title}} no-header{{/title}}">
+	{{#events}}
+		<a class="event" href="{{link}}">
+			<span class="title">{{title}}</span>
+			<span class="time">{{date}}</span>
+			{{#location}}<span class="location">{{location}}</span>{{/location}}
+		</a>
+	{{/events}}
+	{{^events}}
+		<div class="event no-events">
+			It doesn't look like there are any events in the near future.<br />
+			<br />
+			Try selecting a calendar via the wrench icon in the top right.
+		</div>
+	{{/events}}
+</div>

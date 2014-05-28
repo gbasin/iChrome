@@ -1,0 +1,29 @@
+{{#url}}
+	<a class="link drag" href="{{url}}{{#newTab}}" target="_blank{{/newTab}}">
+		<img class="favicon" src="chrome://favicon/{{url}}" />
+		<span class="title">{{title}}</span>
+
+		<div class="tools">
+			<span class="edit">&#xE606;</span>
+			<span class="delete">&#xE678;</span>
+			<span class="move">&#xE693;</span>
+		</div>
+	</a>
+{{/url}}
+{{^url}}
+	<div class="folder drag">
+		<input type="text" class="name" value="{{name}}" disabled />
+
+		<div class="tools">
+			<span class="edit">&#xE606;</span>
+			<span class="delete">&#xE678;</span>
+			<span class="move">&#xE693;</span>
+		</div>
+
+		<div class="items">
+			{{#items}}
+				{{>listing}}
+			{{/items}}
+		</div>
+	</div>
+{{/url}}

@@ -1,0 +1,38 @@
+{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+<div class="tweets">
+	{{#tweets}}
+		<div class="tweet nested-link" data-href="https://twitter.com/{{username}}/status/{{id}}" target="_blank">
+			<div class="topbar">
+				<a href="https://twitter.com/{{username}}" target="_blank" class="user"><b>{{user}}</b> <span class="tweeter">@{{username}}</span></a>
+				<span class="age">{{age}}</span>
+			</div>
+
+			<div class="content">
+				<a href="https://twitter.com/{{username}}" target="_blank" class="user"><img src="{{image}}" /></a>
+
+				{{{content}}}
+			</div>
+
+			<div class="tools">
+				<a class="more" href="https://twitter.com/{{username}}/status/{{id}}" target="_blank">More</a>
+				<a class="reply" href="https://twitter.com/intent/tweet?in_reply_to={{id}}" target="_blank">Reply</a>
+				<a class="retweet" href="https://twitter.com/intent/retweet?tweet_id={{id}}" target="_blank">Retweet</a>
+				<a class="favorite" href="https://twitter.com/intent/favorite?tweet_id={{id}}" target="_blank">Favorite</a>
+			</div>
+		</div>
+	{{/tweets}}
+	{{^tweets}}
+		{{#authorize}}
+			<div class="authorize">
+				You'll need to give iChrome permission to view tweets from your account before anything will show up here.
+				<button type="button" class="btn btn-lg btn-primary">Authorize</button>
+			</div>
+		{{/authorize}}
+		{{^authorize}}
+			<div class="no-tweets">
+				"No moe!" There don't seem to be any tweets here...
+			</div>
+		{{/authorize}}
+	{{/tweets}}
+</div>

@@ -1,0 +1,18 @@
+{{#articles}}
+	<a class="item{{^unread}} read{{/unread}}" href="{{link}}" target="_blank" data-id="{{id}}">
+		{{#image}}<div class="img" style="background-image: url('{{image}}');"><img src="/icon/16.png" /></div>{{/image}}
+
+		<div class="content">
+			<span class="title" title="{{title}}">{{title}}</span>
+
+			<div class="desc">{{excerpt}} ...</div>
+		</div>
+
+		<div class="specs">
+			{{#author}}<span class="author">by {{author}}</span>{{/author}}
+			<span class="recommendations">{{recommendations}}</span>
+			<span class="source">&nbsp;&nbsp;{{source}}&nbsp;&nbsp;/&nbsp;</span>
+			<span class="age">{{age}}</span>
+		</div>
+	</a>
+{{/articles}}

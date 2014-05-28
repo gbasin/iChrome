@@ -1,5 +1,3 @@
-(initLog || (window.initLog = [])).push([new Date().getTime(), "Starting main JS loading and processing"]);
-
 window._gaq = window._gaq || [];
 
 // Main iChrome init
@@ -415,58 +413,6 @@ iChrome.refresh = function(all) {
 	}
 
 	iChrome.Status.log("Refresh done.");
-};
-
-
-// Internal log
-iChrome.Status = function() {
-	if (iChrome.Logs.error.length) {
-		return "There are " + iChrome.Logs.error.length + " errors in the log.";
-	}
-	
-	return "Everything looks good, there are no errors in the log.";
-};
-
-iChrome.Status.get = function(which) {
-	iChrome.Logs[which || "status"].forEach(function(e, i) {
-		console.log(moment(e[0]).toISOString().replace("T", " ").replace("Z", "") + "\t\t\t\t" + e[1]);
-	});
-};
-
-iChrome.Status.getTime = function() {
-	var first = 0,
-		last = 0;
-
-	iChrome.Logs.status.forEach(function(e, i) {
-		if (e[1] == "Main JS loaded and processed, starting storage fetching") {
-			first = e[0];
-		}
-		else if (e[1] == "Uservoice done") {
-			last = e[0];
-		}
-	});
-
-	return last - first;
-};
-
-iChrome.Status.log = function(msg) {
-	iChrome.Logs.status.push([new Date().getTime(), msg]);
-};
-
-iChrome.Status.error = function(msg) {
-	iChrome.Logs.error.push([new Date().getTime(), msg]);
-
-	console.log("There are " + iChrome.Logs.error.length + " errors in the log.");
-};
-
-iChrome.Status.info = function(msg) {
-	iChrome.Logs.info.push([new Date().getTime(), msg]);
-};
-
-iChrome.Logs = {
-	error: [],
-	status: (window.initLog || []),
-	info: []
 };
 
 
@@ -2534,39 +2480,6 @@ iChrome.Updated = function() {
 };
 
 
-// Templates
-iChrome.render = function(template, data, partials) {
-	var compiled = iChrome.Templates.cache[template];
-
-	if (!compiled) {
-		if (iChrome.Templates.raw[template]) {
-			try {
-				compiled = iChrome.Templates.cache[template] = Hogan.compile(iChrome.Templates.raw[template].replace("{{&gt;", "{{>"));
-			}
-			catch (e) {
-				iChrome.Status.error("An error occurred while trying to render the " + template + " template!")
-			}
-		}
-
-		if (!compiled) {
-			return "Template not found!";
-		}
-	}
-	
-	return compiled.render(data || {}, partials);
-};
-
-iChrome.Templates = function(cb) {
-	$("template").each(function() {
-		iChrome.Templates.raw[this.id.substr(9)] = this.innerHTML;
-	}).remove();
-};
-
-iChrome.Templates.cache = {};
-
-iChrome.Templates.raw = {};
-
-
 // Tabs
 iChrome.Tabs = function() {
 	var sizes = {
@@ -4040,7 +3953,7 @@ iChrome.Widgets.Utils.render = function(data, partials) {
 };
 
 iChrome.Widgets.Utils.getTemplate = function(name) {
-	return iChrome.Templates.raw["widgets." + this.name + (name ? "." + name : "")].replace("{{&gt;", "{{>");
+	return iChrome.Templates.getRaw["widgets." + this.name + (name ? "." + name : "")].replace("{{&gt;", "{{>");
 };
 
 
@@ -4687,6 +4600,8 @@ iChrome.Search.Suggestions.setHandlers = function() {
 
 // Run everything
 
+iChrome.Status = window.iChromeStatus;
+
 iChrome.Status.log("Main JS loaded and processed");
 
 var processStorage = function() {
@@ -4695,7 +4610,9 @@ var processStorage = function() {
 
 			document.body.removeChild(document.querySelector("body > .loading"));
 
-			iChrome.Templates();
+			// Again, these have to be here as polyfills
+			iChrome.Status = window.iChromeStatus;
+			iChrome.render = window.iChromeRender;
 
 			iChrome.Status.log("Templates done");
 
