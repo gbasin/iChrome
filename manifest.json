@@ -6,23 +6,23 @@
 			"run_at": "document_start"
 		},
 		{
-			"js": [ "js/wunderlistfix.js" ],
+			"js": [ "inject/js/wunderlistfix.js" ],
 			"matches": [ "https://*.wunderlist.com/webapp*", "http://*.wunderlist.com/webapp*" ],
 			"run_at": "document_start",
 			"all_frames": true
 		},
 		{
-			"css": [ "css/gmailfix.css" ],
+			"css": [ "inject/css/gmailfix.css" ],
 			"matches": [ "https://mail.google.com/*" ],
 			"all_frames": true
 		},
 		{
-			"css": [ "css/gplus.css" ],
+			"css": [ "inject/css/gplus.css" ],
 			"matches": [ "https://plus.google.com/app/basic*" ],
 			"all_frames": true
 		},
 		{
-			"js": [ "js/facebook.js" ],
+			"js": [ "inject/js/facebook.js" ],
 			"matches": [ "https://m.facebook.com/*" ],
 			"run_at": "document_start",
 			"all_frames": true
@@ -33,7 +33,7 @@
 		"index.html"
 	],
 	"background": {
-		"scripts": ["js/background.js"]
+		"scripts": ["app/background.js"]
 	},
 	"icons": {
 		"16": "icon/16.png",
