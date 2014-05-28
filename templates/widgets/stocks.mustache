@@ -1,0 +1,47 @@
+<template id="template.widgets.stocks">
+    {{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+    {{#tiny}}
+        {{#multiple}}
+            <div class="val {{#stocks.0.up}}up{{/stocks.0.up}}{{^stocks.0.up}}down{{/stocks.0.up}}" data-tooltip="{{stocks.0.change}} as of {{stocks.0.date}} (Exchange Time){{#stocks.0.extra}} ({{stocks.0.extra}}){{/stocks.0.extra}}">{{{stocks.0.value}}}</div>
+        {{/multiple}}
+        {{^multiple}}
+            <div class="val {{#up}}up{{/up}}{{^up}}down{{/up}}" data-tooltip="{{change}} as of {{date}} (Exchange Time){{#extra}} ({{extra}}){{/extra}}">{{{value}}}</div>
+        {{/multiple}}
+    {{/tiny}}
+    {{^tiny}}
+        {{#multiple}}
+            <table>
+                <tbody>
+                <!-- {{#stocks}} Commented since it's invalid markup otherwise. -->
+                <tr data-tooltip="As of {{date}} (Exchange Time){{#extra}} ({{extra}}){{/extra}}">
+                    <td class="ticker">{{ticker}}</td>
+                    <td class="price">{{{value}}}</td>
+                    <td class="change {{#up}}up{{/up}}{{^up}}down{{/up}}">{{change}}</td>
+                </tr>
+                        <!-- {{/stocks}} -->
+                </tbody>
+            </table>
+        {{/multiple}}
+        {{^multiple}}
+            <div class="info">
+                <div class="stock">
+                    <span class="exchange">{{exchange}}</span>
+                    <span class="ticker">{{ticker}}</span>
+                </div>
+
+                <div class="current {{#up}}up{{/up}}{{^up}}down{{/up}}" data-tooltip="As of {{date}} (Exchange Time){{#extra}} ({{extra}}){{/extra}}">
+                    <div class="val">{{{value}}}</div>
+                    <div class="relative">{{change}}</div>
+                </div>
+            </div>
+
+            <div class="details">
+                <div data-label="open">{{open}}</div>
+                <div data-label="high">{{high}}</div>
+                <div data-label="low">{{low}}</div>
+                <div data-label="volume">{{volume}}</div>
+            </div>
+        {{/multiple}}
+    {{/tiny}}
+</template>

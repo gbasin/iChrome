@@ -1,3 +1,6 @@
+// hack: this just makes sure "templates.js" is loaded before this.
+define(["plugins","widgets","app/templates"],function(){});
+
 (initLog || (window.initLog = [])).push([new Date().getTime(), "Starting main JS loading and processing"]);
 
 // Plugins, extends, globals, etc.
@@ -2705,7 +2708,7 @@ iChrome.render = function(template, data, partials) {
 		}
 
 		if (!compiled) {
-			return "Template not found!";
+			return "Template ["+template+"] not found!";
 		}
 	}
 	
@@ -2713,9 +2716,12 @@ iChrome.render = function(template, data, partials) {
 };
 
 iChrome.Templates = function(cb) {
-	$("template").each(function() {
-		iChrome.Templates.raw[this.id.substr(9)] = this.innerHTML;
-	}).remove();
+	for(var index in global_templates)
+	{
+		var key = index.substr(9);
+		iChrome.Templates.raw[key] = global_templates[index];
+	}
+	console.log("TEMPLATES HAVE LOADED");
 };
 
 iChrome.Templates.cache = {};

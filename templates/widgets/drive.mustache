@@ -1,0 +1,24 @@
+<template id="template.widgets.drive">
+    {{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+    <div class="files">
+        {{#files}}
+            <a class="file" href="{{link}}" target="_blank">
+                <div class="icon" style="{{#icon}}background-image: url({{icon}});{{/icon}}"></div>
+
+                <div class="info">
+                    <h2 class="name">{{name}}</h2>
+                    <div class="modified">{{modified}}</div>
+                </div>
+            </a>
+        {{/files}}
+        {{^files}}
+            {{#authorize}}
+                <div class="authorize">
+                    You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.
+                    <button type="button" class="btn btn-lg btn-primary">Authorize</button>
+                </div>
+            {{/authorize}}
+        {{/files}}
+    </div>
+</template>

@@ -1,0 +1,15 @@
+<template id="template.widgets.notes">
+    <style type="text/css">
+        .note .content,
+        .note .content * {
+            {{#size}}font-size: {{size}}px!important;{{/size}}
+            {{#face}}font-family: {{face}}!important;{{/face}}
+        }
+    </style>
+
+    <div class="note {{color}}">
+        <input type="text" class="header" maxlength="255" value="{{title}}" />
+
+        <div class="content" contenteditable>{{{content}}}</div>
+    </div>
+</template>
