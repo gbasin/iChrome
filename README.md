@@ -8,10 +8,10 @@ The code's somewhat messy, but I'm thinking of restructuring it using Backbone i
 
 ## Roadmap
 
-#### V2.1.2
+#### V2.1.3
  - Code cleanup and restructuring, most likely using Backbone.js
 
-#### V2.1.3
+#### V2.1.4
  - Internationalization with support for (at least): Russian, German, Dutch, Ukrainian, French, Spanish, Chinese and Portuguese 
 
 #### V2.1.x
