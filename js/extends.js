@@ -1,3 +1,7 @@
+/**
+ * These are various prototype and jQuery extends and utilities
+ */
+
 Number.prototype.abbr = function(min, precision) {
 	var value = this,
 		newValue = value,
