@@ -11,6 +11,7 @@ require.config({
 		"jquery.sortable": ["jquery"],
 		"jquery.numberformatter": ["jquery", "jshashtable"],
 		"jquery.spectrum": ["jquery"],
+		"extends": ["jquery"],
 
 		// This is temporarily in the shim till it's restructured
 		"app/script": ["moment", "app/storage", "app/widgets", "jquery.spectrum", "jquery.sortable"],
@@ -21,7 +22,7 @@ require.config({
 /**
  * Load, this has to load moment this way because script.js needs to shimmed and moment doesn't define properly unless require'd
  */
-require(["moment"], function(moment) {
+require(["moment", "extends"], function(moment) {
 	window.moment = moment;
 
 	require(["app/script"]);
