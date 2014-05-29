@@ -3,8 +3,6 @@ window._gaq = window._gaq || [];
 // Main iChrome init
 var iChrome = function(refresh) {
 	iChrome.Status.log("Starting page generation");
-	
-	$(".toolbar").addClass(iChrome.Storage.settings.toolbar ? "hidden" : "").html(iChrome.render("toolbar", iChrome.Storage.settings));
 
 	iChrome.Tabs();
 
