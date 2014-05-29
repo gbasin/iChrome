@@ -1,3 +1,5 @@
+var initLog = initLog || [];
+
 (initLog || (window.initLog = [])).push([new Date().getTime(), "Done with OAuth loading, starting widgets JS loading and processing"]);
 
 var Widgets = {

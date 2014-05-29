@@ -3958,41 +3958,7 @@ iChrome.Widgets.Utils.getTemplate = function(name) {
 
 
 // Storage Manager
-iChrome.Storage = function(cb) {
-	var d = iChromeConfig;
-
-	iChrome.Storage.tabs = d.tabs || iChrome.Storage.Defaults.tabs;
-	iChrome.Storage.themes = d.themes || iChrome.Storage.Defaults.themes;
-	iChrome.Storage.cached = d.cached || iChrome.Storage.Defaults.cached;
-	iChrome.Storage.settings = {};
-
-	if (typeof d.tabs == "string") {
-		try {
-			iChrome.Storage.tabs = JSON.parse(d.tabs);
-		}
-		catch(e) {
-			alert("An error occurred while trying to load your homepage, please try again or reinstall iChrome.");
-		}
-	}
-
-	$.extend(true, iChrome.Storage.settings, iChrome.Storage.Defaults.settings, d.settings || iChrome.Storage.Defaults.settings);
-
-	iChrome.Storage.tabsSync = JSON.parse(iChrome.Storage.getJSON(iChrome.Storage.tabs));
-
-	iChrome.Storage.Originals.tabs = JSON.parse(JSON.stringify(iChrome.Storage.tabs));
-
-	delete d; // These will hopefully free up some memory
-	delete iChromeConfig;
-
-	if (typeof cb == "function") {
-		try {
-			cb();
-		}
-		catch(e) {
-			console.error(e.stack);
-		}
-	}
-};
+iChrome.Storage = {};
 
 iChrome.Storage.timeout = "";
 
@@ -4599,30 +4565,19 @@ iChrome.Search.Suggestions.setHandlers = function() {
 };
 
 // Run everything
-
 iChrome.Status = window.iChromeStatus;
+iChrome.render = window.iChromeRender;
 
-iChrome.Status.log("Main JS loaded and processed");
+iChrome.Storage.tabs = window.iChromeStorage.tabs;
+iChrome.Storage.themes = window.iChromeStorage.themes;
+iChrome.Storage.cached = window.iChromeStorage.cached;
+iChrome.Storage.settings = window.iChromeStorage.settings;
+iChrome.Storage.tabsSync = window.iChromeStorage.tabsSync;
+iChrome.Storage.Originals.tabs = window.iChromeStorage.Originals.tabs;
 
-var processStorage = function() {
-		iChrome.Storage(function() {
-			iChrome.Status.log("Storage processing complete");
+document.body.removeChild(document.querySelector("body > .loading"));
 
-			document.body.removeChild(document.querySelector("body > .loading"));
-
-			// Again, these have to be here as polyfills
-			iChrome.Status = window.iChromeStatus;
-			iChrome.render = window.iChromeRender;
-
-			iChrome.Status.log("Templates done");
-
-			iChrome();
-		});
-	};
-
-if (typeof iChromeConfig == "object") { // Actual fetching happens in plugins.js, this can't be called twice since JS parsing is synchronous
-	processStorage();
-}
+iChrome();
 
 window.onload = function() {
 	iChrome.Status.log("Window load fired");
