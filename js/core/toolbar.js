@@ -4,14 +4,9 @@
 define(["backbone", "storage/storage", "core/templates"], function(Backbone, Storage, render) {
 	var model = Backbone.Model.extend({
 			initialize: function() {
-				Storage.done(function(storage) {
+				Storage.on("done updated", function(storage) {
 					this.set(storage.settings);
-
-					Storage.on("updated", function() {
-						// storage itself is only a reference, therefore when it's updated in the Storage module the value here is also changed
-						this.set(storage.settings);
-					}, this);
-				}.bind(this));
+				}, this);
 			}
 		}),
 		view = Backbone.View.extend({
@@ -19,14 +14,12 @@ define(["backbone", "storage/storage", "core/templates"], function(Backbone, Sto
 			tagName: "header",
 			className: "toolbar",
 			initialize: function() {
-				this.model.on("change", function() {
-					this.render();
-				}, this);
+				this.model.on("change", this.render, this);
 			},
 			render: function() {
 				this.$el
 					.toggleClass("hidden", this.model.get("toolbar"))
-					.html(render("toolbar", this.model.attributes));
+					.html(render("toolbar", this.model.toJSON()));
 
 				return this;
 			}

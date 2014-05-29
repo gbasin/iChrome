@@ -46,6 +46,32 @@ define(
 		Status.log("Starting storage fetch");
 
 		// This lets events get attached and fired on storage itself. It'll primarily be used as storage.on("updated", ...) and storage.trigger("updated")
-		return deferred.promise(_.extend({}, Backbone.Events));
+		var promise = deferred.promise(_.extend({}, Backbone.Events));
+
+		// Alias triggers so all calls have the storage and promise objects added to them
+		promise.trigger = function(name) {
+			Backbone.Events.trigger.call(promise, name, storage, promise);
+		};
+
+		// Trigger the done event on done
+		promise.done(function() {
+			promise.trigger("done");
+		});
+
+		// If the promise is resolved and a done event is being attached, trigger it
+		promise.on = function(events, cb, ctx) {
+			if (promise.state() == "resolved" && events.split(" ").indexOf("done")) {
+				if (ctx) {
+					cb.call(ctx, storage, promise);
+				}
+				else {
+					cb(storage, promise);
+				}
+			}
+
+			Backbone.Events.on.call(promise, events, cb, ctx);
+		};
+
+		return promise;
 	}
 );
