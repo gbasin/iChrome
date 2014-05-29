@@ -3,8 +3,6 @@ window._gaq = window._gaq || [];
 // Main iChrome init
 var iChrome = function(refresh) {
 	iChrome.Status.log("Starting page generation");
-
-	iChrome.CSS();
 	
 	$(".toolbar").addClass(iChrome.Storage.settings.toolbar ? "hidden" : "").html(iChrome.render("toolbar", iChrome.Storage.settings));
 
@@ -413,21 +411,6 @@ iChrome.refresh = function(all) {
 	}
 
 	iChrome.Status.log("Refresh done.");
-};
-
-
-// CSS generation
-iChrome.CSS = function() {
-	$("style.customcss").remove();
-
-	$(document.body).append(iChrome.render("css", {
-		animation: iChrome.Storage.settings.animation,
-		wcolor: iChrome.Storage.settings.wcolor || "#FFF",
-		hcolor: iChrome.Storage.settings.hcolor || "#F1F1F1",
-		custom: iChrome.Storage.settings["custom-css"] || ""
-	}));
-
-	iChrome.Status.log("CSS generated");
 };
 
 

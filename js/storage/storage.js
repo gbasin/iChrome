@@ -1,7 +1,7 @@
 /**
  * Fetches storage from Chrome's chrome.storage.local and returns a deferred
  */
-define(["core/status", "storage/defaults", "storage/sync", "storage/tojson"], function(Status, defaults, sync, getJSON) {
+define(["jquery", "core/status", "storage/defaults", "storage/sync", "storage/tojson"], function($, Status, defaults, sync, getJSON) {
 	var deferred = $.Deferred(),
 		storage = {
 			Originals: {},

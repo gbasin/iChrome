@@ -1,23 +1,21 @@
-<style class="customcss">
-	{{#wcolor}}
-		.widget-preview .widget,
-		.widgets-container .widget,
-		.store > .detail > .preview-container > .preview > .widget {
-			background: {{wcolor}};
-		}
-	{{/wcolor}}
+{{#wcolor}}
+	.widget-preview .widget,
+	.widgets-container .widget,
+	.store > .detail > .preview-container > .preview > .widget {
+		background: {{wcolor}};
+	}
+{{/wcolor}}
 
-	{{#hcolor}}
-		.toolbar {
-			background: {{hcolor}};
-		}
-	{{/hcolor}}
+{{#hcolor}}
+	.toolbar {
+		background: {{hcolor}};
+	}
+{{/hcolor}}
 
-	{{^animation}}
-		.unloaded .widgets-container .widget {
-			-webkit-animation: none!important;
-		}
-	{{/animation}}
+{{^animation}}
+	.unloaded .widgets-container .widget {
+		-webkit-animation: none!important;
+	}
+{{/animation}}
 
-	{{{custom}}}
-</style>
+{{{custom}}}
