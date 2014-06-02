@@ -2,8 +2,8 @@
  * Fetches storage from Chrome's chrome.storage.local and returns a deferred
  */
 define(
-	["jquery", "underscore", "backbone", "core/status", "storage/defaults", "storage/sync", "storage/tojson"],
-	function($, _, Backbone, Status, defaults, sync, getJSON) {
+	["jquery", "underscore", "backbone", "core/status", "core/analytics", "storage/defaults", "storage/sync", "storage/tojson"],
+	function($, _, Backbone, Status, Track, defaults, sync, getJSON) {
 		var deferred = $.Deferred(),
 			storage = {
 				Originals: {},
@@ -12,7 +12,11 @@ define(
 				}
 			};
 
+		Track.time("Storage");
+
 		chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
+			Track.mark("Storage", "Loaded");
+			
 			Status.log("Storage fetched, processing.");
 
 			storage.tabs = d.tabs || defaults.tabs;
