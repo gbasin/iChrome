@@ -12,16 +12,7 @@
 
 <img src="{{logo-url}}" />
 
-<div class="search">
-	<input type="search" autocomplete="off" placeholder="Search..." autofocus="autofocus" />
-
-	<button class="btn btn-primary">&#xF002;</button>
-
-	{{#voice}}<div class="speech"></div>{{/voice}}
-	{{#ok}}<div class="ok-google">Say "OK Google"</div>{{/ok}}
-
-	<div class="suggestions"></div>
-</div>
+<div class="search"></div>
 
 <div class="actions">
 	{{#links}}

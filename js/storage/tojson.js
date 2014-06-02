@@ -1,7 +1,7 @@
 /**
  * Converts a non-JSON.stringify()able tabs object to JSON.  This is used for syncing and comparing tab objects.
  */
-define(["storage/defaults"], function(defaults) {
+define(["storage/defaults", "widgets"], function(defaults) {
 	var toJSON = function(tabs, settings) {
 		var stabs = [];
 
@@ -53,7 +53,7 @@ define(["storage/defaults"], function(defaults) {
 				alignment: settings.alignment,
 				theme: settings.theme,
 				fixed: settings.columns.split("-")[1] == "fixed"
-			}, $.unextend(defaults.tab, tab)); // DEPENDENCY: iChrome.Tabs
+			}, $.unextend(defaults.tab, tab));
 
 			stabs.push(tab);
 		});

@@ -60,12 +60,12 @@ define(
 
 		// If the promise is resolved and a done event is being attached, trigger it
 		promise.on = function(events, cb, ctx) {
-			if (promise.state() == "resolved" && events.split(" ").indexOf("done")) {
+			if (promise.state() == "resolved" && events.split(" ").indexOf("done") !== -1) {
 				if (ctx) {
 					cb.call(ctx, storage, promise);
 				}
 				else {
-					cb(storage, promise);
+					cb.call(promise, storage, promise);
 				}
 			}
 

@@ -3,11 +3,12 @@
  */
 
 var templates = [
-		"css",				"toolbar",			"store",
-		"store-detail",		"themes",			"themes.listing",
-		"themes.custom",	"settings",			"settings.new-tab",
-		"widget-settings",	"getting-started",	"donate",
-		"updated",			"new-tab",			"whats-new",
+		"css",				"toolbar",			"search",
+		"store",			"store-detail",		"themes",
+		"themes.listing",	"themes.custom",	"settings",
+		"settings.new-tab",	"widget-settings",	"getting-started",
+		"donate",			"updated",			"new-tab",
+		"whats-new",
 		
 		// I plan on changing these to be dynamically read from the widget manifest later
 		"widgets.weather",				"widgets.weather.desc",

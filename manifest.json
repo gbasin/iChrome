@@ -33,7 +33,7 @@
 		"index.html"
 	],
 	"background": {
-		"scripts": ["app/background.js"]
+		"scripts": ["js/background.js"]
 	},
 	"icons": {
 		"16": "icon/16.png",

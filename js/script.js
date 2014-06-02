@@ -34,9 +34,9 @@ iChrome.deferredTimeout = "";
 iChrome.deferred = function(refresh) {
 	iChrome.Status.log("Starting deferred generation");
 
-	iChrome.Search();
+	/*iChrome.Search();
 
-	iChrome.Status.log("Search done");
+	iChrome.Status.log("Search done");*/
 
 	iChrome.Tabs.draggable();
 
@@ -52,11 +52,11 @@ iChrome.deferred = function(refresh) {
 
 	iChrome.initResize();
 
-	if (iChrome.Storage.settings.ok || iChrome.Storage.settings.voice) {
+	/*if (iChrome.Storage.settings.ok || iChrome.Storage.settings.voice) {
 		iChrome.Search.Speech();
 
 		iChrome.Status.log("Speech done");
-	}
+	}*/
 
 	iChrome.Themes();
 
@@ -4153,397 +4153,399 @@ iChrome.Storage.Defaults = {
 };
 
 
-// Search
-iChrome.Search = function() {
-	iChrome.Search.box = $(".search input");
-	iChrome.Search.Suggestions.elm = $(".search .suggestions");
+/*
+	// Search
+	iChrome.Search = function() {
+		iChrome.Search.box = $(".search input");
+		iChrome.Search.Suggestions.elm = $(".search .suggestions");
 
-	$(".search .btn").click(function(e) {
-		iChrome.Search.submit();
-	});
+		$(".search .btn").click(function(e) {
+			iChrome.Search.submit();
+		});
 
-	var box = iChrome.Search.box,
-		toolbar = box.parents(".toolbar");
+		var box = iChrome.Search.box,
+			toolbar = box.parents(".toolbar");
 
-	box.keydown(function(e) {
-		if (e.which == 13) iChrome.Search.submit();
-	}).bind("input", function() {
-		var val = this.value.trim();
+		box.keydown(function(e) {
+			if (e.which == 13) iChrome.Search.submit();
+		}).bind("input", function() {
+			var val = this.value.trim();
 
-		if (val !== "") {
-			iChrome.Search.Suggestions(val);
+			if (val !== "") {
+				iChrome.Search.Suggestions(val);
 
-			if (iChrome.Storage.settings.toolbar && !toolbar.hasClass("typing")) {
-				toolbar.addClass("typing");
+				if (iChrome.Storage.settings.toolbar && !toolbar.hasClass("typing")) {
+					toolbar.addClass("typing");
+				}
 			}
-		}
-		else {
+			else {
+				iChrome.Search.Suggestions.hide();
+
+				if (iChrome.Storage.settings.toolbar && toolbar.hasClass("typing")) {
+					toolbar.removeClass("typing");
+				}
+			}
+		}).focusin(function() {
+			var val = this.value.trim();
+
+			if (val !== "") {
+				iChrome.Search.Suggestions(val);
+
+				if (iChrome.Storage.settings.toolbar && !toolbar.hasClass("typing")) {
+					toolbar.addClass("typing");
+				}
+			}
+		}).focusout(function() {
 			iChrome.Search.Suggestions.hide();
 
 			if (iChrome.Storage.settings.toolbar && toolbar.hasClass("typing")) {
 				toolbar.removeClass("typing");
 			}
+		});
+
+		iChrome.Search.Suggestions.setHandlers();
+		//iChrome.Search.Speech();
+	};
+
+	iChrome.Search.submit = function(val) {
+		var searchURL = (iChrome.Storage.settings["search-url"] || "https://www.google.com/search?q=%s"),
+			val = val || this.box.val().trim();
+
+		var link = document.createElement("a");
+
+		if (val == "amazon" || val == "amazon.com") {
+			link.setAttribute("href", "http://www.amazon.com/?tag=ichrome0e-20");
+
+			_gaq.push(["_trackEvent", "Amazon", "General"]);
 		}
-	}).focusin(function() {
-		var val = this.value.trim();
+		else if (val.indexOf("amazon ") == 0) {
+			link.setAttribute("href", "http://www.amazon.com/s/?field-keywords=" + encodeURIComponent(val.slice(7)) + "&tag=ichrome0e-20");
 
-		if (val !== "") {
-			iChrome.Search.Suggestions(val);
-
-			if (iChrome.Storage.settings.toolbar && !toolbar.hasClass("typing")) {
-				toolbar.addClass("typing");
-			}
+			_gaq.push(["_trackEvent", "Amazon", "Search"]);
 		}
-	}).focusout(function() {
-		iChrome.Search.Suggestions.hide();
-
-		if (iChrome.Storage.settings.toolbar && toolbar.hasClass("typing")) {
-			toolbar.removeClass("typing");
+		else {
+			link.setAttribute("href", searchURL.replace("%s", encodeURIComponent(val)));
 		}
-	});
 
-	iChrome.Search.Suggestions.setHandlers();
-	//iChrome.Search.Speech();
-};
+		if (iChrome.Storage.settings.stab) link.setAttribute("target", "_blank");
 
-iChrome.Search.submit = function(val) {
-	var searchURL = (iChrome.Storage.settings["search-url"] || "https://www.google.com/search?q=%s"),
-		val = val || this.box.val().trim();
+		link.click();
+	};
 
-	var link = document.createElement("a");
+	iChrome.Search.Speech = function() {
+		var btn = $(".search .speech");
 
-	if (val == "amazon" || val == "amazon.com") {
-		link.setAttribute("href", "http://www.amazon.com/?tag=ichrome0e-20");
-
-		_gaq.push(["_trackEvent", "Amazon", "General"]);
-	}
-	else if (val.indexOf("amazon ") == 0) {
-		link.setAttribute("href", "http://www.amazon.com/s/?field-keywords=" + encodeURIComponent(val.slice(7)) + "&tag=ichrome0e-20");
-
-		_gaq.push(["_trackEvent", "Amazon", "Search"]);
-	}
-	else {
-		link.setAttribute("href", searchURL.replace("%s", encodeURIComponent(val)));
-	}
-
-	if (iChrome.Storage.settings.stab) link.setAttribute("target", "_blank");
-
-	link.click();
-};
-
-iChrome.Search.Speech = function() {
-	var btn = $(".search .speech");
-
-	btn.on("click", function(e) {
-		this.restart();
-
-		this.setText("Listening...");
-		
-		this.overbar.addClass("visible");
-
-		this.inProgress = true;
-
-		this.recognition.onstart = function() {
-			this.recognition.onstart = null;
+		btn.on("click", function(e) {
+			this.restart();
 
 			this.setText("Listening...");
-		}.bind(this);
-	}.bind(this.Speech));
+			
+			this.overbar.addClass("visible");
 
-	this.Speech.recognition = new webkitSpeechRecognition();
+			this.inProgress = true;
 
-	this.Speech.recognition.continuous = true;
-	this.Speech.recognition.interimResults = true;
+			this.recognition.onstart = function() {
+				this.recognition.onstart = null;
 
-	this.Speech.recognition.onspeechstart = function() {
-		if (this.inProgress) {
-			this.startAnimation();
+				this.setText("Listening...");
+			}.bind(this);
+		}.bind(this.Speech));
 
-			this.listening = true;
-		}
-	}.bind(this.Speech);
+		this.Speech.recognition = new webkitSpeechRecognition();
 
-	this.Speech.recognition.onspeechend = function() {
-		if (this.inProgress) {
-			this.stopAnimation();
+		this.Speech.recognition.continuous = true;
+		this.Speech.recognition.interimResults = true;
 
-			this.listening = false;
+		this.Speech.recognition.onspeechstart = function() {
+			if (this.inProgress) {
+				this.startAnimation();
 
-			this.setText(this.text);
-		}
-	}.bind(this.Speech);
-
-	this.Speech.recognition.onresult = function(e) {
-		if (iChrome.Storage.settings.ok && !this.inProgress) {
-			for (var i = e.resultIndex; i < e.results.length; i++) {
-				if (e.results[i][0].confidence > 0.2 && this.isOK(e.results[i][0].transcript)) {
-					btn.click();
-				}
+				this.listening = true;
 			}
-		}
-		else if (this.inProgress) {
-			for (var i = e.results.length; i >= 0; i--) {
-				if (e.results[i] && e.results[i][0].confidence > 0.2) {
-					this.text = e.results[i][0].transcript.trim();
+		}.bind(this.Speech);
 
-					this.setText(this.text);
+		this.Speech.recognition.onspeechend = function() {
+			if (this.inProgress) {
+				this.stopAnimation();
 
-					if (e.results[i].isFinal) {
-						this.stop();
+				this.listening = false;
 
-						this.setText("Searching for: " + this.text);
+				this.setText(this.text);
+			}
+		}.bind(this.Speech);
 
-						this.recognition.onend = function() {
-							this.setText("Searching for: " + this.text);
-
-							iChrome.Search.submit(this.text);
-						}.bind(this);
+		this.Speech.recognition.onresult = function(e) {
+			if (iChrome.Storage.settings.ok && !this.inProgress) {
+				for (var i = e.resultIndex; i < e.results.length; i++) {
+					if (e.results[i][0].confidence > 0.2 && this.isOK(e.results[i][0].transcript)) {
+						btn.click();
 					}
 				}
 			}
+			else if (this.inProgress) {
+				for (var i = e.results.length; i >= 0; i--) {
+					if (e.results[i] && e.results[i][0].confidence > 0.2) {
+						this.text = e.results[i][0].transcript.trim();
+
+						this.setText(this.text);
+
+						if (e.results[i].isFinal) {
+							this.stop();
+
+							this.setText("Searching for: " + this.text);
+
+							this.recognition.onend = function() {
+								this.setText("Searching for: " + this.text);
+
+								iChrome.Search.submit(this.text);
+							}.bind(this);
+						}
+					}
+				}
+			}
+		}.bind(this.Speech);
+
+		if (iChrome.Storage.settings.ok) this.Speech.start();
+	};
+
+	iChrome.Search.Speech.text = "";
+	iChrome.Search.Speech.listening = false;
+	iChrome.Search.Speech.inProgress = false;
+
+	iChrome.Search.Speech.overbar = $("body > .voicebar, body > .speech-overlay").on("click", "button, .text a", function(e) {
+		e.preventDefault();
+
+		if (iChrome.Search.Speech.listening && !$(this).is("a")) {
+			iChrome.Search.Speech.overlay.click();
 		}
-	}.bind(this.Speech);
+		else {
+			iChrome.Search.Speech.restart();
+		}
+	});
 
-	if (iChrome.Storage.settings.ok) this.Speech.start();
-};
+	iChrome.Search.Speech.textElm = iChrome.Search.Speech.overbar.find(".text");
+	iChrome.Search.Speech.button = iChrome.Search.Speech.overbar.find("button");
 
-iChrome.Search.Speech.text = "";
-iChrome.Search.Speech.listening = false;
-iChrome.Search.Speech.inProgress = false;
+	iChrome.Search.Speech.overlay = $("body > .speech-overlay").add("body > .voicebar .close").on("click", function() {
+		this.recognition.onspeechend();
 
-iChrome.Search.Speech.overbar = $("body > .voicebar, body > .speech-overlay").on("click", "button, .text a", function(e) {
-	e.preventDefault();
+		this.inProgress = false;
 
-	if (iChrome.Search.Speech.listening && !$(this).is("a")) {
-		iChrome.Search.Speech.overlay.click();
-	}
-	else {
-		iChrome.Search.Speech.restart();
-	}
-});
+		this.overbar.removeClass("visible");
 
-iChrome.Search.Speech.textElm = iChrome.Search.Speech.overbar.find(".text");
-iChrome.Search.Speech.button = iChrome.Search.Speech.overbar.find("button");
+		if (iChrome.Storage.settings.ok) {
+			this.restart();
+		}
+		else {
+			this.stop();
+		}
+	}.bind(iChrome.Search.Speech)).end();
 
-iChrome.Search.Speech.overlay = $("body > .speech-overlay").add("body > .voicebar .close").on("click", function() {
-	this.recognition.onspeechend();
+	iChrome.Search.Speech.setText = function(text) {
+		if (text && text !== "") this.textElm.text(text);
+		else this.textElm.html('Didn\'t get that. <a>Try Again</a>');
+	};
 
-	this.inProgress = false;
+	iChrome.Search.Speech.timeout = "";
 
-	this.overbar.removeClass("visible");
+	iChrome.Search.Speech.animate = function() {
+		var val = Math.round((0.1 + 0.7 * Math.random()) * 40),
+			speed = Math.round(200 + 500 * Math.random()) / 4;
 
-	if (iChrome.Storage.settings.ok) {
-		this.restart();
-	}
-	else {
-		this.stop();
-	}
-}.bind(iChrome.Search.Speech)).end();
+		iChrome.Search.Speech.button
+			.css("box-shadow", "0 0 0 " + val + "px #E5E5E5, 0 0 1px " + (val + 1) + "px rgba(0, 0, 0, 0.2), inset 0 0 1px 1px rgba(255, 255, 255, 0.3)")
+			.css("transition-duration", speed + "ms");
 
-iChrome.Search.Speech.setText = function(text) {
-	if (text && text !== "") this.textElm.text(text);
-	else this.textElm.html('Didn\'t get that. <a>Try Again</a>');
-};
+		this.timeout = setTimeout(this.animate, speed);
+	}.bind(iChrome.Search.Speech);
 
-iChrome.Search.Speech.timeout = "";
+	iChrome.Search.Speech.startAnimation = function() {
+		this.timeout = setTimeout(this.animate, 0);
+	};
 
-iChrome.Search.Speech.animate = function() {
-	var val = Math.round((0.1 + 0.7 * Math.random()) * 40),
-		speed = Math.round(200 + 500 * Math.random()) / 4;
+	iChrome.Search.Speech.stopAnimation = function() {
+		clearTimeout(this.timeout);
 
-	iChrome.Search.Speech.button
-		.css("box-shadow", "0 0 0 " + val + "px #E5E5E5, 0 0 1px " + (val + 1) + "px rgba(0, 0, 0, 0.2), inset 0 0 1px 1px rgba(255, 255, 255, 0.3)")
-		.css("transition-duration", speed + "ms");
+		iChrome.Search.Speech.button.css("box-shadow", "").css("transition-duration", "");
+	};
 
-	this.timeout = setTimeout(this.animate, speed);
-}.bind(iChrome.Search.Speech);
-
-iChrome.Search.Speech.startAnimation = function() {
-	this.timeout = setTimeout(this.animate, 0);
-};
-
-iChrome.Search.Speech.stopAnimation = function() {
-	clearTimeout(this.timeout);
-
-	iChrome.Search.Speech.button.css("box-shadow", "").css("transition-duration", "");
-};
-
-iChrome.Search.Speech.start = function() {
-	this.recognition.start();
-};
-
-
-iChrome.Search.Speech.restart = function() {
-	try {
+	iChrome.Search.Speech.start = function() {
 		this.recognition.start();
-	}
-	catch (e) {
-		this.recognition.onend = function() {
-			this.recognition.onend = null;
+	};
 
-			this.start();
-		}.bind(this);
 
-		this.recognition.abort();
-	}
-};
+	iChrome.Search.Speech.restart = function() {
+		try {
+			this.recognition.start();
+		}
+		catch (e) {
+			this.recognition.onend = function() {
+				this.recognition.onend = null;
 
-iChrome.Search.Speech.stop = function() {
-	this.recognition.abort();
-};
+				this.start();
+			}.bind(this);
 
-iChrome.Search.Speech.isOK = function(str) {
-	arr = str.toLowerCase().split(" ");
-
-	for (var i = arr.length - 1; i >= 0; i--) {
-		var word = arr[i].replace(/[^A-z0-9]/ig, "");
-
-		if (word.indexOf("google") !== -1 || word.indexOf("okay") !== -1 || word == "ok" || word == "computer") {
-			return true;
+			this.recognition.abort();
 		}
 	};
 
-	return false;
-};
+	iChrome.Search.Speech.stop = function() {
+		this.recognition.abort();
+	};
 
-iChrome.Search.Suggestions = function() {
-	$.getJSON("https://www.google.com/complete/search?callback=?", {
-		hl: navigator.language,
-		jsonp: "iChrome.Search.Suggestions.load",
-		q: this.box.val(),
-		client: "youtube"
-	});
-};
+	iChrome.Search.Speech.isOK = function(str) {
+		arr = str.toLowerCase().split(" ");
 
-iChrome.Search.Suggestions.show = function() {
-	iChrome.Search.Suggestions.elm.addClass("visible");
+		for (var i = arr.length - 1; i >= 0; i--) {
+			var word = arr[i].replace(/[^A-z0-9]/ig, "");
 
-	iChrome.Search.Suggestions.visible = true;
-};
+			if (word.indexOf("google") !== -1 || word.indexOf("okay") !== -1 || word == "ok" || word == "computer") {
+				return true;
+			}
+		};
 
-iChrome.Search.Suggestions.hide = function() {
-	iChrome.Search.Suggestions.elm.removeClass("visible");
+		return false;
+	};
+
+	iChrome.Search.Suggestions = function() {
+		$.getJSON("https://www.google.com/complete/search?callback=?", {
+			hl: navigator.language,
+			jsonp: "iChrome.Search.Suggestions.load",
+			q: this.box.val(),
+			client: "youtube"
+		});
+	};
+
+	iChrome.Search.Suggestions.show = function() {
+		iChrome.Search.Suggestions.elm.addClass("visible");
+
+		iChrome.Search.Suggestions.visible = true;
+	};
+
+	iChrome.Search.Suggestions.hide = function() {
+		iChrome.Search.Suggestions.elm.removeClass("visible");
+
+		iChrome.Search.Suggestions.visible = false;
+	};
+
+	iChrome.Search.Suggestions.load = function(resp) {
+		if (iChrome.Search.box.val().trim() == "") return;
+
+		var html = "",
+			entityMap = {
+				"&": "&amp;",
+				"<": "&lt;",
+				">": "&gt;",
+				'"': "&quot;",
+				"'": "&#39;",
+				"/": "&#x2F;"
+			},
+			num = 1;
+
+		html += "<div class=\"active\">" + iChrome.Search.box.val().replace(/[&<>"'\/]/g, function(s) {
+			return entityMap[s];
+		}) + "</div>";
+
+		resp[1].forEach(function(e, i) {
+			if (num > 10) return;
+
+			if (e[0] !== iChrome.Search.box.val()) {
+				html += "<div>" + e[0].replace(/[&<>"'\/]/g, function(s) {
+					return entityMap[s];
+				}) + "</div>";
+
+				num++;
+			}
+		});
+
+		this.current = 0;
+
+		this.elm.html(html);
+
+		this.show();
+	};
+
+	iChrome.Search.Suggestions.current = false;
 
 	iChrome.Search.Suggestions.visible = false;
-};
 
-iChrome.Search.Suggestions.load = function(resp) {
-	if (iChrome.Search.box.val().trim() == "") return;
+	iChrome.Search.Suggestions.setFocus = function(which) {
+		var elm = this.elm,
+			current = this.current;
 
-	var html = "",
-		entityMap = {
-			"&": "&amp;",
-			"<": "&lt;",
-			">": "&gt;",
-			'"': "&quot;",
-			"'": "&#39;",
-			"/": "&#x2F;"
-		},
-		num = 1;
+		if (which == "next") {
+			this.clearFocus(true);
 
-	html += "<div class=\"active\">" + iChrome.Search.box.val().replace(/[&<>"'\/]/g, function(s) {
-		return entityMap[s];
-	}) + "</div>";
+			var e = elm.find("div").eq((current || 0) + 1).addClass("active");
 
-	resp[1].forEach(function(e, i) {
-		if (num > 10) return;
+			if (!e.length) {
+				elm.find("div:first").addClass("active");
 
-		if (e[0] !== iChrome.Search.box.val()) {
-			html += "<div>" + e[0].replace(/[&<>"'\/]/g, function(s) {
-				return entityMap[s];
-			}) + "</div>";
+				current = 0;
+			}
 
-			num++;
+			this.current = (current || 0) + 1;
 		}
-	});
+		else if (which == "prev") {
+			this.clearFocus(true);
 
-	this.current = 0;
+			elm.find("div").eq((current || 0) - 1).addClass("active");
 
-	this.elm.html(html);
-
-	this.show();
-};
-
-iChrome.Search.Suggestions.current = false;
-
-iChrome.Search.Suggestions.visible = false;
-
-iChrome.Search.Suggestions.setFocus = function(which) {
-	var elm = this.elm,
-		current = this.current;
-
-	if (which == "next") {
-		this.clearFocus(true);
-
-		var e = elm.find("div").eq((current || 0) + 1).addClass("active");
-
-		if (!e.length) {
-			elm.find("div:first").addClass("active");
-
-			current = 0;
+			this.current = (current || 0) - 1;
 		}
+		else if (typeof which == "number") {
+			this.clearFocus();
 
-		this.current = (current || 0) + 1;
-	}
-	else if (which == "prev") {
-		this.clearFocus(true);
+			elm.find("div").eq(which).addClass("active");
 
-		elm.find("div").eq((current || 0) - 1).addClass("active");
-
-		this.current = (current || 0) - 1;
-	}
-	else if (typeof which == "number") {
-		this.clearFocus();
-
-		elm.find("div").eq(which).addClass("active");
-
-		this.current = which;
-	}
-};
-
-iChrome.Search.Suggestions.clearFocus = function(skipVar) {
-	this.elm.find("div.active").removeClass("active");
-
-	if (!skipVar) this.current = false;
-};
-
-iChrome.Search.Suggestions.setHandlers = function() {
-	iChrome.Search.box.keydown(function(e) {
-		if (!iChrome.Search.Suggestions.visible) return;
-
-		if (e.which == 38) {
-			e.preventDefault();
-
-			iChrome.Search.Suggestions.setFocus("prev");
-
-			iChrome.Search.box.val(
-				iChrome.Search.Suggestions.elm.find("div").eq(
-					iChrome.Search.Suggestions.current || 0
-				).text()
-			);
+			this.current = which;
 		}
-		else if (e.which == 40) {
-			e.preventDefault();
+	};
 
-			iChrome.Search.Suggestions.setFocus("next");
+	iChrome.Search.Suggestions.clearFocus = function(skipVar) {
+		this.elm.find("div.active").removeClass("active");
 
-			iChrome.Search.box.val(
-				iChrome.Search.Suggestions.elm.find("div").eq(
-					iChrome.Search.Suggestions.current || 0
-				).text()
-			);
-		}
-	});
+		if (!skipVar) this.current = false;
+	};
 
-	this.elm.on("mousedown", function(e) {
-		var target = $(e.target);
+	iChrome.Search.Suggestions.setHandlers = function() {
+		iChrome.Search.box.keydown(function(e) {
+			if (!iChrome.Search.Suggestions.visible) return;
 
-		if (target.is("div") && !target.is(".suggestions")) {
-			iChrome.Search.box.val(target.text());
-			iChrome.Search.submit();
-		}
-	});
-};
+			if (e.which == 38) {
+				e.preventDefault();
+
+				iChrome.Search.Suggestions.setFocus("prev");
+
+				iChrome.Search.box.val(
+					iChrome.Search.Suggestions.elm.find("div").eq(
+						iChrome.Search.Suggestions.current || 0
+					).text()
+				);
+			}
+			else if (e.which == 40) {
+				e.preventDefault();
+
+				iChrome.Search.Suggestions.setFocus("next");
+
+				iChrome.Search.box.val(
+					iChrome.Search.Suggestions.elm.find("div").eq(
+						iChrome.Search.Suggestions.current || 0
+					).text()
+				);
+			}
+		});
+
+		this.elm.on("mousedown", function(e) {
+			var target = $(e.target);
+
+			if (target.is("div") && !target.is(".suggestions")) {
+				iChrome.Search.box.val(target.text());
+				iChrome.Search.submit();
+			}
+		});
+	};
+*/
 
 // Run everything
 iChrome.Status = window.iChromeStatus;
