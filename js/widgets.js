@@ -2096,7 +2096,7 @@ var Widgets = {
 							ticker: e.t,
 							exchange: e.e,
 							up: (e.ec || e.c).indexOf("-") !== 0,
-							date: moment(e.elt || e.lt).format("MMM Do h:mm A"),
+							date: moment(e.elt_dts || e.lt_dts || e.elt || e.lt).format("MMM Do h:mm A"),
 							change: (e.ec || e.c) + " (" + (e.ecp_fix || e.cp_fix) + "%)",
 							open: parseFloat((e.op || "0").replace(/[^0-9\.\-]/g, "")),
 							high: parseFloat((e.hi || "0").replace(/[^0-9\.\-]/g, "")),
