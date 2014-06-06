@@ -1,7 +1,7 @@
 /**
  * The main iChrome view, this initializes everything.
  */
-define(["backbone", "core/css", "core/toolbar", "lib/extends"], function(Backbone, CSS, Toolbar) {
+define(["backbone", "core/css", "core/toolbar", "modals/updated", "lib/extends"], function(Backbone, CSS, Toolbar) {
 	var iChrome = Backbone.View.extend({
 		el: "body",
 		initialize: function() {

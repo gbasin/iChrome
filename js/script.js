@@ -8,10 +8,10 @@ var iChrome = function(refresh) {
 
 	iChrome.Status.log("Tabs rendered");
 
-	if (localStorage["updated"] == "true") {
+	/*if (localStorage["updated"] == "true") {
 		iChrome.Updated();
 	}
-	else if (localStorage["installed"] == "true") {
+	else */if (localStorage["installed"] == "true") {
 		iChrome.Guide();
 	}
 	else if (localStorage["whatsNew"] == "true") {
@@ -2437,28 +2437,30 @@ iChrome.Donate = function() {
 };
 
 
-// Updated
-iChrome.Updated = function() {
-	var modal = this.Updated.modal = new iChrome.Modal({
-		html: iChrome.render("updated"),
-		classes: "updated",
-		height: 640
-	}, function() {
-		localStorage["updated"] = "false";
+/*
+	// Updated
+	iChrome.Updated = function() {
+		var modal = this.Updated.modal = new iChrome.Modal({
+			html: iChrome.render("updated"),
+			classes: "updated",
+			height: 640
+		}, function() {
+			localStorage["updated"] = "false";
 
-		modal.hide();
-	});
+			modal.hide();
+		});
 
-	modal.elm.on("click", ".btn.ok", function(e) {
-		e.preventDefault();
+		modal.elm.on("click", ".btn.ok", function(e) {
+			e.preventDefault();
 
-		localStorage["updated"] = "false";
+			localStorage["updated"] = "false";
 
-		modal.hide();
-	});
+			modal.hide();
+		});
 
-	modal.show();
-};
+		modal.show();
+	};
+*/
 
 
 // Tabs
