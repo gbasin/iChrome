@@ -11,10 +11,10 @@ var iChrome = function(refresh) {
 	/*if (localStorage["updated"] == "true") {
 		iChrome.Updated();
 	}
-	else */if (localStorage["installed"] == "true") {
+	else if (localStorage["installed"] == "true") {
 		iChrome.Guide();
 	}
-	else if (localStorage["whatsNew"] == "true") {
+	else */if (localStorage["whatsNew"] == "true") {
 		iChrome.WhatsNew();
 	}
 
@@ -2243,137 +2243,137 @@ iChrome.Store.handlers = function() {
 	});
 };
 
+/*
+	// Getting Started
+	iChrome.Guide = function() {
+		var widgets = [],
+			defaults = [9, 14, 1, 11, 17, 4],
+			id, widget;
 
-// Getting Started
-iChrome.Guide = function() {
-	var widgets = [],
-		defaults = [9, 14, 1, 11, 17, 4],
-		id, widget;
-
-	for (id in Widgets) {
-		if (widgets.length >= 28) {
-			break;
-		}
-
-		widget = Widgets[id];
-
-		if (widget.permissions) {
-			continue;
-		}
-
-		if (defaults.indexOf(parseInt(id)) !== -1) {
-			widgets.push({
-				id: id,
-				name: widget.name,
-				desc: widget.desc
-			});
-		}
-		else {
-			widgets.push([id, widget.name, widget.desc]);
-		}
-	}
-
-	var modal = this.Guide.modal = new iChrome.Modal({
-		html: iChrome.render("getting-started", {
-			id: chrome.app.getDetails().id,
-			widgets: widgets,
-			second: localStorage["installed"] !== "true"
-		}),
-		classes: "getting-started"
-	}, function() {
-		if (confirm("Are you sure you want to exit this guide?\r\nYou can show it again anytime by hitting \"Installation guide\" from the settings menu.")) {
-			localStorage["installed"] = "false";
-
-			modal.hide();
-
-			$(document.body).removeClass("guide");
-		}
-	});
-
-	modal.elm.on("click", ".btn:not(.disabled)", function(e) {
-		e.preventDefault();
-
-		var elm = $(this),
-			page = elm.parents(".tab").first().removeClass("active")[elm.hasClass("prev") ? "prev" : "next"]();
-
-		if (page.length) {
-			page.addClass("active");
-		}
-		else {
-			modal.hide();
-
-			if (localStorage["installed"] == "true") {
-				iChrome.Storage.tabs[0].columns = iChrome.Guide.getPage();
+		for (id in Widgets) {
+			if (widgets.length >= 28) {
+				break;
 			}
 
-			localStorage["installed"] = "false";
+			widget = Widgets[id];
 
-			iChrome.Tabs.save();
+			if (widget.permissions) {
+				continue;
+			}
 
-			iChrome.refresh();
+			if (defaults.indexOf(parseInt(id)) !== -1) {
+				widgets.push({
+					id: id,
+					name: widget.name,
+					desc: widget.desc
+				});
+			}
+			else {
+				widgets.push([id, widget.name, widget.desc]);
+			}
 		}
-	}).on("click", ".share .buttons a", function(e) {
-		e.preventDefault();
 
-		chrome.windows.create({
-			width: 550,
-			height: 550,
-			type: "detached_panel",
-			url: this.getAttribute("href")
+		var modal = this.Guide.modal = new iChrome.Modal({
+			html: iChrome.render("getting-started", {
+				id: chrome.app.getDetails().id,
+				widgets: widgets,
+				second: localStorage["installed"] !== "true"
+			}),
+			classes: "getting-started"
+		}, function() {
+			if (confirm("Are you sure you want to exit this guide?\r\nYou can show it again anytime by hitting \"Installation guide\" from the settings menu.")) {
+				localStorage["installed"] = "false";
+
+				modal.hide();
+
+				$(document.body).removeClass("guide");
+			}
 		});
 
-		_gaq.push(["_trackEvent", "GSShare", this.getAttribute("data-which")]);
-	}).on("click", ".share input", function() {
-		this.select();
-	});
+		modal.elm.on("click", ".btn:not(.disabled)", function(e) {
+			e.preventDefault();
 
-	modal.show();
+			var elm = $(this),
+				page = elm.parents(".tab").first().removeClass("active")[elm.hasClass("prev") ? "prev" : "next"]();
 
-	$(document.body).addClass("guide");
+			if (page.length) {
+				page.addClass("active");
+			}
+			else {
+				modal.hide();
 
-	_gaq.push(["_trackPageview", "/guide"]);
-};
+				if (localStorage["installed"] == "true") {
+					iChrome.Storage.tabs[0].columns = iChrome.Guide.getPage();
+				}
 
-iChrome.Guide.getPage = function() {
-	var widgets = [],
-		columns = [[], [], []],
-		columnWeights = [0, 0, 0];
+				localStorage["installed"] = "false";
 
-	this.modal.elm.find("form").serializeArray().forEach(function(e, i) {
-		var id = parseInt(e.name.split("widget-")[1]),
-			widget = (Widgets[id] || { size: 3, config: { size: "medium" } });
+				iChrome.Tabs.save();
 
-		if (!widget.config) {
-			widget.config = {
-				size: "medium"
-			};
-		}
-		else if (!widget.config.size) {
-			widget.config.size = (widget.sizes || ["medium"])[0];
-		}
+				iChrome.refresh();
+			}
+		}).on("click", ".share .buttons a", function(e) {
+			e.preventDefault();
 
-		widgets.push([id, widget.size, widget.config.size ]);
-	});
-
-	widgets.sort(function(a, b) {
-		return b[1] - a[1];
-	}).forEach(function(e, i) {
-		if (Widgets[e[0]]) {
-			var minWeight = Math.min.apply(Math, columnWeights),
-				smallest = columnWeights.lastIndexOf(minWeight);
-
-			columns[smallest].push({
-				id: e[0],
-				size: e[2]
+			chrome.windows.create({
+				width: 550,
+				height: 550,
+				type: "detached_panel",
+				url: this.getAttribute("href")
 			});
 
-			columnWeights[smallest] += e[1];
-		}
-	});
+			_gaq.push(["_trackEvent", "GSShare", this.getAttribute("data-which")]);
+		}).on("click", ".share input", function() {
+			this.select();
+		});
 
-	return columns;
-};
+		modal.show();
 
+		$(document.body).addClass("guide");
+
+		_gaq.push(["_trackPageview", "/guide"]);
+	};
+
+	iChrome.Guide.getPage = function() {
+		var widgets = [],
+			columns = [[], [], []],
+			columnWeights = [0, 0, 0];
+
+		this.modal.elm.find("form").serializeArray().forEach(function(e, i) {
+			var id = parseInt(e.name.split("widget-")[1]),
+				widget = (Widgets[id] || { size: 3, config: { size: "medium" } });
+
+			if (!widget.config) {
+				widget.config = {
+					size: "medium"
+				};
+			}
+			else if (!widget.config.size) {
+				widget.config.size = (widget.sizes || ["medium"])[0];
+			}
+
+			widgets.push([id, widget.size, widget.config.size ]);
+		});
+
+		widgets.sort(function(a, b) {
+			return b[1] - a[1];
+		}).forEach(function(e, i) {
+			if (Widgets[e[0]]) {
+				var minWeight = Math.min.apply(Math, columnWeights),
+					smallest = columnWeights.lastIndexOf(minWeight);
+
+				columns[smallest].push({
+					id: e[0],
+					size: e[2]
+				});
+
+				columnWeights[smallest] += e[1];
+			}
+		});
+
+		return columns;
+	};
+*/
 
 // What's New
 iChrome.WhatsNew = function() {
@@ -4550,6 +4550,7 @@ iChrome.Storage.Defaults = {
 */
 
 // Run everything
+iChrome.Guide = window.iChromeGuide;
 iChrome.Status = window.iChromeStatus;
 iChrome.render = window.iChromeRender;
 

@@ -1777,6 +1777,14 @@ body.resizing .medley {
 /*---------------------------------------------
 	/ Getting Started
 */
+.modal.getting-started {
+	z-index: 9999999;
+}
+
+.getting-started + .modal-overlay {
+	z-index: 999999;
+}
+
 body.guide .toolbar .widgets,
 body.guide .toolbar .settings {
 	z-index: 99999;

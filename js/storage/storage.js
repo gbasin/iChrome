@@ -54,7 +54,9 @@ define(
 
 		// Alias triggers so all calls have the storage and promise objects added to them
 		promise.trigger = function(name) {
-			Backbone.Events.trigger.call(promise, name, storage, promise);
+			if (storage && storage.tabs) { // Don't trigger events if storage isn't loaded
+				Backbone.Events.trigger.call(promise, name, storage, promise);
+			}
 		};
 
 		// Trigger the done event on done

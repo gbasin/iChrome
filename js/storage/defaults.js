@@ -36,6 +36,7 @@ define(function() {
 				name: "Home"
 			}
 		],
+		widgets: [9, 14, 1, 11, 17, 4], // These are the widget IDs from the default tab layout
 		settings: {
 			links: [],
 			ok: false,

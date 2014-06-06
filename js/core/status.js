@@ -1,7 +1,7 @@
 /**
  * Status logger and profiler
  */
-define(function() {
+define(["moment"], function(moment) {
 	var first = 0,
 		last = 0,
 		logs = {

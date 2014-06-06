@@ -26,11 +26,12 @@ require.config({
 /**
  * Load, this has to load moment this way because script.js needs to shimmed and moment doesn't define properly unless require'd
  */
-require(["moment", "core/templates", "core/status", "storage/storage", "core/init"], function(moment, render, status, storage) {
+require(["moment", "core/templates", "core/status", "storage/storage", "modals/getting-started", "core/init"], function(moment, render, status, storage, guide) {
 	window.moment = moment;
 
 	iChromeStatus = status;
 	iChromeRender = render;
+	iChromeGuide = guide.show.bind(guide);
 
 	storage.done(function(storage) {
 		iChromeStorage = storage;
