@@ -1,7 +1,7 @@
 /**
  * This generates the toolbar and its submodules
  */
-define(["backbone", "storage/storage", "core/templates", "search/search"], function(Backbone, Storage, render, Search) {
+define(["backbone", "storage/storage", "search/search", "settings/settings", "core/templates"], function(Backbone, Storage, Search, Settings, render) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -12,6 +12,11 @@ define(["backbone", "storage/storage", "core/templates", "search/search"], funct
 		View = Backbone.View.extend({
 			tagName: "header",
 			className: "toolbar",
+			events: {
+				"click .icon.settings": function() { // This has to be proxied since Backbone event handlers are bound to this
+					this.Settings.show();
+				}
+			},
 			initialize: function() {
 				this.model = new Model();
 
@@ -24,6 +29,8 @@ define(["backbone", "storage/storage", "core/templates", "search/search"], funct
 					.on("typing:end", function() {
 						this.$el.toggleClass("typing", false);
 					}, this);
+
+				this.Settings = Settings;
 
 				// init() needs to be called after the listener is attached to prevent a race condition when storage is already loaded.
 				// It also needs to be here instead of attached directly to new Model() otherwise this.model might not be set yet.

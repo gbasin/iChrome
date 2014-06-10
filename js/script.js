@@ -62,9 +62,9 @@ iChrome.deferred = function(refresh) {
 
 	iChrome.Status.log("Themes modal done");
 
-	iChrome.Settings();
+	/*iChrome.Settings();
 
-	iChrome.Status.log("Settings done");
+	iChrome.Status.log("Settings done");*/
 
 	iChrome.Widgets.refresh();
 
@@ -489,486 +489,488 @@ iChrome.Modal = function(ops, close) {
 };
 
 
-// Settings
-iChrome.Settings = function() {
-	var settings = $.extend({}, iChrome.Storage.settings);
+/*
+	// Settings
+	iChrome.Settings = function() {
+		var settings = $.extend({}, iChrome.Storage.settings);
 
-	settings.tabForms = [];
-	settings.themename = (iChrome.Storage.cached[settings.theme] || iChrome.Storage.themes[settings.theme.replace("custom", "")] || {}).name;
+		settings.tabForms = [];
+		settings.themename = (iChrome.Storage.cached[settings.theme] || iChrome.Storage.themes[settings.theme.replace("custom", "")] || {}).name;
 
-	iChrome.Storage.tabs.forEach(function(tab, i) {
-		settings.tabForms.push({
-			name: tab.name || "Home",
-			theme: tab.theme || iChrome.Storage.settings.theme || "default",
-			id: tab.id,
-			fixed: !!tab.fixed,
-			alignment: tab.alignment || "center",
-			columns: (tab.medley ? "medley" : (tab.columns.length || 3)),
-			active: (i == 0 ? "active" : ""),
-			themename: (
-				(tab.theme || iChrome.Storage.settings.theme || "default") == "default" ?
-					"Default Theme" :
-				(
-					iChrome.Storage.cached[tab.theme] || iChrome.Storage.themes[tab.theme.replace("custom", "")] || {}
-				).name
-			)
+		iChrome.Storage.tabs.forEach(function(tab, i) {
+			settings.tabForms.push({
+				name: tab.name || "Home",
+				theme: tab.theme || iChrome.Storage.settings.theme || "default",
+				id: tab.id,
+				fixed: !!tab.fixed,
+				alignment: tab.alignment || "center",
+				columns: (tab.medley ? "medley" : (tab.columns.length || 3)),
+				active: (i == 0 ? "active" : ""),
+				themename: (
+					(tab.theme || iChrome.Storage.settings.theme || "default") == "default" ?
+						"Default Theme" :
+					(
+						iChrome.Storage.cached[tab.theme] || iChrome.Storage.themes[tab.theme.replace("custom", "")] || {}
+					).name
+				)
+			});
 		});
-	});
 
-	var modal = iChrome.Settings.modal = new iChrome.Modal({
-		classes: "settings",
-		html: iChrome.render("settings", settings)
-	});
+		var modal = iChrome.Settings.modal = new iChrome.Modal({
+			classes: "settings",
+			html: iChrome.render("settings", settings)
+		});
 
-	$(".icon.settings").on("click", function(e) {
-		modal.show();
+		$(".icon.settings").on("click", function(e) {
+			modal.show();
 
-		_gaq.push(["_trackPageview", "/settings"]);
-	});
+			_gaq.push(["_trackPageview", "/settings"]);
+		});
 
-	iChrome.Settings.handlers(modal, settings);
+		iChrome.Settings.handlers(modal, settings);
 
-	settings.tabForms.forEach(function(tab, i) {
-		modal.elm.find("form[data-tab='" + tab.id + "']")
-			.find("#columns" + tab.id).val(tab.columns == "medley" ? "medley" : tab.columns + (tab.fixed ? "-fixed" : "-fluid")).end()
-			.find("#alignment" + tab.id).val(tab.alignment);
-	});
-};
+		settings.tabForms.forEach(function(tab, i) {
+			modal.elm.find("form[data-tab='" + tab.id + "']")
+				.find("#columns" + tab.id).val(tab.columns == "medley" ? "medley" : tab.columns + (tab.fixed ? "-fixed" : "-fluid")).end()
+				.find("#alignment" + tab.id).val(tab.alignment);
+		});
+	};
 
-iChrome.Settings.handlers = function(modal, settings) {
-	modal.elm.on("click", ".nav > li", function(e) {
-		var that = $(this),
-			tabs = modal.elm.find(".tabs .tab");
+	iChrome.Settings.handlers = function(modal, settings) {
+		modal.elm.on("click", ".nav > li", function(e) {
+			var that = $(this),
+				tabs = modal.elm.find(".tabs .tab");
 
-		modal.elm.find(".nav > li").add(tabs).removeClass("active");
+			modal.elm.find(".nav > li").add(tabs).removeClass("active");
 
-		that.add(tabs.filter("." + that.attr("data-tab"))).addClass("active");
-	}).on("click", ".btn.theme", function(e) {
-		e.preventDefault();
+			that.add(tabs.filter("." + that.attr("data-tab"))).addClass("active");
+		}).on("click", ".btn.theme", function(e) {
+			e.preventDefault();
 
-		iChrome.Settings.showThemes(this);
+			iChrome.Settings.showThemes(this);
 
-		_gaq.push(["_trackPageview", "/themes"]);
-	}).on("change", ".links .options label:first-child input", function(e) {
-		if ($(this).is(":checked")) {
-			$(this).parents("div").first().addClass("visible");
-		}
-		else {
-			$(this).parents("div").first().removeClass("visible").find("input").val("");
-		}
-	}).on("keydown", "input:not([type=radio], [type=checkbox]), select", function(e) {
-		if (e.which == 13) {
+			_gaq.push(["_trackPageview", "/themes"]);
+		}).on("change", ".links .options label:first-child input", function(e) {
+			if ($(this).is(":checked")) {
+				$(this).parents("div").first().addClass("visible");
+			}
+			else {
+				$(this).parents("div").first().removeClass("visible").find("input").val("");
+			}
+		}).on("keydown", "input:not([type=radio], [type=checkbox]), select", function(e) {
+			if (e.which == 13) {
+				e.preventDefault();
+
+				iChrome.Settings.save();
+
+				modal.hide();
+			}
+		}).on("click", ".btns .btn.delete", function(e) {
+			e.preventDefault();
+
+			if (modal.elm.find(".specific form").length !== 1 && confirm("Are you really sure you want to delete this tab?\r\nThis action is not reversible and all data from all widgets in this tab will be lost.")) {
+				var tab = modal.elm.find("form.active").attr("data-tab") - 1;
+
+				modal.elm.find("form.active").remove();
+
+				iChrome.Storage.tabs.splice(tab, 1);
+				iChrome.Storage.tabsSync.splice(tab, 1);
+
+				iChrome.Storage.tabs.forEach(function(e, i) {
+					e.id = i + 1;
+				});
+
+				_gaq.push(["_trackEvent", "Tabs", "Remove", iChrome.Storage.tabs.length + ""]);
+
+				modal.modal.add(modal.overlay).removeClass("visible");
+
+				iChrome.Settings.save();
+			}
+			else if (modal.elm.find(".specific form").length == 1) {
+				alert("You cannot delete the only remaining tab.");
+			}
+		}).on("click", ".btns .btn.default", function(e) {
+			e.preventDefault();
+
+			var tab;
+
+			if (tab = modal.elm.find("form.active").attr("data-tab")) {
+				iChrome.Storage.settings.def = parseInt(tab);
+
+				_gaq.push(["_trackEvent", "Tabs", "Set as default", tab + ""]);
+			}
+		}).on("click", ".btns .guide", function(e) {
+			e.preventDefault();
+
+			iChrome.Guide();
+		}).on("click", ".btn.save", function(e) {
 			e.preventDefault();
 
 			iChrome.Settings.save();
 
 			modal.hide();
-		}
-	}).on("click", ".btns .btn.delete", function(e) {
-		e.preventDefault();
+		}).on("click", ".nav li.specific li", function(e) {
+			var that = $(this),
+				forms = modal.elm.find(".specific form");
 
-		if (modal.elm.find(".specific form").length !== 1 && confirm("Are you really sure you want to delete this tab?\r\nThis action is not reversible and all data from all widgets in this tab will be lost.")) {
-			var tab = modal.elm.find("form.active").attr("data-tab") - 1;
+			if (that.parents("li").first().hasClass("active")) {
+				e.stopPropagation();
+			}
 
-			modal.elm.find("form.active").remove();
+			if (that.attr("data-id") == "new") {
+				return iChrome.Settings.createTab(modal.elm.find(".specific .btns"), that, forms);
+			}
 
-			iChrome.Storage.tabs.splice(tab, 1);
-			iChrome.Storage.tabsSync.splice(tab, 1);
+			that.siblings().add(forms).removeClass("active");
 
-			iChrome.Storage.tabs.forEach(function(e, i) {
-				e.id = i + 1;
-			});
+			that.add(forms.filter("[data-tab='" + that.attr("data-id") + "']")).addClass("active");
+		}).on("click", ".btn.backup", function(e) {
+			e.preventDefault();
 
-			_gaq.push(["_trackEvent", "Tabs", "Remove", iChrome.Storage.tabs.length + ""]);
+			$("#backup").val(JSON.stringify({
+				themes: iChrome.Storage.themes,
+				settings: iChrome.Storage.settings,
+				tabs: iChrome.Storage.tabsSync
+			}));
+		}).on("click", ".btn.restore", function(e) {
+			e.preventDefault();
 
-			modal.modal.add(modal.overlay).removeClass("visible");
+			if (!confirm("Are you really, really sure you want to do this?\r\nThis will overwrite all local" + 
+						 " and synced data, there is no backup and no way to undo this.  You will lose your" +
+						 " ENTIRE current configuration on all computers signed into this Google account.")) {
+				return;
+			}
 
-			iChrome.Settings.save();
-		}
-		else if (modal.elm.find(".specific form").length == 1) {
-			alert("You cannot delete the only remaining tab.");
-		}
-	}).on("click", ".btns .btn.default", function(e) {
-		e.preventDefault();
+			try {
+				var settings = JSON.parse($("#backup").val());
 
-		var tab;
+				chrome.storage.local.set({
+					tabs: settings.tabs || iChrome.Storage.tabs,
+					themes: settings.themes || iChrome.Storage.themes,
+					settings: settings.settings || iChrome.Storage.settings
+				}, function() {
+					chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
+						iChrome.Storage.tabs = d.tabs || iChrome.Storage.Defaults.tabs;
+						iChrome.Storage.themes = d.themes || iChrome.Storage.Defaults.themes;
+						iChrome.Storage.cached = d.cached || iChrome.Storage.Defaults.cached;
+						iChrome.Storage.settings = d.settings || iChrome.Storage.Defaults.settings;
 
-		if (tab = modal.elm.find("form.active").attr("data-tab")) {
-			iChrome.Storage.settings.def = parseInt(tab);
-
-			_gaq.push(["_trackEvent", "Tabs", "Set as default", tab + ""]);
-		}
-	}).on("click", ".btns .guide", function(e) {
-		e.preventDefault();
-
-		iChrome.Guide();
-	}).on("click", ".btn.save", function(e) {
-		e.preventDefault();
-
-		iChrome.Settings.save();
-
-		modal.hide();
-	}).on("click", ".nav li.specific li", function(e) {
-		var that = $(this),
-			forms = modal.elm.find(".specific form");
-
-		if (that.parents("li").first().hasClass("active")) {
-			e.stopPropagation();
-		}
-
-		if (that.attr("data-id") == "new") {
-			return iChrome.Settings.createTab(modal.elm.find(".specific .btns"), that, forms);
-		}
-
-		that.siblings().add(forms).removeClass("active");
-
-		that.add(forms.filter("[data-tab='" + that.attr("data-id") + "']")).addClass("active");
-	}).on("click", ".btn.backup", function(e) {
-		e.preventDefault();
-
-		$("#backup").val(JSON.stringify({
-			themes: iChrome.Storage.themes,
-			settings: iChrome.Storage.settings,
-			tabs: iChrome.Storage.tabsSync
-		}));
-	}).on("click", ".btn.restore", function(e) {
-		e.preventDefault();
-
-		if (!confirm("Are you really, really sure you want to do this?\r\nThis will overwrite all local" + 
-					 " and synced data, there is no backup and no way to undo this.  You will lose your" +
-					 " ENTIRE current configuration on all computers signed into this Google account.")) {
-			return;
-		}
-
-		try {
-			var settings = JSON.parse($("#backup").val());
-
-			chrome.storage.local.set({
-				tabs: settings.tabs || iChrome.Storage.tabs,
-				themes: settings.themes || iChrome.Storage.themes,
-				settings: settings.settings || iChrome.Storage.settings
-			}, function() {
-				chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
-					iChrome.Storage.tabs = d.tabs || iChrome.Storage.Defaults.tabs;
-					iChrome.Storage.themes = d.themes || iChrome.Storage.Defaults.themes;
-					iChrome.Storage.cached = d.cached || iChrome.Storage.Defaults.cached;
-					iChrome.Storage.settings = d.settings || iChrome.Storage.Defaults.settings;
-
-					if (typeof d.tabs == "string") {
-						try {
-							iChrome.Storage.tabs = JSON.parse(d.tabs);
+						if (typeof d.tabs == "string") {
+							try {
+								iChrome.Storage.tabs = JSON.parse(d.tabs);
+							}
+							catch(e) {
+								alert("An error occurred while trying to load your homepage, please try again or reinstall iChrome.");
+							}
 						}
-						catch(e) {
-							alert("An error occurred while trying to load your homepage, please try again or reinstall iChrome.");
-						}
-					}
 
-					iChrome.Storage.tabsSync = JSON.parse(iChrome.Storage.getJSON(iChrome.Storage.tabs));
+						iChrome.Storage.tabsSync = JSON.parse(iChrome.Storage.getJSON(iChrome.Storage.tabs));
 
-					iChrome.Storage.sync(true);
+						iChrome.Storage.sync(true);
 
-					iChrome.refresh(true); // For some reason, unless this is set to refetch data, it reverts back to the old settings.
+						iChrome.refresh(true); // For some reason, unless this is set to refetch data, it reverts back to the old settings.
+					});
+				});
+			}
+			catch(e) {
+				alert("An error occurred while trying to parse the provided data, please make sure you entered the EXACT text you backed up.");
+			}
+		}).on("click", ".reset", function(e) {
+			e.preventDefault();
+
+			if (!confirm("Are you really sure you want to reset iChrome?\r\nThis will erase all local" + 
+						 " and synced data, there is no backup and no way to undo this.  You will lose your" +
+						 " ENTIRE current configuration on all computers signed into this Google account.")) {
+				return;
+			}
+
+			chrome.storage.sync.clear(function() {
+				chrome.storage.local.clear(function() {
+					var next = function() {
+						var uses = localStorage.uses,
+							uid = localStorage.uid;
+
+						localStorage.clear();
+
+						if (uses) localStorage.uses = uses;
+						if (uid) localStorage.uid = uid;
+
+						chrome.storage.local.set(iChrome.Storage.Defaults, function() {
+							chrome.storage.sync.set(iChrome.Storage.Defaults, function() {
+								window.onbeforeunload = null;
+
+								chrome.extension.getBackgroundPage().setReload();
+
+								location.reload();
+							});
+						});
+					};
+
+					window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
+						var reader = fs.root.createReader(),
+							length = 0;
+
+						(function read() { // Recursive and self executing, necessary as per the specs
+							reader.readEntries(function(results) {
+								if (results.length) {
+									results.forEach(function(e, i) {
+										length++;
+
+										if (e.isDirectory) {
+											e.removeRecursively(function() {
+												length--;
+
+												if (!length) {
+													next();
+												}
+											});
+										}
+										else {
+											e.remove(function() {
+												length--;
+
+												if (!length) {
+													next();
+												}
+											});
+										}
+									});
+
+									read();
+								}
+								else if (!length) {
+									next();
+								}
+							}, next);
+						})();
+					}, next);
 				});
 			});
-		}
-		catch(e) {
-			alert("An error occurred while trying to parse the provided data, please make sure you entered the EXACT text you backed up.");
-		}
-	}).on("click", ".reset", function(e) {
-		e.preventDefault();
-
-		if (!confirm("Are you really sure you want to reset iChrome?\r\nThis will erase all local" + 
-					 " and synced data, there is no backup and no way to undo this.  You will lose your" +
-					 " ENTIRE current configuration on all computers signed into this Google account.")) {
-			return;
-		}
-
-		chrome.storage.sync.clear(function() {
-			chrome.storage.local.clear(function() {
-				var next = function() {
-					var uses = localStorage.uses,
-						uid = localStorage.uid;
-
-					localStorage.clear();
-
-					if (uses) localStorage.uses = uses;
-					if (uid) localStorage.uid = uid;
-
-					chrome.storage.local.set(iChrome.Storage.Defaults, function() {
-						chrome.storage.sync.set(iChrome.Storage.Defaults, function() {
-							window.onbeforeunload = null;
-
-							chrome.extension.getBackgroundPage().setReload();
-
-							location.reload();
-						});
-					});
-				};
-
-				window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
-					var reader = fs.root.createReader(),
-						length = 0;
-
-					(function read() { // Recursive and self executing, necessary as per the specs
-						reader.readEntries(function(results) {
-							if (results.length) {
-								results.forEach(function(e, i) {
-									length++;
-
-									if (e.isDirectory) {
-										e.removeRecursively(function() {
-											length--;
-
-											if (!length) {
-												next();
-											}
-										});
-									}
-									else {
-										e.remove(function() {
-											length--;
-
-											if (!length) {
-												next();
-											}
-										});
-									}
-								});
-
-								read();
-							}
-							else if (!length) {
-								next();
-							}
-						}, next);
-					})();
-				}, next);
-			});
+		})
+		.find("#alignment").val(settings.alignment).end()
+		.find("#columns").val(settings.columns).end()
+		.find("input.color").spectrum({
+			showInput: true,
+			showAlpha: true,
+			showInitial: true,
+			showButtons: false,
+			preferredFormat: "rgb",
+			clickoutFiresChange: true
 		});
-	})
-	.find("#alignment").val(settings.alignment).end()
-	.find("#columns").val(settings.columns).end()
-	.find("input.color").spectrum({
-		showInput: true,
-		showAlpha: true,
-		showInitial: true,
-		showButtons: false,
-		preferredFormat: "rgb",
-		clickoutFiresChange: true
-	});
-};
-
-iChrome.Settings.createTab = function(btns, item, forms) {
-	var id = iChrome.Storage.tabs.length + 1,
-		tab = $.extend(true, {}, iChrome.Tabs.defaults, {
-			id: id,
-			columns: [],
-			name: "New Tab",
-			fixed: iChrome.Storage.settings.columns.split("-")[1] == "fixed"
-		});
-
-	if (iChrome.Storage.settings.columns.split("-")[0] == "medley") {
-		var medley = true;
-
-		tab.columns.push([]);
-	}
-	else {
-		for (var i = iChrome.Storage.settings.columns.split("-")[0]; i > 0; i--) {
-			tab.columns.push([]);
-		}
-	}
-
-	iChrome.Storage.tabs.push(tab);
-
-	var rTab = {
-		id: id,
-		fixed: tab.fixed,
-		theme: iChrome.Storage.settings.theme || "default",
-		columns: (medley ? "medley" : (tab.columns.length || 3)),
-		alignment: iChrome.Storage.settings.alignment || "center",
-		themename: (
-			!iChrome.Storage.settings.theme ? "Default Theme" :
-			(
-				iChrome.Storage.cached[iChrome.Storage.settings.theme] || iChrome.Storage.themes[iChrome.Storage.settings.theme.replace("custom", "")] || {}
-			).name
-		)
 	};
 
-	btns.before(iChrome.render("settings.new-tab", rTab));
-
-	var form = this.modal.elm.find("form[data-tab='" + id + "']")
-		.find("#columns" + id).val(medley ? "medley" : rTab.columns + (rTab.fixed ? "-fixed" : "-fluid")).end()
-		.find("#alignment" + id).val(rTab.alignment).end();
-
-	console.log(this.modal.elm.find("form[data-tab='" + id + "']"), form.find("#columns" + id));
-
-	item.siblings().add(forms).removeClass("active");
-
-	$('<li data-id="' + id + '">New Tab</li>').insertBefore(item).add(form).addClass("active");
-
-	_gaq.push(["_trackEvent", "Tabs", "Add", "settings-" + iChrome.Storage.tabs.length]);
-};
-
-iChrome.Settings.showThemes = function(elm) {
-	iChrome.Themes.elm = elm;
-
-	iChrome.Themes.show(function(theme, id) {
-		this.prev("input").val(id || theme.id).end()
-			.next(".current").text(theme.name || (typeof theme.id == "number" ? "Theme " + theme.id : ""));
-
-		iChrome.Themes.hide();
-	}.bind($(elm)), function(theme) {
-		this.attr("data-style", this.attr("style")).attr("style", iChrome.Tabs.getCSS({theme:theme}));
-
-		iChrome.Themes.overlay.addClass("visible").one("click", function() {
-			$(".modal.previewHidden, .modal-overlay.previewHidden").removeClass("previewHidden").addClass("visible");
-
-			this.attr("style", this.attr("data-style")).attr("data-style", "");
-		}.bind(this));
-
-		$(".modal.visible, .modal-overlay.visible").removeClass("visible").addClass("previewHidden");
-	}.bind($(document.body)));
-};
-
-iChrome.Settings.save = function() {
-	var settings = {
-			links: [],
-			ok: false,
-			tabs: false,
-			apps: false,
-			plus: false,
-			voice: false,
-			gmail: false,
-			toolbar: false,
-			animation: false,
-			def: parseInt(iChrome.Storage.settings.def || 1)
-		},
-		booleans = ["ok", "tabs", "apps", "plus", "voice", "gmail", "toolbar", "animation"],
-		key;
-
-	iChrome.Settings.modal.elm.find(".general form, .visual form, .advanced form").serializeArray().forEach(function(e, i) {
-		if (booleans.indexOf(e.name) !== -1) {
-			settings[e.name] = true;
-		}
-		else if (e.name == "custom-css") {
-			settings["custom-css"] = e.value.replace("</", "<\\/").replace("javascript:", "javascript :").slice(0, 1000);
-		}
-		else if (e.value !== "") {
-			settings[e.name] = e.value;
-		}
-	});
-
-	for (var i = 0; i < 3; i++) {
-		if (settings["custom" + i] && settings["custom" + i + "-text"] || settings["custom" + i + "-url"]) {
-			settings.links.push({
-				text: settings["custom" + i + "-text"] || "",
-				link: settings["custom" + i + "-url"] || ""
+	iChrome.Settings.createTab = function(btns, item, forms) {
+		var id = iChrome.Storage.tabs.length + 1,
+			tab = $.extend(true, {}, iChrome.Tabs.defaults, {
+				id: id,
+				columns: [],
+				name: "New Tab",
+				fixed: iChrome.Storage.settings.columns.split("-")[1] == "fixed"
 			});
 
-			delete settings["custom" + i];
-			delete settings["custom" + i + "-url"];
-			delete settings["custom" + i + "-text"];
+		if (iChrome.Storage.settings.columns.split("-")[0] == "medley") {
+			var medley = true;
+
+			tab.columns.push([]);
 		}
-	}
+		else {
+			for (var i = iChrome.Storage.settings.columns.split("-")[0]; i > 0; i--) {
+				tab.columns.push([]);
+			}
+		}
 
-	iChrome.Settings.modal.elm.find(".specific form").each(function() {
-		var tab = iChrome.Storage.tabs[$(this).attr("data-tab") - 1],
-			propagating = ["alignment", "theme"],
-			tabSettings = {},
-			number, layout, columns, key;
+		iChrome.Storage.tabs.push(tab);
 
-		if (!tab) return;
+		var rTab = {
+			id: id,
+			fixed: tab.fixed,
+			theme: iChrome.Storage.settings.theme || "default",
+			columns: (medley ? "medley" : (tab.columns.length || 3)),
+			alignment: iChrome.Storage.settings.alignment || "center",
+			themename: (
+				!iChrome.Storage.settings.theme ? "Default Theme" :
+				(
+					iChrome.Storage.cached[iChrome.Storage.settings.theme] || iChrome.Storage.themes[iChrome.Storage.settings.theme.replace("custom", "")] || {}
+				).name
+			)
+		};
 
-		$(this).serializeArray().forEach(function(e, i) {
-			if (e.value !== "") tabSettings[e.name] = e.value;
+		btns.before(iChrome.render("settings.new-tab", rTab));
+
+		var form = this.modal.elm.find("form[data-tab='" + id + "']")
+			.find("#columns" + id).val(medley ? "medley" : rTab.columns + (rTab.fixed ? "-fixed" : "-fluid")).end()
+			.find("#alignment" + id).val(rTab.alignment).end();
+
+		console.log(this.modal.elm.find("form[data-tab='" + id + "']"), form.find("#columns" + id));
+
+		item.siblings().add(forms).removeClass("active");
+
+		$('<li data-id="' + id + '">New Tab</li>').insertBefore(item).add(form).addClass("active");
+
+		_gaq.push(["_trackEvent", "Tabs", "Add", "settings-" + iChrome.Storage.tabs.length]);
+	};
+
+	iChrome.Settings.showThemes = function(elm) {
+		iChrome.Themes.elm = elm;
+
+		iChrome.Themes.show(function(theme, id) {
+			this.prev("input").val(id || theme.id).end()
+				.next(".current").text(theme.name || (typeof theme.id == "number" ? "Theme " + theme.id : ""));
+
+			iChrome.Themes.hide();
+		}.bind($(elm)), function(theme) {
+			this.attr("data-style", this.attr("style")).attr("style", iChrome.Tabs.getCSS({theme:theme}));
+
+			iChrome.Themes.overlay.addClass("visible").one("click", function() {
+				$(".modal.previewHidden, .modal-overlay.previewHidden").removeClass("previewHidden").addClass("visible");
+
+				this.attr("style", this.attr("data-style")).attr("data-style", "");
+			}.bind(this));
+
+			$(".modal.visible, .modal-overlay.visible").removeClass("visible").addClass("previewHidden");
+		}.bind($(document.body)));
+	};
+
+	iChrome.Settings.save = function() {
+		var settings = {
+				links: [],
+				ok: false,
+				tabs: false,
+				apps: false,
+				plus: false,
+				voice: false,
+				gmail: false,
+				toolbar: false,
+				animation: false,
+				def: parseInt(iChrome.Storage.settings.def || 1)
+			},
+			booleans = ["ok", "tabs", "apps", "plus", "voice", "gmail", "toolbar", "animation"],
+			key;
+
+		iChrome.Settings.modal.elm.find(".general form, .visual form, .advanced form").serializeArray().forEach(function(e, i) {
+			if (booleans.indexOf(e.name) !== -1) {
+				settings[e.name] = true;
+			}
+			else if (e.name == "custom-css") {
+				settings["custom-css"] = e.value.replace("</", "<\\/").replace("javascript:", "javascript :").slice(0, 1000);
+			}
+			else if (e.value !== "") {
+				settings[e.name] = e.value;
+			}
 		});
 
-		for (key in tabSettings) {
-			if (key == "name") {
-				tab[key] = tabSettings[key];
-			}
-			else if (propagating.indexOf(key) !== -1) {
-				if (settings[key] && (tabSettings[key] == settings[key] || (iChrome.Storage.settings[key] && tabSettings[key] == iChrome.Storage.settings[key]))) {
-					tab[key] = settings[key];
-				}
-				else {
-					tab[key] = tabSettings[key];
-				}
-			}
-			else if (key == "columns") {
-				if (settings.columns && (tabSettings.columns == settings.columns || (iChrome.Storage.settings.columns && tabSettings.columns == iChrome.Storage.settings.columns))) {
-					columns = settings.columns.split("-");
-				}
-				else {
-					columns = tabSettings.columns.split("-");
-				}
+		for (var i = 0; i < 3; i++) {
+			if (settings["custom" + i] && settings["custom" + i + "-text"] || settings["custom" + i + "-url"]) {
+				settings.links.push({
+					text: settings["custom" + i + "-text"] || "",
+					link: settings["custom" + i + "-url"] || ""
+				});
 
-				if (columns[0] == "medley") {
-					columns = ["1", "fixed"];
-
-					if (!tab.medley && !confirm("Are you sure you want to change this to a grid-based tab?\r\nYou will lose all of your columns, everything will be moved to the top right corner.")) {
-						continue;
-					}
-
-					tab.medley = true;
-				}
-				else {
-					if (tab.medley && !confirm("Are you sure you want to change this to a column-based tab?\r\nYou will lose all of your widget positioning, everything will be moved to the first column of the new tab.")) {
-						continue;
-					}
-
-					var wasMedley = true;
-
-					tab.medley = false;
-				}
-
-				number = parseInt(columns[0] || "0");
-
-				tab.fixed = (columns[1] && columns[1] == "fixed");
-
-				if (tab.columns.length == number) {
-					if (wasMedley) {
-						tab.columns[0].forEach(function(w, i) {
-							delete w.loc;
-
-							tab.columns[0][i] = w;
-						});
-					}
-
-					continue;
-				}
-				else if (tab.columns.length < number) {
-					for (var i = number - tab.columns.length; i > 0; i--) {
-						tab.columns.push([]);
-					}
-				}
-				else if (tab.columns.length > number) {
-					for (var i = tab.columns.length - 1; i >= number; i--) {
-						tab.columns[0] = tab.columns[0].concat(tab.columns[i]);
-					}
-
-					tab.columns.splice(number);
-				}
-
-				if (wasMedley) {
-					tab.columns.forEach(function(col, i1) {
-						col.forEach(function(w, i) {
-							delete w.loc;
-
-							tab.columns[i1][i] = w;
-						});
-					});
-				}
+				delete settings["custom" + i];
+				delete settings["custom" + i + "-url"];
+				delete settings["custom" + i + "-text"];
 			}
 		}
-	});
 
-	iChrome.Storage.settings = settings;
+		iChrome.Settings.modal.elm.find(".specific form").each(function() {
+			var tab = iChrome.Storage.tabs[$(this).attr("data-tab") - 1],
+				propagating = ["alignment", "theme"],
+				tabSettings = {},
+				number, layout, columns, key;
 
-	iChrome.Tabs.save();
+			if (!tab) return;
 
-	iChrome.refresh();
-};
+			$(this).serializeArray().forEach(function(e, i) {
+				if (e.value !== "") tabSettings[e.name] = e.value;
+			});
+
+			for (key in tabSettings) {
+				if (key == "name") {
+					tab[key] = tabSettings[key];
+				}
+				else if (propagating.indexOf(key) !== -1) {
+					if (settings[key] && (tabSettings[key] == settings[key] || (iChrome.Storage.settings[key] && tabSettings[key] == iChrome.Storage.settings[key]))) {
+						tab[key] = settings[key];
+					}
+					else {
+						tab[key] = tabSettings[key];
+					}
+				}
+				else if (key == "columns") {
+					if (settings.columns && (tabSettings.columns == settings.columns || (iChrome.Storage.settings.columns && tabSettings.columns == iChrome.Storage.settings.columns))) {
+						columns = settings.columns.split("-");
+					}
+					else {
+						columns = tabSettings.columns.split("-");
+					}
+
+					if (columns[0] == "medley") {
+						columns = ["1", "fixed"];
+
+						if (!tab.medley && !confirm("Are you sure you want to change this to a grid-based tab?\r\nYou will lose all of your columns, everything will be moved to the top right corner.")) {
+							continue;
+						}
+
+						tab.medley = true;
+					}
+					else {
+						if (tab.medley && !confirm("Are you sure you want to change this to a column-based tab?\r\nYou will lose all of your widget positioning, everything will be moved to the first column of the new tab.")) {
+							continue;
+						}
+
+						var wasMedley = true;
+
+						tab.medley = false;
+					}
+
+					number = parseInt(columns[0] || "0");
+
+					tab.fixed = (columns[1] && columns[1] == "fixed");
+
+					if (tab.columns.length == number) {
+						if (wasMedley) {
+							tab.columns[0].forEach(function(w, i) {
+								delete w.loc;
+
+								tab.columns[0][i] = w;
+							});
+						}
+
+						continue;
+					}
+					else if (tab.columns.length < number) {
+						for (var i = number - tab.columns.length; i > 0; i--) {
+							tab.columns.push([]);
+						}
+					}
+					else if (tab.columns.length > number) {
+						for (var i = tab.columns.length - 1; i >= number; i--) {
+							tab.columns[0] = tab.columns[0].concat(tab.columns[i]);
+						}
+
+						tab.columns.splice(number);
+					}
+
+					if (wasMedley) {
+						tab.columns.forEach(function(col, i1) {
+							col.forEach(function(w, i) {
+								delete w.loc;
+
+								tab.columns[i1][i] = w;
+							});
+						});
+					}
+				}
+			}
+		});
+
+		iChrome.Storage.settings = settings;
+
+		iChrome.Tabs.save();
+
+		iChrome.refresh();
+	};
+*/
 
 
 // Themes

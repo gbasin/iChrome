@@ -13,8 +13,7 @@ define(function() {
 
 	ga("set", "checkProtocolTask", function() {}); // Fixes the incompatibility with Chrome extensions: https://code.google.com/p/analytics-issues/issues/detail?id=312#c2
 
-	var timers = {},
-		track = function() {
+	var track = function() {
 			track.event.call(track, arguments);
 		};
 
@@ -27,15 +26,15 @@ define(function() {
 	*/
 	track.event = function(category, action, label, value, nin) {
 		if (nin) { // All previous parameters have been defined
-			ga("send", "event", category, action, label, value, {
+			ga("send", "event", category, action, label.toString(), value, {
 				"nonInteraction": 1
 			});
 		}
 		else if (value) {
-			ga("send", "event", category, action, label, value);
+			ga("send", "event", category, action, label.toString(), value);
 		}
 		else if (label) {
-			ga("send", "event", category, action, label);
+			ga("send", "event", category, action, label.toString());
 		}
 		else {
 			ga("send", "event", category, action);
@@ -66,28 +65,28 @@ define(function() {
 	};
 
 	/*
-		This sets a timer to the current time.
+		This sets a timer to the current time and returns a mark function.  It can't use named timers since they might overlap and reset each other.
 
-		Usage: Track.time("Storage");
+		Usage: var mark = Track.time();
 	*/
-	track.time = function(which) {
-		timers[which] = new Date().getTime();
-	};
+	track.time = function() {
+		var time = new Date().getTime();
 
-	/*
-		This takes the value from a timer, subtracts it form the current time and tracks the result with the given variable and label parameters.
+		/*
+			This takes the value from a timer, subtracts it form the current time and tracks the result with the given variable and label parameters.
 
-		Usage: Track.mark("Storage", "Load");
-	*/
-	track.mark = function(which, variable, label) {
-		if (label && timers[which]) {
-			ga("send", "timing", which, variable || "Time", new Date().getTime() - timers[which], label);
-		}
-		else if (timers[which]) {
-			ga("send", "timing", which, variable || "Time", new Date().getTime() - timers[which]);
-		}
+			It can be called multiple times as in the case of storage saving (see storage/sync.js).
 
-		delete timers[which];
+			Usage: mark("Storage", "Load");
+		*/
+		return function(category, variable, label) {
+			if (label) {
+				ga("send", "timing", category, variable || "Time", new Date().getTime() - time, label);
+			}
+			else {
+				ga("send", "timing", category, variable || "Time", new Date().getTime() - time);
+			}
+		};
 	};
 
 	return track;

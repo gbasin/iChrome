@@ -84,17 +84,15 @@ define(
 
 						Storage.done(function(storage) { // Because of the way promises work, this can be here without an issue
 							if (installed) {
-								storage.tabs[0].columns = getPage(this.$("form")); // DEPENDENCY: Tabs
+								storage.tabs[0].columns = getPage(this.$("form"));
 							}
 
 							delete localStorage["installed"];
 
 							installed = false;
 
-							iChrome.refresh(); // DEPENDENCY: Refresh
-
 							Storage.trigger("updated");
-						});
+						}.bind(this));
 					}
 				},
 				share: function(e) {

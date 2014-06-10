@@ -1,7 +1,7 @@
 /**
  * Saves storage to Chrome's chrome.storage.sync
  */
-define(["core/status", "storage/defaults", "core/uid"], function(Status, Defaults, uid) {
+define(["core/status", "storage/defaults", "core/analytics", "storage/tojson", "core/uid"], function(Status, Defaults, Track, getJSON, uid) {
 	var timeout = null;
 
 	// Splits a string into the specified chunk size
@@ -25,8 +25,12 @@ define(["core/status", "storage/defaults", "core/uid"], function(Status, Default
 		return chunks;
 	};
 
-	var save = function(storage) {
+	var save = function(storage, ocb) {
 		Status.log("Starting sync save");
+
+		var cb = function() {
+			ocb();
+		};
 
 		timeout = null;
 
@@ -35,6 +39,17 @@ define(["core/status", "storage/defaults", "core/uid"], function(Status, Default
 
 		sync.themes = local.themes = storage.themes;
 		sync.settings = local.settings = storage.settings;
+
+		local.tabs = [];
+
+		storage.tabs.forEach(function(tab, i) {
+			local.tabs.push($.unextend({
+				alignment: storage.settings.alignment,
+				theme: storage.settings.theme,
+				fixed: storage.settings.columns.split("-")[1] == "fixed"
+			}, $.unextend(Defaults.tab, tab)));
+		});
+
 		sync.tabs = storage.tabsSync;
 		sync.lastChanged = new Date().getTime() + "-" + uid;
 
@@ -51,7 +66,7 @@ define(["core/status", "storage/defaults", "core/uid"], function(Status, Default
 			});
 		}
 
-		// Compare and remove extra tab chunks that won't be overwritten
+		// Compare and remove extra tab chunks that won't be overwritten.  This may or may not run after the two saves are called.
 		chrome.storage.sync.get(function(d) {
 			if (syncTabs) {
 				var max = 0,
@@ -76,12 +91,26 @@ define(["core/status", "storage/defaults", "core/uid"], function(Status, Default
 		});
 
 		// Sync
-		chrome.storage.sync.set(sync);
-		chrome.storage.local.set(local);
+		var i = 0,
+			mark = Track.time();
+
+		chrome.storage.sync.set(sync, function() {
+			mark("Storage", "Sync", "Sync");
+
+			if (i++) cb(); // i++ returns 0 the first time => false and 1 the second time => true
+		});
+
+		chrome.storage.local.set(local, function() {
+			mark("Storage", "Sync", "Local");
+
+			if (i++) cb();
+		});
 
 		// Get current usage percentage, if it's over 90% alert the user.
 		chrome.storage.sync.getBytesInUse(function(bytes) {
 			if ((bytes / chrome.storage.sync.QUOTA_BYTES) > 0.90) {
+				Track.event("Storage", "Quota", (bytes / chrome.storage.sync.QUOTA_BYTES) + "%"); // If these are happening a lot something isn't built right...
+
 				alert(
 					"You have used more than 90% of the total synchronized storage space available.\r\nIf" + 
 					" you reach the limit, iChrome will stop syncing your data and may stop working.\r\n" + 
@@ -93,19 +122,22 @@ define(["core/status", "storage/defaults", "core/uid"], function(Status, Default
 	};
 
 	// This can't require storage since that would be a circular dependency
-	var sync = function(storage, now) {
+	var sync = function(storage, now, cb) {
 		Status.log("Sync called");
 
 		clearTimeout(timeout);
 
 		if (!now) {
 			timeout = setTimeout(function() {
-				save(storage);
+				save(storage, cb);
 			}, 2000);
 		}
 		else {
-			save(storage);
+			save(storage, cb);
 		}
+
+		// tabsSync is used by the sync function and modules, therefore it needs to be kept up to date
+		storage.tabsSync = JSON.parse(getJSON(storage.tabs, storage.settings));
 	};
 
 	return sync;

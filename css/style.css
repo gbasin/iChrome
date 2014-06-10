@@ -1781,7 +1781,7 @@ body.resizing .medley {
 	z-index: 9999999;
 }
 
-.getting-started + .modal-overlay {
+.modal-overlay.getting-started {
 	z-index: 999999;
 }
 

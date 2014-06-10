@@ -2,20 +2,31 @@
  * Fetches storage from Chrome's chrome.storage.local and returns a deferred
  */
 define(
-	["jquery", "underscore", "backbone", "core/status", "core/analytics", "storage/defaults", "storage/sync", "storage/tojson"],
-	function($, _, Backbone, Status, Track, defaults, sync, getJSON) {
+	["jquery", "underscore", "backbone", "core/status", "core/analytics", "storage/filesystem", "storage/defaults", "storage/sync", "storage/tojson"],
+	function($, _, Backbone, Status, Track, FileSystem, defaults, sync, getJSON) {
 		var deferred = $.Deferred(),
 			storage = {
 				Originals: {},
-				sync: function() {
-					sync(storage);
+				sync: function(now, cb) {
+					if (typeof now == "function") {
+						cb = now;
+						now = undefined;
+					}
+
+					sync(storage, now, cb);
+
+					syncing = true;
+
+					// If sync was called something was most likely changed, therefore requiring the callee to trigger updated is redundant.
+					// Also, UI changes should happen instantly, so this is called synchronously but after the sync synchronous code is run.
+					promise.trigger("updated");
 				}
 			};
 
-		Track.time("Storage");
+		var mark = Track.time();
 
 		chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
-			Track.mark("Storage", "Loaded");
+			mark("Storage", "Loaded");
 			
 			Status.log("Storage fetched, processing.");
 
@@ -76,6 +87,82 @@ define(
 			}
 
 			Backbone.Events.on.call(promise, events, cb, ctx);
+		};
+
+		var syncing = false;
+
+		// When storage is updated it should automatically be synced
+		promise.on("updated", function() {
+			if (!syncing) sync(storage);
+			else syncing = false;
+		});
+
+		// There's no need to put this in the storage object since it doesn't rely on any properties in it
+		promise.reset = function(cb) {
+			var i = 0,
+				done = function() { // Naming this next would be more appropriate but too confusing
+					var next = function() {
+						var uses = localStorage.uses, // A reset shouldn't affect these
+							uid = localStorage.uid;
+
+						localStorage.clear();
+
+						if (uses) localStorage.uses = uses;
+						if (uid) localStorage.uid = uid;
+
+						localStorage.installed = true; // Show the installation guide when the page is reloaded
+
+						if (cb) cb();
+					};
+
+					// Erase all FileSystem entries
+					FileSystem.get(function(fs) {
+						var reader = fs.root.createReader(),
+							length = 0;
+
+						(function read() { // Recursive and self executing, necessary as per the specs
+							reader.readEntries(function(results) {
+								if (results.length) {
+									results.forEach(function(e, i) {
+										length++;
+
+										if (e.isDirectory) {
+											e.removeRecursively(function() {
+												length--;
+
+												if (!length) {
+													next();
+												}
+											});
+										}
+										else {
+											e.remove(function() {
+												length--;
+
+												if (!length) {
+													next();
+												}
+											});
+										}
+									});
+
+									read();
+								}
+								else if (!length) {
+									next();
+								}
+							}, next);
+						})();
+					}, next); // In the event of an error continue anyway
+				};
+
+			chrome.storage.local.clear(function() {
+				if (i++) done();
+			});
+
+			chrome.storage.sync.clear(function() {
+				if (i++) done();
+			});
 		};
 
 		return promise;

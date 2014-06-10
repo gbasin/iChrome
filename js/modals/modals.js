@@ -8,7 +8,7 @@
 define(["backbone"], function(Backbone) {
 	var Modal = Backbone.View.extend({
 		el: '<div class="modal" tabindex="-1"><div class="close"></div><div class="content"></div></div>',
-		overlay: $('<div class="modal-overlay" tabindex="-1"></div>'),
+		overlay: '<div class="modal-overlay" tabindex="-1"></div>',
 		show: function() {
 			this.mo.addClass("visible").end().focus();
 
@@ -30,6 +30,9 @@ define(["backbone"], function(Backbone) {
 			return this;
 		},
 		initialize: function() {
+			// The overlay has to be created for each individual modal instead of once
+			this.overlay = $(this.overlay);
+
 			// Set this.(modal + overlay = mo) shortcut
 			this.mo = this.$el.add(this.overlay);
 
@@ -46,7 +49,8 @@ define(["backbone"], function(Backbone) {
 
 			// Add any classes that have been defined
 			if (this.classes) {
-				this.$el.addClass(this.classes);
+				// Classes should also be set on the overlays so things like the Getting Started guide can position themselves over everything else
+				this.mo.addClass(this.classes);
 			}
 
 
