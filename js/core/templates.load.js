@@ -63,6 +63,16 @@ templates.forEach(function(e, i) {
 	deps[i] += ".hjs";
 });
 
+/*
+	During build this whole file will be replaced with:
+
+	define(function() {
+		return {
+			raw: {}, // Raw templates will be inlined here
+			compiled: {} // And precompiled ones here
+		}
+	});
+*/
 define(deps, function() {
 	var raw = {};
 

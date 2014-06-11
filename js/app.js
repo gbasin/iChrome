@@ -2,14 +2,14 @@
  * Configure requireJS.
  */
 require.config({
-	baseUrl: "/js",
+	baseUrl: "js",
 	paths: {
 		"w": "../widgets",
 		"text": "lib/text",
 		"hogan": "lib/hogan",
 		"moment": "lib/moment",
 		"jquery": "lib/jquery",
-		"oauth2": "/oauth2/oauth2",
+		"oauth2": "../oauth2/oauth2",
 		"backbone": "lib/backbone",
 		"underscore": "lib/underscore"
 	},

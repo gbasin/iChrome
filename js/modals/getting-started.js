@@ -2,8 +2,8 @@
  * The Getting Started guide, this is only shown once on installation or when opened manually from the settings
  */
 define(
-	["jquery", "backbone", "modals/modals", "storage/defaults", "storage/storage", "core/analytics", "core/templates", "widgets"],
-	function($, Backbone, Modal, Defaults, Storage, Track, render) {
+	["jquery", "backbone", "modals/modals", "storage/defaults", "storage/storage", "core/analytics", "tabs/widgets", "core/templates"],
+	function($, Backbone, Modal, Defaults, Storage, Track, Widgets, render) {
 		var installed = localStorage["installed"] == "true",
 			getPage = function(form) {
 				var widgets = [],
@@ -12,7 +12,7 @@ define(
 
 				form.serializeArray().forEach(function(e, i) {
 					var id = parseInt(e.name.split("widget-")[1]),
-						widget = (Widgets[id] || { size: 3, config: { size: "medium" } }); // DEPENDENCY: Widgets
+						widget = (Widgets[id] || { size: 3, config: { size: "medium" } });
 
 					if (!widget.config) {
 						widget.config = {
@@ -29,7 +29,7 @@ define(
 				widgets.sort(function(a, b) {
 					return b[1] - a[1];
 				}).forEach(function(e, i) {
-					if (Widgets[e[0]]) { // DEPENDENCY: Widgets
+					if (Widgets[e[0]]) {
 						var minWeight = Math.min.apply(Math, columnWeights),
 							smallest = columnWeights.lastIndexOf(minWeight);
 
@@ -130,10 +130,10 @@ define(
 						defaults = Defaults.widgets,
 						id, widget;
 
-					for (id in Widgets) { // DEPENDENCY: Widgets
+					for (id in Widgets) {
 						if (widgets.length >= 28) break;
 
-						widget = Widgets[id]; // DEPENDENCY: Widgets
+						widget = Widgets[id];
 
 						if (widget.permissions) continue;
 
