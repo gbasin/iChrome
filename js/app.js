@@ -4,6 +4,7 @@
 require.config({
 	baseUrl: "/js",
 	paths: {
+		"w": "../widgets",
 		"text": "lib/text",
 		"hogan": "lib/hogan",
 		"moment": "lib/moment",
