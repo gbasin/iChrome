@@ -84,7 +84,7 @@ iChrome.deferred = function(refresh) {
 
 	iChrome.Donate();
 
-	window.onbeforeunload = function() {
+	/*window.onbeforeunload = function() {
 		if (iChrome.Storage.timeout !== null) {
 			iChrome.Storage.sync(true);
 		}
@@ -95,7 +95,7 @@ iChrome.deferred = function(refresh) {
 		});
 
 		chrome.extension.getBackgroundPage().setReload();
-	};
+	};*/
 
 	$("#donate").off().on("click", function(e) {
 		e.preventDefault();

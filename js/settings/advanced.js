@@ -13,6 +13,8 @@ define(["jquery", "backbone", "storage/storage", "core/templates"], function($, 
 			init: function() {
 				Storage.on("done updated", function(storage) {
 					this.set(storage);
+
+					this.storage = storage;
 				}, this);
 			}
 		}),

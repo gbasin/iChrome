@@ -17,7 +17,7 @@ define(
 
 					syncing = true;
 
-					// If sync was called something was most likely changed, therefore requiring the callee to trigger updated is redundant.
+					// If sync was called something was most likely changed, therefore requiring the caller to trigger updated is redundant.
 					// Also, UI changes should happen instantly, so this is called synchronously but after the sync synchronous code is run.
 					promise.trigger("updated");
 				}

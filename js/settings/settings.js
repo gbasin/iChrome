@@ -18,6 +18,8 @@ define(
 				init: function() {
 					Storage.on("done updated", function(storage) {
 						this.set(storage); // The settings end up using every part of storage so the whole object is set here
+
+						this.storage = storage;
 					}, this);
 				}
 			}),
@@ -66,7 +68,7 @@ define(
 						e.preventDefault();
 					}
 
-					this.model.get("sync")({
+					this.model.save({
 						settings: serialize(this.$el, this.model.attributes)
 					}, cb || modal.hide.bind(modal));
 				},
