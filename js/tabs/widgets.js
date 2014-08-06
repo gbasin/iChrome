@@ -17,9 +17,9 @@ define([
 ], function() {
 	var widgets = {};
 
-	// Underscore has a method for this but it's simpler given the list of widgets
+	// Lodash has a method for this but it's simpler given the list of widgets
 	[].slice.call(arguments, 0).forEach(function(e, i) {
-		widgets[e.id] = e;
+		widgets[e.id] = widgets[e.nicename] = e;
 	});
 
 	return widgets;

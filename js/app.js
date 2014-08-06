@@ -7,11 +7,16 @@ require.config({
 		"w": "../widgets",
 		"text": "lib/text",
 		"hogan": "lib/hogan",
+		"lodash": "lib/lodash",
 		"moment": "lib/moment",
 		"jquery": "lib/jquery",
-		"oauth2": "../oauth2/oauth2",
 		"backbone": "lib/backbone",
-		"underscore": "lib/underscore"
+		"oauth2": "../oauth2/oauth2"
+	},
+	map: {
+		"*": {
+			"underscore": "lodash" // a Lodash Underscore build is not required for Backbone
+		}
 	},
 	shim: {
 		"lib/jquery.sortable": ["jquery"],
