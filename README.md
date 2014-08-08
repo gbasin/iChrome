@@ -19,7 +19,7 @@ The code's somewhat messy, but I'm currently in the middle of a restructure in t
  - A real website
 
 ### V2.2
-These are very much in flux any of them could be postponed or skipped.
+These are very much in flux, any of them could be postponed or skipped.
  - A widgets store that other developers can contribute to, possibly it isn't quite the main focus of the release
  - iChrome Pro:
    - Shareable tabs
@@ -45,7 +45,7 @@ I follow a more complicated style guide, but here's the basic overview:
  - Trailing semicolons are always used
  - When multiple variables are being defined at the top of a function they should generally be combined into one `var` statement
  - Ternary operators are fine especially for string concatenation
- - Performance should be favored over readability for small snippets. i.e. `$(body).append($('<div></div>').attr("data-name", widget.nicename).attr("data-id", id.split("-")[1]))` instead of `var elm = $('<div></div>'), id = id.split("-")[1]; elm.attr("data-id", id)....`
+ - Performance should be favored over readability for small snippets. i.e. `$(body).append($('<div></div>').attr("data-id", id.split("-")[1]))` instead of `var elm = $('<div></div>'), id = id.split("-")[1]; elm.attr("data-id", id)....`
 
 ## License
 
