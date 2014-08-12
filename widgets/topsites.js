@@ -5,6 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 12,
 		nicename: "topsites",
+		sizes: ["variable"],
 		settings: [
 			{
 				type: "text",

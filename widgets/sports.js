@@ -5,6 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 15,
 		nicename: "sports",
+		sizes: ["tiny", "variable"],
 		interval: 180000,
 		settings: [
 			{

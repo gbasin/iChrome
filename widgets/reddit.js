@@ -6,6 +6,7 @@ define(["jquery"], function($) {
 		id: 18,
 		interval: 300000,
 		nicename: "reddit",
+		sizes: ["variable"],
 		settings: [
 			{
 				type: "text",

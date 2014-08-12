@@ -6,6 +6,7 @@ define(["jquery", "oauth2"], function($) {
 		id: 24,
 		interval: 300000,
 		nicename: "now",
+		sizes: ["variable"],
 		config: {
 			size: "variable"
 		},

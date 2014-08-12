@@ -6,6 +6,7 @@ define(["jquery", "oauth2"], function($) {
 		id: 27,
 		interval: 300000,
 		nicename: "drive",
+		sizes: ["variable"],
 		settings: [
 			{
 				type: "text",

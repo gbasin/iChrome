@@ -5,6 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 21,
 		nicename: "currency",
+		sizes: ["small"],
 		config: {
 			size: "small"
 		},

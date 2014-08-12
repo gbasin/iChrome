@@ -5,6 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 25,
 		nicename: "gmail",
+		sizes: ["variable"],
 		settings: [
 			{
 				type: "text",

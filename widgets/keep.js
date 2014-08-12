@@ -5,6 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 23,
 		nicename: "keep",
+		sizes: ["variable"],
 		settings: [
 			{
 				type: "number",

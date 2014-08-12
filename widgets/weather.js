@@ -6,6 +6,7 @@ define(["jquery"], function($) {
 		id: 1,
 		interval: 300000,
 		nicename: "weather",
+		sizes: ["tiny", "small", "medium"],
 		settings: [
 			{
 				type: "size"

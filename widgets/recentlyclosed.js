@@ -7,6 +7,7 @@ define(["jquery"], function($) {
 		interval: 60000,
 		permissions: ["tabs"],
 		nicename: "recentlyclosed",
+		sizes: ["variable"],
 		settings: [
 			{
 				type: "text",

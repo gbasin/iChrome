@@ -6,6 +6,7 @@ define(["jquery"], function($) {
 		id: 22,
 		interval: 120000,
 		nicename: "voice",
+		sizes: ["tiny", "small"],
 		settings: [
 			{
 				type: "text",

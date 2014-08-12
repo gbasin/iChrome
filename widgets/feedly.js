@@ -6,6 +6,7 @@ define(["jquery", "oauth2"], function($) {
 		id: 19,
 		interval: 300000,
 		nicename: "feedly",
+		sizes: ["variable"],
 		settings: [
 			{
 				type: "text",

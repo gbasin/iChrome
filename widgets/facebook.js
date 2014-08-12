@@ -5,6 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 31,
 		nicename: "facebook",
+		sizes: ["variable"],
 		settings: [
 			{
 				type: "number",

@@ -5,6 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 16,
 		nicename: "bookmarks",
+		sizes: ["tiny", "variable"],
 		settings: [
 			{
 				type: "text",

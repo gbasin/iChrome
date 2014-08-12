@@ -5,6 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 28,
 		nicename: "calc",
+		sizes: ["tiny", "small", "medium"],
 		settings: [
 			{
 				type: "size"

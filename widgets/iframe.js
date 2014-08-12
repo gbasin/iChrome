@@ -5,6 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 7,
 		nicename: "iframe",
+		sizes: ["variable"],
 		settings: [
 			{
 				type: "text",

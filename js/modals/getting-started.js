@@ -2,7 +2,7 @@
  * The Getting Started guide, this is only shown once on installation or when opened manually from the settings
  */
 define(
-	["jquery", "backbone", "modals/modals", "storage/defaults", "storage/storage", "core/analytics", "tabs/widgets", "core/templates"],
+	["jquery", "backbone", "modals/modals", "storage/defaults", "storage/storage", "core/analytics", "widgets/widgets", "core/templates"],
 	function($, Backbone, Modal, Defaults, Storage, Track, Widgets, render) {
 		var installed = localStorage["installed"] == "true",
 			getPage = function(form) {

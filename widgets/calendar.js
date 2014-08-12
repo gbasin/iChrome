@@ -6,6 +6,7 @@ define(["jquery", "oauth2"], function($) {
 		id: 10,
 		interval: 300000,
 		nicename: "calendar",
+		sizes: ["variable"],
 		settings: [
 			{
 				type: "text",

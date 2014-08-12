@@ -1,7 +1,7 @@
 /**
  * Converts a non-JSON.stringify()able tabs object to JSON.  This is used for syncing and comparing tab objects.
  */
-define(["tabs/widgets", "storage/defaults"], function(Widgets, defaults) {
+define(["widgets/widgets", "storage/defaults"], function(Widgets, defaults) {
 	var toJSON = function(tabs, settings) {
 		var stabs = [];
 

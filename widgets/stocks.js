@@ -6,6 +6,7 @@ define(["jquery"], function($) {
 		id: 14,
 		interval: 30000,
 		nicename: "stocks",
+		sizes: ["tiny", "small"],
 		settings: [
 			{
 				type: "text",

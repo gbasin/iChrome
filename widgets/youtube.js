@@ -6,6 +6,7 @@ define(["jquery"], function($) {
 		id: 29,
 		interval: 300000,
 		nicename: "youtube",
+		sizes: ["variable"],
 		settings: [
 			{
 				type: "text",

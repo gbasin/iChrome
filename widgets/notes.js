@@ -5,6 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 13,
 		nicename: "notes",
+		sizes: ["tiny", "variable"],
 		settings: [
 			{
 				type: "select",

@@ -6,6 +6,7 @@ define(["jquery"], function($) {
 		id: 26,
 		interval: 300000,
 		nicename: "twitter",
+		sizes: ["variable"],
 		settings: [
 			{
 				type: "text",

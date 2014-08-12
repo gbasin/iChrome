@@ -36,7 +36,7 @@ define(["moment"], function(moment) {
 
 			logs.error.push([new Date().getTime(), msg]);
 
-			console.log("There" + (length == 0 ? " is " : " are ") + length + " errors in the log.");
+			console.log("There" + (length === 0 ? " is " : " are ") + (length + 1) + " error" + (length === 0 ? "" : "s") + " in the log.");
 		},
 		info: function(msg) {
 			logs.info.push([new Date().getTime(), msg]);

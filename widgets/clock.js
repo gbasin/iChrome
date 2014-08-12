@@ -6,6 +6,7 @@ define(["jquery"], function($) {
 		id: 2,
 		interval: 1000,
 		nicename: "clock",
+		sizes: ["tiny", "small"],
 		settings: [
 			{
 				type: "text",

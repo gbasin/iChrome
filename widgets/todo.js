@@ -5,6 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 17,
 		nicename: "todo",
+		sizes: ["variable"],
 		settings: [
 			{
 				type: "text",
