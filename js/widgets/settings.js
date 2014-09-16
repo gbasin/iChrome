@@ -120,7 +120,7 @@ define(
 
 				elm.addClass("list").html(render("widget-settings.inputs", {
 					"input-list": data
-				})).on("keydown", "input", function(e) {
+				})).on("keydown", "input#widget-" + input.nicename, function(e) {
 					if (e.which == 13) {
 						e.preventDefault();
 						e.stopPropagation();
@@ -376,8 +376,8 @@ define(
 				// preserved (such as woeid and woeloc on the Weather widget)
 				_.assign(this.widget.config, settings);
 				
-				if (this.widget.refresh) this.widget.refresh(true);
-				else this.widget.render();
+				if (this.widget.refresh) this.widget.refresh.call(this.widget, true);
+				else this.widget.render.call(this.widget);
 
 				this.widget.utils.save();
 

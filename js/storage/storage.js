@@ -1,25 +1,54 @@
 /**
- * Fetches storage from Chrome's chrome.storage.local and returns a deferred
+ * Fetches storage from Chrome's chrome.storage.local and returns a Promise
  */
 define(
-	["jquery", "underscore", "backbone", "core/status", "core/analytics", "storage/filesystem", "storage/defaults", "storage/sync", "storage/tojson"],
+	["jquery", "lodash", "backbone", "core/status", "core/analytics", "storage/filesystem", "storage/defaults", "storage/sync", "storage/tojson"],
 	function($, _, Backbone, Status, Track, FileSystem, defaults, sync, getJSON) {
-		var deferred = $.Deferred(),
-			storage = {
+		var deferred = $.Deferred();
+
+		// These are used to check if anything was changed and to stop a default configuration from being synced
+		var lSync = "",
+			dString = JSON.stringify(_.pick(defaults, "tabs", "settings", "themes", "cached"));
+
+
+		var storage = {
 				Originals: {},
-				sync: function(now, cb) {
+				sync: function(now, cb, data) {
 					if (typeof now == "function") {
 						cb = now;
 						now = undefined;
 					}
+					else if (typeof now == "object") {
+						data = now;
+						cb = undefined;
+						now = undefined;
+					}
+					else if (typeof cb == "object") {
+						data = cb;
+						cb = undefined;
+					}
 
-					sync(storage, now, cb);
+					data = data || {};
+					now = now || false;
+					cb = cb || function() {};
 
-					syncing = true;
+					var js = JSON.stringify(_.pick(storage, "tabs", "settings", "themes", "cached"));
 
-					// If sync was called something was most likely changed, therefore requiring the caller to trigger updated is redundant.
-					// Also, UI changes should happen instantly, so this is called synchronously but after the sync synchronous code is run.
-					promise.trigger("updated");
+					// Don't sync if the settings haven't changed or are the defaults
+					if (js !== lSync && js !== dString) {
+						lSync = js;
+
+						sync(storage, now, cb);
+
+						syncing = true;
+
+						// If sync was called something was most likely changed, therefore requiring the caller to trigger updated is redundant.
+						// Also, UI changes should happen instantly, so this is called synchronously but after the sync synchronous code is run.
+						promise.trigger("updated", data);
+					}
+					else {
+						cb();
+					}
 				}
 			};
 
@@ -64,9 +93,9 @@ define(
 		var promise = deferred.promise(_.extend({}, Backbone.Events));
 
 		// Alias triggers so all calls have the storage and promise objects added to them
-		promise.trigger = function(name) {
+		promise.trigger = function(name, data) {
 			if (storage && storage.tabs) { // Don't trigger events if storage isn't loaded
-				Backbone.Events.trigger.call(promise, name, storage, promise);
+				Backbone.Events.trigger.call(promise, name, storage, promise, data);
 			}
 		};
 
@@ -84,6 +113,11 @@ define(
 				else {
 					cb.call(promise, storage, promise);
 				}
+
+				// Remove the event so it doesn't get called from the promise.done() function
+				events = events.replace(/(?:^| )done(?:$| )/, "");
+
+				if (!events) return;
 			}
 
 			Backbone.Events.on.call(promise, events, cb, ctx);

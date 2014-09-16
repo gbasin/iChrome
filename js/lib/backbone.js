@@ -1,4 +1,7 @@
+
 //     Backbone.js 1.1.2
+
+//     PATCHED: Collection.set() is patched to fix discrepancies in collection lengths
 
 //     (c) 2010-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 //     Backbone may be freely distributed under the MIT license.
@@ -715,6 +718,9 @@
         modelMap[model.id] = true;
       }
 
+      // PATCH: This makes sure the length is accurate before the loop runs
+      this.length = this.models.length;
+
       // Remove nonexistent models if appropriate.
       if (remove) {
         for (i = 0, l = this.length; i < l; ++i) {
@@ -742,6 +748,9 @@
 
       // Silently sort the collection if appropriate.
       if (sort) this.sort({silent: true});
+
+      // PATCH: This fixes discrepancies caused by duplicate models being set.
+      this.length = this.models.length;
 
       // Unless silenced, it's time to fire all appropriate add/sort events.
       if (!options.silent) {

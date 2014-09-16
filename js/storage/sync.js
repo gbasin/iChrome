@@ -1,7 +1,7 @@
 /**
  * Saves storage to Chrome's chrome.storage.sync
  */
-define(["core/status", "storage/defaults", "core/analytics", "storage/tojson", "core/uid"], function(Status, Defaults, Track, getJSON, uid) {
+define(["jquery", "core/status", "storage/defaults", "core/analytics", "storage/tojson", "core/uid"], function($, Status, Defaults, Track, getJSON, uid) {
 	var timeout = null;
 
 	// Splits a string into the specified chunk size
@@ -56,10 +56,10 @@ define(["core/status", "storage/defaults", "core/analytics", "storage/tojson", "
 		var sTabs = JSON.stringify(sync.tabs),
 			syncTabs = false;
 
-		if (sTabs !== JSON.stringify(Defaults.tabs)) { // Don't sync tabs if this is the default installation, only accept incoming syncs
+		if (sTabs !== JSON.stringify(Defaults.tabs)) { // Don't sync _tabs_ if this is the default installation, only accept incoming syncs
 			syncTabs = true;
 
-			var arr = chunk(JSON.stringify(sync.tabs), 2000); // Less than half the max item size since it has to re-escape quotes, etc.
+			var arr = chunk(sTabs, 2000); // Less than half the max item size since it has to re-escape quotes, etc.
 
 			arr.forEach(function(e, i) {
 				sync["tabs" + (i ? i : "")] = e;

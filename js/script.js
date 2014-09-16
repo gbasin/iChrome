@@ -4,7 +4,7 @@ window._gaq = window._gaq || [];
 var iChrome = function(refresh) {
 	iChrome.Status.log("Starting page generation");
 
-	iChrome.Tabs();
+	/*iChrome.Tabs();*/
 
 	iChrome.Status.log("Tabs rendered");
 
@@ -38,7 +38,7 @@ iChrome.deferred = function(refresh) {
 
 	iChrome.Status.log("Search done");*/
 
-	iChrome.Tabs.draggable();
+	/*iChrome.Tabs.draggable();
 
 	iChrome.Tabs.Nav.last = iChrome.Tabs.parent.children(".tab").length;
 
@@ -46,7 +46,7 @@ iChrome.deferred = function(refresh) {
 
 	iChrome.Tabs.Nav(parseInt(iChrome.Storage.settings.def || 1));
 
-	iChrome.Status.log("Tabs done");
+	iChrome.Status.log("Tabs done");*/
 
 	iChrome.initTooltips();
 
@@ -74,9 +74,9 @@ iChrome.deferred = function(refresh) {
 
 	iChrome.Status.log("Widget settings done");
 
-	iChrome.Tabs.Menu();
+	/*iChrome.Tabs.Menu();
 
-	iChrome.Status.log("Tabs menu done");
+	iChrome.Status.log("Tabs menu done");*/
 
 	iChrome.Store();
 
@@ -363,7 +363,7 @@ iChrome.initResize = function() {
 	});
 };
 
-iChrome.refresh = function(all) {
+iChrome.refresh = function(all) {/*
 	iChrome.Status.log("Refreshing...");
 
 	clearTimeout(iChrome.deferredTimeout);
@@ -408,7 +408,7 @@ iChrome.refresh = function(all) {
 		iChrome(true);
 	}
 
-	iChrome.Status.log("Refresh done.");
+	iChrome.Status.log("Refresh done.");*/
 };
 
 

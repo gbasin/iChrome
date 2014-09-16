@@ -101,7 +101,7 @@ define(["jquery"], function($) {
 							!confirm(
 								"You selected to change a tab from a column-based layout to a grid-based layout. " + 
 								"If you continue you will lose all of your columns, everything will be moved to th" +
-								"e top right corner.\r\nAre you sure you want to do this?"
+								"e top left corner.\r\nAre you sure you want to do this?"
 							)
 						) {
 							continue;

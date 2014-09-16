@@ -13,13 +13,17 @@ define([
 	"w/todo",		"w/topsites",		"w/traffic",
 	"w/translate",	"w/twitter",		"w/unread",
 	"w/voice",		"w/weather",		"w/wolfram",
-	"w/youtube",	"w/recentlyclosed"
+	"w/youtube",	"w/recentlyclosed",
+
+	"lib/jquery.numberformatter", "lib/jquery.sortable", "oauth2"
 ], function() {
 	var widgets = {};
 
 	// Lodash has a method for this but it's simpler given the list of widgets
 	[].slice.call(arguments, 0).forEach(function(e, i) {
-		widgets[e.id] = widgets[e.nicename] = e;
+		if (e && e.id && e.nicename) {
+			widgets[e.id] = widgets[e.nicename] = e;
+		}
 	});
 
 	return widgets;

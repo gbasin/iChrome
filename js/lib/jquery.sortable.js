@@ -243,7 +243,7 @@
 				this.item = $(e.target).closest(this.options.itemSelector)
 				this.itemContainer = itemContainer
 
-				if(!this.options.onMousedown(this.item, groupDefaults.onMousedown, e))
+				if(!this.options.onMousedown.call(this, this.item, groupDefaults.onMousedown, e))
 					return
 
 				this.setPointer(e)
@@ -259,17 +259,18 @@
 				if(!this.distanceMet(e))
 					return
 
-				this.options.onDragStart(this.item, this.itemContainer, groupDefaults.onDragStart, e)
+				this.options.onDragStart.call(this, this.item, this.itemContainer, groupDefaults.onDragStart, e)
 				this.item.before(this.placeholder)
 				this.dragging = true
 			}
 
 			this.setPointer(e)
 			// place item under the cursor
-			this.options.onDrag(this.item,
-													getRelativePosition(this.pointer, this.item.offsetParent()),
-													groupDefaults.onDrag,
-													e)
+			this.options.onDrag.call(this, 
+									this.item,
+									getRelativePosition(this.pointer, this.item.offsetParent()),
+									groupDefaults.onDrag,
+									e)
 
 			var x = e.pageX,
 			y = e.pageY,
@@ -286,15 +287,15 @@
 			this.dragInitDone = false
 
 			if(this.dragging){
-				if (this.options.onBeforeDrop(this.item, this.placeholder, this, groupDefaults.onBeforeDrop, e)) {
+				if (this.options.onBeforeDrop.call(this, this.item, this.placeholder, this, groupDefaults.onBeforeDrop, e)) {
 					// processing Drop, check if placeholder is detached
 					if(this.placeholder.closest("html")[0])
 						this.placeholder.before(this.item).detach()
 					else
-						this.options.onCancel(this.item, this.itemContainer, groupDefaults.onCancel, e)
+						this.options.onCancel.call(this, this.item, this.itemContainer, groupDefaults.onCancel, e)
 				}
 
-				this.options.onDrop(this.item, this.getContainer(this.item), groupDefaults.onDrop, e)
+				this.options.onDrop.call(this, this.item, this.getContainer(this.item), groupDefaults.onDrop, e)
 
 				// cleanup
 				this.clearDimensions()

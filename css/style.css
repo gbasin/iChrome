@@ -110,41 +110,6 @@ iframe[seamless] {
 	border: 0; /* This fixes the Chrome 33 - 34 loss of support for seamless iframes */
 }
 
-.remove {
-	top: 0;
-	left: 0;
-	right: 0;
-	opacity: 0;
-	color: #FFF;
-	height: 70px;
-	cursor: pointer;
-	position: fixed;
-	font-size: 20px;
-	z-index: 9999999;
-	line-height: 70px;
-	text-align: center;
-	visibility: hidden;
-	background: #E96364;
-	transition: opacity .3s 0 ease-in-out, visibility 0s .3s linear;
-}
-
-body.dragging .remove {
-	opacity: 1;
-	visibility: visible;
-	transition: opacity .3s 0 ease-in-out, visibility 0s 0s linear;
-}
-
-.remove:after {
-	font-size: 20px;
-	content: "\e6A1";
-	margin-left: 10px;
-	font-family: Entypo;
-}
-
-.remove * {
-	display: none;
-}
-
 
 
 
@@ -937,6 +902,51 @@ input[type="radio"]:checked {
 	opacity: 1;
 	height: auto;
 	position: relative;
+}
+
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Tabs Layout / Remove Bar
+*/
+.tab-container .tab > .remove {
+	top: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	z-index: 9;
+	color: #FFF;
+	height: 70px;
+	cursor: pointer;
+	position: fixed;
+	font-size: 20px;
+	line-height: 70px;
+	text-align: center;
+	visibility: hidden;
+	background: #E96364;
+	transition: opacity .3s 0 ease-in-out, visibility 0s .3s linear;
+}
+
+body.dragging .tab-container .tab > .remove {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity .3s 0 ease-in-out, visibility 0s 0s linear;
+}
+
+.tab-container .tab > .remove:after {
+	font-size: 20px;
+	content: "\e6A1";
+	margin-left: 10px;
+	font-family: Entypo;
+}
+
+.tab-container .tab > .remove * {
+	display: none;
 }
 
 

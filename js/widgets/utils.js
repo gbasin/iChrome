@@ -58,6 +58,8 @@ define(["jquery", "backbone", "core/status", "core/templates"], function($, Back
 			render("widgets." + this.widget.nicename, data, partials) +
 			(this.widget.medley ? '\r\n<div class="resize"></div>' : "")
 		);
+
+		this.trigger("render");
 	};
 
 

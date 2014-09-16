@@ -4,6 +4,7 @@
 
 		<div class="panel">
 			<ul>
+				{{#tabMenu}}<li data-id="{{id}}">{{name}}<span class="move">&#xE693;</span></li>{{/tabMenu}}
 				<li data-id="new">New Tab...</li>
 			</ul>
 		</div>

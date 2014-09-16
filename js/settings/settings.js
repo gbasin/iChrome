@@ -28,6 +28,7 @@ define(
 			})),
 			View = Backbone.View.extend({
 				el: modal.content,
+
 				events: {
 					"click .nav > li": function(e) {
 						var elm = $(e.currentTarget),
@@ -60,6 +61,7 @@ define(
 					},
 					"click .btn.save": "save"
 				},
+
 				save: function(e) {
 					if (typeof e == "function") {
 						var cb = e;
@@ -72,11 +74,13 @@ define(
 						settings: serialize(this.$el, this.model.attributes)
 					}, cb || modal.hide.bind(modal));
 				},
+
 				show: function() {
 					this.render();
 
 					modal.show();
 				},
+
 				initialize: function() {
 					this.model = new Model();
 
@@ -90,6 +94,23 @@ define(
 						}
 					}, this).init();
 				},
+
+
+				/**
+				 * Creates a new tab, shows the settings modal and focuses on that tabs settings
+				 *
+				 * @api    public
+				 */
+				createTab: function() {
+					// The modal needs to be shown first (although since this is all sync it actually appears later)
+					// so that the elements needed by the createTab function are present
+					this.show();
+
+					this.$(".nav li.specific").click();
+
+					createTab(modal, this.model.attributes, this.$(".specific .btns"), this.$(".nav li.specific li").last(), this.$(".specific form"));
+				},
+
 				render: function() {
 					if (!this.General) {// These are initialized here so they don't listen for storage change events, etc. until the dialog has been shown
 						this.General = new General();

@@ -59,7 +59,11 @@ define(["jquery", "lodash", "backbone", "core/status", "widgets/widgets", "widge
 
 
 			if (this.model.has("config")) {
-				this.widget.config = this.model.get("config");
+				this.widget.config = {};
+
+				$.extend(true, this.widget.config, Widgets[this.widget.id].config, this.model.get("config"));
+
+				this.widget.size = this.model.get("size") || Widgets[this.widget.id].size;
 
 				this.widget.config.size = sizes[this.widget.size];
 			}
@@ -85,7 +89,7 @@ define(["jquery", "lodash", "backbone", "core/status", "widgets/widgets", "widge
 			}
 
 
-			if (this.widget.refresh) this.widget.refresh(true);
+			if (this.widget.refresh) this.widget.refresh.call(this.widget, true);
 			else this.render();
 		},
 
@@ -156,6 +160,8 @@ define(["jquery", "lodash", "backbone", "core/status", "widgets/widgets", "widge
 			this.widget.utils.elm = this.widget.elm = this.$el;
 
 			this.widget.utils.on("save", this.updateModel, this);
+
+			this.$el.data("view", this);
 
 
 			this.model.on("change", this.update, this);

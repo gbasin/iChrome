@@ -96,19 +96,20 @@ define(["backbone", "core/analytics", "storage/storage", "core/templates"], func
 				};
 
 				this.model.get("tabs").forEach(function(tab, i) {
+					var theme = tab.theme || this.get("settings").theme || "default";
 					data.tabs.push({
 						name: tab.name || "Home",
-						theme: tab.theme || this.get("settings").theme || "default",
+						theme: theme,
 						id: tab.id,
 						fixed: !!tab.fixed,
 						alignment: tab.alignment || "center",
 						columns: (tab.medley ? "medley" : (tab.columns.length || 3)),
 						active: (i == 0 ? "active" : ""),
 						themename: (
-							(tab.theme || this.get("settings").theme || "default") == "default" ?
+							theme == "default" ?
 								"Default Theme" :
 							(
-								this.get("cached")[tab.theme] || this.get("themes")[tab.theme.replace("custom", "")] || {}
+								this.get("cached")[theme] || this.get("themes")[(theme).replace("custom", "")] || {}
 							).name
 						)
 					});

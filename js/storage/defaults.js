@@ -62,6 +62,7 @@ define(function() {
 		tab: {
 			name: "Home",
 			fixed: true,
+			medley: false,
 			theme: "default",
 			alignment: "center"
 		}

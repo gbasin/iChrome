@@ -2,6 +2,8 @@
  *
  * Backbone-DocumentModel v0.6.4
  *
+ * PATCHED: Serialize is patched to properly handle nested collections
+ *
  * Copyright (c) 2013 Michael Haselton & Aaron Herres, Loqwai LLC
  *
  * https://github.com/icereval/backbone-documentmodel
@@ -227,10 +229,6 @@
             _.each(_.keys(models), function (modelKey) {
                 var modelValues = models[modelKey].toJSON();
 
-                if (this.pseudoIdAttribute) {
-                    modelValues = modelValues.value;
-                }
-
                 response.push(modelValues);
             }, this);
         } else if (this instanceof Backbone.Model && this.attributes) {
@@ -239,7 +237,7 @@
 
             // #7 - Strange output on nested collection models toJSON()
             if (this.collection && this.collection.pseudoIdAttribute) {
-                response = this.get('value');
+                response = this.get('value').toJSON();
             } else {
                 _.each(_.keys(attributes), function (attrKey) {
                     if (attributes[attrKey] instanceof Backbone.Model || attributes[attrKey] instanceof Backbone.Collection) {

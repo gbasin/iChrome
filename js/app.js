@@ -12,7 +12,8 @@ require.config({
 		"jquery": "lib/jquery",
 		"oauth2": "../oauth2/oauth2",
 		"jquery.serializejson": "lib/jquery.serializejson",
-		"backbone.documentmodel": "lib/backbone.documentmodel"
+		"backbone.documentmodel": "lib/backbone.documentmodel",
+		"backbone.viewcollection": "lib/backbone.viewcollection"
 	},
 	map: {
 		"*": {
@@ -37,8 +38,10 @@ require.config({
 /**
  * Load, this has to load moment this way because script.js needs to shimmed and moment doesn't define properly unless require'd
  */
-require(["moment", "core/templates", "core/status", "storage/storage", "modals/getting-started", "core/init"], function(moment, render, status, storage, guide) {
+require(["moment", "core/templates", "core/status", "storage/storage", "modals/getting-started", "core/init"], function(moment, render, status, storage, guide, app) {
 	window.moment = moment;
+
+	window.App = app;
 
 	iChromeStatus = status;
 	iChromeRender = render;

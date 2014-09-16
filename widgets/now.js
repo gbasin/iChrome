@@ -226,7 +226,7 @@ define(["jquery", "oauth2"], function($) {
 
 			var that = this; // Can't use .bind() since we need the element from this
 
-			this.elm.off("click", ".dismiss, a.card").on("click", ".dismiss, a.card", function(e) {
+			this.elm.off("click.now", ".dismiss, a.card").on("click.now", ".dismiss, a.card", function(e) {
 				var elm = $(this);
 
 				if (elm.hasClass("dismiss")) {

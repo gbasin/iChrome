@@ -125,7 +125,7 @@ define(["jquery"], function($) {
 
 				this.utils.render(apps);
 
-				this.elm.off("click").on("click", ".app", function(e) {
+				this.elm.off("click.apps").on("click.apps", ".app", function(e) {
 					e.preventDefault();
 
 					var id = this.getAttribute("data-id");
