@@ -353,8 +353,13 @@ define(
 					// And this makes sure that they won't be set to the default even if they aren't present, i.e.
 					// a list of sample labels that's now empty
 					.mapValues(function(e, key) {
+						// If it's a string then it must be empty
+						if (typeof e == "string") {
+							return "";
+						}
+
 						// If it's boolean and not present it must have been an unchecked checkbox (not implemented yet)
-						if (typeof e == "boolean") {
+						else if (typeof e == "boolean") {
 							return false;
 						}
 
