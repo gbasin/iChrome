@@ -1240,6 +1240,7 @@ body.resizing .medley {
 }
 
 .widgets-container .widget.tabbed:before {
+	top: 0;
 	left: 100%;
 	z-index: 9;
 	opacity: 0;
