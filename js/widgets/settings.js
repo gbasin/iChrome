@@ -44,7 +44,7 @@ define(
 								label: e,
 								value: key,
 								nesting: nesting,
-								selected: input.value == key
+								selected: (input.value == key ? "selected" : "")
 							};
 						}
 					});

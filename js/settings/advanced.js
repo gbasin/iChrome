@@ -49,8 +49,8 @@ define(["jquery", "backbone", "storage/storage", "core/templates"], function($, 
 					// Calling this.model.set will break the inheritance chain (a change to this.model.settings.search will instantly change all
 					// other copies of settings across iChrome) so this needs to be set directly onto the storage object
 					this.model.save(settings, function() {
-						modal.hide();
-					});
+						this.trigger("restore");
+					}.bind(this));
 				}
 				catch(e) {
 					alert("An error occurred while trying to parse the provided data, please make sure you entered the EXACT text you backed up.");

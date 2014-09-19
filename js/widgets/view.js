@@ -161,7 +161,11 @@ define(["jquery", "lodash", "backbone", "core/status", "widgets/widgets", "widge
 
 			this.widget.utils.elm = this.widget.elm = this.$el;
 
-			this.widget.utils.on("save", this.updateModel, this);
+			this.widget.utils.on("save", function() {
+				this.updateModel();
+
+				this.model.trigger("save");
+			}, this);
 
 			this.$el.data("view", this);
 

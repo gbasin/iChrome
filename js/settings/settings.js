@@ -125,6 +125,8 @@ define(
 
 							this.render();
 						}, this);
+
+						this.Advanced.on("restore", modal.hide, modal);
 					}
 
 					// Reset the active tabs

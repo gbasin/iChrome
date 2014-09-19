@@ -88,7 +88,7 @@ define(
 
 					this.model.tabs
 						.on("views:change", this.render, this)
-						.on("sort", function() {
+						.on("sort save:columns.value", function() {
 							this.model.storage.tabs = this.model.tabs.toJSON();
 
 							this.model.storage.sync({ tabSort: true });
