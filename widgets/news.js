@@ -25,7 +25,7 @@ define(["jquery"], function($) {
 				type: "select",
 				nicename: "edition",
 				label: "Edition",
-				help: "If your edition or topic is not listed here, please enter a Google News feed URL is the Custom Feed field below (check the help text there for an explanation).",
+				help: "If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
 				options: {
 					us: "U.S.",
 					uk: "U.K.",
@@ -55,7 +55,7 @@ define(["jquery"], function($) {
 				type: "text",
 				nicename: "link",
 				label: "Footer URL",
-				placeholder: "Enter a URL that the \"More\" link should point to"
+				placeholder: "Enter the URL that the \"More\" link should point to"
 			}
 		],
 		config: {

@@ -119,66 +119,68 @@ iChrome.deferred = function(refresh) {
 		themeOut = setTimeout(function() { tStyle.remove(); }, 300);
 	});
 
-	$(".toolbar .custom-link").on("click", function(e) {
-		var href = this.getAttribute("href");
+	/*
+		$(".toolbar .custom-link").on("click", function(e) {
+			var href = this.getAttribute("href");
 
-		if (href.indexOf("chrome") == 0) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
-			e.preventDefault();
+			if (href.indexOf("chrome") == 0) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
+				e.preventDefault();
 
-			chrome.tabs.getCurrent(function(d) {
-				if (e.which == 2) {
-					chrome.tabs.create({
-						url: href,
-						index: d.index + 1
+				chrome.tabs.getCurrent(function(d) {
+					if (e.which == 2) {
+						chrome.tabs.create({
+							url: href,
+							index: d.index + 1
+						});
+					}
+					else {
+						chrome.tabs.update(d.id, {
+							url: href
+						});
+					}
+				});
+			}
+		});
+
+		var appsLoaded = false;
+
+		$(".apps").on("click", function() {
+			var panel = $(this).find(".panel");
+
+			if (!panel.hasClass("visible")) {
+				if (!appsLoaded) {
+					$(this).find("img[data-src]").each(function(e, i) {
+						this.setAttribute("src", this.getAttribute("data-src"));
+
+						this.setAttribute("data-src", null);
 					});
+
+					appsLoaded = true;
 				}
-				else {
-					chrome.tabs.update(d.id, {
-						url: href
-					});
-				}
-			});
-		}
-	});
 
-	var appsLoaded = false;
+				var elms = $(this).find("*");
 
-	$(".apps").on("click", function() {
-		var panel = $(this).find(".panel");
+				$(document.body).on("click.apps", function(e) {
+					if (!elms.is(e.target)) {
+						panel.removeClass("visible");
 
-		if (!panel.hasClass("visible")) {
-			if (!appsLoaded) {
-				$(this).find("img[data-src]").each(function(e, i) {
-					this.setAttribute("src", this.getAttribute("data-src"));
-
-					this.setAttribute("data-src", null);
+						$(document.body).off("click.apps");
+					}
 				});
 
-				appsLoaded = true;
+				panel.addClass("visible");
 			}
+			else {
+				$(document.body).off("click.apps");
 
-			var elms = $(this).find("*");
+				panel.removeClass("visible");
+			}
+		});
 
-			$(document.body).on("click.apps", function(e) {
-				if (!elms.is(e.target)) {
-					panel.removeClass("visible");
-
-					$(document.body).off("click.apps");
-				}
-			});
-
-			panel.addClass("visible");
-		}
-		else {
-			$(document.body).off("click.apps");
-
-			panel.removeClass("visible");
-		}
-	});
-
-	$(".apps a.icon").on("click", function(e) {
-		e.preventDefault();
-	});
+		$(".apps a.icon").on("click", function(e) {
+			e.preventDefault();
+		});
+	*/
 
 	$(document.body).on("click", ".nested-link[data-href]", function(e) {
 		e.preventDefault();

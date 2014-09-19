@@ -25,6 +25,7 @@ define(["lodash", "jquery", "backbone", "storage/storage", "search/search", "set
 			className: "toolbar",
 
 			events: {
+				"click .apps": "appsPanel",
 				"click .icon.settings": function() { // This has to be proxied since Backbone event handlers are bound to this
 					this.Settings.show();
 				},
@@ -35,6 +36,71 @@ define(["lodash", "jquery", "backbone", "storage/storage", "search/search", "set
 				},
 				"click .tabs-menu li[data-id=new]": function(e) {
 					Settings.createTab();
+				},
+				"click .custom-link": function(e) {
+					var href = e.currentTarget.getAttribute("href");
+
+					if (href.indexOf("chrome") == 0) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
+						e.preventDefault();
+
+						chrome.tabs.getCurrent(function(d) {
+							if (e.which == 2) {
+								chrome.tabs.create({
+									url: href,
+									index: d.index + 1
+								});
+							}
+							else {
+								chrome.tabs.update(d.id, {
+									url: href
+								});
+							}
+						});
+					}
+				},
+				"click .apps a.icon": function(e) {
+					e.preventDefault();
+				}
+			},
+
+
+			/**
+			 * Shows and hides the apps panel
+			 *
+			 * @api    private
+			 * @param  {Event} e The event
+			 */
+			appsPanel: function(e) {
+				var elm = $(e.currentTarget),
+					panel = elm.find(".panel");
+
+				if (!panel.hasClass("visible")) {
+					if (!this.appsLoaded) {
+						elm.find("img[data-src]").each(function(e, i) {
+							this.setAttribute("src", this.getAttribute("data-src"));
+
+							this.setAttribute("data-src", null);
+						});
+
+						this.appsLoaded = true;
+					}
+
+					var elms = elm.find("*");
+
+					$(document.body).on("click.apps", function(e) {
+						if (!elms.is(e.target)) {
+							panel.removeClass("visible");
+
+							$(document.body).off("click.apps");
+						}
+					});
+
+					panel.addClass("visible");
+				}
+				else {
+					$(document.body).off("click.apps");
+
+					panel.removeClass("visible");
 				}
 			},
 
@@ -169,6 +235,9 @@ define(["lodash", "jquery", "backbone", "storage/storage", "search/search", "set
 			},
 
 			render: function() {
+				// The app icons attributes get reset on render
+				this.appsLoaded = false;
+
 				this.Search.$el.detach();
 
 				this.$el
