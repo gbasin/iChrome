@@ -112,14 +112,16 @@ define(
 				},
 
 				render: function() {
-					if (!this.General) {// These are initialized here so they don't listen for storage change events, etc. until the dialog has been shown
+					//  These are initialized here so they don't listen for storage change events, etc. until the dialog has been shown
+					if (!this.General) {
 						this.General = new General();
 						this.Visual = new Visual();
 						this.Specific = new Specific();
 						this.Advanced = new Advanced();
 
 						this.Specific.on("tab:removed", function() {
-							this.save(function() {}); // The function is empty so the dialog isn't closed
+							// An empty function needs to be passed so the dialog isn't automatically closed
+							this.save(function() {});
 
 							this.render();
 						}, this);
@@ -129,6 +131,10 @@ define(
 					this.General.$el.addClass("active").siblings().removeClass("active");
 
 					this.$(".nav li.specific li:first, .specific form:first").addClass("active").siblings().removeClass("active");
+
+
+					// The tab elms need to be detached so their event listeners aren't destroyed when this.$el.html() is called
+					$(_.pluck(_.pick(this, "General", "Visual", "Specific", "Advanced"), "el")).detach();
 
 
 					var data = {

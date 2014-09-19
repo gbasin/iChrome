@@ -1,10 +1,10 @@
 /**
  * This is the Visual tab in the settings
  */
-define(["jquery", "backbone", "storage/storage", "core/templates"], function($, Backbone, Storage, render) {
+define(["lodash", "jquery", "backbone", "storage/storage", "core/templates"], function(_, $, Backbone, Storage, render) {
 	var Model = Backbone.Model.extend({
 			getRender: function() {
-				var settings = $.extend({}, this.get("settings"));
+				var settings = _.clone(this.get("settings"));
 
 				settings.themename = (this.get("cached")[settings.theme] || this.get("themes")[settings.theme.replace("custom", "")] || {}).name;
 
@@ -56,7 +56,7 @@ define(["jquery", "backbone", "storage/storage", "core/templates"], function($, 
 			},
 			render: function() {
 				this.$el
-					.html(render("settings/visual", this.model.get("settings")))
+					.html(render("settings/visual", this.model.getRender()))
 					.find("#alignment").val(this.model.get("settings").alignment).end()
 					.find("#columns").val(this.model.get("settings").columns);
 
