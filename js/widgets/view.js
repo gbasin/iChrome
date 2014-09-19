@@ -88,9 +88,11 @@ define(["jquery", "lodash", "backbone", "core/status", "widgets/widgets", "widge
 				});
 			}
 
+			// This needs to be called first so renders happen faster after things change and in
+			// the case that we're offline the widget still renders before attempting to refresh.
+			this.render();
 
 			if (this.widget.refresh) this.widget.refresh.call(this.widget, true);
-			else this.render();
 		},
 
 
