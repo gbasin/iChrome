@@ -4,8 +4,12 @@
 define(["jquery"], function($) {
 	return {
 		id: 17,
+		size: 2,
+		order: 17,
+		name: "To-do",
 		nicename: "todo",
 		sizes: ["variable"],
+		desc: "Displays an interactive to-do list with important and completed items.",
 		settings: [
 			{
 				type: "text",

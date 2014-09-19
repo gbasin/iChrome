@@ -4,9 +4,13 @@
 define(["jquery"], function($) {
 	return {
 		id: 1,
+		size: 3,
+		order: 1,
+		name: "Weather",
 		interval: 300000,
 		nicename: "weather",
 		sizes: ["tiny", "small", "medium"],
+		desc: "Displays the current weather and a forecast for the next 4 days.",
 		settings: [
 			{
 				type: "size"

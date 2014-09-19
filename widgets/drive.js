@@ -4,9 +4,13 @@
 define(["jquery", "oauth2"], function($) {
 	return {
 		id: 27,
+		size: 1,
+		order: 7.5,
+		name: "Drive",
 		interval: 300000,
 		nicename: "drive",
 		sizes: ["variable"],
+		desc: "Displays recently changed files from your Google Drive.",
 		settings: [
 			{
 				type: "text",

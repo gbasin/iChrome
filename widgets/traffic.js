@@ -4,9 +4,13 @@
 define(["jquery"], function($) {
 	return {
 		id: 9,
+		size: 1,
+		order: 14,
+		name: "Traffic",
 		interval: 300000,
 		nicename: "traffic",
 		sizes: ["tiny", "small"],
+		desc: "Displays the current time in current traffic to home or work.",
 		settings: [
 			{
 				type: "size"

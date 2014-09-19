@@ -4,9 +4,13 @@
 define(["jquery"], function($) {
 	return {
 		id: 15,
+		size: 5,
+		order: 9,
+		name: "Sports",
 		nicename: "sports",
-		sizes: ["tiny", "variable"],
 		interval: 180000,
+		sizes: ["tiny", "variable"],
+		desc: "Displays scores and game information for selected leagues and/or teams.",
 		settings: [
 			{
 				type: "text",

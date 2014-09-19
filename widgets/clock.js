@@ -4,9 +4,13 @@
 define(["jquery"], function($) {
 	return {
 		id: 2,
+		size: 2,
+		order: 8,
+		name: "Time & Date",
 		interval: 1000,
 		nicename: "clock",
 		sizes: ["tiny", "small"],
+		desc: "Shows the current date and time. Optionally for a different timezone.",
 		settings: [
 			{
 				type: "text",

@@ -4,8 +4,12 @@
 define(["jquery"], function($) {
 	return {
 		id: 13,
+		size: 2,
+		order: 12,
+		name: "Notes",
 		nicename: "notes",
 		sizes: ["tiny", "variable"],
+		desc: "Inserts a simple, editable, note.",
 		settings: [
 			{
 				type: "select",

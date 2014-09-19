@@ -4,9 +4,13 @@
 define(["jquery", "oauth2"], function($) {
 	return {
 		id: 19,
+		size: 6,
+		order: 6.5,
+		name: "Feedly",
 		interval: 300000,
 		nicename: "feedly",
 		sizes: ["variable"],
+		desc: "Displays articles from your Feedly account in a configurable format.",
 		settings: [
 			{
 				type: "text",

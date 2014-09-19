@@ -4,9 +4,13 @@
 define(["jquery"], function($) {
 	return {
 		id: 22,
+		size: 2,
+		order: 6,
+		name: "Voice",
 		interval: 120000,
 		nicename: "voice",
 		sizes: ["tiny", "small"],
+		desc: "Displays the current number of missed calls and texts in your Google Voice account.",
 		settings: [
 			{
 				type: "text",

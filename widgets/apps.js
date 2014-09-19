@@ -4,8 +4,12 @@
 define(["jquery"], function($) {
 	return {
 		id: 11,
+		size: 2,
+		order: 13,
+		name: "Apps",
 		nicename: "apps",
 		sizes: ["variable"],
+		desc: "Displays your currently installed Google Chrome applications.",
 		settings: [
 			{
 				type: "text",

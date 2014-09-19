@@ -4,9 +4,13 @@
 define(["jquery"], function($) {
 	return {
 		id: 14,
+		size: 2,
+		order: 10,
+		name: "Stocks",
 		interval: 30000,
 		nicename: "stocks",
 		sizes: ["tiny", "small"],
+		desc: "Displays current information for any given stock symbol.",
 		settings: [
 			{
 				type: "text",

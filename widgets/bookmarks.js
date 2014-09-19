@@ -4,8 +4,12 @@
 define(["jquery"], function($) {
 	return {
 		id: 16,
+		size: 2,
+		order: 11,
+		name: "Bookmarks",
 		nicename: "bookmarks",
 		sizes: ["tiny", "variable"],
+		desc: "Displays selected and customized bookmarks and other links.",
 		settings: [
 			{
 				type: "text",

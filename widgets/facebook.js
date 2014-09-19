@@ -4,8 +4,12 @@
 define(["jquery"], function($) {
 	return {
 		id: 31,
+		size: 5,
+		order: 7.9,
+		name: "Facebook",
 		nicename: "facebook",
 		sizes: ["variable"],
+		desc: "Embeds Facebook in a widget",
 		settings: [
 			{
 				type: "number",

@@ -4,9 +4,13 @@
 define(["jquery", "oauth2"], function($) {
 	return {
 		id: 10,
+		size: 1,
+		order: 3,
+		name: "Calendar",
 		interval: 300000,
 		nicename: "calendar",
 		sizes: ["variable"],
+		desc: "Displays upcoming events from one of your Google calendars.",
 		settings: [
 			{
 				type: "text",

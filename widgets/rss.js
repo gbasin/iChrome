@@ -4,9 +4,13 @@
 define(["jquery"], function($) {
 	return {
 		id: 8,
+		size: 5,
+		order: 4,
+		name: "RSS",
 		interval: 300000,
 		nicename: "rss",
 		sizes: ["variable"],
+		desc: "Displays items from a RSS or Atom feed with optional images.",
 		settings: [
 			{
 				type: "text",

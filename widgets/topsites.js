@@ -4,8 +4,12 @@
 define(["jquery"], function($) {
 	return {
 		id: 12,
+		size: 2,
+		order: 15,
+		name: "Top Sites",
 		nicename: "topsites",
 		sizes: ["variable"],
+		desc: "Displays your most visited/top sites.",
 		settings: [
 			{
 				type: "text",

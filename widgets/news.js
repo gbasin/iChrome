@@ -4,9 +4,13 @@
 define(["jquery"], function($) {
 	return {
 		id: 4,
+		size: 6,
+		order: 2,
+		name: "News",
 		interval: 300000,
 		nicename: "news",
 		sizes: ["variable"],
+		desc: "Displays the current top news by category and edition.",
 		settings: [
 			{
 				type: "text",

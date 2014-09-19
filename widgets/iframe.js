@@ -4,8 +4,12 @@
 define(["jquery"], function($) {
 	return {
 		id: 7,
+		size: 4,
+		order: 5,
+		name: "iFrame",
 		nicename: "iframe",
 		sizes: ["variable"],
+		desc: "Displays a webpage of your choice within an iframe.",
 		settings: [
 			{
 				type: "text",

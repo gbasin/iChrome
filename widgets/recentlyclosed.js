@@ -4,10 +4,14 @@
 define(["jquery"], function($) {
 	return {
 		id: 32,
+		size: 4,
+		order: 5.25,
 		interval: 60000,
 		permissions: ["tabs"],
+		name: "Recently Closed",
 		nicename: "recentlyclosed",
 		sizes: ["variable"],
+		desc: "Shows your recently closed tabs",
 		settings: [
 			{
 				type: "text",

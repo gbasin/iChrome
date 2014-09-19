@@ -4,7 +4,11 @@
 define(["jquery"], function($) {
 	return {
 		id: 20,
+		size: 1,
+		order: 14.5,
+		name: "Translate",
 		nicename: "translate",
+		desc: "Contains a small inline Google Translate textbox.",
 		sizes: ["small"],
 		config: {
 			size: "small"

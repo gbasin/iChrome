@@ -4,9 +4,13 @@
 define(["jquery", "oauth2"], function($) {
 	return {
 		id: 24,
+		size: 1,
+		order: 2.5,
+		name: "Google Now",
 		interval: 300000,
 		nicename: "now",
 		sizes: ["variable"],
+		desc: "Displays cards from Google Now including flight status and package tracking.",
 		config: {
 			size: "variable"
 		},

@@ -4,8 +4,12 @@
 define(["jquery"], function($) {
 	return {
 		id: 25,
+		size: 4,
+		order: 4.5,
+		name: "Gmail",
 		nicename: "gmail",
 		sizes: ["variable"],
+		desc: "Displays your Gmail inbox where you can manage your email.",
 		settings: [
 			{
 				type: "text",

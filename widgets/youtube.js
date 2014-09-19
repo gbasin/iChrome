@@ -4,9 +4,13 @@
 define(["jquery"], function($) {
 	return {
 		id: 29,
+		size: 6,
+		order: 7.5,
+		name: "YouTube",
 		interval: 300000,
 		nicename: "youtube",
 		sizes: ["variable"],
+		desc: "Displays either popular videos or videos from a specified user.",
 		settings: [
 			{
 				type: "text",

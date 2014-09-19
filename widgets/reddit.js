@@ -4,9 +4,13 @@
 define(["jquery"], function($) {
 	return {
 		id: 18,
+		size: 6,
+		order: 15.5,
+		name: "Reddit",
 		interval: 300000,
 		nicename: "reddit",
 		sizes: ["variable"],
+		desc: "Displays the top items on Reddit for any given subreddit.",
 		settings: [
 			{
 				type: "text",

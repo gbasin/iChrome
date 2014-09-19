@@ -4,8 +4,12 @@
 define(["jquery"], function($) {
 	return {
 		id: 30,
+		size: 5,
+		order: 7.75,
+		name: "Google+",
 		nicename: "plus",
 		sizes: ["variable"],
+		desc: "Embeds Google Plus in a widget",
 		settings: [
 			{
 				type: "number",

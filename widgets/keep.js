@@ -4,8 +4,12 @@
 define(["jquery"], function($) {
 	return {
 		id: 23,
+		size: 4,
+		order: 7,
+		name: "Keep",
 		nicename: "keep",
 		sizes: ["variable"],
+		desc: "Embeds Google Keep in a widget",
 		settings: [
 			{
 				type: "number",

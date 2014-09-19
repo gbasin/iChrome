@@ -4,9 +4,13 @@
 define(["jquery"], function($) {
 	return {
 		id: 26,
+		size: 1,
+		order: 3,
+		name: "Twitter",
 		interval: 300000,
 		nicename: "twitter",
 		sizes: ["variable"],
+		desc: "Displays tweets from your home stream or a specified list.",
 		settings: [
 			{
 				type: "text",
