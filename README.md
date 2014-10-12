@@ -8,14 +8,14 @@ The code's somewhat messy, but I'm currently in the middle of a restructure in t
 
 ## Roadmap
 
-#### V2.1.3 - WIP
- - Code cleanup and restructuring using Backbone, Require and Lo-Dash.
+#### V2.1.4 - WIP
+ - Code cleanup and restructure using Backbone, Require and Lo-Dash.
 
-#### V2.1.4
+#### V2.1.5
  - Internationalization with support for (at least): Russian, German, Dutch, Ukrainian, French, Spanish, Chinese and Portuguese
  - Various small widget features
 
-#### V2.1.x
+#### V2.x
  - A real website
 
 ### V2.2
@@ -41,11 +41,11 @@ If you'd like to contribute, please fork the repo and submit a pull request.
 I follow a more complicated style guide, but here's the basic overview:
 
  - Code is indented with 4 space tabs, never spaces
- - Double quotes are always used unless it's HTML being quoted
+ - Double quotes are always used unless the string is HTML
  - Trailing semicolons are always used
  - When multiple variables are being defined at the top of a function they should generally be combined into one `var` statement
  - Ternary operators are fine especially for string concatenation
- - Performance should be favored over readability for small snippets. i.e. `$(body).append($('<div></div>').attr("data-id", id.split("-")[1]))` instead of `var elm = $('<div></div>'), id = id.split("-")[1]; elm.attr("data-id", id)....`
+ - Performance should always be favored over readability for small snippets. i.e. `$(body).append($('<div></div>').attr("data-id", id.split("-")[1]))` instead of `var elm = $('<div></div>'), id = id.split("-")[1]; elm.attr("data-id", id)....`
 
 ## License
 
