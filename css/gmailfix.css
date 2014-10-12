@@ -1,2 +1,2 @@
-body { visibility: visible!important; }
+body { visibility: visible!important; display: block!important; }
 #nav { display: none; }
