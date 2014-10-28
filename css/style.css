@@ -29,18 +29,41 @@
 	src: url("../fonts/OpenSansBold.woff");
 }
 
+
+@font-face {
+	font-weight: 300;
+	font-style: normal;
+	font-family: "Roboto";
+	src: url("../fonts/RobotoLight.woff");
+}
+
+@font-face {
+	font-weight: 400;
+	font-style: normal;
+	font-family: "Roboto";
+	src: url("../fonts/RobotoNormal.woff");
+}
+
+@font-face {
+	font-weight: 500;
+	font-style: normal;
+	font-family: "Roboto";
+	src: url("../fonts/RobotoMedium.woff");
+}
+
+@font-face {
+	font-weight: 700;
+	font-style: normal;
+	font-family: "Roboto";
+	src: url("../fonts/RobotoBold.woff");
+}
+
+
 @font-face {
 	font-style: normal;
 	font-weight: normal;
 	font-family: "FontAwesome";
 	src: url("../fonts/fontawesome.woff");
-}
-
-@font-face {
-	font-style: normal;
-	font-weight: normal;
-	font-family: "Roboto";
-	src: url("../fonts/Roboto.woff");
 }
 
 
@@ -309,30 +332,30 @@ input[type="radio"]:checked {
 /*---------------------------------------------
 	/ Tooltip Styles
 */
-.tip-container {
+.tooltip {
 	top: 0;
 	left: 0;
 	opacity: 0;
-	color: #333;
+	color: #666;
 	overflow: auto;
-	font-size: 13px;
+	font-size: 12px;
 	z-index: 9999999;
 	max-width: 360px;
-	font-weight: 600;
-	padding: 8px 15px;
-	line-height: 20px;
+	background: #FFF;
+	line-height: 18px;
+	padding: 10px 15px;
 	position: absolute;
+	text-align: center;
 	visibility: hidden;
-	border-radius: 4px;
-	background: #FFFFC2;
 	word-break: break-word;
-	font-family: Open Sans, sans-serif;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+	border-top: 1px solid #F5F5F5;  
+	font-family: Roboto, sans-serif;
+	border-bottom: 2px solid #689BEC;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
 	transition: visibility 0s .3s, opacity .3s 0s;
 }
 
-.tip-container.visible {
+.tooltip.visible {
 	opacity: 1;
 	visibility: visible;
 	transition: visibility 0s 0s, opacity .3s 0s;

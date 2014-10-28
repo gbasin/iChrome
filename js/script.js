@@ -46,9 +46,9 @@ iChrome.deferred = function(refresh) {
 
 	iChrome.Tabs.Nav(parseInt(iChrome.Storage.settings.def || 1));
 
-	iChrome.Status.log("Tabs done");*/
+	iChrome.Status.log("Tabs done");
 
-	iChrome.initTooltips();
+	iChrome.initTooltips();*/
 
 	iChrome.initResize();
 
@@ -244,80 +244,82 @@ iChrome.deferred = function(refresh) {
 
 iChrome.uid = localStorage.uid || (localStorage.uid = (new Date().getTime()).toString(16) + Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1));
 
-iChrome.initTooltips = function() {
-	if (!$(document.body).find(".tip-container").length) $(document.body).append('<div class="tip-container" />');
+/*
+	iChrome.initTooltips = function() {
+		if (!$(document.body).find(".tip-container").length) $(document.body).append('<div class="tip-container" />');
 
-	var tip = $(".tip-container"),
-		tipTime, maxHeight;
+		var tip = $(".tip-container"),
+			tipTime, maxHeight;
 
-	$(document.body).on("mouseenter", "[data-tooltip]", function() {
-		var elm = $(this),
-			offset = elm.offset();
+		$(document.body).on("mouseenter", "[data-tooltip]", function() {
+			var elm = $(this),
+				offset = elm.offset();
 
-		clearTimeout(tipTime);
+			clearTimeout(tipTime);
 
-		tipTime = setTimeout(function() {
-			var content = elm.attr("data-tooltip"),
-				top = offset.top + elm.outerHeight() + 10
+			tipTime = setTimeout(function() {
+				var content = elm.attr("data-tooltip"),
+					top = offset.top + elm.outerHeight() + 10
 
-			maxHeight = false;
+				maxHeight = false;
 
-			if (content == "") {
-				return;
-			}
-
-			tip.html(content.replace(/(<br(\s)?(\/)?>\s*)+$/, ""));
-
-			if ((top + tip.outerHeight()) > (document.body.scrollTop + window.innerHeight)) {
-				top = offset.top - tip.outerHeight() - 10;
-
-				if (top < 0) {
-					maxHeight = tip.outerHeight() + top;
-
-					top = 0;
+				if (content == "") {
+					return;
 				}
-			}
 
-			tip.css({
-				top: top,
-				left: offset.left,
-				maxHeight: maxHeight || ""
-			});
+				tip.html(content.replace(/(<br(\s)?(\/)?>\s*)+$/, ""));
+
+				if ((top + tip.outerHeight()) > (document.body.scrollTop + window.innerHeight)) {
+					top = offset.top - tip.outerHeight() - 10;
+
+					if (top < 0) {
+						maxHeight = tip.outerHeight() + top;
+
+						top = 0;
+					}
+				}
+
+				tip.css({
+					top: top,
+					left: offset.left,
+					maxHeight: maxHeight || ""
+				});
+
+				tip.addClass("visible");
+			}, 500);
+		}).on("mouseleave", "[data-tooltip]", function() {
+			clearTimeout(tipTime);
+
+			tip.removeClass("visible");
+
+			tipTime = setTimeout(function() {
+				tip.css({
+					top: "",
+					left: "",
+					maxHeight: ""
+				});
+			}, 300);
+		});
+
+		tip.on("mouseenter", function() {
+			clearTimeout(tipTime);
 
 			tip.addClass("visible");
-		}, 500);
-	}).on("mouseleave", "[data-tooltip]", function() {
-		clearTimeout(tipTime);
+		}).on("mouseleave", function() {
+			clearTimeout(tipTime);
 
-		tip.removeClass("visible");
+			tip.removeClass("visible");
 
-		tipTime = setTimeout(function() {
-			tip.css({
-				top: "",
-				left: "",
-				maxHeight: ""
-			});
-		}, 300);
-	});
-
-	tip.on("mouseenter", function() {
-		clearTimeout(tipTime);
-
-		tip.addClass("visible");
-	}).on("mouseleave", function() {
-		clearTimeout(tipTime);
-
-		tip.removeClass("visible");
-
-		tipTime = setTimeout(function() {
-			tip.css({
-				top: "",
-				left: "",
-				maxHeight: ""
-			});
-		}, 300);
-	});
-};
+			tipTime = setTimeout(function() {
+				tip.css({
+					top: "",
+					left: "",
+					maxHeight: ""
+				});
+			}, 300);
+		});
+	};
+*/
 
 iChrome.initResize = function() {
 	var db = $(document.body);

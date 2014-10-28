@@ -1,11 +1,13 @@
 /**
  * The main iChrome view, this initializes everything.
  */
-define(["lodash", "backbone", "core/css", "core/toolbar", "tabs/tabs", "modals/updated", "modals/getting-started", "lib/extends"], function(_, Backbone, CSS, Toolbar, Tabs) {
+define(["lodash", "backbone", "core/css", "core/tooltips", "core/toolbar", "tabs/tabs", "modals/updated", "modals/getting-started", "lib/extends"], function(_, Backbone, CSS, Tooltips, Toolbar, Tabs) {
 	var iChrome = Backbone.View.extend({
 		el: "body",
 		initialize: function() {
 			this.css = new CSS();
+
+			this.tooltips = new Tooltips();
 
 			var toolbar = this.Toolbar = new Toolbar({
 				el: this.$("header.toolbar")
