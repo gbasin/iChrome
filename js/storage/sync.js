@@ -40,6 +40,8 @@ define(["jquery", "core/status", "storage/defaults", "core/analytics", "storage/
 		sync.themes = local.themes = storage.themes;
 		sync.settings = local.settings = storage.settings;
 
+		local.cached = storage.cached;
+
 		local.tabs = [];
 
 		storage.tabs.forEach(function(tab, i) {

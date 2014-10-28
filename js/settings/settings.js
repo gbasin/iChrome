@@ -3,10 +3,10 @@
  */
 define(
 	[
-		"jquery", "backbone", "storage/storage", "core/analytics", "modals/modals", "settings/general", "settings/visual",
-		"settings/specific", "settings/advanced", "core/templates", "settings/serialize", "settings/createTab"
+		"jquery", "backbone", "storage/storage", "core/analytics", "modals/modals", "themes/themes", "settings/general",
+		"settings/visual", "settings/specific", "settings/advanced", "core/templates", "settings/serialize", "settings/createTab"
 	],
-	function($, Backbone, Storage, Track, Modal, General, Visual, Specific, Advanced, render, serialize, createTab) {
+	function($, Backbone, Storage, Track, Modal, Themes, General, Visual, Specific, Advanced, render, serialize, createTab) {
 		var Model = Backbone.Model.extend({
 				save: function(d, cb) {
 					if (d.tabs)		this.storage.tabs = d.tabs;
@@ -71,7 +71,7 @@ define(
 					}
 
 					this.model.save({
-						settings: serialize(this.$el, this.model.attributes)
+						settings: serialize(this.$el, this.model.storage)
 					}, cb || modal.hide.bind(modal));
 				},
 
@@ -108,16 +108,18 @@ define(
 
 					this.$(".nav li.specific").click();
 
-					createTab(modal, this.model.attributes, this.$(".specific .btns"), this.$(".nav li.specific li").last(), this.$(".specific form"));
+					createTab(modal, this.model.storage, this.$(".specific .btns"), this.$(".nav li.specific li").last(), this.$(".specific form"));
 				},
 
 				render: function() {
 					//  These are initialized here so they don't listen for storage change events, etc. until the dialog has been shown
 					if (!this.General) {
+						this.Themes = new Themes();
+
 						this.General = new General();
-						this.Visual = new Visual();
-						this.Specific = new Specific();
 						this.Advanced = new Advanced();
+						this.Visual = new Visual({ themes: this.Themes });
+						this.Specific = new Specific({ themes: this.Themes });
 
 						this.Specific.on("tab:removed", function() {
 							// An empty function needs to be passed so the dialog isn't automatically closed

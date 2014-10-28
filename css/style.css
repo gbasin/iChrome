@@ -2288,8 +2288,8 @@ body.guide .toolbar .settings {
 /*---------------------------------------------
 	/ Themes
 */
-.modal.themes + .modal-overlay {
-	z-index: 999998; /* Just under the themes modal but over the settings */
+.modal-overlay.themes {
+	z-index: 999996; /* Just under the themes modal but over the settings */
 }
 
 .modal.themes {
@@ -2298,7 +2298,7 @@ body.guide .toolbar .settings {
 	right: 25px;
 	bottom: 25px;
 	cursor: default;
-	z-index: 999999;
+	z-index: 999997;
 	max-width: 1400px;
 	max-height: 700px;
 }
@@ -2306,7 +2306,13 @@ body.guide .toolbar .settings {
 .modal.themes .content > .title {
 	z-index: 1;
 	position: relative;
+	transition: box-shadow 0s .25s;
 	box-shadow: 0 4px 3px -2px rgba(0, 0, 0, 0.1);
+}
+
+.modal.themes .content.fadeout > .title {
+	transition: box-shadow .2s 0s ease-in-out;
+	box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, 0.1);
 }
 
 .themes .btn {
@@ -2397,7 +2403,7 @@ body.guide .toolbar .settings {
 	display: none;
 }
 
-.themes .container.fadeout {
+.themes .content.fadeout .container {
 	opacity: 0;
 }
 
@@ -2538,6 +2544,14 @@ body.guide .toolbar .settings {
 /*---------------------------------------------
 	/ Themes / Create
 */
+.modal-overlay.themes.create {
+	z-index: 999998;
+}
+
+.modal.themes.create {
+	z-index: 999999;
+}
+
 .themes.create .content .title {
 	box-shadow: none;
 }

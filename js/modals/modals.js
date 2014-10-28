@@ -5,7 +5,7 @@
  * 
  * See modals/updated for a simple usage example.
  */
-define(["backbone"], function(Backbone) {
+define(["jquery", "backbone"], function($, Backbone) {
 	var Modal = Backbone.View.extend({
 		el: '<div class="modal" tabindex="-1"><div class="close"></div><div class="content"></div></div>',
 		overlay: '<div class="modal-overlay" tabindex="-1"></div>',
@@ -23,7 +23,7 @@ define(["backbone"], function(Backbone) {
 			return this.hide();
 		},
 		destroy: function() {
-			this.mo.remove();
+			this.mo.off().remove();
 
 			this.stopListening();
 

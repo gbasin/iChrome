@@ -1,7 +1,7 @@
 /**
  * The tabs view.  This does the actual rendering of data, creaton of columns and widget insertion.
  */
-define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "themes/themes"], function($, _, Backbone, Status, Track, Themes) {
+define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "themes/utils"], function($, _, Backbone, Status, Track, Themes) {
 	var view = Backbone.View.extend({
 		tagName: "div",
 		className: function() {

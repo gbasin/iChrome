@@ -1,162 +1,394 @@
 /**
- * The themes controller.  This manages almost everything related to themes
+ * The themes modal
  */
-define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage) {
-	var Model = Backbone.Model.extend({
-		initialize: function() {
-			Storage.on("done updated", function(storage) {
-				this.set({
-					custom: storage.themes,
-					cached: storage.cached
-				});
-			}, this);
-		}
-	});
+define(
+	["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "themes/model", "themes/utils", "themes/custom", "themes/cacher", "core/templates"],
+	function(_, $, Backbone, Track, Modal, Model, Utils, Custom, Cacher, render) {
+		var modal = new (Modal.extend({
+			classes: "themes",
+		}));
+
+		var View = Backbone.View.extend({
+			el: modal.content,
 
 
-	var themes = {
-		model: new Model(),
-
-		/**
-		 * Gets a theme when given either a theme name or object
-		 *
-		 * @api    public
-		 * @param  {String|Object} theme The theme to retrieve
-		 * @return {Object}        The retrieved theme
-		 */
-		get: function(theme) {
-			var defTheme = {
-				image: "/images/defaulttheme.jpg"
-			};
-
-			if (typeof theme == "object") {
-				theme = (this.model.get("cached")[theme.id] || this.model.get("themes")[theme.id.replace("custom", "")] || defTheme);
-			}
-			else if (theme == "default") {
-				theme = defTheme;
-			}
-			else {
-				theme = (this.model.get("cached")[theme] || this.model.get("themes")[theme.replace("custom", "")] || defTheme);
-			}
-
-			return theme;
-		},
+			/**
+			 * This holds an array of theme images so the scroll handler doesn't
+			 * have to query for them while handling lazy-loading.
+			 *
+			 * @type {Element[]}
+			 */
+			images: [],
 
 
-		/**
-		 * Gets a themes image when given either a theme name or object
-		 *
-		 * @api    public
-		 * @param  {String|Object} theme The theme to retrieve the image for
-		 * @return {String|Boolean}      The retrieved image or false if it could not be determined
-		 */
-		getImage: function(theme) {
-			var image = false;
+			events: {
+				"click .btn.use": "use",
+				"click .btn.edit": "edit",
+				"click .btn.delete": "delete",
+				"click .btn.preview": "preview",
+				"click .nav li[data-id]": "filter",
+				"click .nav li.create .btn": "createTheme"
+			},
 
 
-			if (typeof theme !== "object") {
-				theme = this.get(theme);
-			}
+			/**
+			 * Creates a new custom theme
+			 *
+			 * @api    private
+			 * @param  {Event} e The event
+			 */
+			createTheme: function(e) {
+				this.createModal = new Custom();
+
+				this.createModal.on("save", function() {
+					this.model.updateCustom();
+				}, this).on("preview", function(theme) {
+					this.trigger("preview", theme);
+				}, this);
+			},
 
 
-			if (theme.image) {
-				image = theme.image;
-			}
-			else if (theme.images) {
-				switch (theme.type) {
-					case "random_daily":
-						// Because of the way this is done, all themes will show the same image on different
-						// computers on the same day without any centralization!
-						var rand = Math.sin(new Date().setHours(0, 0, 0, 0)) * 10000;
+			/**
+			 * Edits a custom theme
+			 *
+			 * @api    private
+			 * @param  {Event} e The event
+			 */
+			edit: function(e) {
+				this.editModal = new Custom({ theme: parseInt($(e.currentTarget).closest(".theme").attr("data-id")) });
 
-						image = this.model.get("cached")[theme.images[Math.floor((rand - Math.floor(rand)) * theme.images.length)]].image;
-					break;
-
-					case "sunrise_sunset":
-						if (!this.SunCalc) {
-							/*
-								(c) 2011-2014, Vladimir Agafonkin
-								SunCalc is a JavaScript library for calculating sun/mooon position and light phases.
-								https://github.com/mourner/suncalc
-
-								Modified by Avi Kohn to only include necessary data and functions
-							*/
-							this.SunCalc=function(){var g=Math.PI,a=Math.sin,l=Math.cos,v=Math.asin,w=Math.acos,c=g/180,q=23.4397*c,r=[[-6,"dawn","dusk"],
-							[6,"gHEnd","gH"]];return function(x,y){var n=c*-y,z=c*x,s=Math.round((new Date).valueOf()/864E5-0.5+2440588-2451545-9E-4-n/(2*g)),h=9E-4
-							+(0+n)/(2*g)+s,e=c*(357.5291+0.98560028*h),f;f=c*(1.9148*a(e)+0.02*a(2*e)+3E-4*a(3*e));f=e+f+102.9372*c+g;var t;t=v(a(0)*l(q)+l(0)*a(q)*
-							a(f));var h=2451545+h+0.0053*a(e)-0.0069*a(2*f),p={},k,u,m,b,d;k=0;for(u=r.length;k<u;k+=1)m=r[k],b=z,d=t,b=w((a(m[0]*c)-a(b)*a(d))/(l(b)
-							*l(d))),d=f,b=2451545+(9E-4+(b+n)/(2*g)+s)+0.0053*a(e)-0.0069*a(2*d),d=h-(b-h),p[m[1]]=new Date(864E5*(d+0.5-2440588)),p[m[2]]=new Date(
-							864E5*(b+0.5-2440588));return p}}();
-						}
-
-						var lat = localStorage.lat,
-							lon = localStorage.lon;
-
-						if (lat && lon) {
-							var times = this.SunCalc(lat, lon);
-						}
-						else {
-							// If lat and lon aren't set, default to Chicago. This should be roughly accurate for most users.
-							var times = this.SunCalc(41.85, -87.65);
-
-							// Then attempt to get a location and save, this needs to be here for synced sunrise themes.
-							// It can't be in the background page since it needs permissions from the user.
-							navigator.geolocation.getCurrentPosition(function(pos) {
-								if (pos && pos.coords) {
-									localStorage.lat = parseFloat(pos.coords.latitude.toFixed(2));
-									localStorage.lon = parseFloat(pos.coords.longitude.toFixed(2));
-								}
-							});
-						}
+				this.editModal.on("save", function() {
+					this.model.updateCustom();
+				}, this).on("preview", function(theme) {
+					this.trigger("preview", theme);
+				}, this);
+			},
 
 
-						times = [times.dawn.getTime() - 18E5, times.gHEnd.getTime() + 72E5, times.gH.getTime() - 36E5, times.dusk.getTime()];
-
-
-						var dt = new Date().getTime(),
-							rand = Math.sin(new Date().setHours(0, 0, 0, 0)) * 10000;
-
-
-						// If after sunrise start and before sunrise end
-						if (dt >= times[0] && dt < times[1]) {
-							var sunrise = theme.images.slice(0, theme.groups[0]); // Then slice images at the indicated groups
-
-							image = this.model.get("cached")[sunrise[Math.floor((rand - Math.floor(rand)) * sunrise.length)]].image; // And pick one randomly
-						}
-
-						// If after sunrise end and before sunset start
-						else if (dt >= times[1] && dt < times[2]) {
-							var daytime = theme.images.slice(theme.groups[0], theme.groups[1]);
-
-							image = this.model.get("cached")[daytime[Math.floor((rand - Math.floor(rand)) * daytime.length)]].image;
-						}
-
-						// If after sunset start and before sunset end
-						else if (dt >= times[2] && dt < times[3]) {
-							var sunset = theme.images.slice(theme.groups[1], theme.groups[2]);
-
-							image = this.model.get("cached")[sunset[Math.floor((rand - Math.floor(rand)) * sunset.length)]].image;
-						}
-
-						// Otherwise, it's nighttime
-						else {
-							var nighttime = theme.images.slice(theme.groups[2], theme.groups[3]);
-
-							image = this.model.get("cached")[nighttime[Math.floor((rand - Math.floor(rand)) * nighttime.length)]].image;
-						}
-					break;
-
-					case "random":
-					default:
-						image = this.model.get("cached")[theme.images[Math.floor(Math.random() * theme.images.length)]].image;
-					break;
+			/**
+			 * Deletes a custom theme
+			 *
+			 * @api    private
+			 * @param  {Event} e The event
+			 */
+			delete: function(e) {
+				if (!confirm(
+					"Are you really sure you would like to delete this theme?\r\n" +
+					"This action is irreversible; the entire theme will be permanently lost."
+				)) {
+					return false;
 				}
+
+				var id = parseInt($(e.currentTarget).closest(".theme").attr("data-id"));
+
+				Cacher.Custom.delete(id, function(err) {
+					if (err) {
+						alert("An error occurred while trying to delete the theme. Please try again later");
+					}
+
+					this.model.updateCustom();
+				}.bind(this));
+			},
+
+
+			/**
+			 * Handles the preview click event and parses out the theme image
+			 * to trigger the preview event with
+			 *
+			 * @api    private
+			 * @param  {Event} e
+			 */
+			preview: function(e) {
+				e.preventDefault();
+
+				var index = this.model.get("index"),
+					themes = this.model.get("themes"),
+					custom = Utils.model.get("custom"),
+					cached = Utils.model.get("cached"),
+					parent = $(e.currentTarget).parents(".theme").first(),
+					id = parseInt(parent.attr("data-id") || 0);
+
+				if (parent.hasClass("custom")) {
+					Track.event("Themes", "Preview", "custom" + id);
+					
+					return this.trigger("preview", custom[id], "custom" + id);
+				}
+
+				var theme = _.clone(themes[index[id]]);
+
+				if (!theme) return;
+
+				// If already cached don't load remote
+				if (cached[theme.id]) {
+					theme.image = Utils.getImage(cached[theme.id]);
+				}
+				else {
+					if (theme.images) {
+						theme.image = "http://themes.ichro.me/images/" + theme.images[Math.floor(Math.random() * theme.images.length)] + ".jpg";
+					}
+					else if (theme.oType == "feed") {
+						var specs = parent.find(".specs:first"),
+							oHtml = specs.html();
+
+						specs.html("<span>Please wait, fetching feed...</span>");
+
+						return Cacher.prototype.getFeed(function(theme) {
+							if (theme === false) {
+								specs.html("<span>Something went wrong while trying to fetch the feed, please try again later.</span>");
+
+								setTimeout(function() {
+									specs.html(oHtml);
+								}, 7000);
+							}
+							else {
+								Track.event("Themes", "Preview", theme.id);
+
+								specs.html(oHtml);
+
+								this.trigger("preview", theme);
+							}
+						}.bind(this), theme);
+					}
+					else {
+						theme.image = "http://themes.ichro.me/images/" + theme.id + ".jpg";
+					}
+				}
+
+				Track.event("Themes", "Preview", theme.id);
+
+				this.trigger("preview", theme);
+			},
+
+
+			/**
+			 * Handles the use click event, caches the theme and trigger the
+			 * use event with the newly cached theme
+			 *
+			 * @api    private
+			 * @param  {Event} e
+			 */
+			use: function(e) {
+				e.preventDefault();
+
+				var index = this.model.get("index"),
+					themes = this.model.get("themes"),
+					custom = Utils.model.get("custom"),
+					parent = $(e.currentTarget).parents(".theme").first(),
+					id = parseInt(parent.attr("data-id") || 0);
+
+				if (parent.hasClass("custom")) {
+					Track.event("Themes", "Use", "custom" + id);
+
+					return this.trigger("use", custom[id], "custom" + id);
+				}
+
+				var theme = _.clone(themes[index[id]]);
+
+				if (!theme) return;
+
+
+				var specs = parent.find(".specs:first"),
+					oHtml = specs.html(),
+					config = {
+						events: {
+							progress: function(total, done) {
+								specs.html("<span>Please wait, caching theme...</span><span>" + done + " of " + total + " images cached</span>");
+							},
+							complete: function(theme) {
+								specs.html(oHtml);
+
+								Track.event("Themes", "Use", theme.id);
+
+								this.trigger("use", theme, theme.id);
+							}.bind(this),
+							error: function() {
+								specs.html("<span>An error occurred while trying to cache the theme, please try again later</span>");
+
+								setTimeout(function() {
+									specs.html(oHtml);
+								}, 7000);
+							}
+						}
+					};
+
+
+				if (theme.oType == "sunrise_sunset") {
+					navigator.geolocation.getCurrentPosition(function(pos) {
+						if (pos && pos.coords) {
+							localStorage.lat = parseFloat(pos.coords.latitude.toFixed(2));
+							localStorage.lon = parseFloat(pos.coords.longitude.toFixed(2));
+						}
+
+						// There's no need to store the cacher in a variable since the events are passed on creation
+						new Cacher(theme, config);
+					}.bind(this));
+				}
+				else {
+					new Cacher(theme, config);
+				}
+			},
+
+
+			/**
+			 * Handles nav click events and filters the themes
+			 *
+			 * @api    private
+			 * @param  {Event} e
+			 */
+			filter: function(e) {
+				var elm = $(e.currentTarget),
+					id = elm.attr("data-id"),
+					themes = [];
+
+
+				if (id == "custom") {
+					themes = this.model.get("custom");
+				}
+				else if ((id = parseInt(id)) || id === 0) {
+					themes = this.model.get("themes").filter(function(e) {
+						return e.filterCategories && e.filterCategories.indexOf(id) !== -1;
+					});
+				}
+				else {
+					themes = [].concat(this.model.get("custom"), this.model.get("themes"))
+				}
+
+
+				// This fades the container out and back in so the filtering isn't a sudden jolt
+				var container = this.$el.addClass("fadeout").children(".container");
+
+				setTimeout(function() {
+					container.html(render("themes.listing", {
+						themes: themes
+					})).scrollTop(0).end().removeClass("fadeout");
+
+					this.images = this.$(".theme .push").toArray();
+
+					this.lazyLoad();
+				}.bind(this), 250);
+
+
+				elm.addClass("active").siblings().removeClass("active");
+			},
+
+
+			/**
+			 * Handles thumbnail lazy-loading
+			 *
+			 * @api    private
+			 */
+			lazyLoad: function() {
+				var length = this.images.length;
+
+				// There might not be any images left to lazy-load
+				if (!length) return;
+
+				var coords,
+					innerHeight = window.innerHeight; // Querying innerHeight can get costly in a loop
+
+				this.images = this.images.filter(function(img) {
+					coords = img.getBoundingClientRect();
+
+					if (((coords.top >= 0 && coords.left >= 0 && coords.top) <= innerHeight)) {
+						// This removes the `lazy` class from the image
+						img.className = "push";
+
+						return false;
+					}
+
+					return true;
+				});
+			},
+
+			show: function() {
+				if (!this.fetched) {
+					this.model.fetch();
+
+					this.fetched = true;
+				}
+				else {
+					// Call render to reset the listing
+					this.render();
+				}
+
+				modal.show();
+			},
+
+			initialize: function(options) {
+				this.model = new Model();
+
+				var previewOverlay = this.previewOverlay = $('<div class="preview-overlay"></div>');
+
+				modal.mo.appendTo(document.body).after(this.previewOverlay);
+
+
+				this.on("use", function() {
+					modal.hide();
+				}, this);
+
+				this.on("preview", function(theme) {
+					var css = "",
+						body = $(document.body),
+						image = Utils.getImage(theme);
+					
+					// This is a compressed version of the tabs view getCSS function
+					if (image)					css += "background-image: url(\"" + image + "\");";
+					if (theme.color)			css += "background-color: " + theme.color + ";";
+					if (theme.fixed)			css += "background-attachment: " + theme.fixed + ";";
+					if (theme.repeat)			css += "background-repeat: " + theme.repeat + ";";
+					if (theme.scaling)			css += "background-size: " + theme.scaling + ";";
+					if (theme.position)			css += "background-position: " + theme.position + ";";
+					if (theme["inline-css"])	css += theme["inline-css"];
+
+
+					body.attr("data-style", body.attr("style")).attr("style", css);
+
+					previewOverlay.addClass("visible").one("click", function() {
+						$(".modal.previewHidden, .modal-overlay.previewHidden").removeClass("previewHidden").addClass("visible");
+
+						previewOverlay.removeClass("visible");
+
+						body.attr("style", body.attr("data-style")).attr("data-style", "");
+					});
+
+					$(".modal.visible, .modal-overlay.visible").removeClass("visible").addClass("previewHidden");
+				}, this);
+
+
+				var refresh = function() {
+					this.$el.html(render("themes", {
+						categories: this.model.get("categories")
+					}));
+
+
+					// Unfortunately scroll events don't bubble so this can't be attached in the events hash
+					this.$(".container").on("scroll", _.debounce(this.lazyLoad.bind(this), 100, {
+						// Never wait more than 100ms, which is only 10x a second and easy for
+						// the computer but still snappy to a person
+						maxWait: 100,
+						leading: true
+					}));
+
+
+					this.render();
+				};
+
+				this.model.on("change", refresh, this);
+
+				refresh.call(this);
+			},
+
+			render: function() {
+				var container = this.$(".container").html(render("themes.listing", {
+					themes: [].concat(this.model.get("custom"), this.model.get("themes"))
+				}));
+
+				this.images = this.$(".theme .push").toArray();
+
+				this.lazyLoad();
 			}
+		});
 
-			return image;
-		}
-	};
-
-
-	return themes;
-});
+		return View;
+	}
+);

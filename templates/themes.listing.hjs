@@ -1,6 +1,6 @@
 {{#themes}}
 	<div data-id="{{id}}" class="theme{{#custom}} custom{{/custom}}">
-		<div class="push lazy" style="{{#color}}background-color: {{color}};{{/color}}{{#image}}background-image: url('{{image}}');{{/image}}"></div>
+		<div class="push lazy" style="{{#color}}background-color: {{color}};{{/color}}{{#thumb}}background-image: url('{{thumb}}');{{/thumb}}"></div>
 
 		<div class="caption">
 			{{#name}}

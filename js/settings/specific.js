@@ -63,29 +63,17 @@ define(["backbone", "core/analytics", "storage/storage", "core/templates"], func
 				"click .btn.theme": function(e) {
 					e.preventDefault();
 
-					iChrome.Themes.show(); // DEPENDENCY: Themes
+					this.themes.show();
 
-					iChrome.Themes.elm = e.currentTarget;
-
-					iChrome.Themes.show(function(theme, id) {
-						this.prev("input").val(id || theme.id).end()
+					this.themes.once("use", function(theme, id) {
+						$(e.currentTarget).prev("input").val(id || theme.id).end()
 							.next(".current").text(theme.name || (typeof theme.id == "number" ? "Theme " + theme.id : ""));
-
-						iChrome.Themes.hide();
-					}.bind($(e.currentTarget)), function(theme) {
-						this.attr("data-style", this.attr("style")).attr("style", iChrome.Tabs.getCSS({theme:theme}));
-
-						iChrome.Themes.overlay.addClass("visible").one("click", function() {
-							$(".modal.previewHidden, .modal-overlay.previewHidden").removeClass("previewHidden").addClass("visible");
-
-							this.attr("style", this.attr("data-style")).attr("data-style", "");
-						}.bind(this));
-
-						$(".modal.visible, .modal-overlay.visible").removeClass("visible").addClass("previewHidden");
-					}.bind($(document.body)));
+					}, this);
 				}
 			},
-			initialize: function() {
+			initialize: function(options) {
+				this.themes = options.themes;
+
 				this.model = new Model();
 
 				this.model.on("change", this.render, this).init();
