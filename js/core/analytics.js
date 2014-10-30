@@ -14,8 +14,8 @@ define(function() {
 	ga("set", "checkProtocolTask", function() {}); // Fixes the incompatibility with Chrome extensions: https://code.google.com/p/analytics-issues/issues/detail?id=312#c2
 
 	var track = function() {
-			track.event.call(track, arguments);
-		};
+		track.event.call(track, arguments);
+	};
 
 	track.ga = ga;
 
@@ -88,6 +88,8 @@ define(function() {
 			}
 		};
 	};
+
+	track.pageview();
 
 	return track;
 });
