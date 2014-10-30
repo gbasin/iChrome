@@ -107,13 +107,13 @@ define(["jquery"], function($) {
 
 			var that = this;
 
-			this.sortable = this.elm.off().on("click", ".item .delete", function(e) {
+			this.sortable = this.elm.off(".todo").on("click.todo", ".item .delete", function(e) {
 				$(this).parent().parent().slideUp(function() {
 					$(this).remove();
 
 					that.save.call(that);
 				});
-			}).on("click", ".item .tags div", function(e) {
+			}).on("click.todo", ".item .tags div", function(e) {
 				var color = $(this).attr("data-color");
 
 				if (color == "none") {
@@ -127,19 +127,19 @@ define(["jquery"], function($) {
 				}
 
 				that.save.call(that);
-			}).on("click", ".item .check", function(e) {
+			}).on("click.todo", ".item .check", function(e) {
 				$(this).parent().toggleClass("done");
 
 				that.save.call(that);
-			}).on("keydown", ".item .title", function(e) {
+			}).on("keydown.todo", ".item .title", function(e) {
 				if (e.which == 13) {
 					e.preventDefault();
 
 					that.addItem.call(that, $(this).parent());
 				}
-			}).on("input", ".item .title", function(e) {
+			}).on("input.todo", ".item .title", function(e) {
 				that.save.call(that);
-			}).on("click", ".new", function(e) {
+			}).on("click.todo", ".new", function(e) {
 				that.addItem.call(that);
 			}).find(".list").sortable({
 				handle: ".move",
