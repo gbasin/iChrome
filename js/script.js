@@ -82,9 +82,9 @@ iChrome.deferred = function(refresh) {
 
 	iChrome.Status.log("Store done");
 
-	iChrome.Donate();
+	/*iChrome.Donate();
 
-	/*window.onbeforeunload = function() {
+	window.onbeforeunload = function() {
 		if (iChrome.Storage.timeout !== null) {
 			iChrome.Storage.sync(true);
 		}
@@ -2402,7 +2402,7 @@ iChrome.WhatsNew = function() {
 
 	dialog.addClass("visible");
 };
-*/
+
 
 // Donate
 iChrome.Donate = function() {
@@ -2444,7 +2444,7 @@ iChrome.Donate = function() {
 };
 
 
-/*
+
 	// Updated
 	iChrome.Updated = function() {
 		var modal = this.Updated.modal = new iChrome.Modal({

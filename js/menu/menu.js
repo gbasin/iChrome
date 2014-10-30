@@ -2,8 +2,8 @@
  * This generates the main menu
  */
 define(
-	["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "settings/settings", "core/uservoice", "core/templates"],
-	function(_, $, Backbone, Storage, Defaults, Settings, UserVoice, render) {
+	["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "settings/settings", "modals/donate", "core/uservoice", "core/templates"],
+	function(_, $, Backbone, Storage, Defaults, Settings, Donate, UserVoice, render) {
 		var Model = Backbone.Model.extend({
 				init: function() {
 					Storage.on("done updated", function(storage) {
@@ -37,8 +37,12 @@ define(
 					"click .footer .donate": function(e) {
 						e.preventDefault();
 
-						// DEPENDENCY: Donate
-						iChrome.Donate.modal.show();
+						if (!this.Donate) {
+							this.Donate = new Donate();
+						}
+						else {
+							this.Donate.show();
+						}
 					},
 					"click .footer .support": function(e) {
 						e.preventDefault();
