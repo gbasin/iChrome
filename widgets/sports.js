@@ -731,7 +731,15 @@ define(["jquery"], function($) {
 				}
 				else {
 					games.forEach(function(game, i) {
-						if ((this.config.number && data.games.length >= this.config.number) || (this.config.unavailable == "none" && this.config.teams.length && this.config.teams.indexOf(game.home_id.replace("/", ".")) == -1 && this.config.teams.indexOf(game.away_id.replace("/", ".")) == -1)) {
+						if (
+							(this.config.number && data.games.length >= this.config.number) ||
+							(
+								this.config.unavailable == "none" &&
+								this.config.teams.length &&
+								this.config.teams.indexOf(game.home_id.replace("/", ".").split(".")[1]) == -1 &&
+								this.config.teams.indexOf(game.away_id.replace("/", ".").split(".")[1]) == -1
+							)
+						) {
 							return;
 						}
 
