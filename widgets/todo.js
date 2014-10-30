@@ -61,7 +61,7 @@ define(["jquery"], function($) {
 		save: function() {
 			this.syncData.items = this.sortable.sortable("serialize").get();
 
-			this.utils.saveConfig(this.data);
+			this.utils.saveConfig(this.syncData);
 		},
 		addItem: function(title, after) {
 			if (typeof title !== "string") {
@@ -107,7 +107,7 @@ define(["jquery"], function($) {
 
 			var that = this;
 
-			this.sortable = this.elm.on("click", ".item .delete", function(e) {
+			this.sortable = this.elm.off().on("click", ".item .delete", function(e) {
 				$(this).parent().parent().slideUp(function() {
 					$(this).remove();
 

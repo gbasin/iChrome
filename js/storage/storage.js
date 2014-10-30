@@ -34,8 +34,8 @@ define(
 
 					var js = JSON.stringify(_.pick(storage, "tabs", "settings", "themes", "cached"));
 
-					// Don't sync if the settings haven't changed or are the defaults
-					if (js !== lSync && js !== dString) {
+					// Don't sync if the settings haven't changed or are the defaults unless this is an onbeforeunload or similar sync
+					if (now || (js !== lSync && js !== dString)) {
 						lSync = js;
 
 						sync(storage, now, cb);
@@ -102,6 +102,10 @@ define(
 		// Trigger the done event on done
 		promise.done(function() {
 			promise.trigger("done");
+
+			window.onbeforeunload = function() {
+				storage.sync(true);
+			};
 		});
 
 		// If the promise is resolved and a done event is being attached, trigger it
