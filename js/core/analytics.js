@@ -89,7 +89,11 @@ define(function() {
 		};
 	};
 
+
+	// Track pageview with GA and internal counter
 	track.pageview();
+	
+	localStorage.uses = parseInt(localStorage.uses || 0) + 1;
 
 	return track;
 });

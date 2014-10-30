@@ -65,6 +65,8 @@ define(
 
 						this.$el.prepend(this.MenuButton.el);
 					}
+
+					this.$el.removeClass("unloaded").children(".loading").remove();
 				}, this).init();
 
 

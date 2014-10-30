@@ -12,6 +12,9 @@ define(["jquery"], function($) {
 		desc: "Inserts a simple, editable, note.",
 		settings: [
 			{
+				type: "size"
+			},
+			{
 				type: "select",
 				nicename: "color",
 				label: "Note Color",
@@ -43,7 +46,7 @@ define(["jquery"], function($) {
 				label: "Font Size",
 				min: 8,
 				max: 45
-			},
+			}
 		],
 		config: {
 			fontsize: 14,

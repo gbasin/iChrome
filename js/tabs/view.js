@@ -350,6 +350,59 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "themes
 
 
 		/**
+		 * Initializes widget resizing for grid-based tabs
+		 *
+		 * @api    private
+		 */
+		resizable: function() {
+			var body = $(document.body),
+				serialize = this.serialize.bind(this);
+
+			this.$el.on("mousedown", ".widget > .resize", function(e) {
+				var startX = e.pageX,
+					startY = e.pageY,
+					widget = this.parentNode,
+					startWidth = widget.offsetWidth,
+					startHeight = widget.offsetHeight,
+
+					grid = widget.parentNode,
+					tc = body.children(".tab-container")[0],
+					tcOTop = tc.offsetTop,
+					tcHeight = tc.offsetHeight,
+					gridMax = tcHeight - 50,
+					h;
+
+				_.each(grid.querySelectorAll(".widget"), function(e) {
+					h = e.offsetTop + e.offsetHeight;
+
+					if (h >= gridMax) { gridMax = h; }
+				});
+
+				body.addClass("resizing").on("mousemove.widgetResize", function(e) {
+					e.preventDefault();
+
+					// -1 so it lines up with the insides of the grid squares
+					widget.style.width = ((10 * Math.round((startWidth + (e.pageX - startX)) / 10)) - 1) + "px";
+					widget.style.height = ((10 * Math.round((startHeight + (e.pageY - startY)) / 10)) - 1) + "px";
+
+
+					var max = widget.offsetTop + widget.offsetHeight;
+
+					if (gridMax > max) {
+						max = gridMax;
+					}
+
+					grid.style.height = (max + 50) + "px";
+				}).on("mouseup.widgetResize", function() {
+					body.removeClass("resizing").off("mousemove.widgetResize mouseup.widgetResize");
+
+					serialize(true);
+				});
+			});
+		},
+
+
+		/**
 		 * Overrides Backbone's remove method
 		 *
 		 * @api    private
@@ -430,15 +483,15 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "themes
 				var btm = _(models)
 					.flatten()
 					.pluck("attributes")
-					.pluck("loc") // Get the loc values of all widget
+					.pluck("loc") // Get the loc values of all widgets
 					.compact() // Remove invalid ones
-					.map(function(e) { // Map the values the the height in pixels
+					.map(function(e) { // Convert the values to a height in pixels
 						return (e[0] + e[3]) * 10;
 					})
 					.tap(function(a) { // Add a 0 to the end just in case there are no values
 						a.push(0);
 					})
-					.max() // And finally, get the largest
+					.max() // And finally, get the largest value
 					.valueOf();
 
 				if (btm > max) max = btm;
@@ -446,6 +499,8 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "themes
 				// The -50 and +50 makes sure that the container is either 50px from the bottom of
 				// the last widget or at the bottom of the tab but never past it if it isn't necessary
 				this.$el.find("main.widgets-container").css("height", max + 50);
+
+				this.resizable();
 			}
 
 

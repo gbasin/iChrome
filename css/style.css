@@ -1246,19 +1246,26 @@ body > .widgets-container {
 	z-index: 2;
 }
 
-.medley .widget .resize {
+.widget > .resize {
+	display: none;
+	pointer-events: none;
+}
+
+.medley .widget > .resize {
 	opacity: 0;
 	right: 2px;
 	width: 7px;
 	bottom: 2px;
 	height: 7px;
+	display: block;
 	position: absolute;
 	cursor: nwse-resize;
+	pointer-events: initial;
 	transition: opacity .3s ease-in-out;
 	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAO0lEQVQIW2NkwAHS0tL+M2KTA0nMmjWLEUMSJgHShCKJLIEimZ6e/n/mzJlwxSA+mINNAqSQEd0oZIUA4SYkbYptwU0AAAAASUVORK5CYII=");
 }
 
-.medley .widget:hover .resize {
+.medley .widget:hover > .resize {
 	opacity: 1;
 }
 

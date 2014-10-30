@@ -14,7 +14,7 @@ var iChrome = function(refresh) {
 	else if (localStorage["installed"] == "true") {
 		iChrome.Guide();
 	}
-	else */if (localStorage["whatsNew"] == "true") {
+	else if (localStorage["whatsNew"] == "true") {
 		iChrome.WhatsNew();
 	}
 
@@ -23,22 +23,22 @@ var iChrome = function(refresh) {
 	iChrome.deferredTimeout = setTimeout(function() {
 		$(document.body).removeClass("unloaded");
 
-		iChrome.deferred(refresh);
+		*/iChrome.deferred(refresh);/*
 	}, 200);
 
-	iChrome.Status.log("Page generation done");
+	iChrome.Status.log("Page generation done");*/
 };
 
 iChrome.deferredTimeout = "";
 
 iChrome.deferred = function(refresh) {
-	iChrome.Status.log("Starting deferred generation");
+	/*iChrome.Status.log("Starting deferred generation");
 
-	/*iChrome.Search();
+	iChrome.Search();
 
-	iChrome.Status.log("Search done");*/
+	iChrome.Status.log("Search done");
 
-	/*iChrome.Tabs.draggable();
+	iChrome.Tabs.draggable();
 
 	iChrome.Tabs.Nav.last = iChrome.Tabs.parent.children(".tab").length;
 
@@ -48,11 +48,11 @@ iChrome.deferred = function(refresh) {
 
 	iChrome.Status.log("Tabs done");
 
-	iChrome.initTooltips();*/
+	iChrome.initTooltips();
 
 	iChrome.initResize();
 
-	/*if (iChrome.Storage.settings.ok || iChrome.Storage.settings.voice) {
+	if (iChrome.Storage.settings.ok || iChrome.Storage.settings.voice) {
 		iChrome.Search.Speech();
 
 		iChrome.Status.log("Speech done");
@@ -80,9 +80,9 @@ iChrome.deferred = function(refresh) {
 
 	iChrome.Store();
 
-	iChrome.Status.log("Store done");
+	/*iChrome.Status.log("Store done");
 
-	/*iChrome.Donate();
+	iChrome.Donate();
 
 	window.onbeforeunload = function() {
 		if (iChrome.Storage.timeout !== null) {
@@ -242,10 +242,10 @@ iChrome.deferred = function(refresh) {
 		iChrome.Status.log("Uservoice done");
 	}*/
 };
-
+/*
 iChrome.uid = localStorage.uid || (localStorage.uid = (new Date().getTime()).toString(16) + Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1));
 
-/*
+
 	iChrome.initTooltips = function() {
 		if (!$(document.body).find(".tip-container").length) $(document.body).append('<div class="tip-container" />');
 
@@ -320,7 +320,7 @@ iChrome.uid = localStorage.uid || (localStorage.uid = (new Date().getTime()).toS
 			}, 300);
 		});
 	};
-*/
+
 
 iChrome.initResize = function() {
 	var db = $(document.body);
@@ -368,7 +368,7 @@ iChrome.initResize = function() {
 	});
 };
 
-iChrome.refresh = function(all) {/*
+iChrome.refresh = function(all) {
 	iChrome.Status.log("Refreshing...");
 
 	clearTimeout(iChrome.deferredTimeout);
@@ -413,9 +413,9 @@ iChrome.refresh = function(all) {/*
 		iChrome(true);
 	}
 
-	iChrome.Status.log("Refresh done.");*/
+	iChrome.Status.log("Refresh done.");
 };
-
+*/
 
 // Modals
 iChrome.Modal = function(ops, close) {
@@ -3945,11 +3945,11 @@ iChrome.Widgets.Utils.render = function(data, partials) {
 iChrome.Widgets.Utils.getTemplate = function(name) {
 	return iChrome.Templates.getRaw["widgets." + this.name + (name ? "." + name : "")].replace("{{&gt;", "{{>");
 };
-*/
 
+*/
 // Storage Manager
 iChrome.Storage = {};
-
+/*
 iChrome.Storage.timeout = "";
 
 iChrome.Storage.sync = function(now) {
@@ -4162,7 +4162,7 @@ iChrome.Storage.Defaults = {
 };
 
 
-/*
+
 	// Search
 	iChrome.Search = function() {
 		iChrome.Search.box = $(".search input");
@@ -4566,9 +4566,9 @@ iChrome.Storage.themes = window.iChromeStorage.themes;
 iChrome.Storage.cached = window.iChromeStorage.cached;
 iChrome.Storage.settings = window.iChromeStorage.settings;
 iChrome.Storage.tabsSync = window.iChromeStorage.tabsSync;
-iChrome.Storage.Originals.tabs = window.iChromeStorage.Originals.tabs;
+//iChrome.Storage.Originals.tabs = window.iChromeStorage.Originals.tabs;
 
-document.body.removeChild(document.querySelector("body > .loading"));
+//document.body.removeChild(document.querySelector("body > .loading"));
 
 iChrome();
 

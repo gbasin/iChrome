@@ -56,7 +56,7 @@ define(["jquery", "backbone", "core/status", "core/templates"], function($, Back
 			'<div class="handle"></div>' +
 			(this.widget.settings ? '\r\n<div class="settings">&#xF0AD;</div>' : "") +
 			render("widgets." + this.widget.nicename, data, partials) +
-			(this.widget.medley ? '\r\n<div class="resize"></div>' : "")
+			'\r\n<div class="resize"></div>'
 		);
 
 		this.trigger("render");
