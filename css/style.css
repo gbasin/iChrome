@@ -1535,6 +1535,10 @@ body.resizing .medley {
 	height: calc(100% - 60px);
 }
 
+.widget-settings .form-group.hidden {
+	display: none;
+}
+
 .widget-settings .form-group:last-child {
 	margin-bottom: 0;
 }

@@ -28,9 +28,10 @@ define(
 					"input-text": _.pick(input, "nicename", "label", "value", "help", "placeholder")
 				}));
 			},
-			select: function(input, elm, widget) {
+			select: function(input, elm, widget, form) {
 				var loop = function(options, level) {
-					var nesting = "&nbsp;".repeat(4 * (level || 0));
+					var nesting = "&nbsp;".repeat(4 * (level || 0)),
+						values = (typeof input.value == "object" ? input.value : [input.value]);
 
 					return _.map(options, function(e, key) {
 						if (key == "label") {
@@ -44,7 +45,7 @@ define(
 								label: e,
 								value: key,
 								nesting: nesting,
-								selected: (input.value == key ? "selected" : "")
+								selected: (values.indexOf(key) !== -1 ? "selected" : "")
 							};
 						}
 					});
@@ -79,7 +80,7 @@ define(
 
 						if (widget.config[input.chained]) cb(widget.config[input.chained]);
 
-						elm.parent().on("change", "#widget-" + input.chained, function() {
+						form.on("change", "#widget-" + input.chained, function() {
 							cb($(this).val());
 						});
 					}
@@ -207,47 +208,6 @@ define(
 		};
 
 
-		/**
-		 * This converts the JSON settings specification to an HTML form, since some of
-		 * the inputs might have async functions it needs to create each field and run it's
-		 * handler instead of just rendering the whole thing all at once.
-		 *
-		 * @api    private
-		 * @param  {jQuery} form   The form element to append the fields to
-		 * @param  {Object} widget The widget to generate the form for
-		 */
-		var createForm = function(form, widget) {
-			if (Array.isArray(widget.settings)) {
-				widget.settings.forEach(function(input, i) {
-					// Move to input creation, should be rendered but invisible till size change
-					/*var sizes = input.sizes || ["all"];
-					(sizes.indexOf(widget.config.size) !== -1 || sizes.indexOf("all") !== -1)*/
-
-					if (inputs[input.type]) {
-						// It might be faster to send a detached element to the handler, but
-						// the order might get messed up if it's async
-						var elm = $('<div class="form-group"></div>');
-
-						// This needs to be typeof because the value might be false
-						if (typeof widget.config[input.nicename] !== "undefined") {
-							input.value = widget.config[input.nicename];
-						}
-
-						try {
-							inputs[input.type](input, elm, widget);
-
-							// This being here ensures that sync code run inside the handler can execute on
-							// a detached element and that the order will stay the same for async handlers
-							elm.appendTo(form);
-						}
-						catch (e) {
-							Status.error(e);
-						}
-					}
-				});
-			}
-		};
-
 
 		/**
 		 * If the control key is down, used by number inputs
@@ -259,6 +219,7 @@ define(
 
 		var view = Backbone.View.extend({
 			el: modal.content,
+
 			events: {
 				"click .btn.save": "save",
 				"keydown input, textarea, select": function(e) {
@@ -268,6 +229,11 @@ define(
 				/**
 				 * Input Events
 				 */
+				
+				// Size
+				"change #widget-size": function() {
+					this.trigger("sizeChange", this.$("#widget-size").val());
+				},
 				
 				// List
 				"click .list .tools span": function(e) {
@@ -324,10 +290,14 @@ define(
 					}
 				}
 			},
+
+
 			save: function(e) {
 				if (e && e.preventDefault) {
 					e.preventDefault();
 				}
+
+				this.off("sizeChange");
 
 				var settings = this.$("form").serializeJSON(),
 					sizes = {
@@ -344,6 +314,12 @@ define(
 					this.widget.size = sizes[settings.size];
 					this.widget.utils.size = settings.size;
 				}
+
+
+				// jQuery.serializeJSON() doesn't parse multiple selects correctly
+				this.$("select[multiple]").each(function() {
+					settings[this.name] = $(this).val();
+				});
 
 
 				// This ensures that things like now-empty lists will still be overwritten
@@ -380,7 +356,17 @@ define(
 				// This is assigned so custom properties that widgets add to their config are
 				// preserved (such as woeid and woeloc on the Weather widget)
 				_.assign(this.widget.config, settings);
+
+
+				// This deletes properties that are only for other sizes, such as the team field in
+				// the Sports widget which if present on a variable sized widget would cause an error
+				_.each(this.widget.settings, function(e) {
+					if (e.sizes && e.sizes.indexOf(this.widget.config.size || this.widget.sizes[0].toLowerCase()) == -1) {
+						delete this.widget.config[e.nicename];
+					}
+				}, this);
 				
+
 				if (this.widget.refresh) this.widget.refresh.call(this.widget, true);
 				else this.widget.render.call(this.widget);
 
@@ -388,18 +374,67 @@ define(
 
 				modal.hide();
 			},
+
 			show: function() {
 				this.render();
 
 				modal.show();
 			},
+
 			initialize: function(opts) {
 				this.widget = opts.widget;
 			},
+
+
+			/**
+			 * This converts the JSON settings specification to an HTML form, since some of
+			 * the inputs might have async functions it needs to create each field and run it's
+			 * handler instead of just rendering the whole thing all at once.
+			 *
+			 * @api    private
+			 */
+			createForm: function() {
+				var form = this.$("form");
+
+				if (Array.isArray(this.widget.settings)) {
+					_.each(this.widget.settings, function(input, i) {
+						if (inputs[input.type]) {
+							// It might be faster to send a detached element to the handler, but
+							// the order might get messed up if it's async
+							var elm = $('<div class="form-group"></div>');
+
+							if (input.sizes) {
+								elm.toggleClass("hidden", input.sizes.indexOf(this.widget.config.size || this.widget.sizes[0].toLowerCase()) == -1);
+
+								this.on("sizeChange", function(size) {
+									elm.toggleClass("hidden", input.sizes.indexOf(size) == -1);
+								}, this);
+							}
+
+							// This needs to be typeof because the value might be false
+							if (typeof this.widget.config[input.nicename] !== "undefined") {
+								input.value = this.widget.config[input.nicename];
+							}
+
+							try {
+								inputs[input.type](input, elm, this.widget, form);
+
+								// This being here ensures that sync code run inside the handler can execute on
+								// a detached element and that the order will stay the same for async handlers
+								elm.appendTo(form);
+							}
+							catch (e) {
+								Status.error(e);
+							}
+						}
+					}, this);
+				}
+			},
+
 			render: function() {
 				this.$el.html(render("widget-settings"));
 
-				createForm(this.$("form"), this.widget);
+				this.createForm();
 
 				return this;
 			}

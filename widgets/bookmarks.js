@@ -28,7 +28,7 @@ define(["jquery"], function($) {
 					one: "Single column",
 					two: "Double column"
 				},
-				sizes: "variable"
+				sizes: ["variable"]
 			},
 			{
 				type: "radio",
