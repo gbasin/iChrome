@@ -525,6 +525,18 @@
 	font-weight: bold;
 }
 
+.rss .item:visited .title,
+.news .item:visited .title,
+.reddit .item:visited .title,
+.feedly .item:visited .title,
+
+.rss .item:visited span.nested-link[data-href],
+.news .item:visited span.nested-link[data-href],
+.reddit .item:visited span.nested-link[data-href],
+.feedly .item:visited span.nested-link[data-href] {
+    color: #707070;
+}
+
 .rss .item img,
 .news .item img,
 .reddit .item .img,
