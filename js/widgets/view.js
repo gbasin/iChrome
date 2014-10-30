@@ -156,7 +156,8 @@ define(["jquery", "lodash", "backbone", "core/status", "widgets/widgets", "widge
 
 
 		initialize: function() {
-			// These need to be created here instead of in the constructor since ensureElement gets called in between
+			// These need to be created here instead of in the constructor since
+			// ensureElement gets called in between
 			this.widget.utils = new Utils(this.widget);
 
 			this.widget.utils.elm = this.widget.elm = this.$el;
@@ -168,6 +169,11 @@ define(["jquery", "lodash", "backbone", "core/status", "widgets/widgets", "widge
 			}, this);
 
 			this.$el.data("view", this);
+
+
+			// A direct render needs to be called in case the widget doesn't
+			// render because of an error so that it can still be removed
+			this.widget.utils.render();
 
 
 			this.model.on("change", this.update, this);
