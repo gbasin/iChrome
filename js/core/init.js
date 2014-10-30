@@ -32,6 +32,12 @@ define(
 
 			events: {
 				"click .nested-link[data-href]": function(e) {
+					// If this was an anchor inside a nested link (like the
+					// Twitter widget), then let it pass
+					if ($(e.target).is("a")) {
+						return;
+					}
+
 					e.preventDefault();
 
 					var a = document.createElement("a"),
