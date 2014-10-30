@@ -1,14 +1,14 @@
-window._gaq = window._gaq || [];
+// window._gaq = window._gaq || [];
 
 // Main iChrome init
 var iChrome = function(refresh) {
-	iChrome.Status.log("Starting page generation");
+	/*iChrome.Status.log("Starting page generation");
 
-	/*iChrome.Tabs();*/
+	iChrome.Tabs();
 
 	iChrome.Status.log("Tabs rendered");
 
-	/*if (localStorage["updated"] == "true") {
+	if (localStorage["updated"] == "true") {
 		iChrome.Updated();
 	}
 	else if (localStorage["installed"] == "true") {
@@ -56,15 +56,15 @@ iChrome.deferred = function(refresh) {
 		iChrome.Search.Speech();
 
 		iChrome.Status.log("Speech done");
-	}*/
+	}
 
 	iChrome.Themes();
 
 	iChrome.Status.log("Themes modal done");
 
-	/*iChrome.Settings();
+	iChrome.Settings();
 
-	iChrome.Status.log("Settings done");*/
+	iChrome.Status.log("Settings done");
 
 	iChrome.Widgets.refresh();
 
@@ -74,7 +74,7 @@ iChrome.deferred = function(refresh) {
 
 	iChrome.Status.log("Widget settings done");
 
-	/*iChrome.Tabs.Menu();
+	iChrome.Tabs.Menu();
 
 	iChrome.Status.log("Tabs menu done");*/
 
@@ -95,7 +95,7 @@ iChrome.deferred = function(refresh) {
 		});
 
 		chrome.extension.getBackgroundPage().setReload();
-	};*/
+	};
 
 	$("#donate").off().on("click", function(e) {
 		e.preventDefault();
@@ -103,6 +103,7 @@ iChrome.deferred = function(refresh) {
 		iChrome.Donate.modal.show();
 	});
 
+	
 	var themeOut = null;
 
 	$(document.body).on("mouseenter", ".theme-view", function(e) {
@@ -119,67 +120,67 @@ iChrome.deferred = function(refresh) {
 		themeOut = setTimeout(function() { tStyle.remove(); }, 300);
 	});
 
-	/*
-		$(".toolbar .custom-link").on("click", function(e) {
-			var href = this.getAttribute("href");
+	
+	$(".toolbar .custom-link").on("click", function(e) {
+		var href = this.getAttribute("href");
 
-			if (href.indexOf("chrome") == 0) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
-				e.preventDefault();
-
-				chrome.tabs.getCurrent(function(d) {
-					if (e.which == 2) {
-						chrome.tabs.create({
-							url: href,
-							index: d.index + 1
-						});
-					}
-					else {
-						chrome.tabs.update(d.id, {
-							url: href
-						});
-					}
-				});
-			}
-		});
-
-		var appsLoaded = false;
-
-		$(".apps").on("click", function() {
-			var panel = $(this).find(".panel");
-
-			if (!panel.hasClass("visible")) {
-				if (!appsLoaded) {
-					$(this).find("img[data-src]").each(function(e, i) {
-						this.setAttribute("src", this.getAttribute("data-src"));
-
-						this.setAttribute("data-src", null);
-					});
-
-					appsLoaded = true;
-				}
-
-				var elms = $(this).find("*");
-
-				$(document.body).on("click.apps", function(e) {
-					if (!elms.is(e.target)) {
-						panel.removeClass("visible");
-
-						$(document.body).off("click.apps");
-					}
-				});
-
-				panel.addClass("visible");
-			}
-			else {
-				$(document.body).off("click.apps");
-
-				panel.removeClass("visible");
-			}
-		});
-
-		$(".apps a.icon").on("click", function(e) {
+		if (href.indexOf("chrome") == 0) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
 			e.preventDefault();
-		});
+
+			chrome.tabs.getCurrent(function(d) {
+				if (e.which == 2) {
+					chrome.tabs.create({
+						url: href,
+						index: d.index + 1
+					});
+				}
+				else {
+					chrome.tabs.update(d.id, {
+						url: href
+					});
+				}
+			});
+		}
+	});
+
+	var appsLoaded = false;
+
+	$(".apps").on("click", function() {
+		var panel = $(this).find(".panel");
+
+		if (!panel.hasClass("visible")) {
+			if (!appsLoaded) {
+				$(this).find("img[data-src]").each(function(e, i) {
+					this.setAttribute("src", this.getAttribute("data-src"));
+
+					this.setAttribute("data-src", null);
+				});
+
+				appsLoaded = true;
+			}
+
+			var elms = $(this).find("*");
+
+			$(document.body).on("click.apps", function(e) {
+				if (!elms.is(e.target)) {
+					panel.removeClass("visible");
+
+					$(document.body).off("click.apps");
+				}
+			});
+
+			panel.addClass("visible");
+		}
+		else {
+			$(document.body).off("click.apps");
+
+			panel.removeClass("visible");
+		}
+	});
+
+	$(".apps a.icon").on("click", function(e) {
+		e.preventDefault();
+	});
 	*/
 
 	$(document.body).on("click", ".nested-link[data-href]", function(e) {
@@ -193,7 +194,7 @@ iChrome.deferred = function(refresh) {
 
 		a.click();
 	});
-
+/*
 	iChrome.Status.log("Event handlers done");
 
 	// Init Uservoice and analytics
@@ -239,7 +240,7 @@ iChrome.deferred = function(refresh) {
 		}]);
 
 		iChrome.Status.log("Uservoice done");
-	}
+	}*/
 };
 
 iChrome.uid = localStorage.uid || (localStorage.uid = (new Date().getTime()).toString(16) + Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1));
@@ -976,7 +977,7 @@ iChrome.Modal = function(ops, close) {
 	};
 */
 
-
+/*
 // Themes
 iChrome.Themes = function() {
 	var modal = this.Themes.modal = new iChrome.Modal({
@@ -1159,7 +1160,7 @@ iChrome.Themes.cache = function(theme, cb, parent) {
 		If this is a dynamic theme and all images are cached, skip the fs entirely and just process and return.
 
 		This will run even if the cache check above was true.
-	*/
+	* /
 	if (!ids.length) {
 		if (iChrome.Storage.cached[theme.id] && iChrome.Storage.cached[theme.id].image) {
 			theme.image = iChrome.Storage.cached[theme.id].image;
@@ -1626,7 +1627,7 @@ iChrome.Themes.getImage = function(theme) {
 						https://github.com/mourner/suncalc
 
 						Modified by Avi Kohn to only include necessary data and functions
-					*/
+					* /
 					iChrome.Themes.SunCalc=function(){var g=Math.PI,a=Math.sin,l=Math.cos,v=Math.asin,w=Math.acos,c=g/180,q=23.4397*c,r=[[-6,"dawn","dusk"],
 					[6,"gHEnd","gH"]];return function(x,y){var n=c*-y,z=c*x,s=Math.round((new Date).valueOf()/864E5-0.5+2440588-2451545-9E-4-n/(2*g)),h=9E-4
 					+(0+n)/(2*g)+s,e=c*(357.5291+0.98560028*h),f;f=c*(1.9148*a(e)+0.02*a(2*e)+3E-4*a(3*e));f=e+f+102.9372*c+g;var t;t=v(a(0)*l(q)+l(0)*a(q)*
@@ -2143,7 +2144,7 @@ iChrome.Themes.defaults = {
 	scaling: "cover",
 	repeat: "no-repeat",
 	fixed: "scroll"
-};
+};*/
 
 
 // Store
@@ -2379,7 +2380,7 @@ iChrome.Store.handlers = function() {
 
 		return columns;
 	};
-*/
+
 
 // What's New
 iChrome.WhatsNew = function() {
@@ -2401,7 +2402,7 @@ iChrome.WhatsNew = function() {
 
 	dialog.addClass("visible");
 };
-
+*/
 
 // Donate
 iChrome.Donate = function() {
@@ -2466,7 +2467,7 @@ iChrome.Donate = function() {
 
 		modal.show();
 	};
-*/
+
 
 
 // Tabs
@@ -3764,7 +3765,7 @@ iChrome.Widgets.Settings.inputs = {
 		}
 
 		elm.find("select").change();
-	},*/
+	},* /
 	size: function(input, elm, widget) {
 		var template =
 			'<label for="widget-size">Widget Size</label>' +
@@ -3944,7 +3945,7 @@ iChrome.Widgets.Utils.render = function(data, partials) {
 iChrome.Widgets.Utils.getTemplate = function(name) {
 	return iChrome.Templates.getRaw["widgets." + this.name + (name ? "." + name : "")].replace("{{&gt;", "{{>");
 };
-
+*/
 
 // Storage Manager
 iChrome.Storage = {};
