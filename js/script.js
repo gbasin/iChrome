@@ -181,7 +181,7 @@ iChrome.deferred = function(refresh) {
 	$(".apps a.icon").on("click", function(e) {
 		e.preventDefault();
 	});
-	*/
+	
 
 	$(document.body).on("click", ".nested-link[data-href]", function(e) {
 		e.preventDefault();
@@ -194,7 +194,7 @@ iChrome.deferred = function(refresh) {
 
 		a.click();
 	});
-/*
+
 	iChrome.Status.log("Event handlers done");
 
 	// Init Uservoice and analytics

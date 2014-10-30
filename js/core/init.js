@@ -29,6 +29,22 @@ define(
 
 		var iChrome = Backbone.View.extend({
 			el: "body",
+
+			events: {
+				"click .nested-link[data-href]": function(e) {
+					e.preventDefault();
+
+					var a = document.createElement("a"),
+						elm = $(e.currentTarget);
+
+					a.href = elm.attr("data-href") || "#";
+					a.target = elm.attr("target") || "_blank";
+
+					a.click();
+				}
+			},
+
+
 			initialize: function() {
 				this.model = new Model();
 
