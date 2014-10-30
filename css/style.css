@@ -680,6 +680,39 @@ input[type="radio"]:checked {
 
 
 /*---------------------------------------------
+	/ Toolbar / Responsive Styles
+
+	These let it be responsive down to 320px with very little work, why not?
+*/
+@media (max-width: 1150px) {
+	.toolbar .search {
+		width: 50%;
+	}
+}
+
+@media (max-width: 800px) {
+	/* These are duplicated in the menu so they can be hidden */
+	.toolbar .links {
+		display: none;
+	}
+}
+
+@media (max-width: 500px) {
+	.toolbar .logo {
+		display: none;
+	}
+
+	.toolbar .search {
+		width: calc(100% - 105px);
+	}
+}
+
+
+
+
+
+
+/*---------------------------------------------
 	/ Menu Button
 */
 .menu-toggle .menu-button {
@@ -1143,7 +1176,7 @@ body.dragging .tab-container .tab > .remove {
 */
 .widgets-container {
 	display: flex;
-	flex-direction: row;
+	flex-flow: row wrap;
 	margin: 45px 5% 40px;
 }
 
