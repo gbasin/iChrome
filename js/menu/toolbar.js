@@ -1,7 +1,7 @@
 /**
  * This generates the toolbar and its submodules
  */
-define(["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "search/search", "core/menu", "core/templates"], function(_, $, Backbone, Storage, Defaults, Search, Menu, render) {
+define(["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "search/search", "menu/menu", "core/templates"], function(_, $, Backbone, Storage, Defaults, Search, Menu, render) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {

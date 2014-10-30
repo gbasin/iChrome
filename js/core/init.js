@@ -2,7 +2,7 @@
  * The main iChrome view, this initializes everything.
  */
 define(
-	["lodash", "backbone", "storage/storage", "core/css", "core/tooltips", "core/menu", "core/toolbar", "core/button", "tabs/tabs", "modals/updated", "modals/getting-started", "lib/extends"],
+	["lodash", "backbone", "storage/storage", "core/css", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs", "modals/updated", "modals/getting-started", "lib/extends"],
 	function(_, Backbone, Storage, CSS, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
 		var Model = Backbone.Model.extend({
 			init: function() {
