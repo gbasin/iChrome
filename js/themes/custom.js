@@ -132,26 +132,28 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 					id = (editing ? this.editing : themes.length);
 
 
-				var next = function(theme) {
-						if (editing && themes[this.editing]) {
-							Cacher.prototype.model.storage.themes[this.editing] = theme;
-						}
-						else {
-							Cacher.prototype.model.storage.themes.push(theme);
-						}
+				var next = function(d) {
+					theme = d || theme;
+					
+					if (editing && themes[this.editing]) {
+						Cacher.prototype.model.storage.themes[this.editing] = theme;
+					}
+					else {
+						Cacher.prototype.model.storage.themes.push(theme);
+					}
 
-						Cacher.prototype.model.storage.sync();
+					Cacher.prototype.model.storage.sync();
 
-						Track.event("Themes", (editing ? "Edit" : "Create"), "custom" + id);
+					Track.event("Themes", (editing ? "Edit" : "Create"), "custom" + id);
 
-						this.trigger("save", theme);
+					this.trigger("save", theme);
 
-						if (cb) {
-							cb();
-						}
+					if (cb) {
+						cb();
+					}
 
-						this.destroy();
-					}.bind(this);
+					this.destroy();
+				}.bind(this);
 
 
 				var upload;
