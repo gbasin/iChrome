@@ -8,6 +8,15 @@ define(["lodash", "jquery", "backbone", "storage/storage", "core/templates"], fu
 
 				settings.themename = (this.get("cached")[settings.theme] || this.get("themes")[settings.theme.replace("custom", "")] || {}).name;
 
+				if (typeof settings.toolbar == "boolean") {
+					if (settings.toolbar) {
+						settings.toolbar = "full";
+					}
+					else {
+						settings.toolbar = "button";
+					}
+				}
+
 				return settings;
 			},
 			init: function() {
@@ -43,10 +52,13 @@ define(["lodash", "jquery", "backbone", "storage/storage", "core/templates"], fu
 				this.model.on("change", this.render, this).init();
 			},
 			render: function() {
+				var data = this.model.getRender();
+
 				this.$el
-					.html(render("settings/visual", this.model.getRender()))
+					.html(render("settings/visual", data))
+					.find("#columns").val(this.model.get("settings").columns).end()
 					.find("#alignment").val(this.model.get("settings").alignment).end()
-					.find("#columns").val(this.model.get("settings").columns);
+					.find(".toolbar-style input").filter(function() { return this.value == data.toolbar; }).prop("checked", true);
 
 				return this;
 			}

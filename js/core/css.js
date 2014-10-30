@@ -6,15 +6,15 @@ define(["backbone", "storage/storage", "core/templates"], function(Backbone, Sto
 			defaults: {
 				custom: "",
 				wcolor: "#FFF",
-				animation: true,
-				hcolor: "#F1F1F1"
+				animation: true/*,
+				hcolor: "#F1F1F1"*/
 			},
 			init: function() {
 				Storage.on("done updated", function(storage) {
 					this.set({
 						animation: storage.settings.animation,
 						wcolor: storage.settings.wcolor || "#FFF",
-						hcolor: storage.settings.hcolor || "#F1F1F1",
+						// hcolor: storage.settings.hcolor || "#F1F1F1",
 						custom: storage.settings["custom-css"] || ""
 					});
 				}, this);
@@ -26,7 +26,10 @@ define(["backbone", "storage/storage", "core/templates"], function(Backbone, Sto
 			tagName: "style",
 			className: "customcss",
 			initialize: function() {
-				this.model = new Model().on("change", this.render, this).init();
+				this.model = new Model().on("change", this.render, this);
+
+				// This can't be in the same statement since init might be synchronous
+				this.model.init();
 			},
 			render: function() {
 				this.$el.html(render("css", this.model.toJSON()));

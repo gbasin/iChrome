@@ -6,16 +6,14 @@ define(["jquery"], function($) {
 		var settings = {
 				links: [],
 				ok: false,
-				tabs: false,
 				apps: false,
 				plus: false,
 				voice: false,
 				gmail: false,
-				toolbar: false,
 				animation: false,
 				def: parseInt(storage.settings.def || 1)
 			},
-			booleans = ["ok", "tabs", "apps", "plus", "voice", "gmail", "toolbar", "animation"],
+			booleans = ["ok", "apps", "plus", "voice", "gmail", "animation"],
 			key;
 
 		modal.find(".general form, .visual form, .advanced form").serializeArray().forEach(function(e, i) {
@@ -23,7 +21,7 @@ define(["jquery"], function($) {
 				settings[e.name] = true; // jQuery will only include a boolean value when serializing if it's checked/true
 			}
 			else if (e.name == "custom-css") { // Limit custom CSS and escape HTML and JS links
-				settings["custom-css"] = e.value.replace("</", "<\\/").replace("javascript:", "javascript :").slice(0, 1000);
+				settings["custom-css"] = e.value.replace(/<\//g, "<\\/").replace(/javascript\:/g, "javascript :").slice(0, 1000);
 			}
 			else if (e.value !== "") { // If it's neither just set it
 				settings[e.name] = e.value;

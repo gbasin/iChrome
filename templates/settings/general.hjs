@@ -12,12 +12,22 @@
 		</div>
 
 		<div class="form-group">
-			<label class="control-label col-sm-2" for="logo-url">Logo URL</label>
+			<label class="control-label col-sm-2" for="profile-img">Profile Picture</label>
 
 			<div class="col-sm-9">
-				<span class="info">This is the image shown at the left of the toolbar.  The default is <b>/images/logo.png</b></span>
+				<span class="info">This is the image shown at the right of the toolbar.  It gets auto-populated from your Google profile</span>
 				
-				<input type="text" id="logo-url" name="logo-url" value="{{logo-url}}" />
+				<input type="text" id="profile-img" name="profile" value="{{profile}}" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="first-name">Name</label>
+
+			<div class="col-sm-9">
+				<span class="info">This is used for the Google+ link in the toolbar.  It also gets auto-populated from your Google profile</span>
+				
+				<input type="text" id="first-name" name="name" value="{{name}}" />
 			</div>
 		</div>
 

@@ -3,7 +3,17 @@
 <div class="content">
 	<form class="form-horizontal">
 		<div class="form-group colors">
-			<label class="control-label col-sm-2">Search Results</label>
+			<label class="control-label col-sm-2">Widget Background</label>
+
+			<div class="col-sm-9">
+				<span class="info">Click the swatch to select a color</span>
+
+				<input type="text" class="color" id="wcolor" name="wcolor" value="{{wcolor}}" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label col-sm-2">Search Behavior</label>
 
 			<div class="checkbox col-sm-9">
 				{{#stab}}<label><input type="checkbox" name="stab" checked /> Open search results in a new tab</label>{{/stab}}
@@ -11,25 +21,11 @@
 			</div>
 		</div>
 
-		<div class="form-group colors">
-			<label class="control-label col-sm-2">Colors</label>
-
-			<div class="col-sm-9">
-				<span class="info">Click a swatch to select a color</span>
-
-				<label class="color">Widgets:</label>
-				<input type="text" class="color" id="wcolor" name="wcolor" value="{{wcolor}}" />
-
-				<label class="color">Header Bar:</label>
-				<input type="text" class="color" id="hcolor" name="hcolor" value="{{hcolor}}" />
-			</div>
-		</div>
-
 		<div class="form-group backup">
 			<label class="control-label col-sm-2" for="backup">Backup / Restore</label>
 
 			<div class="col-sm-9">
-				<span class="info"><b>To backup:</b> Click the Backup button and copy what appears in the field below.<br /><b>To restore:</b> Paste the text you saved or copied before and click the Restore button below.</span>
+				<span class="info"><b>To backup:</b> Click the Backup button and copy the text that appears in the field below.<br /><b>To restore:</b> Paste the text you saved or copied before and click the Restore button.</span>
 
 				<button class="btn btn-primary backup">Backup</button> <button class="btn btn-primary restore">Restore</button>
 
@@ -41,7 +37,7 @@
 			<label class="control-label col-sm-2" for="custom-css">Custom CSS</label>
 
 			<div class="col-sm-9">
-				<span class="info">You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN</a>).<br /><br />Since this will be synced, you can only enter a maximum of 1000 characters including whitespace.</span>
+				<span class="info">You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN</a>).<br /><br />Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.</span>
 
 				<textarea id="custom-css" name="custom-css" maxlength="1000">{{custom-css}}</textarea>
 			</div>

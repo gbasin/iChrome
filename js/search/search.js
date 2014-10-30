@@ -14,7 +14,6 @@ define(["backbone", "storage/storage", "core/templates", "search/suggestions", "
 			className: "search",
 			events: {
 				"input input":		"change",
-				"click button":		"submit",
 				"click .speech":	"speech", // Backbone doesn't handle nested methods so this needs to be proxied
 				"keydown input":	"keydown",
 				"focusin input":	function(e) { this.change(e, "focusin"); },

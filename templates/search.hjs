@@ -1,8 +1,5 @@
-<input type="search" autocomplete="off" placeholder="Search..." autofocus="autofocus" />
-
-<button class="btn btn-primary">&#xF002;</button>
+<input type="search" autocomplete="off" placeholder="Enter your terms{{#ok}} or say &quot;OK, Google&quot;{{/ok}}" autofocus="autofocus" />
 
 {{#voice}}<div class="speech"></div>{{/voice}}
-{{#ok}}<div class="ok-google">Say "OK Google"</div>{{/ok}}
 
 <div class="suggestions"></div>

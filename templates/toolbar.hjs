@@ -1,33 +1,31 @@
-{{#tabs}}
-	<div class="tabs-menu">
-		<span class="icon">&#xF0C9;</span>
-
-		<div class="panel">
-			<ul>
-				{{#tabMenu}}<li data-id="{{id}}">{{name}}<span class="move">&#xE693;</span></li>{{/tabMenu}}
-				<li data-id="new">New Tab...</li>
-			</ul>
-		</div>
-	</div>
-{{/tabs}}
-
-<img src="{{logo-url}}" />
+<div class="logo">
+	<img src="{{logo-url}}" />
+</div>
 
 <div class="search"></div>
 
-<div class="actions">
-	{{#links}}
-		<a href="{{link}}" class="custom-link">{{text}}</a>
-	{{/links}}
-
-	{{#plus}}<a href="https://plus.google.com/u/0/">+Me</a>{{/plus}}
+<div class="links">
+	{{#links}}<a href="{{link}}" class="custom-link">{{text}}</a>{{/links}}
+	{{#plus}}<a href="https://plus.google.com/u/0/">+{{name}}</a>{{/plus}}
 	{{#gmail}}<a href="https://mail.google.com/mail/">Gmail</a>{{/gmail}}
+</div>
 
-	{{#apps}}
-		<div class="apps">
-			<a href="http://www.google.com/intl/en/options/" class="icon">&#xF00A;</a>
-			
-			<div class="panel">
+{{#apps}}
+	<div class="apps-toggle">
+		<svg viewBox="0 0 21 21">
+			<path fill="#DD4B38" d="M5,2.5C5,3.875,3.875,5,2.5,5S0,3.875,0,2.5S1.125,0,2.5,0S5,1.125,5,2.5z" />
+			<path fill="#FDBA1D" d="M13,2.5C13,3.875,11.875,5,10.5,5S8,3.875,8,2.5S9.125,0,10.5,0S13,1.125,13,2.5z" />
+			<path fill="#DD4B38" d="M21,2.5C21,3.875,19.875,5,18.5,5S16,3.875,16,2.5S17.125,0,18.5,0S21,1.125,21,2.5z" />
+			<path fill="#FDBA1D" d="M21,10.5c0,1.375-1.125,2.5-2.5,2.5S16,11.875,16,10.5S17.125,8,18.5,8S21,9.125,21,10.5z" />
+			<path fill="#547DBF" d="M21,18.5c0,1.375-1.125,2.5-2.5,2.5S16,19.875,16,18.5s1.125-2.5,2.5-2.5S21,17.125,21,18.5z" />
+			<path fill="#FDBA1D" d="M13,18.5c0,1.375-1.125,2.5-2.5,2.5S8,19.875,8,18.5S9.125,16,10.5,16S13,17.125,13,18.5z" />
+			<path fill="#54A946" d="M5,18.5C5,19.875,3.875,21,2.5,21S0,19.875,0,18.5S1.125,16,2.5,16S5,17.125,5,18.5z" />
+			<path fill="#54A946" d="M5,10.5C5,11.875,3.875,13,2.5,13S0,11.875,0,10.5S1.125,8,2.5,8S5,9.125,5,10.5z" />
+			<path fill="#547DBF" d="M13,10.5c0,1.375-1.125,2.5-2.5,2.5S8,11.875,8,10.5S9.125,8,10.5,8S13,9.125,13,10.5z" />
+		</svg>
+
+		<div class="collapse">
+			<nav class="apps">
 				<div class="items">
 					<a href="https://plus.google.com/">
 						<img data-src="images/icons/plus.png" />
@@ -75,11 +73,14 @@
 					</a>
 				</div>
 
-				<a href="http://www.google.com/intl/en/options/" class="more">More</a></div>
+				<a href="http://www.google.com/intl/en/options/" class="more">More</a>
+			</nav>
 		</div>
-	{{/apps}}
+	</div>
+{{/apps}}
 
-	<div class="icon widgets">&#xF01A;</div>
+<div class="menu-toggle">
+	<div class="img"{{#profile}} style="background-image: url({{profile}})"{{/profile}}></div>
 
-	<div class="icon settings">&#xF0AD;</div>
+	<nav class="menu"></nav>
 </div>

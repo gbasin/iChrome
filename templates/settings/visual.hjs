@@ -49,24 +49,25 @@
 		</div>
 
 		<div class="form-group">
-			<label class="control-label col-sm-2" for="toolbar">Toolbar</label>
+			<label class="control-label col-sm-2" for="logo-url">Logo URL</label>
 
 			<div class="col-sm-9">
-				<span class="info">When enabled, this will hide the toolbar unless you hover over where it would normally be for 0.5 seconds</span>
-
-				{{#toolbar}}<label><input type="checkbox" name="toolbar" checked /> Enable hidden mode</label>{{/toolbar}}
-				{{^toolbar}}<label><input type="checkbox" name="toolbar" /> Enable hidden mode</label>{{/toolbar}}
+				<span class="info">This is the image shown at the left of the toolbar.  The default is <b>/images/logo.svg</b></span>
+				
+				<input type="text" id="logo-url" name="logo-url" value="{{logo-url}}" />
 			</div>
 		</div>
 
-		<div class="form-group">
-			<label class="control-label col-sm-2">Tabs Menu</label>
+		<div class="form-group toolbar-style">
+			<label class="control-label col-sm-2">Toolbar Style</label>
 
 			<div class="col-sm-9">
-				<span class="info">Show or hide the tabs menu shown at the top left of the page</span>
+				<span class="info">This setting controls the toolbar style, it can either appear normally or as an out of the way button</span>
 
-				{{#tabs}}<label><input type="checkbox" name="tabs" checked /> Show the Tabs Menu</label>{{/tabs}}
-				{{^tabs}}<label><input type="checkbox" name="tabs" /> Show the Tabs Menu</label>{{/tabs}}
+				<div class="checkboxes col-sm-9">
+					<label><input type="radio" name="toolbar" value="full" checked/> Normal</label>
+					<label><input type="radio" name="toolbar" value="button" /> Button</label>
+				</div>
 			</div>
 		</div>
 
@@ -74,7 +75,7 @@
 			<label class="control-label col-sm-2" for="animation">Slide-in Animation</label>
 
 			<div class="col-sm-9">
-				<span class="info">Enable or disable the slide-in animation run when you load the page</span>
+				<span class="info">Enable or disable the slide-in animation that runs when you load the page</span>
 
 				{{#animation}}<label><input type="checkbox" name="animation" checked /> Enable the animation</label>{{/animation}}
 				{{^animation}}<label><input type="checkbox" name="animation" /> Enable the animation</label>{{/animation}}
