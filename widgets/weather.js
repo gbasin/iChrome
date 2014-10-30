@@ -332,8 +332,11 @@ define(["jquery"], function($) {
 
 			var that = this;
 
-			this.elm.find(".temp sup a").click(function(e) {
+			this.elm.children(".cond, .temp, .details, .forecast").click(function() {
+				location.href = "https://www.google.com/search?q=weather";
+			}).end().find(".temp sup a").click(function(e) {
 				e.preventDefault();
+				e.stopPropagation();
 
 				that.config.units = (that.config.units == "standard" ? "metric" : "standard");
 

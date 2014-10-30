@@ -288,6 +288,15 @@
 	font-family: Entypo!important;
 }
 
+.weather .cond,
+.weather .temp,
+.weather .details,
+.weather .forecast {
+	cursor: pointer;
+}
+
+
+
 
 
 
