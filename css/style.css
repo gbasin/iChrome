@@ -1116,55 +1116,65 @@ body.dragging .tab-container .tab > .remove {
 }
 
 .tab-nav nav {
-	top: 0;
-	bottom: 0;
+	top: 50%;
+	left: 10px;
 	opacity: 0;
 	z-index: 1;
-	width: 160px;
+	width: 40px;
+	height: 40px;
 	cursor: pointer;
-	font-size: 85px;
-	font-weight: 300;
+	margin-top: -20px;
+	border-radius: 50%;
 	position: absolute;
-	text-align: center;
-	color: rgba(30, 30, 30, .5);
-	transition: all .15s ease-in-out;
-	font-family: Open Sans, sans-serif;
-	background: rgba(255, 255, 255, 0.1);
+	background: #FAFAFA;
+	box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
+	transition: opacity .15s cubic-bezier(0, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, .2, 1);
 }
 
 .tab-container:hover .tab-nav nav {
-	opacity: 1;
+	opacity: .9;
 }
 
-.tab-nav nav:hover, .dragging .tab-nav nav {
-	background: rgba(255, 255, 255, 0.5);
+.tab-nav nav:hover,
+.dragging .tab-nav nav {
+	opacity: 1;
+	background: #FFF;
+	box-shadow: 0 0 6px rgba(0, 0, 0, .16), 0 6px 12px rgba(0, 0, 0, .32);
 }
 
 .dragging .tab-nav nav {
-	opacity: 1;
 	z-index: 999999;
+}
+
+.tab-nav nav:active {
+	box-shadow: 0 0 8px rgba(0, 0, 0, .18), 0 8px 16px rgba(0, 0, 0, .36);
+}
+
+.tab-nav nav:before {
+	color: #444;
+	width: 36px;
+	height: 40px;
+	display: block;
+	cursor: pointer;
+	font-size: 20px;
+	content: "\E6CD";
+	line-height: 40px;
+	text-align: center;
+	font-family: Entypo;
+}
+
+.tab-nav nav.next {
+	left: auto;
+	right: 10px;
+}
+
+.tab-nav nav.next:before {
+	width: 40px;
+	content: "\E6D0";
 }
 
 .dragging .tab-container {
 	z-index: initial;
-}
-
-.tab-nav nav:before {
-	width: 100%;
-	height: 40px;
-	content: "‹";
-	display: block;
-	line-height: 20px;
-	position: absolute;
-	top: calc(50% - 50px);
-}
-
-.tab-nav .next {
-	right: 0;
-}
-
-.tab-nav .next:before {
-	content: "›";
 }
 
 
