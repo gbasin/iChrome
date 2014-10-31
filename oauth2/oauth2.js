@@ -215,9 +215,10 @@ OAuth2.prototype.finishAuth = function() {
     }
 
     // Once we get here, close the current tab and we're good to go.
-    // The following works around bug: crbug.com/84201
-    window.open('', '_self', '');
-    window.close();
+    // Since the tab was created with chrome.tabs it can't be closed using plain JS
+    chrome.tabs.getCurrent(function(tab) {
+      chrome.tabs.remove(tab.id);
+    });
   }
 
   try {
