@@ -10,7 +10,7 @@ define(["jquery", "oauth2"], function($) {
 		interval: 300000,
 		nicename: "calendar",
 		sizes: ["variable"],
-		desc: "Displays upcoming events from one of your Google calendars.",
+		desc: "Displays upcoming events from one or more of your Google calendars.",
 		settings: [
 			{
 				type: "text",
@@ -20,8 +20,9 @@ define(["jquery", "oauth2"], function($) {
 			},
 			{
 				type: "select",
-				nicename: "calendar",
+				multiple: true,
 				label: "Calendar",
+				nicename: "calendars",
 				options: "getCalendars"
 			},
 			{
@@ -36,7 +37,7 @@ define(["jquery", "oauth2"], function($) {
 			title: "My Calendar",
 			size: "variable",
 			events: 5,
-			calendar: false
+			calendars: []
 		},
 		data: {
 			events: [
@@ -138,54 +139,74 @@ define(["jquery", "oauth2"], function($) {
 		refresh: function() {
 			if (!this.oAuth) this.setOAuth();
 
-			if (!this.config.calendar) {
-				return false;
+			if (!this.config.calendars || !this.config.calendars.length) {
+				if (this.config.calendar) {
+					this.config.calendars = [this.config.calendar];
+
+					delete this.config.calendar;
+				}
+				else {
+					return false;
+				}
 			}
 
+
 			this.oAuth.authorize.call(this.oAuth, function() {
-				$.ajax({
-					type: "GET",
-					dataType: "json",
-					data: {
+				var that = this,
+					events = [],
+					token = this.oAuth.getAccessToken(),
+					params = {
 						maxResults: 10,
 						singleEvents: true,
 						orderBy: "startTime",
 						timeZone: -(new Date().getTimezoneOffset() / 60),
 						timeMin: moment().format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
 						fields: "items(description,htmlLink,id,location,start,summary)"
-					},
-					url: "https://www.googleapis.com/calendar/v3/calendars/" + encodeURIComponent(this.config.calendar) + "/events",
-					beforeSend: function(xhr) {
-						xhr.setRequestHeader("Authorization", "OAuth " + this.oAuth.getAccessToken());
-					}.bind(this),
-					success: function(d) {
-						var events = [];
+					};
 
-						if (d && d.items) {
-							d.items.forEach(function(e, i) {
-								var event = {
-									title: e.summary,
-									link: e.htmlLink,
-									date: (e.start.dateTime || e.start.date + " 00:00:00")
-								};
+				var requests = this.config.calendars.map(function(calendar) {
+					return $.ajax({
+						type: "GET",
+						dataType: "json",
+						data: params,
+						url: "https://www.googleapis.com/calendar/v3/calendars/" + encodeURIComponent(calendar) + "/events",
+						beforeSend: function(xhr) {
+							xhr.setRequestHeader("Authorization", "OAuth " + token);
+						},
+						success: function(d) {
+							if (d && d.items) {
+								events = events.concat(d.items.map(function(e, i) {
+									var event = {
+										link: e.htmlLink,
+										title: e.summary,
+										date: new Date(e.start.dateTime || e.start.date + " 00:00:00").getTime()
+									};
 
-								if (e.location) {
-									event.location = e.location;
-								}
+									if (e.location) {
+										event.location = e.location;
+									}
 
-								events.push(event);
-							});
-
-							this.data = {
-								events: events
-							};
-
-							this.render();
-
-							this.utils.saveData(this.data);
+									return event;
+								}));
+							}
 						}
-					}.bind(this)
+					});
 				});
+
+				$.when.apply($, requests).then(function() {
+					events = events.sort(function(a, b) {
+						return a.date - b.date;
+					}).slice(0, 10);
+
+
+					this.data = {
+						events: events
+					};
+
+					this.render();
+
+					this.utils.saveData(this.data);
+				}.bind(this))
 			}.bind(this));
 		},
 		render: function(demo) {
@@ -204,7 +225,7 @@ define(["jquery", "oauth2"], function($) {
 					}
 				}
 				else {
-					e.date = date.calendar().replace("Today at ", "");
+					e.date = date.calendar().replace(" at 12:00 AM", "").replace("Today at ", "");
 				}
 			});
 
