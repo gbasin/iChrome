@@ -195,14 +195,14 @@ define(
 				input.value = _.result(input, "value");
 
 				elm.html(render("widget-settings.inputs", {
-					"input-text": _.pick(input, "nicename", "label", "min", "max", "value", "help", "placeholder")
+					"input-number": _.pick(input, "nicename", "label", "min", "max", "value", "help", "placeholder")
 				}));
 			},
 			time: function(input, elm) {
 				input.value = _.result(input, "value");
 
 				elm.html(render("widget-settings.inputs", {
-					"input-text": _.pick(input, "nicename", "label", "value", "help", "placeholder")
+					"input-time": _.pick(input, "nicename", "label", "value", "help", "placeholder")
 				}));
 			}
 		};
