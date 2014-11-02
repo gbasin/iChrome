@@ -1,4 +1,4 @@
-{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+{{#title}}<a class="header" href="https://www.google.com/calendar">{{title}}</a>{{/title}}
 
 <div class="events{{^title}} no-header{{/title}}">
 	{{#events}}

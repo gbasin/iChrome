@@ -1280,8 +1280,14 @@
 /*---------------------------------------------
 	/ Calendar
 */
-.widget.calendar h2.header {
+.widget.calendar a.header {
+	display: block;
 	margin-bottom: 25px;
+	text-decoration: none;
+}
+
+.calendar a.header:hover {
+	color: #428BCA;
 }
 
 .calendar .events {
