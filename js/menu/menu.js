@@ -2,8 +2,8 @@
  * This generates the main menu
  */
 define(
-	["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "settings/settings", "modals/donate", "core/uservoice", "core/templates"],
-	function(_, $, Backbone, Storage, Defaults, Settings, Donate, UserVoice, render) {
+	["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "search/search", "search/speech", "settings/settings", "widgets/store", "modals/donate", "core/uservoice", "core/templates"],
+	function(_, $, Backbone, Storage, Defaults, Search, Speech, Settings, Store, Donate, UserVoice, render) {
 		var Model = Backbone.Model.extend({
 				init: function() {
 					Storage.on("done updated", function(storage) {
@@ -32,8 +32,14 @@ define(
 
 				events: {
 					"click [data-item]:not(.active)": "effectuate",
-					"click .tabs .add": Settings.createTab.bind(Settings),
 
+					"click .tabs .add": function() {
+						if (!this.Settings) {
+							this.Settings = new Settings();
+						}
+
+						this.Settings.createTab();
+					},
 					"click .footer .donate": function(e) {
 						e.preventDefault();
 
@@ -70,17 +76,22 @@ define(
 
 					switch (elm.attr("data-item")) {
 						case "settings":
+							if (!this.Settings) {
+								this.Settings = new Settings();
+							}
+
 							this.Settings.show();
+							// This delays displaying the modal until after the init JS is done so the animation is smooth
+							requestAnimationFrame(this.Settings.show.bind(this.Settings));
 						break;
 
 						case "widgets":
-							// DEPENDENCY: Store
-							if (iChrome.Store.modal) {
-								iChrome.Store.modal.show();
+							if (!this.Store) {
+								this.Store = new Store();
 							}
-							else {
-								iChrome.Store.render();
-							}
+
+							// See above
+							requestAnimationFrame(this.Store.show.bind(this.Store));
 						break;
 
 						case "view":
@@ -112,7 +123,7 @@ define(
 										setTimeout(function() { tStyle.remove(); }, 300);
 									}
 								});
-							})
+							});
 						break;
 
 						case "link":
@@ -219,10 +230,9 @@ define(
 				initialize: function() {
 					this.model = new Model();
 
-					this.Settings = Settings;
-
-					// init() needs to be called after the listener is attached to prevent a race condition when storage is already loaded.
-					// It also needs to be here instead of attached directly to new Model() otherwise this.model might not be set yet.
+					// init() needs to be called after the listener is attached to prevent a race
+					// condition when storage is already loaded.  It also needs to be here instead
+					// of attached directly to new Model() otherwise this.model might not be set yet.
 					this.model.on("change", this.render, this).init();
 				},
 
@@ -240,6 +250,14 @@ define(
 
 
 				render: function() {
+					// This enables OK Google hotword detection even when there's only a menu and no toolbar
+					if (this.model.get("ok") && !this.Speech) {
+						this.Speech = new Speech();
+
+						// This calls the search submit handler using the Speech model for settings
+						this.Speech.on("result", Search.prototype.submit, this.Speech);
+					}
+
 					this.$el.html(render("menu", this.model.toJSON()));
 
 					return this;

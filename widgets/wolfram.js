@@ -8,6 +8,7 @@ define(["jquery"], function($) {
 		order: 16,
 		name: "Wolfram|Alpha",
 		nicename: "wolfram",
+		desc: "Inserts a small Wolfram|Alpha search box.",
 		sizes: ["small"],
 		config: {
 			size: "small"

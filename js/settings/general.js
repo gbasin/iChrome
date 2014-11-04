@@ -23,7 +23,12 @@ define(["jquery", "backbone", "storage/storage", "modals/getting-started", "core
 				"click .btns .guide": function(e) {
 					e.preventDefault();
 
-					Guide.show();
+					if (!this.Guide) {
+						this.Guide = new Guide();
+					}
+					else {
+						this.Guide.show();
+					}
 				}
 			},
 			initialize: function() {

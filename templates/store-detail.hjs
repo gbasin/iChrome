@@ -17,7 +17,5 @@
 <div class="preview-container">
 	<h4>Preview</h4>
 
-	<div class="preview">
-		{{{widget}}}
-	</div>
+	<div class="preview"></div>
 </div>

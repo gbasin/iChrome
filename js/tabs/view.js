@@ -194,7 +194,14 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "themes
 						maxWidth: item[0].offsetWidth
 					};
 
-					item.before('<section id="originalLoc"></section>').css(css).addClass("dragged").appendTo("body > .widgets-container");
+					var ret = item.triggerHandler("sortabledragstart", arguments);
+
+					if (ret) {
+						item = ret;
+					}
+					else {
+						item.before('<section id="originalLoc"></section>').css(css).addClass("dragged").appendTo("body > .widgets-container");
+					}
 
 					var tc = body.addClass("dragging").children(".tab-container")[0];
 
@@ -291,6 +298,8 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "themes
 						}
 
 						if (item.installing) {
+							Track.event("Widgets", "Install", view.widget.nicename);
+
 							try {
 								if (view.widget.permissions) {
 									chrome.permissions.request({

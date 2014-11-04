@@ -2,8 +2,8 @@
  * The main iChrome view, this initializes everything.
  */
 define(
-	["lodash", "backbone", "storage/storage", "core/css", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs", "modals/updated", "modals/getting-started", "lib/extends"],
-	function(_, Backbone, Storage, CSS, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
+	["lodash", "backbone", "core/status", "core/analytics", "storage/storage", "core/css", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs", "modals/updated", "modals/getting-started", "lib/extends"],
+	function(_, Backbone, Status, Track, Storage, CSS, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
 		var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -91,6 +91,21 @@ define(
 				});
 
 				this.$el.append(this.css.el);
+
+
+				// requestAnimationFrame ensures this runs after everything is done
+				requestAnimationFrame(function() {
+					var totalLoad = new Date().getTime() - performance.timing.responseEnd,
+						time = performance.timing.loadEventEnd - performance.timing.responseEnd;
+
+					Status.log("Window load took " + time + "ms, actual load took " + totalLoad + "ms");
+
+					console.log("Window load took " + time + "ms, actual load took " + totalLoad + "ms");
+
+					Track.ga("send", "timing", "Page", "Onload", time);
+
+					Track.ga("send", "timing", "Page", "Complete", totalLoad);
+				});
 			}
 		});
 

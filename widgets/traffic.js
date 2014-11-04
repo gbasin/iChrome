@@ -1,7 +1,7 @@
 /*
  * The Traffic widget.
  */
-define(["jquery"], function($) {
+define(["jquery", "moment"], function($) {
 	return {
 		id: 9,
 		size: 1,

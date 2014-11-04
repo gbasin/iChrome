@@ -1,7 +1,7 @@
 /*
  * The Stocks widget.
  */
-define(["jquery"], function($) {
+define(["jquery", "moment"], function($) {
 	return {
 		id: 14,
 		size: 2,

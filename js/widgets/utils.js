@@ -1,7 +1,7 @@
 /**
  * This defines a constructor that creates a widget
  */
-define(["jquery", "backbone", "core/status", "core/templates"], function($, Backbone, Status, render) {
+define(["lodash", "jquery", "backbone", "core/status", "core/templates"], function(_, $, Backbone, Status, render) {
 	/**
 	 * Widget utils, this abstracts things like rendering and config saving
 	 *
@@ -71,7 +71,7 @@ define(["jquery", "backbone", "core/status", "core/templates"], function($, Back
 	 * @return {String}        The retrieved template
 	 */
 	Utils.prototype.getTemplate = function(name) {
-		return render.getRaw("widgets." + this.nicename + (name ? "." + name : "")).replace("{{&gt;", "{{>");
+		return (render.getRaw("widgets." + this.widget.nicename + (name ? "." + name : "")) || "").replace("{{&gt;", "{{>");
 	};
 
 

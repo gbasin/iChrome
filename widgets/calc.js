@@ -17,6 +17,7 @@ define(["jquery"], function($) {
 		config: {
 			size: "medium"
 		},
+		desc: "Displays a calculator with support for basic operators.",
 		render: function() {
 			/*
 				This calculator works for the most part, but can't really be expanded.

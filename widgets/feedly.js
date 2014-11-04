@@ -1,7 +1,7 @@
 /*
  * The Feedly widget.
  */
-define(["jquery", "oauth2"], function($) {
+define(["jquery", "moment", "oauth2"], function($) {
 	return {
 		id: 19,
 		size: 6,

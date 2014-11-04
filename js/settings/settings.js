@@ -3,10 +3,10 @@
  */
 define(
 	[
-		"jquery", "backbone", "storage/storage", "core/analytics", "modals/modals", "themes/themes", "settings/general",
+		"lodash", "jquery", "backbone", "storage/storage", "core/analytics", "modals/modals", "themes/themes", "settings/general",
 		"settings/visual", "settings/specific", "settings/advanced", "core/templates", "settings/serialize", "settings/createTab"
 	],
-	function($, Backbone, Storage, Track, Modal, Themes, General, Visual, Specific, Advanced, render, serialize, createTab) {
+	function(_, $, Backbone, Storage, Track, Modal, Themes, General, Visual, Specific, Advanced, render, serialize, createTab) {
 		var Model = Backbone.Model.extend({
 				save: function(d, cb) {
 					if (d.tabs)		this.storage.tabs = d.tabs;
@@ -161,6 +161,6 @@ define(
 				}
 			});
 
-		return new View();
+		return View;
 	}
 );

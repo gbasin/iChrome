@@ -90,7 +90,7 @@ define(["jquery", "lodash", "backbone", "core/status", "widgets/widgets", "widge
 
 			// This needs to be called first so renders happen faster after things change and in
 			// the case that we're offline the widget still renders before attempting to refresh.
-			this.render();
+			this.render(this.preview);
 
 			if (this.widget.refresh) this.widget.refresh.call(this.widget, true);
 		},
@@ -184,14 +184,21 @@ define(["jquery", "lodash", "backbone", "core/status", "widgets/widgets", "widge
 			if (this.widget.interval) {
 				clearInterval(this.interval);
 
-				this.interval = setInterval((this.widget.refresh || this.widget.render).bind(this.widget), this.widget.interval);
+				this.interval = setInterval(function() {
+					if (this.widget.refresh) {
+						this.widget.refresh();
+					}
+					else {
+						this.widget.render(this.preview);
+					}
+				}.bind(this), this.widget.interval);
 			}
 		},
 
 
 		render: function() {
 			try {
-				this.widget.render.call(this.widget);
+				this.widget.render(this.preview);
 			}
 			catch (e) {
 				Status.error("An error occurred while trying to render the " + this.widget.nicename + " widget!");

@@ -1712,7 +1712,7 @@ body.resizing .medley {
 }
 
 .modal > .title,
-.modal .content > .title {
+.modal > .content > .title {
 	font-size: 20px;
 	line-height: 20px;
 	padding: 25px 30px;
@@ -2248,8 +2248,12 @@ body.guide .toolbar .settings {
 	max-height: 700px;
 }
 
-.store > .title,
-.store > .detail > .title {
+.store > .wrapper {
+	height: 100%;
+}
+
+.store > .wrapper > .title,
+.store > .wrapper > .detail > .title {
 	z-index: 9;
 	height: 70px;
 	font-size: 20px;
@@ -2258,7 +2262,7 @@ body.guide .toolbar .settings {
 	font-family: Open Sans, sans-serif;
 }
 
-.store > .title {
+.store > .wrapper > .title {
 	box-shadow: 0 4px 3px -2px rgba(0, 0, 0, .05);
 }
 
@@ -2266,19 +2270,19 @@ body.guide .toolbar .settings {
 	z-index: 999;
 }
 
-.store > .content,
-.store > .title {
+.store > .wrapper > .content,
+.store > .wrapper > .title {
 	position: relative;
 }
 
-.store > .content {
+.store > .wrapper > .content {
 	overflow: auto;
 	padding: 10px 15px;
 	background: #F5F5F5;
 	height: calc(100% - 70px);
 }
 
-.store > .content:before {
+.store > .wrapper > .content:before {
 	top: 0;
 	left: 0;
 	right: 0;
@@ -2289,7 +2293,7 @@ body.guide .toolbar .settings {
 	background: #F5F5F5;
 }
 
-.store > .content .widget {
+.store > .wrapper > .content .widget {
 	margin: 5px;
 	cursor: pointer;
 	overflow: hidden;
@@ -2301,11 +2305,11 @@ body.guide .toolbar .settings {
 	box-shadow: 0 1px 2px rgba(102, 102, 102, 0.1);
 }
 
-.store > .content .widget:hover {
+.store > .wrapper > .content .widget:hover {
 	background: #FCFCFC;
 }
 
-.store > .content .widget img {
+.store > .wrapper > .content .widget img {
 	width: 80px;
 	float: left;
 	height: 80px;
@@ -2315,7 +2319,7 @@ body.guide .toolbar .settings {
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 
-.store > .content .widget h2.title {
+.store > .wrapper > .content .widget h2.title {
 	font-size: 16px;
 	overflow: hidden;
 	line-height: 20px;
@@ -2325,7 +2329,7 @@ body.guide .toolbar .settings {
 	font-family: Open Sans, sans-serif;
 }
 
-.store > .content .widget .desc {
+.store > .wrapper > .content .widget .desc {
 	color: #666;
 	font-size: 12px;
 	overflow: hidden;
@@ -2343,13 +2347,13 @@ body.guide .toolbar .settings {
 	/ Store Detail
 	These ALL need to be direct selectors so they don't interfere with the previews
 */
-.store.detail > .detail {
+.store.detail > .wrapper > .detail {
 	visibility: visible;
 	-webkit-transform: scale(1) translateZ(0);
 	transition: -webkit-transform .3s 0s ease-in-out, visibility 0s 0s linear;
 }
 
-.store > .detail {
+.store > .wrapper > .detail {
 	top: 0;
 	left: 0;
 	right: 0;
@@ -2362,7 +2366,7 @@ body.guide .toolbar .settings {
 	transition: -webkit-transform .3s 0s ease-in-out, visibility 0s .3s linear;
 }
 
-.store > .detail > div > h4 {
+.store > .wrapper > .detail > div > h4 {
 	font-size: 13px;
 	margin-top: 25px;
 	min-height: 16px;
@@ -2372,14 +2376,14 @@ body.guide .toolbar .settings {
 	font-family: Open Sans, sans-serif;
 }
 
-.store > .detail > .desc-container {
+.store > .wrapper > .detail > .desc-container {
 	float: left;
 	margin-left: 25px;
 	width: calc(100% - 550px);
 	height: calc(100% - 85px);
 }
 
-.store > .detail > .desc-container h4 .legend {
+.store > .wrapper > .detail > .desc-container h4 .legend {
 	float: right;
 	font-size: 13px;
 	font-weight: 400;
@@ -2387,7 +2391,7 @@ body.guide .toolbar .settings {
 	text-transform: none;
 }
 
-.store > .detail > .desc-container .handle {
+.store > .wrapper > .detail > .desc-container .handle {
 	background: #FFF;
 	padding: 10px 25px;
 	margin-right: 10px;
@@ -2398,17 +2402,17 @@ body.guide .toolbar .settings {
 	box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1);
 }
 
-.store > .detail > .desc-container .handle:first-of-type {
+.store > .wrapper > .detail > .desc-container .handle:first-of-type {
 	margin-left: 20px;
 }
 
-.store > .detail > .desc-container .handle:hover {
+.store > .wrapper > .detail > .desc-container .handle:hover {
 	opacity: .8;
 	cursor: move;
 	background-color: #FAFAFA;
 }
 
-.store > .detail > .desc-container .desc {
+.store > .wrapper > .detail > .desc-container .desc {
 	overflow: auto;
 	margin-left: 15px;
 	margin-right: 5px;
@@ -2416,20 +2420,20 @@ body.guide .toolbar .settings {
 	height: calc(100% - 155px);
 }
 
-.store > .detail > .preview-container {
+.store > .wrapper > .detail > .preview-container {
 	width: 440px;
 	float: right;
 	margin-right: 25px;
 	height: calc(100% - 85px);
 }
 
-.store > .detail > .preview-container > .preview {
+.store > .wrapper > .detail > .preview-container > .preview {
 	overflow-x: hidden;
 	padding-right: 15px;
 	height: calc(100% - 55px);
 }
 
-.store > .detail > .preview-container > .preview > .widget {
+.store > .wrapper > .detail > .preview-container > .preview > .widget {
 	width: 410px;
 	padding: 15px;
 	font-size: 14px;
@@ -2441,7 +2445,7 @@ body.guide .toolbar .settings {
 	box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1);
 }
 
-.store > .detail > .preview-container > .preview > .widget.tiny {
+.store > .wrapper > .detail > .preview-container > .preview > .widget.tiny {
 	width: 210px;
 }
 

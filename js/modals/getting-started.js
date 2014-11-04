@@ -121,9 +121,7 @@ define(
 				initialize: function() {
 					modal.mo.appendTo(document.body);
 
-					if (installed) {
-						this.show();
-					}
+					this.show();
 				},
 				render: function() {
 					var widgets = [],
@@ -159,6 +157,10 @@ define(
 				}
 			});
 
-		return new View();
+		if (installed) {
+			new View();
+		}
+
+		return View;
 	}
 );

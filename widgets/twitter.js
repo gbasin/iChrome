@@ -1,7 +1,7 @@
 /*
  * The Twitter widget.
  */
-define(["jquery"], function($) {
+define(["jquery", "moment"], function($) {
 	return {
 		id: 26,
 		size: 1,

@@ -1,7 +1,7 @@
 /*
  * The Clock widget.
  */
-define(["jquery"], function($) {
+define(["jquery", "moment"], function($) {
 	return {
 		id: 2,
 		size: 2,
