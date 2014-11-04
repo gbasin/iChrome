@@ -1,7 +1,7 @@
 /*
  * The Reddit widget.
  */
-define(["jquery", "moment"], function($) {
+define(["jquery", "moment"], function($, moment) {
 	return {
 		id: 18,
 		size: 6,

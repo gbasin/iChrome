@@ -1,7 +1,7 @@
 /*
  * The Drive widget.
  */
-define(["jquery", "moment", "oauth2"], function($) {
+define(["jquery", "moment", "oauth2"], function($, moment) {
 	return {
 		id: 27,
 		size: 1,

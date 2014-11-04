@@ -1,7 +1,7 @@
 /*
  * The Sports widget.
  */
-define(["jquery", "moment"], function($) {
+define(["jquery", "moment"], function($, moment) {
 	return {
 		id: 15,
 		size: 5,

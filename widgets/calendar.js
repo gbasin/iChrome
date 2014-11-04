@@ -1,7 +1,7 @@
 /*
  * The Calendar widget.
  */
-define(["jquery", "moment", "oauth2"], function($) {
+define(["jquery", "moment", "oauth2"], function($, moment) {
 	return {
 		id: 10,
 		size: 1,
