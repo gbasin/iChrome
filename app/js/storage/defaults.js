@@ -46,6 +46,7 @@ define(function() {
 			stab: false,
 			voice: true,
 			gmail: true,
+			editing: true,
 			wcolor: "#FFF",
 			toolbar: "full",
 			animation: true,

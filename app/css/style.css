@@ -815,6 +815,17 @@ input[type="radio"]:checked {
 	vertical-align: text-bottom;
 }
 
+.menu [data-item] .state {
+	float: right;
+	font-size: 12px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.menu [data-item] .state.enabled {
+	color: #4DC830;
+}
+
 .menu .separator {
 	margin: 8px 0;
 	border-top: 1px solid #E5E5E5;
@@ -1388,6 +1399,11 @@ body.resizing .medley {
 .widget-preview .widget .settings:hover,
 .widgets-container .widget .settings:hover {
 	color: #428BCA;
+}
+
+body.no-edit .widgets-container .widget .handle,
+body.no-edit .widgets-container .widget .settings {
+	display: none;
 }
 
 

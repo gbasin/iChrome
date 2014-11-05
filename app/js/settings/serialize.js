@@ -11,6 +11,7 @@ define(["jquery"], function($) {
 				voice: false,
 				gmail: false,
 				animation: false,
+				editing: storage.settings.editing,
 				def: parseInt(storage.settings.def || 1)
 			},
 			booleans = ["ok", "apps", "plus", "voice", "gmail", "animation"],

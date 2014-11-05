@@ -25,6 +25,17 @@
 	Show Background
 </div>
 
+<div data-item="editmode">
+	<svg viewBox="0 0 18 18">
+		<path fill="#666" d="M0,14.25V18h3.75L14.813,6.936l-3.75-3.75L0,14.25z M17.706,4.042c0.393-0.39,0.393-1.022,0-1.414l-2.335-2.336c-0.393-0.391-1.025-0.391-1.414,0l-1.832,1.833l3.749,3.75L17.706,4.042z" />
+	</svg>
+
+	Editing
+
+	{{#editing}}<span class="state enabled">Enabled</span>{{/editing}}
+	{{^editing}}<span class="state">Disabled</span>{{/editing}}
+</div>
+
 <hr class="separator" />
 
 {{#links}}<a data-item="link" href="{{link}}" class="custom-link">{{text}}</a>{{/links}}

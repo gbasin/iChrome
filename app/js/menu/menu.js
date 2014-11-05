@@ -126,6 +126,27 @@ define(
 							});
 						break;
 
+						case "editmode":
+							e.stopPropagation();
+
+							var state = elm.find(".state");
+
+							if (state.hasClass("enabled")) {
+								state.removeClass("enabled").text("Disabled");
+
+								this.model.storage.settings.editing = false;
+							}
+							else {
+								state.addClass("enabled").text("Enabled");
+
+								this.model.storage.settings.editing = true;
+							}
+
+							$(document.body).toggleClass("no-edit", !this.model.storage.settings.editing);
+
+							this.model.storage.sync();
+						break;
+
 						case "link":
 							if (elm.hasClass("custom") && elm.attr("href").indexOf("chrome") == 0) {
 								e.preventDefault();

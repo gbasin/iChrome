@@ -19,7 +19,8 @@ define(
 					}
 
 					this.set({
-						toolbar: toolbar
+						toolbar: toolbar,
+						editing: storage.settings.editing
 					});
 				}, this);
 
@@ -56,7 +57,7 @@ define(
 
 				// This only fires on change otherwise users with the
 				// button might see a FOUT (Flash Of Unchosen Toolbar)
-				this.model.on("change", function() {
+				this.model.on("change:toolbar", function() {
 					if (this.model.get("toolbar") == "full") {
 						if (!this.Toolbar) this.Toolbar = new Toolbar();
 
@@ -73,6 +74,8 @@ define(
 					}
 
 					this.$el.removeClass("unloaded").children(".loading").remove();
+				}, this).on("change:editing", function() {
+					this.$el.toggleClass("no-edit", !this.model.get("editing"));
 				}, this).init();
 
 
