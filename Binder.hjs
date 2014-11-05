@@ -5,6 +5,6 @@
 define(["hogan"], function(Hogan) {
 	return {
 		raw: { {{{exposeTemplates}}} }, /* Raw templates will be inlined here */
-		compiled: { {{#templates}}"{{name}}": new Hogan.Template({{{template}}}), {{/templates}} } /* And precompiled ones here */
+		compiled: { {{#templates}}"{{name}}": new Hogan.Template({{{template}}}){{comma}}{{/templates}} } /* And precompiled ones here */
 	};
 });

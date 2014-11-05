@@ -79,9 +79,32 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// Replace the analytics ID with the production one
+		"string-replace": {
+			analytics: {
+				src: "build/js/core/analytics.js",
+				dest: "build/js/core/analytics.js",
+				options: {
+					replacements: [{
+						pattern: "UA-41131844-4",
+						replacement: "UA-41131844-2"
+					}]
+				}
+			}
+		},
+
 		// Compile JS
 		requirejs: {
-			compile: {
+			build: {
+				options: {
+					name: "app",
+					optimize: "none",
+					baseUrl: "build/js/",
+					out: "build/js/app.js",
+					mainConfigFile: "build/js/app.js"
+				}
+			},
+			webstore: {
 				options: {
 					name: "app",
 					baseUrl: "build/js/",
@@ -115,6 +138,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-hogan");
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-clean");
+	grunt.loadNpmTasks("grunt-string-replace");
 	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-contrib-compress");
 	grunt.loadNpmTasks("grunt-contrib-requirejs");
@@ -133,7 +157,7 @@ module.exports = function(grunt) {
 		grunt.file.write("build/manifest.json", JSON.stringify(manifest, true, "\t"));
 	});
 
-	grunt.registerTask("default", ["copy", "concat", "hogan:compilebinder", "hogan:compile", "requirejs", "clean:all"]);
+	grunt.registerTask("default", ["copy", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "requirejs:build", "clean:all"]);
 
-	grunt.registerTask("webstore", ["default", "removekey", "compress", "clean:webstore"]);
+	grunt.registerTask("webstore", ["copy", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "removekey", "requirejs:webstore", "compress", "clean"]);
 };

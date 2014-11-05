@@ -21,6 +21,7 @@
     "grunt-contrib-copy": "^0.7.0",
     "grunt-contrib-requirejs": "^0.4.4",
     "grunt-hogan": "^0.3.0",
+    "grunt-string-replace": "^1.0.0",
     "hogan.js": "^3.0.2"
   }
 }

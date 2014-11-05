@@ -8,7 +8,8 @@ define(["hogan", "core/status", "core/templates.load"], function(Hogan, Status, 
 	var render = function(template, data, partials) {
 		var compiled = cache[template];
 
-		if (!compiled) {
+		// Partials don't work with precompiled templates
+		if (!compiled || partials) {
 			if (raw[template]) {
 				try {
 					compiled = cache[template] = Hogan.compile(raw[template]);
