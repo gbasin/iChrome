@@ -1,7 +1,7 @@
 /*
  * The Bookmarks widget.
  */
-define(["jquery"], function($) {
+define(["jquery", "modals/modals"], function($, Modal) {
 	return {
 		id: 16,
 		size: 2,
@@ -149,22 +149,26 @@ define(["jquery"], function($) {
 				\
 				<button class="btn btn-primary">Save</button>';
 
-			this.modal = new iChrome.Modal({
+			this.modal = new (Modal.extend({
 				width: 400,
 				height: 290,
-				html: modalHTML,
-				classes: "bookmarks-modal"
-			}, function() {
-				this.adding = false;
+				classes: "bookmarks-modal",
+				close: function() {
+					this.adding = false;
 
-				this.modal.hide();
-			}.bind(this));
+					this.modal.hide();
+				}.bind(this)
+			}));
+
+			this.modal.mo.appendTo(document.body);
+
+			this.modal.content.html(modalHTML);
 
 			this.modal.save = function() {};
 
-			this.modal.title = this.modal.elm.find("#bookmark-title");
-			this.modal.url = this.modal.elm.find("#bookmark-url");
-			this.modal.btn = this.modal.elm.find(".btn").click(function(e) {
+			this.modal.title = this.modal.$("#bookmark-title");
+			this.modal.url = this.modal.$("#bookmark-url");
+			this.modal.btn = this.modal.$(".btn").click(function(e) {
 				this.modal.save(e);
 			}.bind(this));
 
