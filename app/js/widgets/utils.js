@@ -75,5 +75,21 @@ define(["lodash", "jquery", "backbone", "core/status", "core/templates"], functi
 	};
 
 
+	/**
+	 * Renders a widget's template
+	 *
+	 * @api    public
+	 * @param  {String} name        The template to render
+	 * @param  {Object} [data={}]   The data to render with
+	 * @param  {Object} [partials]  Any partials to be included
+	 * @return {String}             The rendered template
+	 */
+	Utils.prototype.renderTemplate = function(name, data, partials) {
+		data = $.extend({}, data || {});
+
+		return render(("widgets." + this.widget.nicename + (name ? "." + name : "")) || "", data, partials);
+	};
+
+
 	return Utils;
 });

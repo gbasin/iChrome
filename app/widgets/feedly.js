@@ -765,11 +765,11 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 									}
 								});
 
-								columns.first().append(iChrome.render("widgets.feedly.articles", {
+								columns.first().append(this.utils.renderTemplate("articles", {
 									articles: column1
 								}));
 
-								columns.last().append(iChrome.render("widgets.feedly.articles", {
+								columns.last().append(this.utils.renderTemplate("articles", {
 									articles: column2
 								}));
 							}
@@ -778,7 +778,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 									e.age = moment(e.date).fromNow(true).replace("hour", "hr").replace("minute", "min").replace("an ", "1 ").replace("a ", "1 ").replace("a few ", "");
 								});
 
-								$(this).append(iChrome.render("widgets.feedly.articles", {
+								$(this).append(this.utils.renderTemplate("articles", {
 									articles: articles
 								}));
 							}
@@ -827,11 +827,11 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 					}
 				});
 
-				data.articles = iChrome.render("widgets.feedly.articles", {
+				data.articles = this.utils.renderTemplate("articles", {
 					articles: articles
 				});
 
-				data.column2 = iChrome.render("widgets.feedly.articles", {
+				data.column2 = this.utils.renderTemplate("articles", {
 					articles: column2
 				});
 			}
@@ -840,7 +840,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 					e.age = moment(e.date).fromNow(true).replace("hour", "hr").replace("minute", "min").replace("an ", "1 ").replace("a ", "1 ").replace("a few ", "");
 				});
 
-				data.articles = iChrome.render("widgets.feedly.articles", {
+				data.articles = this.utils.renderTemplate("articles", {
 					articles: data.articles
 				});
 			}

@@ -92,7 +92,7 @@ define(["jquery", "lodash", "backbone", "core/status", "widgets/widgets", "widge
 			// the case that we're offline the widget still renders before attempting to refresh.
 			this.render(this.preview);
 
-			if (this.widget.refresh) this.widget.refresh.call(this.widget, true);
+			if (this.widget.refresh && !this.preview) this.widget.refresh.call(this.widget, true);
 		},
 
 
@@ -134,6 +134,8 @@ define(["jquery", "lodash", "backbone", "core/status", "widgets/widgets", "widge
 		 * @param  {Object} options The options for the view, these must include a model
 		 */
 		constructor: function(options) {
+			if (options.preview) this.preview = true;
+			
 			var model = options.model;
 
 			var d = model.attributes,
@@ -185,7 +187,7 @@ define(["jquery", "lodash", "backbone", "core/status", "widgets/widgets", "widge
 				clearInterval(this.interval);
 
 				this.interval = setInterval(function() {
-					if (this.widget.refresh) {
+					if (this.widget.refresh && !this.preview) {
 						this.widget.refresh();
 					}
 					else {
