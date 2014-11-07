@@ -85,6 +85,26 @@ define(["jquery", "oauth2"], function($) {
 		},
 		setOAuth: function() {
 			var keys = [ /* !! Remove keys before committing */
+					["1092601450132-elm3qva7di0gi13jvfr4dokp6lst9rcm.apps.googleusercontent.com", "jsE5F1qSqm4CCxpqlMAMJB8r"],
+					["475386506072-d09fbkq2ggibju8dm0os2dpjt6mlmvgr.apps.googleusercontent.com", "xLZp4O6r7GPK-Q44l6AFI3WB"],
+					["905766585722-eup1m0vja23fmr7gkr9bbfo5vrl2l62f.apps.googleusercontent.com", "LV-cjNecQrz0POXh1PLLBZfl"],
+					["297119829873-mb1l6a6cd9g4srrf2kgfjpl3ngvfps6o.apps.googleusercontent.com", "xgHxL894nX-CotYQM6Himp8T"],
+					["61552638141.apps.googleusercontent.com", "tWQxTe1hdRQklrDbhYdC8WiZ"],
+					["564901828000-mcur4bngbbl7ocj7gsr19e2cadd9bs8v.apps.googleusercontent.com", "_2ckjNrRni_bzOZ2S5GsPnrr"],
+					["568348197812-o4p7qoaf10fu849tagidncv0sokridus.apps.googleusercontent.com", "GByCaNN5jOSFh-OgqckxrPpo"],
+					["504688753719-ijc8cb8qtpg566v51smqer9ga0q16opd.apps.googleusercontent.com", "47gm3KkJp16caJDsXvhsCtzu"],
+					["288563396275-33pieggp736m90889r2ufa8f10ac6l36.apps.googleusercontent.com", "K6iKdHm0ZUqVXqqTJGXZcmQI"],
+					["182058966659-60ujcv0310u9ndgvenvmp3ru4b1jq3qp.apps.googleusercontent.com", "J5W1T5VVdKfsBlOLrbjNRqHn"],
+					["827243658242-36fidshv417d4ntaobqqvk4i2ut9imel.apps.googleusercontent.com", "jWj4As7ZsBFWguIElmLk23D5"],
+					["565933460066-li1i03v3afucv3476mtlp84h35u5j2hq.apps.googleusercontent.com", "SKROXpWx0LbtYewnryUCE6i-"],
+					["960034567410-gdr70kb9gggbbvlpv2ej7q81952q9nkr.apps.googleusercontent.com", "HWnWiZq-FfW2K0JjxPeditTL"],
+					["125384267513-v1gpelluifnb5iqp48s39jgame61539a.apps.googleusercontent.com", "B4aEUEdSPwebDMYwMCGYEiVt"],
+					["395311390958-6rddshfv97tkt9r11fvcidr51b44vo2q.apps.googleusercontent.com", "ruKNRqDf3h7R1XSMrFy-JcoS"],
+					["97471935904-0lbpfjujqk9qq0fgkv9flm28u13lbek1.apps.googleusercontent.com", "p39G7BnRrIl_ICClwbVRZbqj"],
+					["134474773808-p13i3uvca6d48go3b5glhotlmpnuiee4.apps.googleusercontent.com", "Wp_9ZrfcdC3pNd7z5zFzwhVm"],
+					["578831884662-5l9kintvanlqm8hnj0omkr2b3obav3pg.apps.googleusercontent.com", "BWtCl-9WUr3ZYkNt-VvMIvRZ"],
+					["757729443264-8l5120ej7h7hr8g0u45m3a5trf61a3tb.apps.googleusercontent.com", "oXX9RB5If0pTuMoOPJnqfrGb"],
+					["318821747372-eia0n4v9itjdeo75r1vngkm6oeb89rrm.apps.googleusercontent.com", "yWjW54cvvoFTfSsWP3uh3Pm2"]
 				],
 				ls = localStorage.oauth2_now,
 				key;
@@ -233,10 +253,10 @@ define(["jquery", "oauth2"], function($) {
 			this.elm.off("click.now", ".dismiss, a.card").on("click.now", ".dismiss, a.card", function(e) {
 				var elm = $(this);
 
+				e.stopImmediatePropagation();
+
 				if (elm.hasClass("dismiss")) {
 					elm = elm.parent();
-
-					e.stopPropagation();
 
 					e.preventDefault();
 				}
@@ -253,7 +273,7 @@ define(["jquery", "oauth2"], function($) {
 							xhr.setRequestHeader("Authorization", "OAuth " + this.oAuth.getAccessToken());
 						}.bind(this),
 						success: function(d) {
-							delete this.data.cards[elm.attr("data-index")];
+							this.data.cards.splice(this.data.cards.indexOf(card), 1);
 						
 							if (elm.hasClass("btns")) {
 								elm.next(".buttons").remove().end().remove();

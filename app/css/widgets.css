@@ -2288,6 +2288,7 @@
 
 .now .card h2 {
 	font-size: 14px;
+	font-weight: 400;
 	overflow: hidden;
 	margin-top: 10px;
 	max-height: 40px;
