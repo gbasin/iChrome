@@ -786,7 +786,7 @@ var refreshFeeds = function() {
 			for (key in cached) {
 				var theme = cached[key];
 
-				if (theme.type == "feed" && ((theme.lastFetched && theme.lastFetched <= start) || !theme.lastFetched)) {
+				if (theme.type == "feed" || (theme.oType && theme.oType == "feed") && ((theme.lastFetched && theme.lastFetched <= start) || !theme.lastFetched)) {
 					active++;
 
 					console.log("Updating cached theme " + key + ", last fetched on " + new Date(theme.lastFetched));
@@ -806,37 +806,9 @@ var refreshFeeds = function() {
 	});
 };
 
-var feedInterval = setInterval(refreshFeeds, 216E5);
+var feedInterval = setInterval(refreshFeeds, 18E5);
 
 refreshFeeds();
-
-
-
-
-
-// Settings migration
-if (chrome.app.getDetails().id == "oghkljobbhapacbahlneolfclkniiami") {
-	chrome.runtime.onMessageExternal.addListener(function(msg, sender, res) {
-		if (sender.id == "iccjgbbjckehppnpajnmplcccjcgbdep") {
-			chrome.storage.sync.get(function(d) {
-				var migrate = {
-						lastChanged: "just-migrated"
-					},
-					key;
-
-				for (key in d) {
-					if (key == "themes" || key == "settings" || key == "lastChanged" || key.indexOf("tabs") == 0) {
-						migrate[key] = d[key];
-					}
-				}
-
-				res(migrate);
-			});
-
-			return true;
-		}
-	});
-}
 
 
 
