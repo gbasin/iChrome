@@ -26,8 +26,17 @@ define(["jquery"], function($) {
 				nicename: "units",
 				label: "Units",
 				options: {
-					standard: "Standard",
-					metric: "Metric"
+					standard: "Fahrenheit",
+					metric: "Celsius"
+				}
+			},
+			{
+				type: "radio",
+				nicename: "wind",
+				label: "Wind Speed Units",
+				options: {
+					mph: "Miles",
+					kph: "Kilometers"
 				}
 			}
 		],
@@ -35,6 +44,7 @@ define(["jquery"], function($) {
 			size: "medium",
 			location: ["San Francisco, CA"],
 			units: "standard",
+			wind: "mph",
 			woeid: ["2487956"],
 			woeloc: ["San Francisco, CA"]
 		},
@@ -298,7 +308,6 @@ define(["jquery"], function($) {
 				if (this.config.units == "metric") {
 					loc.metric = true;
 					loc.temp = Math.round(((loc.temp - 32) * 5) / 9);
-					loc.wind = Math.round(loc.wind * 1.609344) + " kph";
 					loc.chill = Math.round(((loc.chill - 32) * 5) / 9);
 
 					loc.forecast.forEach(function(e, i) {
@@ -307,6 +316,10 @@ define(["jquery"], function($) {
 
 						loc.forecast[i] = e;
 					});
+				}
+
+				if (this.config.wind == "kph") {
+					loc.wind = Math.round(loc.wind * 1.609344) + " kph";
 				}
 				else {
 					loc.wind += " mph";
