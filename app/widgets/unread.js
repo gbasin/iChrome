@@ -28,12 +28,22 @@ define(["jquery"], function($) {
 				label: "Label",
 				help: "This is the label that's shown under the unread message count where <b>%m</b> is either <b>message</b> or <b>messages</b>.",
 				placeholder: "unread %m"
+			},
+			{
+				type: "radio",
+				nicename: "open",
+				label: "When clicked open",
+				options: {
+					inbox: "Inbox",
+					gmail: "Gmail"
+				}
 			}
 		],
 		config: {
 			size: "tiny",
 			user: "0",
-			label: "unread %m"
+			label: "unread %m",
+			open: "gmail"
 		},
 		data: {
 			count: 0,
@@ -78,8 +88,9 @@ define(["jquery"], function($) {
 			var data = {
 				count: this.data.count,
 				label: "messages",
+				messages: this.data.messages,
 				user: (this.config.user || 0),
-				messages: this.data.messages
+				inbox: this.config.open == "inbox"
 			};
 
 			var m = "emails";
