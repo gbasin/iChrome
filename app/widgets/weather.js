@@ -24,7 +24,7 @@ define(["jquery"], function($) {
 			{
 				type: "radio",
 				nicename: "units",
-				label: "Units",
+				label: "Temperature Units",
 				options: {
 					standard: "Fahrenheit",
 					metric: "Celsius"
