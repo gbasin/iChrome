@@ -29,7 +29,7 @@
 				<div class="items">
 					<a href="https://plus.google.com/">
 						<img data-src="images/icons/plus.png" />
-						<span>+Me</span>
+						<span>+{{name}}</span>
 					</a>
 					
 					<a href="https://www.google.com/webhp">
