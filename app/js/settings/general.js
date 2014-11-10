@@ -1,7 +1,7 @@
 /**
  * This is the General tab in the settings
  */
-define(["jquery", "backbone", "storage/storage", "modals/getting-started", "core/templates"], function($, Backbone, Storage, Guide, render) {
+define(["jquery", "backbone", "storage/storage", "modals/getting-started", "core/render"], function($, Backbone, Storage, Guide, render) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {

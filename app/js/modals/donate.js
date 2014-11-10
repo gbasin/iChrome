@@ -1,7 +1,7 @@
 /**
  * The Donate dialog
  */
-define(["backbone", "modals/modals", "core/analytics", "core/uid", "core/templates"], function(Backbone, Modal, Track, uid, render) {
+define(["backbone", "modals/modals", "core/analytics", "core/uid", "core/render"], function(Backbone, Modal, Track, uid, render) {
 	var modal = new (Modal.extend({
 		width: 950,
 		height: 530,

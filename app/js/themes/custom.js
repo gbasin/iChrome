@@ -1,7 +1,7 @@
 /**
  * This is the custom theme create/edit dialog
  */
-define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "themes/utils", "themes/cacher", "core/templates", "lib/jquery.spectrum"], function(_, $, Backbone, Track, Modal, Utils, Cacher, render) {
+define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "themes/utils", "themes/cacher", "core/render", "lib/jquery.spectrum"], function(_, $, Backbone, Track, Modal, Utils, Cacher, render) {
 	var Model =  Backbone.Model.extend({
 			defaults: function() {
 				return _.clone(Utils.defaults);

@@ -1,7 +1,7 @@
 /**
  * This is the Visual tab in the settings
  */
-define(["lodash", "jquery", "backbone", "storage/storage", "core/templates"], function(_, $, Backbone, Storage, render) {
+define(["lodash", "jquery", "backbone", "storage/storage", "core/render"], function(_, $, Backbone, Storage, render) {
 	var Model = Backbone.Model.extend({
 			getRender: function() {
 				var settings = _.clone(this.get("settings"));

@@ -2,7 +2,7 @@
  * The themes modal
  */
 define(
-	["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "themes/model", "themes/utils", "themes/custom", "themes/cacher", "core/templates"],
+	["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "themes/model", "themes/utils", "themes/custom", "themes/cacher", "core/render"],
 	function(_, $, Backbone, Track, Modal, Model, Utils, Custom, Cacher, render) {
 		var modal = new (Modal.extend({
 			classes: "themes",

@@ -2,7 +2,7 @@
  * The Getting Started guide, this is only shown once on installation or when opened manually from the settings
  */
 define(
-	["jquery", "backbone", "modals/modals", "core/analytics", "core/templates"],
+	["jquery", "backbone", "modals/modals", "core/analytics", "core/render"],
 	function($, Backbone, Modal, Track, render) {
 		var installed = localStorage["installed"] == "true",
 			modal = new (Modal.extend({

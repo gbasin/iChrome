@@ -2,7 +2,7 @@
  * The widget settings dialog
  */
 define(
-	["jquery", "lodash", "backbone", "storage/storage", "core/analytics", "core/status", "modals/modals", "widgets/widgets", "core/templates", "jquery.serializejson", "lib/jquery.spectrum"],
+	["jquery", "lodash", "backbone", "storage/storage", "core/analytics", "core/status", "modals/modals", "widgets/widgets", "core/render", "jquery.serializejson", "lib/jquery.spectrum"],
 	function($, _, Backbone, Storage, Track, Status, Modal, Widgets, render) {
 		var modal = new (Modal.extend({
 				width: 400,

@@ -1,7 +1,7 @@
 /**
  * This function creates a new tab
  */
-define(["jquery", "core/analytics", "storage/defaults", "core/templates"], function($, Track, Defaults, render) {
+define(["jquery", "core/analytics", "storage/defaults", "core/render"], function($, Track, Defaults, render) {
 	return function(modal, storage, btns, item, forms) {
 		var id = storage.tabs.length + 1,
 			tab = $.extend(true, {}, Defaults.tabs, {

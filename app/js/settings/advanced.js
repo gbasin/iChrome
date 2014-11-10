@@ -1,7 +1,7 @@
 /**
  * This is the Advanced tab in the settings
  */
-define(["jquery", "backbone", "storage/storage", "core/templates", "lib/jquery.spectrum"], function($, Backbone, Storage, render) {
+define(["jquery", "backbone", "storage/storage", "core/render", "lib/jquery.spectrum"], function($, Backbone, Storage, render) {
 	var Model = Backbone.Model.extend({
 			save: function(d, cb) {
 				if (d.tabs)		this.storage.tabs = d.tabs;

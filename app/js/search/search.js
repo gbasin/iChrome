@@ -1,7 +1,7 @@
 /**
  * This handles the searchbox
  */
-define(["backbone", "storage/storage", "core/templates", "search/suggestions", "search/speech"], function(Backbone, Storage, render, Suggestions, Speech) {
+define(["backbone", "storage/storage", "core/render", "search/suggestions", "search/speech"], function(Backbone, Storage, render, Suggestions, Speech) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {

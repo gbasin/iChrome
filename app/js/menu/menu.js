@@ -2,7 +2,7 @@
  * This generates the main menu
  */
 define(
-	["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "search/search", "search/speech", "settings/settings", "widgets/store", "modals/donate", "core/uservoice", "core/templates"],
+	["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "search/search", "search/speech", "settings/settings", "widgets/store", "modals/donate", "core/uservoice", "core/render"],
 	function(_, $, Backbone, Storage, Defaults, Search, Speech, Settings, Store, Donate, UserVoice, render) {
 		var Model = Backbone.Model.extend({
 				init: function() {

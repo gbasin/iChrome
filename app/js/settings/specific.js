@@ -1,7 +1,7 @@
 /**
  * This is the Tab Specific tab in the settings
  */
-define(["backbone", "core/analytics", "storage/storage", "core/templates"], function(Backbone, Track, Storage, render) {
+define(["backbone", "core/analytics", "storage/storage", "core/render"], function(Backbone, Track, Storage, render) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {

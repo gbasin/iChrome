@@ -1,7 +1,7 @@
 /**
  * This defines a constructor that creates a widget
  */
-define(["lodash", "jquery", "backbone", "core/status", "core/templates"], function(_, $, Backbone, Status, render) {
+define(["lodash", "jquery", "backbone", "core/status", "core/render"], function(_, $, Backbone, Status, render) {
 	/**
 	 * Widget utils, this abstracts things like rendering and config saving
 	 *

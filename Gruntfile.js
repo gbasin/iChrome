@@ -50,7 +50,7 @@ module.exports = function(grunt) {
 
 			compile: {
 				src: "build/templates/**/*.hjs",
-				dest: "build/js/core/templates.load.js",
+				dest: "build/js/core/templates.js",
 				options: {
 					binderPath: path.resolve("tmp/binder.js"),
 

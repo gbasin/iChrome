@@ -2,7 +2,7 @@
  * The tabs container-model.
  */
 define(
-	["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "core/status", "core/analytics", "tabs/collection", "core/templates"],
+	["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "core/status", "core/analytics", "tabs/collection", "core/render"],
 	function(_, $, Backbone, Storage, Defaults, Status, Track, Tabs, render) {
 		var Model = Backbone.Model.extend({
 				initialize: function() {

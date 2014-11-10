@@ -4,7 +4,7 @@
 define(
 	[
 		"lodash", "jquery", "backbone", "storage/storage", "core/analytics", "modals/modals", "themes/themes", "settings/general",
-		"settings/visual", "settings/specific", "settings/advanced", "core/templates", "settings/serialize", "settings/createTab"
+		"settings/visual", "settings/specific", "settings/advanced", "core/render", "settings/serialize", "settings/createTab"
 	],
 	function(_, $, Backbone, Storage, Track, Modal, Themes, General, Visual, Specific, Advanced, render, serialize, createTab) {
 		var Model = Backbone.Model.extend({

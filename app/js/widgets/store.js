@@ -1,7 +1,7 @@
 /**
  * The widget store
  */
-define(["lodash", "jquery", "backbone", "storage/storage", "widgets/widgets", "widgets/view", "core/analytics", "modals/modals", "core/templates"], function(_, $, Backbone, Storage, Widgets, Widget, Track, Modal, render) {
+define(["lodash", "jquery", "backbone", "storage/storage", "widgets/widgets", "widgets/view", "core/analytics", "modals/modals", "core/render"], function(_, $, Backbone, Storage, Widgets, Widget, Track, Modal, render) {
 	var Model = Backbone.Model.extend({
 			initialize: function() {
 				var widgets = _.uniq(_.map(Widgets, function(widget) {
