@@ -1,7 +1,7 @@
 /**
  * This generates global CSS overrides based on settings and user defined custom CSS
  */
-define(["backbone", "storage/storage", "core/templates"], function(Backbone, Storage, render) {
+define(["backbone", "storage/storage", "core/render"], function(Backbone, Storage, render) {
 	var Model = Backbone.Model.extend({
 			defaults: {
 				custom: "",

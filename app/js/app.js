@@ -34,6 +34,6 @@ require.config({
 /**
  * Init.  This requires storage to start loading as early as possible.
  */
-require(["core/templates", "storage/storage", "modals/getting-started", "core/init"], function(render, storage, guide, app) {
+require(["core/render", "storage/storage", "modals/getting-started", "core/init"], function(render, storage, guide, app) {
 	window.App = app;
 });
