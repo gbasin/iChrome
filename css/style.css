@@ -1085,6 +1085,8 @@ body > .widgets-container {
 	min-width: 0;
 	position: absolute;
 	max-width: 100%!important;
+	display: flex;
+	flex-direction: column;
 }
 
 .medley .widgets-container > .widget:hover {
