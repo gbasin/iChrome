@@ -23,6 +23,7 @@
 	/ Widget Globals
 */
 .widget .header {
+	flex: 0 0 auto;
 	color: #666;
 	font-size: 16px;
 	margin-bottom: 10px;
@@ -488,7 +489,7 @@
 	margin: 0;
 	padding: 0;
 	margin: -15px;
-	max-height: 600px;
+	flex: 1 1 auto;
 	overflow-x: hidden;
 }
 
@@ -1319,7 +1320,7 @@
 	font-size: 0;
 	display: block;
 	overflow: auto;
-	max-height: 365px;
+	flex: 1 1 auto;
 }
 
 .apps .app {
@@ -2383,7 +2384,7 @@
 .twitter .tweets {
 	margin: -15px;
 	overflow: auto;
-	max-height: 600px;
+	flex: 1 1 auto;
 }
 
 .twitter .tweet {
@@ -2516,7 +2517,7 @@
 .drive .files {
 	margin: -15px;
 	overflow: auto;
-	max-height: 605px;
+	flex: 1 1 auto;
 }
 
 .drive .file {
