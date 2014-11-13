@@ -480,8 +480,10 @@
 
 
 /*---------------------------------------------
-	/ News, RSS, Reddit and Feedly shared
+	/ List style widgets
 */
+.drive h2.header,
+.twitter h2.header,
 .widget.rss a.header,
 .widget.rss h2.header,
 .widget.news h2.header,
@@ -492,13 +494,38 @@
 
 .rss .items,
 .news .items,
+.drive .files,
 .reddit .items,
-.feedly .items {
-	margin: 0;
+.feedly .items,
+.twitter .tweets {
 	padding: 0;
 	margin: -15px;
 	max-height: 600px;
 	overflow-x: hidden;
+}
+
+.medley .rss .items,
+.medley .news .items,
+.medley .drive .files,
+.medley .reddit .items,
+.medley .feedly .items,
+.medley .twitter .tweets {
+	max-height: calc(100% + 30px);
+}
+
+.medley .news .items,
+.medley .reddit .items,
+.medley .feedly .items,
+.medley .rss .header ~ .items,
+.medley .drive .header ~ .files,
+.medley .twitter .header ~ .tweets {
+	max-height: calc(100% - 12px);
+}
+
+.medley .news .header ~ .items,
+.medley .reddit .header ~ .items,
+.medley .feedly .header ~ .items {
+	max-height: calc(100% - 54px);
 }
 
 .rss .item,
@@ -506,9 +533,9 @@
 .reddit .item,
 .feedly .item {
 	color: #777;
-	max-height: 95px;
 	display: block;
 	overflow: hidden;
+	max-height: 95px;
 	padding: 10px 15px;
 	text-decoration: none;
 }
@@ -2408,16 +2435,6 @@
 /*---------------------------------------------
 	/ Twitter
 */
-.twitter h2.header {
-	margin-bottom: 25px;
-}
-
-.twitter .tweets {
-	margin: -15px;
-	overflow: auto;
-	max-height: 600px;
-}
-
 .twitter .tweet {
 	color: #777;
 	padding: 15px;
@@ -2541,16 +2558,6 @@
 /*---------------------------------------------
 	/ Drive
 */
-.drive h2.header {
-	margin-bottom: 25px;
-}
-
-.drive .files {
-	margin: -15px;
-	overflow: auto;
-	max-height: 605px;
-}
-
 .drive .file {
 	color: #333;
 	display: block;

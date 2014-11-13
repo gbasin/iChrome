@@ -330,7 +330,9 @@
 				"link": "The link",
 				"comments": "The comments"
 			}
-		}
+		},
+
+		"more": "More"
 	},
 
 	"rss": {
