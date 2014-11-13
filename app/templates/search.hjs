@@ -1,4 +1,4 @@
-<input type="search" autocomplete="off" placeholder="Enter your terms{{#ok}} or say &quot;OK, Google&quot;{{/ok}}" autofocus="autofocus" />
+<input type="search" autocomplete="off" placeholder="{{#ok}}{{i18n.toolbar.placeholder_ok}}{{/ok}}{{^ok}}{{i18n.toolbar.placeholder}}{{/ok}}" autofocus="autofocus" />
 
 {{#voice}}<div class="speech"></div>{{/voice}}
 

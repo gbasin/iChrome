@@ -6,18 +6,16 @@ define(["jquery", "oauth2"], function($) {
 		id: 3,
 		size: 2,
 		order: 18,
-		name: "Analytics",
 		interval: 300000,
 		nicename: "analytics",
 		sizes: ["tiny", "medium"],
-		desc: "Displays various metrics for a Google Analytics profile.",
 		preconfig: true,
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide",
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder",
 				defaultVal: ""
 			},
 			{
@@ -26,7 +24,7 @@ define(["jquery", "oauth2"], function($) {
 			{
 				type: "select",
 				nicename: "profile",
-				label: "Profile",
+				label: "i18n.settings.profile",
 				options: "getProfiles"
 			}
 		],

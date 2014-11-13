@@ -1,7 +1,7 @@
 /**
  * This stores the storage defaults.  It's mainly used for comparisons, unextends and resetting iChrome.
  */
-define(function() {
+define(["i18n/i18n"], function(Translate) {
 	return {
 		tabs: [
 			{
@@ -33,7 +33,7 @@ define(function() {
 					]
 				],
 				id: 1,
-				name: "Home"
+				name: Translate("defaults.tab")
 			}
 		],
 		widgets: [9, 14, 1, 11, 17, 4], // These are the widget IDs from the default tab layout
@@ -42,7 +42,6 @@ define(function() {
 			ok: false,
 			apps: true,
 			plus: true,
-			name: "Me",
 			stab: false,
 			voice: true,
 			gmail: true,
@@ -54,6 +53,7 @@ define(function() {
 			"custom-css": "",
 			columns: "3-fixed",
 			alignment: "center",
+			name: Translate("defaults.me"),
 			profile: "/images/profile.png",
 			"logo-url": "/images/logo.svg",
 			"search-url": "https://google.com/search?q=%s"
@@ -61,11 +61,11 @@ define(function() {
 		themes: [],
 		cached: {},
 		tab: {
-			name: "Home",
 			fixed: true,
 			medley: false,
 			theme: "default",
-			alignment: "center"
+			alignment: "center",
+			name: Translate("defaults.tab")
 		}
 	};
 });

@@ -6,17 +6,15 @@ define(["jquery", "moment"], function($, moment) {
 		id: 15,
 		size: 5,
 		order: 9,
-		name: "Sports",
 		nicename: "sports",
 		interval: 180000,
 		sizes: ["tiny", "variable"],
-		desc: "Displays scores and game information for selected leagues and/or teams.",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide",
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder",
 				sizes: ["variable"]
 			},
 			{
@@ -25,7 +23,7 @@ define(["jquery", "moment"], function($, moment) {
 			{
 				type: "select",
 				nicename: "league",
-				label: "League",
+				label: "i18n.settings.league",
 				options: {
 					nfl: "NFL",
 					mlb: "MLB",
@@ -37,7 +35,7 @@ define(["jquery", "moment"], function($, moment) {
 			{
 				type: "number",
 				nicename: "number",
-				label: "Games Shown",
+				label: "i18n.settings.games",
 				min: 1,
 				max: 10,
 				sizes: ["variable"]
@@ -45,7 +43,7 @@ define(["jquery", "moment"], function($, moment) {
 			{
 				type: "select",
 				nicename: "team",
-				label: "Team",
+				label: "i18n.settings.team",
 				options: "getTeams",
 				chained: "league",
 				sizes: ["tiny"]
@@ -53,7 +51,7 @@ define(["jquery", "moment"], function($, moment) {
 			{
 				type: "select",
 				nicename: "teams",
-				label: "Teams",
+				label: "i18n.settings.teams",
 				options: "getTeams",
 				multiple: true,
 				chained: "league",
@@ -62,15 +60,15 @@ define(["jquery", "moment"], function($, moment) {
 			{
 				type: "radio",
 				nicename: "unavailable",
-				label: "When team games are unavailable",
+				label: "i18n.settings.unavailable",
 				options: {
-					other: "Show other games",
-					none: "Show \"No Games\""
+					other: "i18n.settings.unavailable_options.other",
+					none: "i18n.settings.unavailable_options.none"
 				}
 			}
 		],
 		config: {
-			title: "NFL Games",
+			title: "NFL",
 			size: "variable",
 			league: "nfl",
 			teams: [],
@@ -634,12 +632,13 @@ define(["jquery", "moment"], function($, moment) {
 			}
 			else {
 				cb({
-					unk: "Something seems to have gone wrong"
+					unk: this.utils.translate(error)
 				});
 			}
 		},
 		refresh: function() {
-			var teams = this.config.team || "";
+			var teams = this.config.team || "",
+				error = this.utils.translate("unknown_error")
 
 			if (!this.config.team && this.config.teams) {
 				if (typeof this.config.teams == "object") {
@@ -655,12 +654,12 @@ define(["jquery", "moment"], function($, moment) {
 
 				d.forEach(function(e, i) {
 					var game = {
-						home_first: e.home_team ? (e.home_team.first_name || "Unknown") : "Unknown Error",
-						home_last: e.home_team ? (e.home_team.last_name || "Error") : "Unknown Error",
+						home_first: e.home_team ? (e.home_team.first_name || error) : error,
+						home_last: e.home_team ? (e.home_team.last_name || error) : error,
 						home_id: e.home_team ? (e.home_team.id || "unk.unk").replace(".", "/") : "unk/unk",
 
-						away_first: e.away_team ? (e.away_team.first_name || "Unknown") : "Unknown Error",
-						away_last: e.away_team ? (e.away_team.last_name || "Error") : "Unknown Error",
+						away_first: e.away_team ? (e.away_team.first_name || error) : error,
+						away_last: e.away_team ? (e.away_team.last_name || error) : error,
 						away_id: e.away_team ? (e.away_team.id || "unk.unk").replace(".", "/") : "unk/unk",
 
 						start: e.start_ts || new Date().getTime(),
@@ -713,14 +712,14 @@ define(["jquery", "moment"], function($, moment) {
 							}
 
 							if (game.coverage) {
-								game.detail += "<br />Watch on: <b>" + game.coverage + "</b>";
+								game.detail += "<br />" + this.utils.translate("watch_on", "<b>" + game.coverage + "</b>");
 							}
 						}
 						else {
 							game.detail += "<br /><b>" + game.label + "</b>";
 
 							if (game.coverage && game.status == "in_progress") {
-								game.detail += "<br />Watch on: <b>" + game.coverage + "</b>";
+								game.detail += "<br />" + this.utils.translate("watch_on", "<b>" + game.coverage + "</b>");
 							}
 
 							game.status = game.home_score + " - " + game.away_score;

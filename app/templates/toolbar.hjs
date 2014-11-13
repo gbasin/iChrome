@@ -7,7 +7,7 @@
 <div class="links">
 	{{#links}}<a href="{{link}}" class="custom-link">{{text}}</a>{{/links}}
 	{{#plus}}<a href="https://plus.google.com/u/0/">+{{name}}</a>{{/plus}}
-	{{#gmail}}<a href="https://mail.google.com/mail/">Gmail</a>{{/gmail}}
+	{{#gmail}}<a href="https://mail.google.com/mail/">{{i18n.toolbar.apps.gmail}}</a>{{/gmail}}
 </div>
 
 {{#apps}}
@@ -34,46 +34,46 @@
 					
 					<a href="https://www.google.com/webhp">
 						<img data-src="images/icons/search.png" />
-						<span>Search</span>
+						<span>{{i18n.toolbar.apps.search}}</span>
 					</a>
 					
 					<a href="https://www.youtube.com/">
 						<img data-src="images/icons/youtube.png" />
-						<span>YouTube</span>
+						<span>{{i18n.toolbar.apps.youtube}}</span>
 					</a>
 					
 					<a href="https://maps.google.com/">
 						<img data-src="images/icons/maps.png" />
-						<span>Maps</span>
+						<span>{{i18n.toolbar.apps.maps}}</span>
 					</a>
 					
 					<a href="https://play.google.com/">
 						<img data-src="images/icons/play.png" />
-						<span>Play</span>
+						<span>{{i18n.toolbar.apps.play}}</span>
 					</a>
 					
 					<a href="https://news.google.com/">
 						<img data-src="images/icons/news.png" />
-						<span>News</span>
+						<span>{{i18n.toolbar.apps.news}}</span>
 					</a>
 					
 					<a href="https://mail.google.com/">
 						<img data-src="images/icons/gmail.png" />
-						<span>Gmail</span>
+						<span>{{i18n.toolbar.apps.gmail}}</span>
 					</a>
 					
 					<a href="https://drive.google.com/">
 						<img data-src="images/icons/drive.png" />
-						<span>Drive</span>
+						<span>{{i18n.toolbar.apps.drive}}</span>
 					</a>
 					
 					<a href="https://www.google.com/calendar">
 						<img data-src="images/icons/calendar.png" />
-						<span>Calendar</span>
+						<span>{{i18n.toolbar.apps.calendar}}</span>
 					</a>
 				</div>
 
-				<a href="http://www.google.com/intl/en/options/" class="more">More</a>
+				<a href="http://www.google.com/intl/en/options/" class="more">{{i18n.toolbar.apps.more}}</a>
 			</nav>
 		</div>
 	</div>

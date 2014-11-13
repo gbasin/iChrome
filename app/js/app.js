@@ -6,6 +6,7 @@ require.config({
 	paths: {
 		"w": "../widgets",
 		"text": "lib/text",
+		"json": "lib/json",
 		"hogan": "lib/hogan",
 		"lodash": "lib/lodash",
 		"moment": "lib/moment",

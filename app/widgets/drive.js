@@ -6,28 +6,26 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 		id: 27,
 		size: 1,
 		order: 7.5,
-		name: "Drive",
 		interval: 300000,
 		nicename: "drive",
 		sizes: ["variable"],
-		desc: "Displays recently changed files from your Google Drive.",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide"
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder"
 			},
 			{
 				type: "number",
 				nicename: "files",
-				label: "Number of Files Shown",
+				label: "i18n.settings.files_shown",
 				min: 1,
 				max: 20
 			}
 		],
 		config: {
-			title: "Drive",
+			title: "i18n.name",
 			size: "variable",
 			files: 8
 		},
@@ -174,12 +172,12 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 				var date = moment(e.date);
 
 				if (moment().diff(date, "days") > 7) {
-					e.modified = date.format("MMMM Do YYYY") + " by " + e.user;
+					e.modified = date.format("MMMM Do YYYY") + " " + this.utils.translate("modified_by") + " " + e.user;
 				}
 				else {
-					e.modified = date.calendar() + " by " + e.user;
+					e.modified = date.calendar() + " " + this.utils.translate("modified_by") + " " + e.user;
 				}
-			});
+			}.bind(this));
 
 			if (this.config.title && this.config.title !== "") {
 				data.title = this.config.title;

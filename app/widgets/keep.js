@@ -6,14 +6,12 @@ define(["jquery"], function($) {
 		id: 23,
 		size: 4,
 		order: 7,
-		name: "Keep",
 		nicename: "keep",
 		sizes: ["variable"],
-		desc: "Embeds Google Keep in a widget",
 		settings: [
 			{
 				type: "number",
-				label: "Widget Height",
+				label: "i18n.settings.height",
 				nicename: "height",
 				min: 100,
 				max: 800

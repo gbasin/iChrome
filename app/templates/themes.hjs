@@ -1,14 +1,14 @@
-<h2 class="title">Themes</h2>
+<h2 class="title">{{i18n.themes.title}}</h2>
 
 <ul class="nav">
-	<li class="active" data-id="all">All</li>
+	<li class="active" data-id="all">{{i18n.themes.all}}</li>
 	{{#categories}}
 		<li data-id="{{id}}">{{name}}</li>
 	{{/categories}}
-	<li data-id="custom">Custom</li>
+	<li data-id="custom">{{i18n.themes.custom}}</li>
 
 	<li class="create">
-		<button class="btn btn-primary">Create a theme</button>
+		<button class="btn btn-primary">{{i18n.themes.create}}</button>
 	</li>
 </ul>
 

@@ -6,31 +6,29 @@ define(["jquery"], function($) {
 		id: 12,
 		size: 2,
 		order: 15,
-		name: "Top Sites",
 		nicename: "topsites",
 		sizes: ["variable"],
-		desc: "Displays your most visited/top sites.",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide"
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder"
 			},
 			{
 				type: "number",
 				nicename: "show",
-				label: "Number of sites shown",
+				label: "i18n.settings.show",
 				min: 1,
 				max: 20
 			},
 			{
 				type: "radio",
 				nicename: "target",
-				label: "Open sites in",
+				label: "i18n.settings.open",
 				options: {
-					_self: "The current tab",
-					_blank: "A new tab"
+					_self: "i18n.settings.open_options.current",
+					_blank: "i18n.settings.open_options.blank"
 				}
 			}
 		],

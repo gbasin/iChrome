@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
-	var path = require("path");
+	var _ = require("lodash"),
+		path = require("path");
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON("package.json"),
@@ -14,7 +15,18 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// Concat raw versions of templates into a temp file
+		i18n: {
+			compile: {
+				files: {
+					"build/js/i18n/locales.js": ["build/js/i18n/*.json"],
+				},
+				options: {
+					outDir: "build"
+				}
+			}
+		},
+
+		// Concat raw versions of templates into a temp file and replace the locale loader with a static precompiled version
 		concat: {
 			templates: {
 				files: {
@@ -145,6 +157,68 @@ module.exports = function(grunt) {
 
 
 	/**
+	 * Concatenates the locale json files into one requirejs object module.
+	 *
+	 * This task also copies over the webstore required locale keys to the Chrome locale files
+	 *
+	 * @api    public
+	 */
+	grunt.registerMultiTask("i18n", "Compile iChrome i18n files", function() {
+		this.files.forEach(function(file) {
+			var locales = file.src.filter(function(filepath) {
+				if (!grunt.file.exists(filepath)) {
+					grunt.log.warn('Source file "' + filepath + '" not found.');
+
+					return false;
+				}
+				else {
+					return true;
+				}
+			}).map(function(filepath) {
+				return grunt.file.readJSON(filepath);
+			});
+
+
+			locales = _.zipObject(_.pluck(locales, "lang_code"), locales);
+
+			_.mapValues(locales, function(e, i) {
+				var lang = e.lang_code.split("-");
+
+				if (lang[1] == "widgets" && locales[lang[0]]) {
+					delete locales[e.lang_code];
+					delete e.lang_code;
+
+					_.assign(locales[lang[0]].widgets, e);
+				}
+			});
+
+
+			var outDir = this.options().outDir;
+
+			_.each(locales, function(e, i) {
+				var data = {
+					lang_code: {
+						message: i
+					},
+					extDescription: {
+						message: e.extDescription
+					},
+					extName: {
+						message: e.extName
+					}
+				};
+
+				grunt.file.write(outDir + "/_locales/" + i + "/messages.json", JSON.stringify(data));
+			});
+
+			grunt.file.write(file.dest, "define(" + JSON.stringify(locales) + ");");
+
+			grunt.log.writeln('File "' + file.dest + '" created.');
+		}.bind(this));
+	});
+
+
+	/**
 	 * Removes the Chrome extension key so it can be uploaded to the webstore
 	 *
 	 * @api    public
@@ -157,7 +231,8 @@ module.exports = function(grunt) {
 		grunt.file.write("build/manifest.json", JSON.stringify(manifest, true, "\t"));
 	});
 
-	grunt.registerTask("default", ["copy", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "requirejs:build", "clean:all"]);
 
-	grunt.registerTask("webstore", ["copy", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "removekey", "requirejs:webstore", "compress", "clean"]);
+	grunt.registerTask("default", ["copy", "i18n:compile", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "requirejs:build", "clean:all"]);
+
+	grunt.registerTask("webstore", ["copy", "i18n:compile", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "removekey", "requirejs:webstore", "compress", "clean"]);
 };

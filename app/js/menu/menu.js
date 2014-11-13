@@ -2,8 +2,11 @@
  * This generates the main menu
  */
 define(
-	["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "search/search", "search/speech", "settings/settings", "widgets/store", "modals/donate", "core/uservoice", "core/render"],
-	function(_, $, Backbone, Storage, Defaults, Search, Speech, Settings, Store, Donate, UserVoice, render) {
+	[
+		"lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "i18n/i18n", "search/search",
+		"search/speech", "settings/settings", "widgets/store", "modals/donate", "core/uservoice", "core/render"
+	],
+	function(_, $, Backbone, Storage, Defaults, Translate, Search, Speech, Settings, Store, Donate, UserVoice, render) {
 		var Model = Backbone.Model.extend({
 				init: function() {
 					Storage.on("done updated", function(storage) {
@@ -132,12 +135,12 @@ define(
 							var state = elm.find(".state");
 
 							if (state.hasClass("enabled")) {
-								state.removeClass("enabled").text("Disabled");
+								state.removeClass("enabled").text(Translate("menu.editing_disabled"));
 
 								this.model.storage.settings.editing = false;
 							}
 							else {
-								state.addClass("enabled").text("Enabled");
+								state.addClass("enabled").text(Translate("menu.editing_enabled"));
 
 								this.model.storage.settings.editing = true;
 							}

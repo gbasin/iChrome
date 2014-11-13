@@ -6,49 +6,47 @@ define(["jquery"], function($) {
 		id: 29,
 		size: 6,
 		order: 7.5,
-		name: "YouTube",
 		interval: 300000,
 		nicename: "youtube",
 		sizes: ["variable"],
-		desc: "Displays either popular videos or videos from a specified user.",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide"
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder"
 			},
 			{
 				type: "select",
 				nicename: "view",
-				label: "Format",
+				label: "i18n.settings.format",
 				options: {
-					large: "One large",
-					large_2: "One large, two small",
-					large_4: "One large, four small",
-					four: "Four small",
-					six: "Six small"
+					large: "i18n.settings.format_options.large",
+					large_2: "i18n.settings.format_options.large_2",
+					large_4: "i18n.settings.format_options.large_4",
+					four: "i18n.settings.format_options.four",
+					six: "i18n.settings.format_options.six",
 				}
 			},
 			{
 				type: "text",
 				nicename: "user",
-				label: "Show Videos From",
-				help: "This must be an <b>exact</b> username as shown in the URL of the page when you're viewing their profile.<br /><br />This value never includes spaces.",
-				placeholder: "Leave blank to show Top Videos"
+				label: "i18n.settings.from",
+				help: "i18n.settings.from_help",
+				placeholder: "i18n.settings.from_placeholder"
 			},
 			{
 				type: "radio",
 				nicename: "target",
-				label: "Open search results in",
+				label: "i18n.settings.open",
 				options: {
-					_self: "The current tab",
-					_blank: "A new tab"
+					_self: "i18n.settings.open_options.current",
+					_blank: "i18n.settings.open_options.blank"
 				}
 			}
 		],
 		config: {
-			title: "YouTube",
+			title: "i18n.name",
 			size: "variable",
 			view: "large_2",
 			target: "_blank",

@@ -6,36 +6,34 @@ define(["jquery"], function($) {
 		id: 17,
 		size: 2,
 		order: 17,
-		name: "To-do",
 		nicename: "todo",
 		sizes: ["variable"],
-		desc: "Displays an interactive to-do list with important and completed items.",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide"
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder"
 			},
 			{
 				type: "radio",
 				nicename: "font",
-				label: "Font Color",
+				label: "i18n.settings.color",
 				options: {
-					light: "Light",
-					dark: "Dark"
+					light: "i18n.settings.color_options.light",
+					dark: "i18n.settings.color_options.dark"
 				}
 			},
 			{
 				type: "list",
 				color: true,
 				nicename: "tags",
-				label: "Tags",
-				placeholder: "Enter a tag name and press Enter"
+				label: "i18n.settings.tags",
+				placeholder: "i18n.settings.tags_placeholder"
 			}
 		],
 		config: {
-			title: "To-do list",
+			title: "i18n.title",
 			size: "variable",
 			tags: [],
 			font: "dark"

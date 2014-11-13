@@ -6,7 +6,6 @@ define(["jquery"], function($) {
 		id: 28,
 		size: 4,
 		order: 5.5,
-		name: "Calculator",
 		nicename: "calc",
 		sizes: ["tiny", "small", "medium"],
 		settings: [
@@ -17,7 +16,6 @@ define(["jquery"], function($) {
 		config: {
 			size: "medium"
 		},
-		desc: "Displays a calculator with support for basic operators.",
 		render: function() {
 			/*
 				This calculator works for the most part, but can't really be expanded.
@@ -91,7 +89,7 @@ define(["jquery"], function($) {
 					}
 
 					if (!check(problem)) {
-						d0.value = "Mismatched parentheses";
+						d0.value = this.utils.translate("mismatch");
 					}
 				}
 
@@ -99,17 +97,17 @@ define(["jquery"], function($) {
 					var answer = eval(problem);
 
 					if (typeof answer !== "number" || isNaN(answer)) {
-						d0.value = "Error!";
+						d0.value = this.utils.translate("error");
 					}
 					else if (answer == Infinity || answer == -Infinity) {
-						d0.value = "Infinity";
+						d0.value = this.utils.translate("infinity");
 					}
 					else {
 						d0.value = +answer.toFixed(8); // Maximum of 8 decimal places
 					}
 				}
 				catch(e) {
-					d0.value = "Error!";
+					d0.value = this.utils.translate("error");
 				}
 
 				overwrite = true;

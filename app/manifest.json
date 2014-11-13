@@ -53,13 +53,14 @@
 	],
 	"version": "2.1.3",
 	"manifest_version": 2,
+	"default_locale": "en",
 	"short_name": "iChrome",
 	"offline_enabled": true,
+	"name": "__MSG_extName__",
 	"optional_permissions": ["tabs"],
 	"minimum_chrome_version": "29.0",
-	"name": "iChrome - your homepage, for chrome",
+	"description": "__MSG_extDescription__",
 	"update_url": "http://clients2.google.com/service/update2/crx",
 	"key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCNyJlz1NfUOvI1q7YiXjTvStaC99OmJCfnfo07UVF6N7/5coAGTUAASUYmdFd5LxTt4GOrODbzbbdOKO3iEuDtUZFklgvMO81tmoRPJNMf0cb1rpSfnmmB33xtgi2CWzmlVzx3pdbbkGwo2R+rwbeAQkG+zXvzgmnHDSt1a5zqjwIDAQAB",
-	"description": "The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
 	"content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com https://*.uservoice.com https://www.google.com; object-src 'self'"
 }

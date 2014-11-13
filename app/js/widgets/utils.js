@@ -1,7 +1,9 @@
 /**
  * This defines a constructor that creates a widget
  */
-define(["lodash", "jquery", "backbone", "core/status", "core/render"], function(_, $, Backbone, Status, render) {
+define(["lodash", "jquery", "backbone", "core/status", "i18n/i18n", "core/render"], function(_, $, Backbone, Status, Translate, render) {
+	var i18n = Translate.getAll();
+
 	/**
 	 * Widget utils, this abstracts things like rendering and config saving
 	 *
@@ -52,6 +54,8 @@ define(["lodash", "jquery", "backbone", "core/status", "core/render"], function(
 
 		data[this.widget.config.size] = true;
 
+		data.i18n = i18n.widgets[this.widget.nicename] || {};
+
 		this.elm.html(
 			'<div class="handle"></div>' +
 			(this.widget.settings ? '\r\n<div class="settings">&#xF0AD;</div>' : "") +
@@ -71,7 +75,7 @@ define(["lodash", "jquery", "backbone", "core/status", "core/render"], function(
 	 * @return {String}        The retrieved template
 	 */
 	Utils.prototype.getTemplate = function(name) {
-		return (render.getRaw("widgets." + this.widget.nicename + (name ? "." + name : "")) || "").replace("{{&gt;", "{{>");
+		return (render.getRaw("widgets." + this.widget.nicename + (name ? "." + name : "")) || "").replace(/\{\{&gt\;/gi, "{{>");
 	};
 
 
@@ -87,7 +91,51 @@ define(["lodash", "jquery", "backbone", "core/status", "core/render"], function(
 	Utils.prototype.renderTemplate = function(name, data, partials) {
 		data = $.extend({}, data || {});
 
+		data.i18n = i18n.widgets[this.widget.nicename] || {};
+
 		return render(("widgets." + this.widget.nicename + (name ? "." + name : "")) || "", data, partials);
+	};
+
+
+	/**
+	 * Namespaces and proxies a widgets i18n request to the main i18n
+	 *
+	 * @api    public
+	 * @param  {String}   id     The key of the string to get
+	 * @param  {...*}     [data] The data to interpolate
+	 * @return {String}          The returned string, interpolated if variables were provided
+	 */
+	Utils.prototype.translate = function(id) {
+		arguments[0] = "widgets." + this.widget.nicename + "." + id;
+
+		var ret = Translate.apply(Translate, arguments);
+
+		if (!ret) {
+			arguments[0] = arguments[0].replace(this.widget.nicename, "shared");
+
+			ret = Translate.apply(Translate, arguments);
+		}
+
+		return ret;
+	};
+
+
+	/**
+	 * Resolves references in a string to the version from the i18n module
+	 *
+	 * @api    public
+	 * @param  {String} [str=""] The string to resolve
+	 * @return {String}          The resolved string
+	 */
+	Utils.prototype.resolve = function(str) {
+		if (!str) return "";
+
+		if (str.indexOf("i18n.") == 0) {
+			// This uses the prototype so resolve can be called with a different this object
+			return Utils.prototype.translate.call(this, str.substr(5));
+		}
+
+		return str;
 	};
 
 

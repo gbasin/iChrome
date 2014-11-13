@@ -6,20 +6,18 @@ define(["jquery"], function($) {
 		id: 7,
 		size: 4,
 		order: 5,
-		name: "iFrame",
 		nicename: "iframe",
 		sizes: ["variable"],
-		desc: "Displays a webpage of your choice within an iframe.",
 		settings: [
 			{
 				type: "text",
 				nicename: "url",
-				label: "Frame URL",
-				placeholder: "http://www.google.com/"
+				label: "i18n.settings.url",
+				placeholder: "i18n.settings.url_placeholder"
 			},
 			{
 				type: "number",
-				label: "Frame Height",
+				label: "i18n.settings.height",
 				nicename: "height",
 				min: 100,
 				max: 800
@@ -27,10 +25,10 @@ define(["jquery"], function($) {
 			{
 				type: "radio",
 				nicename: "padding",
-				label: "Padding",
+				label: "i18n.settings.padding",
 				options: {
-					"true": "On",
-					"false": "Off"
+					"true": "i18n.settings.on",
+					"false": "i18n.settings.off"
 				}
 			}
 		],

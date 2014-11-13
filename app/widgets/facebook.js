@@ -6,14 +6,12 @@ define(["jquery"], function($) {
 		id: 31,
 		size: 5,
 		order: 7.9,
-		name: "Facebook",
 		nicename: "facebook",
 		sizes: ["variable"],
-		desc: "Embeds Facebook in a widget",
 		settings: [
 			{
 				type: "number",
-				label: "Widget Height",
+				label: "i18n.settings.height",
 				nicename: "height",
 				min: 100,
 				max: 800

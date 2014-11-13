@@ -8,7 +8,7 @@
 	{{/games}}
 	{{^games}}
 		<a class="no-games" href="http://sports.yahoo.com/">
-			<div class="text" data-tooltip="Go to Yahoo! Sports">No Games Scheduled</div>
+			<div class="text">{{i18n.no_games}}</div>
 		</a>
 	{{/games}}
 {{/tiny}}
@@ -43,7 +43,7 @@
 		{{/games}}
 		{{^games}}
 			<a class="no-games" href="http://sports.yahoo.com/">
-				<div class="text" data-tooltip="Go to Yahoo! Sports">No Games Scheduled</div>
+				<div class="text">{{i18n.no_games}}</div>
 			</a>
 		{{/games}}
 	</div>

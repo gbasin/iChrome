@@ -8,6 +8,6 @@
 		</a>
 	{{/tabs}}
 	{{^tabs}}
-		<div class="item no-items">Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed.</div>
+		<div class="item no-items">{{i18n.notabs}}</div>
 	{{/tabs}}
 </div>

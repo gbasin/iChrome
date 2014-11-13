@@ -32,13 +32,13 @@
 	{{^cards}}
 		{{#authorize}}
 			<div class="card authorize">
-				<h2>You'll need to give iChrome permission to view your Google Now cards before anything will show up here.</h2>
-				<button type="button" class="btn btn-lg btn-primary">Authorize</button>
+				<h2>{{i18n.authorize}}</h2>
+				<button type="button" class="btn btn-lg btn-primary">{{i18n.authorize_btn}}</button>
 			</div>
 		{{/authorize}}
 		{{^authorize}}
 			<div class="card no-cards">
-				<h2>All caught up, nothing here.</h2>
+				<h2>{{i18n.caught_up}}</h2>
 			</div>
 		{{/authorize}}
 	{{/cards}}

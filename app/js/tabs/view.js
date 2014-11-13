@@ -1,7 +1,7 @@
 /**
  * The tabs view.  This does the actual rendering of data, creaton of columns and widget insertion.
  */
-define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "themes/utils"], function($, _, Backbone, Status, Track, Themes) {
+define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i18n", "themes/utils"], function($, _, Backbone, Status, Track, Translate, Themes) {
 	var view = Backbone.View.extend({
 		tagName: "div",
 		className: function() {
@@ -232,7 +232,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "themes
 				},
 				onBeforeDrop: function(item, placeholder, group, _super) {
 					if (placeholder.parent() && placeholder.parent().is(".remove")) {
-						if (item.installing || confirm("Are you really sure you want to delete this widget?\r\nThis action is irreversible; all data from this widget will be permanently lost.")) {
+						if (item.installing || confirm(Translate("widgets.delete_confirm"))) {
 							item.remove();
 
 							item.removed = true;
@@ -451,7 +451,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "themes
 			var medley = this.model.get("medley");
 
 			this.$el.html(
-				'<div class="remove">Remove</div>' +
+				'<div class="remove">' + Translate("remove_widget") + '</div>' +
 				'<main class="widgets-container' +
 					(this.model.get("fixed") && !medley ? " fixed" : "") +
 					(medley ? " medley" : "") +

@@ -10,9 +10,7 @@
 	{{/events}}
 	{{^events}}
 		<div class="event no-events">
-			It doesn't look like there are any events in the near future.<br />
-			<br />
-			Try selecting a calendar via the wrench icon in the top right.
+			{{{i18n.noevents}}}
 		</div>
 	{{/events}}
 </div>

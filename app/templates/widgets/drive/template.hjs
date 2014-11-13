@@ -14,8 +14,8 @@
 	{{^files}}
 		{{#authorize}}
 			<div class="authorize">
-				You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.
-				<button type="button" class="btn btn-lg btn-primary">Authorize</button>
+				{{i18n.authorize}}
+				<button type="button" class="btn btn-lg btn-primary">{{i18n.authorize_btn}}</button>
 			</div>
 		{{/authorize}}
 	{{/files}}

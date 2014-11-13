@@ -6,11 +6,9 @@ define(["jquery", "oauth2"], function($) {
 		id: 24,
 		size: 1,
 		order: 2.5,
-		name: "Google Now",
 		interval: 300000,
 		nicename: "now",
 		sizes: ["variable"],
-		desc: "Displays cards from Google Now including flight status and package tracking.",
 		config: {
 			size: "variable"
 		},
@@ -154,6 +152,8 @@ define(["jquery", "oauth2"], function($) {
 				return this.render("authorize");
 			}
 
+			var noTitle = this.utils.translate("no_title");
+
 			this.oAuth.authorize.call(this.oAuth, function() {
 				$.ajax({
 					type: "GET",
@@ -179,7 +179,7 @@ define(["jquery", "oauth2"], function($) {
 								if (e.chromeNotificationOptions) {
 									var co = e.chromeNotificationOptions;
 
-									card.title = co.title || "No title";
+									card.title = co.title || noTitle;
 
 									card.priority = co.priority || -1;
 
@@ -201,7 +201,7 @@ define(["jquery", "oauth2"], function($) {
 
 										co.buttons.forEach(function(btn, i) {
 											var button = {
-												title: btn.title || "No title",
+												title: btn.title || noTitle,
 												link: e.actionUrls.buttonUrls[i] || "#"
 											};
 

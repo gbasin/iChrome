@@ -1,9 +1,10 @@
 /**
  * Template renderer and cacher
  */
-define(["hogan", "core/status", "core/templates"], function(Hogan, Status, templates) {
+define(["lodash", "hogan", "core/status", "i18n/i18n", "core/templates"], function(_, Hogan, Status, Translate, templates) {
 	var cache = templates.compiled || {},
-		raw = templates.raw || {};
+		raw = templates.raw || {},
+		i18n = Translate.getAll();
 
 	var render = function(template, data, partials) {
 		var compiled = cache[template];
@@ -23,8 +24,12 @@ define(["hogan", "core/status", "core/templates"], function(Hogan, Status, templ
 				return 'Template "' + template + '" not found!';
 			}
 		}
+
+		data = _.clone(data || {});
+
+		if (!data.i18n) data.i18n = i18n;
 		
-		return compiled.render(data || {}, partials);
+		return compiled.render(data, partials);
 	};
 
 	render.getRaw = function(template) {

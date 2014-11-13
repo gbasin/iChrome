@@ -8,20 +8,18 @@ define(["jquery"], function($) {
 		order: 5.25,
 		interval: 60000,
 		permissions: ["tabs"],
-		name: "Recently Closed",
 		nicename: "recentlyclosed",
 		sizes: ["variable"],
-		desc: "Shows your recently closed tabs",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide"
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder"
 			},
 			{
 				type: "number",
-				label: "Tabs Shown",
+				label: "i18n.settings.tabs",
 				nicename: "tabs",
 				min: 1,
 				max: 20
@@ -29,10 +27,10 @@ define(["jquery"], function($) {
 			{
 				type: "radio",
 				nicename: "target",
-				label: "Open tabs in",
+				label: "i18n.settings.open",
 				options: {
-					_self: "The current tab",
-					_blank: "A new tab"
+					_self: "i18n.settings.open_options.current",
+					_blank: "i18n.settings.open_options.blank"
 				}
 			}
 		],
@@ -40,7 +38,7 @@ define(["jquery"], function($) {
 			tabs: 5,
 			target: "_blank",
 			size: "variable",
-			title: "Recently Closed"
+			title: "i18n.name"
 		},
 		render: function() {
 			var data = {

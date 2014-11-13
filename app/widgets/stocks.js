@@ -6,17 +6,15 @@ define(["jquery", "moment"], function($, moment) {
 		id: 14,
 		size: 2,
 		order: 10,
-		name: "Stocks",
 		interval: 30000,
 		nicename: "stocks",
 		sizes: ["tiny", "small"],
-		desc: "Displays current information for any given stock symbol.",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide"
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder"
 			},
 			{
 				type: "size"
@@ -24,9 +22,9 @@ define(["jquery", "moment"], function($, moment) {
 			{
 				type: "text",
 				nicename: "symbol",
-				label: "Stock Symbol(s), comma separated",
-				placeholder: "e.g. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-				help: "These are the stocks you'd like shown in a TICKER:EXCHANGE format.<br /><br />For indexes, please use the tickers and exchanges as shown on <a href=\"https://www.google.com/finance\" target=\"_blank\">Google Finance</a>. For example, the Dow Jones index is <b>INDEXDJX:.DJI</b> and NYSE is <b>INDEXNYSEGIS:NYA</b>."
+				label: "i18n.settings.symbols",
+				placeholder: "i18n.settings.symbols_placeholder",
+				help: "i18n.settings.symbols_help"
 			}
 		],
 		config: {

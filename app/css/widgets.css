@@ -1246,6 +1246,10 @@
 	line-height: 20px;
 }
 
+.analytics .details div:after {
+	text-transform: lowercase;
+}
+
 
 
 

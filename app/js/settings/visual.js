@@ -1,7 +1,7 @@
 /**
  * This is the Visual tab in the settings
  */
-define(["lodash", "jquery", "backbone", "storage/storage", "core/render"], function(_, $, Backbone, Storage, render) {
+define(["lodash", "jquery", "backbone", "storage/storage", "i18n/i18n", "core/render"], function(_, $, Backbone, Storage, Translate, render) {
 	var Model = Backbone.Model.extend({
 			getRender: function() {
 				var settings = _.clone(this.get("settings"));
@@ -40,7 +40,7 @@ define(["lodash", "jquery", "backbone", "storage/storage", "core/render"], funct
 
 					this.themes.once("use", function(theme, id) {
 						$(e.currentTarget).prev("input").val(id || theme.id).end()
-							.next(".current").text(theme.name || (typeof theme.id == "number" ? "Theme " + theme.id : ""));
+							.next(".current").text(theme.name || (typeof theme.id == "number" ? Translate("settings.visual.theme_placeholder", theme.id) : ""));
 					}, this);
 				}
 			},

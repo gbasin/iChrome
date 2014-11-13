@@ -6,9 +6,7 @@ define(["jquery"], function($) {
 		id: 20,
 		size: 1,
 		order: 14.5,
-		name: "Translate",
 		nicename: "translate",
-		desc: "Contains a small inline Google Translate textbox.",
 		sizes: ["small"],
 		config: {
 			size: "small"
@@ -32,7 +30,7 @@ define(["jquery"], function($) {
 				submit = function(e) {
 					untranslate = textarea.val();
 
-					btn.text("Untranslate");
+					btn.text(this.utils.translate("untranslate"));
 
 					this.data.from = from.val();
 					this.data.to = to.val();
@@ -56,27 +54,27 @@ define(["jquery"], function($) {
 									});
 
 									if (text == "") {
-										text = "Something went wrong while trying to translate that...";
+										text = this.utils.translate("error");
 									}
 
 									textarea.val(text);
 
 									if (from.val() == "auto") {
-										auto.text("Auto (" + from.find('option[value="' + d.src + '"]').text() + ")");
+										auto.text(this.utils.translate("auto", from.find('option[value="' + d.src + '"]').text()));
 
 										autochanged = true;
 									}
 								}
 								else {
-									auto.text("Unknown");
+									auto.text(this.utils.translate("unknown"));
 
 									autochanged = true;
 								}
 							}
 							else {
-								textarea.val("Something went wrong while trying to translate that...");
+								textarea.val(this.utils.translate("error"));
 							}
-						}
+						}.bind(this)
 					});
 
 					this.utils.saveData(this.data);
@@ -84,14 +82,14 @@ define(["jquery"], function($) {
 				autochange = function(e) {
 					untranslate = false;
 
-					btn.text("Translate");
+					btn.text(this.utils.translate("name"));
 
 					if (autochanged) {
 						auto.text("Auto");
 
 						autochanged = false;
 					}
-				},
+				}.bind(this),
 				untranslate = false;
 
 			btn.on("click", function(e) {
@@ -102,7 +100,7 @@ define(["jquery"], function($) {
 
 					untranslate = false;
 
-					btn.text("Translate");
+					btn.text(this.utils.translate("name"));
 				}
 				else {
 					submit(e);
@@ -125,7 +123,7 @@ define(["jquery"], function($) {
 			to.on("change", function() {
 				untranslate = false;
 
-				btn.text("Translate");
+				btn.text(this.utils.translate("name"));
 			});
 
 			swap.click(function(e) {

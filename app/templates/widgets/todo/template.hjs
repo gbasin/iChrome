@@ -1,4 +1,4 @@
-{{#title}}<h2 class="header">{{title}}<a class="new">Add Item</a></h2>{{/title}}
+{{#title}}<h2 class="header">{{title}}<a class="new">{{i18n.add}}</a></h2>{{/title}}
 
 <div class="list" style="color: {{font}};">
 	{{#items}}
@@ -13,8 +13,8 @@
 				<span class="move">&#xE693;</span>
 
 				<div class="tags">
-					<div data-color="none">None</div>
-					<div data-color="important" style="background-color: #FFECEC;">Important</div>
+					<div data-color="none">{{i18n.none}}</div>
+					<div data-color="important" style="background-color: #FFECEC;">{{i18n.important}}</div>
 					{{#tags}}<div data-color="{{color}}" style="background-color: {{color}};">{{name}}</div>{{/tags}}
 				</div>
 			</div>

@@ -1,7 +1,7 @@
 /**
  * Saves storage to Chrome's chrome.storage.sync
  */
-define(["jquery", "core/status", "storage/defaults", "core/analytics", "storage/tojson", "core/uid"], function($, Status, Defaults, Track, getJSON, uid) {
+define(["jquery", "core/status", "storage/defaults", "core/analytics", "i18n/i18n", "storage/tojson", "core/uid"], function($, Status, Defaults, Track, Translate, getJSON, uid) {
 	var timeout = null;
 
 	// Splits a string into the specified chunk size
@@ -113,12 +113,7 @@ define(["jquery", "core/status", "storage/defaults", "core/analytics", "storage/
 			if ((bytes / chrome.storage.sync.QUOTA_BYTES) > 0.90) {
 				Track.event("Storage", "Quota", (bytes / chrome.storage.sync.QUOTA_BYTES) + "%"); // If these are happening a lot something isn't built right...
 
-				alert(
-					"You have used more than 90% of the total synchronized storage space available.\r\nIf" + 
-					" you reach the limit, iChrome will stop syncing your data and may stop working.\r\n" + 
-					"You can shrink the amount of space you use by deleting custom themes, notes and to-" + 
-					"do lists you don't use."
-				);
+				alert(Translate("storage_warning"));
 			}
 		});
 	};

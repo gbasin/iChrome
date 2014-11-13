@@ -6,10 +6,8 @@ define(["jquery"], function($) {
 		id: 13,
 		size: 2,
 		order: 12,
-		name: "Notes",
 		nicename: "notes",
 		sizes: ["tiny", "variable"],
-		desc: "Inserts a simple, editable, note.",
 		settings: [
 			{
 				type: "size"
@@ -17,20 +15,20 @@ define(["jquery"], function($) {
 			{
 				type: "select",
 				nicename: "color",
-				label: "Note Color",
+				label: "i18n.settings.color",
 				options: {
-					yellow: "Yellow",
-					orange: "Orange",
-					red: "Red",
-					blue: "Blue",
-					green: "Green",
-					white: "White"
+					yellow: "i18n.settings.color_options.yellow",
+					orange: "i18n.settings.color_options.orange",
+					red: "i18n.settings.color_options.red",
+					blue: "i18n.settings.color_options.blue",
+					green: "i18n.settings.color_options.green",
+					white: "i18n.settings.color_options.white",
 				}
 			},
 			{
 				type: "select",
 				nicename: "face",
-				label: "Font Face",
+				label: "i18n.settings.font",
 				options: {
 					arial: "Arial",
 					times: "Times New Roman",
@@ -43,7 +41,7 @@ define(["jquery"], function($) {
 			{
 				type: "number",
 				nicename: "fontsize",
-				label: "Font Size",
+				label: "i18n.settings.fontsize",
 				min: 8,
 				max: 45
 			}

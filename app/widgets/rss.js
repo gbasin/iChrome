@@ -6,62 +6,60 @@ define(["jquery"], function($) {
 		id: 8,
 		size: 5,
 		order: 4,
-		name: "RSS",
 		interval: 300000,
 		nicename: "rss",
 		sizes: ["variable"],
-		desc: "Displays items from a RSS or Atom feed with optional images.",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide"
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder"
 			},
 			{
 				type: "text",
 				nicename: "link",
-				label: "Title Link",
-				placeholder: "Enter a link for the widget title"
+				label: "i18n.settings.link",
+				placeholder: "i18n.settings.link_placeholder"
 			},
 			{
 				type: "text",
 				nicename: "url",
-				label: "Feed URL",
-				placeholder: "The URL of the RSS feed to be displayed"
+				label: "i18n.settings.url",
+				placeholder: "i18n.settings.url_placeholder"
 			},
 			{
 				type: "number",
 				nicename: "number",
-				label: "Articles Shown",
+				label: "i18n.settings.articles",
 				min: 1,
 				max: 20
 			},
 			{
 				type: "select",
 				nicename: "view",
-				label: "View",
+				label: "i18n.settings.view",
 				options: {
-					images: "Image friendly",
-					"default": "Default"
+					images: "i18n.settings.view_options.images",
+					"default": "i18n.settings.view_options.default"
 				}
 			},
 			{
 				type: "radio",
 				nicename: "images",
-				label: "Images",
+				label: "i18n.settings.images",
 				options: {
-					"true": "On",
-					"false": "Off"
+					"true": "i18n.settings.on",
+					"false": "i18n.settings.off"
 				}
 			},
 			{
 				type: "radio",
 				nicename: "desc",
-				label: "Descriptions",
+				label: "i18n.settings.descriptions",
 				options: {
-					"true": "On",
-					"false": "Off"
+					"true": "i18n.settings.on",
+					"false": "i18n.settings.off"
 				}
 			}
 		],
@@ -225,7 +223,7 @@ define(["jquery"], function($) {
 					this.utils.saveData(this.data);
 				}
 				catch(e) {
-					alert("An error occurred while trying to fetch the feed at: " + url + ".\r\nPlease double check the URL and/or modify the widget settings.");
+					alert(this.utils.translate("feed_error", url));
 				}
 			}.bind(this));
 		},

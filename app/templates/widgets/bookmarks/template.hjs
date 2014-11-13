@@ -1,9 +1,9 @@
 <div class="drop">
-	<div class="text">Drop link here</div>
+	<div class="text">{{i18n.drop_link}}</div>
 	<div class="catch" contenteditable></div>
 </div>
 
-<h2 class="header">{{title}}{{^title}}&nbsp;{{/title}}<div class="new">New: <a data-type="bookmark">Bookmark</a> <a data-type="folder">Folder</a></div></h2>
+<h2 class="header">{{title}}{{^title}}&nbsp;{{/title}}<div class="new">{{i18n.new_caption}}: <a data-type="bookmark">{{i18n.new_bookmark}}</a> <a data-type="folder">{{i18n.new_folder}}</a></div></h2>
 
 <div class="list{{#two}} two-column{{/two}}">
 	{{#bookmarks}}

@@ -6,34 +6,26 @@ define(["jquery"], function($) {
 		id: 6,
 		size: 2,
 		order: 6,
-		name: "Unread",
 		interval: 120000,
 		nicename: "unread",
 		sizes: ["tiny", "small"],
-		desc: "Displays the current number of unread emails in your Gmail inbox.",
 		settings: [
 			{
 				type: "text",
 				nicename: "user",
-				label: "Account ID",
-				help: "If you're signed into multiple accounts, this is the \"authuser=\" value.<br /><br />For example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"authuser\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
-				placeholder: "Your \"authuser=\" value"
+				label: "i18n.settings.account",
+				help: "i18n.settings.account_help",
+				placeholder: "i18n.settings.account_placeholder"
 			},
 			{
 				type: "size"
 			},
 			{
-				type: "text",
-				nicename: "label",
-				label: "Label",
-				help: "This is the label that's shown under the unread message count where <b>%m</b> is either <b>message</b> or <b>messages</b>.",
-				placeholder: "unread %m"
-			},
-			{
 				type: "radio",
 				nicename: "open",
-				label: "When clicked open",
+				label: "i18n.settings.open",
 				options: {
+					// Inbox and Gmail are product names, not labels so they shouldn't be translated
 					inbox: "Inbox",
 					gmail: "Gmail"
 				}
@@ -42,7 +34,6 @@ define(["jquery"], function($) {
 		config: {
 			size: "tiny",
 			user: "0",
-			label: "unread %m",
 			open: "gmail"
 		},
 		data: {
@@ -87,19 +78,20 @@ define(["jquery"], function($) {
 		render: function() {
 			var data = {
 				count: this.data.count,
-				label: "messages",
 				messages: this.data.messages,
 				user: (this.config.user || 0),
 				inbox: this.config.open == "inbox"
 			};
 
-			var m = "emails";
-
-			if (data.count == 1) {
-				m = "email";
+			if (data.count == 0) {
+				data.label = this.utils.translate("unread_none");
 			}
-
-			data.label = (this.config.label || "unread %m").replace(/%m/g, m);
+			else if (data.count == 1) {
+				data.label = this.utils.translate("unread_one");
+			}
+			else {
+				data.label = this.utils.translate("unread_many");
+			}
 
 			this.utils.render(data);
 		}

@@ -1,103 +1,103 @@
-<h2 class="header">General</h2>
+<h2 class="header">{{i18n.settings.labels.general}}</h2>
 
 <div class="content">
 	<form class="form-horizontal">
 		<div class="form-group search-url">
-			<label class="control-label col-sm-2" for="search-url">Search URL</label>
+			<label class="control-label col-sm-2" for="search-url">{{i18n.settings.general.search}}</label>
 
 			<div class="col-sm-9">
-				<span class="info">This is the URL that the search box will submit searches to. Put <b>%s</b> where the search query should go</span>
+				<span class="info">{{{i18n.settings.general.search_desc}}}</span>
 				<input type="text" id="search-url" name="search-url" value="{{search-url}}" />
 			</div>
 		</div>
 
 		<div class="form-group">
-			<label class="control-label col-sm-2" for="profile-img">Profile Picture</label>
+			<label class="control-label col-sm-2" for="profile-img">{{i18n.settings.general.profile}}</label>
 
 			<div class="col-sm-9">
-				<span class="info">This is the image shown at the right of the toolbar.  It gets auto-populated from your Google profile</span>
+				<span class="info">{{i18n.settings.general.profile_desc}}</span>
 				
 				<input type="text" id="profile-img" name="profile" value="{{profile}}" />
 			</div>
 		</div>
 
 		<div class="form-group">
-			<label class="control-label col-sm-2" for="first-name">Name</label>
+			<label class="control-label col-sm-2" for="first-name">{{i18n.settings.general.name}}</label>
 
 			<div class="col-sm-9">
-				<span class="info">This is used for the Google+ link in the toolbar.  It also gets auto-populated from your Google profile</span>
+				<span class="info">{{i18n.settings.general.name_desc}}</span>
 				
 				<input type="text" id="first-name" name="name" value="{{name}}" />
 			</div>
 		</div>
 
 		<div class="form-group voice">
-			<label class="control-label col-sm-2">Voice Search</label>
+			<label class="control-label col-sm-2">{{i18n.settings.general.voice}}</label>
 
 			<div class="checkboxes col-sm-9">
-				{{#voice}}<label><input type="checkbox" name="voice" checked /> Enable voice search</label>{{/voice}}
-				{{#ok}}<label><input type="checkbox" name="ok" checked /> Enable "OK Google" hotword detection</label>{{/ok}}
+				{{#voice}}<label><input type="checkbox" name="voice" checked /> {{i18n.settings.general.voice_search}}</label>{{/voice}}
+				{{#ok}}<label><input type="checkbox" name="ok" checked /> {{i18n.settings.general.voice_ok}}</label>{{/ok}}
 
-				{{^voice}}<label><input type="checkbox" name="voice" /> Enable voice search</label>{{/voice}}
-				{{^ok}}<label><input type="checkbox" name="ok" /> Enable "OK Google" hotword detection</label>{{/ok}}
+				{{^voice}}<label><input type="checkbox" name="voice" /> {{i18n.settings.general.voice_search}}</label>{{/voice}}
+				{{^ok}}<label><input type="checkbox" name="ok" /> {{i18n.settings.general.voice_ok}}</label>{{/ok}}
 			</div>
 		</div>
 
 		<div class="form-group links">
-			<label class="control-label col-sm-2">Toolbar Links</label>
+			<label class="control-label col-sm-2">{{i18n.settings.general.links}}</label>
 
 			<div class="col-sm-9 container">
-				<span class="info">Here you can choose which links will show in the right section of the toolbar:</span>
+				<span class="info">{{i18n.settings.general.links_desc}}</span>
 
-				{{#plus}}<label><input type="checkbox" name="plus" checked /> Google Plus</label>{{/plus}}
-				{{#gmail}}<label><input type="checkbox" name="gmail" checked /> Gmail</label>{{/gmail}}
-				{{#apps}}<label><input type="checkbox" name="apps" checked /> Google Apps</label>{{/apps}}
+				{{#plus}}<label><input type="checkbox" name="plus" checked /> {{i18n.settings.general.links_items.plus}}</label>{{/plus}}
+				{{#gmail}}<label><input type="checkbox" name="gmail" checked /> {{i18n.settings.general.links_items.gmail}}</label>{{/gmail}}
+				{{#apps}}<label><input type="checkbox" name="apps" checked /> {{i18n.settings.general.links_items.apps}}</label>{{/apps}}
 
-				{{^plus}}<label><input type="checkbox" name="plus" /> Google Plus</label>{{/plus}}
-				{{^gmail}}<label><input type="checkbox" name="gmail" /> Gmail</label>{{/gmail}}
-				{{^apps}}<label><input type="checkbox" name="apps" /> Google Apps</label>{{/apps}}
+				{{^plus}}<label><input type="checkbox" name="plus" /> {{i18n.settings.general.links_items.plus}}</label>{{/plus}}
+				{{^gmail}}<label><input type="checkbox" name="gmail" /> {{i18n.settings.general.links_items.gmail}}</label>{{/gmail}}
+				{{^apps}}<label><input type="checkbox" name="apps" /> {{i18n.settings.general.links_items.apps}}</label>{{/apps}}
 
 				<hr class="sep" />
 
 				<div class="form-inline options{{#links.0}} visible{{/links.0}}">
-					{{#links.0}}<label><input type="checkbox" name="custom0" checked /> Custom Link 1</label>{{/links.0}}
-					{{^links.0}}<label><input type="checkbox" name="custom0" /> Custom Link 1</label>{{/links.0}}
+					{{#links.0}}<label><input type="checkbox" name="custom0" checked /> {{i18n.settings.general.links_items.link1}}</label>{{/links.0}}
+					{{^links.0}}<label><input type="checkbox" name="custom0" /> {{i18n.settings.general.links_items.link1}}</label>{{/links.0}}
 
 					<div class="form-group">
-						{{#links.0.text}}<input type="text" name="custom0-text" placeholder="Link text" value="{{links.0.text}}" />{{/links.0.text}}
-						{{^links.0.text}}<input type="text" name="custom0-text" placeholder="Link text" value="{{links.0.text}}" />{{/links.0.text}}
+						{{#links.0.text}}<input type="text" name="custom0-text" placeholder="{{i18n.settings.general.links_items.text_holder}}" value="{{links.0.text}}" />{{/links.0.text}}
+						{{^links.0.text}}<input type="text" name="custom0-text" placeholder="{{i18n.settings.general.links_items.text_holder}}" value="{{links.0.text}}" />{{/links.0.text}}
 					</div>
 					<div class="form-group">
-						{{#links.0.link}}<input type="text" name="custom0-url" placeholder="Link URL, i.e. http://www.google.com/" value="{{links.0.link}}" />{{/links.0.link}}
-						{{^links.0.link}}<input type="text" name="custom0-url" placeholder="Link URL, i.e. http://www.google.com/" value="{{links.0.link}}" />{{/links.0.link}}
+						{{#links.0.link}}<input type="text" name="custom0-url" placeholder="{{i18n.settings.general.links_items.link_holder}}" value="{{links.0.link}}" />{{/links.0.link}}
+						{{^links.0.link}}<input type="text" name="custom0-url" placeholder="{{i18n.settings.general.links_items.link_holder}}" value="{{links.0.link}}" />{{/links.0.link}}
 					</div>
 				</div>
 
 				<div class="form-inline options{{#links.1}} visible{{/links.1}}">
-					{{#links.1}}<label><input type="checkbox" name="custom1" checked /> Custom Link 2</label>{{/links.1}}
-					{{^links.1}}<label><input type="checkbox" name="custom1" /> Custom Link 2</label>{{/links.1}}
+					{{#links.1}}<label><input type="checkbox" name="custom1" checked /> {{i18n.settings.general.links_items.link2}}</label>{{/links.1}}
+					{{^links.1}}<label><input type="checkbox" name="custom1" /> {{i18n.settings.general.links_items.link2}}</label>{{/links.1}}
 
 					<div class="form-group">
-						{{#links.1.text}}<input type="text" name="custom1-text" placeholder="Link text" value="{{links.1.text}}" />{{/links.1.text}}
-						{{^links.1.text}}<input type="text" name="custom1-text" placeholder="Link text" value="{{links.1.text}}" />{{/links.1.text}}
+						{{#links.1.text}}<input type="text" name="custom1-text" placeholder="{{i18n.settings.general.links_items.text_holder}}" value="{{links.1.text}}" />{{/links.1.text}}
+						{{^links.1.text}}<input type="text" name="custom1-text" placeholder="{{i18n.settings.general.links_items.text_holder}}" value="{{links.1.text}}" />{{/links.1.text}}
 					</div>
 					<div class="form-group">
-						{{#links.1.link}}<input type="text" name="custom1-url" placeholder="Link URL, i.e. http://www.google.com/" value="{{links.1.link}}" />{{/links.1.link}}
-						{{^links.1.link}}<input type="text" name="custom1-url" placeholder="Link URL, i.e. http://www.google.com/" value="{{links.1.link}}" />{{/links.1.link}}
+						{{#links.1.link}}<input type="text" name="custom1-url" placeholder="{{i18n.settings.general.links_items.link_holder}}" value="{{links.1.link}}" />{{/links.1.link}}
+						{{^links.1.link}}<input type="text" name="custom1-url" placeholder="{{i18n.settings.general.links_items.link_holder}}" value="{{links.1.link}}" />{{/links.1.link}}
 					</div>
 				</div>
 
 				<div class="form-inline options{{#links.2}} visible{{/links.2}}">
-					{{#links.2}}<label><input type="checkbox" name="custom2" checked /> Custom Link 3</label>{{/links.2}}
-					{{^links.2}}<label><input type="checkbox" name="custom2" /> Custom Link 3</label>{{/links.2}}
+					{{#links.2}}<label><input type="checkbox" name="custom2" checked /> {{i18n.settings.general.links_items.link3}}</label>{{/links.2}}
+					{{^links.2}}<label><input type="checkbox" name="custom2" /> {{i18n.settings.general.links_items.link3}}</label>{{/links.2}}
 
 					<div class="form-group">
-						{{#links.2.text}}<input type="text" name="custom2-text" placeholder="Link text" value="{{links.2.text}}" />{{/links.2.text}}
-						{{^links.2.text}}<input type="text" name="custom2-text" placeholder="Link text" value="{{links.2.text}}" />{{/links.2.text}}
+						{{#links.2.text}}<input type="text" name="custom2-text" placeholder="{{i18n.settings.general.links_items.text_holder}}" value="{{links.2.text}}" />{{/links.2.text}}
+						{{^links.2.text}}<input type="text" name="custom2-text" placeholder="{{i18n.settings.general.links_items.text_holder}}" value="{{links.2.text}}" />{{/links.2.text}}
 					</div>
 					<div class="form-group">
-						{{#links.2.link}}<input type="text" name="custom2-url" placeholder="Link URL, i.e. http://www.google.com/" value="{{links.2.link}}" />{{/links.2.link}}
-						{{^links.2.link}}<input type="text" name="custom2-url" placeholder="Link URL, i.e. http://www.google.com/" value="{{links.2.link}}" />{{/links.2.link}}
+						{{#links.2.link}}<input type="text" name="custom2-url" placeholder="{{i18n.settings.general.links_items.link_holder}}" value="{{links.2.link}}" />{{/links.2.link}}
+						{{^links.2.link}}<input type="text" name="custom2-url" placeholder="{{i18n.settings.general.links_items.link_holder}}" value="{{links.2.link}}" />{{/links.2.link}}
 					</div>
 				</div>
 			</div>
@@ -105,6 +105,6 @@
 	</form>
 
 	<div class="col-sm-11 btns">
-		<a class="guide" title="Show the installation guide">Installation guide</a>
+		<a class="guide" title="{{i18n.settings.general.guide_desc}}">{{i18n.settings.general.guide}}</a>
 	</div>
 </div>

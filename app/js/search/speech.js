@@ -1,7 +1,7 @@
 /**
  * Handles "OK Google" detection and speech-based searching
  */
-define(["jquery", "underscore", "backbone", "storage/storage"], function($, _, Backbone, Storage) {
+define(["jquery", "underscore", "backbone", "storage/storage", "i18n/i18n"], function($, _, Backbone, Storage, Translate) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -32,7 +32,7 @@ define(["jquery", "underscore", "backbone", "storage/storage"], function($, _, B
 			start: function() {
 				this.restart();
 
-				this.setText("Listening...");
+				this.setText(Translate("voice.listening"));
 				
 				this.$el.add(this.overlay).addClass("visible");
 
@@ -41,7 +41,7 @@ define(["jquery", "underscore", "backbone", "storage/storage"], function($, _, B
 				this.recognition.onstart = function() {
 					this.recognition.onstart = null;
 
-					this.setText("Listening...");
+					this.setText(Translate("voice.listening"));
 				}.bind(this);
 			},
 			stop: function() {
@@ -74,7 +74,7 @@ define(["jquery", "underscore", "backbone", "storage/storage"], function($, _, B
 			},
 			setText: function(text) {
 				if (text && text !== "") this.$(".text").text(text);
-				else this.$(".text").html("Didn't get that. <a>Try Again</a>");
+				else this.$(".text").html(Translate("voice.missed"));
 			},
 			animate: function() {
 				var val = Math.round((0.1 + 0.7 * Math.random()) * 40),
@@ -127,10 +127,10 @@ define(["jquery", "underscore", "backbone", "storage/storage"], function($, _, B
 							if (e.results[i].isFinal) {
 								this.recognition.abort();
 
-								this.setText("Searching for: " + this.text);
+								this.setText(Translate("voice.searching", this.text));
 
 								this.recognition.onend = function() {
-									this.setText("Searching for: " + this.text);
+									this.setText(Translate("voice.searching", this.text));
 
 									this.trigger("result", this.text);
 								}.bind(this);

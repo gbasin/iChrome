@@ -1,7 +1,7 @@
 /**
  * This is the Tab Specific tab in the settings
  */
-define(["backbone", "core/analytics", "storage/storage", "core/render"], function(Backbone, Track, Storage, render) {
+define(["backbone", "core/analytics", "storage/storage", "i18n/i18n", "core/render"], function(Backbone, Track, Storage, Translate, render) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -20,9 +20,7 @@ define(["backbone", "core/analytics", "storage/storage", "core/render"], functio
 
 					if (
 						this.$("form").length !== 1 &&
-						confirm("Are you really sure you want to delete this tab?\r\n" + 
-								"This action is not reversible and all data from all " + 
-								"widgets in this tab will be lost.")
+						confirm(Translate("settings.specific.delete_confirm"))
 					) {
 						var tab = this.$("form.active").attr("data-tab") - 1;
 
@@ -42,7 +40,7 @@ define(["backbone", "core/analytics", "storage/storage", "core/render"], functio
 						this.trigger("tab:removed");
 					}
 					else if (this.$("form").length == 1) {
-						alert("You cannot delete the only remaining tab.");
+						alert(Translate("settings.specific.delete_disallowed"));
 					}
 				},
 				"click .btns .btn.default": function(e) {
@@ -67,7 +65,7 @@ define(["backbone", "core/analytics", "storage/storage", "core/render"], functio
 
 					this.themes.once("use", function(theme, id) {
 						$(e.currentTarget).prev("input").val(id || theme.id).end()
-							.next(".current").text(theme.name || (typeof theme.id == "number" ? "Theme " + theme.id : ""));
+							.next(".current").text(theme.name || (typeof theme.id == "number" ? Translate("settings.visual.theme_placeholder", theme.id) : ""));
 					}, this);
 				}
 			},
@@ -95,7 +93,7 @@ define(["backbone", "core/analytics", "storage/storage", "core/render"], functio
 						active: (i == 0 ? "active" : ""),
 						themename: (
 							theme == "default" ?
-								"Default Theme" :
+								Translate("settings.visual.theme") :
 							(
 								this.get("cached")[theme] || this.get("themes")[(theme).replace("custom", "")] || {}
 							).name

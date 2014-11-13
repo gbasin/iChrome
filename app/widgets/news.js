@@ -6,30 +6,28 @@ define(["jquery"], function($) {
 		id: 4,
 		size: 6,
 		order: 2,
-		name: "News",
 		interval: 300000,
 		nicename: "news",
 		sizes: ["variable"],
-		desc: "Displays the current top news by category and edition.",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide"
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder"
 			},
 			{
 				type: "number",
 				nicename: "number",
-				label: "Articles Shown",
+				label: "i18n.settings.articles",
 				min: 1,
 				max: 10
 			},
 			{
 				type: "select",
 				nicename: "edition",
-				label: "Edition",
-				help: "If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
+				label: "i18n.settings.edition",
+				help: "i18n.settings.edition_help",
 				options: {
 					us: "U.S.",
 					uk: "U.K.",
@@ -44,27 +42,27 @@ define(["jquery"], function($) {
 			{
 				type: "select",
 				nicename: "topic",
-				label: "Topic",
+				label: "i18n.settings.topic",
 				chained: "edition",
 				options: "getTopics"
 			},
 			{
 				type: "text",
 				nicename: "custom",
-				label: "Custom Feed",
-				help: "This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
-				placeholder: "Enter a custom RSS feed to fetch news from"
+				label: "i18n.settings.feed",
+				help: "i18n.settings.feed_help",
+				placeholder: "i18n.settings.feed_placeholder"
 			},
 			{
 				type: "text",
 				nicename: "link",
-				label: "Footer URL",
-				placeholder: "Enter the URL that the \"More\" link should point to"
+				label: "i18n.settings.footer",
+				placeholder: "i18n.settings.footer_placeholder"
 			}
 		],
 		config: {
 			size: "variable",
-			title: "News",
+			title: "i18n.name",
 			number: 5,
 			edition: "us",
 			topic: "top",
@@ -107,25 +105,25 @@ define(["jquery"], function($) {
 		},
 		getTopics: function(cb, edition) {
 			var topics = {
-				top: "Top Stories",
-				w: "World",
-				n: "Nation",
-				b: "Business",
-				s: "Sports",
-				tc: "Technology",
-				e: "Entertainment",
-				m: "Health",
-				snc: "Science",
-				ir: "Spotlight"
+				top: this.utils.translate("settings.topic_options.top"),
+				w: this.utils.translate("settings.topic_options.world"),
+				n: this.utils.translate("settings.topic_options.nation"),
+				b: this.utils.translate("settings.topic_options.business"),
+				s: this.utils.translate("settings.topic_options.sports"),
+				tc: this.utils.translate("settings.topic_options.technology"),
+				e: this.utils.translate("settings.topic_options.entertainment"),
+				m: this.utils.translate("settings.topic_options.health"),
+				snc: this.utils.translate("settings.topic_options.science"),
+				ir: this.utils.translate("settings.topic_options.spotlight"),
 			},
 			edition = edition || "us";
 
 			if (edition == "pt-BR_br") {
+				topics.t = topics.snc + " / " + topics.tc;
+				topics.po = topics.ir;
+
 				delete topics.snc;
 				delete topics.ir;
-
-				topics.t = "Science/Technology";
-				topics.po = "Spotlight";
 			}
 
 			cb(topics);

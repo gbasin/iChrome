@@ -6,35 +6,33 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 		id: 10,
 		size: 1,
 		order: 3,
-		name: "Calendar",
 		interval: 300000,
 		nicename: "calendar",
 		sizes: ["variable"],
-		desc: "Displays upcoming events from one or more of your Google calendars.",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide"
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder"
 			},
 			{
 				type: "select",
 				multiple: true,
-				label: "Calendar",
+				label: "i18n.settings.calendar",
 				nicename: "calendars",
 				options: "getCalendars"
 			},
 			{
 				type: "number",
 				nicename: "events",
-				label: "Events Shown",
+				label: "i18n.settings.events",
 				min: 1,
 				max: 10
 			}
 		],
 		config: {
-			title: "My Calendar",
+			title: "i18n.title",
 			size: "variable",
 			events: 5,
 			calendars: []

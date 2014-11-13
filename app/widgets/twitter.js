@@ -6,35 +6,33 @@ define(["jquery", "moment"], function($, moment) {
 		id: 26,
 		size: 1,
 		order: 3,
-		name: "Twitter",
 		interval: 300000,
 		nicename: "twitter",
 		sizes: ["variable"],
-		desc: "Displays tweets from your home stream or a specified list.",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide"
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder"
 			},
 			{
 				type: "select",
 				nicename: "source",
-				label: "Show Tweets from",
+				label: "i18n.settings.source",
 				options: "getSources"
 			},
 			{
 				type: "number",
 				nicename: "tweets",
-				label: "Tweets Shown",
+				label: "i18n.settings.show",
 				min: 1,
 				max: 10
 			}
 		],
 		config: {
 			source: "home",
-			title: "Twitter",
+			title: "i18n.name",
 			size: "variable",
 			tweets: "5"
 		},
@@ -84,7 +82,7 @@ define(["jquery", "moment"], function($, moment) {
 		},
 		getSources: function(cb) {
 			if (!this.config.token) {
-				return cb({ "home": "You'll need to authorize iChrome first" });
+				return cb({ "home": this.utils.translate("authorize") });
 			}
 
 			this.ajax({
@@ -92,14 +90,14 @@ define(["jquery", "moment"], function($, moment) {
 				url: "https://api.twitter.com/1.1/lists/list.json",
 				success: function(d) {
 					var sources = {
-						home: "Home",
-						mentions: "Mentions",
-						retweets: "Retweets of me"
+						home: this.utils.translate("home"),
+						mentions: this.utils.translate("mentions"),
+						retweets: this.utils.translate("retweets")
 					};
 
 					if (d && d.length) {
 						sources.lists = {
-							label: "Lists"
+							label: this.utils.translate("lists")
 						};
 
 						d.forEach(function(e, i) {

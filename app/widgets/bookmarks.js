@@ -6,16 +6,14 @@ define(["jquery", "modals/modals"], function($, Modal) {
 		id: 16,
 		size: 2,
 		order: 11,
-		name: "Bookmarks",
 		nicename: "bookmarks",
 		sizes: ["tiny", "variable"],
-		desc: "Displays selected and customized bookmarks and other links.",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title"
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder"
 			},
 			{
 				type: "size"
@@ -23,25 +21,25 @@ define(["jquery", "modals/modals"], function($, Modal) {
 			{
 				type: "select",
 				nicename: "columns",
-				label: "Layout",
+				label: "i18n.settings.layout",
 				options: {
-					one: "Single column",
-					two: "Double column"
+					one: "i18n.settings.layout_options.single",
+					two: "i18n.settings.layout_options.double"
 				},
 				sizes: ["variable"]
 			},
 			{
 				type: "radio",
 				nicename: "target",
-				label: "Open bookmarks in",
+				label: "i18n.settings.open",
 				options: {
-					_self: "The current tab",
-					_blank: "A new tab"
+					_self: "i18n.settings.open_options.current",
+					_blank: "i18n.settings.open_options.blank"
 				}
 			}
 		],
 		config: {
-			title: "Bookmarks",
+			title: "i18n.name",
 			size: "variable",
 			columns: "one",
 			target: "_self"
@@ -133,21 +131,21 @@ define(["jquery", "modals/modals"], function($, Modal) {
 			});
 
 
-			var modalHTML = '<h2 class="title">Edit Bookmark</h2>\
+			var modalHTML = '<h2 class="title">' + this.utils.translate("edit.dialog_title") + '</h2>\
 				<form>\
 					<div class="form-group">\
-						<label for="bookmark-title">Bookmark Title</label>\
-						<input type="text" class="form-control" id="bookmark-title" maxlength="255" placeholder="Google" />\
+						<label for="bookmark-title">' + this.utils.translate("edit.title") + '</label>\
+						<input type="text" class="form-control" id="bookmark-title" maxlength="255" placeholder="' + this.utils.translate("edit.title_placeholder") + '" />\
 					</div>\
 				\
 					<div class="form-group">\
-						<label for="bookmark-url">Bookmark URL</label>\
-						<input type="text" class="form-control" id="bookmark-url" maxlength="500" placeholder="http://www.google.com/" />\
+						<label for="bookmark-url">' + this.utils.translate("edit.url") + '</label>\
+						<input type="text" class="form-control" id="bookmark-url" maxlength="500" placeholder="' + this.utils.translate("edit.url_placeholder") + '" />\
 					</div>\
 				\
 				</form>\
 				\
-				<button class="btn btn-primary">Save</button>';
+				<button class="btn btn-primary">' + this.utils.translate("edit.save") + '</button>';
 
 			this.modal = new (Modal.extend({
 				width: 400,

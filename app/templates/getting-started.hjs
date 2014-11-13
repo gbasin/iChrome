@@ -2,16 +2,16 @@
 	<div class="hero" style="background-image: url(/images/guide/slide1.webp)"></div>
 
 	<div class="caption">
-		<h2 class="title">Welcome to iChrome!</h2>
+		<h2 class="title">{{i18n.intro.slide1.title}}</h2>
 
 		{{#newtab}}
-			<p>If you want iChrome to only show when you start Chrome and not every time you open a new tab please install <a href="https://chrome.google.com/webstore/detail/oghkljobbhapacbahlneolfclkniiami">the main iChrome extension</a> instead of this one.</p>
+			<p>{{{i18n.intro.slide1.newtab_line1}}}</p>
 		{{/newtab}}
 		{{^newtab}}
-			<p>If you want iChrome as your start page, you'll need to set the URL of this page in your settings (<a href="https://support.google.com/chrome/answer/95314" target="_blank">instructions</a>).  Otherwise, if you want it as a new tab or both home and new tab pages, please install <a href="https://chrome.google.com/webstore/detail/iccjgbbjckehppnpajnmplcccjcgbdep">iChrome New Tab</a> instead.</p>
+			<p>{{{i18n.intro.slide1.line1}}}</p>
 		{{/newtab}}
 
-		<p>This introduction is only 3 slides long and will give a quick overview of how to do basic things in iChrome.  When you're ready hit the next arrow at the right.</p>
+		<p>{{i18n.intro.slide1.line2}}</p>
 	</div>
 </article>
 
@@ -19,11 +19,11 @@
 	<div class="hero" style="background-image: url(/images/guide/slide2.webp)"></div>
 
 	<div class="caption">
-		<h2 class="title">Widgets</h2>
+		<h2 class="title">{{i18n.intro.slide2.title}}</h2>
 
-		<p>Widgets are the core of iChrome.  You can configure and move them using the wrench and handle icons shown when hovering at the top right.  To remove one, start dragging it and drop it onto the red bar that appears.</p>
+		<p>{{i18n.intro.slide2.line1}}</p>
 		
-		<p>New widgets can be added by clicking the Widgets item under the menu at the top right of the page (shown in the next slide).</p>
+		<p>{{i18n.intro.slide2.line2}}</p>
 	</div>
 </article>
 
@@ -31,11 +31,11 @@
 	<div class="hero" style="background-image: url(/images/guide/slide3.webp)"></div>
 
 	<div class="caption">
-		<h2 class="title">Customizing</h2>
+		<h2 class="title">{{i18n.intro.slide3.title}}</h2>
 
-		<p>You can change almost anything else you'd want to via the menu at the top right.  There you can configure the way your page looks, how iChrome works and get new widgets.</p>
+		<p>{{i18n.intro.slide3.line1}}</p>
 		
-		<p>Other things you can do include creating individual tabs, each with themes and widgets of their own, custom themes, or configuring the tiniest thing like what links are shown in the toolbar.</p>
+		<p>{{i18n.intro.slide3.line2}}</p>
 	</div>
 </article>
 

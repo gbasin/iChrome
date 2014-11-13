@@ -1,4 +1,4 @@
-define(["lodash", "backbone", "themes/utils"], function(_, Backbone, Utils) {
+define(["lodash", "backbone", "themes/utils", "i18n/i18n"], function(_, Backbone, Utils, Translate) {
 	var model = Backbone.Model.extend({
 		url: "http://themes.ichro.me/manifest.json",
 
@@ -60,20 +60,20 @@ define(["lodash", "backbone", "themes/utils"], function(_, Backbone, Utils) {
 					random: {
 						icon: "&#xE69C;",
 						entypo: "entypo",
-						desc: "This theme displays a random image every time you load the page"
+						desc: Translate("themes.random")
 					},
 					random_daily: {
 						icon: "&#xF073;",
-						desc: "This theme displays a randomly picked image every day"
+						desc: Translate("themes.random_daily")
 					},
 					sunrise_sunset: {
 						icon: "&#xE63D;",
 						entypo: "entypo",
-						desc: "This theme displays an image based on the time of day"
+						desc: Translate("themes.sunrise_sunset")
 					},
 					feed: {
 						icon: "&#xF09E;",
-						desc: "This theme displays an image selected daily from an external feed"
+						desc: Translate("themes.feed")
 					}
 				};
 
@@ -93,7 +93,7 @@ define(["lodash", "backbone", "themes/utils"], function(_, Backbone, Utils) {
 					theme.stats = "";
 
 					if (e.images) {
-						theme.stats += e.images.length + " images" + (e.size ? ", " : "");
+						theme.stats += Translate("themes.images", e.images.length) + (e.size ? ", " : "");
 					}
 
 					if (e.size) {

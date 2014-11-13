@@ -6,11 +6,9 @@ define(["jquery", "moment"], function($, moment) {
 		id: 9,
 		size: 1,
 		order: 14,
-		name: "Traffic",
 		interval: 300000,
 		nicename: "traffic",
 		sizes: ["tiny", "small"],
-		desc: "Displays the current time in current traffic to home or work.",
 		settings: [
 			{
 				type: "size"
@@ -18,28 +16,28 @@ define(["jquery", "moment"], function($, moment) {
 			{
 				type: "time",
 				nicename: "time",
-				label: "I leave home at"
+				label: "i18n.settings.leave"
 			},
 			{
 				type: "text",
 				nicename: "home",
-				label: "Home Address",
-				placeholder: "The destination that should be used after work"
+				label: "i18n.settings.home",
+				placeholder: "i18n.settings.home_placeholder"
 			},
 			{
 				type: "text",
 				nicename: "work",
-				label: "Work Address",
-				placeholder: "The destination that should be used before work"
+				label: "i18n.settings.work",
+				placeholder: "i18n.settings.work_placeholder"
 			},
 			{
 				type: "select",
 				nicename: "mode",
-				label: "Transit Method",
+				label: "i18n.settings.method",
 				options: {
-					D: "Driving",
-					W: "Walking",
-					T: "Public Transit"
+					D: "i18n.settings.method_options.driving",
+					W: "i18n.settings.method_options.walking",
+					T: "i18n.settings.method_options.transit"
 				}
 			}
 		],
@@ -105,10 +103,10 @@ define(["jquery", "moment"], function($, moment) {
 				data.dest = dest;
 			}
 			else if (moment(this.config.time, "hh:mm").add("hours", 1).isAfter()) {
-				data.dest = "work";
+				data.dest = this.utils.translate("to_work");
 			}
 			else {
-				data.dest = "home";
+				data.dest = this.utils.translate("to_home");
 			}
 
 			var time = moment.duration(this.data[data.dest] || 0, "seconds"),
@@ -147,7 +145,7 @@ define(["jquery", "moment"], function($, moment) {
 			this.utils.render(data);
 
 			this.elm.off("click.traffic").on("click.traffic", ".time, .dest", function() {
-				if (this.elm.find(".dest").text().trim() == "to work") {
+				if (this.elm.find(".dest").text().trim() == this.utils.translate("to_work")) {
 					this.render("home");
 				}
 				else {

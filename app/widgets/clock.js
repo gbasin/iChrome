@@ -6,17 +6,15 @@ define(["jquery", "moment"], function($, moment) {
 		id: 2,
 		size: 2,
 		order: 8,
-		name: "Time & Date",
 		interval: 1000,
 		nicename: "clock",
 		sizes: ["tiny", "small"],
-		desc: "Shows the current date and time. Optionally for a different timezone.",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide"
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder"
 			},
 			{
 				type: "size"
@@ -24,10 +22,9 @@ define(["jquery", "moment"], function($, moment) {
 			{
 				type: "select",
 				nicename: "timezone",
-				label: "Time Zone",
-				placeholder: "Enter a zone to show the current time for",
+				label: "i18n.settings.timezone",
 				options: {
-					auto: "Local",
+					auto: "i18n.settings.timezone_local",
 					"-720": "UTC -12:00",
 					"-660": "UTC -11:00",
 					"-600": "UTC -10:00",
@@ -73,18 +70,18 @@ define(["jquery", "moment"], function($, moment) {
 			{
 				type: "select",
 				nicename: "format",
-				label: "Clock View",
+				label: "i18n.settings.format",
 				options: {
-					ampm: "AM/PM - Digital",
-					full: "24 Hour - Digital",
-					analog: "12 Hour - Analog",
-					ampms: "AM/PM - Digital, No Seconds",
-					fulls: "24 Hour - Digital, No Seconds"
+					ampm: "i18n.settings.format_options.ampm",
+					full: "i18n.settings.format_options.24hour",
+					analog: "i18n.settings.format_options.analog",
+					ampms: "i18n.settings.format_options.ampmseconds",
+					fulls: "i18n.settings.format_options.24hourseconds",
 				}
 			}
 		],
 		config: {
-			title: "Clock",
+			title: "i18n.title",
 			size: "small",
 			timezone: "auto",
 			format: "ampm"
@@ -172,7 +169,7 @@ define(["jquery", "moment"], function($, moment) {
 			else {
 				data.html = this.getHTML();
 
-				if (this.config.title && !(this.config.title === "" || (this.config.size === "tiny" && this.config.title === "Time in New York, NY"))) {
+				if (this.config.title && this.config.title !== "") {
 					data.title = this.config.title;
 				}
 

@@ -1,13 +1,13 @@
 <h3 class="title">{{name}}</h3>
 
 <div class="desc-container">
-	<h4>Installation <span class="legend">Drag and drop any size onto your homepage</span></h4>
+	<h4>{{i18n.store.installation}} <span class="legend">{{i18n.store.instructions}}</span></h4>
 
 	{{#sizes}}
 		<section class="handle" data-size="{{0}}">{{1}}</section>
 	{{/sizes}}
 
-	<h4>Description</h4>
+	<h4>{{i18n.store.description}}</h4>
 
 	<div class="desc">
 		{{{desc}}}
@@ -15,7 +15,7 @@
 </div>
 
 <div class="preview-container">
-	<h4>Preview</h4>
+	<h4>{{i18n.store.preview}}</h4>
 
 	<div class="preview"></div>
 </div>

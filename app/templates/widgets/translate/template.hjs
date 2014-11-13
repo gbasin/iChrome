@@ -1,7 +1,7 @@
-<h2 class="header">Translate</h2>
+<h2 class="header">{{i18n.name}}</h2>
 
 <form>
-	<textarea placeholder="Enter the text you'd like to translate here, then hit &quot;Translate&quot; below." maxlength="1000"></textarea>
+	<textarea placeholder="{{i18n.placeholder}}" maxlength="1000"></textarea>
 
 	<div class="selectbar">
 		<select class="from">
@@ -174,5 +174,5 @@
 		</select>
 	</div>
 
-	<button class="btn btn-primary translate">Translate</button>
+	<button class="btn btn-primary translate">{{i18n.name}}</button>
 </form>

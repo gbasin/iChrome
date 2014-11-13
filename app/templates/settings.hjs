@@ -1,19 +1,19 @@
-<h2 class="title">Settings</h2>
+<h2 class="title">{{i18n.menu.settings}}</h2>
 
-<button class="btn btn-primary save">Save &amp; Close</button>
+<button class="btn btn-primary save">{{i18n.settings.save}}</button>
 
 <ul class="nav">
-	<li data-tab="general" class="active">General</li>
-	<li data-tab="visual">Visual</li>
+	<li data-tab="general" class="active">{{i18n.settings.labels.general}}</li>
+	<li data-tab="visual">{{i18n.settings.labels.visual}}</li>
 	<li data-tab="specific" class="specific nested">
-		<h3>Tab Specific</h3>
+		<h3>{{i18n.settings.labels.specific}}</h3>
 
 		<ul>
 			{{#tabs}}<li data-id="{{id}}" class="{{active}}">{{name}}</li>{{/tabs}}
-			<li data-id="new">Create New</li>
+			<li data-id="new">{{i18n.settings.new_tab}}</li>
 		</ul>
 	</li>
-	<li data-tab="advanced">Advanced</li>
+	<li data-tab="advanced">{{i18n.settings.labels.advanced}}</li>
 </ul>
 
 <div class="tabs">

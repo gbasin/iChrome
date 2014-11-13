@@ -3,10 +3,10 @@
  */
 define(
 	[
-		"lodash", "jquery", "backbone", "storage/storage", "core/analytics", "modals/modals", "themes/themes", "settings/general",
+		"lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "core/analytics", "modals/modals", "themes/themes", "settings/general",
 		"settings/visual", "settings/specific", "settings/advanced", "core/render", "settings/serialize", "settings/createTab"
 	],
-	function(_, $, Backbone, Storage, Track, Modal, Themes, General, Visual, Specific, Advanced, render, serialize, createTab) {
+	function(_, $, Backbone, Storage, Defaults, Track, Modal, Themes, General, Visual, Specific, Advanced, render, serialize, createTab) {
 		var Model = Backbone.Model.extend({
 				save: function(d, cb) {
 					if (d.tabs)		this.storage.tabs = d.tabs;
@@ -147,7 +147,7 @@ define(
 					
 					this.model.get("tabs").forEach(function(tab, i) {
 						data.tabs.push({
-							name: tab.name || "Home",
+							name: tab.name || Defaults.tab.name,
 							id: tab.id,
 							active: (i == 0 ? "active" : "")
 						});

@@ -6,9 +6,7 @@ define(["jquery"], function($) {
 		id: 21,
 		size: 1,
 		order: 15.25,
-		name: "Currency",
 		nicename: "currency",
-		desc: "Let's you convert between any two of 169 currencies.",
 		sizes: ["small"],
 		config: {
 			size: "small"

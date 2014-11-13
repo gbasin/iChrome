@@ -2,21 +2,19 @@
 
 {{#noProfile}}
 	<div class="no-profile header">
-		It doesn't look like you selected a profile yet!<br />
-		<br />
-		Try selecting one via the wrench icon in the top right.
+		{{{i18n.noprofile}}}
 	</div>
 {{/noProfile}}
 {{^noProfile}}
-	{{#tiny}}<div class="mainval" data-label="visits" data-tooltip="&lt;b&gt;Pageviews&lt;/b&gt;: {{pageviews}}&lt;br /&gt;&lt;b&gt;Pages per visit&lt;/b&gt;: {{pagesVisit}}&lt;br /&gt;&lt;b&gt;Bounce Rate&lt;/b&gt;: {{bounceRate}}&lt;br /&gt;&lt;b&gt;Completions&lt;/b&gt;: {{completions}}">{{{visits}}}</div>{{/tiny}}
+	{{#tiny}}<div class="mainval" data-label="{{i18n.sessions}}" data-tooltip="&lt;b&gt;{{i18n.pageviews}}&lt;/b&gt;: {{pageviews}}&lt;br /&gt;&lt;b&gt;{{i18n.pagesvisit}}&lt;/b&gt;: {{pagesVisit}}&lt;br /&gt;&lt;b&gt;{{i18n.bouncerate}}&lt;/b&gt;: {{bounceRate}}&lt;br /&gt;&lt;b&gt;{{i18n.completions}}&lt;/b&gt;: {{completions}}">{{{visits}}}</div>{{/tiny}}
 	{{^tiny}}
-		<div class="mainval" data-label="visits">{{{visits}}}</div>
+		<div class="mainval" data-label="{{i18n.sessions}}">{{{visits}}}</div>
 
 		<div class="details">
-			<div data-label="pageviews">{{pageviews}}</div>
-			<div data-label="pages/visit">{{pagesVisit}}</div>
-			<div data-label="bounce rate">{{bounceRate}}</div>
-			<div data-label="completions">{{completions}}</div>
+			<div data-label="{{i18n.pageviews}}">{{pageviews}}</div>
+			<div data-label="{{i18n.pagesvisit}}">{{pagesVisit}}</div>
+			<div data-label="{{i18n.bouncerate}}">{{bounceRate}}</div>
+			<div data-label="{{i18n.completions}}">{{completions}}</div>
 		</div>
 	{{/tiny}}
 {{/noProfile}}

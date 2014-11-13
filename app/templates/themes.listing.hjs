@@ -5,7 +5,7 @@
 		<div class="caption">
 			{{#name}}
 				<h2 title="{{name}}">
-					{{#offline}}<span class="cached" title="This theme has been cached and is available offline">&#xF0E7;</span>{{/offline}}
+					{{#offline}}<span class="cached" title="{{i18n.themes.cached}}">&#xF0E7;</span>{{/offline}}
 
 					{{#type}}<span class="type {{entypo}}" title="{{desc}}">{{{icon}}}</span>{{/type}}
 
@@ -18,32 +18,32 @@
 					<span>{{stats}}</span>
 				{{/stats}}
 				{{^stats}}
-					{{#resolution}}<span><b>Resolution:</b> {{resolution}}</span>{{/resolution}}
+					{{#resolution}}<span><b>{{i18n.themes.resolution}}:</b> {{resolution}}</span>{{/resolution}}
 				{{/stats}}
 
 				{{#source}}
 					{{^stats}}
 						{{^resolution}}
-							{{#categories}}<span><b>Categories:</b> {{categories}}</span>{{/categories}}
+							{{#categories}}<span><b>{{i18n.themes.categories}}:</b> {{categories}}</span>{{/categories}}
 						{{/resolution}}
 					{{/stats}}
 
-					{{#url}}<span><b>By:</b> <a href="{{url}}" target="_blank">{{name}}</a></span>{{/url}}
-					{{^url}}<span><b>By:</b> {{source}}</span>{{/url}}
+					{{#url}}<span><b>{{i18n.themes.author}}:</b> <a href="{{url}}" target="_blank">{{name}}</a></span>{{/url}}
+					{{^url}}<span><b>{{i18n.themes.author}}:</b> {{source}}</span>{{/url}}
 				{{/source}}
 				{{^source}}
-					{{#categories}}<span><b>Categories:</b> {{categories}}</span>{{/categories}}
+					{{#categories}}<span><b>{{i18n.themes.categories}}:</b> {{categories}}</span>{{/categories}}
 				{{/source}}
 			</div>
 
 			{{#custom}}
-				<button class="btn btn-warning edit">Edit</button>
-				<button class="btn btn-danger delete">Delete</button>
+				<button class="btn btn-warning edit">{{i18n.themes.edit}}</button>
+				<button class="btn btn-danger delete">{{i18n.themes.delete}}</button>
 			{{/custom}}
 
-			<button class="btn btn-success use">Use</button>
+			<button class="btn btn-success use">{{i18n.themes.use}}</button>
 
-			<button class="btn btn-primary preview">Preview</button>
+			<button class="btn btn-primary preview">{{i18n.themes.preview}}</button>
 		</div>
 	</div>
 {{/themes}}

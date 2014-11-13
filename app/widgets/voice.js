@@ -6,18 +6,16 @@ define(["jquery"], function($) {
 		id: 22,
 		size: 2,
 		order: 6,
-		name: "Voice",
 		interval: 120000,
 		nicename: "voice",
 		sizes: ["tiny", "small"],
-		desc: "Displays the current number of missed calls and texts in your Google Voice account.",
 		settings: [
 			{
 				type: "text",
 				nicename: "user",
-				label: "Account ID",
-				help: "If you're signed into multiple accounts, this is the number right after \"/b/\" in the URL when on Google Voice.<br /><br />For example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"/b/\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
-				placeholder: "Your \"/b/\" value"
+				label: "i18n.settings.account",
+				help: "i18n.settings.account_help",
+				placeholder: "i18n.settings.account_placeholder"
 			},
 			{
 				type: "size"
@@ -52,6 +50,8 @@ define(["jquery"], function($) {
 							texts: d.unreadCounts.sms || 0,
 							missed: d.unreadCounts.inbox || 0
 						},
+						call = this.utils.translate("call"),
+						text = this.utils.translate("text"),
 						messages = [],
 						id, msg, type;
 
@@ -62,10 +62,10 @@ define(["jquery"], function($) {
 
 						switch (msg.type) {
 							case 10: case 11: 
-								type = "Text message";
+								type = text;
 							break;
 							default: 
-								type = "Call";
+								type = call;
 							break;
 						}
 
@@ -73,7 +73,7 @@ define(["jquery"], function($) {
 							from: msg.displayNumber || "Unknown",
 							date: msg.relativeStartTime || "Unknown Date",
 							excerpt: msg.messageText || msg.note || false,
-							type: type || "Call"
+							type: type
 						});
 
 						type = false;

@@ -6,75 +6,73 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 		id: 19,
 		size: 6,
 		order: 6.5,
-		name: "Feedly",
 		interval: 300000,
 		nicename: "feedly",
 		sizes: ["variable"],
-		desc: "Displays articles from your Feedly account in a configurable format.",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide"
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder"
 			},
 			{
 				type: "select",
 				nicename: "source",
-				label: "Show articles from",
+				label: "i18n.settings.source",
 				options: "getSources"
 			},
 			{
 				type: "radio",
 				nicename: "show",
-				label: "Show",
+				label: "i18n.settings.show",
 				options: {
-					all: "All articles",
-					unread: "Only unread articles"
+					all: "i18n.settings.show_options.all",
+					unread: "i18n.settings.show_options.unread"
 				}
 			},
 			{
 				type: "select",
 				nicename: "view",
-				label: "Layout",
+				label: "i18n.settings.layout",
 				options: {
-					list: "Titles only",
-					magazine: "Magazine",
-					cards: "Cards",
-					"cards dual": "Cards (two columns)"
+					list: "i18n.settings.layout_options.titles",
+					magazine: "i18n.settings.layout_options.magazine",
+					cards: "i18n.settings.layout_options.cards",
+					"cards dual": "i18n.settings.layout_options.cards_columns",
 				}
 			},
 			{
 				type: "radio",
 				nicename: "mark",
-				label: "Mark an article as read when I",
+				label: "i18n.settings.mark",
 				options: {
-					scroll: "Scroll past it or click it",
-					click: "Just click it"
+					scroll: "i18n.settings.mark_options.scroll",
+					click: "i18n.settings.mark_options.click"
 				}
 			},
 			{
 				type: "radio",
 				nicename: "sort",
-				label: "Sort Order",
+				label: "i18n.settings.sort",
 				options: {
-					newest: "Newest first",
-					oldest: "Oldest first"
+					newest: "i18n.settings.sort_options.newest",
+					oldest: "i18n.settings.sort_options.oldest"
 				}
 			},
 			{
 				type: "radio",
 				nicename: "link",
-				label: "Footer Link",
+				label: "i18n.settings.footer_link",
 				options: {
-					show: "Show",
-					hide: "Hide"
+					show: "i18n.settings.footer_link_options.show",
+					hide: "i18n.settings.footer_link_options.hide"
 				}
 			}
 		],
 		config: {
 			size: "variable",
-			title: "Feedly",
+			title: "i18n.name",
 			source: "feed/http://feeds.gawker.com/lifehacker/vip/",
 			show: "all",
 			view: "cards dual",
@@ -439,9 +437,9 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 			oAuth.authorize(function() {
 				var categories = {};
 					
-				categories["user/" + oAuth.get().userId + "/category/global.all"] = "All",
-				categories["user/" + oAuth.get().userId + "/tag/global.saved"] = "Saved for later",
-				categories["user/" + oAuth.get().userId + "/category/global.uncategorized"] = "Uncategorized";
+				categories["user/" + oAuth.get().userId + "/category/global.all"] = this.utils.translate("all"),
+				categories["user/" + oAuth.get().userId + "/tag/global.saved"] = this.utils.translate("saved"),
+				categories["user/" + oAuth.get().userId + "/category/global.uncategorized"] = this.utils.translate("uncategorized");
 
 				$.ajax({
 					type: "GET",
@@ -451,7 +449,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 					},
 					success: function(d) {
 						var feeds = {
-							label: "Feeds"
+							label: this.utils.translate("settings.source_feeds")
 						};
 
 						d.forEach(function(e, i) {

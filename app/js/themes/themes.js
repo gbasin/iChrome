@@ -2,8 +2,8 @@
  * The themes modal
  */
 define(
-	["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "themes/model", "themes/utils", "themes/custom", "themes/cacher", "core/render"],
-	function(_, $, Backbone, Track, Modal, Model, Utils, Custom, Cacher, render) {
+	["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "themes/model", "themes/utils", "themes/custom", "themes/cacher", "i18n/i18n", "core/render"],
+	function(_, $, Backbone, Track, Modal, Model, Utils, Custom, Cacher, Translate, render) {
 		var modal = new (Modal.extend({
 			classes: "themes",
 		}));
@@ -72,10 +72,7 @@ define(
 			 * @param  {Event} e The event
 			 */
 			delete: function(e) {
-				if (!confirm(
-					"Are you really sure you would like to delete this theme?\r\n" +
-					"This action is irreversible; the entire theme will be permanently lost."
-				)) {
+				if (!confirm(Translate("themes.delete_confirm"))) {
 					return false;
 				}
 
@@ -83,7 +80,7 @@ define(
 
 				Cacher.Custom.delete(id, function(err) {
 					if (err) {
-						alert("An error occurred while trying to delete the theme. Please try again later");
+						alert(Translate("themes.delete_error"));
 					}
 
 					this.model.updateCustom();
@@ -130,11 +127,11 @@ define(
 						var specs = parent.find(".specs:first"),
 							oHtml = specs.html();
 
-						specs.html("<span>Please wait, fetching feed...</span>");
+						specs.html("<span>" + Translate("themes.feed_fetching") + "</span>");
 
 						return Cacher.prototype.getFeed(function(theme) {
 							if (theme === false) {
-								specs.html("<span>Something went wrong while trying to fetch the feed, please try again later.</span>");
+								specs.html("<span>" + Translate("themes.feed_error") + "</span>");
 
 								setTimeout(function() {
 									specs.html(oHtml);
@@ -192,7 +189,7 @@ define(
 					config = {
 						events: {
 							progress: function(total, done) {
-								specs.html("<span>Please wait, caching theme...</span><span>" + done + " of " + total + " images cached</span>");
+								specs.html("<span>" + Translate("themes.caching") + "</span><span>" + Translate("themes.cache_status", done, total) + "</span>");
 							},
 							complete: function(theme) {
 								specs.html(oHtml);
@@ -202,7 +199,7 @@ define(
 								this.trigger("use", theme, theme.id);
 							}.bind(this),
 							error: function() {
-								specs.html("<span>An error occurred while trying to cache the theme, please try again later</span>");
+								specs.html("<span>" + Translate("themes.cache_error") + "</span>");
 
 								setTimeout(function() {
 									specs.html(oHtml);

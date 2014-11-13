@@ -6,14 +6,12 @@ define(["jquery"], function($) {
 		id: 30,
 		size: 5,
 		order: 7.75,
-		name: "Google+",
 		nicename: "plus",
 		sizes: ["variable"],
-		desc: "Embeds Google Plus in a widget",
 		settings: [
 			{
 				type: "number",
-				label: "Widget Height",
+				label: "i18n.settings.height",
 				nicename: "height",
 				min: 100,
 				max: 800

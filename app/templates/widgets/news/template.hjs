@@ -27,4 +27,4 @@
 	{{/items}}
 </div>
 
-<a class="more" href="{{link}}">More</a>
+<a class="more" href="{{link}}">{{i18n.more}}</a>

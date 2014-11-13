@@ -2,8 +2,17 @@
  * The widget settings dialog
  */
 define(
-	["jquery", "lodash", "backbone", "storage/storage", "core/analytics", "core/status", "modals/modals", "widgets/widgets", "core/render", "jquery.serializejson", "lib/jquery.spectrum"],
-	function($, _, Backbone, Storage, Track, Status, Modal, Widgets, render) {
+	["jquery", "lodash", "backbone", "storage/storage", "i18n/i18n", "core/analytics", "core/status", "modals/modals", "widgets/widgets", "core/render", "jquery.serializejson", "lib/jquery.spectrum"],
+	function($, _, Backbone, Storage, Translate, Track, Status, Modal, Widgets, render) {
+		var sizeMap = {
+			tiny: Translate("widgets.sizes.tiny"),
+			small: Translate("widgets.sizes.small"),
+			medium: Translate("widgets.sizes.medium"),
+			large: Translate("widgets.sizes.large"),
+			variable: Translate("widgets.sizes.variable")
+		};
+
+
 		var modal = new (Modal.extend({
 				width: 400,
 				height: 535,
@@ -30,25 +39,36 @@ define(
 			},
 			select: function(input, elm, widget, form) {
 				var loop = function(options, level) {
-					var nesting = "&nbsp;".repeat(4 * (level || 0)),
+					var level = level || 0,
+						nesting = "&nbsp;".repeat(4 * level),
 						values = (typeof input.value == "object" ? input.value : [input.value]);
 
-					return _.map(options, function(e, key) {
+					var ret = [];
+
+					// Labels need to be first in the list
+					if (options.label) {
+						ret.push({
+							group: widget.utils.resolve(options.label),
+							nesting: "&nbsp;".repeat(4 * ((level || 1) - 1))
+						});
+					}
+
+					return _.compact(ret.concat(_.map(options, function(e, key) {
 						if (key == "label") {
-							return {
-								group: e,
-								nesting: nesting
-							};
+							return false;
+						}
+						else if (typeof e == "object") {
+							return loop(e, level + 1);
 						}
 						else {
 							return {
-								label: e,
+								label: widget.utils.resolve(e),
 								value: key,
 								nesting: nesting,
 								selected: (values.indexOf(key) !== -1 ? "selected" : "")
 							};
 						}
-					});
+					})));
 				};
 
 
@@ -166,7 +186,7 @@ define(
 					return {
 						size: e,
 						selected: (e == selected ? "selected" : ""),
-						name: e.slice(0, 1).toUpperCase() + e.slice(1).toLowerCase()
+						name: sizeMap[e]
 					};
 				});
 
@@ -176,13 +196,13 @@ define(
 					}
 				}));
 			},
-			radio: function(input, elm) {
+			radio: function(input, elm, widget) {
 				var data = _.pick(input, "nicename", "label", "help");
 
 				data.options = _.map(input.options, function(e, key) {
 					return {
-						label: e,
 						value: key,
+						label: widget.utils.resolve(e),
 						checked: (key == input.value ? "checked" : "")
 					};
 				});
@@ -397,8 +417,14 @@ define(
 				var form = this.$("form");
 
 				if (Array.isArray(this.widget.settings)) {
-					_.each(this.widget.settings, function(input, i) {
-						if (inputs[input.type]) {
+					_.each(this.widget.settings, function(e, i) {
+						if (inputs[e.type]) {
+							var input = _.clone(e);
+
+							if (input.help) input.help = this.widget.utils.resolve(input.help);
+							if (input.label) input.label = this.widget.utils.resolve(input.label);
+							if (input.placeholder) input.placeholder = this.widget.utils.resolve(input.placeholder);
+
 							// It might be faster to send a detached element to the handler, but
 							// the order might get messed up if it's async
 							var elm = $('<div class="form-group"></div>');

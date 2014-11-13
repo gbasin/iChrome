@@ -67,7 +67,7 @@
 {{/input-list-item}}
 
 {{#input-size}}
-	<label for="widget-size">Widget Size</label>
+	<label for="widget-size">{{i18n.widgets.settings.size}}</label>
 
 	<select class="form-control" id="widget-size" name="size">
 		{{#sizes}}

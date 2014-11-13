@@ -15,4 +15,4 @@
 	{{/column2}}
 </div>
 
-{{#link}}<a class="more" href="http://www.feedly.com/">Go To Feedly</a>{{/link}}
+{{#link}}<a class="more" href="http://www.feedly.com/">{{i18n.go_to_feedly}}</a>{{/link}}

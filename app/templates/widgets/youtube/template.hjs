@@ -1,7 +1,7 @@
 {{#title}}<h2 class="header">{{title}}</h2>{{/title}}
 
 <form class="searchbox" action="https://www.youtube.com/results" method="GET{{#newTab}}" target="_blank{{/newTab}}">
-	<input type="text" placeholder="Search YouTube" name="search_query" />
+	<input type="text" placeholder="{{i18n.search}}" name="search_query" />
 
 	<button class="submit">&#xE624;</button>
 </form>
@@ -13,7 +13,7 @@
 		<h2 title="{{title}}">{{title}}</h2>
 
 		<span class="author">{{uploader}}</span>
-		<span class="views">{{views}} views</span>
+		<span class="views">{{views}} {{i18n.views}}</span>
 	</a>
 {{/featured}}
 
@@ -26,7 +26,7 @@
 
 			<span class="author">{{uploader}}</span>
 
-			<span class="views">{{views}} views</span>
+			<span class="views">{{views}} {{i18n.views}}</span>
 		</a>
 	{{/videos}}
 </div>

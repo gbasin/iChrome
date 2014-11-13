@@ -1,7 +1,7 @@
 /**
  * The themes controller.  This manages almost everything related to theme usage
  */
-define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage) {
+define(["lodash", "backbone", "storage/storage", "i18n/i18n"], function(_, Backbone, Storage, Translate) {
 	var Model = Backbone.Model.extend({
 		initialize: function() {
 			Storage.on("done updated", function(storage) {
@@ -18,7 +18,7 @@ define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage)
 		model: new Model(),
 
 		defaults: {
-			name: "New Theme",
+			name: Translate("themes.edit.default_name"),
 			images: false,
 			offline: false,
 			time: false,

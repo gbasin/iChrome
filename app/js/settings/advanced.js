@@ -1,7 +1,7 @@
 /**
  * This is the Advanced tab in the settings
  */
-define(["jquery", "backbone", "storage/storage", "core/render", "lib/jquery.spectrum"], function($, Backbone, Storage, render) {
+define(["jquery", "backbone", "storage/storage", "i18n/i18n", "core/render", "lib/jquery.spectrum"], function($, Backbone, Storage, Translate, render) {
 	var Model = Backbone.Model.extend({
 			save: function(d, cb) {
 				if (d.tabs)		this.storage.tabs = d.tabs;
@@ -37,9 +37,7 @@ define(["jquery", "backbone", "storage/storage", "core/render", "lib/jquery.spec
 			restore: function(e) {
 				e.preventDefault();
 
-				if (!confirm("Are you really, really sure you want to do this?\r\nThis will overwrite all local" + 
-							 " and synced data, there is no backup and no way to undo this.  You will lose your" +
-							 " ENTIRE current configuration on all computers signed into this Google account.")) {
+				if (!confirm(Translate("settings.advanced.restore_confirm"))) {
 					return;
 				}
 
@@ -53,15 +51,13 @@ define(["jquery", "backbone", "storage/storage", "core/render", "lib/jquery.spec
 					}.bind(this));
 				}
 				catch(e) {
-					alert("An error occurred while trying to parse the provided data, please make sure you entered the EXACT text you backed up.");
+					alert(Translate("settings.advanced.restore_error"));
 				}
 			},
 			reset: function(e) {
 				e.preventDefault();
 
-				if (!confirm("Are you really sure you want to reset iChrome?\r\nThis will erase all local" + 
-							 " and synced data, there is no backup and no way to undo this.  You will lose your" +
-							 " ENTIRE current configuration on all computers signed into this Google account.")) {
+				if (!confirm(Translate("settings.advanced.reset_confirm"))) {
 					return;
 				}
 

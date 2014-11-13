@@ -6,67 +6,65 @@ define(["jquery", "moment"], function($, moment) {
 		id: 18,
 		size: 6,
 		order: 15.5,
-		name: "Reddit",
 		interval: 300000,
 		nicename: "reddit",
 		sizes: ["variable"],
-		desc: "Displays the top items on Reddit for any given subreddit.",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide"
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder"
 			},
 			{
 				type: "text",
 				nicename: "subreddit",
-				label: "Subreddit",
-				help: "Enter any subreddit by the part past <b>/r/</b> when on Reddit.<br /><br />For example, Technology is at: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
-				placeholder: "Enter a subreddit to show links from. (i.e. technology)"
+				label: "i18n.settings.subreddit",
+				help: "i18n.settings.subreddit_help",
+				placeholder: "i18n.settings.subreddit_placeholder"
 			},
 			{
 				type: "select",
 				nicename: "sort",
-				label: "Sort Order",
+				label: "i18n.settings.sort",
 				options: {
-					hot: "Hot",
-					top: "Top",
-					"new": "New",
-					gilded: "Gilded",
-					rising: "Rising",
-					controversial: "Controversial"
+					hot: "i18n.settings.sort_options.hot",
+					top: "i18n.settings.sort_options.top",
+					"new": "i18n.settings.sort_options.new",
+					gilded: "i18n.settings.sort_options.gilded",
+					rising: "i18n.settings.sort_options.rising",
+					controversial: "i18n.settings.sort_options.controversial",
 				}
 			},
 			{
 				type: "number",
 				nicename: "number",
-				label: "Links Shown",
+				label: "i18n.settings.links",
 				min: 1,
 				max: 10
 			},
 			{
 				type: "radio",
 				nicename: "click",
-				label: "When I click a link show me",
+				label: "i18n.settings.click",
 				options: {
-					link: "The link",
-					comments: "The comments"
+					link: "i18n.settings.click_options.link",
+					comments: "i18n.settings.click_options.comments"
 				}
 			},
 			{
 				type: "radio",
 				nicename: "link",
-				label: "Footer Link",
+				label: "i18n.settings.footer_link",
 				options: {
-					show: "Show",
-					hide: "Hide"
+					show: "i18n.settings.footer_link_options.show",
+					hide: "i18n.settings.footer_link_options.hide"
 				}
 			}
 		],
 		config: {
 			size: "variable",
-			title: "Reddit",
+			title: "i18n.name",
 			number: 5,
 			sort: "hot",
 			subreddit: "all",

@@ -1,7 +1,7 @@
 /**
  * Serializes the settings into the standard settings object.  This has hardcoded boolean definitions that might be more appropriate in the defaults file.
  */
-define(["jquery"], function($) {
+define(["jquery", "i18n/i18n"], function($, Translate) {
 	var serialize = function(modal, storage) {
 		var settings = {
 				links: [],
@@ -97,11 +97,7 @@ define(["jquery"], function($) {
 
 						if ( // If it wasn't previously a medley tab, then confirm
 							!tab.medley &&
-							!confirm(
-								"You selected to change a tab from a column-based layout to a grid-based layout. " + 
-								"If you continue you will lose all of your columns, everything will be moved to th" +
-								"e top left corner.\r\nAre you sure you want to do this?"
-							)
+							!confirm(Translate("column_to_grid_warning"))
 						) {
 							continue;
 						}
@@ -112,11 +108,7 @@ define(["jquery"], function($) {
 					else { // The opposite of the above
 						if (
 							tab.medley &&
-							!confirm(
-								"You selected to change a tab from a grid-based layout to a column-based layout. " + 
-								"If you continue you will lose all of your widget positioning, everything will be" +
-								" moved to the first column of the new tab.\r\nAre you sure you want to do this?"
-							)
+							!confirm(Translate("grid_to_column_warning"))
 						) {
 							continue;
 						}

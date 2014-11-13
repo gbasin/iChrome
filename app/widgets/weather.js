@@ -6,11 +6,9 @@ define(["jquery"], function($) {
 		id: 1,
 		size: 3,
 		order: 1,
-		name: "Weather",
 		interval: 300000,
 		nicename: "weather",
 		sizes: ["tiny", "small", "medium"],
-		desc: "Displays the current weather and a forecast for the next 4 days.",
 		settings: [
 			{
 				type: "size"
@@ -18,13 +16,13 @@ define(["jquery"], function($) {
 			{
 				type: "list",
 				nicename: "location",
-				label: "Location(s)",
-				placeholder: "Enter a location and press Enter"
+				label: "i18n.settings.location",
+				placeholder: "i18n.settings.location_placeholder"
 			},
 			{
 				type: "radio",
 				nicename: "units",
-				label: "Temperature Units",
+				label: "i18n.settings.temperature",
 				options: {
 					standard: "Fahrenheit",
 					metric: "Celsius"
@@ -33,7 +31,7 @@ define(["jquery"], function($) {
 			{
 				type: "radio",
 				nicename: "wind",
-				label: "Wind Speed Units",
+				label: "i18n.settings.wind",
 				options: {
 					mph: "Miles",
 					kph: "Kilometers"
@@ -51,41 +49,48 @@ define(["jquery"], function($) {
 		data: {
 			weather: [
 				{
-					conditions: "partlycloudy",
-					temp: 59,
-					wind: "8",
-					chill: "59",
-					humidity: "44",
+					wind: "6",
+					chill: "62",
+					humidity: "53",
+					temp: 62,
+					status: "Cloudy",
+					conditions: "cloudy",
+					location: "San Francisco",
 					forecast: [
 						{
-							date: "Today",
-							high: "64",
-							low: "45",
-							conditions: "sunny"
-						},
-						{
-							date: "Mon",
-							high: "65",
-							low: "46",
-							conditions: "sunny"
-						},
-						{
-							date: "Tue",
-							high: "65",
-							low: "45",
-							conditions: "partlycloudy"
-						},
-						{
 							date: "Wed",
-							high: "65",
-							low: "43",
-							conditions: "sunny"
+							high: "62",
+							low: "56",
+							status: "Rain",
+							conditions: "drizzle"
 						},
 						{
 							date: "Thu",
-							high: "67",
-							low: "44",
-							conditions: "sunny"
+							high: "64",
+							low: "55",
+							status: "AM Showers",
+							conditions: "tstorms"
+						},
+						{
+							date: "Fri",
+							high: "62",
+							low: "53",
+							status: "Partly Cloudy",
+							conditions: "partlycloudy"
+						},
+						{
+							date: "Sat",
+							high: "63",
+							low: "54",
+							status: "Partly Cloudy",
+							conditions: "partlycloudy"
+						},
+						{
+							date: "Sun",
+							high: "65",
+							low: "53",
+							status: "Mostly Sunny",
+							conditions: "partlycloudy"
 						}
 					]
 				}
@@ -222,6 +227,7 @@ define(["jquery"], function($) {
 		},
 		refresh: function() {
 			var config = this.config,
+				unknown = this.utils.translate("unknown"),
 				get = function() {
 					$.get("https://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20weather.forecast%20where%20"
 							+ encodeURIComponent("woeid=" + (this.config.woeid || ["2487956"]).join(" or woeid=")),
@@ -242,10 +248,10 @@ define(["jquery"], function($) {
 									chill: res.wind.chill || "0",
 									humidity: res.atmosphere.humidity || 0,
 									temp: parseInt(res.item.condition.temp || 0),
-									status: res.item.condition.text || "Unknown",
+									status: res.item.condition.text || unknown,
 									conditions: this.getCondition(res.item.condition.code) || "unknown",
 
-									location: (res.location.city ? res.location.city : (res.location.region ? res.location.region : (res.location.country ? res.location.country : "Unknown"))),
+									location: (res.location.city ? res.location.city : (res.location.region ? res.location.region : (res.location.country ? res.location.country : unknown))),
 									forecast: []
 								};
 
@@ -254,7 +260,7 @@ define(["jquery"], function($) {
 									date: e.day || "NA",
 									high: e.high || 0,
 									low: e.low || 0,
-									status: e.text || "Unknown",
+									status: e.text || unknown,
 									conditions: this.getCondition(e.code) || "unknown"
 								});
 							}.bind(this));

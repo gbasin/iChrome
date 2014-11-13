@@ -6,53 +6,51 @@ define(["jquery"], function($) {
 		id: 11,
 		size: 2,
 		order: 13,
-		name: "Apps",
 		nicename: "apps",
 		sizes: ["variable"],
-		desc: "Displays your currently installed Google Chrome applications.",
 		settings: [
 			{
 				type: "text",
 				nicename: "title",
-				label: "Widget Title",
-				placeholder: "Enter a widget title or leave blank to hide"
+				label: "i18n.settings.title",
+				placeholder: "i18n.settings.title_placeholder"
 			},
 			{
 				type: "select",
 				nicename: "view",
-				label: "Widget Format",
+				label: "i18n.settings.format",
 				options: {
-					tiles: "Tiles",
-					list: "List"
+					tiles: "i18n.settings.format_options.tiles",
+					list: "i18n.settings.format_options.list"
 				}
 			},
 			{
 				type: "radio",
 				nicename: "show",
-				label: "Show",
+				label: "i18n.settings.display",
 				options: {
-					all: "All apps",
-					enabled: "Only enabled apps"
+					all: "i18n.settings.display_options.all",
+					enabled: "i18n.settings.display_options.enabled"
 				}
 			},
 			{
 				type: "select",
 				nicename: "sort",
-				label: "Sort",
+				label: "i18n.settings.sort",
 				options: {
-					id: "ID",
-					alpha: "Alphabetically",
-					offline: "Offline Enabled",
-					available: "Availability"
+					id: "i18n.settings.sort_options.id",
+					alpha: "i18n.settings.sort_options.alphabetically",
+					offline: "i18n.settings.sort_options.offline",
+					available: "i18n.settings.sort_options.available"
 				}
 			},
 			{
 				type: "radio",
 				nicename: "target",
-				label: "Open apps in",
+				label: "i18n.settings.open",
 				options: {
-					_self: "The current tab",
-					_blank: "A new tab"
+					_self: "i18n.settings.open_options.current",
+					_blank: "i18n.settings.open_options.blank"
 				}
 			}
 		],
@@ -81,9 +79,9 @@ define(["jquery"], function($) {
 
 				list.unshift({
 					enabled: true,
-					shortName: "Store",
 					offlineEnabled: false,
 					id: "ahfgeienlihckogmohjhadlkjgocpleb",
+					shortName: this.utils.translate("store_app"),
 					appLaunchUrl: "https://chrome.google.com/webstore?utm_source=iChrome-apps-widget"
 				});
 

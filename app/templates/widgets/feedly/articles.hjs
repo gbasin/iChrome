@@ -9,7 +9,7 @@
 		</div>
 
 		<div class="specs">
-			{{#author}}<span class="author">by {{author}}</span>{{/author}}
+			{{#author}}<span class="author">{{i18n.author}} {{author}}</span>{{/author}}
 			<span class="recommendations">{{recommendations}}</span>
 			<span class="source">&nbsp;&nbsp;{{source}}&nbsp;&nbsp;/&nbsp;</span>
 			<span class="age">{{age}}</span>

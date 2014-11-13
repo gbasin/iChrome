@@ -2,6 +2,7 @@
  * This loads the widgets and a getAll function for them
  */
 define([
+	"lodash", "widgets/utils",
 	// These have to be w/ so r.js inlines them
 	"w/analytics",	"w/apps",			"w/bookmarks",
 	"w/calc",		"w/calendar",		"w/clock",
@@ -16,13 +17,28 @@ define([
 	"w/youtube",	"w/recentlyclosed",
 
 	"lib/jquery.numberformatter", "lib/jquery.sortable", "oauth2"
-], function() {
-	var widgets = {};
+], function(_, Utils) {
+	var args = Array.prototype.slice.call(arguments, 2),
+		widgets = {};
 
-	// Lodash has a method for this but it's simpler given the list of widgets
-	[].slice.call(arguments, 0).forEach(function(e, i) {
-		if (e && e.id && e.nicename) {
-			widgets[e.id] = widgets[e.nicename] = e;
+	var resolve = function(widget, string) {
+		return Utils.prototype.resolve.call({ widget: widget }, string);
+	};
+
+	_.each(args, function(widget, i) {
+		if (widget && widget.id && widget.nicename) {
+			// This resolves i18n calls in widget configs, it's done here because it's
+			// more efficient than doing it on every new Widget() call
+			widget.config = _.mapValues(widget.config, function(e) {
+				if (typeof e == "string") {
+					return resolve(widget, e);
+				}
+				else {
+					return e;
+				}
+			});
+
+			widgets[widget.id] = widgets[widget.nicename] = widget;
 		}
 	});
 

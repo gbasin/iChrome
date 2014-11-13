@@ -1,43 +1,43 @@
-<h2 class="header">Advanced</h2>
+<h2 class="header">{{i18n.settings.labels.advanced}}</h2>
 
 <div class="content">
 	<form class="form-horizontal">
 		<div class="form-group colors">
-			<label class="control-label col-sm-2">Widget Background</label>
+			<label class="control-label col-sm-2">{{i18n.settings.advanced.background}}</label>
 
 			<div class="col-sm-9">
-				<span class="info">Click the swatch to select a color</span>
+				<span class="info">{{i18n.settings.advanced.background_desc}}</span>
 
 				<input type="text" class="color" id="wcolor" name="wcolor" value="{{wcolor}}" />
 			</div>
 		</div>
 
 		<div class="form-group">
-			<label class="control-label col-sm-2">Search Behavior</label>
+			<label class="control-label col-sm-2">{{i18n.settings.advanced.search}}</label>
 
 			<div class="checkbox col-sm-9">
-				{{#stab}}<label><input type="checkbox" name="stab" checked /> Open search results in a new tab</label>{{/stab}}
-				{{^stab}}<label><input type="checkbox" name="stab" /> Open search results in a new tab</label>{{/stab}}
+				{{#stab}}<label><input type="checkbox" name="stab" checked /> {{i18n.settings.advanced.search_label}}</label>{{/stab}}
+				{{^stab}}<label><input type="checkbox" name="stab" /> {{i18n.settings.advanced.search_label}}</label>{{/stab}}
 			</div>
 		</div>
 
 		<div class="form-group backup">
-			<label class="control-label col-sm-2" for="backup">Backup / Restore</label>
+			<label class="control-label col-sm-2" for="backup">{{i18n.settings.advanced.backup}}</label>
 
 			<div class="col-sm-9">
-				<span class="info"><b>To backup:</b> Click the Backup button and copy the text that appears in the field below.<br /><b>To restore:</b> Paste the text you saved or copied before and click the Restore button.</span>
+				<span class="info">{{{i18n.settings.advanced.backup_desc}}}</span>
 
-				<button class="btn btn-primary backup">Backup</button> <button class="btn btn-primary restore">Restore</button>
+				<button class="btn btn-primary backup">{{i18n.settings.advanced.backup_backup}}</button> <button class="btn btn-primary restore">{{i18n.settings.advanced.backup_restore}}</button>
 
 				<textarea id="backup" name="backup"></textarea>
 			</div>
 		</div>
 
 		<div class="form-group css">
-			<label class="control-label col-sm-2" for="custom-css">Custom CSS</label>
+			<label class="control-label col-sm-2" for="custom-css">{{i18n.settings.advanced.css}}</label>
 
 			<div class="col-sm-9">
-				<span class="info">You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN</a>).<br /><br />Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.</span>
+				<span class="info">{{{i18n.settings.advanced.css_desc}}}</span>
 
 				<textarea id="custom-css" name="custom-css" maxlength="1000">{{custom-css}}</textarea>
 			</div>
@@ -45,6 +45,6 @@
 	</form>
 
 	<div class="col-sm-11 btns">
-		<a class="reset">Reset iChrome</a>
+		<a class="reset">{{i18n.settings.advanced.reset}}</a>
 	</div>
 </div>

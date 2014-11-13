@@ -1,7 +1,7 @@
 /**
  * This is the custom theme create/edit dialog
  */
-define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "themes/utils", "themes/cacher", "core/render", "lib/jquery.spectrum"], function(_, $, Backbone, Track, Modal, Utils, Cacher, render) {
+define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "themes/utils", "themes/cacher", "i18n/i18n", "core/render", "lib/jquery.spectrum"], function(_, $, Backbone, Track, Modal, Utils, Cacher, Translate, render) {
 	var Model =  Backbone.Model.extend({
 			defaults: function() {
 				return _.clone(Utils.defaults);
@@ -163,7 +163,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 						Cacher.Custom.cache(theme, id, next);
 					}
 					catch(e) {
-						alert("An error occurred while trying to cache the image you provided, please double-check the URL.");
+						alert(Translate("themes.edit.cache_error"));
 					}
 				}
 				else if ((upload = this.$("#upload")[0].files).length) {
@@ -171,10 +171,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 						Cacher.Custom.saveUpload(theme, upload[0], id, next);
 					}
 					catch(e) {
-						alert(
-							"An error occurred while trying to upload the file you provided" +
-							", please make sure that it's a reasonable size and an image."
-						);
+						alert(Translate("themes.edit.upload_error"));
 					}
 				}
 				else if (editing) {
