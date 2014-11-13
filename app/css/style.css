@@ -774,7 +774,13 @@ input[type="radio"]:checked {
 	transition: right .3s cubic-bezier(0.190, 1.000, 0.220, 1.000);
 }
 
-.menu.visible {
+.menu:lang(uk) {
+	width: 230px;
+	right: -235px;
+}
+
+.menu.visible,
+.menu.visible:lang(uk) {
 	right: 0;
 }
 
@@ -857,6 +863,10 @@ input[type="radio"]:checked {
 	font-size: 11px;
 	line-height: 18px;
 	padding: 20px 0 10px 15px;
+}
+
+.menu .footer:lang(ja) {
+	font-size: 10px;
 }
 
 .menu .footer .separator {
@@ -1978,9 +1988,15 @@ body.no-edit .widgets-container .widget .settings {
 	width: 800px;
 	height: 600px;
 	z-index: 999999;
+	max-height: 100%;
 	overflow: visible;
 	border-radius: 6px;
 	box-shadow: 0 4px 32px rgba(0, 0, 0, .4);
+}
+
+.modal.getting-started:lang(de),
+.modal.getting-started:lang(fr) {
+	height: 620px;
 }
 
 .getting-started .slide {
@@ -3099,6 +3115,76 @@ body.no-edit .widgets-container .widget .settings {
 .settings .advanced .reset {
 	float: left;
 	color: #D43F3A;
+}
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Asian font overrides
+
+	These are at the end so no !important declarations are needed
+*/
+.menu:lang(zh),
+.tooltip:lang(zh),
+.getting-started .slide:lang(zh),
+.toolbar .apps-toggle .apps:lang(zh),
+.toolbar .search .suggestions div:lang(zh) {
+	font-family: "微軟正黑體", "Microsoft JhengHei", Roboto;
+}
+
+.menu:lang(ja),
+.tooltip:lang(ja),
+.getting-started .slide:lang(ja),
+.toolbar .apps-toggle .apps:lang(ja),
+.toolbar .search .suggestions div:lang(ja) {
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Roboto;
+}
+
+
+.btn:lang(zh),
+.themes .btn:lang(zh),
+.notification:lang(zh),
+.modal > .title:lang(zh),
+.voicebar .text:lang(zh),
+.menu .tabs .add:lang(zh),
+.themes .theme .btn:lang(zh),
+.notification .title:lang(zh),
+.toolbar .search input:lang(zh),
+.settings .tab .header:lang(zh),
+.themes .theme .caption h2:lang(zh),
+.modal > .content > .title:lang(zh),
+.store > .wrapper > .title:lang(zh),
+.widget-settings .list .item:lang(zh),
+.store > .wrapper > .detail > .title:lang(zh),
+.store > .wrapper > .detail > div > h4:lang(zh),
+.store > .wrapper > .content .widget .desc:lang(zh),
+.store > .wrapper > .content .widget h2.title:lang(zh) {
+	font-family: "微軟正黑體", "Microsoft JhengHei", Open Sans;
+}
+
+
+.btn:lang(ja),
+.themes .btn:lang(ja),
+.notification:lang(ja),
+.modal > .title:lang(ja),
+.voicebar .text:lang(ja),
+.menu .tabs .add:lang(ja),
+.themes .theme .btn:lang(ja),
+.notification .title:lang(ja),
+.toolbar .search input:lang(ja),
+.settings .tab .header:lang(ja),
+.themes .theme .caption h2:lang(ja),
+.modal > .content > .title:lang(ja),
+.store > .wrapper > .title:lang(ja),
+.widget-settings .list .item:lang(ja),
+.store > .wrapper > .detail > .title:lang(ja),
+.store > .wrapper > .detail > div > h4:lang(ja),
+.store > .wrapper > .content .widget .desc:lang(ja),
+.store > .wrapper > .content .widget h2.title:lang(ja) {
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Open Sans;
 }
 
 

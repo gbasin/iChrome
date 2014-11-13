@@ -68,7 +68,7 @@ define(
 
 						this.$(".detail").html(
 							render("store-detail", {
-								name: resolve(widget, widget.name),
+								name: widget.name ? resolve(widget, widget.name) : translate(widget, "name"),
 								sizes: widget.sizes.map(function(e) { return [e, sizes[e]] }),
 								desc: Utils.prototype.renderTemplate.call({ widget: widget }, "desc")
 							})
