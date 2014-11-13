@@ -2,21 +2,43 @@
  * The I18N locale loader.  This file will be replaced with a compiled
  * JSON module at build time so no processing has to be done on load.
  */
-define(["lodash", "json!i18n/en.json", "json!i18n/widgets-en.json"], function(_) {
-	var locales = _.rest(arguments);
+define(
+	[
+		"lodash",
 
-	locales = _.zipObject(_.pluck(locales, "lang_code"), locales);
+		"json!i18n/locales/cs/main.json", "json!i18n/locales/cs/widgets.json",
+		"json!i18n/locales/de/main.json", "json!i18n/locales/de/widgets.json",
+		"json!i18n/locales/en/main.json", "json!i18n/locales/en/widgets.json",
+		"json!i18n/locales/es/main.json", "json!i18n/locales/es/widgets.json",
+		"json!i18n/locales/fr/main.json", "json!i18n/locales/fr/widgets.json",
+		"json!i18n/locales/hi/main.json", "json!i18n/locales/hi/widgets.json",
+		"json!i18n/locales/id/main.json", "json!i18n/locales/id/widgets.json",
+		"json!i18n/locales/it/main.json", "json!i18n/locales/it/widgets.json",
+		"json!i18n/locales/ja/main.json", "json!i18n/locales/ja/widgets.json",
+		"json!i18n/locales/nl/main.json", "json!i18n/locales/nl/widgets.json",
+		"json!i18n/locales/ru/main.json", "json!i18n/locales/ru/widgets.json",
+		"json!i18n/locales/tr/main.json", "json!i18n/locales/tr/widgets.json",
+		"json!i18n/locales/uk/main.json", "json!i18n/locales/uk/widgets.json",
+		"json!i18n/locales/pt-PT/main.json", "json!i18n/locales/pt-PT/widgets.json",
+		"json!i18n/locales/zh-CN/main.json", "json!i18n/locales/zh-CN/widgets.json",
+		"json!i18n/locales/zh-TW/main.json", "json!i18n/locales/zh-TW/widgets.json"
+	],
+	function(_) {
+		var locales = _.rest(arguments);
 
-	_.mapValues(locales, function(e, i) {
-		var lang = e.lang_code.split("-");
+		locales = _.zipObject(_.pluck(locales, "lang_code"), locales);
 
-		if (lang[1] == "widgets" && locales[lang[0]]) {
-			delete locales[e.lang_code];
-			delete e.lang_code;
+		_.mapValues(locales, function(e, i) {
+			var lang = e.lang_code.replace("-widgets", "");
 
-			_.assign(locales[lang[0]].widgets, e);
-		}
-	});
+			if (e.lang_code.indexOf("-widgets") !== -1 && locales[lang]) {
+				delete locales[e.lang_code];
+				delete e.lang_code;
 
-	return locales;
-});
+				_.assign(locales[lang].widgets, e);
+			}
+		});
+
+		return locales;
+	}
+);

@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 		i18n: {
 			compile: {
 				files: {
-					"build/js/i18n/locales.js": ["build/js/i18n/*.json"],
+					"build/js/i18n/locales.js": ["build/js/i18n/locales/*/*.json"],
 				},
 				options: {
 					outDir: "build"
@@ -182,13 +182,13 @@ module.exports = function(grunt) {
 			locales = _.zipObject(_.pluck(locales, "lang_code"), locales);
 
 			_.mapValues(locales, function(e, i) {
-				var lang = e.lang_code.split("-");
+				var lang = e.lang_code.replace("-widgets", "");
 
-				if (lang[1] == "widgets" && locales[lang[0]]) {
+				if (e.lang_code.indexOf("-widgets") !== -1 && locales[lang]) {
 					delete locales[e.lang_code];
 					delete e.lang_code;
 
-					_.assign(locales[lang[0]].widgets, e);
+					_.assign(locales[lang].widgets, e);
 				}
 			});
 
@@ -208,7 +208,7 @@ module.exports = function(grunt) {
 					}
 				};
 
-				grunt.file.write(outDir + "/_locales/" + i + "/messages.json", JSON.stringify(data));
+				grunt.file.write(outDir + "/_locales/" + i.replace("-", "_") + "/messages.json", JSON.stringify(data));
 			});
 
 			grunt.file.write(file.dest, "define(" + JSON.stringify(locales) + ");");

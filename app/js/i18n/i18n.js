@@ -6,9 +6,15 @@
  * using a system similar to the templates.
  */
 define(["lodash", "i18n/locales"], function(_, locales) {
-	// This gets the language code from the Chrome-selected file, it effectively uses
-	// Chrome's language code parsing while using its own internal locale files
-	var language = chrome.i18n.getMessage("lang_code");
+	/**
+	 * This gets the language code from the Chrome-selected file, it effectively uses
+	 * Chrome's language code parsing while getting strings from its own internal locale files.
+	 * 
+	 * It also handles manually added localStorage overrides (for testing)
+	 */
+	var language = localStorage.localeOverride || chrome.i18n.getMessage("lang_code");
+
+	document.body.lang = language;
 
 
 	/**
