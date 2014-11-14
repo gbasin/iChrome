@@ -18,11 +18,18 @@ module.exports = function(grunt) {
 		i18n: {
 			compile: {
 				files: {
-					"build/js/i18n/locales.js": ["build/js/i18n/locales/*/*.json"],
+					"build/js/i18n/locales.js": ["build/js/i18n/locales/*/main.json", "build/js/i18n/locales/*/widgets.json"],
 				},
 				options: {
 					outDir: "build"
 				}
+			}
+		},
+
+		descriptions: {
+			compile: {
+				src: ["build/js/i18n/locales/*/description.json"],
+				dest: "descriptions"
 			}
 		},
 
@@ -222,6 +229,47 @@ module.exports = function(grunt) {
 
 
 	/**
+	 * Compiles the webstore description in each language from the locale files
+	 *
+	 * @api    public
+	 */
+	grunt.registerMultiTask("descriptions", "Compile iChrome description files", function() {
+		this.files.forEach(function(file) {
+			var locales = file.src.filter(function(filepath) {
+				if (!grunt.file.exists(filepath)) {
+					grunt.log.warn('Source file "' + filepath + '" not found.');
+
+					return false;
+				}
+				else {
+					return true;
+				}
+			}).map(function(filepath) {
+				return grunt.file.readJSON(filepath);
+			});
+
+			_.each(locales, function(locale, i) {
+				var name = locale.lang_code,
+					desc = "";
+
+				_.each(locale, function(e, i) {
+					if (i !== "lang_code" && i.indexOf("newtab") == -1 && typeof e == "string") {
+						desc += e + "\n\n";
+					}
+					else if (Array.isArray(e)) {
+						desc += "✔ " + e.join("\n✔ ") + "\n\n";
+					}
+				});
+
+				grunt.file.write(file.dest + "/" + name + ".json", desc.trim());
+			});
+
+			grunt.log.writeln('Descriptions created under "' + file.dest + '".');
+		}.bind(this));
+	});
+
+
+	/**
 	 * Removes the Chrome extension key so it can be uploaded to the webstore
 	 *
 	 * @api    public
@@ -237,5 +285,5 @@ module.exports = function(grunt) {
 
 	grunt.registerTask("default", ["copy", "i18n:compile", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "requirejs:build", "clean:all"]);
 
-	grunt.registerTask("webstore", ["copy", "i18n:compile", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "removekey", "requirejs:webstore", "compress", "clean"]);
+	grunt.registerTask("webstore", ["copy", "descriptions", "i18n:compile", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "removekey", "requirejs:webstore", "compress", "clean"]);
 };
