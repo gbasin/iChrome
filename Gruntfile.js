@@ -261,7 +261,7 @@ module.exports = function(grunt) {
 					}
 				});
 
-				grunt.file.write(file.dest + "/" + name + ".json", desc.trim());
+				grunt.file.write(file.dest + "/" + name + ".txt", desc.trim());
 			});
 
 			grunt.log.writeln('Descriptions created under "' + file.dest + '".');
