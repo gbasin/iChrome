@@ -1,0 +1,45 @@
+<div class="cards">
+	{{#cards}}
+		{{#link}}
+		<a class="card{{#btns}} btns{{/btns}}" data-index="{{index}}" href="{{link}}" target="_blank">
+		{{/link}}
+		{{^link}}
+		<div class="card{{#btns}} btns{{/btns}}" data-index="{{index}}">
+		{{/link}}
+		<div class="dismiss">&#xE678;</div>
+
+		{{#icon}}<div class="icon" style="background-image: url('{{icon}}');"></div>{{/icon}}
+
+		{{#title}}<h2>{{title}}</h2>{{/title}}
+		{{#desc}}<p class="desc">{{desc}}</p>{{/desc}}
+
+		{{#image}}<div class="image" style="background-image: url('{{image}}')"></div>{{/image}}
+		{{^link}}
+		</div>
+		{{/link}}
+		{{#link}}
+		</a>
+		{{/link}}
+
+		{{#btns}}
+			<div class="buttons">
+				{{#buttons}}
+					<a href="{{link}}" target="_blank" class="button">{{#btnIcon}}<img src="{{btnIcon}}" />{{/btnIcon}}{{title}}</a>
+				{{/buttons}}
+			</div>
+		{{/btns}}
+	{{/cards}}
+	{{^cards}}
+		{{#authorize}}
+			<div class="card authorize">
+				<h2>{{i18n.authorize}}</h2>
+				<button type="button" class="btn btn-lg btn-primary">{{i18n.authorize_btn}}</button>
+			</div>
+		{{/authorize}}
+		{{^authorize}}
+			<div class="card no-cards">
+				<h2>{{i18n.caught_up}}</h2>
+			</div>
+		{{/authorize}}
+	{{/cards}}
+</div>

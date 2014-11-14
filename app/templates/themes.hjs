@@ -1,0 +1,16 @@
+<h2 class="title">{{i18n.themes.title}}</h2>
+
+<ul class="nav">
+	<li class="active" data-id="all">{{i18n.themes.all}}</li>
+	{{#categories}}
+		<li data-id="{{id}}">{{name}}</li>
+	{{/categories}}
+	<li data-id="custom">{{i18n.themes.custom}}</li>
+
+	<li class="create">
+		<button class="btn btn-primary">{{i18n.themes.create}}</button>
+	</li>
+</ul>
+
+<div class="container">
+</div>

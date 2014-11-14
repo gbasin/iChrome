@@ -1,0 +1,21 @@
+{{#title}}
+	{{#link}}<a class="header" href="{{link}}">{{title}}</a>{{/link}}
+	{{^link}}<h2 class="header">{{title}}</h2>{{/link}}
+{{/title}}
+
+<div class="items{{#images}} images{{/images}}">
+	{{#items}}
+		<a href="{{url}}" class="item" target="_blank">
+			{{#image}}
+				{{#images}}<img src="{{image}}" alt="Loading..." />{{/images}}
+				{{^images}}<div class="img" style="background-image: url('{{image}}');"></div>{{/images}}
+			{{/image}}
+
+			<div class="excerpt">
+				<span class="title">{{title}}</span>
+
+				{{#desc}}<div class="desc">{{{desc}}}</div>{{/desc}}
+			</div>
+		</a>
+	{{/items}}
+</div>

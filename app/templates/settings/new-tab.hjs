@@ -1,0 +1,55 @@
+<form class="form-horizontal active" data-tab="{{id}}">
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="name{{id}}">{{i18n.settings.specific.name}}</label>
+
+		<div class="col-sm-9">
+			<input type="text" id="name{{id}}" name="name" value="{{i18n.settings.specific.default_name}}" />
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="columns{{id}}">{{i18n.settings.specific.layout}}</label>
+
+		<div class="col-sm-9">
+			<select id="columns{{id}}" name="columns">
+				<option value="1-fixed">{{i18n.settings.visual.layout_options.1_fixed}}</option>
+				<option value="1-fluid">{{i18n.settings.visual.layout_options.1_fluid}}</option>
+				<option value="2-fixed">{{i18n.settings.visual.layout_options.2_fixed}}</option>
+				<option value="2-fluid">{{i18n.settings.visual.layout_options.2_fluid}}</option>
+				<option value="3-fixed">{{i18n.settings.visual.layout_options.3_fixed}}</option>
+				<option value="3-fluid">{{i18n.settings.visual.layout_options.3_fluid}}</option>
+				<option value="4-fixed">{{i18n.settings.visual.layout_options.4_fixed}}</option>
+				<option value="4-fluid">{{i18n.settings.visual.layout_options.4_fluid}}</option>
+				<option value="5-fixed">{{i18n.settings.visual.layout_options.5_fixed}}</option>
+				<option value="5-fluid">{{i18n.settings.visual.layout_options.5_fluid}}</option>
+				<option value="medley">{{i18n.settings.visual.layout_options.grid}}</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="theme-btn{{id}}">{{i18n.settings.visual.theme}}</label>
+
+		<div class="col-sm-9">
+			<input type="hidden" name="theme" value="{{theme}}" />
+			
+			<button class="btn btn-primary theme" id="theme-btn{{id}}">{{i18n.settings.visual.theme_select}}</button>
+
+			<span class="current">{{themename}}</span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="alignment{{id}}">{{i18n.settings.visual.align}}</label>
+
+		<div class="col-sm-9">
+			<span class="info">{{i18n.settings.visual.align_desc}}</span>
+
+			<select id="alignment{{id}}" name="alignment">
+				<option value="left">{{i18n.settings.visual.align_labels.left}}</option>
+				<option value="center" selected>{{i18n.settings.visual.align_labels.center}}</option>
+				<option value="right">{{i18n.settings.visual.align_labels.right}}</option>
+			</select>
+		</div>
+	</div>
+</form>

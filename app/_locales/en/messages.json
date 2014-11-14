@@ -1,0 +1,15 @@
+{
+	"extDescription": {
+		"message": "The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!"
+	},
+	"extName": {
+		"message": "iChrome - your homepage, for chrome"
+	},
+
+	"lang_code": {
+		"message": "en"
+	},
+	"themes_upload_image": {
+		"message": "Upload an image"
+	}
+}

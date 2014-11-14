@@ -1,0 +1,444 @@
+{
+  "lang_code":"zh-CN-widgets",
+  "analytics":{
+    "name":"分析",
+    "desc":"显示您谷歌分析项目的各种指标",
+    "sessions":"会话",
+    "pageviews":"页面访问量",
+    "pagesvisit":"页\/访问",
+    "bouncerate":"回访率",
+    "completions":"达成",
+    "noprofile":"看起来您未选择一个项目！\n<br \/><br \/>\n请尝试通过右上角的扳手图标选择一个项目。",
+    "settings":{
+      "profile":"项目档案"
+    }
+  },
+  "apps":{
+    "name":"应用程序",
+    "desc":"显示您当前安装的谷歌 chrome 浏览器应用程序。",
+    "settings":{
+      "format":"小部件格式",
+      "format_options":{
+        "tiles":"方块式",
+        "list":"列表"
+      },
+      "display":"显示",
+      "display_options":{
+        "all":"所有应用程序",
+        "enabled":"仅启用的应用程序"
+      },
+      "sort":"排序",
+      "sort_options":{
+        "id":"编号",
+        "alphabetically":"按字母顺序排列",
+        "offline":"脱机启用",
+        "available":"可用性"
+      },
+      "open":"在...中打开应用"
+    },
+    "store_app":"Store"
+  },
+  "bookmarks":{
+    "name":"书签",
+    "desc":"显示选定并定制收藏夹和其他链接。",
+    "settings":{
+      "title_placeholder":"输入小部件标题",
+      "layout":"布局",
+      "layout_options":{
+        "single":"单列",
+        "double":"双列"
+      },
+      "open":"在...中打开书签"
+    },
+    "edit":{
+      "dialog_title":"编辑书签",
+      "title":"书签名",
+      "title_placeholder":"谷歌（Google）",
+      "url":"添加链接",
+      "url_placeholder":"http:\/\/www.google.com\/",
+      "save":"保存"
+    },
+    "new_caption":"新",
+    "new_bookmark":"书签",
+    "new_folder":"文件夹",
+    "drop_link":"将链接拖至此处"
+  },
+  "calc":{
+    "name":"计算器",
+    "desc":"显示一个基础计算器",
+    "error":"错误 ！",
+    "infinity":"无限",
+    "mismatch":"括号不匹配"
+  },
+  "calendar":{
+    "name":"日历",
+    "desc":"显示您谷歌日历即中将发生的事件。",
+    "settings":{
+      "calendar":"日历",
+      "events":"显示事件"
+    },
+    "title":"My Calendar",
+    "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
+  },
+  "clock":{
+    "name":"Time & Date",
+    "desc":"Shows the current date and time. Optionally for a different timezone.",
+    "settings":{
+      "timezone":"Time Zone",
+      "timezone_local":"Local",
+      "format":"Clock Format",
+      "format_options":{
+        "ampm":"AM\/PM - Digital",
+        "24hour":"24 Hour - Digital",
+        "analog":"12 Hour - Analog",
+        "ampmseconds":"AM\/PM - Digital, No Seconds",
+        "24hourseconds":"24 Hour - Digital, No Seconds"
+      }
+    },
+    "title":"Clock"
+  },
+  "currency":{
+    "name":"Currency",
+    "desc":"Let's you convert between any two of 169 currencies.",
+    "to_label":"to"
+  },
+  "drive":{
+    "name":"网盘",
+    "desc":"Displays recently changed files from your Google Drive.",
+    "settings":{
+      "files_shown":"Number of Files Shown"
+    },
+    "modified_by":"by",
+    "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
+    "authorize_btn":"Authorize"
+  },
+  "facebook":{
+    "name":"Facebook",
+    "desc":"Embeds Facebook in a widget"
+  },
+  "feedly":{
+    "name":"Feedly",
+    "desc":"Displays articles from your Feedly account in a configurable format.",
+    "settings":{
+      "source":"Show articles from",
+      "source_feeds":"Feeds",
+      "show":"显示",
+      "show_options":{
+        "all":"All articles",
+        "unread":"Only unread articles"
+      },
+      "layout":"布局",
+      "layout_options":{
+        "titles":"Titles only",
+        "magazine":"Magazine",
+        "cards":"Cards",
+        "cards_columns":"Cards (two columns)"
+      },
+      "mark":"Mark an article as read when I",
+      "mark_options":{
+        "scroll":"Scroll past it or click it",
+        "click":"Just click it"
+      },
+      "sort":"Sort Order",
+      "sort_options":{
+        "newest":"Newest first",
+        "oldest":"Oldest first"
+      }
+    },
+    "all":"全部",
+    "saved":"Saved for later",
+    "uncategorized":"Uncategorized",
+    "author":"由 ",
+    "go_to_feedly":"打开Feedly"
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"显示您的 Gmail 收件箱，在任何地方您都可以查看您的E-Mail"
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"在您选择的页面用 iframe 内嵌网页。",
+    "settings":{
+      "url":"框架链接",
+      "url_placeholder":"i.e. http:\/\/www.google.com\/",
+      "height":"Frame Height",
+      "padding":"Padding"
+    }
+  },
+  "keep":{
+    "name":"Keep",
+    "desc":"Embeds Google Keep in a widget"
+  },
+  "news":{
+    "name":"新闻",
+    "desc":"Displays the current top news by category and edition.",
+    "settings":{
+      "articles":"Articles Shown",
+      "edition":"Edition",
+      "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
+      "topic":"Topic",
+      "topic_options":{
+        "top":"Top Stories",
+        "world":"World",
+        "nation":"Nation",
+        "business":"Business",
+        "sports":"Sports",
+        "technology":"Technology",
+        "entertainment":"Entertainment",
+        "health":"Health",
+        "science":"Science",
+        "spotlight":"Spotlight"
+      },
+      "feed":"Custom Feed",
+      "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
+      "feed_placeholder":"Enter a custom RSS feed to fetch news from",
+      "footer":"Footer URL",
+      "footer_placeholder":"Enter the URL that the \"More\" link should point to"
+    },
+    "more":"更多"
+  },
+  "notes":{
+    "name":"Notes",
+    "desc":"Inserts a simple, editable, note.",
+    "settings":{
+      "color":"Note Color",
+      "color_options":{
+        "yellow":"Yellow",
+        "orange":"Orange",
+        "red":"Red",
+        "blue":"Blue",
+        "green":"Green",
+        "white":"White"
+      },
+      "font":"Font Face",
+      "fontsize":"Font Size"
+    }
+  },
+  "now":{
+    "name":"Google Now",
+    "desc":"Displays cards from Google Now including flight status and package tracking.",
+    "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
+    "authorize_btn":"Authorize",
+    "caught_up":"All caught up, nothing here.",
+    "no_title":"No Title"
+  },
+  "plus":{
+    "name":"Google+",
+    "desc":"Embeds Google Plus in a widget"
+  },
+  "recentlyclosed":{
+    "name":"Recently Closed",
+    "desc":"Shows your recently closed tabs",
+    "settings":{
+      "tabs":"Tabs Shown",
+      "open":"Open tabs in"
+    },
+    "notabs":"Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed."
+  },
+  "reddit":{
+    "name":"Reddit",
+    "desc":"Displays the top items on Reddit for any given subreddit.",
+    "settings":{
+      "subreddit":"Subreddit",
+      "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
+      "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
+      "sort":"Sort Order",
+      "sort_options":{
+        "hot":"Hot",
+        "top":"Top",
+        "new":"新",
+        "gilded":"Gilded",
+        "rising":"Rising",
+        "controversial":"Controversial"
+      },
+      "links":"Links Shown",
+      "click":"When I click a link show me",
+      "click_options":{
+        "link":"The link",
+        "comments":"The comments"
+      }
+    }
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"Displays items from a RSS or Atom feed with optional images.",
+    "settings":{
+      "link":"Title Link",
+      "link_placeholder":"Enter a link for the widget title",
+      "url":"Feed URL",
+      "url_placeholder":"The URL of the RSS feed to be displayed",
+      "articles":"Articles Shown",
+      "view":"View",
+      "view_options":{
+        "images":"Image friendly",
+        "default":"Default"
+      },
+      "images":"Images",
+      "descriptions":"Descriptions"
+    },
+    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
+  },
+  "sports":{
+    "name":"Sports",
+    "desc":"Displays scores and game information for selected leagues and\/or teams.",
+    "settings":{
+      "league":"League",
+      "games":"Games Shown",
+      "team":"Team",
+      "teams":"Team",
+      "unavailable":"When team games are unavailable",
+      "unavailable_options":{
+        "other":"Show other games",
+        "none":"Show \"No Games\""
+      }
+    },
+    "error":"Something seems to have gone wrong",
+    "unknown_error":"Unknown Error",
+    "watch_on":"Watch on: %s",
+    "no_games":"No Games Scheduled"
+  },
+  "stocks":{
+    "name":"Stocks",
+    "desc":"Displays current information for any given stock symbol.",
+    "settings":{
+      "symbols":"Stock Symbol(s), comma separated",
+      "symbols_placeholder":"e.g. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
+      "symbols_help":"These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br \/><br \/>\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. For example, the Dow Jones index is <b>INDEXDJX:.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
+    },
+    "as_of":"as of",
+    "exchange_time":"Exchange Time",
+    "open":"open",
+    "high":"high",
+    "low":"low",
+    "volume":"volume"
+  },
+  "todo":{
+    "name":"To-do",
+    "desc":"Displays an interactive to-do list with important and completed items.",
+    "title":"To-do list",
+    "settings":{
+      "color":"Font Color",
+      "color_options":{
+        "light":"Light",
+        "dark":"Dark"
+      },
+      "tags":"Tags",
+      "tags_placeholder":"Enter a tag name and press Enter"
+    },
+    "add":"Add Item",
+    "none":"None",
+    "important":"Important"
+  },
+  "topsites":{
+    "name":"Top Sites",
+    "desc":"Displays your most visited\/top sites.",
+    "settings":{
+      "show":"Number of sites shown",
+      "open":"Open sites in"
+    }
+  },
+  "traffic":{
+    "name":"Traffic",
+    "desc":"Displays the current time in current traffic to home or work.",
+    "settings":{
+      "leave":"I leave home at",
+      "home":"Home Address",
+      "home_placeholder":"The destination that should be used after work",
+      "work":"Work Address",
+      "work_placeholder":"The destination that should be used before work",
+      "method":"Transit Method",
+      "method_options":{
+        "driving":"Driving",
+        "walking":"Walking",
+        "transit":"Public Transit"
+      }
+    },
+    "to_home":"to home",
+    "to_work":"to work"
+  },
+  "translate":{
+    "name":"Translate",
+    "desc":"Contains a small inline Google Translate textbox.",
+    "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
+    "untranslate":"Untranslate",
+    "auto":"Auto (%s)",
+    "unknown":"Unknown",
+    "error":"Something went wrong while trying to translate that..."
+  },
+  "twitter":{
+    "name":"Twitter",
+    "desc":"Displays tweets from your home stream or a specified list.",
+    "settings":{
+      "source":"Show Tweets from",
+      "show":"Tweets Shown"
+    },
+    "authorize":"You'll need to authorize iChrome first",
+    "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
+    "authorize_btn":"Authorize",
+    "no_tweets":"There don't seem to be any tweets here...",
+    "home":"首页",
+    "mentions":"Mentions",
+    "retweets":"Retweets of me",
+    "lists":"Lists",
+    "more":"更多",
+    "reply":"Reply",
+    "retweet":"Retweet",
+    "favorite":"Favorite"
+  },
+  "unread":{
+    "name":"Unread",
+    "desc":"Displays the current number of unread emails in your Gmail inbox.",
+    "settings":{
+      "open":"When clicked open"
+    },
+    "unread_none":"unread emails",
+    "unread_one":"unread email",
+    "unread_many":"unread emails"
+  },
+  "voice":{
+    "name":"Voice",
+    "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
+    "call":"Call from",
+    "text":"Text message from",
+    "missed":"missed in Voice",
+    "texts":"unread text messages",
+    "calls":"missed calls"
+  },
+  "weather":{
+    "name":"Weather",
+    "desc":"Displays the current weather and a forecast for the next 4 days.",
+    "settings":{
+      "location":"Location(s)",
+      "location_placeholder":"Enter a location and press Enter",
+      "temperature":"Temperature Units",
+      "wind":"Wind Speed Units"
+    },
+    "unknown":"Unknown",
+    "wind":"Wind Speed",
+    "chill":"Wind Chill",
+    "humidity":"Humidity"
+  },
+  "wolfram":{
+    "desc":"Inserts a small Wolfram|Alpha search box."
+  },
+  "youtube":{
+    "name":"Youtube",
+    "desc":"Displays either popular videos or videos from a specified user.",
+    "settings":{
+      "format":"Format",
+      "format_options":{
+        "large":"One large",
+        "large_2":"One large, two small",
+        "large_4":"One large, four small",
+        "four":"Four small",
+        "six":"Six small"
+      },
+      "from":"Show Videos From",
+      "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
+      "from_placeholder":"Leave blank to show Top Videos",
+      "open":"Open search results in"
+    },
+    "search":"Search YouTube",
+    "num_views":"views"
+  }
+}

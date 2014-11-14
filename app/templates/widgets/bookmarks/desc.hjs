@@ -1,0 +1,16 @@
+The Bookmarks widget contains an editable list of bookmarks in either a one or two column layout.<br />
+<br />
+To add a bookmark:<br />
+<br />
+<ol>
+	<li>Install the widget in your preferred size</li>
+	<li>Hover over the widget and click the "New..." link that appears in the top right corner</li>
+	<li>Fill out the URL and bookmark title fields in the modal that pops up</li>
+	<li>Click "Save"</li>
+</ol>
+To delete or reorder bookmarks use the buttons that appear on the right of each bookmark when they are hovered over.<br />
+<br />
+Variations:<br />
+<br />
+Tiny: Displays a one column only list of editable bookmarks.<br />
+Variable: Displays a one or two column list of editable bookmarks.

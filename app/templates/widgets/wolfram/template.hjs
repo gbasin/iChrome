@@ -1,0 +1,4 @@
+<form action="http://www.wolframalpha.com/input/" method="get">
+	<img src="/images/wolframlogo.png" alt="Wolfram|Alpha logo" />
+	<input type="text" class="search" name="i" placeholder="Search Wolfram|Alpha..." />
+</form>

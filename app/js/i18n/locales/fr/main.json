@@ -1,0 +1,275 @@
+{
+  "lang_code":"fr",
+  "language":"Français",
+  "extDescription":"La MEILLEURE page d'accueil pour Chrome. Des thèmes impressionnant, des dizaines de widgets, extrêmement rapide, personnalisable à l'infini !",
+  "extName":"iChrome - Votre page d'accueil, pour Chrome",
+  "defaults":{
+    "tab":"Accueil",
+    "me":"Moi"
+  },
+  "remove_widget":"Supprimer",
+  "column_to_grid_warning":"Vous avez sélectionnez un onglet basé sur une grille qui remplacera vos onglets basé sur les colonnes. Toute vos colonnes seront supprimés;tout sera déplacé en haut à gauche de l'écran\nVoulez vous continuer ?",
+  "grid_to_column_warning":"Vous avez sélectionnez un onglet basé sur des colonnes qui remplacera vos onglets basé sur une grille. Si vous continuez vous perdrez la position de vos widgets;tout sera déplacé dans la première colonne du nouvel onglet.\nVoulez vous continuer ?",
+  "storage_warning":"Vous utilisez plus de 90% de l'espace de synchronisation disponible.\nSi vous atteignez cette limite, iChrome arrêtera de synchronisation vos données et arrêtera de fonctionner.\nVous pouvez libérer de l'espace en supprimant des thèmes personnalisés, des notes et des listes de tâches que vous n'utilisez pas.",
+  "toolbar":{
+    "placeholder":"Entrer les termes",
+    "placeholder_ok":"Entrer les termes ou dites \"OK,Google\"",
+    "apps":{
+      "search":"Rechercher",
+      "youtube":"YouTube",
+      "maps":"Maps",
+      "play":"Play",
+      "news":"News",
+      "gmail":"Gmail",
+      "drive":"Drive",
+      "calendar":"Calendrier",
+      "more":"Plus"
+    }
+  },
+  "menu":{
+    "settings":"Paramètres",
+    "widgets":"Widgets",
+    "background":"Montrer le fond d'écran",
+    "editing":"Editer",
+    "editing_enabled":"Activé",
+    "editing_disabled":"Desactivé",
+    "plus":"Google Plus",
+    "tabs":"Onglets",
+    "footer":{
+      "support":"Support",
+      "feedback":"Commentaires",
+      "review":"Avis",
+      "twitter":"Twitter",
+      "webstore":"Webstore",
+      "donate":"Don",
+      "by":"Par Avi Kohn"
+    }
+  },
+  "voice":{
+    "listening":"A l'écoute...",
+    "searching":"Recherche : %s",
+    "missed":"Je n'ai pas compris. <a>Réessayer<\/a>"
+  },
+  "settings":{
+    "save":"Enregistrer & Fermer",
+    "new_tab":"Créer un nouvel onglet",
+    "labels":{
+      "general":"General",
+      "visual":"Affichage",
+      "specific":"Spécifique aux onglets",
+      "advanced":"Avancée"
+    },
+    "general":{
+      "search":"URL de recherche",
+      "search_desc":"Ceci est l'URL de recherche que la fonction rechercher utilisera. Mettez <b>%s<\/b> pour indiquer où les termes iront dans cet URL",
+      "profile":"Image de profil",
+      "profile_desc":"Cette image est affiché à droite de votre boite à outils. Elle se met à jour automatiquement selon votre image de profil Google",
+      "name":"Nom",
+      "name_desc":"Ceci est utilisé pour le nom du Google+ dans votre boîte à outils. Elle est aussi mis à jour automatiquement depuis votre Google+.",
+      "voice":"Rech. vocale",
+      "voice_search":"Activer la recherche vocal",
+      "voice_ok":"Activer le mot clé \"OK Google\" pour la detection vocal",
+      "links":"Liens de la barre d'outils",
+      "links_desc":"Ici vous pouvez choisir les liens qui seront affichés à droite de la barre d'outils:",
+      "links_items":{
+        "plus":"Google Plus",
+        "gmail":"Gmail",
+        "apps":"Menu des applications",
+        "link1":"Lien personnalisé 1",
+        "link2":"Lien personnalisé 2",
+        "link3":"Lien personnalisé 3",
+        "text_holder":"Texte du lien",
+        "link_holder":"URL de lien (Exemple : http:\/\/www.google.com\/)"
+      },
+      "guide":"Guide d'installation",
+      "guide_desc":"Montrer le guide qui a été montré lorsque iChrome a été installé pour la première fois"
+    },
+    "visual":{
+      "layout":"Mode d'affichage",
+      "layout_options":{
+        "1_fixed":"Une colonne, largeur fixe",
+        "1_fluid":"Une colonne, largeur variable",
+        "2_fixed":"Deux colonnes, largeurs fixes",
+        "2_fluid":"Deux colonnes, largeurs variables",
+        "3_fixed":"Trois colonnes, largeurs fixes",
+        "3_fluid":"Trois colonnes, largeurs variables",
+        "4_fixed":"Quatres colonnes, largeurs fixes",
+        "4_fluid":"Quatres colonnes, largeurs variables",
+        "5_fixed":"Cinq colonnes, largeurs fixes",
+        "5_fluid":"Cinq colonnes, largeurs variables",
+        "grid":"Mode d'affichage en colonne, largeur personnalisable"
+      },
+      "theme":"Thèmes par défaut",
+      "theme_placeholder":"Theme #%s",
+      "theme_select":"Sélectionner un thème",
+      "align":"Alignement",
+      "align_desc":"Ceci changera l'alignement de votre widget",
+      "align_labels":{
+        "left":"Gauche",
+        "center":"Centre",
+        "right":"Droite"
+      },
+      "logo":"URL du logo",
+      "logo_desc":"Cette image sera montré à gauche de la barre d'outils. L'URL par défaut est <b>\/images\/logo.svg<\/b>",
+      "toolbar":"Style de la barre d'outils",
+      "toolbar_desc":"Ceci contrôle le style de la barre d'outils. Elle peut soit apparaître normalement, soit légèrement vers le bas",
+      "toolbar_normal":"Normal",
+      "toolbar_button":"Bouton",
+      "animation":"Slide-in Animation",
+      "animation_desc":"This setting lets you enable or disable the slide-in animation that runs when you load the page",
+      "animation_label":"Activer les animations"
+    },
+    "specific":{
+      "name":"Nom de l'onglet",
+      "default_name":"Nouvel onglet",
+      "delete":"Supprimer l'onglet",
+      "delete_disallowed":"Vous ne pouvez pas supprimer le seul onglet restant.",
+      "delete_confirm":"Etes vous vraiment sur de vouloir supprimer cet onglet? \nCet action est irréversible, toute les données de tout les widgets de cet onglet seront perdus définitivement.",
+      "default":"Définir par défaut"
+    },
+    "advanced":{
+      "background":"Arrière-plan du widget",
+      "background_desc":"Cliquez sur l'échantillon pour sélectionner une couleur",
+      "search":"Comportement de la recherche",
+      "search_label":"Ouvrir les résultats de la recherche dans un nouvel onglet",
+      "backup":"Sauvegarder \/ Restaurer",
+      "backup_desc":"<b>Pour sauvegarder:<\/b> Cliquez sur le bouton de sauvegarde et copiez le texte qui apparait dans le champ ci-dessous.<br \/><b>Pour restaurer:<\/b>Collez le texte que vous avez sauvegardé ou copié avant et cliquez sur le bouton Restaurer.",
+      "backup_backup":"Sauvegarder",
+      "backup_restore":"Restaurer",
+      "restore_error":"Une erreur est survenue lors de la restauration, assurez vous d'avoir entré le texte EXACTEMENT comme vous l'aviez sauvegardé.",
+      "restore_confirm":"Etes vous vraiment sur de vouloir faire ça ? \nCeci va remplacer toute les données locales et synchronisés, il n'y a pas de sauvegarde possible et aucun moyen d'annuler ceci. Vous allez perdre la configuration sur tout les ordinateurs qui sont actuellement synchronisés sur votre compte Google.",
+      "css":"CSS personnalisé",
+      "css_desc":"Vous pouvez utiliser ceci pour personnaliser tout les aspects visuels de iChrome en utilisant du CSS (Pour plus d'informations sur le CSS, veuillez cliquer sur ce lien : <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>). <br \/><br \/> Puis-ce que le CSS sera synchronisé vous pouvez seulement entrer 1000 caractères, incluant les espaces vides.",
+      "reset":"Configuration par défaut d'iChrome",
+      "reset_confirm":"Etes vous vraiment sur de vouloir remettre la configuration d'iChrome par défaut ? \nCeci va supprimer toutes les données locales et synchronisés, il n'y a pas de sauvegarde possible et aucun moyen d'annuler ceci. Vous allez perdre la configuration sur tout les ordinateurs qui sont actuellement synchronisés sur votre compte Google."
+    }
+  },
+  "store":{
+    "installation":"Installation",
+    "description":"Description ",
+    "preview":"Aperçu ",
+    "instructions":"Cliquer et déplacer toute les tailles sur votre page d'accueil"
+  },
+  "widgets":{
+    "sizes":{
+      "tiny":"Très petit",
+      "small":"Petit",
+      "medium":"Moyen",
+      "large":"Grand",
+      "variable":"Variable"
+    },
+    "settings":{
+      "title":"Paramètres du widget",
+      "save":"Enregistrer",
+      "size":"Taille du Widget"
+    },
+    "delete_confirm":"Etes vous vraiment sur de supprimer ce widget?\nCet action est irréversible; toutes les données de ce widget seront effacés de façon permanentes.",
+    "shared":{
+      "settings":{
+        "title":"Nom du widget",
+        "title_placeholder":"Entrer un nom au widget ou le laisser blanc pour le cacher",
+        "height":"Hauteur du widget",
+        "open_options":{
+          "current":"L'onglet actuel",
+          "blank":"Nouvel onglet"
+        },
+        "footer_link":"Lien en pied de page",
+        "footer_link_options":{
+          "show":"Voir",
+          "hide":"Cacher"
+        },
+        "account":"ID du compte",
+        "account_help":"If you're signed into multiple accounts, this is the \"authuser=\" value.\n<br \/><br \/>\nFor example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"authuser\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
+        "account_placeholder":"Your \"authuser=\" value",
+        "on":"On",
+        "off":"Off"
+      }
+    }
+  },
+  "themes":{
+    "title":"Thèmes",
+    "all":"Tous",
+    "custom":"Personalisé",
+    "create":"Créer un thème",
+    "edit":{
+      "title":"Editer un thème",
+      "create_title":"Créer un thème",
+      "name":"Nom du Thème",
+      "default_name":"Nouveau Theme",
+      "name_placeholder":"Entrer le nom du thème",
+      "image":"URL de l'image",
+      "image_placeholder":"Entrer l'URL d'une image qui sera utilisé comme fond d'écran",
+      "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy and paste the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
+      "color":"Fallback Color",
+      "color_placeholder":"Enter any color name",
+      "position":"Position",
+      "position_options":{
+        "center":"Centre",
+        "top_left":"Top Left",
+        "top_center":"Top Center",
+        "top_right":"Top Right",
+        "bottom_left":"Bottom Left",
+        "bottom_center":"Bottom Center",
+        "bottom_right":"Bottom Right"
+      },
+      "scaling":"Scaling",
+      "scaling_options":{
+        "auto":"Auto",
+        "width":"Full Width",
+        "height":"Full Height",
+        "none":"No Scaling (preview may be inaccurate)"
+      },
+      "repeat":"Image Repeat",
+      "repeat_options":{
+        "none":"No Repeat",
+        "horizontal":"Repeat Horizontally",
+        "vertical":"Repeat Vertically",
+        "both":"Repeat Both"
+      },
+      "attach":"Attach Image To",
+      "attach_tab":"L'onglet",
+      "attach_window":"La fênetre",
+      "preview":"Aperçu ",
+      "save":"Enregistrer & Fermer",
+      "cache_error":"Une erreur est survenue lors de la mise en cache de l'image, s'il vous plait vérifiez l'URL de votre image.",
+      "upload_error":"Une erreur est survenue lors de l'envoi de votre image, veuillez vérifier que votre fichier est à une taille raisonnable et est une image."
+    },
+    "delete":"Supprimer",
+    "use":"Utiliser",
+    "preview":"Aperçu ",
+    "author":"Par",
+    "images":"%s images",
+    "resolution":"Résolution",
+    "categories":"Catégories",
+    "cached":"Ce thème à été mis en cache et est disponible en ligne",
+    "random":"Ce thème affiche une image aléatoire à chaque fois que vous chargez la page",
+    "random_daily":"Ce thème affiche une image aléatoire chaque jour",
+    "sunrise_sunset":"Ce thème affiche une image en fonction de l'heure",
+    "feed":"Ce thème affiche une image sélectionner chaque jour depuis une source externe",
+    "delete_confirm":"Etes vous vraiment sur de vouloir supprimer ce thème?\nCet action est irréversible; le thème sera perdu pour toujours.",
+    "delete_error":"Une erreur est survenue lors de la suppression du thème, veuillez réessayer dans quelques minutes.",
+    "feed_fetching":"Attendez s'il vous plait, la source est en cours d'acheminement",
+    "feed_error":"Une erreur est survenue lors de l'acheminement, veuillez réessayer dans quelques minutes.",
+    "caching":"Patientez s'il vous plait, le thème est en cours de sauvegarde...",
+    "cache_status":"%s de %s image sauvegardé",
+    "cache_error":"Une erreur est survenue lors de la sauvegarde du thème, veuillez réessayer dans quelques minutes"
+  },
+  "intro":{
+    "slide1":{
+      "title":"Bienvenue sur iChrome!",
+      "line1":"Si vous voulez définir iChrome en tant que page d'accueil, vous devez définir cet URL en tant que page d'accueil dans vos paramètres (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">Instructions<\/a>).Si vous voulez définir cet page en tant que Nouvel Onglet veuillez installer <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> à la place.",
+      "newtab_line1":"Si vous voulez que iChrome soit seulement affiché lorsque vous démarrez Chrome et non à chaque fois que vous ouvrez un nouvel onglet veuillez installer<a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">L'extension principal d'iChrome <\/a> plutôt que celle-ci.",
+      "line2":"L'introduction est seulement établi sur 3 diapositive et vous donnera un rapide aperçu des fonctions basique d'iChrome. Lorsque vous êtes prêt cliquez sur la flèche suivante sur la droite."
+    },
+    "slide2":{
+      "title":"Widgets",
+      "line1":"Les Widgets sont le coeur d'iChrome. Vous pouvez les configurer et les déplacer en utilisant la clé à molette et l'icone de manipulation en haut à droite. Pour supprimer un widget, attrapez le et déplacez le sur la barre rouge qui apparaît.",
+      "line2":"De nouveau widget peuvent être ajouté en cliquant sur l'icone des Widgets dans le menu en haut à droite de la page (Montré dans le prochain diapositive)."
+    },
+    "slide3":{
+      "title":"Personnalisation",
+      "line1":"Vous pouvez changer presque tout ce que vous voulez via le menu en haut à droite. Ici vous pouvez configurer le visuel des pages, comment iChrome fonctionne et vous pouvez trouver de nouveau widgets.",
+      "line2":"Il y a plein d'autres choses que vous pouvez faire, comme créer des onglets individuels, chaqu'un avec son propre thème et widgets, ou configurer la moindre petite chose comme les liens qui sont dans la barre d'outils."
+    }
+  }
+}

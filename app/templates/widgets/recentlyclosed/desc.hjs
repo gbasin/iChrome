@@ -1,0 +1,3 @@
+The Recently Closed widget displays a list of your recently closed tabs.<br />
+<br />
+Until Chrome has a stable official API for this, the widget needs to record what tabs you open and close.  Because of this it will only be able to show tabs that have been closed after it's been installed the first time.

@@ -1,0 +1,73 @@
+<div data-item="settings">
+	<svg viewBox="0 0 18 18">
+		<path fill="#999" d="M15.605,9.879c0.036-0.288,0.062-0.58,0.062-0.879s-0.025-0.589-0.062-0.878l1.878-1.488  c0.168-0.137,0.216-0.38,0.105-0.575l-1.778-3.117c-0.111-0.195-0.344-0.274-0.545-0.196l-2.213,0.903  c-0.459-0.356-0.962-0.658-1.503-0.885L11.217,0.38C11.184,0.165,11,0,10.778,0H7.222C7,0,6.816,0.165,6.783,0.379L6.449,2.763  c-0.542,0.228-1.044,0.53-1.503,0.886L2.734,2.746C2.533,2.667,2.3,2.747,2.189,2.941L0.412,6.059  C0.3,6.253,0.349,6.496,0.517,6.633l1.877,1.488C2.357,8.409,2.331,8.701,2.331,9s0.026,0.591,0.063,0.879l-1.877,1.487  c-0.168,0.137-0.216,0.38-0.105,0.574l1.778,3.119c0.111,0.194,0.344,0.272,0.544,0.194l2.213-0.903  c0.459,0.357,0.961,0.658,1.502,0.886l0.333,2.384C6.816,17.835,7,18,7.222,18h3.557c0.222,0,0.405-0.165,0.439-0.379l0.333-2.385  c0.542-0.228,1.044-0.527,1.502-0.886l2.213,0.904c0.201,0.077,0.434-0.001,0.545-0.195l1.778-3.117  c0.11-0.195,0.063-0.438-0.105-0.575L15.605,9.879z M9,12.6c-1.965,0-3.556-1.611-3.556-3.6c0-1.989,1.591-3.6,3.556-3.6  c1.963,0,3.557,1.611,3.557,3.6C12.557,10.988,10.963,12.6,9,12.6z"></path>
+	</svg>
+
+	{{i18n.menu.settings}}
+</div>
+
+<div data-item="widgets">
+	<svg viewBox="0 0 18 18">
+		<rect fill="#4285F4" width="8" height="10"></rect>
+		<rect y="12" fill="#AAA" width="8" height="6"></rect>
+		<rect x="10" fill="#AAA" width="8" height="6"></rect>
+		<rect x="10" y="8" fill="#FFBB1B" width="8" height="10"></rect>
+	</svg>
+
+	{{i18n.menu.widgets}}
+</div>
+
+<div data-item="view">
+	<svg viewBox="0 0 18 18">
+		<path fill="#DD4B39" d="M9,7.2c-1.49,0-2.7,1.21-2.7,2.7c0,1.492,1.21,2.701,2.7,2.701c1.491,0,2.7-1.209,2.7-2.701 C11.7,8.41,10.491,7.2,9,7.2L9,7.2z M16.2,4.5h-2.159c-0.297,0-0.617-0.23-0.711-0.513l-0.559-1.675 C12.677,2.031,12.357,1.8,12.06,1.8H5.94c-0.298,0-0.618,0.23-0.711,0.512L4.67,3.988C4.576,4.27,4.257,4.5,3.96,4.5H1.8 C0.81,4.5,0,5.31,0,6.3v8.099C0,15.39,0.81,16.2,1.8,16.2h14.4c0.99,0,1.8-0.811,1.8-1.801V6.3C18,5.31,17.19,4.5,16.2,4.5L16.2,4.5z M9,14.399c-2.485,0-4.5-2.014-4.5-4.5c0-2.484,2.015-4.5,4.5-4.5s4.5,2.016,4.5,4.5C13.5,12.386,11.485,14.399,9,14.399z"></path>
+	</svg>
+
+	{{i18n.menu.background}}
+</div>
+
+<div data-item="editmode">
+	<svg viewBox="0 0 18 18">
+		<path fill="#666" d="M0,14.25V18h3.75L14.813,6.936l-3.75-3.75L0,14.25z M17.706,4.042c0.393-0.39,0.393-1.022,0-1.414l-2.335-2.336c-0.393-0.391-1.025-0.391-1.414,0l-1.832,1.833l3.749,3.75L17.706,4.042z" />
+	</svg>
+
+	{{i18n.menu.editing}}
+
+	{{#editing}}<span class="state enabled">{{i18n.menu.editing_enabled}}</span>{{/editing}}
+	{{^editing}}<span class="state">{{i18n.menu.editing_disabled}}</span>{{/editing}}
+</div>
+
+<hr class="separator" />
+
+{{#links}}<a data-item="link" href="{{link}}" class="custom-link">{{text}}</a>{{/links}}
+{{#plus}}<a data-item="link" href="https://plus.google.com/u/0/">{{i18n.menu.plus}}</a>{{/plus}}
+{{#gmail}}<a data-item="link" href="https://mail.google.com/mail/">{{i18n.toolbar.apps.gmail}}</a>{{/gmail}}
+
+<hr class="separator" />
+
+<div class="section tabs">
+	<h2>
+		<div class="add">+</div>
+
+		{{i18n.menu.tabs}}
+	</h2>
+
+	{{#tabs}}<div data-item="tab" data-id="{{id}}">{{name}}</div>{{/tabs}}
+</div>
+
+<div class="footer">
+	<a href="http://ichrome.uservoice.com/" class="support" target="_blank">{{i18n.menu.footer.support}}</a> &nbsp;·&nbsp;
+	<a href="http://ichrome.uservoice.com/" class="feedback" target="_blank">{{i18n.menu.footer.feedback}}</a> &nbsp;·&nbsp;
+	<a href="https://chrome.google.com/webstore/detail/ichrome-your-homepage-for/oghkljobbhapacbahlneolfclkniiami/reviews" target="_blank">{{i18n.menu.footer.review}}</a>
+
+	<br />
+
+	<a href="http://www.twitter.com/iChromeHQ" target="_blank">{{i18n.menu.footer.twitter}}</a> &nbsp;·&nbsp;
+	<a href="https://chrome.google.com/webstore/detail/ichrome-your-homepage-for/oghkljobbhapacbahlneolfclkniiami" target="_blank">{{i18n.menu.footer.webstore}}</a> &nbsp;·&nbsp;
+	<a href="#donate" class="donate">{{i18n.menu.footer.donate}}</a>
+
+	<hr class="separator" />
+
+	<span>{{i18n.menu.footer.by}}</span>
+
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US" target="_blank">CC BY-SA 3.0</a>
+</div>

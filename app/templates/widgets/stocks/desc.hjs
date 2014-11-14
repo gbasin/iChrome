@@ -1,0 +1,14 @@
+The Stocks widget displays the latest prices and other information for given stock symbols.<br />
+<br />
+To select stock symbols:<br />
+<br />
+<ol>
+	<li>Install the widget in your preferred size</li>
+	<li>Hover over the widget and click the settings icon that appears</li>
+	<li>Enter the stock symbols in a comma-separated EXCHANGE:TICKER format</li>
+	<li>Click "Save"</li>
+</ol>
+Variations:<br />
+<br />
+Tiny: Displays the most recent trade price and a tooltip with the relative change.<br />
+Small: Displays the most recent trade absolute and relative prices, opening, high and low prices and the volume. Alternatively, if multiple stocks have been entered, displays a table of symbols, current prices and change amounts.

@@ -1,0 +1,20 @@
+{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+{{#noProfile}}
+	<div class="no-profile header">
+		{{{i18n.noprofile}}}
+	</div>
+{{/noProfile}}
+{{^noProfile}}
+	{{#tiny}}<div class="mainval" data-label="{{i18n.sessions}}" data-tooltip="&lt;b&gt;{{i18n.pageviews}}&lt;/b&gt;: {{pageviews}}&lt;br /&gt;&lt;b&gt;{{i18n.pagesvisit}}&lt;/b&gt;: {{pagesVisit}}&lt;br /&gt;&lt;b&gt;{{i18n.bouncerate}}&lt;/b&gt;: {{bounceRate}}&lt;br /&gt;&lt;b&gt;{{i18n.completions}}&lt;/b&gt;: {{completions}}">{{{visits}}}</div>{{/tiny}}
+	{{^tiny}}
+		<div class="mainval" data-label="{{i18n.sessions}}">{{{visits}}}</div>
+
+		<div class="details">
+			<div data-label="{{i18n.pageviews}}">{{pageviews}}</div>
+			<div data-label="{{i18n.pagesvisit}}">{{pagesVisit}}</div>
+			<div data-label="{{i18n.bouncerate}}">{{bounceRate}}</div>
+			<div data-label="{{i18n.completions}}">{{completions}}</div>
+		</div>
+	{{/tiny}}
+{{/noProfile}}

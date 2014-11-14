@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>iChrome</title>
+		
+		<meta charset="utf-8" />
+		<meta name="google" value="notranslate" />
+
+		<link href="css/bootstrap.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/widgets.css" rel="stylesheet" />
+	</head>
+
+	<body class="unloaded">
+		<div class="voicebar">
+			<div class="text">Listening...</div>
+
+			<div class="button">
+				<button>
+					<svg width="31" height="38" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15.673,0c-3.412,0-6.188,2.776-6.188,6.188v12.875c0,3.412,2.776,6.188,6.188,6.188s6.188-2.774,6.188-6.188V6.188C21.859,2.776,19.085,0,15.673,0L15.673,0z" />
+						<path d="M15.485,32.86C7.223,32.86,0.5,26.138,0.5,17.875v-0.36h3.721v0.36c0,6.212,5.053,11.265,11.265,11.265S26.75,24.087,26.75,17.875v-0.36h3.721v0.36C30.471,26.138,23.748,32.86,15.485,32.86z" />
+						<rect x="13.423" y="31.875" width="4.125" height="6.875" />
+					</svg>
+				</button>
+			</div>
+
+			<div class="close">&#xF00D;</div>
+		</div>
+		
+		<!--
+			Storage occasionally freezes up, especially when starting Chrome.
+			Therefore a loading screen needs to be shown even though it usually won't be seen.
+
+			This can't be feasibly localized since inline scripts are disallowed and an external script defeats the purpose.
+			The general meaning should be conveyed even if it's in another language though, so it should still work as-is.
+		-->
+		<div class="loading">
+			<span class="text">
+				<h2>Loading your settings from Chrome...</h2>
+				<br /><br />
+				If you see this for more than ~2 seconds, something probably went wrong.  <a href="http://ichrome.uservoice.com/" target="_blank">Support</a>
+			</span>
+		</div>
+
+		<div class="speech-overlay"></div>
+
+		<div class="widgets-container"></div>
+		
+		<div class="tab-container" tabindex="-1">
+			<div class="tab-nav">
+				<nav class="prev"></nav>
+				<nav class="next"></nav>
+			</div>
+		</div>
+
+		<script type="text/javascript" data-main="js/app.js" src="js/lib/require.js"></script>
+	</body>
+</html>

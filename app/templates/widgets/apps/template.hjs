@@ -1,0 +1,10 @@
+{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+<div class="{{#tiles}}tiles{{/tiles}}{{^tiles}}list{{/tiles}}">
+	{{#items}}
+		<a class="app{{^available}} unavailable{{/available}}" data-id="{{id}}">
+			<img class="thumb" src="{{thumb}}{{^available}}?grayscale=true{{/available}}" />
+			<span class="title">{{name}}</span>
+		</a>
+	{{/items}}
+</div>

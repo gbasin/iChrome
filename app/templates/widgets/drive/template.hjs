@@ -1,0 +1,22 @@
+{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+<div class="files">
+	{{#files}}
+		<a class="file" href="{{link}}" target="_blank">
+			<div class="icon" style="{{#icon}}background-image: url({{icon}});{{/icon}}"></div>
+
+			<div class="info">
+				<h2 class="name">{{name}}</h2>
+				<div class="modified">{{modified}}</div>
+			</div>
+		</a>
+	{{/files}}
+	{{^files}}
+		{{#authorize}}
+			<div class="authorize">
+				{{i18n.authorize}}
+				<button type="button" class="btn btn-lg btn-primary">{{i18n.authorize_btn}}</button>
+			</div>
+		{{/authorize}}
+	{{/files}}
+</div>

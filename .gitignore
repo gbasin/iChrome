@@ -1,3 +1,7 @@
+lib-cov
+coverage
+.grunt
+.lock-wscript
+build/Release
+node_modules
 Thumbs.db
-ehthumbs.db
-Desktop.ini

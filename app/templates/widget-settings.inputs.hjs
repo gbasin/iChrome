@@ -1,0 +1,111 @@
+{{#input-text}}
+	<label for="widget-{{nicename}}">
+		{{label}}
+		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
+	</label>
+
+	<input type="text" class="form-control" id="widget-{{nicename}}" name="{{nicename}}" placeholder="{{placeholder}}" value="{{value}}" />
+{{/input-text}}
+
+{{#input-select}}
+	<label for="widget-{{nicename}}">
+		{{label}}
+		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
+	</label>
+
+	<select class="form-control" id="widget-{{nicename}}" name="{{nicename}}" {{multiple}}>
+		{{#options}}
+			{{#group}}
+				<optgroup label="{{{nesting}}}{{group}}"></optgroup>
+			{{/group}}
+			{{^group}}
+				<option value="{{value}}" {{selected}}>{{{nesting}}}{{label}}</option>
+			{{/group}}
+		{{/options}}
+	</select>
+{{/input-select}}
+
+{{#input-list}}
+	<label for="widget-{{nicename}}">
+		{{label}}
+		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
+	</label>
+	
+	<div>
+		<input type="text" placeholder="{{placeholder}}" id="widget-{{nicename}}" />
+
+		<div class="items">
+			{{#items}}
+				<div class="item">
+					{{#color}}<input type="text" class="color" name="{{nicename}}[][color]" value="{{color}}" />{{/color}}
+
+					<input type="text" name="{{nicename}}[]{{#color}}[name]{{/color}}" value="{{value}}" />
+
+					<div class="tools">
+						<span class="up">&#xE6CF;</span>
+						<span class="down">&#xE6CE;</span>
+						<span class="delete">&#xE678;</span>
+					</div>
+				</div>
+			{{/items}}
+		</div>
+	</div>
+{{/input-list}}
+
+{{#input-list-item}}
+	<div class="item">
+		{{#color}}<input type="text" class="color" name="{{nicename}}[][color]" value="{{color}}" />{{/color}}
+
+		<input type="text" name="{{nicename}}[]{{#color}}[name]{{/color}}" value="{{value}}" />
+
+		<div class="tools">
+			<span class="up">&#xE6CF;</span>
+			<span class="down">&#xE6CE;</span>
+			<span class="delete">&#xE678;</span>
+		</div>
+	</div>
+{{/input-list-item}}
+
+{{#input-size}}
+	<label for="widget-size">{{i18n.widgets.settings.size}}</label>
+
+	<select class="form-control" id="widget-size" name="size">
+		{{#sizes}}
+			<option value="{{size}}" {{selected}}>{{name}}</option>
+		{{/sizes}}
+	</select>
+{{/input-size}}
+
+{{#input-radio}}
+	<label>
+		{{label}}
+		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
+	</label>
+
+	<div>
+		{{#options}}
+			<label class="checkbox-inline">
+				<input type="radio" name="{{nicename}}" value="{{value}}" {{checked}} />
+				{{label}}
+			</label>
+		{{/options}}
+	</div>
+{{/input-radio}}
+
+{{#input-number}}
+	<label for="widget-{{nicename}}">
+		{{label}}
+		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
+	</label>
+
+	<input type="number" id="widget-{{nicename}}" name="{{nicename}}" class="form-control" min="{{min}}" max="{{max}}" value="{{value}}" />
+{{/input-number}}
+
+{{#input-time}}
+	<label for="widget-{{nicename}}">
+		{{label}}
+		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
+	</label>
+
+	<input type="time" class="form-control" name="{{nicename}}" id="widget-{{nicename}}" value="{{value}}" placeholder="{{placeholder}}"/>
+{{/input-time}}

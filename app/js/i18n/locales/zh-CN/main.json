@@ -1,0 +1,275 @@
+{
+  "lang_code":"zh-CN",
+  "language":"中文简体",
+  "extDescription":"Chrome最好用的启动页插件，拥有令人惊叹且可以任意定制的主题、小部件，并如闪电般急速！",
+  "extName":"iChrome - 您的Chrome主页",
+  "defaults":{
+    "tab":"首页",
+    "me":"我"
+  },
+  "remove_widget":"移除",
+  "column_to_grid_warning":"您选择将选项卡的布局方式从基于列的布局改为基于网格的布局。如果您确认继续将会失去您所有的列，然后一切挂件都将被移动到左上角。您确定要这样做吗？",
+  "grid_to_column_warning":"您选择将选项卡的布局方式从基于网格的布局改为基于列的布局。如果您确认继续将会失去您所有的现有小部件位置，然后一切挂件都将被移动到选项卡的第一列。您确定要这样做吗？",
+  "storage_warning":"您已经使用了90%以上的同步储存空间 ，如果同步储存空间满，iChrome将停止同步您的数据并可能停止工作。您通过删除自定义主题、不需要的笔记和待办事项以缩小您的空间使用量。",
+  "toolbar":{
+    "placeholder":"输入并搜索...",
+    "placeholder_ok":"输入或说“OK,Google\"启动语音搜索...",
+    "apps":{
+      "search":"搜索",
+      "youtube":"Youtube",
+      "maps":"地图",
+      "play":"Play商店",
+      "news":"新闻",
+      "gmail":"Gmail",
+      "drive":"网盘",
+      "calendar":"日历",
+      "more":"更多"
+    }
+  },
+  "menu":{
+    "settings":"设置",
+    "widgets":"小部件",
+    "background":"显示背景",
+    "editing":"编辑",
+    "editing_enabled":"已开启",
+    "editing_disabled":"已关闭",
+    "plus":"Google+",
+    "tabs":"标签：",
+    "footer":{
+      "support":"支持",
+      "feedback":"反馈",
+      "review":"评分",
+      "twitter":"Twitter",
+      "webstore":"Webstore",
+      "donate":"捐助",
+      "by":"由Avi Kohn奉献"
+    }
+  },
+  "voice":{
+    "listening":"正在聆听...",
+    "searching":"搜索：%s",
+    "missed":"抱歉，没有听清楚。<a>再试一次<\/a>"
+  },
+  "settings":{
+    "save":"保存并关闭",
+    "new_tab":"新建",
+    "labels":{
+      "general":"通用",
+      "visual":"外观",
+      "specific":"选项卡",
+      "advanced":"高级"
+    },
+    "general":{
+      "search":"搜索链接",
+      "search_desc":"该链接将会用于提交搜索请求， <b>%s<\/b> 代表您输入的搜索词",
+      "profile":"个人图片",
+      "profile_desc":"这是在工具栏的右侧显示的图片，默认图片链接从您的Google资料中自动获取",
+      "name":"姓名",
+      "name_desc":"这是在工具栏 Google+您 处显示的名字，默认姓名从您的Google资料中自动获取",
+      "voice":"语音搜索",
+      "voice_search":"启用语音搜索",
+      "voice_ok":"启用\"OK Google“指令检测",
+      "links":"工具栏链接",
+      "links_desc":"在这里您可以设置哪些链接在工具栏右侧显示：",
+      "links_items":{
+        "plus":"Google+",
+        "gmail":"Gmail",
+        "apps":"App菜单",
+        "link1":"自定义链接 1",
+        "link2":"自定义链接 2",
+        "link3":"自定义链接 3",
+        "text_holder":"链接文本",
+        "link_holder":"链接的地址，例如 http:\/\/www.google.com\/"
+      },
+      "guide":"入门指南",
+      "guide_desc":"重新开始入门指南"
+    },
+    "visual":{
+      "layout":"布局",
+      "layout_options":{
+        "1_fixed":"一列，固定宽度",
+        "1_fluid":"一列，相对宽度",
+        "2_fixed":"两列， 固定宽度",
+        "2_fluid":"两列，相对宽度",
+        "3_fixed":"三列，固定宽度",
+        "3_fluid":"三列，相对宽度",
+        "4_fixed":"四列，固定宽度",
+        "4_fluid":"四列，相对宽度",
+        "5_fixed":"五列，固定宽度",
+        "5_fluid":"五列，相对宽度",
+        "grid":"网格布局， 自定义宽度"
+      },
+      "theme":"默认主题",
+      "theme_placeholder":"主题 #%s",
+      "theme_select":"选择一个主题",
+      "align":"排列方式",
+      "align_desc":"这将更改小部件的排列方式",
+      "align_labels":{
+        "left":"左",
+        "center":"中",
+        "right":"右"
+      },
+      "logo":"Logo地址",
+      "logo_desc":"在工具栏左边显示的图像。默认值为<b>\/images\/logo.svg<\/b>",
+      "toolbar":"工具栏样式",
+      "toolbar_desc":"此参数控制工具栏上的样式。其要么正常显示要么会挡住。",
+      "toolbar_normal":"正常",
+      "toolbar_button":"按钮",
+      "animation":"滑动动画",
+      "animation_desc":"此选项允许您启用或禁用加载时的页面动画",
+      "animation_label":"启用动画"
+    },
+    "specific":{
+      "name":"选项卡名称",
+      "default_name":"新选项卡",
+      "delete":"删除选项卡",
+      "delete_disallowed":"您不能删除唯一剩余的选项卡。",
+      "delete_confirm":"真的要要删除此选项卡吗？该操作无法恢复，选项卡中的所有数据将永久丢失。",
+      "default":"设为默认"
+    },
+    "advanced":{
+      "background":"小部件背景",
+      "background_desc":"单击调色板以选择颜色",
+      "search":"搜索行为",
+      "search_label":"在新选项卡中打开搜索结果页",
+      "backup":"备份\/还原",
+      "backup_desc":"<b>如何备份：<\/b>单击备份按钮，将下面出现的文本复制。 <br\/> <b>如何还原：<\/b> 将备份复制出的文本粘贴，然后单击还原按钮。",
+      "backup_backup":"备份",
+      "backup_restore":"还原",
+      "restore_error":"在解析您提供的数据时发生错误，请确认您输入的内容和备份时完全一致。",
+      "restore_confirm":"您真的确定要这样做吗？\n这将覆盖所有的本地和同步的数据，没有备份也没有办法撤销这个操作。您将丢失您在所有电脑登陆的Google账号同步的所有当前设置！",
+      "css":"自定义 CSS",
+      "css_desc":"您可以使用此功能自定义CSS （有关指引请见 <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\"target=\"_blank\"> MDN<\/a>） 以自由改变 iChrome 几乎所有可视的部分。<br\/><br\/> 因为将会同步的缘故，您最多只能输入包括空格在内的1000个字符。",
+      "reset":"重置 iChrome",
+      "reset_confirm":"是否真的要重置 iChrome？这将清除所有的本地和同步的数据，没有备份也无法撤消该操作。您将丢失您所有同步此谷歌帐户计算机上的当前配置。"
+    }
+  },
+  "store":{
+    "installation":"安装",
+    "description":"描述",
+    "preview":"预览",
+    "instructions":"拖动到您的主页上然后调整至合适的大小"
+  },
+  "widgets":{
+    "sizes":{
+      "tiny":"最小",
+      "small":"小",
+      "medium":"中等",
+      "large":"大",
+      "variable":"特大"
+    },
+    "settings":{
+      "title":"小部件设置",
+      "save":"保存",
+      "size":"小部件大小"
+    },
+    "delete_confirm":"真的要删除此小部件吗？此操作是不可逆的，该小部件的所有数据都将永久丢失。",
+    "shared":{
+      "settings":{
+        "title":"小部件标题",
+        "title_placeholder":"输入小部件窗口标题或留空隐藏",
+        "height":"小部件高度",
+        "open_options":{
+          "current":"当前选项卡",
+          "blank":"新选项卡"
+        },
+        "footer_link":"页脚链接",
+        "footer_link_options":{
+          "show":"显示",
+          "hide":"隐藏"
+        },
+        "account":"帐户 ID",
+        "account_help":"如果你已经登录到多个帐户，这就是\"authuser =\"值。\n<br \/><br \/>举个栗子，如果你登录两个帐户、 12dora@gooddog.com、 450@baobuliao.com、 450@baobuliao.com 的\"authuser\"值将为 1 ，因为它是第二个帐户 （authuser值从0开始）。",
+        "account_placeholder":"您的\"authuser=\"值",
+        "on":"开启",
+        "off":"关闭"
+      }
+    }
+  },
+  "themes":{
+    "title":"主题",
+    "all":"全部",
+    "custom":"自定义",
+    "create":"创建主题",
+    "edit":{
+      "title":"编辑主题",
+      "create_title":"创建主题",
+      "name":"主题名称",
+      "default_name":"新主题",
+      "name_placeholder":"输入主题名称",
+      "image":"图像地址",
+      "image_placeholder":"背景图像链接",
+      "image_help":"上传的图片<b>无法在电脑之间同步<\/b><br \/><br \/>如果这对你很重要，请将您的图像上传到类似 <a href=\"http:\/\/imgur.com\/\"target=\"_blank\"> imgur<\/a> 的图床服务。然后复制和粘贴带扩展名的链接 (例如.jpg) 并将其粘贴到左侧的文本框中。",
+      "color":"回退颜色",
+      "color_placeholder":"输入颜色名称",
+      "position":"位置",
+      "position_options":{
+        "center":"中",
+        "top_left":"左上角",
+        "top_center":"顶部居中",
+        "top_right":"右上角",
+        "bottom_left":"左下角",
+        "bottom_center":"底部居中",
+        "bottom_right":"右下角"
+      },
+      "scaling":"缩放比例",
+      "scaling_options":{
+        "auto":"自动",
+        "width":"全宽度",
+        "height":"全高度",
+        "none":"无缩放比例 （预览时可能会不准确）"
+      },
+      "repeat":"图像重复",
+      "repeat_options":{
+        "none":"不重复",
+        "horizontal":"水平重复",
+        "vertical":"垂直重复",
+        "both":"全部重复"
+      },
+      "attach":"将图像使用在",
+      "attach_tab":"选项卡",
+      "attach_window":"窗口",
+      "preview":"预览",
+      "save":"保存并关闭",
+      "cache_error":"在缓存您提供的图像链接时出错，请仔细检查该链接是否正确。",
+      "upload_error":"在上传您提供的文件时出错，请确保其大小正确和是否是一张图片。"
+    },
+    "delete":"刪除",
+    "use":"使用",
+    "preview":"预览",
+    "author":"由",
+    "images":"%s 图像",
+    "resolution":"分辨率",
+    "categories":"目录",
+    "cached":"该主题已缓存，可脱机使用",
+    "random":"该主题在每次重新加载页面时显示随机图片",
+    "random_daily":"该主题每天重新随机挑选新图片",
+    "sunrise_sunset":"该主题基于一天的时间显示图片",
+    "feed":"该主题从外部源每天获取新图像",
+    "delete_confirm":"你真的要删除这个主题吗？\n此操作是不可逆的 ；整个主题将永久丢失。",
+    "delete_error":"试图删除该主题时出错。请稍后再试。",
+    "feed_fetching":"请稍候，源正在获取......",
+    "feed_error":"在尝试刷新源时出错，请稍后重试。",
+    "caching":"请稍候，正在缓存主题...",
+    "cache_status":"%s 个图片被缓存，还有 %s 个",
+    "cache_error":"试图删除该主题时出错。请稍后再试。"
+  },
+  "intro":{
+    "slide1":{
+      "title":"欢迎您使用 iChrome ！",
+      "line1":"如果你想 iChrome 作为起始页，您需要在您的设置 （<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\"target=\"_blank\"> 说明<\/a>） 中设置为此页面地址。如果您希望用其作为您的新选项卡页，请安装 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\"> iChrome 选项卡<\/a>。",
+      "newtab_line1":"如果您希望iChrome只在您打开Chrome的时候显示，请安装 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">  iChrome 起始页<\/a>，而非本扩展。",
+      "line2":"介绍仅有短短3个步骤，其将会让您快速知悉如何使用iChrome的基础功能。当您准备好后请点击右侧的下一步箭头。"
+    },
+    "slide2":{
+      "title":"小部件",
+      "line1":"小部件是 iChrome 的核心。您可以使用右上角悬停时显示的手柄和扳手图标以配置或移动它们。若要删除，拖动并将其拖到页面最上方红色的删除区域。",
+      "line2":"您可以通过单击顶部菜单下的小部件按钮添加新部件到标签页中 （如下一步所示）。"
+    },
+    "slide3":{
+      "title":"自定义",
+      "line1":"您可以更改几乎任何你想更改的其他内容，在设置页您可以定制您想要的页面外观，了解 iChrome 是如何运作的并获取新的小部件。",
+      "line2":"其他你可以尝试的有意思功能包括创建单独的选项卡，不同的主题所带的小部件，自定义主题，亦可进行更为详细的配置，例如定制显示在工具栏中的链接。"
+    }
+  }
+}

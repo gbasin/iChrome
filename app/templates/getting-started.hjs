@@ -1,0 +1,45 @@
+<article class="slide active" data-id="1">
+	<div class="hero" style="background-image: url(/images/guide/slide1.webp)"></div>
+
+	<div class="caption">
+		<h2 class="title">{{i18n.intro.slide1.title}}</h2>
+
+		{{#newtab}}
+			<p>{{{i18n.intro.slide1.newtab_line1}}}</p>
+		{{/newtab}}
+		{{^newtab}}
+			<p>{{{i18n.intro.slide1.line1}}}</p>
+		{{/newtab}}
+
+		<p>{{i18n.intro.slide1.line2}}</p>
+	</div>
+</article>
+
+<article class="slide" data-id="2">
+	<div class="hero" style="background-image: url(/images/guide/slide2.webp)"></div>
+
+	<div class="caption">
+		<h2 class="title">{{i18n.intro.slide2.title}}</h2>
+
+		<p>{{i18n.intro.slide2.line1}}</p>
+		
+		<p>{{i18n.intro.slide2.line2}}</p>
+	</div>
+</article>
+
+<article class="slide" data-id="3">
+	<div class="hero" style="background-image: url(/images/guide/slide3.webp)"></div>
+
+	<div class="caption">
+		<h2 class="title">{{i18n.intro.slide3.title}}</h2>
+
+		<p>{{i18n.intro.slide3.line1}}</p>
+		
+		<p>{{i18n.intro.slide3.line2}}</p>
+	</div>
+</article>
+
+<div class="nav">
+	<div class="prev"></div>
+	<div class="next"></div>
+</div>

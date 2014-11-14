@@ -1,0 +1,444 @@
+{
+  "lang_code":"de-widgets",
+  "analytics":{
+    "name":"Analytik",
+    "desc":"Zeigt einige Metriken von einen Google Analytics Profil.",
+    "sessions":"Sitzung",
+    "pageviews":"Seitenzugriffe",
+    "pagesvisit":"Seiten\/Besuch",
+    "bouncerate":"Absprungrate",
+    "completions":"Abschlüsse",
+    "noprofile":"Es scheint so, als ob Sie kein Profil ausgewählt haben.\n<br \/><br \/>\nVersuchen Sie eins über das Schraubenschlüssel-Symbol in der rechten oberen Ecke auszuwählen.",
+    "settings":{
+      "profile":"Profil"
+    }
+  },
+  "apps":{
+    "name":"Apps",
+    "desc":"Zeige die zurzeit installierten Google Chrome Applikationen.",
+    "settings":{
+      "format":"Widget-Format",
+      "format_options":{
+        "tiles":"Kacheln",
+        "list":"Liste"
+      },
+      "display":"Zeigen",
+      "display_options":{
+        "all":"Alle Apps",
+        "enabled":"Nur aktivierte Apps"
+      },
+      "sort":"Sortieren",
+      "sort_options":{
+        "id":"ID",
+        "alphabetically":"Alphabetisch",
+        "offline":"Offline aktiviert",
+        "available":"Verfügbarkeit"
+      },
+      "open":"Anwendungen öffnen in"
+    },
+    "store_app":"Store"
+  },
+  "bookmarks":{
+    "name":"Lesezeichen",
+    "desc":"Zeigt ausgewählte und angepasste Lesezeichen und andere Links.",
+    "settings":{
+      "title_placeholder":"Geben Sie einen Widget-Titel ein",
+      "layout":"Design",
+      "layout_options":{
+        "single":"Einzelne Spalte",
+        "double":"Doppelspalte"
+      },
+      "open":"Lesezeichen öffnen in"
+    },
+    "edit":{
+      "dialog_title":"Lesezeichen editieren",
+      "title":"Lesezeichen-Bezeichnung",
+      "title_placeholder":"Google",
+      "url":"Lesezeichen URL",
+      "url_placeholder":"http:\/\/www.google.com\/",
+      "save":"Speichern"
+    },
+    "new_caption":"Neu",
+    "new_bookmark":"Lesezeichen",
+    "new_folder":"Verzeichnis",
+    "drop_link":"Link hierher ziehen"
+  },
+  "calc":{
+    "name":"Taschenrechner",
+    "desc":"Zeigt einen Taschenrechner mit Unterstützung für grundlegende Operatoren an.",
+    "error":"Fehler!",
+    "infinity":"Unendlich",
+    "mismatch":"Nicht übereinstimmende Klammern"
+  },
+  "calendar":{
+    "name":"Kalender",
+    "desc":"Zeigt bevorstehende Veranstaltungen aus einem oder mehrerer Deiner Google-Kalender.",
+    "settings":{
+      "calendar":"Kalender",
+      "events":"Ereignisse angezeigt"
+    },
+    "title":"Mein Kalender",
+    "noevents":"Es gibt keine Ereignisse in naher Zukunft.<br \/><br \/>Versuche einen Kalender über das Schraubenschlüssel-Symbol oben rechts auszuwählen."
+  },
+  "clock":{
+    "name":"Datum & Zeit",
+    "desc":"Zeigt das aktuelle Datum und die Uhrzeit. Wahlweise für eine andere Zeitzone.",
+    "settings":{
+      "timezone":"Zeitzone",
+      "timezone_local":"lokal",
+      "format":"Uhrzeit-Format",
+      "format_options":{
+        "ampm":"AM\/PM - Digital",
+        "24hour":"24-Stunden - Digital",
+        "analog":"12-Stunden - Analog",
+        "ampmseconds":"AM\/PM - Digital, keine Sekunden",
+        "24hourseconds":"24-Stunden - Digital, keine Sekunden"
+      }
+    },
+    "title":"Uhr"
+  },
+  "currency":{
+    "name":"Währung",
+    "desc":"Konvertierung zwischen zwei aus 169 Währungen möglich.",
+    "to_label":"an"
+  },
+  "drive":{
+    "name":"Drive",
+    "desc":"Zeigt kürzlich geänderte Dateien aus Google Drive.",
+    "settings":{
+      "files_shown":"Anzahl der angezeigten Dateien"
+    },
+    "modified_by":"von",
+    "authorize":"Du musst iChrome erlauben, Dateien von Google Drive anzuzeigen, bevor diese hier erscheinen.",
+    "authorize_btn":"Autorisieren"
+  },
+  "facebook":{
+    "name":"Facebook",
+    "desc":"Bettet Facebook in einem Widget ein"
+  },
+  "feedly":{
+    "name":"Feedly",
+    "desc":"Zeigt Artikel aus Deinem Feedly Konto in einem konfigurierbaren Format.",
+    "settings":{
+      "source":"Zeigt Artikel von",
+      "source_feeds":"Feeds",
+      "show":"Anzeigen",
+      "show_options":{
+        "all":"Alle Artikel",
+        "unread":"Nur ungelesene Artikel"
+      },
+      "layout":"Design",
+      "layout_options":{
+        "titles":"Nur Titel",
+        "magazine":"Magazin",
+        "cards":"Karten",
+        "cards_columns":"Karten (zwei Spalten)"
+      },
+      "mark":"Artikel als gelesen markieren wenn ich",
+      "mark_options":{
+        "scroll":"Vorbeiscrollen oder anklicken",
+        "click":"Einfach anklicken"
+      },
+      "sort":"Sortierreihenfolge",
+      "sort_options":{
+        "newest":"Neueste zuerst",
+        "oldest":"Älteste zuerst"
+      }
+    },
+    "all":"Alle",
+    "saved":"Für später gespeichert",
+    "uncategorized":"Unkategorisiert",
+    "author":"von",
+    "go_to_feedly":"Gehe zu Feedly"
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Zeigt den Google Mail-Posteingang, wo Du Deine e-Mails verwalten kannst."
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Zeigt eine Webseite Deiner Wahl in einem iFrame.",
+    "settings":{
+      "url":"Frame-URL",
+      "url_placeholder":"z.B. http:\/\/www.google.com\/",
+      "height":"Frame Höhe",
+      "padding":"Seitlicher Abstand"
+    }
+  },
+  "keep":{
+    "name":"Keep",
+    "desc":"Bettet Google Keep in einem Widget ein"
+  },
+  "news":{
+    "name":"Nachrichten",
+    "desc":"Zeigt aktuelle Top-News nach Kategorie und Version.",
+    "settings":{
+      "articles":"Artikel gezeigt",
+      "edition":"Edition",
+      "edition_help":"Wenn die Edition oder das Thema hier nicht aufgeführt ist, gebe bitte eine Google News Feed-URL in das untenstehende Feld Custom Feed ein (prüfe den Hilfetext auf eine Erklärung).",
+      "topic":"Thema",
+      "topic_options":{
+        "top":"Top-Themen",
+        "world":"Welt",
+        "nation":"Nation",
+        "business":"Wirtschaft",
+        "sports":"Sport",
+        "technology":"Technologie",
+        "entertainment":"Unterhaltung",
+        "health":"Gesundheit",
+        "science":"Wissenschaft",
+        "spotlight":"Brennpunkt"
+      },
+      "feed":"Benutzerdefinierter Feed",
+      "feed_help":"Dies ist der Feed der URL, die unten auf jeder Google News-Seite gezeigt wird, suche nach einem orangenen RSS-Symbol und einem Link mit der Bezeichnung \"RSS\"",
+      "feed_placeholder":"Geben Sie einen benutzerdefinierten RSS-Feed ein",
+      "footer":"Fußzeilen-URL",
+      "footer_placeholder":"Gebe die URL ein, auf die der Link \"Mehr\" verweisen soll"
+    },
+    "more":"mehr"
+  },
+  "notes":{
+    "name":"Notizen",
+    "desc":"Fügt eine einfache, editierbare Notiz ein.",
+    "settings":{
+      "color":"Notiz-Farbe",
+      "color_options":{
+        "yellow":"Gelb",
+        "orange":"Orange",
+        "red":"Rot",
+        "blue":"Blau",
+        "green":"Grün",
+        "white":"Weiß"
+      },
+      "font":"Schriftart",
+      "fontsize":"Schriftgröße"
+    }
+  },
+  "now":{
+    "name":"Google Now",
+    "desc":"Zeigt Karten von Google Now an, einschließlich Flugstatus und Paketverfolgung.",
+    "authorize":"Erlaube iChrome, Google Now-Karten anzuzeigen, bevor diese hier auftauchen.",
+    "authorize_btn":"Autorisieren",
+    "caught_up":"Alles erledigt, hier gibt es nichts.",
+    "no_title":"Kein Titel"
+  },
+  "plus":{
+    "name":"Google+",
+    "desc":"Bettet Google Plus in einem Widget ein"
+  },
+  "recentlyclosed":{
+    "name":"Zuletzt geschlossen",
+    "desc":"Zeigt kürzlich geschlossene Tabs",
+    "settings":{
+      "tabs":"Registerkarten angezeigt",
+      "open":"Tabs öffnen in"
+    },
+    "notabs":"Registerkarten, die geschlossen wurden bevor dieses Widget installiert wurde, können nicht angezeigt werden. Angezeigt werden neue Tabs, die ab jetzt geschlossen werden."
+  },
+  "reddit":{
+    "name":"Reddit",
+    "desc":"Zeigt die Top-Elemente auf Reddit für jeden Subreddit.",
+    "settings":{
+      "subreddit":"Subreddit",
+      "subreddit_help":"Gebe einen Subreddit mit dem Teil hinter <b>\/r\/<\/b> ein, wenn auf Reddit.\n<br \/><br \/>\nBeispielsweise, für Technologie: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, daher gib <b>Technologie<\/b> ein",
+      "subreddit_placeholder":"Geben Sie eine Subreddit zum Anzeigen von Links aus (z.B. Technologie)",
+      "sort":"Sortierreihenfolge",
+      "sort_options":{
+        "hot":"Heiß",
+        "top":"Top",
+        "new":"Neu",
+        "gilded":"Vergoldet",
+        "rising":"Ansteigend",
+        "controversial":"Kontrovers"
+      },
+      "links":"Angezeigte Links",
+      "click":"Beim Klicken auf einen Link, zeige",
+      "click_options":{
+        "link":"Der Link",
+        "comments":"Die Kommentare"
+      }
+    }
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"Zeigt Elemente aus RSS- oder Atom-Feeds mit optionalen Bildern.",
+    "settings":{
+      "link":"Titellink",
+      "link_placeholder":"Geben Sie einen Link für den Widget-Titel ein",
+      "url":"Feed-URL",
+      "url_placeholder":"Die URL des angezeigten RSS-Feeds",
+      "articles":"Artikel gezeigt",
+      "view":"Anzeige",
+      "view_options":{
+        "images":"bilderfreundlich",
+        "default":"Voreinstellung"
+      },
+      "images":"Bilder",
+      "descriptions":"Beschreibungen"
+    },
+    "feed_error":"Es ist ein Fehler aufgetreten während veruscht wurde, den Feed zu laden: %s'. Bitte überprüfe die URL und\/oder passe die Widget-Einstellungen an."
+  },
+  "sports":{
+    "name":"Sport",
+    "desc":"Zeigt Resultate und Informationen zum Spiel für die ausgewählten Ligen und\/oder Mannschaften.",
+    "settings":{
+      "league":"Liga",
+      "games":"Spiele gezeigt",
+      "team":"Team",
+      "teams":"Team",
+      "unavailable":"Wann Spiele des Teams nicht verfügbar sind",
+      "unavailable_options":{
+        "other":"Andere Spiele anzeigen",
+        "none":"\"Keine Spiele\" anzeigen"
+      }
+    },
+    "error":"Etwas scheint schief gegangen zu sein",
+    "unknown_error":"Unbekannter Fehler",
+    "watch_on":"Anschauen auf: %s",
+    "no_games":"Keine Spiele geplant"
+  },
+  "stocks":{
+    "name":"Aktien",
+    "desc":"Zeigt aktuelle Informationen für jedes gewählte Aktiensymbol.",
+    "settings":{
+      "symbols":"Aktiensymbol(e), durch Komma getrennt",
+      "symbols_placeholder":"z.B. NASDAQ: GOOG, INDEXNYSEGIS:NYA",
+      "symbols_help":"Das sind Aktien, die in einem TICKER: EXCHANGE-Format gezeigt werden.\n<br \/><br \/>\nFür Indizes, benutze bitte den Ticker und Austausch wie bei <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\"> Google Finance<\/a> dargestellt. Beispielsweise ist der Dow Jones Index <b>INDEXDJX:.DJI<\/b> und NYSE ist <b>INDEXNYSEGIS:NYA<\/b>."
+    },
+    "as_of":"ab",
+    "exchange_time":"Exchange-Zeit",
+    "open":"offen",
+    "high":"hoch",
+    "low":"schwach",
+    "volume":"Volumen"
+  },
+  "todo":{
+    "name":"To-do",
+    "desc":"Zeigt eine interaktive to-do-Liste mit wichtigen und abgeschlossenen Elementen.",
+    "title":"To-do-Liste",
+    "settings":{
+      "color":"Schriftfarbe",
+      "color_options":{
+        "light":"Hell",
+        "dark":"Dunkel"
+      },
+      "tags":"Markierungen",
+      "tags_placeholder":"Geben Sie einen Tag-Namen ein und drücken Sie die Eingabetaste"
+    },
+    "add":"Element  hinzufügen",
+    "none":"Nichts",
+    "important":"Wichtig"
+  },
+  "topsites":{
+    "name":"Top-Seiten",
+    "desc":"Zeigt die meistbesuchten-\/Top-Websites.",
+    "settings":{
+      "show":"Anzahl der angezeigten Websites",
+      "open":"Öffene Website in"
+    }
+  },
+  "traffic":{
+    "name":"Verkehr",
+    "desc":"Zeigt die aktuelle Zeit mit Verkehr nach Hause oder zur Arbeit.",
+    "settings":{
+      "leave":"Ich verlasse zu Hause um",
+      "home":"Privatadresse",
+      "home_placeholder":"Das Ziel, das nach der Arbeit verwendet werden soll",
+      "work":"Geschäftsadresse",
+      "work_placeholder":"Das Ziel, das vor der Arbeit verwendet werden soll",
+      "method":"Transit-Methode",
+      "method_options":{
+        "driving":"Fahren",
+        "walking":"Gehen",
+        "transit":"Öffentliche Verkehrsmittel"
+      }
+    },
+    "to_home":"nach Hause",
+    "to_work":"zur Arbeit"
+  },
+  "translate":{
+    "name":"Übersetzen",
+    "desc":"Enthält eine kleine Google Translate Textbox.",
+    "placeholder":"Gebe den zu übersetzenden Text hier ein, dann drücke \"Übersetzen\".",
+    "untranslate":"Rückübersetzen",
+    "auto":"Auto (%s)",
+    "unknown":"Unbekannt",
+    "error":"Beim Versuch das zu übersetzen ist etwas schief gelaufen..."
+  },
+  "twitter":{
+    "name":"Twitter",
+    "desc":"Tweets des Standardstreams oder einer angegebenen Liste anzeigen.",
+    "settings":{
+      "source":"Zeige Tweets von",
+      "show":"Tweets angezeigt"
+    },
+    "authorize":"Du musst iChrome zuerst autorisieren",
+    "authorize_msg":"Du musst iChrome die Berechtigung zum Anzeigen von Tweets von Ihrem Konto geben, bevor diese hier auftauchen werden.",
+    "authorize_btn":"Autorisieren",
+    "no_tweets":"Es scheint hier keine Tweets zu geben...",
+    "home":"Home",
+    "mentions":"Erwähnungen",
+    "retweets":"Retweets von mir",
+    "lists":"Listen",
+    "more":"mehr",
+    "reply":"Antworten",
+    "retweet":"Retweeten",
+    "favorite":"Favorit"
+  },
+  "unread":{
+    "name":"Ungelesen",
+    "desc":"Zeigt die aktuelle Anzahl der ungelesenen E-Mails im Google Mail-Posteingang.",
+    "settings":{
+      "open":"Wenn Öffnen geklickt"
+    },
+    "unread_none":"ungelesene E-Mails",
+    "unread_one":"ungelesene E-Mail",
+    "unread_many":"ungelesene E-Mails"
+  },
+  "voice":{
+    "name":"Voice",
+    "desc":"Zeigt die aktuelle Anzahl der Anrufe in Abwesenheit und Nachrichten im Google Voice-Konto.",
+    "call":"Anruf von",
+    "text":"Kurzmitteilung von",
+    "missed":"Verasst in Voice",
+    "texts":"ungelesene Textnachrichten",
+    "calls":"Entgangene Anrufe"
+  },
+  "weather":{
+    "name":"Wetter",
+    "desc":"Zeigt das aktuelle Wetter und eine Vorhersage für die nächsten 4 Tage.",
+    "settings":{
+      "location":"Ort(e)",
+      "location_placeholder":"Gebe einen Ort ein und drücke die Eingabetaste",
+      "temperature":"Temperatur-Einheiten",
+      "wind":"Windgeschwindigkeit-Einheiten"
+    },
+    "unknown":"Unbekannt",
+    "wind":"Windgeschwindigkeit",
+    "chill":"Windkühle",
+    "humidity":"Luftfeuchtigkeit"
+  },
+  "wolfram":{
+    "desc":"Fügt ein kleines Wolfram|Alpha Suchfeld ein."
+  },
+  "youtube":{
+    "name":"YouTube",
+    "desc":"Zeigt entweder beliebte Videos oder Videos von einem bestimmten Benutzer.",
+    "settings":{
+      "format":"Format",
+      "format_options":{
+        "large":"Ein großes",
+        "large_2":"Ein großes, zwei kleine",
+        "large_4":"Ein großes, vier kleine",
+        "four":"Vier kleine",
+        "six":"Sechs kleine"
+      },
+      "from":"Videos anzeigen von",
+      "from_help":"Dies muss ein <b>exakter<\/b> Benutzername sein, wie dieser auf der Profilseite angezeigt wird.\n<br \/><br \/>\nDieser Wert schließt niemals mit einem Leerzeichen.",
+      "from_placeholder":"Freilassen um Top Videos anzuzeigen",
+      "open":"Öffne Suchergebnisse in"
+    },
+    "search":"In Youtube suchen",
+    "num_views":"Ansichten"
+  }
+}

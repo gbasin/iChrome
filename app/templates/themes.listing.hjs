@@ -1,0 +1,49 @@
+{{#themes}}
+	<div data-id="{{id}}" class="theme{{#custom}} custom{{/custom}}">
+		<div class="push lazy" style="{{#color}}background-color: {{color}};{{/color}}{{#thumb}}background-image: url('{{thumb}}');{{/thumb}}"></div>
+
+		<div class="caption">
+			{{#name}}
+				<h2 title="{{name}}">
+					{{#offline}}<span class="cached" title="{{i18n.themes.cached}}">&#xF0E7;</span>{{/offline}}
+
+					{{#type}}<span class="type {{entypo}}" title="{{desc}}">{{{icon}}}</span>{{/type}}
+
+					{{name}}
+				</h2>
+			{{/name}}
+
+			<div class="specs">
+				{{#stats}}
+					<span>{{stats}}</span>
+				{{/stats}}
+				{{^stats}}
+					{{#resolution}}<span><b>{{i18n.themes.resolution}}:</b> {{resolution}}</span>{{/resolution}}
+				{{/stats}}
+
+				{{#source}}
+					{{^stats}}
+						{{^resolution}}
+							{{#categories}}<span><b>{{i18n.themes.categories}}:</b> {{categories}}</span>{{/categories}}
+						{{/resolution}}
+					{{/stats}}
+
+					{{#url}}<span><b>{{i18n.themes.author}}:</b> <a href="{{url}}" target="_blank">{{name}}</a></span>{{/url}}
+					{{^url}}<span><b>{{i18n.themes.author}}:</b> {{source}}</span>{{/url}}
+				{{/source}}
+				{{^source}}
+					{{#categories}}<span><b>{{i18n.themes.categories}}:</b> {{categories}}</span>{{/categories}}
+				{{/source}}
+			</div>
+
+			{{#custom}}
+				<button class="btn btn-warning edit">{{i18n.themes.edit}}</button>
+				<button class="btn btn-danger delete">{{i18n.themes.delete}}</button>
+			{{/custom}}
+
+			<button class="btn btn-success use">{{i18n.themes.use}}</button>
+
+			<button class="btn btn-primary preview">{{i18n.themes.preview}}</button>
+		</div>
+	</div>
+{{/themes}}

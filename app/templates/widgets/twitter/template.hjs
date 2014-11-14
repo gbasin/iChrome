@@ -1,0 +1,38 @@
+{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+<div class="tweets">
+	{{#tweets}}
+		<div class="tweet nested-link" data-href="https://twitter.com/{{username}}/status/{{id}}" target="_blank">
+			<div class="topbar">
+				<a href="https://twitter.com/{{username}}" target="_blank" class="user"><b>{{user}}</b> <span class="tweeter">@{{username}}</span></a>
+				<span class="age">{{age}}</span>
+			</div>
+
+			<div class="content">
+				<a href="https://twitter.com/{{username}}" target="_blank" class="user"><img src="{{image}}" /></a>
+
+				{{{content}}}
+			</div>
+
+			<div class="tools">
+				<a class="more" href="https://twitter.com/{{username}}/status/{{id}}" target="_blank">{{i18n.more}}</a>
+				<a class="reply" href="https://twitter.com/intent/tweet?in_reply_to={{id}}" target="_blank">{{i18n.reply}}</a>
+				<a class="retweet" href="https://twitter.com/intent/retweet?tweet_id={{id}}" target="_blank">{{i18n.retweet}}</a>
+				<a class="favorite" href="https://twitter.com/intent/favorite?tweet_id={{id}}" target="_blank">{{i18n.favorite}}</a>
+			</div>
+		</div>
+	{{/tweets}}
+	{{^tweets}}
+		{{#authorize}}
+			<div class="authorize">
+				{{i18n.authorize_msg}}
+				<button type="button" class="btn btn-lg btn-primary">{{i18n.authorize_btn}}</button>
+			</div>
+		{{/authorize}}
+		{{^authorize}}
+			<div class="no-tweets">
+				{{i18n.no_tweets}}
+			</div>
+		{{/authorize}}
+	{{/tweets}}
+</div>

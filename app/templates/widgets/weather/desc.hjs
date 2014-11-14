@@ -1,0 +1,15 @@
+The Weather widget displays the current weather and forecast for the next 4 days.<br />
+<br />
+Setup:<br />
+<br />
+<ol>
+	<li>Install the widget in your preferred size</li>
+	<li>Hover over the widget and click the settings icon that appears</li>
+	<li>Enter your location</li>
+	<li>Click "Save"</li>
+</ol>
+Variations:<br />
+<br />
+Tiny: Displays the current temperature and a conditions tooltip.<br />
+Small: Displays the current temperature, conditions, wind, humidity and the "Feels Like" temperature.<br />
+Medium: Displays all of the above plus the conditions, high and low for the next 5 days.

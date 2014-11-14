@@ -1,0 +1,3 @@
+<h2 class="title">{{i18n.widgets.settings.title}} <button class="btn btn-primary save">{{i18n.widgets.settings.save}}</button></h2>
+
+<form></form>

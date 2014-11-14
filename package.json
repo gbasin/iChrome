@@ -1,0 +1,28 @@
+{
+  "name": "iChrome",
+  "version": "2.1.3",
+  "description": "The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
+  "main": "app/js/app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AMKohn/iChrome.git"
+  },
+  "author": "Avi Kohn",
+  "license": "Creative Commons Attribution-ShareAlike 3.0 Unported",
+  "bugs": {
+    "url": "https://github.com/AMKohn/iChrome/issues"
+  },
+  "homepage": "http://www.ichro.me/",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-compress": "^0.12.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-requirejs": "^0.4.4",
+    "grunt-hogan": "^0.3.0",
+    "grunt-string-replace": "^1.0.0",
+    "hogan.js": "^3.0.2",
+    "lodash": "^2.4.1"
+  }
+}

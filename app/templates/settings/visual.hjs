@@ -1,0 +1,85 @@
+<h2 class="header">{{i18n.settings.labels.visual}}</h2>
+
+<div class="content">
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label class="control-label col-sm-2">{{i18n.settings.visual.layout}}</label>
+
+			<div class="col-sm-9">
+				<select id="columns" name="columns">
+					<option value="1-fixed">{{i18n.settings.visual.layout_options.1_fixed}}</option>
+					<option value="1-fluid">{{i18n.settings.visual.layout_options.1_fluid}}</option>
+					<option value="2-fixed">{{i18n.settings.visual.layout_options.2_fixed}}</option>
+					<option value="2-fluid">{{i18n.settings.visual.layout_options.2_fluid}}</option>
+					<option value="3-fixed">{{i18n.settings.visual.layout_options.3_fixed}}</option>
+					<option value="3-fluid">{{i18n.settings.visual.layout_options.3_fluid}}</option>
+					<option value="4-fixed">{{i18n.settings.visual.layout_options.4_fixed}}</option>
+					<option value="4-fluid">{{i18n.settings.visual.layout_options.4_fluid}}</option>
+					<option value="5-fixed">{{i18n.settings.visual.layout_options.5_fixed}}</option>
+					<option value="5-fluid">{{i18n.settings.visual.layout_options.5_fluid}}</option>
+					<option value="medley">{{i18n.settings.visual.layout_options.grid}}</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="theme-btn">{{i18n.settings.visual.theme}}</label>
+
+			<div class="col-sm-9">
+				<input type="hidden" name="theme" value="{{theme}}" />
+				
+				<button class="btn btn-primary theme" id="theme-btn">{{i18n.settings.visual.theme_select}}</button>
+
+				<span class="current">{{themename}}</span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="alignment">{{i18n.settings.visual.align}}</label>
+
+			<div class="col-sm-9">
+				<span class="info">{{i18n.settings.visual.align_desc}}</span>
+
+				<select id="alignment" name="alignment">
+					<option value="left">{{i18n.settings.visual.align_labels.left}}</option>
+					<option value="center" selected>{{i18n.settings.visual.align_labels.center}}</option>
+					<option value="right">{{i18n.settings.visual.align_labels.right}}</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="logo-url">{{i18n.settings.visual.logo}}</label>
+
+			<div class="col-sm-9">
+				<span class="info">{{{i18n.settings.visual.logo_desc}}}</span>
+				
+				<input type="text" id="logo-url" name="logo-url" value="{{logo-url}}" />
+			</div>
+		</div>
+
+		<div class="form-group toolbar-style">
+			<label class="control-label col-sm-2">{{i18n.settings.visual.toolbar}}</label>
+
+			<div class="col-sm-9">
+				<span class="info">{{i18n.settings.visual.toolbar_desc}}</span>
+
+				<div class="checkboxes col-sm-9">
+					<label><input type="radio" name="toolbar" value="full" checked/> {{i18n.settings.visual.toolbar_normal}}</label>
+					<label><input type="radio" name="toolbar" value="button" /> {{i18n.settings.visual.toolbar_button}}</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="animation">{{i18n.settings.visual.animation}}</label>
+
+			<div class="col-sm-9">
+				<span class="info">{{i18n.settings.visual.animation_desc}}</span>
+
+				{{#animation}}<label><input type="checkbox" name="animation" checked /> {{i18n.settings.visual.animation_label}}</label>{{/animation}}
+				{{^animation}}<label><input type="checkbox" name="animation" /> {{i18n.settings.visual.animation_label}}</label>{{/animation}}
+			</div>
+		</div>
+	</form>
+</div>

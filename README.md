@@ -1,19 +1,15 @@
-# iChrome
+# iChrome [![Crowdin](https://d322cqt584bo4o.cloudfront.net/ichrome/localized.png)](https://crowdin.com/project/ichrome)
 
-iChrome is a highly customizable, iGoogle homepage replacement extension influenced by Google Now. It includes almost 100 HD themes, over 30 widgets, support for multiple tabs, "OK Google" hotword detection and voice search and almost complete customization.
+iChrome is a highly customizable, iGoogle homepage replacement extension influenced by Google Now. It includes almost 100 HD themes, over 30 widgets, support for multiple tabs, "OK Google" hotword detection and voice search, internationalization support and  almost complete customization.
 
 This is the full source for iChrome except for API secrets which have been replaced with empty strings (`""`).
 
-The code's somewhat messy, but I'm currently in the middle of a restructure in the [restructure](https://github.com/AMKohn/iChrome/tree/restructure) branch.  I'm also looking to add internationalization in V2.1.2, so if you'd like to translate it to a specific language please let me know.
-
 ## Roadmap
 
-#### V2.1.4 - WIP
- - Code cleanup and restructure using Backbone, Require and Lo-Dash.
-
-#### V2.1.5
- - Internationalization with support for (at least): Russian, German, Dutch, Ukrainian, French, Spanish, Chinese and Portuguese
- - Various small widget features
+#### V2.1.4
+ - Various minor updates and tweaks
+ - App sorting support
+ - New widgets including Quotes, Chrome Bookmarks, Site Link, Timer, HTML and Google Tasks
 
 #### V2.x
  - A real website
@@ -41,7 +37,7 @@ If you'd like to contribute, please fork the repo and submit a pull request.
 I follow a more complicated style guide, but here's the basic overview:
 
  - Code is indented with 4 space tabs, never spaces
- - Double quotes are always used unless the string is HTML
+ - Double quotes are always used unless the string contains double quotes, such as with HTML
  - Trailing semicolons are always used
  - When multiple variables are being defined at the top of a function they should generally be combined into one `var` statement
  - Ternary operators are fine especially for string concatenation

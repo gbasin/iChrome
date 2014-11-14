@@ -1,0 +1,275 @@
+{
+  "lang_code":"de",
+  "language":"Deutsch",
+  "extDescription":"Die BESTE Startseite für Chrome. Atemberaubende Themes, dutzende Widgets, blitzschnell und sehr anpassbar!",
+  "extName":"iChrome - Deine Homepage für Chrome",
+  "defaults":{
+    "tab":"Home",
+    "me":"Ich"
+  },
+  "remove_widget":"Löschen",
+  "column_to_grid_warning":"Ausgewählt wurde, eine Registerkarte von spaltenbasiertem Layout zu einem grid-basierten Layout zu ändern. Fortfahren bedeutet, alle Spalten gehen verloren und alles wird nach oben links verschoben. Bist Du sicher, dass Du dies tun willst?",
+  "grid_to_column_warning":"Ausgewählt wurde, eine Registerkarte von grid-basiertem Layout zu einem spaltenbasierten Layout zu ändern. Fortfahren bedeutet, alle Spalten gehen verloren und alles wird nach oben links verschoben. Bist Du sicher, dass Du dies tun willst?",
+  "storage_warning":"Sie benutzen zurzeit mehr als 90% des für die Synchronisation zu Verfügung stehenden Speicherkontingents.\nWenn Sie das Limit erreichen wird iChrome aufhören ihre Daten zu synchronisieren und eventuell aufhören zu funktionieren.\nSie können ihr Datenvolumen verringern indem sie eigene Themes löschen und Notizen oder To-Do Listen löschen, die sie nicht brauchen.",
+  "toolbar":{
+    "placeholder":"Begriff eingeben",
+    "placeholder_ok":"Begriff eingeben oder \"OK, Google\"",
+    "apps":{
+      "search":"Suche",
+      "youtube":"YouTube",
+      "maps":"Karten",
+      "play":"Play",
+      "news":"Nachrichten",
+      "gmail":"Gmail",
+      "drive":"Drive",
+      "calendar":"Kalender",
+      "more":"mehr"
+    }
+  },
+  "menu":{
+    "settings":"Einstellungen",
+    "widgets":"Widgets",
+    "background":"Hintergrund anzeigen",
+    "editing":"Anpassen",
+    "editing_enabled":"aktiviert",
+    "editing_disabled":"deaktiviert",
+    "plus":"Google Plus",
+    "tabs":"Reiter",
+    "footer":{
+      "support":"Support",
+      "feedback":"Feedback",
+      "review":"Beurteilung",
+      "twitter":"Twitter",
+      "webstore":"Onlineshop",
+      "donate":"Spenden",
+      "by":"von Avi Kohn"
+    }
+  },
+  "voice":{
+    "listening":"Höre...",
+    "searching":"Suche nach: %s",
+    "missed":"Nicht verstanden. <a>Versuche es erneut<\/a>"
+  },
+  "settings":{
+    "save":"Speichern & Schließen",
+    "new_tab":"Erstellen",
+    "labels":{
+      "general":"Allgemein",
+      "visual":"Anzeige",
+      "specific":"Registerkarten spezifisch",
+      "advanced":"Erweitert"
+    },
+    "general":{
+      "search":"Suche URL",
+      "search_desc":"Das Suchfeld wird die Suche an folgende Adresse leiten. Trage <b>%s<\/b> ein, wohin die Suchanfrage gehen soll",
+      "profile":"Profilbild",
+      "profile_desc":"Dies ist das Bild, welches auf der rechten Seite der Symbolleiste angezeigt wird. Es wird automatisch aus Deinem Google-Profil empfangen",
+      "name":"Name",
+      "name_desc":"Dies wird für den Google + Link in der Symbolleiste verwendet.  Es wird automatisch aus Deinem Google-Profil gezogen",
+      "voice":"Sprach-Suche",
+      "voice_search":"Sprach-Suche aktivieren",
+      "voice_ok":"Aktivieren Sie die \"OK-Google\" Erkennung",
+      "links":"Symbolleisten-Links",
+      "links_desc":"Hier kannst Du auswählen, welche Links im rechten Bereich der Symbolleiste angezeigt werden:",
+      "links_items":{
+        "plus":"Google Plus",
+        "gmail":"Gmail",
+        "apps":"Apps-Menü",
+        "link1":"Benutzerdefinierter Link 1",
+        "link2":"Benutzerdefinierter Link 2",
+        "link3":"Benutzerdefinierter Link 3",
+        "text_holder":"Link Bezeichnung",
+        "link_holder":"Link-URL, z.B. http:\/\/www.google.com\/"
+      },
+      "guide":"Installationshandbuch",
+      "guide_desc":"Anleitung erneut anzeigen, die gezeigt wurde als iChrome zuerst installiert wurde"
+    },
+    "visual":{
+      "layout":"Design",
+      "layout_options":{
+        "1_fixed":"Eine Spalte mit fester Breite",
+        "1_fluid":"Eine Spalte, variable Breite",
+        "2_fixed":"Zwei Spalten, feste Breite",
+        "2_fluid":"Zwei Spalten, variable Breite",
+        "3_fixed":"Drei Spalten, feste Breite",
+        "3_fluid":"Drei Spalten, variable Breite",
+        "4_fixed":"Vier Spalten, feste Breite",
+        "4_fluid":"Vier Spalten, variable Breite",
+        "5_fixed":"Fünf Spalten, feste Breite",
+        "5_fluid":"Fünf Spalten, variable Breite",
+        "grid":"Grid-basierte, anpassbare Breite"
+      },
+      "theme":"Standarddesign",
+      "theme_placeholder":"Theme #%s",
+      "theme_select":"Theme auswählen",
+      "align":"Ausrichtung",
+      "align_desc":"Dies ändert die Ausrichtung der Widget Spalten",
+      "align_labels":{
+        "left":"Links",
+        "center":"Mitte",
+        "right":"Rechts"
+      },
+      "logo":"Logo-URL",
+      "logo_desc":"Dieses Bild wird am linken Rand der Symbolleiste angezeigt.  Der Standardwert ist <b>\/images\/logo.svg<\/b>",
+      "toolbar":"Symbolleisten-Stil",
+      "toolbar_desc":"Dies bestimmt das Format der Symbolleiste, sie kann entweder normal angezeigt werden oder sich automatisch ausblenden",
+      "toolbar_normal":"Normal",
+      "toolbar_button":"Schaltfläche",
+      "animation":"Slide-in-Animation",
+      "animation_desc":"Diese Einstellung aktiviert oder deaktiviert die Slide-in=n-Animation, die beim Laden der Seite ausgeführt wird",
+      "animation_label":"Animation aktivieren"
+    },
+    "specific":{
+      "name":"Reitername",
+      "default_name":"Neuer Reiter",
+      "delete":"Reiter löschen",
+      "delete_disallowed":"Die letzte verbleibende Registerkarte kann nicht gelöscht werden.",
+      "delete_confirm":"Bist Du dir wirklich sicher, diese Registerkarte zu löschen? Dieser Vorgang ist irreversibel, alle Daten von allen Widgets auf der Registerkarte sind dauerhaft verloren.",
+      "default":"Als Standard festlegen"
+    },
+    "advanced":{
+      "background":"Widget Hintergrund",
+      "background_desc":"Klicke auf das Farbfeld, um eine Farbe auszuwählen",
+      "search":"Suchverhalten",
+      "search_label":"Öffne Suchergebnisse in einem neuen Reiter",
+      "backup":"Sichern \/ Wiederherstellen",
+      "backup_desc":"<b>Sichern:<\/b> Klicke auf die Schaltfläche \"Sichern\" und kopiere den Text aus dem untenstehenden Feld. <br\/> <b>Wiederherstellen:<\/b> Füge den gespeicherten Text ein und klicke auf die Schaltfläche \"Wiederherstellen\".",
+      "backup_backup":"Sichern",
+      "backup_restore":"Wiederherstellen",
+      "restore_error":"Fehler beim Versuch, die bereitgestellten Daten zu analysieren. Stelle sicher, dass genau der gespeicherte Text eingegeben wurde.",
+      "restore_confirm":"Bist Du wirklich, wirklich sicher, dass Du dies tun willst? Damit werden alle lokalen und synchronisierten Daten überschrieben, es gibt keine Sicherung und keine Möglichkeit dies rückgängig zu machen.  Sie verlieren Ihre gesamte aktuelle Konfiguration auf allen Computern, die mit diesem Google-Konto angemeldet sind.",
+      "css":"Benutzerdefiniertes CSS",
+      "css_desc":"In diesem Feld kann fast jeder sichtbare Teil von iChrome mittels CSS angepasst werden (für eine Beschreibung bitte die <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\"> MDN<\/a> beachten). <br \/> <br \/> Da dies synchronisiert wird, können nur maximal 1000 Zeichen, einschließlich Leerzeichen, eingegeben werden.",
+      "reset":"IChrome zurücksetzen",
+      "reset_confirm":"Bist du wirklich, wirklich sicher, dass Du iChrome zurücksetzen willst? Damit werden alle lokalen und synchronisierten Daten überschrieben, es gibt keine Sicherung und keine Möglichkeit dies rückgängig zu machen.  Sie verlieren Ihre gesamte aktuelle Konfiguration auf allen Computern, die mit diesem Google-Konto angemeldet sind."
+    }
+  },
+  "store":{
+    "installation":"Installation",
+    "description":"Beschreibung",
+    "preview":"Vorschau",
+    "instructions":"Verschiebe jede Größe beliebig auf der Homepage"
+  },
+  "widgets":{
+    "sizes":{
+      "tiny":"Winzig",
+      "small":"Klein",
+      "medium":"Medium",
+      "large":"Groß",
+      "variable":"Variabel"
+    },
+    "settings":{
+      "title":"Widget-Einstellungen",
+      "save":"Speichern",
+      "size":"Widget Größe"
+    },
+    "delete_confirm":"Bist du sicher, dass du das Widget wirklich löschen willst?\nDiese Aktion ist irreversibel, alle mit diesen Widget verbundenen Daten werden dauerhaft gelöscht.",
+    "shared":{
+      "settings":{
+        "title":"Widget Titel",
+        "title_placeholder":"Widget-Bezeichnung eingeben oder leer lassen um zu verbergen",
+        "height":"Widget-Höhe",
+        "open_options":{
+          "current":"Aktuelle Registerkarte",
+          "blank":"Neue Registerkarte"
+        },
+        "footer_link":"Fußzeilen-Link",
+        "footer_link_options":{
+          "show":"Anzeigen",
+          "hide":"Ausblenden"
+        },
+        "account":"Account-ID",
+        "account_help":"Wenn Du bei mehreren Konten angemeldet bist ist dies der \"Authuser =\" Wert.\n<br \/> <br \/>\nZum Beispiel, wenn Du in zwei Konten angemeldet bist, jsmith1@gmail.com und jsmith2@gmail.com, ist der \"Authuser\"-Wert für jsmith2@gmail.com 1, da es das zweite angemeldete Konto ist (gezählt ab 0).",
+        "account_placeholder":"Ihr \"Authuser=\" Wert",
+        "on":"An",
+        "off":"Aus"
+      }
+    }
+  },
+  "themes":{
+    "title":"Themes",
+    "all":"Alle",
+    "custom":"Benutzerdefiniert",
+    "create":"Theme erstellen",
+    "edit":{
+      "title":"Theme bearbeiten",
+      "create_title":"Theme erstellen",
+      "name":"Theme Name",
+      "default_name":"Neues Theme",
+      "name_placeholder":"Theme Namen eingeben",
+      "image":"Bild-URL",
+      "image_placeholder":"Gebe eine Hintergrundbild-URL ein",
+      "image_help":"Hochgeladen Bilder <b>können zwischen Computern nicht synchronisiert werden<\/b>. <br \/> <br \/> Falls dies wichtig ist, das Bild bitte mit einem Dienst wie <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">Imgur<\/a> hochladen. Dann kopiere die URL, welche mit einer Erweiterung endet (d.h. .jpg), und füge diese in das Feld auf der linken Seite ein.",
+      "color":"Reserve-Farbe",
+      "color_placeholder":"Gebe eine Farbbezeichnung ein",
+      "position":"Position",
+      "position_options":{
+        "center":"Mittig",
+        "top_left":"Oben links",
+        "top_center":"Oben mittig",
+        "top_right":"Oben rechts",
+        "bottom_left":"Unten links",
+        "bottom_center":"Unten mittig",
+        "bottom_right":"Unten rechts"
+      },
+      "scaling":"Skalierung",
+      "scaling_options":{
+        "auto":"Automatisch",
+        "width":"Volle Breite",
+        "height":"Volle Höhe",
+        "none":"Keine Skalierung (Vorschau kann ungenau sein)"
+      },
+      "repeat":"Bild wiederholen",
+      "repeat_options":{
+        "none":"Nicht wiederholen",
+        "horizontal":"Horizontal wiederholen",
+        "vertical":"Vertikal wiederholen",
+        "both":"Beides wiederholen"
+      },
+      "attach":"Bild anfügen",
+      "attach_tab":"Die Registerkarte",
+      "attach_window":"Das Fenster",
+      "preview":"Vorschau",
+      "save":"Speichern & Schließen",
+      "cache_error":"Fehler beim Versuch, das eingetragene Bild zwischenzuspeichern, bitte überprüfe die URL.",
+      "upload_error":"Fehler beim Hochladen der Datei, bitte sicherstellen, dass es eine vernünftige Dateigröße und ein Bild ist."
+    },
+    "delete":"Löschen",
+    "use":"Verwenden",
+    "preview":"Vorschau",
+    "author":"Von",
+    "images":"%s Bilder",
+    "resolution":"Auflösung",
+    "categories":"Kategorien",
+    "cached":"Dieses Theme wurde zwischengespeichert und ist offline verfügbar",
+    "random":"Dieses Theme zeigt ein Zufallsbild, jedes Mal wenn Du die Seite lädst",
+    "random_daily":"Dieses Theme zeigt jeden Tag ein neues Zufalls-Bild",
+    "sunrise_sunset":"Dieses Theme zeigt ein Bild basierend auf der Tageszeit",
+    "feed":"Dieses Theme zeigt täglich ein Bild von einem externen Feed",
+    "delete_confirm":"Bist Du wirklich sicher, dass Du dieses Theme löschen möchtest? Dieser Vorgang ist unumkehrbar, das gesamte Theme wird dauerhaft gelöscht.",
+    "delete_error":"Fehler beim Versuch, das Theme zu löschen.  Bitte versuche es später erneut.",
+    "feed_fetching":"Bitte warte, Feed wird abgerufen...",
+    "feed_error":"Fehler beim Verusch den Feed zu laden, bitte versuche es später erneut.",
+    "caching":"Bitte warten, Theme wird zwischengespeichert...",
+    "cache_status":"%s von %s Bilder zwischengespeichert",
+    "cache_error":"Fehler beim Versuch, das Theme zwischenzuspeichern.  Bitte versuche es später erneut"
+  },
+  "intro":{
+    "slide1":{
+      "title":"Willkommen bei iChrome!",
+      "line1":"Wenn Du iChrome als Startseite verwenden möchtest, muss die URL dieser Seite in den Einstellungen eingetragen werden. (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\"> Anweisungen<\/a>).  Andernfalls, soll es als neue Registerkarte oder beides (Home und neue Registerkarte) erscheinen installiere bitte <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\"> iChrome New Tab<\/a>.",
+      "newtab_line1":"Wenn iChrome nur angezeigt werden soll, wenn Chrome gestartet wird, und nicht jedes Mal beim Öffnen einer neuen Registerkarte, installiere bitte <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> die Standard-iChrome-Erweiterung<\/a> anstatt dieser.",
+      "line2":"Diese Einführung ist nur 3 Schritte lang und gibt einen schnellen Überblick über grundlegende Dinge in iChrome.  Wenn du bereit bist klicke auf den nächsten Pfeil auf der rechten Seite."
+    },
+    "slide2":{
+      "title":"Widgets",
+      "line1":"Widgets sind der Kern von iChrome.  Du kannst sie mit Hilfe der Schraubenschlüssel und Griff Symbole konfigurieren und verschieben, indem Du die Maus nach oben rechts bewegst.  Um ein Widget zu entfernen, ziehe es auf den roten Balken der oben erscheint.",
+      "line2":"Neue Widgets können durch einen Klick auf das Widget-Element im Menü oben rechts auf der Seite hinzugefügt werden (siehe nächste Folie)."
+    },
+    "slide3":{
+      "title":"Anpassen",
+      "line1":"Du kannst fast alles über das Menü oben rechts ändern.  Dort kannst Du konfigurieren wie die Seite aussieht, wie iChrome funktioniert und neue Widgets erhalten.",
+      "line2":"Ferner kannst du einzelner Reiter erstellen, jeweils mit eigenen Themes und Widgets, benutzerdefinierte Designs erzeugen oder Kleinigkeiten wie welche Links in der Symbolleiste angezeigt werden konfigurieren."
+    }
+  }
+}
