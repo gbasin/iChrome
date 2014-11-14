@@ -205,6 +205,9 @@ module.exports = function(grunt) {
 					},
 					extName: {
 						message: e.extName
+					},
+					themes_upload_image: {
+						message: e.themes.upload_image
 					}
 				};
 

@@ -2707,7 +2707,7 @@ body.no-edit .widgets-container .widget .settings {
 .themes.create .upload input:after {
 	display: block;
 	text-align: center;
-	content: "Upload an image";
+	content: "__MSG_themes_upload_image__";
 }
 
 .themes.create .upload input::-webkit-file-upload-button {

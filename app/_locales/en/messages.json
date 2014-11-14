@@ -8,5 +8,8 @@
 
 	"lang_code": {
 		"message": "en"
+	},
+	"themes_upload_image": {
+		"message": "Upload an image"
 	}
 }
