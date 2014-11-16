@@ -6,10 +6,10 @@ var templates = [
 		"css",					"toolbar",				"search",
 		"store",				"store-detail",			"themes",
 		"themes.listing",		"themes.custom",		"widget-settings",
-		"getting-started",		"donate",				"updated",
-		"whats-new",			"settings",				"menu",
-		"settings/new-tab",		"settings/general",		"settings/visual",
-		"settings/advanced",	"settings/tab-specific","widget-settings.inputs",
+		"getting-started",		"donate",				"translate-request",
+		"settings",				"menu",					"settings/new-tab",
+		"settings/general",		"settings/visual",		"settings/advanced",
+		"settings/tab-specific","widget-settings.inputs",
 		
 		
 		// I plan on changing these to be dynamically read from the widget manifest later

@@ -1821,17 +1821,14 @@ body.no-edit .widgets-container .widget .settings {
 	bottom: 15px;
 	margin: auto;
 	width: 400px;
-	height: 220px;
 	z-index: 99999;
 	position: fixed;
 	overflow: hidden;
 	background: #FFF;
-	max-height: 600px;
+	max-height: 500px;
 	padding: 15px 10px;
 	visibility: hidden;
 	border-radius: 2px;
-	max-height: 500px;
-	/*height: calc(100% - 30px);*/
 	font-family: Open Sans, sans-serif;
 	-webkit-transform: translateY(50px) translateZ(0);
 	transition: all .25s ease-in-out, visibility 0s .25s;
@@ -1874,7 +1871,7 @@ body.no-edit .widgets-container .widget .settings {
 .notification .content {
 	color: #4B4B4B;
 	overflow: auto;
-	padding: 0 15px 0 20px;
+	padding: 0 15px;
 	font-size: 12px;
 	max-height: calc(100% - 30px);
 }
@@ -1886,38 +1883,24 @@ body.no-edit .widgets-container .widget .settings {
 }
 
 .notification li {
+	width: 46%;
 	color: #555;
 	padding: 3px 0;
 	font-size: 12px;
-	list-style: none;
 	position: relative;
+	display: inline-block;
 }
 
-.notification li.important {
-	color: #222;
-}
-
-
-
-
-
-
-/*---------------------------------------------
-	/ What's New
-*/
-.whats-new ul {
-	overflow: auto;
-	max-height: 315px;
-}
-
-.whats-new a {
+.notification a {
+	float: right;
 	font-size: 12px;
 	margin-top: 8px;
 	display: inline-block;
 }
 
-.whats-new .btn {
-	float: right;
+.notification .btn {
+	float: left;
+	margin-top: 0;
 }
 
 
