@@ -774,7 +774,8 @@ input[type="radio"]:checked {
 	transition: right .3s cubic-bezier(0.190, 1.000, 0.220, 1.000);
 }
 
-.menu:lang(uk) {
+.menu:lang(uk),
+.menu:lang(nl) {
 	width: 230px;
 	right: -235px;
 }
@@ -786,6 +787,7 @@ input[type="radio"]:checked {
 
 .menu.visible,
 .menu.visible:lang(uk),
+.menu.visible:lang(nl),
 .menu.visible:lang(ru) {
 	right: 0;
 }
