@@ -468,6 +468,7 @@
 
 		"placeholder": "Enter the text you'd like to translate here, then hit \"Translate\" below.",
 
+		"button": "Translate",
 		"untranslate": "Untranslate",
 		"auto": "Auto (%s)",
 

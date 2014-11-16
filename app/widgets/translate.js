@@ -82,7 +82,7 @@ define(["jquery"], function($) {
 				autochange = function(e) {
 					untranslate = false;
 
-					btn.text(this.utils.translate("name"));
+					btn.text(this.utils.translate("button"));
 
 					if (autochanged) {
 						auto.text("Auto");
@@ -100,7 +100,7 @@ define(["jquery"], function($) {
 
 					untranslate = false;
 
-					btn.text(this.utils.translate("name"));
+					btn.text(this.utils.translate("button"));
 				}
 				else {
 					submit(e);
@@ -123,7 +123,7 @@ define(["jquery"], function($) {
 			to.on("change", function() {
 				untranslate = false;
 
-				btn.text(this.utils.translate("name"));
+				btn.text(this.utils.translate("button"));
 			});
 
 			swap.click(function(e) {

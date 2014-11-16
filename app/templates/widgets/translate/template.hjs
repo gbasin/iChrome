@@ -174,5 +174,5 @@
 		</select>
 	</div>
 
-	<button class="btn btn-primary translate">{{i18n.name}}</button>
+	<button class="btn btn-primary translate">{{i18n.button}}</button>
 </form>
