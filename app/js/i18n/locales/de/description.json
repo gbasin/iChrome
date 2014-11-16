@@ -1,0 +1,27 @@
+{
+  "lang_code":"de",
+  "line_1":"iChrome ist eine Startseiten-Erweiterung, die darauf abzielt, eine persönliche Homepage zu erzeugen wie sie sein sollte: schnell, individuell, schön und produktiv.",
+  "link":"Wenn Du eine Erweiterung für Ihren \"Neuer Tab\"-Seite und nicht die Startseite suchst, schaue Dir \"iChrome New Tab\" an: https:\/\/chrome.google.com\/webstore\/detail\/ichrome-new-tab\/iccjgbbjckehppnpajnmplcccjcgbdep",
+  "newtab_line_1":"iChrome ist eine Erweiterung für die \"Neuer Tab\"- oder Startseite, die versucht eine Seite zu erstellen, wie sie sein sollte: schnell, individuell, schön und produktiv.",
+  "newtab_link":"Wenn Du eine Erweiterung für die Homepage und nicht die \"Neuer Tab\"-Seite suchst, schaue die Standard iChrome-Erweiterung an: https:\/\/chrome.google.com\/webstore\/detail\/ichrome-your-homepage-for\/oghkljobbhapacbahlneolfclkniiami",
+  "line_2":"Baue Deine Startseite mit mehr als 30 Widgets und dutzenden, atemberaubenden Designs.  iChrome umfasst hunderte Funktionalitäten wie die folgenden - und vieles mehr:",
+  "features":[
+    "Dutzende schöne vollformat Wallpaper und Themes inklusive Bing und Webshots Fotos des Tages",
+    "Komplette Synchronisierung zwischen Computern, einschließlich Todo-Listen, Notizen und benutzerdefinierten Designs",
+    "Mehrere Layout-Optionen, einschließlich 1-5 fester oder variabler Spalten (oder wähle direkt ein Raster!)",
+    "Die richtige Information zum richtigen Zeitpunkt mit Google Now Integration",
+    "Voll funktionsfähige Sprachsuche und \"OK, Google\" Hotword Erkennung",
+    "Weltweites Echtzeit-Wetter und Wettervorhersage mit dem Wetter-Widget",
+    "Einfache Widget Installation und Neuordnung mit Hilfe von Drag and Drop",
+    "Folge einem oder mehreren Aktien, in Echtzeit, in dem sauberen und kompakten Aktien-Widget",
+    "Hole Dir die Nachrichten für bestimmte Ausgaben und Themen oder lese einen eigenen RSS-Feed",
+    "Bequemer Zugang zu allen Chrome-Apps mit dem Apps-Widget",
+    "Finde besucht Top-Websites und kürzlich geschlossene Tabs in einfachen Widgets",
+    "Navigiere zwischen anpassbaren Tabs mit der Tastatur, jeweils mit eigenem Design und eigenen Widgets",
+    "Top-Inhalte auf YouTube oder Reddit mit vollen Widget-Unterstützung erforschen",
+    "Jederzeit vollständig offline arbeiten - alles, auch das Design, ist bereit, wann immer Du es bist!"
+  ],
+  "line_3":"iChrome ist ein Open Source Projekt, betrachte es auf Github: https:\/\/github.com\/AMKohn\/iChrome",
+  "line_4":"Feedback und Anregungen sind jederzeit willkommen: http:\/\/ichrome.uservoice.com",
+  "line_5":"Bist du Homepage-Erweiterungen Leid, die nicht einengen und nicht anpassbar sind? Überflutet mit Werbung?  Noch auf der Suche nach \"dem\" iGoogle-Ersatz? Auf der Suche nach einer schönen Start-Seite die sich immer weiter verbessert? iChrome ist für Dich!"
+}

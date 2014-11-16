@@ -170,7 +170,7 @@
     "desc":"Embeds Google Keep in a widget"
   },
   "news":{
-    "name":"News",
+    "name":"新聞",
     "desc":"Displays the current top news by category and edition.",
     "settings":{
       "articles":"Articles Shown",
@@ -195,7 +195,7 @@
       "footer":"Footer URL",
       "footer_placeholder":"Enter the URL that the \"More\" link should point to"
     },
-    "more":"More"
+    "more":"更多"
   },
   "notes":{
     "name":"Notes",
@@ -257,7 +257,8 @@
         "link":"The link",
         "comments":"The comments"
       }
-    }
+    },
+    "more":"更多"
   },
   "rss":{
     "name":"RSS",
@@ -360,6 +361,7 @@
     "name":"Translate",
     "desc":"Contains a small inline Google Translate textbox.",
     "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
+    "button":"Translate",
     "untranslate":"Untranslate",
     "auto":"Auto (%s)",
     "unknown":"Unknown",
@@ -376,11 +378,11 @@
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
     "authorize_btn":"Authorize",
     "no_tweets":"There don't seem to be any tweets here...",
-    "home":"Home",
+    "home":"主頁",
     "mentions":"Mentions",
     "retweets":"Retweets of me",
     "lists":"Lists",
-    "more":"More",
+    "more":"更多",
     "reply":"Reply",
     "retweet":"Retweet",
     "favorite":"Favorite"

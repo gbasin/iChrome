@@ -1,8 +1,10 @@
 {
   "lang_code":"pt-PT",
   "language":"Português",
-  "extDescription":"A MELHOR homepage para o Chrome. Temas incríveis, dezenas de widgets, super rápido, e super costumizavel!",
+  "newtabName":"iChrome novo separador",
   "extName":"IChrome- a tua homepage, para o chrome",
+  "extDescription":"A MELHOR homepage para o Chrome. Temas incríveis, dezenas de widgets, super rápido, e super costumizavel!",
+  "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
   "defaults":{
     "tab":"Casa",
     "me":"Eu"
@@ -191,6 +193,8 @@
     "all":"Tudo\n",
     "custom":"Personalizado",
     "create":"Criar um tema",
+    "url_or_upload":"or",
+    "upload_image":"Upload an image",
     "edit":{
       "title":"Editar tema",
       "create_title":"Criar tema",

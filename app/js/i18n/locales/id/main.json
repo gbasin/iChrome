@@ -1,8 +1,10 @@
 {
   "lang_code":"id",
   "language":"Bahasa Indonesia",
-  "extDescription":"The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
+  "newtabName":"iChrome New Tab",
   "extName":"iChrome - your homepage, for chrome",
+  "extDescription":"The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
+  "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
   "defaults":{
     "tab":"Home",
     "me":"Me"
@@ -191,6 +193,8 @@
     "all":"All",
     "custom":"Custom",
     "create":"Create a theme",
+    "url_or_upload":"or",
+    "upload_image":"Upload an image",
     "edit":{
       "title":"Edit Theme",
       "create_title":"Create Theme",

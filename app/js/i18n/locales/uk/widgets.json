@@ -1,45 +1,45 @@
 {
   "lang_code":"uk-widgets",
   "analytics":{
-    "name":"Analytics",
-    "desc":"Displays various metrics from a Google Analytics profile.",
-    "sessions":"sessions",
-    "pageviews":"Pageviews",
+    "name":"Аналітика",
+    "desc":"Відображення різноманітних показників з профілю Google Analytics.",
+    "sessions":"сесії",
+    "pageviews":"Переглядів сторінок",
     "pagesvisit":"Pages\/visit",
     "bouncerate":"Bounce Rate",
     "completions":"Completions",
     "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
     "settings":{
-      "profile":"Profile"
+      "profile":"Профіль"
     }
   },
   "apps":{
-    "name":"Apps",
+    "name":"Додатки",
     "desc":"Displays your currently installed Google Chrome applications.",
     "settings":{
       "format":"Widget Format",
       "format_options":{
         "tiles":"Tiles",
-        "list":"List"
+        "list":"Список"
       },
-      "display":"Show",
+      "display":"Показати",
       "display_options":{
-        "all":"All apps",
-        "enabled":"Only enabled apps"
+        "all":"Усі додатки",
+        "enabled":"Лише активні додатки"
       },
-      "sort":"Sort",
+      "sort":"Упорядкувати",
       "sort_options":{
         "id":"ID",
-        "alphabetically":"Alphabetically",
-        "offline":"Offline Enabled",
-        "available":"Availability"
+        "alphabetically":"За алфавітом",
+        "offline":"Увімкнено офлайн",
+        "available":"Доступність"
       },
-      "open":"Open apps in"
+      "open":"Відкривати додатки у"
     },
-    "store_app":"Store"
+    "store_app":"Крамниця"
   },
   "bookmarks":{
-    "name":"Bookmarks",
+    "name":"Закладки",
     "desc":"Displays selected and customized bookmarks, and other links.",
     "settings":{
       "title_placeholder":"Enter a widget title",
@@ -56,18 +56,18 @@
       "title_placeholder":"Google",
       "url":"Bookmark URL",
       "url_placeholder":"http:\/\/www.google.com\/",
-      "save":"Save"
+      "save":"Зберегти"
     },
-    "new_caption":"New",
-    "new_bookmark":"Bookmark",
-    "new_folder":"Folder",
+    "new_caption":"Нова",
+    "new_bookmark":"Закладка",
+    "new_folder":"Тека",
     "drop_link":"Drop link here"
   },
   "calc":{
     "name":"Calculator",
     "desc":"Displays a calculator with support for basic operators.",
-    "error":"Error!",
-    "infinity":"Infinity",
+    "error":"Помилка!",
+    "infinity":"Нескінченно",
     "mismatch":"Mismatched parentheses"
   },
   "calendar":{
@@ -98,7 +98,7 @@
     "title":"Clock"
   },
   "currency":{
-    "name":"Currency",
+    "name":"Валюта",
     "desc":"Let's you convert between any two of 169 currencies.",
     "to_label":"to"
   },
@@ -108,7 +108,7 @@
     "settings":{
       "files_shown":"Number of Files Shown"
     },
-    "modified_by":"by",
+    "modified_by":"за",
     "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
     "authorize_btn":"Authorize"
   },
@@ -148,7 +148,7 @@
     "all":"All",
     "saved":"Saved for later",
     "uncategorized":"Uncategorized",
-    "author":"by",
+    "author":"за",
     "go_to_feedly":"Go To Feedly"
   },
   "gmail":{
@@ -246,7 +246,7 @@
       "sort_options":{
         "hot":"Hot",
         "top":"Top",
-        "new":"New",
+        "new":"Нова",
         "gilded":"Gilded",
         "rising":"Rising",
         "controversial":"Controversial"
@@ -257,7 +257,8 @@
         "link":"The link",
         "comments":"The comments"
       }
-    }
+    },
+    "more":"Більше"
   },
   "rss":{
     "name":"RSS",
@@ -360,6 +361,7 @@
     "name":"Translate",
     "desc":"Contains a small inline Google Translate textbox.",
     "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
+    "button":"Translate",
     "untranslate":"Untranslate",
     "auto":"Auto (%s)",
     "unknown":"Unknown",

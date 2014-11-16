@@ -1,8 +1,10 @@
 {
   "lang_code":"zh-CN",
   "language":"中文简体",
-  "extDescription":"Chrome最好用的启动页插件，拥有令人惊叹且可以任意定制的主题、小部件，并如闪电般急速！",
+  "newtabName":"iChrome 新选项卡",
   "extName":"iChrome - 您的Chrome主页",
+  "extDescription":"Chrome最好用的启动页插件，拥有令人惊叹且可以任意定制的主题、小部件，并如闪电般急速！",
+  "newtabDescription":"Chrome最好用的新选项卡，拥有令人惊叹且可以任意定制的主题、小部件，并如闪电般急速！",
   "defaults":{
     "tab":"首页",
     "me":"我"
@@ -179,7 +181,7 @@
           "hide":"隐藏"
         },
         "account":"帐户 ID",
-        "account_help":"如果你已经登录到多个帐户，这就是\"authuser =\"值。\n<br \/><br \/>举个栗子，如果你登录两个帐户、 12dora@gooddog.com、 450@baobuliao.com、 450@baobuliao.com 的\"authuser\"值将为 1 ，因为它是第二个帐户 （authuser值从0开始）。",
+        "account_help":"如果你已经登录到多个帐户，这就是\"authuser =\"值。\n<br \/><br \/>举个栗子，如果你登录两个帐户、 jsmith1@gmail.com、 jsmith2@gmail.com、 jsmith2@gmail.com 的\"authuser\"值将为 1 ，因为它是第二个帐户 (authuser值从0开始)。",
         "account_placeholder":"您的\"authuser=\"值",
         "on":"开启",
         "off":"关闭"
@@ -191,6 +193,8 @@
     "all":"全部",
     "custom":"自定义",
     "create":"创建主题",
+    "url_or_upload":"或",
+    "upload_image":"上传图像",
     "edit":{
       "title":"编辑主题",
       "create_title":"创建主题",
@@ -258,7 +262,7 @@
     "slide1":{
       "title":"欢迎您使用 iChrome ！",
       "line1":"如果你想 iChrome 作为起始页，您需要在您的设置 （<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\"target=\"_blank\"> 说明<\/a>） 中设置为此页面地址。如果您希望用其作为您的新选项卡页，请安装 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\"> iChrome 选项卡<\/a>。",
-      "newtab_line1":"如果您希望iChrome只在您打开Chrome的时候显示，请安装 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">  iChrome 起始页<\/a>，而非本扩展。",
+      "newtab_line1":"如果您希望iChrome只在您打开Chrome的时候显示，请安装 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> iChrome 起始页<\/a>，而非本扩展。",
       "line2":"介绍仅有短短3个步骤，其将会让您快速知悉如何使用iChrome的基础功能。当您准备好后请点击右侧的下一步箭头。"
     },
     "slide2":{

@@ -1,60 +1,62 @@
 {
   "lang_code":"zh-TW",
   "language":"正體中文（臺灣）",
-  "extDescription":"The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
-  "extName":"iChrome - your homepage, for chrome",
+  "newtabName":"iChrome 新選項卡",
+  "extName":"iChrome-您的Chrome主頁",
+  "extDescription":"Chrome平臺最好的主頁，擁有令人震驚的主題，如閃電般迅捷的小部件，並可任意定制。",
+  "newtabDescription":"Chrome平臺最好的主頁，現支持新選項卡。擁有令人震驚的主題，如閃電般迅捷的小部件，並可任意定制。",
   "defaults":{
-    "tab":"Home",
-    "me":"Me"
+    "tab":"主頁",
+    "me":"我"
   },
-  "remove_widget":"Remove",
-  "column_to_grid_warning":"You selected to change a tab from a column-based layout to a grid-based layout. If you continue you will lose all of your columns; everything will be moved to the top left corner.\r\nAre you sure you want to do this?",
-  "grid_to_column_warning":"You selected to change a tab from a grid-based layout to a column-based layout. If you continue you will lose all of your widget positioning; everything will be moved to the first column of the new tab.\r\nAre you sure you want to do this?",
-  "storage_warning":"You have used more than 90% of the total synchronized storage space available.\r\nIf you reach the limit, iChrome will stop syncing your data and may stop working.\r\nYou can shrink the amount of space you use by deleting custom themes, notes and to-do lists that you don't use.",
+  "remove_widget":"刪除",
+  "column_to_grid_warning":"您選擇將選項卡的布局方式從基於列的布局改為基於網格的布局。如果您確認繼續將會失去您所有專欄，然後一切掛件都將被移動到左上角。您確定要這樣做嗎？",
+  "grid_to_column_warning":"您選擇將一個選項卡從基於網格佈局更改為基於列的佈局。如果您繼續，您將丟失所有您的小部件定位 ；一切都將被移動到新的選項卡的第一列。您確定你想要這樣做嗎？",
+  "storage_warning":"您已經使用90%以上的可用總同步空間 。\n如果達到極限，iChrome 將停止同步您的資料並可能停止工作。您可以通過刪除無需使用的自訂主題、 筆記和待辦事項清單以縮小您使用空間的量。",
   "toolbar":{
-    "placeholder":"Enter your terms",
-    "placeholder_ok":"Enter your terms or say \"OK, Google\"",
+    "placeholder":"輸入並搜尋",
+    "placeholder_ok":"輸入並搜尋或說“OK, Google\"...",
     "apps":{
-      "search":"Search",
+      "search":"搜尋",
       "youtube":"YouTube",
-      "maps":"Maps",
+      "maps":"地圖",
       "play":"Play",
-      "news":"News",
+      "news":"新聞",
       "gmail":"Gmail",
       "drive":"Drive",
       "calendar":"Calendar",
-      "more":"More"
+      "more":"更多"
     }
   },
   "menu":{
-    "settings":"Settings",
+    "settings":"設定",
     "widgets":"Widgets",
-    "background":"Show Background",
-    "editing":"Editing",
-    "editing_enabled":"Enabled",
-    "editing_disabled":"Disabled",
-    "plus":"Google Plus",
+    "background":"顯示背景",
+    "editing":"編輯",
+    "editing_enabled":"開啟",
+    "editing_disabled":"關閉",
+    "plus":"Google+",
     "tabs":"Tabs",
     "footer":{
-      "support":"Support",
-      "feedback":"Feedback",
-      "review":"Review",
+      "support":"支援",
+      "feedback":"意見回報",
+      "review":"評論",
       "twitter":"Twitter",
       "webstore":"Webstore",
-      "donate":"Donate",
+      "donate":"贊助",
       "by":"By Avi Kohn"
     }
   },
   "voice":{
-    "listening":"Listening...",
-    "searching":"Searching for: %s",
-    "missed":"Didn't get that. <a>Try Again<\/a>"
+    "listening":"正在聆聽...",
+    "searching":"檢索：%s",
+    "missed":"抱歉，沒有聽到。<a>再試一次<\/a>"
   },
   "settings":{
-    "save":"Save & Close",
+    "save":"保存並關閉",
     "new_tab":"Create New",
     "labels":{
-      "general":"General",
+      "general":"常規",
       "visual":"Visual",
       "specific":"Tab Specific",
       "advanced":"Advanced"
@@ -62,9 +64,9 @@
     "general":{
       "search":"Search URL",
       "search_desc":"This is the URL that the search box will submit searches to. Put <b>%s<\/b> where the search query should go",
-      "profile":"Profile Picture",
+      "profile":"資料圖片",
       "profile_desc":"This is the image shown at the right of the toolbar.  It gets auto-populated from your Google profile",
-      "name":"Name",
+      "name":"名稱",
       "name_desc":"This is used for the Google+ link in the toolbar.  It also gets auto-populated from your Google profile",
       "voice":"Voice Search",
       "voice_search":"Enable voice search",
@@ -72,7 +74,7 @@
       "links":"Toolbar Links",
       "links_desc":"Here you can choose which links will show in the right section of the toolbar:",
       "links_items":{
-        "plus":"Google Plus",
+        "plus":"Google+",
         "gmail":"Gmail",
         "apps":"Apps Menu",
         "link1":"Custom Link 1",
@@ -191,6 +193,8 @@
     "all":"All",
     "custom":"Custom",
     "create":"Create a theme",
+    "url_or_upload":"or",
+    "upload_image":"Upload an image",
     "edit":{
       "title":"Edit Theme",
       "create_title":"Create Theme",
@@ -230,7 +234,7 @@
       "attach_tab":"The tab",
       "attach_window":"The window",
       "preview":"Preview",
-      "save":"Save & Close",
+      "save":"保存並關閉",
       "cache_error":"An error occurred while trying to cache the image you provided, please double-check the URL.",
       "upload_error":"An error occurred while trying to upload the file you provided, please make sure that it's a reasonable size and an image."
     },

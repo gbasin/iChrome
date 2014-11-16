@@ -4,17 +4,17 @@
 	{{#tabs}}
 		<form class="form-horizontal {{active}}" data-tab="{{id}}">
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="name{{id}}">{{i18n.settings.specific.name}}</label>
+				<label class="control-label col-sm-3" for="name{{id}}">{{i18n.settings.specific.name}}</label>
 
-				<div class="col-sm-9">
+				<div class="col-sm-8">
 					<input type="text" id="name{{id}}" name="name" value="{{name}}" />
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="columns{{id}}">{{i18n.settings.visual.layout}}</label>
+				<label class="control-label col-sm-3" for="columns{{id}}">{{i18n.settings.visual.layout}}</label>
 
-				<div class="col-sm-9">
+				<div class="col-sm-8">
 					<select id="columns{{id}}" name="columns">
 						<option value="1-fixed">{{i18n.settings.visual.layout_options.1_fixed}}</option>
 						<option value="1-fluid">{{i18n.settings.visual.layout_options.1_fluid}}</option>
@@ -32,9 +32,9 @@
 			</div>
 
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="theme-btn{{id}}">{{i18n.settings.visual.theme}}</label>
+				<label class="control-label col-sm-3" for="theme-btn{{id}}">{{i18n.settings.visual.theme}}</label>
 
-				<div class="col-sm-9">
+				<div class="col-sm-8">
 					<input type="hidden" name="theme" value="{{theme}}" />
 					
 					<button class="btn btn-primary theme" id="theme-btn{{id}}">{{i18n.settings.visual.theme_select}}</button>
@@ -44,9 +44,9 @@
 			</div>
 
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="alignment{{id}}">{{i18n.settings.visual.align}}</label>
+				<label class="control-label col-sm-3" for="alignment{{id}}">{{i18n.settings.visual.align}}</label>
 
-				<div class="col-sm-9">
+				<div class="col-sm-8">
 					<span class="info">{{i18n.settings.visual.align_desc}}</span>
 
 					<select id="alignment{{id}}" name="alignment">

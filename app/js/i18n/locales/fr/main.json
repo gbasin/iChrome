@@ -1,8 +1,10 @@
 {
   "lang_code":"fr",
   "language":"Français",
-  "extDescription":"La MEILLEURE page d'accueil pour Chrome. Des thèmes impressionnant, des dizaines de widgets, extrêmement rapide, personnalisable à l'infini !",
+  "newtabName":"iChrome New Tab",
   "extName":"iChrome - Votre page d'accueil, pour Chrome",
+  "extDescription":"La MEILLEURE page d'accueil pour Chrome. Des thèmes impressionnant, des dizaines de widgets, extrêmement rapide, personnalisable à l'infini !",
+  "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
   "defaults":{
     "tab":"Accueil",
     "me":"Moi"
@@ -191,6 +193,8 @@
     "all":"Tous",
     "custom":"Personalisé",
     "create":"Créer un thème",
+    "url_or_upload":"or",
+    "upload_image":"Upload an image",
     "edit":{
       "title":"Editer un thème",
       "create_title":"Créer un thème",
@@ -204,7 +208,7 @@
       "color_placeholder":"Enter any color name",
       "position":"Position",
       "position_options":{
-        "center":"Centre",
+        "center":"Centré",
         "top_left":"Top Left",
         "top_center":"Top Center",
         "top_right":"Top Right",

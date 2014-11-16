@@ -1,15 +1,17 @@
 {
   "lang_code":"de",
   "language":"Deutsch",
-  "extDescription":"Die BESTE Startseite für Chrome. Atemberaubende Themes, dutzende Widgets, blitzschnell und sehr anpassbar!",
-  "extName":"iChrome - Deine Homepage für Chrome",
+  "newtabName":"iChrome neue Registerkarte",
+  "extName":"iChrome - Deine Startseite für Chrome",
+  "extDescription":"Die BESTE Startseite für Chrome. Atemberaubende Themes, dutzende Widgets, blitzschnell und unglaublich personalisierbar!",
+  "newtabDescription":"Die beste Homepage für Chrome. Jetzt für neue Tabs. Atemberaubende Themes, Dutzende Widgets, blitzschnell, unglaublich personalisierbar!",
   "defaults":{
     "tab":"Home",
     "me":"Ich"
   },
   "remove_widget":"Löschen",
   "column_to_grid_warning":"Ausgewählt wurde, eine Registerkarte von spaltenbasiertem Layout zu einem grid-basierten Layout zu ändern. Fortfahren bedeutet, alle Spalten gehen verloren und alles wird nach oben links verschoben. Bist Du sicher, dass Du dies tun willst?",
-  "grid_to_column_warning":"Ausgewählt wurde, eine Registerkarte von grid-basiertem Layout zu einem spaltenbasierten Layout zu ändern. Fortfahren bedeutet, alle Spalten gehen verloren und alles wird nach oben links verschoben. Bist Du sicher, dass Du dies tun willst?",
+  "grid_to_column_warning":"Ausgewählt wurde, eine Registerkarte von grid-basiertem Layout zu einem spaltenbasierten Layout zu ändern. Wenn Sie fortfahren bedeutet das, das alle Spalten verloren gehen und alles nach oben links verschoben wird. Bist Sie sicher, dass Sie dies tun willst?",
   "storage_warning":"Sie benutzen zurzeit mehr als 90% des für die Synchronisation zu Verfügung stehenden Speicherkontingents.\nWenn Sie das Limit erreichen wird iChrome aufhören ihre Daten zu synchronisieren und eventuell aufhören zu funktionieren.\nSie können ihr Datenvolumen verringern indem sie eigene Themes löschen und Notizen oder To-Do Listen löschen, die sie nicht brauchen.",
   "toolbar":{
     "placeholder":"Begriff eingeben",
@@ -23,7 +25,7 @@
       "gmail":"Gmail",
       "drive":"Drive",
       "calendar":"Kalender",
-      "more":"mehr"
+      "more":"Mehr"
     }
   },
   "menu":{
@@ -40,9 +42,9 @@
       "feedback":"Feedback",
       "review":"Beurteilung",
       "twitter":"Twitter",
-      "webstore":"Onlineshop",
+      "webstore":"Webstore",
       "donate":"Spenden",
-      "by":"von Avi Kohn"
+      "by":"Von Avi Kohn"
     }
   },
   "voice":{
@@ -60,10 +62,10 @@
       "advanced":"Erweitert"
     },
     "general":{
-      "search":"Suche URL",
+      "search":"Such URL",
       "search_desc":"Das Suchfeld wird die Suche an folgende Adresse leiten. Trage <b>%s<\/b> ein, wohin die Suchanfrage gehen soll",
       "profile":"Profilbild",
-      "profile_desc":"Dies ist das Bild, welches auf der rechten Seite der Symbolleiste angezeigt wird. Es wird automatisch aus Deinem Google-Profil empfangen",
+      "profile_desc":"Dies ist das Bild, welches auf der rechten Seite der Symbolleiste angezeigt wird. Es wird automatisch aus deinem Google-Profil empfangen.",
       "name":"Name",
       "name_desc":"Dies wird für den Google + Link in der Symbolleiste verwendet.  Es wird automatisch aus Deinem Google-Profil gezogen",
       "voice":"Sprach-Suche",
@@ -74,7 +76,7 @@
       "links_items":{
         "plus":"Google Plus",
         "gmail":"Gmail",
-        "apps":"Apps-Menü",
+        "apps":"Apps Menü",
         "link1":"Benutzerdefinierter Link 1",
         "link2":"Benutzerdefinierter Link 2",
         "link3":"Benutzerdefinierter Link 3",
@@ -88,7 +90,7 @@
       "layout":"Design",
       "layout_options":{
         "1_fixed":"Eine Spalte mit fester Breite",
-        "1_fluid":"Eine Spalte, variable Breite",
+        "1_fluid":"Eine Spalte, variabler Breite",
         "2_fixed":"Zwei Spalten, feste Breite",
         "2_fluid":"Zwei Spalten, variable Breite",
         "3_fixed":"Drei Spalten, feste Breite",
@@ -109,14 +111,14 @@
         "center":"Mitte",
         "right":"Rechts"
       },
-      "logo":"Logo-URL",
+      "logo":"Logo URL",
       "logo_desc":"Dieses Bild wird am linken Rand der Symbolleiste angezeigt.  Der Standardwert ist <b>\/images\/logo.svg<\/b>",
       "toolbar":"Symbolleisten-Stil",
       "toolbar_desc":"Dies bestimmt das Format der Symbolleiste, sie kann entweder normal angezeigt werden oder sich automatisch ausblenden",
       "toolbar_normal":"Normal",
       "toolbar_button":"Schaltfläche",
-      "animation":"Slide-in-Animation",
-      "animation_desc":"Diese Einstellung aktiviert oder deaktiviert die Slide-in=n-Animation, die beim Laden der Seite ausgeführt wird",
+      "animation":"Slide-in Animation",
+      "animation_desc":"Diese Einstellung aktiviert oder deaktiviert die Slide-in Animation, die beim Laden der Seite ausgeführt wird",
       "animation_label":"Animation aktivieren"
     },
     "specific":{
@@ -124,7 +126,7 @@
       "default_name":"Neuer Reiter",
       "delete":"Reiter löschen",
       "delete_disallowed":"Die letzte verbleibende Registerkarte kann nicht gelöscht werden.",
-      "delete_confirm":"Bist Du dir wirklich sicher, diese Registerkarte zu löschen? Dieser Vorgang ist irreversibel, alle Daten von allen Widgets auf der Registerkarte sind dauerhaft verloren.",
+      "delete_confirm":"Sind Sie wirklich sicher, dass Sie diese Registerkarte löschen wollen? Dieser Vorgang ist irreversibel, alle Daten von allen Widgets auf der Registerkarte sind dann dauerhaft verloren.",
       "default":"Als Standard festlegen"
     },
     "advanced":{
@@ -168,7 +170,7 @@
       "settings":{
         "title":"Widget Titel",
         "title_placeholder":"Widget-Bezeichnung eingeben oder leer lassen um zu verbergen",
-        "height":"Widget-Höhe",
+        "height":"Widget Höhe",
         "open_options":{
           "current":"Aktuelle Registerkarte",
           "blank":"Neue Registerkarte"
@@ -180,7 +182,7 @@
         },
         "account":"Account-ID",
         "account_help":"Wenn Du bei mehreren Konten angemeldet bist ist dies der \"Authuser =\" Wert.\n<br \/> <br \/>\nZum Beispiel, wenn Du in zwei Konten angemeldet bist, jsmith1@gmail.com und jsmith2@gmail.com, ist der \"Authuser\"-Wert für jsmith2@gmail.com 1, da es das zweite angemeldete Konto ist (gezählt ab 0).",
-        "account_placeholder":"Ihr \"Authuser=\" Wert",
+        "account_placeholder":"Ihr \"authuser=\" Wert",
         "on":"An",
         "off":"Aus"
       }
@@ -191,6 +193,8 @@
     "all":"Alle",
     "custom":"Benutzerdefiniert",
     "create":"Theme erstellen",
+    "url_or_upload":"oder",
+    "upload_image":"Bild hochladen",
     "edit":{
       "title":"Theme bearbeiten",
       "create_title":"Theme erstellen",
@@ -264,12 +268,12 @@
     "slide2":{
       "title":"Widgets",
       "line1":"Widgets sind der Kern von iChrome.  Du kannst sie mit Hilfe der Schraubenschlüssel und Griff Symbole konfigurieren und verschieben, indem Du die Maus nach oben rechts bewegst.  Um ein Widget zu entfernen, ziehe es auf den roten Balken der oben erscheint.",
-      "line2":"Neue Widgets können durch einen Klick auf das Widget-Element im Menü oben rechts auf der Seite hinzugefügt werden (siehe nächste Folie)."
+      "line2":"Neue Widgets können durch einen Klick auf das Widget-Element, im Menü oben rechts auf der Seite, hinzugefügt werden (siehe nächste Folie)."
     },
     "slide3":{
       "title":"Anpassen",
-      "line1":"Du kannst fast alles über das Menü oben rechts ändern.  Dort kannst Du konfigurieren wie die Seite aussieht, wie iChrome funktioniert und neue Widgets erhalten.",
-      "line2":"Ferner kannst du einzelner Reiter erstellen, jeweils mit eigenen Themes und Widgets, benutzerdefinierte Designs erzeugen oder Kleinigkeiten wie welche Links in der Symbolleiste angezeigt werden konfigurieren."
+      "line1":"Du kannst fast alles über das Menü oben rechts ändern. Dort kannst Du konfigurieren, wie die Seite aussieht, wie iChrome funktioniert und neue Widgets erstellen.",
+      "line2":"Ferner kannst du einzelne Reiter erstellen, jeweils mit eigenen Themes und Widgets, benutzerdefinierte Designs erzeugen oder Kleinigkeiten, wie welche Links in der Symbolleiste angezeigt werden konfigurieren."
     }
   }
 }

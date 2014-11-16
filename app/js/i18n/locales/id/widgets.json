@@ -257,7 +257,8 @@
         "link":"The link",
         "comments":"The comments"
       }
-    }
+    },
+    "more":"More"
   },
   "rss":{
     "name":"RSS",
@@ -360,6 +361,7 @@
     "name":"Translate",
     "desc":"Contains a small inline Google Translate textbox.",
     "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
+    "button":"Translate",
     "untranslate":"Untranslate",
     "auto":"Auto (%s)",
     "unknown":"Unknown",

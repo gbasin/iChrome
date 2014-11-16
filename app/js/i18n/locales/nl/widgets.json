@@ -71,10 +71,10 @@
     "mismatch":"Mismatched parentheses"
   },
   "calendar":{
-    "name":"Calendar",
+    "name":"Kalender",
     "desc":"Displays upcoming events from one or more of your Google calendars.",
     "settings":{
-      "calendar":"Calendar",
+      "calendar":"Kalender",
       "events":"Events Shown"
     },
     "title":"My Calendar",
@@ -170,7 +170,7 @@
     "desc":"Embeds Google Keep in a widget"
   },
   "news":{
-    "name":"News",
+    "name":"Nieuws",
     "desc":"Displays the current top news by category and edition.",
     "settings":{
       "articles":"Articles Shown",
@@ -195,7 +195,7 @@
       "footer":"Footer URL",
       "footer_placeholder":"Enter the URL that the \"More\" link should point to"
     },
-    "more":"More"
+    "more":"Meer"
   },
   "notes":{
     "name":"Notes",
@@ -257,7 +257,8 @@
         "link":"The link",
         "comments":"The comments"
       }
-    }
+    },
+    "more":"Meer"
   },
   "rss":{
     "name":"RSS",
@@ -360,6 +361,7 @@
     "name":"Translate",
     "desc":"Contains a small inline Google Translate textbox.",
     "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
+    "button":"Translate",
     "untranslate":"Untranslate",
     "auto":"Auto (%s)",
     "unknown":"Unknown",
@@ -380,7 +382,7 @@
     "mentions":"Mentions",
     "retweets":"Retweets of me",
     "lists":"Lists",
-    "more":"More",
+    "more":"Meer",
     "reply":"Reply",
     "retweet":"Retweet",
     "favorite":"Favorite"

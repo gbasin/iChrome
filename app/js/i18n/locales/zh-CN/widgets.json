@@ -77,77 +77,77 @@
       "calendar":"日历",
       "events":"显示事件"
     },
-    "title":"My Calendar",
-    "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
+    "title":"我的日历",
+    "noevents":"未来暂无安排。\n<br \/><br \/>\n请尝试通过右上角的扳手图标选择日历。"
   },
   "clock":{
-    "name":"Time & Date",
-    "desc":"Shows the current date and time. Optionally for a different timezone.",
+    "name":"日期和时间",
+    "desc":"显示当前日期和时间，在时区不同时可选 。",
     "settings":{
-      "timezone":"Time Zone",
-      "timezone_local":"Local",
-      "format":"Clock Format",
+      "timezone":"时区",
+      "timezone_local":"本地",
+      "format":"时钟格式",
       "format_options":{
-        "ampm":"AM\/PM - Digital",
-        "24hour":"24 Hour - Digital",
-        "analog":"12 Hour - Analog",
-        "ampmseconds":"AM\/PM - Digital, No Seconds",
-        "24hourseconds":"24 Hour - Digital, No Seconds"
+        "ampm":"AM\/PM - 数字",
+        "24hour":"24 小时-数字",
+        "analog":"12 小时-模拟",
+        "ampmseconds":"AM\/PM-数字（无“秒”）",
+        "24hourseconds":"24 小时-数字（无“秒”）"
       }
     },
-    "title":"Clock"
+    "title":"时钟"
   },
   "currency":{
-    "name":"Currency",
-    "desc":"Let's you convert between any two of 169 currencies.",
-    "to_label":"to"
+    "name":"货币转换",
+    "desc":"让您任意在169 货币之间进行转换。",
+    "to_label":"转换至"
   },
   "drive":{
     "name":"网盘",
-    "desc":"Displays recently changed files from your Google Drive.",
+    "desc":"显示您Google Drive最近更改的文件。",
     "settings":{
-      "files_shown":"Number of Files Shown"
+      "files_shown":"显示文件个数"
     },
-    "modified_by":"by",
-    "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
-    "authorize_btn":"Authorize"
+    "modified_by":"由",
+    "authorize":"您需要授予 iChrome 权限以查看您Google Drive中的文件。",
+    "authorize_btn":"授权"
   },
   "facebook":{
     "name":"Facebook",
-    "desc":"Embeds Facebook in a widget"
+    "desc":"在小部件中嵌入Facebook"
   },
   "feedly":{
     "name":"Feedly",
-    "desc":"Displays articles from your Feedly account in a configurable format.",
+    "desc":"使用可配置格式显示您Feedly账户中的文章。",
     "settings":{
-      "source":"Show articles from",
-      "source_feeds":"Feeds",
+      "source":"显示文章来源",
+      "source_feeds":"订阅源",
       "show":"显示",
       "show_options":{
-        "all":"All articles",
-        "unread":"Only unread articles"
+        "all":"所有文章",
+        "unread":"仅显示未读的文章"
       },
       "layout":"布局",
       "layout_options":{
-        "titles":"Titles only",
-        "magazine":"Magazine",
-        "cards":"Cards",
-        "cards_columns":"Cards (two columns)"
+        "titles":"仅显示标题",
+        "magazine":"杂志",
+        "cards":"卡片",
+        "cards_columns":"卡片（两列）"
       },
-      "mark":"Mark an article as read when I",
+      "mark":"将文章标为已读当我：",
       "mark_options":{
-        "scroll":"Scroll past it or click it",
-        "click":"Just click it"
+        "scroll":"滚动滚动条经过其或点击其时",
+        "click":"点击其时"
       },
-      "sort":"Sort Order",
+      "sort":"排序顺序",
       "sort_options":{
-        "newest":"Newest first",
-        "oldest":"Oldest first"
+        "newest":"从最新开始",
+        "oldest":"从最旧开始"
       }
     },
     "all":"全部",
-    "saved":"Saved for later",
-    "uncategorized":"Uncategorized",
+    "saved":"为将来阅读保存",
+    "uncategorized":"未分类",
     "author":"由 ",
     "go_to_feedly":"打开Feedly"
   },
@@ -160,285 +160,287 @@
     "desc":"在您选择的页面用 iframe 内嵌网页。",
     "settings":{
       "url":"框架链接",
-      "url_placeholder":"i.e. http:\/\/www.google.com\/",
-      "height":"Frame Height",
-      "padding":"Padding"
+      "url_placeholder":"例如 http:\/\/www.google.com\/",
+      "height":"框架高度",
+      "padding":"内边距"
     }
   },
   "keep":{
-    "name":"Keep",
-    "desc":"Embeds Google Keep in a widget"
+    "name":"保持",
+    "desc":"嵌入Google Keep小部件"
   },
   "news":{
     "name":"新闻",
-    "desc":"Displays the current top news by category and edition.",
+    "desc":"按类别和版本来显示当前的头条新闻。",
     "settings":{
-      "articles":"Articles Shown",
-      "edition":"Edition",
-      "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
-      "topic":"Topic",
+      "articles":"所示文章",
+      "edition":"版本",
+      "edition_help":"如果此处未列出您的版本或主题，请在下面的自定义字段中输入谷歌新闻feed URL（查看帮助文本获取更多信息）。",
+      "topic":"主题",
       "topic_options":{
-        "top":"Top Stories",
-        "world":"World",
-        "nation":"Nation",
-        "business":"Business",
-        "sports":"Sports",
-        "technology":"Technology",
-        "entertainment":"Entertainment",
-        "health":"Health",
-        "science":"Science",
-        "spotlight":"Spotlight"
+        "top":"要闻",
+        "world":"世界要闻",
+        "nation":"国家要闻",
+        "business":"商业与经济",
+        "sports":"体育运动",
+        "technology":"科技电子",
+        "entertainment":"娱乐休闲",
+        "health":"生活健康",
+        "science":"科学技术",
+        "spotlight":"头条消息"
       },
-      "feed":"Custom Feed",
-      "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
-      "feed_placeholder":"Enter a custom RSS feed to fetch news from",
-      "footer":"Footer URL",
-      "footer_placeholder":"Enter the URL that the \"More\" link should point to"
+      "feed":"自定义消息源",
+      "feed_help":"在Google新闻页找到橘红色的RSS按钮，然后复制写着RSS的链接",
+      "feed_placeholder":"输入一个自定义的RSS订阅源以获取新闻",
+      "footer":"页脚 URL",
+      "footer_placeholder":"输入您想让“更多”字样的链接指向的URL"
     },
     "more":"更多"
   },
   "notes":{
-    "name":"Notes",
-    "desc":"Inserts a simple, editable, note.",
+    "name":"便签",
+    "desc":"插入简单、 可编辑的便签。",
     "settings":{
-      "color":"Note Color",
+      "color":"便签颜色",
       "color_options":{
-        "yellow":"Yellow",
-        "orange":"Orange",
-        "red":"Red",
-        "blue":"Blue",
-        "green":"Green",
-        "white":"White"
+        "yellow":"黄色",
+        "orange":"橙色",
+        "red":"红色",
+        "blue":"蓝色",
+        "green":"绿色",
+        "white":"白色"
       },
-      "font":"Font Face",
-      "fontsize":"Font Size"
+      "font":"字体",
+      "fontsize":"字体大小"
     }
   },
   "now":{
     "name":"Google Now",
-    "desc":"Displays cards from Google Now including flight status and package tracking.",
-    "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
-    "authorize_btn":"Authorize",
-    "caught_up":"All caught up, nothing here.",
-    "no_title":"No Title"
+    "desc":"显示Google Now关于航班状态和包裹追踪的卡片。",
+    "authorize":"在任何东西显示之前您需要给予iChrome查看您Google Now卡片的权限。",
+    "authorize_btn":"授权",
+    "caught_up":"没有新通知",
+    "no_title":"无标题"
   },
   "plus":{
     "name":"Google+",
-    "desc":"Embeds Google Plus in a widget"
+    "desc":"Google+小部件"
   },
   "recentlyclosed":{
-    "name":"Recently Closed",
-    "desc":"Shows your recently closed tabs",
+    "name":"最近关闭",
+    "desc":"显示您最近关闭的标签页",
     "settings":{
-      "tabs":"Tabs Shown",
-      "open":"Open tabs in"
+      "tabs":"显示选项卡",
+      "open":"打开选项卡方式"
     },
-    "notabs":"Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed."
+    "notabs":"无法显示使用此小部件前关闭的内容，将在现在开始显示您关闭的标签页。"
   },
   "reddit":{
     "name":"Reddit",
-    "desc":"Displays the top items on Reddit for any given subreddit.",
+    "desc":"显示Reddit上您提供的子Reddit中的的最热话题",
     "settings":{
-      "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
-      "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
-      "sort":"Sort Order",
+      "subreddit":"子Reddit",
+      "subreddit_help":"输入在子Reddit项链接的<b>\/r\/<\/b>后的字符。\n<br \/><br \/>\n例如，科技类的链接是<a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>所以您需要输入<b>technology<\/b>",
+      "subreddit_placeholder":"输入子Reddit的显示链接。（例如technology）",
+      "sort":"排序顺序",
       "sort_options":{
-        "hot":"Hot",
-        "top":"Top",
+        "hot":"热门",
+        "top":"置顶",
         "new":"新",
-        "gilded":"Gilded",
-        "rising":"Rising",
-        "controversial":"Controversial"
+        "gilded":"高亮",
+        "rising":"上升",
+        "controversial":"有争议"
       },
-      "links":"Links Shown",
-      "click":"When I click a link show me",
+      "links":"显示链接",
+      "click":"当我点击链接时显示",
       "click_options":{
-        "link":"The link",
-        "comments":"The comments"
+        "link":"链接本身",
+        "comments":"评论"
       }
-    }
+    },
+    "more":"更多"
   },
   "rss":{
-    "name":"RSS",
-    "desc":"Displays items from a RSS or Atom feed with optional images.",
+    "name":"RSS 订阅",
+    "desc":"显示RSS或Atom订阅（可带图片）",
     "settings":{
-      "link":"Title Link",
-      "link_placeholder":"Enter a link for the widget title",
-      "url":"Feed URL",
-      "url_placeholder":"The URL of the RSS feed to be displayed",
-      "articles":"Articles Shown",
-      "view":"View",
+      "link":"标题链接",
+      "link_placeholder":"输入小部件标题链接",
+      "url":"Feed链接",
+      "url_placeholder":"显示的RSS订阅链接",
+      "articles":"所示文章",
+      "view":"视图",
       "view_options":{
-        "images":"Image friendly",
-        "default":"Default"
+        "images":"图像友好",
+        "default":"默认"
       },
-      "images":"Images",
-      "descriptions":"Descriptions"
+      "images":"图像",
+      "descriptions":"描述"
     },
-    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
+    "feed_error":"试图在%s获取信息时出现错误。\n请重复检查此链接然后更改小部件设置"
   },
   "sports":{
-    "name":"Sports",
-    "desc":"Displays scores and game information for selected leagues and\/or teams.",
+    "name":"体育运动",
+    "desc":"显示所选联赛或团队的比赛\/分数信息。",
     "settings":{
-      "league":"League",
-      "games":"Games Shown",
-      "team":"Team",
-      "teams":"Team",
-      "unavailable":"When team games are unavailable",
+      "league":"联赛",
+      "games":"所示的比赛",
+      "team":"团队",
+      "teams":"团队",
+      "unavailable":"当团队游戏不可用时",
       "unavailable_options":{
-        "other":"Show other games",
-        "none":"Show \"No Games\""
+        "other":"显示其他比赛",
+        "none":"显示\"没有比赛\""
       }
     },
-    "error":"Something seems to have gone wrong",
-    "unknown_error":"Unknown Error",
-    "watch_on":"Watch on: %s",
-    "no_games":"No Games Scheduled"
+    "error":"看起来发生了一些错误",
+    "unknown_error":"未知错误",
+    "watch_on":"关注： %s",
+    "no_games":"没有规划中的比赛"
   },
   "stocks":{
-    "name":"Stocks",
-    "desc":"Displays current information for any given stock symbol.",
+    "name":"股票",
+    "desc":"显示您指定的股票信息。",
     "settings":{
-      "symbols":"Stock Symbol(s), comma separated",
-      "symbols_placeholder":"e.g. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br \/><br \/>\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. For example, the Dow Jones index is <b>INDEXDJX:.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
+      "symbols":"股票代号，用逗号（,）分隔",
+      "symbols_placeholder":"例如：NASDAQ:GOOG, INDEXNYSEGIS:NYA",
+      "symbols_help":"这些是你需要使用TICKER:EXCHANGE格式的股票。 \n<br \/><br \/> 因为索引的缘故，请使用 <a href=\"https:\/\/www.google.com\/finance\"target=\"_blank\">谷歌财经<\/a> 所示的TICKER\/EXCHANGE值。例如道琼斯指数是 <b>INDEXDJX:DJI<\/b> 和纽约证券交易所是 <b>INDEXNYSEGIS:NYA<\/b>"
     },
-    "as_of":"as of",
-    "exchange_time":"Exchange Time",
-    "open":"open",
-    "high":"high",
-    "low":"low",
-    "volume":"volume"
+    "as_of":"作为",
+    "exchange_time":"交易时间",
+    "open":"开盘",
+    "high":"涨",
+    "low":"跌",
+    "volume":"卷"
   },
   "todo":{
-    "name":"To-do",
-    "desc":"Displays an interactive to-do list with important and completed items.",
-    "title":"To-do list",
+    "name":"待办事项",
+    "desc":"显示交互式的待办事项列表。",
+    "title":"待办事项列表",
     "settings":{
-      "color":"Font Color",
+      "color":"字体颜色",
       "color_options":{
-        "light":"Light",
-        "dark":"Dark"
+        "light":"亮色调",
+        "dark":"暗色调"
       },
-      "tags":"Tags",
-      "tags_placeholder":"Enter a tag name and press Enter"
+      "tags":"标签",
+      "tags_placeholder":"输入标记的名称并按 enter 键"
     },
-    "add":"Add Item",
-    "none":"None",
-    "important":"Important"
+    "add":"添加项目",
+    "none":"暂无",
+    "important":"重要"
   },
   "topsites":{
-    "name":"Top Sites",
-    "desc":"Displays your most visited\/top sites.",
+    "name":"常用网站",
+    "desc":"显示您经常访问\/常用的的网站。",
     "settings":{
-      "show":"Number of sites shown",
-      "open":"Open sites in"
+      "show":"显示网站数目",
+      "open":"网站打开方式"
     }
   },
   "traffic":{
-    "name":"Traffic",
-    "desc":"Displays the current time in current traffic to home or work.",
+    "name":"交通",
+    "desc":"显示当前回家或上班的交通状况。",
     "settings":{
-      "leave":"I leave home at",
-      "home":"Home Address",
-      "home_placeholder":"The destination that should be used after work",
-      "work":"Work Address",
-      "work_placeholder":"The destination that should be used before work",
-      "method":"Transit Method",
+      "leave":"离开家的时间",
+      "home":"家庭住址",
+      "home_placeholder":"这将用于下班后的目的地",
+      "work":"工作地址",
+      "work_placeholder":"这将用于上班前的目的地",
+      "method":"交通方式",
       "method_options":{
-        "driving":"Driving",
-        "walking":"Walking",
-        "transit":"Public Transit"
+        "driving":"开车",
+        "walking":"步行",
+        "transit":"公共交通"
       }
     },
-    "to_home":"to home",
-    "to_work":"to work"
+    "to_home":"回家",
+    "to_work":"上班"
   },
   "translate":{
-    "name":"Translate",
-    "desc":"Contains a small inline Google Translate textbox.",
-    "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
-    "untranslate":"Untranslate",
-    "auto":"Auto (%s)",
-    "unknown":"Unknown",
-    "error":"Something went wrong while trying to translate that..."
+    "name":"翻译",
+    "desc":"一个小巧的谷歌翻译小部件。",
+    "placeholder":"输入您想翻译的内容，然后点击下方的翻译按钮。",
+    "button":"翻译",
+    "untranslate":"原文",
+    "auto":"自动（%s）",
+    "unknown":"未知",
+    "error":"在您尝试翻译时出现了某些问题..."
   },
   "twitter":{
     "name":"Twitter",
-    "desc":"Displays tweets from your home stream or a specified list.",
+    "desc":"显示您的信息流或指定列表中的Tweets。",
     "settings":{
-      "source":"Show Tweets from",
-      "show":"Tweets Shown"
+      "source":"显示从推文来源",
+      "show":"显示Tweets"
     },
-    "authorize":"You'll need to authorize iChrome first",
-    "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
-    "authorize_btn":"Authorize",
-    "no_tweets":"There don't seem to be any tweets here...",
+    "authorize":"您需要给予iChrome授权",
+    "authorize_msg":"在显示任何东西之前您需要给予iChrome权限以查看您账户中的Tweets。",
+    "authorize_btn":"授权",
+    "no_tweets":"似乎这里没有任何Tweets...",
     "home":"首页",
-    "mentions":"Mentions",
-    "retweets":"Retweets of me",
-    "lists":"Lists",
+    "mentions":"提及",
+    "retweets":"转发",
+    "lists":"列表",
     "more":"更多",
-    "reply":"Reply",
-    "retweet":"Retweet",
-    "favorite":"Favorite"
+    "reply":"回复",
+    "retweet":"转推",
+    "favorite":"收藏"
   },
   "unread":{
-    "name":"Unread",
-    "desc":"Displays the current number of unread emails in your Gmail inbox.",
+    "name":"未读",
+    "desc":"显示您Gmail邮箱中的未读邮件数目。",
     "settings":{
-      "open":"When clicked open"
+      "open":"点击时打开"
     },
-    "unread_none":"unread emails",
-    "unread_one":"unread email",
-    "unread_many":"unread emails"
+    "unread_none":"未读邮件",
+    "unread_one":"未读的一封邮件",
+    "unread_many":"未读邮件"
   },
   "voice":{
-    "name":"Voice",
-    "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
-    "call":"Call from",
-    "text":"Text message from",
-    "missed":"missed in Voice",
-    "texts":"unread text messages",
-    "calls":"missed calls"
+    "name":"Google Voice",
+    "desc":"显示您Google Voice中未查看的来电和短信。",
+    "call":"呼叫人",
+    "text":"发信人",
+    "missed":"在Google Voice中未接",
+    "texts":"未读短信",
+    "calls":"未接来电"
   },
   "weather":{
-    "name":"Weather",
-    "desc":"Displays the current weather and a forecast for the next 4 days.",
+    "name":"天气",
+    "desc":"显示当前天气和接下来的 4 天的天气预报。",
     "settings":{
-      "location":"Location(s)",
-      "location_placeholder":"Enter a location and press Enter",
-      "temperature":"Temperature Units",
-      "wind":"Wind Speed Units"
+      "location":"位置",
+      "location_placeholder":"请输入一个位置，然后按 enter 键",
+      "temperature":"温度单位",
+      "wind":"风速单位"
     },
-    "unknown":"Unknown",
-    "wind":"Wind Speed",
-    "chill":"Wind Chill",
-    "humidity":"Humidity"
+    "unknown":"未知",
+    "wind":"风速",
+    "chill":"寒风",
+    "humidity":"湿度"
   },
   "wolfram":{
-    "desc":"Inserts a small Wolfram|Alpha search box."
+    "desc":"插入一个小巧的Wolfram Alpha搜索框。"
   },
   "youtube":{
     "name":"Youtube",
-    "desc":"Displays either popular videos or videos from a specified user.",
+    "desc":"显示热门视频或显示特定用户的视频。",
     "settings":{
-      "format":"Format",
+      "format":"格式",
       "format_options":{
-        "large":"One large",
-        "large_2":"One large, two small",
-        "large_4":"One large, four small",
-        "four":"Four small",
-        "six":"Six small"
+        "large":"一个大位置",
+        "large_2":"一个大位置两个小位置",
+        "large_4":"一个大位置四个小位置",
+        "four":"四个小位置",
+        "six":"六个小位置"
       },
-      "from":"Show Videos From",
-      "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
-      "from_placeholder":"Leave blank to show Top Videos",
-      "open":"Open search results in"
+      "from":"显示视频来源",
+      "from_help":"这必须是与您查看个人资料时<b>完全一致<\/b>的用户名。\n<br \/><br \/>\n此值永远不会包含空格。",
+      "from_placeholder":"为空则显示热门视频",
+      "open":"搜索结果打开方式"
     },
-    "search":"Search YouTube",
-    "num_views":"views"
+    "search":"搜索 YouTube",
+    "num_views":"浏览次数"
   }
 }

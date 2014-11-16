@@ -1,8 +1,10 @@
 {
   "lang_code":"ja",
   "language":"日本語",
-  "extDescription":"Chromeのための最高のホームページ。最高のテーマ、たくさんのウィジェット、超高速、カスタマイズが自由自在！",
+  "newtabName":"iChrome 新しいタブ",
   "extName":"iChrome - Chromeのあなたのホームページ",
+  "extDescription":"Chromeのための最高のホームページ。最高のテーマ、たくさんのウィジェット、超高速、カスタマイズが自由自在！",
+  "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
   "defaults":{
     "tab":"ホーム",
     "me":"自分"
@@ -60,32 +62,32 @@
       "advanced":"Advanced"
     },
     "general":{
-      "search":"Search URL",
+      "search":"検索エンジンURL",
       "search_desc":"This is the URL that the search box will submit searches to. Put <b>%s<\/b> where the search query should go",
-      "profile":"Profile Picture",
+      "profile":"プロフィール写真",
       "profile_desc":"This is the image shown at the right of the toolbar.  It gets auto-populated from your Google profile",
-      "name":"Name",
+      "name":"名前",
       "name_desc":"This is used for the Google+ link in the toolbar.  It also gets auto-populated from your Google profile",
-      "voice":"Voice Search",
-      "voice_search":"Enable voice search",
-      "voice_ok":"Enable \"OK Google\" hotword detection",
-      "links":"Toolbar Links",
+      "voice":"音声検索",
+      "voice_search":"音声検索を有効にする",
+      "voice_ok":"”OK Google\"ホットワード検出を有効にする",
+      "links":"ツールバーリンク",
       "links_desc":"Here you can choose which links will show in the right section of the toolbar:",
       "links_items":{
         "plus":"Google+",
         "gmail":"Gmail",
-        "apps":"Apps Menu",
-        "link1":"Custom Link 1",
-        "link2":"Custom Link 2",
-        "link3":"Custom Link 3",
-        "text_holder":"Link text",
-        "link_holder":"Link URL, i.e. http:\/\/www.google.com\/"
+        "apps":"Appsメニュー",
+        "link1":"カスタムリンク1",
+        "link2":"カスタムリンク2",
+        "link3":"カスタムリンク3",
+        "text_holder":"リンクテキスト",
+        "link_holder":"リンクURL, すなわち http:\/\/www.google.com\/"
       },
-      "guide":"Installation Guide",
-      "guide_desc":"Reshow the guide that was shown when iChrome was first installed"
+      "guide":"インストールガイド",
+      "guide_desc":"iChromeを最初にインストールしたときに表示されたガイドをもう一度見る"
     },
     "visual":{
-      "layout":"Layout",
+      "layout":"レイアウト",
       "layout_options":{
         "1_fixed":"One column, fixed width",
         "1_fluid":"One column, fluid width",
@@ -124,123 +126,125 @@
       "default_name":"New Tab",
       "delete":"Delete tab",
       "delete_disallowed":"You cannot delete the only remaining tab.",
-      "delete_confirm":"Are you really sure you want to delete this tab?\r\nThis action is irreversible, all data from all widgets in the tab will be permanently lost.",
-      "default":"Set as default"
+      "delete_confirm":"このタブを削除するとタブ内のすべてのウィジェットからのすべてのデータは永久に失われます。\n削除しても本当によろしいですか？",
+      "default":"デフォルトとして設定"
     },
     "advanced":{
-      "background":"Widget Background",
-      "background_desc":"Click the swatch to select a color",
-      "search":"Search Behavior",
-      "search_label":"Open search results in a new tab",
-      "backup":"Backup \/ Restore",
+      "background":"ウィジェットの背景",
+      "background_desc":"色を選択するには色見本をクリックしてください",
+      "search":"検索行動",
+      "search_label":"新しいタブで検索結果を見る",
+      "backup":"バックアップ \/ 復元",
       "backup_desc":"<b>To backup:<\/b> Click the Backup button and copy the text that appears in the field below.<br \/><b>To restore:<\/b> Paste the text you saved or copied before and click the Restore button.",
-      "backup_backup":"Backup",
-      "backup_restore":"Restore",
+      "backup_backup":"バックアップ",
+      "backup_restore":"復元",
       "restore_error":"An error occurred while trying to parse the provided data, please make sure you entered the EXACT text you backed up.",
       "restore_confirm":"Are you really, really sure you want to do this?\r\nThis will overwrite all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers signed into this Google account.",
-      "css":"Custom CSS",
+      "css":"カスタム CSS",
       "css_desc":"You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.",
-      "reset":"Reset iChrome",
+      "reset":"iChromeを初期化する",
       "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers signed into this Google account."
     }
   },
   "store":{
-    "installation":"Installation",
-    "description":"Description",
-    "preview":"Preview",
+    "installation":"インストール",
+    "description":"説明",
+    "preview":"プレビュー",
     "instructions":"Drag and drop any size onto your homepage"
   },
   "widgets":{
     "sizes":{
-      "tiny":"Tiny",
-      "small":"Small",
-      "medium":"Medium",
-      "large":"Large",
-      "variable":"Variable"
+      "tiny":"最小",
+      "small":"小",
+      "medium":"標準",
+      "large":"大",
+      "variable":"可変"
     },
     "settings":{
-      "title":"Widget Settings",
-      "save":"Save",
-      "size":"Widget Size"
+      "title":"ウィジェット設定",
+      "save":"保存",
+      "size":"ウィジェットサイズ"
     },
-    "delete_confirm":"Are you really sure you want to delete this widget?\r\nThis action is irreversible; all data from this widget will be permanently lost.",
+    "delete_confirm":"このウィジェットを削除するとこのウィジェットのデータは永久に失われます。\n削除しても本当によろしいですか？",
     "shared":{
       "settings":{
-        "title":"Widget Title",
+        "title":"ウィジェットタイトル",
         "title_placeholder":"Enter a widget title or leave blank to hide",
-        "height":"Widget Height",
+        "height":"ウィジェットの高さ",
         "open_options":{
-          "current":"The current tab",
-          "blank":"A new tab"
+          "current":"現在のタブ",
+          "blank":"新しいタブ"
         },
-        "footer_link":"Footer Link",
+        "footer_link":"フッターリンク",
         "footer_link_options":{
-          "show":"Show",
-          "hide":"Hide"
+          "show":"見せる",
+          "hide":"隠す"
         },
-        "account":"Account ID",
+        "account":"アカウントID",
         "account_help":"If you're signed into multiple accounts, this is the \"authuser=\" value.\n<br \/><br \/>\nFor example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"authuser\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
         "account_placeholder":"Your \"authuser=\" value",
-        "on":"On",
-        "off":"Off"
+        "on":"ON",
+        "off":"OFF"
       }
     }
   },
   "themes":{
-    "title":"Themes",
-    "all":"All",
-    "custom":"Custom",
-    "create":"Create a theme",
+    "title":"テーマ",
+    "all":"すべて",
+    "custom":"カスタム",
+    "create":"テーマを作成",
+    "url_or_upload":"or",
+    "upload_image":"Upload an image",
     "edit":{
-      "title":"Edit Theme",
-      "create_title":"Create Theme",
-      "name":"Theme Name",
-      "default_name":"New Theme",
-      "name_placeholder":"Enter a theme name",
-      "image":"Image URL",
-      "image_placeholder":"Enter a background image URL",
+      "title":"テーマ編集",
+      "create_title":"テーマ作成",
+      "name":"テーマ名",
+      "default_name":"新しいテーマ",
+      "name_placeholder":"テーマ名を入力",
+      "image":"画像 URL",
+      "image_placeholder":"背景画像URLを入力してください",
       "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy and paste the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
-      "color":"Fallback Color",
+      "color":"背景色",
       "color_placeholder":"Enter any color name",
-      "position":"Position",
+      "position":"位置",
       "position_options":{
-        "center":"Center",
-        "top_left":"Top Left",
-        "top_center":"Top Center",
-        "top_right":"Top Right",
-        "bottom_left":"Bottom Left",
-        "bottom_center":"Bottom Center",
-        "bottom_right":"Bottom Right"
+        "center":"中央揃え",
+        "top_left":"左上",
+        "top_center":"中央上",
+        "top_right":"右上",
+        "bottom_left":"左下",
+        "bottom_center":"中央下",
+        "bottom_right":"右下"
       },
-      "scaling":"Scaling",
+      "scaling":"拡大縮小",
       "scaling_options":{
-        "auto":"Auto",
-        "width":"Full Width",
-        "height":"Full Height",
-        "none":"No Scaling (preview may be inaccurate)"
+        "auto":"自動",
+        "width":"最大幅",
+        "height":"最大高",
+        "none":"拡大縮小しない(プレビューが不正確になることがあります)"
       },
-      "repeat":"Image Repeat",
+      "repeat":"背景画像をタイリング",
       "repeat_options":{
-        "none":"No Repeat",
-        "horizontal":"Repeat Horizontally",
-        "vertical":"Repeat Vertically",
-        "both":"Repeat Both"
+        "none":"しない",
+        "horizontal":"横方向に繰り返し",
+        "vertical":"縦方向に繰り返し",
+        "both":"縦横両方向を繰り返し"
       },
-      "attach":"Attach Image To",
-      "attach_tab":"The tab",
-      "attach_window":"The window",
-      "preview":"Preview",
+      "attach":"画像の表示先",
+      "attach_tab":"このタブ",
+      "attach_window":"ウィンドウ",
+      "preview":"プレビュー",
       "save":"保存して閉じる",
       "cache_error":"An error occurred while trying to cache the image you provided, please double-check the URL.",
       "upload_error":"An error occurred while trying to upload the file you provided, please make sure that it's a reasonable size and an image."
     },
-    "delete":"Delete",
-    "use":"Use",
-    "preview":"Preview",
+    "delete":"削除",
+    "use":"使用",
+    "preview":"プレビュー",
     "author":"By",
     "images":"%s images",
-    "resolution":"Resolution",
-    "categories":"Categories",
+    "resolution":"解像度",
+    "categories":"カテゴリ",
     "cached":"This theme has been cached and is available offline",
     "random":"This theme displays a random image every time you load the page",
     "random_daily":"This theme displays an image picked randomly every day",
@@ -251,12 +255,12 @@
     "feed_fetching":"Please wait, fetching feed...",
     "feed_error":"Something went wrong while trying to fetch the feed.  Please try again later.",
     "caching":"Please wait, caching theme...",
-    "cache_status":"%s of %s images cached",
-    "cache_error":"An error occurred while trying to cache the theme.  Please try again later"
+    "cache_status":"%s 中 %s の画像がキャッシュされました",
+    "cache_error":"テーマをキャッシュしようとしたときにエラーが発生しました。後でもう一度お試しください"
   },
   "intro":{
     "slide1":{
-      "title":"Welcome to iChrome!",
+      "title":"ようこそ、iChromeへ!",
       "line1":"If you want iChrome as your start page, you'll need to set the URL of this page in your settings (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">instructions<\/a>).  Otherwise, if you want it as a new tab or both home and new tab pages, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
       "newtab_line1":"If you want iChrome to only show when you start Chrome and not every time you open a new tab please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">the main iChrome extension<\/a> instead of this one.",
       "line2":"This introduction is only 3 slides long and will give a quick overview of how to do basic things in iChrome.  When you're ready hit the next arrow at the right."
@@ -267,7 +271,7 @@
       "line2":"New widgets can be added by clicking the Widgets item under the menu at the top right of the page (shown in the next slide)."
     },
     "slide3":{
-      "title":"Customizing",
+      "title":"カスタマイズする",
       "line1":"You can change almost anything else you'd want to via the menu at the top right.  There you can configure the way your page looks, how iChrome works and get new widgets.",
       "line2":"Other things you can do include creating individual tabs, each with themes and widgets of their own, custom themes, or configuring the tiniest thing like what links are shown in the toolbar."
     }

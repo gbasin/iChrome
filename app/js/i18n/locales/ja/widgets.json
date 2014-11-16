@@ -1,120 +1,120 @@
 {
   "lang_code":"ja-widgets",
   "analytics":{
-    "name":"Analytics",
+    "name":"解析",
     "desc":"Displays various metrics from a Google Analytics profile.",
-    "sessions":"sessions",
-    "pageviews":"Pageviews",
-    "pagesvisit":"Pages\/visit",
-    "bouncerate":"Bounce Rate",
-    "completions":"Completions",
+    "sessions":"セッション",
+    "pageviews":"ページビュー",
+    "pagesvisit":"ページ\/訪問",
+    "bouncerate":"直帰率",
+    "completions":"補完",
     "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
     "settings":{
-      "profile":"Profile"
+      "profile":"プロフィール"
     }
   },
   "apps":{
     "name":"Apps",
-    "desc":"Displays your currently installed Google Chrome applications.",
+    "desc":"現在インストールされているGoogle Chromeのアプリケーションが表示されます。",
     "settings":{
-      "format":"Widget Format",
+      "format":"ウィジェット形式",
       "format_options":{
-        "tiles":"Tiles",
-        "list":"List"
+        "tiles":"タイル",
+        "list":"一覧"
       },
-      "display":"Show",
+      "display":"見せる",
       "display_options":{
-        "all":"All apps",
-        "enabled":"Only enabled apps"
+        "all":"すべてのApps",
+        "enabled":"有効なApps"
       },
-      "sort":"Sort",
+      "sort":"ソート",
       "sort_options":{
         "id":"ID",
-        "alphabetically":"Alphabetically",
-        "offline":"Offline Enabled",
-        "available":"Availability"
+        "alphabetically":"アルファベット順",
+        "offline":"オフライン有効",
+        "available":"可用性"
       },
       "open":"Open apps in"
     },
-    "store_app":"Store"
+    "store_app":"ストア"
   },
   "bookmarks":{
-    "name":"Bookmarks",
+    "name":"ブックマーク",
     "desc":"Displays selected and customized bookmarks, and other links.",
     "settings":{
       "title_placeholder":"Enter a widget title",
-      "layout":"Layout",
+      "layout":"レイアウト",
       "layout_options":{
-        "single":"Single column",
-        "double":"Double column"
+        "single":"1 つの列",
+        "double":"2つの列"
       },
       "open":"Open bookmarks in"
     },
     "edit":{
-      "dialog_title":"Edit Bookmark",
-      "title":"Bookmark Title",
+      "dialog_title":"ブックマークを編集",
+      "title":"ブックマークのタイトル",
       "title_placeholder":"Google",
-      "url":"Bookmark URL",
+      "url":"ブックマークURL",
       "url_placeholder":"http:\/\/www.google.com\/",
-      "save":"Save"
+      "save":"保存"
     },
-    "new_caption":"New",
-    "new_bookmark":"Bookmark",
-    "new_folder":"Folder",
-    "drop_link":"Drop link here"
+    "new_caption":"新しい",
+    "new_bookmark":"ブックマーク",
+    "new_folder":"フォルダ",
+    "drop_link":"リンクをここにドロップ"
   },
   "calc":{
-    "name":"Calculator",
-    "desc":"Displays a calculator with support for basic operators.",
-    "error":"Error!",
-    "infinity":"Infinity",
-    "mismatch":"Mismatched parentheses"
+    "name":"電卓",
+    "desc":"基本的な演算子が使える電卓を表示",
+    "error":"エラーが発生しました",
+    "infinity":"無限",
+    "mismatch":"かっこが一致しません"
   },
   "calendar":{
     "name":"カレンダー",
-    "desc":"Displays upcoming events from one or more of your Google calendars.",
+    "desc":"Google カレンダーから今後のイベントが表示されます。",
     "settings":{
       "calendar":"カレンダー",
-      "events":"Events Shown"
+      "events":"表示されている予定"
     },
-    "title":"My Calendar",
+    "title":"マイカレンダー",
     "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
   },
   "clock":{
-    "name":"Time & Date",
+    "name":"時間 & 日付",
     "desc":"Shows the current date and time. Optionally for a different timezone.",
     "settings":{
-      "timezone":"Time Zone",
-      "timezone_local":"Local",
-      "format":"Clock Format",
+      "timezone":"タイムゾーン",
+      "timezone_local":"ローカル",
+      "format":"時刻フォーマット",
       "format_options":{
-        "ampm":"AM\/PM - Digital",
-        "24hour":"24 Hour - Digital",
-        "analog":"12 Hour - Analog",
-        "ampmseconds":"AM\/PM - Digital, No Seconds",
-        "24hourseconds":"24 Hour - Digital, No Seconds"
+        "ampm":"AM\/PM - デジタル",
+        "24hour":"24時間表記 - デジタル",
+        "analog":"12時間 - アナログ",
+        "ampmseconds":"AM\/PM - デジタル (秒表示なし)",
+        "24hourseconds":"24 時間表示 - デジタル(秒表示なし)"
       }
     },
-    "title":"Clock"
+    "title":"時計"
   },
   "currency":{
-    "name":"Currency",
-    "desc":"Let's you convert between any two of 169 currencies.",
-    "to_label":"to"
+    "name":"通貨",
+    "desc":"169 通貨の中から、 2 つの通貨を変換してみましょう。",
+    "to_label":"から"
   },
   "drive":{
     "name":"ドライブ",
-    "desc":"Displays recently changed files from your Google Drive.",
+    "desc":"最近Google ドライブで変更されたファイルを表示します",
     "settings":{
-      "files_shown":"Number of Files Shown"
+      "files_shown":"ファイルの数が表示される"
     },
-    "modified_by":"by",
+    "modified_by":"By",
     "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
-    "authorize_btn":"Authorize"
+    "authorize_btn":"承認"
   },
   "facebook":{
     "name":"Facebook",
-    "desc":"Embeds Facebook in a widget"
+    "desc":"ウィジェットに Facebook を埋め込みます"
   },
   "feedly":{
     "name":"Feedly",
@@ -122,12 +122,12 @@
     "settings":{
       "source":"Show articles from",
       "source_feeds":"Feeds",
-      "show":"Show",
+      "show":"見せる",
       "show_options":{
         "all":"All articles",
         "unread":"Only unread articles"
       },
-      "layout":"Layout",
+      "layout":"レイアウト",
       "layout_options":{
         "titles":"Titles only",
         "magazine":"Magazine",
@@ -145,10 +145,10 @@
         "oldest":"Oldest first"
       }
     },
-    "all":"All",
+    "all":"すべて",
     "saved":"Saved for later",
     "uncategorized":"Uncategorized",
-    "author":"by",
+    "author":"By",
     "go_to_feedly":"Go To Feedly"
   },
   "gmail":{
@@ -185,8 +185,8 @@
         "sports":"Sports",
         "technology":"Technology",
         "entertainment":"Entertainment",
-        "health":"Health",
-        "science":"Science",
+        "health":"健康",
+        "science":"科学",
         "spotlight":"Spotlight"
       },
       "feed":"Custom Feed",
@@ -203,22 +203,22 @@
     "settings":{
       "color":"Note Color",
       "color_options":{
-        "yellow":"Yellow",
-        "orange":"Orange",
-        "red":"Red",
-        "blue":"Blue",
-        "green":"Green",
-        "white":"White"
+        "yellow":"イエロー",
+        "orange":"オレンジ",
+        "red":"レッド",
+        "blue":"ブルー",
+        "green":"グリーン",
+        "white":"ホワイト"
       },
       "font":"Font Face",
-      "fontsize":"Font Size"
+      "fontsize":"文字サイズ"
     }
   },
   "now":{
     "name":"Google Now",
     "desc":"Displays cards from Google Now including flight status and package tracking.",
     "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
-    "authorize_btn":"Authorize",
+    "authorize_btn":"承認",
     "caught_up":"All caught up, nothing here.",
     "no_title":"No Title"
   },
@@ -246,7 +246,7 @@
       "sort_options":{
         "hot":"Hot",
         "top":"Top",
-        "new":"New",
+        "new":"新しい",
         "gilded":"Gilded",
         "rising":"Rising",
         "controversial":"Controversial"
@@ -257,7 +257,8 @@
         "link":"The link",
         "comments":"The comments"
       }
-    }
+    },
+    "more":"もっと"
   },
   "rss":{
     "name":"RSS",
@@ -360,6 +361,7 @@
     "name":"Translate",
     "desc":"Contains a small inline Google Translate textbox.",
     "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
+    "button":"Translate",
     "untranslate":"Untranslate",
     "auto":"Auto (%s)",
     "unknown":"Unknown",
@@ -374,7 +376,7 @@
     },
     "authorize":"You'll need to authorize iChrome first",
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
-    "authorize_btn":"Authorize",
+    "authorize_btn":"承認",
     "no_tweets":"There don't seem to be any tweets here...",
     "home":"ホーム",
     "mentions":"Mentions",

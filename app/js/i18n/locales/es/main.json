@@ -1,8 +1,10 @@
 {
   "lang_code":"es",
   "language":"Español",
-  "extDescription":"La MEJOR homepage para Chrome. Maravillosos temas, docenas de widgets, !A la velocidad de la luz, increíblemente personalizable!",
+  "newtabName":"iChrome New Tab",
   "extName":"iChrome- Tu homepage para Chrome",
+  "extDescription":"La MEJOR homepage para Chrome. Maravillosos temas, docenas de widgets, !A la velocidad de la luz, increíblemente personalizable!",
+  "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
   "defaults":{
     "tab":"Inicio",
     "me":"Me"
@@ -191,6 +193,8 @@
     "all":"All",
     "custom":"Custom",
     "create":"Create a theme",
+    "url_or_upload":"or",
+    "upload_image":"Upload an image",
     "edit":{
       "title":"Edit Theme",
       "create_title":"Create Theme",

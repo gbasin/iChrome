@@ -195,7 +195,7 @@
       "footer":"Fußzeilen-URL",
       "footer_placeholder":"Gebe die URL ein, auf die der Link \"Mehr\" verweisen soll"
     },
-    "more":"mehr"
+    "more":"Mehr"
   },
   "notes":{
     "name":"Notizen",
@@ -257,7 +257,8 @@
         "link":"Der Link",
         "comments":"Die Kommentare"
       }
-    }
+    },
+    "more":"Mehr"
   },
   "rss":{
     "name":"RSS",
@@ -360,6 +361,7 @@
     "name":"Übersetzen",
     "desc":"Enthält eine kleine Google Translate Textbox.",
     "placeholder":"Gebe den zu übersetzenden Text hier ein, dann drücke \"Übersetzen\".",
+    "button":"Übersetzen",
     "untranslate":"Rückübersetzen",
     "auto":"Auto (%s)",
     "unknown":"Unbekannt",
@@ -380,7 +382,7 @@
     "mentions":"Erwähnungen",
     "retweets":"Retweets von mir",
     "lists":"Listen",
-    "more":"mehr",
+    "more":"Mehr",
     "reply":"Antworten",
     "retweet":"Retweeten",
     "favorite":"Favorit"

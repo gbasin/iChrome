@@ -37,7 +37,7 @@
 			</div>
 
 			{{#custom}}
-				<button class="btn btn-warning edit">{{i18n.themes.edit}}</button>
+				<button class="btn btn-warning edit">{{i18n.themes.edit_btn}}</button>
 				<button class="btn btn-danger delete">{{i18n.themes.delete}}</button>
 			{{/custom}}
 

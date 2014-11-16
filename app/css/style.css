@@ -779,8 +779,14 @@ input[type="radio"]:checked {
 	right: -235px;
 }
 
+.menu:lang(ru) {
+	width: 250px;
+	right: -255px;
+}
+
 .menu.visible,
-.menu.visible:lang(uk) {
+.menu.visible:lang(uk),
+.menu.visible:lang(ru) {
 	right: 0;
 }
 
@@ -1995,7 +2001,8 @@ body.no-edit .widgets-container .widget .settings {
 }
 
 .modal.getting-started:lang(de),
-.modal.getting-started:lang(fr) {
+.modal.getting-started:lang(fr),
+.modal.getting-started:lang(ru) {
 	height: 620px;
 }
 
@@ -2773,6 +2780,31 @@ body.no-edit .widgets-container .widget .settings {
 
 
 
+/*---------------------------------------------
+	/ Themes / Create / Russian Fixes
+*/
+.themes.create form:lang(ru) {
+	width: 40%;
+}
+
+.themes.create .content > .preview:lang(ru) {
+	margin: 25px;
+	width: calc(60% - 50px);
+}
+
+.themes.create #image:lang(ru) {
+	width: 54%;
+}
+
+.themes.create .upload:lang(ru) {
+	width: 42%;
+	padding-left: 5px;
+}
+
+
+
+
+
 
 /*---------------------------------------------
 	/ Settings
@@ -3056,7 +3088,7 @@ body.no-edit .widgets-container .widget .settings {
 */
 .settings .specific form {
 	height: 0;
-	width: 78%;
+	width: 90%;
 	opacity: 0;
 	float: right;
 	min-height: 0;
