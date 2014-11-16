@@ -59,7 +59,7 @@ define(["jquery"], function($) {
 			sort: "id",
 			show: "all",
 			view: "list",
-			target: "_blank",
+			target: "_self",
 			size: "variable"
 		},
 		refresh: function() {

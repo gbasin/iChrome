@@ -1,1 +1,1 @@
-<a class="mainval" href="{{#inbox}}https://inbox.google.com/u/{{user}}{{/inbox}}{{^inbox}}https://mail.google.com/?authuser={{user}}{{/inbox}}" target="_blank" data-label="{{label}}" data-tooltip="{{#messages}}<b>{{subject}}</b><br />{{excerpt}}<br /><br />{{/messages}}">{{count}}</a>
+<a class="mainval" href="{{#inbox}}https://inbox.google.com/u/{{user}}{{/inbox}}{{^inbox}}https://mail.google.com/?authuser={{user}}{{/inbox}}" data-label="{{label}}" data-tooltip="{{#messages}}<b>{{subject}}</b><br />{{excerpt}}<br /><br />{{/messages}}">{{count}}</a>

@@ -36,7 +36,7 @@ define(["jquery"], function($) {
 		],
 		config: {
 			tabs: 5,
-			target: "_blank",
+			target: "_self",
 			size: "variable",
 			title: "i18n.name"
 		},

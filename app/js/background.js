@@ -442,28 +442,38 @@ chrome.runtime.onInstalled.addListener(function(details) {
 	}
 });
 
-chrome.webRequest.onHeadersReceived.addListener(
-	function(info) {
-		var headers = info.responseHeaders;
+var xhr = new XMLHttpRequest();
 
-		for (var i = headers.length - 1; i >= 0; --i) {
-			var header = headers[i].name.toLowerCase();
+xhr.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status !== 200) { // The main iChrome extension is not installed, attach an onHeadersReceived listener
+		chrome.webRequest.onHeadersReceived.addListener(
+			function(info) {
+				var headers = info.responseHeaders;
 
-			if (header == "x-frame-options" || header == "frame-options") {
-				headers.splice(i, 1);
-			}
-		}
-		
-		return {
-			responseHeaders: headers
-		};
-	},
-	{
-		urls: [ "*://*/*" ],
-		types: [ "sub_frame" ]
-	},
-	["blocking", "responseHeaders"]
-);
+				for (var i = headers.length - 1; i >= 0; --i) {
+					var header = headers[i].name.toLowerCase();
+
+					if (header == "x-frame-options" || header == "frame-options") {
+						headers.splice(i, 1);
+					}
+				}
+				
+				return {
+					responseHeaders: headers
+				};
+			},
+			{
+				urls: [ "*://*/*" ],
+				types: [ "sub_frame" ]
+			},
+			["blocking", "responseHeaders"]
+		);
+	}
+};
+
+xhr.open("HEAD", "chrome-extension://oghkljobbhapacbahlneolfclkniiami/index.html");
+
+xhr.send();
 
 
 // Sync manager

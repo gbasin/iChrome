@@ -208,10 +208,10 @@ module.exports = function(grunt) {
 						message: i
 					},
 					extDescription: {
-						message: e.extDescription
+						message: e.newtabDescription
 					},
 					extName: {
-						message: e.extName
+						message: e.newtabName
 					},
 					themes_upload_image: {
 						message: e.themes.upload_image
@@ -253,7 +253,8 @@ module.exports = function(grunt) {
 					desc = "";
 
 				_.each(locale, function(e, i) {
-					if (i !== "lang_code" && i.indexOf("newtab") == -1 && typeof e == "string") {
+					// Line 1 and the link are duplicated for new tab as newtab_line_1 and newtab_link
+					if (["lang_code", "line_1", "link"].indexOf(i) == -1 && typeof e == "string") {
 						desc += e + "\n\n";
 					}
 					else if (Array.isArray(e)) {
