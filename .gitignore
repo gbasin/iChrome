@@ -5,3 +5,4 @@ coverage
 build/Release
 node_modules
 Thumbs.db
+keys.json

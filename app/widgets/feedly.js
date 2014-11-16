@@ -392,7 +392,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 		setOAuth: function() {
 			this.oAuth = new OAuth2("feedly", {
 				client_id: "ichrome",
-				client_secret: "", // !! Remove key before committing
+				client_secret: "__API_KEY_feedly__",
 				api_scope: "https://cloud.feedly.com/subscriptions"
 			}, function(tab) {
 				chrome.webRequest.onBeforeRequest.addListener(

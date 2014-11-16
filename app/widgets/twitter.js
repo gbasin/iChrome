@@ -284,7 +284,7 @@ define(["jquery", "moment"], function($, moment) {
 				encodeURIComponent(params.sort(function(a, b) { return a < b ? -1 : a > b; }).join("&"));
 
 			// Generate signature
-			var signature = CryptoJS.HmacSHA1(baseString, "" /* !! Remove key before committing */ + "&" + encodeURIComponent(secret)).toString(CryptoJS.enc.Base64);
+			var signature = CryptoJS.HmacSHA1(baseString, "__API_KEY_twitter__" + "&" + encodeURIComponent(secret)).toString(CryptoJS.enc.Base64);
 
 			// Generate OAuth header
 			options.beforeSend = function(xhr) {

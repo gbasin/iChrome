@@ -3,6 +3,7 @@ module.exports = function(grunt) {
 		path = require("path");
 
 	grunt.initConfig({
+		keys: grunt.file.readJSON("keys.json"),
 		pkg: grunt.file.readJSON("package.json"),
 
 		// Copy the extension to a new directory for building
@@ -108,6 +109,21 @@ module.exports = function(grunt) {
 						pattern: "UA-41131844-4",
 						replacement: "UA-41131844-2"
 					}]
+				}
+			},
+			apikeys: {
+				files: {
+					"build/widgets/": "build/widgets/*.js"
+				},
+				options: {
+					replacements: [
+						{
+							pattern: /__API_KEY_([A-z0-9\-\.]+)__/ig,
+							replacement: function(match, p1) {
+								return grunt.config.get("keys." + p1);
+							}
+						}
+					]
 				}
 			}
 		},

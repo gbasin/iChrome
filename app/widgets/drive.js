@@ -93,7 +93,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 		setOAuth: function() {
 			this.oAuth = new OAuth2("drive", {
 				client_id: "559765430405-jtbjv5ivuc17nenpsl4dfk9r53a3q0hg.apps.googleusercontent.com",
-				client_secret: "", // !! Remove key before committing
+				client_secret: "__API_KEY_drive__",
 				api_scope: "https://www.googleapis.com/auth/drive.readonly"
 			});
 		},
