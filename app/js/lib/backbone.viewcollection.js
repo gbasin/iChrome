@@ -10,17 +10,20 @@ define(["lodash", "backbone"], function(_, Backbone) {
 		 * Creates a new view from the specified model
 		 *
 		 * @api   public
-		 * @param {Backbone.Model} model  The model
-		 * @param {Boolean}        silent Whether or not to emit an event
+		 * @param {Backbone.Model} model     The model
+		 * @param {Boolean}        silent    Whether or not to emit an event
+		 * @param {Boolean}        skipSort  Whether or not to skip resorting the views
 		 */
-		addView: function(model, silent) {
+		addView: function(model, silent, skipSort) {
 			var view = new this.view({
 				model: model
 			});
 
 			this.views.push(view);
 
-			this.sortViews(silent);
+			if (!skipSort) {
+				this.sortViews(silent);
+			}
 
 			if (!silent) {
 				this.trigger("views:add", view, model);
@@ -38,15 +41,17 @@ define(["lodash", "backbone"], function(_, Backbone) {
 		 * @api   public
 		 */
 		resetViews: function() {
-			// this.views needs to be cloned otherwise removeView will remove the array
-			// element causing the loop to reference a non-existent index
-			_.each(_.clone(this.views), function(e) {
+			// This function needs to work off of a difference otherwise views will be destroyed
+			// erasing event handlers and other jQuery data from their respective elements
+			_(this.views).pluck("model").difference(this.models).each(function(e) {
 				this.removeView(e, true);
 			}, this);
 
-			_.each(this.models, function(e) {
-				this.addView(e, true);
+			_(this.models).difference(_.pluck(this.views, "model")).each(function(e) {
+				this.addView(e, true, true);
 			}, this);
+
+			this.sortViews(true);
 
 			this.trigger("views:reset views:change", this.views, this.models);
 
