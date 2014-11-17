@@ -2700,7 +2700,7 @@ body.no-edit .widgets-container .widget .settings {
 
 .themes.create .upload input {
 	float: right;
-	padding: 6px 0;
+	padding: 8px 0;
 	width: calc(100% - 30px);
 	-webkit-appearance: none;
 }
