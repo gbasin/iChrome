@@ -73,8 +73,26 @@ define(["jquery", "moment"], function($, moment) {
 						&& homed.routeResults[0].routes[0].routeLegs[0] && workd.routeResults[0].routes[0].routeLegs[0]
 						&& homed.routeResults[0].routes[0].routeLegs[0].summary && workd.routeResults[0].routes[0].routeLegs[0].summary) {
 						
-						data.home = (homed.routeResults[0].routes[0].routeLegs[0].summary.timeWithTraffic || homed.routeResults[0].routes[0].routeLegs[0].summary.time || 0);
-						data.work = (workd.routeResults[0].routes[0].routeLegs[0].summary.timeWithTraffic || workd.routeResults[0].routes[0].routeLegs[0].summary.time || 0);
+
+						var homeSummary = homed.routeResults[0].routes[0].routeLegs[0].summary;
+
+						if (homeSummary.timeWithTraffic && homeSummary.timeWithTraffic > 0) {
+							data.home = homeSummary.timeWithTraffic;
+						}
+						else if (homeSummary.time && homeSummary.time > 0) {
+							data.home = homeSummary.time;
+						}
+
+
+						var workSummary = workd.routeResults[0].routes[0].routeLegs[0].summary;
+
+						if (workSummary.timeWithTraffic && workSummary.timeWithTraffic > 0) {
+							data.work = workSummary.timeWithTraffic;
+						}
+						else if (workSummary.time && workSummary.time > 0) {
+							data.work = homeSummary.time;
+						}
+
 
 						if (data.home && data.work) {
 							this.data = data;
@@ -97,19 +115,15 @@ define(["jquery", "moment"], function($, moment) {
 			}.bind(this));
 		},
 		render: function(dest) {
-			var data = {};
-
-			if (typeof dest == "string") {
-				data.dest = dest;
-			}
-			else if (moment(this.config.time, "hh:mm").add("hours", 1).isAfter()) {
-				data.dest = this.utils.translate("to_work");
-			}
-			else {
-				data.dest = this.utils.translate("to_home");
+			if (typeof dest !== "string") {
+				dest = moment(this.config.time, "hh:mm").add("hours", 1).isAfter() ? "work" : "home";
 			}
 
-			var time = moment.duration(this.data[data.dest] || 0, "seconds"),
+			var data = {
+				dest: this.utils.translate("to_" + dest)
+			};
+
+			var time = moment.duration(this.data[dest] || 0, "seconds"),
 				hours = time.get("hours"),
 				minutes = Math.round(time.asMinutes() % 60);
 

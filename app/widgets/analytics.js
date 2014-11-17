@@ -44,7 +44,7 @@ define(["jquery", "oauth2"], function($) {
 		setOAuth: function() {
 			this.oAuth = new OAuth2("google", {
 				client_id: "559765430405-5rvu6sms3mc111781cfgp1atb097rrph.apps.googleusercontent.com",
-				client_secret: "", // !! Remove key before committing
+				client_secret: "__API_KEY_analytics__",
 				api_scope: "https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/analytics"
 			});
 		},

@@ -60,9 +60,6 @@ define(["lodash", "i18n/locales"], function(_, locales) {
 			return string;
 		}
 		catch (e) {
-			// TODO: Remove before commit
-			if (id.indexOf("widgets.common") == 0 || id.indexOf("widgets") == -1) console.error("Tried to find string " + id + " and failed");
-
 			return "";
 		}
 	};

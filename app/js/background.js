@@ -360,44 +360,6 @@ var deleteCustom = function(which, cb) {
 	}, err);
 };
 
-var migrateThemes = function() {
-	chrome.storage.local.get(["settings", "tabs"], function(d) {
-		var queue = [];
-
-		if (d.settings.theme && themes[d.settings.theme]) {
-			queue.push(d.settings.theme);
-
-			// The theme reference will be broken regardless of whether or not the caching succeeds, so there's no harm in setting it now
-			d.settings.theme = themes[d.settings.theme].id + "";
-		}
-
-		d.tabs.forEach(function(e, i) {
-			if (e.theme && themes[e.theme]) {
-				if (queue.indexOf(e.theme) == -1) queue.push(e.theme);
-
-				d.tabs[i].theme = themes[e.theme].id + "";
-			}
-		});
-
-		queue.forEach(function(e, i) {
-			queue[i] = themes[e];
-		});
-
-		(function next() {
-			if (queue.length) {
-				cache(queue.pop(), next);
-			}
-			else {
-				chrome.storage.local.set({
-					tabs: d.tabs,
-					cached: cached,
-					settings: d.settings
-				});
-			}
-		})();
-	});
-};
-
 chrome.runtime.onInstalled.addListener(function(details) {
 	if (details.reason == "install") {
 		var link = document.createElement("a");
@@ -432,13 +394,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 		});
 	}
 	else if (details.reason == "update") {
-		if (details.previousVersion.indexOf("2.1") !== 0) {
-			migrateThemes();
-		}
-		
-		//localStorage["updated"] = "true";
-
-		//localStorage["whatsNew"] = "true";
+		localStorage["translateRequest"] = "true";
 	}
 });
 

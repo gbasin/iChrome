@@ -105,7 +105,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 		setOAuth: function() {
 			this.oAuth = new OAuth2("google2", {
 				client_id: "559765430405-2710gl95r9js4c6m4q9nveijgjji50b8.apps.googleusercontent.com",
-				client_secret: "", // !! Remove key before committing
+				client_secret: "__API_KEY_calendar__",
 				api_scope: "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar"
 			});
 		},

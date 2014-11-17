@@ -2,7 +2,7 @@
  * The main iChrome view, this initializes everything.
  */
 define(
-	["lodash", "backbone", "core/status", "core/analytics", "storage/storage", "core/css", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs", "modals/updated", "modals/getting-started", "lib/extends"],
+	["lodash", "backbone", "core/status", "core/analytics", "storage/storage", "core/css", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs", "modals/updated", "modals/getting-started", "modals/translate-request", "lib/extends"],
 	function(_, Backbone, Status, Track, Storage, CSS, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
 		var Model = Backbone.Model.extend({
 			init: function() {
@@ -98,8 +98,9 @@ define(
 
 				// requestAnimationFrame ensures this runs after everything is done
 				requestAnimationFrame(function() {
-					var totalLoad = new Date().getTime() - performance.timing.responseEnd,
-						time = performance.timing.loadEventEnd - performance.timing.responseEnd;
+					var cTime = new Date().getTime(),
+						totalLoad = cTime - performance.timing.responseEnd,
+						time = (performance.timing.loadEventEnd || cTime) - performance.timing.responseEnd;
 
 					Status.log("Window load took " + time + "ms, actual load took " + totalLoad + "ms");
 

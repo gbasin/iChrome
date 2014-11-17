@@ -1,4 +1,4 @@
-# iChrome [![Crowdin](https://d322cqt584bo4o.cloudfront.net/ichrome/localized.png)](https://crowdin.com/project/ichrome)
+# iChrome [![Crowdin](https://d322cqt584bo4o.cloudfront.net/ichrome/localized.png)](https://crowdin.com/project/ichrome) [![devDependency Status](https://david-dm.org/AMKohn/iChrome/dev-status.svg?style=flat)](https://david-dm.org/AMKohn/iChrome#info=devDependencies)
 
 iChrome is a highly customizable, iGoogle homepage replacement extension influenced by Google Now. It includes almost 100 HD themes, over 30 widgets, support for multiple tabs, "OK Google" hotword detection and voice search, internationalization support and  almost complete customization.
 
