@@ -118,7 +118,7 @@
       "toolbar_normal":"Normaal",
       "toolbar_button":"Knop",
       "animation":"Slide-in animatie",
-      "animation_desc":"This setting lets you enable or disable the slide-in animation that runs when you load the page",
+      "animation_desc":"Met deze optie kunt u de slide-in animatie bij het laden van een pagina, in- en uitschakelen",
       "animation_label":"Schakel animatie in"
     },
     "specific":{
@@ -139,18 +139,18 @@
       "backup_backup":"Back-up",
       "backup_restore":"Herstel",
       "restore_error":"Er is een fout opgetreden bij het proberen om de verstrekte gegevens parseren, zorg ervoor dat u de exacte tekst van uw backup heeft ingevoerd.",
-      "restore_confirm":"Are you really, really sure you want to do this?\r\nThis will overwrite all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers signed into this Google account.",
+      "restore_confirm":"Weet u heel, heel zeker dat je dit wil doen?\nDit zal alle lokale en gesynchroniseerde data overschrijven, er is geen back-up en geen enkele manier om dit ongedaan te maken. U zult uw volledige huidige configuratie verliezen op alle computers die ingelogd zijn op dit Google account.",
       "css":"Aangepaste CSS",
       "css_desc":"You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.",
       "reset":"Reset iChrome",
-      "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers signed into this Google account."
+      "reset_confirm":"Weet u heel zeker dat u iChrome wil resetten?\nDit zal alle lokale en gesynchroniseerde data overschrijven, er is geen back-up en geen enkele manier om dit ongedaan te maken. U zult uw volledige huidige configuratie verliezen op alle computers die ingelogd zijn op dit Google account."
     }
   },
   "store":{
     "installation":"Installatie",
     "description":"omschrijving",
     "preview":"Preview",
-    "instructions":"Drag and drop any size onto your homepage"
+    "instructions":"Sleep elke grote op uw homepage"
   },
   "widgets":{
     "sizes":{
@@ -255,7 +255,7 @@
       "attach_window":"Het venster",
       "preview":"Preview",
       "save":"Opslaan en sluiten",
-      "cache_error":"An error occurred while trying to cache the image you provided, please double-check the URL.",
+      "cache_error":"Er is een error opgetreden tijdens het cachen van uw afbeelding, controleer de URL.",
       "upload_error":"An error occurred while trying to upload the file you provided, please make sure that it's a reasonable size and an image."
     }
   },

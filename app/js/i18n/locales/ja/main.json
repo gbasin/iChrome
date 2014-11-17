@@ -135,7 +135,7 @@
       "search":"検索行動",
       "search_label":"新しいタブで検索結果を見る",
       "backup":"バックアップ \/ 復元",
-      "backup_desc":"<b>バックアップ:<\/b>バックアップ ボタンをクリックし、以下のフィールドに表示されるテキストをコピーします。 < br\/> <b>復元する:<\/b> 復元ボタンをクリックして保存したテキストを貼り付けます。",
+      "backup_desc":"<b>バックアップ:<\/b>バックアップ ボタンをクリックし、以下のフィールドに表示されるテキストをコピーします。 <br\/> <b>復元する:<\/b> 復元ボタンをクリックして保存したテキストを貼り付けます。",
       "backup_backup":"バックアップ",
       "backup_restore":"復元",
       "restore_error":"An error occurred while trying to parse the provided data, please make sure you entered the EXACT text you backed up.",

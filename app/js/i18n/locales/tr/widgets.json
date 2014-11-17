@@ -170,7 +170,7 @@
     "desc":"Embeds Google Keep in a widget"
   },
   "news":{
-    "name":"News",
+    "name":"Haberler",
     "desc":"Displays the current top news by category and edition.",
     "settings":{
       "articles":"Articles Shown",

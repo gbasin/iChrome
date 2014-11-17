@@ -6,18 +6,18 @@
     "sessions":"參訪次數",
     "pageviews":"網頁點閱次數",
     "pagesvisit":"頁面\/訪問",
-    "bouncerate":"Bounce Rate",
-    "completions":"Completions",
-    "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
+    "bouncerate":"Tiàochū lǜ",
+    "completions":"落成",
+    "noprofile":"它看起來並不像您所選擇的配置文件呢！\n<br \/> <br \/>\n嘗試通過在右上角的扳手圖標中選擇一個。",
     "settings":{
-      "profile":"Profile"
+      "profile":"輪廓"
     }
   },
   "apps":{
     "name":"應用程式",
-    "desc":"Displays your currently installed Google Chrome applications.",
+    "desc":"顯示當前安裝谷歌Chrome瀏覽器的應用程序。",
     "settings":{
-      "format":"Widget Format",
+      "format":"控件格式",
       "format_options":{
         "tiles":"Tiles",
         "list":"清單檢視"
@@ -39,7 +39,7 @@
     "store_app":"Store"
   },
   "bookmarks":{
-    "name":"Bookmarks",
+    "name":"書籤",
     "desc":"Displays selected and customized bookmarks, and other links.",
     "settings":{
       "title_placeholder":"Enter a widget title",
@@ -64,7 +64,7 @@
     "drop_link":"Drop link here"
   },
   "calc":{
-    "name":"Calculator",
+    "name":"計算機",
     "desc":"Displays a calculator with support for basic operators.",
     "error":"錯誤 ！",
     "infinity":"Infinity",
@@ -84,18 +84,18 @@
     "name":"時間 & 日期",
     "desc":"Shows the current date and time. Optionally for a different timezone.",
     "settings":{
-      "timezone":"Time Zone",
-      "timezone_local":"Local",
-      "format":"Clock Format",
+      "timezone":"時區",
+      "timezone_local":"本地",
+      "format":"時鐘格式",
       "format_options":{
-        "ampm":"AM\/PM - Digital",
-        "24hour":"24 Hour - Digital",
-        "analog":"12 Hour - Analog",
-        "ampmseconds":"AM\/PM - Digital, No Seconds",
-        "24hourseconds":"24 Hour - Digital, No Seconds"
+        "ampm":"上午\/下午 - 數位時鐘",
+        "24hour":"24 小時 - 數位時鐘",
+        "analog":"12 小時 - 類比時鐘",
+        "ampmseconds":"上午\/下午 - 數位時鐘，沒有「秒」",
+        "24hourseconds":"24 小時 - 數位時鐘，沒有「秒」"
       }
     },
-    "title":"Clock"
+    "title":"時鐘"
   },
   "currency":{
     "name":"貨幣",
@@ -110,15 +110,15 @@
     },
     "modified_by":"由",
     "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
-    "authorize_btn":"Authorize"
+    "authorize_btn":"授權"
   },
   "facebook":{
-    "name":"Facebook",
-    "desc":"Embeds Facebook in a widget"
+    "name":"FACEBOOK",
+    "desc":"將Facebook嵌入小工具中"
   },
   "feedly":{
     "name":"Feedly",
-    "desc":"Displays articles from your Feedly account in a configurable format.",
+    "desc":"從您的Feedly帳戶中顯示可配置格式的文章",
     "settings":{
       "source":"Show articles from",
       "source_feeds":"Feeds",
@@ -218,9 +218,9 @@
     "name":"Google Now",
     "desc":"Displays cards from Google Now including flight status and package tracking.",
     "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
-    "authorize_btn":"Authorize",
+    "authorize_btn":"授權",
     "caught_up":"All caught up, nothing here.",
-    "no_title":"No Title"
+    "no_title":"無標題"
   },
   "plus":{
     "name":"Google+",
@@ -272,7 +272,7 @@
       "view":"View",
       "view_options":{
         "images":"Image friendly",
-        "default":"Default"
+        "default":"預設"
       },
       "images":"Images",
       "descriptions":"Descriptions"
@@ -280,13 +280,13 @@
     "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
   },
   "sports":{
-    "name":"Sports",
+    "name":"運動",
     "desc":"Displays scores and game information for selected leagues and\/or teams.",
     "settings":{
       "league":"League",
       "games":"Games Shown",
-      "team":"Team",
-      "teams":"Team",
+      "team":"隊伍",
+      "teams":"隊伍",
       "unavailable":"When team games are unavailable",
       "unavailable_options":{
         "other":"Show other games",
@@ -309,8 +309,8 @@
     "as_of":"as of",
     "exchange_time":"Exchange Time",
     "open":"open",
-    "high":"high",
-    "low":"low",
+    "high":"高",
+    "low":"低",
     "volume":"volume"
   },
   "todo":{
@@ -376,7 +376,7 @@
     },
     "authorize":"You'll need to authorize iChrome first",
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
-    "authorize_btn":"Authorize",
+    "authorize_btn":"授權",
     "no_tweets":"There don't seem to be any tweets here...",
     "home":"主頁",
     "mentions":"Mentions",

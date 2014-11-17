@@ -135,13 +135,13 @@
       "search":"Comportamiento de búsqueda",
       "search_label":"Resultados de la búsqueda abrir en una pestaña nueva",
       "backup":"Copia de seguridad \/ Restaurar",
-      "backup_desc":"<b>De copia de seguridad:<\/b> Haga clic en el botón Backup y copia el texto que aparece en el campo de abajo. < br \/><b>para restaurar:<\/b> pegar el texto guardado o copiado antes y haga clic en el botón restaurar.",
+      "backup_desc":"<b>De copia de seguridad:<\/b> Haga clic en el botón Backup y copia el texto que aparece en el campo de abajo. <br \/><b>para restaurar:<\/b> pegar el texto guardado o copiado antes y haga clic en el botón restaurar.",
       "backup_backup":"Copia de seguridad",
       "backup_restore":"Restaurar",
       "restore_error":"Se ha producido un error al tratar de analizar los datos proporcionados, por favor, asegúrate de que escribiste el texto exacto que copia de seguridad.",
       "restore_confirm":"¿Está completamente seguro de querer hacer esto?\nEste movimiento sobreescribirá toda la data local y la data sincronizada, no hay respaldo y no hay manera de deshacerlo. Usted perderá TODA su configuración actual en todas las computadoras que estén conectadas a esta cuenta Google.",
       "css":"CSS personalizado",
-      "css_desc":"Puede utilizar este campo para personalizar casi cualquier elemento visual de iChrome usando CSS (para una definición, por favor vea el <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\"> MDN<\/a>). < br \/ &gt; < br \/> puesto que esto se sincronizarán, sólo puede ingresar un máximo de 1000 caracteres, incluyendo espacios en blanco.",
+      "css_desc":"Puede utilizar este campo para personalizar casi cualquier elemento visual de iChrome usando CSS (para una definición, por favor vea el <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\"> MDN<\/a>). <br \/><br \/> puesto que esto se sincronizarán, sólo puede ingresar un máximo de 1000 caracteres, incluyendo espacios en blanco.",
       "reset":"Resetear iChrome",
       "reset_confirm":"¿Estás seguro de que desea restablecer iChrome? Esto borrará todos los datos locales y sincronizados, no hay ninguna copia de seguridad y no hay forma de deshacer esto.  Perderá la configuración actual de todo en todos los equipos firmada en esta cuenta de Google."
     }
@@ -181,7 +181,7 @@
           "hide":"Ocultar"
         },
         "account":"ID de Cuenta",
-        "account_help":"Si usted firmó en múltiples cuentas, este es el \"authuser =\" valor.\n< br \/>< br \/>\nPor ejemplo, si está firmado en dos cuentas, jsmith1@gmail.com y jsmith2@gmail.com, el valor \"authuser\" para jsmith2@gmail.com interesaría 1 puesto que es la segunda cuenta (contando desde cero), que está firmado.",
+        "account_help":"Si usted firmó en múltiples cuentas, este es el \"authuser =\" valor.\n<br \/><br \/>\nPor ejemplo, si está firmado en dos cuentas, jsmith1@gmail.com y jsmith2@gmail.com, el valor \"authuser\" para jsmith2@gmail.com interesaría 1 puesto que es la segunda cuenta (contando desde cero), que está firmado.",
         "account_placeholder":"Su \"authuser =\" valor",
         "on":"ACTIVADO",
         "off":"DESACTIVADO"
@@ -223,7 +223,7 @@
       "name_placeholder":"Introduzca nombre de Tema",
       "image":"URL de la imagen",
       "image_placeholder":"Introduzca una URL de la imagen de fondo",
-      "image_help":"Cargado de imágenes <b>no puede ser sincronizada<\/b> entre ordenadores. < br \/ > < br \/> Si esto es importante para usted, por favor, sube tu imagen a un servicio como <a href=\"http:\/\/imgur.com\/\" target=\"_blank\"> imgur<\/a>. Luego copie y pegue la dirección URL terminando con una extensión (por ejemplo, .jpg) y péguelo en el campo de la izquierda.",
+      "image_help":"Cargado de imágenes <b>no puede ser sincronizada<\/b> entre ordenadores. <br \/> <br \/> Si esto es importante para usted, por favor, sube tu imagen a un servicio como <a href=\"http:\/\/imgur.com\/\" target=\"_blank\"> imgur<\/a>. Luego copie y pegue la dirección URL terminando con una extensión (por ejemplo, .jpg) y péguelo en el campo de la izquierda.",
       "color":"Color de Suplencia",
       "color_placeholder":"Introduzca el nombre de cualquier color",
       "position":"Posición",

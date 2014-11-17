@@ -213,7 +213,7 @@
     "feed_fetching":"Attendez s'il vous plait, la source est en cours d'acheminement",
     "feed_error":"Une erreur est survenue lors de l'acheminement, veuillez réessayer dans quelques minutes.",
     "caching":"Patientez s'il vous plait, le thème est en cours de sauvegarde...",
-    "cache_status":"%s de %s image sauvegardé",
+    "cache_status":"%s de %s images mises en cache",
     "cache_error":"Une erreur est survenue lors de la sauvegarde du thème, veuillez réessayer dans quelques minutes",
     "edit":{
       "title":"Editer un thème",
@@ -223,8 +223,8 @@
       "name_placeholder":"Entrer le nom du thème",
       "image":"URL de l'image",
       "image_placeholder":"Entrer l'URL d'une image qui sera utilisé comme fond d'écran",
-      "image_help":"Votre image n'a pas pu êtres envoyée de votre ordinateur.\n\nSi vous tenez à avoir cette image, vous pouvez l'envoyé depuis le site <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>.\nPuis copiez l'url que ce site vous fournira, mais faite attention que l'url ce finisse par une extension d'image de type (i.e. .jpg), puis collez la dans le champ de gauche.",
-      "color":"Fallback Color",
+      "image_help":"Votre image n'a pas pu êtres envoyée de votre ordinateur.\n<br \/><br \/>\nSi vous tenez à avoir cette image, vous pouvez l'envoyé depuis le site <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>.\nPuis copiez l'url que ce site vous fournira, mais faite attention que l'url ce finisse par une extension d'image de type (i.e. .jpg), puis collez la dans le champ de gauche.",
+      "color":"Couleur d'arrière-plan",
       "color_placeholder":"Entrez une couleur",
       "position":"Position",
       "position_options":{
@@ -236,12 +236,12 @@
         "bottom_center":"Centrer en Bas",
         "bottom_right":"En bas à droite"
       },
-      "scaling":"Scaling",
+      "scaling":"Mise à l'échelle",
       "scaling_options":{
         "auto":"Auto",
         "width":"Pleine largeur",
         "height":"Pleine hauteur",
-        "none":"No Scaling (preview may be inaccurate)"
+        "none":"Pas de mise à l'échelle (L'aperçu peut être inexact)"
       },
       "repeat":"Mosaïque ",
       "repeat_options":{

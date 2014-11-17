@@ -2,39 +2,39 @@
   "lang_code":"fr-widgets",
   "analytics":{
     "name":"Analyses",
-    "desc":"Displays various metrics from a Google Analytics profile.",
-    "sessions":"sessions",
+    "desc":"Affiche plusieurs statistiques depuis un compte Google Analytics.",
+    "sessions":"Cacher contexte : Requête de contexte\nAnalyse -> sessions",
     "pageviews":"Pageviews",
     "pagesvisit":"Pages\/visit",
     "bouncerate":"Bounce Rate",
     "completions":"Completions",
-    "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
+    "noprofile":"On dirait que vous n'avez pas encore choisi de profil !\n<br \/><br \/>\nEssayez d'en choisir un depuis l'icône de clé a molette en haut à droite.",
     "settings":{
       "profile":"Profil"
     }
   },
   "apps":{
     "name":"Applications",
-    "desc":"Displays your currently installed Google Chrome applications.",
+    "desc":"Affiche les applications Chrome actuellement installées.",
     "settings":{
-      "format":"Widget Format",
+      "format":"Format du widget",
       "format_options":{
-        "tiles":"Tiles",
+        "tiles":"Tuiles",
         "list":"Listes"
       },
-      "display":"Voir",
+      "display":"Montrer",
       "display_options":{
-        "all":"All apps",
-        "enabled":"Only enabled apps"
+        "all":"Toutes les applications",
+        "enabled":"Seulement les applications sont habilitées"
       },
       "sort":"Trier",
       "sort_options":{
-        "id":"ID",
+        "id":"Identité",
         "alphabetically":"Par ordre alphabétique",
-        "offline":"Offline Enabled",
-        "available":"Availability"
+        "offline":"Sur Hors Ligne",
+        "available":"Disponibilité"
       },
-      "open":"Open apps in"
+      "open":"Ouvert des applications dans"
     },
     "store_app":"Magasin"
   },
@@ -149,7 +149,7 @@
     "saved":"Sauvgarder pour plus tard",
     "uncategorized":"Uncategorized",
     "author":"par",
-    "go_to_feedly":"Go To Feedly"
+    "go_to_feedly":"Aller à Feedly"
   },
   "gmail":{
     "name":"Gmail",

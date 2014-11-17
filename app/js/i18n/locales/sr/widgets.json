@@ -56,9 +56,9 @@
       "title_placeholder":"Google",
       "url":"Bookmark URL",
       "url_placeholder":"http:\/\/www.google.com\/",
-      "save":"Save"
+      "save":"Сачувај"
     },
-    "new_caption":"New",
+    "new_caption":"Ново",
     "new_bookmark":"Bookmark",
     "new_folder":"Folder",
     "drop_link":"Drop link here"
@@ -246,7 +246,7 @@
       "sort_options":{
         "hot":"Hot",
         "top":"Top",
-        "new":"New",
+        "new":"Ново",
         "gilded":"Gilded",
         "rising":"Rising",
         "controversial":"Controversial"

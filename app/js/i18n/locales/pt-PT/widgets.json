@@ -2,15 +2,15 @@
   "lang_code":"pt-PT-widgets",
   "analytics":{
     "name":"Analytics",
-    "desc":"Displays various metrics from a Google Analytics profile.",
+    "desc":"Exibe várias métricas de um perfil do Google Analytics.",
     "sessions":"sessões",
     "pageviews":"Vistas das paginas",
     "pagesvisit":"Páginas\/visita",
     "bouncerate":"Bounce Rate",
     "completions":"Conclusões",
-    "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
+    "noprofile":"Ele não se parece com você selecionou um perfil ainda! <br \/> <br \/> \nTente selecionar um através do ícone de chave inglesa no canto superior direito.\n",
     "settings":{
-      "profile":"Profile"
+      "profile":"Perfil"
     }
   },
   "apps":{
@@ -32,31 +32,31 @@
         "id":"ID",
         "alphabetically":"Em ordem alfabética",
         "offline":"Offline habilitado",
-        "available":"Availability"
+        "available":"Disponibilidade"
       },
-      "open":"Open apps in"
+      "open":"Aplicações abertas em"
     },
     "store_app":"Loja"
   },
   "bookmarks":{
-    "name":"Bookmarks",
-    "desc":"Displays selected and customized bookmarks, and other links.",
+    "name":"Favoritos",
+    "desc":"Displays selecionados e favoritos personalizados, e outros links.",
     "settings":{
-      "title_placeholder":"Enter a widget title",
+      "title_placeholder":"Insira um widget de título",
       "layout":"Estrutura",
       "layout_options":{
-        "single":"Single column",
-        "double":"Double column"
+        "single":"Coluna única",
+        "double":"Coluna dupla"
       },
-      "open":"Open bookmarks in"
+      "open":"Favoritos  abertos em"
     },
     "edit":{
-      "dialog_title":"Edit Bookmark",
-      "title":"Bookmark Title",
+      "dialog_title":"Editar favoritos",
+      "title":"Favoritos Título",
       "title_placeholder":"Google",
       "url":"URL do favorito",
       "url_placeholder":"http:\/\/www.google.com",
-      "save":"Gravar"
+      "save":"Salvar"
     },
     "new_caption":"Novo",
     "new_bookmark":"Favorito",
@@ -68,63 +68,63 @@
     "desc":"Exibe uma calculadora com suporte para operadores básicos.",
     "error":"ERRO!",
     "infinity":"Infinito",
-    "mismatch":"Mismatched parentheses"
+    "mismatch":"Parênteses não correspondentes"
   },
   "calendar":{
     "name":"Calendario",
-    "desc":"Displays upcoming events from one or more of your Google calendars.",
+    "desc":"Exibe os próximos eventos de um ou mais dos seus calendários do Google.",
     "settings":{
       "calendar":"Calendario",
       "events":"Eventos mostrados"
     },
-    "title":"My Calendar",
-    "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
+    "title":"Meu Calendário",
+    "noevents":"Ele não se parece existem eventos em um futuro próximo. <br \/> <br \/> \nTente selecionar um calendário através do ícone de chave inglesa no canto superior direito.\n"
   },
   "clock":{
-    "name":"Time & Date",
-    "desc":"Shows the current date and time. Optionally for a different timezone.",
+    "name":"Data e Hora",
+    "desc":"Mostra a data ea hora atual. Opcionalmente para um fuso horário diferente.",
     "settings":{
-      "timezone":"Time Zone",
+      "timezone":"Fuso horário",
       "timezone_local":"Local",
-      "format":"Clock Format",
+      "format":"Formato de relógio",
       "format_options":{
-        "ampm":"AM\/PM - Digital",
-        "24hour":"24 Hour - Digital",
-        "analog":"12 Hour - Analog",
-        "ampmseconds":"AM\/PM - Digital, No Seconds",
-        "24hourseconds":"24 Hour - Digital, No Seconds"
+        "ampm":"AM \/ PM - Digital",
+        "24hour":"24 horas - Digital",
+        "analog":"12 horas - Analógico",
+        "ampmseconds":"AM \/ PM - Digital, não há Segundos",
+        "24hourseconds":"24 horas - Digital, não há Segundos"
       }
     },
-    "title":"Clock"
+    "title":"Relógio"
   },
   "currency":{
-    "name":"Currency",
+    "name":"Moeda",
     "desc":"Let's you convert between any two of 169 currencies.",
-    "to_label":"to"
+    "to_label":"a"
   },
   "drive":{
     "name":"Drive",
-    "desc":"Displays recently changed files from your Google Drive.",
+    "desc":"Displays mudou recentemente arquivos de seu Google Drive.",
     "settings":{
-      "files_shown":"Number of Files Shown"
+      "files_shown":"Número de arquivos mostrados"
     },
-    "modified_by":"by",
-    "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
-    "authorize_btn":"Authorize"
+    "modified_by":"por",
+    "authorize":"Você precisa dar iChrome permissão para visualizar arquivos de seu Google Drive antes de qualquer coisa vai aparecer aqui.",
+    "authorize_btn":"Autorizar"
   },
   "facebook":{
     "name":"Facebook",
-    "desc":"Embeds Facebook in a widget"
+    "desc":"Incorpora Facebook em um Widget"
   },
   "feedly":{
     "name":"Feedly",
-    "desc":"Displays articles from your Feedly account in a configurable format.",
+    "desc":"Apresenta artigos de sua conta Feedly em um formato configurável.",
     "settings":{
-      "source":"Show articles from",
+      "source":"Mostrar artigos de",
       "source_feeds":"Feeds",
       "show":"Mostrar",
       "show_options":{
-        "all":"All articles",
+        "all":"Todos os artigos",
         "unread":"Somente os artigos não lidos"
       },
       "layout":"Estrutura",
@@ -139,17 +139,17 @@
         "scroll":"Scroll past it or click it",
         "click":"Just click it"
       },
-      "sort":"Sort Order",
+      "sort":"Ordenação",
       "sort_options":{
         "newest":"Recentes primeiro",
         "oldest":"Antigos primeiro"
       }
     },
     "all":"Tudo\n",
-    "saved":"Saved for later",
-    "uncategorized":"Uncategorized",
-    "author":"by",
-    "go_to_feedly":"Go To Feedly"
+    "saved":"Salvo para mais tarde",
+    "uncategorized":"Não categorizado",
+    "author":"por",
+    "go_to_feedly":"Ir para Feedly"
   },
   "gmail":{
     "name":"Gmail",
@@ -173,13 +173,13 @@
     "name":"Noticias",
     "desc":"Displays the current top news by category and edition.",
     "settings":{
-      "articles":"Articles Shown",
-      "edition":"Edition",
-      "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
-      "topic":"Topic",
+      "articles":"Artigos mostrados",
+      "edition":"Edição",
+      "edition_help":"Se sua edição ou tópico não está listado aqui, por favor insira uma URL do feed do Google News no campo Feed Personalizado abaixo (veja lá o texto de ajuda para obter uma explicação).",
+      "topic":"Tópico",
       "topic_options":{
         "top":"Top Stories",
-        "world":"World",
+        "world":"Mundo",
         "nation":"Nação",
         "business":"Negócios",
         "sports":"Desporto",
@@ -199,102 +199,102 @@
   },
   "notes":{
     "name":"Notas",
-    "desc":"Inserts a simple, editable, note.",
+    "desc":"Insere uma simples e editável nota.",
     "settings":{
-      "color":"Note Color",
+      "color":"Cor da Nota",
       "color_options":{
-        "yellow":"Yellow",
-        "orange":"Orange",
-        "red":"Red",
-        "blue":"Blue",
-        "green":"Green",
-        "white":"White"
+        "yellow":"Amarelo",
+        "orange":"Laranja",
+        "red":"Vermelho",
+        "blue":"Azul",
+        "green":"Verde",
+        "white":"Branco"
       },
-      "font":"Font Face",
-      "fontsize":"Font Size"
+      "font":"Fonte",
+      "fontsize":"Tamanho da fonte"
     }
   },
   "now":{
     "name":"Google Now",
-    "desc":"Displays cards from Google Now including flight status and package tracking.",
-    "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
-    "authorize_btn":"Authorize",
-    "caught_up":"All caught up, nothing here.",
+    "desc":"Exibir cartões do Google Now incluindo situações de vôos e rastreio de encomendas.",
+    "authorize":"Você precisará dar ao iChrome permissão para ver seus cartões do Google Now antes que algo apareça aqui.",
+    "authorize_btn":"Autorizar",
+    "caught_up":"Todos apanhados, nada aqui.",
     "no_title":"No Title"
   },
   "plus":{
     "name":"Google+",
-    "desc":"Embeds Google Plus in a widget"
+    "desc":"Incorpora Google Plus em um Widget"
   },
   "recentlyclosed":{
-    "name":"Recently Closed",
-    "desc":"Shows your recently closed tabs",
+    "name":"Recentemente Fechado",
+    "desc":"Mostra suas abas recentemente fechadas",
     "settings":{
-      "tabs":"Tabs Shown",
-      "open":"Open tabs in"
+      "tabs":"Tabs Mostrado",
+      "open":"Abas abertas em"
     },
-    "notabs":"Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed."
+    "notabs":"Abas que foram fechadas antes desta Widget foi instalado não pode ser mostrado. A partir de agora todos os novos separadores que fechar será exibida."
   },
   "reddit":{
     "name":"Reddit",
-    "desc":"Displays the top items on Reddit for any given subreddit.",
+    "desc":"Apresenta os principais itens da Reddit para qualquer subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
-      "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
-      "sort":"Sort Order",
+      "subreddit_help":"Digite qualquer subreddit pela parte passado <b> \/ r \/ <\/ b> quando no Reddit. <br \/> <br \/> \nPor exemplo, a tecnologia está em: <a href = \"http:\/\/www.reddit.com \/ r \/ tecnologia \"> http:\/\/www.reddit.com\/r\/technology <\/a> , portanto, você deve digitar <b> tecnologia <\/ b>\n",
+      "subreddit_placeholder":"Digite um subreddit para mostrar links de. (Ou seja, a tecnologia)",
+      "sort":"Ordem de classificação",
       "sort_options":{
-        "hot":"Hot",
-        "top":"Top",
+        "hot":"Quente",
+        "top":"Topo",
         "new":"Novo",
-        "gilded":"Gilded",
-        "rising":"Rising",
-        "controversial":"Controversial"
+        "gilded":"Dourado",
+        "rising":"Ascendente",
+        "controversial":"Controverso"
       },
-      "links":"Links Shown",
-      "click":"When I click a link show me",
+      "links":"Links mostrados",
+      "click":"Quando eu clicar em um link me mostrar",
       "click_options":{
-        "link":"The link",
-        "comments":"The comments"
+        "link":"O link",
+        "comments":"Os comentários"
       }
     },
     "more":"Mais"
   },
   "rss":{
     "name":"RSS",
-    "desc":"Displays items from a RSS or Atom feed with optional images.",
+    "desc":"Exibe os itens de um feed RSS ou Atom com imagens opcionais.",
     "settings":{
-      "link":"Title Link",
-      "link_placeholder":"Enter a link for the widget title",
-      "url":"Feed URL",
-      "url_placeholder":"The URL of the RSS feed to be displayed",
-      "articles":"Articles Shown",
-      "view":"View",
+      "link":"Título link",
+      "link_placeholder":"Introduz aqui uma hiperligação para o Widget título",
+      "url":"URL do feed",
+      "url_placeholder":"A URL do feed RSS a ser exibido",
+      "articles":"Artigos Mostrado",
+      "view":"Vista",
       "view_options":{
-        "images":"Image friendly",
-        "default":"Default"
+        "images":"Imagem amigável",
+        "default":"Padrão"
       },
-      "images":"Images",
-      "descriptions":"Descriptions"
+      "images":"Imagens",
+      "descriptions":"Descrições"
     },
-    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
+    "feed_error":"Ocorreu um erro ao tentar buscar o feed em: % s . \nPor favor, verifique o URL e \/ ou modificar os widgets configurações."
   },
   "sports":{
     "name":"Desporto",
-    "desc":"Displays scores and game information for selected leagues and\/or teams.",
+    "desc":"Exibe informações sobre pontuação e jogo para ligas e \/ ou equipes selecionadas.",
     "settings":{
-      "league":"League",
-      "games":"Games Shown",
-      "team":"Team",
-      "teams":"Team",
-      "unavailable":"When team games are unavailable",
+      "league":"Liga",
+      "games":"Jogos Mostrado",
+      "team":"Equipe",
+      "teams":"Equipe",
+      "unavailable":"Quando os jogos da equipe não estão disponíveis",
       "unavailable_options":{
-        "other":"Show other games",
+        "other":"Mostrar outros jogos",
         "none":"Show \"No Games\""
       }
     },
-    "error":"Something seems to have gone wrong",
-    "unknown_error":"Unknown Error",
+    "error":"Algo parece ter dado errado",
+    "unknown_error":"Erro desconhecido",
     "watch_on":"Watch on: %s",
     "no_games":"No Games Scheduled"
   },
@@ -376,7 +376,7 @@
     },
     "authorize":"You'll need to authorize iChrome first",
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
-    "authorize_btn":"Authorize",
+    "authorize_btn":"Autorizar",
     "no_tweets":"There don't seem to be any tweets here...",
     "home":"Casa",
     "mentions":"Menções",
@@ -425,19 +425,19 @@
   },
   "youtube":{
     "name":"YouTube",
-    "desc":"Displays either popular videos or videos from a specified user.",
+    "desc":"Exibe tanto vídeos populares ou vídeos de um usuário especificado.",
     "settings":{
       "format":"Formato",
       "format_options":{
-        "large":"One large",
-        "large_2":"One large, two small",
-        "large_4":"One large, four small",
-        "four":"Four small",
-        "six":"Six small"
+        "large":"Uma grande",
+        "large_2":"Um grande, duas pequenas",
+        "large_4":"Um grande, quatro pequenas",
+        "four":"Quatro pequena",
+        "six":"Seis pequeno"
       },
       "from":"Mostrar vídeos de",
-      "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
-      "from_placeholder":"Leave blank to show Top Videos",
+      "from_help":"Este deve ser um <b> exatamente <\/ b> nome de usuário, como mostra a URL da página quando você está vendo seu perfil. <br \/> <br \/> \nEsse valor nunca inclui espaços.\n",
+      "from_placeholder":"Deixe em branco para mostrar Melhores Vídeos",
       "open":"Resultados da pesquisa em"
     },
     "search":"Pesquisa YouTube",

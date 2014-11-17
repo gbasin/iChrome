@@ -8,7 +8,7 @@
   "features":[
     "Десетине цело екранских , прелепих позадина и тема укључујући Bing и Webshots фотографију дана",
     "Комплетну синхронизацију између рачунара укључујући и ТoDo листе , белешке и прилагодиве теме",
-    "Multiple layout options including 1-5 fixed or variable width columns (or skip them and go with a grid!)",
+    "Вишеструке могућности распореда укључују 1-5 фиксираних или подесивих ширина колумни (или их прескочи и пређи на мрежу!)",
     "Праве информације у право време са интегрисаним Google Now сервисом",
     "Комплетна гласовна претрага и \"OK Google\" детекција гласовне команде",
     "Глобални, тренутни временски услови и прогноза са Временским додатком",
@@ -19,9 +19,9 @@
     "Види твоје најпосећеније сајтове и скоро затворене прозоре у једноставном додатку",
     "Крстари између подесивих прозора, сваки са својом темом и додацима, користећи тастатуру",
     "Провери најбољи садржај на YouTube или Reddit са пуном подршком за додатке",
-    "Work completely offline anytime, everything (even your theme) is ready whenever you are!"
+    "Ради увек и у потпуности ван мреже , све (чак и теме) је спремно кад и ти!"
   ],
-  "line_3":"iChrome is an open source project, check it out on Github: https:\/\/github.com\/AMKohn\/iChrome",
-  "line_4":"Feedback and suggestions are welcome anytime at: http:\/\/ichrome.uservoice.com",
-  "line_5":"Sick of homepage extensions that lock you in and don't let you customize things?  Getting blasted with ads?  Still looking for \"the\" iGoogle replacement? Looking for a beautiful start page that keeps getting better? iChrome is for you!"
+  "line_3":"iChrome је пројекат отвореног типа (open source) , приступи му на Github: https:\/\/github.com\/AMKohn\/iChrome",
+  "line_4":"Ваше идеје , feedback и сугестије су увек добродошле на :http:\/\/ichrome.uservoice.com",
+  "line_5":"Да ли су ти досадиле екстензије на основној страници , које те спутавају да прилагођаваш ствари? Да ли те затрпавају огласи? И даље трагаш за \"оном правом\" iGoogle заменом? Да ли желиш прелепу старт страну која наставља да се побољшава ? Онда је iChrome за тебе!"
 }

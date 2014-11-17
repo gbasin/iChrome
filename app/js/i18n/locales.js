@@ -7,6 +7,7 @@ define(
 		"lodash",
 
 		"json!i18n/locales/cs/main.json", "json!i18n/locales/cs/widgets.json",
+		"json!i18n/locales/da/main.json", "json!i18n/locales/da/widgets.json",
 		"json!i18n/locales/de/main.json", "json!i18n/locales/de/widgets.json",
 		"json!i18n/locales/en/main.json", "json!i18n/locales/en/widgets.json",
 		"json!i18n/locales/es/main.json", "json!i18n/locales/es/widgets.json",

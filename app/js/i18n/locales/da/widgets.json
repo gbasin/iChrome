@@ -1,49 +1,49 @@
 {
-  "lang_code":"cs-widgets",
+  "lang_code":"da-widgets",
   "analytics":{
-    "name":"Analytics",
-    "desc":"Zobrazit různé metriky z profilu Google Analytics.",
-    "sessions":"zasedání",
-    "pageviews":"Zobrazení stránek",
-    "pagesvisit":"Stránky \/ návštěva",
+    "name":"Analytiks",
+    "desc":"Displays various metrics from a Google Analytics profile.",
+    "sessions":"sessions",
+    "pageviews":"Sidevisninger",
+    "pagesvisit":"Sider\/visning",
     "bouncerate":"Bounce Rate",
-    "completions":"Dokončené",
-    "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
+    "completions":"Completions",
+    "noprofile":"Det ser ikke ud til at du har valgt en profil endnu!\n<br \/><br \/>\nPrøv at vælge en gennem skruenøglen ikonet i toppen til højre.",
     "settings":{
       "profile":"Profil"
     }
   },
   "apps":{
-    "name":"Aplikace",
-    "desc":"Zobrazit Google Chrome aplikace aktuálně nainstalované.",
+    "name":"Apps",
+    "desc":"Displays your currently installed Google Chrome applications.",
     "settings":{
-      "format":"Widget formát ",
+      "format":"Widget Format",
       "format_options":{
-        "tiles":"Dlaždice",
-        "list":"seznam"
+        "tiles":"Tiles",
+        "list":"Liste"
       },
-      "display":"Show",
+      "display":"Vis",
       "display_options":{
-        "all":"Všechny aplikace",
-        "enabled":"Only enabled apps"
+        "all":"Alle apps",
+        "enabled":"Kun aktiveret apps"
       },
-      "sort":"Sort",
+      "sort":"Sortér",
       "sort_options":{
         "id":"ID",
         "alphabetically":"Alphabetically",
         "offline":"Offline Enabled",
         "available":"Availability"
       },
-      "open":"Open apps in"
+      "open":"Åben apps i"
     },
-    "store_app":"Store"
+    "store_app":"Butik"
   },
   "bookmarks":{
-    "name":"Bookmarks",
-    "desc":"Displays selected and customized bookmarks, and other links.",
+    "name":"Bogmærker",
+    "desc":"Viser valgte og tilpassede bogmærker, og andre links.",
     "settings":{
       "title_placeholder":"Enter a widget title",
-      "layout":"Layout",
+      "layout":"Opsætning",
       "layout_options":{
         "single":"Single column",
         "double":"Double column"
@@ -71,10 +71,10 @@
     "mismatch":"Mismatched parentheses"
   },
   "calendar":{
-    "name":"Kalendář",
+    "name":"Calendar",
     "desc":"Displays upcoming events from one or more of your Google calendars.",
     "settings":{
-      "calendar":"Kalendář",
+      "calendar":"Calendar",
       "events":"Events Shown"
     },
     "title":"My Calendar",
@@ -170,7 +170,7 @@
     "desc":"Embeds Google Keep in a widget"
   },
   "news":{
-    "name":"Zprávy",
+    "name":"News",
     "desc":"Displays the current top news by category and edition.",
     "settings":{
       "articles":"Articles Shown",
@@ -195,7 +195,7 @@
       "footer":"Footer URL",
       "footer_placeholder":"Enter the URL that the \"More\" link should point to"
     },
-    "more":"Více"
+    "more":"More"
   },
   "notes":{
     "name":"Notes",
@@ -258,7 +258,7 @@
         "comments":"The comments"
       }
     },
-    "more":"Více"
+    "more":"More"
   },
   "rss":{
     "name":"RSS",
@@ -378,11 +378,11 @@
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
     "authorize_btn":"Authorize",
     "no_tweets":"There don't seem to be any tweets here...",
-    "home":"Domovská stránka",
+    "home":"Home",
     "mentions":"Mentions",
     "retweets":"Retweets of me",
     "lists":"Lists",
-    "more":"Více",
+    "more":"More",
     "reply":"Reply",
     "retweet":"Retweet",
     "favorite":"Favorite"

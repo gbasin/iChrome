@@ -775,7 +775,8 @@ input[type="radio"]:checked {
 }
 
 .menu:lang(uk),
-.menu:lang(nl) {
+.menu:lang(nl),
+.menu:lang(es) {
 	width: 230px;
 	right: -235px;
 }
@@ -788,6 +789,7 @@ input[type="radio"]:checked {
 .menu.visible,
 .menu.visible:lang(uk),
 .menu.visible:lang(nl),
+.menu.visible:lang(es),
 .menu.visible:lang(ru) {
 	right: 0;
 }
@@ -1997,7 +1999,9 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 .modal.getting-started:lang(de),
 .modal.getting-started:lang(fr),
-.modal.getting-started:lang(ru) {
+.modal.getting-started:lang(es),
+.modal.getting-started:lang(ru),
+.modal.getting-started:lang(nl) {
 	height: 620px;
 }
 
@@ -2776,7 +2780,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 
 /*---------------------------------------------
-	/ Themes / Create / Russian Fixes
+	/ Themes / Create / Locale Fixes
 */
 .themes.create form:lang(ru) {
 	width: 40%;
@@ -2787,13 +2791,19 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	width: calc(60% - 50px);
 }
 
-.themes.create #image:lang(ru) {
+.themes.create #image:lang(ru),
+.themes.create #image:lang(ja) {
 	width: 54%;
 }
 
-.themes.create .upload:lang(ru) {
+.themes.create .upload:lang(ru),
+.themes.create .upload:lang(ja) {
 	width: 42%;
 	padding-left: 5px;
+}
+
+.themes.create .upload input:lang(ja) {
+	width: calc(100% - 45px);
 }
 
 

@@ -135,13 +135,13 @@
       "search":"搜索行為",
       "search_label":"在新分頁中顯示搜尋結果",
       "backup":"備份\/還原",
-      "backup_desc":"<b>備份：<\/b>按一下備份按鈕，複製出現在下方欄中的內容。 < br \/ > \n<b>還原：<\/b>貼上您之前保存或複製的內容，並按一下還原按鈕。",
+      "backup_desc":"<b>備份：<\/b>按一下備份按鈕，複製出現在下方欄中的內容。 <br \/> \n<b>還原：<\/b>貼上您之前保存或複製的內容，並按一下還原按鈕。",
       "backup_backup":"備份",
       "backup_restore":" 還原",
       "restore_error":"數據格式處理錯誤，請重新輸入",
       "restore_confirm":"是次還原將把所有設定完全刪除，除了本機的設定外，所有以此Google帳戶登入的設定都會被完全刪除，請再三確認。",
       "css":"自訂 CSS",
-      "css_desc":"You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.",
+      "css_desc":"您可以通過這裡使用CSS自定義iChrome幾乎所有可見的部分（如果您需要詳細的解釋，請查看<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>）。<br \/><br \/>因為這些內容將會被同步，因此，你只能輸入包括空格在內的最多1000個字符。",
       "reset":"重置 iChrome",
       "reset_confirm":"您確定要重設您的iChrome嗎？\n重設後所有這部裝置上以及網路同步的資料皆將被清除，且此步驟將無法復原。另外，所有使用當前登入之Google帳號的電腦中的設定也將被移除。"
     }
@@ -165,7 +165,7 @@
       "save":"儲存",
       "size":"小工具(Widget)的大小"
     },
-    "delete_confirm":"Are you really sure you want to delete this widget?\r\nThis action is irreversible; all data from this widget will be permanently lost.",
+    "delete_confirm":"是否確實要刪除此小部件嗎？此操作是不可逆的 ；這個小部件的所有資料都將永久丟失。",
     "shared":{
       "settings":{
         "title":"小工具標題",
@@ -175,13 +175,13 @@
           "current":"當前分頁",
           "blank":"新的分頁"
         },
-        "footer_link":"Footer Link",
+        "footer_link":"頁腳連結",
         "footer_link_options":{
           "show":"顯示",
           "hide":"隐藏"
         },
         "account":"帳號",
-        "account_help":"如果你已經登錄到多個帳戶，這裡是用來設定\"authuser =\"值。\n< br \/ >< br \/ >\n舉例，如果你已經登錄到兩個帳戶、 jsmith1@gmail.com 和  jsmith2@gmail.com，jsmith2@gmail.com 的\"authuser\"值會是 1 ，因為它是您已經登錄的第二個帳戶（從零開始計算）。",
+        "account_help":"如果你已經登錄到多個帳戶，這裡是用來設定\"authuser =\"值。\n<br \/><br \/>\n舉例，如果你已經登錄到兩個帳戶、 jsmith1@gmail.com 和  jsmith2@gmail.com，jsmith2@gmail.com 的\"authuser\"值會是 1 ，因為它是您已經登錄的第二個帳戶（從零開始計算）。",
         "account_placeholder":"你的\"authuser =\"值",
         "on":"開啟",
         "off":"關閉"
@@ -206,15 +206,15 @@
     "cached":"這主題已緩存，也可以離線使用",
     "random":"此主題會在每次載入頁時隨機顯示圖像",
     "random_daily":"此主題每一天隨機顯示圖像",
-    "sunrise_sunset":"This theme displays an image based on the time of day",
-    "feed":"This theme displays an image selected daily from an external feed",
+    "sunrise_sunset":"這個主題基於一天的時間顯示圖像",
+    "feed":"該主題每天從外部源獲取新圖像",
     "delete_confirm":"你真的確定你想要刪除這個主題嗎？\n此操作是不可逆的；整個主題將永久消失。",
     "delete_error":"試圖刪除該主題時出錯。請稍後再試。",
     "feed_fetching":"我們正在讀取摘要，請耐心等候。",
-    "feed_error":"Something went wrong while trying to fetch the feed.  Please try again later.",
+    "feed_error":"在嘗試刷新源時出錯，請稍後重試。",
     "caching":"請稍候，正在緩存主題中...",
     "cache_status":"緩存了 %s \/ %s 張圖像",
-    "cache_error":"An error occurred while trying to cache the theme.  Please try again later",
+    "cache_error":"快取主題內容時出錯。請稍後再試。",
     "edit":{
       "title":"編輯主題",
       "create_title":"創建主題",
@@ -223,7 +223,7 @@
       "name_placeholder":"請輸入主題名稱",
       "image":"圖像 URL",
       "image_placeholder":"輸入背景圖像的 URL",
-      "image_help":"上載了的圖像在電腦之間 <b>無法同步<\/b> < br \/ > < br \/ > 如果這對你很重要，請將您的圖像上載到 <a href=\"HTTP:\/\/imgur.com\/\"target=\"_blank\"> imgur<\/a> 類似的服務。然後複製和貼上含有副檔名 (即.jpg) 的 URL 到左側欄內。",
+      "image_help":"上載了的圖像在電腦之間 <b>無法同步<\/b> <br \/> <br \/> 如果這對你很重要，請將您的圖像上載到 <a href=\"HTTP:\/\/imgur.com\/\"target=\"_blank\"> imgur<\/a> 類似的服務。然後複製和貼上含有副檔名 (即.jpg) 的 URL 到左側欄內。",
       "color":"背景顏色",
       "color_placeholder":"輸入顏色名稱",
       "position":"位置",
@@ -256,25 +256,25 @@
       "preview":"預覽",
       "save":"保存並關閉",
       "cache_error":"不能由連結取得圖片，請確保輸入的圖片連結正確",
-      "upload_error":"An error occurred while trying to upload the file you provided, please make sure that it's a reasonable size and an image."
+      "upload_error":"嘗試上傳檔案時出錯。請確認該檔案為合理大小的圖片檔。"
     }
   },
   "intro":{
     "slide1":{
       "title":"歡迎來到 iChrome ！",
-      "line1":"If you want iChrome as your start page, you'll need to set the URL of this page in your settings (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">instructions<\/a>).  Otherwise, if you want it as a new tab or both home and new tab pages, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
-      "newtab_line1":"If you want iChrome to only show when you start Chrome and not every time you open a new tab please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">the main iChrome extension<\/a> instead of this one.",
-      "line2":"This introduction is only 3 slides long and will give a quick overview of how to do basic things in iChrome.  When you're ready hit the next arrow at the right."
+      "line1":"如果你想要 iChrome 作為你的首頁，你需要在設定裡設定本頁的網址 (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">說明<\/a>)。相反的，如果你想要它成為一個新的頁籤，或是同時成為首頁及頁籤，請改為安裝 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
+      "newtab_line1":"如果你想要 iChrome 僅在你開啟 Chrome 的時候出現，而不是每次開啟新頁籤都會出現，請安裝 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> main iChrome extension <\/a> ，而非此應用。",
+      "line2":"接下來的3張幻燈片將帶您迅速認識iChrome的基本操作。當您準備好時請按下右邊的「下一頁」箭頭。"
     },
     "slide2":{
       "title":"小工具",
-      "line1":"Widgets are the core of iChrome.  You can configure and move them using the wrench and handle icons shown when hovering at the top right.  To remove one, start dragging it and drop it onto the red bar that appears.",
-      "line2":"New widgets can be added by clicking the Widgets item under the menu at the top right of the page (shown in the next slide)."
+      "line1":"小工具是 iChrome 的核心。您可以利用位於小工具右上方的手柄和扳手圖示來移動或設定它們。若要刪除小工具，開始拖曳它並放入出現的紅色橫條中。",
+      "line2":"欲新增小工具，可點選位於畫面右上角的選單鍵裡的「小工具(Widget)」"
     },
     "slide3":{
       "title":"自訂",
-      "line1":"You can change almost anything else you'd want to via the menu at the top right.  There you can configure the way your page looks, how iChrome works and get new widgets.",
-      "line2":"Other things you can do include creating individual tabs, each with themes and widgets of their own, custom themes, or configuring the tiniest thing like what links are shown in the toolbar."
+      "line1":"您可以透過位於右上角的選單(Menu)更改多數的設定：您可以配置您的頁面的外觀、iChrome 的運行以及獲得新的小工具。",
+      "line2":"您還可以做的事情包括創建擁有自己的主題和小工具的個別選單(Tab)、自訂主題、或是調整如\"顯示在工具列中的連結\"等細部環境。"
     }
   }
 }
