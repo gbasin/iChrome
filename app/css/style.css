@@ -74,10 +74,13 @@
 /*---------------------------------------------
 	/ Globals
 */
+﻿html, body {
+	overflow-x: hidden;
+}
+
 body {
 	display: flex;
 	min-height: 100vh;
-	overflow-x: hidden;
 	flex-direction: column;
 	background-size: cover;
 	background-color: #EEE;
