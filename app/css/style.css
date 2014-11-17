@@ -1216,6 +1216,14 @@ body.dragging .tab-container .tab > .remove {
 	display: flex;
 	flex-flow: row wrap;
 	margin: 45px 5% 40px;
+
+	/**
+	 * This ensures the container always has some droppable space, otherwise it would collapse and
+	 * might end up completely underneath the remove bar making it impossible to add widgets to the tab.
+	 *
+	 * The 150px accounts for margins and the toolbar, if it's shown
+	 */
+	min-height: calc(100vh - 150px);
 }
 
 .widgets-container.fixed {
@@ -1252,6 +1260,7 @@ body > .widgets-container {
 	width: 0;
 	height: 0;
 	margin: 0;
+	min-height: 0;
 	display: block;
 	z-index: 9999999;
 	position: absolute;
