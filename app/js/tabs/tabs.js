@@ -318,12 +318,18 @@ define(
 
 
 				/**
-				 * Calls serialize on each of the tabs
+				 * Calls serialize on each of the tabs and re-renders them
 				 *
 				 * @api    private
 				 */
 				serialize: function() {
 					_.invoke(this.model.tabs.views, "serialize");
+
+					// Since the render only inserts columns and widgets it's not expensive
+					// This is called in requestAnimationFrame so there isn't a visible freeze
+					window.requestAnimationFrame(function() {
+						_.invoke(this.model.tabs.views, "render");
+					}.bind(this));
 
 					this.model.storage.tabs = this.model.tabs.toJSON();
 

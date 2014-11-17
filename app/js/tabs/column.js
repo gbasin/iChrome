@@ -1,10 +1,10 @@
 /**
  * The column collection, this creates the widgets
  */
-define(["lodash", "backbone", "backbone.viewcollection", "widgets/view"], function(_, Backbone, ViewCollection, Widget) {
+define(["backbone.viewcollection", "widgets/view", "widgets/model"], function(ViewCollection, Widget, Model) {
 	var Column = ViewCollection.extend({
 		view: Widget,
-		model: Backbone.Model
+		model: Model
 	});
 
 	return Column;
