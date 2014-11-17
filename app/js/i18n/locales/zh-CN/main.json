@@ -65,12 +65,12 @@
       "search":"搜索链接",
       "search_desc":"该链接将会用于提交搜索请求， <b>%s<\/b> 代表您输入的搜索词",
       "profile":"个人图片",
-      "profile_desc":"这是在工具栏的右侧显示的图片，默认图片链接从您的Google资料中自动获取",
+      "profile_desc":"您的照片，其将在工具栏的右侧显示，默认图片链接从您的Google资料中自动获取",
       "name":"姓名",
-      "name_desc":"这是在工具栏 Google+您 处显示的名字，默认姓名从您的Google资料中自动获取",
+      "name_desc":"您的名字，在工具栏 Google+您 处显示，默认姓名将从您的Google资料中自动获取",
       "voice":"语音搜索",
       "voice_search":"启用语音搜索",
-      "voice_ok":"启用\"OK Google“指令检测",
+      "voice_ok":"启用\"OK Google“声音检测",
       "links":"工具栏链接",
       "links_desc":"在这里您可以设置哪些链接在工具栏右侧显示：",
       "links_items":{
@@ -114,7 +114,7 @@
       "logo":"Logo地址",
       "logo_desc":"在工具栏左边显示的图像。默认值为<b>\/images\/logo.svg<\/b>",
       "toolbar":"工具栏样式",
-      "toolbar_desc":"此参数控制工具栏上的样式。其要么正常显示要么会挡住。",
+      "toolbar_desc":"此参数控制工具栏的样式，其可以正常或以按钮形式显示。",
       "toolbar_normal":"正常",
       "toolbar_button":"按钮",
       "animation":"滑动动画",
@@ -132,16 +132,16 @@
     "advanced":{
       "background":"小部件背景",
       "background_desc":"单击调色板以选择颜色",
-      "search":"搜索行为",
+      "search":"搜索相关",
       "search_label":"在新选项卡中打开搜索结果页",
       "backup":"备份\/还原",
-      "backup_desc":"<b>如何备份：<\/b>单击备份按钮，将下面出现的文本复制。 <br\/> <b>如何还原：<\/b> 将备份复制出的文本粘贴，然后单击还原按钮。",
+      "backup_desc":"<b>如何备份：<\/b>单击备份按钮，复制下面出现的文本。 <br\/> <b>如何还原：<\/b> 将备份的文本粘贴，然后单击还原按钮。",
       "backup_backup":"备份",
       "backup_restore":"还原",
       "restore_error":"在解析您提供的数据时发生错误，请确认您输入的内容和备份时完全一致。",
       "restore_confirm":"您真的确定要这样做吗？\n这将覆盖所有的本地和同步的数据，没有备份也没有办法撤销这个操作。您将丢失您在所有电脑登陆的Google账号同步的所有当前设置！",
       "css":"自定义 CSS",
-      "css_desc":"您可以使用此功能自定义CSS （有关指引请见 <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\"target=\"_blank\"> MDN<\/a>） 以自由改变 iChrome 几乎所有可视的部分。<br\/><br\/> 因为将会同步的缘故，您最多只能输入包括空格在内的1000个字符。",
+      "css_desc":"您可以使用此功能自定义CSS （有关指引请见 <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\"target=\"_blank\"> MDN<\/a>） 以自由改变 iChrome 几乎所有可视的部分。<br\/><br\/> 因为此选项将会同步而同步有空间限制的缘故，您最多只能输入包括空格在内的1000个字符。",
       "reset":"重置 iChrome",
       "reset_confirm":"是否真的要重置 iChrome？这将清除所有的本地和同步的数据，没有备份也无法撤消该操作。您将丢失您所有同步此谷歌帐户计算机上的当前配置。"
     }
@@ -181,7 +181,7 @@
           "hide":"隐藏"
         },
         "account":"帐户 ID",
-        "account_help":"如果你已经登录到多个帐户，这就是\"authuser =\"值。\n<br \/><br \/>举个栗子，如果你登录两个帐户、 jsmith1@gmail.com、 jsmith2@gmail.com、 jsmith2@gmail.com 的\"authuser\"值将为 1 ，因为它是第二个帐户 (authuser值从0开始)。",
+        "account_help":"如果您已经登录到多个帐户，这就是\"authuser =\"值。\n<br \/><br \/>例如，如果您已经登录了两个帐户、 jsmith1@gmail.com、 jsmith2@gmail.com、 jsmith2@gmail.com 的\"authuser\"值将为 1 ，因为它是第二个帐户 (authuser值从0开始计数)。",
         "account_placeholder":"您的\"authuser=\"值",
         "on":"开启",
         "off":"关闭"
@@ -208,7 +208,7 @@
     "random_daily":"该主题每天重新随机挑选新图片",
     "sunrise_sunset":"该主题基于一天的时间显示图片",
     "feed":"该主题从外部源每天获取新图像",
-    "delete_confirm":"你真的要删除这个主题吗？\n此操作是不可逆的 ；整个主题将永久丢失。",
+    "delete_confirm":"您真的要删除这个主题吗？\n此操作是不可逆的 ；整个主题将永久丢失。",
     "delete_error":"试图删除该主题时出错。请稍后再试。",
     "feed_fetching":"请稍候，源正在获取......",
     "feed_error":"在尝试刷新源时出错，请稍后重试。",
@@ -223,7 +223,7 @@
       "name_placeholder":"输入主题名称",
       "image":"图像地址",
       "image_placeholder":"背景图像链接",
-      "image_help":"上传的图片<b>无法在电脑之间同步<\/b><br \/><br \/>如果这对你很重要，请将您的图像上传到类似 <a href=\"http:\/\/imgur.com\/\"target=\"_blank\"> imgur<\/a> 的图床服务。然后复制和粘贴带扩展名的链接 (例如.jpg) 并将其粘贴到左侧的文本框中。",
+      "image_help":"上传的图片<b>无法在电脑之间同步<\/b><br \/><br \/>如果这对您很重要，请将您的图像上传到类似 <a href=\"http:\/\/imgur.com\/\"target=\"_blank\"> imgur<\/a> 的图床服务。然后复制和粘贴带扩展名的链接 (例如.jpg) 并将其粘贴到左侧的文本框中。",
       "color":"回退颜色",
       "color_placeholder":"输入颜色名称",
       "position":"位置",
@@ -262,7 +262,7 @@
   "intro":{
     "slide1":{
       "title":"欢迎您使用 iChrome ！",
-      "line1":"如果你想 iChrome 作为起始页，您需要在您的设置 （<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\"target=\"_blank\"> 说明<\/a>） 中设置为此页面地址。如果您希望用其作为您的新选项卡页，请安装 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\"> iChrome 选项卡<\/a>。",
+      "line1":"如果您想让 iChrome 作为您浏览器的起始页，您需要在您的设置（<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\"target=\"_blank\"> 说明<\/a>） 中设置主页为此页面地址。如果您希望将iChrome作为您的新选项卡，请安装 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\"> iChrome 新选项卡<\/a>。",
       "newtab_line1":"如果您希望iChrome只在您打开Chrome的时候显示，请安装 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> iChrome 起始页<\/a>，而非本扩展。",
       "line2":"介绍仅有短短3个步骤，其将会让您快速知悉如何使用iChrome的基础功能。当您准备好后请点击右侧的下一步箭头。"
     },
@@ -274,7 +274,7 @@
     "slide3":{
       "title":"自定义",
       "line1":"您可以更改几乎任何你想更改的其他内容，在设置页您可以定制您想要的页面外观，了解 iChrome 是如何运作的并获取新的小部件。",
-      "line2":"其他你可以尝试的有意思功能包括创建单独的选项卡，不同的主题所带的小部件，自定义主题，亦可进行更为详细的配置，例如定制显示在工具栏中的链接。"
+      "line2":"其他您可尝试的有意思功能包括创建单独的选项卡，不同的主题所带的小部件，自定义主题，亦可进行更为详细的配置，例如定制显示在工具栏中的链接。"
     }
   }
 }

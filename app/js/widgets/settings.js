@@ -13,15 +13,11 @@ define(
 		};
 
 
-		var modal = new (Modal.extend({
-				width: 400,
-				height: 535,
-				classes: "widget-settings"
-			}));
-
-		// The modal will be shared between all widget settings, therefore it should be
-		// appended to the body now instead of each time a new settings instance is created
-		modal.mo.appendTo(document.body);
+		var modal = Modal.extend({
+			width: 400,
+			height: 535,
+			classes: "widget-settings"
+		});
 		
 
 		/**
@@ -238,7 +234,9 @@ define(
 
 
 		var view = Backbone.View.extend({
-			el: modal.content,
+			el: function() {
+				return this.modal.content;
+			},
 
 			events: {
 				"click .btn.save": "save",
@@ -392,13 +390,21 @@ define(
 
 				this.widget.utils.save();
 
-				modal.hide();
+				this.modal.hide();
 			},
 
 			show: function() {
 				this.render();
 
-				modal.show();
+				this.modal.show();
+			},
+
+			constructor: function() {
+				this.modal = new modal();
+
+				this.modal.mo.appendTo(document.body);
+
+				return Backbone.View.apply(this, arguments);
 			},
 
 			initialize: function(opts) {

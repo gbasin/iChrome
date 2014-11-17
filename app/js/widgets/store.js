@@ -2,8 +2,8 @@
  * The widget store
  */
 define(
-	["lodash", "jquery", "backbone", "storage/storage", "i18n/i18n", "widgets/widgets", "widgets/view", "widgets/utils", "core/analytics", "modals/modals", "core/render"],
-	function(_, $, Backbone, Storage, Translate, Widgets, Widget, Utils, Track, Modal, render) {
+	["lodash", "jquery", "backbone", "storage/storage", "i18n/i18n", "widgets/widgets", "widgets/view", "widgets/model", "widgets/utils", "core/analytics", "modals/modals", "core/render"],
+	function(_, $, Backbone, Storage, Translate, Widgets, Widget, WidgetModel, Utils, Track, Modal, render) {
 		var sizes = {
 			tiny: Translate("widgets.sizes.tiny"),
 			small: Translate("widgets.sizes.small"),
@@ -59,7 +59,7 @@ define(
 							id = parseInt(elm.attr("data-id")),
 							widget = Widgets[id],
 							view = new Widget({
-								model: new Backbone.Model({
+								model: new WidgetModel({
 									id: id,
 									size: widget.config && widget.config.size || { size: widget.sizes[0] }
 								}),
@@ -79,7 +79,7 @@ define(
 							drop: false
 						}).find("section.handle").on("sortabledragstart", function(e, item, container, _super) {
 							var newView = new Widget({
-								model: new Backbone.Model({
+								model: new WidgetModel({
 									id: id,
 									size: item.attr("data-size")
 								})

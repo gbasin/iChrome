@@ -463,9 +463,9 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 						categories.feeds = feeds;
 
 						cb(categories);
-					}
+					}.bind(this)
 				});
-			});
+			}.bind(this));
 		},
 		getArticles: function(d) {
 			if (!this.oAuth) this.setOAuth();

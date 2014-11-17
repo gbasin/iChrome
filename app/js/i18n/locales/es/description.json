@@ -1,0 +1,27 @@
+{
+  "lang_code":"es",
+  "line_1":"iChrome es una página de inicio \/ extensión que pretende crear tu página de inicio como debe ser: rápida, personalizable, bella y productiva.",
+  "link":"Si estás buscando una extensión para tu página de nueva pestaña y no tu página de inicio, échale un vistazo a iChrome New Tab: https:\/\/chrome.google.com\/webstore\/detail\/ichrome-new-tab\/iccjgbbjckehppnpajnmplcccjcgbdep",
+  "newtab_line_1":"iChrome es una extensión de la página de nueva pestaña que pretende crear tu página de nueva pestaña como debería ser: Rápida, personalizable, bella y productiva.",
+  "newtab_link":"Si buscas una extensión para tu página de inicio y no tu página nueva pestaña, revisa la extensión iChrome principal: https:\/\/chrome.google.com\/webstore\/detail\/ichrome-your-homepage-for\/oghkljobbhapacbahlneolfclkniiami",
+  "line_2":"Construye tu página de inicio con más de 30 widgets y decenas de temas impresionantes.  cientos de iChrome de características incluyen estos y muchos más:",
+  "features":[
+    "Docenas de hermosos fondos y temas a pantalla completa incluyendo las fotos del día de Bing y Webshots",
+    "Sincronización completa entre equipos incluyendo tus listas de tareas, notas y temas personalizados",
+    "Múltiples opciones de diseño incluyendo entre 1 y 5 columnas de ancho fijo o variable (¡o pasa de ellas y utiliza una cuadrícula!)",
+    "La información correcta en el momento correcto con integración de Google Now",
+    "Búsqueda por voz con funcionalidad completa y detección de \"OK Google\" para buscar",
+    "Condiciones y pronóstico meteorológico en mundialmente y en tiempo real con el widget Weather",
+    "Instalación sencilla de widgets y reordenación con interfaz de arrastrar y soltar",
+    "Sigue una o muchas acciones, en tiempo real, en el widget limpio pero compacto Stocks",
+    "Recibe noticias de una edición y tema específico, o utiliza tu propio canal RSS",
+    "Accede fácilmente a todas tus aplicaciones de Chrome con el widget Apps",
+    "Échale un vistazo a tus páginas más visitadas y pestañas cerradas recientemente en widgets sencillos",
+    "Navega entre las pestañas personalizables, cada uno con su propio tema y widgets, usando el teclado",
+    "Échale un vistazo al contenido popular en YouTube o Reddit con soporte completo de widgets",
+    "¡Trabaja completamente desconectado cuando quieras, todo (incluso tu tema) está listo cuando tú lo estés!"
+  ],
+  "line_3":"iChrome es un proyecto de código abierto, échale un vistazo en Github: https:\/\/github.com\/AMKohn\/iChrome",
+  "line_4":"Comentarios y sugerencias son bienvenidos en cualquier momento en: http:\/\/ichrome.uservoice.com",
+  "line_5":"¿Cansado de extensiones para paginas de inicio que te encierran y no te dejan personalizar nada? ¿Harto de los anuncios? ¿Aún buscando \"el\" sustituto de iGoogle? ¿Buscando una hermosa pagina de inicio que se hace cada vez mejor? ¡iChrome es para ti!"
+}

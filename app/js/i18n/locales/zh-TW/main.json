@@ -1,0 +1,280 @@
+{
+  "lang_code":"zh-TW",
+  "language":"正體中文（臺灣）",
+  "newtabName":"iChrome 新選項卡",
+  "extName":"iChrome-您的Chrome主頁",
+  "extDescription":"Chrome平臺最好的主頁，擁有令人震驚的主題，如閃電般迅捷的小部件，並可任意定制。",
+  "newtabDescription":"Chrome平臺最好的主頁，現支持新選項卡。擁有令人震驚的主題，如閃電般迅捷的小部件，並可任意定制。",
+  "defaults":{
+    "tab":"主頁",
+    "me":"我"
+  },
+  "remove_widget":"刪除",
+  "column_to_grid_warning":"您選擇將選項卡的布局方式從基於列的布局改為基於網格的布局。如果您確認繼續將會失去您所有專欄，然後一切掛件都將被移動到左上角。您確定要這樣做嗎？",
+  "grid_to_column_warning":"您選擇將一個選項卡從基於網格佈局更改為基於列的佈局。如果您繼續，您將丟失所有您的小部件定位 ；一切都將被移動到新的選項卡的第一列。您確定你想要這樣做嗎？",
+  "storage_warning":"您已經使用90%以上的可用總同步空間 。\n如果達到極限，iChrome 將停止同步您的資料並可能停止工作。您可以通過刪除無需使用的自訂主題、 筆記和待辦事項清單以縮小您使用空間的量。",
+  "toolbar":{
+    "placeholder":"輸入並搜尋",
+    "placeholder_ok":"輸入並搜尋或說“OK, Google\"...",
+    "apps":{
+      "search":"搜尋",
+      "youtube":"YouTube",
+      "maps":"地圖",
+      "play":"Play",
+      "news":"新聞",
+      "gmail":"Gmail",
+      "drive":"Drive",
+      "calendar":"日曆",
+      "more":"更多"
+    }
+  },
+  "menu":{
+    "settings":"設定",
+    "widgets":"小工具",
+    "background":"顯示背景",
+    "editing":"編輯",
+    "editing_enabled":"開啟",
+    "editing_disabled":"關閉",
+    "plus":"Google+",
+    "tabs":"分頁",
+    "footer":{
+      "support":"支援",
+      "feedback":"意見回報",
+      "review":"評論",
+      "twitter":"Twitter",
+      "webstore":"線上應用程式商店",
+      "donate":"贊助",
+      "by":"由 Avi Kohn 製作"
+    }
+  },
+  "voice":{
+    "listening":"正在聆聽...",
+    "searching":"檢索：%s",
+    "missed":"抱歉，沒有聽到。<a>再試一次<\/a>"
+  },
+  "settings":{
+    "save":"保存並關閉",
+    "new_tab":"建立新的分頁",
+    "labels":{
+      "general":"一般設定",
+      "visual":"外觀",
+      "specific":"特定的分頁",
+      "advanced":"進階設置"
+    },
+    "general":{
+      "search":"搜尋網址",
+      "search_desc":"引擎將以以下網址列作出檢索，替換<b>%s<\/b>以自製檢索要求",
+      "profile":"資料圖片",
+      "profile_desc":"該圖像會顯示在工具列的右側。它會從 Google個人檔案自動取得您的圖像。",
+      "name":"名稱",
+      "name_desc":"該欄在工具列用來顯示 Google+ 超連結。它亦會自動從你的 Google 個人檔案中取得。",
+      "voice":"語音搜尋",
+      "voice_search":"啟用語音搜索",
+      "voice_ok":"啟用\"OK Google\" 熱門搜尋字詞的自動偵測",
+      "links":"工具列超連結",
+      "links_desc":"你能在此選擇顯示在工具列右方的超連結。",
+      "links_items":{
+        "plus":"Google+",
+        "gmail":"Gmail",
+        "apps":"應用程式功能表",
+        "link1":"自訂超連結 1",
+        "link2":"自訂超連結 2",
+        "link3":"自訂超連結 3",
+        "text_holder":"超連結標題",
+        "link_holder":"超連結網址，例如 http:\/\/www.google.com\/"
+      },
+      "guide":"安裝導覽",
+      "guide_desc":"重新顯示在首次安裝 iChrome 後的指南"
+    },
+    "visual":{
+      "layout":"配罝",
+      "layout_options":{
+        "1_fixed":"只顯示一欄，固定寬度",
+        "1_fluid":"只顯示一欄，可變動寬度",
+        "2_fixed":"顯示兩欄，固定寬度",
+        "2_fluid":"顯示兩欄，可變動寬度",
+        "3_fixed":"顯示三欄，固定寬度",
+        "3_fluid":"顯示三欄，可變動寬度",
+        "4_fixed":"顯示四欄，固定寬度",
+        "4_fluid":"顯示四欄，固定寬度",
+        "5_fixed":"顯示四欄，可變動寬度",
+        "5_fluid":"顯示五欄，可變動寬度",
+        "grid":"基於網格的、自訂寬度"
+      },
+      "theme":"預設主題",
+      "theme_placeholder":"主題 # %s",
+      "theme_select":"選擇一個主題",
+      "align":"對齊方式",
+      "align_desc":"這會變更小工具的對齊方式",
+      "align_labels":{
+        "left":"靠左對齊",
+        "center":"置中",
+        "right":"靠右對齊"
+      },
+      "logo":"標誌 URL",
+      "logo_desc":"這是在工具列左方上顯示的圖像。預設值是 <b>\/images\/logo.svg<\/b>",
+      "toolbar":"工具列樣式",
+      "toolbar_desc":"用於控制工具列樣式。可以普通顯示上方或按下顯示工具列的按鈕。",
+      "toolbar_normal":"普通",
+      "toolbar_button":"按鈕",
+      "animation":"劃動動畫",
+      "animation_desc":"此設置允許您啟用或禁用當頁載入時，運行該劃動動畫",
+      "animation_label":"啟用動畫"
+    },
+    "specific":{
+      "name":"分頁名稱",
+      "default_name":"新分頁",
+      "delete":"刪除分頁",
+      "delete_disallowed":"您不能刪除唯一的分頁。",
+      "delete_confirm":"是否確實要刪除此分頁？\n這動作是不可逆的，在分頁中所有小工具的資料都會永久消失。",
+      "default":"設定為預設值"
+    },
+    "advanced":{
+      "background":"小工具背景",
+      "background_desc":"按一下色板以選擇顏色",
+      "search":"搜索行為",
+      "search_label":"在新分頁中顯示搜尋結果",
+      "backup":"備份\/還原",
+      "backup_desc":"<b>備份：<\/b>按一下備份按鈕，複製出現在下方欄中的內容。 <br \/> \n<b>還原：<\/b>貼上您之前保存或複製的內容，並按一下還原按鈕。",
+      "backup_backup":"備份",
+      "backup_restore":" 還原",
+      "restore_error":"數據格式處理錯誤，請重新輸入",
+      "restore_confirm":"是次還原將把所有設定完全刪除，除了本機的設定外，所有以此Google帳戶登入的設定都會被完全刪除，請再三確認。",
+      "css":"自訂 CSS",
+      "css_desc":"您可以通過這裡使用CSS自定義iChrome幾乎所有可見的部分（如果您需要詳細的解釋，請查看<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>）。<br \/><br \/>因為這些內容將會被同步，因此，你只能輸入包括空格在內的最多1000個字符。",
+      "reset":"重置 iChrome",
+      "reset_confirm":"您確定要重設您的iChrome嗎？\n重設後所有這部裝置上以及網路同步的資料皆將被清除，且此步驟將無法復原。另外，所有使用當前登入之Google帳號的電腦中的設定也將被移除。"
+    }
+  },
+  "store":{
+    "installation":"安裝",
+    "description":"描述",
+    "preview":"預覽",
+    "instructions":"拖曳任何大小至您的主頁上"
+  },
+  "widgets":{
+    "sizes":{
+      "tiny":"更小",
+      "small":"小",
+      "medium":"中",
+      "large":"大",
+      "variable":"變數"
+    },
+    "settings":{
+      "title":"小工具設定",
+      "save":"儲存",
+      "size":"小工具(Widget)的大小"
+    },
+    "delete_confirm":"是否確實要刪除此小部件嗎？此操作是不可逆的 ；這個小部件的所有資料都將永久丟失。",
+    "shared":{
+      "settings":{
+        "title":"小工具標題",
+        "title_placeholder":"輸入視窗小工具標題或保留空白用以隱藏",
+        "height":"小工具高度",
+        "open_options":{
+          "current":"當前分頁",
+          "blank":"新的分頁"
+        },
+        "footer_link":"頁腳連結",
+        "footer_link_options":{
+          "show":"顯示",
+          "hide":"隐藏"
+        },
+        "account":"帳號",
+        "account_help":"如果你已經登錄到多個帳戶，這裡是用來設定\"authuser =\"值。\n<br \/><br \/>\n舉例，如果你已經登錄到兩個帳戶、 jsmith1@gmail.com 和  jsmith2@gmail.com，jsmith2@gmail.com 的\"authuser\"值會是 1 ，因為它是您已經登錄的第二個帳戶（從零開始計算）。",
+        "account_placeholder":"你的\"authuser =\"值",
+        "on":"開啟",
+        "off":"關閉"
+      }
+    }
+  },
+  "themes":{
+    "title":"主題",
+    "all":"全部",
+    "custom":"自訂",
+    "create":"建立新的主題",
+    "url_or_upload":"or",
+    "upload_image":"上傳圖像",
+    "edit_btn":"編輯",
+    "delete":"刪除",
+    "use":"使用",
+    "preview":"預覽",
+    "author":"By ",
+    "images":"%s 張圖像",
+    "resolution":"解析度",
+    "categories":"分類",
+    "cached":"這主題已緩存，也可以離線使用",
+    "random":"此主題會在每次載入頁時隨機顯示圖像",
+    "random_daily":"此主題每一天隨機顯示圖像",
+    "sunrise_sunset":"這個主題基於一天的時間顯示圖像",
+    "feed":"該主題每天從外部源獲取新圖像",
+    "delete_confirm":"你真的確定你想要刪除這個主題嗎？\n此操作是不可逆的；整個主題將永久消失。",
+    "delete_error":"試圖刪除該主題時出錯。請稍後再試。",
+    "feed_fetching":"我們正在讀取摘要，請耐心等候。",
+    "feed_error":"在嘗試刷新源時出錯，請稍後重試。",
+    "caching":"請稍候，正在緩存主題中...",
+    "cache_status":"緩存了 %s \/ %s 張圖像",
+    "cache_error":"快取主題內容時出錯。請稍後再試。",
+    "edit":{
+      "title":"編輯主題",
+      "create_title":"創建主題",
+      "name":"主題名稱",
+      "default_name":"新增主題",
+      "name_placeholder":"請輸入主題名稱",
+      "image":"圖像 URL",
+      "image_placeholder":"輸入背景圖像的 URL",
+      "image_help":"上載了的圖像在電腦之間 <b>無法同步<\/b> <br \/> <br \/> 如果這對你很重要，請將您的圖像上載到 <a href=\"HTTP:\/\/imgur.com\/\"target=\"_blank\"> imgur<\/a> 類似的服務。然後複製和貼上含有副檔名 (即.jpg) 的 URL 到左側欄內。",
+      "color":"背景顏色",
+      "color_placeholder":"輸入顏色名稱",
+      "position":"位置",
+      "position_options":{
+        "center":"置中",
+        "top_left":"左上方",
+        "top_center":"中央置頂",
+        "top_right":"右上方",
+        "bottom_left":"左下方",
+        "bottom_center":"中央底端",
+        "bottom_right":"右下方"
+      },
+      "scaling":"縮放",
+      "scaling_options":{
+        "auto":"自動",
+        "width":"跟隨寬度",
+        "height":"跟隨高度",
+        "none":"無縮放比例 （預覽可能不准確）"
+      },
+      "repeat":"圖像重複",
+      "repeat_options":{
+        "none":"不重複",
+        "horizontal":"水平重複",
+        "vertical":"垂直重複",
+        "both":"重複"
+      },
+      "attach":"附加圖像到",
+      "attach_tab":"分頁",
+      "attach_window":"視窗",
+      "preview":"預覽",
+      "save":"保存並關閉",
+      "cache_error":"不能由連結取得圖片，請確保輸入的圖片連結正確",
+      "upload_error":"嘗試上傳檔案時出錯。請確認該檔案為合理大小的圖片檔。"
+    }
+  },
+  "intro":{
+    "slide1":{
+      "title":"歡迎來到 iChrome ！",
+      "line1":"如果你想要 iChrome 作為你的首頁，你需要在設定裡設定本頁的網址 (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">說明<\/a>)。相反的，如果你想要它成為一個新的頁籤，或是同時成為首頁及頁籤，請改為安裝 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
+      "newtab_line1":"如果你想要 iChrome 僅在你開啟 Chrome 的時候出現，而不是每次開啟新頁籤都會出現，請安裝 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> main iChrome extension <\/a> ，而非此應用。",
+      "line2":"接下來的3張幻燈片將帶您迅速認識iChrome的基本操作。當您準備好時請按下右邊的「下一頁」箭頭。"
+    },
+    "slide2":{
+      "title":"小工具",
+      "line1":"小工具是 iChrome 的核心。您可以利用位於小工具右上方的手柄和扳手圖示來移動或設定它們。若要刪除小工具，開始拖曳它並放入出現的紅色橫條中。",
+      "line2":"欲新增小工具，可點選位於畫面右上角的選單鍵裡的「小工具(Widget)」"
+    },
+    "slide3":{
+      "title":"自訂",
+      "line1":"您可以透過位於右上角的選單(Menu)更改多數的設定：您可以配置您的頁面的外觀、iChrome 的運行以及獲得新的小工具。",
+      "line2":"您還可以做的事情包括創建擁有自己的主題和小工具的個別選單(Tab)、自訂主題、或是調整如\"顯示在工具列中的連結\"等細部環境。"
+    }
+  }
+}

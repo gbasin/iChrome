@@ -169,191 +169,19 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 
 		
 		/**
-		 * Initializes sortable
+		 * Initializes sortable.
+		 *
+		 * By the time this is called the sortable group has already been initialized, this simply adds
+		 * the views columns
 		 *
 		 * @api    private
 		 */
 		sortable: function() {
-			var timeout, grid, gridMax,
-				tcOTop = 0,
-				tcHeight = 0,
-				onGrid = false,
-				body = $(document.body);
-
 			this.$el.children(".remove, .widgets-container.medley").add(this.$el.children(".widgets-container").children(".column")).sortable({
 				group: "columns",
 				handle: ".handle",
 				itemSelector: "section",
-				dynamicDimensions: true,
-				placeholder: "<section class=\"placeholder\"/>",
-				onDragStart: function(item, container, _super) {
-					var css = {
-						height: item[0].offsetHeight,
-						width: item[0].offsetWidth,
-						minWidth: item[0].offsetWidth,
-						maxWidth: item[0].offsetWidth
-					};
-
-					var ret = item.triggerHandler("sortabledragstart", arguments);
-
-					if (ret) {
-						item = ret;
-					}
-					else {
-						item.before('<section id="originalLoc"></section>').css(css).addClass("dragged").appendTo("body > .widgets-container");
-					}
-
-					var tc = body.addClass("dragging").children(".tab-container")[0];
-
-					tcOTop = tc.offsetTop;
-					tcHeight = tc.offsetHeight;
-				},
-				onDrag: function(item, position, _super) {
-					if (item.context) {
-						position.top -= item.context.offsetTop;
-						position.left -= item.context.offsetLeft;
-					}
-
-					if (onGrid) {
-						position.left = 10 * Math.round(position.left / 10); // Rounded to nearest 10
-						position.top = 10 * Math.round((position.top - tcOTop) / 10) + tcOTop;
-
-						var max = position.top + item[0].offsetHeight - tcOTop;
-
-						if (gridMax > max) {
-							max = gridMax;
-						}
-
-						grid[0].style.height = (max + 50) + "px";
-					}
-
-					item[0].style.top = position.top + "px";
-					item[0].style.left = position.left + "px";
-				},
-				onBeforeDrop: function(item, placeholder, group, _super) {
-					if (placeholder.parent() && placeholder.parent().is(".remove")) {
-						if (item.installing || confirm(Translate("widgets.delete_confirm"))) {
-							item.remove();
-
-							item.removed = true;
-
-							if (!item.installing) {
-								Track.event("Widgets", "Uninstall", item.attr("data-name"));
-							}
-						}
-						else {
-							item.insertBefore("#originalLoc");
-
-							item.reset = true;
-
-							var view = item.data("view");
-
-							if (view && view.widget && view.widget.loc) {
-								view.update.call(view);
-							}
-
-							item.isMoved = true;
-						}
-
-						return false;
-					}
-
-					return true;
-				},
-				onDrop: function(item, container, _super) {
-					if (item.isMoved) {
-						var css = {
-							top: item.css("top"),
-							left: item.css("left"),
-							width: item.css("width"),
-							height: item.css("height")
-						};
-					}
-					else {
-						var css = {
-							top: item.position().top - tcOTop,
-							left: item.position().left,
-							width: Math.round(item.outerWidth() / 10) * 10 - 1,
-							height: Math.round(item.outerHeight() / 10) * 10 - 1
-						};
-					}
-
-					_super(item);
-
-
-					var view = {};
-
-					if (!item.removed && !item.reset && (view = item.data("view"))) {
-						if (item.parent().parent().hasClass("medley")) {
-							item.css(css);
-
-							view.widget.medley = true;
-
-							view.render();
-						}
-						else {
-							view.widget.medley = false;
-
-							view.render();
-						}
-
-						if (item.installing) {
-							Track.event("Widgets", "Install", view.widget.nicename);
-
-							try {
-								if (view.widget.permissions) {
-									chrome.permissions.request({
-										permissions: view.widget.permissions
-									}, function(granted) {
-										view.update();
-									});
-								}
-							}
-							catch (e) {
-								Status.error("An error occurred while trying to render the " + view.widget.nicename + " widget!");
-							}
-						}
-					}
-
-					// Trigger a repaint so the tabs height is correct, jQuery oddly seems to be the only thing that gets a flicker-free one.
-					body.hide(0, function() {
-						body.show();
-					});
-
-					$("#originalLoc").remove();
-
-					this.serialize(true);
-				}.bind(this),
-				afterMove: function(placeholder, container) {
-					if (container.el[0].className.indexOf("widgets-container") == -1) {
-						onGrid = false;
-
-						placeholder[0].style.width = container.group.item[0].offsetWidth + "px";
-						placeholder[0].style.height = container.group.item[0].offsetHeight + "px";
-
-						if (container.group.item.hasClass("tiny")) {
-							placeholder.addClass("tiny");
-						}
-						else {
-							placeholder.removeClass("tiny");
-						}
-					}
-					else {
-						onGrid = true;
-
-						grid = container.el;
-
-						gridMax = tcHeight - 50;
-
-						var h;
-
-						_.each(grid[0].querySelectorAll(".widget"), function(e) {
-							h = e.offsetTop + e.offsetHeight;
-
-							if (h >= gridMax) { gridMax = h; }
-						});
-					}
-				}
+				placeholder: "<section class=\"placeholder\"/>"
 			});
 		},
 

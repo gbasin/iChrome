@@ -3,7 +3,7 @@
   "analytics":{
     "name":"Analytics",
     "desc":"Displays various metrics from a Google Analytics profile.",
-    "sessions":"sessions",
+    "sessions":"sessies",
     "pageviews":"Pageviews",
     "pagesvisit":"Pages\/visit",
     "bouncerate":"Bounce Rate",
@@ -22,21 +22,21 @@
         "tiles":"Tiles",
         "list":"List"
       },
-      "display":"Show",
+      "display":"Tonen",
       "display_options":{
         "all":"All apps",
         "enabled":"Only enabled apps"
       },
-      "sort":"Sort",
+      "sort":"Sorteren",
       "sort_options":{
         "id":"ID",
-        "alphabetically":"Alphabetically",
-        "offline":"Offline Enabled",
-        "available":"Availability"
+        "alphabetically":"Alfabetisch",
+        "offline":"Offline ingeschakeld",
+        "available":"Beschikbaarheid"
       },
       "open":"Open apps in"
     },
-    "store_app":"Store"
+    "store_app":"Winkel"
   },
   "bookmarks":{
     "name":"Bookmarks",
@@ -54,20 +54,20 @@
       "dialog_title":"Edit Bookmark",
       "title":"Bookmark Title",
       "title_placeholder":"Google",
-      "url":"Bookmark URL",
+      "url":"Bladwijzer URL",
       "url_placeholder":"http:\/\/www.google.com\/",
-      "save":"Save"
+      "save":"Opslaan"
     },
-    "new_caption":"New",
-    "new_bookmark":"Bookmark",
-    "new_folder":"Folder",
+    "new_caption":"Nieuw",
+    "new_bookmark":"Bladwijzer",
+    "new_folder":"Map",
     "drop_link":"Drop link here"
   },
   "calc":{
-    "name":"Calculator",
+    "name":"Rekenmachine",
     "desc":"Displays a calculator with support for basic operators.",
     "error":"Error!",
-    "infinity":"Infinity",
+    "infinity":"Oneindigheid",
     "mismatch":"Mismatched parentheses"
   },
   "calendar":{
@@ -122,7 +122,7 @@
     "settings":{
       "source":"Show articles from",
       "source_feeds":"Feeds",
-      "show":"Show",
+      "show":"Tonen",
       "show_options":{
         "all":"All articles",
         "unread":"Only unread articles"
@@ -145,7 +145,7 @@
         "oldest":"Oldest first"
       }
     },
-    "all":"All",
+    "all":"Alles",
     "saved":"Saved for later",
     "uncategorized":"Uncategorized",
     "author":"by",
@@ -246,7 +246,7 @@
       "sort_options":{
         "hot":"Hot",
         "top":"Top",
-        "new":"New",
+        "new":"Nieuw",
         "gilded":"Gilded",
         "rising":"Rising",
         "controversial":"Controversial"

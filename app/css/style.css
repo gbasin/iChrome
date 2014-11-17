@@ -775,7 +775,8 @@ input[type="radio"]:checked {
 }
 
 .menu:lang(uk),
-.menu:lang(nl) {
+.menu:lang(nl),
+.menu:lang(es) {
 	width: 230px;
 	right: -235px;
 }
@@ -788,6 +789,7 @@ input[type="radio"]:checked {
 .menu.visible,
 .menu.visible:lang(uk),
 .menu.visible:lang(nl),
+.menu.visible:lang(es),
 .menu.visible:lang(ru) {
 	right: 0;
 }
@@ -1216,6 +1218,14 @@ body.dragging .tab-container .tab > .remove {
 	display: flex;
 	flex-flow: row wrap;
 	margin: 45px 5% 40px;
+
+	/**
+	 * This ensures the container always has some droppable space, otherwise it would collapse and
+	 * might end up completely underneath the remove bar making it impossible to add widgets to the tab.
+	 *
+	 * The 150px accounts for margins and the toolbar, if it's shown
+	 */
+	min-height: calc(100vh - 150px);
 }
 
 .widgets-container.fixed {
@@ -1252,6 +1262,7 @@ body > .widgets-container {
 	width: 0;
 	height: 0;
 	margin: 0;
+	min-height: 0;
 	display: block;
 	z-index: 9999999;
 	position: absolute;
@@ -1419,7 +1430,8 @@ body.resizing .medley {
 }
 
 body.no-edit .widgets-container .widget .handle,
-body.no-edit .widgets-container .widget .settings {
+body.no-edit .widgets-container .widget .settings,
+body.no-edit .widgets-container .widget.tabbed:before {
 	display: none;
 }
 
@@ -1987,7 +1999,9 @@ body.no-edit .widgets-container .widget .settings {
 
 .modal.getting-started:lang(de),
 .modal.getting-started:lang(fr),
-.modal.getting-started:lang(ru) {
+.modal.getting-started:lang(es),
+.modal.getting-started:lang(ru),
+.modal.getting-started:lang(nl) {
 	height: 620px;
 }
 
@@ -2691,7 +2705,7 @@ body.no-edit .widgets-container .widget .settings {
 
 .themes.create .upload input {
 	float: right;
-	padding: 6px 0;
+	padding: 8px 0;
 	width: calc(100% - 30px);
 	-webkit-appearance: none;
 }
@@ -2766,7 +2780,7 @@ body.no-edit .widgets-container .widget .settings {
 
 
 /*---------------------------------------------
-	/ Themes / Create / Russian Fixes
+	/ Themes / Create / Locale Fixes
 */
 .themes.create form:lang(ru) {
 	width: 40%;
@@ -2777,13 +2791,19 @@ body.no-edit .widgets-container .widget .settings {
 	width: calc(60% - 50px);
 }
 
-.themes.create #image:lang(ru) {
+.themes.create #image:lang(ru),
+.themes.create #image:lang(ja) {
 	width: 54%;
 }
 
-.themes.create .upload:lang(ru) {
+.themes.create .upload:lang(ru),
+.themes.create .upload:lang(ja) {
 	width: 42%;
 	padding-left: 5px;
+}
+
+.themes.create .upload input:lang(ja) {
+	width: calc(100% - 45px);
 }
 
 
