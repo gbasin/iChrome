@@ -1428,7 +1428,8 @@ body.resizing .medley {
 }
 
 body.no-edit .widgets-container .widget .handle,
-body.no-edit .widgets-container .widget .settings {
+body.no-edit .widgets-container .widget .settings,
+body.no-edit .widgets-container .widget.tabbed:before {
 	display: none;
 }
 
