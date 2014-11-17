@@ -3,7 +3,7 @@
   "language":"Français",
   "newtabName":"iChrome New Tab",
   "extName":"iChrome - Votre page d'accueil, pour Chrome",
-  "extDescription":"La MEILLEURE page d'accueil pour Chrome. Des thèmes impressionnant, des dizaines de widgets, extrêmement rapide, personnalisable à l'infini !",
+  "extDescription":"La MEILLEURE page d'accueil pour Chrome. Des thèmes impressionnant, des dizaines de widgets, extrêmement rapide!",
   "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
   "defaults":{
     "tab":"Accueil",
