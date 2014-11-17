@@ -304,7 +304,7 @@
     "settings":{
       "symbols":"Aktiensymbol(e), durch Komma getrennt",
       "symbols_placeholder":"z.B. NASDAQ: GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"Das sind Aktien, die in einem TICKER: EXCHANGE-Format gezeigt werden.\n<br \/><br \/>\nFür Indizes, benutze bitte den Ticker und Austausch wie bei <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\"> Google Finance<\/a> dargestellt. Beispielsweise ist der Dow Jones Index <b>INDEXDJX:.DJI<\/b> und NYSE ist <b>INDEXNYSEGIS:NYA<\/b>."
+      "symbols_help":"Das sind Aktien, die in einem TICKER: EXCHANGE-Format gezeigt werden.\n<br \/><br \/>\nFür Indizes, benutze bitte den Ticker und Austausch wie bei <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\"> Google Finance<\/a> dargestellt. Beispielsweise ist der Dow Jones Index <b>.DJI<\/b> und NYSE ist <b>INDEXNYSEGIS:NYA<\/b>."
     },
     "as_of":"ab",
     "exchange_time":"Exchange-Zeit",

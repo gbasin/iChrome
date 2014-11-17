@@ -304,7 +304,7 @@
     "settings":{
       "symbols":"Знак(и), через запятую",
       "symbols_placeholder":"напр. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"Знаки акций в формате TICKER:EXCHANGE.\n<br \/><br \/>\nДля просмотра доступных тикеров и знаков обмена смотрите <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. Например индекс Dow Jones имеет вид <b>INDEXDJX:.DJI<\/b>, индекс NYSE -  <b>INDEXNYSEGIS:NYA<\/b>."
+      "symbols_help":"Знаки акций в формате TICKER:EXCHANGE.\n<br \/><br \/>\nДля просмотра доступных тикеров и знаков обмена смотрите <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. Например индекс Dow Jones имеет вид <b>.DJI<\/b>, индекс NYSE -  <b>INDEXNYSEGIS:NYA<\/b>."
     },
     "as_of":"На",
     "exchange_time":"Время обмена",
@@ -362,13 +362,13 @@
     "desc":"Перевод текста с помощью Google Переводчика.",
     "placeholder":"Введите текст, который вы хотите перевести и нажмите \"Перевести\".",
     "button":"Перевести",
-    "untranslate":"Перевести обратно",
+    "untranslate":"Вернуть",
     "auto":"Автоматически (%s)",
     "unknown":"Перевод отсутствует",
     "error":"Что-то пошло не так. Не удалось выполнить перевод..."
   },
   "twitter":{
-    "name":"Мы в Twitter",
+    "name":"Twitter",
     "desc":"Отображает твиты из вашей ленты, или выбранного списка.",
     "settings":{
       "source":"Отображать твиты из",
@@ -388,7 +388,7 @@
     "favorite":"В избранное"
   },
   "unread":{
-    "name":"Не прочитано",
+    "name":"Непрочитанные",
     "desc":"Отображает количество непрочитанных писем из вашего почтового ящика Gmail.",
     "settings":{
       "open":"Открывать при нажатии"
@@ -413,7 +413,7 @@
       "location":"Местоположение(я)",
       "location_placeholder":"Введите местоположение и нажмите Enter",
       "temperature":"Единица измерения температуры",
-      "wind":"Единица измерения ветра"
+      "wind":"Единица измерения скорость ветра"
     },
     "unknown":"Неизвестно",
     "wind":"Скорость ветра",

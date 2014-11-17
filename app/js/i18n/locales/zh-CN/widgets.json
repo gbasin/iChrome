@@ -304,7 +304,7 @@
     "settings":{
       "symbols":"股票代号，用逗号（,）分隔",
       "symbols_placeholder":"例如：NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"这些是你需要使用TICKER:EXCHANGE格式的股票。 \n<br \/><br \/> 因为索引的缘故，请使用 <a href=\"https:\/\/www.google.com\/finance\"target=\"_blank\">谷歌财经<\/a> 所示的TICKER\/EXCHANGE值。例如道琼斯指数是 <b>INDEXDJX:DJI<\/b> 和纽约证券交易所是 <b>INDEXNYSEGIS:NYA<\/b>"
+      "symbols_help":"这些是你需要使用TICKER:EXCHANGE格式的股票。 \n<br \/><br \/> 因为索引的缘故，请使用 <a href=\"https:\/\/www.google.com\/finance\"target=\"_blank\">谷歌财经<\/a> 所示的TICKER\/EXCHANGE值。例如道琼斯指数是 <b>.DJI<\/b> 和纽约证券交易所是 <b>INDEXNYSEGIS:NYA<\/b>"
     },
     "as_of":"作为",
     "exchange_time":"交易时间",
