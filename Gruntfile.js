@@ -165,7 +165,7 @@ module.exports = function(grunt) {
 
 		// Clean up excess JS files
 		clean: {
-			all: ["tmp", "build/**/Thumbs.db", "build/templates", "build/widgets", "build/js/*/", "build/js/**/*.js", "!build/js/app.js"],
+			all: ["tmp", "build/**/Thumbs.db", "build/templates", "build/widgets", "build/js/*", "!build/js/lib", "build/js/lib/*", "!build/js/lib/require.js", "!build/js/app.js", "!build/js/background.js"],
 			webstore: ["build"]
 		}
 	});
