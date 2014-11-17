@@ -42,7 +42,7 @@
     "name":"ブックマーク",
     "desc":"Displays selected and customized bookmarks, and other links.",
     "settings":{
-      "title_placeholder":"Enter a widget title",
+      "title_placeholder":"ウィジェットのタイトルを入力します",
       "layout":"レイアウト",
       "layout_options":{
         "single":"1 つの列",
@@ -120,49 +120,49 @@
     "name":"Feedly",
     "desc":"Displays articles from your Feedly account in a configurable format.",
     "settings":{
-      "source":"Show articles from",
-      "source_feeds":"Feeds",
+      "source":"記事の表示",
+      "source_feeds":"フィード",
       "show":"見せる",
       "show_options":{
-        "all":"All articles",
-        "unread":"Only unread articles"
+        "all":"すべての記事",
+        "unread":"未読記事のみ"
       },
       "layout":"レイアウト",
       "layout_options":{
-        "titles":"Titles only",
-        "magazine":"Magazine",
-        "cards":"Cards",
-        "cards_columns":"Cards (two columns)"
+        "titles":"タイトルのみ",
+        "magazine":"マガジン",
+        "cards":"カード",
+        "cards_columns":"カード （2 列）"
       },
       "mark":"Mark an article as read when I",
       "mark_options":{
         "scroll":"Scroll past it or click it",
         "click":"Just click it"
       },
-      "sort":"Sort Order",
+      "sort":"並べ替え順序",
       "sort_options":{
-        "newest":"Newest first",
-        "oldest":"Oldest first"
+        "newest":"新着順",
+        "oldest":"古い順"
       }
     },
     "all":"すべて",
-    "saved":"Saved for later",
-    "uncategorized":"Uncategorized",
+    "saved":"あとで読む",
+    "uncategorized":"未分類",
     "author":"By",
-    "go_to_feedly":"Go To Feedly"
+    "go_to_feedly":"Feedly に行く"
   },
   "gmail":{
     "name":"Gmail",
-    "desc":"Displays your Gmail inbox where you can manage your email."
+    "desc":"Gmail の受信トレイが表示されます。"
   },
   "iframe":{
     "name":"iFrame",
-    "desc":"Displays a webpage of your choice within an iframe.",
+    "desc":"iframe 内の web ページが表示されます。",
     "settings":{
-      "url":"Frame URL",
+      "url":"フレームの URL",
       "url_placeholder":"i.e. http:\/\/www.google.com\/",
-      "height":"Frame Height",
-      "padding":"Padding"
+      "height":"フレームの高さ",
+      "padding":"パディング"
     }
   },
   "keep":{
@@ -173,8 +173,8 @@
     "name":"ニュース",
     "desc":"Displays the current top news by category and edition.",
     "settings":{
-      "articles":"Articles Shown",
-      "edition":"Edition",
+      "articles":"表示される記事",
+      "edition":"版",
       "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
       "topic":"Topic",
       "topic_options":{
@@ -195,7 +195,7 @@
       "footer":"Footer URL",
       "footer_placeholder":"Enter the URL that the \"More\" link should point to"
     },
-    "more":"もっと"
+    "more":"さらに"
   },
   "notes":{
     "name":"Notes",
@@ -220,17 +220,17 @@
     "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
     "authorize_btn":"承認",
     "caught_up":"All caught up, nothing here.",
-    "no_title":"No Title"
+    "no_title":"タイトルなし"
   },
   "plus":{
     "name":"Google+",
-    "desc":"Embeds Google Plus in a widget"
+    "desc":"Google+のウィジェットを埋め込みます"
   },
   "recentlyclosed":{
-    "name":"Recently Closed",
-    "desc":"Shows your recently closed tabs",
+    "name":"最近閉じた",
+    "desc":"最近閉じたタブを示します",
     "settings":{
-      "tabs":"Tabs Shown",
+      "tabs":"表示されるタブ",
       "open":"Open tabs in"
     },
     "notabs":"Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed."
@@ -242,59 +242,59 @@
       "subreddit":"Subreddit",
       "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
       "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
-      "sort":"Sort Order",
+      "sort":"並べ替え順序",
       "sort_options":{
-        "hot":"Hot",
-        "top":"Top",
+        "hot":"ホット",
+        "top":"トップ",
         "new":"新しい",
         "gilded":"Gilded",
         "rising":"Rising",
         "controversial":"Controversial"
       },
-      "links":"Links Shown",
+      "links":"表示されるリンク",
       "click":"When I click a link show me",
       "click_options":{
-        "link":"The link",
-        "comments":"The comments"
+        "link":"リンク",
+        "comments":"コメント"
       }
     },
-    "more":"もっと"
+    "more":"さらに"
   },
   "rss":{
     "name":"RSS",
     "desc":"Displays items from a RSS or Atom feed with optional images.",
     "settings":{
-      "link":"Title Link",
-      "link_placeholder":"Enter a link for the widget title",
-      "url":"Feed URL",
-      "url_placeholder":"The URL of the RSS feed to be displayed",
-      "articles":"Articles Shown",
-      "view":"View",
+      "link":"タイトルのリンク",
+      "link_placeholder":"ウィジェットのタイトルのリンクを入力します。",
+      "url":"フィードの URL",
+      "url_placeholder":"表示される RSS フィードの URL",
+      "articles":"表示される記事",
+      "view":"図",
       "view_options":{
         "images":"Image friendly",
-        "default":"Default"
+        "default":"初期設定"
       },
-      "images":"Images",
-      "descriptions":"Descriptions"
+      "images":"画像",
+      "descriptions":"説明"
     },
     "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
   },
   "sports":{
-    "name":"Sports",
+    "name":"スポーツ",
     "desc":"Displays scores and game information for selected leagues and\/or teams.",
     "settings":{
-      "league":"League",
-      "games":"Games Shown",
-      "team":"Team",
-      "teams":"Team",
+      "league":"リーグ",
+      "games":"ゲーム",
+      "team":"チーム",
+      "teams":"チーム",
       "unavailable":"When team games are unavailable",
       "unavailable_options":{
-        "other":"Show other games",
+        "other":"他のゲームを表示します。",
         "none":"Show \"No Games\""
       }
     },
     "error":"Something seems to have gone wrong",
-    "unknown_error":"Unknown Error",
+    "unknown_error":"不明なエラー",
     "watch_on":"Watch on: %s",
     "no_games":"No Games Scheduled"
   },
@@ -382,7 +382,7 @@
     "mentions":"Mentions",
     "retweets":"Retweets of me",
     "lists":"Lists",
-    "more":"もっと",
+    "more":"さらに",
     "reply":"Reply",
     "retweet":"Retweet",
     "favorite":"Favorite"

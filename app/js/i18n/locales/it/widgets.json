@@ -1,81 +1,81 @@
 {
-  "lang_code":"pt-PT-widgets",
+  "lang_code":"it-widgets",
   "analytics":{
     "name":"Analytics",
     "desc":"Displays various metrics from a Google Analytics profile.",
-    "sessions":"sessões",
-    "pageviews":"Vistas das paginas",
-    "pagesvisit":"Páginas\/visita",
+    "sessions":"sessions",
+    "pageviews":"Pageviews",
+    "pagesvisit":"Pages\/visit",
     "bouncerate":"Bounce Rate",
-    "completions":"Conclusões",
+    "completions":"Completions",
     "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
     "settings":{
       "profile":"Profile"
     }
   },
   "apps":{
-    "name":"Aplicações",
-    "desc":"Exibe seus aplicativos instalados do Google Chrome.",
+    "name":"Apps",
+    "desc":"Displays your currently installed Google Chrome applications.",
     "settings":{
-      "format":"Formato do widget",
+      "format":"Widget Format",
       "format_options":{
-        "tiles":"Telhas",
-        "list":"Lista"
+        "tiles":"Tiles",
+        "list":"List"
       },
-      "display":"Mostrar",
+      "display":"Show",
       "display_options":{
-        "all":"Todas as aplicações",
-        "enabled":"Somente aplicações ativadas"
+        "all":"All apps",
+        "enabled":"Only enabled apps"
       },
-      "sort":"Ordenar",
+      "sort":"Sort",
       "sort_options":{
         "id":"ID",
-        "alphabetically":"Em ordem alfabética",
-        "offline":"Offline habilitado",
+        "alphabetically":"Alphabetically",
+        "offline":"Offline Enabled",
         "available":"Availability"
       },
       "open":"Open apps in"
     },
-    "store_app":"Loja"
+    "store_app":"Store"
   },
   "bookmarks":{
     "name":"Bookmarks",
     "desc":"Displays selected and customized bookmarks, and other links.",
     "settings":{
       "title_placeholder":"Enter a widget title",
-      "layout":"Estrutura",
+      "layout":"Layout",
       "layout_options":{
-        "single":"Single column",
-        "double":"Double column"
+        "single":"Colonna Singola",
+        "double":"Colonna Doppia"
       },
-      "open":"Open bookmarks in"
+      "open":"Apri preferiti in"
     },
     "edit":{
-      "dialog_title":"Edit Bookmark",
-      "title":"Bookmark Title",
+      "dialog_title":"Modifica Preferito",
+      "title":"Titolo Segnalibro",
       "title_placeholder":"Google",
-      "url":"URL do favorito",
-      "url_placeholder":"http:\/\/www.google.com",
-      "save":"Gravar"
+      "url":"Bookmark URL",
+      "url_placeholder":"http:\/\/www.google.com\/",
+      "save":"Salva"
     },
-    "new_caption":"Novo",
-    "new_bookmark":"Favorito",
-    "new_folder":"Pasta",
-    "drop_link":"Salvar"
+    "new_caption":"New",
+    "new_bookmark":"Bookmark",
+    "new_folder":"Folder",
+    "drop_link":"Drop link here"
   },
   "calc":{
-    "name":"Calculadora",
-    "desc":"Exibe uma calculadora com suporte para operadores básicos.",
-    "error":"ERRO!",
-    "infinity":"Infinito",
+    "name":"Calculator",
+    "desc":"Displays a calculator with support for basic operators.",
+    "error":"Error!",
+    "infinity":"Infinity",
     "mismatch":"Mismatched parentheses"
   },
   "calendar":{
-    "name":"Calendario",
+    "name":"Calendar",
     "desc":"Displays upcoming events from one or more of your Google calendars.",
     "settings":{
-      "calendar":"Calendario",
-      "events":"Eventos mostrados"
+      "calendar":"Calendar",
+      "events":"Events Shown"
     },
     "title":"My Calendar",
     "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
@@ -122,30 +122,30 @@
     "settings":{
       "source":"Show articles from",
       "source_feeds":"Feeds",
-      "show":"Mostrar",
+      "show":"Show",
       "show_options":{
         "all":"All articles",
-        "unread":"Somente os artigos não lidos"
+        "unread":"Only unread articles"
       },
-      "layout":"Estrutura",
+      "layout":"Layout",
       "layout_options":{
-        "titles":"Títulos apenas",
-        "magazine":"Revista",
-        "cards":"Cartas",
-        "cards_columns":"Cartas (duas colunas)"
+        "titles":"Titles only",
+        "magazine":"Magazine",
+        "cards":"Cards",
+        "cards_columns":"Cards (two columns)"
       },
-      "mark":"Marcar um artigo como lido quando eu",
+      "mark":"Mark an article as read when I",
       "mark_options":{
         "scroll":"Scroll past it or click it",
         "click":"Just click it"
       },
       "sort":"Sort Order",
       "sort_options":{
-        "newest":"Recentes primeiro",
-        "oldest":"Antigos primeiro"
+        "newest":"Newest first",
+        "oldest":"Oldest first"
       }
     },
-    "all":"Tudo\n",
+    "all":"All",
     "saved":"Saved for later",
     "uncategorized":"Uncategorized",
     "author":"by",
@@ -160,7 +160,7 @@
     "desc":"Displays a webpage of your choice within an iframe.",
     "settings":{
       "url":"Frame URL",
-      "url_placeholder":"http:\/\/www.google.com\/",
+      "url_placeholder":"i.e. http:\/\/www.google.com\/",
       "height":"Frame Height",
       "padding":"Padding"
     }
@@ -170,7 +170,7 @@
     "desc":"Embeds Google Keep in a widget"
   },
   "news":{
-    "name":"Noticias",
+    "name":"News",
     "desc":"Displays the current top news by category and edition.",
     "settings":{
       "articles":"Articles Shown",
@@ -180,14 +180,14 @@
       "topic_options":{
         "top":"Top Stories",
         "world":"World",
-        "nation":"Nação",
-        "business":"Negócios",
-        "sports":"Desporto",
-        "technology":"Tecnologia",
-        "entertainment":"Entretenimento",
-        "health":"Saúde",
-        "science":"Ciência",
-        "spotlight":"Centro das atenções"
+        "nation":"Nation",
+        "business":"Business",
+        "sports":"Sports",
+        "technology":"Technology",
+        "entertainment":"Entertainment",
+        "health":"Health",
+        "science":"Science",
+        "spotlight":"Spotlight"
       },
       "feed":"Custom Feed",
       "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
@@ -195,10 +195,10 @@
       "footer":"Footer URL",
       "footer_placeholder":"Enter the URL that the \"More\" link should point to"
     },
-    "more":"Mais"
+    "more":"More"
   },
   "notes":{
-    "name":"Notas",
+    "name":"Notes",
     "desc":"Inserts a simple, editable, note.",
     "settings":{
       "color":"Note Color",
@@ -246,7 +246,7 @@
       "sort_options":{
         "hot":"Hot",
         "top":"Top",
-        "new":"Novo",
+        "new":"New",
         "gilded":"Gilded",
         "rising":"Rising",
         "controversial":"Controversial"
@@ -258,7 +258,7 @@
         "comments":"The comments"
       }
     },
-    "more":"Mais"
+    "more":"More"
   },
   "rss":{
     "name":"RSS",
@@ -280,7 +280,7 @@
     "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
   },
   "sports":{
-    "name":"Desporto",
+    "name":"Sports",
     "desc":"Displays scores and game information for selected leagues and\/or teams.",
     "settings":{
       "league":"League",
@@ -308,27 +308,27 @@
     },
     "as_of":"as of",
     "exchange_time":"Exchange Time",
-    "open":"abrir",
-    "high":"alto",
-    "low":"baixa",
+    "open":"open",
+    "high":"high",
+    "low":"low",
     "volume":"volume"
   },
   "todo":{
-    "name":"Tarefas pendentes",
-    "desc":"Exibe uma lista de tarefas interativas com itens importantes e concluídos.",
-    "title":"Lista para fazer",
+    "name":"To-do",
+    "desc":"Displays an interactive to-do list with important and completed items.",
+    "title":"To-do list",
     "settings":{
-      "color":"Cor do texto",
+      "color":"Font Color",
       "color_options":{
-        "light":"Leve",
-        "dark":"Escuro"
+        "light":"Light",
+        "dark":"Dark"
       },
-      "tags":"Etiquetas",
-      "tags_placeholder":"Insira um nome de etiqueta e pressione Enter"
+      "tags":"Tags",
+      "tags_placeholder":"Enter a tag name and press Enter"
     },
-    "add":"Adicionar item",
-    "none":"Nenhum",
-    "important":"Importante"
+    "add":"Add Item",
+    "none":"None",
+    "important":"Important"
   },
   "topsites":{
     "name":"Top Sites",
@@ -378,56 +378,56 @@
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
     "authorize_btn":"Authorize",
     "no_tweets":"There don't seem to be any tweets here...",
-    "home":"Casa",
-    "mentions":"Menções",
-    "retweets":"Retweets de mim",
-    "lists":"Listas",
-    "more":"Mais",
-    "reply":"Responder",
+    "home":"Home",
+    "mentions":"Mentions",
+    "retweets":"Retweets of me",
+    "lists":"Lists",
+    "more":"More",
+    "reply":"Reply",
     "retweet":"Retweet",
-    "favorite":"Favorito"
+    "favorite":"Favorite"
   },
   "unread":{
-    "name":"Não lido",
-    "desc":"Exibe o número atual de e-mails não lidos em sua caixa de entrada do Gmail.",
+    "name":"Unread",
+    "desc":"Displays the current number of unread emails in your Gmail inbox.",
     "settings":{
-      "open":"Aberto quando for clicado"
+      "open":"When clicked open"
     },
-    "unread_none":"e-mails não lidos",
-    "unread_one":"e-mails não lidos",
-    "unread_many":"e-mails não lidos"
+    "unread_none":"unread emails",
+    "unread_one":"unread email",
+    "unread_many":"unread emails"
   },
   "voice":{
-    "name":"Voz",
-    "desc":"Exibe o número atual de chamadas não atendidas e textos na sua conta do Google Voice.",
-    "call":"Chamar de",
-    "text":"Mensagem de texto de",
-    "missed":"perdeu no Google Voice",
-    "texts":"mensagens de texto não lidas",
-    "calls":"Chamadas perdidas"
+    "name":"Voice",
+    "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
+    "call":"Call from",
+    "text":"Text message from",
+    "missed":"missed in Voice",
+    "texts":"unread text messages",
+    "calls":"missed calls"
   },
   "weather":{
-    "name":"Previsão do tempo",
-    "desc":"Exibe o tempo atual e uma previsão para os próximos 4 dias.",
+    "name":"Weather",
+    "desc":"Displays the current weather and a forecast for the next 4 days.",
     "settings":{
-      "location":"Localizaçõe(s)",
+      "location":"Location(s)",
       "location_placeholder":"Enter a location and press Enter",
       "temperature":"Temperature Units",
       "wind":"Wind Speed Units"
     },
-    "unknown":"Desconhecido",
-    "wind":"Velocidade do vento",
-    "chill":"Vento frio",
-    "humidity":"Humidade"
+    "unknown":"Unknown",
+    "wind":"Wind Speed",
+    "chill":"Wind Chill",
+    "humidity":"Humidity"
   },
   "wolfram":{
-    "desc":"Insere um pequeno Wolfram |Caixa de pesquisa alfa."
+    "desc":"Inserts a small Wolfram|Alpha search box."
   },
   "youtube":{
     "name":"YouTube",
     "desc":"Displays either popular videos or videos from a specified user.",
     "settings":{
-      "format":"Formato",
+      "format":"Format",
       "format_options":{
         "large":"One large",
         "large_2":"One large, two small",
@@ -435,12 +435,12 @@
         "four":"Four small",
         "six":"Six small"
       },
-      "from":"Mostrar vídeos de",
+      "from":"Show Videos From",
       "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
       "from_placeholder":"Leave blank to show Top Videos",
-      "open":"Resultados da pesquisa em"
+      "open":"Open search results in"
     },
-    "search":"Pesquisa YouTube",
-    "num_views":"Vistas"
+    "search":"Search YouTube",
+    "num_views":"views"
   }
 }

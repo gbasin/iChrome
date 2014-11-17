@@ -99,7 +99,7 @@
   },
   "currency":{
     "name":"货币转换",
-    "desc":"让您任意在169 货币之间进行转换。",
+    "desc":"让您在169种货币之间进行转换。",
     "to_label":"转换至"
   },
   "drive":{
@@ -166,7 +166,7 @@
     }
   },
   "keep":{
-    "name":"保持",
+    "name":"Keep",
     "desc":"嵌入Google Keep小部件"
   },
   "news":{
@@ -233,7 +233,7 @@
       "tabs":"显示选项卡",
       "open":"打开选项卡方式"
     },
-    "notabs":"无法显示使用此小部件前关闭的内容，将在现在开始显示您关闭的标签页。"
+    "notabs":"无法显示使用此小部件前关闭的内容，小部件将从现在开始记录并显示您所关闭的标签页。"
   },
   "reddit":{
     "name":"Reddit",
@@ -281,13 +281,13 @@
   },
   "sports":{
     "name":"体育运动",
-    "desc":"显示所选联赛或团队的比赛\/分数信息。",
+    "desc":"显示所选联赛团队的比赛\/分数信息。",
     "settings":{
       "league":"联赛",
       "games":"所示的比赛",
       "team":"团队",
       "teams":"团队",
-      "unavailable":"当团队游戏不可用时",
+      "unavailable":"当关注内容无任何动态时",
       "unavailable_options":{
         "other":"显示其他比赛",
         "none":"显示\"没有比赛\""
@@ -306,7 +306,7 @@
       "symbols_placeholder":"例如：NASDAQ:GOOG, INDEXNYSEGIS:NYA",
       "symbols_help":"这些是你需要使用TICKER:EXCHANGE格式的股票。 \n<br \/><br \/> 因为索引的缘故，请使用 <a href=\"https:\/\/www.google.com\/finance\"target=\"_blank\">谷歌财经<\/a> 所示的TICKER\/EXCHANGE值。例如道琼斯指数是 <b>.DJI<\/b> 和纽约证券交易所是 <b>INDEXNYSEGIS:NYA<\/b>"
     },
-    "as_of":"作为",
+    "as_of":"在",
     "exchange_time":"交易时间",
     "open":"开盘",
     "high":"涨",
@@ -324,9 +324,9 @@
         "dark":"暗色调"
       },
       "tags":"标签",
-      "tags_placeholder":"输入标记的名称并按 enter 键"
+      "tags_placeholder":"输入标记的名称并按Enter键确认"
     },
-    "add":"添加项目",
+    "add":"新建",
     "none":"暂无",
     "important":"重要"
   },
@@ -340,7 +340,7 @@
   },
   "traffic":{
     "name":"交通",
-    "desc":"显示当前回家或上班的交通状况。",
+    "desc":"根据交通状况显示当需要多久到家或多久上班。",
     "settings":{
       "leave":"离开家的时间",
       "home":"家庭住址",
@@ -354,7 +354,7 @@
         "transit":"公共交通"
       }
     },
-    "to_home":"回家",
+    "to_home":"到家",
     "to_work":"上班"
   },
   "translate":{

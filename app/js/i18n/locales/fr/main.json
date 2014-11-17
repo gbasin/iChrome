@@ -1,10 +1,10 @@
 {
   "lang_code":"fr",
   "language":"Français",
-  "newtabName":"iChrome New Tab",
+  "newtabName":"Nouvel onglet iChrome",
   "extName":"iChrome - Votre page d'accueil, pour Chrome",
   "extDescription":"La MEILLEURE page d'accueil pour Chrome. Des thèmes impressionnant, des dizaines de widgets, extrêmement rapide!",
-  "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
+  "newtabDescription":"La MEILLEURE page d'accueil pour Chrome. Maintenant nouvel onglet. Thèmes fabuleux, de nombreux widgets, rapide et personnalisable !",
   "defaults":{
     "tab":"Accueil",
     "me":"Moi"
@@ -14,8 +14,8 @@
   "grid_to_column_warning":"Vous avez sélectionnez un onglet basé sur des colonnes qui remplacera vos onglets basé sur une grille. Si vous continuez vous perdrez la position de vos widgets;tout sera déplacé dans la première colonne du nouvel onglet.\nVoulez vous continuer ?",
   "storage_warning":"Vous utilisez plus de 90% de l'espace de synchronisation disponible.\nSi vous atteignez cette limite, iChrome arrêtera de synchronisation vos données et arrêtera de fonctionner.\nVous pouvez libérer de l'espace en supprimant des thèmes personnalisés, des notes et des listes de tâches que vous n'utilisez pas.",
   "toolbar":{
-    "placeholder":"Entrer les termes",
-    "placeholder_ok":"Entrer les termes ou dites \"OK,Google\"",
+    "placeholder":"Entrer ce que vous cherchez",
+    "placeholder_ok":"Entrez ce que vous cherchez ou dites \"OK,Google\"",
     "apps":{
       "search":"Rechercher",
       "youtube":"YouTube",
@@ -117,8 +117,8 @@
       "toolbar_desc":"Ceci contrôle le style de la barre d'outils. Elle peut soit apparaître normalement, soit légèrement vers le bas",
       "toolbar_normal":"Normal",
       "toolbar_button":"Bouton",
-      "animation":"Slide-in Animation",
-      "animation_desc":"This setting lets you enable or disable the slide-in animation that runs when you load the page",
+      "animation":"Animation de glissement",
+      "animation_desc":"Ces options vous permettent d'activer ou de désactiver l'animation de glissement au chargement de la page",
       "animation_label":"Activer les animations"
     },
     "specific":{
@@ -181,7 +181,7 @@
           "hide":"Cacher"
         },
         "account":"ID du compte",
-        "account_help":"If you're signed into multiple accounts, this is the \"authuser=\" value.\n<br \/><br \/>\nFor example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"authuser\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
+        "account_help":"",
         "account_placeholder":"Your \"authuser=\" value",
         "on":"On",
         "off":"Off"
@@ -193,9 +193,9 @@
     "all":"Tous",
     "custom":"Personalisé",
     "create":"Créer un thème",
-    "url_or_upload":"or",
-    "upload_image":"Upload an image",
-    "edit_btn":"Edit",
+    "url_or_upload":"ou",
+    "upload_image":"Ajouter une image",
+    "edit_btn":"Modifier",
     "delete":"Supprimer",
     "use":"Utiliser",
     "preview":"Aperçu ",
@@ -223,34 +223,34 @@
       "name_placeholder":"Entrer le nom du thème",
       "image":"URL de l'image",
       "image_placeholder":"Entrer l'URL d'une image qui sera utilisé comme fond d'écran",
-      "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy and paste the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
+      "image_help":"Votre image n'a pas pu êtres envoyée de votre ordinateur.\n\nSi vous tenez à avoir cette image, vous pouvez l'envoyé depuis le site <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>.\nPuis copiez l'url que ce site vous fournira, mais faite attention que l'url ce finisse par une extension d'image de type (i.e. .jpg), puis collez la dans le champ de gauche.",
       "color":"Fallback Color",
-      "color_placeholder":"Enter any color name",
+      "color_placeholder":"Entrez une couleur",
       "position":"Position",
       "position_options":{
         "center":"Centré",
-        "top_left":"Top Left",
-        "top_center":"Top Center",
-        "top_right":"Top Right",
-        "bottom_left":"Bottom Left",
-        "bottom_center":"Bottom Center",
-        "bottom_right":"Bottom Right"
+        "top_left":"En haut à gauche",
+        "top_center":"Centrer en Haut",
+        "top_right":"En haut à droite",
+        "bottom_left":"En bas à gauche",
+        "bottom_center":"Centrer en Bas",
+        "bottom_right":"En bas à droite"
       },
       "scaling":"Scaling",
       "scaling_options":{
         "auto":"Auto",
-        "width":"Full Width",
-        "height":"Full Height",
+        "width":"Pleine largeur",
+        "height":"Pleine hauteur",
         "none":"No Scaling (preview may be inaccurate)"
       },
-      "repeat":"Image Repeat",
+      "repeat":"Mosaïque ",
       "repeat_options":{
-        "none":"No Repeat",
-        "horizontal":"Repeat Horizontally",
-        "vertical":"Repeat Vertically",
-        "both":"Repeat Both"
+        "none":"Pas de répétition",
+        "horizontal":"Répéter horizontalement",
+        "vertical":"Répéter verticalement",
+        "both":"Répéter des deux façons"
       },
-      "attach":"Attach Image To",
+      "attach":"Joindre l'image à",
       "attach_tab":"L'onglet",
       "attach_window":"La fênetre",
       "preview":"Aperçu ",

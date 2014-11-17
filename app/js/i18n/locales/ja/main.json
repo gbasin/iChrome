@@ -1,7 +1,7 @@
 {
   "lang_code":"ja",
-  "language":"日本語",
-  "newtabName":"iChrome 新しいタブ",
+  "language":"英語",
+  "newtabName":"iChrome New Tab",
   "extName":"iChrome - Chromeのあなたのホームページ",
   "extDescription":"Chromeのための最高のホームページ。最高のテーマ、たくさんのウィジェット、超高速、カスタマイズが自由自在！",
   "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
@@ -25,7 +25,7 @@
       "gmail":"Gmail",
       "drive":"ドライブ",
       "calendar":"カレンダー",
-      "more":"もっと"
+      "more":"さらに"
     }
   },
   "menu":{
@@ -50,16 +50,16 @@
   "voice":{
     "listening":"聞いています...",
     "searching":"検索: %s",
-    "missed":"Didn't get that. <a>Try Again<\/a>"
+    "missed":"取得できませんでした。もう一度やり直してください。"
   },
   "settings":{
     "save":"保存して閉じる",
     "new_tab":"新規作成",
     "labels":{
-      "general":"一般",
+      "general":"一般設定",
       "visual":"ヴィジュアル",
-      "specific":"Tab Specific",
-      "advanced":"Advanced"
+      "specific":"タブ",
+      "advanced":"拡張機能"
     },
     "general":{
       "search":"検索エンジンURL",
@@ -89,42 +89,42 @@
     "visual":{
       "layout":"レイアウト",
       "layout_options":{
-        "1_fixed":"One column, fixed width",
-        "1_fluid":"One column, fluid width",
-        "2_fixed":"Two columns, fixed width",
-        "2_fluid":"Two columns, fluid width",
-        "3_fixed":"Three columns, fixed width",
-        "3_fluid":"Three columns, fluid width",
-        "4_fixed":"Four columns, fixed width",
-        "4_fluid":"Four columns, fluid width",
-        "5_fixed":"Five columns, fixed width",
-        "5_fluid":"Five columns, fluid width",
+        "1_fixed":"固定幅、1列",
+        "1_fluid":"1 列、可変幅",
+        "2_fixed":"2 列、固定幅",
+        "2_fluid":"2 列、可変幅",
+        "3_fixed":"3 列、固定幅",
+        "3_fluid":"3 列、可変幅",
+        "4_fixed":"4 列、固定幅",
+        "4_fluid":"4 列、可変幅",
+        "5_fixed":"5 列、固定幅",
+        "5_fluid":"5 列、可変幅",
         "grid":"Grid-based, customizable width"
       },
-      "theme":"Default Theme",
+      "theme":"デフォルトのテーマ",
       "theme_placeholder":"Theme #%s",
-      "theme_select":"Select a theme",
-      "align":"Alignment",
-      "align_desc":"This will change the alignment of the widget columns",
+      "theme_select":"テーマの選択",
+      "align":"配置",
+      "align_desc":"これはウィジェットの列の配置を変更します。",
       "align_labels":{
-        "left":"Left",
-        "center":"Center",
-        "right":"Right"
+        "left":"左寄り",
+        "center":"中央揃え",
+        "right":"右寄り"
       },
-      "logo":"Logo URL",
-      "logo_desc":"This is the image shown at the left of the toolbar.  The default is <b>\/images\/logo.svg<\/b>",
-      "toolbar":"Toolbar Style",
-      "toolbar_desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
-      "toolbar_normal":"Normal",
-      "toolbar_button":"Button",
-      "animation":"Slide-in Animation",
-      "animation_desc":"This setting lets you enable or disable the slide-in animation that runs when you load the page",
-      "animation_label":"Enable the animation"
+      "logo":"ロゴの URL",
+      "logo_desc":"これは、ツールバーの左側に表示されるイメージです。既定値は <b>\/images\/logo.svg<\/b>",
+      "toolbar":"ツールバーのスタイル",
+      "toolbar_desc":"これは、ツールバーのスタイルを決定します。",
+      "toolbar_normal":"標準",
+      "toolbar_button":"ボタン",
+      "animation":"スライドでのアニメーション",
+      "animation_desc":"ページを読み込むときのスライドのアニメーションの有無を設定できます。",
+      "animation_label":"アニメーションを有効にします。"
     },
     "specific":{
-      "name":"Tab Name",
-      "default_name":"New Tab",
-      "delete":"Delete tab",
+      "name":"タブ名",
+      "default_name":"新しいタブ",
+      "delete":"タブの削除",
       "delete_disallowed":"You cannot delete the only remaining tab.",
       "delete_confirm":"このタブを削除するとタブ内のすべてのウィジェットからのすべてのデータは永久に失われます。\n削除しても本当によろしいですか？",
       "default":"デフォルトとして設定"
@@ -135,7 +135,7 @@
       "search":"検索行動",
       "search_label":"新しいタブで検索結果を見る",
       "backup":"バックアップ \/ 復元",
-      "backup_desc":"<b>To backup:<\/b> Click the Backup button and copy the text that appears in the field below.<br \/><b>To restore:<\/b> Paste the text you saved or copied before and click the Restore button.",
+      "backup_desc":"<b>バックアップ:<\/b>バックアップ ボタンをクリックし、以下のフィールドに表示されるテキストをコピーします。 < br\/> <b>復元する:<\/b> 復元ボタンをクリックして保存したテキストを貼り付けます。",
       "backup_backup":"バックアップ",
       "backup_restore":"復元",
       "restore_error":"An error occurred while trying to parse the provided data, please make sure you entered the EXACT text you backed up.",
@@ -193,9 +193,9 @@
     "all":"すべて",
     "custom":"カスタム",
     "create":"テーマを作成",
-    "url_or_upload":"or",
-    "upload_image":"Upload an image",
-    "edit_btn":"Edit",
+    "url_or_upload":"または",
+    "upload_image":"画像のアップロード",
+    "edit_btn":"編集",
     "delete":"削除",
     "use":"使用",
     "preview":"プレビュー",
@@ -203,8 +203,8 @@
     "images":"%s images",
     "resolution":"解像度",
     "categories":"カテゴリ",
-    "cached":"This theme has been cached and is available offline",
-    "random":"This theme displays a random image every time you load the page",
+    "cached":"このテーマがキャッシュされ、オフラインで使用可能。",
+    "random":"このテーマはページを読み込むたびにランダムなイメージを表示します。",
     "random_daily":"This theme displays an image picked randomly every day",
     "sunrise_sunset":"This theme displays an image based on the time of day",
     "feed":"This theme displays an image selected daily from an external feed",

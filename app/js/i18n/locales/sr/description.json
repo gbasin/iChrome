@@ -1,0 +1,27 @@
+{
+  "lang_code":"sr",
+  "line_1":"IChrome је екстензија за полазну\/старт страну која има за циљ да полазну страну направи онаквом каква треба да буде : Брза , прилагодљива , прелепа и продуктивна .",
+  "link":"Ако тражиш екстензију за твој нови прозор и не за основну страницу , пробај iChrome New Tab: https:\/\/chrome.google.com\/webstore\/detail\/ichrome-new-tab\/iccjgbbjckehppnpajnmplcccjcgbdep",
+  "newtab_line_1":"iChrome је екстензија за полазну\/старт страну која има за циљ да полазну страну направи онаквом каква треба да буде : Брза , прилагодљива , прелепа и продуктивна .",
+  "newtab_link":"Ако тражиш екстензију за твој нови прозор и не за основну страницу , пробај iChrome New Tab: https:\/\/chrome.google.com\/webstore\/detail\/ichrome-new-tab\/iccjgbbjckehppnpajnmplcccjcgbdep",
+  "line_2":"Направи СВОЈУ старт страну са преко 30 додатака и десетинама прелепих тема.  iChrome-ове стотине карактеристика укључују ове и многе друге :",
+  "features":[
+    "Десетине цело екранских , прелепих позадина и тема укључујући Bing и Webshots фотографију дана",
+    "Комплетну синхронизацију између рачунара укључујући и ТoDo листе , белешке и прилагодиве теме",
+    "Multiple layout options including 1-5 fixed or variable width columns (or skip them and go with a grid!)",
+    "Праве информације у право време са интегрисаним Google Now сервисом",
+    "Комплетна гласовна претрага и \"OK Google\" детекција гласовне команде",
+    "Глобални, тренутни временски услови и прогноза са Временским додатком",
+    "Проста инсталација додатака и реорганизација истих са повуци и спусти интерфејсом",
+    "Прати једну или више берзанских деоница ,у реалном времену , у једноставном и компактном Деоница додатку",
+    "Сазнај вести за специфичну едицију или тему, или прати сопствени RSS feed",
+    "Лако приступи свим твојим Chrome апликацијама са Apps додатком",
+    "Види твоје најпосећеније сајтове и скоро затворене прозоре у једноставном додатку",
+    "Крстари између подесивих прозора, сваки са својом темом и додацима, користећи тастатуру",
+    "Провери најбољи садржај на YouTube или Reddit са пуном подршком за додатке",
+    "Work completely offline anytime, everything (even your theme) is ready whenever you are!"
+  ],
+  "line_3":"iChrome is an open source project, check it out on Github: https:\/\/github.com\/AMKohn\/iChrome",
+  "line_4":"Feedback and suggestions are welcome anytime at: http:\/\/ichrome.uservoice.com",
+  "line_5":"Sick of homepage extensions that lock you in and don't let you customize things?  Getting blasted with ads?  Still looking for \"the\" iGoogle replacement? Looking for a beautiful start page that keeps getting better? iChrome is for you!"
+}

@@ -10,33 +10,33 @@
     "completions":"Completions",
     "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
     "settings":{
-      "profile":"Profile"
+      "profile":"Profil"
     }
   },
   "apps":{
-    "name":"Apps",
+    "name":"Applications",
     "desc":"Displays your currently installed Google Chrome applications.",
     "settings":{
       "format":"Widget Format",
       "format_options":{
         "tiles":"Tiles",
-        "list":"List"
+        "list":"Listes"
       },
       "display":"Voir",
       "display_options":{
         "all":"All apps",
         "enabled":"Only enabled apps"
       },
-      "sort":"Sort",
+      "sort":"Trier",
       "sort_options":{
         "id":"ID",
-        "alphabetically":"Alphabetically",
+        "alphabetically":"Par ordre alphabétique",
         "offline":"Offline Enabled",
         "available":"Availability"
       },
       "open":"Open apps in"
     },
-    "store_app":"Store"
+    "store_app":"Magasin"
   },
   "bookmarks":{
     "name":"Bookmarks",
@@ -58,7 +58,7 @@
       "url_placeholder":"http:\/\/www.google.com\/",
       "save":"Enregistrer"
     },
-    "new_caption":"New",
+    "new_caption":"Nouveau",
     "new_bookmark":"Bookmark",
     "new_folder":"Folder",
     "drop_link":"Drop link here"
@@ -66,7 +66,7 @@
   "calc":{
     "name":"Calculator",
     "desc":"Displays a calculator with support for basic operators.",
-    "error":"Error!",
+    "error":"Erreur!",
     "infinity":"Infinity",
     "mismatch":"Mismatched parentheses"
   },
@@ -77,7 +77,7 @@
       "calendar":"Calendrier",
       "events":"Events Shown"
     },
-    "title":"My Calendar",
+    "title":"Mon calendrier",
     "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
   },
   "clock":{
@@ -85,54 +85,54 @@
     "desc":"Shows the current date and time. Optionally for a different timezone.",
     "settings":{
       "timezone":"Time Zone",
-      "timezone_local":"Local",
-      "format":"Clock Format",
+      "timezone_local":"Mon appareil",
+      "format":"Format de l'heure ",
       "format_options":{
-        "ampm":"AM\/PM - Digital",
-        "24hour":"24 Hour - Digital",
-        "analog":"12 Hour - Analog",
-        "ampmseconds":"AM\/PM - Digital, No Seconds",
-        "24hourseconds":"24 Hour - Digital, No Seconds"
+        "ampm":"AM\/PM - Digitale",
+        "24hour":"24 Heures - Digitale",
+        "analog":"12 Heures - Analogique",
+        "ampmseconds":"AM\/PM - Digitale, Sans Secondes",
+        "24hourseconds":"24 Heures - Digitale, Sans Secondes"
       }
     },
-    "title":"Clock"
+    "title":"Horloge"
   },
   "currency":{
-    "name":"Currency",
-    "desc":"Let's you convert between any two of 169 currencies.",
-    "to_label":"to"
+    "name":"Devise ",
+    "desc":"Vous permet de convertir entre deux des 169 devises.",
+    "to_label":"à"
   },
   "drive":{
     "name":"Drive",
     "desc":"Displays recently changed files from your Google Drive.",
     "settings":{
-      "files_shown":"Number of Files Shown"
+      "files_shown":"Nombre de fichiers affichés"
     },
-    "modified_by":"by",
+    "modified_by":"par",
     "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
-    "authorize_btn":"Authorize"
+    "authorize_btn":"Autoriser"
   },
   "facebook":{
     "name":"Facebook",
-    "desc":"Embeds Facebook in a widget"
+    "desc":"Intègre Facebook dans un widget"
   },
   "feedly":{
     "name":"Feedly",
-    "desc":"Displays articles from your Feedly account in a configurable format.",
+    "desc":"Afficher un article depuis un compte Feedly dans un format configurable.",
     "settings":{
       "source":"Show articles from",
       "source_feeds":"Feeds",
       "show":"Voir",
       "show_options":{
-        "all":"All articles",
+        "all":"Tous les articles",
         "unread":"Only unread articles"
       },
       "layout":"Mode d'affichage",
       "layout_options":{
-        "titles":"Titles only",
+        "titles":"Titres seulement",
         "magazine":"Magazine",
-        "cards":"Cards",
-        "cards_columns":"Cards (two columns)"
+        "cards":"Cartes",
+        "cards_columns":"Cartes (deux colonnes)"
       },
       "mark":"Mark an article as read when I",
       "mark_options":{
@@ -141,14 +141,14 @@
       },
       "sort":"Sort Order",
       "sort_options":{
-        "newest":"Newest first",
-        "oldest":"Oldest first"
+        "newest":"Plus récent en premier",
+        "oldest":"Plus ancien en premier"
       }
     },
     "all":"Tous",
-    "saved":"Saved for later",
+    "saved":"Sauvgarder pour plus tard",
     "uncategorized":"Uncategorized",
-    "author":"by",
+    "author":"par",
     "go_to_feedly":"Go To Feedly"
   },
   "gmail":{
@@ -160,13 +160,13 @@
     "desc":"Displays a webpage of your choice within an iframe.",
     "settings":{
       "url":"Frame URL",
-      "url_placeholder":"i.e. http:\/\/www.google.com\/",
+      "url_placeholder":"e.g. http:\/\/www.google.com\/",
       "height":"Frame Height",
       "padding":"Padding"
     }
   },
   "keep":{
-    "name":"Keep",
+    "name":"Garder",
     "desc":"Embeds Google Keep in a widget"
   },
   "news":{
@@ -182,7 +182,7 @@
         "world":"World",
         "nation":"Nation",
         "business":"Business",
-        "sports":"Sports",
+        "sports":"Sport",
         "technology":"Technology",
         "entertainment":"Entertainment",
         "health":"Health",
@@ -203,11 +203,11 @@
     "settings":{
       "color":"Note Color",
       "color_options":{
-        "yellow":"Yellow",
+        "yellow":"Jaune",
         "orange":"Orange",
-        "red":"Red",
+        "red":"Rouge",
         "blue":"Blue",
-        "green":"Green",
+        "green":"Vert",
         "white":"White"
       },
       "font":"Font Face",
@@ -218,7 +218,7 @@
     "name":"Google Now",
     "desc":"Displays cards from Google Now including flight status and package tracking.",
     "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
-    "authorize_btn":"Authorize",
+    "authorize_btn":"Autoriser",
     "caught_up":"All caught up, nothing here.",
     "no_title":"No Title"
   },
@@ -227,7 +227,7 @@
     "desc":"Embeds Google Plus in a widget"
   },
   "recentlyclosed":{
-    "name":"Recently Closed",
+    "name":"Récemment fermés",
     "desc":"Shows your recently closed tabs",
     "settings":{
       "tabs":"Tabs Shown",
@@ -244,9 +244,9 @@
       "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
       "sort":"Sort Order",
       "sort_options":{
-        "hot":"Hot",
+        "hot":"Populaire",
         "top":"Top",
-        "new":"New",
+        "new":"Nouveau",
         "gilded":"Gilded",
         "rising":"Rising",
         "controversial":"Controversial"
@@ -254,8 +254,8 @@
       "links":"Links Shown",
       "click":"When I click a link show me",
       "click_options":{
-        "link":"The link",
-        "comments":"The comments"
+        "link":"Le lien",
+        "comments":"Commentaires"
       }
     },
     "more":"Plus"
@@ -280,22 +280,22 @@
     "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
   },
   "sports":{
-    "name":"Sports",
-    "desc":"Displays scores and game information for selected leagues and\/or teams.",
+    "name":"Sport",
+    "desc":"Afficher les informations des scores et games pour la ligue\/équipe choisis.",
     "settings":{
-      "league":"League",
+      "league":"Ligue",
       "games":"Games Shown",
-      "team":"Team",
-      "teams":"Team",
+      "team":"Équipe",
+      "teams":"Équipe",
       "unavailable":"When team games are unavailable",
       "unavailable_options":{
-        "other":"Show other games",
-        "none":"Show \"No Games\""
+        "other":"Afficher d'autres jeux",
+        "none":"Afficher \"Pas de jeux\""
       }
     },
     "error":"Something seems to have gone wrong",
-    "unknown_error":"Unknown Error",
-    "watch_on":"Watch on: %s",
+    "unknown_error":"Erreur inconnue ",
+    "watch_on":"Voir : %s",
     "no_games":"No Games Scheduled"
   },
   "stocks":{
@@ -308,10 +308,10 @@
     },
     "as_of":"as of",
     "exchange_time":"Exchange Time",
-    "open":"open",
-    "high":"high",
-    "low":"low",
-    "volume":"volume"
+    "open":"Ouvrir",
+    "high":"Haute",
+    "low":"Bas",
+    "volume":"Volume"
   },
   "todo":{
     "name":"To-do",
@@ -358,10 +358,10 @@
     "to_work":"to work"
   },
   "translate":{
-    "name":"Translate",
+    "name":"Traduire",
     "desc":"Contains a small inline Google Translate textbox.",
     "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
-    "button":"Translate",
+    "button":"Traduire",
     "untranslate":"Untranslate",
     "auto":"Auto (%s)",
     "unknown":"Unknown",
@@ -376,14 +376,14 @@
     },
     "authorize":"You'll need to authorize iChrome first",
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
-    "authorize_btn":"Authorize",
+    "authorize_btn":"Autoriser",
     "no_tweets":"There don't seem to be any tweets here...",
     "home":"Accueil",
     "mentions":"Mentions",
     "retweets":"Retweets of me",
-    "lists":"Lists",
+    "lists":"Listes",
     "more":"Plus",
-    "reply":"Reply",
+    "reply":"Répondre",
     "retweet":"Retweet",
     "favorite":"Favorite"
   },
