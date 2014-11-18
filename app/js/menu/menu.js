@@ -30,8 +30,8 @@ define(
 				}
 			}),
 			View = Backbone.View.extend({
-				tagName: "nav",
-				className: "menu",
+				tagName: "div",
+				className: "menu-container",
 
 				events: {
 					"click [data-item]:not(.active)": "effectuate",
