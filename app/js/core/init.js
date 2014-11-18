@@ -63,14 +63,14 @@ define(
 
 						if (this.MenuButton) this.MenuButton.$el.detach();
 
-						this.$el.prepend(this.Toolbar.el);
+						this.$el.prepend(this.Toolbar.render().el);
 					}
 					else {
 						if (!this.MenuButton) this.MenuButton = new MenuButton();
 
 						if (this.Toolbar) this.Toolbar.$el.detach();
 
-						this.$el.prepend(this.MenuButton.el);
+						this.$el.prepend(this.MenuButton.render().el);
 					}
 
 					this.$el.removeClass("unloaded").children(".loading").remove();

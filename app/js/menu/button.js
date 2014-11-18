@@ -11,7 +11,15 @@ define(["backbone", "menu/menu"], function(Backbone, Menu) {
 		},
 
 		initialize: function() {
-			this.$el.append('<div class="menu-button"></div>', Menu.$el);
+			this.render();
+		},
+
+		render: function() {
+			Menu.$el.detach();
+
+			this.$el.html('<div class="menu-button"></div>').append(Menu.el);
+
+			return this;
 		}
 	});
 

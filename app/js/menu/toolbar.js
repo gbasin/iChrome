@@ -111,18 +111,24 @@ define(["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "
 
 
 			render: function() {
+				if (this.model.get("toolbar") == "full") {
+					this.Menu.$el.detach();
+				}
+
 				// The app icons attributes get reset on render
 				this.appsLoaded = false;
 
 				this.Search.$el.detach();
 
-				this.Menu.$el.detach();
-
 				this.$el.html(render("toolbar", this.model.toJSON()));
 
 				this.$(".search").replaceWith(this.Search.el);
 
-				this.$("nav.menu").replaceWith(this.Menu.el);
+				if (this.model.get("toolbar") == "full") {
+					this.$("nav.menu").replaceWith(this.Menu.el);
+
+					this.Menu.delegateEvents();
+				}
 
 				return this;
 			}
