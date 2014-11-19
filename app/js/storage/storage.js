@@ -44,7 +44,9 @@ define(
 
 						// If sync was called something was most likely changed, therefore requiring the caller to trigger updated is redundant.
 						// Also, UI changes should happen instantly, so this is called synchronously but after the sync synchronous code is run.
-						promise.trigger("updated", data);
+						if (now !== "final") {
+							promise.trigger("updated", data);
+						}
 					}
 					else {
 						cb();
@@ -104,7 +106,7 @@ define(
 			promise.trigger("done");
 
 			window.onbeforeunload = function() {
-				storage.sync(true);
+				storage.sync("final");
 			};
 		});
 
