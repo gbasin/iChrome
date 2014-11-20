@@ -31,7 +31,9 @@ define(
 							desc: widget.desc ? resolve(widget, widget.desc) : translate(widget, "desc")
 						};
 					}), "id").sort(function(a, b) {
-						return a.order - b.order;
+						// sensitivity: "accent" ensures that accented characters differ
+						// while ignoring case and avoiding a toLocaleLowerCase() call
+						return a.name.localeCompare(b.name, "en", { sensitivity: "accent" });
 					});
 
 					this.set({

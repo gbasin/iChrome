@@ -5,7 +5,7 @@ define(["jquery", "modals/modals"], function($, Modal) {
 	return {
 		id: 16,
 		size: 2,
-		order: 11,
+		order: 12,
 		nicename: "bookmarks",
 		sizes: ["tiny", "variable"],
 		settings: [

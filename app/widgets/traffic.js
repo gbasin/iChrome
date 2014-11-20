@@ -5,7 +5,7 @@ define(["jquery", "moment"], function($, moment) {
 	return {
 		id: 9,
 		size: 1,
-		order: 14,
+		order: 27,
 		interval: 300000,
 		nicename: "traffic",
 		sizes: ["tiny", "small"],

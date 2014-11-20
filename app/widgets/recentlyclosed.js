@@ -5,7 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 32,
 		size: 4,
-		order: 5.25,
+		order: 21,
 		interval: 60000,
 		permissions: ["tabs"],
 		nicename: "recentlyclosed",

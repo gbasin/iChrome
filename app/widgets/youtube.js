@@ -5,7 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 29,
 		size: 6,
-		order: 7.5,
+		order: 18,
 		interval: 300000,
 		nicename: "youtube",
 		sizes: ["variable"],

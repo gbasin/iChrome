@@ -5,7 +5,7 @@ define(["jquery", "oauth2"], function($) {
 	return {
 		id: 3,
 		size: 2,
-		order: 18,
+		order: 28,
 		interval: 300000,
 		nicename: "analytics",
 		sizes: ["tiny", "medium"],

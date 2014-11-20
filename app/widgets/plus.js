@@ -5,7 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 30,
 		size: 5,
-		order: 7.75,
+		order: 14,
 		nicename: "plus",
 		sizes: ["variable"],
 		settings: [

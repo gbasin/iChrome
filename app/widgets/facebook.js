@@ -5,7 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 31,
 		size: 5,
-		order: 7.9,
+		order: 13,
 		nicename: "facebook",
 		sizes: ["variable"],
 		settings: [

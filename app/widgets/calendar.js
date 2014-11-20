@@ -5,7 +5,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 	return {
 		id: 10,
 		size: 1,
-		order: 3,
+		order: 7,
 		interval: 300000,
 		nicename: "calendar",
 		sizes: ["variable"],
