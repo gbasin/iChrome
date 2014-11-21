@@ -5,7 +5,7 @@ define(["jquery", "moment"], function($, moment) {
 	return {
 		id: 15,
 		size: 5,
-		order: 9,
+		order: 23,
 		nicename: "sports",
 		interval: 180000,
 		sizes: ["tiny", "variable"],

@@ -5,7 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 22,
 		size: 2,
-		order: 6,
+		order: 31,
 		interval: 120000,
 		nicename: "voice",
 		sizes: ["tiny", "small"],

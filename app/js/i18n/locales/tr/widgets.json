@@ -22,7 +22,7 @@
         "tiles":"Tiles",
         "list":"List"
       },
-      "display":"Show",
+      "display":"Göster",
       "display_options":{
         "all":"All apps",
         "enabled":"Only enabled apps"
@@ -56,26 +56,26 @@
       "title_placeholder":"Google",
       "url":"Bookmark URL",
       "url_placeholder":"http:\/\/www.google.com\/",
-      "save":"Save"
+      "save":"Kaydet"
     },
     "new_caption":"New",
-    "new_bookmark":"Bookmark",
-    "new_folder":"Folder",
+    "new_bookmark":"Yer imi",
+    "new_folder":"Klasör",
     "drop_link":"Drop link here"
   },
   "calc":{
-    "name":"Calculator",
-    "desc":"Displays a calculator with support for basic operators.",
-    "error":"Error!",
-    "infinity":"Infinity",
-    "mismatch":"Mismatched parentheses"
+    "name":"Hesap makinesi",
+    "desc":"Temel işlemleri yapabilen bir hesap makinesi gösterir.",
+    "error":"Hata!",
+    "infinity":"Sonsuz",
+    "mismatch":"Eşleşmeyen parantezler"
   },
   "calendar":{
-    "name":"Calendar",
-    "desc":"Displays upcoming events from one or more of your Google calendars.",
+    "name":"Takvim",
+    "desc":"Bir veya daha fazla Google takviminizde yaklaşan etkinlikleri gösterir.",
     "settings":{
-      "calendar":"Calendar",
-      "events":"Events Shown"
+      "calendar":"Takvim",
+      "events":"Gösterilen Etkinlikler"
     },
     "title":"My Calendar",
     "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
@@ -122,7 +122,7 @@
     "settings":{
       "source":"Show articles from",
       "source_feeds":"Feeds",
-      "show":"Show",
+      "show":"Göster",
       "show_options":{
         "all":"All articles",
         "unread":"Only unread articles"
@@ -145,7 +145,7 @@
         "oldest":"Oldest first"
       }
     },
-    "all":"All",
+    "all":"Tümü",
     "saved":"Saved for later",
     "uncategorized":"Uncategorized",
     "author":"by",
@@ -160,7 +160,7 @@
     "desc":"Displays a webpage of your choice within an iframe.",
     "settings":{
       "url":"Frame URL",
-      "url_placeholder":"i.e. http:\/\/www.google.com\/",
+      "url_placeholder":"örneğin http:\/\/www.google.com\/",
       "height":"Frame Height",
       "padding":"Padding"
     }
@@ -195,7 +195,7 @@
       "footer":"Footer URL",
       "footer_placeholder":"Enter the URL that the \"More\" link should point to"
     },
-    "more":"More"
+    "more":"Daha fazla"
   },
   "notes":{
     "name":"Notes",
@@ -258,7 +258,7 @@
         "comments":"The comments"
       }
     },
-    "more":"More"
+    "more":"Daha fazla"
   },
   "rss":{
     "name":"RSS",
@@ -378,11 +378,11 @@
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
     "authorize_btn":"Authorize",
     "no_tweets":"There don't seem to be any tweets here...",
-    "home":"Home",
+    "home":"Ana Sayfa",
     "mentions":"Mentions",
     "retweets":"Retweets of me",
     "lists":"Lists",
-    "more":"More",
+    "more":"Daha fazla",
     "reply":"Reply",
     "retweet":"Retweet",
     "favorite":"Favorite"

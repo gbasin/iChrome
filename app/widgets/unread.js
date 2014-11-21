@@ -5,7 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 6,
 		size: 2,
-		order: 6,
+		order: 11,
 		interval: 120000,
 		nicename: "unread",
 		sizes: ["tiny", "small"],

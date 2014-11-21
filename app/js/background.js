@@ -394,7 +394,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 		});
 	}
 	else if (details.reason == "update") {
-		localStorage["translateRequest"] = "true";
+		// localStorage["translateRequest"] = "true";
 	}
 });
 

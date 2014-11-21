@@ -6,7 +6,7 @@
     "sessions":"sessões",
     "pageviews":"Vistas das paginas",
     "pagesvisit":"Páginas\/visita",
-    "bouncerate":"Bounce Rate",
+    "bouncerate":"Taxa de rejeição",
     "completions":"Conclusões",
     "noprofile":"Ele não se parece com você selecionou um perfil ainda! <br \/> <br \/> \nTente selecionar um através do ícone de chave inglesa no canto superior direito.\n",
     "settings":{
@@ -99,47 +99,47 @@
   },
   "currency":{
     "name":"Moeda",
-    "desc":"Let's you convert between any two of 169 currencies.",
+    "desc":"Vamos converter entre quaisquer dois de 169 moedas.",
     "to_label":"a"
   },
   "drive":{
     "name":"Drive",
-    "desc":"Displays mudou recentemente arquivos de seu Google Drive.",
+    "desc":"Exibe arquivos recentemente alterados de sua movimentação de Google.",
     "settings":{
       "files_shown":"Número de arquivos mostrados"
     },
     "modified_by":"por",
-    "authorize":"Você precisa dar iChrome permissão para visualizar arquivos de seu Google Drive antes de qualquer coisa vai aparecer aqui.",
+    "authorize":"Você precisará dar iChrome permissão para ver os arquivos do seu Google Drive antes que alguma coisa vai aparecer aqui.",
     "authorize_btn":"Autorizar"
   },
   "facebook":{
-    "name":"Facebook",
-    "desc":"Incorpora Facebook em um Widget"
+    "name":"FACEBOOK",
+    "desc":"Incorpora o Facebook em um widget"
   },
   "feedly":{
     "name":"Feedly",
-    "desc":"Apresenta artigos de sua conta Feedly em um formato configurável.",
+    "desc":"Exibe artigos de sua conta Feedly em um formato configurável.",
     "settings":{
       "source":"Mostrar artigos de",
       "source_feeds":"Feeds",
       "show":"Mostrar",
       "show_options":{
         "all":"Todos os artigos",
-        "unread":"Somente os artigos não lidos"
+        "unread":"Somente os artigos não-lidos"
       },
       "layout":"Estrutura",
       "layout_options":{
         "titles":"Títulos apenas",
         "magazine":"Revista",
-        "cards":"Cartas",
-        "cards_columns":"Cartas (duas colunas)"
+        "cards":"Cartões",
+        "cards_columns":"Cartões (duas colunas)"
       },
       "mark":"Marcar um artigo como lido quando eu",
       "mark_options":{
-        "scroll":"Scroll past it or click it",
-        "click":"Just click it"
+        "scroll":"Rolar após isso ou clique nele",
+        "click":"Basta clicar nela"
       },
-      "sort":"Ordenação",
+      "sort":"Ordem de classificação",
       "sort_options":{
         "newest":"Recentes primeiro",
         "oldest":"Antigos primeiro"
@@ -153,32 +153,32 @@
   },
   "gmail":{
     "name":"Gmail",
-    "desc":"Displays your Gmail inbox where you can manage your email."
+    "desc":"Exibe a caixa de entrada do Gmail, onde você pode gerenciar seu e-mail."
   },
   "iframe":{
     "name":"iFrame",
-    "desc":"Displays a webpage of your choice within an iframe.",
+    "desc":"Exibe uma página de sua escolha dentro de um iframe.",
     "settings":{
-      "url":"Frame URL",
+      "url":"URL frame",
       "url_placeholder":"http:\/\/www.google.com\/",
-      "height":"Frame Height",
-      "padding":"Padding"
+      "height":"Quadro Altura",
+      "padding":"Acolchoamento"
     }
   },
   "keep":{
     "name":"Keep",
-    "desc":"Embeds Google Keep in a widget"
+    "desc":"Incorpora Google keep em um Widget"
   },
   "news":{
     "name":"Noticias",
-    "desc":"Displays the current top news by category and edition.",
+    "desc":"Exibe o atual top news por categoria e edição.",
     "settings":{
       "articles":"Artigos mostrados",
       "edition":"Edição",
       "edition_help":"Se sua edição ou tópico não está listado aqui, por favor insira uma URL do feed do Google News no campo Feed Personalizado abaixo (veja lá o texto de ajuda para obter uma explicação).",
       "topic":"Tópico",
       "topic_options":{
-        "top":"Top Stories",
+        "top":"Top Storias",
         "world":"Mundo",
         "nation":"Nação",
         "business":"Negócios",
@@ -190,10 +190,10 @@
         "spotlight":"Centro das atenções"
       },
       "feed":"Custom Feed",
-      "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
-      "feed_placeholder":"Enter a custom RSS feed to fetch news from",
-      "footer":"Footer URL",
-      "footer_placeholder":"Enter the URL that the \"More\" link should point to"
+      "feed_help":"Esta é a alimentação na URL listado na parte inferior de cada página do Google News, procure um ícone RSS laranja e um link que diz \"RSS\"",
+      "feed_placeholder":"Digite um feed RSS personalizado para buscar notícias de",
+      "footer":"Rodapé URL",
+      "footer_placeholder":"Digite a URL que o link \"Mais\" deve apontar para"
     },
     "more":"Mais"
   },
@@ -220,7 +220,7 @@
     "authorize":"Você precisará dar ao iChrome permissão para ver seus cartões do Google Now antes que algo apareça aqui.",
     "authorize_btn":"Autorizar",
     "caught_up":"Todos apanhados, nada aqui.",
-    "no_title":"No Title"
+    "no_title":"Sem titulo"
   },
   "plus":{
     "name":"Google+",
@@ -280,7 +280,7 @@
     "feed_error":"Ocorreu um erro ao tentar buscar o feed em: % s . \nPor favor, verifique o URL e \/ ou modificar os widgets configurações."
   },
   "sports":{
-    "name":"Desporto",
+    "name":"Esportes",
     "desc":"Exibe informações sobre pontuação e jogo para ligas e \/ ou equipes selecionadas.",
     "settings":{
       "league":"Liga",
@@ -295,19 +295,19 @@
     },
     "error":"Algo parece ter dado errado",
     "unknown_error":"Erro desconhecido",
-    "watch_on":"Watch on: %s",
-    "no_games":"No Games Scheduled"
+    "watch_on":"Assista em: % s",
+    "no_games":"Não há jogos programados"
   },
   "stocks":{
-    "name":"Stocks",
-    "desc":"Displays current information for any given stock symbol.",
+    "name":"Estoques",
+    "desc":"Exibe informações atuais para qualquer símbolo de ação dada.",
     "settings":{
-      "symbols":"Stock Symbol(s), comma separated",
-      "symbols_placeholder":"e.g. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br \/><br \/>\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. For example, the Dow Jones index is <b>.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
+      "symbols":"Símbolo da (s), separados por vírgula",
+      "symbols_placeholder":"por exemplo NASDAQ: GOOG, INDEXNYSEGIS: NYA",
+      "symbols_help":"Estas são as ações que você gostaria que fossem mostradas em um ticker:. Formato de troca <br \/> <br \/> \nPara índices, use os tickers e intercâmbios, como mostrado em <a href = \"https:\/\/www.google.com \/ \"target =\" _ blank finanças \"> Google Finance <\/a> . Por exemplo, o índice Dow Jones é <b> .DJI <\/ b> e NYSE é <b> INDEXNYSEGIS: NYA <\/ b> .\n"
     },
-    "as_of":"as of",
-    "exchange_time":"Exchange Time",
+    "as_of":"a partir de",
+    "exchange_time":"Tempo de troca",
     "open":"abrir",
     "high":"alto",
     "low":"baixa",
@@ -332,52 +332,52 @@
   },
   "topsites":{
     "name":"Top Sites",
-    "desc":"Displays your most visited\/top sites.",
+    "desc":"Exibe suas principais sites mais visitados \/.",
     "settings":{
-      "show":"Number of sites shown",
-      "open":"Open sites in"
+      "show":"Número de locais mostrado",
+      "open":"Locais abertos em"
     }
   },
   "traffic":{
-    "name":"Traffic",
-    "desc":"Displays the current time in current traffic to home or work.",
+    "name":"Tráfego",
+    "desc":"Exibe a hora atual no tráfego atual para casa ou trabalho.",
     "settings":{
-      "leave":"I leave home at",
-      "home":"Home Address",
-      "home_placeholder":"The destination that should be used after work",
-      "work":"Work Address",
-      "work_placeholder":"The destination that should be used before work",
-      "method":"Transit Method",
+      "leave":"Eu saia de casa em",
+      "home":"Endereço Residencial",
+      "home_placeholder":"O destino que deve ser utilizado após o trabalho",
+      "work":"Endereço Trabalho",
+      "work_placeholder":"O destino que deve ser usado antes do trabalho",
+      "method":"Método de trânsito",
       "method_options":{
-        "driving":"Driving",
-        "walking":"Walking",
-        "transit":"Public Transit"
+        "driving":"Condução",
+        "walking":"A pé",
+        "transit":"Transporte público"
       }
     },
-    "to_home":"to home",
-    "to_work":"to work"
+    "to_home":"para casa",
+    "to_work":"ao trabalho"
   },
   "translate":{
-    "name":"Translate",
-    "desc":"Contains a small inline Google Translate textbox.",
-    "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
-    "button":"Translate",
+    "name":"Tradutor",
+    "desc":"Contém um pequeno inline Google Translate textbox.",
+    "placeholder":"Digite o texto que você gostaria de traduzir aqui e, em seguida, Clicar \"Traduzir\" abaixo.",
+    "button":"Traduzir",
     "untranslate":"Untranslate",
-    "auto":"Auto (%s)",
-    "unknown":"Unknown",
-    "error":"Something went wrong while trying to translate that..."
+    "auto":"Automatico (%s)",
+    "unknown":"Desconhecido",
+    "error":"Algo deu errado durante a tentativa de traduzir isso..."
   },
   "twitter":{
     "name":"Twitter",
-    "desc":"Displays tweets from your home stream or a specified list.",
+    "desc":"Exibe os tweets do seu fluxo de casa ou de uma lista especificada.",
     "settings":{
-      "source":"Show Tweets from",
-      "show":"Tweets Shown"
+      "source":"Mostrar Tweets de",
+      "show":"Tweets mostrados"
     },
-    "authorize":"You'll need to authorize iChrome first",
-    "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
+    "authorize":"Você precisará autorizar iChrome primeiro",
+    "authorize_msg":"Você precisará dar iChrome permissão para ver os tweets de sua conta, antes que alguma coisa vai aparecer aqui.",
     "authorize_btn":"Autorizar",
-    "no_tweets":"There don't seem to be any tweets here...",
+    "no_tweets":"Não parece haver qualquer tweets aqui...",
     "home":"Casa",
     "mentions":"Menções",
     "retweets":"Retweets de mim",
@@ -411,9 +411,9 @@
     "desc":"Exibe o tempo atual e uma previsão para os próximos 4 dias.",
     "settings":{
       "location":"Localizaçõe(s)",
-      "location_placeholder":"Enter a location and press Enter",
-      "temperature":"Temperature Units",
-      "wind":"Wind Speed Units"
+      "location_placeholder":"Digite um local e pressione Enter",
+      "temperature":"Unidades de temperatura",
+      "wind":"Unidades de velocidade de vento"
     },
     "unknown":"Desconhecido",
     "wind":"Velocidade do vento",

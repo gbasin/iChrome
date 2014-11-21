@@ -3,18 +3,18 @@
   "language":"Česky",
   "newtabName":"iChrome Nová Karta",
   "extName":"iChrome - Vaše domovská stránka pro chrome",
-  "extDescription":"NEJLEPŠÍ stránka pro Chrome. Nádherné motivy, desítky widgetů, bleskově rychlý, šíleně přizpůsobitelný!",
-  "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
+  "extDescription":"NEJLEPŠÍ domovská stránka pro Chrome. Nádherné motivy, desítky widgetů, bleskově rychlý, šíleně přizpůsobitelný!",
+  "newtabDescription":"Nejlepší výchozí stránka pro Chrome. Nyní i pro nově otevřený tab. Krásná témata, hromada widgetů, rychlý a konfigurovatelný!",
   "defaults":{
     "tab":"Domovská stránka",
     "me":"Já"
   },
   "remove_widget":"Odstranit",
-  "column_to_grid_warning":"You selected to change a tab from a column-based layout to a grid-based layout. If you continue you will lose all of your columns; everything will be moved to the top left corner.\r\nAre you sure you want to do this?",
-  "grid_to_column_warning":"You selected to change a tab from a grid-based layout to a column-based layout. If you continue you will lose all of your widget positioning; everything will be moved to the first column of the new tab.\r\nAre you sure you want to do this?",
-  "storage_warning":"You have used more than 90% of the total synchronized storage space available.\r\nIf you reach the limit, iChrome will stop syncing your data and may stop working.\r\nYou can shrink the amount of space you use by deleting custom themes, notes and to-do lists that you don't use.",
+  "column_to_grid_warning":"Změnili jste rozložení ze sloupcového na rastrové (grid). Pokud budete pokračovat, ztratíte všechny vytvořené sloupce; vše bude přesunuto do levého horního rohu.\nOpravdu to chcete udělat?",
+  "grid_to_column_warning":"Změnili jste rozložení z rastrového (grid) na sloupcové. Pokud budete pokračovat, ztratíte rozložení všech svých widgetů; vše bude přesunuto do prvního sloupce.\nOpravdu to chcete udělat?",
+  "storage_warning":"Více než 90% synchronizovaného úložného prostoru bylo použito.\nPokud překročíte tento limit, iChrome přestane synchronizovat data a může i přestat fungovat.\nSituaci můžete zlepšit smazáním vlastních témat, poznámek a to-do listů, které nepoužíváte.",
   "toolbar":{
-    "placeholder":"Enter your terms",
+    "placeholder":"Zadejte své podmínky",
     "placeholder_ok":"Zadejte dotaz, nebo řekněte \"OK, Google\"",
     "apps":{
       "search":"Hledat",
@@ -44,7 +44,7 @@
       "twitter":"Twitter",
       "webstore":"Webový obchod",
       "donate":"Darovat",
-      "by":"od Avi Kohna"
+      "by":"Avi Kohn"
     }
   },
   "voice":{
@@ -54,227 +54,227 @@
   },
   "settings":{
     "save":"Uložit a zavřít",
-    "new_tab":"Vytvořit nový",
+    "new_tab":"Vytvořit novou",
     "labels":{
       "general":"Obecný",
       "visual":"Vzhled",
-      "specific":"Tab Specific",
+      "specific":"Specifické pro záložku (tab).",
       "advanced":"Pokročilé"
     },
     "general":{
       "search":"Hledat URL",
-      "search_desc":"This is the URL that the search box will submit searches to. Put <b>%s<\/b> where the search query should go",
-      "profile":"Profile Picture",
-      "profile_desc":"This is the image shown at the right of the toolbar.  It gets auto-populated from your Google profile",
-      "name":"Name",
-      "name_desc":"This is used for the Google+ link in the toolbar.  It also gets auto-populated from your Google profile",
-      "voice":"Voice Search",
-      "voice_search":"Enable voice search",
-      "voice_ok":"Enable \"OK Google\" hotword detection",
-      "links":"Toolbar Links",
-      "links_desc":"Here you can choose which links will show in the right section of the toolbar:",
+      "search_desc":"Toto je adresa, na kterou se budou odesílat dotazy vyhledáváni. V adrese se <b>%s<\/b> nahradí vyhledávaným textem",
+      "profile":"Profilová fotka",
+      "profile_desc":"Tento obrázek se zobrazí na pravé straně horního panelu. Automaticky se doplní z Google profilu",
+      "name":"Jméno",
+      "name_desc":"Jméno použité v odkazu na Google+ v horním panelu. Doplní se automaticky z Google profilu",
+      "voice":"Vyhledávání pomocí hlasu",
+      "voice_search":"Povolit vyhledávání pomocí hlasu",
+      "voice_ok":"Povolte detekci výrazu \"OK Google\"",
+      "links":"Odkazy na panelu nástrojů",
+      "links_desc":"Zde si můžete zvolit, které odkazy se zobrazí v pravé sekci panelu nástrojů:",
       "links_items":{
         "plus":"Google Plus",
         "gmail":"Gmail",
-        "apps":"Apps Menu",
-        "link1":"Custom Link 1",
-        "link2":"Custom Link 2",
-        "link3":"Custom Link 3",
-        "text_holder":"Link text",
-        "link_holder":"Link URL, i.e. http:\/\/www.google.com\/"
+        "apps":"Nabídka aplikací",
+        "link1":"Konfigurovatelný odkaz 1",
+        "link2":"Konfigurovatelný odkaz 2",
+        "link3":"Konfigurovatelný odkaz 2",
+        "text_holder":"Text odkazu",
+        "link_holder":"Adresa odkazu. Příklad: http:\/\/www.google.com\/"
       },
-      "guide":"Installation Guide",
-      "guide_desc":"Reshow the guide that was shown when iChrome was first installed"
+      "guide":"Instalační manuál",
+      "guide_desc":"Zobrazit znovu průvodce, který se zobrazuje po první instalaci"
     },
     "visual":{
-      "layout":"Layout",
+      "layout":"Uspořádání",
       "layout_options":{
-        "1_fixed":"One column, fixed width",
-        "1_fluid":"One column, fluid width",
-        "2_fixed":"Two columns, fixed width",
-        "2_fluid":"Two columns, fluid width",
-        "3_fixed":"Three columns, fixed width",
-        "3_fluid":"Three columns, fluid width",
-        "4_fixed":"Four columns, fixed width",
-        "4_fluid":"Four columns, fluid width",
-        "5_fixed":"Five columns, fixed width",
-        "5_fluid":"Five columns, fluid width",
-        "grid":"Grid-based, customizable width"
+        "1_fixed":"Jeden sloupec, pevná šířka",
+        "1_fluid":"Jeden sloupec, pružná šířka",
+        "2_fixed":"Dva sloupce, pevná šířka",
+        "2_fluid":"Dva sloupce, pružná šířka",
+        "3_fixed":"Tři sloupce, pevná šířka",
+        "3_fluid":"Tři sloupce, pružná šířka",
+        "4_fixed":"Čtyři sloupce, pevná šířka",
+        "4_fluid":"Čtyři sloupce, pružná šířka",
+        "5_fixed":"Pět sloupců, pevná šířka",
+        "5_fluid":"Pět sloupců, pružná šířka",
+        "grid":"Rastrové rozložení, nastavitelná šířka"
       },
-      "theme":"Default Theme",
-      "theme_placeholder":"Theme #%s",
-      "theme_select":"Select a theme",
-      "align":"Alignment",
-      "align_desc":"This will change the alignment of the widget columns",
+      "theme":"Výchozí téma",
+      "theme_placeholder":"Téma #%s",
+      "theme_select":"Vyberte téma",
+      "align":"Zarovnání",
+      "align_desc":"Toto změní zarovnání sloupců s widgety",
       "align_labels":{
-        "left":"Left",
-        "center":"Center",
-        "right":"Right"
+        "left":"Vlevo",
+        "center":"Uprostřed",
+        "right":"Vpravo"
       },
-      "logo":"Logo URL",
-      "logo_desc":"This is the image shown at the left of the toolbar.  The default is <b>\/images\/logo.svg<\/b>",
-      "toolbar":"Toolbar Style",
-      "toolbar_desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
-      "toolbar_normal":"Normal",
-      "toolbar_button":"Button",
-      "animation":"Slide-in Animation",
-      "animation_desc":"This setting lets you enable or disable the slide-in animation that runs when you load the page",
-      "animation_label":"Enable the animation"
+      "logo":"URL adresa s logem",
+      "logo_desc":"Toto je obrázek zobrazovaný na levé straně horního panelu. Výchozí cesta je  <b>\/images\/logo.svg<\/b>",
+      "toolbar":"Styl panelu nástrojů",
+      "toolbar_desc":"Toto nastavuje styl panelů nástrojů. Buď je zobrazen normálně a nebo jako tlačítko.",
+      "toolbar_normal":"Normální",
+      "toolbar_button":"Tlačítka",
+      "animation":"Úvodní animace",
+      "animation_desc":"Toto nastavení umožňuje zapnout nebo vypnout úvodní animaci, která se spustí po načtení stránky",
+      "animation_label":"Povolit animaci"
     },
     "specific":{
-      "name":"Tab Name",
-      "default_name":"New Tab",
-      "delete":"Delete tab",
-      "delete_disallowed":"You cannot delete the only remaining tab.",
-      "delete_confirm":"Are you really sure you want to delete this tab?\r\nThis action is irreversible, all data from all widgets in the tab will be permanently lost.",
-      "default":"Set as default"
+      "name":"Název karty",
+      "default_name":"Nová karta",
+      "delete":"Odstranit kartu",
+      "delete_disallowed":"Jedinou zbývající kartu nelze odstranit.",
+      "delete_confirm":"Jste si opravdu jisti, že chcete odstranit tuto kartu? Tato akce je nevratná, všechna data ze všech widgetů v kartě budou navždy ztraceny.",
+      "default":"Nastavit jako výchozí"
     },
     "advanced":{
-      "background":"Widget Background",
-      "background_desc":"Click the swatch to select a color",
-      "search":"Search Behavior",
-      "search_label":"Open search results in a new tab",
-      "backup":"Backup \/ Restore",
-      "backup_desc":"<b>To backup:<\/b> Click the Backup button and copy the text that appears in the field below.<br \/><b>To restore:<\/b> Paste the text you saved or copied before and click the Restore button.",
-      "backup_backup":"Backup",
-      "backup_restore":"Restore",
-      "restore_error":"An error occurred while trying to parse the provided data, please make sure you entered the EXACT text you backed up.",
-      "restore_confirm":"Are you really, really sure you want to do this?\r\nThis will overwrite all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers signed into this Google account.",
-      "css":"Custom CSS",
-      "css_desc":"You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.",
-      "reset":"Reset iChrome",
-      "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers signed into this Google account."
+      "background":"Pozadí widgetu",
+      "background_desc":"Klepněte na vzorku pro výběr barvy",
+      "search":"Chování vyhledávání",
+      "search_label":"Otevřít výsledky hledání v novém okně",
+      "backup":"Záloha \/ Obnova",
+      "backup_desc":"<b>Pro zálohování:<\/b> Použijte tlačítko Zálohovat a uschovejte text, který se následně zobrazí v poli pod tlačítkem.<br \/><b>Pro obnovení:<\/b> Vložte text který jste dříve získali při zálohování a použijte tlačítko Obnovit.",
+      "backup_backup":"Zálohovat",
+      "backup_restore":"Obnovit",
+      "restore_error":"Došlo k chybě při pokusu analyzovat zadané údaje, zkontrolujte, zda že jste zadali přesný text, který jste získali při zálohování.",
+      "restore_confirm":"Jste si opravdu, ale opravdu jisti že chcete obnovit zálohu? Tato akce přepíše všechny lokální a synchronizovat data, neexistuje žádná záloha a žádný způsob, jak se vrátit.  KOMPLETNÍ aktuální konfigurace ve všech počítačích, které používají tento účtet Google, bude ztracena.",
+      "css":"Vlastní CSS",
+      "css_desc":"Toto pole můžete použít k upravení téměř každé vizuální část iChrome pomocí CSS (definice viz <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" \ntarget=\"_blank\">MDN<\/a>).<br \/><br \/>Z důvodu synchronizace nastavení, lze zadat maximálně 1000 znaků včetně mezer.",
+      "reset":"Resetovat iChrome",
+      "reset_confirm":"Jste si opravdu jisti, že chcete obnovit základní nastavení iChrome?\nTímto budou vymazány všechny data, jak lokální tak synchronizované, tato změna je nevratná. Smažete kompletní nastavení a to na všech počítačích, které používají tento účet Google."
     }
   },
   "store":{
-    "installation":"Installation",
-    "description":"Description",
-    "preview":"Preview",
-    "instructions":"Drag and drop any size onto your homepage"
+    "installation":"Instalace",
+    "description":"Popis",
+    "preview":"Náhled",
+    "instructions":"Protáhňete libovolnou velikost na domovskou stránku"
   },
   "widgets":{
     "sizes":{
-      "tiny":"Tiny",
-      "small":"Small",
-      "medium":"Medium",
-      "large":"Large",
-      "variable":"Variable"
+      "tiny":"Drobné",
+      "small":"Malé",
+      "medium":"Střední",
+      "large":"Velké",
+      "variable":"Pružní"
     },
     "settings":{
-      "title":"Widget Settings",
-      "save":"Save",
-      "size":"Widget Size"
+      "title":"Nastavení widgetu",
+      "save":"Ulož",
+      "size":"Velikost widgetu"
     },
-    "delete_confirm":"Are you really sure you want to delete this widget?\r\nThis action is irreversible; all data from this widget will be permanently lost.",
+    "delete_confirm":"Opravdu chcete odstranit tento widget?\nTato akce nemůže být vrácena zpět a všechna data z tohoto widgetu budou ztracena.",
     "shared":{
       "settings":{
-        "title":"Widget Title",
-        "title_placeholder":"Enter a widget title or leave blank to hide",
-        "height":"Widget Height",
+        "title":"Název widgetu",
+        "title_placeholder":"Zadejte název widgetu a nebo nezadávejte nic. V takovém případě se název nezobrazí.",
+        "height":"Výška widgetu",
         "open_options":{
-          "current":"The current tab",
-          "blank":"A new tab"
+          "current":"Současná záložka (tab)",
+          "blank":"Nová záložka"
         },
-        "footer_link":"Footer Link",
+        "footer_link":"Odkaz v zápatí",
         "footer_link_options":{
-          "show":"Show",
-          "hide":"Hide"
+          "show":"Zobrazit",
+          "hide":"Skrýt"
         },
-        "account":"Account ID",
-        "account_help":"If you're signed into multiple accounts, this is the \"authuser=\" value.\n<br \/><br \/>\nFor example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"authuser\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
-        "account_placeholder":"Your \"authuser=\" value",
-        "on":"On",
-        "off":"Off"
+        "account":"ID účtu",
+        "account_help":"Pokud jste přihlášeni na více účtech, toto je \"authuser =\" hodnota. < br \/ > < br \/ > Například pokud jste přihlášeni na dvou účtech, jnovak1@gmail.com a jnovak2@gmail.com, \"authuser\" hodnota pro jnovak2@gmail.com je 1, protože je to druhý účet (počítáno od nuly) .",
+        "account_placeholder":"Vaše \"authuser =\" hodnota",
+        "on":"Zapnout",
+        "off":"Vypnout"
       }
     }
   },
   "themes":{
-    "title":"Themes",
-    "all":"All",
-    "custom":"Custom",
-    "create":"Create a theme",
-    "url_or_upload":"or",
-    "upload_image":"Upload an image",
-    "edit_btn":"Edit",
-    "delete":"Delete",
-    "use":"Use",
-    "preview":"Preview",
-    "author":"By",
-    "images":"%s images",
-    "resolution":"Resolution",
-    "categories":"Categories",
-    "cached":"This theme has been cached and is available offline",
-    "random":"This theme displays a random image every time you load the page",
-    "random_daily":"This theme displays an image picked randomly every day",
-    "sunrise_sunset":"This theme displays an image based on the time of day",
-    "feed":"This theme displays an image selected daily from an external feed",
-    "delete_confirm":"Are you really sure you would like to delete this theme?\r\nThis action is irreversible; the entire theme will be permanently lost.",
-    "delete_error":"An error occurred while trying to delete the theme.  Please try again later.",
-    "feed_fetching":"Please wait, fetching feed...",
-    "feed_error":"Something went wrong while trying to fetch the feed.  Please try again later.",
-    "caching":"Please wait, caching theme...",
-    "cache_status":"%s of %s images cached",
-    "cache_error":"An error occurred while trying to cache the theme.  Please try again later",
+    "title":"Témata",
+    "all":"Vše",
+    "custom":"Vlastní",
+    "create":"Vytvoření motivu",
+    "url_or_upload":"nebo",
+    "upload_image":"Nahrát obrázek",
+    "edit_btn":"Editovat",
+    "delete":"Smazat",
+    "use":"Použít",
+    "preview":"Náhled",
+    "author":"Od",
+    "images":"%s obrázků",
+    "resolution":"Rozlišení",
+    "categories":"Kategorie",
+    "cached":"Motiv je uložen ve vyrovnávací paměti a je dostupný offline",
+    "random":"Motiv zobrazuje náhodný obrázek pří každém načtení stránky",
+    "random_daily":"Motiv zobrazuje každý den náhodný obrázek",
+    "sunrise_sunset":"Motiv zobrazuje náhodný obrázek dle aktuálního času",
+    "feed":"Toto téma zobrazí obrázek z externího kanálu dle denního výběru",
+    "delete_confirm":"Jste si opravdu jisti, že chcete vymazat toto téma?\nTato akce je nevratná; celé téma bude navždy ztraceno.",
+    "delete_error":"Došlo k chybě při pokusu odstranit téma.  Opakujte akci později.",
+    "feed_fetching":"Počkejte prosím, stahuji kanál...",
+    "feed_error":"Při pokusu o načtení informačního kanálu došlo k chybě.  Opakujte prosím akci později.",
+    "caching":"Čekejte prosím, stahuji motiv...",
+    "cache_status":"%s z %s obrázků uložených v mezipaměti",
+    "cache_error":"Došlo k chybě při pokusu načíst téma do mezipaměti.  Prosím opakujte akci později",
     "edit":{
-      "title":"Edit Theme",
-      "create_title":"Create Theme",
-      "name":"Theme Name",
-      "default_name":"New Theme",
-      "name_placeholder":"Enter a theme name",
-      "image":"Image URL",
-      "image_placeholder":"Enter a background image URL",
-      "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy and paste the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
-      "color":"Fallback Color",
-      "color_placeholder":"Enter any color name",
-      "position":"Position",
+      "title":"Upravit motiv",
+      "create_title":"Vytvořit motiv",
+      "name":"Název motivu",
+      "default_name":"Nový motiv",
+      "name_placeholder":"Zadejte název motivu",
+      "image":"Adresa URL obrázku",
+      "image_placeholder":"Zadejte URL obrázku pozadí",
+      "image_help":"Nahrané obrázky <b>nelze synchronizovat<\/b> mezi počítači.<br \/><br \/>Pokud je to pro vás důležité, prosím nahrajte obrázek na webovou službu jako například <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Poté zkopírujte a vložte URL adresu s příponou (tj. jpg) a vložte ji do pole vlevo.",
+      "color":"Základní barva",
+      "color_placeholder":"Zadejte libovolný název barvy",
+      "position":"Pozice",
       "position_options":{
-        "center":"Center",
-        "top_left":"Top Left",
-        "top_center":"Top Center",
-        "top_right":"Top Right",
-        "bottom_left":"Bottom Left",
-        "bottom_center":"Bottom Center",
-        "bottom_right":"Bottom Right"
+        "center":"Uprostřed",
+        "top_left":"Nahoře, vlevo",
+        "top_center":"Nahoře, uprostřed",
+        "top_right":"Nahoře, vpravo",
+        "bottom_left":"Dole, vlevo",
+        "bottom_center":"Dole, uprostřed",
+        "bottom_right":"Dole, vpravo"
       },
-      "scaling":"Scaling",
+      "scaling":"Velikost",
       "scaling_options":{
-        "auto":"Auto",
-        "width":"Full Width",
-        "height":"Full Height",
-        "none":"No Scaling (preview may be inaccurate)"
+        "auto":"Automatická",
+        "width":"Plná šířka",
+        "height":"Plná výška",
+        "none":"Pevná (náhled může být nepřesný)"
       },
-      "repeat":"Image Repeat",
+      "repeat":"Opakování obrázku",
       "repeat_options":{
-        "none":"No Repeat",
-        "horizontal":"Repeat Horizontally",
-        "vertical":"Repeat Vertically",
-        "both":"Repeat Both"
+        "none":"Žádné",
+        "horizontal":"Opakovat vodorovně",
+        "vertical":"Opakovat svisle",
+        "both":"Opakovat v obou směrech"
       },
-      "attach":"Attach Image To",
-      "attach_tab":"The tab",
-      "attach_window":"The window",
-      "preview":"Preview",
+      "attach":"Připojit obrázek",
+      "attach_tab":"Ke kartě",
+      "attach_window":"K oknu",
+      "preview":"Náhled",
       "save":"Uložit a zavřít",
-      "cache_error":"An error occurred while trying to cache the image you provided, please double-check the URL.",
-      "upload_error":"An error occurred while trying to upload the file you provided, please make sure that it's a reasonable size and an image."
+      "cache_error":"Došlo k chybě při pokusu načíst obrázek který jste zadali do mezipaměti, prosím zkontrolujte URL adresu.",
+      "upload_error":"Došlo k chybě při pokusu o uložení souboru, který jste zadali, prosím ujistěte se, že je přiměřené velikosti a je to obrázek."
     }
   },
   "intro":{
     "slide1":{
-      "title":"Welcome to iChrome!",
-      "line1":"If you want iChrome as your start page, you'll need to set the URL of this page in your settings (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">instructions<\/a>).  Otherwise, if you want it as a new tab or both home and new tab pages, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
-      "newtab_line1":"If you want iChrome to only show when you start Chrome and not every time you open a new tab please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">the main iChrome extension<\/a> instead of this one.",
-      "line2":"This introduction is only 3 slides long and will give a quick overview of how to do basic things in iChrome.  When you're ready hit the next arrow at the right."
+      "title":"Vítejte na iChrome!",
+      "line1":"Pokud chcete iChrome jako úvodní stránku, budete muset nastavit URL adresu v nastavení prohlížeče (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">instrukce<\/a>). Pokud ji chcete nastavit při otevření nové záložky, nebo jako úvodní stránku i při otevření nové záložky, prosím instalujte<a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> .",
+      "newtab_line1":"Pokud chcete iChrome zobrazit pouze při startu prohlížeče a ne pro každou novou záložku, prosím instalujte <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">hlavní rozšíření iChrome<\/a> namísto tohoto rozšíření.",
+      "line2":"Tento Úvod se skládá ze tří částí a poskytne Vám základy v ovládání iChrome. Pokud jste připraveni, použijte šipku vpravo."
     },
     "slide2":{
       "title":"Widgety",
-      "line1":"Widgets are the core of iChrome.  You can configure and move them using the wrench and handle icons shown when hovering at the top right.  To remove one, start dragging it and drop it onto the red bar that appears.",
-      "line2":"New widgets can be added by clicking the Widgets item under the menu at the top right of the page (shown in the next slide)."
+      "line1":"Widgety jsou jádrem iChrome.  Můžete je konfigurovat a přesouvat pomocí ikon klíče a úchytu které se zobrazí vpravo nahoře po najetí na widget.  Chcete-li odstranit widget, přetáhněte jej na červený pruh, který se objeví.",
+      "line2":"Nové widgety lze přidat klepnutím na položku widgety v menu v horní části stránky (zobrazené v následujícím snímku)."
     },
     "slide3":{
-      "title":"Customizing",
-      "line1":"You can change almost anything else you'd want to via the menu at the top right.  There you can configure the way your page looks, how iChrome works and get new widgets.",
-      "line2":"Other things you can do include creating individual tabs, each with themes and widgets of their own, custom themes, or configuring the tiniest thing like what links are shown in the toolbar."
+      "title":"Přizpůsobení",
+      "line1":"Téměř cokoli dalšího můžete změnit přes menu v pravé horní části.  Zde můžete nakonfigurovat vzhled vaší stránky, jak se má iChrome chovat a získat nové widgety.",
+      "line2":"Další věci, které můžete nastavit, včetně vytváření jednotlivých záložek, každé s vlastními tématy a widgety, vytvářet vlastní motivy, nebo změnit i tu nejmenší věc, jako které odkazy se mají zobrazit v panelu nástrojů."
     }
   }
 }

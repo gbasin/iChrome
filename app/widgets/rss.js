@@ -5,7 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 8,
 		size: 5,
-		order: 4,
+		order: 3,
 		interval: 300000,
 		nicename: "rss",
 		sizes: ["variable"],

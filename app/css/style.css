@@ -759,49 +759,56 @@ input[type="radio"]:checked {
 /*---------------------------------------------
 	/ Main Menu
 */
-.menu {
+.menu-container {
 	top: 0;
-	margin: 0;
-	width: 215px;
-	right: -220px;
+	width: 0;
+	right: 0;
+	display: flex;
 	z-index: 9999;
-	color: #646464;
-	padding: 5px 0;
-	overflow: auto;
-	font-size: 14px;
+	overflow: hidden;
 	background: #FFF;
 	max-height: 100vh;
 	position: absolute;
-	font-family: Roboto, sans-serif;
+	will-change: width;
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
-	transition: right .3s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+	transition: width .3s cubic-bezier(0.190, 1.000, 0.220, 1.000);
 }
 
-.menu:lang(uk),
-.menu:lang(nl),
-.menu:lang(es) {
-	width: 230px;
-	right: -235px;
-}
-
-.menu:lang(ru) {
-	width: 250px;
-	right: -255px;
-}
-
-.menu.visible,
-.menu.visible:lang(uk),
-.menu.visible:lang(nl),
-.menu.visible:lang(es),
-.menu.visible:lang(ru) {
-	right: 0;
-}
-
-.toolbar .menu {
+.toolbar .menu-container {
 	top: 100%;
 	max-height: calc(100vh - 100%);
 	box-shadow: 0 2px 3px -1px rgba(0, 0, 0, .3),
 				inset 0 1px 3px rgba(0, 0, 0, .075);
+}
+
+.menu {
+	color: #646464;
+	padding: 5px 0;
+	overflow: auto;
+	flex-shrink: 0;
+	font-size: 14px;
+	font-family: Roboto, sans-serif;
+}
+
+.menu,
+.menu-container.visible {
+	width: 215px;
+}
+
+.menu:lang(uk),
+.menu:lang(nl),
+.menu:lang(es),
+.menu-container.visible:lang(uk),
+.menu-container.visible:lang(nl),
+.menu-container.visible:lang(es) {
+	width: 230px;
+}
+
+.menu:lang(ru),
+.menu:lang(sr),
+.menu-container.visible:lang(ru),
+.menu-container.visible:lang(sr) {
+	width: 250px;
 }
 
 .menu [data-item] {
@@ -2004,6 +2011,8 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .modal.getting-started:lang(fr),
 .modal.getting-started:lang(es),
 .modal.getting-started:lang(ru),
+.modal.getting-started:lang(sr),
+.modal.getting-started:lang(cs),
 .modal.getting-started:lang(nl) {
 	height: 620px;
 }
@@ -2795,16 +2804,19 @@ body.no-edit .widgets-container .widget.tabbed:before {
 }
 
 .themes.create #image:lang(ru),
+.themes.create #image:lang(cs),
 .themes.create #image:lang(ja) {
 	width: 54%;
 }
 
 .themes.create .upload:lang(ru),
+.themes.create .upload:lang(cs),
 .themes.create .upload:lang(ja) {
 	width: 42%;
 	padding-left: 5px;
 }
 
+.themes.create .upload input:lang(cs),
 .themes.create .upload input:lang(ja) {
 	width: calc(100% - 45px);
 }
@@ -3082,8 +3094,8 @@ body.no-edit .widgets-container .widget.tabbed:before {
 */
 .settings .toolbar-style .checkboxes label {
 	cursor: pointer;
-    font-weight: 400;
-    margin-right: 15px;
+	font-weight: 400;
+	margin-right: 15px;
 }
 
 

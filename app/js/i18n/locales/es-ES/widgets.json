@@ -22,7 +22,7 @@
         "tiles":"Cuadrillas",
         "list":"Lista"
       },
-      "display":"Enseñar",
+      "display":"Mostrar",
       "display_options":{
         "all":"Todas las aplicaciones",
         "enabled":"Sólo habilita aplicaciones"
@@ -81,7 +81,7 @@
     "noevents":"No parece que hay algún evento en el futuro cercano. < br \/ &gt; < br \/ &gt; pruebe a seleccionar un calendario mediante el icono de llave inglesa en la parte superior derecha."
   },
   "clock":{
-    "name":"Fecha &",
+    "name":"Fecha & Hora",
     "desc":"Muestra la fecha y hora actuales. Opcionalmente para una zona horaria diferente.",
     "settings":{
       "timezone":"Zona horaria",

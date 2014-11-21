@@ -5,7 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 21,
 		size: 1,
-		order: 15.25,
+		order: 29,
 		nicename: "currency",
 		sizes: ["small"],
 		config: {

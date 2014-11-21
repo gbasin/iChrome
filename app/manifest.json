@@ -54,7 +54,7 @@
 		"chrome://favicon/",
 		"webRequestBlocking"
 	],
-	"version": "2.1.6",
+	"version": "2.1.7",
 	"manifest_version": 2,
 	"default_locale": "en",
 	"short_name": "iChrome",

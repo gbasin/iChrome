@@ -5,7 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 7,
 		size: 4,
-		order: 5,
+		order: 4,
 		nicename: "iframe",
 		sizes: ["variable"],
 		settings: [

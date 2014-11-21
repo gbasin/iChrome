@@ -1,14 +1,14 @@
 {
   "lang_code":"cs-widgets",
   "analytics":{
-    "name":"Analytics",
+    "name":"Analytika",
     "desc":"Zobrazit různé metriky z profilu Google Analytics.",
     "sessions":"zasedání",
     "pageviews":"Zobrazení stránek",
     "pagesvisit":"Stránky \/ návštěva",
     "bouncerate":"Bounce Rate",
     "completions":"Dokončené",
-    "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
+    "noprofile":"Nevypadá to, že jste vybrali profil! <br \/><br \/> Vyberte jeden přes ikonu klíče v pravém horním rohu.",
     "settings":{
       "profile":"Profil"
     }
@@ -22,134 +22,134 @@
         "tiles":"Dlaždice",
         "list":"seznam"
       },
-      "display":"Show",
+      "display":"Zobrazit",
       "display_options":{
         "all":"Všechny aplikace",
-        "enabled":"Only enabled apps"
+        "enabled":"Pouze povolené aplikace"
       },
-      "sort":"Sort",
+      "sort":"Seřadit",
       "sort_options":{
         "id":"ID",
-        "alphabetically":"Alphabetically",
-        "offline":"Offline Enabled",
-        "available":"Availability"
+        "alphabetically":"Abecedně",
+        "offline":"Použitelné offline",
+        "available":"Dostupnost"
       },
-      "open":"Open apps in"
+      "open":"Otevřené aplikace v"
     },
-    "store_app":"Store"
+    "store_app":"Obchod"
   },
   "bookmarks":{
-    "name":"Bookmarks",
-    "desc":"Displays selected and customized bookmarks, and other links.",
+    "name":"Záložky",
+    "desc":"Zobrazí vybrané a upravené záložky a další odkazy.",
     "settings":{
-      "title_placeholder":"Enter a widget title",
-      "layout":"Layout",
+      "title_placeholder":"Zadejte název widgetu",
+      "layout":"Uspořádání",
       "layout_options":{
-        "single":"Single column",
-        "double":"Double column"
+        "single":"Jeden sloupec",
+        "double":"Dva sloupce"
       },
-      "open":"Open bookmarks in"
+      "open":"Otevři záložky v"
     },
     "edit":{
-      "dialog_title":"Edit Bookmark",
-      "title":"Bookmark Title",
+      "dialog_title":"Upravit záložku",
+      "title":"Název záložky",
       "title_placeholder":"Google",
-      "url":"Bookmark URL",
+      "url":"URL záložky",
       "url_placeholder":"http:\/\/www.google.com\/",
-      "save":"Save"
+      "save":"Ulož"
     },
-    "new_caption":"New",
-    "new_bookmark":"Bookmark",
-    "new_folder":"Folder",
-    "drop_link":"Drop link here"
+    "new_caption":"Nový",
+    "new_bookmark":"Záložka",
+    "new_folder":"Složka",
+    "drop_link":"Sem přetáhněte odkaz"
   },
   "calc":{
-    "name":"Calculator",
-    "desc":"Displays a calculator with support for basic operators.",
-    "error":"Error!",
-    "infinity":"Infinity",
-    "mismatch":"Mismatched parentheses"
+    "name":"Kalkulačka",
+    "desc":"Zobrazí kalkulačka s podporou pro základní operátory.",
+    "error":"Chyba!",
+    "infinity":"Nekonečno",
+    "mismatch":"Neodpovídající závorky"
   },
   "calendar":{
     "name":"Kalendář",
-    "desc":"Displays upcoming events from one or more of your Google calendars.",
+    "desc":"Zobrazuje nadcházející události z jednoho nebo více vašich Google kalendářů.",
     "settings":{
       "calendar":"Kalendář",
-      "events":"Events Shown"
+      "events":"Zobrazené události"
     },
-    "title":"My Calendar",
-    "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
+    "title":"Můj kalendář",
+    "noevents":"Nevypadá to, že existují nějaké události v blízké budoucnosti. <br \/><br \/> Vyberte kalendář přes ikonu klíče v pravém horním rohu."
   },
   "clock":{
-    "name":"Time & Date",
-    "desc":"Shows the current date and time. Optionally for a different timezone.",
+    "name":"Datum & čas",
+    "desc":"Zobrazuje aktuální datum a čas. Volitelně pro jiné časové pásmo.",
     "settings":{
-      "timezone":"Time Zone",
-      "timezone_local":"Local",
-      "format":"Clock Format",
+      "timezone":"Časové pásmo",
+      "timezone_local":"Místní",
+      "format":"Formát hodin",
       "format_options":{
-        "ampm":"AM\/PM - Digital",
-        "24hour":"24 Hour - Digital",
-        "analog":"12 Hour - Analog",
-        "ampmseconds":"AM\/PM - Digital, No Seconds",
-        "24hourseconds":"24 Hour - Digital, No Seconds"
+        "ampm":"AM\/PM - digitální",
+        "24hour":"24 hodinové - digitální",
+        "analog":"12 hodinové - analogové",
+        "ampmseconds":"DOP\/ODP - Digitální, bez sekund",
+        "24hourseconds":"24 hodin -  - Digitální, bez sekund"
       }
     },
-    "title":"Clock"
+    "title":"Hodiny"
   },
   "currency":{
-    "name":"Currency",
-    "desc":"Let's you convert between any two of 169 currencies.",
-    "to_label":"to"
+    "name":"Měna",
+    "desc":"Umožní přepočet mezi jakýmikoli dvěma ze 169 měn.",
+    "to_label":"na"
   },
   "drive":{
     "name":"Drive",
     "desc":"Displays recently changed files from your Google Drive.",
     "settings":{
-      "files_shown":"Number of Files Shown"
+      "files_shown":"Počet zobrazených souborů"
     },
-    "modified_by":"by",
-    "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
-    "authorize_btn":"Authorize"
+    "modified_by":"od",
+    "authorize":"Je zapotřebí udělit iChrome povolení k zobrazování souborů z vašeho Google Drive, než se zde bude moci cokoliv zobrazit.",
+    "authorize_btn":"Povolit"
   },
   "facebook":{
     "name":"Facebook",
-    "desc":"Embeds Facebook in a widget"
+    "desc":"Vloží Facebook widget"
   },
   "feedly":{
     "name":"Feedly",
-    "desc":"Displays articles from your Feedly account in a configurable format.",
+    "desc":"Zobrazit články z vašeho účtu Feedly v konfigurovatelném formátu.",
     "settings":{
-      "source":"Show articles from",
-      "source_feeds":"Feeds",
-      "show":"Show",
+      "source":"Zobrazit články z",
+      "source_feeds":"Kanály",
+      "show":"Zobrazit",
       "show_options":{
-        "all":"All articles",
-        "unread":"Only unread articles"
+        "all":"Všechny příspěvky",
+        "unread":"Pouze nepřečtené příspěvky"
       },
-      "layout":"Layout",
+      "layout":"Uspořádání",
       "layout_options":{
-        "titles":"Titles only",
-        "magazine":"Magazine",
-        "cards":"Cards",
-        "cards_columns":"Cards (two columns)"
+        "titles":"Pouze nadpisy",
+        "magazine":"Časopis",
+        "cards":"Karty",
+        "cards_columns":"Karty (dva sloupce)"
       },
-      "mark":"Mark an article as read when I",
+      "mark":"Označit články jako přečtené, když",
       "mark_options":{
         "scroll":"Scroll past it or click it",
-        "click":"Just click it"
+        "click":"Stačí kliknout"
       },
-      "sort":"Sort Order",
+      "sort":"Řadit podle",
       "sort_options":{
-        "newest":"Newest first",
-        "oldest":"Oldest first"
+        "newest":"Od nejnovějších",
+        "oldest":"Od nejstarších"
       }
     },
-    "all":"All",
-    "saved":"Saved for later",
-    "uncategorized":"Uncategorized",
-    "author":"by",
-    "go_to_feedly":"Go To Feedly"
+    "all":"Vše",
+    "saved":"Uloženo pro později",
+    "uncategorized":"Nezařazeno",
+    "author":"od",
+    "go_to_feedly":"Přejít na Feedly"
   },
   "gmail":{
     "name":"Gmail",
@@ -159,81 +159,81 @@
     "name":"iFrame",
     "desc":"Displays a webpage of your choice within an iframe.",
     "settings":{
-      "url":"Frame URL",
-      "url_placeholder":"i.e. http:\/\/www.google.com\/",
-      "height":"Frame Height",
-      "padding":"Padding"
+      "url":"URL rámečku",
+      "url_placeholder":"tj. http:\/\/www.google.com\/",
+      "height":"Výška rámečku",
+      "padding":"Odsazení"
     }
   },
   "keep":{
     "name":"Keep",
-    "desc":"Embeds Google Keep in a widget"
+    "desc":"Vloží Google Keep jako widget"
   },
   "news":{
     "name":"Zprávy",
     "desc":"Displays the current top news by category and edition.",
     "settings":{
-      "articles":"Articles Shown",
-      "edition":"Edition",
+      "articles":"Zobrazené články",
+      "edition":"Edice",
       "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
-      "topic":"Topic",
+      "topic":"Téma",
       "topic_options":{
-        "top":"Top Stories",
-        "world":"World",
-        "nation":"Nation",
+        "top":"Nejdůležitější zprávy",
+        "world":"Světové",
+        "nation":"Národ",
         "business":"Business",
-        "sports":"Sports",
-        "technology":"Technology",
-        "entertainment":"Entertainment",
-        "health":"Health",
-        "science":"Science",
+        "sports":"Sport",
+        "technology":"Technologie",
+        "entertainment":"Zábava",
+        "health":"Zdraví",
+        "science":"Věda",
         "spotlight":"Spotlight"
       },
-      "feed":"Custom Feed",
+      "feed":"Vlastní kanál",
       "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
       "feed_placeholder":"Enter a custom RSS feed to fetch news from",
-      "footer":"Footer URL",
-      "footer_placeholder":"Enter the URL that the \"More\" link should point to"
+      "footer":"URL zápatí",
+      "footer_placeholder":"Zadejte URL, kam by mělo odkazovat tlačítko \"Více\""
     },
     "more":"Více"
   },
   "notes":{
-    "name":"Notes",
-    "desc":"Inserts a simple, editable, note.",
+    "name":"Poznámky",
+    "desc":"Vloží jednoduchou, upravitelnou poznámku.",
     "settings":{
-      "color":"Note Color",
+      "color":"Barva poznámky",
       "color_options":{
-        "yellow":"Yellow",
-        "orange":"Orange",
-        "red":"Red",
-        "blue":"Blue",
-        "green":"Green",
-        "white":"White"
+        "yellow":"Žlutá",
+        "orange":"Oranžová",
+        "red":"Červená",
+        "blue":"Modrá",
+        "green":"Zelená",
+        "white":"Bílá"
       },
       "font":"Font Face",
-      "fontsize":"Font Size"
+      "fontsize":"Velikost písma"
     }
   },
   "now":{
-    "name":"Google Now",
+    "name":"Google nyní",
     "desc":"Displays cards from Google Now including flight status and package tracking.",
     "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
-    "authorize_btn":"Authorize",
-    "caught_up":"All caught up, nothing here.",
-    "no_title":"No Title"
+    "authorize_btn":"Povolit",
+    "caught_up":"Vše zachyceno",
+    "no_title":"Bez názvu"
   },
   "plus":{
-    "name":"Google+",
-    "desc":"Embeds Google Plus in a widget"
+    "name":"Google +",
+    "desc":"Vloží Google Plus widget"
   },
   "recentlyclosed":{
-    "name":"Recently Closed",
-    "desc":"Shows your recently closed tabs",
+    "name":"Nedávno zavřené",
+    "desc":"Zobrazuje nedávno zavřené záložky",
     "settings":{
-      "tabs":"Tabs Shown",
-      "open":"Open tabs in"
+      "tabs":"Zobrazené záložky",
+      "open":"Otevřené karty v"
     },
-    "notabs":"Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed."
+    "notabs":"Záložky, které byly zavřeny před tím, než byl nainstalován tento widget, nemohou být zobrazeny. Od této chvíle budou zobrazeny všechny nové záložky, které zavřete."
   },
   "reddit":{
     "name":"Reddit",
@@ -242,20 +242,20 @@
       "subreddit":"Subreddit",
       "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
       "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
-      "sort":"Sort Order",
+      "sort":"Řadit podle",
       "sort_options":{
         "hot":"Hot",
         "top":"Top",
-        "new":"New",
+        "new":"Nový",
         "gilded":"Gilded",
         "rising":"Rising",
-        "controversial":"Controversial"
+        "controversial":"Kontroverzní"
       },
-      "links":"Links Shown",
-      "click":"When I click a link show me",
+      "links":"Zobrazené odkazy",
+      "click":"Když kliknu na odkaz, zobraz",
       "click_options":{
-        "link":"The link",
-        "comments":"The comments"
+        "link":"Odkaz",
+        "comments":"Komentáře"
       }
     },
     "more":"Více"
@@ -265,182 +265,182 @@
     "desc":"Displays items from a RSS or Atom feed with optional images.",
     "settings":{
       "link":"Title Link",
-      "link_placeholder":"Enter a link for the widget title",
-      "url":"Feed URL",
+      "link_placeholder":"Zadejte odkaz pro název widgetu",
+      "url":"URL kanálu",
       "url_placeholder":"The URL of the RSS feed to be displayed",
-      "articles":"Articles Shown",
-      "view":"View",
+      "articles":"Zobrazené články",
+      "view":"Zobrazení",
       "view_options":{
-        "images":"Image friendly",
-        "default":"Default"
+        "images":"Podporující obrázky",
+        "default":"Výchozí"
       },
-      "images":"Images",
-      "descriptions":"Descriptions"
+      "images":"Obrázky",
+      "descriptions":"Popisy"
     },
     "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
   },
   "sports":{
-    "name":"Sports",
+    "name":"Sport",
     "desc":"Displays scores and game information for selected leagues and\/or teams.",
     "settings":{
-      "league":"League",
-      "games":"Games Shown",
-      "team":"Team",
-      "teams":"Team",
+      "league":"Liga",
+      "games":"Hry zobrazeny",
+      "team":"Tým",
+      "teams":"Tým",
       "unavailable":"When team games are unavailable",
       "unavailable_options":{
-        "other":"Show other games",
-        "none":"Show \"No Games\""
+        "other":"Zobrazit další hry",
+        "none":"Zobrazit \"Žádné hry\""
       }
     },
-    "error":"Something seems to have gone wrong",
-    "unknown_error":"Unknown Error",
-    "watch_on":"Watch on: %s",
-    "no_games":"No Games Scheduled"
+    "error":"Zdá se, že něco se pokazilo",
+    "unknown_error":"Neznámá chyba",
+    "watch_on":"Sledujte na: %s",
+    "no_games":"Žádné plánované hry"
   },
   "stocks":{
-    "name":"Stocks",
+    "name":"Akcie",
     "desc":"Displays current information for any given stock symbol.",
     "settings":{
       "symbols":"Stock Symbol(s), comma separated",
-      "symbols_placeholder":"e.g. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
+      "symbols_placeholder":"například NASDAQ: GOOG, INDEXNYSEGIS:NYA",
       "symbols_help":"These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br \/><br \/>\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. For example, the Dow Jones index is <b>.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
     },
-    "as_of":"as of",
+    "as_of":"k",
     "exchange_time":"Exchange Time",
     "open":"open",
     "high":"high",
     "low":"low",
-    "volume":"volume"
+    "volume":"Množství"
   },
   "todo":{
-    "name":"To-do",
+    "name":"Seznam úkolů",
     "desc":"Displays an interactive to-do list with important and completed items.",
-    "title":"To-do list",
+    "title":"Seznam úkolů",
     "settings":{
-      "color":"Font Color",
+      "color":"Barva písma",
       "color_options":{
         "light":"Light",
-        "dark":"Dark"
+        "dark":"Tmavý"
       },
-      "tags":"Tags",
-      "tags_placeholder":"Enter a tag name and press Enter"
+      "tags":"Štítky",
+      "tags_placeholder":"Zadej název štítku a stikni Enter"
     },
-    "add":"Add Item",
-    "none":"None",
-    "important":"Important"
+    "add":"Přidat položku",
+    "none":"Prázdný",
+    "important":"Důležité"
   },
   "topsites":{
     "name":"Top Sites",
-    "desc":"Displays your most visited\/top sites.",
+    "desc":"Zobrazí vaše nejnavštěvovanější stránky.",
     "settings":{
-      "show":"Number of sites shown",
+      "show":"Počet zobrazovaných stránek",
       "open":"Open sites in"
     }
   },
   "traffic":{
-    "name":"Traffic",
+    "name":"Provoz",
     "desc":"Displays the current time in current traffic to home or work.",
     "settings":{
       "leave":"I leave home at",
-      "home":"Home Address",
+      "home":"Adresa domů",
       "home_placeholder":"The destination that should be used after work",
-      "work":"Work Address",
+      "work":"Adresa do zaměstnání",
       "work_placeholder":"The destination that should be used before work",
       "method":"Transit Method",
       "method_options":{
-        "driving":"Driving",
-        "walking":"Walking",
-        "transit":"Public Transit"
+        "driving":"Jízda autem",
+        "walking":"Pěšky",
+        "transit":"Veřejná doprava"
       }
     },
     "to_home":"to home",
     "to_work":"to work"
   },
   "translate":{
-    "name":"Translate",
+    "name":"Překladač",
     "desc":"Contains a small inline Google Translate textbox.",
-    "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
-    "button":"Translate",
-    "untranslate":"Untranslate",
-    "auto":"Auto (%s)",
-    "unknown":"Unknown",
-    "error":"Something went wrong while trying to translate that..."
+    "placeholder":"Zadejte text, který chcete přeložit, poté klikněte na \"Přeložit\" níže.",
+    "button":"Překladač",
+    "untranslate":"Přeložit zpět",
+    "auto":"Rozpoznat automaticky (%s)",
+    "unknown":"Neznámý",
+    "error":"Něco se pokazilo při pokusu přeložit tento text..."
   },
   "twitter":{
     "name":"Twitter",
     "desc":"Displays tweets from your home stream or a specified list.",
     "settings":{
-      "source":"Show Tweets from",
-      "show":"Tweets Shown"
+      "source":"Zobrazit Tweety od",
+      "show":"Zobrazené Tweety"
     },
-    "authorize":"You'll need to authorize iChrome first",
-    "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
-    "authorize_btn":"Authorize",
-    "no_tweets":"There don't seem to be any tweets here...",
+    "authorize":"Je zapotřebí nejprve autorizovat iChrome",
+    "authorize_msg":"Je potřeba nejprve udělit iChrome povolení k prohlížení tweetů z vašeho účtu, než bude možné zde něco zobrazit.",
+    "authorize_btn":"Povolit",
+    "no_tweets":"Nezdá se, že by zde byly nějaké tweety...",
     "home":"Domovská stránka",
     "mentions":"Mentions",
     "retweets":"Retweets of me",
     "lists":"Lists",
     "more":"Více",
-    "reply":"Reply",
+    "reply":"Odpovědět",
     "retweet":"Retweet",
-    "favorite":"Favorite"
+    "favorite":"Oblíbené"
   },
   "unread":{
-    "name":"Unread",
-    "desc":"Displays the current number of unread emails in your Gmail inbox.",
+    "name":"Nepřečtené",
+    "desc":"Zobrazí současný počet nepřečtených emailů v doručené poště Gmail.",
     "settings":{
-      "open":"When clicked open"
+      "open":"Po kliknutí otevřít"
     },
-    "unread_none":"unread emails",
-    "unread_one":"unread email",
-    "unread_many":"unread emails"
+    "unread_none":"nepřečtené e-maily",
+    "unread_one":"nepřečtený e-mail",
+    "unread_many":"nepřečtené e-maily"
   },
   "voice":{
-    "name":"Voice",
-    "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
-    "call":"Call from",
-    "text":"Text message from",
+    "name":"Hlas",
+    "desc":"Zobrazí současný počet zmeškaných hovorů a zpráv na vašem účtu Google Voice.",
+    "call":"Hovor od",
+    "text":"Zpráva od",
     "missed":"missed in Voice",
-    "texts":"unread text messages",
-    "calls":"missed calls"
+    "texts":"nepřečtené zprávy",
+    "calls":"zmeškané hovory"
   },
   "weather":{
-    "name":"Weather",
+    "name":"Počasí",
     "desc":"Displays the current weather and a forecast for the next 4 days.",
     "settings":{
-      "location":"Location(s)",
-      "location_placeholder":"Enter a location and press Enter",
-      "temperature":"Temperature Units",
-      "wind":"Wind Speed Units"
+      "location":"Umístění",
+      "location_placeholder":"Zadejte umístění a stiskněte klávesu Enter",
+      "temperature":"Jednotky teploty",
+      "wind":"Jednotky rychlosti větru"
     },
-    "unknown":"Unknown",
-    "wind":"Wind Speed",
+    "unknown":"Neznámý",
+    "wind":"Rychlost větru",
     "chill":"Wind Chill",
-    "humidity":"Humidity"
+    "humidity":"Vlhkost"
   },
   "wolfram":{
-    "desc":"Inserts a small Wolfram|Alpha search box."
+    "desc":"Vloží malé Wolfram|Alpha vyhledávací pole."
   },
   "youtube":{
     "name":"YouTube",
-    "desc":"Displays either popular videos or videos from a specified user.",
+    "desc":"Zobrazí populární videa nebo videa od zadaného uživatele.",
     "settings":{
-      "format":"Format",
+      "format":"Formát",
       "format_options":{
-        "large":"One large",
-        "large_2":"One large, two small",
-        "large_4":"One large, four small",
-        "four":"Four small",
-        "six":"Six small"
+        "large":"Jeden velký",
+        "large_2":"Jeden velký, dva malé",
+        "large_4":"Jeden velký, čtyři malé",
+        "four":"Čtyři malé",
+        "six":"Šest malých"
       },
-      "from":"Show Videos From",
+      "from":"Zobrazí videa z",
       "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
       "from_placeholder":"Leave blank to show Top Videos",
-      "open":"Open search results in"
+      "open":"Otevřít výsledky vyhledávání v"
     },
-    "search":"Search YouTube",
-    "num_views":"views"
+    "search":"Prohledat YouTube",
+    "num_views":"zhlédnutí"
   }
 }

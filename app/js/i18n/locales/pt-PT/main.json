@@ -224,7 +224,7 @@
       "image":"URL da imagem",
       "image_placeholder":"Digite a URL para uma imagem de plano de fundo",
       "image_help":"Imagens carregadas <b>não pode ser sincronizado<\/b> entre computadores. <br \/> <br \/> Se isso é importante para você, por favor enviar sua imagem para um serviço como o <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Depois copie e cole o URL terminando com uma extensão (ou seja, .jpg) e cole-o no campo do lado esquerdo.",
-      "color":"Fallback Color",
+      "color":"Cor de Fundo",
       "color_placeholder":"Introduza o nome da cor",
       "position":"Posição",
       "position_options":{
@@ -245,36 +245,36 @@
       },
       "repeat":"Repetição de imagem",
       "repeat_options":{
-        "none":"No Repeat",
+        "none":"Não repetir",
         "horizontal":"Repetir horizontalmente",
         "vertical":"Repetir verticalmente",
-        "both":"Repeat Both"
+        "both":"Repetir ambos"
       },
       "attach":"Anexar imagem para",
       "attach_tab":"No separador",
       "attach_window":"A janela",
       "preview":"Preview",
       "save":"Salvar & Fechar",
-      "cache_error":"An error occurred while trying to cache the image you provided, please double-check the URL.",
-      "upload_error":"An error occurred while trying to upload the file you provided, please make sure that it's a reasonable size and an image."
+      "cache_error":"Ocorreu um erro ao tentar armazenar em cache a imagem que você forneceu, por favor, verifique novamente a URL.",
+      "upload_error":"Ocorreu um erro ao tentar carregar o arquivo que você forneceu, por favor certifique-se que é um tamanho razoável e uma imagem."
     }
   },
   "intro":{
     "slide1":{
       "title":"Bem-vindo ao iChrome!",
-      "line1":"If you want iChrome as your start page, you'll need to set the URL of this page in your settings (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">instructions<\/a>).  Otherwise, if you want it as a new tab or both home and new tab pages, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
-      "newtab_line1":"If you want iChrome to only show when you start Chrome and not every time you open a new tab please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">the main iChrome extension<\/a> instead of this one.",
+      "line1":"Se você quer iChrome como sua página inicial, você precisará definir o URL desta página em suas configurações (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\"> instruções<\/a>).  Caso contrário, se você quiser como uma nova aba ou ambas as páginas de guia para casa e novo, por favor instale <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\"> iChrome nova guia<\/a> em vez disso.",
+      "newtab_line1":"Se você quer iChrome para mostrar apenas quando iniciar o Chrome e não cada vez que você abre uma nova guia, por favor instale <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> a extensão principal iChrome<\/a> em vez deste.",
       "line2":"Esta introdução possui apenas 3 slides, e vai dar uma visão rápida de como fazer coisas básicas em iChrome.  Quando estiver pronto, clique na seta à direita."
     },
     "slide2":{
       "title":"Widgets",
-      "line1":"Widgets are the core of iChrome.  You can configure and move them using the wrench and handle icons shown when hovering at the top right.  To remove one, start dragging it and drop it onto the red bar that appears.",
-      "line2":"New widgets can be added by clicking the Widgets item under the menu at the top right of the page (shown in the next slide)."
+      "line1":"Widgets são o núcleo da iChrome.  Você pode configurar e movê-los usando os ícones chave e alça mostrados quando pairar no canto superior direito.  Para remover um, comece a arrastar- e largue-a na barra vermelha que aparece.",
+      "line2":"Novos widgets podem ser adicionados clicando no item de Widgets no menu na parte superior direita da página (mostrada no próximo slide)."
     },
     "slide3":{
       "title":"Personalizar",
-      "line1":"You can change almost anything else you'd want to via the menu at the top right.  There you can configure the way your page looks, how iChrome works and get new widgets.",
-      "line2":"Other things you can do include creating individual tabs, each with themes and widgets of their own, custom themes, or configuring the tiniest thing like what links are shown in the toolbar."
+      "line1":"Você pode alterar qualquer outra coisa que gostaria de através do menu na parte superior direita.  Lá você pode configurar a aparência da sua página, como o iChrome funciona e obter novos widgets.",
+      "line2":"Outras coisas que você pode incluir criando guias individuais, cada um com temas e widgets do seus próprios, temas personalizados, ou configurando a menor coisa como links que são mostradas na barra de ferramentas."
     }
   }
 }

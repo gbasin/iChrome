@@ -5,7 +5,7 @@ define(["jquery"], function($) {
 	return {
 		id: 20,
 		size: 1,
-		order: 14.5,
+		order: 26,
 		nicename: "translate",
 		sizes: ["small"],
 		config: {

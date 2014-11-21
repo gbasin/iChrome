@@ -5,7 +5,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 	return {
 		id: 19,
 		size: 6,
-		order: 6.5,
+		order: 22,
 		interval: 300000,
 		nicename: "feedly",
 		sizes: ["variable"],
