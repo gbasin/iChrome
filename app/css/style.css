@@ -805,7 +805,9 @@ input[type="radio"]:checked {
 }
 
 .menu:lang(ru),
-.menu-container.visible:lang(ru) {
+.menu:lang(sr),
+.menu-container.visible:lang(ru),
+.menu-container.visible:lang(sr) {
 	width: 250px;
 }
 
@@ -2009,6 +2011,8 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .modal.getting-started:lang(fr),
 .modal.getting-started:lang(es),
 .modal.getting-started:lang(ru),
+.modal.getting-started:lang(sr),
+.modal.getting-started:lang(cs),
 .modal.getting-started:lang(nl) {
 	height: 620px;
 }
@@ -2800,16 +2804,19 @@ body.no-edit .widgets-container .widget.tabbed:before {
 }
 
 .themes.create #image:lang(ru),
+.themes.create #image:lang(cs),
 .themes.create #image:lang(ja) {
 	width: 54%;
 }
 
 .themes.create .upload:lang(ru),
+.themes.create .upload:lang(cs),
 .themes.create .upload:lang(ja) {
 	width: 42%;
 	padding-left: 5px;
 }
 
+.themes.create .upload input:lang(cs),
 .themes.create .upload input:lang(ja) {
 	width: calc(100% - 45px);
 }
