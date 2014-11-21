@@ -1,52 +1,52 @@
 {
-  "lang_code":"sr-widgets",
+  "lang_code":"ca-widgets",
   "analytics":{
-    "name":"Аналитика",
-    "desc":"Показује различите вредности са Google Analytics профила.",
-    "sessions":"сесије",
-    "pageviews":"Број погледа стране",
-    "pagesvisit":"Страна\/посета",
-    "bouncerate":"Одскочни проценат (Bounce Rate)",
-    "completions":"Комплеција (Completions)",
-    "noprofile":"Изгледа да још ниси одабрао профил!\n<br \/><br \/>\nПробај да одабереш један уз помоћ кључа у горњем десном углу.",
+    "name":"Analytics",
+    "desc":"Displays various metrics from a Google Analytics profile.",
+    "sessions":"sessions",
+    "pageviews":"Pageviews",
+    "pagesvisit":"Pages\/visit",
+    "bouncerate":"Bounce Rate",
+    "completions":"Completions",
+    "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
     "settings":{
-      "profile":"Профил"
+      "profile":"Profile"
     }
   },
   "apps":{
-    "name":"Апликације",
-    "desc":"Показује твоје тренутно инсталиране Google Chrome апликације.",
+    "name":"Apps",
+    "desc":"Displays your currently installed Google Chrome applications.",
     "settings":{
-      "format":"Форматирај Додатак",
+      "format":"Widget Format",
       "format_options":{
-        "tiles":"Плоче",
-        "list":"Листа"
+        "tiles":"Tiles",
+        "list":"List"
       },
-      "display":"Прикажи",
+      "display":"Show",
       "display_options":{
-        "all":"Све апликације",
-        "enabled":"Само укључене апликације"
+        "all":"All apps",
+        "enabled":"Only enabled apps"
       },
-      "sort":"Сортирај",
+      "sort":"Sort",
       "sort_options":{
-        "id":"Ваш ИД ",
-        "alphabetically":"По абецеди",
-        "offline":"Омогућено ван мреже",
-        "available":"Доступност"
+        "id":"ID",
+        "alphabetically":"Alphabetically",
+        "offline":"Offline Enabled",
+        "available":"Availability"
       },
-      "open":"Отвори апликације у"
+      "open":"Open apps in"
     },
-    "store_app":"Продавница"
+    "store_app":"Store"
   },
   "bookmarks":{
-    "name":"Сачуване странице",
+    "name":"Bookmarks",
     "desc":"Displays selected and customized bookmarks, and other links.",
     "settings":{
       "title_placeholder":"Enter a widget title",
-      "layout":"Распоред",
+      "layout":"Layout",
       "layout_options":{
-        "single":"Једна колона",
-        "double":"Дупла колона"
+        "single":"Single column",
+        "double":"Double column"
       },
       "open":"Open bookmarks in"
     },
@@ -56,51 +56,51 @@
       "title_placeholder":"Google",
       "url":"Bookmark URL",
       "url_placeholder":"http:\/\/www.google.com\/",
-      "save":"Сачувај"
+      "save":"Save"
     },
-    "new_caption":"Ново",
-    "new_bookmark":"Обележивач",
-    "new_folder":"Фасцикла",
-    "drop_link":"Спусти линк овде"
+    "new_caption":"New",
+    "new_bookmark":"Bookmark",
+    "new_folder":"Folder",
+    "drop_link":"Drop link here"
   },
   "calc":{
-    "name":"Дигитрон",
-    "desc":"Показује дигитрон са подршком за основне функције.",
-    "error":"Грешка!",
-    "infinity":"Бесконачност",
-    "mismatch":"Неодговарајуће заграде"
+    "name":"Calculator",
+    "desc":"Displays a calculator with support for basic operators.",
+    "error":"Error!",
+    "infinity":"Infinity",
+    "mismatch":"Mismatched parentheses"
   },
   "calendar":{
-    "name":"Календар",
-    "desc":"Приказује надолазеће догађаје са једног или више твојих Google календара.",
+    "name":"Calendar",
+    "desc":"Displays upcoming events from one or more of your Google calendars.",
     "settings":{
-      "calendar":"Календар",
-      "events":"Прикажи догађаје"
+      "calendar":"Calendar",
+      "events":"Events Shown"
     },
-    "title":"Мој Календар",
-    "noevents":"Изгледа да немаш догађаје у блиској будућности.\n<br \/><br \/>\nПробај да одабереш календар уз помоћ кључа у горњем десном углу."
+    "title":"My Calendar",
+    "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
   },
   "clock":{
-    "name":"Време и Датум",
-    "desc":"Прикажи тренутни датум и време. По избору за различиту временску зону.",
+    "name":"Time & Date",
+    "desc":"Shows the current date and time. Optionally for a different timezone.",
     "settings":{
-      "timezone":"Временска зона",
-      "timezone_local":"Локално",
-      "format":"Формат сата",
+      "timezone":"Time Zone",
+      "timezone_local":"Local",
+      "format":"Clock Format",
       "format_options":{
-        "ampm":"Пре подне\/После подне - Дигитални",
-        "24hour":"24 часа - Дигитални",
-        "analog":"12 сати - Аналогни",
+        "ampm":"AM\/PM - Digital",
+        "24hour":"24 Hour - Digital",
+        "analog":"12 Hour - Analog",
         "ampmseconds":"AM\/PM - Digital, No Seconds",
         "24hourseconds":"24 Hour - Digital, No Seconds"
       }
     },
-    "title":"Сат"
+    "title":"Clock"
   },
   "currency":{
-    "name":"Валута",
-    "desc":"Дозвољава ти конверзију изеђу било које две валуте од 169 понуђених.",
-    "to_label":"на"
+    "name":"Currency",
+    "desc":"Let's you convert between any two of 169 currencies.",
+    "to_label":"to"
   },
   "drive":{
     "name":"Drive",
@@ -122,15 +122,15 @@
     "settings":{
       "source":"Show articles from",
       "source_feeds":"Feeds",
-      "show":"Прикажи",
+      "show":"Show",
       "show_options":{
         "all":"All articles",
         "unread":"Only unread articles"
       },
-      "layout":"Распоред",
+      "layout":"Layout",
       "layout_options":{
         "titles":"Titles only",
-        "magazine":"Магазин",
+        "magazine":"Magazine",
         "cards":"Cards",
         "cards_columns":"Cards (two columns)"
       },
@@ -142,18 +142,18 @@
       "sort":"Sort Order",
       "sort_options":{
         "newest":"Newest first",
-        "oldest":"Прво најстарије"
+        "oldest":"Oldest first"
       }
     },
-    "all":"Све",
-    "saved":"Сачувано за касније",
-    "uncategorized":"Некатегоризовано",
+    "all":"All",
+    "saved":"Saved for later",
+    "uncategorized":"Uncategorized",
     "author":"by",
-    "go_to_feedly":"Иди на Feedly"
+    "go_to_feedly":"Go To Feedly"
   },
   "gmail":{
     "name":"Gmail",
-    "desc":"Приказује твоје Gmail сандуче где можеш да руководиш твојим емејлом."
+    "desc":"Displays your Gmail inbox where you can manage your email."
   },
   "iframe":{
     "name":"iFrame",
@@ -166,49 +166,49 @@
     }
   },
   "keep":{
-    "name":"Сачувај",
+    "name":"Keep",
     "desc":"Embeds Google Keep in a widget"
   },
   "news":{
-    "name":"Вести",
+    "name":"News",
     "desc":"Displays the current top news by category and edition.",
     "settings":{
       "articles":"Articles Shown",
-      "edition":"Izdaǌe",
+      "edition":"Edition",
       "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
-      "topic":"Тема",
+      "topic":"Topic",
       "topic_options":{
-        "top":"Најчитаније Вести",
-        "world":"Свет",
-        "nation":"Нација",
-        "business":"Бизнис",
-        "sports":"Спорт",
-        "technology":"Технологија",
-        "entertainment":"Забава",
-        "health":"Здравље",
-        "science":"Наука",
-        "spotlight":"У жижи јавности"
+        "top":"Top Stories",
+        "world":"World",
+        "nation":"Nation",
+        "business":"Business",
+        "sports":"Sports",
+        "technology":"Technology",
+        "entertainment":"Entertainment",
+        "health":"Health",
+        "science":"Science",
+        "spotlight":"Spotlight"
       },
-      "feed":"Прилагођен фид",
+      "feed":"Custom Feed",
       "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
       "feed_placeholder":"Enter a custom RSS feed to fetch news from",
       "footer":"Footer URL",
       "footer_placeholder":"Enter the URL that the \"More\" link should point to"
     },
-    "more":"Још"
+    "more":"More"
   },
   "notes":{
-    "name":"Белешке",
-    "desc":"Убаци једноставну , изменљиву бележницу.",
+    "name":"Notes",
+    "desc":"Inserts a simple, editable, note.",
     "settings":{
-      "color":"Боја белешке",
+      "color":"Note Color",
       "color_options":{
-        "yellow":"Жута",
-        "orange":"Наранџаста",
-        "red":"Црвена",
-        "blue":"Плава",
-        "green":"Зелена",
-        "white":"Бела"
+        "yellow":"Yellow",
+        "orange":"Orange",
+        "red":"Red",
+        "blue":"Blue",
+        "green":"Green",
+        "white":"White"
       },
       "font":"Font Face",
       "fontsize":"Font Size"
@@ -246,7 +246,7 @@
       "sort_options":{
         "hot":"Hot",
         "top":"Top",
-        "new":"Ново",
+        "new":"New",
         "gilded":"Gilded",
         "rising":"Rising",
         "controversial":"Controversial"
@@ -258,7 +258,7 @@
         "comments":"The comments"
       }
     },
-    "more":"Још"
+    "more":"More"
   },
   "rss":{
     "name":"RSS",
@@ -280,13 +280,13 @@
     "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
   },
   "sports":{
-    "name":"Спорт",
+    "name":"Sports",
     "desc":"Displays scores and game information for selected leagues and\/or teams.",
     "settings":{
       "league":"League",
       "games":"Games Shown",
-      "team":"Тим",
-      "teams":"Тим",
+      "team":"Team",
+      "teams":"Team",
       "unavailable":"When team games are unavailable",
       "unavailable_options":{
         "other":"Show other games",
@@ -294,7 +294,7 @@
       }
     },
     "error":"Something seems to have gone wrong",
-    "unknown_error":"Непозната грешка",
+    "unknown_error":"Unknown Error",
     "watch_on":"Watch on: %s",
     "no_games":"No Games Scheduled"
   },
@@ -358,13 +358,13 @@
     "to_work":"to work"
   },
   "translate":{
-    "name":"Преведи",
+    "name":"Translate",
     "desc":"Contains a small inline Google Translate textbox.",
     "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
-    "button":"Преведи",
+    "button":"Translate",
     "untranslate":"Untranslate",
     "auto":"Auto (%s)",
-    "unknown":"Непознато",
+    "unknown":"Unknown",
     "error":"Something went wrong while trying to translate that..."
   },
   "twitter":{
@@ -378,11 +378,11 @@
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
     "authorize_btn":"Authorize",
     "no_tweets":"There don't seem to be any tweets here...",
-    "home":"Почетна страна",
+    "home":"Home",
     "mentions":"Mentions",
     "retweets":"Retweets of me",
     "lists":"Lists",
-    "more":"Још",
+    "more":"More",
     "reply":"Reply",
     "retweet":"Retweet",
     "favorite":"Favorite"
@@ -415,7 +415,7 @@
       "temperature":"Temperature Units",
       "wind":"Wind Speed Units"
     },
-    "unknown":"Непознато",
+    "unknown":"Unknown",
     "wind":"Wind Speed",
     "chill":"Wind Chill",
     "humidity":"Humidity"

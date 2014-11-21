@@ -3,94 +3,94 @@
   "language":"Енглески",
   "newtabName":"iChrome нови прозор",
   "extName":"iChrome - твоја основна страна , за chrome",
-  "extDescription":"The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
-  "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
+  "extDescription":"Најбоља основна страна за Chrome. Заносне теме, десетине додатака, ултра брз, невероватно прилагодљив!",
+  "newtabDescription":"Најбоља основна страна за Chrome. Сада за нови прозор. Заносне теме, десетине додатака, ултра брз, невероватно прилагодљив!",
   "defaults":{
-    "tab":"Home",
-    "me":"Me"
+    "tab":"Почетна страна",
+    "me":"Ja"
   },
-  "remove_widget":"Remove",
-  "column_to_grid_warning":"You selected to change a tab from a column-based layout to a grid-based layout. If you continue you will lose all of your columns; everything will be moved to the top left corner.\r\nAre you sure you want to do this?",
+  "remove_widget":"Ukloni",
+  "column_to_grid_warning":"Одабрао си да промениш картице са распореда заснованог на колонама на распоред заснован на мрежи. Ако одлучиш да наставиш изгубићеш све своје колоне; све ће бити премештено у горњи леви угао.\nДа ли си сигуран да желиш да наставиш?",
   "grid_to_column_warning":"You selected to change a tab from a grid-based layout to a column-based layout. If you continue you will lose all of your widget positioning; everything will be moved to the first column of the new tab.\r\nAre you sure you want to do this?",
   "storage_warning":"You have used more than 90% of the total synchronized storage space available.\r\nIf you reach the limit, iChrome will stop syncing your data and may stop working.\r\nYou can shrink the amount of space you use by deleting custom themes, notes and to-do lists that you don't use.",
   "toolbar":{
-    "placeholder":"Enter your terms",
-    "placeholder_ok":"Enter your terms or say \"OK, Google\"",
+    "placeholder":"Унеси тражене термине",
+    "placeholder_ok":"Унеси тражене термине и кажи \"OK, Google\"",
     "apps":{
-      "search":"Search",
+      "search":"Претражи",
       "youtube":"YouTube",
-      "maps":"Maps",
+      "maps":"Мапе",
       "play":"Play",
-      "news":"News",
+      "news":"Вести",
       "gmail":"Gmail",
       "drive":"Drive",
-      "calendar":"Calendar",
-      "more":"More"
+      "calendar":"Календар",
+      "more":"Још"
     }
   },
   "menu":{
-    "settings":"Settings",
-    "widgets":"Widgets",
-    "background":"Show Background",
-    "editing":"Editing",
-    "editing_enabled":"Enabled",
-    "editing_disabled":"Disabled",
+    "settings":"Подешавања",
+    "widgets":"Додаци",
+    "background":"Покажи Позадину",
+    "editing":"Уређивање",
+    "editing_enabled":"Укључено",
+    "editing_disabled":"Искључено",
     "plus":"Google Plus",
-    "tabs":"Tabs",
+    "tabs":"Картице",
     "footer":{
-      "support":"Support",
-      "feedback":"Feedback",
-      "review":"Review",
+      "support":"Подршка",
+      "feedback":"Ваше мишљење",
+      "review":"Мишљења других",
       "twitter":"Twitter",
-      "webstore":"Webstore",
-      "donate":"Donate",
-      "by":"By Avi Kohn"
+      "webstore":"Веб продавница",
+      "donate":"Донирај",
+      "by":"Направио Ави Кон"
     }
   },
   "voice":{
-    "listening":"Listening...",
-    "searching":"Searching for: %s",
-    "missed":"Didn't get that. <a>Try Again<\/a>"
+    "listening":"Слушање...",
+    "searching":"Тражење: %s",
+    "missed":"Није обављено. <a>Пробај поново<\/a>"
   },
   "settings":{
-    "save":"Save & Close",
-    "new_tab":"Create New",
+    "save":"Сачувај & Затвори",
+    "new_tab":"Направи нови",
     "labels":{
-      "general":"General",
-      "visual":"Visual",
-      "specific":"Tab Specific",
-      "advanced":"Advanced"
+      "general":"Главно",
+      "visual":"Визуално",
+      "specific":"Специфичан прозор",
+      "advanced":"Напредно"
     },
     "general":{
-      "search":"Search URL",
+      "search":"Претрага УРЛ-а",
       "search_desc":"This is the URL that the search box will submit searches to. Put <b>%s<\/b> where the search query should go",
-      "profile":"Profile Picture",
+      "profile":"Профилна слика",
       "profile_desc":"This is the image shown at the right of the toolbar.  It gets auto-populated from your Google profile",
-      "name":"Name",
+      "name":"Име",
       "name_desc":"This is used for the Google+ link in the toolbar.  It also gets auto-populated from your Google profile",
-      "voice":"Voice Search",
-      "voice_search":"Enable voice search",
-      "voice_ok":"Enable \"OK Google\" hotword detection",
-      "links":"Toolbar Links",
-      "links_desc":"Here you can choose which links will show in the right section of the toolbar:",
+      "voice":"Гласовна претрага",
+      "voice_search":"Омогући гласовну претрагу",
+      "voice_ok":"Омогући \"OK Google\" детекцију гласовне пречице",
+      "links":"Линкови за траку са алаткама",
+      "links_desc":"Овде можеш да одабереш који линкови ће бити приказани у десном делу траке са алаткама:",
       "links_items":{
         "plus":"Google Plus",
         "gmail":"Gmail",
-        "apps":"Apps Menu",
-        "link1":"Custom Link 1",
-        "link2":"Custom Link 2",
-        "link3":"Custom Link 3",
-        "text_holder":"Link text",
-        "link_holder":"Link URL, i.e. http:\/\/www.google.com\/"
+        "apps":"Мени са апликацијама",
+        "link1":"Прилагодљив Линк 1",
+        "link2":"Прилагодљив Линк 2",
+        "link3":"Прилагодљив Линк 3",
+        "text_holder":"Текст Линка",
+        "link_holder":"Линк,УРЛ, прим. http:\/\/www.google.com\/"
       },
-      "guide":"Installation Guide",
-      "guide_desc":"Reshow the guide that was shown when iChrome was first installed"
+      "guide":"Приручник за Инсталацију",
+      "guide_desc":"Прикажи поново упутство које је било приказано када је iChrome први пут инсталиран "
     },
     "visual":{
-      "layout":"Layout",
+      "layout":"Распоред",
       "layout_options":{
-        "1_fixed":"One column, fixed width",
-        "1_fluid":"One column, fluid width",
+        "1_fixed":"Једна колона, фиксне ширине",
+        "1_fluid":"Једна колона, флуидне ширине",
         "2_fixed":"Two columns, fixed width",
         "2_fluid":"Two columns, fluid width",
         "3_fixed":"Three columns, fixed width",
@@ -101,31 +101,31 @@
         "5_fluid":"Five columns, fluid width",
         "grid":"Grid-based, customizable width"
       },
-      "theme":"Default Theme",
-      "theme_placeholder":"Theme #%s",
-      "theme_select":"Select a theme",
+      "theme":"Основна тема",
+      "theme_placeholder":"Тема #%s",
+      "theme_select":"Одабери тему",
       "align":"Alignment",
       "align_desc":"This will change the alignment of the widget columns",
       "align_labels":{
-        "left":"Left",
-        "center":"Center",
-        "right":"Right"
+        "left":"Лево",
+        "center":"Средина",
+        "right":"Десно"
       },
-      "logo":"Logo URL",
+      "logo":"УРЛ логоа",
       "logo_desc":"This is the image shown at the left of the toolbar.  The default is <b>\/images\/logo.svg<\/b>",
-      "toolbar":"Toolbar Style",
-      "toolbar_desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
-      "toolbar_normal":"Normal",
-      "toolbar_button":"Button",
-      "animation":"Slide-in Animation",
+      "toolbar":"Стил Траке са алаткама",
+      "toolbar_desc":"Ово контролише стил траке са алаткама. Може да изгледа нормално или као дугме ван простора",
+      "toolbar_normal":"Нормално",
+      "toolbar_button":"Дугме",
+      "animation":"Слајдин анимација",
       "animation_desc":"This setting lets you enable or disable the slide-in animation that runs when you load the page",
-      "animation_label":"Enable the animation"
+      "animation_label":"Омогући анимацију"
     },
     "specific":{
-      "name":"Tab Name",
-      "default_name":"New Tab",
-      "delete":"Delete tab",
-      "delete_disallowed":"You cannot delete the only remaining tab.",
+      "name":"Име Картице",
+      "default_name":"Нова Картица",
+      "delete":"Обриши картицу",
+      "delete_disallowed":"Не можеш да обришеш последње преосталу картицу.",
       "delete_confirm":"Are you really sure you want to delete this tab?\r\nThis action is irreversible, all data from all widgets in the tab will be permanently lost.",
       "default":"Set as default"
     },
@@ -142,14 +142,14 @@
       "restore_confirm":"Are you really, really sure you want to do this?\r\nThis will overwrite all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers signed into this Google account.",
       "css":"Custom CSS",
       "css_desc":"You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.",
-      "reset":"Reset iChrome",
+      "reset":"Ресетуј iChrome",
       "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers signed into this Google account."
     }
   },
   "store":{
-    "installation":"Installation",
-    "description":"Description",
-    "preview":"Preview",
+    "installation":"Инсталација",
+    "description":"Опис",
+    "preview":"Погледај пре објаве",
     "instructions":"Drag and drop any size onto your homepage"
   },
   "widgets":{
@@ -158,121 +158,121 @@
       "small":"Small",
       "medium":"Medium",
       "large":"Large",
-      "variable":"Variable"
+      "variable":"Променљива"
     },
     "settings":{
-      "title":"Widget Settings",
-      "save":"Save",
-      "size":"Widget Size"
+      "title":"Подешавања додатака",
+      "save":"Сачувај",
+      "size":"Величина додатка"
     },
-    "delete_confirm":"Are you really sure you want to delete this widget?\r\nThis action is irreversible; all data from this widget will be permanently lost.",
+    "delete_confirm":"Да ли си сигуран да желиш да обришеш овај додатак?\nОва акција је бесповратна; сви подаци са овог додатка ће бити трајно изгубљени.",
     "shared":{
       "settings":{
-        "title":"Widget Title",
-        "title_placeholder":"Enter a widget title or leave blank to hide",
-        "height":"Widget Height",
+        "title":"Назив додатка",
+        "title_placeholder":"Унеси назив додатка или остави празно",
+        "height":"Висина додатка",
         "open_options":{
-          "current":"The current tab",
-          "blank":"A new tab"
+          "current":"Тренутна картица",
+          "blank":"Нова картица"
         },
         "footer_link":"Footer Link",
         "footer_link_options":{
-          "show":"Show",
-          "hide":"Hide"
+          "show":"Прикажи",
+          "hide":"Сакриј"
         },
-        "account":"Account ID",
+        "account":"ID Налога",
         "account_help":"If you're signed into multiple accounts, this is the \"authuser=\" value.\n<br \/><br \/>\nFor example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"authuser\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
         "account_placeholder":"Your \"authuser=\" value",
-        "on":"On",
-        "off":"Off"
+        "on":"Укључено",
+        "off":"Искључено"
       }
     }
   },
   "themes":{
-    "title":"Themes",
-    "all":"All",
-    "custom":"Custom",
-    "create":"Create a theme",
-    "url_or_upload":"or",
-    "upload_image":"Upload an image",
-    "edit_btn":"Edit",
-    "delete":"Delete",
-    "use":"Use",
-    "preview":"Preview",
+    "title":"Теме",
+    "all":"Све",
+    "custom":"Прилагођено",
+    "create":"Направи тему",
+    "url_or_upload":"или",
+    "upload_image":"Уплоадуј слику",
+    "edit_btn":"Подеси",
+    "delete":"Обриши",
+    "use":"Користи",
+    "preview":"Погледај пре објаве",
     "author":"By",
     "images":"%s images",
-    "resolution":"Resolution",
-    "categories":"Categories",
-    "cached":"This theme has been cached and is available offline",
-    "random":"This theme displays a random image every time you load the page",
-    "random_daily":"This theme displays an image picked randomly every day",
-    "sunrise_sunset":"This theme displays an image based on the time of day",
-    "feed":"This theme displays an image selected daily from an external feed",
-    "delete_confirm":"Are you really sure you would like to delete this theme?\r\nThis action is irreversible; the entire theme will be permanently lost.",
-    "delete_error":"An error occurred while trying to delete the theme.  Please try again later.",
-    "feed_fetching":"Please wait, fetching feed...",
+    "resolution":"Резолуција",
+    "categories":"Категорије",
+    "cached":"Ова тема је кеширана и доступна је ван мреже",
+    "random":"Ова тема приказује наизменичну слику сваки пут кад отвориш страну",
+    "random_daily":"Ова тема приказује наизменично одабрану слику сваког дана",
+    "sunrise_sunset":"Ова тема приказује слику засновану на времену у току дана",
+    "feed":"Ова тема приказује слику свакодневно одабрану са спољашњег извора",
+    "delete_confirm":"Да ли си стварно сигуран да желиш да обришеш ову тему?\nОва дело је бесповратно; цела тема ће бити трајно изгубљена.",
+    "delete_error":"Десила се грешка док се брисала тема. Молимо Вас покушајте поново.",
+    "feed_fetching":"Молимо сачекајте, учитавамо са извора...",
     "feed_error":"Something went wrong while trying to fetch the feed.  Please try again later.",
     "caching":"Please wait, caching theme...",
     "cache_status":"%s of %s images cached",
     "cache_error":"An error occurred while trying to cache the theme.  Please try again later",
     "edit":{
-      "title":"Edit Theme",
-      "create_title":"Create Theme",
-      "name":"Theme Name",
-      "default_name":"New Theme",
-      "name_placeholder":"Enter a theme name",
-      "image":"Image URL",
+      "title":"Измени Тему",
+      "create_title":"Направи тему",
+      "name":"Име Теме",
+      "default_name":"Нова Тема",
+      "name_placeholder":"Унеси назив теме",
+      "image":"УРЛ слике",
       "image_placeholder":"Enter a background image URL",
       "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy and paste the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
       "color":"Fallback Color",
       "color_placeholder":"Enter any color name",
-      "position":"Position",
+      "position":"Позиција",
       "position_options":{
-        "center":"Center",
-        "top_left":"Top Left",
-        "top_center":"Top Center",
-        "top_right":"Top Right",
-        "bottom_left":"Bottom Left",
-        "bottom_center":"Bottom Center",
-        "bottom_right":"Bottom Right"
+        "center":"На центру",
+        "top_left":"Горе лево",
+        "top_center":"Горе центар",
+        "top_right":"Горе десно",
+        "bottom_left":"Доле лево",
+        "bottom_center":"Доле центар",
+        "bottom_right":"Доле десно"
       },
       "scaling":"Scaling",
       "scaling_options":{
-        "auto":"Auto",
-        "width":"Full Width",
-        "height":"Full Height",
+        "auto":"Аутоматско",
+        "width":"Цела ширина",
+        "height":"Цела висина",
         "none":"No Scaling (preview may be inaccurate)"
       },
       "repeat":"Image Repeat",
       "repeat_options":{
         "none":"No Repeat",
         "horizontal":"Repeat Horizontally",
-        "vertical":"Repeat Vertically",
-        "both":"Repeat Both"
+        "vertical":"Понови Вертикално",
+        "both":"Понови Оба"
       },
-      "attach":"Attach Image To",
-      "attach_tab":"The tab",
-      "attach_window":"The window",
-      "preview":"Preview",
-      "save":"Save & Close",
-      "cache_error":"An error occurred while trying to cache the image you provided, please double-check the URL.",
-      "upload_error":"An error occurred while trying to upload the file you provided, please make sure that it's a reasonable size and an image."
+      "attach":"Закачи слику за",
+      "attach_tab":"Картицу",
+      "attach_window":"Прозор",
+      "preview":"Погледај пре објаве",
+      "save":"Сачувај & Затвори",
+      "cache_error":"Десила се грешка током кешираља слике коју сте пружили, молимо вас да проверите УРЛ. ",
+      "upload_error":"Десила се грешка током уплоадовања пруженог фајла, молимо проверите да је фајл одговарајуће величине и да је слика."
     }
   },
   "intro":{
     "slide1":{
-      "title":"Welcome to iChrome!",
-      "line1":"If you want iChrome as your start page, you'll need to set the URL of this page in your settings (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">instructions<\/a>).  Otherwise, if you want it as a new tab or both home and new tab pages, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
+      "title":"Добродошли у iChrome!\n",
+      "line1":"Ако желиш iChrome за твоју основну страну, требаш да УРЛ ове стране у твојим подешавањима (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">инструкције<\/a>). Супротно, ако га желиш као нову картицу или оба основну страницу и нову картицу, молимо инсталирајте <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome Нову Картицу<\/a> уместо.",
       "newtab_line1":"If you want iChrome to only show when you start Chrome and not every time you open a new tab please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">the main iChrome extension<\/a> instead of this one.",
       "line2":"This introduction is only 3 slides long and will give a quick overview of how to do basic things in iChrome.  When you're ready hit the next arrow at the right."
     },
     "slide2":{
-      "title":"Widgets",
+      "title":"Додаци",
       "line1":"Widgets are the core of iChrome.  You can configure and move them using the wrench and handle icons shown when hovering at the top right.  To remove one, start dragging it and drop it onto the red bar that appears.",
       "line2":"New widgets can be added by clicking the Widgets item under the menu at the top right of the page (shown in the next slide)."
     },
     "slide3":{
-      "title":"Customizing",
+      "title":"Подешавање",
       "line1":"You can change almost anything else you'd want to via the menu at the top right.  There you can configure the way your page looks, how iChrome works and get new widgets.",
       "line2":"Other things you can do include creating individual tabs, each with themes and widgets of their own, custom themes, or configuring the tiniest thing like what links are shown in the toolbar."
     }

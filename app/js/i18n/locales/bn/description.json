@@ -1,10 +1,10 @@
 {
-  "lang_code":"hr",
-  "line_1":"iChrome je ekstenzija za početnu stranicu kojoj je cilj stvoriti početnu stranicu kakva bi trebala biti: Brza, Prilagodljiva i Produktivna.",
+  "lang_code":"bn",
+  "line_1":"iChrome is a home \/ start page extension that aims to create your homepage the way it should be: Fast, customizable, beautiful and productive.",
   "link":"If you're looking for an extension for your new tab page and not your home page, check out iChrome New Tab: https:\/\/chrome.google.com\/webstore\/detail\/ichrome-new-tab\/iccjgbbjckehppnpajnmplcccjcgbdep",
   "newtab_line_1":"iChrome is a new tab \/ start page extension that aims to create your new tab page the way it should be: Fast, customizable, beautiful and productive.",
-  "newtab_link":"Ako tražite ekstenziju za vašu početnu stranicu, a ne za stranicu u novom tabu, pogledajte glavnu iChrome ekstenziju: https:\/\/chrome.google.com\/webstore\/detail\/ichrome-your-homepage-for\/oghkljobbhapacbahlneolfclkniiami",
-  "line_2":"Stvorite SVOJU početnu stranicu koristeći preko 30 widgeta i desetke zadivljujućih tema. Na tisuće iChrome-ovih funkcija uključuju sljedeće i puno više:",
+  "newtab_link":"If you're looking for an extension for your home page and not your new tab page, check out the main iChrome extension: https:\/\/chrome.google.com\/webstore\/detail\/ichrome-your-homepage-for\/oghkljobbhapacbahlneolfclkniiami",
+  "line_2":"Build YOUR start page with over 30 widgets and dozens of stunning themes.  iChrome's hundreds of features include these and many more:",
   "features":[
     "Dozens of full screen, beautiful wallpapers and themes including the Bing and Webshots photos of the day",
     "Complete syncing between computers including your todo lists, notes and custom themes",

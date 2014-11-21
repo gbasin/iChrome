@@ -14,7 +14,7 @@
   "grid_to_column_warning":"Vous avez sélectionnez un onglet basé sur des colonnes qui remplacera vos onglets basé sur une grille. Si vous continuez vous perdrez la position de vos widgets;tout sera déplacé dans la première colonne du nouvel onglet.\nVoulez vous continuer ?",
   "storage_warning":"Vous utilisez plus de 90% de l'espace de synchronisation disponible.\nSi vous atteignez cette limite, iChrome arrêtera de synchronisation vos données et arrêtera de fonctionner.\nVous pouvez libérer de l'espace en supprimant des thèmes personnalisés, des notes et des listes de tâches que vous n'utilisez pas.",
   "toolbar":{
-    "placeholder":"Entrer ce que vous cherchez",
+    "placeholder":"Entrez ce que vous cherchez",
     "placeholder_ok":"Entrez ce que vous cherchez ou dites \"OK,Google\"",
     "apps":{
       "search":"Rechercher",
@@ -182,7 +182,7 @@
         },
         "account":"ID du compte",
         "account_help":"",
-        "account_placeholder":"Your \"authuser=\" value",
+        "account_placeholder":"Vous \"authuser=\" value",
         "on":"On",
         "off":"Off"
       }

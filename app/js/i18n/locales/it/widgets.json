@@ -3,14 +3,14 @@
   "analytics":{
     "name":"Analytics",
     "desc":"Displays various metrics from a Google Analytics profile.",
-    "sessions":"sessions",
-    "pageviews":"Pageviews",
+    "sessions":"sessioni",
+    "pageviews":"Visualizzazioni",
     "pagesvisit":"Pages\/visit",
-    "bouncerate":"Bounce Rate",
+    "bouncerate":"Tasso di rimbalzo",
     "completions":"Completions",
     "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
     "settings":{
-      "profile":"Profile"
+      "profile":"Profilo"
     }
   },
   "apps":{
@@ -20,30 +20,30 @@
       "format":"Widget Format",
       "format_options":{
         "tiles":"Tiles",
-        "list":"List"
+        "list":"Lista"
       },
-      "display":"Show",
+      "display":"Mostra",
       "display_options":{
-        "all":"All apps",
-        "enabled":"Only enabled apps"
+        "all":"Tutte le apps",
+        "enabled":"Solo le apps attivate"
       },
-      "sort":"Sort",
+      "sort":"Ordinamento",
       "sort_options":{
         "id":"ID",
-        "alphabetically":"Alphabetically",
-        "offline":"Offline Enabled",
-        "available":"Availability"
+        "alphabetically":"Alfabeticamente",
+        "offline":"Offline abilitato",
+        "available":"Disponibilità"
       },
       "open":"Open apps in"
     },
     "store_app":"Store"
   },
   "bookmarks":{
-    "name":"Bookmarks",
+    "name":"Preferiti",
     "desc":"Displays selected and customized bookmarks, and other links.",
     "settings":{
       "title_placeholder":"Enter a widget title",
-      "layout":"Layout",
+      "layout":"Aspetto",
       "layout_options":{
         "single":"Colonna Singola",
         "double":"Colonna Doppia"
@@ -58,49 +58,49 @@
       "url_placeholder":"http:\/\/www.google.com\/",
       "save":"Salva"
     },
-    "new_caption":"New",
-    "new_bookmark":"Bookmark",
-    "new_folder":"Folder",
-    "drop_link":"Drop link here"
+    "new_caption":"Nuovo",
+    "new_bookmark":"Segnalibro",
+    "new_folder":"Cartella",
+    "drop_link":"Trascina il link qui"
   },
   "calc":{
-    "name":"Calculator",
+    "name":"Calcolatrice",
     "desc":"Displays a calculator with support for basic operators.",
-    "error":"Error!",
-    "infinity":"Infinity",
-    "mismatch":"Mismatched parentheses"
+    "error":"Errore!",
+    "infinity":"Infinito",
+    "mismatch":"Parentesi non corrispondenti"
   },
   "calendar":{
     "name":"Calendar",
     "desc":"Displays upcoming events from one or more of your Google calendars.",
     "settings":{
       "calendar":"Calendar",
-      "events":"Events Shown"
+      "events":"Eventi mostrati"
     },
-    "title":"My Calendar",
+    "title":"Il mio calendario",
     "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
   },
   "clock":{
-    "name":"Time & Date",
+    "name":"Ora e data",
     "desc":"Shows the current date and time. Optionally for a different timezone.",
     "settings":{
-      "timezone":"Time Zone",
-      "timezone_local":"Local",
-      "format":"Clock Format",
+      "timezone":"Fuso orario",
+      "timezone_local":"Locale",
+      "format":"Formato orologio",
       "format_options":{
-        "ampm":"AM\/PM - Digital",
-        "24hour":"24 Hour - Digital",
-        "analog":"12 Hour - Analog",
-        "ampmseconds":"AM\/PM - Digital, No Seconds",
-        "24hourseconds":"24 Hour - Digital, No Seconds"
+        "ampm":"AM\/PM - digitale",
+        "24hour":"24 ore - digitale",
+        "analog":"12 ore - analogico",
+        "ampmseconds":"AM\/PM - digitale, senza secondi",
+        "24hourseconds":"24 ore - digitale, senza secondi"
       }
     },
-    "title":"Clock"
+    "title":"Orologio"
   },
   "currency":{
-    "name":"Currency",
+    "name":"Valuta",
     "desc":"Let's you convert between any two of 169 currencies.",
-    "to_label":"to"
+    "to_label":"in"
   },
   "drive":{
     "name":"Drive",
@@ -108,9 +108,9 @@
     "settings":{
       "files_shown":"Number of Files Shown"
     },
-    "modified_by":"by",
+    "modified_by":"di",
     "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
-    "authorize_btn":"Authorize"
+    "authorize_btn":"Autorizza"
   },
   "facebook":{
     "name":"Facebook",
@@ -122,34 +122,34 @@
     "settings":{
       "source":"Show articles from",
       "source_feeds":"Feeds",
-      "show":"Show",
+      "show":"Mostra",
       "show_options":{
-        "all":"All articles",
-        "unread":"Only unread articles"
+        "all":"Tutti gli articoli",
+        "unread":"Solo gli articoli non letti"
       },
-      "layout":"Layout",
+      "layout":"Aspetto",
       "layout_options":{
-        "titles":"Titles only",
-        "magazine":"Magazine",
-        "cards":"Cards",
-        "cards_columns":"Cards (two columns)"
+        "titles":"Solo titoli",
+        "magazine":"Rivista",
+        "cards":"Carte",
+        "cards_columns":"Carte (due colonne)"
       },
       "mark":"Mark an article as read when I",
       "mark_options":{
-        "scroll":"Scroll past it or click it",
-        "click":"Just click it"
+        "scroll":"Scorri oltre o cliccalo",
+        "click":"Cliccalo solamente"
       },
-      "sort":"Sort Order",
+      "sort":"Ordinamento",
       "sort_options":{
-        "newest":"Newest first",
-        "oldest":"Oldest first"
+        "newest":"Prima i più recenti",
+        "oldest":"Prima i più vecchi"
       }
     },
-    "all":"All",
-    "saved":"Saved for later",
-    "uncategorized":"Uncategorized",
-    "author":"by",
-    "go_to_feedly":"Go To Feedly"
+    "all":"Tutti",
+    "saved":"salvati per dopo",
+    "uncategorized":"Senza categoria",
+    "author":"di",
+    "go_to_feedly":"Vai a Feedly"
   },
   "gmail":{
     "name":"Gmail",
@@ -161,66 +161,66 @@
     "settings":{
       "url":"Frame URL",
       "url_placeholder":"i.e. http:\/\/www.google.com\/",
-      "height":"Frame Height",
-      "padding":"Padding"
+      "height":"Altezza frame",
+      "padding":"Rientro"
     }
   },
   "keep":{
-    "name":"Keep",
+    "name":"Mantieni",
     "desc":"Embeds Google Keep in a widget"
   },
   "news":{
-    "name":"News",
+    "name":"Notizie",
     "desc":"Displays the current top news by category and edition.",
     "settings":{
-      "articles":"Articles Shown",
-      "edition":"Edition",
+      "articles":"Articoli mostrati",
+      "edition":"Edizione",
       "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
-      "topic":"Topic",
+      "topic":"Argomento",
       "topic_options":{
-        "top":"Top Stories",
-        "world":"World",
-        "nation":"Nation",
-        "business":"Business",
-        "sports":"Sports",
-        "technology":"Technology",
-        "entertainment":"Entertainment",
-        "health":"Health",
-        "science":"Science",
-        "spotlight":"Spotlight"
+        "top":"Storie migliori",
+        "world":"Mondiale",
+        "nation":"Nazionale",
+        "business":"Affari",
+        "sports":"Sport",
+        "technology":"Tecnologia",
+        "entertainment":"Intrattenimento",
+        "health":"Salute",
+        "science":"Scienza",
+        "spotlight":"Spettacolo"
       },
-      "feed":"Custom Feed",
+      "feed":"Feed personalizzato",
       "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
       "feed_placeholder":"Enter a custom RSS feed to fetch news from",
-      "footer":"Footer URL",
+      "footer":"URL a piè di pagina",
       "footer_placeholder":"Enter the URL that the \"More\" link should point to"
     },
-    "more":"More"
+    "more":"Altro"
   },
   "notes":{
-    "name":"Notes",
+    "name":"note",
     "desc":"Inserts a simple, editable, note.",
     "settings":{
       "color":"Note Color",
       "color_options":{
-        "yellow":"Yellow",
-        "orange":"Orange",
-        "red":"Red",
-        "blue":"Blue",
-        "green":"Green",
-        "white":"White"
+        "yellow":"Giallo",
+        "orange":"Arancione",
+        "red":"Rosso",
+        "blue":"Blu",
+        "green":"Verde",
+        "white":"Bianco"
       },
-      "font":"Font Face",
-      "fontsize":"Font Size"
+      "font":"Stile font",
+      "fontsize":"Dimensione carattere"
     }
   },
   "now":{
     "name":"Google Now",
     "desc":"Displays cards from Google Now including flight status and package tracking.",
     "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
-    "authorize_btn":"Authorize",
+    "authorize_btn":"Autorizza",
     "caught_up":"All caught up, nothing here.",
-    "no_title":"No Title"
+    "no_title":"Senza titolo"
   },
   "plus":{
     "name":"Google+",
@@ -242,61 +242,61 @@
       "subreddit":"Subreddit",
       "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
       "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
-      "sort":"Sort Order",
+      "sort":"Ordinamento",
       "sort_options":{
         "hot":"Hot",
         "top":"Top",
-        "new":"New",
-        "gilded":"Gilded",
-        "rising":"Rising",
-        "controversial":"Controversial"
+        "new":"Nuovo",
+        "gilded":"Dorato",
+        "rising":"In evidenza",
+        "controversial":"Controverso"
       },
-      "links":"Links Shown",
+      "links":"Links mostrati",
       "click":"When I click a link show me",
       "click_options":{
-        "link":"The link",
-        "comments":"The comments"
+        "link":"Il link",
+        "comments":"I commenti"
       }
     },
-    "more":"More"
+    "more":"Altro"
   },
   "rss":{
     "name":"RSS",
     "desc":"Displays items from a RSS or Atom feed with optional images.",
     "settings":{
-      "link":"Title Link",
+      "link":"Titolo Link",
       "link_placeholder":"Enter a link for the widget title",
-      "url":"Feed URL",
+      "url":"URL del Feed",
       "url_placeholder":"The URL of the RSS feed to be displayed",
-      "articles":"Articles Shown",
-      "view":"View",
+      "articles":"Articoli mostrati",
+      "view":"Vista",
       "view_options":{
-        "images":"Image friendly",
-        "default":"Default"
+        "images":"Con possibilità di immagini",
+        "default":"Normale"
       },
-      "images":"Images",
-      "descriptions":"Descriptions"
+      "images":"Immagini",
+      "descriptions":"Descrizioni"
     },
     "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
   },
   "sports":{
-    "name":"Sports",
+    "name":"Sport",
     "desc":"Displays scores and game information for selected leagues and\/or teams.",
     "settings":{
-      "league":"League",
-      "games":"Games Shown",
-      "team":"Team",
-      "teams":"Team",
-      "unavailable":"When team games are unavailable",
+      "league":"Campionato",
+      "games":"Partite mostrate",
+      "team":"Squadre",
+      "teams":"Squadre",
+      "unavailable":"Quando non sono disponibili partite",
       "unavailable_options":{
-        "other":"Show other games",
-        "none":"Show \"No Games\""
+        "other":"Visualizza altre partite",
+        "none":"Visualizza \"nessuna partita\""
       }
     },
     "error":"Something seems to have gone wrong",
     "unknown_error":"Unknown Error",
     "watch_on":"Watch on: %s",
-    "no_games":"No Games Scheduled"
+    "no_games":"Nessuna partita in programma"
   },
   "stocks":{
     "name":"Stocks",
@@ -376,13 +376,13 @@
     },
     "authorize":"You'll need to authorize iChrome first",
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
-    "authorize_btn":"Authorize",
+    "authorize_btn":"Autorizza",
     "no_tweets":"There don't seem to be any tweets here...",
     "home":"Home",
     "mentions":"Mentions",
     "retweets":"Retweets of me",
     "lists":"Lists",
-    "more":"More",
+    "more":"Altro",
     "reply":"Reply",
     "retweet":"Retweet",
     "favorite":"Favorite"

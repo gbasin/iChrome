@@ -2,30 +2,30 @@
   "lang_code":"nl-widgets",
   "analytics":{
     "name":"Analytics",
-    "desc":"Displays various metrics from a Google Analytics profile.",
+    "desc":"Laat verschillende statistieken zien van een Google Analytics-profiel.",
     "sessions":"sessies",
     "pageviews":"Pageviews",
-    "pagesvisit":"Pages\/visit",
+    "pagesvisit":"Paginabezoeken",
     "bouncerate":"Bounce Rate",
-    "completions":"Completions",
-    "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
+    "completions":"Opleveringen",
+    "noprofile":"Zo te zien heeft u nog geen profiel geselecteerd!\n<br \/><br \/>\nSelecteer er een via het steeksleutel icoon rechtsbovenin.",
     "settings":{
-      "profile":"Profile"
+      "profile":"Profiel"
     }
   },
   "apps":{
     "name":"Apps",
-    "desc":"Displays your currently installed Google Chrome applications.",
+    "desc":"Laat uw huidige geïnstalleerde Google Chrome applicaties zien.",
     "settings":{
-      "format":"Widget Format",
+      "format":"Widget formaat",
       "format_options":{
-        "tiles":"Tiles",
-        "list":"List"
+        "tiles":"Tegels",
+        "list":"Lijst"
       },
-      "display":"Tonen",
+      "display":"Laat zien",
       "display_options":{
-        "all":"All apps",
-        "enabled":"Only enabled apps"
+        "all":"Alle apps",
+        "enabled":"Alleen ingeschakelde apps"
       },
       "sort":"Sorteren",
       "sort_options":{
@@ -39,20 +39,20 @@
     "store_app":"Winkel"
   },
   "bookmarks":{
-    "name":"Bookmarks",
-    "desc":"Displays selected and customized bookmarks, and other links.",
+    "name":"Bladwijzers",
+    "desc":"Geselecteerde displays en aangepaste bladwijzers, en andere links.",
     "settings":{
-      "title_placeholder":"Enter a widget title",
+      "title_placeholder":"Voer een widget titel in",
       "layout":"Layout",
       "layout_options":{
-        "single":"Single column",
-        "double":"Double column"
+        "single":"Één kolom",
+        "double":"Dubbele kolom"
       },
-      "open":"Open bookmarks in"
+      "open":"Open Bladwijzers in"
     },
     "edit":{
-      "dialog_title":"Edit Bookmark",
-      "title":"Bookmark Title",
+      "dialog_title":"Bladwijzers bijwerken",
+      "title":"Bladwijzer titel",
       "title_placeholder":"Google",
       "url":"Bladwijzer URL",
       "url_placeholder":"http:\/\/www.google.com\/",
@@ -61,386 +61,386 @@
     "new_caption":"Nieuw",
     "new_bookmark":"Bladwijzer",
     "new_folder":"Map",
-    "drop_link":"Drop link here"
+    "drop_link":"Link hier neerzetten"
   },
   "calc":{
     "name":"Rekenmachine",
-    "desc":"Displays a calculator with support for basic operators.",
-    "error":"Error!",
+    "desc":"Laat een rekenmachine zien met ondersteuning voor basisoperatoren.",
+    "error":"Fout!",
     "infinity":"Oneindigheid",
-    "mismatch":"Mismatched parentheses"
+    "mismatch":"Onjuiste combinaties van haakjes"
   },
   "calendar":{
-    "name":"Kalender",
-    "desc":"Displays upcoming events from one or more of your Google calendars.",
+    "name":"Agenda",
+    "desc":"Toont aanstaande gebeurtenissen uit een of meer van uw Google agenda's.",
     "settings":{
-      "calendar":"Kalender",
-      "events":"Events Shown"
+      "calendar":"Agenda",
+      "events":"Gebeurtenissen weergegeven"
     },
-    "title":"My Calendar",
-    "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
+    "title":"Mijn agenda",
+    "noevents":"Het lijkt dat er geen evenementen in de nabije toekomst zijn.\n<br \/><br\/>\nProbeer een agenda te selecteren via het moersleutelpictogram in de rechterbovenhoek."
   },
   "clock":{
-    "name":"Time & Date",
-    "desc":"Shows the current date and time. Optionally for a different timezone.",
+    "name":"Tijd & datum",
+    "desc":"Geeft de huidige datum en tijd weer. Mogelijk voor een andere tijdzone.",
     "settings":{
-      "timezone":"Time Zone",
-      "timezone_local":"Local",
-      "format":"Clock Format",
+      "timezone":"Tijdzone",
+      "timezone_local":"Lokaal",
+      "format":"Kloknotatie",
       "format_options":{
-        "ampm":"AM\/PM - Digital",
-        "24hour":"24 Hour - Digital",
-        "analog":"12 Hour - Analog",
-        "ampmseconds":"AM\/PM - Digital, No Seconds",
-        "24hourseconds":"24 Hour - Digital, No Seconds"
+        "ampm":"AM\/PM - Digitaal",
+        "24hour":"24-uurs - Digitaal",
+        "analog":"12-uurs - Analoog",
+        "ampmseconds":"AM\/PM - Digitaal, geen Seconden",
+        "24hourseconds":"24-uurs - Digitaal, geen Seconden"
       }
     },
-    "title":"Clock"
+    "title":"Klok"
   },
   "currency":{
-    "name":"Currency",
-    "desc":"Let's you convert between any two of 169 currencies.",
-    "to_label":"to"
+    "name":"Munteenheid",
+    "desc":"Laat u converteren tussen elke van de 169 valuta's.",
+    "to_label":"Naar"
   },
   "drive":{
     "name":"Drive",
-    "desc":"Displays recently changed files from your Google Drive.",
+    "desc":"Laat onlangs gewijzigde bestanden zien uit uw Google Drive.",
     "settings":{
-      "files_shown":"Number of Files Shown"
+      "files_shown":"Aantal bestanden weergeven"
     },
-    "modified_by":"by",
-    "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
-    "authorize_btn":"Authorize"
+    "modified_by":"door",
+    "authorize":"U moet iChrome toestemming geven om bestanden van uw Google Drive te lezen voordat hier iets zichtbaar word.",
+    "authorize_btn":"Machtigen"
   },
   "facebook":{
     "name":"Facebook",
-    "desc":"Embeds Facebook in a widget"
+    "desc":"Hiermee sluit u Facebook in in een widget"
   },
   "feedly":{
     "name":"Feedly",
-    "desc":"Displays articles from your Feedly account in a configurable format.",
+    "desc":"Laat uw Feedly artikelen zien in een configureerbaar formaat.",
     "settings":{
-      "source":"Show articles from",
+      "source":"Laat artikelen zien van",
       "source_feeds":"Feeds",
       "show":"Tonen",
       "show_options":{
-        "all":"All articles",
-        "unread":"Only unread articles"
+        "all":"Alle artikelen",
+        "unread":"Alleen ongelezen artikelen"
       },
       "layout":"Layout",
       "layout_options":{
-        "titles":"Titles only",
-        "magazine":"Magazine",
-        "cards":"Cards",
-        "cards_columns":"Cards (two columns)"
+        "titles":"Alleen koppen",
+        "magazine":"Tijdschrift",
+        "cards":"Kaarten",
+        "cards_columns":"Kaarten (twee kolommen)"
       },
-      "mark":"Mark an article as read when I",
+      "mark":"Markeer een artikel als gelezen wanneer ik",
       "mark_options":{
-        "scroll":"Scroll past it or click it",
-        "click":"Just click it"
+        "scroll":"Er voorbij scrol of  erop klik",
+        "click":"Gewoon op klikken"
       },
-      "sort":"Sort Order",
+      "sort":"Sorteervolgorde",
       "sort_options":{
-        "newest":"Newest first",
-        "oldest":"Oldest first"
+        "newest":"Nieuwste eerst",
+        "oldest":"Oudste eerst"
       }
     },
     "all":"Alles",
-    "saved":"Saved for later",
-    "uncategorized":"Uncategorized",
-    "author":"by",
-    "go_to_feedly":"Go To Feedly"
+    "saved":"Opgeslagen voor later",
+    "uncategorized":"Niet ingedeeld",
+    "author":"door",
+    "go_to_feedly":"Ga naar Feedly"
   },
   "gmail":{
     "name":"Gmail",
-    "desc":"Displays your Gmail inbox where you can manage your email."
+    "desc":"Geeft uw Gmail inbox weer waar u uw email kunt beheren."
   },
   "iframe":{
     "name":"iFrame",
-    "desc":"Displays a webpage of your choice within an iframe.",
+    "desc":"Laat een webpagina van uw keuze in een iframe zien.",
     "settings":{
       "url":"Frame URL",
-      "url_placeholder":"i.e. http:\/\/www.google.com\/",
-      "height":"Frame Height",
-      "padding":"Padding"
+      "url_placeholder":"bijvoorbeeld http:\/\/www.google.com\/",
+      "height":"Framehoogte",
+      "padding":"Opvulling"
     }
   },
   "keep":{
-    "name":"Keep",
-    "desc":"Embeds Google Keep in a widget"
+    "name":"Bewaar",
+    "desc":"Stopt Google Keep in een widget"
   },
   "news":{
     "name":"Nieuws",
-    "desc":"Displays the current top news by category and edition.",
+    "desc":"Geeft het huidige top nieuws weer per categorie en editie.",
     "settings":{
-      "articles":"Articles Shown",
-      "edition":"Edition",
-      "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
-      "topic":"Topic",
+      "articles":"Weergegeven artikelen",
+      "edition":"Editie",
+      "edition_help":"Als uw uitgave of thema niet in de lijst staat, vul de URL van de Google News-feed in het onderstaande 'aangepaste feed'-veld (bekijk daar de helptekst voor verdere uitleg).",
+      "topic":"Onderwerp",
       "topic_options":{
-        "top":"Top Stories",
-        "world":"World",
-        "nation":"Nation",
-        "business":"Business",
-        "sports":"Sports",
-        "technology":"Technology",
+        "top":"Populaire artikelen",
+        "world":"Wereld",
+        "nation":"Nationaal",
+        "business":"Zakelijk",
+        "sports":"Sport",
+        "technology":"Technologie",
         "entertainment":"Entertainment",
-        "health":"Health",
-        "science":"Science",
-        "spotlight":"Spotlight"
+        "health":"Gezondheid",
+        "science":"Wetenschap",
+        "spotlight":"Schijnwerper"
       },
-      "feed":"Custom Feed",
-      "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
-      "feed_placeholder":"Enter a custom RSS feed to fetch news from",
-      "footer":"Footer URL",
-      "footer_placeholder":"Enter the URL that the \"More\" link should point to"
+      "feed":"Aangepaste Feed",
+      "feed_help":"Dit is de feed van de URL die aan de onderkant van elke Google Nieuwspagina staat. Zoek een oranje RSS-icoon op en een link dat \"RSS\" aangeeft",
+      "feed_placeholder":"Vul een eigen RSS feed in om nieuws van op te halen",
+      "footer":"Voettekst URL",
+      "footer_placeholder":"Vul een URL in waar de \"Meer\" knop naar moet linken"
     },
     "more":"Meer"
   },
   "notes":{
-    "name":"Notes",
-    "desc":"Inserts a simple, editable, note.",
+    "name":"Notities",
+    "desc":"Voegt een simpele, aanpasbare notitie toe.",
     "settings":{
-      "color":"Note Color",
+      "color":"Notitiekleur",
       "color_options":{
-        "yellow":"Yellow",
-        "orange":"Orange",
-        "red":"Red",
-        "blue":"Blue",
-        "green":"Green",
-        "white":"White"
+        "yellow":"Geel",
+        "orange":"Oranje",
+        "red":"Rood",
+        "blue":"Blauw",
+        "green":"Groen",
+        "white":"Wit"
       },
-      "font":"Font Face",
-      "fontsize":"Font Size"
+      "font":"Lettertype",
+      "fontsize":"Tekstgrootte"
     }
   },
   "now":{
     "name":"Google Now",
-    "desc":"Displays cards from Google Now including flight status and package tracking.",
-    "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
-    "authorize_btn":"Authorize",
-    "caught_up":"All caught up, nothing here.",
-    "no_title":"No Title"
+    "desc":"Toon kaarten van Google Now inclusief vluchtstatus en het volgen van pakketten.",
+    "authorize":"U zult iChrome toestemming moeten geven om uw Google Now-kaarten te bekijken voordat er iets getoond zal worden.",
+    "authorize_btn":"Machtigen",
+    "caught_up":"Alles voltooid, hier is niets.",
+    "no_title":"Geen titel"
   },
   "plus":{
     "name":"Google+",
-    "desc":"Embeds Google Plus in a widget"
+    "desc":"Hiermee sluit u Google Plus in in een widget"
   },
   "recentlyclosed":{
-    "name":"Recently Closed",
-    "desc":"Shows your recently closed tabs",
+    "name":"Onlangs gesloten",
+    "desc":"Toont uw onlangs gesloten tabbladen",
     "settings":{
-      "tabs":"Tabs Shown",
-      "open":"Open tabs in"
+      "tabs":"Weergegeven tabbladen",
+      "open":"Open tabbladen in"
     },
-    "notabs":"Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed."
+    "notabs":"Tabbladen die werden gesloten voordat deze widget geïnstalleerd was kunnen niet worden weergegeven. Vanaf nu zal elke tab die u sluit worden weergegeven."
   },
   "reddit":{
     "name":"Reddit",
-    "desc":"Displays the top items on Reddit for any given subreddit.",
+    "desc":"Toont de populairste items op Reddit voor elke opgegeven subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
-      "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
-      "sort":"Sort Order",
+      "subreddit_help":"Vul een subreddit in dat volgt na <b>\/r\/<\/b> op Reddit.\n<br \/><br \/>\n'Technology' is bijvoorbeeld te vinden via: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, wat betekent dat u <b>technology<\/b> invult",
+      "subreddit_placeholder":"Geef een subreddit om links ervan te tonen (bijv. technologie)",
+      "sort":"Sorteervolgorde",
       "sort_options":{
-        "hot":"Hot",
+        "hot":"Populair",
         "top":"Top",
         "new":"Nieuw",
-        "gilded":"Gilded",
-        "rising":"Rising",
-        "controversial":"Controversial"
+        "gilded":"Verguld",
+        "rising":"Stijgend",
+        "controversial":"Controversiële"
       },
-      "links":"Links Shown",
-      "click":"When I click a link show me",
+      "links":"Getoonde links",
+      "click":"Laat zien bij het klikken op een link",
       "click_options":{
-        "link":"The link",
-        "comments":"The comments"
+        "link":"De link",
+        "comments":"De reacties"
       }
     },
     "more":"Meer"
   },
   "rss":{
     "name":"RSS",
-    "desc":"Displays items from a RSS or Atom feed with optional images.",
+    "desc":"Toont items van een RSS- of Atomfeed met eventuele afbeeldingen.",
     "settings":{
-      "link":"Title Link",
-      "link_placeholder":"Enter a link for the widget title",
+      "link":"Titellink",
+      "link_placeholder":"Geef een link voor de titel van de widget",
       "url":"Feed URL",
-      "url_placeholder":"The URL of the RSS feed to be displayed",
-      "articles":"Articles Shown",
-      "view":"View",
+      "url_placeholder":"De URL van de RSS-feed die getoond moet worden",
+      "articles":"Weergegeven artikelen",
+      "view":"Weergave",
       "view_options":{
-        "images":"Image friendly",
-        "default":"Default"
+        "images":"Afbeeldingsvriendelijk",
+        "default":"Standaardinstelling"
       },
-      "images":"Images",
-      "descriptions":"Descriptions"
+      "images":"Afbeeldingen",
+      "descriptions":"Beschrijvingen"
     },
-    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
+    "feed_error":"Een fout is opgetreden tijdens het ophalen van de feed: %s.\nControleer nogmaals de URL en\/of verander de instellingen van de widget."
   },
   "sports":{
-    "name":"Sports",
-    "desc":"Displays scores and game information for selected leagues and\/or teams.",
+    "name":"Sport",
+    "desc":"Geeft scores en wedstrijdinformatie voor geselecteerde divisies en\/of teams.",
     "settings":{
-      "league":"League",
-      "games":"Games Shown",
+      "league":"Competitie",
+      "games":"Getoonde wedstrijden",
       "team":"Team",
       "teams":"Team",
-      "unavailable":"When team games are unavailable",
+      "unavailable":"Wanneer teamwedstrijden niet beschikbaar zijn",
       "unavailable_options":{
-        "other":"Show other games",
-        "none":"Show \"No Games\""
+        "other":"Toon andere wedstrijden",
+        "none":"Toon \"geen wedstrijden\""
       }
     },
-    "error":"Something seems to have gone wrong",
-    "unknown_error":"Unknown Error",
-    "watch_on":"Watch on: %s",
-    "no_games":"No Games Scheduled"
+    "error":"Er lijkt iets verkeerd te zijn gegaan",
+    "unknown_error":"Onbekende fout",
+    "watch_on":"Kijk op: %s",
+    "no_games":"Geen wedstrijden gepland"
   },
   "stocks":{
-    "name":"Stocks",
-    "desc":"Displays current information for any given stock symbol.",
+    "name":"Aandelen",
+    "desc":"Geeft actuele informatie voor elk opgegeven beurssymbool.",
     "settings":{
-      "symbols":"Stock Symbol(s), comma separated",
-      "symbols_placeholder":"e.g. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br \/><br \/>\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. For example, the Dow Jones index is <b>.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
+      "symbols":"Beurssymbolen, gescheiden door komma's",
+      "symbols_placeholder":"Bijv. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
+      "symbols_help":"Dit zijn de aandelen die u wilt zien in TICKER:EXCHANGE formaat.\n<br \/><br \/>\nVoor indexen, gebruik de tickers en wisselkoersen zoals getoond op <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. Bijvoorbeeld de Dow Jones index is <b>.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
     },
-    "as_of":"as of",
-    "exchange_time":"Exchange Time",
+    "as_of":"per",
+    "exchange_time":"Wisselkoers tijd",
     "open":"open",
-    "high":"high",
-    "low":"low",
+    "high":"hoog",
+    "low":"laag",
     "volume":"volume"
   },
   "todo":{
-    "name":"To-do",
-    "desc":"Displays an interactive to-do list with important and completed items.",
-    "title":"To-do list",
+    "name":"Taken",
+    "desc":"Geeft een interactieve takenlijst weer met belangrijke en voltooide taken.",
+    "title":"Takenlijst",
     "settings":{
-      "color":"Font Color",
+      "color":"Tekstkleur",
       "color_options":{
-        "light":"Light",
-        "dark":"Dark"
+        "light":"Licht",
+        "dark":"Donker"
       },
-      "tags":"Tags",
-      "tags_placeholder":"Enter a tag name and press Enter"
+      "tags":"Labels",
+      "tags_placeholder":"Vul een tagnaam in en druk enter"
     },
-    "add":"Add Item",
-    "none":"None",
-    "important":"Important"
+    "add":"Item toevoegen",
+    "none":"Geen",
+    "important":"Belangrijk"
   },
   "topsites":{
-    "name":"Top Sites",
-    "desc":"Displays your most visited\/top sites.",
+    "name":"Topsites",
+    "desc":"Geeft uw meest bezochte\/beste websites weer.",
     "settings":{
-      "show":"Number of sites shown",
-      "open":"Open sites in"
+      "show":"Aantal getoonde websites",
+      "open":"Open websites in"
     }
   },
   "traffic":{
-    "name":"Traffic",
-    "desc":"Displays the current time in current traffic to home or work.",
+    "name":"Data",
+    "desc":"Toont de actuele reistijd naar huis of werk.",
     "settings":{
-      "leave":"I leave home at",
-      "home":"Home Address",
-      "home_placeholder":"The destination that should be used after work",
-      "work":"Work Address",
-      "work_placeholder":"The destination that should be used before work",
-      "method":"Transit Method",
+      "leave":"Ik ga van huis om",
+      "home":"Huisadres",
+      "home_placeholder":"De bestemming waar u na werk naartoe gaat",
+      "work":"Werkadres",
+      "work_placeholder":"De bestemming waar u voor uw werk naartoe gaat",
+      "method":"OV-vervoersmiddel",
       "method_options":{
-        "driving":"Driving",
-        "walking":"Walking",
-        "transit":"Public Transit"
+        "driving":"Onderweg",
+        "walking":"Wandelen",
+        "transit":"Openbaar vervoer"
       }
     },
-    "to_home":"to home",
-    "to_work":"to work"
+    "to_home":"naar huis",
+    "to_work":"naar werk"
   },
   "translate":{
-    "name":"Translate",
-    "desc":"Contains a small inline Google Translate textbox.",
-    "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
-    "button":"Translate",
-    "untranslate":"Untranslate",
+    "name":"Vertalen",
+    "desc":"Bevat een kleine ingevoegde Google Vertalen-tekstveld.",
+    "placeholder":"Vul de tekst in u die u wilt vertalen, druk daarna op 'vertalen'.",
+    "button":"Vertalen",
+    "untranslate":"Terugvertalen",
     "auto":"Auto (%s)",
-    "unknown":"Unknown",
-    "error":"Something went wrong while trying to translate that..."
+    "unknown":"Onbekend",
+    "error":"Er ging iets fout toen u dat wou vertalen..."
   },
   "twitter":{
     "name":"Twitter",
-    "desc":"Displays tweets from your home stream or a specified list.",
+    "desc":"Geeft tweets weer van uw tijdlijn of een specifieke lijst.",
     "settings":{
-      "source":"Show Tweets from",
-      "show":"Tweets Shown"
+      "source":"Laat tweets zien van",
+      "show":"Tweets weergegeven"
     },
-    "authorize":"You'll need to authorize iChrome first",
-    "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
-    "authorize_btn":"Authorize",
-    "no_tweets":"There don't seem to be any tweets here...",
+    "authorize":"U zult iChrome eerst toestemming moeten geven",
+    "authorize_msg":"U zult iChrome eerst toestemming moeten geven om uw tweets te bekijken van uw account voordat er hier iets zal worden weergegeven.",
+    "authorize_btn":"Machtigen",
+    "no_tweets":"Er schijnen hier geen tweets te zijn...",
     "home":"Home",
-    "mentions":"Mentions",
-    "retweets":"Retweets of me",
-    "lists":"Lists",
+    "mentions":"Vermeldingen",
+    "retweets":"Mijn retweets",
+    "lists":"Lijsten",
     "more":"Meer",
-    "reply":"Reply",
+    "reply":"Reageer",
     "retweet":"Retweet",
-    "favorite":"Favorite"
+    "favorite":"Favoriet"
   },
   "unread":{
-    "name":"Unread",
-    "desc":"Displays the current number of unread emails in your Gmail inbox.",
+    "name":"Ongelezen",
+    "desc":"Geeft het aantal ongelezen e-mails uit uw Gmail-postvak weer.",
     "settings":{
-      "open":"When clicked open"
+      "open":"Bij klikken open"
     },
-    "unread_none":"unread emails",
-    "unread_one":"unread email",
-    "unread_many":"unread emails"
+    "unread_none":"ongelezen e-mails",
+    "unread_one":"ongelezen e-mail",
+    "unread_many":"ongelezen e-mails"
   },
   "voice":{
     "name":"Voice",
-    "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
-    "call":"Call from",
-    "text":"Text message from",
-    "missed":"missed in Voice",
-    "texts":"unread text messages",
-    "calls":"missed calls"
+    "desc":"Geeft het actuele aantal gemiste oproepen en sms'jes in je Google Voice-account weer.",
+    "call":"Oproep van",
+    "text":"SMS van",
+    "missed":"gemist in Voice",
+    "texts":"ongelezen sms'jes",
+    "calls":"gemiste oproepen"
   },
   "weather":{
-    "name":"Weather",
-    "desc":"Displays the current weather and a forecast for the next 4 days.",
+    "name":"Weer",
+    "desc":"Geeft actueel weer en de weersverwachting voor de komende 4 dagen weer.",
     "settings":{
-      "location":"Location(s)",
-      "location_placeholder":"Enter a location and press Enter",
-      "temperature":"Temperature Units",
-      "wind":"Wind Speed Units"
+      "location":"Locatie(s)",
+      "location_placeholder":"Vul een locatie in en druk enter",
+      "temperature":"Eenheid van temperatuur",
+      "wind":"Eenheid van windsnelheid"
     },
-    "unknown":"Unknown",
-    "wind":"Wind Speed",
-    "chill":"Wind Chill",
-    "humidity":"Humidity"
+    "unknown":"Onbekend",
+    "wind":"Windsnelheid",
+    "chill":"Gevoelstemperatuur",
+    "humidity":"Luchtvochtigheid"
   },
   "wolfram":{
-    "desc":"Inserts a small Wolfram|Alpha search box."
+    "desc":"Voegt een klein Wolfram|Alpha zoekvak toe."
   },
   "youtube":{
     "name":"YouTube",
-    "desc":"Displays either popular videos or videos from a specified user.",
+    "desc":"Populaire video's of video's van een specifieke gebruiker weergeven.",
     "settings":{
-      "format":"Format",
+      "format":"Indeling",
       "format_options":{
-        "large":"One large",
-        "large_2":"One large, two small",
-        "large_4":"One large, four small",
-        "four":"Four small",
-        "six":"Six small"
+        "large":"Één groot",
+        "large_2":"Één groot, twee klein",
+        "large_4":"Één groot, vier klein",
+        "four":"Vier klein",
+        "six":"Zes klein"
       },
-      "from":"Show Videos From",
-      "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
-      "from_placeholder":"Leave blank to show Top Videos",
-      "open":"Open search results in"
+      "from":"Toon video's van",
+      "from_help":"Dit moet een <b>exacte<\/b> gebruikersnaam zijn zoals weergegeven in de URL van de pagina wanneer u dat profiel bekijkt. <br \/><br \/> Deze waarde bevat nooit spaties.",
+      "from_placeholder":"Laat leeg om de populairste video's te laten zien",
+      "open":"Open zoekresultaten in"
     },
-    "search":"Search YouTube",
-    "num_views":"views"
+    "search":"Zoek op YouTube",
+    "num_views":"weergaven"
   }
 }

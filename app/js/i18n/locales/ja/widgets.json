@@ -2,13 +2,13 @@
   "lang_code":"ja-widgets",
   "analytics":{
     "name":"解析",
-    "desc":"Displays various metrics from a Google Analytics profile.",
+    "desc":"Googleアナリティクスプロフィールからさまざまな統計情報を表示",
     "sessions":"セッション",
     "pageviews":"ページビュー",
     "pagesvisit":"ページ\/訪問",
     "bouncerate":"直帰率",
     "completions":"補完",
-    "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
+    "noprofile":"まだプロフィールが選択されていないようです！\n<br \/><br \/>\n右上の設定アイコンから１つ選択してみてください。",
     "settings":{
       "profile":"プロフィール"
     }
@@ -34,13 +34,13 @@
         "offline":"オフライン有効",
         "available":"可用性"
       },
-      "open":"Open apps in"
+      "open":"アプリを開く…"
     },
     "store_app":"ストア"
   },
   "bookmarks":{
     "name":"ブックマーク",
-    "desc":"Displays selected and customized bookmarks, and other links.",
+    "desc":"選択もしくはカスタマイズされたブックマークやその他のリンクを表示",
     "settings":{
       "title_placeholder":"ウィジェットのタイトルを入力します",
       "layout":"レイアウト",
@@ -48,7 +48,7 @@
         "single":"1 つの列",
         "double":"2つの列"
       },
-      "open":"Open bookmarks in"
+      "open":"ブックマークを開く"
     },
     "edit":{
       "dialog_title":"ブックマークを編集",
@@ -78,11 +78,11 @@
       "events":"表示されている予定"
     },
     "title":"マイカレンダー",
-    "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
+    "noevents":"近日中に設定されているイベントは特にないようです。\n<br \/><br \/>\n右上の設定アイコンからカレンダーを選択してみてください。"
   },
   "clock":{
     "name":"時間 & 日付",
-    "desc":"Shows the current date and time. Optionally for a different timezone.",
+    "desc":"現在の日付と時刻を表示。異なるタイムゾーンのために必要に応じて設定。",
     "settings":{
       "timezone":"タイムゾーン",
       "timezone_local":"ローカル",
@@ -109,7 +109,7 @@
       "files_shown":"ファイルの数が表示される"
     },
     "modified_by":"By",
-    "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
+    "authorize":"こちらに何かを表示するためには、iChromeにあなたのGoogleドライブからファイルを読み込むための許可を与える必要があります。",
     "authorize_btn":"承認"
   },
   "facebook":{
@@ -118,7 +118,7 @@
   },
   "feedly":{
     "name":"Feedly",
-    "desc":"Displays articles from your Feedly account in a configurable format.",
+    "desc":"Feedlyアカウントから設定可能な形式で記事を表示。",
     "settings":{
       "source":"記事の表示",
       "source_feeds":"フィード",
@@ -137,7 +137,7 @@
       "mark":"Mark an article as read when I",
       "mark_options":{
         "scroll":"Scroll past it or click it",
-        "click":"Just click it"
+        "click":"ここをクリック"
       },
       "sort":"並べ替え順序",
       "sort_options":{
@@ -160,13 +160,13 @@
     "desc":"iframe 内の web ページが表示されます。",
     "settings":{
       "url":"フレームの URL",
-      "url_placeholder":"i.e. http:\/\/www.google.com\/",
+      "url_placeholder":"例: http:\/\/www.google.com\/",
       "height":"フレームの高さ",
       "padding":"パディング"
     }
   },
   "keep":{
-    "name":"Keep",
+    "name":"保持",
     "desc":"Embeds Google Keep in a widget"
   },
   "news":{
@@ -176,32 +176,32 @@
       "articles":"表示される記事",
       "edition":"版",
       "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
-      "topic":"Topic",
+      "topic":"トピック",
       "topic_options":{
         "top":"Top Stories",
-        "world":"World",
+        "world":"世界",
         "nation":"Nation",
         "business":"Business",
-        "sports":"Sports",
-        "technology":"Technology",
-        "entertainment":"Entertainment",
+        "sports":"スポーツ",
+        "technology":"テクノロジー",
+        "entertainment":"エンターテイメント",
         "health":"健康",
         "science":"科学",
-        "spotlight":"Spotlight"
+        "spotlight":"スポットライト"
       },
-      "feed":"Custom Feed",
+      "feed":"カスタム フィード",
       "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
       "feed_placeholder":"Enter a custom RSS feed to fetch news from",
-      "footer":"Footer URL",
+      "footer":"フッター URL",
       "footer_placeholder":"Enter the URL that the \"More\" link should point to"
     },
     "more":"さらに"
   },
   "notes":{
-    "name":"Notes",
+    "name":"メモ",
     "desc":"Inserts a simple, editable, note.",
     "settings":{
-      "color":"Note Color",
+      "color":"ノートの色",
       "color_options":{
         "yellow":"イエロー",
         "orange":"オレンジ",
@@ -210,7 +210,7 @@
         "green":"グリーン",
         "white":"ホワイト"
       },
-      "font":"Font Face",
+      "font":"フォントの種類",
       "fontsize":"文字サイズ"
     }
   },

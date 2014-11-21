@@ -40,7 +40,7 @@
     "footer":{
       "support":"Soporte",
       "feedback":"Commentarios",
-      "review":"Criticas",
+      "review":"Críticas",
       "twitter":"Twitter",
       "webstore":"Tienda Online",
       "donate":"Donar",
@@ -83,8 +83,8 @@
         "text_holder":"Texto de enlaze",
         "link_holder":"URL de enlaze, (http:\/\/www.google.com\/)"
       },
-      "guide":"Guia de Instalacion",
-      "guide_desc":"Reshow la guía que se muestra cuando se instaló por primera vez iChrome"
+      "guide":"Guía de Instalación",
+      "guide_desc":"Volver a mostrar la guía de inicio de iChrome"
     },
     "visual":{
       "layout":"Diseño",
@@ -99,7 +99,7 @@
         "4_fluid":"Cuatro columnas, de ancho fluido",
         "5_fixed":"Cinco columnas, ancho fijo",
         "5_fluid":"Cinco columnas, ancho fluido",
-        "grid":"Ancho basados en red y personalizable"
+        "grid":"Ancho basado en cuadrícula y personalizable"
       },
       "theme":"Tema predeterminado",
       "theme_placeholder":"Tema # %s",
@@ -118,7 +118,7 @@
       "toolbar_normal":"Normal",
       "toolbar_button":"Botón",
       "animation":"Slide-in de animación",
-      "animation_desc":"Esta opción le permite activar o desactivar la animación de diapositivas-en que se ejecuta cuando se carga la página",
+      "animation_desc":"Esta opción le permite activar o desactivar la animación de diapositivas que se ejecuta cuando se carga la página",
       "animation_label":"Activar la animación"
     },
     "specific":{
@@ -177,20 +177,20 @@
         },
         "footer_link":"Enlace de pie de página",
         "footer_link_options":{
-          "show":"Enseñar",
+          "show":"Mostrar",
           "hide":"Ocultar"
         },
         "account":"ID de Cuenta",
         "account_help":"Si usted firmó en múltiples cuentas, este es el \"authuser =\" valor.\n<br \/><br \/>\nPor ejemplo, si está firmado en dos cuentas, jsmith1@gmail.com y jsmith2@gmail.com, el valor \"authuser\" para jsmith2@gmail.com interesaría 1 puesto que es la segunda cuenta (contando desde cero), que está firmado.",
         "account_placeholder":"Su \"authuser =\" valor",
-        "on":"ACTIVADO",
-        "off":"DESACTIVADO"
+        "on":"Activado",
+        "off":"Desactivado"
       }
     }
   },
   "themes":{
     "title":"Tema",
-    "all":"TODOS",
+    "all":"Todos",
     "custom":"Personlizado",
     "create":"Crear un tema",
     "url_or_upload":"o",
@@ -200,9 +200,9 @@
     "use":"Usar",
     "preview":"Avance",
     "author":"Por",
-    "images":"%s imagenes",
+    "images":"%s imágenes",
     "resolution":"Resolución",
-    "categories":"CATEGORÍAS",
+    "categories":"Categorías",
     "cached":"Este tema ha sido almacenados en caché y está disponible sin conexión",
     "random":"Este tema muestra una imagen al azar cada vez que se carga la página",
     "random_daily":"Este tema muestra una imagen escogida al azar cada día",
@@ -210,8 +210,8 @@
     "feed":"Este tema muestra una imagen seleccionada diario de alimentación externo",
     "delete_confirm":"¿Estás seguro de que desea eliminar este tema? Esta acción es irreversible; el tema entero se perderá permanentemente.",
     "delete_error":"Se ha producido un error al intentar eliminar el tema.  Inténtalo de nuevo más tarde.",
-    "feed_fetching":"Por favor espere, trayendo alimentos...",
-    "feed_error":"Algo salió mal al intentar de buscar el alimento.  Inténtalo de nuevo más tarde.",
+    "feed_fetching":"Por favor espere, obteniendo datos...",
+    "feed_error":"Algo salió mal al intentar descargar los datos. Inténtalo de nuevo más tarde.",
     "caching":"Por favor espere, almacenamiento en caché de tema...",
     "cache_status":"%s de %s imágenes en caché",
     "cache_error":"Se ha producido un error al intentar eliminar el tema.  Inténtalo de nuevo más tarde",
@@ -223,17 +223,17 @@
       "name_placeholder":"Introduzca nombre de Tema",
       "image":"URL de la imagen",
       "image_placeholder":"Introduzca una URL de la imagen de fondo",
-      "image_help":"Cargado de imágenes <b>no puede ser sincronizada<\/b> entre ordenadores. <br \/> <br \/> Si esto es importante para usted, por favor, sube tu imagen a un servicio como <a href=\"http:\/\/imgur.com\/\" target=\"_blank\"> imgur<\/a>. Luego copie y pegue la dirección URL terminando con una extensión (por ejemplo, .jpg) y péguelo en el campo de la izquierda.",
+      "image_help":"La subida de imágenes <b>no puede ser sincronizada<\/b> entre ordenadores. <br \/> <br \/> Si esto es importante para usted, por favor, sube tu imagen a un servicio como <a href=\"http:\/\/imgur.com\/\" target=\"_blank\"> imgur<\/a>. Luego copie y pegue la dirección URL terminando con una extensión (por ejemplo, .jpg) y péguelo en el campo de la izquierda.",
       "color":"Color de Suplencia",
-      "color_placeholder":"Introduzca el nombre de cualquier color",
+      "color_placeholder":"Introduzca el nombre de un color",
       "position":"Posición",
       "position_options":{
         "center":"Centro",
         "top_left":"Arriba a la izquierda",
-        "top_center":"Arriba-Centro",
+        "top_center":"Arriba al centro",
         "top_right":"Arriba a la derecha",
         "bottom_left":"Abajo a la Izquierda",
-        "bottom_center":"Abajo-centro",
+        "bottom_center":"Abajo al centro",
         "bottom_right":"Abajo a la Derecha"
       },
       "scaling":"Redimensionamiento",
@@ -245,10 +245,10 @@
       },
       "repeat":"Repetición de la imagen",
       "repeat_options":{
-        "none":"No repetición",
+        "none":"Sin repetición",
         "horizontal":"Repetir horizontalmente",
         "vertical":"Repita verticalmente",
-        "both":"Repita los dos"
+        "both":"Repetir horizontal y verticalmente"
       },
       "attach":"Adjuntar imagen",
       "attach_tab":"La Pestaña",
@@ -261,20 +261,20 @@
   },
   "intro":{
     "slide1":{
-      "title":"¡ Bienvenido a iChrome!",
+      "title":"¡Bienvenido a iChrome!",
       "line1":"Si quieres iChrome como tu página de inicio, tendrás que configurar la URL de esta página de configuración (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\"> instrucciones<\/a>).  De lo contrario, si lo quieres como una nueva pestaña o ambas páginas de la ficha Inicio y nuevo, por favor, instale <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\"> iChrome nueva pestaña<\/a> en su lugar.",
       "newtab_line1":"Si quieres iChrome a mostrar sólo cuando empiezas a Chrome y no cada vez que abres una nueva pestaña por favor instale <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> la extensión principal iChrome<\/a> en lugar de éste.",
-      "line2":"Esta introducción es sólo largos 3 toboganes y dará una rápida visión de cómo hacer las cosas básicas en iChrome.  Cuando estés listo a la próxima flecha a la derecha."
+      "line2":"Esta introducción tiene solo tres pantallas y te dará una rápida visión de cómo hacer las cosas básicas en iChrome. Cuando estés listo presiona la flecha para continuar."
     },
     "slide2":{
       "title":"Widgets",
-      "line1":"Los widgets son el núcleo de iChrome.  Puede configurar y muévalos usando las llave y manija de iconos que se muestran cuando se pasa a la parte superior derecha.  Para quitar uno, empiece arrastrando y colóquelo en la barra roja que aparece.",
+      "line1":"Los widgets son el núcleo de iChrome.  Puede configurarlos y moverlos usando las llave y manija de iconos que se muestran cuando se pasa a la parte superior derecha.  Para quitar uno, empiece arrastrando y colóquelo en la barra roja que aparece.",
       "line2":"Pueden añadir nuevos widgets haciendo clic en el elemento de Widgets en el menú en la parte superior derecha de la página (se muestra en la siguiente diapositiva)."
     },
     "slide3":{
       "title":"Personalización",
-      "line1":"Usted puede cambiar casi cualquier cosa que quieras a través del menú en la parte superior derecha.  Se puede configurar la apariencia de tu página, cómo iChrome funciona y conseguir nuevos widgets.",
-      "line2":"Otras cosas puede incluir crear fichas individuales, cada uno con temas y widgets de sus propia, temas personalizados, o configurar la cosa más como qué enlaces se muestran en la barra de herramientas."
+      "line1":"Puedes cambiar casi cualquier cosa que quieras a través del menú en la parte superior derecha.  Se puede configurar la apariencia de tu página, cómo funciona iChrome y conseguir nuevos widgets.",
+      "line2":"Otras cosas puede incluir crear pestañas individuales, cada uno con temas y widgets propios, temas personalizados, o configurar qué enlaces se muestran en la barra de herramientas."
     }
   }
 }

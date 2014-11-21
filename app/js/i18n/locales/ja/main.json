@@ -1,18 +1,18 @@
 {
   "lang_code":"ja",
   "language":"英語",
-  "newtabName":"iChrome New Tab",
-  "extName":"iChrome - Chromeのあなたのホームページ",
+  "newtabName":"iChrome 新しいタブ",
+  "extName":"iChrome - Chromeのための、あなた専用のホームページ",
   "extDescription":"Chromeのための最高のホームページ。最高のテーマ、たくさんのウィジェット、超高速、カスタマイズが自由自在！",
-  "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
+  "newtabDescription":"Chromeのための最高のホームページ。新しいタブにしましょう。見事なテーマ、多数のウィジェット、さらに超高速。めちゃくちゃにカスタマイズ できます！",
   "defaults":{
     "tab":"ホーム",
     "me":"自分"
   },
   "remove_widget":"削除",
-  "column_to_grid_warning":"You selected to change a tab from a column-based layout to a grid-based layout. If you continue you will lose all of your columns; everything will be moved to the top left corner.\r\nAre you sure you want to do this?",
-  "grid_to_column_warning":"You selected to change a tab from a grid-based layout to a column-based layout. If you continue you will lose all of your widget positioning; everything will be moved to the first column of the new tab.\r\nAre you sure you want to do this?",
-  "storage_warning":"You have used more than 90% of the total synchronized storage space available.\r\nIf you reach the limit, iChrome will stop syncing your data and may stop working.\r\nYou can shrink the amount of space you use by deleting custom themes, notes and to-do lists that you don't use.",
+  "column_to_grid_warning":"あなたは、グリッドベースのレイアウトに列ベースのレイアウトからタブを変更するために選択。続行すると、あなたのすべての列を失うことになる。すべてが左上隅に移動される。\nあなたはこれをやってみたいあなたはよろしいですか？",
+  "grid_to_column_warning":"あなたは、カラムベースのレイアウトにグリッドベースのレイアウトからタブを変更するために選択。あなたがあなたのウィジェットポジショニングのすべてを失うことになる続ける場合。すべてが新しいタブの最初の列に移動されます。\nあなたはこれをやってみたいあなたはよろしいですか？",
+  "storage_warning":"あなたが利用可能な総同期化されたストレージ·スペースの90％以上を使用している。\nあなたが限界に達した場合、 iChromeは、データの同期を停止し、作業を停止することがあります。\nあなたは、カスタムテーマ、ノートとあなたが使用していないのto-doリストを削除することにより、使用スペースの量を縮小することができます。",
   "toolbar":{
     "placeholder":"検索条件を入力してください",
     "placeholder_ok":"検索条件を入力するか、”OK,Google\"と言ってください。",
@@ -42,46 +42,46 @@
       "feedback":"フィードバック",
       "review":"レビュー",
       "twitter":"Twitter",
-      "webstore":"Twitter",
+      "webstore":"ストア",
       "donate":"寄付",
       "by":"By Avi Kohn"
     }
   },
   "voice":{
-    "listening":"聞いています...",
+    "listening":"聞き取り中...",
     "searching":"検索: %s",
-    "missed":"取得できませんでした。もう一度やり直してください。"
+    "missed":"取得できませんでした。<a>もう一度やり直してください<\/a>。"
   },
   "settings":{
     "save":"保存して閉じる",
     "new_tab":"新規作成",
     "labels":{
-      "general":"一般設定",
-      "visual":"ヴィジュアル",
+      "general":"一般",
+      "visual":"見た目",
       "specific":"タブ",
-      "advanced":"拡張機能"
+      "advanced":"高度な設定"
     },
     "general":{
       "search":"検索エンジンURL",
       "search_desc":"This is the URL that the search box will submit searches to. Put <b>%s<\/b> where the search query should go",
       "profile":"プロフィール写真",
-      "profile_desc":"This is the image shown at the right of the toolbar.  It gets auto-populated from your Google profile",
+      "profile_desc":"これは、ツールバーの右側に示した画像である。それはあなたのGoogleプロフィールから自動的に入力を取得",
       "name":"名前",
-      "name_desc":"This is used for the Google+ link in the toolbar.  It also gets auto-populated from your Google profile",
+      "name_desc":"これは、ツールバーの Google + リンクで使用されます。Google プロフィールから自動的に取得入力されます。",
       "voice":"音声検索",
       "voice_search":"音声検索を有効にする",
       "voice_ok":"”OK Google\"ホットワード検出を有効にする",
       "links":"ツールバーリンク",
-      "links_desc":"Here you can choose which links will show in the right section of the toolbar:",
+      "links_desc":"ここでは、リンクはツールバーの右側のセクションに表示されている選択することができます。",
       "links_items":{
-        "plus":"Google+",
-        "gmail":"Gmail",
+        "plus":"グーグルプラス",
+        "gmail":"ジーメール",
         "apps":"Appsメニュー",
         "link1":"カスタムリンク1",
         "link2":"カスタムリンク2",
         "link3":"カスタムリンク3",
         "text_holder":"リンクテキスト",
-        "link_holder":"リンクURL, すなわち http:\/\/www.google.com\/"
+        "link_holder":"リンクURL, 例: http:\/\/www.google.com\/"
       },
       "guide":"インストールガイド",
       "guide_desc":"iChromeを最初にインストールしたときに表示されたガイドをもう一度見る"
@@ -89,7 +89,7 @@
     "visual":{
       "layout":"レイアウト",
       "layout_options":{
-        "1_fixed":"固定幅、1列",
+        "1_fixed":"1 列、固定幅",
         "1_fluid":"1 列、可変幅",
         "2_fixed":"2 列、固定幅",
         "2_fluid":"2 列、可変幅",
@@ -99,10 +99,10 @@
         "4_fluid":"4 列、可変幅",
         "5_fixed":"5 列、固定幅",
         "5_fluid":"5 列、可変幅",
-        "grid":"Grid-based, customizable width"
+        "grid":"グリッドベース、可変幅"
       },
       "theme":"デフォルトのテーマ",
-      "theme_placeholder":"Theme #%s",
+      "theme_placeholder":"テーマ #%s",
       "theme_select":"テーマの選択",
       "align":"配置",
       "align_desc":"これはウィジェットの列の配置を変更します。",
@@ -125,7 +125,7 @@
       "name":"タブ名",
       "default_name":"新しいタブ",
       "delete":"タブの削除",
-      "delete_disallowed":"You cannot delete the only remaining tab.",
+      "delete_disallowed":"残り１つのタブは削除できません。",
       "delete_confirm":"このタブを削除するとタブ内のすべてのウィジェットからのすべてのデータは永久に失われます。\n削除しても本当によろしいですか？",
       "default":"デフォルトとして設定"
     },
@@ -138,19 +138,19 @@
       "backup_desc":"<b>バックアップ:<\/b>バックアップ ボタンをクリックし、以下のフィールドに表示されるテキストをコピーします。 <br\/> <b>復元する:<\/b> 復元ボタンをクリックして保存したテキストを貼り付けます。",
       "backup_backup":"バックアップ",
       "backup_restore":"復元",
-      "restore_error":"An error occurred while trying to parse the provided data, please make sure you entered the EXACT text you backed up.",
-      "restore_confirm":"Are you really, really sure you want to do this?\r\nThis will overwrite all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers signed into this Google account.",
+      "restore_error":"エラーが提供されたデータを解析しようとして、必ずバックアップした正確なテキストを入力してくださいが発生しました。",
+      "restore_confirm":"あなたはこれをしたい、本当に確か、実際にある？\nこれは、すべてのローカルおよび同期されたデータを上書きします、バックアップおよびこれを元に戻す方法はありません。あなたはこのGoogleアカウントにログインしたすべてのコンピュータにあなたの全体の現在の設定が失われます。",
       "css":"カスタム CSS",
       "css_desc":"You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.",
       "reset":"iChromeを初期化する",
-      "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers signed into this Google account."
+      "reset_confirm":"あなたが目クロームをリセットしたい本当によろしいですか？\nこれは、すべてのローカルおよび同期されたデータが消去されます、バックアップおよびこれを元に戻す方法はありません。あなたはこのGoogleアカウントにログインしたすべてのコンピュータにあなたの全体の現在の設定が失われます。"
     }
   },
   "store":{
     "installation":"インストール",
     "description":"説明",
     "preview":"プレビュー",
-    "instructions":"Drag and drop any size onto your homepage"
+    "instructions":"ドラッグ アンド ドロップで任意のサイズであなたのホームページへ貼り付け"
   },
   "widgets":{
     "sizes":{
@@ -169,7 +169,7 @@
     "shared":{
       "settings":{
         "title":"ウィジェットタイトル",
-        "title_placeholder":"Enter a widget title or leave blank to hide",
+        "title_placeholder":"ウィジェットのタイトルを入力するか、空白のままは非表示になります",
         "height":"ウィジェットの高さ",
         "open_options":{
           "current":"現在のタブ",
@@ -205,14 +205,14 @@
     "categories":"カテゴリ",
     "cached":"このテーマがキャッシュされ、オフラインで使用可能。",
     "random":"このテーマはページを読み込むたびにランダムなイメージを表示します。",
-    "random_daily":"This theme displays an image picked randomly every day",
-    "sunrise_sunset":"This theme displays an image based on the time of day",
-    "feed":"This theme displays an image selected daily from an external feed",
-    "delete_confirm":"Are you really sure you would like to delete this theme?\r\nThis action is irreversible; the entire theme will be permanently lost.",
+    "random_daily":"このテーマは、画像は毎日ランダムに選択表示され",
+    "sunrise_sunset":"このテーマは、一日の時間に基づいて画像を表示する",
+    "feed":"このテーマは、外部フィードから毎日選択した画像を表示する",
+    "delete_confirm":"あなたはこのテーマを削除したいと思い、あなたが本当によろしいですか？\nこのアクションは不可逆的である。全体テーマは完全に失われます。",
     "delete_error":"An error occurred while trying to delete the theme.  Please try again later.",
-    "feed_fetching":"Please wait, fetching feed...",
+    "feed_fetching":"フィードを取得しています。しばらくお待ちください。",
     "feed_error":"Something went wrong while trying to fetch the feed.  Please try again later.",
-    "caching":"Please wait, caching theme...",
+    "caching":"読み込み中です。しばらくお待ちください。",
     "cache_status":"%s 中 %s の画像がキャッシュされました",
     "cache_error":"テーマをキャッシュしようとしたときにエラーが発生しました。後でもう一度お試しください",
     "edit":{
@@ -225,7 +225,7 @@
       "image_placeholder":"背景画像URLを入力してください",
       "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy and paste the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
       "color":"背景色",
-      "color_placeholder":"Enter any color name",
+      "color_placeholder":"色を入力してください。",
       "position":"位置",
       "position_options":{
         "center":"中央揃え",
@@ -243,9 +243,9 @@
         "height":"最大高",
         "none":"拡大縮小しない(プレビューが不正確になることがあります)"
       },
-      "repeat":"背景画像をタイリング",
+      "repeat":"背景画像を繰り返す",
       "repeat_options":{
-        "none":"しない",
+        "none":"繰り返さない",
         "horizontal":"横方向に繰り返し",
         "vertical":"縦方向に繰り返し",
         "both":"縦横両方向を繰り返し"
@@ -255,8 +255,8 @@
       "attach_window":"ウィンドウ",
       "preview":"プレビュー",
       "save":"保存して閉じる",
-      "cache_error":"An error occurred while trying to cache the image you provided, please double-check the URL.",
-      "upload_error":"An error occurred while trying to upload the file you provided, please make sure that it's a reasonable size and an image."
+      "cache_error":"画像の読み込み中にエラーが発生しました。このURLをダブルクリックしてください。",
+      "upload_error":"ファイルのアップロード中にエラーが発生しました。ファイルのサイズが適切であることを確認してください。"
     }
   },
   "intro":{
@@ -273,8 +273,8 @@
     },
     "slide3":{
       "title":"カスタマイズする",
-      "line1":"You can change almost anything else you'd want to via the menu at the top right.  There you can configure the way your page looks, how iChrome works and get new widgets.",
-      "line2":"Other things you can do include creating individual tabs, each with themes and widgets of their own, custom themes, or configuring the tiniest thing like what links are shown in the toolbar."
+      "line1":"あなたは、右上のメニューからあなたがしたいと思う他にほとんど何も変更することができます。そこには、目クロームがどのように機能するか、あなたのページの見え方を設定し、新しいウィジェットを取得することができます。",
+      "line2":"あなたが行うことができます他のものがテーマと、自分のウィジェット、カスタムテーマを持つ各、個々のタブを作成したり、リンクがツールバーに示されているもののような最も小さいものを構成しています。"
     }
   }
 }

@@ -1,21 +1,21 @@
 {
   "lang_code":"nl",
   "language":"Nederlands",
-  "newtabName":"iChrome nieuw tabblad",
-  "extName":"iChrome - jouw homepage, voor Chrome",
-  "extDescription":"De BESTE homepage voor Chrome. Adembenemende thema's, tientallen widgets, bliksemsnel en ongelooflijk aanpasbaar!",
+  "newtabName":"iChrome New Tab",
+  "extName":"iChrome - jouw startpagina, voor chrome",
+  "extDescription":"De BESTE startpagina voor Chrome. Adembenemende thema's, tientallen widgets, bliksemsnel en ongelooflijk aanpasbaar!",
   "newtabDescription":"De BESTE homepage voor Chrome. Nu voor nieuwe tabs. Adembenemende thema's, tientallen widgets, bliksemsnel, ongelooflijk aanpasbaar!",
   "defaults":{
     "tab":"Home",
     "me":"Ik"
   },
   "remove_widget":"Verwijder",
-  "column_to_grid_warning":"U koos om een tab van kolom-gebaseerd naar raster-gebaseerd te veranderen. Als u doorgaat zult u al uw kolommen verliezen. Alles zal verwijdert worden naar de linkerbovenhoek.\nWeet u zeker dat u door wilt gaan?",
-  "grid_to_column_warning":"U koos om een tab van raster-gebaseerd naar kolom-gebaseerd te veranderen. Als u doorgaat zult u al uw posities van widgets verliezen. Alles zal verplaatst worden naar de eerste kolom van de nieuwe tab.\nWeet u zeker dat u door wilt gaan?",
-  "storage_warning":"U heeft meer dan 90% van de beschikbare gesynchroniseerde opslagruimte gebruikt. Als u het limiet bereikt zal iChrome uw data niet meer sychroniseren en eventueel stoppen met werken. U kunt de hoeveelheid opslagruimte die u gebruikt kunt verminderen door aangepaste thema's, notities en takenlijsten te verwijderen die u niet gebruikt.",
+  "column_to_grid_warning":"U koos om een tab van kolom-gebaseerd naar raster-gebaseerd te veranderen. Als u doorgaat zult u al uw kolommen verliezen. Alles zal verplaatst worden naar de linkerbovenhoek.\nWeet u zeker dat u door wilt gaan?",
+  "grid_to_column_warning":"U koos om een tabblad van raster-gebaseerd naar kolom-gebaseerd te veranderen. Als u doorgaat zult u al uw posities van widgets verliezen. Alles zal verplaatst worden naar de eerste kolom van de nieuwe tabblad.\nWeet u zeker dat u door wilt gaan?",
+  "storage_warning":"U heeft meer dan 90% van de beschikbare gesynchroniseerde opslagruimte gebruikt. Als u het limiet bereikt zal iChrome uw data niet meer sychroniseren en eventueel stoppen met werken. U kunt de hoeveelheid opslagruimte die u gebruikt verminderen door niet gebuikte aangepaste thema's, notities en takenlijsten te verwijderen.",
   "toolbar":{
     "placeholder":"Vul uw zoekopdracht in",
-    "placeholder_ok":"Vul je zoekopdracht in of zeg \"OK, Google\"",
+    "placeholder_ok":"Vul uw zoekopdracht in of zeg \"OK, Google\"",
     "apps":{
       "search":"Zoeken",
       "youtube":"YouTube",
@@ -35,12 +35,12 @@
     "editing":"Bewerken",
     "editing_enabled":"Ingeschakeld",
     "editing_disabled":"Uitgeschakeld",
-    "plus":"Google Plus",
-    "tabs":"Tabs",
+    "plus":"Google+",
+    "tabs":"Tabbladen",
     "footer":{
-      "support":"Help",
+      "support":"Ondersteuning",
       "feedback":"Feedback",
-      "review":"Review",
+      "review":"Recenseren",
       "twitter":"Twitter",
       "webstore":"Webstore",
       "donate":"Doneer",
@@ -48,7 +48,7 @@
     }
   },
   "voice":{
-    "listening":"Luisteren...",
+    "listening":"Luistert...",
     "searching":"Zoeken naar: %s",
     "missed":"Niet verstaan. <a>Probeer opnieuw<\/a>"
   },
@@ -58,7 +58,7 @@
     "labels":{
       "general":"Algemeen",
       "visual":"Weergave",
-      "specific":"Tab specifiek",
+      "specific":"Per tabblad",
       "advanced":"Geavanceerd"
     },
     "general":{
@@ -74,7 +74,7 @@
       "links":"Links op de werkbalk",
       "links_desc":"Hier kunt u kiezen welke links getoond worden in de rechterkant van de werkbalk:",
       "links_items":{
-        "plus":"Google Plus",
+        "plus":"Google+",
         "gmail":"Gmail",
         "apps":"Apps-menu",
         "link1":"Aangepaste link 1",
@@ -114,8 +114,8 @@
       "logo":"Logo-URL",
       "logo_desc":"Dit is de afbeelding die aan de linkerkant van de toolbar wordt getoond. Standaard is het  <b>\/images\/logo.svg<\/b>",
       "toolbar":"Werkbalkstijl",
-      "toolbar_desc":"Hiermee wordt de stijl van de werkbalk bepaald. Het kan er normaal uitzien of als een knop die niet in de weg ligt",
-      "toolbar_normal":"Normaal",
+      "toolbar_desc":"Hiermee wordt de stijl van de werkbalk bepaald. Het kan er normaal uitzien of als een knop die niet in de weg zit",
+      "toolbar_normal":"Standaard",
       "toolbar_button":"Knop",
       "animation":"Slide-in animatie",
       "animation_desc":"Met deze optie kunt u de slide-in animatie bij het laden van een pagina, in- en uitschakelen",
@@ -123,8 +123,8 @@
     },
     "specific":{
       "name":"Tabnaam",
-      "default_name":"Nieuwe tab",
-      "delete":"Verwijder tab",
+      "default_name":"Nieuw tabblad",
+      "delete":"Verwijder tabblad",
       "delete_disallowed":"U kunt het laatste tab niet verwijderen.",
       "delete_confirm":"Weet u zeker dat u dit tab wilt verwijderen? Deze actie is onomkeerbaar, de data van alle widgets zal permanent worden verwijderd.",
       "default":"Stel in als standaard"
@@ -132,29 +132,29 @@
     "advanced":{
       "background":"Achtergrond van widget",
       "background_desc":"Klik op de kleurstaal om een kleur te selecteren",
-      "search":"Zoek gedrag",
+      "search":"Zoekgedrag",
       "search_label":"Open de zoekresultaten in een nieuw tabblad",
       "backup":"Back-up \/ Herstel",
-      "backup_desc":"<b>To backup:<\/b> Click the Backup button and copy the text that appears in the field below.<br \/><b>To restore:<\/b> Paste the text you saved or copied before and click the Restore button.",
+      "backup_desc":"<b>Backup:<\/b> Klik op de Backup knop en kopieer de tekst die hieronder verschijnt. <br\/><b>Herstellen:<\/b> Plaats de tekst die je op hebt geslagen en klik op de Herstel knop.",
       "backup_backup":"Back-up",
       "backup_restore":"Herstel",
       "restore_error":"Er is een fout opgetreden bij het proberen om de verstrekte gegevens parseren, zorg ervoor dat u de exacte tekst van uw backup heeft ingevoerd.",
       "restore_confirm":"Weet u heel, heel zeker dat je dit wil doen?\nDit zal alle lokale en gesynchroniseerde data overschrijven, er is geen back-up en geen enkele manier om dit ongedaan te maken. U zult uw volledige huidige configuratie verliezen op alle computers die ingelogd zijn op dit Google account.",
       "css":"Aangepaste CSS",
-      "css_desc":"You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.",
+      "css_desc":"U kan dit veld gebruiken voor het aanpassen van bijna elk visueel deel van iChrome met behulp van CSS (voor de definitie zie <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Omdat dit zal worden gesynchroniseerd, kunt u maximum 1000 karakters invoeren, inclusief spaties.",
       "reset":"Reset iChrome",
       "reset_confirm":"Weet u heel zeker dat u iChrome wil resetten?\nDit zal alle lokale en gesynchroniseerde data overschrijven, er is geen back-up en geen enkele manier om dit ongedaan te maken. U zult uw volledige huidige configuratie verliezen op alle computers die ingelogd zijn op dit Google account."
     }
   },
   "store":{
     "installation":"Installatie",
-    "description":"omschrijving",
-    "preview":"Preview",
+    "description":"Beschrijving",
+    "preview":"Voorbeeld",
     "instructions":"Sleep elke grote op uw homepage"
   },
   "widgets":{
     "sizes":{
-      "tiny":"Mini",
+      "tiny":"Zeer klein",
       "small":"Klein",
       "medium":"Gemiddeld",
       "large":"Groot",
@@ -169,7 +169,7 @@
     "shared":{
       "settings":{
         "title":"Widget titel",
-        "title_placeholder":"Voer een widget titel in of laat het leeg om verbergen",
+        "title_placeholder":"Voer een titel in of laat leeg om hem te verbergen",
         "height":"Widget hoogte",
         "open_options":{
           "current":"Het huidige tabblad",
@@ -181,8 +181,8 @@
           "hide":"Verbergen"
         },
         "account":"Account-ID",
-        "account_help":"If you're signed into multiple accounts, this is the \"authuser=\" value.\n<br \/><br \/>\nFor example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"authuser\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
-        "account_placeholder":"Your \"authuser=\" value",
+        "account_help":"Als u bij meerdere account bent aangemeld, is dit de \"authuser=\" waarde.\n<br \/><br \/>\nVoorbeeld, als u bij twee accounts bent aangemeld, jsmith1@gmail.com en jsmith2@gmail.com, de \"authuser\" waarde voor jsmith2@gmail.com zou 1 zijn aangezien het het tweede account (beginnend van 0) is waar u bent aangemeld.",
+        "account_placeholder":"Uw \"authuser =\" waarde",
         "on":"Aan",
         "off":"Uit"
       }
@@ -190,7 +190,7 @@
   },
   "themes":{
     "title":"Thema's",
-    "all":"Alles",
+    "all":"Alle",
     "custom":"Custom",
     "create":"Een thema maken",
     "url_or_upload":"Of",
@@ -198,7 +198,7 @@
     "edit_btn":"Bewerken",
     "delete":"Verwijderen",
     "use":"Gebruiken",
-    "preview":"Preview",
+    "preview":"Voorbeeld",
     "author":"Door",
     "images":"%s plaatjes",
     "resolution":"Resolutie",
@@ -222,13 +222,13 @@
       "default_name":"Nieuw thema",
       "name_placeholder":"Voer de naam van een thema in",
       "image":"Afbeelding-URL",
-      "image_placeholder":"Voer een achtergrondplaatje URL in",
-      "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy and paste the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
-      "color":"Terugval kleur",
+      "image_placeholder":"Voer een URL in voor een achtergrondplaatje",
+      "image_help":"Afbeeldingen die zijn geüpload <b>kunnen niet worden gesynchroniseerd<\/b> tussen computers.<br \/><br \/>Als dit belangrijk is voor u, gelieve uw afbeelding te uploaden naar een service zoals <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Kopieer en plak de URL die eindigt met de extentie (bv., .jpg) en plak deze in het veld aan de linkerkant.",
+      "color":"Achtergrondkleur",
       "color_placeholder":"Voer een kleurnaam in",
       "position":"Positie",
       "position_options":{
-        "center":"Gecentreerd",
+        "center":"Middelpunt",
         "top_left":"Linksboven",
         "top_center":"Middenboven",
         "top_right":"Rechtsboven",
@@ -251,20 +251,20 @@
         "both":"Herhaal beide"
       },
       "attach":"Afbeelding toevoegen aan",
-      "attach_tab":"De tab",
+      "attach_tab":"Het tabblad",
       "attach_window":"Het venster",
-      "preview":"Preview",
+      "preview":"Voorbeeld",
       "save":"Opslaan en sluiten",
       "cache_error":"Er is een error opgetreden tijdens het cachen van uw afbeelding, controleer de URL.",
-      "upload_error":"An error occurred while trying to upload the file you provided, please make sure that it's a reasonable size and an image."
+      "upload_error":"Er is een fout opgetreden tijdens het uploaden van het opgegeven bestand, gelieve ervoor te zorgen dat het een redelijke grootte en afbeelding is."
     }
   },
   "intro":{
     "slide1":{
       "title":"Welkom bij iChrome!",
-      "line1":"If you want iChrome as your start page, you'll need to set the URL of this page in your settings (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">instructions<\/a>).  Otherwise, if you want it as a new tab or both home and new tab pages, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
-      "newtab_line1":"If you want iChrome to only show when you start Chrome and not every time you open a new tab please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">the main iChrome extension<\/a> instead of this one.",
-      "line2":"This introduction is only 3 slides long and will give a quick overview of how to do basic things in iChrome.  When you're ready hit the next arrow at the right."
+      "line1":"Als u iChrome als uw startpagina wilt, kunt u de URL van deze pagina in de instellingen van Chrome zetten (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">instructies in Engels<\/a>). Als u dit echter wilt gebruiken in nieuwe tabbladen of zowel als startpagina als in nieuwe tabbladen, installeer dan <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a>.",
+      "newtab_line1":"Als u iChrome alleen wilt zien wanneer u Chrome opstart, en niet elke keer dat u een nieuw tabblad opent, installeer dan <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> de gewone iChrome extensie<\/a> in plaats van deze.",
+      "line2":"Deze introductie is maar 3 slides lang en biedt een kort overzicht van hoe basisdingen in iChrome werken. Als u klaar bent klik dan op de pijl aan de rechterkant."
     },
     "slide2":{
       "title":"Widgets",
@@ -273,8 +273,8 @@
     },
     "slide3":{
       "title":"Aanpassingen",
-      "line1":"You can change almost anything else you'd want to via the menu at the top right.  There you can configure the way your page looks, how iChrome works and get new widgets.",
-      "line2":"Other things you can do include creating individual tabs, each with themes and widgets of their own, custom themes, or configuring the tiniest thing like what links are shown in the toolbar."
+      "line1":"U kunt bijna alles anders wat je van via het menu aan de bovenkant rechts veranderen. Daar kan u het uiterlijk van uw pagina veranderen, hoe iChrome werkt en nieuwe widgets krijgen.",
+      "line2":"Andere dingen die u kan doen, inclusief aparte tabbladen, elk met thema's and widgets met hun eigen, aangepaste thema's, of configureer het kleinste ding zoals links die worden weergegeven in de werkbalk."
     }
   }
 }
