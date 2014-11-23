@@ -7,19 +7,17 @@ define(
 		var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
-					var toolbar = storage.settings.toolbar;
-
-					if (typeof toolbar == "boolean") {
-						if (toolbar) {
-							toolbar = "full";
+					if (typeof storage.settings.toolbar == "boolean") {
+						if (storage.settings.toolbar) {
+							storage.settings.toolbar = "full";
 						}
 						else {
-							toolbar = "button";
+							storage.settings.toolbar = "button";
 						}
 					}
 
 					this.set({
-						toolbar: toolbar,
+						toolbar: storage.settings.toolbar,
 						editing: storage.settings.editing
 					});
 				}, this);

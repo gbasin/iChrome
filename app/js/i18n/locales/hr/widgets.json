@@ -1,20 +1,20 @@
 {
   "lang_code":"hr-widgets",
   "analytics":{
-    "name":"Analytics",
-    "desc":"Displays various metrics from a Google Analytics profile.",
+    "name":"Google Analytics",
+    "desc":"Prikazuje različite metrike iz Google Analytics profila.",
     "sessions":"sessions",
     "pageviews":"Pageviews",
     "pagesvisit":"Pages\/visit",
     "bouncerate":"Bounce Rate",
     "completions":"Completions",
-    "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
+    "noprofile":"Izgleda da niste odabrali profil! \n<br \/><br \/>\nPokušajte ga odabrati preko ključ ikonice u gornjem desnom kutu.",
     "settings":{
-      "profile":"Profile"
+      "profile":"Profil"
     }
   },
   "apps":{
-    "name":"Apps",
+    "name":"Aplikacije",
     "desc":"Displays your currently installed Google Chrome applications.",
     "settings":{
       "format":"Widget Format",
@@ -22,24 +22,24 @@
         "tiles":"Tiles",
         "list":"List"
       },
-      "display":"Show",
+      "display":"Prikaži",
       "display_options":{
-        "all":"All apps",
-        "enabled":"Only enabled apps"
+        "all":"Sve aplikacije",
+        "enabled":"Samo omogućene aplikacije"
       },
       "sort":"Sort",
       "sort_options":{
         "id":"ID",
-        "alphabetically":"Alphabetically",
-        "offline":"Offline Enabled",
-        "available":"Availability"
+        "alphabetically":"Abecednim redom",
+        "offline":"Omogućeno Van Mreže",
+        "available":"Raspoloživost"
       },
-      "open":"Open apps in"
+      "open":"Otvorene aplikacije u"
     },
-    "store_app":"Store"
+    "store_app":"Trgovina"
   },
   "bookmarks":{
-    "name":"Bookmarks",
+    "name":"Oznake",
     "desc":"Displays selected and customized bookmarks, and other links.",
     "settings":{
       "title_placeholder":"Enter a widget title",
@@ -58,15 +58,15 @@
       "url_placeholder":"http:\/\/www.google.com\/",
       "save":"Save"
     },
-    "new_caption":"New",
+    "new_caption":"Novi",
     "new_bookmark":"Bookmark",
     "new_folder":"Folder",
     "drop_link":"Drop link here"
   },
   "calc":{
-    "name":"Calculator",
-    "desc":"Displays a calculator with support for basic operators.",
-    "error":"Error!",
+    "name":"Računalo",
+    "desc":"Prikazuje Kalkulator sa podrškom za osnovne operatore.",
+    "error":"Pogreška!",
     "infinity":"Infinity",
     "mismatch":"Mismatched parentheses"
   },
@@ -246,7 +246,7 @@
       "sort_options":{
         "hot":"Hot",
         "top":"Top",
-        "new":"New",
+        "new":"Novi",
         "gilded":"Gilded",
         "rising":"Rising",
         "controversial":"Controversial"
