@@ -2,24 +2,24 @@
   "lang_code":"it-widgets",
   "analytics":{
     "name":"Analytics",
-    "desc":"Displays various metrics from a Google Analytics profile.",
+    "desc":"Consente di visualizzare i vari parametri di un profilo Google Analytics.",
     "sessions":"sessioni",
     "pageviews":"Visualizzazioni",
-    "pagesvisit":"Pages\/visit",
+    "pagesvisit":"Pagine\/visita",
     "bouncerate":"Tasso di rimbalzo",
-    "completions":"Completions",
-    "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
+    "completions":"Completamenti",
+    "noprofile":"Non sembra ancora selezionato un profilo!\n <br \/><br \/>\nProvare a selezionarne uno tramite l'icona della chiave inglese in alto a destra.",
     "settings":{
       "profile":"Profilo"
     }
   },
   "apps":{
     "name":"Apps",
-    "desc":"Displays your currently installed Google Chrome applications.",
+    "desc":"Consente di visualizzare le applicazioni di Google Chrome attualmente installate.",
     "settings":{
-      "format":"Widget Format",
+      "format":"Formato widget",
       "format_options":{
-        "tiles":"Tiles",
+        "tiles":"Piastrelle",
         "list":"Lista"
       },
       "display":"Mostra",
@@ -34,15 +34,15 @@
         "offline":"Offline abilitato",
         "available":"Disponibilità"
       },
-      "open":"Open apps in"
+      "open":"Applicazioni aperte in"
     },
     "store_app":"Store"
   },
   "bookmarks":{
     "name":"Preferiti",
-    "desc":"Displays selected and customized bookmarks, and other links.",
+    "desc":"Visualizza segnalibri selezionati e personalizzati, e altri link.",
     "settings":{
-      "title_placeholder":"Enter a widget title",
+      "title_placeholder":"Inserisci un titolo del widget",
       "layout":"Aspetto",
       "layout_options":{
         "single":"Colonna Singola",
@@ -54,7 +54,7 @@
       "dialog_title":"Modifica Preferito",
       "title":"Titolo Segnalibro",
       "title_placeholder":"Google",
-      "url":"Bookmark URL",
+      "url":"URL Segnalibro",
       "url_placeholder":"http:\/\/www.google.com\/",
       "save":"Salva"
     },
@@ -65,24 +65,24 @@
   },
   "calc":{
     "name":"Calcolatrice",
-    "desc":"Displays a calculator with support for basic operators.",
+    "desc":"Consente di visualizzare una calcolatrice con il supporto per gli operatori di base.",
     "error":"Errore!",
     "infinity":"Infinito",
     "mismatch":"Parentesi non corrispondenti"
   },
   "calendar":{
     "name":"Calendar",
-    "desc":"Displays upcoming events from one or more of your Google calendars.",
+    "desc":"Visualizza gli eventi imminenti da uno o più dei vostri calendari di Google.",
     "settings":{
       "calendar":"Calendar",
       "events":"Eventi mostrati"
     },
     "title":"Il mio calendario",
-    "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
+    "noevents":"Non sembra che ci sia qualche evento nel prossimo futuro.\n<br \/><br \/>\nProvare a selezionare un calendario tramite l'icona della chiave inglese in alto a destra."
   },
   "clock":{
     "name":"Ora e data",
-    "desc":"Shows the current date and time. Optionally for a different timezone.",
+    "desc":"Mostra la data e l'ora correnti. Facoltativamente per un fuso orario differente.",
     "settings":{
       "timezone":"Fuso orario",
       "timezone_local":"Locale",
@@ -99,28 +99,28 @@
   },
   "currency":{
     "name":"Valuta",
-    "desc":"Let's you convert between any two of 169 currencies.",
+    "desc":"Ti permette di convertire tra due di 169 valute.",
     "to_label":"in"
   },
   "drive":{
     "name":"Drive",
-    "desc":"Displays recently changed files from your Google Drive.",
+    "desc":"Visualizza i file recentemente modificati dal tuo Google Drive.",
     "settings":{
-      "files_shown":"Number of Files Shown"
+      "files_shown":"Numero di file mostrati"
     },
     "modified_by":"di",
-    "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
+    "authorize":"Avrete bisogno di dare a iChrome il permesso di visualizzare i file dal vostro Google Drive prima che questi vengano mostrati qui.",
     "authorize_btn":"Autorizza"
   },
   "facebook":{
     "name":"Facebook",
-    "desc":"Embeds Facebook in a widget"
+    "desc":"Incorpora Facebook in un widget"
   },
   "feedly":{
     "name":"Feedly",
-    "desc":"Displays articles from your Feedly account in a configurable format.",
+    "desc":"Visualizza articoli dal tuo account Feedly in un formato configurabile.",
     "settings":{
-      "source":"Show articles from",
+      "source":"Visualizza articoli di",
       "source_feeds":"Feeds",
       "show":"Mostra",
       "show_options":{
@@ -134,7 +134,7 @@
         "cards":"Carte",
         "cards_columns":"Carte (due colonne)"
       },
-      "mark":"Mark an article as read when I",
+      "mark":"Contrassegnare un articolo come letto quando io",
       "mark_options":{
         "scroll":"Scorri oltre o cliccalo",
         "click":"Cliccalo solamente"
@@ -153,11 +153,11 @@
   },
   "gmail":{
     "name":"Gmail",
-    "desc":"Displays your Gmail inbox where you can manage your email."
+    "desc":"Visualizza la tua casella di posta Gmail in cui è possibile gestire la posta elettronica."
   },
   "iframe":{
     "name":"iFrame",
-    "desc":"Displays a webpage of your choice within an iframe.",
+    "desc":"Consente di visualizzare una pagina web a vostra scelta all'interno di un iframe.",
     "settings":{
       "url":"Frame URL",
       "url_placeholder":"i.e. http:\/\/www.google.com\/",
@@ -167,15 +167,15 @@
   },
   "keep":{
     "name":"Mantieni",
-    "desc":"Embeds Google Keep in a widget"
+    "desc":"Incorpora Google Keep in un widget"
   },
   "news":{
     "name":"Notizie",
-    "desc":"Displays the current top news by category and edition.",
+    "desc":"Visualizza le attuali top news per categoria ed edizione.",
     "settings":{
       "articles":"Articoli mostrati",
       "edition":"Edizione",
-      "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
+      "edition_help":"Se l'edizione o l'argomento non è elencata qui, inserisci un URL del feed di Google News nel campo feed personalizzato al di sotto (controllare il testo di aiuto per una spiegazione).",
       "topic":"Argomento",
       "topic_options":{
         "top":"Storie migliori",
@@ -190,18 +190,18 @@
         "spotlight":"Spettacolo"
       },
       "feed":"Feed personalizzato",
-      "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
-      "feed_placeholder":"Enter a custom RSS feed to fetch news from",
+      "feed_help":"Questo è il feed all'URL indicato nella parte inferiore di ogni pagina di Google News, cercare l'icona RSS arancione e un link che dice \"RSS\"",
+      "feed_placeholder":"Inserire un feed RSS personalizzato per recuperare notizie da",
       "footer":"URL a piè di pagina",
-      "footer_placeholder":"Enter the URL that the \"More\" link should point to"
+      "footer_placeholder":"Inserisci l'URL al quale il collegamento \"Altro\" dovrebbe puntare"
     },
     "more":"Altro"
   },
   "notes":{
     "name":"note",
-    "desc":"Inserts a simple, editable, note.",
+    "desc":"Inserisce una semplice, modificabile, nota.",
     "settings":{
-      "color":"Note Color",
+      "color":"Colore della nota",
       "color_options":{
         "yellow":"Giallo",
         "orange":"Arancione",
@@ -216,24 +216,24 @@
   },
   "now":{
     "name":"Google Now",
-    "desc":"Displays cards from Google Now including flight status and package tracking.",
-    "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
+    "desc":"Visualizza le schede di Google Now, tra cui lo stato dei voli e il tracciamento dei pacchi.",
+    "authorize":"Avrete bisogno di dare iChrome il permesso di visualizzare le schede di Google Now prima che venga visualizzata qui qualsiasi cosa.",
     "authorize_btn":"Autorizza",
-    "caught_up":"All caught up, nothing here.",
+    "caught_up":"Tutti coinvolti, niente qui.",
     "no_title":"Senza titolo"
   },
   "plus":{
     "name":"Google+",
-    "desc":"Embeds Google Plus in a widget"
+    "desc":"Incorpora Google Plus in un widget"
   },
   "recentlyclosed":{
-    "name":"Recently Closed",
-    "desc":"Shows your recently closed tabs",
+    "name":"Chiuso di recente",
+    "desc":"Mostra i tabs chiusi di recente",
     "settings":{
       "tabs":"Tabs Shown",
-      "open":"Open tabs in"
+      "open":"Apri tabs in"
     },
-    "notabs":"Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed."
+    "notabs":"I tabs che sono stati chiusi prima dell'installazione di questo widget non possono essere visualizzati. Da adesso qualsiasi tab chiuso sarà visualizzato."
   },
   "reddit":{
     "name":"Reddit",

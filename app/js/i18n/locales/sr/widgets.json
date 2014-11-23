@@ -40,21 +40,21 @@
   },
   "bookmarks":{
     "name":"Сачуване странице",
-    "desc":"Displays selected and customized bookmarks, and other links.",
+    "desc":"Приказује селектоване и прилагођене букмаркове ,и остале линкове.",
     "settings":{
-      "title_placeholder":"Enter a widget title",
+      "title_placeholder":"Унеси назив додатка",
       "layout":"Распоред",
       "layout_options":{
         "single":"Једна колона",
         "double":"Дупла колона"
       },
-      "open":"Open bookmarks in"
+      "open":"Отвори букмаркове у"
     },
     "edit":{
-      "dialog_title":"Edit Bookmark",
-      "title":"Bookmark Title",
+      "dialog_title":"Измени Букмарк",
+      "title":"Назив Букмарка",
       "title_placeholder":"Google",
-      "url":"Bookmark URL",
+      "url":"УРЛ Букмарка",
       "url_placeholder":"http:\/\/www.google.com\/",
       "save":"Сачувај"
     },
@@ -91,8 +91,8 @@
         "ampm":"Пре подне\/После подне - Дигитални",
         "24hour":"24 часа - Дигитални",
         "analog":"12 сати - Аналогни",
-        "ampmseconds":"AM\/PM - Digital, No Seconds",
-        "24hourseconds":"24 Hour - Digital, No Seconds"
+        "ampmseconds":"Пре подне\/После подне - Дигитални, Без Секунди",
+        "24hourseconds":"24 Часовни - Дигитални, Без Секунди"
       }
     },
     "title":"Сат"
@@ -104,51 +104,51 @@
   },
   "drive":{
     "name":"Drive",
-    "desc":"Displays recently changed files from your Google Drive.",
+    "desc":"Приказује скоро промењене податке са твог Google Drive-а.",
     "settings":{
-      "files_shown":"Number of Files Shown"
+      "files_shown":"Број Приказаних Фајлова"
     },
-    "modified_by":"by",
-    "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
-    "authorize_btn":"Authorize"
+    "modified_by":"од",
+    "authorize":"Потребно је да даш овлашћење iChrome-у да види податке са твог Google Drive-а пре него се било шта појави овде. ",
+    "authorize_btn":"Ауторизуј"
   },
   "facebook":{
     "name":"Facebook",
-    "desc":"Embeds Facebook in a widget"
+    "desc":"Убацује Facebook у додатак"
   },
   "feedly":{
     "name":"Feedly",
-    "desc":"Displays articles from your Feedly account in a configurable format.",
+    "desc":"Приказује новинске чланке са твог Feedly рачуна у прилагодљивом формату.",
     "settings":{
-      "source":"Show articles from",
-      "source_feeds":"Feeds",
+      "source":"Прикажи чланке од",
+      "source_feeds":"Новински извори",
       "show":"Прикажи",
       "show_options":{
-        "all":"All articles",
-        "unread":"Only unread articles"
+        "all":"Сви чланци",
+        "unread":"Само непрочитани чланци"
       },
       "layout":"Распоред",
       "layout_options":{
-        "titles":"Titles only",
+        "titles":"Само називи",
         "magazine":"Магазин",
-        "cards":"Cards",
-        "cards_columns":"Cards (two columns)"
+        "cards":"Картице",
+        "cards_columns":"Картице (две колумне)"
       },
-      "mark":"Mark an article as read when I",
+      "mark":"Означи чланак прочитаним кад ја",
       "mark_options":{
-        "scroll":"Scroll past it or click it",
-        "click":"Just click it"
+        "scroll":"Скролујем преко њега или га кликнем",
+        "click":"Само га кликнем"
       },
-      "sort":"Sort Order",
+      "sort":"Ред Сортирања",
       "sort_options":{
-        "newest":"Newest first",
+        "newest":"Најновије прво",
         "oldest":"Прво најстарије"
       }
     },
     "all":"Све",
     "saved":"Сачувано за касније",
     "uncategorized":"Некатегоризовано",
-    "author":"by",
+    "author":"од",
     "go_to_feedly":"Иди на Feedly"
   },
   "gmail":{
@@ -157,25 +157,25 @@
   },
   "iframe":{
     "name":"iFrame",
-    "desc":"Displays a webpage of your choice within an iframe.",
+    "desc":"Приказује веб страну твог одабира у оквиру iframe-а.",
     "settings":{
-      "url":"Frame URL",
-      "url_placeholder":"i.e. http:\/\/www.google.com\/",
-      "height":"Frame Height",
-      "padding":"Padding"
+      "url":"Оквир УРЛ",
+      "url_placeholder":"прим. http:\/\/www.google.com\/",
+      "height":"Висина Оквира",
+      "padding":"Испуна"
     }
   },
   "keep":{
     "name":"Сачувај",
-    "desc":"Embeds Google Keep in a widget"
+    "desc":"Убацује Google Keep у додатак"
   },
   "news":{
     "name":"Вести",
-    "desc":"Displays the current top news by category and edition.",
+    "desc":"Приказује тренутно најчитаније вести по категорији и издању.",
     "settings":{
-      "articles":"Articles Shown",
+      "articles":"Приказани новински чланци",
       "edition":"Izdaǌe",
-      "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
+      "edition_help":"Ако твоја едиција или тема није наведена овде, молим те унеси Google News изворни УРЛ у Прилагодљиви Извори поље доле (погледај помоћ текст тамо за објашњење).",
       "topic":"Тема",
       "topic_options":{
         "top":"Најчитаније Вести",
@@ -211,27 +211,27 @@
         "white":"Бела"
       },
       "font":"Font Face",
-      "fontsize":"Font Size"
+      "fontsize":"Величина фонта"
     }
   },
   "now":{
     "name":"Google Now",
-    "desc":"Displays cards from Google Now including flight status and package tracking.",
+    "desc":"Приказује картице са Google Now укључујући статус лета и праћење пакета.",
     "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
-    "authorize_btn":"Authorize",
-    "caught_up":"All caught up, nothing here.",
-    "no_title":"No Title"
+    "authorize_btn":"Ауторизуј",
+    "caught_up":"Све свршено, нема ничега овде.",
+    "no_title":"Без наслова"
   },
   "plus":{
     "name":"Google+",
-    "desc":"Embeds Google Plus in a widget"
+    "desc":"Убацује Google Plus у додатак"
   },
   "recentlyclosed":{
-    "name":"Recently Closed",
-    "desc":"Shows your recently closed tabs",
+    "name":"Скоро затворено",
+    "desc":"Приказује твоје недавно затворене картице",
     "settings":{
-      "tabs":"Tabs Shown",
-      "open":"Open tabs in"
+      "tabs":"Приказане Картице",
+      "open":"Отвори картице у"
     },
     "notabs":"Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed."
   },
@@ -242,128 +242,128 @@
       "subreddit":"Subreddit",
       "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
       "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
-      "sort":"Sort Order",
+      "sort":"Ред Сортирања",
       "sort_options":{
-        "hot":"Hot",
-        "top":"Top",
+        "hot":"Вруће",
+        "top":"Врх",
         "new":"Ново",
         "gilded":"Gilded",
         "rising":"Rising",
-        "controversial":"Controversial"
+        "controversial":"Контраверзно"
       },
-      "links":"Links Shown",
-      "click":"When I click a link show me",
+      "links":"Приказани Линкови",
+      "click":"Када кликнем на линк прикажи ми",
       "click_options":{
-        "link":"The link",
-        "comments":"The comments"
+        "link":"Линк",
+        "comments":"Коментари"
       }
     },
     "more":"Још"
   },
   "rss":{
-    "name":"RSS",
-    "desc":"Displays items from a RSS or Atom feed with optional images.",
+    "name":"РСС",
+    "desc":"Приказује артикле са РСС или Atom feed-а са опционалним сликама.",
     "settings":{
-      "link":"Title Link",
-      "link_placeholder":"Enter a link for the widget title",
-      "url":"Feed URL",
+      "link":"Назив Линка",
+      "link_placeholder":"Унеси линк за назив додатка",
+      "url":"УРЛ извора",
       "url_placeholder":"The URL of the RSS feed to be displayed",
-      "articles":"Articles Shown",
-      "view":"View",
+      "articles":"Приказани новински чланци",
+      "view":"Погледај",
       "view_options":{
-        "images":"Image friendly",
-        "default":"Default"
+        "images":"Пријатељско према сликама",
+        "default":"Основно"
       },
-      "images":"Images",
-      "descriptions":"Descriptions"
+      "images":"Слике",
+      "descriptions":"Описи"
     },
-    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
+    "feed_error":"Десила се грешка током испоруке новинских чланака на: %s.\nМолимо Вас поново проверите УРЛ или измените подешавања додатка."
   },
   "sports":{
     "name":"Спорт",
-    "desc":"Displays scores and game information for selected leagues and\/or teams.",
+    "desc":"Приказује резултате и информације о утакмицама за одабране лиге или тимове.",
     "settings":{
-      "league":"League",
-      "games":"Games Shown",
+      "league":"Лига",
+      "games":"Приказане Утакмице",
       "team":"Тим",
       "teams":"Тим",
-      "unavailable":"When team games are unavailable",
+      "unavailable":"Када су утакмице недоступне",
       "unavailable_options":{
-        "other":"Show other games",
-        "none":"Show \"No Games\""
+        "other":"Прикажи друге утакмице",
+        "none":"Прикажи \"Ниједну Утакмицу\""
       }
     },
-    "error":"Something seems to have gone wrong",
+    "error":"Нешто је пошло наопако",
     "unknown_error":"Непозната грешка",
-    "watch_on":"Watch on: %s",
-    "no_games":"No Games Scheduled"
+    "watch_on":"Погледај на: %s",
+    "no_games":"Ниједна утакмица није заказана"
   },
   "stocks":{
-    "name":"Stocks",
-    "desc":"Displays current information for any given stock symbol.",
+    "name":"Берзанске Акције",
+    "desc":"Приказује тренутну информацију за било који понуђени акцијски симбол.",
     "settings":{
-      "symbols":"Stock Symbol(s), comma separated",
-      "symbols_placeholder":"e.g. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
+      "symbols":"Берзанск-акцијски симболи, одвојени зарезом",
+      "symbols_placeholder":"прим. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
       "symbols_help":"These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br \/><br \/>\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. For example, the Dow Jones index is <b>.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
     },
     "as_of":"as of",
-    "exchange_time":"Exchange Time",
-    "open":"open",
-    "high":"high",
-    "low":"low",
-    "volume":"volume"
+    "exchange_time":"Време Размене",
+    "open":"отвори",
+    "high":"високо",
+    "low":"ниско",
+    "volume":"Јачина звука"
   },
   "todo":{
-    "name":"To-do",
-    "desc":"Displays an interactive to-do list with important and completed items.",
-    "title":"To-do list",
+    "name":"За-Урадити",
+    "desc":"Приказује интерактивну за-урадити листу са битним и комплетним ставкама.",
+    "title":"За-Урадити листа",
     "settings":{
-      "color":"Font Color",
+      "color":"Боја фонта",
       "color_options":{
-        "light":"Light",
-        "dark":"Dark"
+        "light":"Светло",
+        "dark":"Тамно"
       },
-      "tags":"Tags",
+      "tags":"Етикете",
       "tags_placeholder":"Enter a tag name and press Enter"
     },
-    "add":"Add Item",
-    "none":"None",
-    "important":"Important"
+    "add":"Додај артикл",
+    "none":"ништа",
+    "important":"Важно"
   },
   "topsites":{
-    "name":"Top Sites",
-    "desc":"Displays your most visited\/top sites.",
+    "name":"Најпосећенији сајтови",
+    "desc":"Приказује твоје најпосећеније сајтове.",
     "settings":{
-      "show":"Number of sites shown",
-      "open":"Open sites in"
+      "show":"Број приказаних сајтова",
+      "open":"Отвори сајтове у"
     }
   },
   "traffic":{
-    "name":"Traffic",
+    "name":"Саобраћај",
     "desc":"Displays the current time in current traffic to home or work.",
     "settings":{
-      "leave":"I leave home at",
-      "home":"Home Address",
-      "home_placeholder":"The destination that should be used after work",
-      "work":"Work Address",
-      "work_placeholder":"The destination that should be used before work",
-      "method":"Transit Method",
+      "leave":"Напуштам кућу у",
+      "home":"Кућна адреса",
+      "home_placeholder":"Дестинација које треба да се употребљава после посла",
+      "work":"Пословна Адреса",
+      "work_placeholder":"Дестинација које треба да се употребљава пре посла",
+      "method":"Метод путовања",
       "method_options":{
-        "driving":"Driving",
-        "walking":"Walking",
-        "transit":"Public Transit"
+        "driving":"Вожња",
+        "walking":"Пешачење",
+        "transit":"Градски саобраћај"
       }
     },
-    "to_home":"to home",
-    "to_work":"to work"
+    "to_home":"ка кући",
+    "to_work":"ка послу"
   },
   "translate":{
     "name":"Преведи",
     "desc":"Contains a small inline Google Translate textbox.",
     "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
     "button":"Преведи",
-    "untranslate":"Untranslate",
-    "auto":"Auto (%s)",
+    "untranslate":"Одпреведи",
+    "auto":"Aуто (%s)",
     "unknown":"Непознато",
     "error":"Something went wrong while trying to translate that..."
   },
@@ -371,24 +371,24 @@
     "name":"Twitter",
     "desc":"Displays tweets from your home stream or a specified list.",
     "settings":{
-      "source":"Show Tweets from",
-      "show":"Tweets Shown"
+      "source":"Прикажи Твитове са",
+      "show":"Приказани Твитови"
     },
     "authorize":"You'll need to authorize iChrome first",
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
-    "authorize_btn":"Authorize",
+    "authorize_btn":"Ауторизуј",
     "no_tweets":"There don't seem to be any tweets here...",
     "home":"Почетна страна",
     "mentions":"Mentions",
-    "retweets":"Retweets of me",
-    "lists":"Lists",
+    "retweets":"Ретвитови о мени",
+    "lists":"Листе",
     "more":"Још",
-    "reply":"Reply",
+    "reply":"Одговори",
     "retweet":"Retweet",
-    "favorite":"Favorite"
+    "favorite":"Омиљено"
   },
   "unread":{
-    "name":"Unread",
+    "name":"Непрочитано",
     "desc":"Displays the current number of unread emails in your Gmail inbox.",
     "settings":{
       "open":"When clicked open"
@@ -398,49 +398,49 @@
     "unread_many":"unread emails"
   },
   "voice":{
-    "name":"Voice",
+    "name":"Глас",
     "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
-    "call":"Call from",
-    "text":"Text message from",
+    "call":"Позив од",
+    "text":"Поруке од",
     "missed":"missed in Voice",
     "texts":"unread text messages",
-    "calls":"missed calls"
+    "calls":"Пропуштени позиви"
   },
   "weather":{
-    "name":"Weather",
-    "desc":"Displays the current weather and a forecast for the next 4 days.",
+    "name":"Време",
+    "desc":"Приказује тренутно време и прогнозу за следећа 4 дана.",
     "settings":{
-      "location":"Location(s)",
-      "location_placeholder":"Enter a location and press Enter",
-      "temperature":"Temperature Units",
-      "wind":"Wind Speed Units"
+      "location":"Локација(е)",
+      "location_placeholder":"Унеси локацију и притисни Ентер",
+      "temperature":"Температурне јединице",
+      "wind":"Јединице за Брзину Ветра"
     },
     "unknown":"Непознато",
-    "wind":"Wind Speed",
-    "chill":"Wind Chill",
-    "humidity":"Humidity"
+    "wind":"Брзина Ветра",
+    "chill":"Хладноћа Ветра",
+    "humidity":"Влажност"
   },
   "wolfram":{
     "desc":"Inserts a small Wolfram|Alpha search box."
   },
   "youtube":{
     "name":"YouTube",
-    "desc":"Displays either popular videos or videos from a specified user.",
+    "desc":"Приказује или популарне видео фајлове или видео фајлове одабраног корисника.",
     "settings":{
-      "format":"Format",
+      "format":"Формат",
       "format_options":{
-        "large":"One large",
-        "large_2":"One large, two small",
-        "large_4":"One large, four small",
-        "four":"Four small",
-        "six":"Six small"
+        "large":"Један велики",
+        "large_2":"Један велики, два мала",
+        "large_4":"Један велики, четири мала",
+        "four":"Четири мала",
+        "six":"Шест малих"
       },
-      "from":"Show Videos From",
+      "from":"Прикажи Видео Фајлове Са",
       "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
-      "from_placeholder":"Leave blank to show Top Videos",
-      "open":"Open search results in"
+      "from_placeholder":"Остави празно ради приказа Најгледанијих Видео Фајлова",
+      "open":"Отвори резултате претраге у"
     },
-    "search":"Search YouTube",
-    "num_views":"views"
+    "search":"Претражи YouTube",
+    "num_views":"Број прегледа"
   }
 }

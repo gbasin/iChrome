@@ -104,7 +104,7 @@
   },
   "drive":{
     "name":"Drive",
-    "desc":"Displays recently changed files from your Google Drive.",
+    "desc":"Zobrazí nedávno změněné soubory z disku Google Drive.",
     "settings":{
       "files_shown":"Počet zobrazených souborů"
     },
@@ -136,7 +136,7 @@
       },
       "mark":"Označit články jako přečtené, když",
       "mark_options":{
-        "scroll":"Scroll past it or click it",
+        "scroll":"Posuň \"vložit\" nebo \"kliknout\"",
         "click":"Stačí kliknout"
       },
       "sort":"Řadit podle",
@@ -153,11 +153,11 @@
   },
   "gmail":{
     "name":"Gmail",
-    "desc":"Displays your Gmail inbox where you can manage your email."
+    "desc":"Zobrazí váši Gmail poštovní schránku, kde můžete spravovat váš email."
   },
   "iframe":{
     "name":"iFrame",
-    "desc":"Displays a webpage of your choice within an iframe.",
+    "desc":"Zobrazí webovou stránku dle vašeho výběru v rámci objektu iframe.",
     "settings":{
       "url":"URL rámečku",
       "url_placeholder":"tj. http:\/\/www.google.com\/",
@@ -171,11 +171,11 @@
   },
   "news":{
     "name":"Zprávy",
-    "desc":"Displays the current top news by category and edition.",
+    "desc":"Zobrazí aktuální novinky podle kategorie a vydání.",
     "settings":{
       "articles":"Zobrazené články",
       "edition":"Edice",
-      "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
+      "edition_help":"Pokud zde není uvedeno vydání nebo téma, zadejte adresu Google News feed URL v poli Custom Feed níže (podívejte se do nápovědy pro vysvětlení).",
       "topic":"Téma",
       "topic_options":{
         "top":"Nejdůležitější zprávy",
@@ -210,14 +210,14 @@
         "green":"Zelená",
         "white":"Bílá"
       },
-      "font":"Font Face",
+      "font":"Řez písma",
       "fontsize":"Velikost písma"
     }
   },
   "now":{
     "name":"Google nyní",
-    "desc":"Displays cards from Google Now including flight status and package tracking.",
-    "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
+    "desc":"Zobrazí karty z Google Now včetně letového provozu a sledování zásilek.",
+    "authorize":"Budete muset dát iChrome oprávnění k zobrazení karet Google Now dříve, než se tady něco objeví.",
     "authorize_btn":"Povolit",
     "caught_up":"Vše zachyceno",
     "no_title":"Bez názvu"
@@ -237,7 +237,7 @@
   },
   "reddit":{
     "name":"Reddit",
-    "desc":"Displays the top items on Reddit for any given subreddit.",
+    "desc":"Zobrazí top položky na Reddit-u pro daný subreddit.",
     "settings":{
       "subreddit":"Subreddit",
       "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
@@ -245,10 +245,10 @@
       "sort":"Řadit podle",
       "sort_options":{
         "hot":"Hot",
-        "top":"Top",
+        "top":"Nejlepší",
         "new":"Nový",
         "gilded":"Gilded",
-        "rising":"Rising",
+        "rising":"Rostoucí",
         "controversial":"Kontroverzní"
       },
       "links":"Zobrazené odkazy",
@@ -264,7 +264,7 @@
     "name":"RSS",
     "desc":"Displays items from a RSS or Atom feed with optional images.",
     "settings":{
-      "link":"Title Link",
+      "link":"Odkaz titulku",
       "link_placeholder":"Zadejte odkaz pro název widgetu",
       "url":"URL kanálu",
       "url_placeholder":"The URL of the RSS feed to be displayed",
@@ -277,7 +277,7 @@
       "images":"Obrázky",
       "descriptions":"Popisy"
     },
-    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
+    "feed_error":"Došlo k chybě při pokusu o načtení kanálu %s. Prosím zkontrolujte URL nebo upravte nastavení widgetu."
   },
   "sports":{
     "name":"Sport",
@@ -302,7 +302,7 @@
     "name":"Akcie",
     "desc":"Displays current information for any given stock symbol.",
     "settings":{
-      "symbols":"Stock Symbol(s), comma separated",
+      "symbols":"Burzovní symbol (symboly), oddělené čárkami",
       "symbols_placeholder":"například NASDAQ: GOOG, INDEXNYSEGIS:NYA",
       "symbols_help":"These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br \/><br \/>\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. For example, the Dow Jones index is <b>.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
     },
@@ -315,7 +315,7 @@
   },
   "todo":{
     "name":"Seznam úkolů",
-    "desc":"Displays an interactive to-do list with important and completed items.",
+    "desc":"Zobrazí interaktivní seznam úkolů s významnými a dokončenými položkami.",
     "title":"Seznam úkolů",
     "settings":{
       "color":"Barva písma",
@@ -335,31 +335,31 @@
     "desc":"Zobrazí vaše nejnavštěvovanější stránky.",
     "settings":{
       "show":"Počet zobrazovaných stránek",
-      "open":"Open sites in"
+      "open":"Otevřít stránky v"
     }
   },
   "traffic":{
     "name":"Provoz",
     "desc":"Displays the current time in current traffic to home or work.",
     "settings":{
-      "leave":"I leave home at",
+      "leave":"Opouším domov v",
       "home":"Adresa domů",
-      "home_placeholder":"The destination that should be used after work",
+      "home_placeholder":"Cíl pro použití po práci",
       "work":"Adresa do zaměstnání",
-      "work_placeholder":"The destination that should be used before work",
-      "method":"Transit Method",
+      "work_placeholder":"Cíl pro použití před prací",
+      "method":"Typ dopravy",
       "method_options":{
         "driving":"Jízda autem",
         "walking":"Pěšky",
         "transit":"Veřejná doprava"
       }
     },
-    "to_home":"to home",
-    "to_work":"to work"
+    "to_home":"domů",
+    "to_work":"do práce"
   },
   "translate":{
     "name":"Překladač",
-    "desc":"Contains a small inline Google Translate textbox.",
+    "desc":"Obsahuje malé textové pole Google Translate.",
     "placeholder":"Zadejte text, který chcete přeložit, poté klikněte na \"Přeložit\" níže.",
     "button":"Překladač",
     "untranslate":"Přeložit zpět",
@@ -379,9 +379,9 @@
     "authorize_btn":"Povolit",
     "no_tweets":"Nezdá se, že by zde byly nějaké tweety...",
     "home":"Domovská stránka",
-    "mentions":"Mentions",
+    "mentions":"Citace",
     "retweets":"Retweets of me",
-    "lists":"Lists",
+    "lists":"Seznamy",
     "more":"Více",
     "reply":"Odpovědět",
     "retweet":"Retweet",
@@ -408,7 +408,7 @@
   },
   "weather":{
     "name":"Počasí",
-    "desc":"Displays the current weather and a forecast for the next 4 days.",
+    "desc":"Zobrazí aktuální počasí a předpověď pro příští 4 dny.",
     "settings":{
       "location":"Umístění",
       "location_placeholder":"Zadejte umístění a stiskněte klávesu Enter",

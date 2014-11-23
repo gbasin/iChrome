@@ -181,7 +181,7 @@
         "top":"Top Stories",
         "world":"世界",
         "nation":"Nation",
-        "business":"Business",
+        "business":"ビジネス",
         "sports":"スポーツ",
         "technology":"テクノロジー",
         "entertainment":"エンターテイメント",
@@ -309,8 +309,8 @@
     "as_of":"as of",
     "exchange_time":"Exchange Time",
     "open":"open",
-    "high":"high",
-    "low":"low",
+    "high":"高い",
+    "low":"低い",
     "volume":"volume"
   },
   "todo":{
@@ -326,9 +326,9 @@
       "tags":"Tags",
       "tags_placeholder":"Enter a tag name and press Enter"
     },
-    "add":"Add Item",
+    "add":"項目を追加",
     "none":"None",
-    "important":"Important"
+    "important":"重要"
   },
   "topsites":{
     "name":"Top Sites",
@@ -339,7 +339,7 @@
     }
   },
   "traffic":{
-    "name":"Traffic",
+    "name":"トラフィック",
     "desc":"Displays the current time in current traffic to home or work.",
     "settings":{
       "leave":"I leave home at",
@@ -358,12 +358,12 @@
     "to_work":"to work"
   },
   "translate":{
-    "name":"Translate",
+    "name":"翻訳",
     "desc":"Contains a small inline Google Translate textbox.",
     "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
-    "button":"Translate",
+    "button":"翻訳",
     "untranslate":"Untranslate",
-    "auto":"Auto (%s)",
+    "auto":"言語を検出する (%s)",
     "unknown":"Unknown",
     "error":"Something went wrong while trying to translate that..."
   },
@@ -388,7 +388,7 @@
     "favorite":"Favorite"
   },
   "unread":{
-    "name":"Unread",
+    "name":"未読",
     "desc":"Displays the current number of unread emails in your Gmail inbox.",
     "settings":{
       "open":"When clicked open"
@@ -407,7 +407,7 @@
     "calls":"missed calls"
   },
   "weather":{
-    "name":"Weather",
+    "name":"天気",
     "desc":"Displays the current weather and a forecast for the next 4 days.",
     "settings":{
       "location":"Location(s)",
@@ -418,7 +418,7 @@
     "unknown":"Unknown",
     "wind":"Wind Speed",
     "chill":"Wind Chill",
-    "humidity":"Humidity"
+    "humidity":"湿度"
   },
   "wolfram":{
     "desc":"Inserts a small Wolfram|Alpha search box."
