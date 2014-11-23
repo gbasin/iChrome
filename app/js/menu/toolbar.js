@@ -111,7 +111,9 @@ define(["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "
 
 
 			render: function() {
-				if (this.model.get("toolbar") == "full") {
+				var toolbar = this.model.get("toolbar") == "full" || this.model.get("toolbar") === true;
+
+				if (toolbar) {
 					this.Menu.$el.detach();
 				}
 
@@ -124,7 +126,7 @@ define(["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "
 
 				this.$(".search").replaceWith(this.Search.el);
 
-				if (this.model.get("toolbar") == "full") {
+				if (toolbar) {
 					this.$("nav.menu").replaceWith(this.Menu.el);
 
 					this.Menu.delegateEvents();
