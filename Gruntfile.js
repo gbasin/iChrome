@@ -301,5 +301,5 @@ module.exports = function(grunt) {
 
 	grunt.registerTask("default", ["copy", "i18n:compile", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "requirejs:build", "clean:all"]);
 
-	grunt.registerTask("webstore", ["copy", "descriptions", "i18n:compile", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "removekey", "requirejs:webstore", "compress", "clean"]);
+	grunt.registerTask("webstore", ["copy", "descriptions", "i18n:compile", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "removekey", "requirejs:webstore", "clean:all", "compress", "clean:webstore"]);
 };
