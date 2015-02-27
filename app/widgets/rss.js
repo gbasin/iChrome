@@ -106,7 +106,18 @@ define(["jquery"], function($) {
 			]
 		},
 		getItem: function(itm) {
-			var html = $("<div>" + (itm.find("description").text() || itm.find("content").text() || itm.find("summary").text() || "").replace(/ src="\/\//g, " data-src=\"https://").replace(/ src="/g, " data-src=\"").replace(/ src='\/\//g, " data-src='https://").replace(/ src='/g, " data-src='") + "</div>"),
+			var html = $("<div>" + (
+					itm.find("description").text() ||
+					itm.find("content").text() ||
+					itm.find("summary").text() ||
+					itm.find("content:encoded").text() ||
+					""
+				)
+					.replace(/ src="\/\//g, " data-src=\"https://")
+					.replace(/ src="/g, " data-src=\"")
+					.replace(/ src='\/\//g, " data-src='https://")
+					.replace(/ src='/g, " data-src='") +
+				"</div>"),
 				item = {
 					title: itm.find("title").text().trim(),
 					url: (itm.find("link[href]").attr("href") || itm.find("link").text() || "").trim()
