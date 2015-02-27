@@ -127,6 +127,9 @@ require(["jquery"], function($) {
 			else if (typeof c == "undefined") {
 				newObj[k] = e;
 			}
+			else if (e === null) {
+				newObj[k] = e;
+			}
 			else if (typeof e == "object" && typeof e.length == "number" && JSON.stringify(e) !== JSON.stringify(c)) {
 				newObj[k] = e;
 			}
