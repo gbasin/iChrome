@@ -1803,6 +1803,19 @@
 
 
 
+
+/*---------------------------------------------
+	/ Bookmarks / Edit Mode Styles
+*/
+body.no-edit .bookmarks .new,
+body.no-edit .bookmarks .tools {
+	display: none;
+}
+
+
+
+
+
 /*---------------------------------------------
 	/ Bookmarks / Folders
 */
