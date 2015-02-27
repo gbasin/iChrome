@@ -3,9 +3,11 @@
 <div class="events{{^title}} no-header{{/title}}">
 	{{#events}}
 		<a class="event" href="{{link}}">
-			<span class="title">{{title}}</span>
-			<span class="time">{{date}}</span>
-			{{#location}}<span class="location">{{location}}</span>{{/location}}
+			{{#calendar}}{{#location}}<span class="location" title="{{location}}">{{location}}</span>{{/location}}{{/calendar}}
+			<span class="title" title="{{title}}">{{title}}</span>
+			<span class="time" title="{{date}}">{{date}}</span>
+			{{#calendar}}<span class="calendar" title="{{calendar}}">{{calendar}}</span>{{/calendar}}
+			{{^calendar}}{{#location}}<span class="location" title="{{location}}">{{location}}</span>{{/location}}{{/calendar}}
 		</a>
 	{{/events}}
 	{{^events}}
