@@ -36,6 +36,27 @@ define(
 				events: {
 					"click [data-item]:not(.active)": "effectuate",
 
+					"click a.custom-link": function(e) {
+						var href = e.currentTarget.getAttribute("href");
+
+						if (href.indexOf("chrome") == 0) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
+							e.preventDefault();
+
+							chrome.tabs.getCurrent(function(d) {
+								if (e.which == 2) {
+									chrome.tabs.create({
+										url: href,
+										index: d.index + 1
+									});
+								}
+								else {
+									chrome.tabs.update(d.id, {
+										url: href
+									});
+								}
+							});
+						}
+					},
 					"click .tabs .add": function() {
 						if (!this.Settings) {
 							this.Settings = new Settings();
