@@ -37,7 +37,7 @@ define(
 				var loop = function(options, level) {
 					var level = level || 0,
 						nesting = "&nbsp;".repeat(4 * level),
-						values = (typeof input.value == "object" ? input.value : [input.value]);
+						values = (typeof input.value == "object" ? input.value : [input.value]) || [];
 
 					var ret = [];
 
