@@ -120,7 +120,7 @@ define(["jquery"], function($) {
 				"</div>"),
 				item = {
 					title: itm.find("title").text().trim(),
-					url: (itm.find("link[href]").attr("href") || itm.find("link").text() || "").trim()
+					url: (itm.find("link").text() || itm.find("link[href]").attr("href") || "").trim()
 				};
 
 
