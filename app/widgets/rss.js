@@ -120,7 +120,7 @@ define(["jquery"], function($) {
 				"</div>"),
 				item = {
 					title: itm.find("title").text().trim(),
-					url: (itm.find("link").text() || itm.find("link[href]").attr("href") || "").trim()
+					url: (itm.find("link").text() || itm.find("link[href][rel=alternate], link[href]:not([rel])").attr("href") || "").trim()
 				};
 
 
@@ -133,6 +133,9 @@ define(["jquery"], function($) {
 			if (!item.image || item.image == "") {
 				if (html.find("iframe[data-chomp-id]").length) {
 					item.image = "http://img.youtube.com/vi/" + html.find("iframe[data-chomp-id]").attr("data-chomp-id") + "/1.jpg";
+				}
+				else if (itm.find("[rel=enclosure][href][type^=image]").length) {
+					item.image = itm.find("[rel=enclosure][href][type^=image]").attr("href");
 				}
 				else if (itm.find("media\\:content[url], media\\:thumbnail[url], enclosure[url][type^=image]").length) {
 					item.image = itm.find("media\\:content[url], media\\:thumbnail[url], enclosure[url][type^=image]").attr("url");
