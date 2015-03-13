@@ -1,7 +1,7 @@
 /**
  * The widget view.  This does the coupling of Backbone => non-Backbone code.
  */
-define(["jquery", "lodash", "backbone", "core/status", "widgets/widgets", "widgets/settings", "widgets/utils"], function($, _, Backbone, Status, Widgets, Settings, Utils) {
+define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widgets/widgets", "widgets/settings", "widgets/utils"], function($, _, Backbone, Status, Track, Widgets, Settings, Utils) {
 	var sizes = {
 			1: "tiny",
 			2: "small",
@@ -176,6 +176,10 @@ define(["jquery", "lodash", "backbone", "core/status", "widgets/widgets", "widge
 			// A direct render needs to be called in case the widget doesn't
 			// render because of an error so that it can still be removed
 			this.widget.utils.render();
+
+			if (!this.preview) {
+				Track.event("Widgets", "View", this.widget.nicename);
+			}
 
 
 			this.model.on("change", this.update, this);

@@ -1,7 +1,7 @@
 /**
  * This generates the toolbar and its submodules
  */
-define(["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "search/search", "menu/menu", "core/render"], function(_, $, Backbone, Storage, Defaults, Search, Menu, render) {
+define(["lodash", "jquery", "backbone", "core/analytics", "storage/storage", "storage/defaults", "search/search", "menu/menu", "core/render"], function(_, $, Backbone, Track, Storage, Defaults, Search, Menu, render) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -73,6 +73,11 @@ define(["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "
 								});
 							}
 						});
+
+						Track.event("Toolbar", "Link Click", "Chrome");
+					}
+					else {
+						Track.event("Toolbar", "Link Click");
 					}
 				}
 			},
@@ -109,11 +114,15 @@ define(["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "
 					});
 
 					elm.addClass("active");
+
+					Track.event("Toolbar", "Apps Menu", "Open");
 				}
 				else {
 					$(document.body).off("click.apps");
 
 					elm.removeClass("active");
+
+					Track.event("Toolbar", "Apps Menu", "Close");
 				}
 			},
 

@@ -45,6 +45,8 @@ define(
 				}, this).on("preview", function(theme) {
 					this.trigger("preview", theme);
 				}, this);
+
+				Track.pageview("Themes: Create", "/themes/create");
 			},
 
 
@@ -62,6 +64,8 @@ define(
 				}, this).on("preview", function(theme) {
 					this.trigger("preview", theme);
 				}, this);
+
+				Track.pageview("Themes: Edit", "/themes/edit");
 			},
 
 
@@ -309,6 +313,8 @@ define(
 				}
 
 				modal.show();
+
+				Track.pageview("Themes", "/themes");
 			},
 
 			initialize: function(options) {

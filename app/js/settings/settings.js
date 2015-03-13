@@ -32,11 +32,14 @@ define(
 				events: {
 					"click .nav > li": function(e) {
 						var elm = $(e.currentTarget),
+							tab = elm.attr("data-tab"),
 							tabs = this.$(".tabs .tab");
 
 						this.$(".nav > li").add(tabs).removeClass("active");
 
-						elm.add(tabs.filter("." + elm.attr("data-tab"))).addClass("active");
+						elm.add(tabs.filter("." + tab)).addClass("active");
+
+						Track.pageview("Settings: " + tab[0].toUpperCase() + tab.slice(1), "/settings/" + tab);
 					},
 					"keydown input:not([type=radio], [type=checkbox]), select": function(e) { // Even though this isn't in the tab views the events bubble
 						if (e.which == 13) {
@@ -79,6 +82,8 @@ define(
 					this.render();
 
 					modal.show();
+
+					Track.pageview("Settings", "/settings");
 				},
 
 				initialize: function() {

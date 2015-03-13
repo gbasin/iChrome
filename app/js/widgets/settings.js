@@ -391,12 +391,16 @@ define(
 				this.widget.utils.save();
 
 				this.modal.hide();
+
+				Track.event("Widgets", "Configure", this.widget.nicename);
 			},
 
 			show: function() {
 				this.render();
 
 				this.modal.show();
+
+				Track.pageview("/widget/" + this.widget.nicename + "/settings");
 			},
 
 			constructor: function() {

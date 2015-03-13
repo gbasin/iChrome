@@ -1,7 +1,7 @@
 /**
  * The main tooltip handler.  This displays tooltips for any element with a data-tooltip attribute
  */
-define(["jquery", "backbone"], function($, Backbone) {
+define(["jquery", "backbone", "core/analytics"], function($, Backbone, Track) {
 	var View = Backbone.View.extend({
 		tagName: "div",
 		className: "tooltip",
@@ -73,6 +73,8 @@ define(["jquery", "backbone"], function($, Backbone) {
 					maxHeight: maxHeight || "",
 					left: Math.round(offset.left)
 				}).addClass("visible");
+
+				Track.event("Tooltip", "Show");
 			}.bind(this), 500);
 		},
 

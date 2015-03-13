@@ -3,10 +3,10 @@
  */
 define(
 	[
-		"lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "i18n/i18n", "search/search",
+		"lodash", "jquery", "backbone", "core/analytics", "storage/storage", "storage/defaults", "i18n/i18n", "search/search",
 		"search/speech", "settings/settings", "widgets/store", "modals/donate", "core/uservoice", "core/render"
 	],
-	function(_, $, Backbone, Storage, Defaults, Translate, Search, Speech, Settings, Store, Donate, UserVoice, render) {
+	function(_, $, Backbone, Track, Storage, Defaults, Translate, Search, Speech, Settings, Store, Donate, UserVoice, render) {
 		var Model = Backbone.Model.extend({
 				init: function() {
 					Storage.on("done updated", function(storage) {
@@ -55,6 +55,11 @@ define(
 									});
 								}
 							});
+
+							Track.event("Menu", "Link Click", "Chrome");
+						}
+						else {
+							Track.event("Menu", "Link Click");
 						}
 					},
 					"click .tabs .add": function() {
@@ -148,6 +153,8 @@ define(
 									}
 								});
 							});
+
+							Track.event("Menu", "View Background");
 						break;
 
 						case "editmode":
@@ -169,6 +176,8 @@ define(
 							$(document.body).toggleClass("no-edit", !this.model.storage.settings.editing);
 
 							this.model.storage.sync();
+
+							Track.event("Menu", "Edit Mode", this.model.storage.settings.editing ? "Enable" : "Disable");
 						break;
 
 						case "link":
@@ -188,6 +197,11 @@ define(
 										});
 									}
 								});
+
+								Track.event("Menu", "Link Click", "Chrome");
+							}
+							else {
+								Track.event("Menu", "Link Click");
 							}
 						break;
 
@@ -195,6 +209,8 @@ define(
 							this.navigate(e.currentTarget);
 
 							this.trigger("navigate", parseInt(elm.attr("data-id")));
+
+							Track.event("Menu", "Tab Navigation");
 						break;
 					}
 				},
@@ -263,11 +279,15 @@ define(
 						}.bind(this));
 
 						this.$el.addClass("visible");
+
+						Track.event("Menu", "Show");
 					}
 					else if (this.$el.hasClass("visible") && !show) {
 						$(document.body).off("click.menu");
 
 						this.$el.removeClass("visible");
+
+						Track.event("Menu", "Hide");
 					}
 				},
 

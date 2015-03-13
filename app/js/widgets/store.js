@@ -76,6 +76,8 @@ define(
 							})
 						).find(".preview").prepend(view.el);
 
+						Track.pageview("Store: " + widget.nicename, "/store/" + widget.nicename);
+
 						modal.$el.addClass("detail").find(".detail .desc-container").sortable({
 							group: "columns",
 							drop: false
@@ -123,6 +125,8 @@ define(
 					this.render();
 
 					modal.show();
+
+					Track.pageview("Store", "/store");
 				},
 
 				initialize: function() {
