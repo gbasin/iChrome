@@ -398,39 +398,38 @@ chrome.runtime.onInstalled.addListener(function(details) {
 	}
 });
 
-var xhr = new XMLHttpRequest();
+chrome.webRequest.onHeadersReceived.addListener(
+	function(info) {
+		if (info.tabId !== -1) {
+			var i = -1,
+				views = chrome.extension.getViews(),
+				length = views.length;
 
-xhr.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status !== 200) { // The main iChrome extension is not installed, attach an onHeadersReceived listener
-		chrome.webRequest.onHeadersReceived.addListener(
-			function(info) {
-				var headers = info.responseHeaders;
+			while (++i < length) {
+				if (views[i].tabId == info.tabId) {
+					var headers = info.responseHeaders || [];
 
-				for (var i = headers.length - 1; i >= 0; --i) {
-					var header = headers[i].name.toLowerCase();
+					for (var i = headers.length - 1; i >= 0; --i) {
+						var header = headers[i].name.toLowerCase();
 
-					if (header == "x-frame-options" || header == "frame-options") {
-						headers.splice(i, 1);
+						if (header == "x-frame-options" || header == "frame-options") {
+							headers.splice(i, 1);
+						}
 					}
+
+					return {
+						responseHeaders: headers
+					};
 				}
-				
-				return {
-					responseHeaders: headers
-				};
-			},
-			{
-				urls: [ "*://*/*" ],
-				types: [ "sub_frame" ]
-			},
-			["blocking", "responseHeaders"]
-		);
-	}
-};
-
-xhr.open("HEAD", "chrome-extension://oghkljobbhapacbahlneolfclkniiami/index.html");
-
-xhr.send();
-
+			}
+		}
+	},
+	{
+		urls: [ "*://*/*" ],
+		types: [ "sub_frame" ]
+	},
+	["blocking", "responseHeaders"]
+);
 
 // Sync manager
 var unextend = function(obj1, obj2) {
@@ -781,76 +780,82 @@ refreshFeeds();
 
 
 // Recently Closed
-chrome.permissions.contains({
-	permissions: ["tabs"]
-}, function(granted) {
-	if (granted) {
-		var tabs = {},
-			windows = {},
-			ctabs = JSON.parse(localStorage.recentlyClosed || "[]");
+var checkRC = function() {
+	chrome.permissions.contains({
+		permissions: ["tabs"]
+	}, function(granted) {
+		if (granted) {
+			var tabs = {},
+				windows = {},
+				ctabs = JSON.parse(localStorage.recentlyClosed || "[]");
 
-		chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-			if (changeInfo.status && tab.url && tab.title && tab.windowId &&
-				tab.url !== "chrome-extension://oghkljobbhapacbahlneolfclkniiami/index.html" && tab.url !== "chrome://newtab/" &&
-				tab.url !== "chrome-extension://iccjgbbjckehppnpajnmplcccjcgbdep/index.html") {
-				tabs[tabId] = [tab.title, tab.url, tab.windowId];
+			chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+				if (changeInfo.status && tab.url && tab.title && tab.windowId &&
+					tab.url !== "chrome-extension://oghkljobbhapacbahlneolfclkniiami/index.html" && tab.url !== "chrome://newtab/" &&
+					tab.url !== "chrome-extension://iccjgbbjckehppnpajnmplcccjcgbdep/index.html") {
+					tabs[tabId] = [tab.title, tab.url, tab.windowId];
 
-				if (windows[tab.windowId]) {
-					windows[tab.windowId].push(tabId);
+					if (windows[tab.windowId]) {
+						windows[tab.windowId].push(tabId);
+					}
+					else {
+						windows[tab.windowId] = [tabId];
+					}
 				}
-				else {
-					windows[tab.windowId] = [tabId];
+			});
+
+			var onClose = function(tabId) {
+				if (tabs[tabId]) {
+					delete windows[tabs[tabId].pop()][tabId];
+
+					ctabs.unshift(tabs[tabId]);
+					
+					ctabs = ctabs.slice(0, 20);
+
+					localStorage.recentlyClosed = JSON.stringify(ctabs);
 				}
-			}
-		});
-
-		var onClose = function(tabId) {
-			if (tabs[tabId]) {
-				delete windows[tabs[tabId].pop()][tabId];
-
-				ctabs.unshift(tabs[tabId]);
 				
-				ctabs = ctabs.slice(0, 20);
+				delete tabs[tabId];
+			};
 
-				localStorage.recentlyClosed = JSON.stringify(ctabs);
-			}
-			
-			delete tabs[tabId];
-		};
+			chrome.tabs.onRemoved.addListener(onClose);
+			chrome.tabs.onDetached.addListener(onClose);
 
-		chrome.tabs.onRemoved.addListener(onClose);
-		chrome.tabs.onDetached.addListener(onClose);
+			var getAll = function() {
+					chrome.tabs.query({
+						windowType: "normal"
+					}, function(res) {
+						var ts = {},
+							ws = {};
 
-		var getAll = function() {
-				chrome.tabs.query({
-					windowType: "normal"
-				}, function(res) {
-					var ts = {},
-						ws = {};
-
-					res.forEach(function(tab, i) {
-						if (tab.id && tab.title && tab.windowId && tab.url &&
-							tab.url !== "chrome-extension://oghkljobbhapacbahlneolfclkniiami/index.html" && tab.url !== "chrome://newtab/" &&
-							tab.url !== "chrome-extension://iccjgbbjckehppnpajnmplcccjcgbdep/index.html") {
-							ts[tab.id] = [tab.title, tab.url, tab.windowId];
-						}
-
-						if (tab.windowId && tab.id) {
-							if (ws[tab.windowId]) {
-								ws[tab.windowId].push(tab.id);
+						res.forEach(function(tab, i) {
+							if (tab.id && tab.title && tab.windowId && tab.url &&
+								tab.url !== "chrome-extension://oghkljobbhapacbahlneolfclkniiami/index.html" && tab.url !== "chrome://newtab/" &&
+								tab.url !== "chrome-extension://iccjgbbjckehppnpajnmplcccjcgbdep/index.html") {
+								ts[tab.id] = [tab.title, tab.url, tab.windowId];
 							}
-							else {
-								ws[tab.windowId] = [tab.id];
+
+							if (tab.windowId && tab.id) {
+								if (ws[tab.windowId]) {
+									ws[tab.windowId].push(tab.id);
+								}
+								else {
+									ws[tab.windowId] = [tab.id];
+								}
 							}
-						}
+						});
+
+						tabs = ts;
+						windows = ws;
 					});
+				},
+				tabsInt = setInterval(getAll, 60000);
 
-					tabs = ts;
-					windows = ws;
-				});
-			},
-			tabsInt = setInterval(getAll, 60000);
+			getAll();
+		}
+	});
+};
 
-		getAll();
-	}
-});
+chrome.permissions.onAdded.addListener(checkRC);
+
+checkRC();

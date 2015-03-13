@@ -163,6 +163,7 @@ define(["jquery"], function($) {
 				case 6:
 				case 7:
 				case 15:
+				case 16:
 				case 18:
 				case 41:
 				case 43:

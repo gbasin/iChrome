@@ -178,7 +178,27 @@ define(["jquery", "modals/modals"], function($, Modal) {
 
 			var that = this;
 
-			this.sortable = this.elm.on("click", ".link .delete", function(e) {
+			this.sortable = this.elm.on("click", "a.link", function(e) {
+				var href = this.getAttribute("href");
+
+				if (href.indexOf("chrome") == 0) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
+					e.preventDefault();
+
+					chrome.tabs.getCurrent(function(d) {
+						if (e.which == 2) {
+							chrome.tabs.create({
+								url: href,
+								index: d.index + 1
+							});
+						}
+						else {
+							chrome.tabs.update(d.id, {
+								url: href
+							});
+						}
+					});
+				}
+			}).on("click", ".link .delete", function(e) {
 				e.preventDefault();
 
 				$(this).parent().parent().slideUp(function() {

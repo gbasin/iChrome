@@ -1,7 +1,7 @@
 /**
  * This handles the searchbox
  */
-define(["backbone", "storage/storage", "core/render", "search/suggestions", "search/speech"], function(Backbone, Storage, render, Suggestions, Speech) {
+define(["backbone", "storage/storage", "core/render", "core/analytics", "search/suggestions", "search/speech"], function(Backbone, Storage, render, Track, Suggestions, Speech) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -29,9 +29,13 @@ define(["backbone", "storage/storage", "core/render", "search/suggestions", "sea
 				}
 				else if (e.which == 38) {
 					this.Suggestions.setFocus("prev");
+
+					Track.event("Search", "Suggestions", "Key Prev");
 				}
 				else if (e.which == 40) {
 					this.Suggestions.setFocus("next");
+
+					Track.event("Search", "Suggestions", "Key Next");
 				}
 			},
 			change: function(e, w) {
@@ -55,6 +59,13 @@ define(["backbone", "storage/storage", "core/render", "search/suggestions", "sea
 			submit: function(val) {
 				if (typeof val !== "string") {
 					val = this.$("input").val().trim();
+
+					Track.ga("send", {
+						useBeacon: true,
+						hitType: "pageview",
+						title: "Search: " + val,
+						page: "/search?q=" + encodeURIComponent(val)
+					});
 				}
 
 				var searchURL = (this.model.get("search-url") || "https://www.google.com/search?q=%s"),
@@ -68,6 +79,8 @@ define(["backbone", "storage/storage", "core/render", "search/suggestions", "sea
 			},
 			speech: function() {
 				this.Speech.start();
+
+				Track.event("Search", "Speech", "Start");
 			},
 			initialize: function() {
 				this.model = new Model();
@@ -84,6 +97,14 @@ define(["backbone", "storage/storage", "core/render", "search/suggestions", "sea
 				}, this);
 
 				this.Speech.on("result", function(val) {
+					Track.ga("send", {
+						useBeacon: true,
+						hitType: "pageview",
+						title: "Voice Search: " + val,
+						page: "/search/speech?q=" + encodeURIComponent(val),
+						useBeacon: true
+					});
+
 					this.submit(val);
 				}, this);
 

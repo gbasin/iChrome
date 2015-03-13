@@ -1,7 +1,7 @@
 /**
  * This generates the toolbar and its submodules
  */
-define(["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "search/search", "menu/menu", "core/render"], function(_, $, Backbone, Storage, Defaults, Search, Menu, render) {
+define(["lodash", "jquery", "backbone", "core/analytics", "storage/storage", "storage/defaults", "search/search", "menu/menu", "core/render"], function(_, $, Backbone, Track, Storage, Defaults, Search, Menu, render) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -53,6 +53,32 @@ define(["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "
 
 				"click .apps a.icon": function(e) {
 					e.preventDefault();
+				},
+				"click a.custom-link": function(e) {
+					var href = e.currentTarget.getAttribute("href");
+
+					if (href.indexOf("chrome") == 0) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
+						e.preventDefault();
+
+						chrome.tabs.getCurrent(function(d) {
+							if (e.which == 2) {
+								chrome.tabs.create({
+									url: href,
+									index: d.index + 1
+								});
+							}
+							else {
+								chrome.tabs.update(d.id, {
+									url: href
+								});
+							}
+						});
+
+						Track.event("Toolbar", "Link Click", "Chrome");
+					}
+					else {
+						Track.event("Toolbar", "Link Click");
+					}
 				}
 			},
 
@@ -88,11 +114,15 @@ define(["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "
 					});
 
 					elm.addClass("active");
+
+					Track.event("Toolbar", "Apps Menu", "Open");
 				}
 				else {
 					$(document.body).off("click.apps");
 
 					elm.removeClass("active");
+
+					Track.event("Toolbar", "Apps Menu", "Close");
 				}
 			},
 

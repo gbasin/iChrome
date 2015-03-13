@@ -106,7 +106,7 @@ define(["jquery", "moment"], function($, moment) {
 					}
 
 					cb(sources);
-				}
+				}.bind(this)
 			});
 		},
 		authorize: function(e) {

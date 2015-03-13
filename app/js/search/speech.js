@@ -1,7 +1,7 @@
 /**
  * Handles "OK Google" detection and speech-based searching
  */
-define(["jquery", "underscore", "backbone", "storage/storage", "i18n/i18n"], function($, _, Backbone, Storage, Translate) {
+define(["jquery", "underscore", "backbone", "core/analytics", "storage/storage", "i18n/i18n"], function($, _, Backbone, Track, Storage, Translate) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -114,6 +114,8 @@ define(["jquery", "underscore", "backbone", "storage/storage", "i18n/i18n"], fun
 					for (var i = e.resultIndex; i < e.results.length; i++) {
 						if (e.results[i][0].confidence > 0.2 && this.isOK(e.results[i][0].transcript)) {
 							this.start();
+
+							Track.event("Search", "Speech", "Ok Google");
 						}
 					}
 				}
@@ -152,6 +154,8 @@ define(["jquery", "underscore", "backbone", "storage/storage", "i18n/i18n"], fun
 
 					if (this.model.get("ok")) {
 						this.restart();
+
+						Track.event("Search", "Speech", "Background Start");
 					}
 					else {
 						this.recognition.abort();

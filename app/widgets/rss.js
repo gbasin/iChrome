@@ -1,7 +1,7 @@
 /*
  * The RSS widget.
  */
-define(["jquery"], function($) {
+define(["jquery", "lodash"], function($, _) {
 	return {
 		id: 8,
 		size: 5,
@@ -105,11 +105,16 @@ define(["jquery"], function($) {
 				}
 			]
 		},
-		getItem: function(itm) {
-			var html = $("<div>" + (itm.find("description").text() || itm.find("content").text() || itm.find("summary").text() || "").replace(/ src="\/\//g, " data-src=\"https://").replace(/ src="/g, " data-src=\"").replace(/ src='\/\//g, " data-src='https://").replace(/ src='/g, " data-src='") + "</div>"),
+		parseEntry: function(itm, i) {
+			var html = $("<div>" + (itm.content || "")
+					.replace(/ src="\/\//g, " data-src=\"https://")
+					.replace(/ src="/g, " data-src=\"")
+					.replace(/ src='\/\//g, " data-src='https://")
+					.replace(/ src='/g, " data-src='") +
+				"</div>"),
 				item = {
-					title: itm.find("title").text().trim(),
-					url: (itm.find("link[href]").attr("href") || itm.find("link").text() || "").trim()
+					title: (itm.title || "").trim(),
+					url: (itm.link || "").trim()
 				};
 
 
@@ -117,14 +122,21 @@ define(["jquery"], function($) {
 			html.find(".mf-viral, .feedflare, img[width=1], img[height=1], img[data-src^='http://da.feedsportal.com']").remove();
 
 
-			item.image = html.find("img[data-src]").first().attr("data-src");
+			item.image = _(itm.mediaGroups)
+				.pluck("contents")
+				.flatten()
+				.filter(function(e) {
+					return e.medium === "image" && e.height >= 35 && e.width >= 35;
+				})
+				.pluck("url")
+				.value()[0];
 
 			if (!item.image || item.image == "") {
-				if (html.find("iframe[data-chomp-id]").length) {
-					item.image = "http://img.youtube.com/vi/" + html.find("iframe[data-chomp-id]").attr("data-chomp-id") + "/1.jpg";
+				if (html.find("img[data-src]").length) {
+					item.image = html.find("img[data-src]").first().attr("data-src");
 				}
-				else if (itm.find("media\\:content[url], media\\:thumbnail[url], enclosure[url][type^=image]").length) {
-					item.image = itm.find("media\\:content[url], media\\:thumbnail[url], enclosure[url][type^=image]").attr("url");
+				else if (html.find("iframe[data-chomp-id]").length) {
+					item.image = "http://img.youtube.com/vi/" + html.find("iframe[data-chomp-id]").attr("data-chomp-id") + "/1.jpg";
 				}
 				else {
 					delete item.image;
@@ -191,32 +203,15 @@ define(["jquery"], function($) {
 				url = url.parseUrl();
 			}
 
-			$.get(url, function(d) {
+			$.getJSON("http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=" + this.config.number + "&q=" + encodeURIComponent(url), function(d) {
 				try {
-					if (typeof d == "object") {
-						d = $(d);
-					}
-					else {
-						d = $($.parseXML(d));
+					if (!d || typeof d !== "object" || !d.responseData || !d.responseData.feed) {
+						throw new Error("Failed to load feed");
 					}
 
-					var items = d.find("item"),
-						that = this,
-						rss = {
-							items: []
-						};
-
-					if (!items.length) {
-						items = d.find("entry");
-					}
-
-					items.each(function(i) {
-						if (i > 19) return;
-
-						rss.items.push(that.getItem($(this)));
-					});
-
-					this.data = rss;
+					this.data = {
+						items: (d.responseData.feed.entries || []).map(this.parseEntry.bind(this))
+					};
 
 					this.render.call(this);
 

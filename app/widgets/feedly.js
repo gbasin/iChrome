@@ -763,11 +763,11 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 									}
 								});
 
-								columns.first().append(this.utils.renderTemplate("articles", {
+								columns.first().append(that.utils.renderTemplate("articles", {
 									articles: column1
 								}));
 
-								columns.last().append(this.utils.renderTemplate("articles", {
+								columns.last().append(that.utils.renderTemplate("articles", {
 									articles: column2
 								}));
 							}
@@ -776,7 +776,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 									e.age = moment(e.date).fromNow(true).replace("hour", "hr").replace("minute", "min").replace("an ", "1 ").replace("a ", "1 ").replace("a few ", "");
 								});
 
-								$(this).append(this.utils.renderTemplate("articles", {
+								$(this).append(that.utils.renderTemplate("articles", {
 									articles: articles
 								}));
 							}

@@ -1,7 +1,7 @@
 /*
  * The Gmail widget.
  */
-define(["jquery"], function($) {
+define(["jquery", "widgets/framefix"], function($, frameFix) {
 	return {
 		id: 25,
 		size: 4,
@@ -30,6 +30,8 @@ define(["jquery"], function($) {
 			size: "variable"
 		},
 		render: function() {
+			if (!frameFix(this.render, this, arguments)) return;
+			
 			this.utils.render({
 				user: this.config.user || 0,
 				height: this.config.height || 400

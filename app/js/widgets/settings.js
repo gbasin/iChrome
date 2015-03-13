@@ -37,7 +37,7 @@ define(
 				var loop = function(options, level) {
 					var level = level || 0,
 						nesting = "&nbsp;".repeat(4 * level),
-						values = (typeof input.value == "object" ? input.value : [input.value]);
+						values = (typeof input.value == "object" ? input.value : [input.value]) || [];
 
 					var ret = [];
 
@@ -391,12 +391,16 @@ define(
 				this.widget.utils.save();
 
 				this.modal.hide();
+
+				Track.event("Widgets", "Configure", this.widget.nicename);
 			},
 
 			show: function() {
 				this.render();
 
 				this.modal.show();
+
+				Track.pageview("/widget/" + this.widget.nicename + "/settings");
 			},
 
 			constructor: function() {

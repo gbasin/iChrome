@@ -570,7 +570,7 @@
 .news .item:visited span.nested-link[data-href],
 .reddit .item:visited span.nested-link[data-href],
 .feedly .item:visited span.nested-link[data-href] {
-    color: #707070;
+	color: #707070;
 }
 
 .rss .item img,
@@ -1347,23 +1347,45 @@
 }
 
 .calendar .event .title {
-	display: block;
+	width: 100%;
 	font-size: 18px;
+	overflow: hidden;
 	margin-bottom: 5px;
+	white-space: nowrap;
+	display: inline-block;
+	text-overflow: ellipsis;
 }
 
-.calendar .event .time {
+.calendar .event span {
+	width: 49%;
+	overflow: hidden;
+	white-space: nowrap;
+	display: inline-block;
+	text-overflow: ellipsis;
+}
+
+.calendar .event .time,
+.calendar .event .calendar {
 	color: #333;
+	line-height: 20px;
+}
+
+.calendar .event .calendar {
+	float: right;
+	font-size: 13px;
+	text-align: right;
 }
 
 .calendar .event .location {
 	color: #666;
-	display: block;
+	float: right;
 	font-size: 15px;
-	margin-top: 5px;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
+	text-align: right;
+	line-height: 25px;
+}
+
+.calendar .event .location + .title {
+	max-width: 49%;
 }
 
 
@@ -1798,6 +1820,19 @@
 .bookmarks .tools .edit:hover	{ color: #428BCA; }
 .bookmarks .tools .delete:hover	{ color: #E43431; }
 .bookmarks .tools .move:hover	{ cursor: move; }
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Bookmarks / Edit Mode Styles
+*/
+body.no-edit .bookmarks .new,
+body.no-edit .bookmarks .tools {
+	display: none;
+}
 
 
 

@@ -1,12 +1,14 @@
 /**
  * This handles and fetches search suggestions
  */
-define(["jquery", "underscore", "backbone"], function($, _, Backbone) {
+define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Backbone, Track) {
 	var Suggestions = Backbone.View.extend({
 			tagName: "div",
 			className: "suggestions",
 			events: {
 				"mousedown .suggestion": function(e) {
+					Track.event("Search", "Suggestions", "Click");
+
 					this.trigger("select", e.currentTarget.innerText);
 				}
 			},

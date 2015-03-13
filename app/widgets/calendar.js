@@ -152,6 +152,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 			this.oAuth.authorize.call(this.oAuth, function() {
 				var that = this,
 					events = [],
+					multiple = this.config.calendars.length > 1,
 					token = this.oAuth.getAccessToken(),
 					params = {
 						maxResults: 10,
@@ -159,7 +160,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 						orderBy: "startTime",
 						timeZone: -(new Date().getTimezoneOffset() / 60),
 						timeMin: moment().format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
-						fields: "items(description,htmlLink,id,location,start,summary)"
+						fields: "summary,items(description,htmlLink,id,location,start,summary)"
 					};
 
 				var requests = this.config.calendars.map(function(calendar) {
@@ -179,6 +180,10 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 										title: e.summary,
 										date: new Date(e.start.dateTime || e.start.date + " 00:00:00").getTime()
 									};
+
+									if (multiple && d.summary) {
+										event.calendar = d.summary;
+									}
 
 									if (e.location) {
 										event.location = e.location;
