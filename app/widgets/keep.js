@@ -1,7 +1,7 @@
 /*
  * The Keep widget.
  */
-define(["jquery"], function($) {
+define(["jquery", "widgets/framefix"], function($, frameFix) {
 	return {
 		id: 23,
 		size: 4,
@@ -22,6 +22,8 @@ define(["jquery"], function($) {
 			size: "variable"
 		},
 		render: function() {
+			if (!frameFix(this.render, this, arguments)) return;
+			
 			this.utils.render({
 				url: "https://keep.google.com/keep/u/0/",
 				height: this.config.height || 400

@@ -400,19 +400,29 @@ chrome.runtime.onInstalled.addListener(function(details) {
 
 chrome.webRequest.onHeadersReceived.addListener(
 	function(info) {
-		var headers = info.responseHeaders;
+		if (info.tabId !== -1) {
+			var i = -1,
+				views = chrome.extension.getViews(),
+				length = views.length;
 
-		for (var i = headers.length - 1; i >= 0; --i) {
-			var header = headers[i].name.toLowerCase();
+			while (++i < length) {
+				if (views[i].tabId == info.tabId) {
+					var headers = info.responseHeaders || [];
 
-			if (header == "x-frame-options" || header == "frame-options") {
-				headers.splice(i, 1);
+					for (var i = headers.length - 1; i >= 0; --i) {
+						var header = headers[i].name.toLowerCase();
+
+						if (header == "x-frame-options" || header == "frame-options") {
+							headers.splice(i, 1);
+						}
+					}
+
+					return {
+						responseHeaders: headers
+					};
+				}
 			}
 		}
-		
-		return {
-			responseHeaders: headers
-		};
 	},
 	{
 		urls: [ "*://*/*" ],

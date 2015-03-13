@@ -1,7 +1,7 @@
 /*
  * The Google+ widget.
  */
-define(["jquery"], function($) {
+define(["jquery", "widgets/framefix"], function($, frameFix) {
 	return {
 		id: 30,
 		size: 5,
@@ -22,6 +22,8 @@ define(["jquery"], function($) {
 			size: "variable"
 		},
 		render: function() {
+			if (!frameFix(this.render, this, arguments)) return;
+			
 			this.utils.render({
 				height: this.config.height || 500
 			});
