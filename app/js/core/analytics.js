@@ -60,7 +60,7 @@ define(function() {
 			});
 		}
 		else {
-			ga("send", "pageview", path || ("/v" + chrome.runtime.getManifest().version));
+			ga("send", "pageview", path || ("/v" + chrome.runtime.getManifest().version + "/newtab"));
 		}
 	};
 
