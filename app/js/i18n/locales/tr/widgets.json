@@ -2,66 +2,66 @@
   "lang_code":"tr-widgets",
   "analytics":{
     "name":"Analytics",
-    "desc":"Displays various metrics from a Google Analytics profile.",
-    "sessions":"sessions",
-    "pageviews":"Pageviews",
-    "pagesvisit":"Pages\/visit",
-    "bouncerate":"Bounce Rate",
-    "completions":"Completions",
-    "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
+    "desc":"Google Analytics profilindeki çeşitli ölçümleri görüntüler.",
+    "sessions":"oturumlar",
+    "pageviews":"Sayfa görüntüleme",
+    "pagesvisit":"Sayfa\/ziyaret",
+    "bouncerate":"Hemen çıkma oranı",
+    "completions":"Tamamlananlar",
+    "noprofile":"Henüz bir profil seçilmiş gibi görünmüyor!\n<br \/><br \/>\nSağ üstteki ingiliz anahtarı simgesi ile seçmeyi deneyin.",
     "settings":{
-      "profile":"Profile"
+      "profile":"Profil"
     }
   },
   "apps":{
-    "name":"Apps",
-    "desc":"Displays your currently installed Google Chrome applications.",
+    "name":"Uygulamalar",
+    "desc":"Şu anda yüklü Google Chrome uygulamalarınızı görüntüler.",
     "settings":{
-      "format":"Widget Format",
+      "format":"Widget Biçimi",
       "format_options":{
-        "tiles":"Tiles",
-        "list":"List"
+        "tiles":"Kutucuklar",
+        "list":"Liste"
       },
       "display":"Göster",
       "display_options":{
-        "all":"All apps",
-        "enabled":"Only enabled apps"
+        "all":"Tüm Uygulamalar",
+        "enabled":"Yalnızca etkin uygulamalar"
       },
-      "sort":"Sort",
+      "sort":"Sırala",
       "sort_options":{
         "id":"ID",
-        "alphabetically":"Alphabetically",
-        "offline":"Offline Enabled",
-        "available":"Availability"
+        "alphabetically":"Alfabetik",
+        "offline":"Çevrimdışı Etkin",
+        "available":"Uygunluk"
       },
       "open":"Open apps in"
     },
-    "store_app":"Store"
+    "store_app":"Mağaza"
   },
   "bookmarks":{
-    "name":"Bookmarks",
-    "desc":"Displays selected and customized bookmarks, and other links.",
+    "name":"Yer imleri",
+    "desc":"Yer imlerinizi ve diğer bağlantıları görüntüler.",
     "settings":{
-      "title_placeholder":"Enter a widget title",
-      "layout":"Layout",
+      "title_placeholder":"Widget için bir başlık girin",
+      "layout":"Düzen",
       "layout_options":{
-        "single":"Single column",
-        "double":"Double column"
+        "single":"Tek sütun",
+        "double":"Çift sütun"
       },
-      "open":"Open bookmarks in"
+      "open":"Yer imlerini şurada aç"
     },
     "edit":{
-      "dialog_title":"Edit Bookmark",
-      "title":"Bookmark Title",
+      "dialog_title":"Yer imini düzenle",
+      "title":"Yer imi adı",
       "title_placeholder":"Google",
-      "url":"Bookmark URL",
+      "url":"Yer imi URL",
       "url_placeholder":"http:\/\/www.google.com\/",
       "save":"Kaydet"
     },
-    "new_caption":"New",
+    "new_caption":"Yeni",
     "new_bookmark":"Yer imi",
     "new_folder":"Klasör",
-    "drop_link":"Drop link here"
+    "drop_link":"Bağlantıyı buraya bırakın"
   },
   "calc":{
     "name":"Hesap makinesi",
@@ -77,19 +77,19 @@
       "calendar":"Takvim",
       "events":"Gösterilen Etkinlikler"
     },
-    "title":"My Calendar",
-    "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
+    "title":"Takvimim",
+    "noevents":"Yakın bir gelecekte herhangi bir olayı var gibi görünmüyor.\n<br\/><br\/> \nSağ üstteki ingiliz anahtarı ile seçmeyi deneyin."
   },
   "clock":{
-    "name":"Time & Date",
-    "desc":"Shows the current date and time. Optionally for a different timezone.",
+    "name":"Saat & Tarih",
+    "desc":"Geçerli tarih ve saati gösterir. İsteğe bağlı olarak farklı bir zaman dilimi için kullanılabilir.",
     "settings":{
-      "timezone":"Time Zone",
-      "timezone_local":"Local",
-      "format":"Clock Format",
+      "timezone":"Saat dilimi",
+      "timezone_local":"Yerel",
+      "format":"Saat biçimi",
       "format_options":{
-        "ampm":"AM\/PM - Digital",
-        "24hour":"24 Hour - Digital",
+        "ampm":"AM\/PM - Dijital",
+        "24hour":"24 saat - Dijital",
         "analog":"12 Hour - Analog",
         "ampmseconds":"AM\/PM - Digital, No Seconds",
         "24hourseconds":"24 Hour - Digital, No Seconds"
@@ -173,80 +173,80 @@
     "name":"Haberler",
     "desc":"Displays the current top news by category and edition.",
     "settings":{
-      "articles":"Articles Shown",
-      "edition":"Edition",
-      "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
-      "topic":"Topic",
+      "articles":"Gösterilecek Makale",
+      "edition":"Basın",
+      "edition_help":"Eğer sizin basınınız burada listelenmiyorsa, lütfen Google Haberler besleme adresini aşağıdaki Özel Besleme alanına giriniz (oradaki yardım metnini kontrol edin).",
+      "topic":"Konu Başlığı",
       "topic_options":{
-        "top":"Top Stories",
-        "world":"World",
-        "nation":"Nation",
-        "business":"Business",
-        "sports":"Sports",
-        "technology":"Technology",
-        "entertainment":"Entertainment",
-        "health":"Health",
-        "science":"Science",
-        "spotlight":"Spotlight"
+        "top":"En çok okunan haberler",
+        "world":"Dünya",
+        "nation":"Ulusal",
+        "business":"İş Hayatı",
+        "sports":"Spor",
+        "technology":"Teknoloji",
+        "entertainment":"Eğlence",
+        "health":"Sağlık",
+        "science":"Bilim",
+        "spotlight":"Sanat"
       },
-      "feed":"Custom Feed",
-      "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
-      "feed_placeholder":"Enter a custom RSS feed to fetch news from",
-      "footer":"Footer URL",
-      "footer_placeholder":"Enter the URL that the \"More\" link should point to"
+      "feed":"Özel Besleme",
+      "feed_help":"Bu besleme, her Google Haberler sayfasının altında listelenir. Sayfanın altında önünde turuncu bir ikon yer alan \"RSS\" yazısının bağlantısını bu alana yapıştırın",
+      "feed_placeholder":"Haberleri getirmek için özel bir RSS beslemesi girin",
+      "footer":"Altbilgi Bağlantısı",
+      "footer_placeholder":"\"Daha fazla\" yazısına tıklandığında açılacal URL'yi girin"
     },
     "more":"Daha fazla"
   },
   "notes":{
-    "name":"Notes",
-    "desc":"Inserts a simple, editable, note.",
+    "name":"Notlar",
+    "desc":"Basit, düzenlenebilir, bir not ekler.",
     "settings":{
-      "color":"Note Color",
+      "color":"Not rengi",
       "color_options":{
-        "yellow":"Yellow",
-        "orange":"Orange",
-        "red":"Red",
-        "blue":"Blue",
-        "green":"Green",
-        "white":"White"
+        "yellow":"Sarı",
+        "orange":"Turuncu",
+        "red":"Kırmızı",
+        "blue":"Mavi",
+        "green":"Yeşil",
+        "white":"Beyaz"
       },
-      "font":"Font Face",
-      "fontsize":"Font Size"
+      "font":"Yazı tipi",
+      "fontsize":"Yazı tipi boyutu"
     }
   },
   "now":{
-    "name":"Google Now",
-    "desc":"Displays cards from Google Now including flight status and package tracking.",
-    "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
-    "authorize_btn":"Authorize",
-    "caught_up":"All caught up, nothing here.",
-    "no_title":"No Title"
+    "name":"Google Asistan",
+    "desc":"Uçuş durumu ve paket izlemeleri dahil olmak üzere tüm Google Asistan kartlarını görüntüler.",
+    "authorize":"Google Asistan kartlarınızın burada görüntülenebilmesi için iChrome'a izin vermeniz gerekir.",
+    "authorize_btn":"Yetki ver",
+    "caught_up":"Görüntülenecek hiçbir şey yok.",
+    "no_title":"Başlık yok"
   },
   "plus":{
-    "name":"Google+",
-    "desc":"Embeds Google Plus in a widget"
+    "name":"Google +",
+    "desc":"Bir Google Plus widgeti gömer"
   },
   "recentlyclosed":{
-    "name":"Recently Closed",
-    "desc":"Shows your recently closed tabs",
+    "name":"En Son Kapatılan",
+    "desc":"En son kapatılan sekmeleri gösterir",
     "settings":{
-      "tabs":"Tabs Shown",
-      "open":"Open tabs in"
+      "tabs":"Gösterilecek Sekme",
+      "open":"Sekmeleri şurada aç"
     },
-    "notabs":"Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed."
+    "notabs":"Bu widget yüklenmeden önce kapatılan sekmeleri gösteremez. Bundan sonra kapatılan sekmeler burada görüntülenir."
   },
   "reddit":{
     "name":"Reddit",
-    "desc":"Displays the top items on Reddit for any given subreddit.",
+    "desc":"Reddit üzerindeki popüler başlıkları görüntüler.",
     "settings":{
       "subreddit":"Subreddit",
       "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
       "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
-      "sort":"Sort Order",
+      "sort":"Sırala",
       "sort_options":{
         "hot":"Hot",
         "top":"Top",
-        "new":"New",
+        "new":"Yeni",
         "gilded":"Gilded",
         "rising":"Rising",
         "controversial":"Controversial"
@@ -268,7 +268,7 @@
       "link_placeholder":"Enter a link for the widget title",
       "url":"Feed URL",
       "url_placeholder":"The URL of the RSS feed to be displayed",
-      "articles":"Articles Shown",
+      "articles":"Gösterilecek Makale",
       "view":"View",
       "view_options":{
         "images":"Image friendly",
@@ -280,7 +280,7 @@
     "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
   },
   "sports":{
-    "name":"Sports",
+    "name":"Spor",
     "desc":"Displays scores and game information for selected leagues and\/or teams.",
     "settings":{
       "league":"League",
@@ -314,54 +314,54 @@
     "volume":"volume"
   },
   "todo":{
-    "name":"To-do",
-    "desc":"Displays an interactive to-do list with important and completed items.",
-    "title":"To-do list",
+    "name":"Yapılacaklar",
+    "desc":"Yapılacaklar listesi ile tamamlanmış ve önemli öğeleri görüntüler.",
+    "title":"Yapılacaklar listesi",
     "settings":{
-      "color":"Font Color",
+      "color":"Yazı tipi rengi",
       "color_options":{
-        "light":"Light",
-        "dark":"Dark"
+        "light":"Açık",
+        "dark":"Siyah"
       },
-      "tags":"Tags",
-      "tags_placeholder":"Enter a tag name and press Enter"
+      "tags":"Etiketler",
+      "tags_placeholder":"Bir etiket adı girin ve Enter tuşuna basın"
     },
-    "add":"Add Item",
-    "none":"None",
-    "important":"Important"
+    "add":"Öğe Ekle",
+    "none":"Hiçbiri",
+    "important":"Önemli"
   },
   "topsites":{
-    "name":"Top Sites",
-    "desc":"Displays your most visited\/top sites.",
+    "name":"En iyi siteler",
+    "desc":"En çok ziyaret edilen siteleri görüntüler.",
     "settings":{
-      "show":"Number of sites shown",
-      "open":"Open sites in"
+      "show":"Gösterilecek site sayısı",
+      "open":"Siteleri şurada aç"
     }
   },
   "traffic":{
-    "name":"Traffic",
-    "desc":"Displays the current time in current traffic to home or work.",
+    "name":"Trafik",
+    "desc":"Ev ve iş yeri arasındaki geçerli trafik zamanını görüntüler.",
     "settings":{
-      "leave":"I leave home at",
-      "home":"Home Address",
-      "home_placeholder":"The destination that should be used after work",
-      "work":"Work Address",
-      "work_placeholder":"The destination that should be used before work",
-      "method":"Transit Method",
+      "leave":"Evden çıkış saati",
+      "home":"Ev adresi",
+      "home_placeholder":"İşten sonra kullanılması gereken hedef",
+      "work":"İş adresi",
+      "work_placeholder":"İşe gitmeden önce kullanılması gereken hedef",
+      "method":"Taşıma yöntemi",
       "method_options":{
-        "driving":"Driving",
-        "walking":"Walking",
-        "transit":"Public Transit"
+        "driving":"Sürüş",
+        "walking":"Yürüyüş",
+        "transit":"Toplu taşıma"
       }
     },
-    "to_home":"to home",
-    "to_work":"to work"
+    "to_home":"ev için",
+    "to_work":"iş için"
   },
   "translate":{
-    "name":"Translate",
+    "name":"Çeviri",
     "desc":"Contains a small inline Google Translate textbox.",
     "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
-    "button":"Translate",
+    "button":"Çeviri",
     "untranslate":"Untranslate",
     "auto":"Auto (%s)",
     "unknown":"Unknown",

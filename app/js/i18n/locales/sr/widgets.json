@@ -190,10 +190,10 @@
         "spotlight":"У жижи јавности"
       },
       "feed":"Прилагођен фид",
-      "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
-      "feed_placeholder":"Enter a custom RSS feed to fetch news from",
-      "footer":"Footer URL",
-      "footer_placeholder":"Enter the URL that the \"More\" link should point to"
+      "feed_help":"Ово је извор у УРЛ-у наведеном на дну сваке Google News стране, потражи наранџасту РСС иконицу и линк на коме пише \"РСС\"",
+      "feed_placeholder":"Унеси лични РСС извор са којих ће вести бити узимане",
+      "footer":"Подножје УРЛ",
+      "footer_placeholder":"Унеси УРЛ на који \"Још\" линк треба да те одведе"
     },
     "more":"Још"
   },
@@ -210,14 +210,14 @@
         "green":"Зелена",
         "white":"Бела"
       },
-      "font":"Font Face",
+      "font":"Лице Фонта",
       "fontsize":"Величина фонта"
     }
   },
   "now":{
     "name":"Google Now",
     "desc":"Приказује картице са Google Now укључујући статус лета и праћење пакета.",
-    "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
+    "authorize":"Потребно је да даш овлашћење iChrome-у да види твоје Google Now картице пре него се било шта појави овде. ",
     "authorize_btn":"Ауторизуј",
     "caught_up":"Све свршено, нема ничега овде.",
     "no_title":"Без наслова"
@@ -233,22 +233,22 @@
       "tabs":"Приказане Картице",
       "open":"Отвори картице у"
     },
-    "notabs":"Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed."
+    "notabs":"Картице које су затворене пре него је овај додатак инсталиран не могу бити приказане. Почевши од овог тренутка свака нова картица коју затвориш ће бити приказана."
   },
   "reddit":{
     "name":"Reddit",
-    "desc":"Displays the top items on Reddit for any given subreddit.",
+    "desc":"Приказује најчитаније артикле на Reddit-у за било који дати subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
-      "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
+      "subreddit_help":"Унеси било који subreddit по делу прошлости <b>\/r\/<\/b> када на Reddit-у.\n<br \/><br \/>\nНа пример, Технологија је на: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, тако да ћеш унети <b>технологија<\/b>",
+      "subreddit_placeholder":"Унеси subreddit да прикажеш линкове са. (прим. технологија)",
       "sort":"Ред Сортирања",
       "sort_options":{
         "hot":"Вруће",
         "top":"Врх",
         "new":"Ново",
-        "gilded":"Gilded",
-        "rising":"Rising",
+        "gilded":"Позлаћен",
+        "rising":"Растуће",
         "controversial":"Контраверзно"
       },
       "links":"Приказани Линкови",
@@ -267,7 +267,7 @@
       "link":"Назив Линка",
       "link_placeholder":"Унеси линк за назив додатка",
       "url":"УРЛ извора",
-      "url_placeholder":"The URL of the RSS feed to be displayed",
+      "url_placeholder":"УРЛ РСС извора за приказ",
       "articles":"Приказани новински чланци",
       "view":"Погледај",
       "view_options":{
@@ -304,9 +304,9 @@
     "settings":{
       "symbols":"Берзанск-акцијски симболи, одвојени зарезом",
       "symbols_placeholder":"прим. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br \/><br \/>\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. For example, the Dow Jones index is <b>.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
+      "symbols_help":"Ово су акције које би волео да буду приказане на ТРАКА:БЕРЗЕ формату.\n<br \/><br \/>\nЗа индексирање, молимо користите траке и берзе као што је приказано на <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. На пример, Dow Jones  индекс је <b>.DJI<\/b> и NYSE је <b>INDEXNYSEGIS:NYA<\/b>."
     },
-    "as_of":"as of",
+    "as_of":"од",
     "exchange_time":"Време Размене",
     "open":"отвори",
     "high":"високо",
@@ -324,7 +324,7 @@
         "dark":"Тамно"
       },
       "tags":"Етикете",
-      "tags_placeholder":"Enter a tag name and press Enter"
+      "tags_placeholder":"Унеси име етикете и притисни Ентер"
     },
     "add":"Додај артикл",
     "none":"ништа",
@@ -340,7 +340,7 @@
   },
   "traffic":{
     "name":"Саобраћај",
-    "desc":"Displays the current time in current traffic to home or work.",
+    "desc":"Приказује тренутно време у тренутном путу до куће или посла.",
     "settings":{
       "leave":"Напуштам кућу у",
       "home":"Кућна адреса",
@@ -359,51 +359,51 @@
   },
   "translate":{
     "name":"Преведи",
-    "desc":"Contains a small inline Google Translate textbox.",
-    "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
+    "desc":"Садржи малу Google Translate текстуалну кутију.",
+    "placeholder":"Унеси текст који би волео да преведеш овде, онда притисни \"Преведи\" доле.",
     "button":"Преведи",
     "untranslate":"Одпреведи",
     "auto":"Aуто (%s)",
     "unknown":"Непознато",
-    "error":"Something went wrong while trying to translate that..."
+    "error":"Нешто је кренуло наопако током превођења датога..."
   },
   "twitter":{
     "name":"Twitter",
-    "desc":"Displays tweets from your home stream or a specified list.",
+    "desc":"Приказује твитове са твог основног твитер профила или специфичне листе.",
     "settings":{
       "source":"Прикажи Твитове са",
       "show":"Приказани Твитови"
     },
-    "authorize":"You'll need to authorize iChrome first",
-    "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
+    "authorize":"Мораш прво да даш овлашћење iChrome-у",
+    "authorize_msg":"Потребно је да даш овлашћење iChrome-у да види твитове са твог рачуна пре него се било шта појави овде. ",
     "authorize_btn":"Ауторизуј",
-    "no_tweets":"There don't seem to be any tweets here...",
+    "no_tweets":"Изгледа да овде нема твитова...",
     "home":"Почетна страна",
-    "mentions":"Mentions",
+    "mentions":"Спомињање",
     "retweets":"Ретвитови о мени",
     "lists":"Листе",
     "more":"Још",
     "reply":"Одговори",
-    "retweet":"Retweet",
+    "retweet":"Ретвит",
     "favorite":"Омиљено"
   },
   "unread":{
     "name":"Непрочитано",
-    "desc":"Displays the current number of unread emails in your Gmail inbox.",
+    "desc":"Приказује тренутан број непрочитаних email-ова ит твог Gmail поштанског сандучета.",
     "settings":{
-      "open":"When clicked open"
+      "open":"Када је притиснуто за отварање"
     },
-    "unread_none":"unread emails",
-    "unread_one":"unread email",
-    "unread_many":"unread emails"
+    "unread_none":"Непрочитани email-ови",
+    "unread_one":"Непрочитани email",
+    "unread_many":"Непрочитани email-ови"
   },
   "voice":{
     "name":"Глас",
-    "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
+    "desc":"Приказује тренутни број пропуштених позива и поруке са твог Google Voice рачуна.",
     "call":"Позив од",
     "text":"Поруке од",
-    "missed":"missed in Voice",
-    "texts":"unread text messages",
+    "missed":"Пропуштени у Гласу",
+    "texts":"Непрочитане текстуалне поруке",
     "calls":"Пропуштени позиви"
   },
   "weather":{
@@ -421,7 +421,7 @@
     "humidity":"Влажност"
   },
   "wolfram":{
-    "desc":"Inserts a small Wolfram|Alpha search box."
+    "desc":"Убацује малу Wolfram|Alpha кутију за претрагу."
   },
   "youtube":{
     "name":"YouTube",
@@ -436,7 +436,7 @@
         "six":"Шест малих"
       },
       "from":"Прикажи Видео Фајлове Са",
-      "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
+      "from_help":"Ово мора да буде <b>тачно<\/b> корисничко име као што је приказано у УРЛ-у странице када посећујеш њихов профил.\n<br \/><br \/>\nВредно никада не подразумева размаке.",
       "from_placeholder":"Остави празно ради приказа Најгледанијих Видео Фајлова",
       "open":"Отвори резултате претраге у"
     },

@@ -105,20 +105,20 @@
       "theme_placeholder":"Тема #%s",
       "theme_select":"Одабери тему",
       "align":"Поравнавање",
-      "align_desc":"This will change the alignment of the widget columns",
+      "align_desc":"Ово ће променити поравнане колумне додатака",
       "align_labels":{
         "left":"Лево",
         "center":"Средина",
         "right":"Десно"
       },
       "logo":"УРЛ логоа",
-      "logo_desc":"This is the image shown at the left of the toolbar.  The default is <b>\/images\/logo.svg<\/b>",
+      "logo_desc":"Ова слика је приказана са леве стране траке са алаткама. Основно подешавање је <b>\/images\/logo.svg<\/b>",
       "toolbar":"Стил Траке са алаткама",
       "toolbar_desc":"Ово контролише стил траке са алаткама. Може да изгледа нормално или као дугме ван простора",
       "toolbar_normal":"Нормално",
       "toolbar_button":"Дугме",
       "animation":"Слајдин анимација",
-      "animation_desc":"This setting lets you enable or disable the slide-in animation that runs when you load the page",
+      "animation_desc":"Ово подешавање ти дозвољава да омогућиш или онемогућиш уклизну анимацију која се активира кад отвориш страницу",
       "animation_label":"Омогући анимацију"
     },
     "specific":{
@@ -126,7 +126,7 @@
       "default_name":"Нова Картица",
       "delete":"Обриши картицу",
       "delete_disallowed":"Не можеш да обришеш последње преосталу картицу.",
-      "delete_confirm":"Are you really sure you want to delete this tab?\r\nThis action is irreversible, all data from all widgets in the tab will be permanently lost.",
+      "delete_confirm":"Да ли си стварно сигуран да желиш да обришеш ову картицу?\nОва акција је неповратна, сви подаци са свих додатка у картици ће бити трајно изгубљени.",
       "default":"Постави као подразумевано"
     },
     "advanced":{
@@ -141,9 +141,9 @@
       "restore_error":"Десила се грешка током раздвајања понуђених података, осигурај се да си унео ТАЧАН текст који си сачувао као резервну копију.",
       "restore_confirm":"Да ли си стварно, стварно сигуран да желиш ово да урадиш?\nОво ће поништити све локалне и синхронизоване податке, не постоји резервна копија нити који други начин да поништиш ову акцију. Изгубићеш СВУ тренутну конфигурацију на свим рачунарима уписаним на овај Google рачун .",
       "css":"Подесиви ЦСС",
-      "css_desc":"You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.",
+      "css_desc":"Можеш да користиш ово поље да прилагодиш скоро сваки визуални део iChrome-а користећи ЦСС(за дефиницију молимо погледајте <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Пошто ће ово бити синхронизовано, можеш да унесеш максимално 1000 карактера, укључујући и празан простор између знакова.",
       "reset":"Ресетуј iChrome",
-      "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers signed into this Google account."
+      "reset_confirm":"Да ли си стварно сигуран да желиш да ресетујеш iChrome?\nОво ће обрисати све локалне и синхронизоване податке, не постоји резервна копија нити било који други начин да поништиш ову акцију.Изгубићеш СВУ тренутну конфигурацију на свим рачунарима уписаним на овај Google рачун."
     }
   },
   "store":{
@@ -175,14 +175,14 @@
           "current":"Тренутна картица",
           "blank":"Нова картица"
         },
-        "footer_link":"Footer Link",
+        "footer_link":"Подножни Линк",
         "footer_link_options":{
           "show":"Прикажи",
           "hide":"Сакриј"
         },
         "account":"ID Налога",
-        "account_help":"If you're signed into multiple accounts, this is the \"authuser=\" value.\n<br \/><br \/>\nFor example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"authuser\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
-        "account_placeholder":"Your \"authuser=\" value",
+        "account_help":"Ако си уписан у више рачуна, ово је \"ауторизациона=\" вредност.\n<br \/><br \/>\nНа пример, ако си уписан у два рачуна, jsmith1@gmail.com и jsmith2@gmail.com,  \"ауторизациона\" вредност за jsmith2@gmail.com била би 1 пошто је то други рачун (рачунајући од нуле) у који си уписан.",
+        "account_placeholder":"Твоја \"ауторизаторска=\" вредност",
         "on":"Укључено",
         "off":"Искључено"
       }
@@ -223,7 +223,7 @@
       "name_placeholder":"Унеси назив теме",
       "image":"УРЛ слике",
       "image_placeholder":"Унеси УРЛ слике за позадину",
-      "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy and paste the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
+      "image_help":"Уплоадоване слике <b>Не може да се синхронизује<\/b> између рачунара.<br \/><br \/>Ако ти је ово битно, молимо те уплоадуј твоју слику на сервис као <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Онда копирај па проследи крај УРЛ-а са екстензијом (нпр. .jpg) и проследи га у поље са леве стране.",
       "color":"Резервна боја",
       "color_placeholder":"Унеси име било које боје",
       "position":"Позиција",
@@ -269,12 +269,12 @@
     "slide2":{
       "title":"Додаци",
       "line1":"Додаци су средиште iChrome-а. Можеш да их конфигуришеш и помераш користећи кључ и ручица иконице када помериш курсор у горњи десни угао. Да уклониш додатак, кликни на њега држи и почни да га повлачиш у црвену линију која се појави.",
-      "line2":"New widgets can be added by clicking the Widgets item under the menu at the top right of the page (shown in the next slide)."
+      "line2":"Нови додаци могу бити убачени кликом на Додаци ставку у менију у горњем десном углу странице (приказано на следећем слајду)."
     },
     "slide3":{
       "title":"Подешавање",
-      "line1":"You can change almost anything else you'd want to via the menu at the top right.  There you can configure the way your page looks, how iChrome works and get new widgets.",
-      "line2":"Other things you can do include creating individual tabs, each with themes and widgets of their own, custom themes, or configuring the tiniest thing like what links are shown in the toolbar."
+      "line1":"Можеш да промениш готово све што желиш преко менија у горњем десном углу. Тамо можеш да  промениш начин на који твоја страна изгледа, како iChrome ради и да пронађеш нове додатке.",
+      "line2":"Друге ствари које можеш да урадиш подразумевају стварање индивидуалних картица, сваке са својим темама и додацима, подесивим темама , или конфигурација најмањих ствари као нпр. који су линкови приказани у траци са алаткама."
     }
   }
 }

@@ -71,10 +71,10 @@
     "mismatch":"Parentesi non corrispondenti"
   },
   "calendar":{
-    "name":"Calendar",
+    "name":"Calendario",
     "desc":"Visualizza gli eventi imminenti da uno o più dei vostri calendari di Google.",
     "settings":{
-      "calendar":"Calendar",
+      "calendar":"Calendario",
       "events":"Eventi mostrati"
     },
     "title":"Il mio calendario",
@@ -166,7 +166,7 @@
     }
   },
   "keep":{
-    "name":"Mantieni",
+    "name":"Keep",
     "desc":"Incorpora Google Keep in un widget"
   },
   "news":{
@@ -219,7 +219,7 @@
     "desc":"Visualizza le schede di Google Now, tra cui lo stato dei voli e il tracciamento dei pacchi.",
     "authorize":"Avrete bisogno di dare iChrome il permesso di visualizzare le schede di Google Now prima che venga visualizzata qui qualsiasi cosa.",
     "authorize_btn":"Autorizza",
-    "caught_up":"Tutti coinvolti, niente qui.",
+    "caught_up":"Hai visto tutto, niente qui.",
     "no_title":"Senza titolo"
   },
   "plus":{
@@ -230,18 +230,18 @@
     "name":"Chiuso di recente",
     "desc":"Mostra i tabs chiusi di recente",
     "settings":{
-      "tabs":"Tabs Shown",
+      "tabs":"Schede mostrate",
       "open":"Apri tabs in"
     },
     "notabs":"I tabs che sono stati chiusi prima dell'installazione di questo widget non possono essere visualizzati. Da adesso qualsiasi tab chiuso sarà visualizzato."
   },
   "reddit":{
     "name":"Reddit",
-    "desc":"Displays the top items on Reddit for any given subreddit.",
+    "desc":"Mostra i migliori elementi di Reddit per ogni subreddit dato.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
-      "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
+      "subreddit_help":"Inserire un subreddit inserendo soltanto la parte dell'URL di quel subreddit a partire da <b>\/r\/<\/b>.\n<br \/><br \/>\nPer esempio, Technology si trova su: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, quindi va inserito soltanto <b>technology<\/b>",
+      "subreddit_placeholder":"Inserisci un subreddit di per poter vedere i links. (es: technology)",
       "sort":"Ordinamento",
       "sort_options":{
         "hot":"Hot",
@@ -252,7 +252,7 @@
         "controversial":"Controverso"
       },
       "links":"Links mostrati",
-      "click":"When I click a link show me",
+      "click":"Quando faccio clic su un collegamento Mostrami",
       "click_options":{
         "link":"Il link",
         "comments":"I commenti"
@@ -262,12 +262,12 @@
   },
   "rss":{
     "name":"RSS",
-    "desc":"Displays items from a RSS or Atom feed with optional images.",
+    "desc":"Visualizza gli elementi da un feed RSS o Atom, con immagini opzionali.",
     "settings":{
       "link":"Titolo Link",
-      "link_placeholder":"Enter a link for the widget title",
+      "link_placeholder":"Inserisci un collegamento per il titolo del widget",
       "url":"URL del Feed",
-      "url_placeholder":"The URL of the RSS feed to be displayed",
+      "url_placeholder":"L'URL del feed RSS da mostrare",
       "articles":"Articoli mostrati",
       "view":"Vista",
       "view_options":{
@@ -277,11 +277,11 @@
       "images":"Immagini",
       "descriptions":"Descrizioni"
     },
-    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
+    "feed_error":"Si è verificato un errore durante il recupero dei feed a: %s.\nSi prega di ricontrollare l'URL e\/o modificare le impostazioni del widget."
   },
   "sports":{
     "name":"Sport",
-    "desc":"Displays scores and game information for selected leagues and\/or teams.",
+    "desc":"Visualizza punteggi e informazioni per i campionati e\/o squadre selezionati.",
     "settings":{
       "league":"Campionato",
       "games":"Partite mostrate",
@@ -293,154 +293,154 @@
         "none":"Visualizza \"nessuna partita\""
       }
     },
-    "error":"Something seems to have gone wrong",
-    "unknown_error":"Unknown Error",
-    "watch_on":"Watch on: %s",
+    "error":"Qualcosa sembra essere andato storto",
+    "unknown_error":"Errore Sconosciuto",
+    "watch_on":"Guarda su: %s",
     "no_games":"Nessuna partita in programma"
   },
   "stocks":{
-    "name":"Stocks",
-    "desc":"Displays current information for any given stock symbol.",
+    "name":"Azioni",
+    "desc":"Visualizza le informazioni correnti per qualsiasi azione.",
     "settings":{
-      "symbols":"Stock Symbol(s), comma separated",
-      "symbols_placeholder":"e.g. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br \/><br \/>\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. For example, the Dow Jones index is <b>.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
+      "symbols":"Simboli per gli stock, separare con una virgola",
+      "symbols_placeholder":"per esempio NASDAQ: GOOG, INDEXNYSEGIS:NYA",
+      "symbols_help":"Questi sono gli stock che vuoi mostrare in un formato TICKER:EXCHANGE.\n<br \/><br \/>\nPer indicizzazione, per favore usa i tickers e exchanges come mostrati su <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. Per esempio, l'indice del dow jones e <b>.DJI<\/b> e per il NYSE è <b>INDEXNYSEGIS:NYA<\/b>."
     },
-    "as_of":"as of",
-    "exchange_time":"Exchange Time",
-    "open":"open",
-    "high":"high",
-    "low":"low",
+    "as_of":"A partire da",
+    "exchange_time":"Tempo di scambio",
+    "open":"Aperto",
+    "high":"Alto",
+    "low":"Basso",
     "volume":"volume"
   },
   "todo":{
-    "name":"To-do",
-    "desc":"Displays an interactive to-do list with important and completed items.",
-    "title":"To-do list",
+    "name":"Da fare",
+    "desc":"Mostra una lista interattiva di promemoria con elementi importati e completati.",
+    "title":"Promemoria",
     "settings":{
-      "color":"Font Color",
+      "color":"Colore carattere",
       "color_options":{
-        "light":"Light",
-        "dark":"Dark"
+        "light":"Chiaro",
+        "dark":"Scuro"
       },
-      "tags":"Tags",
-      "tags_placeholder":"Enter a tag name and press Enter"
+      "tags":"Etichette",
+      "tags_placeholder":"Inserisci il nome di un etichetta e premi invio"
     },
-    "add":"Add Item",
-    "none":"None",
-    "important":"Important"
+    "add":"Aggiungi elemento",
+    "none":"Niente",
+    "important":"Importante"
   },
   "topsites":{
-    "name":"Top Sites",
-    "desc":"Displays your most visited\/top sites.",
+    "name":"Siti più visitati",
+    "desc":"Visualizza i siti che visiti maggiormente.",
     "settings":{
-      "show":"Number of sites shown",
-      "open":"Open sites in"
+      "show":"Numero di siti visualizzati",
+      "open":"Apri siti dentro"
     }
   },
   "traffic":{
-    "name":"Traffic",
-    "desc":"Displays the current time in current traffic to home or work.",
+    "name":"Traffico",
+    "desc":"Visualizza l'ora ed il traffico tra casa e luogo di lavoro.",
     "settings":{
-      "leave":"I leave home at",
-      "home":"Home Address",
-      "home_placeholder":"The destination that should be used after work",
-      "work":"Work Address",
-      "work_placeholder":"The destination that should be used before work",
-      "method":"Transit Method",
+      "leave":"Vado via di casa alle",
+      "home":"Indirizzo di casa",
+      "home_placeholder":"La destinazione che deve essere utilizzata dopo il lavoro",
+      "work":"Indirizzo di lavoro",
+      "work_placeholder":"La destinazione che deve essere utilizzata prima di lavoro",
+      "method":"Metodo di trasporto",
       "method_options":{
-        "driving":"Driving",
-        "walking":"Walking",
-        "transit":"Public Transit"
+        "driving":"In auto",
+        "walking":"A piedi",
+        "transit":"Transito pubblico"
       }
     },
-    "to_home":"to home",
-    "to_work":"to work"
+    "to_home":"Verso casa",
+    "to_work":"Verso il luogo di lavoro"
   },
   "translate":{
-    "name":"Translate",
-    "desc":"Contains a small inline Google Translate textbox.",
-    "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
-    "button":"Translate",
-    "untranslate":"Untranslate",
+    "name":"traduci",
+    "desc":"Contiene un piccola versione di Google Traslate.",
+    "placeholder":"Inserisci il testo che vuoi tradurre qui, e poi premi \"traduci\".",
+    "button":"traduci",
+    "untranslate":"Originale",
     "auto":"Auto (%s)",
-    "unknown":"Unknown",
-    "error":"Something went wrong while trying to translate that..."
+    "unknown":"Sconosciuto",
+    "error":"Qualcosa è andato storto mentre si cercava di tradurre la frase..."
   },
   "twitter":{
     "name":"Twitter",
-    "desc":"Displays tweets from your home stream or a specified list.",
+    "desc":"Mostra i tweet della tua timeline o da una lista specificata.",
     "settings":{
-      "source":"Show Tweets from",
-      "show":"Tweets Shown"
+      "source":"Mostra i tweet da",
+      "show":"Tweet mostrati"
     },
-    "authorize":"You'll need to authorize iChrome first",
-    "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
+    "authorize":"Devi prima autorizzare iChrome",
+    "authorize_msg":"È necessario dare il permesso ad iChrome per accedere ai tuoi tweet per visualizzare i tuoi tweet qui.",
     "authorize_btn":"Autorizza",
-    "no_tweets":"There don't seem to be any tweets here...",
+    "no_tweets":"Non sembrano esserci tweet qui...",
     "home":"Home",
-    "mentions":"Mentions",
-    "retweets":"Retweets of me",
-    "lists":"Lists",
+    "mentions":"Menzioni",
+    "retweets":"I miei retweet",
+    "lists":"Liste",
     "more":"Altro",
-    "reply":"Reply",
-    "retweet":"Retweet",
-    "favorite":"Favorite"
+    "reply":"Rispondi",
+    "retweet":"Ritwitta",
+    "favorite":"Preferito"
   },
   "unread":{
-    "name":"Unread",
-    "desc":"Displays the current number of unread emails in your Gmail inbox.",
+    "name":"Da leggere",
+    "desc":"Mostra il numero corrente di email non lette nella tua casella Gmail.",
     "settings":{
-      "open":"When clicked open"
+      "open":"Quando cliccato apri"
     },
-    "unread_none":"unread emails",
-    "unread_one":"unread email",
-    "unread_many":"unread emails"
+    "unread_none":"Email non lette",
+    "unread_one":"Email non lette",
+    "unread_many":"Email non lette"
   },
   "voice":{
     "name":"Voice",
-    "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
-    "call":"Call from",
-    "text":"Text message from",
-    "missed":"missed in Voice",
-    "texts":"unread text messages",
-    "calls":"missed calls"
+    "desc":"Mostra il numero di chiamate e messaggi persi del tuo account Google Voice.",
+    "call":"Chiamata da",
+    "text":"Messaggio da parte di",
+    "missed":"Chiamate perse",
+    "texts":"Messaggi non letti",
+    "calls":"Chiamate perse"
   },
   "weather":{
-    "name":"Weather",
-    "desc":"Displays the current weather and a forecast for the next 4 days.",
+    "name":"Meteo",
+    "desc":"Mostra il meteo per i prossimi 4 giorni.",
     "settings":{
-      "location":"Location(s)",
-      "location_placeholder":"Enter a location and press Enter",
-      "temperature":"Temperature Units",
-      "wind":"Wind Speed Units"
+      "location":"Luogo\/i",
+      "location_placeholder":"Inserisci un luogo e premi invio",
+      "temperature":"Unità termica",
+      "wind":"Unità di velocità del vento"
     },
-    "unknown":"Unknown",
-    "wind":"Wind Speed",
-    "chill":"Wind Chill",
-    "humidity":"Humidity"
+    "unknown":"Sconosciuto",
+    "wind":"Velocità del vento",
+    "chill":"Vento freddo",
+    "humidity":"Umidità"
   },
   "wolfram":{
-    "desc":"Inserts a small Wolfram|Alpha search box."
+    "desc":"Inserisce un piccolo modulo per cercare su Wolfram|Alpha."
   },
   "youtube":{
     "name":"YouTube",
-    "desc":"Displays either popular videos or videos from a specified user.",
+    "desc":"Mostra video popolari o di un utente specifico.",
     "settings":{
-      "format":"Format",
+      "format":"Formato",
       "format_options":{
-        "large":"One large",
-        "large_2":"One large, two small",
-        "large_4":"One large, four small",
-        "four":"Four small",
-        "six":"Six small"
+        "large":"Uno grande",
+        "large_2":"Uno grande, due piccoli",
+        "large_4":"Uno grande, quattro piccoli",
+        "four":"Quattro piccoli",
+        "six":"Sei piccoli"
       },
-      "from":"Show Videos From",
-      "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
-      "from_placeholder":"Leave blank to show Top Videos",
-      "open":"Open search results in"
+      "from":"Mostra video da",
+      "from_help":"Questo deve essere il nome <b>utente esatto<\/b> come mostrato nel URL della pagina in cui visualizzi il tuo profilo su YouTube.\n<br \/><br \/>\nQuesto valore non include mai spazzi.",
+      "from_placeholder":"Lascia vuoto per mostrare i video popolari",
+      "open":"Apri risultati in"
     },
-    "search":"Search YouTube",
-    "num_views":"views"
+    "search":"Cerca su YouTube",
+    "num_views":"Visualizzazioni"
   }
 }

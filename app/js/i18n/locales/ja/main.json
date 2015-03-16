@@ -2,7 +2,7 @@
   "lang_code":"ja",
   "language":"日本語",
   "newtabName":"iChrome 新しいタブ",
-  "extName":"iChrome - Chromeのための、あなた専用のホームページ",
+  "extName":"iChrome - あなただけのChromeを作りましょう",
   "extDescription":"Chromeのための最高のホームページ。最高のテーマ、たくさんのウィジェット、超高速、カスタマイズが自由自在！",
   "newtabDescription":"Chromeのための最高のホームページ。新しいタブにしましょう。見事なテーマ、多数のウィジェット、さらに超高速。めちゃくちゃにカスタマイズ できます！",
   "defaults":{
@@ -10,9 +10,9 @@
     "me":"自分"
   },
   "remove_widget":"削除",
-  "column_to_grid_warning":"あなたは、グリッドベースのレイアウトに列ベースのレイアウトからタブを変更するために選択。続行すると、あなたのすべての列を失うことになる。すべてが左上隅に移動される。\nあなたはこれをやってみたいあなたはよろしいですか？",
-  "grid_to_column_warning":"あなたは、カラムベースのレイアウトにグリッドベースのレイアウトからタブを変更するために選択。あなたがあなたのウィジェットポジショニングのすべてを失うことになる続ける場合。すべてが新しいタブの最初の列に移動されます。\nあなたはこれをやってみたいあなたはよろしいですか？",
-  "storage_warning":"あなたが利用可能な総同期化されたストレージ·スペースの90％以上を使用している。\nあなたが限界に達した場合、 iChromeは、データの同期を停止し、作業を停止することがあります。\nあなたは、カスタムテーマ、ノートとあなたが使用していないのto-doリストを削除することにより、使用スペースの量を縮小することができます。",
+  "column_to_grid_warning":"カラムレイアウトからタブレイアウトへの変更を選択しました。このまま続けると全てのカラムが消えて、全てが左上へと移動します。\nこのまま続けてもよろしいですか？",
+  "grid_to_column_warning":"タブをグリッドレイアウトからカラムレイアウトへ変更するよう選択しました。このまま続けると全てのウィジェットが消えて、全てが新しいタブの左端カラムへと移動します。\nこのまま続けてもよろしいですか？",
+  "storage_warning":"利用可能な同期ストレージのうち90%以上を使っています。\n限界に達するとiChromeはデータの同期を停止して動作も停止するかもしれません。\nカスタムテーマや使っていないto-doリストなどを削除することでスペースを圧縮することができます。",
   "toolbar":{
     "placeholder":"検索条件を入力してください",
     "placeholder_ok":"検索条件を入力するか、”OK,Google\"と言ってください。",
@@ -25,7 +25,7 @@
       "gmail":"Gmail",
       "drive":"ドライブ",
       "calendar":"カレンダー",
-      "more":"さらに"
+      "more":"もっと"
     }
   },
   "menu":{
@@ -63,19 +63,19 @@
     },
     "general":{
       "search":"検索エンジンURL",
-      "search_desc":"This is the URL that the search box will submit searches to. Put <b>%s<\/b> where the search query should go",
+      "search_desc":"これは、検索ボックスが検索を送信する先のURLです。検索クエリを入力する欄に <b>%s<\/b> を入力してください。",
       "profile":"プロフィール写真",
-      "profile_desc":"これは、ツールバーの右側に示した画像である。それはあなたのGoogleプロフィールから自動的に入力を取得",
+      "profile_desc":"これがツールバーの右に表示されるイメージです。Googleのプロフィールから自動的に表示されます。",
       "name":"名前",
       "name_desc":"これは、ツールバーの Google + リンクで使用されます。Google プロフィールから自動的に取得入力されます。",
       "voice":"音声検索",
       "voice_search":"音声検索を有効にする",
       "voice_ok":"”OK Google\"ホットワード検出を有効にする",
       "links":"ツールバーリンク",
-      "links_desc":"ここでは、リンクはツールバーの右側のセクションに表示されている選択することができます。",
+      "links_desc":"ここではツールバーの右側セクションにどのリンクを表示させるかを選ぶことができます。",
       "links_items":{
-        "plus":"グーグルプラス",
-        "gmail":"ジーメール",
+        "plus":"Google+",
+        "gmail":"Gmail",
         "apps":"Appsメニュー",
         "link1":"カスタムリンク1",
         "link2":"カスタムリンク2",
@@ -138,12 +138,12 @@
       "backup_desc":"<b>バックアップ:<\/b>バックアップ ボタンをクリックし、以下のフィールドに表示されるテキストをコピーします。 <br\/> <b>復元する:<\/b> 復元ボタンをクリックして保存したテキストを貼り付けます。",
       "backup_backup":"バックアップ",
       "backup_restore":"復元",
-      "restore_error":"エラーが提供されたデータを解析しようとして、必ずバックアップした正確なテキストを入力してくださいが発生しました。",
-      "restore_confirm":"あなたはこれをしたい、本当に確か、実際にある？\nこれは、すべてのローカルおよび同期されたデータを上書きします、バックアップおよびこれを元に戻す方法はありません。あなたはこのGoogleアカウントにログインしたすべてのコンピュータにあなたの全体の現在の設定が失われます。",
+      "restore_error":"入力されたデータを解析中にエラーが発生しました。 バックアップしたテキストを正確に入力してください。",
+      "restore_confirm":"本当に、本当にこれを実行したいですか？\nこれによりすべての同期されたローカルデータが上書きされ、バックアップも無ければ取り消すこともできません。このGoogleアカウントに関連付けられたすべてのコンピューターの全設定を失います。",
       "css":"カスタム CSS",
-      "css_desc":"You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.",
+      "css_desc":"CSS（定義については <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>を参照）を使ってiChromeのほとんどのビジュアル部分をカスタマイズするためにこのフィールドを使用することができます。<br \/><br \/>これは同期されるため、スペースを含み最大1,000文字まで入力できます。",
       "reset":"iChromeを初期化する",
-      "reset_confirm":"あなたが目クロームをリセットしたい本当によろしいですか？\nこれは、すべてのローカルおよび同期されたデータが消去されます、バックアップおよびこれを元に戻す方法はありません。あなたはこのGoogleアカウントにログインしたすべてのコンピュータにあなたの全体の現在の設定が失われます。"
+      "reset_confirm":"iChromeを本当にリセットしますか？\nこれによりすべての同期されたローカルデータが消え、バックアップも無ければ取り消すこともできません。このGoogleアカウントに関連付けられたすべてのコンピューターの全設定を失います。"
     }
   },
   "store":{
@@ -181,7 +181,7 @@
           "hide":"隠す"
         },
         "account":"アカウントID",
-        "account_help":"If you're signed into multiple accounts, this is the \"authuser=\" value.\n<br \/><br \/>\nFor example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"authuser\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
+        "account_help":"複数のアカウントにサインインしている場合、こちらが\"authuser=\" 値になります。\n<br \/><br \/>\n例えば、jsmith1@gmail.com と jsmith2@gmail.com という２つのアカウントにサインインしている場合、jsmith2@gmail.com は２つめのアカウントになるため \"authuser\" の値は1 になります（ゼロから数えるため）。",
         "account_placeholder":"Your \"authuser=\" value",
         "on":"ON",
         "off":"OFF"
@@ -205,13 +205,13 @@
     "categories":"カテゴリ",
     "cached":"このテーマがキャッシュされ、オフラインで使用可能。",
     "random":"このテーマはページを読み込むたびにランダムなイメージを表示します。",
-    "random_daily":"このテーマは、画像は毎日ランダムに選択表示され",
-    "sunrise_sunset":"このテーマは、一日の時間に基づいて画像を表示する",
-    "feed":"このテーマは、外部フィードから毎日選択した画像を表示する",
-    "delete_confirm":"あなたはこのテーマを削除したいと思い、あなたが本当によろしいですか？\nこのアクションは不可逆的である。全体テーマは完全に失われます。",
-    "delete_error":"An error occurred while trying to delete the theme.  Please try again later.",
+    "random_daily":"このテーマは毎日ランダムに選ばれたイメージを表示します。",
+    "sunrise_sunset":"このテーマはその日の時間によってイメージを表示します。",
+    "feed":"このテーマは毎日外部フィードから選ばれたイメージを表示します。",
+    "delete_confirm":"このテーマを削除しますか？\nこのアクションは取り消せません。すべてのテーマが完全に消えます。",
+    "delete_error":"テーマを削除しようとしてエラーが発生しました。もう一度やり直してください。",
     "feed_fetching":"フィードを取得しています。しばらくお待ちください。",
-    "feed_error":"Something went wrong while trying to fetch the feed.  Please try again later.",
+    "feed_error":"フィードの取得に失敗しました。もう一度やり直してください。",
     "caching":"読み込み中です。しばらくお待ちください。",
     "cache_status":"%s 中 %s の画像がキャッシュされました",
     "cache_error":"テーマをキャッシュしようとしたときにエラーが発生しました。後でもう一度お試しください",
@@ -223,7 +223,7 @@
       "name_placeholder":"テーマ名を入力",
       "image":"画像 URL",
       "image_placeholder":"背景画像URLを入力してください",
-      "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy and paste the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
+      "image_help":"アップロードされた画像がコンピュータ間で <b>同期できません<\/b> でした。<br \/><br \/>もしあなたにとってこれが重要な場合は、<a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a> などのサービスへ画像をアップロードしてください。その後、左のフィールドに拡張子（.jpg 等）で終わるURLをコピー＆ペーストしてください。",
       "color":"背景色",
       "color_placeholder":"色を入力してください。",
       "position":"位置",
@@ -262,19 +262,19 @@
   "intro":{
     "slide1":{
       "title":"ようこそ、iChromeへ!",
-      "line1":"If you want iChrome as your start page, you'll need to set the URL of this page in your settings (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">instructions<\/a>).  Otherwise, if you want it as a new tab or both home and new tab pages, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
-      "newtab_line1":"If you want iChrome to only show when you start Chrome and not every time you open a new tab please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">the main iChrome extension<\/a> instead of this one.",
-      "line2":"This introduction is only 3 slides long and will give a quick overview of how to do basic things in iChrome.  When you're ready hit the next arrow at the right."
+      "line1":"iChrome をスタートページにしたい場合は、設定でそのURLをセット (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">手順<\/a>) します。または新しいタブで開く、もしくはホームとは別の新しいタブで開く場合は、<a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome 新しいタブ<\/a> をインストールしてください。",
+      "newtab_line1":"iChromeを新しいタブが開く度に開くのではなく、Chromeを最初に起動した時だけスタートページに表示する場合は、こちらではなく <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">メインiChrome エクステンション<\/a> をインストールしてください。",
+      "line2":"このイントロダクションの長さはスライド３枚ほどで、iChromeの基本操作の概要を説明します。準備ができたら、右側にある矢印を押してください。"
     },
     "slide2":{
       "title":"ウィジェット",
-      "line1":"Widgets are the core of iChrome.  You can configure and move them using the wrench and handle icons shown when hovering at the top right.  To remove one, start dragging it and drop it onto the red bar that appears.",
-      "line2":"New widgets can be added by clicking the Widgets item under the menu at the top right of the page (shown in the next slide)."
+      "line1":"ウィジェットはiChromeのコアです。右上にカーソルを合わせたときに表示されるレンチおよびハンドルアイコンを使って設定したり移動したりすることができます。削除するには、ドラッグして表示された赤いバーにドロップします。",
+      "line2":"ページの右上にあるメニュー（次のスライドで表示されます）の中にあるウィジェットアイテムをクリックすることで新しいウィジェットが追加できます。"
     },
     "slide3":{
       "title":"カスタマイズする",
-      "line1":"あなたは、右上のメニューからあなたがしたいと思う他にほとんど何も変更することができます。そこには、目クロームがどのように機能するか、あなたのページの見え方を設定し、新しいウィジェットを取得することができます。",
-      "line2":"あなたが行うことができます他のものがテーマと、自分のウィジェット、カスタムテーマを持つ各、個々のタブを作成したり、リンクがツールバーに示されているもののような最も小さいものを構成しています。"
+      "line1":"右上のメニューからほぼ何でもあなたが望む通りに設定を変更できます。ページの見た目やiChromeの動作を変更したり、新しいウィジェットを入手することができます。",
+      "line2":"その他できることの中には、それぞれ別々のテーマやウィジェットを持つ新しいタブを作ったり、カスタムテーマを変更したり、ツールバーに表示させるリンクを設定したりする等詳細な設定が可能です。"
     }
   }
 }

@@ -1,0 +1,280 @@
+{
+  "lang_code":"pl",
+  "language":"Polski",
+  "newtabName":"iChrome nowa karta",
+  "extName":"iChrome - Twoją stroną główną dla Chrome",
+  "extDescription":"NAJLEPSZA strona główna dla Chrome. Wspaniałe motywy, dziesiątki widżetów, błyskawicznie szybki, szalenie konfigurowalny!",
+  "newtabDescription":"NAJLEPSZA nowa karta dla Chrome. Wspaniałe motywy, dziesiątki widżetów, błyskawicznie szybki, szalenie konfigurowalny!",
+  "defaults":{
+    "tab":"Strona głóna",
+    "me":"Ja"
+  },
+  "remove_widget":"Usuń",
+  "column_to_grid_warning":"Wybrano zmianę z układu kolumn na siatkę. Jeśli zamierzasz kontynuować, stracisz położenie wszystkich widżetów i zostaną one umieszczone w prawym górnym rogu. Czy jesteś pewien że chcesz kontynuować?",
+  "grid_to_column_warning":"Wybrano zmianę z układu siatki na kolumny. Jeśli zamierzasz kontynuować, stracisz położenie wszystkich widżetów i zostaną one umieszczone w prawym górnym rogu. Czy jesteś pewien że chcesz kontynuować?",
+  "storage_warning":"Wykorzystałeś więcej niż 90% z całkowitej zsynchronizowanej przestrzeni dyskowej. Gdy już osiągniesz limit, iChrome przestanie synchronizować dane i może również przestać działać. Możesz zmniejszyć wykorzystanie powierzchni poprzez usuwanie niestandardowych tematów, notatek i list zadań które nie są używane.",
+  "toolbar":{
+    "placeholder":"Wpisz słowa kluczowe",
+    "placeholder_ok":"Wpisz słowa kluczowe lub powiedz \"OK, Google\"",
+    "apps":{
+      "search":"Szukaj",
+      "youtube":"YouTube",
+      "maps":"Mapy",
+      "play":"Play",
+      "news":"Nowości",
+      "gmail":"Gmail",
+      "drive":"Drive",
+      "calendar":"Kalendarz",
+      "more":"Więcej"
+    }
+  },
+  "menu":{
+    "settings":"Ustawienia",
+    "widgets":"Widżety",
+    "background":"Pokaż tło",
+    "editing":"Edytowanie",
+    "editing_enabled":"Aktywne",
+    "editing_disabled":"Nieaktywne",
+    "plus":"Google+",
+    "tabs":"Karty",
+    "footer":{
+      "support":"Pomoc",
+      "feedback":"Oceń",
+      "review":"Opinia",
+      "twitter":"Twitter",
+      "webstore":"Sklep",
+      "donate":"Darowizna",
+      "by":"Przez Avi Kohn"
+    }
+  },
+  "voice":{
+    "listening":"Słucham...",
+    "searching":"Wyszukiwanie: %s",
+    "missed":"Nie rozumiem. <a>Spróbuj ponownie<\/a>"
+  },
+  "settings":{
+    "save":"Zapisz i zamknij",
+    "new_tab":"Utwórz nową",
+    "labels":{
+      "general":"Podstawowe",
+      "visual":"Wygląd",
+      "specific":"Specyficzne dla kart",
+      "advanced":"Zaawansowane"
+    },
+    "general":{
+      "search":"Adres URL wyszukiwania",
+      "search_desc":"Jest to adres URL wyszukiwarki który użyje tekstu z pola wyszukiwarki. Umieść <b>%s<\/b> w miejsce gdzie parametry wyszukiwania mają się znaleźć",
+      "profile":"Zdjęcie profilowe",
+      "profile_desc":"Jest to obrazek widoczny w prawym górnym rogu paska narzędzi. Zostanie automatycznie zgrany z Twoim profilem Google",
+      "name":"Imię",
+      "name_desc":"Jest to tytuł linku dla Google+ widoczna na pasku narzędzi. Zostanie automatycznie zgrana z Twoim profilem Google",
+      "voice":"Wyszukiwarka głosowa",
+      "voice_search":"Włącz wyszukiwanie głosowe",
+      "voice_ok":"Włącz detekcje słów \"OK Google\"",
+      "links":"Linki w pasku narzędzi",
+      "links_desc":"Tutaj możesz wybrać, które linki będą wyświetlane w prawej górnej części paska narzędzi:",
+      "links_items":{
+        "plus":"Google+",
+        "gmail":"Gmail",
+        "apps":"Menu aplikacji",
+        "link1":"Link niestandardowy 1",
+        "link2":"Link niestandardowy 2",
+        "link3":"Link niestandardowy 3",
+        "text_holder":"Tekst linku",
+        "link_holder":"Adres URL linku, przykładowo http:\/\/www.google.com\/"
+      },
+      "guide":"Przewodnik instalacji",
+      "guide_desc":"Pokaż ponownie przewodnik który został wyświetlony gdy pierwszy zainstalowano iChrome"
+    },
+    "visual":{
+      "layout":"Układ",
+      "layout_options":{
+        "1_fixed":"Jedna kolumna, stała szerokość",
+        "1_fluid":"Jedna kolumna, płynna szerokość",
+        "2_fixed":"Dwie kolumny, stała szerokość",
+        "2_fluid":"Dwie kolumny, płynna szerokość",
+        "3_fixed":"Trzy kolumny, stała szerokość",
+        "3_fluid":"Trzy kolumny, płynna szerokość",
+        "4_fixed":"Cztery kolumny, stała szerokość",
+        "4_fluid":"Cztery kolumny, płynna szerokość",
+        "5_fixed":"Pięć kolumn, stała szerokość",
+        "5_fluid":"Pięć kolumn, płynna szerokość",
+        "grid":"Na bazie siatki, można dostosować szerokość"
+      },
+      "theme":"Domyślny motyw",
+      "theme_placeholder":"Motyw #%s",
+      "theme_select":"Wybierz motyw",
+      "align":"Wyrównanie",
+      "align_desc":"To ustawienie zmieni wyrównanie widżetów w kolumnach",
+      "align_labels":{
+        "left":"Lewe",
+        "center":"Środek",
+        "right":"Prawe"
+      },
+      "logo":"Logo URL",
+      "logo_desc":"Jest to obrazek widoczny w lewym górnym rogu paska narzędzi. Wartością domyślną jest <b>\/images\/logo.svg<\/b>",
+      "toolbar":"Styl paska narzędzi",
+      "toolbar_desc":"Ta opcja kontroluje styl paska narzędzi. Może pojawiać się normalnie lub jako przycisk",
+      "toolbar_normal":"Domyślny",
+      "toolbar_button":"Przycisk",
+      "animation":"Animacja",
+      "animation_desc":"Ta opcja służy do włączenia lub wyłączenia animacji slide-in gdy uruchomisz stronę",
+      "animation_label":"Włącz animację"
+    },
+    "specific":{
+      "name":"Nazwa karty",
+      "default_name":"Nowa karta",
+      "delete":"Usuń kartę",
+      "delete_disallowed":"Nie możesz usunąć podstawowej karty.",
+      "delete_confirm":"Czy na pewno chcesz usunąć tę kartę? Ta akcja jest nieodwracalna, wszystkie dane z wszystkich widżetów w na tej karcie zostaną trwale utracone.",
+      "default":"Ustaw jako domyślną"
+    },
+    "advanced":{
+      "background":"Tło widżetu",
+      "background_desc":"Kliknij próbkę by wybrać kolor",
+      "search":"Zachowanie wyszukiwarki",
+      "search_label":"Wyniki wyszukiwania otwórz w nowej karcie",
+      "backup":"Kopia zapasowa \/ przywracanie",
+      "backup_desc":"<b>Tworzenie kopii zapasowej:<\/b> Kliknij przycisk Kopia Zapasowa i skopiuj text który pojawi się w polu poniżej. <br \/><b>Przywracanie kopii zapasowej:<\/b> Wklej tekst który zapisałeś bądź skopiowany z powyższego pola i kliknij Przywróć.",
+      "backup_backup":"Kopia zapasowa",
+      "backup_restore":"Przywróć",
+      "restore_error":"Wystąpił błąd podczas analizy dostarczonych danych, proszę upewnij się że wprowadzone dane są DOKŁADNIE takie same jak utworzone przez przycisk kopii zapasowej.",
+      "restore_confirm":"Czy naprawdę chcesz to zrobić? Spowoduje to nadpisanie wszystkich lokalnych i zsynchronizowanych ustawień, nie ma kopii zapasowej ani możliwości by to cofnąć. Stracisz CAŁĄ aktualną konfigurację na wszystkich komputerach zalogowanych do tego samego konta Google.",
+      "css":"Niestandardowy CSS",
+      "css_desc":"Możesz użyć tego pola aby spersonalizować prawie każdą wizualną część iChrome używając CSS (dla definicji zobacz <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Ponieważ te pole zostanie zsynchronizowane, można wprowadzić jedynie 1000 znaków, łącznie z spacją.",
+      "reset":"Zresetuj iChrome",
+      "reset_confirm":"Czy naprawdę chcesz zresetować iChrome? Spowoduje to nadpisanie wszystkich lokalnych i zsynchronizowanych danych, nie ma kopii zapasowej ani możliwości by to cofnąć. Stracisz CAŁĄ aktualną konfigurację na wszystkich komputerach zalogowanych do tego samego konta Google."
+    }
+  },
+  "store":{
+    "installation":"Instalacja",
+    "description":"Opis",
+    "preview":"Podgląd",
+    "instructions":"Przeciągnij i upuść na stronę główną w dowolnej wielkości"
+  },
+  "widgets":{
+    "sizes":{
+      "tiny":"Malutki",
+      "small":"Mały",
+      "medium":"Średni",
+      "large":"Duży",
+      "variable":"Zmienna"
+    },
+    "settings":{
+      "title":"Ustawienia widżetu",
+      "save":"Zapisz",
+      "size":"Rozmiar widżetu"
+    },
+    "delete_confirm":"Czy naprawdę chcesz usunąć ten widżet? Spowoduje to usunięcie wszystkich danych z tego widżetu. Ta akcja jest nieodwracalna.",
+    "shared":{
+      "settings":{
+        "title":"Tytuł widżetu",
+        "title_placeholder":"Wprowadź tytuł widżetu lub pozostaw puste pole aby ukryć",
+        "height":"Wysokość widżetu",
+        "open_options":{
+          "current":"Bieżącej karcie",
+          "blank":"Nowej karcie"
+        },
+        "footer_link":"Link w stopce",
+        "footer_link_options":{
+          "show":"Pokaż",
+          "hide":"Ukryj"
+        },
+        "account":"ID Klienta",
+        "account_help":"Jeśli posiadasz wiele kont, to jest to wartość \"authuser=\".\n<br \/><br \/>\nNa przykład, gdy zalogujesz się na dwa konta, example1@gmail.com i example2@gmail.com, wartość \"authuser\" dla example2@gmail.com wynosi 1, ponieważ to drugie konto na którym jesteś zalogowany\/zalogowana dla \"authuser\" przyjmuje wartość 0 (liczyć od 0 należy).",
+        "account_placeholder":"Twoja wartość \"authuser=\"",
+        "on":"Włącz",
+        "off":"Wyłącz"
+      }
+    }
+  },
+  "themes":{
+    "title":"Motywy",
+    "all":"Wszystko",
+    "custom":"Niestandardowy",
+    "create":"Stwórz motyw",
+    "url_or_upload":"lub",
+    "upload_image":"Prześlij obraz",
+    "edit_btn":"Edytuj",
+    "delete":"Usuń",
+    "use":"Użyj",
+    "preview":"Podgląd",
+    "author":"Przez",
+    "images":"%s obraz",
+    "resolution":"Rozdzielczość",
+    "categories":"Kategorie",
+    "cached":"Ten motyw jest zbuforowany i jest dostępny offline",
+    "random":"Ten motyw wyświetla losowy obraz przy każdym wczytaniu strony",
+    "random_daily":"Ten motyw wyświetla losowy obraz każdego dnia",
+    "sunrise_sunset":"Ten motyw wyświetla obraz w oparciu o porę dnia",
+    "feed":"Ten motyw wyświetla na ten dzień obraz z zewnętrznego źródła",
+    "delete_confirm":"Czy na pewno chcesz usunąć ten motyw? Spowoduje to całkowite usunięcie tego motywu. Ta akcja jest nieodwracalna, cały motyw zostanie trwale utracony.",
+    "delete_error":"Wystąpił błąd podczas usuwania motyw. Spróbuj ponownie później.",
+    "feed_fetching":"Proszę czekać, pobieranie z źródła obrazów...",
+    "feed_error":"Coś poszło nie tak podczas pobierania z źródła obrazów. Spróbuj ponownie później.",
+    "caching":"Proszę czekać, buforowanie motywu...",
+    "cache_status":"%s z %s obrazów zbuforowanych",
+    "cache_error":"Wystąpił błąd podczas buforowania tematu. Spróbuj ponownie później",
+    "edit":{
+      "title":"Edytuj motyw",
+      "create_title":"Stwórz motyw",
+      "name":"Nazwa motywu",
+      "default_name":"Nowy motyw",
+      "name_placeholder":"Wprowadź nazwę motywu",
+      "image":"Adres URL obrazu",
+      "image_placeholder":"Wprowadź adres URL obrazu tła",
+      "image_help":"Przesłane obrazy <b>nie mogą być zsynchronizowane<\/b> pomiędzy komputerami.<br \/><br \/>Jeśli jest to dla Ciebie ważne, proszę przesłać obrazy do usług takich jak <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Następnie skopiuj i wklej adres URL kończącego się z rozszerzeniem (np. jpg) i wklej go w polu po lewej stronie.",
+      "color":"Kolor awaryjny",
+      "color_placeholder":"Wprowadź nazwę koloru",
+      "position":"Pozycja",
+      "position_options":{
+        "center":"Środek",
+        "top_left":"Lewy górny",
+        "top_center":"Środkowy górny",
+        "top_right":"Prawy górny",
+        "bottom_left":"Dolny lewy",
+        "bottom_center":"Środkowy dolny",
+        "bottom_right":"Prawy dolny"
+      },
+      "scaling":"Skalowanie",
+      "scaling_options":{
+        "auto":"Automatyczny",
+        "width":"Pełna szerokość",
+        "height":"Pełna wysokość",
+        "none":"Brak skalowania (podgląd może być niepoprawny)"
+      },
+      "repeat":"Powtórz obraz",
+      "repeat_options":{
+        "none":"Nie powtarzaj obrazu",
+        "horizontal":"Powtórz poziomo",
+        "vertical":"Powtórz pionowo",
+        "both":"Powtórz pionowo i poziomo"
+      },
+      "attach":"Dołącz obraz do",
+      "attach_tab":"Karty",
+      "attach_window":"Okna",
+      "preview":"Podgląd",
+      "save":"Zapisz i zamknij",
+      "cache_error":"Wystąpił błąd podczas próby zbuforowania obrazu które dostarczyłeś, proszę sprawdzić ponownie adres URL.",
+      "upload_error":"Wystąpił błąd podczas przesyłania pliku który dostarczyłeś, proszę upewnić się, że jest to rozsądny rozmiar obrazu."
+    }
+  },
+  "intro":{
+    "slide1":{
+      "title":"Witaj w iChrome!",
+      "line1":"If you want iChrome as your start page, you'll need to set the URL of this page in your settings (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">instructions<\/a>).  Otherwise, if you want it as a new tab or both home and new tab pages, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
+      "newtab_line1":"If you want iChrome to only show when you start Chrome and not every time you open a new tab please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">the main iChrome extension<\/a> instead of this one.",
+      "line2":"Ten wstęp jest tylko 3 zjeżdżalnie długo i daje szybki przegląd jak zrobić podstawowe rzeczy w iChrome. Kiedy będziesz gotowy uderz w strzałkę po prawej."
+    },
+    "slide2":{
+      "title":"Widżety",
+      "line1":"Widgets are the core of iChrome.  You can configure and move them using the wrench and handle icons shown when hovering at the top right.  To remove one, start dragging it and drop it onto the red bar that appears.",
+      "line2":"New widgets can be added by clicking the Widgets item under the menu at the top right of the page (shown in the next slide)."
+    },
+    "slide3":{
+      "title":"Personalizacja",
+      "line1":"You can change almost anything else you'd want to via the menu at the top right.  There you can configure the way your page looks, how iChrome works and get new widgets.",
+      "line2":"Other things you can do include creating individual tabs, each with themes and widgets of their own, custom themes, or configuring the tiniest thing like what links are shown in the toolbar."
+    }
+  }
+}

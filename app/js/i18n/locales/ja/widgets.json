@@ -25,7 +25,7 @@
       "display":"見せる",
       "display_options":{
         "all":"すべてのApps",
-        "enabled":"有効なApps"
+        "enabled":"有効なAppsのみ表示"
       },
       "sort":"ソート",
       "sort_options":{
@@ -134,10 +134,10 @@
         "cards":"カード",
         "cards_columns":"カード （2 列）"
       },
-      "mark":"Mark an article as read when I",
+      "mark":"既読にするタイミング",
       "mark_options":{
-        "scroll":"Scroll past it or click it",
-        "click":"ここをクリック"
+        "scroll":"クリックしたときとスクロースして通り過ぎたとき",
+        "click":"クリックしたとき"
       },
       "sort":"並べ替え順序",
       "sort_options":{
@@ -167,20 +167,20 @@
   },
   "keep":{
     "name":"保持",
-    "desc":"Embeds Google Keep in a widget"
+    "desc":"埋め込み型 Google Keep ウィジェット"
   },
   "news":{
     "name":"ニュース",
-    "desc":"Displays the current top news by category and edition.",
+    "desc":"カテゴリと版によって現在のトップニュースを表示します。",
     "settings":{
       "articles":"表示される記事",
       "edition":"版",
-      "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
+      "edition_help":"表示したい版もしくはトピックがここに表示されない場合は、GoogleニュースフィードのURLを下記のカスタムフィードの欄に入力してください（詳細はフィールドのヘルプを御覧ください）。",
       "topic":"トピック",
       "topic_options":{
-        "top":"Top Stories",
+        "top":"トップ記事",
         "world":"世界",
-        "nation":"Nation",
+        "nation":"国内",
         "business":"ビジネス",
         "sports":"スポーツ",
         "technology":"テクノロジー",
@@ -190,16 +190,16 @@
         "spotlight":"スポットライト"
       },
       "feed":"カスタム フィード",
-      "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
-      "feed_placeholder":"Enter a custom RSS feed to fetch news from",
+      "feed_help":"すべてのGoogleニュースページの下に記載されているURLのフィードです。オレンジ色のRSSアイコンもしくはリンク文字のRSSを探してみてください。",
+      "feed_placeholder":"ニュースを取得するカスタム RSS フィードを入力してください。",
       "footer":"フッター URL",
-      "footer_placeholder":"Enter the URL that the \"More\" link should point to"
+      "footer_placeholder":"\"もっと表示\" のリンクを押すと表示されるURLを入力してください。"
     },
-    "more":"さらに"
+    "more":"もっと表示"
   },
   "notes":{
     "name":"メモ",
-    "desc":"Inserts a simple, editable, note.",
+    "desc":"シンプルで、編集可能なメモを挿入します。",
     "settings":{
       "color":"ノートの色",
       "color_options":{
@@ -216,10 +216,10 @@
   },
   "now":{
     "name":"Google Now",
-    "desc":"Displays cards from Google Now including flight status and package tracking.",
-    "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
+    "desc":"フライト情報と荷物の追跡を含めたGoogle Now のカードを表示します。",
+    "authorize":"何かを表示するには、まず iChrome にあなたのGoogle Nowカードを閲覧する許可を与える必要があります。",
     "authorize_btn":"承認",
-    "caught_up":"All caught up, nothing here.",
+    "caught_up":"すべて済んでいます、何もありません。",
     "no_title":"タイトルなし"
   },
   "plus":{
@@ -231,216 +231,216 @@
     "desc":"最近閉じたタブを示します",
     "settings":{
       "tabs":"表示されるタブ",
-      "open":"Open tabs in"
+      "open":"タブの開き方"
     },
-    "notabs":"Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed."
+    "notabs":"このウィジェットをインストールする前に閉じたタブは表示できません。これ以降に閉じた新しいタブは表示されます。"
   },
   "reddit":{
     "name":"Reddit",
-    "desc":"Displays the top items on Reddit for any given subreddit.",
+    "desc":"指定されたsubredditに対するReddit のトップアイテムを表示します。",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
-      "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
-      "sort":"並べ替え順序",
+      "subreddit_help":"Redditの<b>\/r\/<\/b>以降の部分にあるsubredditを入力してください。\n<br \/><br \/>\n例えば、Technology の場合: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>　ですので、<b>technology<\/b>を入力します。",
+      "subreddit_placeholder":"取得したリンクを表示するsubredditを入力します。(例： technology)",
+      "sort":"ソート順",
       "sort_options":{
         "hot":"ホット",
         "top":"トップ",
-        "new":"新しい",
-        "gilded":"Gilded",
-        "rising":"Rising",
-        "controversial":"Controversial"
+        "new":"新着",
+        "gilded":"ゴールド順",
+        "rising":"上昇中",
+        "controversial":"論争中"
       },
       "links":"表示されるリンク",
-      "click":"When I click a link show me",
+      "click":"クリックで表示",
       "click_options":{
         "link":"リンク",
         "comments":"コメント"
       }
     },
-    "more":"さらに"
+    "more":"もっと"
   },
   "rss":{
     "name":"RSS",
-    "desc":"Displays items from a RSS or Atom feed with optional images.",
+    "desc":"RSSもしくはAtomフィードからのアイテムをオプション画像とともに表示",
     "settings":{
       "link":"タイトルのリンク",
       "link_placeholder":"ウィジェットのタイトルのリンクを入力します。",
       "url":"フィードの URL",
       "url_placeholder":"表示される RSS フィードの URL",
-      "articles":"表示される記事",
+      "articles":"表示する記事数",
       "view":"図",
       "view_options":{
-        "images":"Image friendly",
+        "images":"大きく表示",
         "default":"初期設定"
       },
       "images":"画像",
       "descriptions":"説明"
     },
-    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
+    "feed_error":"フィードを取得しようとしてエラーが発生しました：%s。\nURLを再度チェックするか、ウィジェットの設定を確かめてください。"
   },
   "sports":{
     "name":"スポーツ",
-    "desc":"Displays scores and game information for selected leagues and\/or teams.",
+    "desc":"選択したリーグやチームのスコアや試合情報を表示します。",
     "settings":{
       "league":"リーグ",
       "games":"ゲーム",
       "team":"チーム",
       "teams":"チーム",
-      "unavailable":"When team games are unavailable",
+      "unavailable":"チームの試合情報が取得できない場合",
       "unavailable_options":{
         "other":"他のゲームを表示します。",
-        "none":"Show \"No Games\""
+        "none":"「試合はありません」を表示"
       }
     },
-    "error":"Something seems to have gone wrong",
+    "error":"何かが間違っているようです。",
     "unknown_error":"不明なエラー",
-    "watch_on":"Watch on: %s",
-    "no_games":"No Games Scheduled"
+    "watch_on":"%s で試合を見る",
+    "no_games":"試合の予定はありません。"
   },
   "stocks":{
-    "name":"Stocks",
-    "desc":"Displays current information for any given stock symbol.",
+    "name":"株",
+    "desc":"指定した銘柄の現況を表示します。",
     "settings":{
-      "symbols":"Stock Symbol(s), comma separated",
-      "symbols_placeholder":"e.g. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br \/><br \/>\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. For example, the Dow Jones index is <b>.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
+      "symbols":"銘柄をカンマで区切って指定",
+      "symbols_placeholder":"例）　NASDAQ:GOOG, INDEXNYSEGIS:NYA",
+      "symbols_help":"TICKER:EXCHANGE形式で表示したい銘柄があるはずです。\n<br \/><br \/>\n指数の指定には、<a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a> のようにTickersとExchangesを使用してください。 例えば、ダウ・ジョーンズ指数は <b>.DJI<\/b> で NYSE は <b>INDEXNYSEGIS:NYA<\/b>になります。"
     },
-    "as_of":"as of",
-    "exchange_time":"Exchange Time",
-    "open":"open",
+    "as_of":"時点",
+    "exchange_time":"取引時間",
+    "open":"開始値",
     "high":"高い",
     "low":"低い",
-    "volume":"volume"
+    "volume":"取引量"
   },
   "todo":{
-    "name":"To-do",
-    "desc":"Displays an interactive to-do list with important and completed items.",
-    "title":"To-do list",
+    "name":"To-Do",
+    "desc":"重要なことや完了したアイテムなど、インタラクティブなTo-Doリストを表示します。",
+    "title":"To-Doリスト",
     "settings":{
-      "color":"Font Color",
+      "color":"フォントの色",
       "color_options":{
-        "light":"Light",
-        "dark":"Dark"
+        "light":"明るい",
+        "dark":"暗い"
       },
-      "tags":"Tags",
-      "tags_placeholder":"Enter a tag name and press Enter"
+      "tags":"タグ",
+      "tags_placeholder":"タグを入力してEnterキーを押します"
     },
     "add":"項目を追加",
-    "none":"None",
+    "none":"未設定",
     "important":"重要"
   },
   "topsites":{
-    "name":"Top Sites",
-    "desc":"Displays your most visited\/top sites.",
+    "name":"トップサイト",
+    "desc":"最も訪問したサイト\/トップサイトを表示します。",
     "settings":{
-      "show":"Number of sites shown",
-      "open":"Open sites in"
+      "show":"表示されるサイトの数",
+      "open":"サイトの開き方"
     }
   },
   "traffic":{
     "name":"トラフィック",
-    "desc":"Displays the current time in current traffic to home or work.",
+    "desc":"自宅もしくは職場までの現在の交通状況でかかる時間を表示します。",
     "settings":{
-      "leave":"I leave home at",
-      "home":"Home Address",
-      "home_placeholder":"The destination that should be used after work",
-      "work":"Work Address",
-      "work_placeholder":"The destination that should be used before work",
-      "method":"Transit Method",
+      "leave":"自宅を出発する時間",
+      "home":"自宅住所",
+      "home_placeholder":"仕事の後に行く場所",
+      "work":"職場の住所",
+      "work_placeholder":"仕事の前にいる場所",
+      "method":"交通手段",
       "method_options":{
-        "driving":"Driving",
-        "walking":"Walking",
-        "transit":"Public Transit"
+        "driving":"車",
+        "walking":"徒歩",
+        "transit":"公共機関"
       }
     },
-    "to_home":"to home",
-    "to_work":"to work"
+    "to_home":"自宅へ",
+    "to_work":"職場へ"
   },
   "translate":{
     "name":"翻訳",
-    "desc":"Contains a small inline Google Translate textbox.",
-    "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
+    "desc":"小さなインラインのGoogle翻訳テキストボックスを設置します。",
+    "placeholder":"翻訳したい文章をここに入力し、下記の「翻訳」ボタンを押してください。",
     "button":"翻訳",
-    "untranslate":"Untranslate",
+    "untranslate":"原文に戻す",
     "auto":"言語を検出する (%s)",
-    "unknown":"Unknown",
-    "error":"Something went wrong while trying to translate that..."
+    "unknown":"訳文が見つかりません",
+    "error":"翻訳中に何かが起こり、完了できませんでした"
   },
   "twitter":{
     "name":"Twitter",
-    "desc":"Displays tweets from your home stream or a specified list.",
+    "desc":"ホーム画面のストリームもしくは特定のリストからのツイートを表示",
     "settings":{
-      "source":"Show Tweets from",
-      "show":"Tweets Shown"
+      "source":"表示するツイートの設定",
+      "show":"表示されているツイート"
     },
-    "authorize":"You'll need to authorize iChrome first",
-    "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
+    "authorize":"まずiChromeを承認してください。",
+    "authorize_msg":"あなたのツイッターアカウントからツイートを表示するためには、iChromeに許可を与える必要があります。",
     "authorize_btn":"承認",
-    "no_tweets":"There don't seem to be any tweets here...",
+    "no_tweets":"ツイートがありません…",
     "home":"ホーム",
-    "mentions":"Mentions",
-    "retweets":"Retweets of me",
-    "lists":"Lists",
-    "more":"さらに",
-    "reply":"Reply",
-    "retweet":"Retweet",
-    "favorite":"Favorite"
+    "mentions":"メンション",
+    "retweets":"自分のリツイート",
+    "lists":"リスト",
+    "more":"もっと",
+    "reply":"返信",
+    "retweet":"リツイート",
+    "favorite":"お気に入り"
   },
   "unread":{
     "name":"未読",
-    "desc":"Displays the current number of unread emails in your Gmail inbox.",
+    "desc":"Gmailの受信トレイにある未読メールの数を表示",
     "settings":{
-      "open":"When clicked open"
+      "open":"クリックすると開く"
     },
-    "unread_none":"unread emails",
-    "unread_one":"unread email",
-    "unread_many":"unread emails"
+    "unread_none":"未読メール",
+    "unread_one":"未読のメール",
+    "unread_many":"未読メール"
   },
   "voice":{
     "name":"Voice",
-    "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
-    "call":"Call from",
-    "text":"Text message from",
-    "missed":"missed in Voice",
-    "texts":"unread text messages",
-    "calls":"missed calls"
+    "desc":"Google Voiceアカウントの不在着信した電話やメッセージの数を表示",
+    "call":"発信元",
+    "text":"送信元",
+    "missed":"不在着信ボイス",
+    "texts":"未読メッセージ",
+    "calls":"不在着信"
   },
   "weather":{
     "name":"天気",
-    "desc":"Displays the current weather and a forecast for the next 4 days.",
+    "desc":"現在の天気とこの先４日間の予報を表示",
     "settings":{
-      "location":"Location(s)",
-      "location_placeholder":"Enter a location and press Enter",
-      "temperature":"Temperature Units",
-      "wind":"Wind Speed Units"
+      "location":"場所",
+      "location_placeholder":"場所を入力してEnterキーを押してください",
+      "temperature":"温度の単位",
+      "wind":"風の単位"
     },
-    "unknown":"Unknown",
-    "wind":"Wind Speed",
-    "chill":"Wind Chill",
+    "unknown":"不明",
+    "wind":"風速",
+    "chill":"体感温度",
     "humidity":"湿度"
   },
   "wolfram":{
-    "desc":"Inserts a small Wolfram|Alpha search box."
+    "desc":"Wolfram|Alpha の小さな検索ボックスを挿入します。"
   },
   "youtube":{
     "name":"YouTube",
-    "desc":"Displays either popular videos or videos from a specified user.",
+    "desc":"人気のビデオや特定ユーザーのビデオを表示します。",
     "settings":{
-      "format":"Format",
+      "format":"表示方法",
       "format_options":{
-        "large":"One large",
-        "large_2":"One large, two small",
-        "large_4":"One large, four small",
-        "four":"Four small",
-        "six":"Six small"
+        "large":"１つだけ大きく表示",
+        "large_2":"１つ大きく、２つ小さく表示",
+        "large_4":"１つ大きく、４つ小さく表示",
+        "four":"４つ小さく表示",
+        "six":"６つ小さく表示"
       },
-      "from":"Show Videos From",
-      "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
-      "from_placeholder":"Leave blank to show Top Videos",
-      "open":"Open search results in"
+      "from":"表示するビデオを指定",
+      "from_help":"プロフィール画面のURLにあるユーザー名と <b>全く同じ<\/b> ように指定する必要があります。\n<br \/><br \/>\nユーザー名にスペースは入りません。",
+      "from_placeholder":"トップビデオを表示する場合は空白のままにしてください。",
+      "open":"検索結果の表示方法"
     },
-    "search":"Search YouTube",
-    "num_views":"views"
+    "search":"YouTubeを検索",
+    "num_views":"閲覧数"
   }
 }

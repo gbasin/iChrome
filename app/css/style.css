@@ -739,9 +739,11 @@ input[type="radio"]:checked {
 .menu:lang(uk),
 .menu:lang(nl),
 .menu:lang(es),
+.menu:lang(pl),
 .menu-container.visible:lang(uk),
 .menu-container.visible:lang(nl),
-.menu-container.visible:lang(es) {
+.menu-container.visible:lang(es),
+.menu-container.visible:lang(pl) {
 	width: 230px;
 }
 
@@ -1954,6 +1956,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .modal.getting-started:lang(ru),
 .modal.getting-started:lang(sr),
 .modal.getting-started:lang(cs),
+.modal.getting-started:lang(it),
 .modal.getting-started:lang(nl) {
 	height: 620px;
 }
@@ -2746,19 +2749,22 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 .themes.create #image:lang(ru),
 .themes.create #image:lang(cs),
-.themes.create #image:lang(ja) {
+.themes.create #image:lang(ja),
+.themes.create #image:lang(tr) {
 	width: 54%;
 }
 
 .themes.create .upload:lang(ru),
 .themes.create .upload:lang(cs),
-.themes.create .upload:lang(ja) {
+.themes.create .upload:lang(ja),
+.themes.create .upload:lang(tr) {
 	width: 42%;
 	padding-left: 5px;
 }
 
 .themes.create .upload input:lang(cs),
-.themes.create .upload input:lang(ja) {
+.themes.create .upload input:lang(ja),
+.themes.create .upload input:lang(tr) {
 	width: calc(100% - 45px);
 }
 
