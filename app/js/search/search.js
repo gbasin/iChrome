@@ -1,7 +1,7 @@
 /**
  * This handles the searchbox
  */
-define(["backbone", "wikiwand", "storage/storage", "core/render", "core/analytics", "search/speech"], function(Backbone, Wikiwand, Storage, render, Track, Speech) {
+define(["backbone", "wikiwand", "storage/storage", "core/render", "core/analytics", "search/speech", "i18n/i18n"], function(Backbone, Wikiwand, Storage, render, Track, Speech, Translate) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -63,7 +63,9 @@ define(["backbone", "wikiwand", "storage/storage", "core/render", "core/analytic
 					key: "slkjgops",
 					autoFocus: true,
 					container: this.$(".wikiwand")[0],
-					noConnection: this.$("input.noConnection")[0]
+					noConnection: this.$("input.noConnection")[0],
+					target: this.model.get("stab") ? "_blank" : "_top",
+					placeholder: Translate(this.model.get("ok") ? "toolbar.placeholder_ok" : "toolbar.placeholder")
 				});
 
 				return this;

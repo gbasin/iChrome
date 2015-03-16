@@ -1,5 +1,5 @@
 <div class="wikiwand">
-	<input class="noConnection" placeholder="{{#ok}}{{i18n.toolbar.placeholder_ok}}{{/ok}}{{^ok}}{{i18n.toolbar.placeholder}}{{/ok}}" title="No internet connection" style="display: none;" />
+	<input class="noConnection" placeholder="{{#ok}}{{i18n.toolbar.placeholder_ok}}{{/ok}}{{^ok}}{{i18n.toolbar.placeholder}}{{/ok}}" style="display: none;" />
 </div>
 
 {{#voice}}<div class="speech"></div>{{/voice}}

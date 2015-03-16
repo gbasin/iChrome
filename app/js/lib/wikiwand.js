@@ -14,6 +14,9 @@ define(function() {
 		if (!params.container) {
 			return console.log("wikiwand search widget - no container specified");
 		}
+
+		params.target = params.target || "_blank";
+		params.placeholder = params.placeholder || "";
 		
 		params.cse = !!params.cse; // !! forces a boolean
 		params.autoFocus = !!params.autoFocus;
@@ -29,7 +32,8 @@ define(function() {
 		frame.style.opacity = 0;
 		frame.style.width = "100%";
 		frame.style.height = "100%";
-		frame.setAttribute("src", "http://www.wikiwand.com/searchWidget?key=" + params.key + "&autoFocus=" + params.autoFocus + "&cse=" + params.cse);
+		frame.setAttribute("src", "http://www.wikiwand.com/searchWidget?key=" + params.key + "&autoFocus=" + params.autoFocus +
+			"&cse=" + params.cse + "&placeholder=" + encodeURIComponent(params.placeholder) + "&target=" + params.target);
 
 		container.style.overflow = "hidden";
 		container.style.backgroundColor = "white";
