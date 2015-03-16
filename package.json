@@ -1,6 +1,6 @@
 {
   "name": "iChrome",
-  "version": "2.1.3",
+  "version": "2.1.9",
   "description": "The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
   "main": "app/js/app.js",
   "repository": {
