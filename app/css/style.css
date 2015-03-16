@@ -587,74 +587,15 @@ input[type="radio"]:checked {
 	background: #FBFBFB;
 }
 
-.toolbar .search .btn {
-	z-index: 9;
-	flex: 1 75px;
-	min-width: 75px;
-	max-width: 75px;
-	padding: 6px 30px;
-	vertical-align: top;
-	font-family: FontAwesome;
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-}
-
-.toolbar .search .suggestions {
-	left: 0;
-	right: 0;
-	top: 100%;
-	z-index: 2;
-	opacity: 0;
-	cursor: pointer;
-	font-size: 14px;
-	background: #FFF;
-	position: absolute;
-	visibility: hidden;
-	-webkit-transform: translateY(-10px);
-	box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.3);
-	transition: opacity .3s ease-in-out,
-				-webkit-transform .3s ease-in-out,
-				visibility 0s .3s;
-}
-
-.toolbar .search .suggestions.visible {
-	opacity: 1;
-	visibility: visible;
-	-webkit-transform: translateY(0px);
-	transition: opacity .3s ease-in-out,
-				-webkit-transform .3s ease-in-out,
-				visibility 0s 0s;
-}
-
-.toolbar .search .suggestions:before {
+.toolbar .search .wikiwand {
 	top: 0;
 	left: 0;
 	right: 0;
-	content: "";
-	height: 13px;
+	bottom: 0;
+	z-index: 2;
+	background: #FFF;
 	position: absolute;
-	pointer-events: none;
-	box-shadow: inset 0 2px 3px -1px rgba(0, 0, 0, .075);
-}
-
-.toolbar .search .suggestions div {
-	padding: 0 16px;
-	overflow: hidden;
-	line-height: 32px;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	font-family: Roboto, sans-serif;
-	border-left: 4px solid transparent;
-}
-
-.toolbar .search .suggestions div:hover,
-.toolbar .search .suggestions div.active {
-	background: #F5F5F5;
-	border-left-color: #888;
-}
-
-.toolbar .search .suggestions div.active {
-	border-left-color: #738FFE;
+	width: 100%!important;
 }
 
 .toolbar .search .speech {
