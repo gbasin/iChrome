@@ -304,7 +304,7 @@
     "settings":{
       "symbols":"股票代號，用逗號分隔",
       "symbols_placeholder":"例如 NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"這些都是你會喜歡的股票代號： 交換格式所示。< br \/ > < br \/ > 對於索引，請使用代號和交流關於 <a href=\"HTTPs:\/\/www.google.com\/finance\"target=\"_blank\"> 谷歌財經<\/a> 所示。例如，道鐘斯指數是 <b>。DJI<\/b> 和紐約證券交易所是 <b>INDEXNYSEGIS:NYA<\/b>。"
+      "symbols_help":"這些都是你會喜歡的股票代號： 交換格式所示。\n<br \/><br \/>\n對於索引，請使用代號和交流關於 <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\"> 谷歌財經<\/a> 所示。例如，道鐘斯指數是 <b>。DJI<\/b> 和紐約證券交易所是 <b>INDEXNYSEGIS:NYA<\/b>。"
     },
     "as_of":"作為",
     "exchange_time":"交換時間",

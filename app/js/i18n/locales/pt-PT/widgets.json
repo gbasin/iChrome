@@ -304,7 +304,7 @@
     "settings":{
       "symbols":"Símbolo da (s), separados por vírgula",
       "symbols_placeholder":"por exemplo NASDAQ: GOOG, INDEXNYSEGIS: NYA",
-      "symbols_help":"Estas são as ações que você gostaria que fossem mostradas em um ticker:. Formato de troca <br \/> <br \/> \nPara índices, use os tickers e intercâmbios, como mostrado em <a href = \"https:\/\/www.google.com \/ \"target =\" _ blank finanças \"> Google Finance <\/a> . Por exemplo, o índice Dow Jones é <b> .DJI <\/ b> e NYSE é <b> INDEXNYSEGIS: NYA <\/ b> .\n"
+      "symbols_help":"Estas são as ações que você gostaria que fossem mostradas em um ticker:. Formato de troca\n<br \/><br \/>\nPara índices, use os tickers e intercâmbios, como mostrado em  <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. Por exemplo, o índice Dow Jones é <b>.DJI<\/b> e NYSE é <b>INDEXNYSEGIS: NYA<\/b> ."
     },
     "as_of":"a partir de",
     "exchange_time":"Tempo de troca",

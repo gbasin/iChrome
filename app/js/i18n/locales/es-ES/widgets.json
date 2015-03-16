@@ -8,7 +8,7 @@
     "pagesvisit":"Páginas\/visita",
     "bouncerate":"Tasa de rebote",
     "completions":"Terminaciones",
-    "noprofile":"No parece que se ha seleccionado un perfil todavía!\n< br \/>< br \/>\nPruebe a seleccionar una vía el icono de llave inglesa en la parte superior derecha.",
+    "noprofile":"No parece que se ha seleccionado un perfil todavía!\n<br \/><br \/>\nPruebe a seleccionar una vía el icono de llave inglesa en la parte superior derecha.",
     "settings":{
       "profile":"PERFIL"
     }
@@ -78,7 +78,7 @@
       "events":"Eventos presentados"
     },
     "title":"Mi Calendario",
-    "noevents":"No parece que hay algún evento en el futuro cercano. < br \/ &gt; < br \/ &gt; pruebe a seleccionar un calendario mediante el icono de llave inglesa en la parte superior derecha."
+    "noevents":"No parece que hay algún evento en el futuro cercano. \n<br \/><br \/>\npruebe a seleccionar un calendario mediante el icono de llave inglesa en la parte superior derecha."
   },
   "clock":{
     "name":"Fecha & Hora",
@@ -240,7 +240,7 @@
     "desc":"Muestra los elementos principales en Reddit para cualquier subreddit dado.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Introduzca cualquier subreddit por la parte más allá de <b>\/r\/\/r\/<\/b> cuando en Reddit. < br \/ &gt; < br \/ &gt; Por ejemplo, la Tecnología es: <a href=\"http:\/\/www.reddit.com\/r\/technology\"> http:\/\/www.reddit.com\/r\/technology<\/a>, por lo tanto, es necesario introducir <b>tecnología<\/b>",
+      "subreddit_help":"Introduzca cualquier subreddit por la parte más allá de <b>\/r\/<\/b> cuando en Reddit.\n<br \/><br \/>\nPor ejemplo, la Tecnología es: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, por lo tanto, es necesario introducir <b>tecnología<\/b>",
       "subreddit_placeholder":"Introduzca un subreddit para mostrar enlaces de. (es decir, tecnología)",
       "sort":"Orden de clasificación",
       "sort_options":{
@@ -304,7 +304,7 @@
     "settings":{
       "symbols":"Símbolos stock, separados por comas",
       "symbols_placeholder":"por ejemplo NASDAQ: GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"Estas son las acciones como se muestra en un formato TICKER: intercambio. < br \/ &gt; < br \/ &gt; Para índices, por favor use las bolsas y teletipos como se muestra en <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\"> Google Finance<\/a>. Por ejemplo, el índice Dow Jones es <b>.DJI<\/b> y NYSE es <b>INDEXNYSEGIS:NYA<\/b>."
+      "symbols_help":"Estas son las acciones como se muestra en un formato TICKER: intercambio.\n<br \/><br \/>\nPara índices, por favor use las bolsas y teletipos como se muestra en <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. Por ejemplo, el índice Dow Jones es <b>.DJI<\/b> y NYSE es <b>INDEXNYSEGIS:NYA<\/b>."
     },
     "as_of":"desde",
     "exchange_time":"Cambio de Tiempo",
@@ -436,7 +436,7 @@
         "six":"Seis pequeñas"
       },
       "from":"Mostrar Videos de",
-      "from_help":"Este debe ser un nombre de usuario <b>exactamente<\/b> como se muestra en la dirección URL de la página cuando estás viendo su perfil. < br \/ &gt; < br \/ &gt; este valor no incluye espacios.",
+      "from_help":"Este debe ser un nombre de usuario <b>exactamente<\/b> como se muestra en la dirección URL de la página cuando estás viendo su perfil.\n<br \/><br \/>\neste valor no incluye espacios.",
       "from_placeholder":"Deje en blanco para mostrar Videos Top",
       "open":"Resultados de búsqueda abierta"
     },

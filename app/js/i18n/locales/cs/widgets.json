@@ -43,7 +43,7 @@
     "desc":"Zobrazí vybrané a upravené záložky a další odkazy.",
     "settings":{
       "title_placeholder":"Zadejte název widgetu",
-      "layout":"Uspořádání",
+      "layout":"Rozložení",
       "layout_options":{
         "single":"Jeden sloupec",
         "double":"Dva sloupce"
@@ -190,8 +190,8 @@
         "spotlight":"Spotlight"
       },
       "feed":"Vlastní kanál",
-      "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
-      "feed_placeholder":"Enter a custom RSS feed to fetch news from",
+      "feed_help":"Toto je kanál odkayovaný adresou URL uvedenou v dolní části každé stránky na Google News, vyhledejte oranžovou RSS ikonu a odkaz, který říká \"RSS\"",
+      "feed_placeholder":"Zadejte vlastní RSS kanál pro načítání zpráv z",
       "footer":"URL zápatí",
       "footer_placeholder":"Zadejte URL, kam by mělo odkazovat tlačítko \"Více\""
     },
@@ -240,11 +240,11 @@
     "desc":"Zobrazí top položky na Reddit-u pro daný subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
-      "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
+      "subreddit_help":"Pokud používáte Reddit, na termín se odkazujte textem umístěným za <b>\/r\/<\/b>. < br \/><br \/>\nNapříklad termín Technology je na: <a href=\"http:\/\/www.reddit.com\/r\/technology\"> http:\/\/www.reddit.com\/r\/technology<\/a>, tedy zadáte <b>technology<\/b>",
+      "subreddit_placeholder":"Zadejte subreddit pro zobrazení odkazů. (například: technologie)",
       "sort":"Řadit podle",
       "sort_options":{
-        "hot":"Hot",
+        "hot":"Populární",
         "top":"Nejlepší",
         "new":"Nový",
         "gilded":"Gilded",
@@ -262,12 +262,12 @@
   },
   "rss":{
     "name":"RSS",
-    "desc":"Displays items from a RSS or Atom feed with optional images.",
+    "desc":"Zobrazí položky z RSS nebo Atom zdroje s volitelnými obrázky.",
     "settings":{
       "link":"Odkaz titulku",
       "link_placeholder":"Zadejte odkaz pro název widgetu",
       "url":"URL kanálu",
-      "url_placeholder":"The URL of the RSS feed to be displayed",
+      "url_placeholder":"URL kanálu RSS pro zobrazení",
       "articles":"Zobrazené články",
       "view":"Zobrazení",
       "view_options":{
@@ -281,13 +281,13 @@
   },
   "sports":{
     "name":"Sport",
-    "desc":"Displays scores and game information for selected leagues and\/or teams.",
+    "desc":"Zobrazí skóre a herní informace o vybraných soutěžích a nebo týmech.",
     "settings":{
       "league":"Liga",
       "games":"Hry zobrazeny",
       "team":"Tým",
       "teams":"Tým",
-      "unavailable":"When team games are unavailable",
+      "unavailable":"Když týmové hry nejsou k dispozici",
       "unavailable_options":{
         "other":"Zobrazit další hry",
         "none":"Zobrazit \"Žádné hry\""
@@ -300,17 +300,17 @@
   },
   "stocks":{
     "name":"Akcie",
-    "desc":"Displays current information for any given stock symbol.",
+    "desc":"Zobrazí aktuální informace o jakékoli zadané akcii.",
     "settings":{
       "symbols":"Burzovní symbol (symboly), oddělené čárkami",
       "symbols_placeholder":"například NASDAQ: GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br \/><br \/>\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. For example, the Dow Jones index is <b>.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
+      "symbols_help":"Toto jsou akcie, které chcete zobrazit v TICKER:EXCHANGE formátu.\n<br \/><br \/> \nPro indexy, použijte tickers a exchanges jak je uvedeno na <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. Například Dow Jonesův index <b>.DJI<\/b> a NYSE je <b>INDEXNYSEGIS:NYA<\/b>."
     },
     "as_of":"k",
-    "exchange_time":"Exchange Time",
-    "open":"open",
-    "high":"high",
-    "low":"low",
+    "exchange_time":"Čas výměny",
+    "open":"otevřeno",
+    "high":"Vysoká",
+    "low":"Nízká",
     "volume":"Množství"
   },
   "todo":{
@@ -320,7 +320,7 @@
     "settings":{
       "color":"Barva písma",
       "color_options":{
-        "light":"Light",
+        "light":"Slabé",
         "dark":"Tmavý"
       },
       "tags":"Štítky",
@@ -331,7 +331,7 @@
     "important":"Důležité"
   },
   "topsites":{
-    "name":"Top Sites",
+    "name":"Weby na nejvyšší úrovni",
     "desc":"Zobrazí vaše nejnavštěvovanější stránky.",
     "settings":{
       "show":"Počet zobrazovaných stránek",
@@ -340,7 +340,7 @@
   },
   "traffic":{
     "name":"Provoz",
-    "desc":"Displays the current time in current traffic to home or work.",
+    "desc":"Zobrazí aktuální čas v aktuálním provozu domů nebo do práce.",
     "settings":{
       "leave":"Opouším domov v",
       "home":"Adresa domů",
@@ -361,7 +361,7 @@
     "name":"Překladač",
     "desc":"Obsahuje malé textové pole Google Translate.",
     "placeholder":"Zadejte text, který chcete přeložit, poté klikněte na \"Přeložit\" níže.",
-    "button":"Překladač",
+    "button":"Přeložit",
     "untranslate":"Přeložit zpět",
     "auto":"Rozpoznat automaticky (%s)",
     "unknown":"Neznámý",
@@ -369,7 +369,7 @@
   },
   "twitter":{
     "name":"Twitter",
-    "desc":"Displays tweets from your home stream or a specified list.",
+    "desc":"Zobrazí tweety z vašeho domácího streamu a nebo určitého seznamu.",
     "settings":{
       "source":"Zobrazit Tweety od",
       "show":"Zobrazené Tweety"
@@ -380,7 +380,7 @@
     "no_tweets":"Nezdá se, že by zde byly nějaké tweety...",
     "home":"Domovská stránka",
     "mentions":"Citace",
-    "retweets":"Retweets of me",
+    "retweets":"Retweety o mě",
     "lists":"Seznamy",
     "more":"Více",
     "reply":"Odpovědět",
@@ -402,7 +402,7 @@
     "desc":"Zobrazí současný počet zmeškaných hovorů a zpráv na vašem účtu Google Voice.",
     "call":"Hovor od",
     "text":"Zpráva od",
-    "missed":"missed in Voice",
+    "missed":"zmeškaný ve Voice",
     "texts":"nepřečtené zprávy",
     "calls":"zmeškané hovory"
   },
@@ -417,7 +417,7 @@
     },
     "unknown":"Neznámý",
     "wind":"Rychlost větru",
-    "chill":"Wind Chill",
+    "chill":"Chladný vítr",
     "humidity":"Vlhkost"
   },
   "wolfram":{
@@ -436,8 +436,8 @@
         "six":"Šest malých"
       },
       "from":"Zobrazí videa z",
-      "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
-      "from_placeholder":"Leave blank to show Top Videos",
+      "from_help":"Toto musí být <b>přesné<\/b> uživatelské jméno, jak je uvedeno v URL stránky, když zobrazujete jejich profil.\n<br \/><br \/>\nTato hodnota nikdy obsahuje mezery.",
+      "from_placeholder":"Pro zobrazení top videí ponechejte prázdné",
       "open":"Otevřít výsledky vyhledávání v"
     },
     "search":"Prohledat YouTube",

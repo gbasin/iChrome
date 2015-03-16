@@ -11,6 +11,7 @@ require.config({
 		"lodash": "lib/lodash",
 		"moment": "lib/moment",
 		"jquery": "lib/jquery",
+		"wikiwand": "lib/wikiwand",
 		"oauth2": "../oauth2/oauth2",
 		"jquery.serializejson": "lib/jquery.serializejson",
 		"backbone.documentmodel": "lib/backbone.documentmodel",

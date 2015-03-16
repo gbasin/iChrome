@@ -22,7 +22,7 @@
         "tiles":"Tiles",
         "list":"List"
       },
-      "display":"Show",
+      "display":"দেখান",
       "display_options":{
         "all":"All apps",
         "enabled":"Only enabled apps"
@@ -56,7 +56,7 @@
       "title_placeholder":"Google",
       "url":"Bookmark URL",
       "url_placeholder":"http:\/\/www.google.com\/",
-      "save":"Save"
+      "save":"সংরক্ষণ"
     },
     "new_caption":"New",
     "new_bookmark":"Bookmark",
@@ -71,10 +71,10 @@
     "mismatch":"Mismatched parentheses"
   },
   "calendar":{
-    "name":"Calendar",
+    "name":"পঞ্জিকা",
     "desc":"Displays upcoming events from one or more of your Google calendars.",
     "settings":{
-      "calendar":"Calendar",
+      "calendar":"পঞ্জিকা",
       "events":"Events Shown"
     },
     "title":"My Calendar",
@@ -103,7 +103,7 @@
     "to_label":"to"
   },
   "drive":{
-    "name":"Drive",
+    "name":"ড্রাইভ",
     "desc":"Displays recently changed files from your Google Drive.",
     "settings":{
       "files_shown":"Number of Files Shown"
@@ -122,7 +122,7 @@
     "settings":{
       "source":"Show articles from",
       "source_feeds":"Feeds",
-      "show":"Show",
+      "show":"দেখান",
       "show_options":{
         "all":"All articles",
         "unread":"Only unread articles"
@@ -152,7 +152,7 @@
     "go_to_feedly":"Go To Feedly"
   },
   "gmail":{
-    "name":"Gmail",
+    "name":"জিমেইল",
     "desc":"Displays your Gmail inbox where you can manage your email."
   },
   "iframe":{
@@ -170,7 +170,7 @@
     "desc":"Embeds Google Keep in a widget"
   },
   "news":{
-    "name":"News",
+    "name":"সংবাদ",
     "desc":"Displays the current top news by category and edition.",
     "settings":{
       "articles":"Articles Shown",
@@ -195,7 +195,7 @@
       "footer":"Footer URL",
       "footer_placeholder":"Enter the URL that the \"More\" link should point to"
     },
-    "more":"More"
+    "more":"আরও"
   },
   "notes":{
     "name":"Notes",
@@ -258,7 +258,7 @@
         "comments":"The comments"
       }
     },
-    "more":"More"
+    "more":"আরও"
   },
   "rss":{
     "name":"RSS",
@@ -368,7 +368,7 @@
     "error":"Something went wrong while trying to translate that..."
   },
   "twitter":{
-    "name":"Twitter",
+    "name":"টুইটার",
     "desc":"Displays tweets from your home stream or a specified list.",
     "settings":{
       "source":"Show Tweets from",
@@ -382,7 +382,7 @@
     "mentions":"Mentions",
     "retweets":"Retweets of me",
     "lists":"Lists",
-    "more":"More",
+    "more":"আরও",
     "reply":"Reply",
     "retweet":"Retweet",
     "favorite":"Favorite"
@@ -424,7 +424,7 @@
     "desc":"Inserts a small Wolfram|Alpha search box."
   },
   "youtube":{
-    "name":"YouTube",
+    "name":"ইউটিউব",
     "desc":"Displays either popular videos or videos from a specified user.",
     "settings":{
       "format":"Format",

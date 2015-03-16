@@ -20,6 +20,7 @@ define(
 		"json!i18n/locales/it/main.json", "json!i18n/locales/it/widgets.json",
 		"json!i18n/locales/ja/main.json", "json!i18n/locales/ja/widgets.json",
 		"json!i18n/locales/nl/main.json", "json!i18n/locales/nl/widgets.json",
+		"json!i18n/locales/pl/main.json", "json!i18n/locales/pl/widgets.json",
 		"json!i18n/locales/pt-PT/main.json", "json!i18n/locales/pt-PT/widgets.json",
 		"json!i18n/locales/ru/main.json", "json!i18n/locales/ru/widgets.json",
 		"json!i18n/locales/sr/main.json", "json!i18n/locales/sr/widgets.json",

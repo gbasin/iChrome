@@ -1,106 +1,106 @@
 {
-  "lang_code":"uk-widgets",
+  "lang_code":"pl-widgets",
   "analytics":{
-    "name":"Аналітика",
-    "desc":"Відображення різноманітних показників з профілю Google Analytics.",
-    "sessions":"сесії",
-    "pageviews":"Переглядів сторінок",
-    "pagesvisit":"Сторінки\/відвідування",
-    "bouncerate":"Bounce Rate",
-    "completions":"Completions",
-    "noprofile":"Схоже, ви ще не вибрали профіль.\n<br \/><br \/>\nОберіть за натиснувши на значок гайкового ключа у верхньому правому кутку.",
+    "name":"Statystyki",
+    "desc":"Wyświetl różne metryki z profilu w usłudze Google Analytics.",
+    "sessions":"sesje",
+    "pageviews":"Odsłon",
+    "pagesvisit":"Strony\/odwiedziny",
+    "bouncerate":"Współczynnik odrzuceń",
+    "completions":"Zakończonych",
+    "noprofile":"Wygląda na to że nie wybrano profilu.\n<br \/><br \/>\nProszę wybrać jeden poprzez ikonę klucza w prawym górnym rogu.",
     "settings":{
-      "profile":"Профіль"
+      "profile":"Profil"
     }
   },
   "apps":{
-    "name":"Додатки",
-    "desc":"Відображає ваші інстальовані програми Google Chrome.",
+    "name":"Aplikacje",
+    "desc":"Wyświetla aktualnie zainstalowane aplikacje w Google Chrome.",
     "settings":{
-      "format":"Формат віджету",
+      "format":"Styl widżetu",
       "format_options":{
-        "tiles":"Tiles",
-        "list":"Список"
+        "tiles":"Kafelki",
+        "list":"Lista"
       },
-      "display":"Показати",
+      "display":"Pokaż",
       "display_options":{
-        "all":"Усі додатки",
-        "enabled":"Лише активні додатки"
+        "all":"Wszystkie aplikacje",
+        "enabled":"Tylko włączone aplikacje"
       },
-      "sort":"Упорядкувати",
+      "sort":"Sortowanie",
       "sort_options":{
         "id":"ID",
-        "alphabetically":"За алфавітом",
-        "offline":"Увімкнено офлайн",
-        "available":"Доступність"
+        "alphabetically":"Alfabetycznie",
+        "offline":"Włączono w trybie offline",
+        "available":"Dostępność"
       },
-      "open":"Відкривати додатки у"
+      "open":"Włącz aplikację w"
     },
-    "store_app":"Крамниця"
+    "store_app":"Sklep"
   },
   "bookmarks":{
-    "name":"Закладки",
-    "desc":"Displays selected and customized bookmarks, and other links.",
+    "name":"Zakładki",
+    "desc":"Wyświetl zaznaczone i dostosowane zakładki, a także inne linki.",
     "settings":{
-      "title_placeholder":"Enter a widget title",
-      "layout":"Layout",
+      "title_placeholder":"Wprowadź tytuł widżetu",
+      "layout":"Układ",
       "layout_options":{
-        "single":"Single column",
-        "double":"Double column"
+        "single":"Pojedyncza kolumna",
+        "double":"Podwójna kolumna"
       },
-      "open":"Open bookmarks in"
+      "open":"Otwórz zakładki w"
     },
     "edit":{
-      "dialog_title":"Edit Bookmark",
-      "title":"Bookmark Title",
+      "dialog_title":"Edytuj zakładkę",
+      "title":"Tytuł zakładki",
       "title_placeholder":"Google",
-      "url":"Bookmark URL",
+      "url":"Adres URL zakładki",
       "url_placeholder":"http:\/\/www.google.com\/",
-      "save":"Зберегти"
+      "save":"Zapisz"
     },
-    "new_caption":"Нова",
-    "new_bookmark":"Закладка",
-    "new_folder":"Тека",
-    "drop_link":"Drop link here"
+    "new_caption":"Nowy",
+    "new_bookmark":"Zakładka",
+    "new_folder":"Nowy folder",
+    "drop_link":"Upuść link tutaj"
   },
   "calc":{
-    "name":"Calculator",
-    "desc":"Displays a calculator with support for basic operators.",
-    "error":"Помилка!",
-    "infinity":"Нескінченно",
-    "mismatch":"Mismatched parentheses"
+    "name":"Kalkulator",
+    "desc":"Wyświetla kalkulator z obsługą podstawowych operatorów.",
+    "error":"Wystąpił błąd!",
+    "infinity":"Nieskończoność",
+    "mismatch":"Niedopasowane nawiasy"
   },
   "calendar":{
-    "name":"Календар",
-    "desc":"Displays upcoming events from one or more of your Google calendars.",
+    "name":"Kalendarz",
+    "desc":"Wyświetla nadchodzące zdarzenia z jednego lub więcej kalendarzy Google.",
     "settings":{
-      "calendar":"Календар",
-      "events":"Events Shown"
+      "calendar":"Kalendarz",
+      "events":"Pokaż wydarzenia"
     },
-    "title":"My Calendar",
+    "title":"Mój kalendarz",
     "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
   },
   "clock":{
-    "name":"Time & Date",
+    "name":"Data i czas",
     "desc":"Shows the current date and time. Optionally for a different timezone.",
     "settings":{
-      "timezone":"Time Zone",
-      "timezone_local":"Local",
-      "format":"Clock Format",
+      "timezone":"Strefa czasowa",
+      "timezone_local":"Lokalny",
+      "format":"Format zegara",
       "format_options":{
-        "ampm":"AM\/PM - Digital",
-        "24hour":"24 Hour - Digital",
-        "analog":"12 Hour - Analog",
-        "ampmseconds":"AM\/PM - Digital, No Seconds",
-        "24hourseconds":"24 Hour - Digital, No Seconds"
+        "ampm":"AM\/PM - cyfrowy",
+        "24hour":"24 godzinny - cyfrowy",
+        "analog":"12 godzinny - analogowy",
+        "ampmseconds":"AM\/PM - cyfrowy, bez sekund",
+        "24hourseconds":"24 godzinny - cyfrowy, bez sekund"
       }
     },
-    "title":"Clock"
+    "title":"Zegar"
   },
   "currency":{
-    "name":"Валюта",
+    "name":"Currency",
     "desc":"Let's you convert between any two of 169 currencies.",
-    "to_label":"to"
+    "to_label":"do"
   },
   "drive":{
     "name":"Drive",
@@ -108,9 +108,9 @@
     "settings":{
       "files_shown":"Number of Files Shown"
     },
-    "modified_by":"за",
+    "modified_by":"przez",
     "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
-    "authorize_btn":"Authorize"
+    "authorize_btn":"Autoryzuj"
   },
   "facebook":{
     "name":"Facebook",
@@ -120,57 +120,57 @@
     "name":"Feedly",
     "desc":"Displays articles from your Feedly account in a configurable format.",
     "settings":{
-      "source":"Show articles from",
-      "source_feeds":"Feeds",
-      "show":"Show",
+      "source":"Pokaż artykuły z",
+      "source_feeds":"Kanały RSS",
+      "show":"Pokaż",
       "show_options":{
-        "all":"All articles",
-        "unread":"Only unread articles"
+        "all":"Wszystkie artykuły",
+        "unread":"Tylko nieprzeczytane wiadomości"
       },
-      "layout":"Layout",
+      "layout":"Układ",
       "layout_options":{
-        "titles":"Titles only",
-        "magazine":"Magazine",
-        "cards":"Cards",
-        "cards_columns":"Cards (two columns)"
+        "titles":"Tylko tytuły",
+        "magazine":"Magazyn",
+        "cards":"Karty",
+        "cards_columns":"Karty (dwie kolumny)"
       },
-      "mark":"Mark an article as read when I",
+      "mark":"Zaznacz artykuł jako przeczytany gdy",
       "mark_options":{
         "scroll":"Scroll past it or click it",
         "click":"Just click it"
       },
-      "sort":"Sort Order",
+      "sort":"Kolejność sortowania",
       "sort_options":{
-        "newest":"Newest first",
-        "oldest":"Oldest first"
+        "newest":"Najmłodsze",
+        "oldest":"Najstarsze"
       }
     },
-    "all":"All",
+    "all":"Wszystko",
     "saved":"Saved for later",
-    "uncategorized":"Uncategorized",
-    "author":"за",
-    "go_to_feedly":"Go To Feedly"
+    "uncategorized":"Bez kategorii",
+    "author":"przez",
+    "go_to_feedly":"Przejdź do Feedly"
   },
   "gmail":{
     "name":"Gmail",
-    "desc":"Displays your Gmail inbox where you can manage your email."
+    "desc":"Wyświetla skrzynkę odbiorczą Gmail z której możesz zarządzać swoją pocztą elektroniczną."
   },
   "iframe":{
     "name":"iFrame",
-    "desc":"Displays a webpage of your choice within an iframe.",
+    "desc":"Wyświetla wybraną stronę internetową w iframe.",
     "settings":{
-      "url":"Frame URL",
-      "url_placeholder":"i.e. http:\/\/www.google.com\/",
-      "height":"Frame Height",
-      "padding":"Padding"
+      "url":"Adres URL ramki",
+      "url_placeholder":"np. http:\/\/www.google.com\/",
+      "height":"Wysokość ramki",
+      "padding":"Dopełnienie"
     }
   },
   "keep":{
     "name":"Keep",
-    "desc":"Embeds Google Keep in a widget"
+    "desc":"Osadza Google Keep w widżecie"
   },
   "news":{
-    "name":"Новини",
+    "name":"Nowości",
     "desc":"Displays the current top news by category and edition.",
     "settings":{
       "articles":"Articles Shown",
@@ -195,20 +195,20 @@
       "footer":"Footer URL",
       "footer_placeholder":"Enter the URL that the \"More\" link should point to"
     },
-    "more":"Більше"
+    "more":"Więcej"
   },
   "notes":{
     "name":"Notes",
     "desc":"Inserts a simple, editable, note.",
     "settings":{
-      "color":"Note Color",
+      "color":"Kolor notatki",
       "color_options":{
-        "yellow":"Yellow",
-        "orange":"Orange",
-        "red":"Red",
-        "blue":"Blue",
-        "green":"Green",
-        "white":"White"
+        "yellow":"Żółty",
+        "orange":"Pomarańczowy",
+        "red":"Czerwony",
+        "blue":"Niebieski",
+        "green":"Zielony",
+        "white":"Biały"
       },
       "font":"Font Face",
       "fontsize":"Font Size"
@@ -218,16 +218,16 @@
     "name":"Google Now",
     "desc":"Displays cards from Google Now including flight status and package tracking.",
     "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
-    "authorize_btn":"Authorize",
+    "authorize_btn":"Autoryzuj",
     "caught_up":"All caught up, nothing here.",
-    "no_title":"No Title"
+    "no_title":"Bez tytułu"
   },
   "plus":{
     "name":"Google+",
     "desc":"Embeds Google Plus in a widget"
   },
   "recentlyclosed":{
-    "name":"Recently Closed",
+    "name":"Niedawno zamknięte",
     "desc":"Shows your recently closed tabs",
     "settings":{
       "tabs":"Tabs Shown",
@@ -242,11 +242,11 @@
       "subreddit":"Subreddit",
       "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
       "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
-      "sort":"Sort Order",
+      "sort":"Kolejność sortowania",
       "sort_options":{
         "hot":"Hot",
         "top":"Top",
-        "new":"Нова",
+        "new":"Nowy",
         "gilded":"Gilded",
         "rising":"Rising",
         "controversial":"Controversial"
@@ -258,7 +258,7 @@
         "comments":"The comments"
       }
     },
-    "more":"Більше"
+    "more":"Więcej"
   },
   "rss":{
     "name":"RSS",
@@ -275,7 +275,7 @@
         "default":"Default"
       },
       "images":"Images",
-      "descriptions":"Descriptions"
+      "descriptions":"Opis"
     },
     "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
   },
@@ -309,12 +309,12 @@
     "as_of":"as of",
     "exchange_time":"Exchange Time",
     "open":"open",
-    "high":"high",
-    "low":"low",
+    "high":"wysokie",
+    "low":"niskie",
     "volume":"volume"
   },
   "todo":{
-    "name":"To-do",
+    "name":"Zadania do wykonania",
     "desc":"Displays an interactive to-do list with important and completed items.",
     "title":"To-do list",
     "settings":{
@@ -376,19 +376,19 @@
     },
     "authorize":"You'll need to authorize iChrome first",
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
-    "authorize_btn":"Authorize",
+    "authorize_btn":"Autoryzuj",
     "no_tweets":"There don't seem to be any tweets here...",
-    "home":"Додому",
+    "home":"Strona głóna",
     "mentions":"Mentions",
     "retweets":"Retweets of me",
-    "lists":"Lists",
-    "more":"Більше",
+    "lists":"Listy",
+    "more":"Więcej",
     "reply":"Reply",
     "retweet":"Retweet",
-    "favorite":"Favorite"
+    "favorite":"Ulubione"
   },
   "unread":{
-    "name":"Unread",
+    "name":"Nieprzeczytane",
     "desc":"Displays the current number of unread emails in your Gmail inbox.",
     "settings":{
       "open":"When clicked open"
@@ -398,9 +398,9 @@
     "unread_many":"unread emails"
   },
   "voice":{
-    "name":"Voice",
+    "name":"Głos",
     "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
-    "call":"Call from",
+    "call":"Zadzwoń z",
     "text":"Text message from",
     "missed":"missed in Voice",
     "texts":"unread text messages",
@@ -429,18 +429,18 @@
     "settings":{
       "format":"Format",
       "format_options":{
-        "large":"One large",
-        "large_2":"One large, two small",
-        "large_4":"One large, four small",
-        "four":"Four small",
-        "six":"Six small"
+        "large":"Jeden duży",
+        "large_2":"Jeden duży, dwa małe",
+        "large_4":"Jeden duży, cztery małe",
+        "four":"Cztery małe",
+        "six":"Sześć małych"
       },
       "from":"Show Videos From",
       "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
       "from_placeholder":"Leave blank to show Top Videos",
       "open":"Open search results in"
     },
-    "search":"Search YouTube",
+    "search":"Wyszukaj na YouTube",
     "num_views":"views"
   }
 }
