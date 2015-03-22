@@ -16,7 +16,7 @@ define([
 	"w/voice",		"w/weather",		"w/wolfram",
 	"w/youtube",	"w/recentlyclosed",
 
-	"lib/jquery.numberformatter", "lib/jquery.sortable", "oauth2"
+	"lib/jquery.numberformatter", "lib/jquery.sortable"
 ], function(_, Utils) {
 	var args = Array.prototype.slice.call(arguments, 2),
 		widgets = {};
