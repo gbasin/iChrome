@@ -1,11 +1,6 @@
 {
 	"content_scripts": [
 		{
-			"js": [ "oauth2/oauth2_inject.js" ],
-			"matches": [ "https://ichrome.uservoice.com/robots.txt*", "https://www.google.com/ichrome/robots.txt*", "https://developers.google.com/robots.txt*" ],
-			"run_at": "document_start"
-		},
-		{
 			"js": [ "inject/js/wunderlistfix.js" ],
 			"matches": [ "https://*.wunderlist.com/*", "http://*.wunderlist.com/*" ],
 			"run_at": "document_start",
@@ -29,7 +24,6 @@
 		}
 	],
 	"web_accessible_resources": [
-		"oauth2/oauth2.html",
 		"index.html"
 	],
 	"background": {

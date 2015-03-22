@@ -394,6 +394,59 @@ chrome.runtime.onInstalled.addListener(function(details) {
 		});
 	}
 	else if (details.reason == "update") {
+		var oAuthKeys = Object.keys(localStorage).filter(function(e) {
+			return e.indexOf("oauth2_") === 0;
+		});
+
+		if (oAuthKeys.length) {
+			var nAuth = {};
+
+			[
+				["google", "analytics"],
+				["google2", "calendar"],
+				["drive", "drive"],
+				["feedly", "feedly"],
+				["now", "now"]
+			].forEach(function(e, i) {
+				if (localStorage["oauth2_" + e[0]]) {
+					var parsed = JSON.parse(localStorage.["oauth2_" + e[0]]);
+
+					var converted = {
+						type: "Bearer"
+					};
+
+					Object.keys(parsed).forEach(function(e, i) {
+						switch (e) {
+							case "accessToken":
+								converted.token = parsed.accessToken;
+							break;
+							
+							case "refreshToken":
+								converted.refreshToken = parsed.refreshToken;
+							break;
+
+							case "accessTokenDate":
+								if (parsed.expiresIn) {
+									converted.expiry = parsed.accessTokenDate + (parsed.expiresIn * 1000);
+								}
+							break;
+						}
+					});
+
+					if (converted.token) {
+						nAuth[e[1]] = converted;
+					}
+				}
+			});
+
+			localStorage.oauth = JSON.stringify(nAuth);
+
+			oAuthKeys.forEach(function(e, i) {
+				delete localStorage[e];
+			});
+		}
+
+
 		// localStorage["translateRequest"] = "true";
 	}
 });

@@ -1,7 +1,7 @@
 /*
  * The Calendar widget.
  */
-define(["jquery", "moment", "oauth2"], function($, moment) {
+define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 	return {
 		id: 10,
 		size: 1,
@@ -103,36 +103,32 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 		},
 		oAuth: false,
 		setOAuth: function() {
-			this.oAuth = new OAuth2("google2", {
-				client_id: "559765430405-2710gl95r9js4c6m4q9nveijgjji50b8.apps.googleusercontent.com",
-				client_secret: "__API_KEY_calendar__",
-				api_scope: "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar"
+			this.oAuth = new OAuth({
+				name: "calendar",
+				id: "559765430405-2710gl95r9js4c6m4q9nveijgjji50b8.apps.googleusercontent.com",
+				secret: "__API_KEY_calendar__",
+				scope: "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar"
 			});
 		},
 		getCalendars: function(cb) {
 			if (!this.oAuth) this.setOAuth();
 
-			this.oAuth.authorize.call(this.oAuth, function() {
-				$.ajax({
-					type: "GET",
-					dataType: "json",
-					url: "https://www.googleapis.com/calendar/v3/users/me/calendarList/",
-					beforeSend: function(xhr) {
-						xhr.setRequestHeader("Authorization", "OAuth " + this.oAuth.getAccessToken());
-					}.bind(this),
-					success: function(d) {
-						if (!d || !d.items) return cb("error");
+			this.oAuth.ajax({
+				type: "GET",
+				dataType: "json",
+				url: "https://www.googleapis.com/calendar/v3/users/me/calendarList/",
+				success: function(d) {
+					if (!d || !d.items) return cb("error");
 
-						var calendars = {};
+					var calendars = {};
 
-						d.items.forEach(function(e, i) {
-							calendars[e.id] = e.summary;
-						});
+					d.items.forEach(function(e, i) {
+						calendars[e.id] = e.summary;
+					});
 
-						cb(calendars);
-					}
-				});
-			}.bind(this));
+					cb(calendars);
+				}
+			});
 		},
 		refresh: function() {
 			if (!this.oAuth) this.setOAuth();
@@ -149,11 +145,10 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 			}
 
 
-			this.oAuth.authorize.call(this.oAuth, function() {
+			this.oAuth.getToken(function(token) {
 				var that = this,
 					events = [],
 					multiple = this.config.calendars.length > 1,
-					token = this.oAuth.getAccessToken(),
 					params = {
 						maxResults: 10,
 						singleEvents: true,
@@ -170,7 +165,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 						data: params,
 						url: "https://www.googleapis.com/calendar/v3/calendars/" + encodeURIComponent(calendar) + "/events",
 						beforeSend: function(xhr) {
-							xhr.setRequestHeader("Authorization", "OAuth " + token);
+							xhr.setRequestHeader("Authorization", "Bearer " + token);
 						},
 						success: function(d) {
 							if (d && d.items) {

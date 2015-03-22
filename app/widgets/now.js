@@ -1,7 +1,7 @@
 /*
  * The Google Now widget.
  */
-define(["jquery", "oauth2"], function($) {
+define(["jquery", "oauth"], function($, OAuth) {
 	return {
 		id: 24,
 		size: 1,
@@ -102,9 +102,9 @@ define(["jquery", "oauth2"], function($) {
 					["134474773808-p13i3uvca6d48go3b5glhotlmpnuiee4.apps.googleusercontent.com", "__API_KEY_now.16__"],
 					["578831884662-5l9kintvanlqm8hnj0omkr2b3obav3pg.apps.googleusercontent.com", "__API_KEY_now.17__"],
 					["757729443264-8l5120ej7h7hr8g0u45m3a5trf61a3tb.apps.googleusercontent.com", "__API_KEY_now.18__"],
-					["318821747372-eia0n4v9itjdeo75r1vngkm6oeb89rrm.apps.googleusercontent.com", "__API_KEY_now.19__"],
+					["318821747372-eia0n4v9itjdeo75r1vngkm6oeb89rrm.apps.googleusercontent.com", "__API_KEY_now.19__"]
 				],
-				ls = localStorage.oauth2_now,
+				ls = localStorage.oauth,
 				key;
 
 			if (ls) {
@@ -117,123 +117,98 @@ define(["jquery", "oauth2"], function($) {
 				key = keys[Math.floor(Math.random() * keys.length)];
 			}
 
-			this.oAuth = new OAuth2("now", {
-				client_id: key[0],
-				client_secret: key[1],
-				api_scope: "https://www.googleapis.com/auth/googlenow"
-			}, function(tab) {
-				chrome.webRequest.onBeforeRequest.addListener(
-					function extract(info) {
-						var url = info.url,
-							params = "?",
-							index = url.indexOf(params);
-
-						if (index > -1) {
-							params = url.substring(index);
-						}
-
-						chrome.webRequest.onBeforeRequest.removeListener(extract);
-
-						chrome.tabs.update(info.tabId, {
-							url: chrome.extension.getURL("oauth2/oauth2.html") + params + "&from=" + encodeURIComponent(url)
-						});
-					},
-					{
-						urls: [ "http://ichro.me/auth/*" ]
-					},
-					["blocking", "requestBody"]
-				);
+			this.oAuth = new OAuth({
+				name: "now",
+				id: key[0],
+				secret: key[1],
+				redirectURL: "http://ichro.me/auth/now",
+				scope: "https://www.googleapis.com/auth/googlenow"
 			});
 		},
 		refresh: function() {
 			if (!this.oAuth) this.setOAuth();
 
-			if (!this.oAuth.getAccessToken()) {
+			if (!this.oAuth.hasToken()) {
 				return this.render("authorize");
 			}
 
 			var noTitle = this.utils.translate("no_title");
 
-			this.oAuth.authorize.call(this.oAuth, function() {
-				$.ajax({
-					type: "GET",
-					dataType: "json",
-					url: "https://www.googleapis.com/chromenow/v1/notifications",
-					beforeSend: function(xhr) {
-						xhr.setRequestHeader("Authorization", "OAuth " + this.oAuth.getAccessToken());
-					}.bind(this),
-					success: function(d) {
-						var cards = [];
+			this.oAuth.ajax({
+				type: "GET",
+				dataType: "json",
+				url: "https://www.googleapis.com/chromenow/v1/notifications",
+				success: function(d) {
+					var cards = [];
 
-						if (d && d.notifications) {
-							d.notifications.forEach(function(e, i) {
-								if (i > 15) return;
+					if (d && d.notifications) {
+						d.notifications.forEach(function(e, i) {
+							if (i > 15) return;
 
-								var card = {
-									index: cards.length,
-									id: e.notificationId,
-									cnId: e.chromeNotificationId,
-									duration: (e.dismissal && e.dismissal.duration) || 21000
-								};
+							var card = {
+								index: cards.length,
+								id: e.notificationId,
+								cnId: e.chromeNotificationId,
+								duration: (e.dismissal && e.dismissal.duration) || 21000
+							};
 
-								if (e.chromeNotificationOptions) {
-									var co = e.chromeNotificationOptions;
+							if (e.chromeNotificationOptions) {
+								var co = e.chromeNotificationOptions;
 
-									card.title = co.title || noTitle;
+								card.title = co.title || noTitle;
 
-									card.priority = co.priority || -1;
+								card.priority = co.priority || -1;
 
-									if (co.message) card.desc = co.message.replace(/\n/g, "  ");
+								if (co.message) card.desc = co.message.replace(/\n/g, "  ");
 
-									if (co.iconUrl) card.icon = co.iconUrl;
+								if (co.iconUrl) card.icon = co.iconUrl;
 
-									if (co.imageUrl && co.imageUrl.length < 100000) {
-										card.image = co.imageUrl;
-									}
-
-									if (co.isClickable && e.actionUrls && e.actionUrls.messageUrl) {
-										card.link = e.actionUrls.messageUrl;
-									}
-
-									if (co.buttons && e.actionUrls && e.actionUrls.buttonUrls &&
-										e.actionUrls.buttonUrls.length == co.buttons.length) {
-										card.buttons = [];
-
-										co.buttons.forEach(function(btn, i) {
-											var button = {
-												title: btn.title || noTitle,
-												link: e.actionUrls.buttonUrls[i] || "#"
-											};
-
-											if (btn.iconUrl) button.btnIcon = btn.iconUrl;
-
-											if (btn.title) card.buttons.push(button);
-										});
-
-										if (card.buttons.length) {
-											card.btns = true;
-										}
-									}
+								if (co.imageUrl && co.imageUrl.length < 100000) {
+									card.image = co.imageUrl;
 								}
 
-								cards.push(card);
-							});
+								if (co.isClickable && e.actionUrls && e.actionUrls.messageUrl) {
+									card.link = e.actionUrls.messageUrl;
+								}
 
-							cards.sort(function(a, b) {
-								return b.priority - a.priority;
-							});
-						}
+								if (co.buttons && e.actionUrls && e.actionUrls.buttonUrls &&
+									e.actionUrls.buttonUrls.length == co.buttons.length) {
+									card.buttons = [];
 
-						this.data = {
-							cards: cards
-						};
+									co.buttons.forEach(function(btn, i) {
+										var button = {
+											title: btn.title || noTitle,
+											link: e.actionUrls.buttonUrls[i] || "#"
+										};
 
-						this.render();
+										if (btn.iconUrl) button.btnIcon = btn.iconUrl;
 
-						this.utils.saveData(this.data);
-					}.bind(this)
-				});
-			}.bind(this));
+										if (btn.title) card.buttons.push(button);
+									});
+
+									if (card.buttons.length) {
+										card.btns = true;
+									}
+								}
+							}
+
+							cards.push(card);
+						});
+
+						cards.sort(function(a, b) {
+							return b.priority - a.priority;
+						});
+					}
+
+					this.data = {
+						cards: cards
+					};
+
+					this.render();
+
+					this.utils.saveData(this.data);
+				}.bind(this)
+			});
 		},
 		render: function(key) {
 			if (!this.oAuth) this.setOAuth();
@@ -244,7 +219,7 @@ define(["jquery", "oauth2"], function($) {
 				return this.elm.find(".authorize").on("click", function(e) {
 					e.preventDefault();
 
-					this.oAuth.authorize.call(this.oAuth, this.refresh.bind(this));
+					this.oAuth.getToken(this.refresh.bind(this));
 				}.bind(this));
 			}
 
@@ -265,29 +240,24 @@ define(["jquery", "oauth2"], function($) {
 
 				if (!card) return;
 
-				that.oAuth.authorize.call(that.oAuth, function() {
-					$.ajax({
-						type: "DELETE",
-						url: "https://www.googleapis.com/chromenow/v1/notifications/" + card.id + "?chromeNotificationId=" + encodeURIComponent(card.cnId) + "&age=29&duration=" + card.duration,
-						beforeSend: function(xhr) {
-							xhr.setRequestHeader("Authorization", "OAuth " + this.oAuth.getAccessToken());
-						}.bind(this),
-						success: function(d) {
-							this.data.cards.splice(this.data.cards.indexOf(card), 1);
-						
-							if (elm.hasClass("btns")) {
-								elm.next(".buttons").remove().end().remove();
-							}
-							else {
-								elm.remove();
-							}
+				that.oAuth.ajax({
+					type: "DELETE",
+					url: "https://www.googleapis.com/chromenow/v1/notifications/" + card.id + "?chromeNotificationId=" + encodeURIComponent(card.cnId) + "&age=29&duration=" + card.duration,
+					success: function(d) {
+						this.data.cards.splice(this.data.cards.indexOf(card), 1);
+					
+						if (elm.hasClass("btns")) {
+							elm.next(".buttons").remove().end().remove();
+						}
+						else {
+							elm.remove();
+						}
 
-							this.utils.saveData(this.data);
+						this.utils.saveData(this.data);
 
-							this.utils.render(this.data);
-						}.bind(this)
-					});
-				}.bind(that));
+						this.utils.render(this.data);
+					}.bind(that)
+				});
 			});
 
 			this.utils.render(this.data);

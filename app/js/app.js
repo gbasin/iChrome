@@ -8,11 +8,11 @@ require.config({
 		"text": "lib/text",
 		"json": "lib/json",
 		"hogan": "lib/hogan",
+		"oauth": "lib/oauth",
 		"lodash": "lib/lodash",
 		"moment": "lib/moment",
 		"jquery": "lib/jquery",
 		"wikiwand": "lib/wikiwand",
-		"oauth2": "../oauth2/oauth2",
 		"jquery.serializejson": "lib/jquery.serializejson",
 		"backbone.documentmodel": "lib/backbone.documentmodel",
 		"backbone.viewcollection": "lib/backbone.viewcollection"
