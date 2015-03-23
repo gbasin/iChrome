@@ -24,6 +24,15 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				options: "getCalendars"
 			},
 			{
+				type: "radio",
+				label: "i18n.settings.show",
+				nicename: "show",
+				options: {
+					all: "i18n.settings.show_options.all",
+					today: "i18n.settings.show_options.today"
+				}
+			},
+			{
 				type: "number",
 				nicename: "events",
 				label: "i18n.settings.events",
@@ -35,6 +44,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 			title: "i18n.title",
 			size: "variable",
 			events: 5,
+			show: "all",
 			calendars: []
 		},
 		data: {
@@ -106,7 +116,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 			this.oAuth = new OAuth({
 				name: "calendar",
 				id: "559765430405-2710gl95r9js4c6m4q9nveijgjji50b8.apps.googleusercontent.com",
-				secret: "__API_KEY_calendar__",
+				secret: "QLlFpcECWen5pm-7XWj-fMS3",
 				scope: "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar"
 			});
 		},
@@ -157,6 +167,10 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 						timeMin: moment().format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
 						fields: "summary,items(description,htmlLink,id,location,start,summary)"
 					};
+
+				if (that.config.show == "today") {
+					params.timeMax = moment().endOf("day").format("YYYY-MM-DDTHH:mm:ss.SSSZ");
+				}
 
 				var requests = this.config.calendars.map(function(calendar) {
 					return $.ajax({

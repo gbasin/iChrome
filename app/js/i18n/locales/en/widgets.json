@@ -98,7 +98,13 @@
 
 		"settings": {
 			"calendar": "Calendar",
-			"events": "Events Shown"
+			"events": "Events Shown",
+
+			"show": "Show events from",
+			"show_options": {
+				"all": "All time",
+				"today": "Today only"
+			}
 		},
 
 		"title": "My Calendar",
