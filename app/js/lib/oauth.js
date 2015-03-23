@@ -56,7 +56,7 @@ define(["jquery", "lodash"], function($, _) {
 			if (this.data.token) {
 				if (new Date().getTime() >= this.data.expiry) {
 					if (this.data.refreshToken) {
-						this.refreshToken(this.data, cb);
+						this.refreshToken(cb);
 					}
 					else if (!silent) {
 						this.startAuthFlow(cb);
