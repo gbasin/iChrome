@@ -45,13 +45,16 @@
 		"chrome://favicon/",
 		"webRequestBlocking"
 	],
+	"optional_permissions": [
+		"tabs",
+		"bookmarks"
+	],
 	"version": "2.1.9",
 	"manifest_version": 2,
 	"default_locale": "en",
 	"short_name": "iChrome",
 	"offline_enabled": true,
 	"name": "__MSG_extName__",
-	"optional_permissions": ["tabs"],
 	"minimum_chrome_version": "29.0",
 	"description": "__MSG_extDescription__",
 	"update_url": "http://clients2.google.com/service/update2/crx",

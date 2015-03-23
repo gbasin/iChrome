@@ -22,7 +22,9 @@ define(
 
 		var Model = Backbone.Model.extend({
 				initialize: function() {
-					var widgets = _.uniq(_.map(Widgets, function(widget) {
+					var widgets = _(Widgets).filter(function(widget) {
+						return !widget.unlisted;
+					}).map(function(widget) {
 						return {
 							id: widget.id,
 							order: widget.order,
@@ -30,7 +32,7 @@ define(
 							name: widget.name ? resolve(widget, widget.name) : translate(widget, "name"),
 							desc: widget.desc ? resolve(widget, widget.desc) : translate(widget, "desc")
 						};
-					}), "id").sort(function(a, b) {
+					}).uniq("id").value().sort(function(a, b) {
 						// sensitivity: "accent" ensures that accented characters differ
 						// while ignoring case and avoiding a toLocaleLowerCase() call
 						return a.name.localeCompare(b.name, "en", { sensitivity: "accent" });

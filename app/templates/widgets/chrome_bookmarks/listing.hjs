@@ -1,0 +1,20 @@
+{{#url}}
+	<a class="link" href="{{url}}{{#newTab}}" target="_blank{{/newTab}}">
+		<img class="favicon" src="chrome://favicon/{{url}}" />
+
+		<span class="title" title="{{title}}&#013;{{url}}">{{title}}</span>
+
+		<span class="date">{{date}}</span>
+	</a>
+{{/url}}
+{{^url}}
+	<div class="folder">
+		<span class="title">{{name}}</span>
+	</div>
+
+	<div class="folder-items">
+		{{#items}}
+			{{>listing}}
+		{{/items}}
+	</div>
+{{/url}}

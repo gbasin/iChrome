@@ -6,6 +6,7 @@ define(["jquery", "modals/modals"], function($, Modal) {
 		id: 16,
 		size: 2,
 		order: 12,
+		unlisted: true,
 		nicename: "bookmarks",
 		sizes: ["tiny", "variable"],
 		settings: [

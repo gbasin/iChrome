@@ -83,6 +83,19 @@
 		"drop_link": "Drop link here"
 	},
 
+	"chrome_bookmarks": {
+		"name": "Bookmarks",
+		"desc": "Displays your Chrome bookmarks, optionally from a specific folder.",
+
+		"settings": {
+			"title_placeholder": "Enter a widget title",
+
+			"from": "Show bookmarks from",
+
+			"open": "Open bookmarks in"
+		}
+	},
+
 	"calc": {
 		"name": "Calculator",
 		"desc": "Displays a calculator with support for basic operators.",

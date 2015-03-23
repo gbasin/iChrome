@@ -11,8 +11,6 @@ var templates = [
 		"settings/general",		"settings/visual",		"settings/advanced",
 		"settings/tab-specific","widget-settings.inputs",
 		
-		
-		// I plan on changing these to be dynamically read from the widget manifest later
 		"widgets.weather",				"widgets.weather.desc",
 		"widgets.stocks",				"widgets.stocks.desc",
 		"widgets.clock",				"widgets.clock.desc",
@@ -28,10 +26,11 @@ var templates = [
 		"widgets.notes",				"widgets.notes.desc",
 		"widgets.wolfram",				"widgets.wolfram.desc",
 		"widgets.sports",				"widgets.sports.desc",
-		"widgets.bookmarks",			"widgets.bookmarks.desc",	"widgets.bookmarks.listing",
+		"widgets.bookmarks",			"widgets.bookmarks.desc",			"widgets.bookmarks.listing",
+		"widgets.chrome_bookmarks",		"widgets.chrome_bookmarks.desc",	"widgets.chrome_bookmarks.listing",
 		"widgets.todo",					"widgets.todo.desc",
 		"widgets.reddit",				"widgets.reddit.desc",
-		"widgets.feedly",				"widgets.feedly.desc",		"widgets.feedly.articles",
+		"widgets.feedly",				"widgets.feedly.desc",				"widgets.feedly.articles",
 		"widgets.translate",			"widgets.translate.desc",
 		"widgets.currency",				"widgets.currency.desc",
 		"widgets.voice",				"widgets.voice.desc",
@@ -51,11 +50,11 @@ var templates = [
 templates.forEach(function(e, i) {
 	deps[i] = "text!/templates/";
 
-	if (/^widgets\.([a-z\-]*)\.(.*)$/.test(e)) {
-		deps[i] += e.replace(/^widgets\.([a-z\-]*)\.(.*)$/, "widgets/$1/$2");
+	if (/^widgets\.([a-z\-_]*)\.(.*)$/.test(e)) {
+		deps[i] += e.replace(/^widgets\.([a-z\-_]*)\.(.*)$/, "widgets/$1/$2");
 	}
 	else if (e.indexOf("widgets.") == 0) {
-		deps[i] += e.replace(/^widgets\.([a-z\-]*)$/, "widgets/$1/template");
+		deps[i] += e.replace(/^widgets\.([a-z\-_]*)$/, "widgets/$1/template");
 	}
 	else {
 		deps[i] += e;
