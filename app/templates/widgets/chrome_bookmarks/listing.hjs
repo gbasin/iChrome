@@ -10,6 +10,8 @@
 {{^url}}
 	<div class="folder">
 		<span class="title">{{name}}</span>
+
+		<span class="count">{{items.length}}</span>
 	</div>
 
 	<div class="folder-items">

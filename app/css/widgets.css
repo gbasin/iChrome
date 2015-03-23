@@ -2037,7 +2037,8 @@ body.no-edit .bookmarks .tools {
 	text-overflow: ellipsis;
 }
 
-.chrome_bookmarks .date {
+.chrome_bookmarks .date,
+.chrome_bookmarks .count {
 	color: #757575;
 	flex-shrink: 0;
 	font-size: 11px;
