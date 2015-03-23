@@ -156,11 +156,10 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 
 			this.oAuth.getToken(function(token) {
-				var that = this,
-					events = [],
+				var events = [],
 					multiple = this.config.calendars.length > 1,
 					params = {
-						maxResults: 10,
+						maxResults: this.config.events || 5,
 						singleEvents: true,
 						orderBy: "startTime",
 						timeZone: -(new Date().getTimezoneOffset() / 60),
@@ -168,7 +167,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 						fields: "summary,items(description,htmlLink,id,location,start,summary)"
 					};
 
-				if (that.config.show == "today") {
+				if (this.config.show == "today") {
 					params.timeMax = moment().endOf("day").format("YYYY-MM-DDTHH:mm:ss.SSSZ");
 				}
 
@@ -208,7 +207,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				$.when.apply($, requests).then(function() {
 					events = events.sort(function(a, b) {
 						return a.date - b.date;
-					}).slice(0, 10);
+					}).slice(0, this.config.events || 5);
 
 
 					this.data = {
