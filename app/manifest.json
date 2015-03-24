@@ -39,7 +39,6 @@
 		"topSites",
 		"http://*/",
 		"https://*/",
-		"management",
 		"webRequest",
 		"unlimitedStorage",
 		"chrome://favicon/",
@@ -47,7 +46,8 @@
 	],
 	"optional_permissions": [
 		"tabs",
-		"bookmarks"
+		"bookmarks",
+		"management"
 	],
 	"version": "2.1.9",
 	"manifest_version": 2,

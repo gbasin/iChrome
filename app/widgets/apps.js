@@ -8,6 +8,7 @@ define(["jquery"], function($) {
 		order: 25,
 		nicename: "apps",
 		sizes: ["variable"],
+		permissions: ["management"],
 		settings: [
 			{
 				type: "text",
@@ -65,7 +66,38 @@ define(["jquery"], function($) {
 		refresh: function() {
 			this.render();
 		},
-		render: function() {
+		render: function(demo) {
+			if (demo) {
+				return this.utils.render({
+					items: [
+						{
+							"name": this.utils.translate("store_app"),
+							"id": "ahfgeienlihckogmohjhadlkjgocpleb",
+							"thumb": "chrome://extension-icon/ahfgeienlihckogmohjhadlkjgocpleb/64/1",
+							"available": true
+						},
+						{
+							"name": "Google Drive",
+							"id": "apdfllckaahabafndbhieahigkjlhalf",
+							"thumb": "chrome://extension-icon/apdfllckaahabafndbhieahigkjlhalf/64/1",
+							"available": true
+						},
+						{
+							"name": "YouTube",
+							"id": "blpcfgokakmgnkcojhhkbfbldkacnbeo",
+							"thumb": "chrome://extension-icon/blpcfgokakmgnkcojhhkbfbldkacnbeo/64/1",
+							"available": true
+						},
+						{
+							"name": "Google Search",
+							"id": "coobgpohoikkiipiblmjeljniedjpjpf",
+							"thumb": "chrome://extension-icon/coobgpohoikkiipiblmjeljniedjpjpf/64/1",
+							"available": true
+						}
+					]
+				});
+			}
+
 			chrome.management.getAll(function(d) {
 				var list = d.filter(function(e) {
 						return e.type !== "extension" && e.type !== "theme";
