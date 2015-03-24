@@ -85,6 +85,8 @@ define(["jquery", "lodash", "moment"], function($, _, moment) {
 		 * @param   {Function}  cb  The callback
 		 */
 		getFolders: function(cb) {
+			if (!chrome.bookmarks) return;
+
 			chrome.bookmarks.getTree(function(d) {
 				var folders = _.reduce(d[0].children, function getFolders(res, e) {
 					if (e.children) {
@@ -108,6 +110,8 @@ define(["jquery", "lodash", "moment"], function($, _, moment) {
 
 
 		refresh: function() {
+			if (!chrome.bookmarks) return;
+
 			// Even though this is a Chrome API call it takes as long as a web request
 			// and therefore should be part of a refresh pattern for faster loading
 			chrome.bookmarks.getSubTree(this.config.from, function(d) {
@@ -154,11 +158,13 @@ define(["jquery", "lodash", "moment"], function($, _, moment) {
 
 				var render = this.render.bind(this, false);
 
-				chrome.bookmarks.onCreated.addListener(render);
-				chrome.bookmarks.onRemoved.addListener(render);
-				chrome.bookmarks.onChanged.addListener(render);
-				chrome.bookmarks.onMoved.addListener(render);
-				chrome.bookmarks.onChildrenReordered.addListener(render);
+				if (chrome.bookmarks) {
+					chrome.bookmarks.onCreated.addListener(render);
+					chrome.bookmarks.onRemoved.addListener(render);
+					chrome.bookmarks.onChanged.addListener(render);
+					chrome.bookmarks.onMoved.addListener(render);
+					chrome.bookmarks.onChildrenReordered.addListener(render);
+				}
 			}
 
 

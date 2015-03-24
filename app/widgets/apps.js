@@ -97,6 +97,9 @@ define(["jquery"], function($) {
 					]
 				});
 			}
+			else if (!chrome.management.getAll) {
+				return;
+			}
 
 			chrome.management.getAll(function(d) {
 				var list = d.filter(function(e) {
