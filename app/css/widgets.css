@@ -2274,6 +2274,254 @@ body.no-edit .bookmarks .tools {
 
 
 /*---------------------------------------------
+	/ Tasks
+*/
+.widget.tasks h2.header {
+	margin-bottom: 25px;
+}
+
+.tasks .authorize {
+	font-size: 14px;
+	padding: 10px 20px;
+	text-align: center;
+}
+
+.tasks button {
+	font-size: 13px;
+	background: none;
+	font-weight: 500;
+	border-radius: 1px;
+	text-transform: uppercase;
+	font-family: Roboto, sans-serif;
+	transition: all .2s cubic-bezier(.4, 0, .2, 1);
+}
+
+.tasks button:hover,
+.tasks button:focus {
+	background: rgba(153, 153, 153, .2);
+}
+
+.tasks button:active {
+	box-shadow: none;
+	background: rgba(153, 153, 153, .4);
+}
+
+.tasks .add {
+	opacity: 0;
+	color: #666;
+	float: right;
+	margin-top: -5px;
+	padding: 5px 10px;
+	margin-right: -5px;
+}
+
+.tasks:hover .add {
+	opacity: 1;
+}
+
+.tasks .items {
+	font-size: 0;
+	display: block;
+	margin: -5px -15px;
+}
+
+.tasks .item {
+	opacity: 1;
+	color: #444;
+	height: 38px; /* This is hardcoded so the height can be transitioned */
+	display: flex;
+	cursor: pointer;
+	font-size: 13px;
+	overflow: hidden;
+	line-height: 16px;
+	padding: 9px 15px;
+	padding-left: 12px;
+	position: relative;
+	align-items: center;
+	text-decoration: none;
+	font-family: Roboto, sans-serif;
+	border-left: 3px solid transparent;
+	transition: all .2s cubic-bezier(.4, 0, .2, 1),
+				opacity .15s cubic-bezier(.4, 0, .2, 1);
+}
+
+.tasks .item.transitioning {
+	opacity: 0;
+}
+
+.tasks .item.edit,
+.tasks .item:hover {
+	border-left-color: #1ABC9C;
+	background: rgba(0, 0, 0, .03);
+}
+
+.tasks .check {
+	margin: 1px;
+	width: 18px;
+	height: 18px;
+	flex-shrink: 0;
+	border-radius: 50%;
+	vertical-align: top;
+}
+
+/**
+ * This increases the checkbox's click target area to minimize
+ * the chance of user frustration from missing the box.
+ */
+.tasks .check:after {
+	top: -9px;
+	border: 0;
+	left: -15px;
+	right: -5px;
+	content: "";
+	width: auto;
+	height: auto;
+	bottom: -9px;
+	transform: none;
+	position: absolute;
+}
+
+.tasks .check:checked {
+	background: none;
+	box-shadow: none;
+}
+
+.tasks .check:checked:before {
+	top: -1px;
+	left: -1px;
+	right: -1px;
+	bottom: -1px;
+	position: absolute;
+	content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#1ABC9C" viewBox="0 0 20 20"><path d="M10,1.667c-4.604,0-8.333,3.729-8.333,8.333S5.396,18.333,10,18.333s8.333-3.729,8.333-8.333S14.604,1.667,10,1.667z M10,16.667c-3.683,0-6.667-2.984-6.667-6.667c0-3.683,2.983-6.667,6.667-6.667c3.683,0,6.667,2.983,6.667,6.667 C16.667,13.683,13.683,16.667,10,16.667z M15,7.933l-6.429,6.428l-1.428-1.428L5,10.789L6.429,9.36l2.143,2.144l5-5L15,7.933z" /></svg>');
+}
+
+.tasks .title {
+	flex-grow: 1;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 0 10px 0 8px;
+	text-overflow: ellipsis;
+	transition: color .25s cubic-bezier(.55, 0, .1, 1);
+}
+
+.tasks .check:checked + .title {
+	color: #888;
+}
+
+.tasks .title .strikethrough {
+	max-width: 100%;
+	overflow: hidden;
+	position: relative;
+	display: inline-block;
+	text-overflow: ellipsis;
+}
+
+.tasks .title .strikethrough:before {
+	left: 0;
+	top: 50%;
+	width: 0;
+	content: "";
+	position: absolute;
+	border-top: 1px solid #888;
+	transition: width .25s cubic-bezier(.55, 0, .1, 1);
+}
+
+.tasks .check:checked + .title .strikethrough:before {
+	width: 100%;
+}
+
+.tasks .due-date {
+	color: #757575;
+	flex-shrink: 0;
+	font-size: 11px;
+	font-family: Open Sans, sans-serif;
+}
+
+.tasks .due-date.due-today {
+	color: #2196F3;
+}
+
+.tasks .due-date.overdue {
+	color: #F44336;
+}
+
+/**
+ * This removes the need for a re-render when items are checked off
+ * by disabling the title (pointer-events) and date styling.
+ */
+.tasks .check:checked ~ .due-date {
+	color: #757575;
+	pointer-events: none;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Tasks / Edit
+*/
+.tasks .item.edit {
+	height: 154px; /* This is hardcoded so the height can be transitioned */
+	margin: 5px 0;
+	cursor: default;
+	flex-wrap: wrap;
+	padding-top: 12px;
+	background: initial;
+	box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .25);
+}
+
+.tasks .edit textarea,
+.tasks .edit input[type="text"] {
+	border-radius: 0;
+	padding: 4px 6px!important;
+	border-width: 0 0 1px 0!important;
+}
+
+.tasks .edit input.title[type="text"] {
+	font-size: inherit;
+	margin-right: 10px;
+	padding: 3px 6px!important;
+	flex-basis: calc(72% - 10px);
+}
+
+.tasks .edit .due-date {
+	flex-basis: 28%;
+}
+
+.tasks .edit textarea.notes {
+	height: 56px;
+	resize: none;
+	flex-basis: 100%;
+	font-size: inherit;
+	margin: 12px 0 10px;
+}
+
+.tasks .edit button.done {
+	color: #0FAD8E;
+	margin-left: auto;
+}
+
+.tasks .edit button.icon {
+	padding: 3px 5px;
+}
+
+.tasks .edit button.icon svg {
+	fill: #474747;
+	vertical-align: top;
+}
+
+.tasks .edit button.delete svg {
+	margin: 2px;
+	width: 20px;
+	height: 20px;
+}
+
+
+
+
+
+/*---------------------------------------------
 	/ Translate
 */
 .translate form {

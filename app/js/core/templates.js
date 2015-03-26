@@ -10,7 +10,7 @@ var templates = [
 		"settings",				"menu",					"settings/new-tab",
 		"settings/general",		"settings/visual",		"settings/advanced",
 		"settings/tab-specific","widget-settings.inputs",
-		
+
 		"widgets.weather",				"widgets.weather.desc",
 		"widgets.stocks",				"widgets.stocks.desc",
 		"widgets.clock",				"widgets.clock.desc",
@@ -26,6 +26,7 @@ var templates = [
 		"widgets.notes",				"widgets.notes.desc",
 		"widgets.wolfram",				"widgets.wolfram.desc",
 		"widgets.sports",				"widgets.sports.desc",
+		"widgets.tasks",				"widgets.tasks.desc",				"widgets.tasks.item",
 		"widgets.bookmarks",			"widgets.bookmarks.desc",			"widgets.bookmarks.listing",
 		"widgets.chrome_bookmarks",		"widgets.chrome_bookmarks.desc",	"widgets.chrome_bookmarks.listing",
 		"widgets.todo",					"widgets.todo.desc",

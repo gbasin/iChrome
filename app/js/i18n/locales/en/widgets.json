@@ -446,6 +446,33 @@
 		"important": "Important"
 	},
 
+	"tasks": {
+		"name": "Tasks",
+		"desc": "Displays an editable list of tasks from one of your Google Tasks lists.",
+
+		"title": "Tasks",
+
+		"settings": {
+			"list": "List"
+		},
+
+		"task_title": "Title",
+		"due_date": "Due date",
+		"notes": "Notes",
+
+		"add": "Add Item",
+
+		"delete_task": "Delete Task",
+		"move_up": "Move Up",
+		"move_down": "Move Down",
+		"done": "Done",
+
+		"due_today": "Due today",
+		"overdue": "Overdue",
+
+		"authorize": "You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
+	},
+
 	"topsites": {
 		"name": "Top Sites",
 		"desc": "Displays your most visited/top sites.",
