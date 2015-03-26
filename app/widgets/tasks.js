@@ -58,7 +58,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 			this.oAuth = new OAuth({
 				name: "tasks",
 				id: "559765430405-jtbjv5ivuc17nenpsl4dfk9r53a3q0hg.apps.googleusercontent.com",
-				secret: "uzvC025Z3R12syGZ52hFDyHx",
+				secret: "__API_KEY_tasks__",
 				scope: "https://www.googleapis.com/auth/tasks"
 			});
 		},
@@ -241,7 +241,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 			if (e.due) {
 				var date = moment(e.due);
 
-				if (date.diff(new Date(), "days") + 1 > 7) {
+				if (Math.abs(date.diff(new Date(), "days")) + 1 > 7) {
 					ret.due = date.format("MMMM Do");
 				}
 				else {
