@@ -409,7 +409,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 				["now", "now"]
 			].forEach(function(e, i) {
 				if (localStorage["oauth2_" + e[0]]) {
-					var parsed = JSON.parse(localStorage.["oauth2_" + e[0]]);
+					var parsed = JSON.parse(localStorage["oauth2_" + e[0]]);
 
 					var converted = {
 						type: "Bearer"
