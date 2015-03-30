@@ -2,12 +2,9 @@
 
 <div class="items">
 	{{#tabs}}
-		<a class="item" href="{{url}}{{#newTab}}" target="_blank{{/newTab}}">
+		<a class="item" href="{{url}}" data-id="{{id}}">
 			<img class="favicon" src="chrome://favicon/{{url}}" />
 			<span class="title">{{title}}</span>
 		</a>
-	{{/tabs}}
-	{{^tabs}}
-		<div class="item no-items">{{i18n.notabs}}</div>
 	{{/tabs}}
 </div>

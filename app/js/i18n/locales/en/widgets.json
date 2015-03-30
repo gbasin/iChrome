@@ -318,9 +318,7 @@
 		"settings": {
 			"tabs": "Tabs Shown",
 			"open": "Open tabs in"
-		},
-
-		"notabs": "Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed."
+		}
 	},
 
 	"reddit": {
