@@ -1,7 +1,7 @@
 /*
  * The Apps widget.
  */
-define(["jquery"], function($) {
+define(["jquery", "lodash"], function($, _) {
 	return {
 		id: 11,
 		size: 2,
@@ -63,9 +63,93 @@ define(["jquery"], function($) {
 			target: "_blank",
 			size: "variable"
 		},
+
+		syncData: {},
+
 		refresh: function() {
 			this.render();
 		},
+
+
+		/**
+		 * Gets, filters and sorts the listing of apps
+		 *
+		 * @api     private
+		 * @param   {Function}  cb
+		 */
+		getApps: function(cb) {
+			chrome.management.getAll(function(d) {
+				var list = d.filter(function(e) {
+						return e.type !== "extension" && e.type !== "theme";
+					}),
+					apps = [],
+					id = chrome.app.getDetails().id,
+					all = this.config.show == "all";
+
+				list.unshift({
+					enabled: true,
+					offlineEnabled: false,
+					id: "ahfgeienlihckogmohjhadlkjgocpleb",
+					shortName: this.utils.translate("store_app"),
+					appLaunchUrl: "https://chrome.google.com/webstore?utm_source=iChrome-apps-widget"
+				});
+
+				switch (this.config.sort) {
+					case "alpha":
+						list.sort(function(a, b) {
+							var c = a.shortName.toLowerCase(),
+								d = b.shortName.toLowerCase();
+
+							return c < d ? -1 : c > d;
+						});
+					break;
+					case "offline":
+						list.sort(function(a, b) {
+							return a.offlineEnabled;
+						});
+					break;
+					case "available":
+						list.sort(function(a, b) {
+							return ((!navigator.onLine && a.offlineEnabled) + a.enabled) - ((!navigator.onLine && b.offlineEnabled) + b.enabled);
+						});
+					break;
+				}
+
+				list.forEach(function(e, i) {
+					if (e.id !== id && (all || e.enabled)) {
+						apps.push({
+							name: e.shortName,
+							id: e.id,
+							thumb: "chrome://extension-icon/" + e.id + "/64/1",
+							available: (navigator.onLine && e.enabled) || (!navigator.onLine && e.offlineEnabled)
+						});
+					}
+				});
+
+				if (this.syncData && this.syncData.order) {
+					// This creates an hash that can be used to look up the
+					// _.sortBy compatible sort value of a given app id.
+					// 
+					// This method with negative reversed indexes causes apps
+					// that are sorted to stay in position while new apps get
+					// appended to the end of the list in their original order.
+					var order = this.syncData.order.slice().reverse();
+
+					order = _.zipObject(order, order.map(function(e, i) {
+						return -i;
+					}));
+
+					apps = _.sortBy(apps, function(e) {
+						return order[e.id] || 1;
+					});
+				}
+
+				cb.call(this, {
+					items: apps
+				});
+			}.bind(this));
+		},
+
 		render: function(demo) {
 			if (demo) {
 				return this.utils.render({
@@ -101,57 +185,7 @@ define(["jquery"], function($) {
 				return;
 			}
 
-			chrome.management.getAll(function(d) {
-				var list = d.filter(function(e) {
-						return e.type !== "extension" && e.type !== "theme";
-					}),
-					apps = {
-						items: []
-					},
-					id = chrome.app.getDetails().id,
-					self = this.config.target == "_self",
-					all = this.config.show == "all";
-
-				list.unshift({
-					enabled: true,
-					offlineEnabled: false,
-					id: "ahfgeienlihckogmohjhadlkjgocpleb",
-					shortName: this.utils.translate("store_app"),
-					appLaunchUrl: "https://chrome.google.com/webstore?utm_source=iChrome-apps-widget"
-				});
-
-				switch (this.config.sort) {
-					case "alpha":
-						list.sort(function(a, b) {
-							var c = a.shortName.toLowerCase(),
-								d = b.shortName.toLowerCase();
-
-							return c < d ? -1 : c > d;
-						});
-					break;
-					case "offline":
-						list.sort(function(a, b) {
-							return a.offlineEnabled;
-						});
-					break;
-					case "available":
-						list.sort(function(a, b) {
-							return ((!navigator.onLine && a.offlineEnabled) + a.enabled) - ((!navigator.onLine && b.offlineEnabled) + b.enabled);
-						});
-					break;
-				}
-
-				list.forEach(function(e, i) {
-					if (e.id !== id && (all || e.enabled)) {
-						apps.items.push({
-							name: e.shortName,
-							id: e.id,
-							thumb: "chrome://extension-icon/" + e.id + "/64/1",
-							available: (navigator.onLine && e.enabled) || (!navigator.onLine && e.offlineEnabled)
-						});
-					}
-				});
-
+			this.getApps(function(apps) {
 				if (this.config.title && this.config.title !== "") {
 					apps.title = this.config.title;
 				}
@@ -162,7 +196,11 @@ define(["jquery"], function($) {
 
 				this.utils.render(apps);
 
-				this.elm.off("click.apps").on("click.apps", ".app", function(e) {
+
+				var that = this,
+					self = this.config.target == "_self";
+
+				this.sortable = this.elm.off("click.apps").on("click.apps", ".app", function(e) {
 					e.preventDefault();
 
 					var id = this.getAttribute("data-id");
@@ -174,12 +212,43 @@ define(["jquery"], function($) {
 							});
 						}
 					});
+				}).find(".list, .tiles").sortable({
+					distance: 20,
+					itemSelector: ".app",
+					placeholder: "<div class=\"app holder\"/>",
+					onDragStart: function(item, container, _super) {
+						var width = item.outerWidth(),
+							height = item.outerHeight();
+
+						item.css({
+							width: width,
+							height: height,
+							transform: "translate(-" + width / 2 + "px, -" + height / 2 + "px)"
+						});
+
+						item.addClass("dragged");
+					},
+					onDrop: function(item, container, _super) {
+						_super(item, container);
+
+						that.syncData.order = that.sortable.sortable("serialize").get();
+
+						that.utils.save();
+					},
+					serialize: function(item, children, isContainer) {
+						if (isContainer) {
+							return children;
+						}
+						else {
+							return item.attr("data-id");
+						}
+					},
 				});
 
 				$(window).one("offline.apps online.apps", function() {
 					this.render();
 				}.bind(this));
-			}.bind(this));
+			});
 		}
 	};
 });

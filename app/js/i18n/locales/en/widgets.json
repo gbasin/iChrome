@@ -636,5 +636,18 @@
 		},
 
 		"unknown_author": "Unknown"
+	},
+
+	"html": {
+		"name": "HTML",
+		"desc": "Displays completely custom HTML in an iframe.",
+
+		"settings": {
+			"html": "HTML",
+
+			"js": "JavaScript",
+
+			"height": "Widget Height"
+		}
 	}
 }

@@ -1293,22 +1293,6 @@
 
 
 /*---------------------------------------------
-	/ iFrame
-*/
-.widget.iframe {
-	padding: 0!important;
-}
-
-.iframe iframe {
-	width: 100%;
-	height: 100%;
-}
-
-
-
-
-
-/*---------------------------------------------
 	/ Calendar
 */
 .widget.calendar a.header {
@@ -2629,16 +2613,20 @@ body.no-edit .bookmarks .tools {
 
 
 /*---------------------------------------------
-	/ Keep, Plus and Facebook shared
+	/ iFrame, HTML, Keep, Plus and Facebook shared
 */
+.widget.html,
 .widget.keep,
 .widget.plus,
+.widget.iframe,
 .widget.facebook {
 	padding: 0!important;
 }
 
+.html iframe,
 .keep iframe,
 .plus iframe,
+.iframe iframe,
 .facebook iframe {
 	width: 100%;
 	height: 100%;
