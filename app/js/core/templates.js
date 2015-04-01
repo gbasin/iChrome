@@ -44,7 +44,8 @@ var templates = [
 		"widgets.youtube",				"widgets.youtube.desc",
 		"widgets.plus",					"widgets.plus.desc",
 		"widgets.facebook",				"widgets.facebook.desc",
-		"widgets.recentlyclosed",		"widgets.recentlyclosed.desc"
+		"widgets.recentlyclosed",		"widgets.recentlyclosed.desc",
+		"widgets.quotes",				"widgets.quotes.desc"
 	],
 	deps = [];
 

@@ -3275,3 +3275,98 @@ body.no-edit .bookmarks .tools {
 	text-overflow: ellipsis;
 	width: calc(100% - 25px);
 }
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Quotes
+*/
+.quotes blockquote {
+	border: 0;
+	margin: 0;
+	color: #222;
+	font-size: 20px;
+	padding: 5px 5px 0;
+	-webkit-font-smoothing: antialiased;
+	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.quotes blockquote > a {
+	color: inherit;
+	display: block;
+	text-decoration: none;
+}
+
+.quotes blockquote p {
+	font: inherit;
+	font-style: italic;
+	text-align: center;
+	margin-bottom: 5px;
+	white-space: pre-wrap;
+}
+
+.quotes blockquote p.no-quotes {
+	margin-top: 8px;
+}
+
+.quotes blockquote p:not(.no-quotes):before {
+	content: "\201C";
+}
+
+.quotes blockquote p:not(.no-quotes):after {
+	content: "\201D";
+}
+
+.quotes blockquote footer {
+	font-size: 14px;
+	text-align: right;
+}
+
+.quotes blockquote p.no-quotes + footer {
+	margin-bottom: -12px;
+}
+
+.quotes footer cite {
+	color: #444;
+	overflow: hidden;
+	white-space: nowrap;
+	vertical-align: top;
+	display: inline-block;
+	text-overflow: ellipsis;
+	max-width: calc(100% - 70px);
+}
+
+.quotes footer span {
+	opacity: 0;
+	float: left;
+	cursor: pointer;
+	margin-right: 10px;
+	font-family: Roboto, sans-serif;
+	transition: opacity .2s cubic-bezier(.4, 0, .2, 1);
+}
+
+.quotes:hover footer span {
+	opacity: 1;
+}
+
+.quotes footer .tweet:before {
+	color: #55ACEE;
+	font-size: 20px;
+	content: "\F099";
+	line-height: 20px;
+	font-family: FontAwesome;
+}
+
+.quotes footer .refresh svg {
+	fill: #444;
+	width: 20px;
+	height: 20px;
+}
+
+.quotes footer .refresh:hover svg {
+	fill: #222;
+}

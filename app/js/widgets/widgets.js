@@ -15,7 +15,7 @@ define([
 	"w/translate",	"w/twitter",		"w/unread",
 	"w/voice",		"w/weather",		"w/wolfram",
 	"w/youtube",	"w/recentlyclosed",	"w/chrome_bookmarks",
-	"w/tasks",
+	"w/tasks",		"w/quotes",
 
 	"lib/jquery.numberformatter", "lib/jquery.sortable"
 ], function(_, Utils) {

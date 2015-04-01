@@ -619,5 +619,22 @@
 
 		"search": "Search YouTube",
 		"num_views": "views"
+	},
+
+	"quotes": {
+		"name": "Quotes",
+		"desc": "Displays a quote picked either every time you load the page or once daily.",
+
+		"settings": {
+			"source": "Source",
+
+			"method": "Load new quotes",
+			"method_options": {
+				"daily": "Once daily",
+				"random": "Every time I load the page"
+			}
+		},
+
+		"unknown_author": "Unknown"
 	}
 }
