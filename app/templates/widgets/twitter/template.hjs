@@ -2,23 +2,23 @@
 
 <div class="tweets">
 	{{#tweets}}
-		<div class="tweet nested-link" data-href="https://twitter.com/{{username}}/status/{{id}}" target="_blank">
+		<div class="tweet nested-link" data-href="https://twitter.com/{{username}}/status/{{id}}">
 			<div class="topbar">
-				<a href="https://twitter.com/{{username}}" target="_blank" class="user"><b>{{user}}</b> <span class="tweeter">@{{username}}</span></a>
+				<a href="https://twitter.com/{{username}}" class="user"><b>{{user}}</b> <span class="tweeter">@{{username}}</span></a>
 				<span class="age">{{age}}</span>
 			</div>
 
 			<div class="content">
-				<a href="https://twitter.com/{{username}}" target="_blank" class="user"><img src="{{image}}" /></a>
+				<a href="https://twitter.com/{{username}}" class="user"><img src="{{image}}" /></a>
 
 				{{{content}}}
 			</div>
 
 			<div class="tools">
-				<a class="more" href="https://twitter.com/{{username}}/status/{{id}}" target="_blank">{{i18n.more}}</a>
-				<a class="reply" href="https://twitter.com/intent/tweet?in_reply_to={{id}}" target="_blank">{{i18n.reply}}</a>
-				<a class="retweet" href="https://twitter.com/intent/retweet?tweet_id={{id}}" target="_blank">{{i18n.retweet}}</a>
-				<a class="favorite" href="https://twitter.com/intent/favorite?tweet_id={{id}}" target="_blank">{{i18n.favorite}}</a>
+				<a class="more" href="https://twitter.com/{{username}}/status/{{id}}">{{i18n.more}}</a>
+				<a class="reply" href="https://twitter.com/intent/tweet?in_reply_to={{id}}">{{i18n.reply}}</a>
+				<a class="retweet" href="https://twitter.com/intent/retweet?tweet_id={{id}}">{{i18n.retweet}}</a>
+				<a class="favorite" href="https://twitter.com/intent/favorite?tweet_id={{id}}">{{i18n.favorite}}</a>
 			</div>
 		</div>
 	{{/tweets}}

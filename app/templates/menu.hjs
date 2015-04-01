@@ -56,14 +56,14 @@
 	</div>
 
 	<div class="footer">
-		<a href="http://ichrome.uservoice.com/" class="support" target="_blank">{{i18n.menu.footer.support}}</a> &nbsp;·&nbsp;
-		<a href="http://ichrome.uservoice.com/" class="feedback" target="_blank">{{i18n.menu.footer.feedback}}</a> &nbsp;·&nbsp;
-		<a href="https://chrome.google.com/webstore/detail/ichrome-your-homepage-for/oghkljobbhapacbahlneolfclkniiami/reviews" target="_blank">{{i18n.menu.footer.review}}</a>
+		<a href="http://ichrome.uservoice.com/" class="support">{{i18n.menu.footer.support}}</a> &nbsp;·&nbsp;
+		<a href="http://ichrome.uservoice.com/" class="feedback">{{i18n.menu.footer.feedback}}</a> &nbsp;·&nbsp;
+		<a href="https://chrome.google.com/webstore/detail/ichrome-your-homepage-for/oghkljobbhapacbahlneolfclkniiami/reviews">{{i18n.menu.footer.review}}</a>
 
 		<br />
 
-		<a href="http://www.twitter.com/iChromeHQ" target="_blank">{{i18n.menu.footer.twitter}}</a> &nbsp;·&nbsp;
-		<a href="https://chrome.google.com/webstore/detail/ichrome-your-homepage-for/oghkljobbhapacbahlneolfclkniiami" target="_blank">{{i18n.menu.footer.webstore}}</a> &nbsp;·&nbsp;
+		<a href="http://www.twitter.com/iChromeHQ">{{i18n.menu.footer.twitter}}</a> &nbsp;·&nbsp;
+		<a href="https://chrome.google.com/webstore/detail/ichrome-your-homepage-for/oghkljobbhapacbahlneolfclkniiami">{{i18n.menu.footer.webstore}}</a> &nbsp;·&nbsp;
 		<a href="#donate" class="donate">{{i18n.menu.footer.donate}}</a>
 
 		<hr class="separator" />

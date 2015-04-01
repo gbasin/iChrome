@@ -1,7 +1,7 @@
 <div class="cards">
 	{{#cards}}
 		{{#link}}
-		<a class="card{{#btns}} btns{{/btns}}" data-index="{{index}}" href="{{link}}" target="_blank">
+		<a class="card{{#btns}} btns{{/btns}}" data-index="{{index}}" href="{{link}}">
 		{{/link}}
 		{{^link}}
 		<div class="card{{#btns}} btns{{/btns}}" data-index="{{index}}">
@@ -24,7 +24,7 @@
 		{{#btns}}
 			<div class="buttons">
 				{{#buttons}}
-					<a href="{{link}}" target="_blank" class="button">{{#btnIcon}}<img src="{{btnIcon}}" />{{/btnIcon}}{{title}}</a>
+					<a href="{{link}}" class="button">{{#btnIcon}}<img src="{{btnIcon}}" />{{/btnIcon}}{{title}}</a>
 				{{/buttons}}
 			</div>
 		{{/btns}}

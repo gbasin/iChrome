@@ -1,7 +1,7 @@
 {{#title}}<h2 class="header">{{title}}</h2>{{/title}}
 
 <blockquote>
-	{{#link}}<a href="{{link}}" target="_blank">{{/link}}
+	{{#link}}<a href="{{link}}">{{/link}}
 		<p {{#noquotes}}class="no-quotes"{{/noquotes}}>{{body}}</p>
 
 		<footer class="clearfix">

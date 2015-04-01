@@ -2,8 +2,8 @@
  * The main iChrome view, this initializes everything.
  */
 define(
-	["lodash", "backbone", "core/status", "core/analytics", "storage/storage", "core/css", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs", "modals/updated", "modals/getting-started", "modals/translate-request", "lib/extends"],
-	function(_, Backbone, Status, Track, Storage, CSS, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
+	["jquery", "lodash", "backbone", "core/status", "core/analytics", "storage/storage", "core/css", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs", "modals/updated", "modals/getting-started", "modals/translate-request", "lib/extends"],
+	function($, _, Backbone, Status, Track, Storage, CSS, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
 		var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -18,7 +18,8 @@ define(
 
 					this.set({
 						toolbar: storage.settings.toolbar,
-						editing: storage.settings.editing
+						editing: storage.settings.editing,
+						target: storage.settings.ltab ? "_blank" : "_self"
 					});
 				}, this);
 
@@ -43,7 +44,12 @@ define(
 						elm = $(e.currentTarget);
 
 					a.href = elm.attr("data-href") || "#";
-					a.target = elm.attr("target") || "_blank";
+					
+					var target = elm.attr("target");
+
+					if (target) {
+						a.target = target;
+					}
 
 					a.click();
 				}
@@ -76,6 +82,8 @@ define(
 					this.$el.removeClass("unloaded").children(".loading").remove();
 				}, this).on("change:editing", function() {
 					this.$el.toggleClass("no-edit", !this.model.get("editing"));
+				}, this).on("change:target", function() {
+					$("base").attr("target", this.model.get("target"));
 				}, this).init();
 
 

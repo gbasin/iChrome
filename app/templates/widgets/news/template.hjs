@@ -3,7 +3,7 @@
 <div class="items">
 	{{#items}}
 		{{#featured}}
-			<a class="item featured" href="{{url}}" target="_blank">
+			<a class="item featured" href="{{url}}">
 				<span class="title">{{title}}</span>
 
 				<div class="excerpt">
@@ -14,7 +14,7 @@
 			</a>
 		{{/featured}}
 		{{^featured}}
-			<a class="item" href="{{url}}" target="_blank">
+			<a class="item" href="{{url}}">
 				{{#image}}<img src="{{image}}" />{{/image}}
 
 				<div class="excerpt">

@@ -353,7 +353,12 @@ define(["jquery"], function($) {
 			var that = this;
 
 			this.elm.children(".cond, .temp, .details, .forecast").click(function() {
-				location.href = "https://www.google.com/search?q=weather";
+				// This method uses the default target
+				var link = document.createElement("a");
+
+				link.href = "https://www.google.com/search?q=weather";
+
+				link.click();
 			}).end().find(".temp sup a").click(function(e) {
 				e.preventDefault();
 				e.stopPropagation();

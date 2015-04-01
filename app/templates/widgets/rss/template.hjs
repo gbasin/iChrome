@@ -5,7 +5,7 @@
 
 <div class="items{{#images}} images{{/images}}">
 	{{#items}}
-		<a href="{{url}}" class="item" target="_blank">
+		<a href="{{url}}" class="item">
 			{{#image}}
 				{{#images}}<img src="{{image}}" alt="Loading..." />{{/images}}
 				{{^images}}<div class="img" style="background-image: url('{{image}}');"></div>{{/images}}

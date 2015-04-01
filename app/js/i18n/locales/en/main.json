@@ -83,6 +83,9 @@
 			"name": "Name",
 			"name_desc": "This is used for the Google+ link in the toolbar.  It also gets auto-populated from your Google profile",
 
+			"ltab": "Link Behavior",
+			"ltab_label": "Open links in a new tab by default",
+
 			"voice": "Voice Search",
 			"voice_search": "Enable voice search",
 			"voice_ok": "Enable \"OK Google\" hotword detection",
