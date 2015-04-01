@@ -33,6 +33,13 @@ define(
 					"input-text": _.pick(input, "nicename", "label", "value", "help", "placeholder")
 				}));
 			},
+			textarea: function(input, elm) {
+				input.value = _.result(input, "value");
+
+				elm.html(render("widget-settings.inputs", {
+					"input-textarea": _.pick(input, "nicename", "label", "value", "help", "placeholder")
+				}));
+			},
 			select: function(input, elm, widget, form) {
 				var loop = function(options, level) {
 					var level = level || 0,
@@ -240,9 +247,13 @@ define(
 
 			events: {
 				"click .btn.save": "save",
-				"keydown input, textarea, select": function(e) {
+				"keydown input, select": function(e) {
 					if (e.which == 13) this.save(e);
 				},
+				"keydown textarea": function(e) {
+					if (e.which == 13 && e.shiftKey) this.save(e);
+				},
+
 
 				/**
 				 * Input Events
