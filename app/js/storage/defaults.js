@@ -46,7 +46,7 @@ define(["i18n/i18n"], function(Translate) {
 			ok: false,
 			apps: true,
 			plus: true,
-			ltab: true,
+			ltab: false,
 			stab: false,
 			voice: true,
 			gmail: true,
