@@ -116,7 +116,7 @@ define(["jquery", "moment"], function($, moment) {
 		},
 		render: function(dest) {
 			if (typeof dest !== "string") {
-				dest = moment(this.config.time, "hh:mm").add("hours", 1).isAfter() ? "work" : "home";
+				dest = moment(this.config.time, "hh:mm").add(1, "hours").isAfter() ? "work" : "home";
 			}
 
 			var data = {

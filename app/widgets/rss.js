@@ -155,14 +155,24 @@ define(["jquery", "lodash"], function($, _) {
 			}
 
 			html.find("*").not("a, b, i, strong, u").each(function() {
-				$(this).replaceWith(this.innerHTML || "");
+				if (this.children.length) {
+					$(this).children().unwrap();
+				}
+				else {
+					$(this).replaceWith(this.innerHTML);
+				}
 			});
 
 			html.find("*").not("a, b, i, strong, u").remove();
 
-			item.desc = html.html().trim();
 
-			if (!item.desc || item.desc == "") {
+			var fChild = html.children().first();
+
+			if ((fChild.text() || "").toLowerCase() == item.title.toLowerCase()) {
+				fChild.remove();
+			}
+
+			if (!html[0].innerHTML.trim().length) {
 				delete item.desc;
 			}
 			else {
@@ -187,7 +197,7 @@ define(["jquery", "lodash"], function($, _) {
 					$(this).replaceWith(span);
 				});
 
-				item.desc = html.html();
+				item.desc = html.html().trim();
 			}
 
 			return item;

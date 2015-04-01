@@ -31,6 +31,15 @@
 			</div>
 		</div>
 
+		<div class="form-group">
+			<label class="control-label col-sm-2">{{i18n.settings.general.ltab}}</label>
+
+			<div class="checkbox col-sm-9">
+				{{#ltab}}<label><input type="checkbox" name="ltab" checked /> {{i18n.settings.general.ltab_label}}</label>{{/ltab}}
+				{{^ltab}}<label><input type="checkbox" name="ltab" /> {{i18n.settings.general.ltab_label}}</label>{{/ltab}}
+			</div>
+		</div>
+
 		<div class="form-group voice">
 			<label class="control-label col-sm-2">{{i18n.settings.general.voice}}</label>
 

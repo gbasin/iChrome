@@ -1,7 +1,7 @@
 /*
  * The Calendar widget.
  */
-define(["jquery", "moment", "oauth2"], function($, moment) {
+define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 	return {
 		id: 10,
 		size: 1,
@@ -24,6 +24,15 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 				options: "getCalendars"
 			},
 			{
+				type: "radio",
+				label: "i18n.settings.show",
+				nicename: "show",
+				options: {
+					all: "i18n.settings.show_options.all",
+					today: "i18n.settings.show_options.today"
+				}
+			},
+			{
 				type: "number",
 				nicename: "events",
 				label: "i18n.settings.events",
@@ -35,6 +44,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 			title: "i18n.title",
 			size: "variable",
 			events: 5,
+			show: "all",
 			calendars: []
 		},
 		data: {
@@ -103,36 +113,32 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 		},
 		oAuth: false,
 		setOAuth: function() {
-			this.oAuth = new OAuth2("google2", {
-				client_id: "559765430405-2710gl95r9js4c6m4q9nveijgjji50b8.apps.googleusercontent.com",
-				client_secret: "__API_KEY_calendar__",
-				api_scope: "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar"
+			this.oAuth = new OAuth({
+				name: "calendar",
+				id: "559765430405-2710gl95r9js4c6m4q9nveijgjji50b8.apps.googleusercontent.com",
+				secret: "__API_KEY_calendar__",
+				scope: "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar"
 			});
 		},
 		getCalendars: function(cb) {
 			if (!this.oAuth) this.setOAuth();
 
-			this.oAuth.authorize.call(this.oAuth, function() {
-				$.ajax({
-					type: "GET",
-					dataType: "json",
-					url: "https://www.googleapis.com/calendar/v3/users/me/calendarList/",
-					beforeSend: function(xhr) {
-						xhr.setRequestHeader("Authorization", "OAuth " + this.oAuth.getAccessToken());
-					}.bind(this),
-					success: function(d) {
-						if (!d || !d.items) return cb("error");
+			this.oAuth.ajax({
+				type: "GET",
+				dataType: "json",
+				url: "https://www.googleapis.com/calendar/v3/users/me/calendarList/",
+				success: function(d) {
+					if (!d || !d.items) return cb("error");
 
-						var calendars = {};
+					var calendars = {};
 
-						d.items.forEach(function(e, i) {
-							calendars[e.id] = e.summary;
-						});
+					d.items.forEach(function(e, i) {
+						calendars[e.id] = e.summary;
+					});
 
-						cb(calendars);
-					}
-				});
-			}.bind(this));
+					cb(calendars);
+				}
+			});
 		},
 		refresh: function() {
 			if (!this.oAuth) this.setOAuth();
@@ -149,19 +155,21 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 			}
 
 
-			this.oAuth.authorize.call(this.oAuth, function() {
-				var that = this,
-					events = [],
+			this.oAuth.getToken(function(token) {
+				var events = [],
 					multiple = this.config.calendars.length > 1,
-					token = this.oAuth.getAccessToken(),
 					params = {
-						maxResults: 10,
+						maxResults: this.config.events || 5,
 						singleEvents: true,
 						orderBy: "startTime",
 						timeZone: -(new Date().getTimezoneOffset() / 60),
 						timeMin: moment().format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
 						fields: "summary,items(description,htmlLink,id,location,start,summary)"
 					};
+
+				if (this.config.show == "today") {
+					params.timeMax = moment().endOf("day").format("YYYY-MM-DDTHH:mm:ss.SSSZ");
+				}
 
 				var requests = this.config.calendars.map(function(calendar) {
 					return $.ajax({
@@ -170,7 +178,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 						data: params,
 						url: "https://www.googleapis.com/calendar/v3/calendars/" + encodeURIComponent(calendar) + "/events",
 						beforeSend: function(xhr) {
-							xhr.setRequestHeader("Authorization", "OAuth " + token);
+							xhr.setRequestHeader("Authorization", "Bearer " + token);
 						},
 						success: function(d) {
 							if (d && d.items) {
@@ -199,7 +207,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 				$.when.apply($, requests).then(function() {
 					events = events.sort(function(a, b) {
 						return a.date - b.date;
-					}).slice(0, 10);
+					}).slice(0, this.config.events || 5);
 
 
 					this.data = {

@@ -1,7 +1,7 @@
 /*
  * The Unread widget.
  */
-define(["jquery"], function($) {
+define(["jquery", "widgets/framefix"], function($, frameFix) {
 	return {
 		id: 6,
 		size: 2,
@@ -46,7 +46,9 @@ define(["jquery"], function($) {
 			]
 		},
 		refresh: function() {
-			$.get("http://mail.google.com/mail/feed/atom/?authuser=" + (this.config.user || 0), function(d) {
+			if (!frameFix(this.refresh, this, arguments)) return;
+
+			$.get("https://mail.google.com/mail/u/" + (this.config.user || 0) + "/feed/atom/", function(d) {
 				try {
 					var d = $(d),
 						count = parseInt(d.find("fullcount").text()),
@@ -73,6 +75,11 @@ define(["jquery"], function($) {
 				catch (e) {
 					this.utils.error("An error occurred while trying to update the Unread widget!");
 				}
+			}.bind(this)).fail(function() {
+				this.data.count = 0;
+				this.data.messages = [];
+
+				this.render();
 			}.bind(this));
 		},
 		render: function() {

@@ -394,6 +394,59 @@ chrome.runtime.onInstalled.addListener(function(details) {
 		});
 	}
 	else if (details.reason == "update") {
+		var oAuthKeys = Object.keys(localStorage).filter(function(e) {
+			return e.indexOf("oauth2_") === 0;
+		});
+
+		if (oAuthKeys.length) {
+			var nAuth = {};
+
+			[
+				["google", "analytics"],
+				["google2", "calendar"],
+				["drive", "drive"],
+				["feedly", "feedly"],
+				["now", "now"]
+			].forEach(function(e, i) {
+				if (localStorage["oauth2_" + e[0]]) {
+					var parsed = JSON.parse(localStorage["oauth2_" + e[0]]);
+
+					var converted = {
+						type: "Bearer"
+					};
+
+					Object.keys(parsed).forEach(function(e, i) {
+						switch (e) {
+							case "accessToken":
+								converted.token = parsed.accessToken;
+							break;
+							
+							case "refreshToken":
+								converted.refreshToken = parsed.refreshToken;
+							break;
+
+							case "accessTokenDate":
+								if (parsed.expiresIn) {
+									converted.expiry = parsed.accessTokenDate + (parsed.expiresIn * 1000);
+								}
+							break;
+						}
+					});
+
+					if (converted.token) {
+						nAuth[e[1]] = converted;
+					}
+				}
+			});
+
+			localStorage.oauth = JSON.stringify(nAuth);
+
+			oAuthKeys.forEach(function(e, i) {
+				delete localStorage[e];
+			});
+		}
+
+
 		// localStorage["translateRequest"] = "true";
 	}
 });
@@ -431,6 +484,34 @@ chrome.webRequest.onHeadersReceived.addListener(
 	["blocking", "responseHeaders"]
 );
 
+<<<<<<< HEAD
+=======
+
+chrome.webRequest.onAuthRequired.addListener(
+	function(info) {
+		if (info.tabId !== -1 && info.scheme.toLowerCase().trim() === "basic") {
+			var i = -1,
+				views = chrome.extension.getViews(),
+				length = views.length;
+
+			while (++i < length) {
+				if (views[i].tabId == info.tabId) {
+					return {
+						cancel: true
+					};
+				}
+			}
+		}
+	},
+	{
+		urls: [ "https://mail.google.com/mail/u/*/feed/atom/" ],
+		types: [ "xmlhttprequest" ]
+	},
+	["blocking"]
+);
+
+
+>>>>>>> origin/master
 // Sync manager
 var unextend = function(obj1, obj2) {
 		var newObj = {};
@@ -774,88 +855,3 @@ var refreshFeeds = function() {
 var feedInterval = setInterval(refreshFeeds, 18E5);
 
 refreshFeeds();
-
-
-
-
-
-// Recently Closed
-var checkRC = function() {
-	chrome.permissions.contains({
-		permissions: ["tabs"]
-	}, function(granted) {
-		if (granted) {
-			var tabs = {},
-				windows = {},
-				ctabs = JSON.parse(localStorage.recentlyClosed || "[]");
-
-			chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-				if (changeInfo.status && tab.url && tab.title && tab.windowId &&
-					tab.url !== "chrome-extension://oghkljobbhapacbahlneolfclkniiami/index.html" && tab.url !== "chrome://newtab/" &&
-					tab.url !== "chrome-extension://iccjgbbjckehppnpajnmplcccjcgbdep/index.html") {
-					tabs[tabId] = [tab.title, tab.url, tab.windowId];
-
-					if (windows[tab.windowId]) {
-						windows[tab.windowId].push(tabId);
-					}
-					else {
-						windows[tab.windowId] = [tabId];
-					}
-				}
-			});
-
-			var onClose = function(tabId) {
-				if (tabs[tabId]) {
-					delete windows[tabs[tabId].pop()][tabId];
-
-					ctabs.unshift(tabs[tabId]);
-					
-					ctabs = ctabs.slice(0, 20);
-
-					localStorage.recentlyClosed = JSON.stringify(ctabs);
-				}
-				
-				delete tabs[tabId];
-			};
-
-			chrome.tabs.onRemoved.addListener(onClose);
-			chrome.tabs.onDetached.addListener(onClose);
-
-			var getAll = function() {
-					chrome.tabs.query({
-						windowType: "normal"
-					}, function(res) {
-						var ts = {},
-							ws = {};
-
-						res.forEach(function(tab, i) {
-							if (tab.id && tab.title && tab.windowId && tab.url &&
-								tab.url !== "chrome-extension://oghkljobbhapacbahlneolfclkniiami/index.html" && tab.url !== "chrome://newtab/" &&
-								tab.url !== "chrome-extension://iccjgbbjckehppnpajnmplcccjcgbdep/index.html") {
-								ts[tab.id] = [tab.title, tab.url, tab.windowId];
-							}
-
-							if (tab.windowId && tab.id) {
-								if (ws[tab.windowId]) {
-									ws[tab.windowId].push(tab.id);
-								}
-								else {
-									ws[tab.windowId] = [tab.id];
-								}
-							}
-						});
-
-						tabs = ts;
-						windows = ws;
-					});
-				},
-				tabsInt = setInterval(getAll, 60000);
-
-			getAll();
-		}
-	});
-};
-
-chrome.permissions.onAdded.addListener(checkRC);
-
-checkRC();

@@ -1,7 +1,7 @@
 /*
  * The Analytics widget.
  */
-define(["jquery", "oauth2"], function($) {
+define(["jquery", "oauth"], function($, OAuth) {
 	return {
 		id: 3,
 		size: 2,
@@ -42,10 +42,11 @@ define(["jquery", "oauth2"], function($) {
 		},
 		oAuth: false,
 		setOAuth: function() {
-			this.oAuth = new OAuth2("google", {
-				client_id: "559765430405-5rvu6sms3mc111781cfgp1atb097rrph.apps.googleusercontent.com",
-				client_secret: "__API_KEY_analytics__",
-				api_scope: "https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/analytics"
+			this.oAuth = new OAuth({
+				name: "analytics",
+				id: "559765430405-5rvu6sms3mc111781cfgp1atb097rrph.apps.googleusercontent.com",
+				secret: "__API_KEY_analytics__",
+				scope: "https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/analytics"
 			});
 		},
 		getProfiles: function(cb) {
@@ -57,7 +58,6 @@ define(["jquery", "oauth2"], function($) {
 				accounts = {},
 				properties = {},
 				data = {},
-				oAuth = this.oAuth,
 				compile = function() {
 					if (errors !== 0) cb("Error");
 
@@ -73,13 +73,13 @@ define(["jquery", "oauth2"], function($) {
 					cb(data);
 				};
 
-			oAuth.authorize.call(oAuth, function() {
+			this.oAuth.getToken(function(token) {
 				$.ajax({
 					type: "GET",
 					dataType: "json",
 					url: "https://www.googleapis.com/analytics/v3/management/accounts",
 					beforeSend: function(xhr) {
-						xhr.setRequestHeader("Authorization", "OAuth " + oAuth.getAccessToken());
+						xhr.setRequestHeader("Authorization", "Bearer " + token);
 					},
 					success: function(d) {
 						if (!d || !d.items) return errors++;
@@ -97,7 +97,7 @@ define(["jquery", "oauth2"], function($) {
 					dataType: "json",
 					url: "https://www.googleapis.com/analytics/v3/management/accounts/~all/webproperties",
 					beforeSend: function(xhr) {
-						xhr.setRequestHeader("Authorization", "OAuth " + oAuth.getAccessToken());
+						xhr.setRequestHeader("Authorization", "Bearer " + token);
 					},
 					success: function(d) {
 						if (!d || !d.items) return errors++;
@@ -118,7 +118,7 @@ define(["jquery", "oauth2"], function($) {
 					dataType: "json",
 					url: "https://www.googleapis.com/analytics/v3/management/accounts/~all/webproperties/~all/profiles",
 					beforeSend: function(xhr) {
-						xhr.setRequestHeader("Authorization", "OAuth " + oAuth.getAccessToken());
+						xhr.setRequestHeader("Authorization", "Bearer " + token);
 					},
 					success: function(d) {
 						if (!d || !d.items) return errors++;
@@ -144,42 +144,37 @@ define(["jquery", "oauth2"], function($) {
 				return false;
 			}
 
-			this.oAuth.authorize.call(this.oAuth, function() {
-				$.ajax({
-					type: "GET",
-					dataType: "json",
-					data: {
-						ids: "ga:" + this.config.profile,
-						"start-date": "today",
-						"end-date": "today",
-						"max-results": 1,
-						metrics: "ga:visits,ga:pageviews,ga:visitBounceRate,ga:goal1Completions"
-					},
-					url: "https://www.googleapis.com/analytics/v3/data/ga",
-					beforeSend: function(xhr) {
-						xhr.setRequestHeader("Authorization", "OAuth " + this.oAuth.getAccessToken());
-					}.bind(this),
-					success: function(d) {
-						if (d && d.rows && d.rows[0] && d.rows[0].length == 4) {
-							var result = d.rows[0],
-								data = {
-									visits:			parseInt(result[0]),
-									pageviews:		parseInt(result[1]),
-									bounceRate:		parseFloat(parseFloat(result[2]).toFixed(2)),
-									completions:	parseInt(result[3]),
+			this.oAuth.ajax({
+				type: "GET",
+				dataType: "json",
+				data: {
+					ids: "ga:" + this.config.profile,
+					"start-date": "today",
+					"end-date": "today",
+					"max-results": 1,
+					metrics: "ga:visits,ga:pageviews,ga:visitBounceRate,ga:goal1Completions"
+				},
+				url: "https://www.googleapis.com/analytics/v3/data/ga",
+				success: function(d) {
+					if (d && d.rows && d.rows[0] && d.rows[0].length == 4) {
+						var result = d.rows[0],
+							data = {
+								visits:			parseInt(result[0]),
+								pageviews:		parseInt(result[1]),
+								bounceRate:		parseFloat(parseFloat(result[2]).toFixed(2)),
+								completions:	parseInt(result[3]),
 
-									pagesVisit: parseFloat((result[1] / result[0]).toFixed(2))
-								};
+								pagesVisit: parseFloat((result[1] / result[0]).toFixed(2))
+							};
 
-							this.data = data;
+						this.data = data;
 
-							this.render();
+						this.render();
 
-							this.utils.saveData(this.data);
-						}
-					}.bind(this)
-				});
-			}.bind(this));
+						this.utils.saveData(this.data);
+					}
+				}.bind(this)
+			});
 		},
 		render: function(demo) {
 			var data = $.extend({}, this.data);

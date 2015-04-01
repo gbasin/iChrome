@@ -19,6 +19,10 @@ define(["i18n/i18n"], function(Translate) {
 						}
 					], [
 						{
+							id: 35,
+							size: 5
+						},
+						{
 							id: 11,
 							size: 5
 						}, {
@@ -42,6 +46,7 @@ define(["i18n/i18n"], function(Translate) {
 			ok: false,
 			apps: true,
 			plus: true,
+			ltab: true,
 			stab: false,
 			voice: true,
 			gmail: true,

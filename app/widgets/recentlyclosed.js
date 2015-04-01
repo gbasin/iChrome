@@ -1,12 +1,11 @@
 /*
  * The Recently Closed widget.
  */
-define(["jquery"], function($) {
+define(["jquery", "lodash"], function($, _) {
 	return {
 		id: 32,
 		size: 4,
 		order: 21,
-		interval: 60000,
 		permissions: ["tabs"],
 		nicename: "recentlyclosed",
 		sizes: ["variable"],
@@ -40,29 +39,92 @@ define(["jquery"], function($) {
 			size: "variable",
 			title: "i18n.name"
 		},
-		render: function() {
-			var data = {
-				newTab: this.config.target == "_blank"
-			};
+		render: function(demo) {
+			if (!this.listening && !demo) {
+				this.listening = true;
 
-			if (localStorage.recentlyClosed) {
-				var tabs = JSON.parse(localStorage.recentlyClosed).slice(0, this.config.tabs || 5);
-
-				data.tabs = [];
-
-				tabs.forEach(function(e, i) {
-					data.tabs.push({
-						title: e[0],
-						url: e[1]
-					});
-				});
+				chrome.sessions.onChanged.addListener(function() {
+					this.render();
+				}.bind(this));
 			}
 
-			if (this.config.title && this.config.title !== "") {
+			var data = {};
+
+			if (this.config.title) {
 				data.title = this.config.title;
 			}
 
-			this.utils.render(data);
+			if (demo) {
+				data.tabs = [
+					{
+						title: "Google",
+						url: "http://www.google.com/"
+					},
+					{
+						title: "Facebook",
+						url: "http://www.facebook.com/"
+					},
+					{
+						title: "Youtube",
+						url: "http://www.youtube.com/"
+					},
+					{
+						title: "Amazon",
+						url: "http://www.amazon.com/"
+					},
+					{
+						title: "Wikipedia",
+						url: "http://www.wikipedia.org/"
+					}
+				];
+
+				return this.utils.render(data);
+			}
+
+			chrome.sessions.getRecentlyClosed({
+				maxResults: parseInt(this.config.tabs || 5)
+			}, function(sessions) {
+				data.tabs = _.compact(sessions.map(function(e, i) {
+					var ret = {};
+
+					if (e.tab) {
+						ret.id = e.tab.sessionId;
+
+						ret.url = e.tab.url;
+						ret.title = e.tab.title;
+					}
+					else if (e.window && e.window.tabs.length) {
+						ret.id = e.window.sessionId;
+
+						ret.url = e.window.tabs[0].url;
+						ret.title = e.window.tabs[0].title + (e.window.tabs.length > 1 ? ", " + (e.window.tabs.length - 1) + " more" : "");
+					}
+
+					if (ret.id) {
+						return ret;
+					}
+					else {
+						return null;
+					}
+				}));
+
+				this.utils.render(data);
+			}.bind(this));
+
+
+			var target = this.config.target;
+
+			this.elm.off("click.recentlyclosed").on("click.recentlyclosed", "a.item", function(e) {
+				e.preventDefault();
+
+				chrome.sessions.restore(this.getAttribute("data-id"), function(session) {
+					if (target == "_self") {
+						chrome.tabs.getCurrent(function(tab) {
+							if (tab) chrome.tabs.remove(tab.id);
+						});
+					}
+				});
+			});
 		}
 	};
 });

@@ -92,7 +92,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 			// the case that we're offline the widget still renders before attempting to refresh.
 			this.render(this.preview);
 
-			if (this.widget.refresh && !this.preview) this.widget.refresh.call(this.widget, true);
+			if (this.widget.refresh && !this.preview) this.widget.refresh.call(this.widget);
 		},
 
 

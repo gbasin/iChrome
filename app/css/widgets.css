@@ -1293,22 +1293,6 @@
 
 
 /*---------------------------------------------
-	/ iFrame
-*/
-.widget.iframe {
-	padding: 0!important;
-}
-
-.iframe iframe {
-	width: 100%;
-	height: 100%;
-}
-
-
-
-
-
-/*---------------------------------------------
 	/ Calendar
 */
 .widget.calendar a.header {
@@ -1405,11 +1389,18 @@
 .apps .app {
 	width: 50%;
 	color: #666;
+	height: 32px;
 	margin: 6px 0;
 	font-size: 14px;
 	display: inline-block;
 	text-decoration: none;
 	font-family: Open Sans, sans-serif;
+}
+
+.apps .app.holder {
+	border-radius: 3px;
+	vertical-align: top;
+	background: rgba(0, 0, 0, .05);
 }
 
 .apps .app.unavailable {
@@ -1446,6 +1437,7 @@
 
 .apps .tiles .app {
 	flex: 1;
+	height: auto;
 	margin: 10px;
 	min-width: 64px;
 	text-align: center;
@@ -1982,6 +1974,115 @@ body.no-edit .bookmarks .tools {
 
 
 
+
+
+/*---------------------------------------------
+	/ Chrome Bookmarks
+*/
+.widget.chrome_bookmarks h2.header {
+	margin-bottom: 25px!important;
+}
+
+.chrome_bookmarks .list {
+	font-size: 0;
+	display: block;
+	overflow: auto;
+	max-height: 340px;
+	margin: -5px -15px;
+}
+
+.chrome_bookmarks .link,
+.chrome_bookmarks .folder {
+	color: #444;
+	display: flex;
+	cursor: pointer;
+	font-size: 13px;
+	line-height: 16px;
+	padding: 9px 15px;
+	padding-left: 12px;
+	position: relative;
+	align-items: center;
+	text-decoration: none;
+	font-family: Roboto, sans-serif;
+	border-left: 3px solid transparent;
+}
+
+.chrome_bookmarks .link:hover,
+.chrome_bookmarks .folder:hover {
+	border-left-color: #1E88E5;
+	background: rgba(0, 0, 0, .03);
+}
+
+.chrome_bookmarks .favicon {
+	width: 16px;
+	height: 16px;
+	flex-shrink: 0;
+	border-radius: 2px;
+	vertical-align: top;
+}
+
+.chrome_bookmarks .title {
+	flex-grow: 1;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 0 10px 0 8px;
+	text-overflow: ellipsis;
+}
+
+.chrome_bookmarks .date,
+.chrome_bookmarks .count {
+	color: #757575;
+	flex-shrink: 0;
+	font-size: 11px;
+	font-family: Open Sans, sans-serif;
+}
+
+
+
+/*---------------------------------------------
+	/ Bookmarks / Folders
+*/
+.chrome_bookmarks .folder:before {
+	width: 16px;
+	content: "";
+	height: 16px;
+	flex-shrink: 0;
+	background: no-repeat center/18px;
+	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#444" viewBox="0 0 24 24"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/></svg>');
+}
+
+.chrome_bookmarks .folder.active:before {
+	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#444" viewBox="0 0 24 24"><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/></svg>');
+}
+
+.chrome_bookmarks .folder .title {
+	padding-right: 0;
+}
+
+.chrome_bookmarks .folder:not(.active) + .folder-items {
+	display: none;
+}
+
+.chrome_bookmarks .folder-items > .link,
+.chrome_bookmarks .folder-items > .folder {
+	padding-left: 22px;
+}
+
+.chrome_bookmarks .folder-items > .folder-items > .link,
+.chrome_bookmarks .folder-items > .folder-items > .folder {
+	padding-left: 29px;
+}
+
+.chrome_bookmarks .folder-items > .folder-items > .folder-items > .link,
+.chrome_bookmarks .folder-items > .folder-items > .folder-items > .folder {
+	padding-left: 36px;
+}
+
+
+
+
+
+
 /*---------------------------------------------
 	/ To do
 */
@@ -2165,6 +2266,254 @@ body.no-edit .bookmarks .tools {
 
 
 /*---------------------------------------------
+	/ Tasks
+*/
+.widget.tasks h2.header {
+	margin-bottom: 25px;
+}
+
+.tasks .authorize {
+	font-size: 14px;
+	padding: 10px 20px;
+	text-align: center;
+}
+
+.tasks button {
+	font-size: 13px;
+	background: none;
+	font-weight: 500;
+	border-radius: 1px;
+	text-transform: uppercase;
+	font-family: Roboto, sans-serif;
+	transition: all .2s cubic-bezier(.4, 0, .2, 1);
+}
+
+.tasks button:hover,
+.tasks button:focus {
+	background: rgba(153, 153, 153, .2);
+}
+
+.tasks button:active {
+	box-shadow: none;
+	background: rgba(153, 153, 153, .4);
+}
+
+.tasks .add {
+	opacity: 0;
+	color: #666;
+	float: right;
+	margin-top: -5px;
+	padding: 5px 10px;
+	margin-right: -5px;
+}
+
+.tasks:hover .add {
+	opacity: 1;
+}
+
+.tasks .items {
+	font-size: 0;
+	display: block;
+	margin: -5px -15px;
+}
+
+.tasks .item {
+	opacity: 1;
+	color: #444;
+	height: 38px; /* This is hardcoded so the height can be transitioned */
+	display: flex;
+	cursor: pointer;
+	font-size: 13px;
+	overflow: hidden;
+	line-height: 16px;
+	padding: 9px 15px;
+	padding-left: 12px;
+	position: relative;
+	align-items: center;
+	text-decoration: none;
+	font-family: Roboto, sans-serif;
+	border-left: 3px solid transparent;
+	transition: all .2s cubic-bezier(.4, 0, .2, 1),
+				opacity .15s cubic-bezier(.4, 0, .2, 1);
+}
+
+.tasks .item.transitioning {
+	opacity: 0;
+}
+
+.tasks .item.edit,
+.tasks .item:hover {
+	border-left-color: #1ABC9C;
+	background: rgba(0, 0, 0, .03);
+}
+
+.tasks .check {
+	margin: 1px;
+	width: 18px;
+	height: 18px;
+	flex-shrink: 0;
+	border-radius: 50%;
+	vertical-align: top;
+}
+
+/**
+ * This increases the checkbox's click target area to minimize
+ * the chance of user frustration from missing the box.
+ */
+.tasks .check:after {
+	top: -9px;
+	border: 0;
+	left: -15px;
+	right: -5px;
+	content: "";
+	width: auto;
+	height: auto;
+	bottom: -9px;
+	transform: none;
+	position: absolute;
+}
+
+.tasks .check:checked {
+	background: none;
+	box-shadow: none;
+}
+
+.tasks .check:checked:before {
+	top: -1px;
+	left: -1px;
+	right: -1px;
+	bottom: -1px;
+	position: absolute;
+	content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#1ABC9C" viewBox="0 0 20 20"><path d="M10,1.667c-4.604,0-8.333,3.729-8.333,8.333S5.396,18.333,10,18.333s8.333-3.729,8.333-8.333S14.604,1.667,10,1.667z M10,16.667c-3.683,0-6.667-2.984-6.667-6.667c0-3.683,2.983-6.667,6.667-6.667c3.683,0,6.667,2.983,6.667,6.667 C16.667,13.683,13.683,16.667,10,16.667z M15,7.933l-6.429,6.428l-1.428-1.428L5,10.789L6.429,9.36l2.143,2.144l5-5L15,7.933z" /></svg>');
+}
+
+.tasks .title {
+	flex-grow: 1;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 0 10px 0 8px;
+	text-overflow: ellipsis;
+	transition: color .25s cubic-bezier(.55, 0, .1, 1);
+}
+
+.tasks .check:checked + .title {
+	color: #888;
+}
+
+.tasks .title .strikethrough {
+	max-width: 100%;
+	overflow: hidden;
+	position: relative;
+	display: inline-block;
+	text-overflow: ellipsis;
+}
+
+.tasks .title .strikethrough:before {
+	left: 0;
+	top: 50%;
+	width: 0;
+	content: "";
+	position: absolute;
+	border-top: 1px solid #888;
+	transition: width .25s cubic-bezier(.55, 0, .1, 1);
+}
+
+.tasks .check:checked + .title .strikethrough:before {
+	width: 100%;
+}
+
+.tasks .due-date {
+	color: #757575;
+	flex-shrink: 0;
+	font-size: 11px;
+	font-family: Open Sans, sans-serif;
+}
+
+.tasks .due-date.due-today {
+	color: #2196F3;
+}
+
+.tasks .due-date.overdue {
+	color: #F44336;
+}
+
+/**
+ * This removes the need for a re-render when items are checked off
+ * by disabling the title (pointer-events) and date styling.
+ */
+.tasks .check:checked ~ .due-date {
+	color: #757575;
+	pointer-events: none;
+}
+
+
+
+
+
+/*---------------------------------------------
+	/ Tasks / Edit
+*/
+.tasks .item.edit {
+	height: 154px; /* This is hardcoded so the height can be transitioned */
+	margin: 5px 0;
+	cursor: default;
+	flex-wrap: wrap;
+	padding-top: 12px;
+	background: initial;
+	box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .25);
+}
+
+.tasks .edit textarea,
+.tasks .edit input[type="text"] {
+	border-radius: 0;
+	padding: 4px 6px!important;
+	border-width: 0 0 1px 0!important;
+}
+
+.tasks .edit input.title[type="text"] {
+	font-size: inherit;
+	margin-right: 10px;
+	padding: 3px 6px!important;
+	flex-basis: calc(72% - 10px);
+}
+
+.tasks .edit .due-date {
+	flex-basis: 28%;
+}
+
+.tasks .edit textarea.notes {
+	height: 56px;
+	resize: none;
+	flex-basis: 100%;
+	font-size: inherit;
+	margin: 12px 0 10px;
+}
+
+.tasks .edit button.done {
+	color: #0FAD8E;
+	margin-left: auto;
+}
+
+.tasks .edit button.icon {
+	padding: 3px 5px;
+}
+
+.tasks .edit button.icon svg {
+	fill: #474747;
+	vertical-align: top;
+}
+
+.tasks .edit button.delete svg {
+	margin: 2px;
+	width: 20px;
+	height: 20px;
+}
+
+
+
+
+
+/*---------------------------------------------
 	/ Translate
 */
 .translate form {
@@ -2264,16 +2613,20 @@ body.no-edit .bookmarks .tools {
 
 
 /*---------------------------------------------
-	/ Keep, Plus and Facebook shared
+	/ iFrame, HTML, Keep, Plus and Facebook shared
 */
+.widget.html,
 .widget.keep,
 .widget.plus,
+.widget.iframe,
 .widget.facebook {
 	padding: 0!important;
 }
 
+.html iframe,
 .keep iframe,
 .plus iframe,
+.iframe iframe,
 .facebook iframe {
 	width: 100%;
 	height: 100%;
@@ -2917,4 +3270,99 @@ body.no-edit .bookmarks .tools {
 	vertical-align: middle;
 	text-overflow: ellipsis;
 	width: calc(100% - 25px);
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Quotes
+*/
+.quotes blockquote {
+	border: 0;
+	margin: 0;
+	color: #222;
+	font-size: 20px;
+	padding: 5px 5px 0;
+	-webkit-font-smoothing: antialiased;
+	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.quotes blockquote > a {
+	color: inherit;
+	display: block;
+	text-decoration: none;
+}
+
+.quotes blockquote p {
+	font: inherit;
+	font-style: italic;
+	text-align: center;
+	margin-bottom: 5px;
+	white-space: pre-wrap;
+}
+
+.quotes blockquote p.no-quotes {
+	margin-top: 8px;
+}
+
+.quotes blockquote p:not(.no-quotes):before {
+	content: "\201C";
+}
+
+.quotes blockquote p:not(.no-quotes):after {
+	content: "\201D";
+}
+
+.quotes blockquote footer {
+	font-size: 14px;
+	text-align: right;
+}
+
+.quotes blockquote p.no-quotes + footer {
+	margin-bottom: -12px;
+}
+
+.quotes footer cite {
+	color: #444;
+	overflow: hidden;
+	white-space: nowrap;
+	vertical-align: top;
+	display: inline-block;
+	text-overflow: ellipsis;
+	max-width: calc(100% - 70px);
+}
+
+.quotes footer span {
+	opacity: 0;
+	float: left;
+	cursor: pointer;
+	margin-right: 10px;
+	font-family: Roboto, sans-serif;
+	transition: opacity .2s cubic-bezier(.4, 0, .2, 1);
+}
+
+.quotes:hover footer span {
+	opacity: 1;
+}
+
+.quotes footer .tweet:before {
+	color: #55ACEE;
+	font-size: 20px;
+	content: "\F099";
+	line-height: 20px;
+	font-family: FontAwesome;
+}
+
+.quotes footer .refresh svg {
+	fill: #444;
+	width: 20px;
+	height: 20px;
+}
+
+.quotes footer .refresh:hover svg {
+	fill: #222;
 }

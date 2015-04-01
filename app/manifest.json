@@ -1,11 +1,6 @@
 {
 	"content_scripts": [
 		{
-			"js": [ "oauth2/oauth2_inject.js" ],
-			"matches": [ "https://ichrome.uservoice.com/robots.txt*", "https://www.google.com/ichrome/robots.txt*", "https://developers.google.com/robots.txt*" ],
-			"run_at": "document_start"
-		},
-		{
 			"js": [ "inject/js/wunderlistfix.js" ],
 			"matches": [ "https://*.wunderlist.com/*", "http://*.wunderlist.com/*" ],
 			"run_at": "document_start",
@@ -32,7 +27,6 @@
 		"newtab": "index.html"
 	},
 	"web_accessible_resources": [
-		"oauth2/oauth2.html",
 		"index.html"
 	],
 	"background": {
@@ -46,13 +40,18 @@
 	"permissions": [
 		"storage",
 		"topSites",
+		"sessions",
 		"http://*/",
 		"https://*/",
-		"management",
 		"webRequest",
 		"unlimitedStorage",
 		"chrome://favicon/",
 		"webRequestBlocking"
+	],
+	"optional_permissions": [
+		"tabs",
+		"bookmarks",
+		"management"
 	],
 	"version": "2.1.9",
 	"manifest_version": 2,
@@ -60,8 +59,7 @@
 	"short_name": "iChrome",
 	"offline_enabled": true,
 	"name": "__MSG_extName__",
-	"optional_permissions": ["tabs"],
-	"minimum_chrome_version": "29.0",
+	"minimum_chrome_version": "37.0",
 	"description": "__MSG_extDescription__",
 	"update_url": "http://clients2.google.com/service/update2/crx",
 	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxwfbvOggtaBdJLMJbzEvFWW+BCZ2tEZwH9Nolbnj7t7ph5wnFg5DAkv34/N8hD4gAfQBdNM045g9EEccicqkLYsFLR7YT4kczrgHbq83qS3odYiAWPOEjQM+ydwUDxj0gjtgdwE7KugLWOZkOUQUJJ9IzeRvVHjyZUeIgeBBEFvwQyI7bKTyxeXKBwzt+0JTBs7W/0IQ/KGzNFZo5YXYuPIdjRCR823u1uJ8Zgr8CGmUrkqDoJuxmY+De7FxVZfJsINlpoGRAeXE38FYRgDkTfk4gad0pgromIYVRS7gDJXGBdm52Yvi+Ah5cCXhqB+Lj8xtOCN98WL6M9exn88VoQIDAQAB",

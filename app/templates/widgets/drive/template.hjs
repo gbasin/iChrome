@@ -2,7 +2,7 @@
 
 <div class="files">
 	{{#files}}
-		<a class="file" href="{{link}}" target="_blank">
+		<a class="file" href="{{link}}">
 			<div class="icon" style="{{#icon}}background-image: url({{icon}});{{/icon}}"></div>
 
 			<div class="info">

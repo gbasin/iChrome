@@ -1,7 +1,7 @@
 /*
  * The Drive widget.
  */
-define(["jquery", "moment", "oauth2"], function($, moment) {
+define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 	return {
 		id: 27,
 		size: 1,
@@ -91,69 +91,65 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 		},
 		oAuth: false,
 		setOAuth: function() {
-			this.oAuth = new OAuth2("drive", {
-				client_id: "559765430405-jtbjv5ivuc17nenpsl4dfk9r53a3q0hg.apps.googleusercontent.com",
-				client_secret: "__API_KEY_drive__",
-				api_scope: "https://www.googleapis.com/auth/drive.readonly"
+			this.oAuth = new OAuth({
+				name: "drive",
+				id: "559765430405-jtbjv5ivuc17nenpsl4dfk9r53a3q0hg.apps.googleusercontent.com",
+				secret: "__API_KEY_drive__",
+				scope: "https://www.googleapis.com/auth/drive.readonly"
 			});
 		},
 		refresh: function() {
 			if (!this.oAuth) this.setOAuth();
 
-			if (!this.oAuth.getAccessToken()) {
+			if (!this.oAuth.hasToken()) {
 				return this.render("authorize");
 			}
 
-			this.oAuth.authorize.call(this.oAuth, function() {
-				$.ajax({
-					type: "GET",
-					data: {
-						maxResults: this.config.files || 8,
-						fields: "items(alternateLink,iconLink,mimeType,thumbnailLink,lastModifyingUserName,modifiedDate,title)"
-					},
-					url: "https://www.googleapis.com/drive/v2/files",
-					beforeSend: function(xhr) {
-						xhr.setRequestHeader("Authorization", "OAuth " + this.oAuth.getAccessToken());
-					}.bind(this),
-					success: function(d) {
-						var files = [];
+			this.oAuth.ajax({
+				type: "GET",
+				data: {
+					maxResults: this.config.files || 8,
+					fields: "items(alternateLink,iconLink,mimeType,thumbnailLink,lastModifyingUserName,modifiedDate,title)"
+				},
+				url: "https://www.googleapis.com/drive/v2/files",
+				success: function(d) {
+					var files = [];
 
-						if (d && d.items) {
-							d.items.forEach(function(e, i) {
-								var file = {
-									name: e.title,
-									icon: e.iconLink,
-									link: e.alternateLink,
-									user: e.lastModifyingUserName,
-									date: moment(e.modifiedDate).toDate().getTime()
-								};
-
-								if (e.thumbnailLink && e.mimeType && (e.mimeType.indexOf("image") == 0 || e.mimeType.indexOf("video") == 0)) {
-									file.icon = e.thumbnailLink.replace(/=s220$/, "=s75-c"); // Replace the 220px picture with a 75px square one
-								}
-								else if (e.iconLink) {
-									file.icon = e.iconLink.replace("_list.png", "_email.png").replace("icon_10", "icon_11"); // Replace the 16px icon with a 32px icon and version 10 icons with V11
-								}
-
-								files.push(file);
-							});
-
-							this.data = {
-								files: files
+					if (d && d.items) {
+						d.items.forEach(function(e, i) {
+							var file = {
+								name: e.title,
+								icon: e.iconLink,
+								link: e.alternateLink,
+								user: e.lastModifyingUserName,
+								date: moment(e.modifiedDate).toDate().getTime()
 							};
 
-							this.render();
+							if (e.thumbnailLink && e.mimeType && (e.mimeType.indexOf("image") == 0 || e.mimeType.indexOf("video") == 0)) {
+								file.icon = e.thumbnailLink.replace(/=s220$/, "=s75-c"); // Replace the 220px picture with a 75px square one
+							}
+							else if (e.iconLink) {
+								file.icon = e.iconLink.replace("_list.png", "_email.png").replace("icon_10", "icon_11"); // Replace the 16px icon with a 32px icon and version 10 icons with V11
+							}
 
-							this.utils.saveData(this.data);
-						}
-					}.bind(this)
-				});
-			}.bind(this));
+							files.push(file);
+						});
+
+						this.data = {
+							files: files
+						};
+
+						this.render();
+
+						this.utils.saveData(this.data);
+					}
+				}.bind(this)
+			});
 		},
 		render: function(key) {
 			if (!this.oAuth) this.setOAuth();
 
-			if (key == "authorize" || (!key && !this.oAuth.getAccessToken())) {
+			if (key == "authorize" || (!key && !this.oAuth.hasToken())) {
 				this.utils.render({
 					authorize: true,
 					title: (this.config.title && this.config.title !== "" ? this.config.title : false)
@@ -162,7 +158,7 @@ define(["jquery", "moment", "oauth2"], function($, moment) {
 				return this.elm.find(".authorize").on("click", function(e) {
 					e.preventDefault();
 
-					this.oAuth.authorize.call(this.oAuth, this.refresh.bind(this));
+					this.oAuth.getToken(this.refresh.bind(this));
 				}.bind(this));
 			}
 

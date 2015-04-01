@@ -1,0 +1,38 @@
+{{#edit}}
+	<input type="text" class="title" value="{{title}}" placeholder="{{i18n.task_title}}" />
+
+	<input type="text" class="due-date" value="{{due}}" placeholder="{{i18n.due_date}}" />
+
+
+	<textarea class="notes" placeholder="{{i18n.notes}}">{{notes}}</textarea>
+
+
+	<button type="button" class="btn icon delete" title="{{i18n.delete_task}}">
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+			<path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path>
+		</svg>
+	</button>
+
+	<button type="button" class="btn icon move-up" title="{{i18n.move_up}}">
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+			<path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z" />
+		</svg>
+	</button>
+
+	<button type="button" class="btn icon move-down" title="{{i18n.move_down}}">
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+			<path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
+		</svg>
+	</button>
+
+	<button type="button" class="btn done">{{i18n.done}}</button>
+{{/edit}}
+{{^edit}}
+	<input type="checkbox" class="check"{{#done}} checked{{/done}} />
+
+	<span class="title">
+		<span class="strikethrough" title="{{title}}">{{title}}</span>
+	</span>
+
+	{{#due}}<span class="due-date{{#duetoday}} due-today{{/duetoday}}{{#overdue}} overdue{{/overdue}}" title="{{#duetoday}}{{i18n.due_today}}{{/duetoday}}{{#overdue}}{{i18n.overdue}}{{/overdue}}{{^duetoday}}{{^overdue}}{{i18n.due_date}}{{/overdue}}{{/duetoday}}">{{due}}</span>{{/due}}
+{{/edit}}

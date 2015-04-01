@@ -14,9 +14,10 @@ define([
 	"w/todo",		"w/topsites",		"w/traffic",
 	"w/translate",	"w/twitter",		"w/unread",
 	"w/voice",		"w/weather",		"w/wolfram",
-	"w/youtube",	"w/recentlyclosed",
+	"w/youtube",	"w/recentlyclosed",	"w/chrome_bookmarks",
+	"w/tasks",		"w/quotes",			"w/html",
 
-	"lib/jquery.numberformatter", "lib/jquery.sortable", "oauth2"
+	"lib/jquery.numberformatter", "lib/jquery.sortable"
 ], function(_, Utils) {
 	var args = Array.prototype.slice.call(arguments, 2),
 		widgets = {};

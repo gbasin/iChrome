@@ -6,6 +6,8 @@ define(["jquery", "i18n/i18n"], function($, Translate) {
 		var settings = {
 				links: [],
 				ok: false,
+				ltab: false,
+				stab: false,
 				apps: false,
 				plus: false,
 				voice: false,
@@ -14,7 +16,7 @@ define(["jquery", "i18n/i18n"], function($, Translate) {
 				editing: storage.settings.editing,
 				def: parseInt(storage.settings.def || 1)
 			},
-			booleans = ["ok", "apps", "plus", "voice", "gmail", "animation"],
+			booleans = ["ok", "ltab", "stab", "apps", "plus", "voice", "gmail", "animation"],
 			key;
 
 		modal.find(".general form, .visual form, .advanced form").serializeArray().forEach(function(e, i) {

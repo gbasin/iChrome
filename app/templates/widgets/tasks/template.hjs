@@ -1,0 +1,16 @@
+<h2 class="header">{{title}}{{^authorize}}<button type="button" class="btn add">{{i18n.add}}</button>{{/authorize}}</h2>
+
+<div class="items">
+	{{#items}}
+		<div class="item" data-id="{{id}}">
+			{{>item}}
+		</div>
+	{{/items}}
+	{{^items}}
+		{{#authorize}}
+			<div class="authorize">
+				{{i18n.authorize}}
+			</div>
+		{{/authorize}}
+	{{/items}}
+</div>
