@@ -19,6 +19,10 @@ define(["i18n/i18n"], function(Translate) {
 						}
 					], [
 						{
+							id: 35,
+							size: 5
+						},
+						{
 							id: 11,
 							size: 5
 						}, {
