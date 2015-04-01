@@ -1405,11 +1405,18 @@
 .apps .app {
 	width: 50%;
 	color: #666;
+	height: 32px;
 	margin: 6px 0;
 	font-size: 14px;
 	display: inline-block;
 	text-decoration: none;
 	font-family: Open Sans, sans-serif;
+}
+
+.apps .app.holder {
+	border-radius: 3px;
+	vertical-align: top;
+	background: rgba(0, 0, 0, .05);
 }
 
 .apps .app.unavailable {
@@ -1446,6 +1453,7 @@
 
 .apps .tiles .app {
 	flex: 1;
+	height: auto;
 	margin: 10px;
 	min-width: 64px;
 	text-align: center;
