@@ -44,11 +44,11 @@ module.exports = function(grunt) {
 					process: function(src, pathname) {
 						var name = path.relative(path.resolve("build/templates"), pathname).replace(/\\/g, "/");
 
-						if (/^widgets\/([a-z\-]*)\/template\.hjs$/.test(name)) {
-							name = name.replace(/^widgets\/([a-z\-]*)\/template\.hjs$/, "widgets.$1");
+						if (/^widgets\/([a-z\-_]*)\/template\.hjs$/.test(name)) {
+							name = name.replace(/^widgets\/([a-z\-_]*)\/template\.hjs$/, "widgets.$1");
 						}
-						else if (/^widgets\/([a-z\-]*)\/(.*)\.hjs$/.test(name)) {
-							name = name.replace(/^widgets\/([a-z\-]*)\/(.*)\.hjs$/, "widgets.$1.$2");
+						else if (/^widgets\/([a-z\-_]*)\/(.*)\.hjs$/.test(name)) {
+							name = name.replace(/^widgets\/([a-z\-_]*)\/(.*)\.hjs$/, "widgets.$1.$2");
 						}
 						else {
 							name = name.replace(".hjs", "");
