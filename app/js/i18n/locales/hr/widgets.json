@@ -63,6 +63,15 @@
     "new_folder":"Folder",
     "drop_link":"Drop link here"
   },
+  "chrome_bookmarks":{
+    "name":"Oznake",
+    "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
+    "settings":{
+      "title_placeholder":"Enter a widget title",
+      "from":"Show bookmarks from",
+      "open":"Open bookmarks in"
+    }
+  },
   "calc":{
     "name":"Računalo",
     "desc":"Prikazuje Kalkulator sa podrškom za osnovne operatore.",
@@ -75,7 +84,12 @@
     "desc":"Displays upcoming events from one or more of your Google calendars.",
     "settings":{
       "calendar":"Calendar",
-      "events":"Events Shown"
+      "events":"Events Shown",
+      "show":"Show events from",
+      "show_options":{
+        "all":"All time",
+        "today":"Today only"
+      }
     },
     "title":"My Calendar",
     "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
@@ -232,8 +246,7 @@
     "settings":{
       "tabs":"Tabs Shown",
       "open":"Open tabs in"
-    },
-    "notabs":"Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed."
+    }
   },
   "reddit":{
     "name":"Reddit",
@@ -329,6 +342,25 @@
     "add":"Add Item",
     "none":"None",
     "important":"Important"
+  },
+  "tasks":{
+    "name":"Tasks",
+    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
+    "title":"Tasks",
+    "settings":{
+      "list":"List"
+    },
+    "task_title":"Title",
+    "due_date":"Due date",
+    "notes":"Notes",
+    "add":"Add Item",
+    "delete_task":"Delete Task",
+    "move_up":"Move Up",
+    "move_down":"Move Down",
+    "done":"Done",
+    "due_today":"Due today",
+    "overdue":"Overdue",
+    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
   },
   "topsites":{
     "name":"Top Sites",
@@ -442,5 +474,27 @@
     },
     "search":"Search YouTube",
     "num_views":"views"
+  },
+  "quotes":{
+    "name":"Quotes",
+    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "settings":{
+      "source":"Source",
+      "method":"Load new quotes",
+      "method_options":{
+        "daily":"Once daily",
+        "random":"Every time I load the page"
+      }
+    },
+    "unknown_author":"Unknown"
+  },
+  "html":{
+    "name":"HTML",
+    "desc":"Displays completely custom HTML in an iframe.",
+    "settings":{
+      "html":"HTML",
+      "js":"JavaScript",
+      "height":"Widget Height"
+    }
   }
 }

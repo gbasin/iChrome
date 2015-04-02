@@ -68,6 +68,8 @@
       "profile_desc":"Esta es la imagen que se mostrará al lado derecho de su barra de herramientas. Se rellenan los campos desde tu perfil de Google",
       "name":"Nombre",
       "name_desc":"Esto se utiliza para el enlace de Google + en la barra de herramientas.  También recibe rellenan automáticamente de tu perfil de Google",
+      "ltab":"El funcionamiento de el enlace",
+      "ltab_label":"Abrir vínculos en una nueva pestaña predeterminada",
       "voice":"Búsqueda por voz",
       "voice_search":"Activar búsqueda por voz",
       "voice_ok":"Habilitar la detección de hotword \"Google OK\"",

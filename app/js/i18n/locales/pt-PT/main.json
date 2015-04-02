@@ -4,14 +4,14 @@
   "newtabName":"iChrome novo separador",
   "extName":"IChrome- a tua homepage, para o chrome",
   "extDescription":"A MELHOR homepage para o Chrome. Temas incríveis, dezenas de widgets, super rápido, e super costumizavel!",
-  "newtabDescription":"A MELHOR homepage para o Chrome, como também para nova aba. Lindos temas, vários widgets, ultra rápido e loucamente personalizável!",
+  "newtabDescription":"A MELHOR homepage para o Chrome, também para novo separador. Lindos temas, vários widgets, ultra rápido e loucamente personalizável!",
   "defaults":{
     "tab":"Casa",
     "me":"Eu"
   },
   "remove_widget":"Remover",
-  "column_to_grid_warning":"Você selecionou para alterar uma guia de um layout de coluna para um layout de grade. Se você continuar, você perderá todas suas colunas; Tudo será movido para o canto superior esquerdo. Tem certeza que quer fazer isso?",
-  "grid_to_column_warning":"Você selecionou para alterar uma guia de um layout de grade para um layout de coluna. Se você continuar você perderá todo seu posicionamento de widget; Tudo será movido para a primeira coluna da nova guia. Tem certeza que quer fazer isso?",
+  "column_to_grid_warning":"Selecionou para alterar um separador de um layout de coluna para um layout de grade. Se continuar, perderá todas suas colunas; Tudo será movido para o canto superior esquerdo. Tem certeza que quer fazer isso?",
+  "grid_to_column_warning":"Selecionou para alterar uma guia de um layout de grade para um layout de coluna. Se continuar perderá as posicões dos widget; Tudo será movido para a primeira coluna da nova guia. Tem certeza que quer fazer isso?",
   "storage_warning":"Você usou mais de 90% do espaço total de armazenamento sincronizado disponível. Se você atingir o limite, iChrome vai parar de sincronizar seus dados e poderá deixar de funcionar. Você pode diminuir a quantidade de espaço que você usa, excluindo temas personalizados, notas e listas de tarefas que não são usadas.",
   "toolbar":{
     "placeholder":"Digite seus termos",
@@ -68,6 +68,8 @@
       "profile_desc":"Esta é a imagem mostrada no canto direito da barra de ferramentas.  Vem diretamente do seu perfil do Google",
       "name":"Nome",
       "name_desc":"Isto é usado para o Google + link na barra de ferramentas.  Também é preenchido automaticamente do seu perfil do Google",
+      "ltab":"Comportamento da ligação",
+      "ltab_label":"Abrir links em numa nova aba por padrão",
       "voice":"Pesquisa de voz",
       "voice_search":"Habilitar a pesquisa por voz",
       "voice_ok":"Ativar a detecção do hotword \"Ok, Google\"",
@@ -254,7 +256,7 @@
       "attach_tab":"No separador",
       "attach_window":"A janela",
       "preview":"Preview",
-      "save":"Salvar & Fechar",
+      "save":"Gravar & Fechar",
       "cache_error":"Ocorreu um erro ao tentar armazenar em cache a imagem que você forneceu, por favor, verifique novamente a URL.",
       "upload_error":"Ocorreu um erro ao tentar carregar o arquivo que você forneceu, por favor certifique-se que é um tamanho razoável e uma imagem."
     }

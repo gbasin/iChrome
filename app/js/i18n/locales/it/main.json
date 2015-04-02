@@ -68,6 +68,8 @@
       "profile_desc":"Questa è l'immagine visualizzata a destra della barra degli strumenti. E' auto-popolata dal tuo profilo di Google",
       "name":"Nome",
       "name_desc":"Questo è usato per il collegamento Google+ nella barra degli strumenti. Viene anche auto-popolato dal tuo profilo di Google",
+      "ltab":"Comportamento dei link",
+      "ltab_label":"Apri link in una nuova scheda di default",
       "voice":"Ricerca vocale",
       "voice_search":"Abilita ricerca vocale",
       "voice_ok":"Attiva il rilevamento della frase chiave \"OK Google\"",

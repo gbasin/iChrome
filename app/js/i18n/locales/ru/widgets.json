@@ -63,6 +63,15 @@
     "new_folder":"Папка",
     "drop_link":"Перетащите ссылку сюда"
   },
+  "chrome_bookmarks":{
+    "name":"Закладки",
+    "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
+    "settings":{
+      "title_placeholder":"Введите заголовок виджета",
+      "from":"Show bookmarks from",
+      "open":"Открывать во вкладке"
+    }
+  },
   "calc":{
     "name":"Калькулятор",
     "desc":"Отображает калькулятор с поддержкой основных математических операций.",
@@ -75,7 +84,12 @@
     "desc":"Отображает предстоящие события для одного из ваших календарей Google.",
     "settings":{
       "calendar":"Календарь",
-      "events":"Количество отображаемых событий"
+      "events":"Количество отображаемых событий",
+      "show":"Show events from",
+      "show_options":{
+        "all":"All time",
+        "today":"Today only"
+      }
     },
     "title":"Мой календарь",
     "noevents":"Похоже, предстоящие события отсутствуют.\n<br \/><br \/>\nВы можете выбрать другой календарь в настройках виджета в правой верхней его части."
@@ -232,8 +246,7 @@
     "settings":{
       "tabs":"Количество отображаемых вкладок",
       "open":"Открывать во вкладке"
-    },
-    "notabs":"Вкладки, закрытые до момента установки этого виджета не отображаются. Отображаются только вкладки, закрытые после активации виджета."
+    }
   },
   "reddit":{
     "name":"Reddit",
@@ -329,6 +342,25 @@
     "add":"Добавить",
     "none":"Обычное",
     "important":"Важное"
+  },
+  "tasks":{
+    "name":"Tasks",
+    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
+    "title":"Tasks",
+    "settings":{
+      "list":"Список"
+    },
+    "task_title":"Title",
+    "due_date":"Due date",
+    "notes":"Заметки",
+    "add":"Добавить",
+    "delete_task":"Delete Task",
+    "move_up":"Move Up",
+    "move_down":"Move Down",
+    "done":"Done",
+    "due_today":"Due today",
+    "overdue":"Overdue",
+    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
   },
   "topsites":{
     "name":"Популярные сайты",
@@ -442,5 +474,27 @@
     },
     "search":"Поиск на YouTube",
     "num_views":"просмотров"
+  },
+  "quotes":{
+    "name":"Quotes",
+    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "settings":{
+      "source":"Source",
+      "method":"Load new quotes",
+      "method_options":{
+        "daily":"Once daily",
+        "random":"Every time I load the page"
+      }
+    },
+    "unknown_author":"Перевод отсутствует"
+  },
+  "html":{
+    "name":"HTML",
+    "desc":"Displays completely custom HTML in an iframe.",
+    "settings":{
+      "html":"HTML",
+      "js":"JavaScript",
+      "height":"Высота виджета"
+    }
   }
 }

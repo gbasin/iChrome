@@ -63,6 +63,15 @@
     "new_folder":"Dossier",
     "drop_link":"Déposer le lien ici"
   },
+  "chrome_bookmarks":{
+    "name":"Marque-pages",
+    "desc":"Affiche vos signets Chrome, éventuellement à partir d'un dossier spécifique.",
+    "settings":{
+      "title_placeholder":"Entrez le titre du widget",
+      "from":"Afficher les signets de",
+      "open":"Ouvrir favori dans"
+    }
+  },
   "calc":{
     "name":"Calculatrice",
     "desc":"Affiche une calculatrice pouvant effectuer des opérations simples.",
@@ -75,7 +84,12 @@
     "desc":"Affiche les événements à venir d'un ou plusieurs de vos calendriers Google.",
     "settings":{
       "calendar":"Calendrier",
-      "events":"Événements affichés"
+      "events":"Événements affichés",
+      "show":"Montrer les événements de",
+      "show_options":{
+        "all":"tous les temps",
+        "today":"aujourd'hui seulement"
+      }
     },
     "title":"Mon agenda",
     "noevents":"Il ne semble pas y avoir d’événements à venir. <br\/> <br\/> Essayez de sélectionner un agenda en cliquant sur la clé en haut à droite."
@@ -232,8 +246,7 @@
     "settings":{
       "tabs":"Onglets affichés",
       "open":"Ouvrir onglets dans"
-    },
-    "notabs":"Les onglets que vous avez fermez avant que ce widget soit installé ne peuvent pas être affichés. A partir de maintenant, touts les onglets que vous fermerez seront affichés ici."
+    }
   },
   "reddit":{
     "name":"Reddit",
@@ -329,6 +342,25 @@
     "add":"Ajouter une note",
     "none":"Aucun",
     "important":"Important"
+  },
+  "tasks":{
+    "name":"tâches",
+    "desc":"Affiche une liste modifiable de tâches à partir d'un de vos listes de Google Tasks.",
+    "title":"tâches",
+    "settings":{
+      "list":"Listes"
+    },
+    "task_title":"Titre",
+    "due_date":"date d'échéance",
+    "notes":"Notes",
+    "add":"Ajouter une note",
+    "delete_task":"effacez la tâche",
+    "move_up":"déplacer vers le haut",
+    "move_down":"descendre",
+    "done":"fini",
+    "due_today":"en raison aujourd'hui",
+    "overdue":"en retard",
+    "authorize":"Vous aurez besoin de sélectionner une liste de votre Google Tasks via les paramètres avant tout peut être affiché ici."
   },
   "topsites":{
     "name":"Sites favoris",
@@ -442,5 +474,27 @@
     },
     "search":"Recherche YouTube",
     "num_views":"vues"
+  },
+  "quotes":{
+    "name":"citations",
+    "desc":"Affiche une citation cueillis soit à chaque fois que vous chargez la page ou une fois par jour.",
+    "settings":{
+      "source":"Source",
+      "method":"Charger les nouvelles citations",
+      "method_options":{
+        "daily":"Une fois par jour",
+        "random":"Chaque fois que je charge la page"
+      }
+    },
+    "unknown_author":"Inconnu"
+  },
+  "html":{
+    "name":"HTML",
+    "desc":"HTML personnalisée s'affiche dans un iframe.",
+    "settings":{
+      "html":"HTML",
+      "js":"JavaScript",
+      "height":"Hauteur du widget"
+    }
   }
 }

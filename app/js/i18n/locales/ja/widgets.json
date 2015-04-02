@@ -63,6 +63,15 @@
     "new_folder":"フォルダ",
     "drop_link":"リンクをここにドロップ"
   },
+  "chrome_bookmarks":{
+    "name":"ブックマーク",
+    "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
+    "settings":{
+      "title_placeholder":"ウィジェットのタイトルを入力します",
+      "from":"ブックマークを表示します。",
+      "open":"ブックマークを開く"
+    }
+  },
   "calc":{
     "name":"電卓",
     "desc":"基本的な演算子が使える電卓を表示",
@@ -75,7 +84,12 @@
     "desc":"Google カレンダーから今後のイベントが表示されます。",
     "settings":{
       "calendar":"カレンダー",
-      "events":"表示されている予定"
+      "events":"表示されている予定",
+      "show":"Show events from",
+      "show_options":{
+        "all":"All time",
+        "today":"Today only"
+      }
     },
     "title":"マイカレンダー",
     "noevents":"近日中に設定されているイベントは特にないようです。\n<br \/><br \/>\n右上の設定アイコンからカレンダーを選択してみてください。"
@@ -232,8 +246,7 @@
     "settings":{
       "tabs":"表示されるタブ",
       "open":"タブの開き方"
-    },
-    "notabs":"このウィジェットをインストールする前に閉じたタブは表示できません。これ以降に閉じた新しいタブは表示されます。"
+    }
   },
   "reddit":{
     "name":"Reddit",
@@ -329,6 +342,25 @@
     "add":"項目を追加",
     "none":"未設定",
     "important":"重要"
+  },
+  "tasks":{
+    "name":"Tasks",
+    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
+    "title":"Tasks",
+    "settings":{
+      "list":"一覧"
+    },
+    "task_title":"Title",
+    "due_date":"Due date",
+    "notes":"メモ",
+    "add":"項目を追加",
+    "delete_task":"Delete Task",
+    "move_up":"Move Up",
+    "move_down":"Move Down",
+    "done":"Done",
+    "due_today":"Due today",
+    "overdue":"Overdue",
+    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
   },
   "topsites":{
     "name":"トップサイト",
@@ -442,5 +474,27 @@
     },
     "search":"YouTubeを検索",
     "num_views":"閲覧数"
+  },
+  "quotes":{
+    "name":"Quotes",
+    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "settings":{
+      "source":"Source",
+      "method":"Load new quotes",
+      "method_options":{
+        "daily":"Once daily",
+        "random":"Every time I load the page"
+      }
+    },
+    "unknown_author":"訳文が見つかりません"
+  },
+  "html":{
+    "name":"HTML",
+    "desc":"Displays completely custom HTML in an iframe.",
+    "settings":{
+      "html":"HTML",
+      "js":"JavaScript",
+      "height":"ウィジェットの高さ"
+    }
   }
 }

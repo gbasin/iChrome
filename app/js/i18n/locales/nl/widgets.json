@@ -63,6 +63,15 @@
     "new_folder":"Map",
     "drop_link":"Link hier neerzetten"
   },
+  "chrome_bookmarks":{
+    "name":"Bladwijzers",
+    "desc":"Laat je Chromen bladwijzers zien,\nzo gewenst van een specifieke map.",
+    "settings":{
+      "title_placeholder":"Voer een widget titel in",
+      "from":"Laat bladwijzers zien uit",
+      "open":"Open bladwijzers in"
+    }
+  },
   "calc":{
     "name":"Rekenmachine",
     "desc":"Laat een rekenmachine zien met ondersteuning voor basisoperatoren.",
@@ -75,7 +84,12 @@
     "desc":"Toont aanstaande gebeurtenissen uit een of meer van uw Google agenda's.",
     "settings":{
       "calendar":"Agenda",
-      "events":"Gebeurtenissen weergegeven"
+      "events":"Gebeurtenissen weergegeven",
+      "show":"Laat afspraken zien uit",
+      "show_options":{
+        "all":"Alle tijd",
+        "today":"Alleen vandaag"
+      }
     },
     "title":"Mijn agenda",
     "noevents":"Het lijkt dat er geen evenementen in de nabije toekomst zijn.\n<br \/><br\/>\nProbeer een agenda te selecteren via het moersleutelpictogram in de rechterbovenhoek."
@@ -232,8 +246,7 @@
     "settings":{
       "tabs":"Weergegeven tabbladen",
       "open":"Open tabbladen in"
-    },
-    "notabs":"Tabbladen die werden gesloten voordat deze widget geïnstalleerd was kunnen niet worden weergegeven. Vanaf nu zal elke tab die u sluit worden weergegeven."
+    }
   },
   "reddit":{
     "name":"Reddit",
@@ -329,6 +342,25 @@
     "add":"Item toevoegen",
     "none":"Geen",
     "important":"Belangrijk"
+  },
+  "tasks":{
+    "name":"Tasks",
+    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
+    "title":"Tasks",
+    "settings":{
+      "list":"Lijst"
+    },
+    "task_title":"Title",
+    "due_date":"Due date",
+    "notes":"Notities",
+    "add":"Item toevoegen",
+    "delete_task":"Delete Task",
+    "move_up":"Move Up",
+    "move_down":"Move Down",
+    "done":"Done",
+    "due_today":"Due today",
+    "overdue":"Overdue",
+    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
   },
   "topsites":{
     "name":"Topsites",
@@ -442,5 +474,27 @@
     },
     "search":"Zoek op YouTube",
     "num_views":"weergaven"
+  },
+  "quotes":{
+    "name":"Quotes",
+    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "settings":{
+      "source":"Source",
+      "method":"Load new quotes",
+      "method_options":{
+        "daily":"Once daily",
+        "random":"Every time I load the page"
+      }
+    },
+    "unknown_author":"Onbekend"
+  },
+  "html":{
+    "name":"HTML",
+    "desc":"Displays completely custom HTML in an iframe.",
+    "settings":{
+      "html":"HTML",
+      "js":"JavaScript",
+      "height":"Widget hoogte"
+    }
   }
 }

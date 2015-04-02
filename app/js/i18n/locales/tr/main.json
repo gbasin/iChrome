@@ -68,6 +68,8 @@
       "profile_desc":"This is the image shown at the right of the toolbar.  It gets auto-populated from your Google profile",
       "name":"İsim",
       "name_desc":"This is used for the Google+ link in the toolbar.  It also gets auto-populated from your Google profile",
+      "ltab":"Link Behavior",
+      "ltab_label":"Open links in a new tab by default",
       "voice":"Sesli Arama",
       "voice_search":"Sesli aramayı etkinleştir",
       "voice_ok":"\"OK Google\" denetimini etkinleştir",

@@ -63,6 +63,15 @@
     "new_folder":"Cartella",
     "drop_link":"Trascina il link qui"
   },
+  "chrome_bookmarks":{
+    "name":"Preferiti",
+    "desc":"Visualizza i preferiti di Chrome, facoltativamente da una cartella specifica.",
+    "settings":{
+      "title_placeholder":"Inserisci un titolo del widget",
+      "from":"Mostra i preferiti da",
+      "open":"Apri preferiti in"
+    }
+  },
   "calc":{
     "name":"Calcolatrice",
     "desc":"Consente di visualizzare una calcolatrice con il supporto per gli operatori di base.",
@@ -75,7 +84,12 @@
     "desc":"Visualizza gli eventi imminenti da uno o più dei vostri calendari di Google.",
     "settings":{
       "calendar":"Calendario",
-      "events":"Eventi mostrati"
+      "events":"Eventi mostrati",
+      "show":"Mostra gli eventi da",
+      "show_options":{
+        "all":"Tutto il tempo",
+        "today":"Solo oggi"
+      }
     },
     "title":"Il mio calendario",
     "noevents":"Non sembra che ci sia qualche evento nel prossimo futuro.\n<br \/><br \/>\nProvare a selezionare un calendario tramite l'icona della chiave inglese in alto a destra."
@@ -232,8 +246,7 @@
     "settings":{
       "tabs":"Schede mostrate",
       "open":"Apri tabs in"
-    },
-    "notabs":"I tabs che sono stati chiusi prima dell'installazione di questo widget non possono essere visualizzati. Da adesso qualsiasi tab chiuso sarà visualizzato."
+    }
   },
   "reddit":{
     "name":"Reddit",
@@ -329,6 +342,25 @@
     "add":"Aggiungi elemento",
     "none":"Niente",
     "important":"Importante"
+  },
+  "tasks":{
+    "name":"Attività",
+    "desc":"Mostra una lista modificabile di attività da una delle tue liste Google Task.",
+    "title":"Attività",
+    "settings":{
+      "list":"Lista"
+    },
+    "task_title":"Titolo",
+    "due_date":"Data di scadenza",
+    "notes":"note",
+    "add":"Aggiungi elemento",
+    "delete_task":"Elimina attività",
+    "move_up":"Sposta in alto",
+    "move_down":"Sposta in basso",
+    "done":"Fatto",
+    "due_today":"Scade oggi",
+    "overdue":"Scaduto",
+    "authorize":"Per far visualizzare qualcosa qui, devi prima selezionare una lista da Google Task nelle impostazioni."
   },
   "topsites":{
     "name":"Siti più visitati",
@@ -442,5 +474,27 @@
     },
     "search":"Cerca su YouTube",
     "num_views":"Visualizzazioni"
+  },
+  "quotes":{
+    "name":"Citazioni",
+    "desc":"Mostra una citazione selezionata ogni volta che apri la pagina o una volta al giorno.",
+    "settings":{
+      "source":"Fonte",
+      "method":"Carica nuove citazioni",
+      "method_options":{
+        "daily":"Una volta al giorno",
+        "random":"Ogni volta che carico la pagina"
+      }
+    },
+    "unknown_author":"Sconosciuto"
+  },
+  "html":{
+    "name":"HTML",
+    "desc":"Mostra dell'HTML personalizzabile all'interno di un iframe.",
+    "settings":{
+      "html":"HTML",
+      "js":"JavaScript",
+      "height":"Altezza del widget"
+    }
   }
 }

@@ -63,6 +63,15 @@
     "new_folder":"Фасцикла",
     "drop_link":"Спусти линк овде"
   },
+  "chrome_bookmarks":{
+    "name":"Сачуване странице",
+    "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
+    "settings":{
+      "title_placeholder":"Унеси назив додатка",
+      "from":"Show bookmarks from",
+      "open":"Отвори букмаркове у"
+    }
+  },
   "calc":{
     "name":"Дигитрон",
     "desc":"Показује дигитрон са подршком за основне функције.",
@@ -75,7 +84,12 @@
     "desc":"Приказује надолазеће догађаје са једног или више твојих Google календара.",
     "settings":{
       "calendar":"Календар",
-      "events":"Прикажи догађаје"
+      "events":"Прикажи догађаје",
+      "show":"Show events from",
+      "show_options":{
+        "all":"All time",
+        "today":"Today only"
+      }
     },
     "title":"Мој Календар",
     "noevents":"Изгледа да немаш догађаје у блиској будућности.\n<br \/><br \/>\nПробај да одабереш календар уз помоћ кључа у горњем десном углу."
@@ -232,8 +246,7 @@
     "settings":{
       "tabs":"Приказане Картице",
       "open":"Отвори картице у"
-    },
-    "notabs":"Картице које су затворене пре него је овај додатак инсталиран не могу бити приказане. Почевши од овог тренутка свака нова картица коју затвориш ће бити приказана."
+    }
   },
   "reddit":{
     "name":"Reddit",
@@ -329,6 +342,25 @@
     "add":"Додај артикл",
     "none":"ништа",
     "important":"Важно"
+  },
+  "tasks":{
+    "name":"Tasks",
+    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
+    "title":"Tasks",
+    "settings":{
+      "list":"Листа"
+    },
+    "task_title":"Title",
+    "due_date":"Due date",
+    "notes":"Белешке",
+    "add":"Додај артикл",
+    "delete_task":"Delete Task",
+    "move_up":"Move Up",
+    "move_down":"Move Down",
+    "done":"Done",
+    "due_today":"Due today",
+    "overdue":"Overdue",
+    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
   },
   "topsites":{
     "name":"Најпосећенији сајтови",
@@ -442,5 +474,27 @@
     },
     "search":"Претражи YouTube",
     "num_views":"Број прегледа"
+  },
+  "quotes":{
+    "name":"Quotes",
+    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "settings":{
+      "source":"Source",
+      "method":"Load new quotes",
+      "method_options":{
+        "daily":"Once daily",
+        "random":"Every time I load the page"
+      }
+    },
+    "unknown_author":"Непознато"
+  },
+  "html":{
+    "name":"HTML",
+    "desc":"Displays completely custom HTML in an iframe.",
+    "settings":{
+      "html":"HTML",
+      "js":"JavaScript",
+      "height":"Висина додатка"
+    }
   }
 }

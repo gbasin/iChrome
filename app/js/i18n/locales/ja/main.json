@@ -68,6 +68,8 @@
       "profile_desc":"これがツールバーの右に表示されるイメージです。Googleのプロフィールから自動的に表示されます。",
       "name":"名前",
       "name_desc":"これは、ツールバーの Google + リンクで使用されます。Google プロフィールから自動的に取得入力されます。",
+      "ltab":"Link Behavior",
+      "ltab_label":"Open links in a new tab by default",
       "voice":"音声検索",
       "voice_search":"音声検索を有効にする",
       "voice_ok":"”OK Google\"ホットワード検出を有効にする",

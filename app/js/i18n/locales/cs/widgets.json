@@ -63,6 +63,15 @@
     "new_folder":"Složka",
     "drop_link":"Sem přetáhněte odkaz"
   },
+  "chrome_bookmarks":{
+    "name":"Záložky",
+    "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
+    "settings":{
+      "title_placeholder":"Zadejte název widgetu",
+      "from":"Show bookmarks from",
+      "open":"Otevři záložky v"
+    }
+  },
   "calc":{
     "name":"Kalkulačka",
     "desc":"Zobrazí kalkulačka s podporou pro základní operátory.",
@@ -75,7 +84,12 @@
     "desc":"Zobrazuje nadcházející události z jednoho nebo více vašich Google kalendářů.",
     "settings":{
       "calendar":"Kalendář",
-      "events":"Zobrazené události"
+      "events":"Zobrazené události",
+      "show":"Show events from",
+      "show_options":{
+        "all":"All time",
+        "today":"Today only"
+      }
     },
     "title":"Můj kalendář",
     "noevents":"Nevypadá to, že existují nějaké události v blízké budoucnosti. <br \/><br \/> Vyberte kalendář přes ikonu klíče v pravém horním rohu."
@@ -232,8 +246,7 @@
     "settings":{
       "tabs":"Zobrazené záložky",
       "open":"Otevřené karty v"
-    },
-    "notabs":"Záložky, které byly zavřeny před tím, než byl nainstalován tento widget, nemohou být zobrazeny. Od této chvíle budou zobrazeny všechny nové záložky, které zavřete."
+    }
   },
   "reddit":{
     "name":"Reddit",
@@ -329,6 +342,25 @@
     "add":"Přidat položku",
     "none":"Prázdný",
     "important":"Důležité"
+  },
+  "tasks":{
+    "name":"Tasks",
+    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
+    "title":"Tasks",
+    "settings":{
+      "list":"seznam"
+    },
+    "task_title":"Title",
+    "due_date":"Due date",
+    "notes":"Poznámky",
+    "add":"Přidat položku",
+    "delete_task":"Delete Task",
+    "move_up":"Move Up",
+    "move_down":"Move Down",
+    "done":"Done",
+    "due_today":"Due today",
+    "overdue":"Overdue",
+    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
   },
   "topsites":{
     "name":"Weby na nejvyšší úrovni",
@@ -442,5 +474,27 @@
     },
     "search":"Prohledat YouTube",
     "num_views":"zhlédnutí"
+  },
+  "quotes":{
+    "name":"Quotes",
+    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "settings":{
+      "source":"Source",
+      "method":"Load new quotes",
+      "method_options":{
+        "daily":"Once daily",
+        "random":"Every time I load the page"
+      }
+    },
+    "unknown_author":"Neznámý"
+  },
+  "html":{
+    "name":"HTML",
+    "desc":"Displays completely custom HTML in an iframe.",
+    "settings":{
+      "html":"HTML",
+      "js":"JavaScript",
+      "height":"Výška widgetu"
+    }
   }
 }

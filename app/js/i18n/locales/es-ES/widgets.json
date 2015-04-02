@@ -63,6 +63,15 @@
     "new_folder":"Carpeta",
     "drop_link":"Caída de enlace aquí"
   },
+  "chrome_bookmarks":{
+    "name":"Marcadores",
+    "desc":"Muestra tus marcadores de Chrome, opcionalmente de una carpeta específica.",
+    "settings":{
+      "title_placeholder":"Introduzca el título de un widget",
+      "from":"Mostrar marcadores de",
+      "open":"Abrir marcadores en"
+    }
+  },
   "calc":{
     "name":"Calculadora",
     "desc":"Muestra una calculadora con soporte para los operadores básicos.",
@@ -75,7 +84,12 @@
     "desc":"Muestra eventos de uno o más de sus calendarios de Google.",
     "settings":{
       "calendar":"Calendario",
-      "events":"Eventos presentados"
+      "events":"Eventos presentados",
+      "show":"Mostrar eventos de",
+      "show_options":{
+        "all":"Todo el tiempo",
+        "today":"Hoy solamente"
+      }
     },
     "title":"Mi Calendario",
     "noevents":"No parece que hay algún evento en el futuro cercano. \n<br \/><br \/>\npruebe a seleccionar un calendario mediante el icono de llave inglesa en la parte superior derecha."
@@ -232,8 +246,7 @@
     "settings":{
       "tabs":"Lengüetas que se muestra",
       "open":"Pestañas abiertas en"
-    },
-    "notabs":"Pestañas que se cerraron antes de que se instaló este widget no pueden ser demostradas. A partir de ahora cualquier nuevas pestañas que cierras se mostrará."
+    }
   },
   "reddit":{
     "name":"Reddit",
@@ -329,6 +342,25 @@
     "add":"Añadir Artículo",
     "none":"Ninguno",
     "important":"Importante"
+  },
+  "tasks":{
+    "name":"tareas",
+    "desc":"Muestra una lista de tareas de una de sus tareas de Google editable aparecen.",
+    "title":"tareas",
+    "settings":{
+      "list":"Lista"
+    },
+    "task_title":"Título",
+    "due_date":"fecha de vencimiento",
+    "notes":"Notas",
+    "add":"Añadir Artículo",
+    "delete_task":"Borrar tarea",
+    "move_up":"Subir",
+    "move_down":"Abajo",
+    "done":"Hecho",
+    "due_today":"Vencen hoy",
+    "overdue":"Atrasado",
+    "authorize":"Usted necesitará seleccionar una lista de sus tareas de Google mediante la configuración antes de que nada puede ser mostrado aquí."
   },
   "topsites":{
     "name":"Paginas web principales",
@@ -442,5 +474,27 @@
     },
     "search":"Buscar YouTube",
     "num_views":"Vistas"
+  },
+  "quotes":{
+    "name":"Comillas",
+    "desc":"Muestra una cotización elegida cada vez que se carga la página o una vez al día.",
+    "settings":{
+      "source":"Fuente",
+      "method":"Carga nuevas frases",
+      "method_options":{
+        "daily":"Una vez al día",
+        "random":"Cada vez cargue la página"
+      }
+    },
+    "unknown_author":"Desconocido"
+  },
+  "html":{
+    "name":"HTML",
+    "desc":"Muestra totalmente personalizado HTML en un iframe.",
+    "settings":{
+      "html":"HTML",
+      "js":"JavaScript",
+      "height":"Altura de Widget"
+    }
   }
 }

@@ -68,6 +68,8 @@
       "profile_desc":"Dies ist das Bild, welches auf der rechten Seite der Symbolleiste angezeigt wird. Es wird automatisch aus deinem Google-Profil empfangen.",
       "name":"Name",
       "name_desc":"Dies wird für den Google + Link in der Symbolleiste verwendet.  Es wird automatisch aus Deinem Google-Profil gezogen",
+      "ltab":"Link Verhalten",
+      "ltab_label":"Standardmäßig Links in einem neuen Reiter öffnen",
       "voice":"Sprach-Suche",
       "voice_search":"Sprach-Suche aktivieren",
       "voice_ok":"Aktivieren Sie die \"OK-Google\" Erkennung",
