@@ -53,7 +53,7 @@
 		"bookmarks",
 		"management"
 	],
-	"version": "2.1.9",
+	"version": "2.1.10",
 	"manifest_version": 2,
 	"default_locale": "en",
 	"short_name": "iChrome",

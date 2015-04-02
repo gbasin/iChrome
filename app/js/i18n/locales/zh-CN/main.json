@@ -31,10 +31,10 @@
   "menu":{
     "settings":"设置",
     "widgets":"小部件",
-    "background":"显示背景",
+    "background":"只显示背景",
     "editing":"编辑",
-    "editing_enabled":"已开启",
-    "editing_disabled":"已关闭",
+    "editing_enabled":"正在编辑",
+    "editing_disabled":"不在编辑",
     "plus":"Google+",
     "tabs":"标签：",
     "footer":{
@@ -68,6 +68,8 @@
       "profile_desc":"您的照片，其将在工具栏的右侧显示，默认图片链接从您的Google资料中自动获取",
       "name":"姓名",
       "name_desc":"您的名字，在工具栏 Google+您 处显示，默认姓名将从您的Google资料中自动获取",
+      "ltab":"点击链接时的行为",
+      "ltab_label":"默认情况下将在新选项卡中打开链接",
       "voice":"语音搜索",
       "voice_search":"启用语音搜索",
       "voice_ok":"启用\"OK Google“声音检测",
@@ -147,14 +149,14 @@
     }
   },
   "store":{
-    "installation":"安装",
+    "installation":"拖动以安装",
     "description":"描述",
     "preview":"预览",
     "instructions":"拖动到您的主页上然后调整至合适的大小"
   },
   "widgets":{
     "sizes":{
-      "tiny":"最小",
+      "tiny":"迷你",
       "small":"小",
       "medium":"中等",
       "large":"大",
@@ -165,7 +167,7 @@
       "save":"保存",
       "size":"小部件大小"
     },
-    "delete_confirm":"真的要删除此小部件吗？此操作是不可逆的，该小部件的所有数据都将永久丢失。",
+    "delete_confirm":"您真的要删除此小部件吗？此操作不可恢复，该小部件的所有数据都将永久丢失。",
     "shared":{
       "settings":{
         "title":"小部件标题",
@@ -175,7 +177,7 @@
           "current":"当前选项卡",
           "blank":"新选项卡"
         },
-        "footer_link":"页脚链接",
+        "footer_link":"”更多“按钮",
         "footer_link_options":{
           "show":"显示",
           "hide":"隐藏"
@@ -208,7 +210,7 @@
     "random_daily":"该主题每天重新随机挑选新图片",
     "sunrise_sunset":"该主题基于一天的时间显示图片",
     "feed":"该主题从外部源每天获取新图像",
-    "delete_confirm":"您真的要删除这个主题吗？\n此操作是不可逆的 ；整个主题将永久丢失。",
+    "delete_confirm":"您真的要删除这个主题吗？\n此操作不可恢复 ；整个主题将永久丢失。",
     "delete_error":"试图删除该主题时出错。请稍后再试。",
     "feed_fetching":"请稍候，源正在获取......",
     "feed_error":"在尝试刷新源时出错，请稍后重试。",

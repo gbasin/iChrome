@@ -63,6 +63,15 @@
     "new_folder":"資料夾",
     "drop_link":"拖曳連結至此"
   },
+  "chrome_bookmarks":{
+    "name":"書籤",
+    "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
+    "settings":{
+      "title_placeholder":"輸入小工具標題",
+      "from":"Show bookmarks from",
+      "open":"打開書籤於..."
+    }
+  },
   "calc":{
     "name":"計算機",
     "desc":"顯示含有基本運算符的計算器。",
@@ -75,7 +84,12 @@
     "desc":"顯示接下來一或多個來自Google日曆的事件",
     "settings":{
       "calendar":"行事曆",
-      "events":"顯示的事件"
+      "events":"顯示的事件",
+      "show":"Show events from",
+      "show_options":{
+        "all":"All time",
+        "today":"Today only"
+      }
     },
     "title":"我的日曆",
     "noevents":"近期似乎沒有任何事件。\n<br \/><br \/>\n試著透過右上角的設定圖示來選取一個日曆。"
@@ -232,8 +246,7 @@
     "settings":{
       "tabs":"顯示的標籤頁",
       "open":"打開標籤頁於"
-    },
-    "notabs":"無法顯示安裝這個小工具之前關閉的標籤頁。將顯示為任何現在開啟的新標籤頁。"
+    }
   },
   "reddit":{
     "name":"熱迪特",
@@ -329,6 +342,25 @@
     "add":"加入項目",
     "none":"無",
     "important":"重要"
+  },
+  "tasks":{
+    "name":"任務",
+    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
+    "title":"任務",
+    "settings":{
+      "list":"清單檢視"
+    },
+    "task_title":"Title",
+    "due_date":"最後期限",
+    "notes":"備註",
+    "add":"加入項目",
+    "delete_task":"刪除任務",
+    "move_up":"上移",
+    "move_down":"下移",
+    "done":" 完成",
+    "due_today":"今天到期",
+    "overdue":"逾期",
+    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
   },
   "topsites":{
     "name":"置頂網站",
@@ -442,5 +474,27 @@
     },
     "search":"搜尋 YouTube",
     "num_views":"觀賞"
+  },
+  "quotes":{
+    "name":"Quotes",
+    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "settings":{
+      "source":"Source",
+      "method":"Load new quotes",
+      "method_options":{
+        "daily":"Once daily",
+        "random":"Every time I load the page"
+      }
+    },
+    "unknown_author":"不明"
+  },
+  "html":{
+    "name":"HTML",
+    "desc":"Displays completely custom HTML in an iframe.",
+    "settings":{
+      "html":"HTML",
+      "js":"JavaScript",
+      "height":"小工具高度"
+    }
   }
 }

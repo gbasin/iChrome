@@ -63,6 +63,15 @@
     "new_folder":"Klasör",
     "drop_link":"Bağlantıyı buraya bırakın"
   },
+  "chrome_bookmarks":{
+    "name":"Yer imleri",
+    "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
+    "settings":{
+      "title_placeholder":"Widget için bir başlık girin",
+      "from":"Show bookmarks from",
+      "open":"Yer imlerini şurada aç"
+    }
+  },
   "calc":{
     "name":"Hesap makinesi",
     "desc":"Temel işlemleri yapabilen bir hesap makinesi gösterir.",
@@ -75,7 +84,12 @@
     "desc":"Bir veya daha fazla Google takviminizde yaklaşan etkinlikleri gösterir.",
     "settings":{
       "calendar":"Takvim",
-      "events":"Gösterilen Etkinlikler"
+      "events":"Gösterilen Etkinlikler",
+      "show":"Show events from",
+      "show_options":{
+        "all":"All time",
+        "today":"Today only"
+      }
     },
     "title":"Takvimim",
     "noevents":"Yakın bir gelecekte herhangi bir olayı var gibi görünmüyor.\n<br\/><br\/> \nSağ üstteki ingiliz anahtarı ile seçmeyi deneyin."
@@ -232,8 +246,7 @@
     "settings":{
       "tabs":"Gösterilecek Sekme",
       "open":"Sekmeleri şurada aç"
-    },
-    "notabs":"Bu widget yüklenmeden önce kapatılan sekmeleri gösteremez. Bundan sonra kapatılan sekmeler burada görüntülenir."
+    }
   },
   "reddit":{
     "name":"Reddit",
@@ -329,6 +342,25 @@
     "add":"Öğe Ekle",
     "none":"Hiçbiri",
     "important":"Önemli"
+  },
+  "tasks":{
+    "name":"Tasks",
+    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
+    "title":"Tasks",
+    "settings":{
+      "list":"Liste"
+    },
+    "task_title":"Title",
+    "due_date":"Due date",
+    "notes":"Notlar",
+    "add":"Öğe Ekle",
+    "delete_task":"Delete Task",
+    "move_up":"Move Up",
+    "move_down":"Move Down",
+    "done":"Done",
+    "due_today":"Due today",
+    "overdue":"Overdue",
+    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
   },
   "topsites":{
     "name":"En iyi siteler",
@@ -442,5 +474,27 @@
     },
     "search":"Search YouTube",
     "num_views":"views"
+  },
+  "quotes":{
+    "name":"Quotes",
+    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "settings":{
+      "source":"Source",
+      "method":"Load new quotes",
+      "method_options":{
+        "daily":"Once daily",
+        "random":"Every time I load the page"
+      }
+    },
+    "unknown_author":"Unknown"
+  },
+  "html":{
+    "name":"HTML",
+    "desc":"Displays completely custom HTML in an iframe.",
+    "settings":{
+      "html":"HTML",
+      "js":"JavaScript",
+      "height":"Widget yüksekliği"
+    }
   }
 }

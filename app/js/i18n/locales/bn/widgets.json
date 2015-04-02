@@ -1,49 +1,49 @@
 {
   "lang_code":"bn-widgets",
   "analytics":{
-    "name":"Analytics",
-    "desc":"Displays various metrics from a Google Analytics profile.",
-    "sessions":"sessions",
-    "pageviews":"Pageviews",
-    "pagesvisit":"Pages\/visit",
+    "name":"বিশ্লেষণমূলক",
+    "desc":"গুগল বিশ্লেষণ প্রোফাইল থেকে বিভিন্ন বৈশিষ্ট্যের মান প্রদর্শন করা হয়।",
+    "sessions":"অধিবেশন",
+    "pageviews":"পাতাপরিদর্শন",
+    "pagesvisit":"পাতা\/ভ্রমণ",
     "bouncerate":"Bounce Rate",
     "completions":"Completions",
     "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
     "settings":{
-      "profile":"Profile"
+      "profile":"প্রোফাইল"
     }
   },
   "apps":{
-    "name":"Apps",
-    "desc":"Displays your currently installed Google Chrome applications.",
+    "name":"অ্যাপসমূহ",
+    "desc":"আপনার বর্তমানে ইনস্টল করা গুগল ক্রোম অ্যাপ্লিকেশনসমূহ প্রদর্শন করে।",
     "settings":{
-      "format":"Widget Format",
+      "format":"উইজেটের বিন্যাস",
       "format_options":{
-        "tiles":"Tiles",
-        "list":"List"
+        "tiles":"টালি",
+        "list":"তালিকা"
       },
       "display":"দেখান",
       "display_options":{
-        "all":"All apps",
-        "enabled":"Only enabled apps"
+        "all":"সব অ্যাপসমূহ",
+        "enabled":"শুধুমাত্র সক্রিয় অ্যাপসমূহ"
       },
-      "sort":"Sort",
+      "sort":"বাছাই করুন",
       "sort_options":{
         "id":"ID",
-        "alphabetically":"Alphabetically",
-        "offline":"Offline Enabled",
+        "alphabetically":"বর্ণানুক্রমে",
+        "offline":"অফলাইন সক্ষমিত",
         "available":"Availability"
       },
-      "open":"Open apps in"
+      "open":"এতে অ্যাপসমূহ খুলুন"
     },
-    "store_app":"Store"
+    "store_app":"দোকান"
   },
   "bookmarks":{
-    "name":"Bookmarks",
+    "name":"বুকমার্ক",
     "desc":"Displays selected and customized bookmarks, and other links.",
     "settings":{
       "title_placeholder":"Enter a widget title",
-      "layout":"Layout",
+      "layout":"লেআউট",
       "layout_options":{
         "single":"Single column",
         "double":"Double column"
@@ -53,21 +53,30 @@
     "edit":{
       "dialog_title":"Edit Bookmark",
       "title":"Bookmark Title",
-      "title_placeholder":"Google",
-      "url":"Bookmark URL",
-      "url_placeholder":"http:\/\/www.google.com\/",
+      "title_placeholder":"গুগল",
+      "url":"বুকমার্ক URL",
+      "url_placeholder":"http:\/\/www.google.com.bd\/",
       "save":"সংরক্ষণ"
     },
-    "new_caption":"New",
-    "new_bookmark":"Bookmark",
+    "new_caption":"নতুন",
+    "new_bookmark":"বুকমার্ক",
     "new_folder":"Folder",
     "drop_link":"Drop link here"
   },
+  "chrome_bookmarks":{
+    "name":"বুকমার্ক",
+    "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
+    "settings":{
+      "title_placeholder":"Enter a widget title",
+      "from":"Show bookmarks from",
+      "open":"Open bookmarks in"
+    }
+  },
   "calc":{
-    "name":"Calculator",
+    "name":"ক্যালকুলেটর",
     "desc":"Displays a calculator with support for basic operators.",
-    "error":"Error!",
-    "infinity":"Infinity",
+    "error":"ত্রুটি!",
+    "infinity":"অসীম",
     "mismatch":"Mismatched parentheses"
   },
   "calendar":{
@@ -75,23 +84,28 @@
     "desc":"Displays upcoming events from one or more of your Google calendars.",
     "settings":{
       "calendar":"পঞ্জিকা",
-      "events":"Events Shown"
+      "events":"Events Shown",
+      "show":"Show events from",
+      "show_options":{
+        "all":"All time",
+        "today":"Today only"
+      }
     },
-    "title":"My Calendar",
+    "title":"আমার পঞ্জিকা",
     "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
   },
   "clock":{
-    "name":"Time & Date",
-    "desc":"Shows the current date and time. Optionally for a different timezone.",
+    "name":"সময় ও তারিখ",
+    "desc":"বর্তমান তারিখ এবং সময় প্রদর্শন করে। বিভিন্ন সময় অঞ্চল জন্য বিকল্পনীয়।",
     "settings":{
-      "timezone":"Time Zone",
-      "timezone_local":"Local",
-      "format":"Clock Format",
+      "timezone":"সময় অঞ্চল",
+      "timezone_local":"স্থানীয়",
+      "format":"ঘড়ির বিন্যাস",
       "format_options":{
-        "ampm":"AM\/PM - Digital",
-        "24hour":"24 Hour - Digital",
-        "analog":"12 Hour - Analog",
-        "ampmseconds":"AM\/PM - Digital, No Seconds",
+        "ampm":"পুর্বাহ্ন\/অপরাহ্ন - ডিজিটাল",
+        "24hour":"২৪ ঘণ্টা - ডিজিটাল",
+        "analog":"১২ ঘণ্টা - এনালগ",
+        "ampmseconds":"পুর্বাহ্ন\/অপরাহ্ন - ডিজিটাল, সেকেন্ডবিহীন",
         "24hourseconds":"24 Hour - Digital, No Seconds"
       }
     },
@@ -125,31 +139,31 @@
       "show":"দেখান",
       "show_options":{
         "all":"All articles",
-        "unread":"Only unread articles"
+        "unread":"শুধু অপঠিত নিবন্ধ"
       },
-      "layout":"Layout",
+      "layout":"লেআউট",
       "layout_options":{
-        "titles":"Titles only",
-        "magazine":"Magazine",
-        "cards":"Cards",
-        "cards_columns":"Cards (two columns)"
+        "titles":"শুধুমাত্র শিরোনাম",
+        "magazine":"পত্রিকা",
+        "cards":"কার্ড",
+        "cards_columns":"কার্ড (দুই কলাম)"
       },
-      "mark":"Mark an article as read when I",
+      "mark":"একটি নিবন্ধ পঠিত হিসাবে চিহ্নিত করুন যখন আমি",
       "mark_options":{
-        "scroll":"Scroll past it or click it",
-        "click":"Just click it"
+        "scroll":"এটিতে স্ক্রল বা এটিতে ক্লিক করি",
+        "click":"শুধু এটিতে ক্লিক করি"
       },
-      "sort":"Sort Order",
+      "sort":"সজ্জাক্রম",
       "sort_options":{
-        "newest":"Newest first",
-        "oldest":"Oldest first"
+        "newest":"নবীনতম প্রথমে",
+        "oldest":"পুরনোতম প্রথমে"
       }
     },
-    "all":"All",
-    "saved":"Saved for later",
-    "uncategorized":"Uncategorized",
-    "author":"by",
-    "go_to_feedly":"Go To Feedly"
+    "all":"সব",
+    "saved":"পরের জন্য সংরক্ষিত",
+    "uncategorized":"শ্রেণীবিহীন",
+    "author":"কর্তৃক",
+    "go_to_feedly":"Feedly-এ যান"
   },
   "gmail":{
     "name":"জিমেইল",
@@ -159,35 +173,35 @@
     "name":"iFrame",
     "desc":"Displays a webpage of your choice within an iframe.",
     "settings":{
-      "url":"Frame URL",
-      "url_placeholder":"i.e. http:\/\/www.google.com\/",
-      "height":"Frame Height",
+      "url":"ফ্রেম URL",
+      "url_placeholder":"উদা. http:\/\/www.google.com.bd\/",
+      "height":"ফ্রেমের উচ্চতা",
       "padding":"Padding"
     }
   },
   "keep":{
     "name":"Keep",
-    "desc":"Embeds Google Keep in a widget"
+    "desc":"উইজেটে গুগল কিপ এম্বেড করুন"
   },
   "news":{
     "name":"সংবাদ",
     "desc":"Displays the current top news by category and edition.",
     "settings":{
       "articles":"Articles Shown",
-      "edition":"Edition",
+      "edition":"সংস্করণ",
       "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
-      "topic":"Topic",
+      "topic":"প্রসঙ্গ",
       "topic_options":{
-        "top":"Top Stories",
-        "world":"World",
-        "nation":"Nation",
-        "business":"Business",
-        "sports":"Sports",
-        "technology":"Technology",
-        "entertainment":"Entertainment",
-        "health":"Health",
-        "science":"Science",
-        "spotlight":"Spotlight"
+        "top":"শীর্ষ গল্প",
+        "world":"বিশ্ব",
+        "nation":"জাতি",
+        "business":"ব্যবসা",
+        "sports":"ক্রীড়া",
+        "technology":"প্রযুক্তি",
+        "entertainment":"বিনোদন",
+        "health":"স্বাস্থ্য",
+        "science":"বিজ্ঞান",
+        "spotlight":"স্পটলাইট"
       },
       "feed":"Custom Feed",
       "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
@@ -198,7 +212,7 @@
     "more":"আরও"
   },
   "notes":{
-    "name":"Notes",
+    "name":"নোট",
     "desc":"Inserts a simple, editable, note.",
     "settings":{
       "color":"Note Color",
@@ -232,8 +246,7 @@
     "settings":{
       "tabs":"Tabs Shown",
       "open":"Open tabs in"
-    },
-    "notabs":"Tabs that were closed before this widget was installed can't be shown. Starting now any new tabs you close will be displayed."
+    }
   },
   "reddit":{
     "name":"Reddit",
@@ -242,14 +255,14 @@
       "subreddit":"Subreddit",
       "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
       "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
-      "sort":"Sort Order",
+      "sort":"সজ্জাক্রম",
       "sort_options":{
         "hot":"Hot",
         "top":"Top",
-        "new":"New",
+        "new":"নতুন",
         "gilded":"Gilded",
         "rising":"Rising",
-        "controversial":"Controversial"
+        "controversial":"বিতর্কিত"
       },
       "links":"Links Shown",
       "click":"When I click a link show me",
@@ -269,7 +282,7 @@
       "url":"Feed URL",
       "url_placeholder":"The URL of the RSS feed to be displayed",
       "articles":"Articles Shown",
-      "view":"View",
+      "view":"দেখুন",
       "view_options":{
         "images":"Image friendly",
         "default":"Default"
@@ -280,13 +293,13 @@
     "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
   },
   "sports":{
-    "name":"Sports",
+    "name":"ক্রীড়া",
     "desc":"Displays scores and game information for selected leagues and\/or teams.",
     "settings":{
       "league":"League",
       "games":"Games Shown",
-      "team":"Team",
-      "teams":"Team",
+      "team":"দল",
+      "teams":"দল",
       "unavailable":"When team games are unavailable",
       "unavailable_options":{
         "other":"Show other games",
@@ -294,9 +307,9 @@
       }
     },
     "error":"Something seems to have gone wrong",
-    "unknown_error":"Unknown Error",
-    "watch_on":"Watch on: %s",
-    "no_games":"No Games Scheduled"
+    "unknown_error":"অজানা ত্রুটি",
+    "watch_on":"%s এ দেখুন",
+    "no_games":"কোনো খেলার সময়সূচী নেই"
   },
   "stocks":{
     "name":"Stocks",
@@ -308,38 +321,57 @@
     },
     "as_of":"as of",
     "exchange_time":"Exchange Time",
-    "open":"open",
-    "high":"high",
-    "low":"low",
-    "volume":"volume"
+    "open":"খুলুন",
+    "high":"উচ্চ",
+    "low":"নিম্ন",
+    "volume":"ভলিউম"
   },
   "todo":{
-    "name":"To-do",
-    "desc":"Displays an interactive to-do list with important and completed items.",
-    "title":"To-do list",
+    "name":"করণীয়",
+    "desc":"গুরুত্বপূর্ণ এবং সম্পন্ন আইটেমসহ একটি মিথস্ক্রিয় করণীয় তালিকা প্রদর্শন করে।",
+    "title":"করণীয় তালিকা",
     "settings":{
-      "color":"Font Color",
+      "color":"ফন্টের রঙ",
       "color_options":{
-        "light":"Light",
-        "dark":"Dark"
+        "light":"হালকা",
+        "dark":"গাঢ়"
       },
-      "tags":"Tags",
+      "tags":"ট্যাগ",
       "tags_placeholder":"Enter a tag name and press Enter"
     },
-    "add":"Add Item",
-    "none":"None",
+    "add":"আইটেম যোগ করুন",
+    "none":"কোনটি নয়",
     "important":"Important"
+  },
+  "tasks":{
+    "name":"Tasks",
+    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
+    "title":"Tasks",
+    "settings":{
+      "list":"তালিকা"
+    },
+    "task_title":"Title",
+    "due_date":"Due date",
+    "notes":"নোট",
+    "add":"আইটেম যোগ করুন",
+    "delete_task":"Delete Task",
+    "move_up":"Move Up",
+    "move_down":"Move Down",
+    "done":"Done",
+    "due_today":"Due today",
+    "overdue":"Overdue",
+    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
   },
   "topsites":{
     "name":"Top Sites",
     "desc":"Displays your most visited\/top sites.",
     "settings":{
-      "show":"Number of sites shown",
-      "open":"Open sites in"
+      "show":"দেখানো সাইটের সংখ্যা",
+      "open":"এতে সাইট খুলুন"
     }
   },
   "traffic":{
-    "name":"Traffic",
+    "name":"ট্রাফিক",
     "desc":"Displays the current time in current traffic to home or work.",
     "settings":{
       "leave":"I leave home at",
@@ -358,13 +390,13 @@
     "to_work":"to work"
   },
   "translate":{
-    "name":"Translate",
+    "name":"অনুবাদ",
     "desc":"Contains a small inline Google Translate textbox.",
     "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
-    "button":"Translate",
+    "button":"অনুবাদ",
     "untranslate":"Untranslate",
     "auto":"Auto (%s)",
-    "unknown":"Unknown",
+    "unknown":"অজানা",
     "error":"Something went wrong while trying to translate that..."
   },
   "twitter":{
@@ -378,14 +410,14 @@
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
     "authorize_btn":"Authorize",
     "no_tweets":"There don't seem to be any tweets here...",
-    "home":"Home",
+    "home":"মূল পাতা",
     "mentions":"Mentions",
     "retweets":"Retweets of me",
     "lists":"Lists",
     "more":"আরও",
-    "reply":"Reply",
+    "reply":"উত্তর দিন",
     "retweet":"Retweet",
-    "favorite":"Favorite"
+    "favorite":"পছন্দ"
   },
   "unread":{
     "name":"Unread",
@@ -415,7 +447,7 @@
       "temperature":"Temperature Units",
       "wind":"Wind Speed Units"
     },
-    "unknown":"Unknown",
+    "unknown":"অজানা",
     "wind":"Wind Speed",
     "chill":"Wind Chill",
     "humidity":"Humidity"
@@ -442,5 +474,27 @@
     },
     "search":"Search YouTube",
     "num_views":"views"
+  },
+  "quotes":{
+    "name":"Quotes",
+    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "settings":{
+      "source":"Source",
+      "method":"Load new quotes",
+      "method_options":{
+        "daily":"Once daily",
+        "random":"Every time I load the page"
+      }
+    },
+    "unknown_author":"অজানা"
+  },
+  "html":{
+    "name":"HTML",
+    "desc":"Displays completely custom HTML in an iframe.",
+    "settings":{
+      "html":"HTML",
+      "js":"JavaScript",
+      "height":"উইজেটের উচ্চতা"
+    }
   }
 }

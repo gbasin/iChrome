@@ -68,6 +68,8 @@
       "profile_desc":"Dit is de afbeelding dat rechts op de werkbalk wordt weergegeven. Deze wordt automatisch uit uw Google-profiel gehaald",
       "name":"Naam",
       "name_desc":"Deze wordt gebruikt voor de link naar Google+ in de werkbalk. Deze wordt ook automatisch uit uw Google-profiel gehaald",
+      "ltab":"Link gedrag",
+      "ltab_label":"Open links in a new tab by default",
       "voice":"Spraakgestuurd zoeken",
       "voice_search":"Spraakgestuurd zoeken inschakelen",
       "voice_ok":"Schakel \"OK Google\" herkenning in",

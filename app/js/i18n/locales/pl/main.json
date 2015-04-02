@@ -68,6 +68,8 @@
       "profile_desc":"Jest to obrazek widoczny w prawym górnym rogu paska narzędzi. Zostanie automatycznie zgrany z Twoim profilem Google",
       "name":"Imię",
       "name_desc":"Jest to tytuł linku dla Google+ widoczna na pasku narzędzi. Zostanie automatycznie zgrana z Twoim profilem Google",
+      "ltab":"Link Behavior",
+      "ltab_label":"Open links in a new tab by default",
       "voice":"Wyszukiwarka głosowa",
       "voice_search":"Włącz wyszukiwanie głosowe",
       "voice_ok":"Włącz detekcje słów \"OK Google\"",

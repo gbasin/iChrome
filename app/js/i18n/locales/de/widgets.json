@@ -63,6 +63,15 @@
     "new_folder":"Verzeichnis",
     "drop_link":"Link hierher ziehen"
   },
+  "chrome_bookmarks":{
+    "name":"Lesezeichen",
+    "desc":"Zeigt Deine Chrome-Favoriten, optional die eines bestimmten Ordners.",
+    "settings":{
+      "title_placeholder":"Geben Sie einen Widget-Titel ein",
+      "from":"Zeige Favoriten von",
+      "open":"Lesezeichen öffnen in"
+    }
+  },
   "calc":{
     "name":"Taschenrechner",
     "desc":"Zeigt einen Taschenrechner mit Unterstützung für grundlegende Operatoren an.",
@@ -75,7 +84,12 @@
     "desc":"Zeigt bevorstehende Veranstaltungen aus einem oder mehrerer Deiner Google-Kalender.",
     "settings":{
       "calendar":"Kalender",
-      "events":"Ereignisse angezeigt"
+      "events":"Ereignisse angezeigt",
+      "show":"Zeige Events von",
+      "show_options":{
+        "all":"zeitlich unbegrenzt",
+        "today":"Nur heute"
+      }
     },
     "title":"Mein Kalender",
     "noevents":"Es gibt keine Ereignisse in naher Zukunft.<br \/><br \/>Versuche einen Kalender über das Schraubenschlüssel-Symbol oben rechts auszuwählen."
@@ -232,8 +246,7 @@
     "settings":{
       "tabs":"Registerkarten angezeigt",
       "open":"Tabs öffnen in"
-    },
-    "notabs":"Registerkarten, die geschlossen wurden bevor dieses Widget installiert wurde, können nicht angezeigt werden. Angezeigt werden neue Tabs, die ab jetzt geschlossen werden."
+    }
   },
   "reddit":{
     "name":"Reddit",
@@ -329,6 +342,25 @@
     "add":"Element  hinzufügen",
     "none":"Nichts",
     "important":"Wichtig"
+  },
+  "tasks":{
+    "name":"Aufgaben",
+    "desc":"Zeigt eine anpassbare Liste der Aufgaben von einer Deiner Google-Aufgabenlisten.",
+    "title":"Aufgaben",
+    "settings":{
+      "list":"Liste"
+    },
+    "task_title":"Titel",
+    "due_date":"Fällig am",
+    "notes":"Notizen",
+    "add":"Element  hinzufügen",
+    "delete_task":"Aufgabe löschen",
+    "move_up":"Nach oben",
+    "move_down":"Nach unten",
+    "done":"Fertig",
+    "due_today":"Heute fällig",
+    "overdue":"Überfällig",
+    "authorize":"Du musst eine Liste aus Deinen Google-Aufgaben über die Einstellungen auswählen, bevor hier etwas angezeigt werden kann."
   },
   "topsites":{
     "name":"Top-Seiten",
@@ -442,5 +474,27 @@
     },
     "search":"In Youtube suchen",
     "num_views":"Ansichten"
+  },
+  "quotes":{
+    "name":"Zitate",
+    "desc":"Zeigt ein Zitat jedes Mal, wenn die Seite neu geladen wird oder einmal täglich.",
+    "settings":{
+      "source":"Quelle",
+      "method":"Neue Zitate laden",
+      "method_options":{
+        "daily":"Einmal täglich",
+        "random":"Jedes Mal wenn die Seite geladen wird"
+      }
+    },
+    "unknown_author":"Unbekannt"
+  },
+  "html":{
+    "name":"HTML",
+    "desc":"Zeigt vollständig benutzerdefiniertes HTML in einem Iframe.",
+    "settings":{
+      "html":"HTML",
+      "js":"JavaScript",
+      "height":"Widget Höhe"
+    }
   }
 }

@@ -68,6 +68,8 @@
       "profile_desc":"該圖像會顯示在工具列的右側。它會從 Google個人檔案自動取得您的圖像。",
       "name":"名稱",
       "name_desc":"工具列 Google+ 超連結所顯示的文字。iChrome 也會自動從您的 Google 個人檔案中取得。",
+      "ltab":"超連結行為",
+      "ltab_label":"預設情況下在新選項卡中打開超連結",
       "voice":"語音搜尋",
       "voice_search":"啟用語音搜索",
       "voice_ok":"啟用 \"OK Google\" 啟動指令偵測",

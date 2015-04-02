@@ -68,6 +68,8 @@
       "profile_desc":"Tento obrázek se zobrazí na pravé straně horního panelu. Automaticky se doplní z Google profilu",
       "name":"Jméno",
       "name_desc":"Jméno použité v odkazu na Google+ v horním panelu. Doplní se automaticky z Google profilu",
+      "ltab":"Link Behavior",
+      "ltab_label":"Open links in a new tab by default",
       "voice":"Vyhledávání pomocí hlasu",
       "voice_search":"Povolit vyhledávání pomocí hlasu",
       "voice_ok":"Povolte detekci výrazu \"OK Google\"",

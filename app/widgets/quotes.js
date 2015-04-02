@@ -29,7 +29,7 @@ define(["jquery", "lodash"], function($, _) {
 				label: "i18n.settings.source"
 			},
 			{
-				type: "radio",
+				type: "select",
 				nicename: "method",
 				label: "i18n.settings.method",
 				options: {

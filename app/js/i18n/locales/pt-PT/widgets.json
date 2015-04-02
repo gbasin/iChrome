@@ -63,6 +63,15 @@
     "new_folder":"Pasta",
     "drop_link":"Salvar"
   },
+  "chrome_bookmarks":{
+    "name":"Favoritos",
+    "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
+    "settings":{
+      "title_placeholder":"Insira um widget de título",
+      "from":"Show bookmarks from",
+      "open":"Favoritos  abertos em"
+    }
+  },
   "calc":{
     "name":"Calculadora",
     "desc":"Exibe uma calculadora com suporte para operadores básicos.",
@@ -75,7 +84,12 @@
     "desc":"Exibe os próximos eventos de um ou mais dos seus calendários do Google.",
     "settings":{
       "calendar":"Calendario",
-      "events":"Eventos mostrados"
+      "events":"Eventos mostrados",
+      "show":"Show events from",
+      "show_options":{
+        "all":"All time",
+        "today":"Today only"
+      }
     },
     "title":"Meu Calendário",
     "noevents":"Ele não se parece existem eventos em um futuro próximo. <br \/> <br \/> \nTente selecionar um calendário através do ícone de chave inglesa no canto superior direito.\n"
@@ -232,8 +246,7 @@
     "settings":{
       "tabs":"Tabs Mostrado",
       "open":"Abas abertas em"
-    },
-    "notabs":"Abas que foram fechadas antes desta Widget foi instalado não pode ser mostrado. A partir de agora todos os novos separadores que fechar será exibida."
+    }
   },
   "reddit":{
     "name":"Reddit",
@@ -329,6 +342,25 @@
     "add":"Adicionar item",
     "none":"Nenhum",
     "important":"Importante"
+  },
+  "tasks":{
+    "name":"Tasks",
+    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
+    "title":"Tasks",
+    "settings":{
+      "list":"Lista"
+    },
+    "task_title":"Title",
+    "due_date":"Due date",
+    "notes":"Notas",
+    "add":"Adicionar item",
+    "delete_task":"Delete Task",
+    "move_up":"Move Up",
+    "move_down":"Move Down",
+    "done":"Done",
+    "due_today":"Due today",
+    "overdue":"Overdue",
+    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
   },
   "topsites":{
     "name":"Top Sites",
@@ -442,5 +474,27 @@
     },
     "search":"Pesquisa YouTube",
     "num_views":"Vistas"
+  },
+  "quotes":{
+    "name":"Quotes",
+    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "settings":{
+      "source":"Source",
+      "method":"Load new quotes",
+      "method_options":{
+        "daily":"Once daily",
+        "random":"Every time I load the page"
+      }
+    },
+    "unknown_author":"Desconhecido"
+  },
+  "html":{
+    "name":"HTML",
+    "desc":"Displays completely custom HTML in an iframe.",
+    "settings":{
+      "html":"HTML",
+      "js":"JavaScript",
+      "height":"Altura do widget"
+    }
   }
 }
