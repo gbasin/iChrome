@@ -484,9 +484,6 @@ chrome.webRequest.onHeadersReceived.addListener(
 	["blocking", "responseHeaders"]
 );
 
-<<<<<<< HEAD
-=======
-
 chrome.webRequest.onAuthRequired.addListener(
 	function(info) {
 		if (info.tabId !== -1 && info.scheme.toLowerCase().trim() === "basic") {
@@ -510,8 +507,6 @@ chrome.webRequest.onAuthRequired.addListener(
 	["blocking"]
 );
 
-
->>>>>>> origin/master
 // Sync manager
 var unextend = function(obj1, obj2) {
 		var newObj = {};
