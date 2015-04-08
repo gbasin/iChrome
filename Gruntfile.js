@@ -326,7 +326,47 @@ module.exports = function(grunt) {
 	});
 
 
-	grunt.registerTask("default", ["jshint:all", "copy", "i18n:compile", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "requirejs:build", "clean:all"]);
+	grunt.registerTask("default", [
+		"jshint:all",
+		"copy",
+		"i18n:compile",
+		"concat",
+		"hogan:compilebinder",
+		"hogan:compile",
+		"string-replace",
+		"requirejs:build",
+		"clean:all"
+	]);
 
-	grunt.registerTask("webstore", ["jshint:all", "copy", "descriptions", "i18n:compile", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "removekey", "requirejs:webstore", "clean:all", "compress", "clean:webstore"]);
+	grunt.registerTask("webstore", [
+		"jshint:all",
+		"copy",
+		"descriptions",
+		"i18n:compile",
+		"concat",
+		"hogan:compilebinder",
+		"hogan:compile",
+		"string-replace",
+		"removekey",
+		"requirejs:webstore",
+		"clean:all",
+		"compress",
+		"clean:webstore"
+	]);
+
+	grunt.registerTask("travis", [
+		"jshint:all",
+		"copy",
+		"descriptions",
+		"i18n:compile",
+		"concat",
+		"hogan:compilebinder",
+		"hogan:compile",
+		"string-replace:analytics",
+		"removekey",
+		"requirejs:webstore",
+		"clean:all",
+		"compress",
+		"clean:webstore"
+	]);
 };
