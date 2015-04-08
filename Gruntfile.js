@@ -90,7 +90,7 @@ module.exports = function(grunt) {
 		hogan: {
 			compilebinder: {
 				src: "binder.hjs",
-				dest: "tmp/binder.js",
+				dest: path.resolve("tmp/binder.js"),
 				options: { binderName: "bootstrap" }
 			},
 
@@ -105,7 +105,7 @@ module.exports = function(grunt) {
 					// as a lambda.
 					exposeTemplates: function() {
 						// The slice removes the last comma from the file
-						return grunt.file.read(path.resolve("tmp/templates.js")).slice(0, -1);
+						return grunt.file.read("tmp/templates.js").slice(0, -1);
 					},
 
 					nameFunc: function(e) {
@@ -192,7 +192,8 @@ module.exports = function(grunt) {
 		// Clean up excess JS files
 		clean: {
 			all: ["tmp", "build/**/Thumbs.db", "build/templates", "build/widgets", "build/js/*", "!build/js/lib", "build/js/lib/*", "!build/js/lib/require.js", "!build/js/app.js", "!build/js/background.js"],
-			webstore: ["build"]
+			webstore: ["build"],
+			travis: ["build", "webstore.zip", "descriptions"]
 		}
 	});
 
@@ -367,6 +368,6 @@ module.exports = function(grunt) {
 		"requirejs:webstore",
 		"clean:all",
 		"compress",
-		"clean:webstore"
+		"clean:travis"
 	]);
 };
