@@ -147,7 +147,6 @@ define(["jquery"], function($) {
 				case 24:
 				case 25:
 					return "tornado";
-					break;
 
 				case 3:
 				case 4:
@@ -157,7 +156,6 @@ define(["jquery"], function($) {
 				case 45:
 				case 47:
 					return "tstorms";
-					break;
 
 				case 5:
 				case 6:
@@ -169,69 +167,58 @@ define(["jquery"], function($) {
 				case 43:
 				case 46:
 					return "snow";
-					break;
 
 				case 8:
 				case 9:
 				case 11:
 				case 12:
 					return "drizzle";
-					break;
 
 				case 13:
 				case 14:
 				case 17:
 				case 42:
 					return "flurries";
-					break;
 
 				case 20:
 				case 21:
 				case 22:
 					return "fog";
-					break;
 
 				case 26:
 					return "cloudy";
-					break;
 
 				case 27:
 				case 29:
 				case 28:
 				case 44:
 					return "mostlycloudy";
-					break;
 
 				case 10:
 				case 30:
 				case 33:
 				case 34:
 					return "partlycloudy";
-					break;
 
 				case 35:
 				case 40:
 					return "rain";
-					break;
 
 				case 31:
 				case 32:
 				case 36:
 					return "sunny";
-					break;
 
 				default:
 					return "unknown";
-			};
-
-			return false;
+			}
 		},
 		refresh: function() {
 			var config = this.config,
 				unknown = this.utils.translate("unknown"),
 				get = function() {
-					$.get("https://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20weather.forecast%20where%20"
-							+ encodeURIComponent("woeid=" + (this.config.woeid || ["2487956"]).join(" or woeid=")),
+					$.get("https://query.yahooapis.com/v1/public/yql?format=json&q=select%20*%20from%20weather.forecast%20where%20" +
+							encodeURIComponent("woeid=" + (this.config.woeid || ["2487956"]).join(" or woeid=")),
 					function(res) {
 						var weather = [];
 

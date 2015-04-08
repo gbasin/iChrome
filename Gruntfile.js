@@ -6,6 +6,32 @@ module.exports = function(grunt) {
 		keys: grunt.file.readJSON("keys.json"),
 		pkg: grunt.file.readJSON("package.json"),
 
+		jshint: {
+			options: {
+				globals: {
+					chrome: true,
+					define: true,
+					require: true,
+					PERSISTENT: true,
+					performance: true,
+					webkitSpeechRecognition: true
+				},
+				devel: true,
+				browser: true,
+				nonstandard: true,
+
+				noarg: true,
+				undef: true,
+				bitwise: true,
+				latedef: true,
+				unused: "vars",
+				loopfunc: true,
+				futurehostile: true,
+				reporter: require("jshint-stylish")
+			},
+			all: ["app/widgets/*.js", "app/js/**/*.js", "!app/js/lib/*.js"]
+		},
+
 		// Copy the extension to a new directory for building
 		copy: {
 			build: {
@@ -173,6 +199,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-hogan");
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-clean");
+	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-string-replace");
 	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-contrib-compress");
@@ -299,7 +326,7 @@ module.exports = function(grunt) {
 	});
 
 
-	grunt.registerTask("default", ["copy", "i18n:compile", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "requirejs:build", "clean:all"]);
+	grunt.registerTask("default", ["jshint:all", "copy", "i18n:compile", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "requirejs:build", "clean:all"]);
 
-	grunt.registerTask("webstore", ["copy", "descriptions", "i18n:compile", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "removekey", "requirejs:webstore", "clean:all", "compress", "clean:webstore"]);
+	grunt.registerTask("webstore", ["jshint:all", "copy", "descriptions", "i18n:compile", "concat", "hogan:compilebinder", "hogan:compile", "string-replace", "removekey", "requirejs:webstore", "clean:all", "compress", "clean:webstore"]);
 };

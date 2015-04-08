@@ -132,21 +132,21 @@ define(["jquery", "modals/modals"], function($, Modal) {
 			});
 
 
-			var modalHTML = '<h2 class="title">' + this.utils.translate("edit.dialog_title") + '</h2>\
-				<form>\
-					<div class="form-group">\
-						<label for="bookmark-title">' + this.utils.translate("edit.title") + '</label>\
-						<input type="text" class="form-control" id="bookmark-title" maxlength="255" placeholder="' + this.utils.translate("edit.title_placeholder") + '" />\
-					</div>\
-				\
-					<div class="form-group">\
-						<label for="bookmark-url">' + this.utils.translate("edit.url") + '</label>\
-						<input type="text" class="form-control" id="bookmark-url" maxlength="500" placeholder="' + this.utils.translate("edit.url_placeholder") + '" />\
-					</div>\
-				\
-				</form>\
-				\
-				<button class="btn btn-primary">' + this.utils.translate("edit.save") + '</button>';
+			var modalHTML = '<h2 class="title">' + this.utils.translate("edit.dialog_title") + '</h2>' +
+				'<form>' +
+					'<div class="form-group">' +
+						'<label for="bookmark-title">' + this.utils.translate("edit.title") + '</label>' +
+						'<input type="text" class="form-control" id="bookmark-title" maxlength="255" placeholder="' + this.utils.translate("edit.title_placeholder") + '" />' +
+					'</div>' +
+
+					'<div class="form-group">' +
+						'<label for="bookmark-url">' + this.utils.translate("edit.url") + '</label>' +
+						'<input type="text" class="form-control" id="bookmark-url" maxlength="500" placeholder="' + this.utils.translate("edit.url_placeholder") + '" />' +
+					'</div>' +
+
+				'</form>' +
+
+				'<button class="btn btn-primary">' + this.utils.translate("edit.save") + '</button>';
 
 			this.modal = new (Modal.extend({
 				width: 400,
@@ -157,7 +157,7 @@ define(["jquery", "modals/modals"], function($, Modal) {
 
 					this.modal.hide();
 				}.bind(this)
-			}));
+			}))();
 
 			this.modal.mo.appendTo(document.body);
 
@@ -182,7 +182,7 @@ define(["jquery", "modals/modals"], function($, Modal) {
 			this.sortable = this.elm.on("click", "a.link", function(e) {
 				var href = this.getAttribute("href");
 
-				if (href.indexOf("chrome") == 0 && !$(e.target).is(".tools span")) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
+				if (href.indexOf("chrome") === 0 && !$(e.target).is(".tools span")) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
 					e.preventDefault();
 
 					chrome.tabs.getCurrent(function(d) {

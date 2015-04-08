@@ -212,7 +212,7 @@ define(["jquery", "lodash"], function($, _) {
 				type: "popup",
 				focused: true,
 				top: Math.round((screen.availHeight - 600) / 2),
-				left: Math.round((screen.availWidth - 560) / 2),
+				left: Math.round((screen.availWidth - 560) / 2)
 			}, function(win) {
 				chrome.webRequest.onBeforeRequest.addListener(
 					function(info) {

@@ -2,11 +2,15 @@
  * Exports a global analytics API
  */
 define(function() {
+	/* jshint ignore:start */
 	(function(i, s, o, g, r, a, m) {
 		i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);
 	})(window, document, "script", "https://ssl.google-analytics.com/analytics.js", "ga");
+	/* jshint ignore:end */
+
+	/* global ga */
 
 	ga("create", "UA-41131844-4", "ichro.me"); // This is temporarily set to a blank profile since the page is reloaded hundreds of times during development.
 	ga("require", "displayfeatures");
@@ -50,7 +54,7 @@ define(function() {
 		if (!path) {
 			path = title;
 
-			delete title;
+			title = null;
 		}
 
 		if (path && title) {

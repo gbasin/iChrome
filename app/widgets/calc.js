@@ -53,11 +53,7 @@ define(["jquery"], function($) {
 					.replace(/[0-9\.]+/g, function(match) { // Handle multiple decimal places within a number
 						f = true;
 
-						return " " +
-								match.replace(/\./g, function() {
-									return (f && !(f = false)) ? "." : "";
-								})
-							+ " ";
+						return " " + match.replace(/\./g, function() { return (f && !(f = false)) ? "." : ""; }) + " ";
 					})
 					.replace(/ {1,}/g, " ") // Multiple spaces
 					.replace(/([0-9]) ?\(/g, "$1 * (") // Handle parentheses adjacent to numbers by multiplying them
@@ -94,7 +90,7 @@ define(["jquery"], function($) {
 				}
 
 				try {
-					var answer = eval(problem);
+					var answer = eval(problem); // jshint ignore:line
 
 					if (typeof answer !== "number" || isNaN(answer)) {
 						d0.value = this.utils.translate("error");
@@ -198,11 +194,7 @@ define(["jquery"], function($) {
 					.replace(/[0-9\.]+/g, function(match) {
 						f = true;
 
-						return " " +
-								match.replace(/\./g, function() {
-									return (f && !(f = false)) ? "." : "";
-								})
-							+ " ";
+						return " " + match.replace(/\./g, function() { return (f && !(f = false)) ? "." : ""; }) + " ";
 					})
 					.replace(/ {1,}/g, " ")
 					.replace(/\( /g, "(")

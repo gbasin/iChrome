@@ -408,8 +408,8 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 			oAuth.getToken(function(token, data) {
 				var categories = {};
 					
-				categories["user/" + data.userId + "/category/global.all"] = this.utils.translate("all"),
-				categories["user/" + data.userId + "/tag/global.saved"] = this.utils.translate("saved"),
+				categories["user/" + data.userId + "/category/global.all"] = this.utils.translate("all");
+				categories["user/" + data.userId + "/tag/global.saved"] = this.utils.translate("saved");
 				categories["user/" + data.userId + "/category/global.uncategorized"] = this.utils.translate("uncategorized");
 
 				oAuth.ajax({
@@ -570,8 +570,10 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 			return articles;
 		},
 		refresh: function() {
-			if (this.config.source.indexOf("feed/") == 0 && !this.oAuth.hasToken()) var req = $.ajax;
-			else var req = this.oAuth.ajax.bind(this.oAuth);
+			var req;
+
+			if (this.config.source.indexOf("feed/") === 0 && !this.oAuth.hasToken()) req = $.ajax;
+			else req = this.oAuth.ajax.bind(this.oAuth);
 
 			req({
 				type: "GET",
@@ -640,7 +642,9 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				};
 
 			this.elm.find(".items").on("click", ".item", function(e) {
-				if (!sent.hasOwnProperty(id = $(this).attr("data-id"))) {
+				var id = $(this).attr("data-id");
+				
+				if (!sent.hasOwnProperty(id)) {
 					sent[id] = true;
 
 					that.oAuth.ajax({
@@ -705,7 +709,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 								articles.forEach(function(e, i) {
 									e.age = moment(e.date).fromNow(true).replace("hour", "hr").replace("minute", "min").replace("an ", "1 ").replace("a ", "1 ").replace("a few ", "");
 
-									if (i % 2 == 0) {
+									if (i % 2 === 0) {
 										column2.push(e);
 									}
 									else {
@@ -733,8 +737,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 							loading = false;
 
-							delete articles;
-							delete d;
+							articles = d = null;
 						}.bind(this)
 					});
 				}
@@ -767,7 +770,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				data.articles.forEach(function(e, i) {
 					e.age = moment(e.date).fromNow(true).replace("hour", "hr").replace("minute", "min").replace("an ", "1 ").replace("a ", "1 ").replace("a few ", "");
 
-					if (i % 2 == 0) {
+					if (i % 2 === 0) {
 						column2.push(e);
 					}
 					else {

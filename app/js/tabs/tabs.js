@@ -122,7 +122,7 @@ define(
 					var tcOTop = 0,
 						tcHeight = 0,
 						onGrid = false,
-						timeout, grid, gridMax,
+						grid, gridMax,
 						body = $(document.body);
 
 					elm.sortable({
@@ -206,8 +206,10 @@ define(
 							return true;
 						},
 						onDrop: function(item, container, _super) {
+							var css;
+
 							if (item.isMoved) {
-								var css = {
+								css = {
 									top: item.css("top"),
 									left: item.css("left"),
 									width: item.css("width"),
@@ -215,7 +217,7 @@ define(
 								};
 							}
 							else {
-								var css = {
+								css = {
 									top: item.position().top - tcOTop,
 									left: item.position().left,
 									width: Math.round(item.outerWidth() / 10) * 10 - 1,

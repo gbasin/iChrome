@@ -29,7 +29,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 	var Cacher = function(theme, options) {
 		this.theme = theme;
 
-		var options = options || {};
+		options = options || {};
 
 		if (options.events) {
 			this.on(options.events);
@@ -64,27 +64,28 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 		// Otherwise, set theme to this.theme
 		else if (!theme) {
-			var theme = this.theme;
+			theme = this.theme;
 		}
 		
 
-		var cached = this.model.get("cached");
+		var cached = this.model.get("cached"),
+			ids;
 
 		if (cached[theme.id]) {
 			// New images might have been added to the theme, so loop
 			// through and make sure they're all there. If not, cache them.
-			var ids = (theme.images || []).filter(function(e) {
+			ids = (theme.images || []).filter(function(e) {
 				return !cached[e];
 			});
 		}
 		else {
 			if (theme.images) {
-				var ids = theme.images.filter(function(e) {
+				ids = theme.images.filter(function(e) {
 					return !cached[e];
 				});
 			}
 			else {
-				var ids = [theme.id];
+				ids = [theme.id];
 			}
 		}
 
@@ -137,7 +138,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 										image: fe.toURL()
 									};
 
-									if (active == 0) {
+									if (active === 0) {
 										that.cleanup(cached[id].image);
 									}
 									else {
@@ -172,7 +173,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 		// If the FS object has "expired", maybe because of slow
 		// requests, restart the caching
 		if (e && e.name == "InvalidStateError") {
-			return this.cache(theme);
+			return this.cache(this.theme);
 		}
 
 		Status.error(e);
@@ -206,8 +207,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 		}
 
 
-		var that = this,
-			utils = {
+		var utils = {
 				Math: {
 					rand: function() {
 						return function(max) {
@@ -292,8 +292,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 	 * doesn't have an images array
 	 */
 	Cacher.prototype.cleanup = function(image) {
-		var theme = this.theme,
-			cached = this.model.get("cached");
+		var theme = this.theme;
 
 		if (!theme.images && image) {
 			theme.image = image;
@@ -339,7 +338,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 		 */
 		cache: function(theme, id, cb) {
 			// If the theme doesn't need any caching, delete the old image if present and return
-			if (theme.image.indexOf("data:") == 0 || theme.image.indexOf("filesystem:") == 0 || theme.image.indexOf("/") == 0) {
+			if (theme.image.indexOf("data:") === 0 || theme.image.indexOf("filesystem:") === 0 || theme.image.indexOf("/") === 0) {
 				theme.offline = true;
 
 				this.deleteImage(theme.id, function() {
@@ -416,14 +415,6 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 		 * @param  {Function} cb    The callback
 		 */
 		delete: function(id, cb) {
-			var err = function(e) {
-				if (e && e.name == "InvalidStateError") {
-					return this.delete(id, cb);
-				}
-
-				cb(false);
-			}.bind(this);
-
 			this.deleteImage(id, function() {
 				this.reEnumerate(id, function() {
 					Cacher.prototype.model.storage.themes.splice(id, 1);

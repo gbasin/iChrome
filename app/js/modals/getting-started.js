@@ -4,12 +4,12 @@
 define(
 	["jquery", "backbone", "modals/modals", "core/analytics", "core/render"],
 	function($, Backbone, Modal, Track, render) {
-		var installed = localStorage["installed"] == "true",
+		var installed = localStorage.installed == "true",
 			modal = new (Modal.extend({
 				classes: "getting-started",
 
 				close: function() {}
-			})),
+			}))(),
 			View = Backbone.View.extend({
 				el: modal.el,
 
@@ -27,13 +27,14 @@ define(
 				navClick: function(e) {
 					e.preventDefault();
 
-					var active = this.$(".slide.active");
+					var active = this.$(".slide.active"),
+						page;
 
 					if ($(e.currentTarget).hasClass("prev")) {
-						var page = active.prev(".slide");
+						page = active.prev(".slide");
 					}
 					else {
-						var page = active.next(".slide");
+						page = active.next(".slide");
 					}
 
 					if (page.length) {
@@ -44,7 +45,7 @@ define(
 					else if (active.attr("data-id") !== "1") {
 						modal.hide();
 
-						delete localStorage["installed"];
+						delete localStorage.installed;
 
 						installed = false;
 

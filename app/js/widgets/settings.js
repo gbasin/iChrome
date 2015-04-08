@@ -42,8 +42,9 @@ define(
 			},
 			select: function(input, elm, widget, form) {
 				var loop = function(options, level) {
-					var level = level || 0,
-						nesting = "&nbsp;".repeat(4 * level),
+					level = level || 0;
+					
+					var nesting = "&nbsp;".repeat(4 * level),
 						values = (typeof input.value == "object" ? input.value : [input.value]) || [];
 
 					var ret = [];
@@ -314,7 +315,7 @@ define(
 					else if (input.valueAsNumber && input.valueAsNumber < input.min) {
 						input.value = input.min;
 					}
-					else if (!input.valueAsNumber && input.value != "") {
+					else if (!input.valueAsNumber && input.value !== "") {
 						input.value = input.min;
 					}
 				}
@@ -335,7 +336,7 @@ define(
 						medium: 3,
 						large: 4,
 						variable: 5
-					}, key;
+					};
 
 				if (settings.size && this.widget.config.size && this.widget.config.size !== settings.size) {
 					this.widget.elm.attr("class", "widget " + this.widget.nicename + " " + settings.size).attr("data-size", settings.size);
@@ -470,8 +471,8 @@ define(
 								// a detached element and that the order will stay the same for async handlers
 								elm.appendTo(form);
 							}
-							catch (e) {
-								Status.error(e);
+							catch (err) {
+								Status.error(err);
 							}
 						}
 					}, this);

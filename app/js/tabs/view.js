@@ -204,7 +204,6 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 
 					grid = widget.parentNode,
 					tc = body.children(".tab-container")[0],
-					tcOTop = tc.offsetTop,
 					tcHeight = tc.offsetHeight,
 					gridMax = tcHeight - 50,
 					h;
@@ -291,11 +290,10 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 				models = [];
 
 			this.model.get("columns").models.forEach(function(e, i) {
-				if (medley) {
-					var column = main;
-				}
-				else {
-					var column = $('<div class="column"></div>').appendTo(main);
+				var column = main;
+
+				if (!medley) {
+					column = $('<div class="column"></div>').appendTo(main);
 				}
 
 				var collection = (e.get("value") || { views: [], models: [] });
@@ -307,8 +305,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 
 
 			if (medley) {
-				var h,
-					max = this.$el.height() - 50;
+				var max = this.$el.height() - 50;
 
 				/**
 				 * This is the number of pixels the bottom of the furthest widget from the top is.

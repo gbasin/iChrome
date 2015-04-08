@@ -15,7 +15,7 @@ define(["lodash", "jquery", "backbone", "backbone.viewcollection", "tabs/model",
 			// The defaults are set by the tabs model since it has access to storage
 			this.model = Model.extend({
 				defaults: function() {
-					return this.defaults
+					return this.defaults;
 				}.bind(this)
 			});
 		},
@@ -36,8 +36,6 @@ define(["lodash", "jquery", "backbone", "backbone.viewcollection", "tabs/model",
 				return;
 			}
 
-
-			var oActive = this.active;
 
 			this.body.attr("style", tab.getCSS.call(tab));
 

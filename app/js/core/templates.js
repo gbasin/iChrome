@@ -56,7 +56,7 @@ templates.forEach(function(e, i) {
 	if (/^widgets\.([a-z\-_]*)\.(.*)$/.test(e)) {
 		deps[i] += e.replace(/^widgets\.([a-z\-_]*)\.(.*)$/, "widgets/$1/$2");
 	}
-	else if (e.indexOf("widgets.") == 0) {
+	else if (e.indexOf("widgets.") === 0) {
 		deps[i] += e.replace(/^widgets\.([a-z\-_]*)$/, "widgets/$1/template");
 	}
 	else {

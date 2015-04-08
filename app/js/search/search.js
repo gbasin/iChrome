@@ -40,8 +40,7 @@ define(["backbone", "wikiwand", "storage/storage", "core/render", "core/analytic
 						useBeacon: true,
 						hitType: "pageview",
 						title: "Voice Search: " + val,
-						page: "/search/speech?q=" + encodeURIComponent(val),
-						useBeacon: true
+						page: "/search/speech?q=" + encodeURIComponent(val)
 					});
 
 					this.submit(val);

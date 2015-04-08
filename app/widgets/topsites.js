@@ -44,14 +44,11 @@ define(["jquery"], function($) {
 			var that = this;
 
 			chrome.topSites.get(function(sites) {
-				var sites = sites.slice(0, that.config.show),
-					data = {
-						title: that.config.title || false,
-						newTab: that.config.target == "_blank",
-						sites: sites
-					};
-
-				that.utils.render(data);
+				that.utils.render({
+					title: that.config.title || false,
+					newTab: that.config.target == "_blank",
+					sites: sites.slice(0, that.config.show)
+				});
 			});
 		}
 	};

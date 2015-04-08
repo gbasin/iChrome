@@ -393,7 +393,7 @@ define(["jquery", "lodash"], function($, _) {
 				["Without new experiences, something inside of us sleeps. The sleeper must awaken.", "Frank Herbert"],
 				["What lies behind us and what lies before us are tiny matters compared to what lies within us.", "Ralph Waldo Emerson"],
 				["Don't let the noise of others' opinions drown out your own inner voice. Have the courage to follow your own heart and intuition.", "Steve Jobs"],
-				["‎Do not seek to follow in the footsteps of others, instead, seek what they sought.", "Matsuo Basho"],
+				["Do not seek to follow in the footsteps of others, instead, seek what they sought.", "Matsuo Basho"],
 				["If you wish to travel far and fast, travel light. Take off all your envies, jealousies, unforgiveness, selfishness, and fears.", "Glenn Clark"],
 				["If you are still looking for that one person who will change your life, take a look in the mirror.", "Roman Price"],
 				["Be who you were created to be, and you will set the world on fire.", "St. Catherine of Sienna"],
@@ -450,11 +450,13 @@ define(["jquery", "lodash"], function($, _) {
 					url: _.result(source, "url"),
 					success: function(d) {
 						if (d) {
+							var quote;
+
 							try {
-								var quote = source.parse(d, this.utils.translate("unknown_author"));
+								quote = source.parse(d, this.utils.translate("unknown_author"));
 							}
 							catch (e) {
-								var quote = false;
+								quote = false;
 							}
 
 							if (!quote) return;

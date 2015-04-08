@@ -50,8 +50,9 @@ define(["jquery", "widgets/framefix"], function($, frameFix) {
 
 			$.get("https://mail.google.com/mail/u/" + (this.config.user || 0) + "/feed/atom/", function(d) {
 				try {
-					var d = $(d),
-						count = parseInt(d.find("fullcount").text()),
+					d = $(d);
+
+					var count = parseInt(d.find("fullcount").text()),
 						messages = [];
 
 					d.find("entry").each(function(i) {
@@ -90,7 +91,7 @@ define(["jquery", "widgets/framefix"], function($, frameFix) {
 				inbox: this.config.open == "inbox"
 			};
 
-			if (data.count == 0) {
+			if (data.count === 0) {
 				data.label = this.utils.translate("unread_none");
 			}
 			else if (data.count == 1) {

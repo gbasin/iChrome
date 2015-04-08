@@ -41,7 +41,7 @@ define(["jquery"], function($) {
 						complete: function(d) {
 							d = d.responseText;
 
-							if (typeof d == "string" && d.indexOf("{") == 0 && (d = JSON.parse(d)) && d.sentences && d.sentences.length) {
+							if (typeof d === "string" && d.indexOf("{") === 0 && (d = JSON.parse(d)) && d.sentences && d.sentences.length) {
 								if (d.src && accepted.indexOf(d.src) !== -1) {
 									var text = "";
 
@@ -53,13 +53,13 @@ define(["jquery"], function($) {
 										text += e.trans;
 									});
 
-									if (text == "") {
+									if (text === "") {
 										text = this.utils.translate("error");
 									}
 
 									textarea.val(text);
 
-									if (from.val() == "auto") {
+									if (from.val() === "auto") {
 										auto.text(this.utils.translate("auto", from.find('option[value="' + d.src + '"]').text()));
 
 										autochanged = true;
@@ -111,7 +111,7 @@ define(["jquery"], function($) {
 			to.val(this.data.to);
 
 			from.add(to).on("keydown", function(e) {
-				if (e.which == 13 && (!untranslate || untranslate == "")) {
+				if (e.which === 13 && (!untranslate || untranslate === "")) {
 					e.preventDefault();
 
 					submit(e);

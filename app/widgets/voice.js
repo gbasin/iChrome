@@ -58,7 +58,7 @@ define(["jquery"], function($) {
 					for (id in d.messages) {
 						msg = d.messages[id];
 
-						if (messages.length > 4 || !msg || msg.isRead == true) continue;
+						if (messages.length > 4 || !msg || msg.isRead === true) continue;
 
 						switch (msg.type) {
 							case 10: case 11: 

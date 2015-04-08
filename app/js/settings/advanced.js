@@ -50,7 +50,7 @@ define(["jquery", "backbone", "storage/storage", "i18n/i18n", "core/render", "li
 						this.trigger("restore");
 					}.bind(this));
 				}
-				catch(e) {
+				catch(err) {
 					alert(Translate("settings.advanced.restore_error"));
 				}
 			},

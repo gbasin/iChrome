@@ -256,7 +256,7 @@ define(["jquery", "moment"], function($, moment) {
 				}
 
 				if (e.score < 0) {
-					e.direction = " down"
+					e.direction = " down";
 				}
 
 				e.score = e.score.toLocaleString();
