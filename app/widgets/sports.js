@@ -632,13 +632,13 @@ define(["jquery", "moment"], function($, moment) {
 			}
 			else {
 				cb({
-					unk: this.utils.translate(error)
+					unk: this.utils.translate("error")
 				});
 			}
 		},
 		refresh: function() {
 			var teams = this.config.team || "",
-				error = this.utils.translate("unknown_error")
+				error = this.utils.translate("unknown_error");
 
 			if (!this.config.team && this.config.teams) {
 				if (typeof this.config.teams == "object") {
@@ -691,8 +691,6 @@ define(["jquery", "moment"], function($, moment) {
 				games = (this.data || {games:[]}).games;
 			
 			if (games.length) {
-				var done = 0;
-
 				if (this.config.size == "tiny") {
 					games.forEach(function(game, i) {
 						if (data.games.length >= 1 || (this.config.unavailable == "none" && this.config.teams.length && this.config.teams.indexOf(game.home_id.replace("/", ".")) == -1 && this.config.teams.indexOf(game.away_id.replace("/", ".")) == -1)) {
@@ -708,7 +706,7 @@ define(["jquery", "moment"], function($, moment) {
 								game.status = game.time.format("h:mm A");
 							}
 							else {
-								game.status = game.time.format("MM/DD")
+								game.status = game.time.format("MM/DD");
 							}
 
 							if (game.coverage) {

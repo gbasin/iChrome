@@ -65,13 +65,13 @@ define(["jquery", "moment"], function($, moment) {
 						};
 
 
-					if (homed.routeResults && workd.routeResults
-						&& homed.routeResults[0] && workd.routeResults[0]
-						&& homed.routeResults[0].routes && workd.routeResults[0].routes
-						&& homed.routeResults[0].routes[0] && workd.routeResults[0].routes[0]
-						&& homed.routeResults[0].routes[0].routeLegs && workd.routeResults[0].routes[0].routeLegs
-						&& homed.routeResults[0].routes[0].routeLegs[0] && workd.routeResults[0].routes[0].routeLegs[0]
-						&& homed.routeResults[0].routes[0].routeLegs[0].summary && workd.routeResults[0].routes[0].routeLegs[0].summary) {
+					if (homed.routeResults && workd.routeResults &&
+						homed.routeResults[0] && workd.routeResults[0] &&
+						homed.routeResults[0].routes && workd.routeResults[0].routes &&
+						homed.routeResults[0].routes[0] && workd.routeResults[0].routes[0] &&
+						homed.routeResults[0].routes[0].routeLegs && workd.routeResults[0].routes[0].routeLegs &&
+						homed.routeResults[0].routes[0].routeLegs[0] && workd.routeResults[0].routes[0].routeLegs[0] &&
+						homed.routeResults[0].routes[0].routeLegs[0].summary && workd.routeResults[0].routes[0].routeLegs[0].summary) {
 						
 
 						var homeSummary = homed.routeResults[0].routes[0].routeLegs[0].summary;
@@ -103,9 +103,9 @@ define(["jquery", "moment"], function($, moment) {
 						}
 					}
 
-					if (workd.resolvedWaypoints && workd.resolvedWaypoints[0]
-						&& workd.resolvedWaypoints[0][0] && workd.resolvedWaypoints[0][0].address && workd.resolvedWaypoints[0][0].address.formattedAddress
-						&& workd.resolvedWaypoints[0][1] && workd.resolvedWaypoints[0][1].address && workd.resolvedWaypoints[0][1].address.formattedAddress) {
+					if (workd.resolvedWaypoints && workd.resolvedWaypoints[0] &&
+						workd.resolvedWaypoints[0][0] && workd.resolvedWaypoints[0][0].address && workd.resolvedWaypoints[0][0].address.formattedAddress &&
+						workd.resolvedWaypoints[0][1] && workd.resolvedWaypoints[0][1].address && workd.resolvedWaypoints[0][1].address.formattedAddress) {
 						this.config.home = workd.resolvedWaypoints[0][0].address.formattedAddress;
 						this.config.work = workd.resolvedWaypoints[0][1].address.formattedAddress;
 

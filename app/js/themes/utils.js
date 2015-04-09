@@ -65,7 +65,8 @@ define(["lodash", "backbone", "storage/storage", "i18n/i18n"], function(_, Backb
 		 * @return {String|Boolean}      The retrieved image or false if it could not be determined
 		 */
 		getImage: function(theme) {
-			var image = false;
+			var image = false,
+				rand;
 
 
 			if (typeof theme !== "object") {
@@ -81,7 +82,7 @@ define(["lodash", "backbone", "storage/storage", "i18n/i18n"], function(_, Backb
 					case "random_daily":
 						// Because of the way this is done, all themes will show the same image on different
 						// computers on the same day without any centralization!
-						var rand = Math.sin(new Date().setHours(0, 0, 0, 0)) * 10000;
+						rand = Math.sin(new Date().setHours(0, 0, 0, 0)) * 10000;
 
 						image = this.model.get("cached")[theme.images[Math.floor((rand - Math.floor(rand)) * theme.images.length)]].image;
 					break;
@@ -95,23 +96,26 @@ define(["lodash", "backbone", "storage/storage", "i18n/i18n"], function(_, Backb
 
 								Modified by Avi Kohn to only include necessary data and functions
 							*/
+							/* jshint ignore:start */
 							this.SunCalc=function(){var g=Math.PI,a=Math.sin,l=Math.cos,v=Math.asin,w=Math.acos,c=g/180,q=23.4397*c,r=[[-6,"dawn","dusk"],
 							[6,"gHEnd","gH"]];return function(x,y){var n=c*-y,z=c*x,s=Math.round((new Date).valueOf()/864E5-0.5+2440588-2451545-9E-4-n/(2*g)),h=9E-4
 							+(0+n)/(2*g)+s,e=c*(357.5291+0.98560028*h),f;f=c*(1.9148*a(e)+0.02*a(2*e)+3E-4*a(3*e));f=e+f+102.9372*c+g;var t;t=v(a(0)*l(q)+l(0)*a(q)*
 							a(f));var h=2451545+h+0.0053*a(e)-0.0069*a(2*f),p={},k,u,m,b,d;k=0;for(u=r.length;k<u;k+=1)m=r[k],b=z,d=t,b=w((a(m[0]*c)-a(b)*a(d))/(l(b)
 							*l(d))),d=f,b=2451545+(9E-4+(b+n)/(2*g)+s)+0.0053*a(e)-0.0069*a(2*d),d=h-(b-h),p[m[1]]=new Date(864E5*(d+0.5-2440588)),p[m[2]]=new Date(
 							864E5*(b+0.5-2440588));return p}}();
+							/* jshint ignore:end */
 						}
 
 						var lat = localStorage.lat,
-							lon = localStorage.lon;
+							lon = localStorage.lon,
+							times;
 
 						if (lat && lon) {
-							var times = this.SunCalc(lat, lon);
+							times = this.SunCalc(lat, lon);
 						}
 						else {
 							// If lat and lon aren't set, default to Chicago. This should be roughly accurate for most users.
-							var times = this.SunCalc(41.85, -87.65);
+							times = this.SunCalc(41.85, -87.65);
 
 							// Then attempt to get a location and save, this needs to be here for synced sunrise themes.
 							// It can't be in the background page since it needs permissions from the user.
@@ -127,8 +131,9 @@ define(["lodash", "backbone", "storage/storage", "i18n/i18n"], function(_, Backb
 						times = [times.dawn.getTime() - 18E5, times.gHEnd.getTime() + 72E5, times.gH.getTime() - 36E5, times.dusk.getTime()];
 
 
-						var dt = new Date().getTime(),
-							rand = Math.sin(new Date().setHours(0, 0, 0, 0)) * 10000;
+						var dt = new Date().getTime();
+						
+						rand = Math.sin(new Date().setHours(0, 0, 0, 0)) * 10000;
 
 
 						// If after sunrise start and before sunrise end
@@ -160,7 +165,6 @@ define(["lodash", "backbone", "storage/storage", "i18n/i18n"], function(_, Backb
 						}
 					break;
 
-					case "random":
 					default:
 						image = this.model.get("cached")[theme.images[Math.floor(Math.random() * theme.images.length)]].image;
 					break;

@@ -45,20 +45,20 @@ define(["jquery"], function($) {
 					this.data.from = from.val();
 					this.data.to = to.val();
 
-					var rev = false,
-						conv = 0;
+					var conv = 0,
+						fr, tov, f, t;
 
 					if (reverse) {
-						var fr = to.val(),
-							tov = from.val(),
-							f = tval.val(),
-							t = fval;
+						fr = to.val();
+						tov = from.val();
+						f = tval.val();
+						t = fval;
 					}
 					else {
-						var fr = from.val(),
-							tov = to.val(),
-							f = fval.val(),
-							t = tval;
+						fr = from.val();
+						tov = to.val();
+						f = fval.val();
+						t = tval;
 					}
 
 

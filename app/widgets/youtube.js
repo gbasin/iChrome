@@ -99,11 +99,10 @@ define(["jquery"], function($) {
 		refresh: function() {
 			var that = this;
 
+			var url = "http://gdata.youtube.com/feeds/api/standardfeeds/most_viewed?max-results=6&alt=json&time=today";
+
 			if (this.config.user && this.config.user.trim() !== "") {
-				var url = "https://gdata.youtube.com/feeds/api/users/" + encodeURIComponent(this.config.user) + "/uploads?alt=json&max-results=6" // &orderby=published";
-			}
-			else {
-				var url = "http://gdata.youtube.com/feeds/api/standardfeeds/most_viewed?max-results=6&alt=json&time=today";
+				url = "https://gdata.youtube.com/feeds/api/users/" + encodeURIComponent(this.config.user) + "/uploads?alt=json&max-results=6"; // &orderby=published";
 			}
 
 			$.get(url, function(d) {

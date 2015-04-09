@@ -1,7 +1,7 @@
 /**
  * The main tooltip handler.  This displays tooltips for any element with a data-tooltip attribute
  */
-define(["jquery", "backbone", "core/analytics"], function($, Backbone, Track) {
+define(["jquery", "backbone", "core/analytics", "core/render"], function($, Backbone, Track, render) {
 	var View = Backbone.View.extend({
 		tagName: "div",
 		className: "tooltip",

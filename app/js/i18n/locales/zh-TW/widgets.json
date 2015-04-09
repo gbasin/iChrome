@@ -240,6 +240,10 @@
     "name":"Google+",
     "desc":"在小工具嵌入 Google Plus"
   },
+  "notifications":{
+    "name":"Google Notifications",
+    "desc":"Displays your Google Notifications from services such as Google+"
+  },
   "recentlyclosed":{
     "name":"最近關閉",
     "desc":"顯示您最近關閉的標籤頁",

@@ -206,6 +206,8 @@ define(["jquery", "moment"], function($, moment) {
 			var token = t || this.config.token || "",
 				secret = s || this.config.secret || "";
 
+			var CryptoJS = this.CryptoJS;
+			
 			if (!this.CryptoJS) {
 				/*
 					CryptoJS v3.1.2
@@ -213,7 +215,8 @@ define(["jquery", "moment"], function($, moment) {
 					(c) 2009-2013 by Jeff Mott. All rights reserved.
 					code.google.com/p/crypto-js/wiki/License
 				*/
-				var CryptoJS=CryptoJS||function(g,l){var e={},d=e.lib={},m=function(){},k=d.Base={extend:function(a){m.prototype=this;var c=new m;a&&c.mixIn(a);c.hasOwnProperty("init")||(c.init=function(){c.$super.init.apply(this,arguments)});c.init.prototype=c;c.$super=this;return c},create:function(){var a=this.extend();a.init.apply(a,arguments);return a},init:function(){},mixIn:function(a){for(var c in a)a.hasOwnProperty(c)&&(this[c]=a[c]);a.hasOwnProperty("toString")&&(this.toString=a.toString)},clone:function(){return this.init.prototype.extend(this)}},
+				/* jshint ignore:start */
+				CryptoJS=CryptoJS||function(g,l){var e={},d=e.lib={},m=function(){},k=d.Base={extend:function(a){m.prototype=this;var c=new m;a&&c.mixIn(a);c.hasOwnProperty("init")||(c.init=function(){c.$super.init.apply(this,arguments)});c.init.prototype=c;c.$super=this;return c},create:function(){var a=this.extend();a.init.apply(a,arguments);return a},init:function(){},mixIn:function(a){for(var c in a)a.hasOwnProperty(c)&&(this[c]=a[c]);a.hasOwnProperty("toString")&&(this.toString=a.toString)},clone:function(){return this.init.prototype.extend(this)}},
 				p=d.WordArray=k.extend({init:function(a,c){a=this.words=a||[];this.sigBytes=c!=l?c:4*a.length},toString:function(a){return(a||n).stringify(this)},concat:function(a){var c=this.words,q=a.words,f=this.sigBytes;a=a.sigBytes;this.clamp();if(f%4)for(var b=0;b<a;b++)c[f+b>>>2]|=(q[b>>>2]>>>24-8*(b%4)&255)<<24-8*((f+b)%4);else if(65535<q.length)for(b=0;b<a;b+=4)c[f+b>>>2]=q[b>>>2];else c.push.apply(c,q);this.sigBytes+=a;return this},clamp:function(){var a=this.words,c=this.sigBytes;a[c>>>2]&=4294967295<<
 				32-8*(c%4);a.length=g.ceil(c/4)},clone:function(){var a=k.clone.call(this);a.words=this.words.slice(0);return a},random:function(a){for(var c=[],b=0;b<a;b+=4)c.push(4294967296*g.random()|0);return new p.init(c,a)}}),b=e.enc={},n=b.Hex={stringify:function(a){var c=a.words;a=a.sigBytes;for(var b=[],f=0;f<a;f++){var d=c[f>>>2]>>>24-8*(f%4)&255;b.push((d>>>4).toString(16));b.push((d&15).toString(16))}return b.join("")},parse:function(a){for(var c=a.length,b=[],f=0;f<c;f+=2)b[f>>>3]|=parseInt(a.substr(f,
 				2),16)<<24-4*(f%8);return new p.init(b,c/2)}},j=b.Latin1={stringify:function(a){var c=a.words;a=a.sigBytes;for(var b=[],f=0;f<a;f++)b.push(String.fromCharCode(c[f>>>2]>>>24-8*(f%4)&255));return b.join("")},parse:function(a){for(var c=a.length,b=[],f=0;f<c;f++)b[f>>>2]|=(a.charCodeAt(f)&255)<<24-8*(f%4);return new p.init(b,c)}},h=b.Utf8={stringify:function(a){try{return decodeURIComponent(escape(j.stringify(a)))}catch(c){throw Error("Malformed UTF-8 data");}},parse:function(a){return j.parse(unescape(encodeURIComponent(a)))}},
@@ -226,24 +229,23 @@ define(["jquery", "moment"], function($, moment) {
 				this._hasher;e=d.finalize(e);d.reset();return d.finalize(this._oKey.clone().concat(e))}})})();
 				(function(){var h=CryptoJS,i=h.lib.WordArray;h.enc.Base64={stringify:function(b){var e=b.words,f=b.sigBytes,c=this._map;b.clamp();for(var b=[],a=0;a<f;a+=3)for(var d=(e[a>>>2]>>>24-8*(a%4)&255)<<16|(e[a+1>>>2]>>>24-8*((a+1)%4)&255)<<8|e[a+2>>>2]>>>24-8*((a+2)%4)&255,g=0;4>g&&a+0.75*g<f;g++)b.push(c.charAt(d>>>6*(3-g)&63));if(e=c.charAt(64))for(;b.length%4;)b.push(e);return b.join("")},parse:function(b){var b=b.replace(/\s/g,""),e=b.length,f=this._map,c=f.charAt(64);c&&(c=b.indexOf(c),-1!=c&&(e=c));
 				for(var c=[],a=0,d=0;d<e;d++)if(d%4){var g=f.indexOf(b.charAt(d-1))<<2*(d%4),h=f.indexOf(b.charAt(d))>>>6-2*(d%4);c[a>>>2]|=(g|h)<<24-8*(a%4);a++}return i.create(c,a)},_map:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="}})();
+				/* jshint ignore:end */
 
 				this.CryptoJS = CryptoJS;
 			}
-			else {
-				var CryptoJS = this.CryptoJS;
-			}
 
 			var method = (options.type || "GET").toUpperCase(),
-				code = "", key;
+				code = "",
+				key, url,
+				parameters = {};
 
 			// Parse parameters
 			if (options.data) {
-				var parameters = options.data,
-					url = options.url;
+				url = options.url;
+				parameters = options.data;
 			}
 			else {
-				var url = options.url.split("?"),
-					parameters = {};
+				url = options.url.split("?");
 
 				((url && url[1]) || "").split("&").forEach(function(e, i) {
 					var param = e.split("=");
@@ -262,8 +264,9 @@ define(["jquery", "moment"], function($, moment) {
 			// Set parameters
 			var consumer_key = "nYjEzkjKdyWotLXmbSjjA",
 				nonce = encodeURIComponent(btoa(code)),
-				timestamp = Math.floor(new Date().getTime() / 1000),
-				token = encodeURIComponent(token);
+				timestamp = Math.floor(new Date().getTime() / 1000);
+			
+			token = encodeURIComponent(token);
 
 			var params = [
 				"oauth_consumer_key=" + consumer_key,
@@ -311,16 +314,16 @@ define(["jquery", "moment"], function($, moment) {
 				source = this.config.source;
 
 			if (source == "home" || !source) {
-				url = "https://api.twitter.com/1.1/statuses/home_timeline.json?"
+				url = "https://api.twitter.com/1.1/statuses/home_timeline.json?";
 			}
 			else if (source == "retweets") {
-				url = "https://api.twitter.com/1.1/statuses/retweets_of_me.json?"
+				url = "https://api.twitter.com/1.1/statuses/retweets_of_me.json?";
 			}
 			else if (source == "mentions") {
-				url = "https://api.twitter.com/1.1/statuses/mentions_timeline.json?"
+				url = "https://api.twitter.com/1.1/statuses/mentions_timeline.json?";
 			}
 			else {
-				url = "https://api.twitter.com/1.1/lists/statuses.json?list_id=" + source + "&"
+				url = "https://api.twitter.com/1.1/lists/statuses.json?list_id=" + source + "&";
 			}
 
 			this.ajax({
@@ -331,16 +334,16 @@ define(["jquery", "moment"], function($, moment) {
 
 					if (d && d.forEach) {
 						var hEscape = function(str) {
+							str = String(str || "");
+							
 							// Based off of Hogan.js' escape method
-
 							var amp		= /&/g,
 								lt		= /</g,
 								gt		= />/g,
 								apos	= /\'/g,
 								quot	= /\"/g,
 								brace	= /\{/g,
-								all		= /[&<>\{\"\']/,
-								str		= String(str || "");
+								all		= /[&<>\{\"\']/;
 
 							if (all.test(str)) {
 								return str.replace(amp, "&amp;").replace(lt, "&lt;").replace(gt, "&gt;").replace(apos, "&#39;").replace(quot, "&quot;").replace(brace, "&#123;");

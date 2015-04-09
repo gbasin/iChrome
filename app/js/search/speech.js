@@ -105,13 +105,15 @@ define(["jquery", "lodash", "backbone", "core/analytics", "storage/storage", "i1
 					if (word.indexOf("google") !== -1 || word.indexOf("okay") !== -1 || word == "ok" || word == "computer") {
 						return true;
 					}
-				};
+				}
 
 				return false;
 			},
 			result: function(e) {
+				var i;
+
 				if (this.model.get("ok") && !this.inProgress) {
-					for (var i = e.resultIndex; i < e.results.length; i++) {
+					for (i = e.resultIndex; i < e.results.length; i++) {
 						if (e.results[i][0].confidence > 0.2 && this.isOK(e.results[i][0].transcript)) {
 							this.start();
 
@@ -120,7 +122,7 @@ define(["jquery", "lodash", "backbone", "core/analytics", "storage/storage", "i1
 					}
 				}
 				else if (this.inProgress) {
-					for (var i = e.results.length; i >= 0; i--) {
+					for (i = e.results.length; i >= 0; i--) {
 						if (e.results[i] && e.results[i][0].confidence > 0.2) {
 							this.text = e.results[i][0].transcript.trim();
 

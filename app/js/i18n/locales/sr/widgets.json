@@ -240,6 +240,10 @@
     "name":"Google+",
     "desc":"Убацује Google Plus у додатак"
   },
+  "notifications":{
+    "name":"Google Notifications",
+    "desc":"Displays your Google Notifications from services such as Google+"
+  },
   "recentlyclosed":{
     "name":"Скоро затворено",
     "desc":"Приказује твоје недавно затворене картице",

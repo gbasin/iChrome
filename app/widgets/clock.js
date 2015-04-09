@@ -100,10 +100,10 @@ define(["jquery", "moment"], function($, moment) {
 				seconds = dt.getSeconds(),
 				am = hours < 12;
 
-			if (this.config.format.indexOf("ampm") == 0) {
+			if (this.config.format.indexOf("ampm") === 0) {
 				hours = (hours > 12 ? hours - 12 : hours);
 
-				if (hours == 0) hours = 12;
+				if (hours === 0) hours = 12;
 
 				html += (am ? " am" : " pm") + (this.config.format == "ampms" ? " no-seconds" : "");
 			}
@@ -113,7 +113,7 @@ define(["jquery", "moment"], function($, moment) {
 			
 			html += '">' + hours + ":" + minutes.pad();
 
-			if (this.config.size == "tiny" && this.config.format.indexOf("ampm") == 0) {
+			if (this.config.size == "tiny" && this.config.format.indexOf("ampm") === 0) {
 				html += "<span>" + (this.config.format == "ampm" ? seconds.pad() : "") + "</span></div>";
 			}
 			else if (this.config.size != "tiny") {

@@ -125,7 +125,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 								date: moment(e.modifiedDate).toDate().getTime()
 							};
 
-							if (e.thumbnailLink && e.mimeType && (e.mimeType.indexOf("image") == 0 || e.mimeType.indexOf("video") == 0)) {
+							if (e.thumbnailLink && e.mimeType && (e.mimeType.indexOf("image") === 0 || e.mimeType.indexOf("video") === 0)) {
 								file.icon = e.thumbnailLink.replace(/=s220$/, "=s75-c"); // Replace the 220px picture with a 75px square one
 							}
 							else if (e.iconLink) {

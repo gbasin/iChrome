@@ -217,7 +217,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 					this.render();
 
 					this.utils.saveData(this.data);
-				}.bind(this))
+				}.bind(this));
 			}.bind(this));
 		},
 		render: function(demo) {

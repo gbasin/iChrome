@@ -131,7 +131,7 @@ define(["jquery", "lodash"], function($, _) {
 				.pluck("url")
 				.value()[0];
 
-			if (!item.image || item.image == "") {
+			if (!item.image || item.image === "") {
 				if (html.find("img[data-src]").length) {
 					item.image = html.find("img[data-src]").first().attr("data-src");
 				}
@@ -182,7 +182,7 @@ define(["jquery", "lodash"], function($, _) {
 
 					span.text(this.innerText.replace(/\n/g, "  ").trim());
 
-					if (href.trim().indexOf("//") == 0) {
+					if (href.trim().indexOf("//") === 0) {
 						href =  "http:" + href.trim();
 					}
 					else if (href.trim().indexOf("http") !== 0) {
@@ -203,10 +203,9 @@ define(["jquery", "lodash"], function($, _) {
 			return item;
 		},
 		refresh: function() {
-			var config = this.config,
-				url = this.config.url;
+			var url = this.config.url;
 
-			if (!url || url == "") {
+			if (!url) {
 				url = "http://feeds.gawker.com/lifehacker/full";
 			}
 			else {
@@ -245,7 +244,7 @@ define(["jquery", "lodash"], function($, _) {
 				if (this.config.images == "false" && rss.items[i].image) {
 					delete rss.items[i].image;
 				}
-			};
+			}
 
 			if (this.config.title && this.config.title !== "") {
 				rss.title = this.config.title;

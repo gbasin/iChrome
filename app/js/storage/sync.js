@@ -75,7 +75,7 @@ define(["jquery", "core/status", "storage/defaults", "core/analytics", "i18n/i18
 					key;
 
 				for (key in d) {
-					if (key.indexOf("tabs") == 0 && max < key.substr(4) || 0) {
+					if (key.indexOf("tabs") === 0 && max < key.substr(4) || 0) {
 						max = (key.substr(4) || 0);
 					}
 				}

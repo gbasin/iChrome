@@ -240,6 +240,10 @@
     "name":"Google +",
     "desc":"Bir Google Plus widgeti gömer"
   },
+  "notifications":{
+    "name":"Google Notifications",
+    "desc":"Displays your Google Notifications from services such as Google+"
+  },
   "recentlyclosed":{
     "name":"En Son Kapatılan",
     "desc":"En son kapatılan sekmeleri gösterir",

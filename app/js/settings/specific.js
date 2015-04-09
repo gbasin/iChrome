@@ -1,7 +1,7 @@
 /**
  * This is the Tab Specific tab in the settings
  */
-define(["backbone", "core/analytics", "storage/storage", "i18n/i18n", "core/render"], function(Backbone, Track, Storage, Translate, render) {
+define(["jquery", "backbone", "core/analytics", "storage/storage", "i18n/i18n", "core/render"], function($, Backbone, Track, Storage, Translate, render) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -46,9 +46,9 @@ define(["backbone", "core/analytics", "storage/storage", "i18n/i18n", "core/rend
 				"click .btns .btn.default": function(e) {
 					e.preventDefault();
 
-					var tab;
+					var tab = this.$("form.active").attr("data-tab");
 
-					if (tab = this.$("form.active").attr("data-tab")) {
+					if (tab) {
 						this.model.get("settings").def = parseInt(tab);
 
 						Track.event("Tabs", "Set as default", tab);
@@ -90,7 +90,7 @@ define(["backbone", "core/analytics", "storage/storage", "i18n/i18n", "core/rend
 						fixed: !!tab.fixed,
 						alignment: tab.alignment || "center",
 						columns: (tab.medley ? "medley" : (tab.columns.length || 3)),
-						active: (i == 0 ? "active" : ""),
+						active: (i === 0 ? "active" : ""),
 						themename: (
 							theme == "default" ?
 								Translate("settings.visual.theme") :

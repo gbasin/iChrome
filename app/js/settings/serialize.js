@@ -16,15 +16,14 @@ define(["jquery", "i18n/i18n"], function($, Translate) {
 				editing: storage.settings.editing,
 				def: parseInt(storage.settings.def || 1)
 			},
-			booleans = ["ok", "ltab", "stab", "apps", "plus", "voice", "gmail", "animation"],
-			key;
+			booleans = ["ok", "ltab", "stab", "apps", "plus", "voice", "gmail", "animation"];
 
 		modal.find(".general form, .visual form, .advanced form").serializeArray().forEach(function(e, i) {
 			if (booleans.indexOf(e.name) !== -1) {
 				settings[e.name] = true; // jQuery will only include a boolean value when serializing if it's checked/true
 			}
-			else if (e.name == "custom-css") { // Limit custom CSS and escape HTML and JS links
-				settings["custom-css"] = e.value.replace(/<\//g, "<\\/").replace(/javascript\:/g, "javascript :").slice(0, 1000);
+			else if (e.name == "custom-css") { // Limit custom CSS
+				settings["custom-css"] = e.value.slice(0, 1000);
 			}
 			else if (e.value !== "") { // If it's neither just set it
 				settings[e.name] = e.value;
@@ -50,7 +49,7 @@ define(["jquery", "i18n/i18n"], function($, Translate) {
 			var tab = storage.tabs[$(this).attr("data-tab") - 1],
 				propagating = ["alignment", "theme"],
 				tabSettings = {},
-				number, layout, columns, key;
+				number, columns, key;
 
 			// If the tab's ID isn't in the storage.tabs array it doesn't exist or is corrupt, skip it
 			if (!tab) return;
@@ -93,6 +92,9 @@ define(["jquery", "i18n/i18n"], function($, Translate) {
 						columns = tabSettings.columns.split("-");
 					}
 
+
+					var wasMedley = false;
+
 					// If the new layout is "medley", AKA grid-based
 					if (columns[0] == "medley") {
 						columns = ["1", "fixed"]; // The number of columns is 1 for conversion and storage
@@ -115,7 +117,7 @@ define(["jquery", "i18n/i18n"], function($, Translate) {
 							continue;
 						}
 
-						var wasMedley = true;
+						wasMedley = true;
 
 						tab.medley = false;
 					}
@@ -125,6 +127,9 @@ define(["jquery", "i18n/i18n"], function($, Translate) {
 
 					// Set the fixed boolean
 					tab.fixed = (columns[1] && columns[1] == "fixed");
+
+
+					var i;
 
 					// If the column number hasn't changed
 					if (tab.columns.length == number) {
@@ -139,12 +144,12 @@ define(["jquery", "i18n/i18n"], function($, Translate) {
 						continue;
 					}
 					else if (tab.columns.length < number) { // If the number of columns needs to be increased
-						for (var i = number - tab.columns.length; i > 0; i--) {
-							tab.columns.push([]); // Push empty columns untill the value is reached
+						for (i = number - tab.columns.length; i > 0; i--) {
+							tab.columns.push([]); // Push empty columns until the value is reached
 						}
 					}
 					else if (tab.columns.length > number) { // If the number of columns needs to be reduced
-						for (var i = tab.columns.length - 1; i >= number; i--) {
+						for (i = tab.columns.length - 1; i >= number; i--) {
 							tab.columns[0] = tab.columns[0].concat(tab.columns[i]); // Move all widgets in extra columns to the first
 						}
 

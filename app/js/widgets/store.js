@@ -53,7 +53,7 @@ define(
 						this.hide();
 					}
 				}
-			})),
+			}))(),
 			View = Backbone.View.extend({
 				el: modal.content,
 
@@ -73,7 +73,7 @@ define(
 						this.$(".detail").html(
 							render("store-detail", {
 								name: widget.name ? resolve(widget, widget.name) : translate(widget, "name"),
-								sizes: widget.sizes.map(function(e) { return [e, sizes[e]] }),
+								sizes: widget.sizes.map(function(e) { return [e, sizes[e]]; }),
 								desc: Utils.prototype.renderTemplate.call({ widget: widget }, "desc")
 							})
 						).find(".preview").prepend(view.el);

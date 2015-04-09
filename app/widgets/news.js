@@ -115,7 +115,8 @@ define(["jquery"], function($) {
 				m: this.utils.translate("settings.topic_options.health"),
 				snc: this.utils.translate("settings.topic_options.science"),
 				ir: this.utils.translate("settings.topic_options.spotlight"),
-			},
+			};
+
 			edition = edition || "us";
 
 			if (edition == "pt-BR_br") {
@@ -149,11 +150,11 @@ define(["jquery"], function($) {
 							desc: html.find(".lh font:nth-of-type(2)").find("*").remove().end().text().trim()
 						};
 
-					if (item.desc == "") {
+					if (!item.desc) {
 						item.desc = html.text().trim();
 					}
 
-					if (item.image == "") {
+					if (!item.image) {
 						delete item.image;
 					}
 

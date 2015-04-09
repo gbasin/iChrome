@@ -6,7 +6,7 @@ define(["backbone", "modals/modals", "core/analytics", "core/uid", "core/render"
 		width: 950,
 		height: 530,
 		classes: "donate"
-	}));
+	}))();
 	
 	var View = Backbone.View.extend({
 		el: modal.content,

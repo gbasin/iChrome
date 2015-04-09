@@ -6,7 +6,7 @@ define(
 	function(_, $, Backbone, Track, Modal, Model, Utils, Custom, Cacher, Translate, render) {
 		var modal = new (Modal.extend({
 			classes: "themes",
-		}));
+		}))();
 
 		var View = Backbone.View.extend({
 			el: modal.content,
@@ -251,7 +251,7 @@ define(
 					});
 				}
 				else {
-					themes = [].concat(this.model.get("custom"), this.model.get("themes"))
+					themes = [].concat(this.model.get("custom"), this.model.get("themes"));
 				}
 
 
@@ -382,7 +382,7 @@ define(
 			},
 
 			render: function() {
-				var container = this.$(".container").html(render("themes.listing", {
+				this.$(".container").html(render("themes.listing", {
 					themes: [].concat(this.model.get("custom"), this.model.get("themes"))
 				}));
 

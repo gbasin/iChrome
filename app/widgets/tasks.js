@@ -168,8 +168,10 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 			}
 
 
+			var item;
+
 			if (elm.is(this.addForm)) {
-				var item = $('<div class="item">' + this.utils.renderTemplate("item", this.formatItem(dta)) + "</div>").insertAfter(elm);
+				item = $('<div class="item">' + this.utils.renderTemplate("item", this.formatItem(dta)) + "</div>").insertAfter(elm);
 
 				if (dta.due) dta.due = new Date(dta.due);
 
@@ -203,10 +205,11 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 				});
 			}
 			else {
-				var id = elm.attr("data-id"),
-					item = _.find(this.data.items, {
-						id: id
-					});
+				var id = elm.attr("data-id");
+				
+				item = _.find(this.data.items, {
+					id: id
+				});
 
 				_.assign(item, dta);
 
@@ -279,14 +282,13 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 			});
 
 
+			var oAuth = this.oAuth;
+			
 			// If this is a demo, or not authenticated, it shouldn't attempt any requests
 			if (demo || !this.oAuth) {
-				var oAuth = {
+				oAuth = {
 					ajax: function() {}
 				};
-			}
-			else {
-				var oAuth = this.oAuth;
 			}
 
 			var that = this;

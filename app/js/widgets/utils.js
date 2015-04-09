@@ -106,14 +106,16 @@ define(["lodash", "jquery", "backbone", "core/status", "i18n/i18n", "core/render
 	 * @return {String}          The returned string, interpolated if variables were provided
 	 */
 	Utils.prototype.translate = function(id) {
-		arguments[0] = "widgets." + this.widget.nicename + "." + id;
+		var args = _.toArray(arguments);
 
-		var ret = Translate.apply(Translate, arguments);
+		args[0] = "widgets." + this.widget.nicename + "." + id;
+
+		var ret = Translate.apply(Translate, args);
 
 		if (!ret) {
-			arguments[0] = arguments[0].replace(this.widget.nicename, "shared");
+			args[0] = args[0].replace(this.widget.nicename, "shared");
 
-			ret = Translate.apply(Translate, arguments);
+			ret = Translate.apply(Translate, args);
 		}
 
 		return ret;
@@ -130,7 +132,7 @@ define(["lodash", "jquery", "backbone", "core/status", "i18n/i18n", "core/render
 	Utils.prototype.resolve = function(str) {
 		if (!str) return "";
 
-		if (str.indexOf("i18n.") == 0) {
+		if (str.indexOf("i18n.") === 0) {
 			// This uses the prototype so resolve can be called with a different this object
 			return Utils.prototype.translate.call(this, str.substr(5));
 		}

@@ -102,19 +102,21 @@ define(["jquery", "moment"], function($, moment) {
 			});
 		},
 		render: function() {
+			var data;
+
 			if (Array.isArray(this.data)) {
 				if (this.data.length > 1) {
-					var data = {
+					data = {
 						multiple: true,
 						stocks: $.extend({}, { data: this.data || [] }).data
 					};
 				}
 				else {
-					var data = $.extend({}, { data: this.data || [] }).data[0];
+					data = $.extend({}, { data: this.data || [] }).data[0];
 				}
 			}
 			else {
-				var data = $.extend({}, this.data || {});
+				data = $.extend({}, this.data || {});
 			}
 
 			if (this.config.title && this.config.title !== "") {

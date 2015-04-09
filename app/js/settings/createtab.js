@@ -9,11 +9,10 @@ define(["jquery", "core/analytics", "storage/defaults", "i18n/i18n", "core/rende
 				columns: [],
 				name: Translate("settings.specific.default_name"),
 				fixed: storage.settings.columns.split("-")[1] == "fixed"
-			});
+			}),
+			medley = storage.settings.columns.split("-")[0] == "medley";
 
-		if (storage.settings.columns.split("-")[0] == "medley") {
-			var medley = true;
-
+		if (medley) {
 			tab.columns.push([]);
 		}
 		else {

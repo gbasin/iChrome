@@ -4,7 +4,7 @@
 define(
 	[
 		"lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "core/analytics", "modals/modals", "themes/themes", "settings/general",
-		"settings/visual", "settings/specific", "settings/advanced", "core/render", "settings/serialize", "settings/createTab"
+		"settings/visual", "settings/specific", "settings/advanced", "core/render", "settings/serialize", "settings/createtab"
 	],
 	function(_, $, Backbone, Storage, Defaults, Track, Modal, Themes, General, Visual, Specific, Advanced, render, serialize, createTab) {
 		var Model = Backbone.Model.extend({
@@ -25,7 +25,7 @@ define(
 			}),
 			modal = new (Modal.extend({
 				classes: "settings"
-			})),
+			}))(),
 			View = Backbone.View.extend({
 				el: modal.content,
 
@@ -66,8 +66,10 @@ define(
 				},
 
 				save: function(e) {
+					var cb;
+
 					if (typeof e == "function") {
-						var cb = e;
+						cb = e;
 					}
 					else if (e && e.preventDefault) {
 						e.preventDefault();
@@ -154,7 +156,7 @@ define(
 						data.tabs.push({
 							name: tab.name || Defaults.tab.name,
 							id: tab.id,
-							active: (i == 0 ? "active" : "")
+							active: (i === 0 ? "active" : "")
 						});
 					});
 

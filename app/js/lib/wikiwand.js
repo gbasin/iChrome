@@ -46,7 +46,7 @@ define(function() {
 		}
 
 		window.addEventListener("message", function(e) {
-			if (e && e.data && e.data.height) {
+			if (e && e.source === frame.contentWindow && e.data && e.data.height) {
 				noConnection.style.display = "none";
 
 				frame.style.opacity = 1;

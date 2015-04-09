@@ -240,6 +240,10 @@
     "name":"Google+",
     "desc":"Hiermee sluit u Google Plus in in een widget"
   },
+  "notifications":{
+    "name":"Google Notifications",
+    "desc":"Displays your Google Notifications from services such as Google+"
+  },
   "recentlyclosed":{
     "name":"Onlangs gesloten",
     "desc":"Toont uw onlangs gesloten tabbladen",
@@ -344,23 +348,23 @@
     "important":"Belangrijk"
   },
   "tasks":{
-    "name":"Tasks",
-    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
-    "title":"Tasks",
+    "name":"Taken",
+    "desc":"Toont een bewerkbare lijst met taken van een van uw Google Task lijsten.",
+    "title":"Taken",
     "settings":{
       "list":"Lijst"
     },
-    "task_title":"Title",
-    "due_date":"Due date",
+    "task_title":"Titel",
+    "due_date":"Vervaldatum",
     "notes":"Notities",
     "add":"Item toevoegen",
-    "delete_task":"Delete Task",
-    "move_up":"Move Up",
-    "move_down":"Move Down",
-    "done":"Done",
-    "due_today":"Due today",
+    "delete_task":"Verwijder taak",
+    "move_up":"Omhoog",
+    "move_down":"Omlaag",
+    "done":"Klaar",
+    "due_today":"Vervalt vandaag",
     "overdue":"Overdue",
-    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
+    "authorize":"U zult een lijst moeten selecteren van uw Google Tasks via instellingen voordat hier iets getoont kan worden."
   },
   "topsites":{
     "name":"Topsites",
@@ -479,18 +483,18 @@
     "name":"Quotes",
     "desc":"Displays a quote picked either every time you load the page or once daily.",
     "settings":{
-      "source":"Source",
+      "source":"Bron",
       "method":"Load new quotes",
       "method_options":{
         "daily":"Once daily",
-        "random":"Every time I load the page"
+        "random":"Telkens wanneer de pagina wordt geladen"
       }
     },
     "unknown_author":"Onbekend"
   },
   "html":{
     "name":"HTML",
-    "desc":"Displays completely custom HTML in an iframe.",
+    "desc":"Toont volledig aangepaste HTML-code in een iframe.",
     "settings":{
       "html":"HTML",
       "js":"JavaScript",

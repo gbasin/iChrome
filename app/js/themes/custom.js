@@ -35,7 +35,8 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 			 * @api    private
 			 */
 			updatePreview: function() {
-				var image, upload,
+				var image = this.$("#image").val(),
+					upload,
 					next = function(url) {
 						this.$(".preview").first().css({
 							backgroundColor: this.$("#color").val(),
@@ -47,7 +48,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 						});
 					}.bind(this);
 
-				if (image = this.$("#image").val()) {
+				if (image) {
 					next(image);
 				}
 				else if ((upload = this.$("#upload")[0].files).length) {
@@ -76,10 +77,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 			 * @api    private
 			 */
 			preview: function(e) {
-				if (typeof e == "function") {
-					var cb = e;
-				}
-				else if (e && e.preventDefault) {
+				if (e && e.preventDefault) {
 					e.preventDefault();
 				}
 
@@ -162,7 +160,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 					try { // This is a user-provided URL, anything could happen
 						Cacher.Custom.cache(theme, id, next);
 					}
-					catch(e) {
+					catch(err) {
 						alert(Translate("themes.edit.cache_error"));
 					}
 				}
@@ -170,7 +168,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 					try { // Again, who knows what could go wrong
 						Cacher.Custom.saveUpload(theme, upload[0], id, next);
 					}
-					catch(e) {
+					catch(err) {
 						alert(Translate("themes.edit.upload_error"));
 					}
 				}
@@ -221,7 +219,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 
 						setTimeout(this.destroy.bind(this), 400);
 					}.bind(this)
-				}));
+				}))();
 
 				return Backbone.View.apply(this, arguments);
 			},
