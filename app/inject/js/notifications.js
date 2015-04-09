@@ -48,7 +48,8 @@ s.textContent = (function gapiOnLoad() {
 			{ style: "notifications" },
 			{ origin: "https://www.google.com/" },
 			{
-				setNotificationText: "",
+				setNotificationText: function() {},
+				setNotificationAnimation: function() {},
 				setNotificationWidgetHeight: function(height) {
 					window.parent.postMessage({
 						height: parseInt(height)
