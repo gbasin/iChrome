@@ -65,10 +65,10 @@
   },
   "chrome_bookmarks":{
     "name":"Закладки",
-    "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
+    "desc":"Отображать ваши закладки Chrome, при необходимости из определенной папки.",
     "settings":{
       "title_placeholder":"Введите заголовок виджета",
-      "from":"Show bookmarks from",
+      "from":"Отображать закладки из",
       "open":"Открывать во вкладке"
     }
   },
@@ -85,10 +85,10 @@
     "settings":{
       "calendar":"Календарь",
       "events":"Количество отображаемых событий",
-      "show":"Show events from",
+      "show":"Отображать события из",
       "show_options":{
-        "all":"All time",
-        "today":"Today only"
+        "all":"За всё время",
+        "today":"Только сегодня"
       }
     },
     "title":"Мой календарь",
@@ -240,6 +240,10 @@
     "name":"Google+",
     "desc":"Встраивает Google Plus в виджет"
   },
+  "notifications":{
+    "name":"Google Notifications",
+    "desc":"Displays your Google Notifications from services such as Google+"
+  },
   "recentlyclosed":{
     "name":"Недавно закрытые вкладки",
     "desc":"Отображает список недавно закрытых вкладок",
@@ -344,23 +348,23 @@
     "important":"Важное"
   },
   "tasks":{
-    "name":"Tasks",
-    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
-    "title":"Tasks",
+    "name":"Задачи",
+    "desc":"Отображать редактируемый список задач из одного из ваших списков Google Tasks.",
+    "title":"Задачи",
     "settings":{
       "list":"Список"
     },
-    "task_title":"Title",
-    "due_date":"Due date",
+    "task_title":"Заголовок",
+    "due_date":"Дата окончания",
     "notes":"Заметки",
     "add":"Добавить",
-    "delete_task":"Delete Task",
-    "move_up":"Move Up",
-    "move_down":"Move Down",
-    "done":"Done",
-    "due_today":"Due today",
-    "overdue":"Overdue",
-    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
+    "delete_task":"Удалить задачу",
+    "move_up":"Переместить вверх",
+    "move_down":"Переместить вниз",
+    "done":"Пометить выполненной",
+    "due_today":"Завершающиеся сегодня",
+    "overdue":"Просроченные",
+    "authorize":"Для отображения чего-либо сначала нужно выбрать список в Google Tasks с помощью Настроек."
   },
   "topsites":{
     "name":"Популярные сайты",
@@ -476,21 +480,21 @@
     "num_views":"просмотров"
   },
   "quotes":{
-    "name":"Quotes",
-    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "name":"Цитаты",
+    "desc":"Отображать выбранную цитату при каждой загрузке страницы либо раз в день.",
     "settings":{
-      "source":"Source",
-      "method":"Load new quotes",
+      "source":"Источник",
+      "method":"Загрузить новые цитаты",
       "method_options":{
-        "daily":"Once daily",
-        "random":"Every time I load the page"
+        "daily":"Один раз в день",
+        "random":"При каждой загрузке страницы"
       }
     },
     "unknown_author":"Перевод отсутствует"
   },
   "html":{
     "name":"HTML",
-    "desc":"Displays completely custom HTML in an iframe.",
+    "desc":"Отображает пользовательскую HTML-страницу в iframe.",
     "settings":{
       "html":"HTML",
       "js":"JavaScript",

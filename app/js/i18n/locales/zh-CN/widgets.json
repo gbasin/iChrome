@@ -240,6 +240,10 @@
     "name":"Google+",
     "desc":"Google+小部件"
   },
+  "notifications":{
+    "name":"Google Notifications",
+    "desc":"Displays your Google Notifications from services such as Google+"
+  },
   "recentlyclosed":{
     "name":"最近关闭",
     "desc":"显示您最近关闭的标签页",
@@ -425,9 +429,9 @@
     "settings":{
       "open":"点击时打开"
     },
-    "unread_none":"未读邮件",
-    "unread_one":"未读的一封邮件",
-    "unread_many":"未读邮件"
+    "unread_none":"封未读邮件",
+    "unread_one":"封未读邮件",
+    "unread_many":"封未读邮件"
   },
   "voice":{
     "name":"Google Voice",

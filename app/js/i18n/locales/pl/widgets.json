@@ -240,6 +240,10 @@
     "name":"Google+",
     "desc":"Embeds Google Plus in a widget"
   },
+  "notifications":{
+    "name":"Google Notifications",
+    "desc":"Displays your Google Notifications from services such as Google+"
+  },
   "recentlyclosed":{
     "name":"Niedawno zamknięte",
     "desc":"Shows your recently closed tabs",

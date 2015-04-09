@@ -6,9 +6,9 @@
     "sessions":"অধিবেশন",
     "pageviews":"পাতাপরিদর্শন",
     "pagesvisit":"পাতা\/ভ্রমণ",
-    "bouncerate":"Bounce Rate",
-    "completions":"Completions",
-    "noprofile":"It doesn't look like you selected a profile yet!\n<br \/><br \/>\nTry selecting one via the wrench icon in the top right.",
+    "bouncerate":"বাউন্স রেট",
+    "completions":"সম্পূর্ণতা",
+    "noprofile":"আপনি এখনো একটি প্রোফাইল নির্বাচন করার মত দেখাচ্ছে না!\n<br \/><br \/>\nউপরে ডানদিকে রেঞ্চ আইকন মাধ্যমে একটি নির্বাচন করার চেষ্টা করুন।",
     "settings":{
       "profile":"প্রোফাইল"
     }
@@ -32,7 +32,7 @@
         "id":"ID",
         "alphabetically":"বর্ণানুক্রমে",
         "offline":"অফলাইন সক্ষমিত",
-        "available":"Availability"
+        "available":"প্রাপ্যতা"
       },
       "open":"এতে অ্যাপসমূহ খুলুন"
     },
@@ -40,19 +40,19 @@
   },
   "bookmarks":{
     "name":"বুকমার্ক",
-    "desc":"Displays selected and customized bookmarks, and other links.",
+    "desc":"নির্বাচিত এবং স্বনির্ধারিত বুকমার্ক ও অন্যান্য লিংক প্রদর্শন করে।",
     "settings":{
-      "title_placeholder":"Enter a widget title",
+      "title_placeholder":"উইজেটের একটি শিরোনাম লিখুন",
       "layout":"লেআউট",
       "layout_options":{
-        "single":"Single column",
-        "double":"Double column"
+        "single":"একক কলাম",
+        "double":"দ্বৈত কলাম"
       },
-      "open":"Open bookmarks in"
+      "open":"এতে বুকমার্ক খুলুন"
     },
     "edit":{
-      "dialog_title":"Edit Bookmark",
-      "title":"Bookmark Title",
+      "dialog_title":"বুকমার্ক সম্পাদনা",
+      "title":"বুকমার্কের শিরোনাম",
       "title_placeholder":"গুগল",
       "url":"বুকমার্ক URL",
       "url_placeholder":"http:\/\/www.google.com.bd\/",
@@ -60,35 +60,35 @@
     },
     "new_caption":"নতুন",
     "new_bookmark":"বুকমার্ক",
-    "new_folder":"Folder",
-    "drop_link":"Drop link here"
+    "new_folder":"ফোল্ডার",
+    "drop_link":"এখানে লিংক ছেড়ে দিন"
   },
   "chrome_bookmarks":{
     "name":"বুকমার্ক",
-    "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
+    "desc":"ঐচ্ছিকভাবে একটি নির্দিষ্ট ফোল্ডার থেকে, আপনার ক্রোম বুকমার্কসসমূহ প্রদর্শন করে।",
     "settings":{
-      "title_placeholder":"Enter a widget title",
-      "from":"Show bookmarks from",
-      "open":"Open bookmarks in"
+      "title_placeholder":"উইজেটের একটি শিরোনাম লিখুন",
+      "from":"এ থেকে বুকমার্ক প্রদর্শন করান",
+      "open":"এতে বুকমার্ক খুলুন"
     }
   },
   "calc":{
     "name":"ক্যালকুলেটর",
-    "desc":"Displays a calculator with support for basic operators.",
+    "desc":"মৌলিক অপারেটরদের জন্য সমর্থনসহ একটি ক্যালকুলেটর প্রদর্শন করে।",
     "error":"ত্রুটি!",
     "infinity":"অসীম",
-    "mismatch":"Mismatched parentheses"
+    "mismatch":"বন্ধনী মেলেনি"
   },
   "calendar":{
     "name":"পঞ্জিকা",
-    "desc":"Displays upcoming events from one or more of your Google calendars.",
+    "desc":"আপনার এক বা একাধিক গুগল পঞ্জিকা থেকে আসন্ন ঘটনাবলী প্রদর্শন করে।",
     "settings":{
       "calendar":"পঞ্জিকা",
-      "events":"Events Shown",
-      "show":"Show events from",
+      "events":"ইভেন্ট দেখানো",
+      "show":"ইভেন্ট দেখান",
       "show_options":{
-        "all":"All time",
-        "today":"Today only"
+        "all":"সব সময়ের",
+        "today":"শুধুমাত্র আজকের"
       }
     },
     "title":"আমার পঞ্জিকা",
@@ -106,39 +106,39 @@
         "24hour":"২৪ ঘণ্টা - ডিজিটাল",
         "analog":"১২ ঘণ্টা - এনালগ",
         "ampmseconds":"পুর্বাহ্ন\/অপরাহ্ন - ডিজিটাল, সেকেন্ডবিহীন",
-        "24hourseconds":"24 Hour - Digital, No Seconds"
+        "24hourseconds":"২৪ ঘণ্টা - ডিজিটাল, সেকেন্ডবিহীন"
       }
     },
-    "title":"Clock"
+    "title":"ঘড়ি"
   },
   "currency":{
-    "name":"Currency",
+    "name":"মুদ্রা",
     "desc":"Let's you convert between any two of 169 currencies.",
-    "to_label":"to"
+    "to_label":"এতে"
   },
   "drive":{
     "name":"ড্রাইভ",
     "desc":"Displays recently changed files from your Google Drive.",
     "settings":{
-      "files_shown":"Number of Files Shown"
+      "files_shown":"দেখানো ফাইলের সংখ্যা"
     },
-    "modified_by":"by",
+    "modified_by":"কর্তৃক",
     "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
-    "authorize_btn":"Authorize"
+    "authorize_btn":"অনুমোদন"
   },
   "facebook":{
-    "name":"Facebook",
-    "desc":"Embeds Facebook in a widget"
+    "name":"ফেসবুক",
+    "desc":"উইজেটে ফেসবুক এম্বেড করুন"
   },
   "feedly":{
     "name":"Feedly",
     "desc":"Displays articles from your Feedly account in a configurable format.",
     "settings":{
-      "source":"Show articles from",
-      "source_feeds":"Feeds",
+      "source":"নিবন্ধ দেখান",
+      "source_feeds":"ফীড",
       "show":"দেখান",
       "show_options":{
-        "all":"All articles",
+        "all":"সকল নিবন্ধ",
         "unread":"শুধু অপঠিত নিবন্ধ"
       },
       "layout":"লেআউট",
@@ -187,7 +187,7 @@
     "name":"সংবাদ",
     "desc":"Displays the current top news by category and edition.",
     "settings":{
-      "articles":"Articles Shown",
+      "articles":"নিবন্ধ দেখানো",
       "edition":"সংস্করণ",
       "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
       "topic":"প্রসঙ্গ",
@@ -215,34 +215,38 @@
     "name":"নোট",
     "desc":"Inserts a simple, editable, note.",
     "settings":{
-      "color":"Note Color",
+      "color":"নোটের রঙ",
       "color_options":{
-        "yellow":"Yellow",
-        "orange":"Orange",
-        "red":"Red",
-        "blue":"Blue",
-        "green":"Green",
-        "white":"White"
+        "yellow":"হলুদ",
+        "orange":"কমলা",
+        "red":"লাল",
+        "blue":"নীল",
+        "green":"সবুজ",
+        "white":"সাদা"
       },
-      "font":"Font Face",
-      "fontsize":"Font Size"
+      "font":"ফন্টের মুখ",
+      "fontsize":"ফন্টের মাপ"
     }
   },
   "now":{
-    "name":"Google Now",
+    "name":"গুগল নাও",
     "desc":"Displays cards from Google Now including flight status and package tracking.",
     "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
-    "authorize_btn":"Authorize",
+    "authorize_btn":"অনুমোদন",
     "caught_up":"All caught up, nothing here.",
-    "no_title":"No Title"
+    "no_title":"কোন শিরোনাম নেই"
   },
   "plus":{
-    "name":"Google+",
+    "name":"গুগল+",
     "desc":"Embeds Google Plus in a widget"
   },
+  "notifications":{
+    "name":"Google Notifications",
+    "desc":"Displays your Google Notifications from services such as Google+"
+  },
   "recentlyclosed":{
-    "name":"Recently Closed",
-    "desc":"Shows your recently closed tabs",
+    "name":"সম্প্রতি বন্ধ হয়েছে",
+    "desc":"আপনার সম্প্রতি বন্ধ হওয়া ট্যাব প্রদর্শন করে।",
     "settings":{
       "tabs":"Tabs Shown",
       "open":"Open tabs in"
@@ -268,7 +272,7 @@
       "click":"When I click a link show me",
       "click_options":{
         "link":"The link",
-        "comments":"The comments"
+        "comments":"মন্তব্য"
       }
     },
     "more":"আরও"
@@ -281,14 +285,14 @@
       "link_placeholder":"Enter a link for the widget title",
       "url":"Feed URL",
       "url_placeholder":"The URL of the RSS feed to be displayed",
-      "articles":"Articles Shown",
+      "articles":"নিবন্ধ দেখানো",
       "view":"দেখুন",
       "view_options":{
         "images":"Image friendly",
-        "default":"Default"
+        "default":"পূর্ব-নির্ধারিত"
       },
-      "images":"Images",
-      "descriptions":"Descriptions"
+      "images":"চিত্র",
+      "descriptions":"বিবরণ"
     },
     "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
   },
@@ -296,7 +300,7 @@
     "name":"ক্রীড়া",
     "desc":"Displays scores and game information for selected leagues and\/or teams.",
     "settings":{
-      "league":"League",
+      "league":"লীগ",
       "games":"Games Shown",
       "team":"দল",
       "teams":"দল",
@@ -312,7 +316,7 @@
     "no_games":"কোনো খেলার সময়সূচী নেই"
   },
   "stocks":{
-    "name":"Stocks",
+    "name":"স্টক",
     "desc":"Displays current information for any given stock symbol.",
     "settings":{
       "symbols":"Stock Symbol(s), comma separated",
@@ -320,7 +324,7 @@
       "symbols_help":"These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br \/><br \/>\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. For example, the Dow Jones index is <b>.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
     },
     "as_of":"as of",
-    "exchange_time":"Exchange Time",
+    "exchange_time":"বিনিময়ের সময়",
     "open":"খুলুন",
     "high":"উচ্চ",
     "low":"নিম্ন",
@@ -337,33 +341,33 @@
         "dark":"গাঢ়"
       },
       "tags":"ট্যাগ",
-      "tags_placeholder":"Enter a tag name and press Enter"
+      "tags_placeholder":"ট্যাগ নাম প্রবেশ করান এবং Enter চাপুন"
     },
     "add":"আইটেম যোগ করুন",
     "none":"কোনটি নয়",
-    "important":"Important"
+    "important":"গুরুত্বপূর্ণ"
   },
   "tasks":{
-    "name":"Tasks",
+    "name":"কার্যসমূহ",
     "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
-    "title":"Tasks",
+    "title":"কার্যসমূহ",
     "settings":{
       "list":"তালিকা"
     },
-    "task_title":"Title",
+    "task_title":"শিরোনাম",
     "due_date":"Due date",
     "notes":"নোট",
     "add":"আইটেম যোগ করুন",
     "delete_task":"Delete Task",
-    "move_up":"Move Up",
-    "move_down":"Move Down",
-    "done":"Done",
+    "move_up":"উপরে উঠান",
+    "move_down":"নিচে নামান",
+    "done":"সম্পন্ন",
     "due_today":"Due today",
     "overdue":"Overdue",
     "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
   },
   "topsites":{
-    "name":"Top Sites",
+    "name":"শীর্ষ সাইট",
     "desc":"Displays your most visited\/top sites.",
     "settings":{
       "show":"দেখানো সাইটের সংখ্যা",
@@ -375,15 +379,15 @@
     "desc":"Displays the current time in current traffic to home or work.",
     "settings":{
       "leave":"I leave home at",
-      "home":"Home Address",
+      "home":"বাড়ির ঠিকানা",
       "home_placeholder":"The destination that should be used after work",
-      "work":"Work Address",
+      "work":"কর্মস্থানের ঠিকানা",
       "work_placeholder":"The destination that should be used before work",
       "method":"Transit Method",
       "method_options":{
         "driving":"Driving",
-        "walking":"Walking",
-        "transit":"Public Transit"
+        "walking":"হাঁটা",
+        "transit":"পাবলিক পরিবহন"
       }
     },
     "to_home":"to home",
@@ -395,7 +399,7 @@
     "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
     "button":"অনুবাদ",
     "untranslate":"Untranslate",
-    "auto":"Auto (%s)",
+    "auto":"স্বয়ংক্রিয় (%s)",
     "unknown":"অজানা",
     "error":"Something went wrong while trying to translate that..."
   },
@@ -408,29 +412,29 @@
     },
     "authorize":"You'll need to authorize iChrome first",
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
-    "authorize_btn":"Authorize",
+    "authorize_btn":"অনুমোদন",
     "no_tweets":"There don't seem to be any tweets here...",
     "home":"মূল পাতা",
     "mentions":"Mentions",
     "retweets":"Retweets of me",
-    "lists":"Lists",
+    "lists":"তালিকা",
     "more":"আরও",
     "reply":"উত্তর দিন",
-    "retweet":"Retweet",
+    "retweet":"পুনঃটুইট",
     "favorite":"পছন্দ"
   },
   "unread":{
-    "name":"Unread",
+    "name":"অপঠিত",
     "desc":"Displays the current number of unread emails in your Gmail inbox.",
     "settings":{
       "open":"When clicked open"
     },
-    "unread_none":"unread emails",
-    "unread_one":"unread email",
-    "unread_many":"unread emails"
+    "unread_none":"অপঠিত ইমেইল",
+    "unread_one":"অপঠিত ইমেইল",
+    "unread_many":"অপঠিত ইমেইল"
   },
   "voice":{
-    "name":"Voice",
+    "name":"কন্ঠ",
     "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
     "call":"Call from",
     "text":"Text message from",
@@ -439,18 +443,18 @@
     "calls":"missed calls"
   },
   "weather":{
-    "name":"Weather",
+    "name":"আবহাওয়া",
     "desc":"Displays the current weather and a forecast for the next 4 days.",
     "settings":{
-      "location":"Location(s)",
+      "location":"অবস্থান",
       "location_placeholder":"Enter a location and press Enter",
-      "temperature":"Temperature Units",
-      "wind":"Wind Speed Units"
+      "temperature":"তাপমাত্রার একক",
+      "wind":"বাতাসের গতির একক"
     },
     "unknown":"অজানা",
-    "wind":"Wind Speed",
-    "chill":"Wind Chill",
-    "humidity":"Humidity"
+    "wind":"বাতাসের গতি",
+    "chill":"বাতাস বইছে",
+    "humidity":"আর্দ্রতা"
   },
   "wolfram":{
     "desc":"Inserts a small Wolfram|Alpha search box."
@@ -459,31 +463,31 @@
     "name":"ইউটিউব",
     "desc":"Displays either popular videos or videos from a specified user.",
     "settings":{
-      "format":"Format",
+      "format":"বিন্যাস",
       "format_options":{
-        "large":"One large",
-        "large_2":"One large, two small",
-        "large_4":"One large, four small",
-        "four":"Four small",
-        "six":"Six small"
+        "large":"একটি বড়",
+        "large_2":"একটি বড়, দুটি ছোট",
+        "large_4":"একটি বড়, চারটি ছোট",
+        "four":"চারটি ছোট",
+        "six":"ছয়টি ছোট"
       },
-      "from":"Show Videos From",
+      "from":"এ থেকে ভিডিও দেখান",
       "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
       "from_placeholder":"Leave blank to show Top Videos",
       "open":"Open search results in"
     },
-    "search":"Search YouTube",
-    "num_views":"views"
+    "search":"ইউটিউবে অনুসন্ধান করুন",
+    "num_views":"বার দেখা"
   },
   "quotes":{
-    "name":"Quotes",
+    "name":"উদ্ধৃতি",
     "desc":"Displays a quote picked either every time you load the page or once daily.",
     "settings":{
-      "source":"Source",
-      "method":"Load new quotes",
+      "source":"উৎস",
+      "method":"নতুন উদ্ধৃতি লোড করুন",
       "method_options":{
-        "daily":"Once daily",
-        "random":"Every time I load the page"
+        "daily":"দৈনিক একবার",
+        "random":"প্রত্যেক বার আমি পৃষ্ঠা লোড করার সময়"
       }
     },
     "unknown_author":"অজানা"

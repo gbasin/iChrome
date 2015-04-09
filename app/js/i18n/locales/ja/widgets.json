@@ -240,6 +240,10 @@
     "name":"Google+",
     "desc":"Google+のウィジェットを埋め込みます"
   },
+  "notifications":{
+    "name":"Google Notifications",
+    "desc":"Displays your Google Notifications from services such as Google+"
+  },
   "recentlyclosed":{
     "name":"最近閉じた",
     "desc":"最近閉じたタブを示します",

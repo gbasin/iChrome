@@ -121,13 +121,13 @@
       "toolbar_button":"Buton",
       "animation":"Slide-in Animation",
       "animation_desc":"This setting lets you enable or disable the slide-in animation that runs when you load the page",
-      "animation_label":"Enable the animation"
+      "animation_label":"Animasyonu etkinleştir"
     },
     "specific":{
       "name":"Sekme Adı",
       "default_name":"Yeni Sekme",
       "delete":"Sekmeyi sil",
-      "delete_disallowed":"You cannot delete the only remaining tab.",
+      "delete_disallowed":"Kalan son sekmeyi silemezsin.",
       "delete_confirm":"Are you really sure you want to delete this tab?\r\nThis action is irreversible, all data from all widgets in the tab will be permanently lost.",
       "default":"Varsayılan olarak ayarla"
     },
