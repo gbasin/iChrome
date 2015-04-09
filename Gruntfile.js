@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 				futurehostile: true,
 				reporter: require("jshint-stylish")
 			},
-			all: ["app/widgets/*.js", "app/js/**/*.js", "!app/js/lib/*.js"]
+			all: ["app/widgets/*.js", "app/inject/js/*.js", "app/js/**/*.js", "!app/js/lib/*.js"]
 		},
 
 		// Copy the extension to a new directory for building
