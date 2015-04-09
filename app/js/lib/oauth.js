@@ -188,6 +188,16 @@ define(["jquery", "lodash"], function($, _) {
 
 
 		/**
+		 * The ID of the currently opened window, false if none exists or true if one is being created.
+		 *
+		 * This is used to stop multiple windows from being opened on top of each other.
+		 *
+		 * @type  {Boolean|Number}
+		 */
+		openWindow: false,
+
+
+		/**
 		 * Opens a panel at the config authURL, starting the authorization process
 		 *
 		 * @api     private
@@ -205,45 +215,68 @@ define(["jquery", "lodash"], function($, _) {
 
 			var that = this;
 
-			chrome.windows.create({
-				url: url,
-				width: 560,
-				height: 600,
-				type: "popup",
-				focused: true,
-				top: Math.round((screen.availHeight - 600) / 2),
-				left: Math.round((screen.availWidth - 560) / 2)
-			}, function(win) {
-				chrome.webRequest.onBeforeRequest.addListener(
-					function(info) {
-						var params = JSON.parse('{"' +
-							info.url
-								.substr(info.url.split("?")[0].length + 1)
-								.replace(/"/g, "%22")
-								.replace(/&/g, '","')
-								.replace(/=/g,'":"') +
-						'"}', function(key, value) {
-							return key === "" ? value : decodeURIComponent(value)
-						});
+			var createWindow = function() {
+				that.openWindow = true;
 
-						if (params[this.config.codeParam]) {
-							this.exchangeCode(params[this.config.codeParam], cb);
-						}
+				chrome.windows.create({
+					url: url,
+					width: 560,
+					height: 600,
+					type: "popup",
+					focused: true,
+					top: Math.round((screen.availHeight - 600) / 2),
+					left: Math.round((screen.availWidth - 560) / 2)
+				}, function(win) {
+					that.openWindow = win.id;
 
-						chrome.windows.remove(win.id);
+					chrome.webRequest.onBeforeRequest.addListener(
+						function(info) {
+							var params = JSON.parse('{"' +
+								info.url
+									.substr(info.url.split("?")[0].length + 1)
+									.replace(/"/g, "%22")
+									.replace(/&/g, '","')
+									.replace(/=/g,'":"') +
+							'"}', function(key, value) {
+								return key === "" ? value : decodeURIComponent(value)
+							});
 
-						return {
-							cancel: true
-						};
-					}.bind(that),
-					{
-						windowId: win.id,
-						types: ["main_frame"],
-						urls: [redirectURL + "*"]
-					},
-					["blocking"]
-				);
-			});
+							if (params[this.config.codeParam]) {
+								this.exchangeCode(params[this.config.codeParam], cb);
+							}
+
+							chrome.windows.remove(win.id);
+
+							return {
+								cancel: true
+							};
+						}.bind(that),
+						{
+							windowId: win.id,
+							types: ["main_frame"],
+							urls: [redirectURL + "*"]
+						},
+						["blocking"]
+					);
+				});
+			};
+
+			if (typeof this.openWindow === "number") {
+				chrome.windows.get(this.openWindow, function(win) {
+					if (chrome.runtime.lastError) {
+						createWindow();
+					}
+					else {
+						chrome.windows.update(win.id, { focused: true });
+					}
+				});
+			}
+			else if (this.openWindow === true) {
+				return;
+			}
+			else {
+				createWindow();
+			}
 		},
 
 
