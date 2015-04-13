@@ -614,9 +614,7 @@ chrome.storage.onChanged.addListener(function(d, area) {
 
 							chrome.storage.local.set(newData, function() {
 								chrome.extension.getViews().forEach(function(e, i) {
-									if (e.iChrome && e.iChrome.refresh) {
-										e.iChrome.refresh(true);
-									}
+									e.window.location.reload();
 								});
 							});
 						};
