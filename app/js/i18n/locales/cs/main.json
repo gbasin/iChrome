@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"Vítejte na iChrome!",
-      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
+      "line1":"Pokud chcete iChrome jako úvodní stránku, budete muset nastavit URL adresu v nastavení prohlížeče (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">instrukce<\/a>). Pokud ji chcete nastavit při otevření nové záložky, nebo jako úvodní stránku i při otevření nové záložky, prosím instalujte<a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> .",
       "newtab_line1":"Pokud chcete iChrome zobrazit pouze při startu prohlížeče a ne pro každou novou záložku, prosím instalujte <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">hlavní rozšíření iChrome<\/a> namísto tohoto rozšíření.",
       "line2":"Tento Úvod se skládá ze tří částí a poskytne Vám základy v ovládání iChrome. Pokud jste připraveni, použijte šipku vpravo."
     },

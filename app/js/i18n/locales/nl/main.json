@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"Welkom bij iChrome!",
-      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
+      "line1":"Als u iChrome als uw startpagina wilt, kunt u de URL van deze pagina in de instellingen van Chrome zetten (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">instructies in Engels<\/a>). Als u dit echter wilt gebruiken in nieuwe tabbladen of zowel als startpagina als in nieuwe tabbladen, installeer dan <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a>.",
       "newtab_line1":"Als u iChrome alleen wilt zien wanneer u Chrome opstart, en niet elke keer dat u een nieuw tabblad opent, installeer dan <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> de gewone iChrome extensie<\/a> in plaats van deze.",
       "line2":"Deze introductie is maar 3 slides lang en biedt een kort overzicht van hoe basisdingen in iChrome werken. Als u klaar bent klik dan op de pijl aan de rechterkant."
     },

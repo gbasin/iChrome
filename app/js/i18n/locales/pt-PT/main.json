@@ -200,7 +200,7 @@
     "edit_btn":"Editar",
     "delete":"Apagar",
     "use":"Utilizar",
-    "preview":"Preview",
+    "preview":"Pré visualização",
     "author":"por",
     "images":"%s imagens",
     "resolution":"Resolução",
@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"Bem-vindo ao iChrome!",
-      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
+      "line1":"Se você quer iChrome como sua página inicial, você precisará definir o URL desta página em suas configurações (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\"> instruções<\/a>).  Caso contrário, se você quiser como uma nova aba ou ambas as páginas de guia para casa e novo, por favor instale <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\"> iChrome nova guia<\/a> em vez disso.",
       "newtab_line1":"Se você quer iChrome para mostrar apenas quando iniciar o Chrome e não cada vez que você abre uma nova guia, por favor instale <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> a extensão principal iChrome<\/a> em vez deste.",
       "line2":"Esta introdução possui apenas 3 slides, e vai dar uma visão rápida de como fazer coisas básicas em iChrome.  Quando estiver pronto, clique na seta à direita."
     },

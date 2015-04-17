@@ -327,7 +327,7 @@
 	"intro": {
 		"slide1": {
 			"title": "Welcome to iChrome!",
-			"line1": "If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https://chrome.google.com/webstore/detail/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab</a> instead.",
+			"line1": "If you want iChrome as your start page, you'll need to set the URL of this page in your settings (<a href=\"https://support.google.com/chrome/answer/95314\" target=\"_blank\">instructions</a>).  Otherwise, if you want it as a new tab or both home and new tab pages, please install <a href=\"https://chrome.google.com/webstore/detail/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab</a> instead.",
 			"newtab_line1": "If you want iChrome to only show when you start Chrome and not every time you open a new tab please install <a href=\"https://chrome.google.com/webstore/detail/oghkljobbhapacbahlneolfclkniiami\">the main iChrome extension</a> instead of this one.",
 			"line2": "This introduction is only 3 slides long and will give a quick overview of how to do basic things in iChrome.  When you're ready hit the next arrow at the right."
 		},
