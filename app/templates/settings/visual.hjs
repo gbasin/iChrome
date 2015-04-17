@@ -34,16 +34,6 @@
 			</div>
 		</div>
 
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="logo-url">{{i18n.settings.visual.logo}}</label>
-
-			<div class="col-sm-9">
-				<span class="info">{{{i18n.settings.visual.logo_desc}}}</span>
-				
-				<input type="text" id="logo-url" name="logo-url" value="{{logo-url}}" />
-			</div>
-		</div>
-
 		<div class="form-group toolbar-style">
 			<label class="control-label col-sm-2">{{i18n.settings.visual.toolbar}}</label>
 

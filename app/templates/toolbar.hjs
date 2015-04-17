@@ -1,5 +1,5 @@
 <div class="logo">
-	<img src="{{logo-url}}" />
+	<img src="/images/logo.svg" />
 </div>
 
 <div class="search"></div>

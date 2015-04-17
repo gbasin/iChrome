@@ -55,7 +55,6 @@ define(["i18n/i18n"], function(Translate) {
 			columns: "3-fixed",
 			name: Translate("defaults.me"),
 			profile: "/images/profile.png",
-			"logo-url": "/images/logo.svg",
 			"search-url": "https://google.com/search?q=%s"
 		},
 		themes: [],
