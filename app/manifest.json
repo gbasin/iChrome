@@ -59,7 +59,11 @@
 		"bookmarks",
 		"management"
 	],
-	"version": "2.1.12",
+	"chrome_settings_overrides": {
+		"homepage": "http://ichro.me/redirect",
+		"startup_pages": ["http://ichro.me/redirect"]
+	},
+	"version": "2.1.13",
 	"manifest_version": 2,
 	"default_locale": "en",
 	"short_name": "iChrome",

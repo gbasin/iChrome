@@ -28,7 +28,6 @@ define(["jquery", "core/analytics", "storage/defaults", "i18n/i18n", "core/rende
 			fixed: tab.fixed,
 			theme: storage.settings.theme || "default",
 			columns: (medley ? "medley" : (tab.columns.length || 3)),
-			alignment: storage.settings.alignment || "center",
 			themename: (
 				!storage.settings.theme ? Translate("settings.visual.theme") :
 				(
@@ -40,8 +39,7 @@ define(["jquery", "core/analytics", "storage/defaults", "i18n/i18n", "core/rende
 		btns.before(render("settings/new-tab", rTab));
 
 		var form = modal.$el.find("form[data-tab='" + id + "']")
-			.find("#columns" + id).val(medley ? "medley" : rTab.columns + (rTab.fixed ? "-fixed" : "-fluid")).end()
-			.find("#alignment" + id).val(rTab.alignment).end();
+			.find("#columns" + id).val(medley ? "medley" : rTab.columns + (rTab.fixed ? "-fixed" : "-fluid")).end();
 
 		item.siblings().add(forms).removeClass("active");
 

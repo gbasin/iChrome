@@ -407,10 +407,10 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 			oAuth.getToken(function(token, data) {
 				var categories = {};
-					
-				categories["user/" + data.userId + "/category/global.all"] = this.utils.translate("all");
-				categories["user/" + data.userId + "/tag/global.saved"] = this.utils.translate("saved");
-				categories["user/" + data.userId + "/category/global.uncategorized"] = this.utils.translate("uncategorized");
+
+				categories["user/" + data.id + "/category/global.all"] = this.utils.translate("all");
+				categories["user/" + data.id + "/tag/global.saved"] = this.utils.translate("saved");
+				categories["user/" + data.id + "/category/global.uncategorized"] = this.utils.translate("uncategorized");
 
 				oAuth.ajax({
 					type: "GET",
@@ -548,7 +548,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 				if (e.tags && e.tags[0]) {
 					e.tags.forEach(function(t, i) {
-						if (t.id == "user/" + oAuth.data.userId + "/tag/global.saved") {
+						if (t.id == "user/" + oAuth.data.id + "/tag/global.saved") {
 							article.saved = true;
 						}
 					});
@@ -667,7 +667,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				if (elm.hasClass("saved")) {
 					that.oAuth.ajax({
 						type: "DELETE",
-						url: "http://cloud.feedly.com/v3/tags/" + encodeURIComponent("user/" + that.oAuth.data.userId + "/tag/global.saved") + "/" + encodeURIComponent(elm.parents(".item").first().attr("data-id")),
+						url: "http://cloud.feedly.com/v3/tags/" + encodeURIComponent("user/" + that.oAuth.data.id + "/tag/global.saved") + "/" + encodeURIComponent(elm.parents(".item").first().attr("data-id")),
 						complete: function(d) {
 							elm.removeClass("saved").text(parseInt(elm.text()) - 1);
 						}
@@ -679,7 +679,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 						data: JSON.stringify({
 							entryId: elm.parents(".item").first().attr("data-id")
 						}),
-						url: "http://cloud.feedly.com/v3/tags/" + encodeURIComponent("user/" + that.oAuth.data.userId + "/tag/global.saved"),
+						url: "http://cloud.feedly.com/v3/tags/" + encodeURIComponent("user/" + that.oAuth.data.id + "/tag/global.saved"),
 						complete: function(d) {
 							elm.addClass("saved").text(parseInt(elm.text()) + 1);
 						}

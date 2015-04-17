@@ -46,7 +46,6 @@ define(["jquery", "core/status", "storage/defaults", "core/analytics", "i18n/i18
 
 		storage.tabs.forEach(function(tab, i) {
 			local.tabs.push($.unextend({
-				alignment: storage.settings.alignment,
 				theme: storage.settings.theme,
 				fixed: storage.settings.columns.split("-")[1] == "fixed"
 			}, $.unextend(Defaults.tab, tab)));

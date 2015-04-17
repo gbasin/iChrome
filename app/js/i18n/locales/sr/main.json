@@ -62,14 +62,16 @@
       "advanced":"Напредно"
     },
     "general":{
-      "search":"Претрага УРЛ-а",
-      "search_desc":"Ово је УРЛ коме ће кутија за претрагу подносити претраге. Унеси <b>%s<\/b> где упит за претрагу треба да иде",
+      "search_url":"Претрага УРЛ-а",
+      "search_url_desc":"Ово је УРЛ коме ће кутија за претрагу подносити претраге. Унеси <b>%s<\/b> где упит за претрагу треба да иде",
       "profile":"Профилна слика",
       "profile_desc":"Ово је слика приказана десно од твоје траке са алаткама. Она се само допуњује са твог Google профила",
       "name":"Име",
       "name_desc":"Ово се користи за Google+ линк у траци са алаткама. Оно се само допуњује са твог Google профила",
       "ltab":"Link Behavior",
       "ltab_label":"Open links in a new tab by default",
+      "search":"Понашање претраге",
+      "search_label":"Отвори резултате претраге у новој картици",
       "voice":"Гласовна претрага",
       "voice_search":"Омогући гласовну претрагу",
       "voice_ok":"Омогући \"OK Google\" детекцију гласовне пречице",
@@ -134,8 +136,6 @@
     "advanced":{
       "background":"Позадина додатка",
       "background_desc":"Кликни узорак да одабереш боју",
-      "search":"Понашање претраге",
-      "search_label":"Отвори резултате претраге у новој картици",
       "backup":"Направи резервну копију \/ Обнови",
       "backup_desc":"<b>За резервну копију:<\/b> Кликни Направи Резервну копију дугме и копирај текст који се појави у доњем пољу.<br \/><b>За обнову:<\/b> Проследи текст који си сачувао или копирао раније и кликни Обнови дугме.",
       "backup_backup":"Направи резервну копију",
@@ -201,7 +201,7 @@
     "delete":"Обриши",
     "use":"Користи",
     "preview":"Погледај пре објаве",
-    "author":"Од",
+    "author":"од",
     "images":"%s Слике",
     "resolution":"Резолуција",
     "categories":"Категорије",
@@ -230,7 +230,7 @@
       "color_placeholder":"Унеси име било које боје",
       "position":"Позиција",
       "position_options":{
-        "center":"На центру",
+        "center":"Средина",
         "top_left":"Горе лево",
         "top_center":"Горе центар",
         "top_right":"Горе десно",
@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"Добродошли у iChrome!\n",
-      "line1":"Ако желиш iChrome за твоју основну страну, требаш да УРЛ ове стране у твојим подешавањима (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">инструкције<\/a>). Супротно, ако га желиш као нову картицу или оба основну страницу и нову картицу, молимо инсталирајте <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome Нову Картицу<\/a> уместо.",
+      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
       "newtab_line1":"Ако желиш да се iChrome само када стартујеш Chrome а не сваки пут када отвориш нову картицу инсталирај <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">главну iChrome екстензију<\/a> уместо ове.",
       "line2":"Овај увод је дугачак само 3 слајда и даће ти брз преглед како да обавиш основне ствари у iChrome-у. Кад будеш спреман претисни следећу стрелицу десно."
     },

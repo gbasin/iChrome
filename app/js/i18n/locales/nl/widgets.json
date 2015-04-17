@@ -69,7 +69,7 @@
     "settings":{
       "title_placeholder":"Voer een widget titel in",
       "from":"Laat bladwijzers zien uit",
-      "open":"Open bladwijzers in"
+      "open":"Open Bladwijzers in"
     }
   },
   "calc":{
@@ -159,7 +159,7 @@
         "oldest":"Oudste eerst"
       }
     },
-    "all":"Alles",
+    "all":"Alle",
     "saved":"Opgeslagen voor later",
     "uncategorized":"Niet ingedeeld",
     "author":"door",
@@ -241,8 +241,8 @@
     "desc":"Hiermee sluit u Google Plus in in een widget"
   },
   "notifications":{
-    "name":"Google Notifications",
-    "desc":"Displays your Google Notifications from services such as Google+"
+    "name":"Google notificaties",
+    "desc":"Geef uw Google notificaties van services zoals Google+ weer"
   },
   "recentlyclosed":{
     "name":"Onlangs gesloten",
@@ -363,7 +363,7 @@
     "move_down":"Omlaag",
     "done":"Klaar",
     "due_today":"Vervalt vandaag",
-    "overdue":"Overdue",
+    "overdue":"Achterstallige",
     "authorize":"U zult een lijst moeten selecteren van uw Google Tasks via instellingen voordat hier iets getoont kan worden."
   },
   "topsites":{
@@ -480,13 +480,13 @@
     "num_views":"weergaven"
   },
   "quotes":{
-    "name":"Quotes",
-    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "name":"Citaten",
+    "desc":"Geeft een citaat weer van iedere keer dat u de pagina laad of één keer daags.",
     "settings":{
       "source":"Bron",
-      "method":"Load new quotes",
+      "method":"Nieuwe citaten laden",
       "method_options":{
-        "daily":"Once daily",
+        "daily":"Eenmaal dagelijks",
         "random":"Telkens wanneer de pagina wordt geladen"
       }
     },

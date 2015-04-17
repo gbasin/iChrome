@@ -13,7 +13,6 @@ define(
 					Storage.on("done updated", function(storage, promise, data) {
 						if (!(data && data.tabSort)) {
 							var defaults = _.assign({}, Defaults.tab, {
-								alignment: storage.settings.alignment,
 								theme: storage.settings.theme,
 								fixed: storage.settings.columns.split("-")[1] == "fixed"
 							});

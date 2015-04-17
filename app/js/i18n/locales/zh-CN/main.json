@@ -62,14 +62,16 @@
       "advanced":"高级"
     },
     "general":{
-      "search":"搜索链接",
-      "search_desc":"该链接将会用于提交搜索请求， <b>%s<\/b> 代表您输入的搜索词",
+      "search_url":"搜索链接",
+      "search_url_desc":"该链接将会用于提交搜索请求， <b>%s<\/b> 代表您输入的搜索词",
       "profile":"个人图片",
       "profile_desc":"您的照片，其将在工具栏的右侧显示，默认图片链接从您的Google资料中自动获取",
       "name":"姓名",
       "name_desc":"您的名字，在工具栏 Google+您 处显示，默认姓名将从您的Google资料中自动获取",
       "ltab":"点击链接时的行为",
       "ltab_label":"默认情况下将在新选项卡中打开链接",
+      "search":"搜索相关",
+      "search_label":"在新选项卡中打开搜索结果页",
       "voice":"语音搜索",
       "voice_search":"启用语音搜索",
       "voice_ok":"启用\"OK Google“声音检测",
@@ -134,8 +136,6 @@
     "advanced":{
       "background":"小部件背景",
       "background_desc":"单击调色板以选择颜色",
-      "search":"搜索相关",
-      "search_label":"在新选项卡中打开搜索结果页",
       "backup":"备份\/还原",
       "backup_desc":"<b>如何备份：<\/b>单击备份按钮，复制下面出现的文本。 <br\/> <b>如何还原：<\/b> 将备份的文本粘贴，然后单击还原按钮。",
       "backup_backup":"备份",
@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"欢迎您使用 iChrome ！",
-      "line1":"如果您想让 iChrome 作为您浏览器的起始页，您需要在您的设置（<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\"target=\"_blank\"> 说明<\/a>） 中设置主页为此页面地址。如果您希望将iChrome作为您的新选项卡，请安装 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\"> iChrome 新选项卡<\/a>。",
+      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
       "newtab_line1":"如果您希望iChrome只在您打开Chrome的时候显示，请安装 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> iChrome 起始页<\/a>，而非本扩展。",
       "line2":"介绍仅有短短3个步骤，其将会让您快速知悉如何使用iChrome的基础功能。当您准备好后请点击右侧的下一步箭头。"
     },

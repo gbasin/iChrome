@@ -62,14 +62,16 @@
       "advanced":"進階設置"
     },
     "general":{
-      "search":"搜尋網址",
-      "search_desc":"引擎將以以下網址列作出檢索，替換<b>%s<\/b>以自製檢索要求",
+      "search_url":"搜尋網址",
+      "search_url_desc":"引擎將以以下網址列作出檢索，替換<b>%s<\/b>以自製檢索要求",
       "profile":"資料圖片",
       "profile_desc":"該圖像會顯示在工具列的右側。它會從 Google個人檔案自動取得您的圖像。",
       "name":"名稱",
       "name_desc":"工具列 Google+ 超連結所顯示的文字。iChrome 也會自動從您的 Google 個人檔案中取得。",
       "ltab":"超連結行為",
       "ltab_label":"預設情況下在新選項卡中打開超連結",
+      "search":"搜尋行為",
+      "search_label":"在新分頁中顯示搜尋結果",
       "voice":"語音搜尋",
       "voice_search":"啟用語音搜索",
       "voice_ok":"啟用 \"OK Google\" 啟動指令偵測",
@@ -134,8 +136,6 @@
     "advanced":{
       "background":"小工具背景",
       "background_desc":"按一下色板以選擇顏色",
-      "search":"搜尋行為",
-      "search_label":"在新分頁中顯示搜尋結果",
       "backup":"備份\/還原",
       "backup_desc":"<b>備份：<\/b>按一下備份按鈕，複製出現在下方欄中的內容。 <br \/> \n<b>還原：<\/b>貼上您之前保存或複製的內容，並按一下還原按鈕。",
       "backup_backup":"備份",
@@ -201,7 +201,7 @@
     "delete":"刪除",
     "use":"使用",
     "preview":"預覽",
-    "author":"By ",
+    "author":"由",
     "images":"%s 張圖像",
     "resolution":"解析度",
     "categories":"分類",
@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"歡迎來到 iChrome ！",
-      "line1":"如果你想要 iChrome 作為你的首頁，你需要在設定裡設定本頁的網址 (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">說明<\/a>)。相反的，如果你想要它成為一個新的頁籤，或是同時成為首頁及頁籤，請改為安裝 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
+      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
       "newtab_line1":"如果你想要 iChrome 僅在你開啟 Chrome 的時候出現，而不是每次開啟新頁籤都會出現，請安裝 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> main iChrome extension <\/a> ，而非此應用。",
       "line2":"接下來的3張幻燈片將帶您迅速認識iChrome的基本操作。當您準備好時請按下右邊的「下一頁」箭頭。"
     },

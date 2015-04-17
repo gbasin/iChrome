@@ -136,7 +136,7 @@
     "settings":{
       "source":"Show articles from",
       "source_feeds":"Feeds",
-      "show":"Show",
+      "show":"Prikaži",
       "show_options":{
         "all":"All articles",
         "unread":"Only unread articles"

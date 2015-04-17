@@ -62,14 +62,16 @@
       "advanced":"Avancée"
     },
     "general":{
-      "search":"URL de recherche",
-      "search_desc":"Ceci est l'URL de recherche que la fonction rechercher utilisera. Mettez <b>%s<\/b> pour indiquer où les termes iront dans cet URL",
+      "search_url":"URL de recherche",
+      "search_url_desc":"Ceci est l'URL de recherche que la fonction rechercher utilisera. Mettez <b>%s<\/b> pour indiquer où les termes iront dans cet URL",
       "profile":"Image de profil",
       "profile_desc":"Cette image est affiché à droite de votre boite à outils. Elle se met à jour automatiquement selon votre image de profil Google",
       "name":"Nom",
       "name_desc":"Ceci est utilisé pour le nom du Google+ dans votre boîte à outils. Elle est aussi mis à jour automatiquement depuis votre Google+.",
       "ltab":"comportement des liens",
       "ltab_label":"Ouvrir le lien dans un nouvel onglet par défaut",
+      "search":"Comportement de la recherche",
+      "search_label":"Ouvrir les résultats de la recherche dans un nouvel onglet",
       "voice":"Rech. vocale",
       "voice_search":"Activer la recherche vocal",
       "voice_ok":"Activer le mot clé \"OK Google\" pour la detection vocal",
@@ -134,8 +136,6 @@
     "advanced":{
       "background":"Arrière-plan du widget",
       "background_desc":"Cliquez sur l'échantillon pour sélectionner une couleur",
-      "search":"Comportement de la recherche",
-      "search_label":"Ouvrir les résultats de la recherche dans un nouvel onglet",
       "backup":"Sauvegarder \/ Restaurer",
       "backup_desc":"<b>Pour sauvegarder:<\/b> Cliquez sur le bouton de sauvegarde et copiez le texte qui apparait dans le champ ci-dessous.<br \/><b>Pour restaurer:<\/b>Collez le texte que vous avez sauvegardé ou copié avant et cliquez sur le bouton Restaurer.",
       "backup_backup":"Sauvegarder",
@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"Bienvenue sur iChrome!",
-      "line1":"Si vous voulez définir iChrome en tant que page d'accueil, vous devez définir cet URL en tant que page d'accueil dans vos paramètres (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">Instructions<\/a>).Si vous voulez définir cet page en tant que Nouvel Onglet veuillez installer <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> à la place.",
+      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
       "newtab_line1":"Si vous voulez que iChrome soit seulement affiché lorsque vous démarrez Chrome et non à chaque fois que vous ouvrez un nouvel onglet veuillez installer<a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">L'extension principal d'iChrome <\/a> plutôt que celle-ci.",
       "line2":"L'introduction est seulement établi sur 3 diapositive et vous donnera un rapide aperçu des fonctions basique d'iChrome. Lorsque vous êtes prêt cliquez sur la flèche suivante sur la droite."
     },

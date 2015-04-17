@@ -62,14 +62,16 @@
       "advanced":"Avanzado"
     },
     "general":{
-      "search":"Buscar URL",
-      "search_desc":"Esta es la URL que presentará el cuadro de búsqueda busca. Poner <b>%s<\/b> donde debe ir a la consulta de búsqueda",
+      "search_url":"Buscar URL",
+      "search_url_desc":"Esta es la URL que presentará el cuadro de búsqueda busca. Poner <b>%s<\/b> donde debe ir a la consulta de búsqueda",
       "profile":"Foto de Perfil",
       "profile_desc":"Esta es la imagen que se mostrará al lado derecho de su barra de herramientas. Se rellenan los campos desde tu perfil de Google",
       "name":"Nombre",
       "name_desc":"Esto se utiliza para el enlace de Google + en la barra de herramientas.  También recibe rellenan automáticamente de tu perfil de Google",
       "ltab":"El funcionamiento de el enlace",
       "ltab_label":"Abrir vínculos en una nueva pestaña predeterminada",
+      "search":"Comportamiento de búsqueda",
+      "search_label":"Resultados de la búsqueda abrir en una pestaña nueva",
       "voice":"Búsqueda por voz",
       "voice_search":"Activar búsqueda por voz",
       "voice_ok":"Habilitar la detección de hotword \"Google OK\"",
@@ -134,8 +136,6 @@
     "advanced":{
       "background":"Fondo de widget",
       "background_desc":"Haga clic en la muestra para seleccionar un color",
-      "search":"Comportamiento de búsqueda",
-      "search_label":"Resultados de la búsqueda abrir en una pestaña nueva",
       "backup":"Copia de seguridad \/ Restaurar",
       "backup_desc":"<b>De copia de seguridad:<\/b> Haga clic en el botón Backup y copia el texto que aparece en el campo de abajo. <br \/><b>para restaurar:<\/b> pegar el texto guardado o copiado antes y haga clic en el botón restaurar.",
       "backup_backup":"Copia de seguridad",
@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"¡Bienvenido a iChrome!",
-      "line1":"Si quieres iChrome como tu página de inicio, tendrás que configurar la URL de esta página de configuración (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\"> instrucciones<\/a>).  De lo contrario, si lo quieres como una nueva pestaña o ambas páginas de la ficha Inicio y nuevo, por favor, instale <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\"> iChrome nueva pestaña<\/a> en su lugar.",
+      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
       "newtab_line1":"Si quieres iChrome a mostrar sólo cuando empiezas a Chrome y no cada vez que abres una nueva pestaña por favor instale <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> la extensión principal iChrome<\/a> en lugar de éste.",
       "line2":"Esta introducción tiene solo tres pantallas y te dará una rápida visión de cómo hacer las cosas básicas en iChrome. Cuando estés listo presiona la flecha para continuar."
     },

@@ -366,7 +366,7 @@ module.exports = function(grunt) {
 		"hogan:compile",
 		"string-replace:analytics",
 		"removekey",
-		"requirejs:webstore",
+		"requirejs:build",
 		"clean:all",
 		"compress",
 		"clean:travis"

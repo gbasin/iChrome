@@ -12,10 +12,4 @@
 	}
 {{/hcolor}}
 
-{{^animation}}
-	.unloaded .widgets-container .widget {
-		-webkit-animation: none!important;
-	}
-{{/animation}}
-
 {{{custom}}}

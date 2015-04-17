@@ -5,14 +5,12 @@ define(["backbone", "storage/storage", "core/render"], function(Backbone, Storag
 	var Model = Backbone.Model.extend({
 			defaults: {
 				custom: "",
-				wcolor: "#FFF",
-				animation: true/*,
+				wcolor: "#FFF"/*,
 				hcolor: "#F1F1F1"*/
 			},
 			init: function() {
 				Storage.on("done updated", function(storage) {
 					this.set({
-						animation: storage.settings.animation,
 						wcolor: storage.settings.wcolor || "#FFF",
 						// hcolor: storage.settings.hcolor || "#F1F1F1",
 						custom: storage.settings["custom-css"] || ""

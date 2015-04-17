@@ -1,7 +1,7 @@
 /**
  * Serializes the settings into the standard settings object.  This has hardcoded boolean definitions that might be more appropriate in the defaults file.
  */
-define(["jquery", "i18n/i18n"], function($, Translate) {
+define(["jquery", "lodash", "i18n/i18n"], function($, _, Translate) {
 	var serialize = function(modal, storage) {
 		var settings = {
 				links: [],
@@ -11,12 +11,9 @@ define(["jquery", "i18n/i18n"], function($, Translate) {
 				apps: false,
 				plus: false,
 				voice: false,
-				gmail: false,
-				animation: false,
-				editing: storage.settings.editing,
-				def: parseInt(storage.settings.def || 1)
+				gmail: false
 			},
-			booleans = ["ok", "ltab", "stab", "apps", "plus", "voice", "gmail", "animation"];
+			booleans = ["ok", "ltab", "stab", "apps", "plus", "voice", "gmail"];
 
 		modal.find(".general form, .visual form, .advanced form").serializeArray().forEach(function(e, i) {
 			if (booleans.indexOf(e.name) !== -1) {
@@ -47,7 +44,7 @@ define(["jquery", "i18n/i18n"], function($, Translate) {
 		// For each tab specific form
 		modal.find(".specific form").each(function() {
 			var tab = storage.tabs[$(this).attr("data-tab") - 1],
-				propagating = ["alignment", "theme"],
+				propagating = ["theme"],
 				tabSettings = {},
 				number, columns, key;
 
@@ -169,7 +166,7 @@ define(["jquery", "i18n/i18n"], function($, Translate) {
 			}
 		});
 
-		return settings;
+		return _.defaults(settings, storage.settings);
 	};
 
 	return serialize;

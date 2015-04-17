@@ -62,14 +62,16 @@
       "advanced":"Zaawansowane"
     },
     "general":{
-      "search":"Adres URL wyszukiwania",
-      "search_desc":"Jest to adres URL wyszukiwarki który użyje tekstu z pola wyszukiwarki. Umieść <b>%s<\/b> w miejsce gdzie parametry wyszukiwania mają się znaleźć",
+      "search_url":"Adres URL wyszukiwania",
+      "search_url_desc":"Jest to adres URL wyszukiwarki który użyje tekstu z pola wyszukiwarki. Umieść <b>%s<\/b> w miejsce gdzie parametry wyszukiwania mają się znaleźć",
       "profile":"Zdjęcie profilowe",
       "profile_desc":"Jest to obrazek widoczny w prawym górnym rogu paska narzędzi. Zostanie automatycznie zgrany z Twoim profilem Google",
       "name":"Imię",
       "name_desc":"Jest to tytuł linku dla Google+ widoczna na pasku narzędzi. Zostanie automatycznie zgrana z Twoim profilem Google",
       "ltab":"Link Behavior",
       "ltab_label":"Open links in a new tab by default",
+      "search":"Zachowanie wyszukiwarki",
+      "search_label":"Wyniki wyszukiwania otwórz w nowej karcie",
       "voice":"Wyszukiwarka głosowa",
       "voice_search":"Włącz wyszukiwanie głosowe",
       "voice_ok":"Włącz detekcje słów \"OK Google\"",
@@ -134,8 +136,6 @@
     "advanced":{
       "background":"Tło widżetu",
       "background_desc":"Kliknij próbkę by wybrać kolor",
-      "search":"Zachowanie wyszukiwarki",
-      "search_label":"Wyniki wyszukiwania otwórz w nowej karcie",
       "backup":"Kopia zapasowa \/ przywracanie",
       "backup_desc":"<b>Tworzenie kopii zapasowej:<\/b> Kliknij przycisk Kopia Zapasowa i skopiuj text który pojawi się w polu poniżej. <br \/><b>Przywracanie kopii zapasowej:<\/b> Wklej tekst który zapisałeś bądź skopiowany z powyższego pola i kliknij Przywróć.",
       "backup_backup":"Kopia zapasowa",
@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"Witaj w iChrome!",
-      "line1":"If you want iChrome as your start page, you'll need to set the URL of this page in your settings (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">instructions<\/a>).  Otherwise, if you want it as a new tab or both home and new tab pages, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
+      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
       "newtab_line1":"If you want iChrome to only show when you start Chrome and not every time you open a new tab please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">the main iChrome extension<\/a> instead of this one.",
       "line2":"Ten wstęp jest tylko 3 zjeżdżalnie długo i daje szybki przegląd jak zrobić podstawowe rzeczy w iChrome. Kiedy będziesz gotowy uderz w strzałkę po prawej."
     },

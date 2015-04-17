@@ -136,12 +136,12 @@
     "settings":{
       "source":"Show articles from",
       "source_feeds":"Feeds",
-      "show":"Show",
+      "show":"Vis",
       "show_options":{
         "all":"All articles",
         "unread":"Only unread articles"
       },
-      "layout":"Layout",
+      "layout":"Opsætning",
       "layout_options":{
         "titles":"Titles only",
         "magazine":"Magazine",

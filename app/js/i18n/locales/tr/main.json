@@ -62,14 +62,16 @@
       "advanced":"Gelişmiş"
     },
     "general":{
-      "search":"Arama URL'si",
-      "search_desc":"This is the URL that the search box will submit searches to. Put <b>%s<\/b> where the search query should go",
+      "search_url":"Arama URL'si",
+      "search_url_desc":"This is the URL that the search box will submit searches to. Put <b>%s<\/b> where the search query should go",
       "profile":"Profil Resmi",
       "profile_desc":"This is the image shown at the right of the toolbar.  It gets auto-populated from your Google profile",
       "name":"İsim",
       "name_desc":"This is used for the Google+ link in the toolbar.  It also gets auto-populated from your Google profile",
       "ltab":"Link Behavior",
       "ltab_label":"Open links in a new tab by default",
+      "search":"Search Behavior",
+      "search_label":"Arama sonuçlarını yeni sekmede aç",
       "voice":"Sesli Arama",
       "voice_search":"Sesli aramayı etkinleştir",
       "voice_ok":"\"OK Google\" denetimini etkinleştir",
@@ -89,7 +91,7 @@
       "guide_desc":"Reshow the guide that was shown when iChrome was first installed"
     },
     "visual":{
-      "layout":"Layout",
+      "layout":"Düzen",
       "layout_options":{
         "1_fixed":"Bir sütun, sabit genişlik",
         "1_fluid":"Bir sütun, akıcı genişlik",
@@ -134,8 +136,6 @@
     "advanced":{
       "background":"Widget arka planı",
       "background_desc":"Click the swatch to select a color",
-      "search":"Search Behavior",
-      "search_label":"Arama sonuçlarını yeni sekmede aç",
       "backup":"Yedekleme \/ Geri yükleme",
       "backup_desc":"<b>Yedekleme için:<\/b> Yedekle düğmesini tıklatın ve aşağıdaki alanda görünen metni kopyalayın. <br \/><b>Geri yüklemek için:<\/b> Kaydettiğiniz veya daha önceden kopyaladığınız metni yapıştırın ve Geri yükle düğmesini tıklatın.",
       "backup_backup":"Yedekle",
@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"iChrome'a Hoşgeldiniz!",
-      "line1":"If you want iChrome as your start page, you'll need to set the URL of this page in your settings (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">instructions<\/a>).  Otherwise, if you want it as a new tab or both home and new tab pages, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
+      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
       "newtab_line1":"If you want iChrome to only show when you start Chrome and not every time you open a new tab please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">the main iChrome extension<\/a> instead of this one.",
       "line2":"This introduction is only 3 slides long and will give a quick overview of how to do basic things in iChrome.  When you're ready hit the next arrow at the right."
     },

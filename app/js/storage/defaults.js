@@ -49,14 +49,11 @@ define(["i18n/i18n"], function(Translate) {
 			editing: true,
 			wcolor: "#FFF",
 			toolbar: "full",
-			animation: true,
 			theme: "default",
 			"custom-css": "",
 			columns: "3-fixed",
-			alignment: "center",
 			name: Translate("defaults.me"),
 			profile: "/images/profile.png",
-			"logo-url": "/images/logo.svg",
 			"search-url": "https://google.com/search?q=%s"
 		},
 		themes: [],
@@ -65,7 +62,6 @@ define(["i18n/i18n"], function(Translate) {
 			fixed: true,
 			medley: false,
 			theme: "default",
-			alignment: "center",
 			name: Translate("defaults.tab")
 		}
 	};

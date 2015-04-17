@@ -9,7 +9,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 		},
 
 		initialize: function() {
-			this.model.on("reset:columns set:columns add:columns remove:columns change:fixed change:medley change:alignment", function() {
+			this.model.on("reset:columns set:columns add:columns remove:columns change:fixed change:medley", function() {
 				var options = _.last(arguments);
 
 				if (!(options && options.noRefresh)) {
@@ -282,7 +282,6 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 				'<main class="widgets-container' +
 					(this.model.get("fixed") && !medley ? " fixed" : "") +
 					(medley ? " medley" : "") +
-					(this.model.get("alignment") == "left" ? " left" : this.model.get("alignment") == "right" ? " right" : "") +
 				'"></main>'
 			);
 

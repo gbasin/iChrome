@@ -62,14 +62,16 @@
       "advanced":"Geavanceerd"
     },
     "general":{
-      "search":"Zoek-URL",
-      "search_desc":"Dit is de URL waar het zoekveld zoekopdrachten naar verzend. Zet <b>%s<\/b> neer waar de zoekopdracht moet komen te staan",
+      "search_url":"Zoek-URL",
+      "search_url_desc":"Dit is de URL waar het zoekveld zoekopdrachten naar verzend. Zet <b>%s<\/b> neer waar de zoekopdracht moet komen te staan",
       "profile":"Profielfoto",
       "profile_desc":"Dit is de afbeelding dat rechts op de werkbalk wordt weergegeven. Deze wordt automatisch uit uw Google-profiel gehaald",
       "name":"Naam",
       "name_desc":"Deze wordt gebruikt voor de link naar Google+ in de werkbalk. Deze wordt ook automatisch uit uw Google-profiel gehaald",
       "ltab":"Link gedrag",
       "ltab_label":"Open links standaard in een nieuw tabblad",
+      "search":"Zoekgedrag",
+      "search_label":"Open de zoekresultaten in een nieuw tabblad",
       "voice":"Spraakgestuurd zoeken",
       "voice_search":"Spraakgestuurd zoeken inschakelen",
       "voice_ok":"Schakel \"OK Google\" herkenning in",
@@ -134,8 +136,6 @@
     "advanced":{
       "background":"Achtergrond van widget",
       "background_desc":"Klik op de kleurstaal om een kleur te selecteren",
-      "search":"Zoekgedrag",
-      "search_label":"Open de zoekresultaten in een nieuw tabblad",
       "backup":"Back-up \/ Herstel",
       "backup_desc":"<b>Backup:<\/b> Klik op de Backup knop en kopieer de tekst die hieronder verschijnt. <br\/><b>Herstellen:<\/b> Plaats de tekst die je op hebt geslagen en klik op de Herstel knop.",
       "backup_backup":"Back-up",
@@ -201,7 +201,7 @@
     "delete":"Verwijderen",
     "use":"Gebruiken",
     "preview":"Voorbeeld",
-    "author":"Door",
+    "author":"door",
     "images":"%s plaatjes",
     "resolution":"Resolutie",
     "categories":"Categoriën",
@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"Welkom bij iChrome!",
-      "line1":"Als u iChrome als uw startpagina wilt, kunt u de URL van deze pagina in de instellingen van Chrome zetten (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">instructies in Engels<\/a>). Als u dit echter wilt gebruiken in nieuwe tabbladen of zowel als startpagina als in nieuwe tabbladen, installeer dan <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a>.",
+      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
       "newtab_line1":"Als u iChrome alleen wilt zien wanneer u Chrome opstart, en niet elke keer dat u een nieuw tabblad opent, installeer dan <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> de gewone iChrome extensie<\/a> in plaats van deze.",
       "line2":"Deze introductie is maar 3 slides lang en biedt een kort overzicht van hoe basisdingen in iChrome werken. Als u klaar bent klik dan op de pijl aan de rechterkant."
     },

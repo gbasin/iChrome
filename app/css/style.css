@@ -1193,14 +1193,6 @@ body.dragging .tab-container .tab > .remove {
 	justify-content: center;
 }
 
-.widgets-container.left {
-	justify-content: flex-start;
-}
-
-.widgets-container.right {
-	justify-content: flex-end;
-}
-
 .widgets-container .column {
 	flex: 1;
 	display: flex;
@@ -1247,6 +1239,7 @@ body > .widgets-container {
 	margin: 0;
 	width: 400px;
 	min-width: 0;
+	min-height: 70px;
 	position: absolute;
 	max-width: 100%!important;
 }
@@ -2988,15 +2981,6 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 .settings .sep {
 	border: 0;
-}
-
-.settings .search-url {
-	display: none;
-}
-
-.settings .search-url .checkbox {
-	margin-top: 10px;
-	margin-left: 16.666666666666664%;
 }
 
 .settings .voice .container label {

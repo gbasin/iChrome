@@ -43,7 +43,7 @@
     "desc":"顯示選定和個性書籤，及其他連結。",
     "settings":{
       "title_placeholder":"輸入小工具標題",
-      "layout":"介面樣式",
+      "layout":"配罝",
       "layout_options":{
         "single":"單列",
         "double":"雙列"
@@ -117,7 +117,7 @@
     "to_label":"至"
   },
   "drive":{
-    "name":"雲端",
+    "name":"Drive",
     "desc":"顯示您的Google Drive中最近更改的檔案",
     "settings":{
       "files_shown":"顯示的檔案個數"
@@ -141,7 +141,7 @@
         "all":"所有文章",
         "unread":"只顯示未讀的文章"
       },
-      "layout":"配罝",
+      "layout":"介面樣式",
       "layout_options":{
         "titles":"只顯示標題",
         "magazine":"雜誌",
@@ -259,7 +259,7 @@
       "subreddit":"Subreddit",
       "subreddit_help":"在網址的<b>\/r\/<\/b>之後輸入任何reddit細目。\n<br \/><br \/>\n例如，科技類的網址是<a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, 因此你需要輸入<b>technology<\/b>",
       "subreddit_placeholder":"輸入 reddit 細目（例如：technology）以顯示連結。",
-      "sort":"排列順序",
+      "sort":"排列次序",
       "sort_options":{
         "hot":"熱門",
         "top":"頂部",
@@ -285,7 +285,7 @@
       "link_placeholder":"為小部件標題輸入一個連結",
       "url":"訂閱 URL",
       "url_placeholder":"要顯示的 RRS 訂閱源的 URL",
-      "articles":"顯示的文章",
+      "articles":"文章顯示",
       "view":"檢視",
       "view_options":{
         "images":"友好的圖像",
@@ -400,7 +400,7 @@
     "button":"翻譯",
     "untranslate":"沒有翻譯",
     "auto":"自動 (%s)",
-    "unknown":"不明",
+    "unknown":"未知",
     "error":"翻譯這句時出現了一些錯誤..."
   },
   "twitter":{
@@ -490,7 +490,7 @@
         "random":"Every time I load the page"
       }
     },
-    "unknown_author":"不明"
+    "unknown_author":"未知"
   },
   "html":{
     "name":"HTML",

@@ -231,15 +231,21 @@ define(["jquery", "lodash"], function($, _) {
 
 					chrome.webRequest.onBeforeRequest.addListener(
 						function(info) {
-							var params = JSON.parse('{"' +
-								info.url
-									.substr(info.url.split("?")[0].length + 1)
-									.replace(/"/g, "%22")
-									.replace(/&/g, '","')
-									.replace(/=/g,'":"') +
-							'"}', function(key, value) {
-								return key === "" ? value : decodeURIComponent(value)
+							// Adapted from http://stackoverflow.com/a/3855394/900747
+							var params = {},
+								idx;
+
+							_.each(new URL(info.url).search.substr(1).split("&"), function(e) {
+								idx = e.indexOf("=");
+
+								if (idx === -1) {
+									params[e] = "";
+								}
+								else {
+									params[e.substring(0, idx)] = decodeURIComponent(e.substr(idx + 1).replace(/\+/g, " "));
+								}
 							});
+
 
 							if (params[this.config.codeParam]) {
 								this.exchangeCode(params[this.config.codeParam], cb);
