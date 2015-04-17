@@ -53,7 +53,6 @@ define(["i18n/i18n"], function(Translate) {
 			theme: "default",
 			"custom-css": "",
 			columns: "3-fixed",
-			alignment: "center",
 			name: Translate("defaults.me"),
 			profile: "/images/profile.png",
 			"logo-url": "/images/logo.svg",
@@ -65,7 +64,6 @@ define(["i18n/i18n"], function(Translate) {
 			fixed: true,
 			medley: false,
 			theme: "default",
-			alignment: "center",
 			name: Translate("defaults.tab")
 		}
 	};

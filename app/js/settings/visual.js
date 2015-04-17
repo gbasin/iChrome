@@ -57,7 +57,6 @@ define(["lodash", "jquery", "backbone", "storage/storage", "i18n/i18n", "core/re
 				this.$el
 					.html(render("settings/visual", data))
 					.find("#columns").val(this.model.get("settings").columns).end()
-					.find("#alignment").val(this.model.get("settings").alignment).end()
 					.find(".toolbar-style input").filter(function() { return this.value == data.toolbar; }).prop("checked", true);
 
 				return this;

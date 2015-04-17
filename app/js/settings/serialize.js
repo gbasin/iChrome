@@ -45,7 +45,7 @@ define(["jquery", "lodash", "i18n/i18n"], function($, _, Translate) {
 		// For each tab specific form
 		modal.find(".specific form").each(function() {
 			var tab = storage.tabs[$(this).attr("data-tab") - 1],
-				propagating = ["alignment", "theme"],
+				propagating = ["theme"],
 				tabSettings = {},
 				number, columns, key;
 

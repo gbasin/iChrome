@@ -50,7 +50,6 @@ define(["jquery", "widgets/widgets", "storage/defaults"], function($, Widgets, d
 			}
 
 			tab = $.unextend({
-				alignment: settings.alignment,
 				theme: settings.theme,
 				fixed: settings.columns.split("-")[1] == "fixed"
 			}, $.unextend(defaults.tab, tab));

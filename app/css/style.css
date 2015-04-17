@@ -1193,14 +1193,6 @@ body.dragging .tab-container .tab > .remove {
 	justify-content: center;
 }
 
-.widgets-container.left {
-	justify-content: flex-start;
-}
-
-.widgets-container.right {
-	justify-content: flex-end;
-}
-
 .widgets-container .column {
 	flex: 1;
 	display: flex;

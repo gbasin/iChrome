@@ -88,7 +88,6 @@ define(["jquery", "backbone", "core/analytics", "storage/storage", "i18n/i18n", 
 						theme: theme,
 						id: tab.id,
 						fixed: !!tab.fixed,
-						alignment: tab.alignment || "center",
 						columns: (tab.medley ? "medley" : (tab.columns.length || 3)),
 						active: (i === 0 ? "active" : ""),
 						themename: (
@@ -105,8 +104,7 @@ define(["jquery", "backbone", "core/analytics", "storage/storage", "i18n/i18n", 
 
 				data.tabs.forEach(function(tab, i) {
 					this.$("form[data-tab='" + tab.id + "']")
-						.find("#columns" + tab.id).val(tab.columns == "medley" ? "medley" : tab.columns + (tab.fixed ? "-fixed" : "-fluid")).end()
-						.find("#alignment" + tab.id).val(tab.alignment);
+						.find("#columns" + tab.id).val(tab.columns == "medley" ? "medley" : tab.columns + (tab.fixed ? "-fixed" : "-fluid"));
 				}.bind(this));
 
 				return this;
