@@ -1,41 +1,32 @@
 # iChrome
 [![Build Status](https://img.shields.io/travis/AMKohn/iChrome.svg?style=flat)](https://travis-ci.org/AMKohn/iChrome) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/ichrome/localized.png)](https://crowdin.com/project/ichrome) [![devDependency Status](https://david-dm.org/AMKohn/iChrome/dev-status.svg?style=flat)](https://david-dm.org/AMKohn/iChrome#info=devDependencies) [![twitter](http://img.shields.io/badge/twitter-@iChromeHQ-blue.svg?style=flat)](http://twitter.com/iChromeHQ)
 
-iChrome is a highly customizable, iGoogle homepage replacement extension influenced by Google Now. It includes almost 100 HD themes, over 30 widgets, support for multiple tabs, "OK Google" hotword detection and voice search, internationalization support and  almost complete customization.
+iChrome is a highly customizable, iGoogle homepage replacement extension influenced by Google Now. It includes almost 100 HD themes, over 30 widgets, support for multiple tabs, "OK Google" hotword detection and voice search, internationalization support and almost complete customization.
 
-This is the full source for iChrome except for API secrets which have been replaced with empty strings (`""`).
+This is the full source for iChrome except for API secrets which have been replaced with placeholders.
 
 ## Roadmap
-
-#### V2.1.4
- - Various minor updates and tweaks
- - App sorting support
- - New widgets including Quotes, Chrome Bookmarks, Site Link, Timer, HTML and Google Tasks
 
 #### V2.x
  - A real website
 
 ### V2.2
 These are very much in flux, any of them could be postponed or skipped.
- - A widgets store that other developers can contribute to, possibly it isn't quite the main focus of the release
- - iChrome Pro:
-   - Shareable tabs
+
+##### iChrome Pro:
    - Prioritized support and suggestions
-   - The ability to create up to 50, synced, custom, dynamic themes (video, slideshows, time and date dependent) that are hosted on iChrome servers
-   - The ability to group and disconnect synced computers
-   - The ability to configure a backup schedule
-   - Up to 50 online backups per computer
-   - A dashboard to manage (copy, remove from account, disconnect, reset, restore from any - including another computers - backup and group) a computers configuration
-   - The ability to permanently save up to 50 configurations or backups separately from the 50 per computer
+   - 2 fully synced themes per tab.
+   - The ability to create dynamic custom themes (video, slideshows, time and date dependent) that are hosted on iChrome servers
+   - 30 online backups
    - "Parental" controls with the ability to blacklist widgets and lock configurations remotely
-   - More, I'm still thinking it through
+   - Possibly maximizable widgets
+   - Various widget features including realtime stocks with charts, realtime analytics, more accurate weather, etc.
 
 ## Contributing
 
 If you'd like to contribute, please fork the repo and submit a pull request.
 
 ## Style Guide
-I follow a more complicated style guide, but here's the basic overview:
 
  - Code is indented with 4 space tabs, never spaces
  - Double quotes are always used unless the string contains double quotes, such as with HTML
