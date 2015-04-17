@@ -203,6 +203,20 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 
 
 		render: function() {
+			// Set by the onDrop handler
+			if (this.widget.medley === false && this.model.has("loc")) {
+				this.model.unset("loc", {
+					viewChange: true
+				});
+
+				this.$el.css({
+					top: "",
+					left: "",
+					width: "",
+					height: ""
+				});
+			}
+
 			try {
 				this.widget.render(this.preview);
 			}
