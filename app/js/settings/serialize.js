@@ -11,10 +11,9 @@ define(["jquery", "lodash", "i18n/i18n"], function($, _, Translate) {
 				apps: false,
 				plus: false,
 				voice: false,
-				gmail: false,
-				animation: false
+				gmail: false
 			},
-			booleans = ["ok", "ltab", "stab", "apps", "plus", "voice", "gmail", "animation"];
+			booleans = ["ok", "ltab", "stab", "apps", "plus", "voice", "gmail"];
 
 		modal.find(".general form, .visual form, .advanced form").serializeArray().forEach(function(e, i) {
 			if (booleans.indexOf(e.name) !== -1) {

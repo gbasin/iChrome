@@ -49,7 +49,6 @@ define(["i18n/i18n"], function(Translate) {
 			editing: true,
 			wcolor: "#FFF",
 			toolbar: "full",
-			animation: true,
 			theme: "default",
 			"custom-css": "",
 			columns: "3-fixed",
