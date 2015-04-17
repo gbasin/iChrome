@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"Bienvenue sur iChrome!",
-      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
+      "line1":"Si vous voulez définir iChrome en tant que page d'accueil, vous devez définir cet URL en tant que page d'accueil dans vos paramètres (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">Instructions<\/a>).Si vous voulez définir cet page en tant que Nouvel Onglet veuillez installer <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> à la place.",
       "newtab_line1":"Si vous voulez que iChrome soit seulement affiché lorsque vous démarrez Chrome et non à chaque fois que vous ouvrez un nouvel onglet veuillez installer<a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">L'extension principal d'iChrome <\/a> plutôt que celle-ci.",
       "line2":"L'introduction est seulement établi sur 3 diapositive et vous donnera un rapide aperçu des fonctions basique d'iChrome. Lorsque vous êtes prêt cliquez sur la flèche suivante sur la droite."
     },

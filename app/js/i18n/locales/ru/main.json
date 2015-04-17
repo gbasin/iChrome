@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"Добро пожаловать в iChrome!",
-      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
+      "line1":"Для того, чтобы чтобы сделать iChrome в качестве начальной страницы, необходимо изменить адрес стартовой страницы на текущий в Настройках браузера.\n(<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">Посмотреть инструкцию<\/a>).  Если же вы хотите видеть Вашу страницу при открытии новой вкладки - установите расширение <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome Новая Вкладка<\/a>.",
       "newtab_line1":"Если вы хотите видеть iChrome только однажды, при открытии браузера, а не при создании новых вкладок - установите расширение <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">iChrome<\/a> вместо этого.",
       "line2":"Вступление содержит всего 3 слайда и расскажет вам об основных возможностях iChrome. Когда будете готовы - кликайте стрелку в правой части экрана."
     },

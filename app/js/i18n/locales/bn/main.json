@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"iChrome-এ স্বাগতম!",
-      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
+      "line1":"আপনি যদি iChrome কে আপনার শুরুর পাতা হিসাবে চান, আপনাকে আপনার সেটিংস থেকে এই পাতার URL টি সেট করতে হবে (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314?hl=bn\" target=\"_blank\">নির্দেশাবলী<\/a>)। অন্যথায়, আপনি যদি এটিকে নতুন ট্যাব হিসাবে চান অথবা নীড় \/ নতুন ট্যাব উভয় হিসাবে, তাহলে দয়া করে এর পরিবর্তে <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome নতুন ট্যাব<\/a> ইনস্টল করুন।",
       "newtab_line1":"আপনি শুধুমাত্র যখন ক্রোম চালু করবেন তখন যদি iChrome কে দেখতে চান এবং প্রত্যেক বার নয় যখন আপনি একটি নতুন ট্যাব খুলেন, তাহলে দয়া করে এটির পরিবর্তে <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">প্রধান iChrome এক্সটেনশন<\/a> ইনস্টল করুন।",
       "line2":"এই ভূমিকা শুধুমাত্র ৩ স্লাইড দীর্ঘ এবং দ্রুত iChrome মৌলিক জিনিস কিভাবে করবেন তার একটি সংক্ষিপ্ত বিবরণ দেয়। যখন আপনি প্রস্তুত হবেন, ঠিক তখন পরের তীরে ক্লিক করুন।"
     },

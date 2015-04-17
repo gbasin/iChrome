@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"ようこそ、iChromeへ!",
-      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
+      "line1":"iChrome をスタートページにしたい場合は、設定でそのURLをセット (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">手順<\/a>) します。または新しいタブで開く、もしくはホームとは別の新しいタブで開く場合は、<a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome 新しいタブ<\/a> をインストールしてください。",
       "newtab_line1":"iChromeを新しいタブが開く度に開くのではなく、Chromeを最初に起動した時だけスタートページに表示する場合は、こちらではなく <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">メインiChrome エクステンション<\/a> をインストールしてください。",
       "line2":"このイントロダクションの長さはスライド３枚ほどで、iChromeの基本操作の概要を説明します。準備ができたら、右側にある矢印を押してください。"
     },

@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"歡迎來到 iChrome ！",
-      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
+      "line1":"如果你想要 iChrome 作為你的首頁，你需要在設定裡設定本頁的網址 (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">說明<\/a>)。相反的，如果你想要它成為一個新的頁籤，或是同時成為首頁及頁籤，請改為安裝 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
       "newtab_line1":"如果你想要 iChrome 僅在你開啟 Chrome 的時候出現，而不是每次開啟新頁籤都會出現，請安裝 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> main iChrome extension <\/a> ，而非此應用。",
       "line2":"接下來的3張幻燈片將帶您迅速認識iChrome的基本操作。當您準備好時請按下右邊的「下一頁」箭頭。"
     },
