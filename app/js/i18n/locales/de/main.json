@@ -62,14 +62,16 @@
       "advanced":"Erweitert"
     },
     "general":{
-      "search":"Such URL",
-      "search_desc":"Das Suchfeld wird die Suche an folgende Adresse leiten. Trage <b>%s<\/b> ein, wohin die Suchanfrage gehen soll",
+      "search_url":"Such URL",
+      "search_url_desc":"Das Suchfeld wird die Suche an folgende Adresse leiten. Trage <b>%s<\/b> ein, wohin die Suchanfrage gehen soll",
       "profile":"Profilbild",
       "profile_desc":"Dies ist das Bild, welches auf der rechten Seite der Symbolleiste angezeigt wird. Es wird automatisch aus deinem Google-Profil empfangen.",
       "name":"Name",
       "name_desc":"Dies wird für den Google + Link in der Symbolleiste verwendet.  Es wird automatisch aus Deinem Google-Profil gezogen",
       "ltab":"Link Verhalten",
       "ltab_label":"Standardmäßig Links in einem neuen Reiter öffnen",
+      "search":"Suchverhalten",
+      "search_label":"Öffne Suchergebnisse in einem neuen Reiter",
       "voice":"Sprach-Suche",
       "voice_search":"Sprach-Suche aktivieren",
       "voice_ok":"Aktivieren Sie die \"OK-Google\" Erkennung",
@@ -134,8 +136,6 @@
     "advanced":{
       "background":"Widget Hintergrund",
       "background_desc":"Klicke auf das Farbfeld, um eine Farbe auszuwählen",
-      "search":"Suchverhalten",
-      "search_label":"Öffne Suchergebnisse in einem neuen Reiter",
       "backup":"Sichern \/ Wiederherstellen",
       "backup_desc":"<b>Sichern:<\/b> Klicke auf die Schaltfläche \"Sichern\" und kopiere den Text aus dem untenstehenden Feld. <br\/> <b>Wiederherstellen:<\/b> Füge den gespeicherten Text ein und klicke auf die Schaltfläche \"Wiederherstellen\".",
       "backup_backup":"Sichern",
@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"Willkommen bei iChrome!",
-      "line1":"Wenn Du iChrome als Startseite verwenden möchtest, muss die URL dieser Seite in den Einstellungen eingetragen werden. (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\"> Anweisungen<\/a>).  Andernfalls, soll es als neue Registerkarte oder beides (Home und neue Registerkarte) erscheinen installiere bitte <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\"> iChrome New Tab<\/a>.",
+      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
       "newtab_line1":"Wenn iChrome nur angezeigt werden soll, wenn Chrome gestartet wird, und nicht jedes Mal beim Öffnen einer neuen Registerkarte, installiere bitte <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> die Standard-iChrome-Erweiterung<\/a> anstatt dieser.",
       "line2":"Diese Einführung ist nur 3 Schritte lang und gibt einen schnellen Überblick über grundlegende Dinge in iChrome.  Wenn du bereit bist klicke auf den nächsten Pfeil auf der rechten Seite."
     },

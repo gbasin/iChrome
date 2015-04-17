@@ -62,14 +62,16 @@
       "advanced":"উচ্চতর"
     },
     "general":{
-      "search":"URL অনুসন্ধান",
-      "search_desc":"This is the URL that the search box will submit searches to. Put <b>%s<\/b> where the search query should go",
+      "search_url":"URL অনুসন্ধান",
+      "search_url_desc":"This is the URL that the search box will submit searches to. Put <b>%s<\/b> where the search query should go",
       "profile":"প্রোফাইল ছবি",
       "profile_desc":"This is the image shown at the right of the toolbar.  It gets auto-populated from your Google profile",
       "name":"নাম",
       "name_desc":"This is used for the Google+ link in the toolbar.  It also gets auto-populated from your Google profile",
       "ltab":"Link Behavior",
       "ltab_label":"Open links in a new tab by default",
+      "search":"অনুসন্ধানের আচরণ",
+      "search_label":"একটি নতুন ট্যাবে অনুসন্ধানের ফলাফল খুলুন",
       "voice":"কণ্ঠ অনুসন্ধান",
       "voice_search":"কন্ঠস্বর অনুসন্ধান সক্ষম করুন",
       "voice_ok":"Enable \"OK Google\" hotword detection",
@@ -134,8 +136,6 @@
     "advanced":{
       "background":"উইজেটের পটভূমি",
       "background_desc":"Click the swatch to select a color",
-      "search":"অনুসন্ধানের আচরণ",
-      "search_label":"একটি নতুন ট্যাবে অনুসন্ধানের ফলাফল খুলুন",
       "backup":"Backup \/ Restore",
       "backup_desc":"<b>To backup:<\/b> Click the Backup button and copy the text that appears in the field below.<br \/><b>To restore:<\/b> Paste the text you saved or copied before and click the Restore button.",
       "backup_backup":"ব্যাকআপ",
@@ -264,7 +264,7 @@
   "intro":{
     "slide1":{
       "title":"iChrome-এ স্বাগতম!",
-      "line1":"আপনি যদি iChrome কে আপনার শুরুর পাতা হিসাবে চান, আপনাকে আপনার সেটিংস থেকে এই পাতার URL টি সেট করতে হবে (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314?hl=bn\" target=\"_blank\">নির্দেশাবলী<\/a>)। অন্যথায়, আপনি যদি এটিকে নতুন ট্যাব হিসাবে চান অথবা নীড় \/ নতুন ট্যাব উভয় হিসাবে, তাহলে দয়া করে এর পরিবর্তে <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome নতুন ট্যাব<\/a> ইনস্টল করুন।",
+      "line1":"If you want iChrome as a new tab or both home and new tab page, please install <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab<\/a> instead.",
       "newtab_line1":"আপনি শুধুমাত্র যখন ক্রোম চালু করবেন তখন যদি iChrome কে দেখতে চান এবং প্রত্যেক বার নয় যখন আপনি একটি নতুন ট্যাব খুলেন, তাহলে দয়া করে এটির পরিবর্তে <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">প্রধান iChrome এক্সটেনশন<\/a> ইনস্টল করুন।",
       "line2":"এই ভূমিকা শুধুমাত্র ৩ স্লাইড দীর্ঘ এবং দ্রুত iChrome মৌলিক জিনিস কিভাবে করবেন তার একটি সংক্ষিপ্ত বিবরণ দেয়। যখন আপনি প্রস্তুত হবেন, ঠিক তখন পরের তীরে ক্লিক করুন।"
     },

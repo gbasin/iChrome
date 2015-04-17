@@ -124,7 +124,7 @@
     },
     "modified_by":"by",
     "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
-    "authorize_btn":"Authorize"
+    "authorize_btn":"Yetki ver"
   },
   "facebook":{
     "name":"Facebook",
@@ -141,7 +141,7 @@
         "all":"All articles",
         "unread":"Only unread articles"
       },
-      "layout":"Layout",
+      "layout":"Düzen",
       "layout_options":{
         "titles":"Titles only",
         "magazine":"Magazine",
@@ -153,7 +153,7 @@
         "scroll":"Scroll past it or click it",
         "click":"Just click it"
       },
-      "sort":"Sort Order",
+      "sort":"Sırala",
       "sort_options":{
         "newest":"Newest first",
         "oldest":"Oldest first"
@@ -412,7 +412,7 @@
     },
     "authorize":"You'll need to authorize iChrome first",
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
-    "authorize_btn":"Authorize",
+    "authorize_btn":"Yetki ver",
     "no_tweets":"There don't seem to be any tweets here...",
     "home":"Ana Sayfa",
     "mentions":"Mentions",

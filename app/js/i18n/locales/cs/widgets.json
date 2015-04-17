@@ -43,7 +43,7 @@
     "desc":"Zobrazí vybrané a upravené záložky a další odkazy.",
     "settings":{
       "title_placeholder":"Zadejte název widgetu",
-      "layout":"Rozložení",
+      "layout":"Uspořádání",
       "layout_options":{
         "single":"Jeden sloupec",
         "double":"Dva sloupce"
@@ -394,7 +394,7 @@
     "to_work":"do práce"
   },
   "translate":{
-    "name":"Překladač",
+    "name":"Přeložit",
     "desc":"Obsahuje malé textové pole Google Translate.",
     "placeholder":"Zadejte text, který chcete přeložit, poté klikněte na \"Přeložit\" níže.",
     "button":"Přeložit",

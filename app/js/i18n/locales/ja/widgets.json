@@ -209,7 +209,7 @@
       "footer":"フッター URL",
       "footer_placeholder":"\"もっと表示\" のリンクを押すと表示されるURLを入力してください。"
     },
-    "more":"もっと表示"
+    "more":"もっと"
   },
   "notes":{
     "name":"メモ",
@@ -259,11 +259,11 @@
       "subreddit":"Subreddit",
       "subreddit_help":"Redditの<b>\/r\/<\/b>以降の部分にあるsubredditを入力してください。\n<br \/><br \/>\n例えば、Technology の場合: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>　ですので、<b>technology<\/b>を入力します。",
       "subreddit_placeholder":"取得したリンクを表示するsubredditを入力します。(例： technology)",
-      "sort":"ソート順",
+      "sort":"並べ替え順序",
       "sort_options":{
         "hot":"ホット",
         "top":"トップ",
-        "new":"新着",
+        "new":"新しい",
         "gilded":"ゴールド順",
         "rising":"上昇中",
         "controversial":"論争中"
@@ -285,7 +285,7 @@
       "link_placeholder":"ウィジェットのタイトルのリンクを入力します。",
       "url":"フィードの URL",
       "url_placeholder":"表示される RSS フィードの URL",
-      "articles":"表示する記事数",
+      "articles":"表示される記事",
       "view":"図",
       "view_options":{
         "images":"大きく表示",
@@ -400,7 +400,7 @@
     "button":"翻訳",
     "untranslate":"原文に戻す",
     "auto":"言語を検出する (%s)",
-    "unknown":"訳文が見つかりません",
+    "unknown":"不明",
     "error":"翻訳中に何かが起こり、完了できませんでした"
   },
   "twitter":{
@@ -490,7 +490,7 @@
         "random":"Every time I load the page"
       }
     },
-    "unknown_author":"訳文が見つかりません"
+    "unknown_author":"不明"
   },
   "html":{
     "name":"HTML",

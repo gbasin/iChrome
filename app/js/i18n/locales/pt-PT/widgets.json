@@ -56,7 +56,7 @@
       "title_placeholder":"Google",
       "url":"URL do favorito",
       "url_placeholder":"http:\/\/www.google.com",
-      "save":"Salvar"
+      "save":"Gravar"
     },
     "new_caption":"Novo",
     "new_bookmark":"Favorito",
@@ -285,7 +285,7 @@
       "link_placeholder":"Introduz aqui uma hiperligação para o Widget título",
       "url":"URL do feed",
       "url_placeholder":"A URL do feed RSS a ser exibido",
-      "articles":"Artigos Mostrado",
+      "articles":"Artigos mostrados",
       "view":"Vista",
       "view_options":{
         "images":"Imagem amigável",
@@ -297,7 +297,7 @@
     "feed_error":"Ocorreu um erro ao tentar buscar o feed em: % s . \nPor favor, verifique o URL e \/ ou modificar os widgets configurações."
   },
   "sports":{
-    "name":"Esportes",
+    "name":"Desporto",
     "desc":"Exibe informações sobre pontuação e jogo para ligas e \/ ou equipes selecionadas.",
     "settings":{
       "league":"Liga",
@@ -394,7 +394,7 @@
     "to_work":"ao trabalho"
   },
   "translate":{
-    "name":"Tradutor",
+    "name":"Traduzir",
     "desc":"Contém um pequeno inline Google Translate textbox.",
     "placeholder":"Digite o texto que você gostaria de traduzir aqui e, em seguida, Clicar \"Traduzir\" abaixo.",
     "button":"Traduzir",

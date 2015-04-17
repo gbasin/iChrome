@@ -136,7 +136,7 @@
     "settings":{
       "source":"Zeigt Artikel von",
       "source_feeds":"Feeds",
-      "show":"Anzeigen",
+      "show":"Zeigen",
       "show_options":{
         "all":"Alle Artikel",
         "unread":"Nur ungelesene Artikel"
