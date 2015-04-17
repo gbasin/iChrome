@@ -12,15 +12,6 @@
 			</div>
 		</div>
 
-		<div class="form-group">
-			<label class="control-label col-sm-2">{{i18n.settings.advanced.search}}</label>
-
-			<div class="checkbox col-sm-9">
-				{{#stab}}<label><input type="checkbox" name="stab" checked /> {{i18n.settings.advanced.search_label}}</label>{{/stab}}
-				{{^stab}}<label><input type="checkbox" name="stab" /> {{i18n.settings.advanced.search_label}}</label>{{/stab}}
-			</div>
-		</div>
-
 		<div class="form-group backup">
 			<label class="control-label col-sm-2" for="backup">{{i18n.settings.advanced.backup}}</label>
 

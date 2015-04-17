@@ -74,8 +74,8 @@
 		},
 
 		"general": {
-			"search": "Search URL",
-			"search_desc": "This is the URL that the search box will submit searches to. Put <b>%s</b> where the search query should go",
+			"search_url": "Search URL",
+			"search_url_desc": "This is the URL that the search box will submit searches to. Put <b>%s</b> where the search query should go",
 
 			"profile": "Profile Picture",
 			"profile_desc": "This is the image shown at the right of the toolbar.  It gets auto-populated from your Google profile",
@@ -85,6 +85,9 @@
 
 			"ltab": "Link Behavior",
 			"ltab_label": "Open links in a new tab by default",
+
+			"search": "Search Behavior",
+			"search_label": "Open search results in a new tab",
 
 			"voice": "Voice Search",
 			"voice_search": "Enable voice search",
@@ -164,9 +167,6 @@
 		"advanced": {
 			"background": "Widget Background",
 			"background_desc": "Click the swatch to select a color",
-
-			"search": "Search Behavior",
-			"search_label": "Open search results in a new tab",
 
 			"backup": "Backup / Restore",
 			"backup_desc": "<b>To backup:</b> Click the Backup button and copy the text that appears in the field below.<br /><b>To restore:</b> Paste the text you saved or copied before and click the Restore button.",
