@@ -1,7 +1,7 @@
 /**
  * Serializes the settings into the standard settings object.  This has hardcoded boolean definitions that might be more appropriate in the defaults file.
  */
-define(["jquery", "i18n/i18n"], function($, Translate) {
+define(["jquery", "lodash", "i18n/i18n"], function($, _, Translate) {
 	var serialize = function(modal, storage) {
 		var settings = {
 				links: [],
@@ -12,9 +12,7 @@ define(["jquery", "i18n/i18n"], function($, Translate) {
 				plus: false,
 				voice: false,
 				gmail: false,
-				animation: false,
-				editing: storage.settings.editing,
-				def: parseInt(storage.settings.def || 1)
+				animation: false
 			},
 			booleans = ["ok", "ltab", "stab", "apps", "plus", "voice", "gmail", "animation"];
 
@@ -169,7 +167,7 @@ define(["jquery", "i18n/i18n"], function($, Translate) {
 			}
 		});
 
-		return settings;
+		return _.defaults(settings, storage.settings);
 	};
 
 	return serialize;
