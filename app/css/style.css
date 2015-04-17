@@ -1247,6 +1247,7 @@ body > .widgets-container {
 	margin: 0;
 	width: 400px;
 	min-width: 0;
+	min-height: 70px;
 	position: absolute;
 	max-width: 100%!important;
 }
