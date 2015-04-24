@@ -512,6 +512,14 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 					else if (image && image.indexOf("http://img.gawkerassets.com/") !== -1) {
 						image = image.replace("ku-xlarge", "ku-medium");
 					}
+					else if (article.enclosure) { //checks if the enclosure object exist, then if it contains an image it uses the first found
+						for (var i = 0; i < article.enclosure.length; i++) {
+							if (["image/jpeg", "image/png"].indexOf(article.enclosure[i].type) >= 0) {
+								image = article.enclosure[i].href;
+								break;
+							} 
+						}
+					}
 
 					return image;
 				},
@@ -561,7 +569,15 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				if (e.origin) {
 					article.source = names[e.origin.streamId || ""] || e.origin.title || e.title;
 				}
+				
+				if (e.enclosure) { //sometime this object contains the image
+					article.enclosure = e.enclosure;
+				}
 
+				if (e.visual) {
+					article.visual = e.visual;
+				}
+				
 				article.image = getImage(article);
 
 				articles.push(article);
