@@ -78,7 +78,7 @@ define(["jquery"], function($) {
 
 							e.removeAttribute(a.name);
 						}
-						else if (a.name !== "href") {
+						else if (a.name !== "href" && a.name !== "src") {
 							e.removeAttribute(a.name);
 						}
 					});
