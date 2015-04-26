@@ -90,7 +90,8 @@ define(["jquery"], function($) {
 						autochanged = false;
 					}
 				}.bind(this),
-				untranslate = false;
+				untranslate = false,
+				btnText = this.utils.translate("button");
 
 			btn.on("click", function(e) {
 				e.preventDefault();
@@ -100,7 +101,7 @@ define(["jquery"], function($) {
 
 					untranslate = false;
 
-					btn.text(this.utils.translate("button"));
+					btn.text(btnText);
 				}
 				else {
 					submit(e);
@@ -123,7 +124,7 @@ define(["jquery"], function($) {
 			to.on("change", function() {
 				untranslate = false;
 
-				btn.text(this.utils.translate("button"));
+				btn.text(btnText);
 			});
 
 			swap.click(function(e) {
