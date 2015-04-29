@@ -532,12 +532,13 @@
 .news .item,
 .reddit .item,
 .feedly .item {
-	color: #777;
+	color: #555;
 	display: block;
 	overflow: hidden;
 	max-height: 95px;
 	padding: 10px 15px;
 	text-decoration: none;
+	font-family: Open Sans, sans-serif;
 }
 
 .rss .item .excerpt,
@@ -553,12 +554,21 @@
 .news .item .title,
 .reddit .item .title,
 .feedly .item .title {
-	color: #28C;
+	color: #222;
 	display: block;
 	font-size: 13px;
 	overflow: hidden;
 	max-height: 35px;
-	font-weight: bold;
+	font-weight: 600;
+	letter-spacing: -0.2px;
+}
+
+.rss .item span.nested-link[data-href],
+.news .item span.nested-link[data-href],
+.reddit .item span.nested-link[data-href],
+.feedly .item span.nested-link[data-href] {
+	color: #222;
+	font-weight: 600;
 }
 
 .rss .item:visited .title,
@@ -570,7 +580,7 @@
 .news .item:visited span.nested-link[data-href],
 .reddit .item:visited span.nested-link[data-href],
 .feedly .item:visited span.nested-link[data-href] {
-	color: #707070;
+	color: #555;
 }
 
 .rss .item img,
@@ -579,7 +589,6 @@
 .feedly .item .img {
 	float: left;
 	margin-right: 10px;
-	border-radius: 4px;
 	height: calc(100% - 20px);
 }
 
@@ -665,7 +674,6 @@
 	width: 70px;
 	height: 70px;
 	margin-right: 10px;
-	border-radius: 4px;
 	background-size: cover;
 	background-position: center;
 }
