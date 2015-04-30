@@ -59,7 +59,7 @@
 	"chrome_settings_overrides": {
 		"homepage": "http://ichro.me/redirect"
 	},
-	"version": "2.1.14",
+	"version": "2.1.15",
 	"manifest_version": 2,
 	"default_locale": "en",
 	"short_name": "iChrome",
