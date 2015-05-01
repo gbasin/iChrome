@@ -31,9 +31,9 @@ define(["jquery"], function($) {
 			var load = function(from, to, cb) {
 					caching = true;
 
-					$.get("http://rate-exchange.appspot.com/currency?from=" + from + "&to=" + to + "&q=1", function(d) {
-						if (d && d.from == from && d.to == to && d.rate) {
-							cache[from + "-" + to] = d.rate;
+					$.get("https://rate-exchange.herokuapp.com/fetchRate?from=" + from + "&to=" + to, function(d) {
+						if (d && d.From == from && d.To == to && d.Rate) {
+							cache[from + "-" + to] = parseFloat(d.Rate);
 						}
 
 						caching = false;
