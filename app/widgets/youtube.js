@@ -103,6 +103,7 @@ define(["jquery", "moment"], function($, moment) {
 
 			if (this.config.user && this.config.user.trim() !== "") {
 				if (!this.config.resolvedId || this.config.resolvedUser !== this.config.user) {
+					return $.get(url + "channels?part=contentDetails&forUsername=" + encodeURIComponent(this.config.user) + "&fields=items/contentDetails/relatedPlaylists/uploads&maxResults=1&key=__API_KEY_youtube__", function(d) {
 						try {
 							this.config.resolvedId = d.items[0].contentDetails.relatedPlaylists.uploads;
 
