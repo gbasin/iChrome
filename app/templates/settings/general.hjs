@@ -3,10 +3,10 @@
 <div class="content">
 	<form class="form-horizontal">
 		<div class="form-group search-url">
-			<label class="control-label col-sm-2" for="search-url">{{i18n.settings.general.search}}</label>
+			<label class="control-label col-sm-2" for="search-url">{{i18n.settings.general.search_url}}</label>
 
 			<div class="col-sm-9">
-				<span class="info">{{{i18n.settings.general.search_desc}}}</span>
+				<span class="info">{{{i18n.settings.general.search_url_desc}}}</span>
 				<input type="text" id="search-url" name="search-url" value="{{search-url}}" />
 			</div>
 		</div>
