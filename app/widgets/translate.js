@@ -1,7 +1,7 @@
 /*
  * The Translate widget.
  */
-define(["jquery"], function($) {
+define(["lodash", "jquery"], function(_, $) {
 	return {
 		id: 20,
 		size: 1,
@@ -43,7 +43,9 @@ define(["jquery"], function($) {
 						complete: function(d) {
 							d = d.responseText;
 
-							if (typeof d === "string" && (d = eval("(" + d + ")")) && d[0] && d[0].length) {
+							/* jshint -W054 */ // new Function() will trigger an error, but it's the only practical way to parse the data
+							if (typeof d === "string" && (d = (new Function("return (" + d + ")"))()) && d[0] && d[0].length) {
+							/* jshint +W054 */
 								if (d[2] && accepted.indexOf(d[2]) !== -1) {
 									var text = _.map(d[0], _.first).join("");
 
