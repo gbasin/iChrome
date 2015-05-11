@@ -62,7 +62,7 @@
       "advanced":"Avanzado"
     },
     "general":{
-      "search_url":"Buscar URL",
+      "search_url":"URL de búsqueda",
       "search_url_desc":"Esta es la URL que presentará el cuadro de búsqueda busca. Poner <b>%s<\/b> donde debe ir a la consulta de búsqueda",
       "profile":"Foto de Perfil",
       "profile_desc":"Esta es la imagen que se mostrará al lado derecho de su barra de herramientas. Se rellenan los campos desde tu perfil de Google",

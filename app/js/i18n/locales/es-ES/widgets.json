@@ -241,8 +241,8 @@
     "desc":"Incrusta Google Plus en un widget"
   },
   "notifications":{
-    "name":"Google Notifications",
-    "desc":"Displays your Google Notifications from services such as Google+"
+    "name":"Notificaciones de Google",
+    "desc":"Muestra tus notificaciones de Google de servicios tales como Google +"
   },
   "recentlyclosed":{
     "name":"Recientemente cerrados",

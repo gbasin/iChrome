@@ -241,8 +241,8 @@
     "desc":"Bettet Google Plus in einem Widget ein"
   },
   "notifications":{
-    "name":"Google Notifications",
-    "desc":"Displays your Google Notifications from services such as Google+"
+    "name":"Google-Benachrichtigungen",
+    "desc":"Zeigt Ihre Google-Benachrichtigungen von Diensten wie Google+ an"
   },
   "recentlyclosed":{
     "name":"Zuletzt geschlossen",
