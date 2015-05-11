@@ -1,7 +1,7 @@
 /**
  * Handles "OK Google" detection and speech-based searching
  */
-define(["jquery", "lodash", "backbone", "core/analytics", "storage/storage", "i18n/i18n"], function($, _, Backbone, Track, Storage, Translate) {
+define(["jquery", "underscore", "backbone", "core/analytics", "storage/storage", "i18n/i18n"], function($, _, Backbone, Track, Storage, Translate) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {

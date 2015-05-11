@@ -1,5 +1,5 @@
-<div class="wikiwand">
-	<input class="noConnection" placeholder="{{#ok}}{{i18n.toolbar.placeholder_ok}}{{/ok}}{{^ok}}{{i18n.toolbar.placeholder}}{{/ok}}" style="display: none;" />
-</div>
+<input type="search" autocomplete="off" placeholder="{{#ok}}{{i18n.toolbar.placeholder_ok}}{{/ok}}{{^ok}}{{i18n.toolbar.placeholder}}{{/ok}}" autofocus="autofocus" />
 
 {{#voice}}<div class="speech"></div>{{/voice}}
+
+<div class="suggestions"></div>
