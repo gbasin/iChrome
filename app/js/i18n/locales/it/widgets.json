@@ -242,7 +242,7 @@
   },
   "notifications":{
     "name":"Google Notifications",
-    "desc":"Displays your Google Notifications from services such as Google+"
+    "desc":"Mostra le notifiche di Google da servizi come Google+"
   },
   "recentlyclosed":{
     "name":"Chiuso di recente",

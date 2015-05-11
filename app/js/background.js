@@ -454,39 +454,6 @@ chrome.runtime.onInstalled.addListener(function(details) {
 	}
 });
 
-chrome.webRequest.onHeadersReceived.addListener(
-	function(info) {
-		if (info.tabId !== -1) {
-			var viewIdx = -1,
-				views = chrome.extension.getViews(),
-				length = views.length;
-
-			while (++viewIdx < length) {
-				if (views[viewIdx].tabId == info.tabId) {
-					var headers = info.responseHeaders || [];
-
-					for (var i = headers.length - 1; i >= 0; --i) {
-						var header = headers[i].name.toLowerCase();
-
-						if (header == "x-frame-options" || header == "frame-options") {
-							headers.splice(i, 1);
-						}
-					}
-
-					return {
-						responseHeaders: headers
-					};
-				}
-			}
-		}
-	},
-	{
-		urls: [ "*://*/*" ],
-		types: [ "sub_frame" ]
-	},
-	["blocking", "responseHeaders"]
-);
-
 chrome.webRequest.onAuthRequired.addListener(
 	function(info) {
 		if (info.tabId !== -1 && info.scheme.toLowerCase().trim() === "basic") {

@@ -241,8 +241,8 @@
     "desc":"Google+小部件"
   },
   "notifications":{
-    "name":"Google Notifications",
-    "desc":"Displays your Google Notifications from services such as Google+"
+    "name":"Google通知",
+    "desc":"显示您谷歌服务的通知，例如Google+"
   },
   "recentlyclosed":{
     "name":"最近关闭",

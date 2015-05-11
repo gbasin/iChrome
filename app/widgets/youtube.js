@@ -1,7 +1,7 @@
 /*
  * The Youtube widget.
  */
-define(["jquery"], function($) {
+define(["jquery", "moment"], function($, moment) {
 	return {
 		id: 29,
 		size: 6,
@@ -99,46 +99,51 @@ define(["jquery"], function($) {
 		refresh: function() {
 			var that = this;
 
-			var url = "http://gdata.youtube.com/feeds/api/standardfeeds/most_viewed?max-results=6&alt=json&time=today";
+			var url = "https://www.googleapis.com/youtube/v3/";
 
 			if (this.config.user && this.config.user.trim() !== "") {
-				url = "https://gdata.youtube.com/feeds/api/users/" + encodeURIComponent(this.config.user) + "/uploads?alt=json&max-results=6"; // &orderby=published";
-			}
+				if (!this.config.resolvedId || this.config.resolvedUser !== this.config.user) {
+					return $.get(url + "channels?part=contentDetails&forUsername=" + encodeURIComponent(this.config.user) + "&fields=items/contentDetails/relatedPlaylists/uploads&maxResults=1&key=__API_KEY_youtube__", function(d) {
+						try {
+							this.config.resolvedId = d.items[0].contentDetails.relatedPlaylists.uploads;
 
-			$.get(url, function(d) {
-				if (d && d.feed && d.feed.entry) {
-					var videos = [];
+							this.config.resolvedUser = this.config.user;
+						}
+						catch (e) {
+							delete this.config.resolvedId;
 
-					d.feed.entry.forEach(function(e, i) {
-						var video = {
-							title: e.title && e.title.$t,
-							views: parseInt((e.yt$statistics && e.yt$statistics.viewCount) || 0),
-							url: e.media$group && e.media$group.media$player && e.media$group.media$player[0] && e.media$group.media$player[0].url,
-							thumb: e.media$group && e.media$group.media$thumbnail && e.media$group.media$thumbnail[0] && e.media$group.media$thumbnail[0].url,
-							uploader: e.media$group && e.media$group.media$credit && e.media$group.media$credit[0] && e.media$group.media$credit[0].yt$display
-						};
+							delete this.config.resolvedUser;
 
-						if (e.media$group && e.media$group.yt$duration && e.media$group.yt$duration.seconds) {
-							var dur = parseInt(e.media$group.yt$duration.seconds),
-								seconds = dur % 60;
-
-							dur -= seconds;
-
-							var minutes = (dur % 3600) / 60;
-
-							dur -= minutes;
-
-							var hours = Math.floor(dur / 3600);
-
-							if (hours) {
-								video.duration = hours + ":" + (minutes || 0).pad() + ":" + (seconds || 0).pad();
-							}
-							else {
-								video.duration = (minutes || 0) + ":" + (seconds || 0).pad();
-							}
+							this.config.user = "";
 						}
 
-						videos.push(video);
+						this.refresh();
+					}.bind(this));
+				}
+				
+				url += "playlistItems?playlistId=" + encodeURIComponent(this.config.resolvedId) + "&part=snippet&fields=items(id,snippet(title,description,thumbnails/high/url,resourceId/videoId,channelTitle))";
+			}
+			else {
+				url += "videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=us&fields=items(id,snippet(title,description,thumbnails/high/url,channelTitle),statistics/viewCount,contentDetails/duration)";
+			}
+
+			url += "&maxResults=6&key=__API_KEY_youtube__";
+
+
+			$.get(url, function(d) {
+				if (d && d.items && d.items.length) {
+					var videos = d.items.map(function(e) {
+						var d = e.contentDetails && e.contentDetails.duration && moment.duration(e.contentDetails.duration);
+
+						return {
+							title: e.snippet.title,
+							uploader: e.snippet.channelTitle,
+							description: e.snippet.description,
+							views: parseInt((e.statistics && e.statistics.viewCount) || 0),
+							thumb: (e.snippet && e.snippet.thumbnails && e.snippet.thumbnails.high && e.snippet.thumbnails.high.url) || "",
+							duration: (d ? (d.hours() ? d.hours() + ":" + d.minutes().pad() : d.minutes()) + ":" + d.seconds().pad() : "0:00"),
+							url: "https://www.youtube.com/watch?v=" + encodeURIComponent((e.snippet && e.snippet.resourceId && e.snippet.resourceId.videoId) || e.id)
+						};
 					});
 
 					that.data = {

@@ -1,7 +1,7 @@
 /*
  * The Translate widget.
  */
-define(["jquery"], function($) {
+define(["lodash", "jquery"], function(_, $) {
 	return {
 		id: 20,
 		size: 1,
@@ -30,6 +30,8 @@ define(["jquery"], function($) {
 				submit = function(e) {
 					untranslate = textarea.val();
 
+					if (!untranslate.trim().length) return;
+
 					btn.text(this.utils.translate("untranslate"));
 
 					this.data.from = from.val();
@@ -37,21 +39,15 @@ define(["jquery"], function($) {
 
 					$.ajax({
 						type: "GET",
-						url: "http://translate.google.com/translate_a/t?client=ichrome&sl=" + encodeURIComponent(this.data.from) + "&tl=" + encodeURIComponent(this.data.to) + "&q=" + encodeURIComponent(textarea.val()) + "",
+						url: "https://translate.google.com/translate_a/single?client=t&sl=" + encodeURIComponent(this.data.from) + "&tl=" + encodeURIComponent(this.data.to) + "&dt=t&q=" + encodeURIComponent(untranslate),
 						complete: function(d) {
 							d = d.responseText;
 
-							if (typeof d === "string" && d.indexOf("{") === 0 && (d = JSON.parse(d)) && d.sentences && d.sentences.length) {
-								if (d.src && accepted.indexOf(d.src) !== -1) {
-									var text = "";
-
-									d.sentences.forEach(function(e, i) {
-										if (i !== 0) {
-											text += "\r\n";
-										}
-
-										text += e.trans;
-									});
+							/* jshint -W054 */ // new Function() will trigger an error, but it's the only practical way to parse the data
+							if (typeof d === "string" && (d = (new Function("return (" + d + ")"))()) && d[0] && d[0].length) {
+							/* jshint +W054 */
+								if (d[2] && accepted.indexOf(d[2]) !== -1) {
+									var text = _.map(d[0], _.first).join("");
 
 									if (text === "") {
 										text = this.utils.translate("error");
@@ -60,7 +56,7 @@ define(["jquery"], function($) {
 									textarea.val(text);
 
 									if (from.val() === "auto") {
-										auto.text(this.utils.translate("auto", from.find('option[value="' + d.src + '"]').text()));
+										auto.text(this.utils.translate("auto", from.find('option[value="' + d[2] + '"]').text()));
 
 										autochanged = true;
 									}
@@ -90,7 +86,8 @@ define(["jquery"], function($) {
 						autochanged = false;
 					}
 				}.bind(this),
-				untranslate = false;
+				untranslate = false,
+				btnText = this.utils.translate("button");
 
 			btn.on("click", function(e) {
 				e.preventDefault();
@@ -100,7 +97,7 @@ define(["jquery"], function($) {
 
 					untranslate = false;
 
-					btn.text(this.utils.translate("button"));
+					btn.text(btnText);
 				}
 				else {
 					submit(e);
@@ -123,7 +120,7 @@ define(["jquery"], function($) {
 			to.on("change", function() {
 				untranslate = false;
 
-				btn.text(this.utils.translate("button"));
+				btn.text(btnText);
 			});
 
 			swap.click(function(e) {
