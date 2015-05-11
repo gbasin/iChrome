@@ -1,24 +1,43 @@
 /**
- * This sets a global variable `tabId` to the current tab's Chrome ID so the background page
- * can filter requests from iframes within the page and disable the frame-options header.
- *
- * It would be simpler to call this on load instead of adding a check in every place that
- * requires it, but the call takes 15 - 20 ms initially which is too long to delay every load
- * by on the chance that it has a frame.
+ * This creates an onHeadersReceived listener on an as-needed basis.
  */
 define(function() {
+	var listening = false;
+
 	var check = function(cb, ctx, args) {
-		if (!window.tabId) {
-			chrome.tabs.getCurrent(function(tab) {
-				window.tabId = tab.id;
+		if (listening) return true;
+		
+		chrome.tabs.getCurrent(function(tab) {
+			chrome.webRequest.onHeadersReceived.addListener(
+				function(info) {
+					var headers = info.responseHeaders || [];
 
-				cb.apply(ctx, args);
-			});
+					for (var i = headers.length - 1; i >= 0; --i) {
+						var header = headers[i].name.toLowerCase();
 
-			return false;
-		}
+						if (header == "x-frame-options" || header == "frame-options") {
+							headers.splice(i, 1);
+						}
+					}
 
-		return true;
+					return {
+						responseHeaders: headers
+					};
+				},
+				{
+					tabId: tab.id,
+					urls: [ "*://*/*" ],
+					types: [ "sub_frame" ]
+				},
+				["blocking", "responseHeaders"]
+			);
+
+			listening = true;
+
+			cb.apply(ctx, args);
+		});
+
+		return false;
 	};
 
 	return check;
