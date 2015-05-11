@@ -73,7 +73,7 @@ define(["backbone", "storage/storage", "core/render", "core/analytics", "search/
 
 				link.setAttribute("href", searchURL.replace("%s", encodeURIComponent(val)));
 
-				if (this.model.get("stab")) link.setAttribute("target", "_blank");
+				link.setAttribute("target", (this.model.get("stab") ? "_blank" : "_self"));
 
 				link.click();
 			},
