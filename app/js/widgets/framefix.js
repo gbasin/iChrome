@@ -1,12 +1,22 @@
 /**
  * This creates an onHeadersReceived listener on an as-needed basis.
  */
-define(function() {
-	var listening = false;
+define(["jquery"], function($) {
+	var listening = false,
+		attaching = false,
+		callbacks = [];
 
 	var check = function(cb, ctx, args) {
 		if (listening) return true;
-		
+
+		callbacks.push(function() {
+			cb.apply(ctx, args);
+		});
+
+		if (attaching) return false;
+
+		attaching = true;
+
 		chrome.tabs.getCurrent(function(tab) {
 			chrome.webRequest.onHeadersReceived.addListener(
 				function(info) {
@@ -33,8 +43,13 @@ define(function() {
 			);
 
 			listening = true;
+			attaching = false;
 
-			cb.apply(ctx, args);
+			callbacks.forEach(function(cb) {
+				cb();
+			});
+
+			callbacks = [];
 		});
 
 		return false;

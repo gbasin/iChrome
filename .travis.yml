@@ -3,6 +3,8 @@ language: node_js
 node_js:
   - "0.12"
 
+sudo: false
+
 before_install:
   - npm install -g grunt-cli
   - "echo -n {} >> keys.json"
