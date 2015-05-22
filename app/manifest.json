@@ -40,6 +40,9 @@
 		"48": "icon/48.png",
 		"128": "icon/128.png"
 	},
+	"chrome_settings_overrides": {
+		"homepage": "http://ichro.me/redirect"
+	},
 	"permissions": [
 		"storage",
 		"topSites",
@@ -56,10 +59,7 @@
 		"bookmarks",
 		"management"
 	],
-	"chrome_settings_overrides": {
-		"homepage": "http://ichro.me/redirect"
-	},
-	"version": "2.1.17",
+	"version": "2.1.18",
 	"manifest_version": 2,
 	"default_locale": "en",
 	"short_name": "iChrome",

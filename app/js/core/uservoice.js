@@ -2,34 +2,46 @@
  * Initializes UserVoice and it's autoprompts
  */
 define(["core/uid"], function(uid) {
-	window.UserVoice = window.UserVoice || [];
+	var initUV = function() {
+		var uv = document.createElement("script");
 
-	var uv = document.createElement("script");
+		uv.async = true;
+		uv.type = "text/javascript";
+		uv.src = "https://widget.uservoice.com/YLT6rl3u3uU75IbSodIBw.js";
 
-	uv.async = true;
-	uv.type = "text/javascript";
-	uv.src = "https://widget.uservoice.com/YLT6rl3u3uU75IbSodIBw.js";
+		var s = document.getElementsByTagName("script")[0];
 
-	var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(uv, s);
 
-	s.parentNode.insertBefore(uv, s);
+		window.UserVoice.push(["set", {
+			accent_color: "#448dd6",
+			trigger_color: "white",
+			screenshot_enabled: "false",
+			trigger_background_color: "rgba(46, 49, 51, 0.6)"
+		}]);
 
-	window.UserVoice.push(["set", {
-		accent_color: "#448dd6",
-		trigger_color: "white",
-		screenshot_enabled: "false",
-		trigger_background_color: "rgba(46, 49, 51, 0.6)"
-	}]);
+		window.UserVoice.push(["identify", {
+			id: uid
+		}]);
 
-	window.UserVoice.push(["identify", {
-		id: uid
-	}]);
+		window.UserVoice.push(["autoprompt", {
+			position: "toast"
+		}]);
+	};
 
-	window.UserVoice.push(["autoprompt", {
-		position: "toast"
-	}]);
+	if (Math.random() * 5 < 1) {
+		window.UserVoice = window.UserVoice || [];
+
+		initUV();
+	}
 
 	return function() {
+		if (!window.UserVoice) {
+			window.UserVoice = [];
+
+			initUV();
+		}
+
 		window.UserVoice.push(Array.prototype.slice.call(arguments));
 	};
 });
