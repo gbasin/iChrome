@@ -1349,8 +1349,8 @@ body.resizing .medley {
 /*---------------------------------------------
 	/ Widgets Layout / Widgets
 */
-.widget-preview .widget,
-.widgets-container .widget {
+.widgets-container .widget,
+.store-detail .preview .widget {
 	margin: 2%;
 	z-index: 1;
 	flex: 2 100%;
@@ -1363,24 +1363,24 @@ body.resizing .medley {
 	box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1);
 }
 
-.widget-preview .widget.tiny,
-.widgets-container .widget.tiny {
+.widgets-container .widget.tiny,
+.store-detail .preview .widget.tiny {
 	flex: 1 46%;
 	max-width: 46%;
 }
 
-.widget-preview .widget .handle,
-.widget-preview .widget .settings,
 .widgets-container .widget .handle,
-.widgets-container .widget .settings {
+.widgets-container .widget .settings,
+.store-detail .preview .widget .handle,
+.store-detail .preview .widget .settings {
 	opacity: 0;
 	z-index: 9;
 	position: absolute;
 	transition: opacity .3s ease-in-out;
 }
 
-.widget-preview .widget .handle,
-.widgets-container .widget .handle {
+.widgets-container .widget .handle,
+.store-detail .preview .widget .handle {
 	top: 15px;
 	right: 8px;
 	width: 4px;
@@ -1394,20 +1394,18 @@ body.resizing .medley {
 				0 -6px 3px rgba(255, 255, 255, 0.8);
 }
 
-.widget-preview .widget:hover .handle,
-.widget-preview .widget:hover .settings,
 .widgets-container .widget:hover .handle,
 .widgets-container .widget:hover .settings,
 
-.widget-preview .widget .handle,
-.widget-preview .widget .settings {
+.store-detail .preview .widget:hover .handle,
+.store-detail .preview .widget:hover .settings {
 	opacity: 1;
 }
 
-.widget-preview .widget .handle:before,
-.widget-preview .widget .settings:before,
 .widgets-container .widget .handle:before,
-.widgets-container .widget .settings:before {
+.widgets-container .widget .settings:before,
+.store-detail .preview .widget .handle:before,
+.store-detail .preview .widget .settings:before {
 	top: -15px;
 	left: -15px;
 	right: -10px;
@@ -1418,8 +1416,8 @@ body.resizing .medley {
 	background: rgba(0, 0, 0, 0);
 }
 
-.widget-preview .widget .settings,
-.widgets-container .widget .settings {
+.widgets-container .widget .settings,
+.store-detail .preview .widget .settings {
 	top: 30px;
 	right: 5px;
 	color: #666;
@@ -1429,15 +1427,15 @@ body.resizing .medley {
 	text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
 }
 
-.widget-preview .widget .settings:before,
-.widgets-container .widget .settings:before {
+.widgets-container .widget .settings:before,
+.store-detail .preview .widget .settings:before {
 	top: -1px;
 	left: -6px;
 	bottom: -5px;
 }
 
-.widget-preview .widget .settings:hover,
-.widgets-container .widget .settings:hover {
+.widgets-container .widget .settings:hover,
+.store-detail .preview .widget .settings:hover {
 	color: #428BCA;
 }
 
@@ -2206,7 +2204,6 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 /*---------------------------------------------
 	/ Widget Store
-	These are direct selectors so they don't interfere with the widget previews
 */
 .modal.store {
 	overflow: visible; /* This fixes the 1px white gap above the close button caused by subpixel rounding in the automatic modal centering. */
@@ -2214,41 +2211,32 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	max-height: 700px;
 }
 
-.store > .wrapper {
+.store .wrapper {
 	height: 100%;
 }
 
-.store > .wrapper > .title,
-.store > .wrapper > .detail > .title {
-	z-index: 9;
+.store .wrapper > .title {
 	height: 70px;
 	font-size: 20px;
 	padding: 25px 30px;
 	border-bottom: 1px solid #EEE;
 	font-family: Open Sans, sans-serif;
-}
-
-.store > .wrapper > .title {
 	box-shadow: 0 4px 3px -2px rgba(0, 0, 0, .05);
 }
 
-.store > .close {
-	z-index: 999;
-}
-
-.store > .wrapper > .content,
-.store > .wrapper > .title {
+.store .content,
+.store .title {
 	position: relative;
 }
 
-.store > .wrapper > .content {
+.store .content {
 	overflow: auto;
 	padding: 10px 15px;
 	background: #F5F5F5;
 	height: calc(100% - 70px);
 }
 
-.store > .wrapper > .content:before {
+.store .content:before {
 	top: 0;
 	left: 0;
 	right: 0;
@@ -2259,7 +2247,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	background: #F5F5F5;
 }
 
-.store > .wrapper > .content .widget {
+.store .content .widget {
 	margin: 5px;
 	cursor: pointer;
 	overflow: hidden;
@@ -2271,11 +2259,11 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	box-shadow: 0 1px 2px rgba(102, 102, 102, 0.1);
 }
 
-.store > .wrapper > .content .widget:hover {
+.store .content .widget:hover {
 	background: #FCFCFC;
 }
 
-.store > .wrapper > .content .widget img {
+.store .content .widget img {
 	width: 80px;
 	float: left;
 	height: 80px;
@@ -2285,7 +2273,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 
-.store > .wrapper > .content .widget h2.title {
+.store .content .widget h2.title {
 	font-size: 16px;
 	overflow: hidden;
 	line-height: 20px;
@@ -2295,7 +2283,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	font-family: Open Sans, sans-serif;
 }
 
-.store > .wrapper > .content .widget .desc {
+.store .content .widget .desc {
 	color: #666;
 	font-size: 12px;
 	overflow: hidden;
@@ -2309,109 +2297,109 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 
 
+
+
 /*---------------------------------------------
 	/ Store Detail
-	These ALL need to be direct selectors so they don't interfere with the previews
+	These need to be direct-descendant selectors so they don't interfere with widget previews
 */
-.store.detail > .wrapper > .detail {
-	visibility: visible;
-	-webkit-transform: scale(1) translateZ(0);
-	transition: -webkit-transform .3s 0s ease-in-out, visibility 0s 0s linear;
+.modal.store-detail {
+	width: 490px;
+	z-index: 999998;
+	max-height: 700px;
 }
 
-.store > .wrapper > .detail {
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 99; /* Just over the store, but under the close button so the JS is simpler */
-	background: #FFF;
-	position: absolute;
-	visibility: hidden;
-	-webkit-transform: scale(0) translateZ(0);
-	transition: -webkit-transform .3s 0s ease-in-out, visibility 0s .3s linear;
+.modal-overlay.store-detail {
+	z-index: 99999;
 }
 
-.store > .wrapper > .detail > div > h4 {
+.store-detail > .content {
+	overflow: auto;
+	padding: 25px 30px;
+	background: #F8F8F8;
+	height: calc(100% - 70px);
+}
+
+.store-detail > .content > section {
+	margin-bottom: 25px;
+}
+
+.store-detail > .content > section > h3 {
 	font-size: 13px;
-	margin-top: 25px;
-	min-height: 16px;
-	font-weight: 600;
+	font-weight: 500;
 	margin-bottom: 15px;
-	text-transform: uppercase;
-	font-family: Open Sans, sans-serif;
+	font-family: Roboto, sans-serif;
 }
 
-.store > .wrapper > .detail > .desc-container {
-	float: left;
-	margin-left: 25px;
-	width: calc(100% - 550px);
-	height: calc(100% - 85px);
-}
-
-.store > .wrapper > .detail > .desc-container h4 .legend {
+.store-detail > .content > section > h3 .legend {
 	float: right;
-	font-size: 13px;
 	font-weight: 400;
-	padding-right: 25px;
-	text-transform: none;
 }
 
-.store > .wrapper > .detail > .desc-container .handle {
+.store-detail > .content > .installation .handle {
+	font-size: 13px;
 	background: #FFF;
+	font-weight: 500;
 	padding: 10px 25px;
 	margin-right: 10px;
 	border-radius: 2px;
 	display: inline-block;
+	text-transform: uppercase;
+	font-family: Roboto, sans-serif;
 	transition: all .15s ease-in-out;
-	border: 1px solid rgba(0, 0, 0, 0.08);
-	box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .12),
+				0 1px 2px rgba(0, 0, 0, .2);
 }
 
-.store > .wrapper > .detail > .desc-container .handle:first-of-type {
+.store-detail > .content > .installation .handle:first-of-type {
 	margin-left: 20px;
 }
 
-.store > .wrapper > .detail > .desc-container .handle:hover {
-	opacity: .8;
+.store-detail > .content > .installation .handle:focus,
+.store-detail > .content > .installation .handle:hover,
+.store-detail > .content > .installation .handle:active {
+	color: #FFF;
 	cursor: move;
-	background-color: #FAFAFA;
+	background: #2196F3;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .16),
+				0 3px 6px rgba(0, 0, 0, .23);
 }
 
-.store > .wrapper > .detail > .desc-container .desc {
+.store-detail > .content > .installation .handle:focus,
+.store-detail > .content > .installation .handle:active {
+	background: #1E88E5;
+}
+
+.store-detail > .content > .description .desc {
 	overflow: auto;
+	max-height: 250px;
 	margin-left: 15px;
 	margin-right: 5px;
 	padding-right: 15px;
-	height: calc(100% - 155px);
 }
 
-.store > .wrapper > .detail > .preview-container {
-	width: 440px;
-	float: right;
-	margin-right: 25px;
-	height: calc(100% - 85px);
+.store-detail > .content > section.preview {
+	padding-bottom: 10px;
 }
 
-.store > .wrapper > .detail > .preview-container > .preview {
-	overflow-x: hidden;
-	padding-right: 15px;
-	height: calc(100% - 55px);
-}
-
-.store > .wrapper > .detail > .preview-container > .preview > .widget {
+.store-detail > .content > section.preview > .widget {
 	width: 410px;
 	padding: 15px;
 	font-size: 14px;
 	overflow: hidden;
 	background: #FFF;
 	border-radius: 2px;
-	margin: 0 10px 10px;
-	border: 1px solid rgba(0, 0, 0, 0.08);
-	box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .12),
+				0 1px 2px rgba(0, 0, 0, .2);
 }
 
-.store > .wrapper > .detail > .preview-container > .preview > .widget.tiny {
+/* This doesn't have to use direct-desendant because widgets need to be tolerant of the handle and settings classes */
+.store-detail .preview .widget .handle,
+.store-detail .preview .widget .settings {
+	pointer-events: none;
+}
+
+.store-detail > .content > section.preview > .widget.tiny {
 	width: 210px;
 }
 
@@ -3189,7 +3177,9 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .tooltip:lang(zh),
 .getting-started .slide:lang(zh),
 .toolbar .apps-toggle .apps:lang(zh),
-.toolbar .search .suggestions div:lang(zh) {
+.toolbar .search .suggestions div:lang(zh),
+.store-detail > .content > section > h3:lang(zh),
+.store-detail > .content > .installation .handle:lang(zh) {
 	font-family: "微軟正黑體", "Microsoft JhengHei", Roboto;
 }
 
@@ -3197,7 +3187,9 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .tooltip:lang(ja),
 .getting-started .slide:lang(ja),
 .toolbar .apps-toggle .apps:lang(ja),
-.toolbar .search .suggestions div:lang(ja) {
+.toolbar .search .suggestions div:lang(ja),
+.store-detail > .content > section > h3:lang(ja),
+.store-detail > .content > .installation .handle:lang(ja) {
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Roboto;
 }
 
@@ -3216,10 +3208,8 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .modal > .content > .title:lang(zh),
 .store > .wrapper > .title:lang(zh),
 .widget-settings .list .item:lang(zh),
-.store > .wrapper > .detail > .title:lang(zh),
-.store > .wrapper > .detail > div > h4:lang(zh),
-.store > .wrapper > .content .widget .desc:lang(zh),
-.store > .wrapper > .content .widget h2.title:lang(zh) {
+.store .content .widget .desc:lang(zh),
+.store .content .widget h2.title:lang(zh) {
 	font-family: "微軟正黑體", "Microsoft JhengHei", Open Sans;
 }
 
@@ -3238,10 +3228,8 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .modal > .content > .title:lang(ja),
 .store > .wrapper > .title:lang(ja),
 .widget-settings .list .item:lang(ja),
-.store > .wrapper > .detail > .title:lang(ja),
-.store > .wrapper > .detail > div > h4:lang(ja),
-.store > .wrapper > .content .widget .desc:lang(ja),
-.store > .wrapper > .content .widget h2.title:lang(ja) {
+.store .content .widget .desc:lang(ja),
+.store .content .widget h2.title:lang(ja) {
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Open Sans;
 }
 

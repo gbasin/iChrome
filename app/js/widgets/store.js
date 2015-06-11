@@ -44,23 +44,24 @@ define(
 				}
 			}),
 			modal = new (Modal.extend({
-				classes: "store",
-				close: function() {
-					if (this.$el.hasClass("detail")) {
-						this.$el.removeClass("detail");
-					}
-					else {
-						this.hide();
-					}
-				}
+				classes: "store"
 			}))(),
 			View = Backbone.View.extend({
 				el: modal.content,
 
 				events: {
 					"click > .content .widget": function(e) {
-						var elm = $(e.currentTarget),
-							id = parseInt(elm.attr("data-id")),
+						var wModal = new (Modal.extend({
+							classes: "store-detail",
+							close: function() {
+								this.hide();
+
+								setTimeout(this.destroy.bind(this), 400);
+							}
+						}))();
+
+
+						var id = parseInt($(e.currentTarget).attr("data-id")),
 							widget = Widgets[id],
 							view = new Widget({
 								model: new WidgetModel({
@@ -70,17 +71,19 @@ define(
 								preview: true
 							});
 
-						this.$(".detail").html(
+						wModal.content.replaceWith(
 							render("store-detail", {
 								name: widget.name ? resolve(widget, widget.name) : translate(widget, "name"),
 								sizes: widget.sizes.map(function(e) { return [e, sizes[e]]; }),
 								desc: Utils.prototype.renderTemplate.call({ widget: widget }, "desc")
 							})
-						).find(".preview").prepend(view.el);
+						);
+
+						wModal.content = wModal.$(".content");
 
 						Track.pageview("Store: " + widget.nicename, "/store/" + widget.nicename);
 
-						modal.$el.addClass("detail").find(".detail .desc-container").sortable({
+						wModal.content.find(".sizes").sortable({
 							group: "columns",
 							drop: false
 						}).find("section.handle").on("sortabledragstart", function(e, item, container, _super) {
@@ -112,7 +115,8 @@ define(
 							// This way any events attached by jquery.sortable stay intact
 							item[0] = newView.el;
 
-							modal.hide().$el.removeClass("detail");
+							wModal.close();
+							modal.hide();
 
 							item.css(css).addClass("dragged").appendTo("body > .widgets-container");
 
@@ -120,6 +124,12 @@ define(
 
 							return item;
 						});
+
+						wModal.content.find("section.preview").append(view.el);
+
+						wModal.mo.appendTo(document.body);
+
+						requestAnimationFrame(wModal.show.bind(wModal));
 					}
 				},
 

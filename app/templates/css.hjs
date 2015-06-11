@@ -1,7 +1,7 @@
 {{#wcolor}}
 	.widget-preview .widget,
 	.widgets-container .widget,
-	.store > .wrapper > .detail > .preview-container > .preview > .widget {
+	.store-detail > .content > section.preview > .widget {
 		background: {{wcolor}};
 	}
 {{/wcolor}}

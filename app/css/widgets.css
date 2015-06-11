@@ -2650,7 +2650,7 @@ body.no-edit .bookmarks .tools {
 	/ Now
 */
 .widgets-container .widget.now,
-.preview-container .widget.now {
+.store-detail .preview .widget.now {
 	padding: 0!important;
 	border: none!important;
 	box-shadow: none!important;
