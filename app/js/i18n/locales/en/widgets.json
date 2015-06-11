@@ -654,5 +654,24 @@
 
 			"height": "Widget Height"
 		}
+	},
+
+	"sitelink": {
+		"name": "Site Link",
+		"desc": "Displays a link, optionally with a title and thumbnail",
+
+		"settings": {
+			"link": "Link URL",
+			"link_placeholder": "http://www.google.com/",
+
+			"image": "Image URL",
+			"image_placeholder": "http://www.example.com/image.png",
+
+			"color": "Image Background Color",
+
+			"style": "Image Style",
+			"style_fill": "Fill",
+			"style_center": "Center"
+		}
 	}
 }

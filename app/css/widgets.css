@@ -3376,3 +3376,61 @@ body.no-edit .bookmarks .tools {
 .quotes footer .refresh:hover svg {
 	fill: #222;
 }
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Site Link
+*/
+.widget.sitelink {
+	padding: 0!important;
+	border-radius: 4px 4px 2px 2px;
+}
+
+.sitelink a {
+	display: block;
+	text-decoration: none;
+}
+.widget.sitelink h2.header {
+	margin: 0;
+	padding: 12px;
+}
+
+.sitelink .thumbnail {
+	display: block;
+	overflow: hidden;
+	position: relative;
+	background: #F8F8F8;
+	padding-bottom: 65%;
+	border-radius: 4px 4px 0 0;
+	box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+}
+
+.sitelink .thumbnail:not(.fill) {
+	background-image: none!important;
+}
+
+.sitelink .thumbnail img {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	max-width: 100%;
+	max-height: 100%;
+	position: absolute;
+}
+
+.sitelink .thumbnail.fill {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.sitelink .thumbnail.fill img {
+	display: none;
+}

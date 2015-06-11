@@ -1,0 +1,9 @@
+<a href="{{link}}">
+	{{#hasIcon}}
+		<div class="thumbnail {{style}}" style="background-image: url({{image}}); background-color: {{color}};">
+			<img src="{{image}}" />
+		</div>
+	{{/hasIcon}}
+
+	{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+</a>
