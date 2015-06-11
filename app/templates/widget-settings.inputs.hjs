@@ -16,6 +16,15 @@
 	<textarea class="form-control" id="widget-{{nicename}}" name="{{nicename}}" placeholder="{{placeholder}}">{{value}}</textarea>
 {{/input-textarea}}
 
+{{#input-color}}
+	<label for="widget-{{nicename}}">
+		{{label}}
+		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
+	</label>
+	
+	<input type="text" class="form-control" id="widget-{{nicename}}" name="{{nicename}}" value="{{value}}" />
+{{/input-color}}
+
 {{#input-select}}
 	<label for="widget-{{nicename}}">
 		{{label}}

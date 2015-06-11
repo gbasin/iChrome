@@ -40,6 +40,20 @@ define(
 					"input-textarea": _.pick(input, "nicename", "label", "value", "help", "placeholder")
 				}));
 			},
+			color: function(input, elm) {
+				input.value = _.result(input, "value");
+
+				elm.html(render("widget-settings.inputs", {
+					"input-color": _.pick(input, "nicename", "label", "value", "help")
+				})).find("input").spectrum({
+					showInput: true,
+					showAlpha: true,
+					showInitial: true,
+					showButtons: false,
+					preferredFormat: "rgb",
+					clickoutFiresChange: true
+				});
+			},
 			select: function(input, elm, widget, form) {
 				var loop = function(options, level) {
 					level = level || 0;
