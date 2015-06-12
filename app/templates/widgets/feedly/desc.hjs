@@ -1,9 +1,3 @@
-The Feedly widget displays an infinite-scrolling list of articles from any category or feed in your Feedly account with images, when available.<br />
+This widget displays a list of articles from any category or feed in your Feedly account, with images.<br />
 <br />
-Articles can be displayed as full width cards, half width cards (two columns), a list or a "magazine" view like the News or RSS widgets.<br />
-<br />
-You can also optionally select to show only unread articles, sort articles oldest first and mark articles as read when either clicked or scrolled past.<br />
-<br />
-To save an article and recommend it just click the recommendation count that's displayed in green on every article.<br />
-<br />
-There are no variations available for this widget.
+Go into the settings after installation to choose a display format and set other preferences.

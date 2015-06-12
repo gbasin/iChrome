@@ -1,13 +1,3 @@
 The Gmail widget displays your Gmail inbox in an iFrame where you can manage your email.<br />
 <br />
-<b>This widget will not work offline unless you install the Gmail extension for Chrome.</b><br />
-<br />
-No setup is required for this widget, however you can follow these steps to select an alternate email account:<br />
-<br />
-<ol>
-	<li>Install the widget in your preferred size</li>
-	<li>Hover over the widget and click the settings icon that appears</li>
-	<li>Enter an account ID (an explanation is available under the question mark icon)</li>
-	<li>Click "Save"</li>
-</ol>
-There are no variations available for this widget.
+This widget won't work offline unless you install the Gmail extension for Chrome.

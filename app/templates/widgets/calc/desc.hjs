@@ -1,9 +1,1 @@
-The Calculator widget displays a simple, calculator.<br />
-<br />
-No setup is necessary for this widget.<br />
-<br />
-Variations:<br />
-<br />
-Tiny: Displays only an input box where you can enter simple problems.<br />
-Small: Displays an input box plus keys that can't be entered easily through the keyboard.<br />
-Medium: Displays an input box, full keypad and basic functions (add, subtract, multiply, divide, parentheses).
+This widget contains a calculator with basic functionality.

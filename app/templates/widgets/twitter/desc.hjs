@@ -1,10 +1,3 @@
-The Twitter widget displays tweets from either your home stream or a list of your choice. Alternatively, it can display tweets you've been mentioned in or tweets of yours that have been retweeted.<br />
+Use this widget to keep track of what's going on on Twitter, and who's mentioned you.<br />
 <br />
-Setup:<br />
-<br />
-<ol>
-	<li>Install the widget in your preferred size</li>
-	<li>Click the large Authorize button that is shown in the widget</li>
-	<li>After the window opens on Twitter, accept and click Authorize</li>
-</ol>
-There are no variations available for this widget.
+You'll need to grant access to your account after installation by clicking the Authorize button.

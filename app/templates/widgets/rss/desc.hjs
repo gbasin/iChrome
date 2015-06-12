@@ -1,12 +1,3 @@
-The RSS widget lets you display items with images, descriptions and/or titles in a list format from either a RSS or Atom feed.<br />
+Use this widget to display an RSS or Atom feed.  It'll display items with titles, images, and descriptions.<br />
 <br />
-To setup a RSS or Atom feed:<br />
-<br />
-<ol>
-	<li>Install the widget in your preferred size</li>
-	<li>Hover over the widget and click the settings icon that appears</li>
-	<li>Enter the feed URL</li>
-	<li>Enable or disable images and/or descriptions</li>
-	<li>Click "Save"</li>
-</ol>
-There are no variations available for this widget.
+After installation, go into the settings and enter your feed URL.  You can also customize what's shown.

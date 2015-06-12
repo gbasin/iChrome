@@ -1,7 +1,3 @@
-The Keep widget embeds Google Keep inside a widget.<br />
+Use this widget to display your Google Keep.<br />
 <br />
-<b>This widget is not available offline unless you also install the <a href="https://chrome.google.com/webstore/detail/google-keep/hmjkmjkepdijhoojdojkdfohbdgmmhki" target="_blank">Google Keep Chrome extension</a>.</b><br />
-<br />
-This widget also loads from a third-party site that is not as optimized as iChrome, it may cause iChrome to load slowly.<br />
-<br />
-There are no variations available for this widget.
+Please not that it won't work offline unless you install the Google Keep Chrome extension.
