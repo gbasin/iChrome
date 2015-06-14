@@ -322,7 +322,7 @@ define(
 
 				var previewOverlay = this.previewOverlay = $('<div class="preview-overlay"></div>');
 
-				modal.mo.appendTo(document.body).after(this.previewOverlay);
+				modal.mo.appendTo(document.body).last().after(this.previewOverlay);
 
 
 				this.on("use", function() {

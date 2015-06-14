@@ -1740,7 +1740,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	opacity: 0;
 	outline: 0;
 	margin: auto;
-	z-index: 99999;
+	z-index: 9999;
 	position: fixed;
 	overflow: hidden;
 	background: #FFF;
@@ -1993,14 +1993,12 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	/ Getting Started
 */
 .modal-overlay.getting-started {
-	z-index: 99999;
 	background: rgba(0, 0, 0, .3);
 }
 
 .modal.getting-started {
 	width: 800px;
 	height: 600px;
-	z-index: 999999;
 	max-height: 100%;
 	overflow: visible;
 	border-radius: 6px;
@@ -2305,12 +2303,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 */
 .modal.store-detail {
 	width: 490px;
-	z-index: 999998;
 	max-height: 700px;
-}
-
-.modal-overlay.store-detail {
-	z-index: 99999;
 }
 
 .store-detail > .content {
@@ -2412,17 +2405,12 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Themes
 */
-.modal-overlay.themes {
-	z-index: 999996; /* Just under the themes modal but over the settings */
-}
-
 .modal.themes {
 	top: 25px;
 	left: 25px;
 	right: 25px;
 	bottom: 25px;
 	cursor: default;
-	z-index: 999997;
 	max-width: 1400px;
 	max-height: 700px;
 }
@@ -2668,14 +2656,6 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Themes / Create
 */
-.modal-overlay.themes.create {
-	z-index: 999998;
-}
-
-.modal.themes.create {
-	z-index: 999999;
-}
-
 .themes.create .content .title {
 	box-shadow: none;
 }

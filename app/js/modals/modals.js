@@ -34,7 +34,7 @@ define(["jquery", "backbone"], function($, Backbone) {
 			this.overlay = $(this.overlay);
 
 			// Set this.(modal + overlay = mo) shortcut
-			this.mo = this.$el.add(this.overlay);
+			this.mo = this.overlay.add(this.$el);
 
 
 			// Construct an object of CSS properties based on the options passed
