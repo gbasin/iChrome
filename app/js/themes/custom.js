@@ -236,6 +236,12 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 				requestAnimationFrame(this.modal.show.bind(this.modal));
 			},
 
+			remove: function() {
+				this.$("#color").spectrum("destroy");
+				
+				Backbone.View.prototype.remove.call(this);
+			},
+
 			render: function() {
 				this.$("#color").spectrum("destroy");
 

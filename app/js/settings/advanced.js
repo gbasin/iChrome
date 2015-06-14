@@ -74,7 +74,14 @@ define(["jquery", "backbone", "storage/storage", "i18n/i18n", "core/render", "li
 
 				this.model.on("change", this.render, this).init();
 			},
+			remove: function() {
+				this.$("input.color").spectrum("destroy");
+				
+				Backbone.View.prototype.remove.call(this);
+			},
 			render: function() {
+				this.$("input.color").spectrum("destroy");
+
 				this.$el
 					.html(render("settings/advanced", this.model.get("settings")))
 					.find("input.color").spectrum({

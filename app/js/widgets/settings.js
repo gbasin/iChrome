@@ -46,7 +46,7 @@ define(
 
 				elm.html(render("widget-settings.inputs", {
 					"input-color": _.pick(input, "nicename", "label", "value", "help")
-				})).find("input").spectrum({
+				})).find("input.color").spectrum({
 					showInput: true,
 					showAlpha: true,
 					showInitial: true,
@@ -430,6 +430,10 @@ define(
 
 			constructor: function() {
 				this.modal = new modal();
+
+				this.modal.on("destroy", function() {
+					this.$("input.color").spectrum("destroy");
+				}, this);
 
 				this.modal.mo.appendTo(document.body);
 
