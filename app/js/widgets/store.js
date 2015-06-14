@@ -52,12 +52,8 @@ define(
 				events: {
 					"click > .content .widget": function(e) {
 						var wModal = new (Modal.extend({
-							classes: "store-detail",
-							close: function() {
-								this.hide();
-
-								setTimeout(this.destroy.bind(this), 400);
-							}
+							destroyOnHide: true,
+							classes: "store-detail"
 						}))();
 
 

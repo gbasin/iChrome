@@ -9,6 +9,14 @@ define(["jquery", "backbone"], function($, Backbone) {
 	var Modal = Backbone.View.extend({
 		el: '<div class="modal" tabindex="-1"><div class="close"></div><div class="content"></div></div>',
 		overlay: '<div class="modal-overlay" tabindex="-1"></div>',
+
+		/**
+		 * Whether or not to destroy the modal when it's hidden.  Used to clean up temporary modals.
+		 *
+		 * @type  {Boolean}
+		 */
+		destroyOnHide: false,
+
 		show: function() {
 			this.mo.addClass("visible").end().focus();
 
@@ -17,12 +25,18 @@ define(["jquery", "backbone"], function($, Backbone) {
 		hide: function() {
 			this.mo.removeClass("visible");
 
+			if (this.destroyOnHide) {
+				setTimeout(this.destroy.bind(this), 400);
+			}
+
 			return this;
 		},
 		close: function(e) { // This is an overridable close method that is called from event handlers, it lets the content intercept closes.
 			return this.hide();
 		},
 		destroy: function() {
+			this.trigger("destroy");
+
 			this.mo.off().remove();
 
 			this.stopListening();

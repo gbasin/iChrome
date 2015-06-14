@@ -16,6 +16,7 @@ define(
 		var modal = Modal.extend({
 			width: 400,
 			height: 535,
+			destroyOnHide: true,
 			classes: "widget-settings"
 		});
 		
@@ -422,8 +423,6 @@ define(
 			},
 
 			show: function() {
-				this.render();
-
 				this.modal.show();
 
 				Track.pageview("/widget/" + this.widget.nicename + "/settings");
@@ -439,6 +438,10 @@ define(
 
 			initialize: function(opts) {
 				this.widget = opts.widget;
+
+				this.render();
+
+				requestAnimationFrame(this.show.bind(this));
 			},
 
 
