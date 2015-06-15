@@ -105,18 +105,18 @@ define(["lodash", "backbone", "modals/modals", "core/render"], function(_, Backb
 					chrome.runtime.getPlatformInfo(function(info) {
 						chrome.storage.local.get(function(local) {
 							chrome.storage.sync.getBytesInUse(function(syncUsage) {
-								alert(`
-									Debug info (hit Ctrl+C or Cmd+C to copy):
-									iChrome Version: ${chrome.runtime.getManifest().version}
-									Chrome Version: ${(/Chrome\/([0-9.]+)/.exec(navigator.userAgent) || [])[1]}
-									Operating System: ${info.os}
-									OAuth keys: ${Object.keys(JSON.parse(localStorage.oauth || "{}")).join(", ")}
-									User ID: ${localStorage.uid}
-									Uses: ${localStorage.uses}
-									Cached themes: ${Object.keys(local.cached || {}).length}
-									Tabs: ${local.tabs.length}
-									Sync bytes in use: ${syncUsage} / ${chrome.storage.sync.QUOTA_BYTES}
-								`.replace(/^\t+/g, ""));
+								alert(
+									"Debug info (hit Ctrl+C or Cmd+C to copy):" + "\n" +
+									"iChrome Version: " + chrome.runtime.getManifest().version + "\n" +
+									"Chrome Version: " + (/Chrome\/([0-9.]+)/.exec(navigator.userAgent) || [])[1] + "\n" +
+									"Operating System: " + info.os + "\n" +
+									"OAuth keys: " + Object.keys(JSON.parse(localStorage.oauth || "{}")).join(", ") + "\n" +
+									"User ID: " + localStorage.uid + "\n" +
+									"Uses: " + localStorage.uses + "\n" +
+									"Cached themes: " + Object.keys(local.cached || {}).length + "\n" +
+									"Tabs: " + local.tabs.length + "\n" +
+									"Sync bytes in use: " + syncUsage + " / " + chrome.storage.sync.QUOTA_BYTES
+								);
 
 								that.setStatus();
 							});
