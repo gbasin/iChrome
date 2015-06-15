@@ -37,5 +37,6 @@
 
 	<div class="col-sm-11 btns">
 		<a class="reset">{{i18n.settings.advanced.reset}}</a>
+		<a class="debug">{{i18n.settings.advanced.debug}}</a>
 	</div>
 </div>

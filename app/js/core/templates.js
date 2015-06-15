@@ -9,7 +9,7 @@ var templates = [
 		"getting-started",		"donate",				"translate-request",
 		"settings",				"menu",					"settings/new-tab",
 		"settings/general",		"settings/visual",		"settings/advanced",
-		"settings/tab-specific","widget-settings.inputs",
+		"settings/tab-specific","widget-settings.inputs","settings/debug",
 
 		"widgets.weather",				"widgets.weather.desc",
 		"widgets.stocks",				"widgets.stocks.desc",

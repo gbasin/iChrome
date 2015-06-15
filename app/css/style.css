@@ -3143,6 +3143,94 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	color: #D43F3A;
 }
 
+.settings .advanced .debug {
+	float: left;
+	padding-left: 15px;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Settings / Advanced / Debug
+*/
+.debug .content {
+	font-family: Roboto, sans-serif;
+}
+
+.debug .section {
+	margin: 0 25px;
+	padding: 15px 0;
+}
+
+.debug .section h3 {
+	font-size: 15px;
+	font-weight: 500;
+	margin-bottom: 15px;
+	font-family: inherit;
+}
+
+.debug button {
+	border: 0;
+	outline: 0;
+	margin: 0 2px;
+	color: #2196F3;
+	padding: 0 10px;
+	font-size: 14px;
+	min-width: 64px;
+	font-weight: 500;
+	line-height: 34px;
+	text-align: center;
+	border-radius: 2px;
+	font-family: inherit;
+	background: transparent;
+	text-transform: uppercase;
+	transition: all .25s cubic-bezier(0, 0, .2, 1);
+}
+
+.debug button:hover,
+.debug button:focus {
+	background: rgba(153, 153, 153, .2);
+}
+
+.debug button:active {
+	background: rgba(153, 153, 153, .4);
+}
+
+.debug .status {
+	margin: 0;
+	font-size: 13px;
+	padding: 20px 25px 10px;
+	transition: all .25s cubic-bezier(0, 0, .2, 1);
+}
+
+.debug .status.no-status {
+	font-size: 0;
+	padding: 0 25px;
+}
+
+.debug .console {
+	position: relative;
+}
+
+.debug .console textarea {
+	width: 100%;
+	height: 75px;
+	resize: none;
+	border-radius: 0;
+	border-width: 0 0 1px 0!important;
+}
+
+.debug .console button {
+	right: 0;
+	top: 12px;
+	color: #4CAF50;
+	position: absolute;
+}
+
 
 
 
