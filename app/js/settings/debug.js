@@ -1,7 +1,7 @@
 /**
  * The debug dialog.  This contains advanced tools that users can be instructed to use for troubleshooting.
  */
-define(["lodash", "backbone", "modals/modals", "core/render"], function(_, Backbone, Modal, render) {
+define(["lodash", "jquery", "backbone", "storage/filesystem", "modals/modals", "core/render"], function(_, $, Backbone, FileSystem, Modal, render) {
 	var modal = new (Modal.extend({
 		width: 800,
 		classes: "debug"
@@ -153,7 +153,7 @@ define(["lodash", "backbone", "modals/modals", "core/render"], function(_, Backb
 				break;
 
 				case "execute":
-					var out = eval($(".console textarea").val());
+					var out = eval($(".console textarea").val()); // jshint ignore:line
 
 					if (out) {
 						$(".console textarea").val("Output: " + out.toString());
