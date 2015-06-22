@@ -3434,3 +3434,78 @@ body.no-edit .bookmarks .tools {
 .sitelink .thumbnail.fill img {
 	display: none;
 }
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ System Stats
+*/
+.stats {
+	font-family: Roboto, sans-serif;
+}
+
+.stats .header {
+	margin-bottom: 15px;
+}
+
+.stats .cpu,
+.stats .memory {
+	margin-bottom: 20px;
+}
+
+.stats .label {
+	width: 60px;
+	padding-right: 5px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.stats h3 {
+	font-size: 13px;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 5px;
+	font-family: inherit;
+}
+
+.stats .icon {
+	width: 100%;
+	opacity: .6;
+	height: 36px;
+	display: inline-block;
+}
+
+.stats .status {
+	display: inline-block;
+	vertical-align: middle;
+	width: calc(100% - 65px);
+}
+
+.stats .name,
+.stats .summary {
+	font-size: 13px;
+	margin-bottom: 2px;
+}
+
+.stats progress {
+	width: auto;
+	height: 6px;
+	margin: 6px 0;
+	display: block;
+	overflow: hidden;
+	border-radius: 2px;
+	-webkit-appearance: none;
+}
+
+.stats progress::-webkit-progress-value {
+	background: #2196F3;
+	transition: width .5s ease;
+}
+
+.stats progress::-webkit-progress-bar {
+	background: #BBDEFB;
+}

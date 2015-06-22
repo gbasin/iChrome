@@ -673,5 +673,22 @@
 			"style_fill": "Fill",
 			"style_center": "Center"
 		}
+	},
+
+	"stats": {
+		"name": "System Statistics",
+		"desc": "Keep an eye on your system with realtime statistics",
+
+		"memory": "Memory",
+		"battery": "Battery",
+
+		"usage": "usage",
+		"in_use": "in use",
+		"remaining": "remaining",
+
+		"charged": "Fully Charged",
+		"idle": "Idle",
+		"charging": "Charging",
+		"discharging": "Discharging"
 	}
 }

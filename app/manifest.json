@@ -50,6 +50,9 @@
 		"http://*/",
 		"https://*/",
 		"webRequest",
+		"system.cpu",
+		"system.memory",
+		"system.storage",
 		"unlimitedStorage",
 		"chrome://favicon/",
 		"webRequestBlocking"
