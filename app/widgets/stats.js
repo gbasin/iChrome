@@ -111,7 +111,7 @@ define(["lodash", "jquery", "moment"], function(_, $, moment) {
 						var formatNum = function(num) {
 							var exp = Math.floor(Math.log(num) / Math.log(1024));
 
-							return (num / Math.pow(1024, exp)).toFixed(2) * 1 + " " + (exp == 0 ? "bytes": "KMGTPEZY"[exp - 1] + "iB");
+							return (num / Math.pow(1024, exp)).toFixed(2) * 1 + " " + (exp === 0 ? "bytes": "KMGTPEZY"[exp - 1] + "iB");
 						};
 
 						var data = {
