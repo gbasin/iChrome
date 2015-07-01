@@ -187,6 +187,7 @@ body > .loading h2 {
 input[type="tel"],
 input[type="text"],
 input[type="time"],
+input[type="date"],
 input[type="email"],
 input[type="search"],
 input[type="number"],
@@ -206,6 +207,7 @@ textarea {
 .widget input[type="tel"],
 .widget input[type="text"],
 .widget input[type="time"],
+.widget input[type="date"],
 .widget input[type="email"],
 .widget input[type="search"],
 .widget input[type="number"],
@@ -217,6 +219,7 @@ textarea {
 input[type="tel"]:hover,
 input[type="text"]:hover,
 input[type="time"]:hover,
+input[type="date"]:hover,
 input[type="email"]:hover,
 input[type="search"]:hover,
 input[type="number"]:hover,
@@ -229,6 +232,7 @@ textarea:hover {
 input[type="tel"]:focus,
 input[type="text"]:focus,
 input[type="time"]:focus,
+input[type="date"]:focus,
 input[type="email"]:focus,
 input[type="search"]:focus,
 input[type="number"]:focus,
@@ -240,8 +244,42 @@ textarea:focus {
 
 input[type="time"]::-webkit-clear-button,
 input[type="time"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-clear-button,
+input[type="date"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
 	display: none;
+}
+
+input[readonly]::-webkit-datetime-edit-ampm-field:focus,
+input[readonly]::-webkit-datetime-edit-hour-field:focus,
+input[readonly]::-webkit-datetime-edit-minute-field:focus {
+	color: inherit;
+	background-color: inherit;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+	opacity: 1;
+	overflow: hidden;
+	color: transparent;
+	position: relative;
+	margin-left: -1.3em;
+	margin-right: 0.3em;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:before {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	color: #333;
+	line-height: 1;
+	content: "\e6ce";
+	position: absolute;
+	font-family: Entypo;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+	background: none;
 }
 
 form:not(.form-horizontal) .color label {
