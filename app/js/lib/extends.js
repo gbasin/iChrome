@@ -32,12 +32,10 @@ require(["jquery"], function($) {
 		return newValue;
 	};
 
-	Number.prototype.pad = function(width, char) {
-		char = char || "0";
-		num = this + "";
-		width = width || 2;
+	Number.prototype.pad = function() {
+		var num = this.toString();
 
-		return ((num.length >= width) ? num : new Array(width - num.length + 1).join(char) + num);
+		return (num.length == 1) ? "0" + num : num;
 	};
 
 	$.animateNumber = function(from, to, speed, elm, prefix) {
