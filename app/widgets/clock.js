@@ -1,12 +1,438 @@
 /*
  * The Clock widget.
  */
-define(["jquery", "moment"], function($, moment) {
+define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbone) {
+	var View = Backbone.View.extend({
+		events: {
+			"click header.tabs .item": function(e) {
+				var tab = e.currentTarget.getAttribute("data-id");
+
+				$(e.currentTarget).add(this.$(".section." + tab)).addClass("active").siblings().removeClass("active");
+
+				this.data.tab = tab;
+
+				this.utils.saveData();
+			},
+
+			"click .alert .dismiss": function(e) {
+				$(e.currentTarget).parents(".alert").first().removeClass("visible");
+
+				if (this.audio) {
+					this.audio.pause();
+				}
+			},
+
+			"change .audio input[type=checkbox]": function(e) {
+				this.config.audio = e.currentTarget.checked;
+
+				this.utils.saveConfig();
+			},
+			
+			"click .stopwatch .start-stop": function(e) {
+				if (this.data.stopwatch && this.data.stopwatch.start) {
+					this.data.stopwatch.running = !this.data.stopwatch.running;
+
+					if (!this.data.stopwatch.running) {
+						this.data.stopwatch.paused = new Date().getTime();
+					}
+					else if (this.data.stopwatch.paused) {
+						this.data.stopwatch.start += new Date().getTime() - this.data.stopwatch.paused;
+
+						delete this.data.stopwatch.paused;
+					}
+				}
+				else {
+					this.data.stopwatch = {
+						running: true,
+						start: new Date().getTime()
+					};
+				}
+
+				e.currentTarget.classList.toggle("started", this.data.stopwatch.running);
+
+				this.utils.saveData();
+			},
+
+			"click .stopwatch .reset": function(e) {
+				delete this.data.stopwatch;
+
+				this.stopwatchElm.innerHTML = "0:00";
+
+				this.$(".stopwatch .start-stop").removeClass("started");
+
+				this.utils.saveData();
+			},
+			
+			"click .timer .start-stop": "startTimer",
+			
+			"keydown .timer input.time": function(e) {
+				if (e.which === 13) {
+					this.startTimer(e);
+				}
+			},
+
+			"click .timer .reset": function(e) {
+				delete this.data.timer;
+
+				this.timerElm.innerHTML = "0:00";
+
+				this.$(".section.timer").removeClass("running");
+				this.$(".timer .start-stop").removeClass("started");
+
+				this.utils.saveData();
+			},
+			
+			"keydown .alarm input.time": function(e) {
+				if (e.which === 13) {
+					this.startAlarm(e);
+				}
+			},
+
+			"click .alarm .set": "startAlarm"
+		},
+
+		interval: null,
+
+		formatTime: function(time) {
+			time = Math.floor(time / 1000);
+
+			var days = parseInt(time / 86400),
+				hours = parseInt((time % 86400) / 3600),
+				minutes = parseInt((time % 3600) / 60);
+
+			if (days) {
+				return days + ":" + hours.pad() + ":" + minutes.pad() + ":" + (time % 60).pad();
+			}
+			else if (hours) {
+				return hours + ":" + minutes.pad() + ":" + (time % 60).pad();
+			}
+			else {
+				return minutes + ":" + (time % 60).pad();
+			}
+		},
+
+		updateClock: function(returnHTML) {
+			var html = '<div class="time',
+				dt = new Date();
+
+			if (this.config.timezone !== "auto") {
+				dt = new Date(dt.getTime() + dt.getTimezoneOffset() * 60000 + parseInt(this.config.timezone) * 60000);
+			}
+
+			var hours = dt.getHours(),
+				minutes = dt.getMinutes(),
+				seconds = dt.getSeconds(),
+				am = hours < 12;
+
+			if (this.config.format.indexOf("ampm") === 0) {
+				hours = (hours > 12 ? hours - 12 : hours);
+
+				if (hours === 0) hours = 12;
+
+				html += (am ? " am" : " pm") + (this.config.format == "ampms" ? " no-seconds" : "");
+			}
+			else {
+				html += " full" + (this.config.format == "fulls" ? " no-seconds" : "");
+			}
+			
+			html += '">' + hours + ":" + minutes.pad();
+
+			if (this.config.size == "tiny" && this.config.format.indexOf("ampm") === 0) {
+				html += "<span>" + (this.config.format == "ampm" ? seconds.pad() : "") + "</span></div>";
+			}
+			else if (this.config.size != "tiny") {
+				// moment(dt) is slower so avoid it when possible
+				var date = (this.config.timezone !== "auto" ? moment(dt).format("dddd, MMMM Do YYYY") : moment().format("dddd, MMMM Do YYYY"));
+
+				if (this.config.format == "ampm" || this.config.format == "full") {
+					html += ":" + seconds.pad();
+				}
+
+				html += '</div><div class="date">' + date + "</div>";
+			}
+
+			if (returnHTML) {
+				return html;
+			}
+			else {
+				this.clockElm.innerHTML = html;
+			}
+		},
+
+		updateStopwatch: function(ret) {
+			var formatted = this.formatTime(new Date().getTime() - this.data.stopwatch.start);
+
+			if (ret) {
+				return formatted;
+			}
+
+			this.stopwatchElm.innerHTML = formatted;
+		},
+
+		startTimer: function(e) {
+			if (this.data.timer && this.data.timer.start) {
+				this.data.timer.running = !this.data.timer.running;
+
+				if (!this.data.timer.running) {
+					this.data.timer.paused = new Date().getTime();
+				}
+				else if (this.data.timer.paused) {
+					this.data.timer.start += new Date().getTime() - this.data.timer.paused;
+
+					delete this.data.timer.paused;
+				}
+			}
+			else {
+				var input = this.$(".timer input.time")[0];
+
+				input.value = input.value.replace(/[^0-9:\.]/g, "");
+
+
+				var multiples = [1E3, 6E4, 36E5, 864E5];
+
+				// This splits 0:00:00:00.00 into ["0", "00", "00", "00.00"].
+				// 
+				// Then it reverses it, so it's [seconds, minutes, hours, days] and limits
+				// it to 4 values.
+				// 
+				// Each value is then multiplied in order by its ms multiplier. They're combined
+				// leaving a single total ms value for the time input
+				var duration = _(input.value.split(":")).compact().reverse().take(4).reduce(function(total, e, i) {
+					total += Math.floor(e * multiples[i]);
+
+					return total;
+				}, 0);
+
+				if (duration) {
+					input.value = "";
+
+					this.data.timer = {
+						running: true,
+						duration: duration,
+						start: new Date().getTime()
+					};
+				}
+			}
+
+			var running = !!(this.data.timer && this.data.timer.running);
+
+			this.$(".timer .start-stop").toggleClass("started", running);
+			this.$(".section.timer").toggleClass("running", !!this.data.timer);
+
+			if (running) {
+				this.updateTimer();
+			}
+
+			this.utils.saveData();
+		},
+
+		updateTimer: function(ret) {
+			var time = (this.data.timer.start + this.data.timer.duration) - new Date().getTime();
+
+			if (time <= 0) {
+				var formatted = "0:00";
+
+				this.trigger("timer:ended");
+
+				delete this.data.timer;
+
+				this.$(".section.timer").removeClass("running");
+				this.$(".timer .start-stop").removeClass("started");
+
+				this.utils.saveData();
+			}
+			else {
+				var formatted = this.formatTime(time);
+			}
+
+			if (ret) {
+				return formatted;
+			}
+
+			this.timerElm.innerHTML = formatted;
+		},
+
+		startAlarm: function(e) {
+			if (this.data.alarm && this.data.alarm.set) {
+				this.data.alarm.set = !this.data.alarm.set;
+			}
+			else {
+				var time = new Date().setHours(0, 0, 0, 0) + this.$(".alarm input.time")[0].valueAsNumber;
+
+				if (time <= new Date().getTime()) {
+					time += 86400000;
+				}
+
+				this.data.alarm = {
+					set: true,
+					time: time
+				};
+			}
+
+			this.$(".alarm .set").text(this.data.alarm && this.data.alarm.set ? this.utils.translate("unset") : this.utils.translate("set"));
+			this.$(".section.alarm").toggleClass("running", this.data.alarm && this.data.alarm.set);
+
+			if (this.data.alarm && this.data.alarm.set) {
+				this.updateAlarm();
+			}
+
+			this.utils.saveData();
+		},
+
+		updateAlarm: function(ret) {
+			var time = this.data.alarm.time - new Date().getTime();
+
+			if (this.data.alarm.time <= new Date().getTime()) {
+				var formatted = "0:00";
+
+				this.trigger("alarm:ended");
+
+				// Don't delete the entire element, preserve the last used time
+				this.data.alarm.set = false;
+
+				this.$(".alarm .set").text(this.utils.translate("set"));
+				this.$(".section.alarm").removeClass("running");
+
+				this.utils.saveData();
+			}
+			else {
+				var formatted = this.formatTime(time);
+			}
+
+			if (ret) {
+				return formatted;
+			}
+
+			this.alarmElm.innerHTML = formatted;
+		},
+
+		setCache: function() {
+			this.timerElm = this.$(".timer div.time")[0];
+			this.alarmElm = this.$(".alarm div.time")[0];
+			this.stopwatchElm = this.$(".stopwatch .time")[0];
+		},
+
+		update: function() {
+			this.updateClock();
+
+			if (this.data.alarm && this.data.alarm.set) this.updateAlarm();
+			if (this.data.timer && this.data.timer.running) this.updateTimer();
+			if (this.data.stopwatch && this.data.stopwatch.running) this.updateStopwatch();
+		},
+
+		playAudio: function() {
+			if (this.config.audio) {
+				this.audio = new Audio();
+
+				this.audio.loop = true;
+				this.audio.volume = .3;
+				this.audio.autoplay = true;
+				this.audio.src = "http://ichro.me/widgets/clock/audio/" + this.config.sound + ".ogg";
+			}
+		},
+
+		initialize: function() {
+			this.on("alarm:ended", function() {
+				this.$(".alert.alarm .time").text(moment(this.data.alarm.time).format("h:mm A"));
+
+				this.$(".alert.alarm").addClass("visible");
+
+				this.playAudio();
+			}).on("timer:ended", function() {
+				this.$(".alert.timer .time").text(this.formatTime(this.data.timer.duration));
+
+				this.$(".alert.timer").addClass("visible");
+
+				this.playAudio();
+			});
+		},
+
+		render: function() {
+			clearInterval(this.interval);
+
+			this.isAnalog = (this.config.format == "analog");
+
+			this.$el.toggleClass("analog", this.isAnalog);
+
+			if (this.isAnalog) {
+				var dt = new Date();
+
+				if (this.config.timezone !== "auto") {
+					dt = new Date(dt.getTime() + dt.getTimezoneOffset() * 60000 + parseInt(this.config.timezone) * 60000);
+				}
+
+				var data = {
+					analog: true,
+					mPos: dt.getMinutes() * 6 + (dt.getSeconds() / 60 * 6),
+					hPos: dt.getHours() * 30 + (dt.getMinutes() / 60 * 30),
+					sPos: dt.getSeconds() * 6
+				};
+
+				return this.utils.render(data);
+			}
+
+			var data = JSON.parse(JSON.stringify(this.data));
+
+			data.html = this.updateClock(true);
+
+			data.audio = this.config.audio;
+
+			if (this.config.size === "tiny") {
+				if (this.config.title) {
+					data.title = this.config.title;
+				}
+			}
+			else {
+				if (data.stopwatch) {
+					if (data.stopwatch.paused) {
+						data.stopwatch.start += new Date().getTime() - data.stopwatch.paused;
+					}
+
+					data.stopwatch.html = this.updateStopwatch.call({ data: data, formatTime: this.formatTime }, true);
+				}
+
+				if (data.timer) {
+					if (data.timer.paused) {
+						data.timer.start += new Date().getTime() - data.timer.paused;
+					}
+
+					data.timer.html = this.updateTimer.call({ data: data, formatTime: this.formatTime }, true);
+				}
+
+				if (data.alarm) {
+					if (data.alarm.set) {
+						data.alarm.html = this.updateTimer.call({ data: data, formatTime: this.formatTime }, true);
+					}
+				}
+
+				data.alarm = data.alarm || {};
+
+				data.alarm.timeStr = data.alarm.time ? new Date(data.alarm.time).getHours().pad() + ":" + new Date(data.alarm.time).getMinutes().pad() : "07:00";
+			}
+
+			this.utils.render(data);
+
+			if (this.data.tab) {
+				this.$(".tabs .item[data-id=" + this.data.tab + "], .section." + this.data.tab).addClass("active").siblings().removeClass("active");
+			}
+
+
+			this.clockElm = this.$(".clock")[0];
+
+			if (this.config.size === "tiny") {
+				this.interval = setInterval(this.updateClock.bind(this), 1000);
+			}
+			else {
+				this.setCache();
+
+				this.interval = setInterval(this.update.bind(this), 1000);
+			}
+		}
+	});
+
 	return {
 		id: 2,
 		size: 2,
-		order: 10,
-		interval: 1000,
 		nicename: "clock",
 		sizes: ["tiny", "small"],
 		settings: [
@@ -78,105 +504,64 @@ define(["jquery", "moment"], function($, moment) {
 					ampms: "i18n.settings.format_options.ampmseconds",
 					fulls: "i18n.settings.format_options.24hourseconds",
 				}
+			},
+			{
+				type: "select",
+				nicename: "sound",
+				label: "i18n.settings.sound",
+				options: {
+					urban_beat: "Urban Beat",
+					argon: "Argon",
+					ariel: "Ariel",
+					carbon: "Carbon",
+					carme: "Carme",
+					ceres: "Ceres",
+					dione: "Dione",
+					elara: "Elara",
+					europa: "Europa",
+					ganymede: "Ganymede",
+					helium: "Helium",
+					iapetus: "Iapetus",
+					io: "Io",
+					krypton: "Krypton",
+					luna: "Luna",
+					neon: "Neon",
+					oberon: "Oberon",
+					osmium: "Osmium",
+					oxygen: "Oxygen",
+					phobos: "Phobos",
+					platinum: "Platinum",
+					rhea: "Rhea",
+					salacia: "Salacia",
+					sedna: "Sedna",
+					tethys: "Tethys",
+					titan: "Titan",
+					triton: "Triton",
+					umbriel: "Umbriel"
+				}
 			}
 		],
 		config: {
 			title: "i18n.title",
 			size: "small",
 			timezone: "auto",
-			format: "ampm"
+			format: "ampm",
+			audio: true,
+			sound: "urban_beat"
 		},
-		isAnalog: false,
-		getHTML: function() {
-			var html = '<div class="time',
-				dt = new Date();
-
-			if (this.config.timezone !== "auto") {
-				dt = new Date(dt.getTime() + dt.getTimezoneOffset() * 60000 + parseInt(this.config.timezone) * 60000);
-			}
-
-			var hours = dt.getHours(),
-				minutes = dt.getMinutes(),
-				seconds = dt.getSeconds(),
-				am = hours < 12;
-
-			if (this.config.format.indexOf("ampm") === 0) {
-				hours = (hours > 12 ? hours - 12 : hours);
-
-				if (hours === 0) hours = 12;
-
-				html += (am ? " am" : " pm") + (this.config.format == "ampms" ? " no-seconds" : "");
-			}
-			else {
-				html += " full" + (this.config.format == "fulls" ? " no-seconds" : "");
+		data: {},
+		render: function() {
+			if (!this.view) {
+				this.view = new (View.extend({
+					utils: this.utils,
+					config: this.config,
+					data: this.data || {}
+				}))({
+					el: this.elm
+				});
 			}
 			
-			html += '">' + hours + ":" + minutes.pad();
-
-			if (this.config.size == "tiny" && this.config.format.indexOf("ampm") === 0) {
-				html += "<span>" + (this.config.format == "ampm" ? seconds.pad() : "") + "</span></div>";
-			}
-			else if (this.config.size != "tiny") {
-				// moment(dt) is slower so avoid it when possible
-				var date = (this.config.timezone !== "auto" ? moment(dt).format("dddd, MMMM Do YYYY") : moment().format("dddd, MMMM Do YYYY"));
-
-				if (this.config.format == "ampm" || this.config.format == "full") {
-					html += ":" + seconds.pad();
-				}
-
-				html += '</div><div class="date">' + date + "</div>";
-			}
-
-			return html;
-		},
-		refresh: function(settings) {
-			if (settings) {
-				this.elm.removeClass("analog");
-
-				this.render();
-			}
-			else if (!this.isAnalog) {
-				this.clockElm.innerHTML = this.getHTML();
-			}
-		},
-		render: function() {
-			var data = {
-				analog: this.config.format == "analog"
-			};
-
-			this.isAnalog = data.analog;
-
-			if (data.analog) {
-				var dt = new Date();
-
-				if (this.config.timezone !== "auto") {
-					dt = new Date(dt.getTime() + dt.getTimezoneOffset() * 60000 + parseInt(this.config.timezone) * 60000);
-				}
-
-				var min = dt.getMinutes();
-
-				data = {
-					analog: true,
-					mPos: min * 6 + (dt.getSeconds() / 60 * 6),
-					hPos: dt.getHours() * 30 + (min / 60 * 30),
-					sPos: dt.getSeconds() * 6
-				};
-
-				this.elm.addClass("analog");
-
-				this.utils.render(data);
-			}
-			else {
-				data.html = this.getHTML();
-
-				if (this.config.title && this.config.title !== "") {
-					data.title = this.config.title;
-				}
-
-				this.utils.render(data);
-
-				this.clockElm = this.elm.find(".clock")[0];
-			}
+			this.view.render();
 		}
 	};
 });

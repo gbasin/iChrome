@@ -954,6 +954,31 @@
 /*---------------------------------------------
 	/ Clock
 */
+.widget.clock {
+	font-family: Roboto, sans-serif;
+}
+
+.widget.clock.small {
+	background: #FAFAFA;
+}
+
+.clock .section {
+	padding: 15px;
+	position: absolute;
+	margin: 0 -15px -15px;
+	transform: translateX(-100%);
+	transition: transform .2s ease-in-out;
+}
+
+.clock .section.active {
+	position: static;
+	transform: translateX(0);
+}
+
+.clock .section.active ~ .section {
+	transform: translateX(100%);
+}
+
 .clock .time {
 	color: #555;
 	font-size: 85px;
@@ -961,6 +986,23 @@
 	text-align: center;
 	line-height: 115px;
 	font-family: Open Sans, sans-serif;
+}
+
+.clock input:not([type="checkbox"]) {
+	border-radius: 0;
+	border-width: 0 0 1px 0!important;
+}
+
+.clock input.time {
+	width: 100%;
+	font-size: 80px;
+	border-radius: 0;
+	border: 0!important;
+	padding: 0 0 5px!important;
+}
+
+.clock input.date {
+	font-size: 16px;
 }
 
 .clock .time:after {
@@ -980,15 +1022,196 @@
 
 .clock .time.no-seconds {
 	font-size: 120px;
-	line-height: 150px;
+	line-height: 115px;
 }
 
 .clock .date {
 	color: #428BCA;
 	font-size: 18px;
-	margin-top: 10px;
+	margin-top: 20px;
 	text-align: center;
 }
+
+.clock .controls {
+	display: flex;
+	margin-top: 15px;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+
+.clock .controls button.material {
+	margin: 0;
+}
+
+.clock .controls button.material.toggle {
+	margin: -6px 4px;
+}
+
+.clock .controls button.material.toggle:first-child {
+	margin-left: -6px;
+}
+
+.clock .start-stop.started #start,
+.clock .start-stop:not(.started) #stop {
+	display: none;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Clock / Header
+*/
+.clock header.tabs {
+	height: 44px;
+	display: flex;
+	background: #FFF;
+	margin: -15px -15px 0;
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.clock .tabs .item {
+	flex: 1 25%;
+	padding: 10px 0;
+	cursor: pointer;
+	text-align: center;
+}
+
+.clock .tabs svg {
+	width: 22px;
+	height: 22px;
+	fill: #757575;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.clock .tabs .item:hover svg {
+	fill: #444;
+}
+
+.clock .tabs .item.active svg {
+	opacity: 1;
+	fill: #2196F3;
+}
+
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Clock / Clock
+*/
+.clock .section.clock {
+	padding-top: 25px;
+}
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Clock / Alarm
+*/
+.clock .alarm.running input.time,
+.clock .alarm:not(.running) div.time {
+	display: none;
+}
+
+.clock .alarm input.time {
+	padding: 3px 0 3px!important;
+}
+
+.clock .alarm .date {
+	color: #333;
+	flex: 0 145px;
+	margin-top: 0;
+	border: 0!important;
+	padding: 0!important;
+}
+
+.clock .alarm .audio {
+	margin-left: 5px;
+	font-weight: 500;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Clock / Timer
+*/
+.clock .timer .controls {
+	margin-top: 10px;
+}
+
+.clock .timer.running input.time,
+.clock .timer:not(.running) div.time {
+	display: none;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Clock / Alert
+*/
+.clock .alert {
+	left: 0;
+	right: 0;
+	top: 100%;
+	margin: 0;
+	border: 0;
+	bottom: 0;
+	z-index: 1;
+	color: #FFF;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	border-radius: 0;
+	position: absolute;
+	text-align: center;
+	background: #FB8C00;
+	flex-flow: row wrap;
+	align-content: space-around;
+	transition: top .2s ease-in-out;
+}
+
+.clock .alert.visible {
+	top: 0;
+}
+
+.clock .alert > * {
+	flex-basis: 100%;
+}
+
+.clock .alert h3 {
+	font-weight: 300;
+	font-family: inherit;
+}
+
+.clock .alert .time,
+.clock .alert button.flat {
+	color: inherit;
+}
+
+.clock .alert .time {
+	margin: 0;
+}
+
+
 
 
 

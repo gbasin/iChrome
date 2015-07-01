@@ -126,8 +126,8 @@
 	},
 
 	"clock": {
-		"name": "Time & Date",
-		"desc": "Shows the current date and time. Optionally for a different timezone.",
+		"name": "Clock",
+		"desc": "Offers alarm, time, timer, and stopwatch functionality.",
 
 		"settings": {
 			"timezone": "Time Zone",
@@ -140,10 +140,22 @@
 				"analog": "12 Hour - Analog",
 				"ampmseconds": "AM/PM - Digital, No Seconds",
 				"24hourseconds": "24 Hour - Digital, No Seconds"
-			}
+			},
+
+			"sound": "Alert Sound"
 		},
 
-		"title": "Clock"
+		"title": "Clock",
+
+		"alarm": "Alarm",
+		"clock": "Clock",
+		"timer": "Timer",
+		"stopwatch": "Stopwatch",
+
+		"set": "Set",
+		"unset": "Unset",
+		"dismiss": "Dismiss",
+		"enable_audio": "Enable audio"
 	},
 
 	"currency": {
