@@ -227,10 +227,11 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 		},
 
 		updateTimer: function(ret) {
-			var time = (this.data.timer.start + this.data.timer.duration) - new Date().getTime();
+			var formatted,
+				time = (this.data.timer.start + this.data.timer.duration) - new Date().getTime();
 
 			if (time <= 0) {
-				var formatted = "0:00";
+				formatted = "0:00";
 
 				this.trigger("timer:ended");
 
@@ -242,7 +243,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				this.utils.saveData();
 			}
 			else {
-				var formatted = this.formatTime(time);
+				formatted = this.formatTime(time);
 			}
 
 			if (ret) {
@@ -280,10 +281,11 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 		},
 
 		updateAlarm: function(ret) {
-			var time = this.data.alarm.time - new Date().getTime();
+			var formatted,
+				time = this.data.alarm.time - new Date().getTime();
 
 			if (this.data.alarm.time <= new Date().getTime()) {
-				var formatted = "0:00";
+				formatted = "0:00";
 
 				this.trigger("alarm:ended");
 
@@ -296,7 +298,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				this.utils.saveData();
 			}
 			else {
-				var formatted = this.formatTime(time);
+				formatted = this.formatTime(time);
 			}
 
 			if (ret) {
@@ -325,7 +327,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				this.audio = new Audio();
 
 				this.audio.loop = true;
-				this.audio.volume = .3;
+				this.audio.volume = 0.3;
 				this.audio.autoplay = true;
 				this.audio.src = "http://ichro.me/widgets/clock/audio/" + this.config.sound + ".ogg";
 			}
@@ -354,6 +356,9 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 
 			this.$el.toggleClass("analog", this.isAnalog);
 
+
+			var data;
+
 			if (this.isAnalog) {
 				var dt = new Date();
 
@@ -361,7 +366,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 					dt = new Date(dt.getTime() + dt.getTimezoneOffset() * 60000 + parseInt(this.config.timezone) * 60000);
 				}
 
-				var data = {
+				data = {
 					analog: true,
 					mPos: dt.getMinutes() * 6 + (dt.getSeconds() / 60 * 6),
 					hPos: dt.getHours() * 30 + (dt.getMinutes() / 60 * 30),
@@ -371,7 +376,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				return this.utils.render(data);
 			}
 
-			var data = JSON.parse(JSON.stringify(this.data));
+			data = JSON.parse(JSON.stringify(this.data));
 
 			data.html = this.updateClock(true);
 
