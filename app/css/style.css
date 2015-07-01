@@ -319,6 +319,199 @@ form:not(.form-horizontal) .color label {
 
 
 
+
+
+/*---------------------------------------------
+	/ Material Buttons
+*/
+button.material {
+	border: 0;
+	outline: 0;
+	margin: 0 8px;
+	padding: 0 16px;
+	cursor: pointer;
+	min-width: 80px;
+	font-size: 13px;
+	background: #EEE;
+	font-weight: 500;
+	line-height: 32px;
+	border-radius: 2px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: Roboto, sans-serif;
+	transition: all .15s ease-in-out;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+button.material:hover,
+button.material:focus,
+button.material:active {
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+button.material:active {
+	background: #E0E0E0;
+}
+
+button.material.disabled,
+button.material[disabled] {
+	cursor: default;
+	box-shadow: none;
+	color: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.12);
+}
+
+button.material svg {
+	width: 24px;
+	height: 24px;
+	fill: currentColor;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Material Buttons / Floating Action Button
+*/
+button.material.fab {
+	width: 40px;
+	height: 40px;
+	padding: 8px;
+	min-width: initial;
+	border-radius: 50%;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Material Buttons / Colors
+*/
+button.material.red,
+button.material.blue,
+button.material.green,
+button.material.orange {
+	color: #FFF;
+}
+
+button.material.red				{ background: #F44336; }
+button.material.red:active		{ background: #E53935; }
+
+button.material.blue			{ background: #2196F3; }
+button.material.blue:active		{ background: #1E88E5; }
+
+button.material.green			{ background: #4CAF50; }
+button.material.green:active	{ background: #43A047; }
+
+button.material.orange			{ background: #FF9800; }
+button.material.orange:active	{ background: #FB8C00; }
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Material Buttons / Flat
+*/
+button.material.flat {
+	background: none;
+	box-shadow: none;
+	border-radius: 0;
+	line-height: 32px;
+}
+
+button.material.flat:hover,
+button.material.flat:focus {
+	background: rgba(0, 0, 0, 0.075);
+}
+
+button.material.flat:active {
+	background: rgba(0, 0, 0, 0.15);
+}
+
+button.material.flat.red	{ color: #F44336; }
+button.material.flat.blue	{ color: #2196F3; }
+button.material.flat.green	{ color: #4CAF50; }
+button.material.flat.orange	{ color: #FF9800; }
+
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Material Buttons / Icon Toggle
+*/
+button.material.toggle {
+	width: 36px;
+	color: #000;
+	height: 36px;
+	padding: 6px;
+	margin: 0 4px;
+	box-shadow: none;
+	position: relative;
+	min-width: initial;
+	border-radius: 50%;
+	background: transparent;
+	transition: all .2s ease;
+}
+
+button.material.toggle svg {
+	opacity: .7;
+}
+
+button.material.toggle:after,
+button.material.toggle:before {
+	position: absolute;
+	border-radius: 50%;
+	background: currentColor;
+	transition: opacity .2s ease;
+}
+
+button.material.toggle:before {
+	top: 50%;
+	width: 0;
+	left: 50%;
+	height: 0;
+	content: "";
+	opacity: 0.1;
+	border-radius: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+button.material.toggle:active:before {
+	width: 100%;
+	height: 100%;
+	opacity: .05;
+	transition: width .2s ease, height .2s ease;
+}
+
+button.material.toggle:hover:after,
+button.material.toggle:focus:after {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: "";
+	opacity: .05;
+}
+
+
+
+
+
+
+
 /*---------------------------------------------
 	/ Forms / Checkbox and Radio Styles
 */
