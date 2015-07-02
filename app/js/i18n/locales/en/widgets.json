@@ -702,5 +702,21 @@
 		"idle": "Idle",
 		"charging": "Charging",
 		"discharging": "Discharging"
+	},
+
+	"search": {
+		"name": "Search",
+		"desc": "Embed a search box in your page for easy access",
+
+		"settings": {
+			"placeholder": "Search Field Placeholder",
+
+			"search_url": "Search URL",
+
+			"param": "Query Parameter",
+			"param_placeholder": "The parameter where the query goes, i.e. \"q\""
+		},
+
+		"default_placeholder": "Search Google"
 	}
 }

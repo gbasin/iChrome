@@ -18,6 +18,7 @@ define([
 	"w/youtube",	"w/recentlyclosed",	"w/chrome_bookmarks",
 	"w/tasks",		"w/quotes",			"w/html",
 	"w/notifications",	"w/sitelink",	"w/stats",
+	"w/search",
 
 	"lib/jquery.numberformatter", "lib/jquery.sortable"
 ], function(_, Utils) {

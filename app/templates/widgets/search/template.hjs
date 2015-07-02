@@ -1,0 +1,7 @@
+<form action="{{url}}">
+	<input type="text" name="{{param}}" class="searchbox" placeholder="{{placeholder}}" />
+
+	{{#small}}
+		<button class="material blue submit">Search</button>
+	{{/small}}
+</form>

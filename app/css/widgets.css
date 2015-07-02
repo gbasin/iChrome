@@ -3732,3 +3732,49 @@ body.no-edit .bookmarks .tools {
 .stats progress::-webkit-progress-bar {
 	background: #BBDEFB;
 }
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Search
+*/
+.widget.search form {
+	height: 50px;
+	margin: -15px;
+	position: relative;
+}
+
+.widget.search .searchbox {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	border-radius: 0;
+	position: absolute;
+	border: 0!important;
+	font-family: Roboto;
+	padding: 6px 18px!important;
+}
+
+.widget.search .searchbox:focus,
+.widget.search .searchbox:active {
+	background: rgba(0, 0, 0, .015)!important;
+}
+
+.widget.search button.submit {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	border-radius: 0;
+	position: absolute;
+}
+
+.widget.search.tiny form {
+	height: 65px;
+}
