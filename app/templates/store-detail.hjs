@@ -11,13 +11,15 @@
 		</div>
 	</section>
 
-	<section class="description">
-		<h3>{{i18n.store.description}}</h3>
+	{{#desc}}
+		<section class="description">
+			<h3>{{i18n.store.description}}</h3>
 
-		<div class="desc">
-			{{{desc}}}
-		</div>
-	</section>
+			<div class="desc">
+				{{{desc}}}
+			</div>
+		</section>
+	{{/desc}}
 
 	<section class="preview">
 		<h3>{{i18n.store.preview}}</h3>
