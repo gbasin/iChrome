@@ -1,6 +1,10 @@
 var s = document.createElement("script");
 
 s.textContent = "(" + (function() {
+	// Ignore eval
+	/* jshint -W060 */
+	/* jshint -W061 */
+
 	var oEval = window.eval,
 		oOpen = window.open;
 
@@ -35,6 +39,9 @@ s.textContent = "(" + (function() {
 			return oEval.apply(window, arguments);
 		}
 	};
+
+	/*jshint +W060 */
+	/*jshint +W061 */
 
 	window.open = function(url, target) {
 		if (url === window.location && (target == "_top" || target == "_parent")) {
