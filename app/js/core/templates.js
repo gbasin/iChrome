@@ -50,7 +50,8 @@ var templates = [
 		"widgets.notifications",		"widgets.notifications.desc",
 		"widgets.sitelink",				"widgets.sitelink.desc",
 		"widgets.stats",				"widgets.stats.desc",
-		"widgets.search",				"widgets.search.desc"
+		"widgets.search",				"widgets.search.desc",
+		"widgets.classroom",			"widgets.classroom.desc"
 	],
 	deps = [];
 

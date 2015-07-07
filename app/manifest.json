@@ -17,6 +17,12 @@
 			"all_frames": true
 		},
 		{
+			"js": [ "inject/js/classroom.js" ],
+			"matches": [ "https://classroom.google.com/*" ],
+			"run_at": "document_start",
+			"all_frames": true
+		},
+		{
 			"js": [ "inject/js/facebook.js" ],
 			"matches": [ "https://m.facebook.com/*" ],
 			"run_at": "document_start",

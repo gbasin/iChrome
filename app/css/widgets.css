@@ -2849,13 +2849,14 @@ body.no-edit .bookmarks .tools {
 
 
 /*---------------------------------------------
-	/ iFrame, HTML, Keep, Plus and Facebook shared
+	/ iFrame, HTML, Keep, Plus, Classroom and Facebook shared
 */
 .widget.html,
 .widget.keep,
 .widget.plus,
 .widget.iframe,
 .widget.facebook,
+.widget.classroom,
 .widget.notifications {
 	padding: 0!important;
 }
@@ -2865,6 +2866,7 @@ body.no-edit .bookmarks .tools {
 .plus iframe,
 .iframe iframe,
 .facebook iframe,
+.classroom iframe,
 .notifications iframe {
 	width: 100%;
 	height: 100%;
@@ -3782,4 +3784,17 @@ body.no-edit .bookmarks .tools {
 
 .widget.search.tiny form {
 	height: 65px;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Classroom
+*/
+.widget.classroom {
+	height: 450px;
 }
