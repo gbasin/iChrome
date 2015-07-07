@@ -2849,11 +2849,12 @@ body.no-edit .bookmarks .tools {
 
 
 /*---------------------------------------------
-	/ iFrame, HTML, Keep, Plus, Classroom and Facebook shared
+	/ iframe widgets shared
 */
 .widget.html,
 .widget.keep,
 .widget.plus,
+.widget.gmail,
 .widget.iframe,
 .widget.facebook,
 .widget.classroom,
@@ -2864,6 +2865,7 @@ body.no-edit .bookmarks .tools {
 .html iframe,
 .keep iframe,
 .plus iframe,
+.gmail iframe,
 .iframe iframe,
 .facebook iframe,
 .classroom iframe,
@@ -3038,22 +3040,6 @@ body.no-edit .bookmarks .tools {
 .now .authorize .btn {
 	margin: 15px 0;
 	width: calc(100% - 35px);
-}
-
-
-
-
-
-/*---------------------------------------------
-	/ Gmail
-*/
-.widget.gmail {
-	padding: 0!important;
-}
-
-.gmail iframe {
-	width: 100%;
-	height: 100%;
 }
 
 
