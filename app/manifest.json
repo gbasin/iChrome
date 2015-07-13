@@ -68,7 +68,7 @@
 		"bookmarks",
 		"management"
 	],
-	"version": "2.1.18",
+	"version": "2.1.19",
 	"manifest_version": 2,
 	"default_locale": "en",
 	"short_name": "iChrome",
