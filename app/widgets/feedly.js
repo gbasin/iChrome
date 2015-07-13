@@ -657,7 +657,9 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 					last = new Date().getTime();
 				};
 
-			this.elm.find(".items").on("click", ".item", function(e) {
+			this.elm.find(".items").on("mousedown", ".item", function(e) {
+				// mousedown handles left, middle, and right clicks
+
 				var id = $(this).attr("data-id");
 				
 				if (!sent.hasOwnProperty(id)) {

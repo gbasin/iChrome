@@ -35,13 +35,9 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 
 		events: {
 			"click .settings": function(e) {
-				if (!this.settings) {
-					this.settings = new Settings({
-						widget: this.widget
-					});
-				}
-
-				this.settings.show();
+				new Settings({
+					widget: this.widget
+				});
 			}
 		},
 

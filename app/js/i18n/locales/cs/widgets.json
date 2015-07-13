@@ -1,26 +1,26 @@
 {
   "lang_code":"cs-widgets",
   "analytics":{
-    "name":"Analytika",
+    "name":"Analytics",
     "desc":"Zobrazit různé metriky z profilu Google Analytics.",
     "sessions":"zasedání",
     "pageviews":"Zobrazení stránek",
-    "pagesvisit":"Stránky \/ návštěva",
+    "pagesvisit":"Stránky \/ zobrazení",
     "bouncerate":"Bounce Rate",
     "completions":"Dokončené",
-    "noprofile":"Nevypadá to, že jste vybrali profil! <br \/><br \/> Vyberte jeden přes ikonu klíče v pravém horním rohu.",
+    "noprofile":"Vypadá to, že jste ještě nevybrali profil! <br \/><br \/> Vyberte jeden přes ikonu klíče v pravém horním rohu.",
     "settings":{
       "profile":"Profil"
     }
   },
   "apps":{
     "name":"Aplikace",
-    "desc":"Zobrazit Google Chrome aplikace aktuálně nainstalované.",
+    "desc":"Zobrazit aktuálně nainstalované Google Chrome aplikace.",
     "settings":{
-      "format":"Widget formát ",
+      "format":"Formát widgetu",
       "format_options":{
         "tiles":"Dlaždice",
-        "list":"seznam"
+        "list":"Seznam"
       },
       "display":"Zobrazit",
       "display_options":{
@@ -34,7 +34,7 @@
         "offline":"Použitelné offline",
         "available":"Dostupnost"
       },
-      "open":"Otevřené aplikace v"
+      "open":"Otevírat aplikace v"
     },
     "store_app":"Obchod"
   },
@@ -48,7 +48,7 @@
         "single":"Jeden sloupec",
         "double":"Dva sloupce"
       },
-      "open":"Otevři záložky v"
+      "open":"Otevřít záložky v"
     },
     "edit":{
       "dialog_title":"Upravit záložku",
@@ -56,7 +56,7 @@
       "title_placeholder":"Google",
       "url":"URL záložky",
       "url_placeholder":"http:\/\/www.google.com\/",
-      "save":"Ulož"
+      "save":"Uložit"
     },
     "new_caption":"Nový",
     "new_bookmark":"Záložka",
@@ -65,10 +65,10 @@
   },
   "chrome_bookmarks":{
     "name":"Záložky",
-    "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
+    "desc":"Zobrazí Vaše záložky z Chrome, volitelně z určité složky.",
     "settings":{
       "title_placeholder":"Zadejte název widgetu",
-      "from":"Show bookmarks from",
+      "from":"Zobrazit záložky z",
       "open":"Otevři záložky v"
     }
   },
@@ -85,18 +85,18 @@
     "settings":{
       "calendar":"Kalendář",
       "events":"Zobrazené události",
-      "show":"Show events from",
+      "show":"Zobrazit události z",
       "show_options":{
-        "all":"All time",
-        "today":"Today only"
+        "all":"Kdykoli",
+        "today":"Pouze dnes"
       }
     },
     "title":"Můj kalendář",
     "noevents":"Nevypadá to, že existují nějaké události v blízké budoucnosti. <br \/><br \/> Vyberte kalendář přes ikonu klíče v pravém horním rohu."
   },
   "clock":{
-    "name":"Datum & čas",
-    "desc":"Zobrazuje aktuální datum a čas. Volitelně pro jiné časové pásmo.",
+    "name":"Hodiny",
+    "desc":"Offers alarm, time, timer, and stopwatch functionality.",
     "settings":{
       "timezone":"Časové pásmo",
       "timezone_local":"Místní",
@@ -107,9 +107,18 @@
         "analog":"12 hodinové - analogové",
         "ampmseconds":"DOP\/ODP - Digitální, bez sekund",
         "24hourseconds":"24 hodin -  - Digitální, bez sekund"
-      }
+      },
+      "sound":"Alert Sound"
     },
-    "title":"Hodiny"
+    "title":"Hodiny",
+    "alarm":"Alarm",
+    "clock":"Hodiny",
+    "timer":"Timer",
+    "stopwatch":"Stopwatch",
+    "set":"Set",
+    "unset":"Unset",
+    "dismiss":"Dismiss",
+    "enable_audio":"Enable audio"
   },
   "currency":{
     "name":"Měna",
@@ -174,7 +183,7 @@
     "desc":"Zobrazí webovou stránku dle vašeho výběru v rámci objektu iframe.",
     "settings":{
       "url":"URL rámečku",
-      "url_placeholder":"tj. http:\/\/www.google.com\/",
+      "url_placeholder":"např. http:\/\/www.google.com\/",
       "height":"Výška rámečku",
       "padding":"Odsazení"
     }
@@ -229,7 +238,7 @@
     }
   },
   "now":{
-    "name":"Google nyní",
+    "name":"Google Now",
     "desc":"Zobrazí karty z Google Now včetně letového provozu a sledování zásilek.",
     "authorize":"Budete muset dát iChrome oprávnění k zobrazení karet Google Now dříve, než se tady něco objeví.",
     "authorize_btn":"Povolit",
@@ -237,12 +246,12 @@
     "no_title":"Bez názvu"
   },
   "plus":{
-    "name":"Google +",
+    "name":"Google+",
     "desc":"Vloží Google Plus widget"
   },
   "notifications":{
-    "name":"Google Notifications",
-    "desc":"Displays your Google Notifications from services such as Google+"
+    "name":"upozornění Google",
+    "desc":"Zobrazuje Vaše upozornění Google ze služeb jako Google+"
   },
   "recentlyclosed":{
     "name":"Nedávno zavřené",
@@ -348,26 +357,26 @@
     "important":"Důležité"
   },
   "tasks":{
-    "name":"Tasks",
-    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
-    "title":"Tasks",
+    "name":"Úkoly",
+    "desc":"Zobrazuje upravitelný list úkolů z jednoho Vašeho listu Google Tasks.",
+    "title":"Úkoly",
     "settings":{
       "list":"seznam"
     },
-    "task_title":"Title",
-    "due_date":"Due date",
+    "task_title":"Nadpis",
+    "due_date":"Datum konce",
     "notes":"Poznámky",
     "add":"Přidat položku",
-    "delete_task":"Delete Task",
-    "move_up":"Move Up",
-    "move_down":"Move Down",
-    "done":"Done",
-    "due_today":"Due today",
-    "overdue":"Overdue",
-    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
+    "delete_task":"Odstranit úkol",
+    "move_up":"Posunout nahoru",
+    "move_down":"Posunout dolu",
+    "done":"Hotovo",
+    "due_today":"Končící dnes",
+    "overdue":"Po konci",
+    "authorize":"Před tím, než zde může být cokoliv zobrazeno, v nastavení musíte vybrat list z  Vašeho Google Tasks."
   },
   "topsites":{
-    "name":"Weby na nejvyšší úrovni",
+    "name":"Oblíbené weby",
     "desc":"Zobrazí vaše nejnavštěvovanější stránky.",
     "settings":{
       "show":"Počet zobrazovaných stránek",
@@ -480,25 +489,72 @@
     "num_views":"zhlédnutí"
   },
   "quotes":{
-    "name":"Quotes",
-    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "name":"Nabídky",
+    "desc":"Zobrazí nabídku buď při každém načtení stránky, nebo jednou denně.",
     "settings":{
-      "source":"Source",
-      "method":"Load new quotes",
+      "source":"Zdroj",
+      "method":"Nahrát nové nabídky",
       "method_options":{
-        "daily":"Once daily",
-        "random":"Every time I load the page"
+        "daily":"Jednou za den",
+        "random":"Pokaždé, když načtu stránku"
       }
     },
     "unknown_author":"Neznámý"
   },
   "html":{
     "name":"HTML",
-    "desc":"Displays completely custom HTML in an iframe.",
+    "desc":"Zobrazuje Váš HTML kód v iFramu.",
     "settings":{
       "html":"HTML",
       "js":"JavaScript",
       "height":"Výška widgetu"
+    }
+  },
+  "sitelink":{
+    "name":"Site Link",
+    "desc":"Displays a link, optionally with a title and thumbnail",
+    "settings":{
+      "link":"Link URL",
+      "link_placeholder":"http:\/\/www.google.com\/",
+      "image":"URL adresa obrázku",
+      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "color":"Image Background Color",
+      "style":"Image Style",
+      "style_fill":"Fill",
+      "style_center":"Uprostřed"
+    }
+  },
+  "stats":{
+    "name":"System Statistics",
+    "desc":"Keep an eye on your system with realtime statistics",
+    "memory":"Memory",
+    "battery":"Battery",
+    "usage":"usage",
+    "in_use":"in use",
+    "remaining":"remaining",
+    "charged":"Fully Charged",
+    "idle":"Idle",
+    "charging":"Charging",
+    "discharging":"Discharging"
+  },
+  "search":{
+    "name":"Hledat",
+    "desc":"Embed a search box in your page for easy access",
+    "settings":{
+      "placeholder":"Search Field Placeholder",
+      "search_url":"Hledat URL",
+      "param":"Query Parameter",
+      "param_placeholder":"The parameter where the query goes, i.e. \"q\""
+    },
+    "default_placeholder":"Search Google"
+  },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
     }
   }
 }

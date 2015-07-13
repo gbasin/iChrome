@@ -11,7 +11,7 @@ define(["lodash", "hogan", "core/status", "i18n/i18n", "core/templates"], functi
 
 		// Partials don't work with precompiled templates
 		if (!compiled || partials) {
-			if (raw[template]) {
+			if (typeof raw[template] !== "undefined") {
 				try {
 					compiled = cache[template] = Hogan.compile(raw[template]);
 				}

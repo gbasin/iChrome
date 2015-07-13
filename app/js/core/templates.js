@@ -9,7 +9,7 @@ var templates = [
 		"getting-started",		"donate",				"translate-request",
 		"settings",				"menu",					"settings/new-tab",
 		"settings/general",		"settings/visual",		"settings/advanced",
-		"settings/tab-specific","widget-settings.inputs",
+		"settings/tab-specific","widget-settings.inputs","settings/debug",
 
 		"widgets.weather",				"widgets.weather.desc",
 		"widgets.stocks",				"widgets.stocks.desc",
@@ -47,7 +47,11 @@ var templates = [
 		"widgets.recentlyclosed",		"widgets.recentlyclosed.desc",
 		"widgets.quotes",				"widgets.quotes.desc",
 		"widgets.html",					"widgets.html.desc",
-		"widgets.notifications",		"widgets.notifications.desc"
+		"widgets.notifications",		"widgets.notifications.desc",
+		"widgets.sitelink",				"widgets.sitelink.desc",
+		"widgets.stats",				"widgets.stats.desc",
+		"widgets.search",				"widgets.search.desc",
+		"widgets.classroom",			"widgets.classroom.desc"
 	],
 	deps = [];
 

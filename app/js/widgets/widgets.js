@@ -3,7 +3,8 @@
  */
 define([
 	"lodash", "widgets/utils",
-	// These have to be w/ so r.js inlines them
+
+	// These have to be w/ so r.js can inline them
 	"w/analytics",	"w/apps",			"w/bookmarks",
 	"w/calc",		"w/calendar",		"w/clock",
 	"w/currency",	"w/drive",			"w/facebook",
@@ -16,7 +17,8 @@ define([
 	"w/voice",		"w/weather",		"w/wolfram",
 	"w/youtube",	"w/recentlyclosed",	"w/chrome_bookmarks",
 	"w/tasks",		"w/quotes",			"w/html",
-	"w/notifications",
+	"w/notifications",	"w/sitelink",	"w/stats",
+	"w/search",		"w/classroom",
 
 	"lib/jquery.numberformatter", "lib/jquery.sortable"
 ], function(_, Utils) {

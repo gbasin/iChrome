@@ -95,8 +95,8 @@
     "noevents":"Het lijkt dat er geen evenementen in de nabije toekomst zijn.\n<br \/><br\/>\nProbeer een agenda te selecteren via het moersleutelpictogram in de rechterbovenhoek."
   },
   "clock":{
-    "name":"Tijd & datum",
-    "desc":"Geeft de huidige datum en tijd weer. Mogelijk voor een andere tijdzone.",
+    "name":"Klok",
+    "desc":"Offers alarm, time, timer, and stopwatch functionality.",
     "settings":{
       "timezone":"Tijdzone",
       "timezone_local":"Lokaal",
@@ -107,9 +107,18 @@
         "analog":"12-uurs - Analoog",
         "ampmseconds":"AM\/PM - Digitaal, geen Seconden",
         "24hourseconds":"24-uurs - Digitaal, geen Seconden"
-      }
+      },
+      "sound":"Alert Sound"
     },
-    "title":"Klok"
+    "title":"Klok",
+    "alarm":"Alarm",
+    "clock":"Klok",
+    "timer":"Timer",
+    "stopwatch":"Stopwatch",
+    "set":"Set",
+    "unset":"Unset",
+    "dismiss":"Dismiss",
+    "enable_audio":"Enable audio"
   },
   "currency":{
     "name":"Munteenheid",
@@ -499,6 +508,53 @@
       "html":"HTML",
       "js":"JavaScript",
       "height":"Widget hoogte"
+    }
+  },
+  "sitelink":{
+    "name":"Site Link",
+    "desc":"Displays a link, optionally with a title and thumbnail",
+    "settings":{
+      "link":"Link URL",
+      "link_placeholder":"http:\/\/www.google.com\/",
+      "image":"Afbeelding-URL",
+      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "color":"Image Background Color",
+      "style":"Image Style",
+      "style_fill":"Fill",
+      "style_center":"Gecentreerd"
+    }
+  },
+  "stats":{
+    "name":"System Statistics",
+    "desc":"Keep an eye on your system with realtime statistics",
+    "memory":"Memory",
+    "battery":"Battery",
+    "usage":"usage",
+    "in_use":"in use",
+    "remaining":"remaining",
+    "charged":"Fully Charged",
+    "idle":"Idle",
+    "charging":"Charging",
+    "discharging":"Discharging"
+  },
+  "search":{
+    "name":"Zoeken",
+    "desc":"Embed a search box in your page for easy access",
+    "settings":{
+      "placeholder":"Search Field Placeholder",
+      "search_url":"Zoek-URL",
+      "param":"Query Parameter",
+      "param_placeholder":"The parameter where the query goes, i.e. \"q\""
+    },
+    "default_placeholder":"Search Google"
+  },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
     }
   }
 }

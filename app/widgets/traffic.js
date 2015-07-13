@@ -120,7 +120,9 @@ define(["jquery", "moment"], function($, moment) {
 			}
 
 			var data = {
-				dest: this.utils.translate("to_" + dest)
+				dest: this.utils.translate("to_" + dest),
+				toEnc: encodeURIComponent(this.config[dest]),
+				fromEnc: encodeURIComponent(this.config[dest == "work" ? "home" : "work"])
 			};
 
 			var time = moment.duration(this.data[dest] || 0, "seconds"),
@@ -158,7 +160,9 @@ define(["jquery", "moment"], function($, moment) {
 
 			this.utils.render(data);
 
-			this.elm.off("click.traffic").on("click.traffic", ".time, .dest", function() {
+			this.elm.off("click.traffic").on("click.traffic", ".dest", function(e) {
+				e.preventDefault();
+
 				if (this.elm.find(".dest").text().trim() == this.utils.translate("to_work")) {
 					this.render("home");
 				}

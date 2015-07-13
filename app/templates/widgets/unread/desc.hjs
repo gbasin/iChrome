@@ -1,16 +1,3 @@
-The Unread widget displays the current number of unread emails in your Gmail inbox.<br />
+Use this widget to keep track of your unread emails in Gmail.<br />
 <br />
-<b>Please note that this widget can't pull an unread message count from your inbox if you aren't signed in.</b><br />
-<br />
-No setup is required for this widget, however you can follow these steps to select an alternate email account:<br />
-<br />
-<ol>
-	<li>Install the widget in your preferred size</li>
-	<li>Hover over the widget and click the settings icon that appears</li>
-	<li>Enter an account ID (an explanation is available under the question mark icon)</li>
-	<li>Click "Save"</li>
-</ol>
-Variations:<br />
-<br />
-Tiny: Displays the current number of unread messages in your Gmail account in a compressed format.<br />
-Small: Displays the current number of unread messages in your Gmail account in an expanded format.
+Please note that you'll need to be signed in for this widget to get your unread messages.

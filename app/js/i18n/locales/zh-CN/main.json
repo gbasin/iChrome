@@ -145,7 +145,9 @@
       "css":"自定义 CSS",
       "css_desc":"您可以使用此功能自定义CSS （有关指引请见 <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\"target=\"_blank\"> MDN<\/a>） 以自由改变 iChrome 几乎所有可视的部分。<br\/><br\/> 因为此选项将会同步而同步有空间限制的缘故，您最多只能输入包括空格在内的1000个字符。",
       "reset":"重置 iChrome",
-      "reset_confirm":"是否真的要重置 iChrome？这将清除所有的本地和同步的数据，没有备份也无法撤消该操作。您将丢失您所有同步此谷歌帐户计算机上的当前配置。"
+      "reset_confirm":"是否真的要重置 iChrome？这将清除所有的本地和同步的数据，没有备份也无法撤消该操作。您将丢失您所有同步此谷歌帐户计算机上的当前配置。",
+      "debug":"Debug Tools",
+      "debug_confirm":"WARNING: These tools can erase your configuration in a single click, only use them if your developer instructs you to.\r\nAre you sure you want to continue?"
     }
   },
   "store":{

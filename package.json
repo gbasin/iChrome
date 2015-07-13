@@ -8,7 +8,7 @@
     "url": "https://github.com/AMKohn/iChrome.git"
   },
   "author": "Avi Kohn",
-  "license": "Creative Commons Attribution-ShareAlike 3.0 Unported",
+  "license": "CC-BY-SA-3.0",
   "bugs": {
     "url": "https://github.com/AMKohn/iChrome/issues"
   },
@@ -24,7 +24,7 @@
     "grunt-hogan": "^0.3.0",
     "grunt-string-replace": "^1.0.0",
     "hogan.js": "^3.0.2",
-    "jshint-stylish": "^1.0.1",
+    "jshint-stylish": "^2.0.0",
     "lodash": "^3.3.1"
   }
 }

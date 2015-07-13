@@ -145,7 +145,9 @@
       "css":"Custom CSS",
       "css_desc":"You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.",
       "reset":"Reset iChrome",
-      "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers signed into this Google account."
+      "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers signed into this Google account.",
+      "debug":"Debug Tools",
+      "debug_confirm":"WARNING: These tools can erase your configuration in a single click, only use them if your developer instructs you to.\r\nAre you sure you want to continue?"
     }
   },
   "store":{

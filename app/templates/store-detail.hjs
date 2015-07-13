@@ -1,21 +1,27 @@
-<h3 class="title">{{name}}</h3>
+<h2 class="title">{{name}}</h2>
 
-<div class="desc-container">
-	<h4>{{i18n.store.installation}} <span class="legend">{{i18n.store.instructions}}</span></h4>
+<div class="content">
+	<section class="installation">
+		<h3>{{i18n.store.installation}} <span class="legend">{{i18n.store.instructions}}</span></h3>
 
-	{{#sizes}}
-		<section class="handle" data-size="{{0}}">{{1}}</section>
-	{{/sizes}}
+		<div class="sizes">
+			{{#sizes}}
+				<section class="handle" data-size="{{0}}">{{1}}</section>
+			{{/sizes}}
+		</div>
+	</section>
 
-	<h4>{{i18n.store.description}}</h4>
+	{{#desc}}
+		<section class="description">
+			<h3>{{i18n.store.description}}</h3>
 
-	<div class="desc">
-		{{{desc}}}
-	</div>
-</div>
+			<div class="desc">
+				{{{desc}}}
+			</div>
+		</section>
+	{{/desc}}
 
-<div class="preview-container">
-	<h4>{{i18n.store.preview}}</h4>
-
-	<div class="preview"></div>
+	<section class="preview">
+		<h3>{{i18n.store.preview}}</h3>
+	</section>
 </div>

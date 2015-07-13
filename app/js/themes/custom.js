@@ -204,22 +204,16 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 			 * @api    public
 			 */
 			destroy: function() {
-				this.remove();
-
-				this.modal.destroy();
+				// modal.hide() triggers a destroy which in turn calls this.remove();
+				this.modal.hide();
 			},
 
 
 			constructor: function() {
 				this.modal = new (Modal.extend({
-					classes: "themes create",
-
-					close: function() {
-						this.modal.hide();
-
-						setTimeout(this.destroy.bind(this), 400);
-					}.bind(this)
-				}))();
+					destroyOnHide: true,
+					classes: "themes create"
+				}))().on("destroy", this.remove, this);
 
 				return Backbone.View.apply(this, arguments);
 			},
@@ -240,6 +234,12 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 				this.modal.mo.appendTo(document.body);
 
 				requestAnimationFrame(this.modal.show.bind(this.modal));
+			},
+
+			remove: function() {
+				this.$("#color").spectrum("destroy");
+				
+				Backbone.View.prototype.remove.call(this);
 			},
 
 			render: function() {

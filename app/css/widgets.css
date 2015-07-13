@@ -954,6 +954,31 @@
 /*---------------------------------------------
 	/ Clock
 */
+.widget.clock {
+	font-family: Roboto, sans-serif;
+}
+
+.widget.clock.small {
+	background: #FAFAFA;
+}
+
+.clock .section {
+	padding: 15px;
+	position: absolute;
+	margin: 0 -15px -15px;
+	transform: translateX(-100%);
+	transition: transform .2s ease-in-out;
+}
+
+.clock .section.active {
+	position: static;
+	transform: translateX(0);
+}
+
+.clock .section.active ~ .section {
+	transform: translateX(100%);
+}
+
 .clock .time {
 	color: #555;
 	font-size: 85px;
@@ -961,6 +986,23 @@
 	text-align: center;
 	line-height: 115px;
 	font-family: Open Sans, sans-serif;
+}
+
+.clock input:not([type="checkbox"]) {
+	border-radius: 0;
+	border-width: 0 0 1px 0!important;
+}
+
+.clock input.time {
+	width: 100%;
+	font-size: 80px;
+	border-radius: 0;
+	border: 0!important;
+	padding: 0 0 5px!important;
+}
+
+.clock input.date {
+	font-size: 16px;
 }
 
 .clock .time:after {
@@ -980,15 +1022,196 @@
 
 .clock .time.no-seconds {
 	font-size: 120px;
-	line-height: 150px;
+	line-height: 115px;
 }
 
 .clock .date {
 	color: #428BCA;
 	font-size: 18px;
-	margin-top: 10px;
+	margin-top: 20px;
 	text-align: center;
 }
+
+.clock .controls {
+	display: flex;
+	margin-top: 15px;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+
+.clock .controls button.material {
+	margin: 0;
+}
+
+.clock .controls button.material.toggle {
+	margin: -6px 4px;
+}
+
+.clock .controls button.material.toggle:first-child {
+	margin-left: -6px;
+}
+
+.clock .start-stop.started #start,
+.clock .start-stop:not(.started) #stop {
+	display: none;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Clock / Header
+*/
+.clock header.tabs {
+	height: 44px;
+	display: flex;
+	background: #FFF;
+	margin: -15px -15px 0;
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.clock .tabs .item {
+	flex: 1 25%;
+	padding: 10px 0;
+	cursor: pointer;
+	text-align: center;
+}
+
+.clock .tabs svg {
+	width: 22px;
+	height: 22px;
+	fill: #757575;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.clock .tabs .item:hover svg {
+	fill: #444;
+}
+
+.clock .tabs .item.active svg {
+	opacity: 1;
+	fill: #2196F3;
+}
+
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Clock / Clock
+*/
+.clock .section.clock {
+	padding-top: 25px;
+}
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Clock / Alarm
+*/
+.clock .alarm.running input.time,
+.clock .alarm:not(.running) div.time {
+	display: none;
+}
+
+.clock .alarm input.time {
+	padding: 3px 0 3px!important;
+}
+
+.clock .alarm .date {
+	color: #333;
+	flex: 0 145px;
+	margin-top: 0;
+	border: 0!important;
+	padding: 0!important;
+}
+
+.clock .alarm .audio {
+	margin-left: 5px;
+	font-weight: 500;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Clock / Timer
+*/
+.clock .timer .controls {
+	margin-top: 10px;
+}
+
+.clock .timer.running input.time,
+.clock .timer:not(.running) div.time {
+	display: none;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Clock / Alert
+*/
+.clock .alert {
+	left: 0;
+	right: 0;
+	top: 100%;
+	margin: 0;
+	border: 0;
+	bottom: 0;
+	z-index: 1;
+	color: #FFF;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	border-radius: 0;
+	position: absolute;
+	text-align: center;
+	background: #FB8C00;
+	flex-flow: row wrap;
+	align-content: space-around;
+	transition: top .2s ease-in-out;
+}
+
+.clock .alert.visible {
+	top: 0;
+}
+
+.clock .alert > * {
+	flex-basis: 100%;
+}
+
+.clock .alert h3 {
+	font-weight: 300;
+	font-family: inherit;
+}
+
+.clock .alert .time,
+.clock .alert button.flat {
+	color: inherit;
+}
+
+.clock .alert .time {
+	margin: 0;
+}
+
+
 
 
 
@@ -1230,6 +1453,11 @@
 */
 .widget.traffic {
 	cursor: pointer;
+}
+
+.widget.traffic a {
+	color: inherit;
+	text-decoration: none;
 }
 
 .widget.traffic .dest {
@@ -2621,13 +2849,15 @@ body.no-edit .bookmarks .tools {
 
 
 /*---------------------------------------------
-	/ iFrame, HTML, Keep, Plus and Facebook shared
+	/ iframe widgets shared
 */
 .widget.html,
 .widget.keep,
 .widget.plus,
+.widget.gmail,
 .widget.iframe,
 .widget.facebook,
+.widget.classroom,
 .widget.notifications {
 	padding: 0!important;
 }
@@ -2635,8 +2865,10 @@ body.no-edit .bookmarks .tools {
 .html iframe,
 .keep iframe,
 .plus iframe,
+.gmail iframe,
 .iframe iframe,
 .facebook iframe,
+.classroom iframe,
 .notifications iframe {
 	width: 100%;
 	height: 100%;
@@ -2650,7 +2882,7 @@ body.no-edit .bookmarks .tools {
 	/ Now
 */
 .widgets-container .widget.now,
-.preview-container .widget.now {
+.store-detail .preview .widget.now {
 	padding: 0!important;
 	border: none!important;
 	box-shadow: none!important;
@@ -2808,22 +3040,6 @@ body.no-edit .bookmarks .tools {
 .now .authorize .btn {
 	margin: 15px 0;
 	width: calc(100% - 35px);
-}
-
-
-
-
-
-/*---------------------------------------------
-	/ Gmail
-*/
-.widget.gmail {
-	padding: 0!important;
-}
-
-.gmail iframe {
-	width: 100%;
-	height: 100%;
 }
 
 
@@ -3375,4 +3591,196 @@ body.no-edit .bookmarks .tools {
 
 .quotes footer .refresh:hover svg {
 	fill: #222;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Site Link
+*/
+.widget.sitelink {
+	padding: 0!important;
+	border-radius: 4px 4px 2px 2px;
+}
+
+.sitelink a {
+	display: block;
+	text-decoration: none;
+}
+.widget.sitelink h2.header {
+	margin: 0;
+	padding: 12px;
+}
+
+.sitelink .thumbnail {
+	display: block;
+	overflow: hidden;
+	position: relative;
+	background: #F8F8F8;
+	padding-bottom: 65%;
+	border-radius: 4px 4px 0 0;
+	box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+}
+
+.sitelink .thumbnail:not(.fill) {
+	background-image: none!important;
+}
+
+.sitelink .thumbnail img {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	max-width: 100%;
+	max-height: 100%;
+	position: absolute;
+}
+
+.sitelink .thumbnail.fill {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.sitelink .thumbnail.fill img {
+	display: none;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ System Stats
+*/
+.stats {
+	font-family: Roboto, sans-serif;
+}
+
+.stats .header {
+	margin-bottom: 15px;
+}
+
+.stats .cpu,
+.stats .memory {
+	margin-bottom: 20px;
+}
+
+.stats .label {
+	width: 60px;
+	padding-right: 5px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.stats h3 {
+	font-size: 13px;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 5px;
+	font-family: inherit;
+}
+
+.stats .icon {
+	width: 100%;
+	opacity: .6;
+	height: 36px;
+	display: inline-block;
+}
+
+.stats .status {
+	display: inline-block;
+	vertical-align: middle;
+	width: calc(100% - 65px);
+}
+
+.stats .name,
+.stats .summary {
+	font-size: 13px;
+	margin-bottom: 2px;
+}
+
+.stats progress {
+	width: auto;
+	height: 6px;
+	margin: 6px 0;
+	display: block;
+	overflow: hidden;
+	border-radius: 2px;
+	-webkit-appearance: none;
+}
+
+.stats progress::-webkit-progress-value {
+	background: #2196F3;
+	transition: width .5s ease;
+}
+
+.stats progress::-webkit-progress-bar {
+	background: #BBDEFB;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Search
+*/
+.widget.search form {
+	height: 50px;
+	margin: -15px;
+	position: relative;
+}
+
+.widget.search .searchbox {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	border-radius: 0;
+	position: absolute;
+	border: 0!important;
+	font-family: Roboto;
+	padding: 6px 18px!important;
+}
+
+.widget.search .searchbox:focus,
+.widget.search .searchbox:active {
+	background: rgba(0, 0, 0, .015)!important;
+}
+
+.widget.search button.submit {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	border-radius: 0;
+	position: absolute;
+}
+
+.widget.search.tiny form {
+	height: 65px;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Classroom
+*/
+.widget.classroom {
+	height: 450px;
 }

@@ -1,7 +1,7 @@
 /**
  * This is the Advanced tab in the settings
  */
-define(["jquery", "backbone", "storage/storage", "i18n/i18n", "core/render", "lib/jquery.spectrum"], function($, Backbone, Storage, Translate, render) {
+define(["jquery", "backbone", "settings/debug", "storage/storage", "i18n/i18n", "core/render", "lib/jquery.spectrum"], function($, Backbone, Debug, Storage, Translate, render) {
 	var Model = Backbone.Model.extend({
 			save: function(d, cb) {
 				if (d.tabs)		this.storage.tabs = d.tabs;
@@ -32,7 +32,18 @@ define(["jquery", "backbone", "storage/storage", "i18n/i18n", "core/render", "li
 					}));
 				},
 				"click .btn.restore": "restore",
-				"click .reset": "reset"
+				"click .reset": "reset",
+				"click .debug" :"debug"
+			},
+			debug: function(e) {
+				if (confirm(Translate("settings.advanced.debug_confirm"))) {
+					if (!this.Debug) {
+						this.Debug = new Debug();
+					}
+					else {
+						this.Debug.show();
+					}
+				}
 			},
 			restore: function(e) {
 				e.preventDefault();
@@ -74,7 +85,14 @@ define(["jquery", "backbone", "storage/storage", "i18n/i18n", "core/render", "li
 
 				this.model.on("change", this.render, this).init();
 			},
+			remove: function() {
+				this.$("input.color").spectrum("destroy");
+				
+				Backbone.View.prototype.remove.call(this);
+			},
 			render: function() {
+				this.$("input.color").spectrum("destroy");
+
 				this.$el
 					.html(render("settings/advanced", this.model.get("settings")))
 					.find("input.color").spectrum({

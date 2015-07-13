@@ -16,6 +16,7 @@ define(
 		var modal = Modal.extend({
 			width: 400,
 			height: 535,
+			destroyOnHide: true,
 			classes: "widget-settings"
 		});
 		
@@ -39,6 +40,20 @@ define(
 				elm.html(render("widget-settings.inputs", {
 					"input-textarea": _.pick(input, "nicename", "label", "value", "help", "placeholder")
 				}));
+			},
+			color: function(input, elm) {
+				input.value = _.result(input, "value");
+
+				elm.html(render("widget-settings.inputs", {
+					"input-color": _.pick(input, "nicename", "label", "value", "help")
+				})).find("input.color").spectrum({
+					showInput: true,
+					showAlpha: true,
+					showInitial: true,
+					showButtons: false,
+					preferredFormat: "rgb",
+					clickoutFiresChange: true
+				});
 			},
 			select: function(input, elm, widget, form) {
 				var loop = function(options, level) {
@@ -408,8 +423,6 @@ define(
 			},
 
 			show: function() {
-				this.render();
-
 				this.modal.show();
 
 				Track.pageview("/widget/" + this.widget.nicename + "/settings");
@@ -418,6 +431,10 @@ define(
 			constructor: function() {
 				this.modal = new modal();
 
+				this.modal.on("destroy", function() {
+					this.$("input.color").spectrum("destroy");
+				}, this);
+
 				this.modal.mo.appendTo(document.body);
 
 				return Backbone.View.apply(this, arguments);
@@ -425,6 +442,10 @@ define(
 
 			initialize: function(opts) {
 				this.widget = opts.widget;
+
+				this.render();
+
+				requestAnimationFrame(this.show.bind(this));
 			},
 
 

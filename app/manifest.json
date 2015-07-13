@@ -17,6 +17,12 @@
 			"all_frames": true
 		},
 		{
+			"js": [ "inject/js/classroom.js" ],
+			"matches": [ "https://classroom.google.com/*" ],
+			"run_at": "document_start",
+			"all_frames": true
+		},
+		{
 			"js": [ "inject/js/facebook.js" ],
 			"matches": [ "https://m.facebook.com/*" ],
 			"run_at": "document_start",
@@ -50,6 +56,9 @@
 		"http://*/",
 		"https://*/",
 		"webRequest",
+		"system.cpu",
+		"system.memory",
+		"system.storage",
 		"unlimitedStorage",
 		"chrome://favicon/",
 		"webRequestBlocking"
@@ -59,7 +68,7 @@
 		"bookmarks",
 		"management"
 	],
-	"version": "2.1.18",
+	"version": "2.1.19",
 	"manifest_version": 2,
 	"default_locale": "en",
 	"short_name": "iChrome",

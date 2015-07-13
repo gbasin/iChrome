@@ -95,8 +95,8 @@
     "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
   },
   "clock":{
-    "name":"সময় ও তারিখ",
-    "desc":"বর্তমান তারিখ এবং সময় প্রদর্শন করে। বিভিন্ন সময় অঞ্চল জন্য বিকল্পনীয়।",
+    "name":"ঘড়ি",
+    "desc":"Offers alarm, time, timer, and stopwatch functionality.",
     "settings":{
       "timezone":"সময় অঞ্চল",
       "timezone_local":"স্থানীয়",
@@ -107,9 +107,18 @@
         "analog":"১২ ঘণ্টা - এনালগ",
         "ampmseconds":"পুর্বাহ্ন\/অপরাহ্ন - ডিজিটাল, সেকেন্ডবিহীন",
         "24hourseconds":"২৪ ঘণ্টা - ডিজিটাল, সেকেন্ডবিহীন"
-      }
+      },
+      "sound":"Alert Sound"
     },
-    "title":"ঘড়ি"
+    "title":"ঘড়ি",
+    "alarm":"Alarm",
+    "clock":"ঘড়ি",
+    "timer":"Timer",
+    "stopwatch":"Stopwatch",
+    "set":"Set",
+    "unset":"Unset",
+    "dismiss":"Dismiss",
+    "enable_audio":"Enable audio"
   },
   "currency":{
     "name":"মুদ্রা",
@@ -499,6 +508,53 @@
       "html":"HTML",
       "js":"JavaScript",
       "height":"উইজেটের উচ্চতা"
+    }
+  },
+  "sitelink":{
+    "name":"Site Link",
+    "desc":"Displays a link, optionally with a title and thumbnail",
+    "settings":{
+      "link":"Link URL",
+      "link_placeholder":"http:\/\/www.google.com.bd\/",
+      "image":"চিত্রের URL",
+      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "color":"Image Background Color",
+      "style":"Image Style",
+      "style_fill":"Fill",
+      "style_center":"কেন্দ্রে"
+    }
+  },
+  "stats":{
+    "name":"System Statistics",
+    "desc":"Keep an eye on your system with realtime statistics",
+    "memory":"Memory",
+    "battery":"Battery",
+    "usage":"usage",
+    "in_use":"in use",
+    "remaining":"remaining",
+    "charged":"Fully Charged",
+    "idle":"Idle",
+    "charging":"Charging",
+    "discharging":"Discharging"
+  },
+  "search":{
+    "name":"অনুসন্ধান",
+    "desc":"Embed a search box in your page for easy access",
+    "settings":{
+      "placeholder":"Search Field Placeholder",
+      "search_url":"URL অনুসন্ধান",
+      "param":"Query Parameter",
+      "param_placeholder":"The parameter where the query goes, i.e. \"q\""
+    },
+    "default_placeholder":"Search Google"
+  },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
     }
   }
 }

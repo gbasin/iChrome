@@ -1,0 +1,53 @@
+<h2 class="header">{{i18n.name}}</h2>
+
+<div class="section cpu">
+	<div class="label">
+		<h3 class="title">CPU</h3>
+
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="icon">
+			<path d="M40 4.17H8c-2.21 0-4 1.79-4 4v32c0 2.21 1.79 4 4 4h32c2.21 0 4-1.79 4-4v-32c0-2.21-1.79-4-4-4zm0 36H8v-32h32v32zm-4-28H26c-2.21 0-4 1.79-4 4v4.55c-1.19.69-2 1.97-2 3.45 0 2.21 1.79 4 4 4s4-1.79 4-4c0-1.48-.81-2.75-2-3.45v-4.55h6v16H16v-16h4v-4h-8v24h24v-24z"/>
+		</svg>
+	</div>
+
+	<div class="status">
+		<p class="name">{{cpu.name}}</p>
+
+		<p class="summary"><span class="usage">{{cpu.usage}}</span>% {{i18n.usage}}</p>
+
+		{{#cpu.cores}}
+			<progress value="{{.}}" max="100"></progress>
+		{{/cpu.cores}}
+	</div>
+</div>
+
+<div class="section memory">
+	<div class="label">
+		<h3 class="title">{{i18n.memory}}</h3>
+
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="icon">
+			<path d="M4 40h40v-8H4v8zm4-6h4v4H8v-4zM4 8v8h40V8H4zm8 6H8v-4h4v4zM4 28h40v-8H4v8zm4-6h4v4H8v-4z"/>
+		</svg>
+	</div>
+
+	<div class="status">
+		<p class="summary">{{ram.usage}} / {{ram.total}} {{i18n.in_use}}</p>
+
+		<progress value="{{ram.usagePercent}}" max="100"></progress>
+	</div>
+</div>
+
+<div class="section battery">
+	<div class="label">
+		<h3 class="title">{{i18n.battery}}</h3>
+
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="icon">
+			<path d="M31.33 8H28V4h-8v4h-3.33C15.19 8 14 9.19 14 10.67v30.67c0 1.47 1.19 2.67 2.67 2.67h14.67c1.47 0 2.67-1.19 2.67-2.67V10.67C34 9.19 32.81 8 31.33 8z"/>
+		</svg>
+	</div>
+
+	<div class="status">
+		<p class="summary">{{battery.status}} ({{battery.percent}}%{{#battery.remaining}}, {{battery.remaining}} {{i18n.remaining}}{{/battery.remaining}})</p>
+
+		<progress value="{{battery.percent}}" max="100"></progress>
+	</div>
+</div>

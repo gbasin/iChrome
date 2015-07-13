@@ -95,8 +95,8 @@
     "noevents":"Изгледа да немаш догађаје у блиској будућности.\n<br \/><br \/>\nПробај да одабереш календар уз помоћ кључа у горњем десном углу."
   },
   "clock":{
-    "name":"Време и Датум",
-    "desc":"Прикажи тренутни датум и време. По избору за различиту временску зону.",
+    "name":"Сат",
+    "desc":"Offers alarm, time, timer, and stopwatch functionality.",
     "settings":{
       "timezone":"Временска зона",
       "timezone_local":"Локално",
@@ -107,9 +107,18 @@
         "analog":"12 сати - Аналогни",
         "ampmseconds":"Пре подне\/После подне - Дигитални, Без Секунди",
         "24hourseconds":"24 Часовни - Дигитални, Без Секунди"
-      }
+      },
+      "sound":"Alert Sound"
     },
-    "title":"Сат"
+    "title":"Сат",
+    "alarm":"Alarm",
+    "clock":"Сат",
+    "timer":"Timer",
+    "stopwatch":"Stopwatch",
+    "set":"Set",
+    "unset":"Unset",
+    "dismiss":"Dismiss",
+    "enable_audio":"Enable audio"
   },
   "currency":{
     "name":"Валута",
@@ -499,6 +508,53 @@
       "html":"HTML",
       "js":"JavaScript",
       "height":"Висина додатка"
+    }
+  },
+  "sitelink":{
+    "name":"Site Link",
+    "desc":"Displays a link, optionally with a title and thumbnail",
+    "settings":{
+      "link":"Link URL",
+      "link_placeholder":"http:\/\/www.google.com\/",
+      "image":"УРЛ слике",
+      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "color":"Image Background Color",
+      "style":"Image Style",
+      "style_fill":"Fill",
+      "style_center":"Средина"
+    }
+  },
+  "stats":{
+    "name":"System Statistics",
+    "desc":"Keep an eye on your system with realtime statistics",
+    "memory":"Memory",
+    "battery":"Battery",
+    "usage":"usage",
+    "in_use":"in use",
+    "remaining":"remaining",
+    "charged":"Fully Charged",
+    "idle":"Idle",
+    "charging":"Charging",
+    "discharging":"Discharging"
+  },
+  "search":{
+    "name":"Претражи",
+    "desc":"Embed a search box in your page for easy access",
+    "settings":{
+      "placeholder":"Search Field Placeholder",
+      "search_url":"Претрага УРЛ-а",
+      "param":"Query Parameter",
+      "param_placeholder":"The parameter where the query goes, i.e. \"q\""
+    },
+    "default_placeholder":"Search Google"
+  },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
     }
   }
 }
