@@ -145,7 +145,9 @@
       "css":"CSS personnalisé",
       "css_desc":"Vous pouvez utiliser ceci pour personnaliser tout les aspects visuels de iChrome en utilisant du CSS (Pour plus d'informations sur le CSS, veuillez cliquer sur ce lien : <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>). <br \/><br \/> Puis-ce que le CSS sera synchronisé vous pouvez seulement entrer 1000 caractères, incluant les espaces vides.",
       "reset":"Configuration par défaut d'iChrome",
-      "reset_confirm":"Etes vous vraiment sur de vouloir remettre la configuration d'iChrome par défaut ? \nCeci va supprimer toutes les données locales et synchronisés, il n'y a pas de sauvegarde possible et aucun moyen d'annuler ceci. Vous allez perdre la configuration sur tout les ordinateurs qui sont actuellement synchronisés sur votre compte Google."
+      "reset_confirm":"Etes vous vraiment sur de vouloir remettre la configuration d'iChrome par défaut ? \nCeci va supprimer toutes les données locales et synchronisés, il n'y a pas de sauvegarde possible et aucun moyen d'annuler ceci. Vous allez perdre la configuration sur tout les ordinateurs qui sont actuellement synchronisés sur votre compte Google.",
+      "debug":"Debug Tools",
+      "debug_confirm":"WARNING: These tools can erase your configuration in a single click, only use them if your developer instructs you to.\r\nAre you sure you want to continue?"
     }
   },
   "store":{

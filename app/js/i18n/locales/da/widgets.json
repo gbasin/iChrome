@@ -95,8 +95,8 @@
     "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
   },
   "clock":{
-    "name":"Time & Date",
-    "desc":"Shows the current date and time. Optionally for a different timezone.",
+    "name":"Clock",
+    "desc":"Offers alarm, time, timer, and stopwatch functionality.",
     "settings":{
       "timezone":"Time Zone",
       "timezone_local":"Local",
@@ -107,9 +107,18 @@
         "analog":"12 Hour - Analog",
         "ampmseconds":"AM\/PM - Digital, No Seconds",
         "24hourseconds":"24 Hour - Digital, No Seconds"
-      }
+      },
+      "sound":"Alert Sound"
     },
-    "title":"Clock"
+    "title":"Clock",
+    "alarm":"Alarm",
+    "clock":"Clock",
+    "timer":"Timer",
+    "stopwatch":"Stopwatch",
+    "set":"Set",
+    "unset":"Unset",
+    "dismiss":"Dismiss",
+    "enable_audio":"Enable audio"
   },
   "currency":{
     "name":"Currency",
@@ -499,6 +508,53 @@
       "html":"HTML",
       "js":"JavaScript",
       "height":"Widget Height"
+    }
+  },
+  "sitelink":{
+    "name":"Site Link",
+    "desc":"Displays a link, optionally with a title and thumbnail",
+    "settings":{
+      "link":"Link URL",
+      "link_placeholder":"http:\/\/www.google.com\/",
+      "image":"Image URL",
+      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "color":"Image Background Color",
+      "style":"Image Style",
+      "style_fill":"Fill",
+      "style_center":"Center"
+    }
+  },
+  "stats":{
+    "name":"System Statistics",
+    "desc":"Keep an eye on your system with realtime statistics",
+    "memory":"Memory",
+    "battery":"Battery",
+    "usage":"usage",
+    "in_use":"in use",
+    "remaining":"remaining",
+    "charged":"Fully Charged",
+    "idle":"Idle",
+    "charging":"Charging",
+    "discharging":"Discharging"
+  },
+  "search":{
+    "name":"Search",
+    "desc":"Embed a search box in your page for easy access",
+    "settings":{
+      "placeholder":"Search Field Placeholder",
+      "search_url":"Search URL",
+      "param":"Query Parameter",
+      "param_placeholder":"The parameter where the query goes, i.e. \"q\""
+    },
+    "default_placeholder":"Search Google"
+  },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
     }
   }
 }

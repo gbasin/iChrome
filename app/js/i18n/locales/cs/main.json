@@ -1,10 +1,10 @@
 {
   "lang_code":"cs",
   "language":"Česky",
-  "newtabName":"iChrome Nová Karta",
+  "newtabName":"Nová karta iChrome",
   "extName":"iChrome - Vaše domovská stránka pro chrome",
   "extDescription":"NEJLEPŠÍ domovská stránka pro Chrome. Nádherné motivy, desítky widgetů, bleskově rychlý, šíleně přizpůsobitelný!",
-  "newtabDescription":"Nejlepší výchozí stránka pro Chrome. Nyní i pro nově otevřený tab. Krásná témata, hromada widgetů, rychlý a konfigurovatelný!",
+  "newtabDescription":"Nejlepší výchozí stránka pro Chrome. Nyní i pro nově otevřený panel. Krásná témata, hromada widgetů, rychlý a konfigurovatelný!",
   "defaults":{
     "tab":"Domovská stránka",
     "me":"Já"
@@ -14,7 +14,7 @@
   "grid_to_column_warning":"Změnili jste rozložení z rastrového (grid) na sloupcové. Pokud budete pokračovat, ztratíte rozložení všech svých widgetů; vše bude přesunuto do prvního sloupce.\nOpravdu to chcete udělat?",
   "storage_warning":"Více než 90% synchronizovaného úložného prostoru bylo použito.\nPokud překročíte tento limit, iChrome přestane synchronizovat data a může i přestat fungovat.\nSituaci můžete zlepšit smazáním vlastních témat, poznámek a to-do listů, které nepoužíváte.",
   "toolbar":{
-    "placeholder":"Zadejte své podmínky",
+    "placeholder":"Co hledáte?\n",
     "placeholder_ok":"Zadejte dotaz, nebo řekněte \"OK, Google\"",
     "apps":{
       "search":"Hledat",
@@ -23,7 +23,7 @@
       "play":"Play",
       "news":"Zprávy",
       "gmail":"Gmail",
-      "drive":"Drive",
+      "drive":"Disk",
       "calendar":"Kalendář",
       "more":"Více"
     }
@@ -43,7 +43,7 @@
       "review":"Recenze",
       "twitter":"Twitter",
       "webstore":"Webový obchod",
-      "donate":"Darovat",
+      "donate":"Přispět",
       "by":"Avi Kohn"
     }
   },
@@ -56,7 +56,7 @@
     "save":"Uložit a zavřít",
     "new_tab":"Vytvořit novou",
     "labels":{
-      "general":"Obecný",
+      "general":"Obecné",
       "visual":"Vzhled",
       "specific":"Specifické pro záložku (tab).",
       "advanced":"Pokročilé"
@@ -64,14 +64,14 @@
     "general":{
       "search_url":"Hledat URL",
       "search_url_desc":"Toto je adresa, na kterou se budou odesílat dotazy vyhledáváni. V adrese se <b>%s<\/b> nahradí vyhledávaným textem",
-      "profile":"Profilová fotka",
+      "profile":"Profilový obrázek",
       "profile_desc":"Tento obrázek se zobrazí na pravé straně horního panelu. Automaticky se doplní z Google profilu",
       "name":"Jméno",
       "name_desc":"Jméno použité v odkazu na Google+ v horním panelu. Doplní se automaticky z Google profilu",
-      "ltab":"Link Behavior",
-      "ltab_label":"Open links in a new tab by default",
+      "ltab":"Chování odkazů",
+      "ltab_label":"Jako výchozí otevírat odkazy v nové záložce",
       "search":"Chování vyhledávání",
-      "search_label":"Otevřít výsledky hledání v novém okně",
+      "search_label":"Otevřít výsledky hledání v nové záložce",
       "voice":"Vyhledávání pomocí hlasu",
       "voice_search":"Povolit vyhledávání pomocí hlasu",
       "voice_ok":"Povolte detekci výrazu \"OK Google\"",
@@ -88,15 +88,15 @@
         "link_holder":"Adresa odkazu. Příklad: http:\/\/www.google.com\/"
       },
       "guide":"Instalační manuál",
-      "guide_desc":"Zobrazit znovu průvodce, který se zobrazuje po první instalaci"
+      "guide_desc":"Znovu zobrazit průvodce, který byl byl zobrazen při prvním startu iChrome"
     },
     "visual":{
       "layout":"Uspořádání",
       "layout_options":{
         "1_fixed":"Jeden sloupec, pevná šířka",
-        "1_fluid":"Jeden sloupec, pružná šířka",
+        "1_fluid":"Jeden sloupec, nastavitelná šířka",
         "2_fixed":"Dva sloupce, pevná šířka",
-        "2_fluid":"Dva sloupce, pružná šířka",
+        "2_fluid":"Dva sloupce, nastavitelná šířka",
         "3_fixed":"Tři sloupce, pevná šířka",
         "3_fluid":"Tři sloupce, pružná šířka",
         "4_fixed":"Čtyři sloupce, pevná šířka",
@@ -120,7 +120,7 @@
       "toolbar":"Styl panelu nástrojů",
       "toolbar_desc":"Toto nastavuje styl panelů nástrojů. Buď je zobrazen normálně a nebo jako tlačítko.",
       "toolbar_normal":"Normální",
-      "toolbar_button":"Tlačítka",
+      "toolbar_button":"Tlačítko",
       "animation":"Úvodní animace",
       "animation_desc":"Toto nastavení umožňuje zapnout nebo vypnout úvodní animaci, která se spustí po načtení stránky",
       "animation_label":"Povolit animaci"
@@ -145,7 +145,9 @@
       "css":"Vlastní CSS",
       "css_desc":"Toto pole můžete použít k upravení téměř každé vizuální část iChrome pomocí CSS (definice viz <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" \ntarget=\"_blank\">MDN<\/a>).<br \/><br \/>Z důvodu synchronizace nastavení, lze zadat maximálně 1000 znaků včetně mezer.",
       "reset":"Resetovat iChrome",
-      "reset_confirm":"Jste si opravdu jisti, že chcete obnovit základní nastavení iChrome?\nTímto budou vymazány všechny data, jak lokální tak synchronizované, tato změna je nevratná. Smažete kompletní nastavení a to na všech počítačích, které používají tento účet Google."
+      "reset_confirm":"Jste si opravdu jisti, že chcete obnovit základní nastavení iChrome?\nTímto budou vymazány všechny data, jak lokální tak synchronizované, tato změna je nevratná. Smažete kompletní nastavení a to na všech počítačích, které používají tento účet Google.",
+      "debug":"Debug Tools",
+      "debug_confirm":"WARNING: These tools can erase your configuration in a single click, only use them if your developer instructs you to.\r\nAre you sure you want to continue?"
     }
   },
   "store":{
@@ -160,7 +162,7 @@
       "small":"Malé",
       "medium":"Střední",
       "large":"Velké",
-      "variable":"Pružní"
+      "variable":"Proměnná"
     },
     "settings":{
       "title":"Nastavení widgetu",
@@ -205,25 +207,25 @@
     "images":"%s obrázků",
     "resolution":"Rozlišení",
     "categories":"Kategorie",
-    "cached":"Motiv je uložen ve vyrovnávací paměti a je dostupný offline",
-    "random":"Motiv zobrazuje náhodný obrázek pří každém načtení stránky",
+    "cached":"Tento motiv je uložen ve vyrovnávací paměti a je dostupný offline",
+    "random":"Tento motiv zobrazuje náhodný obrázek pří každém načtení stránky",
     "random_daily":"Motiv zobrazuje každý den náhodný obrázek",
-    "sunrise_sunset":"Motiv zobrazuje náhodný obrázek dle aktuálního času",
-    "feed":"Toto téma zobrazí obrázek z externího kanálu dle denního výběru",
+    "sunrise_sunset":"Tento motiv zobrazuje náhodný obrázek dle aktuálního času",
+    "feed":"Tento motiv zobrazí obrázek z externího kanálu dle denního výběru",
     "delete_confirm":"Jste si opravdu jisti, že chcete vymazat toto téma?\nTato akce je nevratná; celé téma bude navždy ztraceno.",
-    "delete_error":"Došlo k chybě při pokusu odstranit téma.  Opakujte akci později.",
+    "delete_error":"Došlo k chybě při pokusu odstranit motiv.  Prosím opakujte akci později.",
     "feed_fetching":"Počkejte prosím, stahuji kanál...",
     "feed_error":"Při pokusu o načtení informačního kanálu došlo k chybě.  Opakujte prosím akci později.",
     "caching":"Čekejte prosím, stahuji motiv...",
     "cache_status":"%s z %s obrázků uložených v mezipaměti",
-    "cache_error":"Došlo k chybě při pokusu načíst téma do mezipaměti.  Prosím opakujte akci později",
+    "cache_error":"Došlo k chybě při pokusu načíst motiv do mezipaměti.  Prosím opakujte akci později",
     "edit":{
       "title":"Upravit motiv",
       "create_title":"Vytvořit motiv",
       "name":"Název motivu",
       "default_name":"Nový motiv",
       "name_placeholder":"Zadejte název motivu",
-      "image":"Adresa URL obrázku",
+      "image":"URL adresa obrázku",
       "image_placeholder":"Zadejte URL obrázku pozadí",
       "image_help":"Nahrané obrázky <b>nelze synchronizovat<\/b> mezi počítači.<br \/><br \/>Pokud je to pro vás důležité, prosím nahrajte obrázek na webovou službu jako například <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Poté zkopírujte a vložte URL adresu s příponou (tj. jpg) a vložte ji do pole vlevo.",
       "color":"Základní barva",
@@ -231,19 +233,19 @@
       "position":"Pozice",
       "position_options":{
         "center":"Uprostřed",
-        "top_left":"Nahoře, vlevo",
-        "top_center":"Nahoře, uprostřed",
-        "top_right":"Nahoře, vpravo",
-        "bottom_left":"Dole, vlevo",
-        "bottom_center":"Dole, uprostřed",
-        "bottom_right":"Dole, vpravo"
+        "top_left":"Vlevo nahoře",
+        "top_center":"Uprostřed nahoře",
+        "top_right":"Vpravo nahoře",
+        "bottom_left":"Vlevo dole",
+        "bottom_center":"Uprostřed dole",
+        "bottom_right":"Vpravo dole"
       },
       "scaling":"Velikost",
       "scaling_options":{
-        "auto":"Automatická",
+        "auto":"Automatická detekce",
         "width":"Plná šířka",
         "height":"Plná výška",
-        "none":"Pevná (náhled může být nepřesný)"
+        "none":"Bez zoomování (náhled může být nepřesný)"
       },
       "repeat":"Opakování obrázku",
       "repeat_options":{

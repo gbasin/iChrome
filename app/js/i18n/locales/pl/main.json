@@ -145,7 +145,9 @@
       "css":"Niestandardowy CSS",
       "css_desc":"Możesz użyć tego pola aby spersonalizować prawie każdą wizualną część iChrome używając CSS (dla definicji zobacz <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Ponieważ te pole zostanie zsynchronizowane, można wprowadzić jedynie 1000 znaków, łącznie z spacją.",
       "reset":"Zresetuj iChrome",
-      "reset_confirm":"Czy naprawdę chcesz zresetować iChrome? Spowoduje to nadpisanie wszystkich lokalnych i zsynchronizowanych danych, nie ma kopii zapasowej ani możliwości by to cofnąć. Stracisz CAŁĄ aktualną konfigurację na wszystkich komputerach zalogowanych do tego samego konta Google."
+      "reset_confirm":"Czy naprawdę chcesz zresetować iChrome? Spowoduje to nadpisanie wszystkich lokalnych i zsynchronizowanych danych, nie ma kopii zapasowej ani możliwości by to cofnąć. Stracisz CAŁĄ aktualną konfigurację na wszystkich komputerach zalogowanych do tego samego konta Google.",
+      "debug":"Debug Tools",
+      "debug_confirm":"WARNING: These tools can erase your configuration in a single click, only use them if your developer instructs you to.\r\nAre you sure you want to continue?"
     }
   },
   "store":{

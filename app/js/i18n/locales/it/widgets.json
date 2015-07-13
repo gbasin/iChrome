@@ -95,8 +95,8 @@
     "noevents":"Non sembra che ci sia qualche evento nel prossimo futuro.\n<br \/><br \/>\nProvare a selezionare un calendario tramite l'icona della chiave inglese in alto a destra."
   },
   "clock":{
-    "name":"Ora e data",
-    "desc":"Mostra la data e l'ora correnti. Facoltativamente per un fuso orario differente.",
+    "name":"Orologio",
+    "desc":"Offers alarm, time, timer, and stopwatch functionality.",
     "settings":{
       "timezone":"Fuso orario",
       "timezone_local":"Locale",
@@ -107,9 +107,18 @@
         "analog":"12 ore - analogico",
         "ampmseconds":"AM\/PM - digitale, senza secondi",
         "24hourseconds":"24 ore - digitale, senza secondi"
-      }
+      },
+      "sound":"Alert Sound"
     },
-    "title":"Orologio"
+    "title":"Orologio",
+    "alarm":"Alarm",
+    "clock":"Orologio",
+    "timer":"Timer",
+    "stopwatch":"Stopwatch",
+    "set":"Set",
+    "unset":"Unset",
+    "dismiss":"Dismiss",
+    "enable_audio":"Enable audio"
   },
   "currency":{
     "name":"Valuta",
@@ -499,6 +508,53 @@
       "html":"HTML",
       "js":"JavaScript",
       "height":"Altezza del widget"
+    }
+  },
+  "sitelink":{
+    "name":"Site Link",
+    "desc":"Displays a link, optionally with a title and thumbnail",
+    "settings":{
+      "link":"Link URL",
+      "link_placeholder":"http:\/\/www.google.com\/",
+      "image":"URL dell'immagine",
+      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "color":"Image Background Color",
+      "style":"Image Style",
+      "style_fill":"Fill",
+      "style_center":"Al centro"
+    }
+  },
+  "stats":{
+    "name":"System Statistics",
+    "desc":"Keep an eye on your system with realtime statistics",
+    "memory":"Memory",
+    "battery":"Battery",
+    "usage":"usage",
+    "in_use":"in use",
+    "remaining":"remaining",
+    "charged":"Fully Charged",
+    "idle":"Idle",
+    "charging":"Charging",
+    "discharging":"Discharging"
+  },
+  "search":{
+    "name":"Cerca",
+    "desc":"Embed a search box in your page for easy access",
+    "settings":{
+      "placeholder":"Search Field Placeholder",
+      "search_url":"URL di ricerca",
+      "param":"Query Parameter",
+      "param_placeholder":"The parameter where the query goes, i.e. \"q\""
+    },
+    "default_placeholder":"Search Google"
+  },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
     }
   }
 }

@@ -95,8 +95,8 @@
     "noevents":"Il ne semble pas y avoir d’événements à venir. <br\/> <br\/> Essayez de sélectionner un agenda en cliquant sur la clé en haut à droite."
   },
   "clock":{
-    "name":"Date & Heure",
-    "desc":"Affiche la date et l'heure. Optionnellement dans un différent fuseau horaire.",
+    "name":"Horloge",
+    "desc":"Offers alarm, time, timer, and stopwatch functionality.",
     "settings":{
       "timezone":"Fuseau horaire",
       "timezone_local":"Mon appareil",
@@ -107,9 +107,18 @@
         "analog":"12 Heures - Analogique",
         "ampmseconds":"AM\/PM - Digitale, Sans Secondes",
         "24hourseconds":"24 Heures - Digitale, Sans Secondes"
-      }
+      },
+      "sound":"Alert Sound"
     },
-    "title":"Horloge"
+    "title":"Horloge",
+    "alarm":"Alarm",
+    "clock":"Horloge",
+    "timer":"Timer",
+    "stopwatch":"Stopwatch",
+    "set":"Set",
+    "unset":"Unset",
+    "dismiss":"Dismiss",
+    "enable_audio":"Enable audio"
   },
   "currency":{
     "name":"Devise ",
@@ -241,8 +250,8 @@
     "desc":"Intègre Google Plus dans un widget"
   },
   "notifications":{
-    "name":"Google Notifications",
-    "desc":"Displays your Google Notifications from services such as Google+"
+    "name":"Notifications Google",
+    "desc":"Affiche vos notifications Google à partir de services tel que Google+"
   },
   "recentlyclosed":{
     "name":"Récemment fermés",
@@ -285,7 +294,7 @@
       "link_placeholder":"Entrez un lien pour le nom du widget",
       "url":"URL du flux",
       "url_placeholder":"L'URL du flux RSS à afficher",
-      "articles":"Affiché les articles",
+      "articles":"Articles affichés",
       "view":"Voir",
       "view_options":{
         "images":"Compatible avec images",
@@ -297,7 +306,7 @@
     "feed_error":"Une erreur s'est produite en essayant d'aller chercher de le flux à: %s. S'il vous plaît vérifier l'URL et\/ou modifier les paramètres du widget."
   },
   "sports":{
-    "name":"Sport",
+    "name":"Sports",
     "desc":"Afficher les informations des scores et games pour la ligue\/équipe choisis.",
     "settings":{
       "league":"Ligue",
@@ -352,12 +361,12 @@
     "desc":"Affiche une liste modifiable de tâches à partir d'un de vos listes de Google Tasks.",
     "title":"tâches",
     "settings":{
-      "list":"Listes"
+      "list":"Liste"
     },
     "task_title":"Titre",
     "due_date":"date d'échéance",
     "notes":"Notes",
-    "add":"Ajouter une note",
+    "add":"Ajouter un élément",
     "delete_task":"effacez la tâche",
     "move_up":"déplacer vers le haut",
     "move_down":"descendre",
@@ -498,7 +507,54 @@
     "settings":{
       "html":"HTML",
       "js":"JavaScript",
-      "height":"Hauteur du widget"
+      "height":"Hauteur du Widget"
+    }
+  },
+  "sitelink":{
+    "name":"Site Link",
+    "desc":"Displays a link, optionally with a title and thumbnail",
+    "settings":{
+      "link":"Link URL",
+      "link_placeholder":"http:\/\/www.google.com\/",
+      "image":"URL de l'image",
+      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "color":"Image Background Color",
+      "style":"Image Style",
+      "style_fill":"Fill",
+      "style_center":"Centre"
+    }
+  },
+  "stats":{
+    "name":"System Statistics",
+    "desc":"Keep an eye on your system with realtime statistics",
+    "memory":"Memory",
+    "battery":"Battery",
+    "usage":"usage",
+    "in_use":"in use",
+    "remaining":"remaining",
+    "charged":"Fully Charged",
+    "idle":"Idle",
+    "charging":"Charging",
+    "discharging":"Discharging"
+  },
+  "search":{
+    "name":"Rechercher",
+    "desc":"Embed a search box in your page for easy access",
+    "settings":{
+      "placeholder":"Search Field Placeholder",
+      "search_url":"URL de recherche",
+      "param":"Query Parameter",
+      "param_placeholder":"The parameter where the query goes, i.e. \"q\""
+    },
+    "default_placeholder":"Search Google"
+  },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
     }
   }
 }
