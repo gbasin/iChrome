@@ -2,6 +2,12 @@
  * The Clock widget.
  */
 define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbone) {
+	var padThree = function(num) {
+		num = num.toString();
+
+		return ((num.length === 1) ? "00" : (num.length === 2) ? "0" : "") + num;
+	};
+
 	var View = Backbone.View.extend({
 		events: {
 			"click header.tabs .item": function(e) {
@@ -93,8 +99,8 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 
 		interval: null,
 
-		formatTime: function(time) {
-			time = Math.floor(time / 1000);
+		formatTime: function(rTime, ms) {
+			var time = Math.floor(rTime / 1000);
 
 			var days = parseInt(time / 86400),
 				hours = parseInt((time % 86400) / 3600),
@@ -107,7 +113,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				return hours + ":" + minutes.pad() + ":" + (time % 60).pad();
 			}
 			else {
-				return minutes + ":" + (time % 60).pad();
+				return minutes + ":" + (time % 60).pad() + (ms ? "." + padThree(rTime % 1000) : "");
 			}
 		},
 
@@ -159,14 +165,18 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 			}
 		},
 
-		updateStopwatch: function(ret) {
-			var formatted = this.formatTime(new Date().getTime() - this.data.stopwatch.start);
+		updateStopwatch: function(ret, force) {
+			if (this.data.stopwatch && (this.data.stopwatch.running || force)) {
+				var time = new Date().getTime() - this.data.stopwatch.start;
 
-			if (ret) {
-				return formatted;
+				var formatted = this.formatTime(time, time < 6E5);
+
+				if (ret) {
+					return formatted;
+				}
+
+				this.stopwatchElm.innerHTML = formatted;
 			}
-
-			this.stopwatchElm.innerHTML = formatted;
 		},
 
 		startTimer: function(e) {
@@ -319,7 +329,6 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 
 			if (this.data.alarm && this.data.alarm.set) this.updateAlarm();
 			if (this.data.timer && this.data.timer.running) this.updateTimer();
-			if (this.data.stopwatch && this.data.stopwatch.running) this.updateStopwatch();
 		},
 
 		playAudio: function() {
@@ -393,7 +402,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 						data.stopwatch.start += new Date().getTime() - data.stopwatch.paused;
 					}
 
-					data.stopwatch.html = this.updateStopwatch.call({ data: data, formatTime: this.formatTime }, true);
+					data.stopwatch.html = this.updateStopwatch.call({ data: data, formatTime: this.formatTime }, true, true);
 				}
 
 				if (data.timer) {
@@ -431,6 +440,13 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				this.setCache();
 
 				this.interval = setInterval(this.update.bind(this), 1000);
+
+				// The stopwatch displays milliseconds so it needs to update every ~50 ms
+				// instead of every 1000 to display a smooth progression
+				// 
+				// This uses 53 instead of 50 so the numbers displayed aren't continuously
+				// repeated
+				this.interval = setInterval(this.updateStopwatch.bind(this), 53);
 			}
 		}
 	});
