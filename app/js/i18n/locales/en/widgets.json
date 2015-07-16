@@ -162,7 +162,8 @@
 		"name": "Currency",
 		"desc": "Let's you convert between any two of 169 currencies.",
 
-		"to_label": "to"
+		"to_label": "to",
+		"recently-used": "Recently Used"
 	},
 
 	"drive": {

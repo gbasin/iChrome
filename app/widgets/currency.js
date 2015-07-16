@@ -13,7 +13,9 @@ define(["lodash", "jquery"], function(_, $) {
 		},
 		data: {
 			from: "USD",
-			to: "USD"
+			to: "USD",
+			recentFrom: ["USD"],
+			recentTo: ["USD"]
 		},
 		currencies: {
 			AFN: "Afghan Afghani",
@@ -191,10 +193,23 @@ define(["lodash", "jquery"], function(_, $) {
 				currencies: _.map(this.currencies, function(name, code) {
 					return {
 						name: name,
+						code: code
+					};
+				}),
+				recentFrom: _.map(this.data.recentFrom || ["USD"], function(code) {
+					return {
+						name: this.currencies[code],
 						code: code,
 						selected: code === "USD"
 					};
-				})
+				}, this),
+				recentTo: _.map(this.data.recentTo || ["USD"], function(code) {
+					return {
+						name: this.currencies[code],
+						code: code,
+						selected: code === "USD"
+					};
+				}, this)
 			});
 
 			var from = this.elm.find("select.from"),
@@ -223,6 +238,9 @@ define(["lodash", "jquery"], function(_, $) {
 				convert = function(reverse) {
 					this.data.from = from.val();
 					this.data.to = to.val();
+
+					this.data.recentFrom = _(this.data.recentFrom || []).unshift(this.data.from).uniq().take(15).value();
+					this.data.recentTo = _(this.data.recentTo || []).unshift(this.data.to).uniq().take(15).value();
 
 					var conv = 0,
 						fr, tov, f, t;

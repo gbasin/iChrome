@@ -11,12 +11,24 @@
 
 	<div class="selectbar">
 		<select class="from">
+			<optgroup label="{{i18n.recently-used}}">
+				{{#recentFrom}}
+					<option value="{{code}}">{{name}}</option>
+				{{/recentFrom}}
+			</optgroup>
+
 			{{#currencies}}
 				<option value="{{code}}" {{#selected}}selected{{/selected}}>{{name}}</option>
 			{{/currencies}}
 		</select>
 
 		<select class="to">
+			<optgroup label="{{i18n.recently-used}}">
+				{{#recentTo}}
+					<option value="{{code}}">{{name}}</option>
+				{{/recentTo}}
+			</optgroup>
+
 			{{#currencies}}
 				<option value="{{code}}" {{#selected}}selected{{/selected}}>{{name}}</option>
 			{{/currencies}}
