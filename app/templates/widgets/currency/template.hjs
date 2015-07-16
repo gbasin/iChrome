@@ -11,7 +11,7 @@
 
 	<div class="selectbar">
 		<select class="from">
-			<optgroup label="{{i18n.recently-used}}">
+			<optgroup label="{{i18n.recently_used}}">
 				{{#recentFrom}}
 					<option value="{{code}}">{{name}}</option>
 				{{/recentFrom}}
@@ -23,7 +23,7 @@
 		</select>
 
 		<select class="to">
-			<optgroup label="{{i18n.recently-used}}">
+			<optgroup label="{{i18n.recently_used}}">
 				{{#recentTo}}
 					<option value="{{code}}">{{name}}</option>
 				{{/recentTo}}
