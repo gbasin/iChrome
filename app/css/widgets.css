@@ -3784,3 +3784,149 @@ body.no-edit .bookmarks .tools {
 .widget.classroom {
 	height: 450px;
 }
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Pushbullet
+*/
+.widget.pushbullet {
+	padding: 0!important;
+	font-family: Roboto, sans-serif;
+}
+
+.pushbullet a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.pushbullet header {
+	width: 100%;
+	color: #FFF;
+	padding: 0 25px;
+	font-size: 16px;
+	line-height: 55px;
+	position: relative;
+	background: #4AB367;
+	letter-spacing: .4px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .37);
+}
+
+.pushbullet .items {
+	padding: 8px 0;
+	overflow: auto;
+	max-height: 400px;
+}
+
+.medley .pushbullet .items {
+	max-height: calc(100% - 55px);
+}
+
+.pushbullet .items .item {
+	display: block;
+	min-height: 68px;
+	padding: 14px 16px;
+	transition: background-color .2s ease;
+}
+
+.pushbullet .items .item:hover {
+	background: rgba(0, 0, 0, .03);
+}
+
+.pushbullet .item .thumb {
+	width: 40px;
+	float: left;
+	height: 40px;
+	margin-right: 16px;
+	border-radius: 50%;
+	vertical-align: top;
+	display: inline-block;
+	background-size: cover;
+	background-color: #DDD;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.pushbullet .item .sender {
+	font-weight: 500;
+}
+
+.pushbullet .item .date {
+	color: #666;
+	float: right;
+	font-size: 13px;
+}
+
+.pushbullet .item .body {
+	margin: 0;
+	display: block;
+	font-size: 13px;
+	max-height: 56px;
+	overflow: hidden;
+}
+
+.pushbullet .item .body .title,
+.pushbullet .item .body.title span {
+	font-weight: 500;
+}
+
+.pushbullet .item .link,
+.pushbullet .item .body.title {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.pushbullet .item .image {
+	width: 185px;
+	height: 115px;
+	margin-top: 10px;
+	border-radius: 2px;
+	display: inline-block;
+	background-size: cover;
+	background-color: #DDD;
+	background-position: center;
+	background-repeat: no-repeat;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Pushbullet / Notice pages
+*/
+.pushbullet .notice {
+	color: #888;
+	height: 400px;
+	text-align: center;
+	background: #F2F2F2;
+	padding: 85px 10% 20px;
+}
+
+.pushbullet .notice.no-key {
+	padding-top: 55px;
+}
+
+.pushbullet .notice svg {
+	width: 150px;
+	height: 150px;
+	fill: currentColor;
+}
+
+.pushbullet .notice p {
+	line-height: 22px;
+	margin: 5px 0 15px;
+}
+
+.pushbullet .notice button {
+	min-width: 90px;
+	margin-top: 10px;
+}

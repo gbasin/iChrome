@@ -51,6 +51,7 @@
 	},
 	"permissions": [
 		"storage",
+		"cookies",
 		"topSites",
 		"sessions",
 		"http://*/",

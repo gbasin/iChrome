@@ -730,5 +730,15 @@
 			"mode_teacher": "Teacher",
 			"mode_student": "Student"
 		}
+	},
+
+	"pushbullet": {
+		"name": "Pushbullet",
+		"desc": "Keep track of notifications from your phone and other devices",
+
+		"no_pushes": "No pushes found",
+
+		"sign_in": "Sign in",
+		"no_key": "It doesn't look like you're signed in to Pushbullet.  Sign in now to connect this widget."
 	}
 }
