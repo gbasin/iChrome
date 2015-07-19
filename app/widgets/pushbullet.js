@@ -62,7 +62,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 						}
 					});
 
-					if (!(Object.keys(cache.users).length + Object.keys(cache.channels).length)) {
+					if (Object.keys(cache.users).length + Object.keys(cache.channels).length === 0) {
 						return;
 					}
 
@@ -177,8 +177,8 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 							parsed.body = e.body;
 
 							if (e.url) {
-								if (e.url.indexOf("://") == 0) {
-									e.url = "https" + push.url;
+								if (e.url.indexOf("://") === 0) {
+									e.url = "https" + e.url;
 								}
 
 								parsed.link = e.url;
@@ -204,7 +204,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 
 						return parsed;
 					}
-					catch (e) {
+					catch (err) {
 						return null;
 					}
 				}, this)
