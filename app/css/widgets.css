@@ -3838,14 +3838,13 @@ body.no-edit .bookmarks .tools {
 
 .pushbullet header {
 	width: 100%;
-	color: #FFF;
 	padding: 0 25px;
 	font-size: 16px;
 	line-height: 55px;
 	position: relative;
-	background: #4AB367;
+	background: #F8F8F8;
 	letter-spacing: .4px;
-	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .37);
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
 }
 
 .pushbullet .items {
