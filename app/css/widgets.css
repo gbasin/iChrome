@@ -1531,81 +1531,113 @@
 /*---------------------------------------------
 	/ Calendar
 */
-.widget.calendar a.header {
-	display: block;
-	margin-bottom: 25px;
-	text-decoration: none;
+.widget.calendar {
+	padding: 0!important;
+	font-family: Roboto, sans-serif;
 }
 
-.calendar a.header:hover {
-	color: #428BCA;
-}
-
-.calendar .events {
-	margin: -15px;
-}
-
-.calendar .events.no-header {
-	margin-top: -15px;
-}
-
-.calendar .event {
-	color: #428BCA;
-	display: block;
-	overflow: hidden;
-	padding: 10px 20px;
-	text-decoration: none;
-	font-family: Open Sans, sans-serif;
-}
-
-.calendar .event:hover {
-	background: rgba(0, 0, 0, 0.03);
-}
-
-.calendar .event.no-events {
-	color: #555;
-}
-
-.calendar .event .title {
+.calendar header {
 	width: 100%;
-	font-size: 18px;
-	overflow: hidden;
-	margin-bottom: 5px;
-	white-space: nowrap;
-	display: inline-block;
-	text-overflow: ellipsis;
+	height: 55px;
+	padding: 0 25px;
+	font-size: 16px;
+	line-height: 55px;
+	position: relative;
+	letter-spacing: .2px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .24);
 }
 
-.calendar .event span {
-	width: 49%;
-	overflow: hidden;
-	white-space: nowrap;
-	display: inline-block;
-	text-overflow: ellipsis;
+.calendar header a {
+	color: inherit;
+	text-decoration: none;
 }
 
-.calendar .event .time,
-.calendar .event .calendar {
-	color: #333;
-	line-height: 20px;
+.calendar .notice {
+	color: #888;
+	height: 250px;
+	text-align: center;
+	padding: 85px 10% 20px;
 }
 
-.calendar .event .calendar {
-	float: right;
+.calendar .notice p {
+	line-height: 22px;
+	margin: 5px 0 15px;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Calendar / Agenda
+*/
+.calendar .agenda {
+	overflow: auto;
+	padding-top: 8px;
+	max-height: 500px;
+	background: #FAFAFA;
+}
+
+.medley .calendar .agenda {
+	max-height: calc(100% - 55px);
+}
+
+.calendar .agenda .day .date {
 	font-size: 13px;
-	text-align: right;
+	font-weight: 500;
+	padding: 8px 14px;
 }
 
-.calendar .event .location {
-	color: #666;
-	float: right;
+.calendar .agenda .day .date.today {
+	color: #4285F4;
+}
+
+.calendar .agenda .day .date.past {
+	color: #999;
+}
+
+.calendar .agenda .day .events {
+	background: #FFF;
+	overflow: hidden;
+	border-radius: 3px;
+	margin: 0 18px 10px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .12);
+}
+
+.calendar .agenda .day .event {
+	color: #333;
+	display: block;
+	font-size: 13px;
+	padding: 8px 15px;
+	text-decoration: none;
+}
+
+.calendar .agenda.multiple .day .event {
+	border-left: 3px solid #2196F3;
+}
+
+.calendar .agenda .day .event:not(:first-child) {
+	border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.calendar .agenda .day .event:hover {
+	background: #F5F5F5;
+}
+
+.calendar .agenda .day .event > * {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.calendar .agenda .day .event .title {
+	width: 100%;
 	font-size: 15px;
-	text-align: right;
+	font-weight: 500;
 	line-height: 25px;
-}
-
-.calendar .event .location + .title {
-	max-width: 49%;
+	font-family: inherit;
 }
 
 

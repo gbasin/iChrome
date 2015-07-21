@@ -111,7 +111,6 @@
 
 		"settings": {
 			"calendar": "Calendar",
-			"events": "Events Shown",
 
 			"show": "Show events from",
 			"show_options": {
@@ -120,9 +119,11 @@
 			}
 		},
 
-		"title": "My Calendar",
+		"title": "Agenda",
 
-		"noevents": "It doesn't look like there are any events in the near future.\n<br /><br />\nTry selecting a calendar via the wrench icon in the top right."
+		"calendar": "Calendar",
+
+		"noevents": "No events found in the near future, it looks like your schedule's clear!"
 	},
 
 	"clock": {
