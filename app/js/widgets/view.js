@@ -55,9 +55,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 
 
 			if (this.model.has("config")) {
-				this.widget.config = {};
-
-				$.extend(true, this.widget.config, Widgets[this.widget.id].config, this.model.get("config"));
+				this.widget.config = $.extend(true, _.clone(Widgets[this.widget.id].config), this.model.get("config"));
 
 				this.widget.size = this.model.get("size") || Widgets[this.widget.id].size;
 
@@ -135,14 +133,9 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 			var model = options.model;
 
 			var d = model.attributes,
-				widget = this.widget = {};
+				widget = this.widget = _.assign(_.clone(Widgets[d.id], true), d);
 
-			$.extend(true, widget, Widgets[d.id], d);
-
-			// These should not be deep-extended
-			if (d.data) widget.data = d.data;
-			if (d.syncData) widget.syncData = d.syncData;
-
+			widget.config = $.extend(true, _.clone(Widgets[d.id].config, true), d.config);
 
 			widget.config.size = sizes[widget.size];
 

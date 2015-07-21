@@ -64,7 +64,7 @@ define(
 			storage.tabs = d.tabs || defaults.tabs;
 			storage.themes = d.themes || defaults.themes;
 			storage.cached = d.cached || defaults.cached;
-			storage.settings = {};
+			storage.settings = d.settings;
 
 			if (typeof d.tabs == "string") {
 				try {
@@ -75,7 +75,12 @@ define(
 				}
 			}
 
-			$.extend(true, storage.settings, defaults.settings, d.settings || defaults.settings);
+			if (storage.settings) {
+				_.defaultsDeep(storage.settings, defaults.settings);
+			}
+			else {
+				storage.settings = _.cloneDeep(defaults.settings);
+			}
 
 			storage.tabsSync = JSON.parse(getJSON(storage.tabs, storage.settings));
 

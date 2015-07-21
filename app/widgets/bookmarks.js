@@ -1,7 +1,7 @@
 /*
  * The Bookmarks widget.
  */
-define(["jquery", "modals/modals"], function($, Modal) {
+define(["jquery", "lodash", "modals/modals"], function($, _, Modal) {
 	return {
 		id: 16,
 		size: 2,
@@ -108,12 +108,12 @@ define(["jquery", "modals/modals"], function($, Modal) {
 		adding: false,
 		render: function() {
 			if (this.data) {
-				this.syncData = $.extend(true, {}, this.data);
+				this.syncData = _.cloneDeep(this.data);
 
 				delete this.data;
 			}
 
-			var data = $.extend({}, this.syncData || {});
+			var data = _.clone(this.syncData);
 
 			if (this.config.title && this.config.title !== "") {
 				data.title = this.config.title;

@@ -50,7 +50,7 @@ define(["lodash", "jquery", "backbone", "core/status", "i18n/i18n", "core/render
 	 * @param  {Object} [partials] Any partials that should be rendered with it
 	 */
 	Utils.prototype.render = function(data, partials) {
-		data = $.extend({}, data || {});
+		data = _.clone(data);
 
 		data[this.widget.config.size] = true;
 
@@ -89,7 +89,7 @@ define(["lodash", "jquery", "backbone", "core/status", "i18n/i18n", "core/render
 	 * @return {String}             The rendered template
 	 */
 	Utils.prototype.renderTemplate = function(name, data, partials) {
-		data = $.extend({}, data || {});
+		data = _.clone(data);
 
 		data.i18n = i18n.widgets[this.widget.nicename] || {};
 

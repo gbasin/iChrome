@@ -1,7 +1,7 @@
 /*
  * The Drive widget.
  */
-define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
+define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 	return {
 		id: 27,
 		size: 1,
@@ -162,7 +162,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				}.bind(this));
 			}
 
-			var data = $.extend(true, {}, this.data);
+			var data = _.cloneDeep(this.data);
 
 			data.files.forEach(function(e, i) {
 				var date = moment(e.date);
