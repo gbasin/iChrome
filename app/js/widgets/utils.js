@@ -50,18 +50,18 @@ define(["lodash", "jquery", "backbone", "core/status", "i18n/i18n", "core/render
 	 * @param  {Object} [partials] Any partials that should be rendered with it
 	 */
 	Utils.prototype.render = function(data, partials) {
-		data = _.clone(data);
+		data = _.clone(data) || {};
 
 		data[this.widget.config.size] = true;
 
 		data.i18n = i18n.widgets[this.widget.nicename] || {};
 
-		this.elm.html(
+		this.elm[0].innerHTML = 
 			'<div class="handle"></div>' +
 			(this.widget.settings ? '\r\n<div class="settings">&#xF0AD;</div>' : "") +
 			render("widgets." + this.widget.nicename, data, partials) +
 			'\r\n<div class="resize"></div>'
-		);
+		;
 
 		this.trigger("render");
 	};
@@ -89,7 +89,7 @@ define(["lodash", "jquery", "backbone", "core/status", "i18n/i18n", "core/render
 	 * @return {String}             The rendered template
 	 */
 	Utils.prototype.renderTemplate = function(name, data, partials) {
-		data = _.clone(data);
+		data = _.clone(data) || {};
 
 		data.i18n = i18n.widgets[this.widget.nicename] || {};
 

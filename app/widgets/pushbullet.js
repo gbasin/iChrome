@@ -255,13 +255,16 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				hasPushes: pushes && pushes.length
 			};
 
+			var momentSecondsFuture = moment._locale._relativeTime.future.replace("%s", moment._locale._relativeTime.s),
+				momentSecondsPast = moment._locale._relativeTime.past.replace("%s", moment._locale._relativeTime.s);
+
 			if (data.hasPushes) {
 				data.pushes = pushes.map(function(e) {
 					e = _.clone(e);
 
 					e.date = moment(e.date).fromNow().replace( // Fix "in a few seconds" bug
-						moment._locale._relativeTime.future.replace("%s", moment._locale._relativeTime.s),
-						moment._locale._relativeTime.past.replace("%s", moment._locale._relativeTime.s)
+						momentSecondsFuture,
+						momentSecondsPast
 					);
 
 					return e;
