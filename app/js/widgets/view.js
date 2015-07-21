@@ -113,7 +113,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 				else {
 					set[key] = e;
 				}
-			}, this);
+			}, this).value();
 
 			this.model.set(set, {
 				// This lets the update function that will be called know that it

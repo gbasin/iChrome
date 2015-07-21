@@ -124,7 +124,7 @@ define(["jquery", "lodash"], function($, _) {
 
 			item.image = _(itm.mediaGroups)
 				.pluck("contents")
-				.flatten()
+				.flatten(true)
 				.filter(function(e) {
 					return e.medium === "image" && e.height >= 35 && e.width >= 35;
 				})

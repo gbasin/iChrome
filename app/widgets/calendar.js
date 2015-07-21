@@ -357,7 +357,7 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 						data.days[d].push(e);
 					}
 				}
-			}, this);
+			}, this).value();
 
 
 			var dt = new Date();

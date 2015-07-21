@@ -264,7 +264,7 @@
     function documentEvents(eventName) {
         var eventSplit = eventName.split(':'),
             eventType = eventSplit[0],
-            eventAttrs = eventSplit.length > 1 ? _.last(eventSplit, eventSplit.length - 1)[0].split('.') : [],
+            eventAttrs = eventSplit.length > 1 ? _.takeRight(eventSplit, eventSplit.length - 1)[0].split('.') : [],
             args = Array.prototype.slice.call(arguments, 0);
 
         //console.log('DocumentEvent:event:this (' + this.name + ') [' + (this instanceof Backbone.Model ? 'M' : 'C') + ']:' + eventName);
