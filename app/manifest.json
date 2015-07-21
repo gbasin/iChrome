@@ -33,6 +33,12 @@
 			"matches": [ "https://www.google.com/ichrome/notifications*" ],
 			"run_at": "document_idle",
 			"all_frames": true
+		},
+		{
+			"js": [ "inject/js/linkedin.js" ],
+			"matches": [ "https://touch.www.linkedin.com/*" ],
+			"run_at": "document_start",
+			"all_frames": true
 		}
 	],
 	"web_accessible_resources": [

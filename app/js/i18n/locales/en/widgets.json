@@ -741,5 +741,10 @@
 
 		"sign_in": "Sign in",
 		"no_key": "It doesn't look like you're signed in to Pushbullet.  Sign in now to connect this widget."
+	},
+
+	"linkedin": {
+		"name": "LinkedIn",
+		"desc": "Displays your LinkedIn home stream"
 	}
 }

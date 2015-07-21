@@ -2888,6 +2888,7 @@ body.no-edit .bookmarks .tools {
 .widget.plus,
 .widget.gmail,
 .widget.iframe,
+.widget.linkedin,
 .widget.facebook,
 .widget.classroom,
 .widget.notifications {
@@ -2899,6 +2900,7 @@ body.no-edit .bookmarks .tools {
 .plus iframe,
 .gmail iframe,
 .iframe iframe,
+.linkedin iframe,
 .facebook iframe,
 .classroom iframe,
 .notifications iframe {
