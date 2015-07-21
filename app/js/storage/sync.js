@@ -25,6 +25,20 @@ define(["jquery", "core/status", "storage/defaults", "core/analytics", "i18n/i18
 		return chunks;
 	};
 
+	var cacheTheme = function(storage) {
+		var defaultTab = storage.tabs[(storage.settings.def || 1) - 1];
+
+		var theme = defaultTab.theme || storage.settings.theme;
+
+		theme = storage.cached[theme] || storage.custom[theme.replace("custom", "")] || { image: "/images/defaulttheme.jpg" };
+
+		if (!theme || !theme.image) {
+			return;
+		}
+
+		localStorage.themeImg = theme.image;
+	};
+
 	var save = function(storage, ocb) {
 		Status.log("Starting sync save");
 
@@ -106,6 +120,9 @@ define(["jquery", "core/status", "storage/defaults", "core/analytics", "i18n/i18
 
 			if (i++) cb();
 		});
+
+		// Cache the default theme image
+		cacheTheme(storage);
 
 		// Get current usage percentage, if it's over 90% alert the user.
 		chrome.storage.sync.getBytesInUse(function(bytes) {

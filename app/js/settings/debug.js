@@ -36,6 +36,8 @@ define(["lodash", "jquery", "backbone", "storage/filesystem", "modals/modals", "
 				case "clear-local":
 					chrome.storage.local.clear();
 
+					delete localStorage.themeImg;
+
 					this.setStatus("Chrome Local storage cleared, reload the page to resync");
 				break;
 

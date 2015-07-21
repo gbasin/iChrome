@@ -203,6 +203,8 @@ define(
 			chrome.storage.sync.clear(function() {
 				if (i++) done();
 			});
+
+			delete localStorage.themeImg;
 		};
 
 		return promise;

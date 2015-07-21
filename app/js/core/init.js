@@ -121,6 +121,30 @@ define(
 			}
 		});
 
+
+		/**
+		 * Background image preloading
+		 *
+		 * This makes the background image appear with the first render
+		 * and makes the first paint happen sooner
+		 */
+		var themeImg = localStorage.themeImg;
+
+		if (!themeImg) return;
+
+		var loader = new Image();
+
+		loader.src = themeImg;
+
+		loader.onload = function() {
+			if (!document.body.style.backgroundImage) {
+				document.body.style.backgroundImage = "url(\"" + themeImg + "\")";
+			}
+
+			// Force repaint
+			document.body.offsetHeight; // jshint ignore:line
+		};
+
 		return new iChrome();
 	}
 );
