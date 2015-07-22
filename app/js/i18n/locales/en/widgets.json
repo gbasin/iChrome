@@ -746,5 +746,27 @@
 	"linkedin": {
 		"name": "LinkedIn",
 		"desc": "Displays your LinkedIn home stream"
+	},
+
+	"directions": {
+		"name": "Directions",
+		"desc": "Get directions to and from nearly anywhere right from your homepage.",
+
+		"driving": "Driving",
+		"transit": "Public Transit",
+		"walking": "Walking",
+		"cycling": "Cycling",
+
+		"from": "Enter a starting point",
+		"to": "Enter a destination",
+
+		"loading": "Loading directions, please wait...",
+
+		"error": "Something went wrong while trying to load the directions you requested.",
+		"error2": "Please check the start and destination addresses you entered.",
+
+		"open_in_maps": "Open in Google Maps",
+
+		"via": "via"
 	}
 }

@@ -3963,3 +3963,196 @@ body.no-edit .bookmarks .tools {
 	min-width: 90px;
 	margin-top: 10px;
 }
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Directions
+*/
+.widget.directions {
+	padding: 0!important;
+	font-family: Roboto, sans-serif;
+}
+
+.directions .methods {
+	height: 46px;
+	display: flex;
+	background: #FAFAFA;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+
+.directions .methods button {
+	flex: 1;
+	margin: 0;
+	min-width: 0;
+	color: #757575;
+	padding: 10px 0;
+	transition: none;
+	border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.directions .methods button:hover {
+	border-bottom-color: rgba(33, 150, 243, 0.5);
+}
+
+.directions .methods button:hover,
+.directions .methods button:focus,
+.directions .methods button:active {
+	color: #444;
+	background: initial;
+}
+
+.directions .methods button.active {
+	color: #2196F3;
+	border-bottom-color: currentColor;
+}
+
+.directions input {
+	width: 100%;
+	font-size: 14px;
+	border-radius: 0;
+	border: none!important;
+	padding: 15px 20px!important;
+}
+
+.directions input.to,
+.directions input.to:hover,
+.directions input.to:focus {
+	border-top: 1px solid #E2E2E2!important;
+}
+
+.directions .map {
+	width: 100%;
+}
+
+.directions .map-wrapper {
+	display: block;
+	overflow: hidden;
+}
+
+.directions .notice {
+	height: 0;
+	color: #888;
+	padding: 0 10%;
+	overflow: hidden;
+	text-align: center;
+	transition: all .2s ease;
+	background-color: #F5F5F5;
+}
+
+.directions .notice.visible {
+	height: auto;
+	padding: 30px 10% 20px;
+	border-top: 1px solid #E2E2E2;
+}
+
+.directions .notice p {
+	line-height: 22px;
+	margin: 5px 0 15px;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Directions / Routes
+*/
+.directions .route {
+	overflow: hidden;
+}
+
+.directions .results .route:not(:last-child) {
+	border-bottom: 1px solid #E2E2E2;
+}
+
+.directions .route .summary {
+	cursor: pointer;
+	font-size: 14px;
+	line-height: 24px;
+	padding: 18px 25px;
+	position: relative;
+	padding-right: 60px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+
+.directions .route .summary a {
+	top: 18px;
+	opacity: 0;
+	color: #888;
+	right: 25px;
+	position: absolute;
+	transition: opacity .15s ease;
+}
+
+.directions .route .summary:hover a {
+	opacity: 1;
+}
+
+.directions .route .summary a:hover {
+	color: #444;
+}
+
+.directions .route .summary svg {
+	width: 24px;
+	height: 24px;
+	fill: currentColor;
+}
+
+.directions .route .time {
+	color: #4CAF50;
+	font-weight: 500;
+}
+
+.directions .steps {
+	padding: 0;
+	max-height: 0;
+	overflow: hidden;
+	margin-bottom: 0;
+	background: #F5F5F5;
+	transition: all .2s ease;
+}
+
+.directions .route.active .steps,
+.directions .route:focus .steps {
+	overflow: auto;
+	padding: 10px 0;
+	max-height: 350px;
+}
+
+.directions .steps li {
+	display: flex;
+	font-size: 13px;
+	padding: 5px 18px;
+}
+
+.directions .steps li b {
+	font-weight: 500;
+}
+
+.directions .steps .description {
+	flex: 1;
+}
+
+.directions .steps .description div {
+	text-indent: 10px;
+	font-size: 12px!important;
+}
+
+.directions .steps li .distance {
+	flex-shrink: 0;
+	font-weight: 500;
+	margin-left: 10px;
+}
+
+.directions .steps li.copyrights {
+	display: block;
+	font-size: 11px;
+	text-align: right;
+}
