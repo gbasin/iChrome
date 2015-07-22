@@ -280,11 +280,6 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 		size: 4,
 		nicename: "pushbullet",
 		sizes: ["medium"],
-		settings: [
-			{
-				type: "size"
-			}
-		],
 		config: {
 			size: "medium"
 		},
