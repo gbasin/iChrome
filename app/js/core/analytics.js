@@ -2,13 +2,27 @@
  * Exports a global analytics API
  */
 define(function() {
-	/* jshint ignore:start */
-	(function(i, s, o, g, r, a, m) {
-		i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);
-	})(window, document, "script", "https://ssl.google-analytics.com/analytics.js", "ga");
-	/* jshint ignore:end */
+	// Uncompressed Google Analytics insertion code
+	(function() {
+		window.GoogleAnalyticsObject = "ga";
+
+		window.ga = window.ga || function() {
+			(window.ga.q = window.ga.q || []).push(arguments);
+		};
+
+		window.ga.l = new Date().getTime();
+
+		var script = document.createElement("script"),
+			firstScript = document.getElementsByTagName("script")[0];
+
+		script.async = true;
+		script.src = "https://ssl.google-analytics.com/analytics.js";
+
+		// Analytics are not critical, delay insertion
+		requestAnimationFrame(function() {
+			firstScript.parentNode.insertBefore(script,firstScript);
+		});
+	})();
 
 	/* global ga */
 
