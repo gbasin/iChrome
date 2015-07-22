@@ -63,7 +63,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 
 			this.$(".map-wrapper, .results").slideUp(function() {
 				$(this).remove();
-			})
+			});
 
 			$.ajax({
 				type: "GET",
