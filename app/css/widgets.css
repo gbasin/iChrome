@@ -4200,10 +4200,6 @@ body.no-edit .bookmarks .tools {
 	transition: background .1s ease;
 }
 
-.pocket .link:not(:last-child) {
-	border-bottom: 1px solid #EEE;
-}
-
 .pocket .link:hover {
 	background: #FAFAFA;
 }
@@ -4220,6 +4216,11 @@ body.no-edit .bookmarks .tools {
 	vertical-align: top;
 	display: inline-block;
 	width: calc(100% - 100px);
+}
+
+.pocket .link:not(:last-child) .info {
+	padding-bottom: 14px;
+	border-bottom: 1px solid #EEE;
 }
 
 .pocket .link .title {
