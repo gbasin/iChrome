@@ -796,6 +796,7 @@ input[type="radio"]:checked {
 
 
 
+
 /*---------------------------------------------
 	/ Toolbar / Search
 */
@@ -919,6 +920,36 @@ input[type="radio"]:checked {
 
 
 
+
+/*---------------------------------------------
+	/ Toolbar / Announcements
+*/
+.toolbar .announcements {
+	cursor: pointer;
+	padding: 14px 10px;
+	padding-right: 15px;
+}
+
+.toolbar .announcements:after {
+	color: #FFF;
+	width: 21px;
+	height: 21px;
+	display: block;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 21px;
+	text-align: center;
+	border-radius: 50%;
+	background: #F44336;
+	content: attr(data-count);
+	font-family: Roboto, sans-serif;
+}
+
+
+
+
+
+
 /*---------------------------------------------
 	/ Toolbar / Responsive Styles
 
@@ -945,6 +976,73 @@ input[type="radio"]:checked {
 	.toolbar .search {
 		width: calc(100% - 105px);
 	}
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Announcements
+*/
+.modal.announcements {
+	font-family: Roboto, sans-serif;
+}
+
+.modal.small.announcements > .close {
+	width: 55px;
+	height: 55px;
+	line-height: 55px;
+}
+
+.announcements .header {
+	height: 55px;
+	padding: 0 25px;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 55px;
+	position: relative;
+	font-family: inherit;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .18);
+}
+
+.modal.announcements .content {
+	overflow: auto;
+	font-size: 13px;
+	padding: 15px 20px;
+	height: calc(100% - 55px);
+	background-color: #FAFAFA;
+}
+
+.announcements p {
+	margin: 0;
+}
+
+.announcements p:not(:last-child) {
+	margin-bottom: 15px;
+}
+
+.announcements section {
+	margin: 15px 0;
+	padding-left: 10px;
+}
+
+.announcements h3 {
+	font-size: 13px;
+	font-weight: 500;
+	padding-bottom: 8px;
+	font-family: inherit;
+}
+
+.announcements ul {
+	margin: 0;
+	padding-left: 30px;
+}
+
+.announcements li {
+	padding-bottom: 5px;
 }
 
 
@@ -987,6 +1085,26 @@ input[type="radio"]:checked {
 
 .menu-toggle .menu-button:active {
 	background-color: #E84E40;
+}
+
+.menu-toggle .announcements {
+	top: 42px;
+	right: 42px;
+	color: #FFF;
+	z-index: 10;
+	width: 21px;
+	height: 21px;
+	display: block;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 21px;
+	position: absolute;
+	text-align: center;
+	border-radius: 50%;
+	background: #F44336;
+	font-family: Roboto, sans-serif;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
 }
 
 

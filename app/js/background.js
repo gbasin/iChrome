@@ -449,8 +449,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 			});
 		}
 
-
-		// localStorage["translateRequest"] = "true";
+		localStorage.showWhatsNew = "true";
 	}
 });
 

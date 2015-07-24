@@ -10,6 +10,8 @@
 	{{#gmail}}<a href="https://mail.google.com/mail/">{{i18n.toolbar.apps.gmail}}</a>{{/gmail}}
 </div>
 
+{{#announcements}}<div class="announcements" data-count="{{announcements}}"></div>{{/announcements}}
+
 {{#apps}}
 	<div class="apps-toggle">
 		<svg viewBox="0 0 21 21">
