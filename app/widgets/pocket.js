@@ -263,7 +263,7 @@ define(["jquery", "lodash", "moment", "backbone", "oauth"], function($, _, momen
 	return {
 		id: 45,
 		size: 1,
-		refresh: 300000,
+		interval: 300000,
 		nicename: "pocket",
 		sizes: ["variable"],
 		settings: [
