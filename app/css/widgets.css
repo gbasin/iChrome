@@ -4156,3 +4156,138 @@ body.no-edit .bookmarks .tools {
 	font-size: 11px;
 	text-align: right;
 }
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Pocket
+*/
+.widget.pocket {
+	padding: 0!important;
+	font-family: Roboto, sans-serif;
+}
+
+.pocket header {
+	width: 100%;
+	padding: 0 25px;
+	font-size: 16px;
+	line-height: 55px;
+	position: relative;
+	letter-spacing: .4px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+
+.pocket header:after {
+	height: 4px;
+	content: "";
+	display: block;
+	margin: -4px -25px 0;
+	background: linear-gradient(to right, #83EDB8 0%, #83EDB8 25%, #32BCB6 25%, #32BCB6 50%, #EF4056 50%, #EF4056 75%, #FCB64B 75%, #FCB64B 100%);
+}
+
+.pocket a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.pocket .link {
+	font-size: 0;
+	display: block;
+	transition: background .1s ease;
+}
+
+.pocket .link:not(:last-child) {
+	border-bottom: 1px solid #EEE;
+}
+
+.pocket .link:hover {
+	background: #FAFAFA;
+}
+
+.pocket .link .image {
+	width: 100px;
+	height: 95px;
+	display: inline-block;
+	background: #EAEAEA center/cover no-repeat;
+}
+
+.pocket .link .info {
+	padding: 15px 15px;
+	vertical-align: top;
+	display: inline-block;
+	width: calc(100% - 100px);
+}
+
+.pocket .link .title {
+	height: 40px;
+	font-size: 14px;
+	overflow: hidden;
+	font-weight: 500;
+	line-height: 20px;
+	margin-bottom: 10px;
+	font-family: inherit;
+	transition: color .1s ease;
+}
+
+.pocket .link:hover .title {
+	color: #26A69A;
+}
+
+.pocket .link .details {
+	margin: 0;
+	color: #757575;
+	display: block;
+	font-size: 12px;
+	line-height: 15px;
+}
+
+.pocket .link .details .date {
+	float: right;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Pocket / Notice pages
+*/
+.pocket .notice {
+	color: #888;
+	height: 400px;
+	text-align: center;
+	background: #F2F2F2;
+	padding: 85px 10% 20px;
+}
+
+.pocket .notice.no-key {
+	padding-top: 55px;
+}
+
+.pocket .notice svg {
+	width: 150px;
+	height: 150px;
+	fill: currentColor;
+}
+
+.pocket .notice p {
+	line-height: 22px;
+	margin: 5px 0 15px;
+}
+
+.pocket .notice button {
+	color: #FFF;
+	min-width: 90px;
+	margin-top: 10px;
+	background: #EE4056;
+}
+
+.pocket .notice button:active {
+	background: #E02C43;
+}

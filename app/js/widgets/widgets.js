@@ -19,7 +19,7 @@ define([
 	"w/tasks",		"w/quotes",			"w/html",
 	"w/notifications",	"w/sitelink",	"w/stats",
 	"w/search",		"w/classroom",		"w/pushbullet",
-	"w/linkedin",	"w/directions",
+	"w/linkedin",	"w/directions",		"w/pocket",
 
 	"lib/jquery.numberformatter", "lib/jquery.sortable"
 ], function(_, Utils) {

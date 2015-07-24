@@ -750,7 +750,7 @@
 
 	"directions": {
 		"name": "Directions",
-		"desc": "Get directions to and from nearly anywhere right from your homepage.",
+		"desc": "Get directions to and from nearly anywhere right from your homepage",
 
 		"driving": "Driving",
 		"transit": "Public Transit",
@@ -768,5 +768,25 @@
 		"open_in_maps": "Open in Google Maps",
 
 		"via": "via"
+	},
+
+	"pocket": {
+		"name": "Pocket",
+		"desc": "Display a list of your saved articles, videos, and web pages from Pocket",
+
+		"settings": {
+			"links_shown": "Number of links shown",
+
+			"open": "Open links",
+			"open_pocket": "In Pocket",
+			"open_original": "At their original URL"
+		},
+
+		"by": "By",
+
+		"no_links": "No links found",
+
+		"grant_access": "Grant access",
+		"no_key": "You'll need to give iChrome access to your Pocket account before it can load your links."
 	}
 }

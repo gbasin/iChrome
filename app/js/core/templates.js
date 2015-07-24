@@ -54,7 +54,8 @@ var templates = [
 		"widgets.classroom",			"widgets.classroom.desc",
 		"widgets.pushbullet",			"widgets.pushbullet.desc",
 		"widgets.linkedin",				"widgets.linkedin.desc",
-		"widgets.directions",			"widgets.directions.desc"
+		"widgets.directions",			"widgets.directions.desc",
+		"widgets.pocket",				"widgets.pocket.desc"
 	],
 	deps = [];
 
