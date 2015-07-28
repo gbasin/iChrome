@@ -1,7 +1,7 @@
 /*
  * Site Link
  */
-define(["lodash"], function(_) {
+define(["jquery", "lodash"], function($, _) {
 	return {
 		id: 38,
 		size: 1,
