@@ -39,7 +39,7 @@ define(
 					"click a.custom-link": function(e) {
 						var href = e.currentTarget.getAttribute("href");
 
-						if (href.indexOf("chrome") === 0) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
+						if (href.indexOf("chrome") === 0 || $("base").attr("target") == "_blank") { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
 							e.preventDefault();
 
 							chrome.tabs.getCurrent(function(d) {
@@ -185,7 +185,7 @@ define(
 								e.preventDefault();
 
 								chrome.tabs.getCurrent(function(d) {
-									if (e.which == 2) {
+									if (e.which == 2 || $("base").attr("target") == "_blank") {
 										chrome.tabs.create({
 											url: elm.attr("href"),
 											index: d.index + 1

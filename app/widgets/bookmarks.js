@@ -186,7 +186,7 @@ define(["jquery", "lodash", "modals/modals"], function($, _, Modal) {
 					e.preventDefault();
 
 					chrome.tabs.getCurrent(function(d) {
-						if (e.which == 2 || e.currentTarget.target == "_blank") {
+						if (e.which == 2 || (e.currentTarget.target || $("base").attr("target")) == "_blank") {
 							chrome.tabs.create({
 								url: href,
 								index: d.index + 1
