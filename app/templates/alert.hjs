@@ -1,0 +1,11 @@
+{{#title}}<h2>{{title}}</h2>{{/title}}
+
+<div class="content">
+	{{#contents}}
+		<p>{{.}}</p>
+	{{/contents}}
+</div>
+
+<footer>
+	{{#buttons}}<button type="button" data-action="{{action}}" class="material flat {{class}}">{{label}}{{^label}}{{i18n.alert.default_button}}{{/label}}</button>{{/buttons}}
+</footer>

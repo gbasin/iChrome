@@ -6,7 +6,7 @@ var templates = [
 		"css",					"toolbar",				"search",
 		"store",				"store-detail",			"themes",
 		"themes.listing",		"themes.custom",		"widget-settings",
-		"getting-started",		"donate",				"translate-request",
+		"getting-started",		"translate-request",	"alert",
 		"settings",				"menu",					"settings/new-tab",
 		"settings/general",		"settings/visual",		"settings/advanced",
 		"settings/tab-specific","widget-settings.inputs","settings/debug",

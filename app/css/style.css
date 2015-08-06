@@ -87,6 +87,7 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: top center;
+	-webkit-font-smoothing: antialiased;
 
 	/* Disable selection since it gives iChrome a more app-like feel and users should never end up copying text. */
 	cursor: default;
@@ -566,6 +567,101 @@ input[type="radio"]:checked {
 	background: #FFF;
 	box-shadow: inset 0 0 0 4px #1ABC9C;
 }
+
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Alert Dialog Style
+*/
+dialog {
+	border: 0;
+	width: auto;
+	overflow: hidden;
+	max-width: 370px;
+	padding: 24px 0 0;
+	border-radius: 3px;
+	background: #FAFAFA;
+	transform: scale(1);
+	font: 400 14px/20px Roboto, sans-serif;
+	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24);
+}
+
+dialog:not([open]) {
+	transform: scale(0.9);
+}
+
+dialog:not([open]),
+dialog:not([open])::backdrop {
+	opacity: 0;
+	display: initial;
+	visibility: hidden;
+	transition: visibility 0s .3s linear,
+				transform .3s cubic-bezier(.4, 0, .2, 1),
+				opacity .25s .05s cubic-bezier(.4, 0, .2, 1);
+}
+
+dialog::backdrop {
+	background: rgba(0, 0, 0, .2);
+}
+
+dialog, dialog::backdrop {
+	opacity: 1;
+	visibility: visible;
+	transition: visibility 0s 0s linear,
+				opacity .3s cubic-bezier(.4, 0, .2, 1),
+				transform .15s .05s cubic-bezier(.4, 0, .2, 1);
+}
+
+dialog.no-transition,
+dialog.no-transition::backdrop {
+	transition: none;
+}
+
+dialog h2 {
+	margin: 0;
+	font: inherit;
+	font-size: 20px;
+	font-weight: 500;
+	padding: 0 24px 20px;
+}
+
+dialog .content {
+	color: #757575;
+	line-height: 1.6;
+	padding: 0 24px 24px;
+}
+
+dialog .content p:last-child {
+	margin: 0;
+}
+
+dialog footer {
+	text-align: right;
+	padding: 0 4px 12px;
+}
+
+dialog footer button.material.flat {
+	padding: 0 8px;
+	margin-left: 0;
+	min-width: 64px;
+	font-size: 14px;
+	line-height: 36px;
+}
+
+dialog footer button.material.flat:hover:not(:focus) {
+	background: rgba(0, 0, 0, .05);
+}
+
+dialog footer button.material.flat:active {
+	background: rgba(0, 0, 0, .075);
+}
+
+
 
 
 
