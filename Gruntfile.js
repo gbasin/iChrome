@@ -39,6 +39,19 @@ module.exports = function(grunt) {
 				src: [ "**" ],
 				dest: "build",
 				expand: true
+			},
+			jsonly: {
+				files: [{
+					src: "app/js/app.js",
+					dest: "app/js/app.unbuilt.js"
+				}, {
+					src: "build/js/app.js",
+					dest: "app/js/app.js"
+				}]
+			},
+			resetjs: {
+				src: "app/js/app.unbuilt.js",
+				dest: "app/js/app.js"
 			}
 		},
 
@@ -194,7 +207,8 @@ module.exports = function(grunt) {
 		clean: {
 			all: ["tmp", "build/**/Thumbs.db", "build/templates", "build/widgets", "build/js/*", "!build/js/lib", "build/js/lib/*", "!build/js/lib/require.js", "!build/js/app.js", "!build/js/background.js"],
 			webstore: ["build"],
-			travis: ["build", "webstore.zip", "descriptions"]
+			travis: ["build", "webstore.zip", "descriptions"],
+			jsonly: ["app/js/app.unbuilt.js"]
 		}
 	});
 
@@ -330,7 +344,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask("default", [
 		"jshint:all",
-		"copy",
+		"copy:build",
 		"i18n:compile",
 		"concat",
 		"hogan:compilebinder",
@@ -342,7 +356,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask("webstore", [
 		"jshint:all",
-		"copy",
+		"copy:build",
 		"descriptions",
 		"i18n:compile",
 		"concat",
@@ -358,7 +372,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask("travis", [
 		"jshint:all",
-		"copy",
+		"copy:build",
 		"descriptions",
 		"i18n:compile",
 		"concat",
@@ -370,5 +384,38 @@ module.exports = function(grunt) {
 		"clean:all",
 		"compress",
 		"clean:travis"
+	]);
+
+
+	grunt.registerTask("waitReset", function() {
+		var done = this.async();
+
+		var rl = require("readline").createInterface({
+			input: process.stdin,
+			output: process.stdout
+		});
+
+		rl.question("Press Enter to reset app.js: ", function(answer) {
+			rl.close();
+
+			done();
+		});
+	});
+
+	grunt.registerTask("jsonly", [
+		"jshint:all",
+		"copy:build",
+		"i18n:compile",
+		"concat",
+		"hogan:compilebinder",
+		"hogan:compile",
+		"string-replace",
+		"requirejs:webstore",
+		"copy:jsonly",
+		"clean:all",
+		"clean:webstore",
+		"waitReset",
+		"copy:resetjs",
+		"clean:jsonly"
 	]);
 };
