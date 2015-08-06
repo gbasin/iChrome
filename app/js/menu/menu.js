@@ -4,9 +4,9 @@
 define(
 	[
 		"lodash", "jquery", "backbone", "core/analytics", "storage/storage", "storage/defaults", "i18n/i18n", "search/search",
-		"search/speech", "settings/settings", "widgets/store", "modals/donate", "core/uservoice", "core/render"
+		"search/speech", "settings/settings", "widgets/store", "core/uservoice", "core/render"
 	],
-	function(_, $, Backbone, Track, Storage, Defaults, Translate, Search, Speech, Settings, Store, Donate, UserVoice, render) {
+	function(_, $, Backbone, Track, Storage, Defaults, Translate, Search, Speech, Settings, Store, UserVoice, render) {
 		var Model = Backbone.Model.extend({
 				init: function() {
 					Storage.on("done updated", function(storage) {
@@ -68,16 +68,6 @@ define(
 						}
 
 						this.Settings.createTab();
-					},
-					"click .footer .donate": function(e) {
-						e.preventDefault();
-
-						if (!this.Donate) {
-							this.Donate = new Donate();
-						}
-						else {
-							this.Donate.show();
-						}
 					},
 					"click .footer .support": function(e) {
 						e.preventDefault();

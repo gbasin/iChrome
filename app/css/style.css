@@ -2462,61 +2462,6 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 
 /*---------------------------------------------
-	/ Donate
-*/
-.donate .desc {
-	padding: 25px;
-	background: #FCFCFC;
-	height: calc(100% - 70px);
-}
-
-.donate .buttons {
-	padding: 25px 35px;
-}
-
-.donate .btn {
-	margin-right: 15px;
-}
-
-.donate svg {
-	height: 22px;
-	vertical-align: middle;
-}
-
-.donate .paypal svg {
-	width: 60px;
-	height: 16px;
-}
-
-.donate .bitcoin:not(:hover) {
-	background-color: #F7931B;
-}
-
-.donate .bitcoin svg {
-	width: 85px;
-}
-
-.donate .litecoin svg {
-	width: 90px;
-}
-
-.donate .dogecoin {
-	background-color: #B2D234;
-}
-
-.donate .dogecoin:hover {
-	background: #A9C92C;
-}
-
-.donate .dogecoin svg {
-	width: 100px;
-}
-
-
-
-
-
-/*---------------------------------------------
 	/ Upgrade guide
 */
 .updated .desc {
