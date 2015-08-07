@@ -30,6 +30,8 @@ define(
 		var iChrome = Backbone.View.extend({
 			el: "body",
 
+			Status: Status,
+
 			events: {
 				"click .nested-link[data-href]": function(e) {
 					// If this was an anchor inside a nested link (like the
