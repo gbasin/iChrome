@@ -1,7 +1,7 @@
 /**
  * Initializes UserVoice and it's autoprompts
  */
-define(["core/uid"], function(uid) {
+define(["storage/syncapi"], function(SyncAPI) {
 	var initUV = function() {
 		var uv = document.createElement("script");
 
@@ -20,9 +20,24 @@ define(["core/uid"], function(uid) {
 			trigger_background_color: "rgba(46, 49, 51, 0.6)"
 		}]);
 
+
+		var d = SyncAPI.getInfo();
+
+		var extension = chrome.i18n.getMessage("@@extension_id");
+
+		if (extension === "oghkljobbhapacbahlneolfclkniiami") {
+			extension = "Main";
+		}
+		else if (extension === "iccjgbbjckehppnpajnmplcccjcgbdep") {
+			extension = "New Tab";
+		}
+
 		window.UserVoice.push(["identify", {
-			id: uid
+			email: d.user.email,
+			name: (d.user.fname + " " + d.user.lname).trim() || undefined,
+			type: extension
 		}]);
+
 
 		window.UserVoice.push(["autoprompt", {
 			position: "toast"
