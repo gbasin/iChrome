@@ -105,7 +105,7 @@ define(
 							widget[input.options].call(widget, function(options) {
 								var val = elm.find("select").val();
 
-								data.options = _.flatten(loop(options));
+								data.options = _.flatten(loop(options), true);
 
 								elm.html(render("widget-settings.inputs", {
 									"input-select": data
@@ -125,7 +125,7 @@ define(
 					}
 					else {
 						widget[input.options].call(widget, function(options) {
-							data.options = _.flatten(loop(options));
+							data.options = _.flatten(loop(options), true);
 
 							elm.html(render("widget-settings.inputs", {
 								"input-select": data
@@ -134,7 +134,7 @@ define(
 					}
 				}
 				else {
-					data.options = _.flatten(loop(input.options));
+					data.options = _.flatten(loop(input.options), true);
 
 					elm.html(render("widget-settings.inputs", {
 						"input-select": data

@@ -63,8 +63,7 @@
 		<br />
 
 		<a href="http://www.twitter.com/iChromeHQ">{{i18n.menu.footer.twitter}}</a> &nbsp;·&nbsp;
-		<a href="https://chrome.google.com/webstore/detail/ichrome-new-tab/iccjgbbjckehppnpajnmplcccjcgbdep">{{i18n.menu.footer.webstore}}</a> &nbsp;·&nbsp;
-		<a href="#donate" class="donate">{{i18n.menu.footer.donate}}</a>
+		<a href="https://chrome.google.com/webstore/detail/ichrome-new-tab/iccjgbbjckehppnpajnmplcccjcgbdep">{{i18n.menu.footer.webstore}}</a>
 
 		<hr class="separator" />
 

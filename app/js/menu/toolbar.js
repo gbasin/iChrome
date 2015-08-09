@@ -1,170 +1,156 @@
 /**
  * This generates the toolbar and its submodules
  */
-define(["lodash", "jquery", "backbone", "core/analytics", "storage/storage", "storage/defaults", "search/search", "menu/menu", "core/render"], function(_, $, Backbone, Track, Storage, Defaults, Search, Menu, render) {
-	var Model = Backbone.Model.extend({
-			init: function() {
-				Storage.on("done updated", function(storage) {
-					this.storage = storage;
+define(
+	["lodash", "jquery", "backbone", "core/analytics", "storage/storage", "storage/syncapi", "storage/defaults", "search/search", "menu/menu", "core/announcements", "core/render"],
+	function(_, $, Backbone, Track, Storage, SyncAPI, Defaults, Search, Menu, Announcements, render) {
+		var Model = Backbone.Model.extend({
+				init: function() {
+					Storage.on("done updated", function(storage) {
+						var set = _.clone(storage.settings);
 
-					this.set(storage.settings);
+						var d = SyncAPI.getInfo();
 
-					if (
-						!storage.settings.name || storage.settings.name == Defaults.settings.name ||
-						!storage.settings.profile || storage.settings.profile == Defaults.settings.profile
-					) {
-						this.getProfile();
-					}
-				}, this);
-			},
+						set.name = d.user.fname || Defaults.user.fname;
 
+						set.profileimage = d.user.image ? d.user.image + "?sz=72" : Defaults.user.image;
 
-			/**
-			 * Gets the profile picture and user's first name
-			 *
-			 * @api    private
-			 */
-			getProfile: function() {
-				$.get("https://apis.google.com/u/0/_/+1/hover?url=http%3A%2F%2Fichro.me&isSet=false", function(d) {
-					var img = $("img", $.parseHTML(d));
+						Announcements.off("countchange", null, this).on("countchange", function(count) {
+							this.set("announcements", count);
+						}, this);
 
-					var profile = img.attr("src").replace("s24", "s72-c"),
-						name = img.parent().next().find("a").text().split(" ")[0];
+						set.announcements = Announcements.count;
 
-					// We're probably not signed in, skip till next time
-					if (!name || profile.indexOf("s72-c") == -1) {
-						return;
-					}
+						this.set(set);
+					}, this);
+				}
+			}),
+			View = Backbone.View.extend({
+				tagName: "header",
+				className: "toolbar",
 
-					this.storage.settings.name = name;
-					this.storage.settings.profile = profile;
+				events: {
+					"click .apps-toggle": "toggleApps",
+					"click .menu-toggle": Menu.toggle.bind(Menu),
 
-					this.storage.sync(true);
-				}.bind(this));
-			}
-		}),
-		View = Backbone.View.extend({
-			tagName: "header",
-			className: "toolbar",
-
-			events: {
-				"click .apps-toggle": "toggleApps",
-				"click .menu-toggle": Menu.toggle.bind(Menu),
-
-				"click .apps a.icon": function(e) {
-					e.preventDefault();
-				},
-				"click a.custom-link": function(e) {
-					var href = e.currentTarget.getAttribute("href");
-
-					if (href.indexOf("chrome") === 0) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
+					"click .announcements": function(e) {
+						Announcements.show();
+					},
+					"click .apps a.icon": function(e) {
 						e.preventDefault();
+					},
+					"click a.custom-link": function(e) {
+						var href = e.currentTarget.getAttribute("href");
 
-						chrome.tabs.getCurrent(function(d) {
-							if (e.which == 2) {
-								chrome.tabs.create({
-									url: href,
-									index: d.index + 1
-								});
-							}
-							else {
-								chrome.tabs.update(d.id, {
-									url: href
-								});
+						if (href.indexOf("chrome") === 0 || $("base").attr("target") == "_blank") { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
+							e.preventDefault();
+
+							chrome.tabs.getCurrent(function(d) {
+								if (e.which == 2) {
+									chrome.tabs.create({
+										url: href,
+										index: d.index + 1
+									});
+								}
+								else {
+									chrome.tabs.update(d.id, {
+										url: href
+									});
+								}
+							});
+
+							Track.event("Toolbar", "Link Click", "Chrome");
+						}
+						else {
+							Track.event("Toolbar", "Link Click");
+						}
+					}
+				},
+
+
+				/**
+				 * Shows and hides the apps panel
+				 *
+				 * @api    private
+				 * @param  {Event} e The event
+				 */
+				toggleApps: function(e) {
+					var elm = $(e.currentTarget);
+
+					if (!elm.hasClass("active")) {
+						if (!this.appsLoaded) {
+							elm.find("img[data-src]").each(function(e, i) {
+								this.setAttribute("src", this.getAttribute("data-src"));
+
+								this.removeAttribute("data-src");
+							});
+
+							this.appsLoaded = true;
+						}
+
+						var elms = elm.find("*").add(elm);
+
+						$(document.body).on("click.apps", function(e) {
+							if (!elms.is(e.target)) {
+								elm.removeClass("active");
+
+								$(document.body).off("click.apps");
 							}
 						});
 
-						Track.event("Toolbar", "Link Click", "Chrome");
+						elm.addClass("active");
+
+						Track.event("Toolbar", "Apps Menu", "Open");
 					}
 					else {
-						Track.event("Toolbar", "Link Click");
+						$(document.body).off("click.apps");
+
+						elm.removeClass("active");
+
+						Track.event("Toolbar", "Apps Menu", "Close");
 					}
-				}
-			},
+				},
 
 
-			/**
-			 * Shows and hides the apps panel
-			 *
-			 * @api    private
-			 * @param  {Event} e The event
-			 */
-			toggleApps: function(e) {
-				var elm = $(e.currentTarget);
+				initialize: function() {
+					this.model = new Model();
 
-				if (!elm.hasClass("active")) {
-					if (!this.appsLoaded) {
-						elm.find("img[data-src]").each(function(e, i) {
-							this.setAttribute("src", this.getAttribute("data-src"));
+					this.Menu = Menu;
 
-							this.removeAttribute("data-src");
-						});
+					this.Search = new Search();
 
-						this.appsLoaded = true;
+					// init() needs to be called after the listener is attached to prevent a race condition when storage is already loaded.
+					// It also needs to be here instead of attached directly to new Model() otherwise this.model might not be set yet.
+					this.model.on("change", this.render, this).init();
+				},
+
+
+				render: function() {
+					var toolbar = this.model.get("toolbar") == "full" || this.model.get("toolbar") === true;
+
+					if (toolbar) {
+						this.Menu.$el.detach();
 					}
 
-					var elms = elm.find("*").add(elm);
+					// The app icons attributes get reset on render
+					this.appsLoaded = false;
 
-					$(document.body).on("click.apps", function(e) {
-						if (!elms.is(e.target)) {
-							elm.removeClass("active");
+					this.Search.$el.detach();
 
-							$(document.body).off("click.apps");
-						}
-					});
+					this.$el.html(render("toolbar", this.model.toJSON()));
 
-					elm.addClass("active");
+					this.$(".search").replaceWith(this.Search.el);
 
-					Track.event("Toolbar", "Apps Menu", "Open");
+					if (toolbar) {
+						this.$("nav.menu").replaceWith(this.Menu.el);
+
+						this.Menu.delegateEvents();
+					}
+
+					return this;
 				}
-				else {
-					$(document.body).off("click.apps");
+			});
 
-					elm.removeClass("active");
-
-					Track.event("Toolbar", "Apps Menu", "Close");
-				}
-			},
-
-
-			initialize: function() {
-				this.model = new Model();
-
-				this.Menu = Menu;
-
-				this.Search = new Search();
-
-				// init() needs to be called after the listener is attached to prevent a race condition when storage is already loaded.
-				// It also needs to be here instead of attached directly to new Model() otherwise this.model might not be set yet.
-				this.model.on("change", this.render, this).init();
-			},
-
-
-			render: function() {
-				var toolbar = this.model.get("toolbar") == "full" || this.model.get("toolbar") === true;
-
-				if (toolbar) {
-					this.Menu.$el.detach();
-				}
-
-				// The app icons attributes get reset on render
-				this.appsLoaded = false;
-
-				this.Search.$el.detach();
-
-				this.$el.html(render("toolbar", this.model.toJSON()));
-
-				this.$(".search").replaceWith(this.Search.el);
-
-				if (toolbar) {
-					this.$("nav.menu").replaceWith(this.Menu.el);
-
-					this.Menu.delegateEvents();
-				}
-
-				return this;
-			}
-		});
-
-	return View;
-});
+		return View;
+	}
+);

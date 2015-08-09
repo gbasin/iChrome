@@ -4,9 +4,9 @@
 define(
 	[
 		"lodash", "jquery", "backbone", "core/analytics", "storage/storage", "storage/defaults", "i18n/i18n", "search/search",
-		"search/speech", "settings/settings", "widgets/store", "modals/donate", "core/uservoice", "core/render"
+		"search/speech", "settings/settings", "widgets/store", "core/uservoice", "core/render"
 	],
-	function(_, $, Backbone, Track, Storage, Defaults, Translate, Search, Speech, Settings, Store, Donate, UserVoice, render) {
+	function(_, $, Backbone, Track, Storage, Defaults, Translate, Search, Speech, Settings, Store, UserVoice, render) {
 		var Model = Backbone.Model.extend({
 				init: function() {
 					Storage.on("done updated", function(storage) {
@@ -39,7 +39,7 @@ define(
 					"click a.custom-link": function(e) {
 						var href = e.currentTarget.getAttribute("href");
 
-						if (href.indexOf("chrome") === 0) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
+						if (href.indexOf("chrome") === 0 || $("base").attr("target") == "_blank") { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
 							e.preventDefault();
 
 							chrome.tabs.getCurrent(function(d) {
@@ -69,16 +69,6 @@ define(
 
 						this.Settings.createTab();
 					},
-					"click .footer .donate": function(e) {
-						e.preventDefault();
-
-						if (!this.Donate) {
-							this.Donate = new Donate();
-						}
-						else {
-							this.Donate.show();
-						}
-					},
 					"click .footer .support": function(e) {
 						e.preventDefault();
 
@@ -105,22 +95,11 @@ define(
 
 					switch (elm.attr("data-item")) {
 						case "settings":
-							if (!this.Settings) {
-								this.Settings = new Settings();
-							}
-
-							this.Settings.show();
-							// This delays displaying the modal until after the init JS is done so the animation is smooth
-							requestAnimationFrame(this.Settings.show.bind(this.Settings));
+							this.open("settings");
 						break;
 
 						case "widgets":
-							if (!this.Store) {
-								this.Store = new Store();
-							}
-
-							// See above
-							requestAnimationFrame(this.Store.show.bind(this.Store));
+							this.open("store");
 						break;
 
 						case "view":
@@ -185,7 +164,7 @@ define(
 								e.preventDefault();
 
 								chrome.tabs.getCurrent(function(d) {
-									if (e.which == 2) {
+									if (e.which == 2 || $("base").attr("target") == "_blank") {
 										chrome.tabs.create({
 											url: elm.attr("href"),
 											index: d.index + 1
@@ -213,6 +192,29 @@ define(
 							Track.event("Menu", "Tab Navigation");
 						break;
 					}
+				},
+
+
+				/**
+				 * This method allows other modules to open the store and settings
+				 *
+				 * @api     public
+				 * @param   {String}  [which]  Which modal to open, "store" or "settings", defaults to "settings".
+				 * @return  {Backbone.View}    The view of the modal that was just opened
+				 */
+				open: function(which) {
+					var isStore = which === "store";
+
+					which = isStore ? "Store" : "Settings";
+
+					if (!this[which]) {
+						this[which] = isStore ? new Store() : new Settings();
+					}
+
+					// This delays displaying the modal until after the init JS is done so the animation is smooth
+					requestAnimationFrame(this[which].show.bind(this[which]));
+
+					return this[which];
 				},
 
 

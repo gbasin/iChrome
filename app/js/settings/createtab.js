@@ -1,10 +1,10 @@
 /**
  * This function creates a new tab
  */
-define(["jquery", "core/analytics", "storage/defaults", "i18n/i18n", "core/render"], function($, Track, Defaults, Translate, render) {
+define(["jquery", "lodash", "core/analytics", "storage/defaults", "i18n/i18n", "core/render"], function($, _, Track, Defaults, Translate, render) {
 	return function(modal, storage, btns, item, forms) {
 		var id = storage.tabs.length + 1,
-			tab = $.extend(true, {}, Defaults.tabs, {
+			tab = _.assign(_.clone(Defaults.tabs, true), {
 				id: id,
 				columns: [],
 				name: Translate("settings.specific.default_name"),

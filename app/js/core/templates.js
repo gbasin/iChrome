@@ -6,10 +6,11 @@ var templates = [
 		"css",					"toolbar",				"search",
 		"store",				"store-detail",			"themes",
 		"themes.listing",		"themes.custom",		"widget-settings",
-		"getting-started",		"donate",				"translate-request",
+		"getting-started",		"translate-request",	"alert",
 		"settings",				"menu",					"settings/new-tab",
 		"settings/general",		"settings/visual",		"settings/advanced",
 		"settings/tab-specific","widget-settings.inputs","settings/debug",
+		"announcements",		"settings/sync",
 
 		"widgets.weather",				"widgets.weather.desc",
 		"widgets.stocks",				"widgets.stocks.desc",
@@ -51,7 +52,11 @@ var templates = [
 		"widgets.sitelink",				"widgets.sitelink.desc",
 		"widgets.stats",				"widgets.stats.desc",
 		"widgets.search",				"widgets.search.desc",
-		"widgets.classroom",			"widgets.classroom.desc"
+		"widgets.classroom",			"widgets.classroom.desc",
+		"widgets.pushbullet",			"widgets.pushbullet.desc",
+		"widgets.linkedin",				"widgets.linkedin.desc",
+		"widgets.directions",			"widgets.directions.desc",
+		"widgets.pocket",				"widgets.pocket.desc"
 	],
 	deps = [];
 

@@ -4,9 +4,9 @@
 define(
 	[
 		"lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "core/analytics", "modals/modals", "themes/themes", "settings/general",
-		"settings/visual", "settings/specific", "settings/advanced", "core/render", "settings/serialize", "settings/createtab"
+		"settings/visual", "settings/specific", "settings/sync", "settings/advanced", "core/render", "settings/serialize", "settings/createtab"
 	],
-	function(_, $, Backbone, Storage, Defaults, Track, Modal, Themes, General, Visual, Specific, Advanced, render, serialize, createTab) {
+	function(_, $, Backbone, Storage, Defaults, Track, Modal, Themes, General, Visual, Specific, Sync, Advanced, render, serialize, createTab) {
 		var Model = Backbone.Model.extend({
 				save: function(d, cb) {
 					if (d.tabs)		this.storage.tabs = d.tabs;
@@ -75,6 +75,8 @@ define(
 						e.preventDefault();
 					}
 
+					this.Sync.save();
+
 					this.model.save({
 						settings: serialize(this.$el, this.model.storage)
 					}, cb || modal.hide.bind(modal));
@@ -127,6 +129,7 @@ define(
 						this.Advanced = new Advanced();
 						this.Visual = new Visual({ themes: this.Themes });
 						this.Specific = new Specific({ themes: this.Themes });
+						this.Sync = new Sync();
 
 						this.Specific.on("tab:removed", function() {
 							// An empty function needs to be passed so the dialog isn't automatically closed
@@ -145,7 +148,7 @@ define(
 
 
 					// The tab elms need to be detached so their event listeners aren't destroyed when this.$el.html() is called
-					$(_.pluck(_.pick(this, "General", "Visual", "Specific", "Advanced"), "el")).detach();
+					$(_.pluck(_.pick(this, "General", "Visual", "Specific", "Sync", "Advanced"), "el")).detach();
 
 
 					var data = {
@@ -162,7 +165,7 @@ define(
 
 					this.$el.html(render("settings", data));
 
-					this.$(".tabs").append(this.General.el, this.Visual.el, this.Specific.el, this.Advanced.el);
+					this.$(".tabs").append(this.General.el, this.Visual.el, this.Specific.el, this.Sync.el, this.Advanced.el);
 
 					return this;
 				}

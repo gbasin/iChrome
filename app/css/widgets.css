@@ -1531,81 +1531,113 @@
 /*---------------------------------------------
 	/ Calendar
 */
-.widget.calendar a.header {
-	display: block;
-	margin-bottom: 25px;
-	text-decoration: none;
+.widget.calendar {
+	padding: 0!important;
+	font-family: Roboto, sans-serif;
 }
 
-.calendar a.header:hover {
-	color: #428BCA;
-}
-
-.calendar .events {
-	margin: -15px;
-}
-
-.calendar .events.no-header {
-	margin-top: -15px;
-}
-
-.calendar .event {
-	color: #428BCA;
-	display: block;
-	overflow: hidden;
-	padding: 10px 20px;
-	text-decoration: none;
-	font-family: Open Sans, sans-serif;
-}
-
-.calendar .event:hover {
-	background: rgba(0, 0, 0, 0.03);
-}
-
-.calendar .event.no-events {
-	color: #555;
-}
-
-.calendar .event .title {
+.calendar header {
 	width: 100%;
-	font-size: 18px;
-	overflow: hidden;
-	margin-bottom: 5px;
-	white-space: nowrap;
-	display: inline-block;
-	text-overflow: ellipsis;
+	height: 55px;
+	padding: 0 25px;
+	font-size: 16px;
+	line-height: 55px;
+	position: relative;
+	letter-spacing: .2px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .24);
 }
 
-.calendar .event span {
-	width: 49%;
-	overflow: hidden;
-	white-space: nowrap;
-	display: inline-block;
-	text-overflow: ellipsis;
+.calendar header a {
+	color: inherit;
+	text-decoration: none;
 }
 
-.calendar .event .time,
-.calendar .event .calendar {
-	color: #333;
-	line-height: 20px;
+.calendar .notice {
+	color: #888;
+	height: 250px;
+	text-align: center;
+	padding: 85px 10% 20px;
 }
 
-.calendar .event .calendar {
-	float: right;
+.calendar .notice p {
+	line-height: 22px;
+	margin: 5px 0 15px;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Calendar / Agenda
+*/
+.calendar .agenda {
+	overflow: auto;
+	padding-top: 8px;
+	max-height: 500px;
+	background: #FAFAFA;
+}
+
+.medley .calendar .agenda {
+	max-height: calc(100% - 55px);
+}
+
+.calendar .agenda .day .date {
 	font-size: 13px;
-	text-align: right;
+	font-weight: 500;
+	padding: 8px 14px;
 }
 
-.calendar .event .location {
-	color: #666;
-	float: right;
+.calendar .agenda .day .date.today {
+	color: #4285F4;
+}
+
+.calendar .agenda .day .date.past {
+	color: #999;
+}
+
+.calendar .agenda .day .events {
+	background: #FFF;
+	overflow: hidden;
+	border-radius: 3px;
+	margin: 0 18px 10px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .12);
+}
+
+.calendar .agenda .day .event {
+	color: #333;
+	display: block;
+	font-size: 13px;
+	padding: 8px 15px;
+	text-decoration: none;
+}
+
+.calendar .agenda.multiple .day .event {
+	border-left: 3px solid #2196F3;
+}
+
+.calendar .agenda .day .event:not(:first-child) {
+	border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.calendar .agenda .day .event:hover {
+	background: #F5F5F5;
+}
+
+.calendar .agenda .day .event > * {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.calendar .agenda .day .event .title {
+	width: 100%;
 	font-size: 15px;
-	text-align: right;
+	font-weight: 500;
 	line-height: 25px;
-}
-
-.calendar .event .location + .title {
-	max-width: 49%;
+	font-family: inherit;
 }
 
 
@@ -2856,6 +2888,7 @@ body.no-edit .bookmarks .tools {
 .widget.plus,
 .widget.gmail,
 .widget.iframe,
+.widget.linkedin,
 .widget.facebook,
 .widget.classroom,
 .widget.notifications {
@@ -2867,6 +2900,7 @@ body.no-edit .bookmarks .tools {
 .plus iframe,
 .gmail iframe,
 .iframe iframe,
+.linkedin iframe,
 .facebook iframe,
 .classroom iframe,
 .notifications iframe {
@@ -3783,4 +3817,478 @@ body.no-edit .bookmarks .tools {
 */
 .widget.classroom {
 	height: 450px;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Pushbullet
+*/
+.widget.pushbullet {
+	padding: 0!important;
+	font-family: Roboto, sans-serif;
+}
+
+.pushbullet a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.pushbullet header {
+	width: 100%;
+	padding: 0 25px;
+	font-size: 16px;
+	line-height: 55px;
+	position: relative;
+	background: #F8F8F8;
+	letter-spacing: .4px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
+}
+
+.pushbullet .items {
+	padding: 8px 0;
+	overflow: auto;
+	max-height: 400px;
+}
+
+.medley .pushbullet .items {
+	max-height: calc(100% - 55px);
+}
+
+.pushbullet .items .item {
+	display: block;
+	min-height: 68px;
+	padding: 14px 16px;
+	transition: background-color .2s ease;
+}
+
+.pushbullet .items .item:hover {
+	background: rgba(0, 0, 0, .03);
+}
+
+.pushbullet .item .thumb {
+	width: 40px;
+	float: left;
+	height: 40px;
+	margin-right: 16px;
+	border-radius: 50%;
+	vertical-align: top;
+	display: inline-block;
+	background-size: cover;
+	background-color: #DDD;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.pushbullet .item .sender {
+	font-weight: 500;
+}
+
+.pushbullet .item .date {
+	color: #666;
+	float: right;
+	font-size: 13px;
+}
+
+.pushbullet .item .body {
+	margin: 0;
+	display: block;
+	font-size: 13px;
+	max-height: 56px;
+	overflow: hidden;
+}
+
+.pushbullet .item .body .title,
+.pushbullet .item .body.title span {
+	font-weight: 500;
+}
+
+.pushbullet .item .link,
+.pushbullet .item .body.title {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.pushbullet .item .image {
+	width: 185px;
+	height: 115px;
+	margin-top: 10px;
+	border-radius: 2px;
+	display: inline-block;
+	background-size: cover;
+	background-color: #DDD;
+	background-position: center;
+	background-repeat: no-repeat;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Pushbullet / Notice pages
+*/
+.pushbullet .notice {
+	color: #888;
+	height: 400px;
+	text-align: center;
+	background: #F2F2F2;
+	padding: 85px 10% 20px;
+}
+
+.pushbullet .notice.no-key {
+	padding-top: 55px;
+}
+
+.pushbullet .notice svg {
+	width: 150px;
+	height: 150px;
+	fill: currentColor;
+}
+
+.pushbullet .notice p {
+	line-height: 22px;
+	margin: 5px 0 15px;
+}
+
+.pushbullet .notice button {
+	min-width: 90px;
+	margin-top: 10px;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Directions
+*/
+.widget.directions {
+	padding: 0!important;
+	font-family: Roboto, sans-serif;
+}
+
+.directions .methods {
+	height: 46px;
+	display: flex;
+	background: #FAFAFA;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+
+.directions .methods button {
+	flex: 1;
+	margin: 0;
+	min-width: 0;
+	color: #757575;
+	padding: 10px 0;
+	transition: none;
+	border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.directions .methods button:hover {
+	border-bottom-color: rgba(33, 150, 243, 0.5);
+}
+
+.directions .methods button:hover,
+.directions .methods button:focus,
+.directions .methods button:active {
+	color: #444;
+	background: initial;
+}
+
+.directions .methods button.active {
+	color: #2196F3;
+	border-bottom-color: currentColor;
+}
+
+.directions input {
+	width: 100%;
+	font-size: 14px;
+	border-radius: 0;
+	border: none!important;
+	padding: 15px 20px!important;
+}
+
+.directions input.to,
+.directions input.to:hover,
+.directions input.to:focus {
+	border-top: 1px solid #E2E2E2!important;
+}
+
+.directions .map {
+	width: 100%;
+}
+
+.directions .map-wrapper {
+	display: block;
+	overflow: hidden;
+}
+
+.directions .notice {
+	height: 0;
+	color: #888;
+	padding: 0 10%;
+	overflow: hidden;
+	text-align: center;
+	transition: all .2s ease;
+	background-color: #F5F5F5;
+}
+
+.directions .notice.visible {
+	height: auto;
+	padding: 30px 10% 20px;
+	border-top: 1px solid #E2E2E2;
+}
+
+.directions .notice p {
+	line-height: 22px;
+	margin: 5px 0 15px;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Directions / Routes
+*/
+.directions .route {
+	overflow: hidden;
+}
+
+.directions .results .route:not(:last-child) {
+	border-bottom: 1px solid #E2E2E2;
+}
+
+.directions .route .summary {
+	cursor: pointer;
+	font-size: 14px;
+	line-height: 24px;
+	padding: 18px 25px;
+	position: relative;
+	padding-right: 60px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+
+.directions .route .summary a {
+	top: 18px;
+	opacity: 0;
+	color: #888;
+	right: 25px;
+	position: absolute;
+	transition: opacity .15s ease;
+}
+
+.directions .route .summary:hover a {
+	opacity: 1;
+}
+
+.directions .route .summary a:hover {
+	color: #444;
+}
+
+.directions .route .summary svg {
+	width: 24px;
+	height: 24px;
+	fill: currentColor;
+}
+
+.directions .route .time {
+	color: #4CAF50;
+	font-weight: 500;
+}
+
+.directions .steps {
+	padding: 0;
+	max-height: 0;
+	overflow: hidden;
+	margin-bottom: 0;
+	background: #F5F5F5;
+	transition: all .2s ease;
+}
+
+.directions .route.active .steps,
+.directions .route:focus .steps {
+	overflow: auto;
+	padding: 10px 0;
+	max-height: 350px;
+}
+
+.directions .steps li {
+	display: flex;
+	font-size: 13px;
+	padding: 5px 18px;
+}
+
+.directions .steps li b {
+	font-weight: 500;
+}
+
+.directions .steps .description {
+	flex: 1;
+}
+
+.directions .steps .description div {
+	text-indent: 10px;
+	font-size: 12px!important;
+}
+
+.directions .steps li .distance {
+	flex-shrink: 0;
+	font-weight: 500;
+	margin-left: 10px;
+}
+
+.directions .steps li.copyrights {
+	display: block;
+	font-size: 11px;
+	text-align: right;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Pocket
+*/
+.widget.pocket {
+	padding: 0!important;
+	font-family: Roboto, sans-serif;
+}
+
+.pocket header {
+	width: 100%;
+	padding: 0 25px;
+	font-size: 16px;
+	line-height: 55px;
+	position: relative;
+	letter-spacing: .4px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+
+.pocket header:after {
+	height: 4px;
+	content: "";
+	display: block;
+	margin: -4px -25px 0;
+	background: linear-gradient(to right, #83EDB8 0%, #83EDB8 25%, #32BCB6 25%, #32BCB6 50%, #EF4056 50%, #EF4056 75%, #FCB64B 75%, #FCB64B 100%);
+}
+
+.pocket a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.pocket .link {
+	font-size: 0;
+	display: block;
+	transition: background .1s ease;
+}
+
+.pocket .link:hover {
+	background: #FAFAFA;
+}
+
+.pocket .link .image {
+	width: 100px;
+	height: 95px;
+	display: inline-block;
+	background: #EAEAEA center/cover no-repeat;
+}
+
+.pocket .link .info {
+	padding: 15px 15px;
+	vertical-align: top;
+	display: inline-block;
+	width: calc(100% - 100px);
+}
+
+.pocket .link:not(:last-child) .info {
+	padding-bottom: 14px;
+	border-bottom: 1px solid #EEE;
+}
+
+.pocket .link .title {
+	height: 40px;
+	font-size: 14px;
+	overflow: hidden;
+	font-weight: 500;
+	line-height: 20px;
+	margin-bottom: 10px;
+	font-family: inherit;
+	transition: color .1s ease;
+}
+
+.pocket .link:hover .title {
+	color: #26A69A;
+}
+
+.pocket .link .details {
+	margin: 0;
+	color: #757575;
+	display: block;
+	font-size: 12px;
+	line-height: 15px;
+}
+
+.pocket .link .details .date {
+	float: right;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Pocket / Notice pages
+*/
+.pocket .notice {
+	color: #888;
+	height: 400px;
+	text-align: center;
+	background: #F2F2F2;
+	padding: 85px 10% 20px;
+}
+
+.pocket .notice.no-key {
+	padding-top: 55px;
+}
+
+.pocket .notice svg {
+	width: 150px;
+	height: 150px;
+	fill: currentColor;
+}
+
+.pocket .notice p {
+	line-height: 22px;
+	margin: 5px 0 15px;
+}
+
+.pocket .notice button {
+	color: #FFF;
+	min-width: 90px;
+	margin-top: 10px;
+	background: #EE4056;
+}
+
+.pocket .notice button:active {
+	background: #E02C43;
 }

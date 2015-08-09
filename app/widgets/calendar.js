@@ -1,7 +1,7 @@
 /*
  * The Calendar widget.
  */
-define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
+define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 	return {
 		id: 10,
 		size: 1,
@@ -31,83 +31,65 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 					all: "i18n.settings.show_options.all",
 					today: "i18n.settings.show_options.today"
 				}
-			},
-			{
-				type: "number",
-				nicename: "events",
-				label: "i18n.settings.events",
-				min: 1,
-				max: 10
 			}
 		],
 		config: {
 			title: "i18n.title",
 			size: "variable",
-			events: 5,
 			show: "all",
 			calendars: []
 		},
 		data: {
 			events: [
 				{
-					title: "Glass Developer Hangout Office Hours",
-					link: "https://www.google.com/calendar/event?eid=djZkb2lkMmFyOG1hZGExbnE4NTFwcGpyMmNfMjAxNDAxMDNUMTkwMDAwWiBkZXZlbG9wZXItY2FsZW5kYXJAZ29vZ2xlLmNvbQ",
-					date: "2014-01-03T11:00:00-08:00",
-					location: "MTV-2015-2-Watkins Glen (5) GVC (No external guests)"
+					"link": "https://www.google.com/calendar",
+					"title": "Multi-day Event",
+					"start": 1437278400000,
+					"end": 1437624000000,
+					"time": "July 19th - July 22nd",
+					"calendar": "Personal",
+					"calendarId": "Personal",
+					"location": "Mountain View, CA, USA",
+					"color": "#4986e7"
 				},
 				{
-					title: "Glass Developer Hangout Office Hours",
-					link: "https://www.google.com/calendar/event?eid=djZkb2lkMmFyOG1hZGExbnE4NTFwcGpyMmNfMjAxNDAxMTdUMTkwMDAwWiBkZXZlbG9wZXItY2FsZW5kYXJAZ29vZ2xlLmNvbQ",
-					date: "2014-01-17T11:00:00-08:00",
-					location: "MTV-2015-2-Watkins Glen (5) GVC (No external guests)"
+					"link": "https://www.google.com/calendar",
+					"title": "Single day event",
+					"start": 1437364800000,
+					"end": 1437451200000,
+					"calendar": "Secondary Calendar",
+					"calendarId": "Secondary Calendar",
+					"color": "#ffad46"
 				},
 				{
-					title: "Glass Developer Hangout Office Hours",
-					link: "https://www.google.com/calendar/event?eid=djZkb2lkMmFyOG1hZGExbnE4NTFwcGpyMmNfMjAxNDAxMzFUMTkwMDAwWiBkZXZlbG9wZXItY2FsZW5kYXJAZ29vZ2xlLmNvbQ",
-					date: "2014-01-31T11:00:00-08:00",
-					location: "MTV-2015-2-Watkins Glen (5) GVC (No external guests)"
+					"link": "https://www.google.com/calendar",
+					"title": "Lunch",
+					"start": 1437494400000,
+					"end": 1437494400000,
+					"time": "12 PM",
+					"calendar": "Secondary Calendar",
+					"calendarId": "Secondary Calendar",
+					"color": "#ffad46"
 				},
 				{
-					title: "Glass Developer Hangout Office Hours",
-					link: "https://www.google.com/calendar/event?eid=djZkb2lkMmFyOG1hZGExbnE4NTFwcGpyMmNfMjAxNDAyMTRUMTkwMDAwWiBkZXZlbG9wZXItY2FsZW5kYXJAZ29vZ2xlLmNvbQ",
-					date: "2014-02-14T11:00:00-08:00",
-					location: "MTV-2015-2-Watkins Glen (5) GVC (No external guests)"
+					"link": "https://www.google.com/calendar",
+					"title": "Meeting",
+					"start": 1437505200000,
+					"end": 1437505200000,
+					"time": "3 PM",
+					"calendar": "Secondary Calendar",
+					"calendarId": "Secondary Calendar",
+					"color": "#ffad46"
 				},
 				{
-					title: "Glass Developer Hangout Office Hours",
-					link: "https://www.google.com/calendar/event?eid=djZkb2lkMmFyOG1hZGExbnE4NTFwcGpyMmNfMjAxNDAyMjhUMTkwMDAwWiBkZXZlbG9wZXItY2FsZW5kYXJAZ29vZ2xlLmNvbQ",
-					date: "2014-02-28T11:00:00-08:00",
-					location: "MTV-2015-2-Watkins Glen (5) GVC (No external guests)"
-				},
-				{
-					title: "Glass Developer Hangout Office Hours",
-					link: "https://www.google.com/calendar/event?eid=djZkb2lkMmFyOG1hZGExbnE4NTFwcGpyMmNfMjAxNDAzMTRUMTgwMDAwWiBkZXZlbG9wZXItY2FsZW5kYXJAZ29vZ2xlLmNvbQ",
-					date: "2014-03-14T11:00:00-07:00",
-					location: "MTV-2015-2-Watkins Glen (5) GVC (No external guests)"
-				},
-				{
-					title: "Glass Developer Hangout Office Hours",
-					link: "https://www.google.com/calendar/event?eid=djZkb2lkMmFyOG1hZGExbnE4NTFwcGpyMmNfMjAxNDAzMjhUMTgwMDAwWiBkZXZlbG9wZXItY2FsZW5kYXJAZ29vZ2xlLmNvbQ",
-					date: "2014-03-28T11:00:00-07:00",
-					location: "MTV-2015-2-Watkins Glen (5) GVC (No external guests)"
-				},
-				{
-					title: "Glass Developer Hangout Office Hours",
-					link: "https://www.google.com/calendar/event?eid=djZkb2lkMmFyOG1hZGExbnE4NTFwcGpyMmNfMjAxNDA0MTFUMTgwMDAwWiBkZXZlbG9wZXItY2FsZW5kYXJAZ29vZ2xlLmNvbQ",
-					date: "2014-04-11T11:00:00-07:00",
-					location: "MTV-2015-2-Watkins Glen (5) GVC (No external guests)"
-				},
-				{
-					title: "Glass Developer Hangout Office Hours",
-					link: "https://www.google.com/calendar/event?eid=djZkb2lkMmFyOG1hZGExbnE4NTFwcGpyMmNfMjAxNDA0MjVUMTgwMDAwWiBkZXZlbG9wZXItY2FsZW5kYXJAZ29vZ2xlLmNvbQ",
-					date: "2014-04-25T11:00:00-07:00",
-					location: "MTV-2015-2-Watkins Glen (5) GVC (No external guests)"
-				},
-				{
-					title: "Glass Developer Hangout Office Hours",
-					link: "https://www.google.com/calendar/event?eid=djZkb2lkMmFyOG1hZGExbnE4NTFwcGpyMmNfMjAxNDA1MDlUMTgwMDAwWiBkZXZlbG9wZXItY2FsZW5kYXJAZ29vZ2xlLmNvbQ",
-					date: "2014-05-09T11:00:00-07:00",
-					location: "MTV-2015-2-Watkins Glen (5) GVC (No external guests)"
+					"link": "https://www.google.com/calendar",
+					"title": "Dinner",
+					"start": 1437604200000,
+					"end": 1437607800000,
+					"time": "6:30 PM - 7:30 PM",
+					"calendar": "h.e.kohn824@gmail.com",
+					"calendarId": "h.e.kohn824@gmail.com",
+					"color": "#4986e7"
 				}
 			]
 		},
@@ -159,19 +141,45 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				var events = [],
 					multiple = this.config.calendars.length > 1,
 					params = {
-						maxResults: this.config.events || 5,
+						maxResults: 50,
 						singleEvents: true,
 						orderBy: "startTime",
 						timeZone: -(new Date().getTimezoneOffset() / 60),
-						timeMin: moment().format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
-						fields: "summary,items(description,htmlLink,id,location,start,summary)"
+						timeMin: moment().startOf("week").format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
+						timeMax: moment().endOf("day").add(1, "ms").add(7, "days").format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
+						fields: "summary,items(description,htmlLink,id,location,start,end,summary)"
 					};
 
 				if (this.config.show == "today") {
+					params.timeMin = moment().startOf("day").format("YYYY-MM-DDTHH:mm:ss.SSSZ");
 					params.timeMax = moment().endOf("day").format("YYYY-MM-DDTHH:mm:ss.SSSZ");
 				}
 
-				var requests = this.config.calendars.map(function(calendar) {
+
+				var requests = [],
+					calendarColors = {};
+
+				if (multiple) {
+					requests.push($.ajax({
+						type: "GET",
+						dataType: "json",
+						url: "https://www.googleapis.com/calendar/v3/users/me/calendarList?fields=items(backgroundColor%2Cid)",
+						beforeSend: function(xhr) {
+							xhr.setRequestHeader("Authorization", "Bearer " + token);
+						},
+						success: function(d) {
+							if (!d || !d.items) return;
+
+							d.items.forEach(function(e, i) {
+								if (e.backgroundColor) {
+									calendarColors[e.id] = e.backgroundColor;
+								}
+							});
+						}.bind(this)
+					}));
+				}
+
+				requests = requests.concat(_.map(this.config.calendars, function(calendar) {
 					return $.ajax({
 						type: "GET",
 						dataType: "json",
@@ -182,15 +190,26 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 						},
 						success: function(d) {
 							if (d && d.items) {
-								events = events.concat(d.items.map(function(e, i) {
+								events = events.concat(_.map(d.items, function(e, i) {
 									var event = {
 										link: e.htmlLink,
 										title: e.summary,
-										date: new Date(e.start.dateTime || e.start.date + " 00:00:00").getTime()
+										start: new Date(e.start.dateTime || e.start.date + " 00:00:00").getTime(),
+										end: e.end && new Date(e.end.dateTime || e.end.date + " 00:00:00").getTime()
 									};
+
+									event.time = this.getTimeStr(event.start, event.end);
+
+									if (!event.time) {
+										delete event.time;
+									}
 
 									if (multiple && d.summary) {
 										event.calendar = d.summary;
+									}
+
+									if (multiple) {
+										event.calendarId = calendar;
 									}
 
 									if (e.location) {
@@ -198,16 +217,27 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 									}
 
 									return event;
-								}));
+								}, this));
 							}
-						}
+						}.bind(this)
 					});
-				});
+				}, this));
 
 				$.when.apply($, requests).then(function() {
 					events = events.sort(function(a, b) {
-						return a.date - b.date;
-					}).slice(0, this.config.events || 5);
+						return a.start - b.start;
+					}).slice(0, 50);
+
+
+					if (multiple && Object.keys(calendarColors).length) {
+						events = events.map(function(e) {
+							if (e.calendarId && calendarColors[e.calendarId]) {
+								e.color = calendarColors[e.calendarId];
+							}
+
+							return e;
+						});
+					}
 
 
 					this.data = {
@@ -220,35 +250,173 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				}.bind(this));
 			}.bind(this));
 		},
-		render: function(demo) {
-			var data = $.extend(true, {}, this.data);
 
-			data.events = data.events.slice(0, this.config.events || 5);
 
-			data.events.forEach(function(e, i) {
-				var date = moment(e.date);
+		/**
+		 * Returns a formatted time string for an event
+		 *
+		 * @api     private
+		 * @param   {Number}  oStart  The start time of the event, in ms
+		 * @param   {Number}  oEnd    The end time of the event
+		 * @return  {String}          The formatted time, date, or range string
+		 */
+		getTimeStr: function(oStart, oEnd) {
+			var start = moment(oStart),
+				end = moment(oEnd),
+				timeStr;
 
-				if (date.diff(new Date(), "days") + 1 > 7) {
-					e.date = date.format("dddd, MMMM Do YYYY");
 
-					if ((date = date.format("h:mm A")) !== "12:00 AM") {
-						e.date += " at " + date;
-					}
-				}
-				else {
-					e.date = date.calendar().replace(" at 12:00 AM", "").replace("Today at ", "");
-				}
-			});
+			var endTimeStr = end.minutes() ? "h:mm A" : "h A",
+				endHasTime = end.hours() + end.minutes();
 
-			if (this.config.title && this.config.title !== "") {
-				data.title = this.config.title;
+			var endSameAsStart = (endHasTime && end.clone().startOf("day").isSame(start.clone().startOf("day"))) ||
+								(!endHasTime && end.subtract(1, "days").isSame(start)) || end.isSame(start);
+
+			// If the end time doesn't exist, or it's the same as the start date, delete it
+			if (!oEnd || (endSameAsStart && !endHasTime) || end.isSame(start)) {
+				end = null;
 			}
 
-			if (!demo && !data.events.length) {
+			// If it has time and is on the same day as the start date, format it as a simple time value
+			else if (endHasTime && endSameAsStart) {
+				timeStr = end.format(endTimeStr);
+			}
+
+			// Otherwise, if it does have time and didn't match the last clause (meaning it's on a different
+			// date than the start date), format it with a month and day.
+			else if (endHasTime) {
+				timeStr = end.format("MMMM Do, " + endTimeStr);
+			}
+
+			// If it doesn't match the last clause (and doesn't have a time) and is not on the same day as
+			// the start date, format it as a plain date string
+			else {
+				timeStr = end.format("MMMM Do");
+			}
+
+
+			var startTimeStr = start.minutes() ? "h:mm A" : "h A",
+				startHasTime = start.hours() + start.minutes();
+
+			// If the start time doesn't exist (for some reason) or it doesn't have time or an end date (and
+			// therefore shouldn't be displayed), return now
+			if (!oStart || (!startHasTime && !end)) {
+				return;
+			}
+
+			// If it has time and is on the same day as the end date, format it as a plain time string
+			else if (startHasTime && end && endSameAsStart) {
+				timeStr = start.format(startTimeStr) + " - " + timeStr;
+			}
+
+			// Otherwise, if it has time and is not on the same day as the end date, which exists, format
+			// it as a date and time string
+			else if (startHasTime && end) {
+				timeStr = start.format("MMMM Do, " + startTimeStr) + " - " + timeStr;
+			}
+
+			// If it has time and the end date doesn't exist
+			else if (startHasTime) {
+				timeStr = start.format(startTimeStr);
+			}
+
+			// If it didn't match the last clauses (and doesn't have time), and has an end date
+			// that's not on the same day, format it as a date string
+			else if (end && !endSameAsStart) {
+				timeStr = start.format("MMMM Do") + " - " + timeStr;
+			}
+
+			return timeStr;
+		},
+
+		render: function(demo) {
+			var data = _.clone(this.data, true);
+
+			data.title = this.config.title;
+
+			data.days = {};
+
+			_(data.events).each(function(e) {
+				var start = new Date(e.start).toDateString();
+
+				data.days[start] = (data.days[start] || []);
+
+				data.days[start].push(e);
+
+				var end = moment(e.end).subtract(1, "seconds").startOf("day");
+
+				if (end.isValid() && end.toDate().toDateString() !== start) {
+					var diff = end.diff(moment(e.start).startOf("day"), "days"),
+						d;
+
+					for (var i = 1; i <= diff; i++) {
+						d = new Date(e.start + (864E5 * i)).toDateString();
+
+						data.days[d] = (data.days[d] || []);
+
+						data.days[d].push(e);
+					}
+				}
+			}, this).value();
+
+
+			var dt = new Date();
+
+			if (demo) {
+				dt = new Date(1437364800000);
+			}
+
+			var today = moment(dt).startOf("day"),
+				rangeStart, rangeEnd;
+
+			if (this.config.show == "today") {
+				rangeStart = moment(dt).startOf("day");
+				rangeEnd = moment(dt).endOf("day");
+			}
+			else {
+				rangeStart = moment(dt).startOf("week");
+				rangeEnd = moment(dt).endOf("day").add(7, "days");
+			}
+
+			data.days = _.compact(_.map(data.days, function(e, i) {
+				var date = moment(new Date(i)),
+					dateStr = "";
+
+				if (date.isBefore(rangeStart) || date.isAfter(rangeEnd)) {
+					return null;
+				}
+
+				if (date.diff(new Date(), "days") + 1 > 7) {
+					dateStr = date.format("dddd, MMMM Do YYYY");
+				}
+				else {
+					dateStr = date.calendar(dt).replace(" at 12:00 AM", "");
+				}
+
+				return {
+					events: e,
+					date: dateStr,
+					status: date.isSame(today) ? "today" : date.isBefore(today) ? "past" : ""
+				};
+			}));
+
+			if (this.config.calendars.length > 1) {
+				data.multiple = true;
+			}
+
+			if (!data.days.length) {
 				data.noEvents = true;
 			}
 
 			this.utils.render(data);
+
+
+			// Scroll today's section into view
+			var todayElm = this.elm.find(".agenda .date.today").parent()[0];
+
+			if (!todayElm) return;
+
+			todayElm.parentElement.scrollTop = todayElm.getBoundingClientRect().top - todayElm.offsetHeight - 8;
 		}
 	};
 });

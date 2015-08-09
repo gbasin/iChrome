@@ -45,11 +45,11 @@ define(["lodash", "backbone"], function(_, Backbone) {
 			// erasing event handlers and other jQuery data from their respective elements
 			_(this.views).pluck("model").difference(this.models).each(function(e) {
 				this.removeView(e, true);
-			}, this);
+			}, this).value();
 
 			_(this.models).difference(_.pluck(this.views, "model")).each(function(e) {
 				this.addView(e, true, true);
-			}, this);
+			}, this).value();
 
 			this.sortViews(true);
 

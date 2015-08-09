@@ -314,7 +314,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 				 * @type {Number}
 				 */
 				var btm = _(models)
-					.flatten()
+					.flatten(true)
 					.pluck("attributes")
 					.pluck("loc") // Get the loc values of all widgets
 					.compact() // Remove invalid ones

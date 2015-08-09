@@ -1,7 +1,7 @@
 /*
  * Site Link
  */
-define(["lodash"], function(_) {
+define(["jquery", "lodash"], function($, _) {
 	return {
 		id: 38,
 		size: 1,
@@ -58,6 +58,28 @@ define(["lodash"], function(_) {
 			data.hasIcon = data.image || data.color;
 
 			this.utils.render(data);
+
+			this.elm.off("click.sitelink").on("click.sitelink", "a", function(e) {
+				var href = this.getAttribute("href");
+
+				if (href.indexOf("chrome") === 0) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
+					e.preventDefault();
+
+					chrome.tabs.getCurrent(function(d) {
+						if (e.which == 2 || (e.currentTarget.target || $("base").attr("target")) == "_blank") {
+							chrome.tabs.create({
+								url: href,
+								index: d.index + 1
+							});
+						}
+						else {
+							chrome.tabs.update(d.id, {
+								url: href
+							});
+						}
+					});
+				}
+			});
 		}
 	};
 });

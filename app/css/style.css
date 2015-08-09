@@ -87,6 +87,7 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: top center;
+	-webkit-font-smoothing: antialiased;
 
 	/* Disable selection since it gives iChrome a more app-like feel and users should never end up copying text. */
 	cursor: default;
@@ -571,6 +572,101 @@ input[type="radio"]:checked {
 
 
 
+
+
+
+/*---------------------------------------------
+	/ Alert Dialog Style
+*/
+dialog {
+	border: 0;
+	width: auto;
+	overflow: hidden;
+	max-width: 370px;
+	padding: 24px 0 0;
+	border-radius: 3px;
+	background: #FAFAFA;
+	transform: scale(1);
+	font: 400 14px/20px Roboto, sans-serif;
+	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24);
+}
+
+dialog:not([open]) {
+	transform: scale(0.9);
+}
+
+dialog:not([open]),
+dialog:not([open])::backdrop {
+	opacity: 0;
+	display: initial;
+	visibility: hidden;
+	transition: visibility 0s .3s linear,
+				transform .3s cubic-bezier(.4, 0, .2, 1),
+				opacity .25s .05s cubic-bezier(.4, 0, .2, 1);
+}
+
+dialog::backdrop {
+	background: rgba(0, 0, 0, .2);
+}
+
+dialog, dialog::backdrop {
+	opacity: 1;
+	visibility: visible;
+	transition: visibility 0s 0s linear,
+				opacity .3s cubic-bezier(.4, 0, .2, 1),
+				transform .15s .05s cubic-bezier(.4, 0, .2, 1);
+}
+
+dialog.no-transition,
+dialog.no-transition::backdrop {
+	transition: none;
+}
+
+dialog h2 {
+	margin: 0;
+	font: inherit;
+	font-size: 20px;
+	font-weight: 500;
+	padding: 0 24px 20px;
+}
+
+dialog .content {
+	color: #757575;
+	line-height: 1.6;
+	padding: 0 24px 24px;
+}
+
+dialog .content p:last-child {
+	margin: 0;
+}
+
+dialog footer {
+	text-align: right;
+	padding: 0 4px 12px;
+}
+
+dialog footer button.material.flat {
+	padding: 0 8px;
+	margin-left: 0;
+	min-width: 64px;
+	font-size: 14px;
+	line-height: 36px;
+}
+
+dialog footer button.material.flat:hover:not(:focus) {
+	background: rgba(0, 0, 0, .05);
+}
+
+dialog footer button.material.flat:active {
+	background: rgba(0, 0, 0, .075);
+}
+
+
+
+
+
+
+
 /*---------------------------------------------
 	/ Tooltip Styles
 */
@@ -796,6 +892,7 @@ input[type="radio"]:checked {
 
 
 
+
 /*---------------------------------------------
 	/ Toolbar / Search
 */
@@ -919,6 +1016,36 @@ input[type="radio"]:checked {
 
 
 
+
+/*---------------------------------------------
+	/ Toolbar / Announcements
+*/
+.toolbar .announcements {
+	cursor: pointer;
+	padding: 14px 10px;
+	padding-right: 15px;
+}
+
+.toolbar .announcements:after {
+	color: #FFF;
+	width: 21px;
+	height: 21px;
+	display: block;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 21px;
+	text-align: center;
+	border-radius: 50%;
+	background: #F44336;
+	content: attr(data-count);
+	font-family: Roboto, sans-serif;
+}
+
+
+
+
+
+
 /*---------------------------------------------
 	/ Toolbar / Responsive Styles
 
@@ -945,6 +1072,73 @@ input[type="radio"]:checked {
 	.toolbar .search {
 		width: calc(100% - 105px);
 	}
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Announcements
+*/
+.modal.announcements {
+	font-family: Roboto, sans-serif;
+}
+
+.modal.small.announcements > .close {
+	width: 55px;
+	height: 55px;
+	line-height: 55px;
+}
+
+.announcements .header {
+	height: 55px;
+	padding: 0 25px;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 55px;
+	position: relative;
+	font-family: inherit;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .18);
+}
+
+.modal.announcements .content {
+	overflow: auto;
+	font-size: 13px;
+	padding: 15px 20px;
+	height: calc(100% - 55px);
+	background-color: #FAFAFA;
+}
+
+.announcements p {
+	margin: 0;
+}
+
+.announcements p:not(:last-child) {
+	margin-bottom: 15px;
+}
+
+.announcements section {
+	margin: 15px 0;
+	padding-left: 10px;
+}
+
+.announcements h3 {
+	font-size: 13px;
+	font-weight: 500;
+	padding-bottom: 8px;
+	font-family: inherit;
+}
+
+.announcements ul {
+	margin: 0;
+	padding-left: 30px;
+}
+
+.announcements li {
+	padding-bottom: 5px;
 }
 
 
@@ -987,6 +1181,26 @@ input[type="radio"]:checked {
 
 .menu-toggle .menu-button:active {
 	background-color: #E84E40;
+}
+
+.menu-toggle .announcements {
+	top: 42px;
+	right: 42px;
+	color: #FFF;
+	z-index: 10;
+	width: 21px;
+	height: 21px;
+	display: block;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 21px;
+	position: absolute;
+	text-align: center;
+	border-radius: 50%;
+	background: #F44336;
+	font-family: Roboto, sans-serif;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
 }
 
 
@@ -2344,61 +2558,6 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 
 /*---------------------------------------------
-	/ Donate
-*/
-.donate .desc {
-	padding: 25px;
-	background: #FCFCFC;
-	height: calc(100% - 70px);
-}
-
-.donate .buttons {
-	padding: 25px 35px;
-}
-
-.donate .btn {
-	margin-right: 15px;
-}
-
-.donate svg {
-	height: 22px;
-	vertical-align: middle;
-}
-
-.donate .paypal svg {
-	width: 60px;
-	height: 16px;
-}
-
-.donate .bitcoin:not(:hover) {
-	background-color: #F7931B;
-}
-
-.donate .bitcoin svg {
-	width: 85px;
-}
-
-.donate .litecoin svg {
-	width: 90px;
-}
-
-.donate .dogecoin {
-	background-color: #B2D234;
-}
-
-.donate .dogecoin:hover {
-	background: #A9C92C;
-}
-
-.donate .dogecoin svg {
-	width: 100px;
-}
-
-
-
-
-
-/*---------------------------------------------
 	/ Upgrade guide
 */
 .updated .desc {
@@ -3336,6 +3495,68 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .settings .specific .nav {
 	margin-left: 10px;
 }
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Settings / Sync
+*/
+.settings .sync {
+	font-family: Roboto;
+}
+
+.settings .sync .form-group {
+	margin-bottom: 30px;
+}
+
+.settings .sync input {
+	border-radius: 0;
+	padding: 4px 10px!important;
+	border-width: 0 0 1px!important;
+}
+
+.settings .sync .name input {
+	max-width: 200px;
+}
+
+.settings .sync #fname {
+	margin-right: 10px;
+}
+
+.settings .sync .token .info {
+	line-height: 28px;
+	margin-bottom: 15px;
+}
+
+.settings .sync #token {
+	font-size: 15px;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+
+.settings .sync #token::-webkit-input-placeholder {
+	color: #777;
+}
+
+.settings .sync button.material.flat {
+	margin: 0 5px;
+	padding: 0 12px;
+}
+
+.settings .sync button.syncing,
+.settings .sync button.resetting {
+	color: inherit;
+	pointer-events: none;
+}
+
+.settings .sync .last-synced {
+	float: right;
+	line-height: 32px;
+}
+
 
 
 

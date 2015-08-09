@@ -1,7 +1,7 @@
 /*
  * The Stocks widget.
  */
-define(["jquery", "moment"], function($, moment) {
+define(["jquery", "lodash", "moment"], function($, _, moment) {
 	return {
 		id: 14,
 		size: 2,
@@ -108,15 +108,15 @@ define(["jquery", "moment"], function($, moment) {
 				if (this.data.length > 1) {
 					data = {
 						multiple: true,
-						stocks: $.extend({}, { data: this.data || [] }).data
+						stocks: this.data
 					};
 				}
 				else {
-					data = $.extend({}, { data: this.data || [] }).data[0];
+					data = this.data[0];
 				}
 			}
 			else {
-				data = $.extend({}, this.data || {});
+				data = _.clone(this.data);
 			}
 
 			if (this.config.title && this.config.title !== "") {

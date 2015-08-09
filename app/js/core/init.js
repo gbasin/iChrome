@@ -30,6 +30,8 @@ define(
 		var iChrome = Backbone.View.extend({
 			el: "body",
 
+			Status: Status,
+
 			events: {
 				"click .nested-link[data-href]": function(e) {
 					// If this was an anchor inside a nested link (like the
@@ -120,6 +122,30 @@ define(
 				});
 			}
 		});
+
+
+		/**
+		 * Background image preloading
+		 *
+		 * This makes the background image appear with the first render
+		 * and makes the first paint happen sooner
+		 */
+		var themeImg = localStorage.themeImg;
+
+		if (themeImg) {
+			var loader = new Image();
+
+			loader.src = themeImg;
+
+			loader.onload = function() {
+				if (!document.body.style.backgroundImage) {
+					document.body.style.backgroundImage = "url(\"" + themeImg + "\")";
+				}
+
+				// Force repaint
+				document.body.offsetHeight; // jshint ignore:line
+			};
+		}
 
 		return new iChrome();
 	}

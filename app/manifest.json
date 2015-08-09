@@ -33,6 +33,12 @@
 			"matches": [ "https://www.google.com/ichrome/notifications*" ],
 			"run_at": "document_idle",
 			"all_frames": true
+		},
+		{
+			"js": [ "inject/js/linkedin.js" ],
+			"matches": [ "https://touch.www.linkedin.com/*" ],
+			"run_at": "document_start",
+			"all_frames": true
 		}
 	],
 	"chrome_url_overrides" : {
@@ -51,6 +57,7 @@
 	},
 	"permissions": [
 		"storage",
+		"cookies",
 		"topSites",
 		"sessions",
 		"http://*/",
@@ -74,7 +81,7 @@
 	"short_name": "iChrome",
 	"offline_enabled": true,
 	"name": "__MSG_extName__",
-	"minimum_chrome_version": "37.0",
+	"minimum_chrome_version": "39.0",
 	"description": "__MSG_extDescription__",
 	"update_url": "http://clients2.google.com/service/update2/crx",
 	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxwfbvOggtaBdJLMJbzEvFWW+BCZ2tEZwH9Nolbnj7t7ph5wnFg5DAkv34/N8hD4gAfQBdNM045g9EEccicqkLYsFLR7YT4kczrgHbq83qS3odYiAWPOEjQM+ydwUDxj0gjtgdwE7KugLWOZkOUQUJJ9IzeRvVHjyZUeIgeBBEFvwQyI7bKTyxeXKBwzt+0JTBs7W/0IQ/KGzNFZo5YXYuPIdjRCR823u1uJ8Zgr8CGmUrkqDoJuxmY+De7FxVZfJsINlpoGRAeXE38FYRgDkTfk4gad0pgromIYVRS7gDJXGBdm52Yvi+Ah5cCXhqB+Lj8xtOCN98WL6M9exn88VoQIDAQAB",
