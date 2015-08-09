@@ -259,8 +259,10 @@ define(
 								negative: Translate("storage.signin_dismiss"),
 								positive: Translate("storage.signin_btn")
 							}
-						}, function() {
-							API.authorize(storage);
+						}, function(signin) {
+							if (signin) {
+								API.authorize(storage);
+							}
 
 							delete localStorage.alertDuplicate;
 						}.bind(this));
