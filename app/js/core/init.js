@@ -132,20 +132,20 @@ define(
 		 */
 		var themeImg = localStorage.themeImg;
 
-		if (!themeImg) return;
+		if (themeImg) {
+			var loader = new Image();
 
-		var loader = new Image();
+			loader.src = themeImg;
 
-		loader.src = themeImg;
+			loader.onload = function() {
+				if (!document.body.style.backgroundImage) {
+					document.body.style.backgroundImage = "url(\"" + themeImg + "\")";
+				}
 
-		loader.onload = function() {
-			if (!document.body.style.backgroundImage) {
-				document.body.style.backgroundImage = "url(\"" + themeImg + "\")";
-			}
-
-			// Force repaint
-			document.body.offsetHeight; // jshint ignore:line
-		};
+				// Force repaint
+				document.body.offsetHeight; // jshint ignore:line
+			};
+		}
 
 		return new iChrome();
 	}
