@@ -82,7 +82,7 @@
 {{/apps}}
 
 <div class="menu-toggle">
-	<div class="img"{{#profile}} style="background-image: url({{profile}})"{{/profile}}></div>
+	<div class="img"{{#profileimage}} style="background-image: url({{profileimage}})"{{/profileimage}}></div>
 
 	<nav class="menu"></nav>
 </div>

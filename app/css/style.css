@@ -3500,6 +3500,68 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 
 
+
+/*---------------------------------------------
+	/ Settings / Sync
+*/
+.settings .sync {
+	font-family: Roboto;
+}
+
+.settings .sync .form-group {
+	margin-bottom: 30px;
+}
+
+.settings .sync input {
+	border-radius: 0;
+	padding: 4px 10px!important;
+	border-width: 0 0 1px!important;
+}
+
+.settings .sync .name input {
+	max-width: 200px;
+}
+
+.settings .sync #fname {
+	margin-right: 10px;
+}
+
+.settings .sync .token .info {
+	line-height: 28px;
+	margin-bottom: 15px;
+}
+
+.settings .sync #token {
+	font-size: 15px;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+
+.settings .sync #token::-webkit-input-placeholder {
+	color: #777;
+}
+
+.settings .sync button.material.flat {
+	margin: 0 5px;
+	padding: 0 12px;
+}
+
+.settings .sync button.syncing,
+.settings .sync button.resetting {
+	color: inherit;
+	pointer-events: none;
+}
+
+.settings .sync .last-synced {
+	float: right;
+	line-height: 32px;
+}
+
+
+
+
+
+
 /*---------------------------------------------
 	/ Settings / Advanced
 */

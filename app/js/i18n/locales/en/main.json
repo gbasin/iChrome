@@ -18,6 +18,18 @@
 	"grid_to_column_warning": "You selected to change a tab from a grid-based layout to a column-based layout. If you continue you will lose all of your widget positioning; everything will be moved to the first column of the new tab.\r\nAre you sure you want to do this?",
 	"storage_warning": "You have used more than 90% of the total synchronized storage space available.\r\nIf you reach the limit, iChrome will stop syncing your data and may stop working.\r\nYou can shrink the amount of space you use by deleting custom themes, notes and to-do lists that you don't use.",
 
+	"alert": {
+		"default_button": "Dismiss"
+	},
+
+	"storage": {
+		"signin": "Sign in to sync your settings",
+		"signin_desc": "iChrome has detected a sync profile under your email address.",
+		"signin_desc2": "Sign in with your Google account now to download and sync your configuration.",
+		"signin_btn": "Sign in",
+		"signin_dismiss": "Dismiss"
+	},
+
 	"toolbar": {
 		"placeholder": "Enter your terms",
 		"placeholder_ok": "Enter your terms or say \"OK, Google\"",
@@ -69,18 +81,13 @@
 			"general":	"General",
 			"visual":	"Visual",
 			"specific":	"Tab Specific",
+			"sync":		"Accounts and Sync",
 			"advanced":	"Advanced"
 		},
 
 		"general": {
 			"search_url": "Search URL",
 			"search_url_desc": "This is the URL that the search box will submit searches to. Put <b>%s</b> where the search query should go",
-
-			"profile": "Profile Picture",
-			"profile_desc": "This is the image shown at the right of the toolbar.  It gets auto-populated from your Google profile",
-
-			"name": "Name",
-			"name_desc": "This is used for the Google+ link in the toolbar.  It also gets auto-populated from your Google profile",
 
 			"ltab": "Link Behavior",
 			"ltab_label": "Open links in a new tab by default",
@@ -163,6 +170,41 @@
 			"default": "Set as default"
 		},
 
+		"sync": {
+			"status_syncing": "iChrome is currently <b>syncing</b> your tabs and settings.",
+			"status_notsyncing": "iChrome is currently <b>not syncing</b> your tabs and settings.",
+			"status_notsyncing2": "Click Sync Now at the bottom of this page or sign in with your Google account to create a profile.",
+
+			"duplicate_profile": "A profile already exists under the email address below. To protect your security, iChrome can't use your sync profile until you verify that you own the address by signing in to your Google account.",
+
+			"name": "Name",
+			"fname": "First Name",
+			"lname": "Last Name",
+			"name_desc": "We'll use this to address you inside iChrome and in any communications.",
+
+			"email": "Email Address",
+			"email_desc": "This is used to identify your sync profile, we'll also use it if we need to get in touch with you.",
+
+			"signin": "Sign In",
+			"signin_btn": "Sign in with Google",
+			"signin_desc": "Sign in with your Google account to easily and securely add new computers to your sync profile.",
+			"signed_in": "iChrome is <b>connected</b> to your Google account.  Sign in on any new computers to instantly sync your configuration.",
+
+			"keep_data": "Keep local data?",
+			"keep_data_desc": "Would you like to keep your local data, and replace the configuration on other computers you may have in this sync group with it, or replace this computer's configuration with theirs?",
+			"keep_theirs": "Use Theirs",
+			"keep_local": "Keep Local",
+
+			"sync_now": "Sync Now",
+			"syncing": "Syncing...",
+
+			"last_synced": "Last synced",
+
+			"reset": "Reset Profile",
+			"resetting": "Resetting...",
+			"reset_confirm": "Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers connected to this sync profile."
+		},
+
 		"advanced": {
 			"background": "Widget Background",
 			"background_desc": "Click the swatch to select a color",
@@ -177,9 +219,6 @@
 			"css": "Custom CSS",
 			"css_desc": "You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"_blank\">MDN</a>).<br /><br />Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.",
 
-			"reset": "Reset iChrome",
-			"reset_confirm": "Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers signed into this Google account.",
-			
 			"debug": "Debug Tools",
 			"debug_confirm": "WARNING: These tools can erase your configuration in a single click, only use them if your developer instructs you to.\r\nAre you sure you want to continue?"
 		}

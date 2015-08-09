@@ -10,7 +10,7 @@ var templates = [
 		"settings",				"menu",					"settings/new-tab",
 		"settings/general",		"settings/visual",		"settings/advanced",
 		"settings/tab-specific","widget-settings.inputs","settings/debug",
-		"announcements",
+		"announcements",		"settings/sync",
 
 		"widgets.weather",				"widgets.weather.desc",
 		"widgets.stocks",				"widgets.stocks.desc",

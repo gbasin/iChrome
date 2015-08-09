@@ -95,22 +95,11 @@ define(
 
 					switch (elm.attr("data-item")) {
 						case "settings":
-							if (!this.Settings) {
-								this.Settings = new Settings();
-							}
-
-							this.Settings.show();
-							// This delays displaying the modal until after the init JS is done so the animation is smooth
-							requestAnimationFrame(this.Settings.show.bind(this.Settings));
+							this.open("settings");
 						break;
 
 						case "widgets":
-							if (!this.Store) {
-								this.Store = new Store();
-							}
-
-							// See above
-							requestAnimationFrame(this.Store.show.bind(this.Store));
+							this.open("store");
 						break;
 
 						case "view":
@@ -203,6 +192,29 @@ define(
 							Track.event("Menu", "Tab Navigation");
 						break;
 					}
+				},
+
+
+				/**
+				 * This method allows other modules to open the store and settings
+				 *
+				 * @api     public
+				 * @param   {String}  [which]  Which modal to open, "store" or "settings", defaults to "settings".
+				 * @return  {Backbone.View}    The view of the modal that was just opened
+				 */
+				open: function(which) {
+					var isStore = which === "store";
+
+					which = isStore ? "Store" : "Settings";
+
+					if (!this[which]) {
+						this[which] = isStore ? new Store() : new Settings();
+					}
+
+					// This delays displaying the modal until after the init JS is done so the animation is smooth
+					requestAnimationFrame(this[which].show.bind(this[which]));
+
+					return this[which];
 				},
 
 

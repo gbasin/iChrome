@@ -27,20 +27,6 @@ define(["lodash", "jquery", "backbone", "storage/filesystem", "modals/modals", "
 			if (!action) return;
 
 			switch (action) {
-				case "clear-sync":
-					chrome.storage.sync.clear();
-
-					this.setStatus("Chrome Sync storage cleared, reload the page to resync");
-				break;
-
-				case "clear-local":
-					chrome.storage.local.clear();
-
-					delete localStorage.themeImg;
-
-					this.setStatus("Chrome Local storage cleared, reload the page to resync");
-				break;
-
 				case "clear-localstorage":
 					localStorage.clear();
 
@@ -48,49 +34,7 @@ define(["lodash", "jquery", "backbone", "storage/filesystem", "modals/modals", "
 				break;
 
 				case "clear-fs":
-					var next = function() {
-						this.setStatus("FileSystem cleared");
-					}.bind(this);
-
-					// Erase all FileSystem entries
-					FileSystem.get(function(fs) {
-						var reader = fs.root.createReader(),
-							length = 0;
-
-						(function read() { // Recursive and self executing, necessary as per the specs
-							reader.readEntries(function(results) {
-								if (results.length) {
-									results.forEach(function(e, i) {
-										length++;
-
-										if (e.isDirectory) {
-											e.removeRecursively(function() {
-												length--;
-
-												if (!length) {
-													next();
-												}
-											});
-										}
-										else {
-											e.remove(function() {
-												length--;
-
-												if (!length) {
-													next();
-												}
-											});
-										}
-									});
-
-									read();
-								}
-								else if (!length) {
-									next();
-								}
-							}, next);
-						})();
-					}, next); // In the event of an error continue anyway
+					FileSystem.clear();
 				break;
 
 				case "clear-oauth":
@@ -102,28 +46,23 @@ define(["lodash", "jquery", "backbone", "storage/filesystem", "modals/modals", "
 				case "get-info":
 					this.setStatus("Compiling information, please wait");
 
-					var that = this;
-
 					chrome.runtime.getPlatformInfo(function(info) {
-						chrome.storage.local.get(function(local) {
-							chrome.storage.sync.getBytesInUse(function(syncUsage) {
-								alert(
-									"Debug info (hit Ctrl+C or Cmd+C to copy):" + "\n" +
-									"iChrome Version: " + chrome.runtime.getManifest().version + "\n" +
-									"Chrome Version: " + (/Chrome\/([0-9.]+)/.exec(navigator.userAgent) || [])[1] + "\n" +
-									"Operating System: " + info.os + "\n" +
-									"OAuth keys: " + Object.keys(JSON.parse(localStorage.oauth || "{}")).join(", ") + "\n" +
-									"User ID: " + localStorage.uid + "\n" +
-									"Uses: " + localStorage.uses + "\n" +
-									"Cached themes: " + Object.keys(local.cached || {}).length + "\n" +
-									"Tabs: " + local.tabs.length + "\n" +
-									"Sync bytes in use: " + syncUsage + " / " + chrome.storage.sync.QUOTA_BYTES
-								);
+						this.setStatus();
 
-								that.setStatus();
-							});
-						});
-					});
+						alert(
+							"Debug info (hit Ctrl+C or Cmd+C to copy):" + "\n" +
+							"iChrome Version: " + chrome.runtime.getManifest().version + "\n" +
+							"Chrome Version: " + (/Chrome\/([0-9.]+)/.exec(navigator.userAgent) || [])[1] + "\n" +
+							"Operating System: " + info.os + "\n" +
+							"OAuth keys: " + Object.keys(JSON.parse(localStorage.oauth || "{}")).join(", ") + "\n" +
+							"Sync Token: " + JSON.parse(localStorage.syncData || "{}").token + "\n" +
+							"Sync Client: " + JSON.parse(localStorage.syncData || "{}").client + "\n" +
+							"Uses: " + localStorage.uses + "\n" +
+							"Cached themes: " + Object.keys(JSON.parse(localStorage.config || "{}").cached || {}).length + "\n" +
+							"Tabs: " + JSON.parse(localStorage.config || "{}").tabs.length + "\n" +
+							"Local data size: " + (localStorage.config || "").length
+						);
+					}.bind(this));
 				break;
 
 				case "update":

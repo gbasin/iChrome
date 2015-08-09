@@ -13,6 +13,7 @@
 			<li data-id="new">{{i18n.settings.new_tab}}</li>
 		</ul>
 	</li>
+	<li data-tab="sync">{{i18n.settings.labels.sync}}</li>
 	<li data-tab="advanced">{{i18n.settings.labels.advanced}}</li>
 </ul>
 

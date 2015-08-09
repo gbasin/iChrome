@@ -2,53 +2,27 @@
  * This generates the toolbar and its submodules
  */
 define(
-	["lodash", "jquery", "backbone", "core/analytics", "storage/storage", "storage/defaults", "search/search", "menu/menu", "core/announcements", "core/render"],
-	function(_, $, Backbone, Track, Storage, Defaults, Search, Menu, Announcements, render) {
+	["lodash", "jquery", "backbone", "core/analytics", "storage/storage", "storage/syncapi", "storage/defaults", "search/search", "menu/menu", "core/announcements", "core/render"],
+	function(_, $, Backbone, Track, Storage, SyncAPI, Defaults, Search, Menu, Announcements, render) {
 		var Model = Backbone.Model.extend({
 				init: function() {
 					Storage.on("done updated", function(storage) {
-						this.storage = storage;
+						var set = _.clone(storage.settings);
 
-						this.set(storage.settings);
+						var d = SyncAPI.getInfo();
 
-						if (
-							!storage.settings.name || storage.settings.name == Defaults.settings.name ||
-							!storage.settings.profile || storage.settings.profile == Defaults.settings.profile
-						) {
-							this.getProfile();
-						}
+						set.name = d.user.fname || Defaults.user.fname;
+
+						set.profileimage = d.user.image ? d.user.image + "?sz=72" : Defaults.user.image;
 
 						Announcements.off("countchange", null, this).on("countchange", function(count) {
 							this.set("announcements", count);
 						}, this);
 
-						this.set("announcements", Announcements.count);
+						set.announcements = Announcements.count;
+
+						this.set(set);
 					}, this);
-				},
-
-
-				/**
-				 * Gets the profile picture and user's first name
-				 *
-				 * @api    private
-				 */
-				getProfile: function() {
-					$.get("https://apis.google.com/u/0/_/+1/hover?url=http%3A%2F%2Fichro.me&isSet=false", function(d) {
-						var img = $("img", $.parseHTML(d));
-
-						var profile = img.attr("src").replace("s24", "s72-c"),
-							name = img.parent().next().find("a").text().split(" ")[0];
-
-						// We're probably not signed in, skip till next time
-						if (!name || profile.indexOf("s72-c") == -1) {
-							return;
-						}
-
-						this.storage.settings.name = name;
-						this.storage.settings.profile = profile;
-
-						this.storage.sync(true);
-					}.bind(this));
 				}
 			}),
 			View = Backbone.View.extend({

@@ -37,6 +37,10 @@ define(["i18n/i18n"], function(Translate) {
 			}
 		],
 		widgets: [9, 14, 1, 11, 17, 4], // These are the widget IDs from the default tab layout
+		user: {
+			fname: Translate("defaults.me"),
+			image: "/images/profile.png"
+		},
 		settings: {
 			links: [],
 			ok: false,
@@ -52,8 +56,6 @@ define(["i18n/i18n"], function(Translate) {
 			theme: "default",
 			"custom-css": "",
 			columns: "3-fixed",
-			name: Translate("defaults.me"),
-			profile: "/images/profile.png",
 			"search-url": "https://google.com/search?q=%s"
 		},
 		themes: [],

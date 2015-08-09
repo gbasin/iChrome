@@ -32,7 +32,6 @@ define(["jquery", "backbone", "settings/debug", "storage/storage", "i18n/i18n", 
 					}));
 				},
 				"click .btn.restore": "restore",
-				"click .reset": "reset",
 				"click .debug" :"debug"
 			},
 			debug: function(e) {
@@ -64,21 +63,6 @@ define(["jquery", "backbone", "settings/debug", "storage/storage", "i18n/i18n", 
 				catch(err) {
 					alert(Translate("settings.advanced.restore_error"));
 				}
-			},
-			reset: function(e) {
-				e.preventDefault();
-
-				if (!confirm(Translate("settings.advanced.reset_confirm"))) {
-					return;
-				}
-
-				Storage.reset(function() { // Disable the onbeforeunload sync save and reload
-					window.onbeforeunload = null;
-
-					chrome.extension.getBackgroundPage().setReload();
-
-					location.reload();
-				});
 			},
 			initialize: function() {
 				this.model = new Model();
