@@ -4,6 +4,7 @@
 define(["jquery", "backbone", "settings/debug", "storage/storage", "i18n/i18n", "core/render", "lib/jquery.spectrum"], function($, Backbone, Debug, Storage, Translate, render) {
 	var Model = Backbone.Model.extend({
 			save: function(d, cb) {
+				if (d.user)		this.storage.user = d.user;
 				if (d.tabs)		this.storage.tabs = d.tabs;
 				if (d.themes)	this.storage.themes = d.themes;
 				if (d.settings)	this.storage.settings = d.settings;
@@ -26,6 +27,7 @@ define(["jquery", "backbone", "settings/debug", "storage/storage", "i18n/i18n", 
 					e.preventDefault();
 
 					this.$("#backup").val(JSON.stringify({
+						user: this.model.get("user"),
 						themes: this.model.get("themes"),
 						settings: this.model.get("settings"),
 						tabs: this.model.get("tabsSync")
