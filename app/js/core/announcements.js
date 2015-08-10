@@ -1,9 +1,9 @@
 /**
  * Announcements
  */
-define(["backbone", "modals/alert", "core/analytics", "core/render"], function(Backbone, Alert, Track, render) {
+define(["backbone", "modals/alert", "core/analytics", "i18n/i18n", "core/render"], function(Backbone, Alert, Track, Translate, render) {
 	var Model = Backbone.Model.extend({
-		url: "http://api.ichro.me/announcements?extension=" + chrome.i18n.getMessage("@@extension_id") + "&version=" + chrome.runtime.getManifest().version,
+		url: "http://api.ichro.me/announcements?extension=" + chrome.i18n.getMessage("@@extension_id") + "&version=" + chrome.runtime.getManifest().version + "&lang=" + Translate("lang_code"),
 
 		defaults: {
 			count: 0,
@@ -28,19 +28,6 @@ define(["backbone", "modals/alert", "core/analytics", "core/render"], function(B
 					}
 				}, 3000);
 			}
-
-
-			/**
-			 * Sample announcement from server:
-			 *
-			 * {
-			 *     "count": 2,
-			 *     "alert": false,
-			 *     "announcement_id": 1,
-			 *     "title": "Test title",
-			 *     "contents": "<p>Test announcement</p><section><h3>Test</h3><ul><li>List item #1</li><li>List item #2</li></ul></section>"
-			 * }
-			 */
 
 			this.fetch();
 
@@ -79,21 +66,30 @@ define(["backbone", "modals/alert", "core/analytics", "core/render"], function(B
 		},
 
 		show: function(isAlert) {
+			var d = this.model.attributes;
+
 			Alert({
-				title: this.model.get("title"),
+				title: d.title,
 				classes: "announcements",
-				html: this.model.get("isUpdate") ? render("whatsnew") : this.model.get("contents"),
+				html: d.isUpdate ? render("whatsnew") : d.contents,
 				buttons: {
-					positive: "Got it"
+					positive: d.action ? d.action.text : "Got it",
+					negative: d.action ? Translate("alert.default_button") : undefined
 				}
-			}, function() {
+			}, function(res) {
 				this.trigger("dismissed");
 
-				if (this.model.get("isUpdate")) {
+				if (d.isUpdate) {
 					localStorage.removeItem("showWhatsNew");
 				}
 				else {
-					localStorage.dismissedAnnouncement = this.model.get("announcement_id");
+					localStorage.dismissedAnnouncement = d.announcement_id;
+
+					if (d.action && res) {
+						chrome.tabs.create({
+							url: d.action.url
+						});
+					}
 				}
 
 				this.model.clear({
