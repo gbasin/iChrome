@@ -84,15 +84,15 @@
     "desc":"显示您谷歌日历即中将发生的事件。",
     "settings":{
       "calendar":"日历",
-      "events":"显示事件",
       "show":"从 显示活动",
       "show_options":{
         "all":"所有时间",
         "today":"仅显示今天"
       }
     },
-    "title":"我的日历",
-    "noevents":"未来暂无安排。\n<br \/><br \/>\n请尝试通过右上角的扳手图标选择日历。"
+    "title":"Agenda",
+    "calendar":"日历",
+    "noevents":"No events found in the near future, it looks like your schedule's clear!"
   },
   "clock":{
     "name":"时钟",
@@ -123,7 +123,8 @@
   "currency":{
     "name":"货币转换",
     "desc":"让您在169种货币之间进行转换。",
-    "to_label":"转换至"
+    "to_label":"转换至",
+    "recently_used":"Recently Used"
   },
   "drive":{
     "name":"网盘",
@@ -556,5 +557,45 @@
       "mode_teacher":"Teacher",
       "mode_student":"Student"
     }
+  },
+  "pushbullet":{
+    "name":"Pushbullet",
+    "desc":"Keep track of notifications from your phone and other devices",
+    "no_pushes":"No pushes found",
+    "sign_in":"Sign in",
+    "no_key":"It doesn't look like you're signed in to Pushbullet.  Sign in now to connect this widget."
+  },
+  "linkedin":{
+    "name":"LinkedIn",
+    "desc":"Displays your LinkedIn home stream"
+  },
+  "directions":{
+    "name":"Directions",
+    "desc":"Get directions to and from nearly anywhere right from your homepage",
+    "driving":"开车",
+    "transit":"公共交通",
+    "walking":"步行",
+    "cycling":"Cycling",
+    "from":"Enter a starting point",
+    "to":"Enter a destination",
+    "loading":"Loading directions, please wait...",
+    "error":"Something went wrong while trying to load the directions you requested.",
+    "error2":"Please check the start and destination addresses you entered.",
+    "open_in_maps":"Open in Google Maps",
+    "via":"via"
+  },
+  "pocket":{
+    "name":"Pocket",
+    "desc":"Display a list of your saved articles, videos, and web pages from Pocket",
+    "settings":{
+      "links_shown":"Number of links shown",
+      "open":"Open links",
+      "open_pocket":"In Pocket",
+      "open_original":"At their original URL"
+    },
+    "by":"由",
+    "no_links":"No links found",
+    "grant_access":"Grant access",
+    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
   }
 }

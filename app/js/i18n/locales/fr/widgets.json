@@ -84,15 +84,15 @@
     "desc":"Affiche les événements à venir d'un ou plusieurs de vos calendriers Google.",
     "settings":{
       "calendar":"Calendrier",
-      "events":"Événements affichés",
       "show":"Montrer les événements de",
       "show_options":{
         "all":"tous les temps",
         "today":"aujourd'hui seulement"
       }
     },
-    "title":"Mon agenda",
-    "noevents":"Il ne semble pas y avoir d’événements à venir. <br\/> <br\/> Essayez de sélectionner un agenda en cliquant sur la clé en haut à droite."
+    "title":"Agenda",
+    "calendar":"Calendrier",
+    "noevents":"No events found in the near future, it looks like your schedule's clear!"
   },
   "clock":{
     "name":"Horloge",
@@ -108,22 +108,23 @@
         "ampmseconds":"AM\/PM - Digitale, Sans Secondes",
         "24hourseconds":"24 Heures - Digitale, Sans Secondes"
       },
-      "sound":"Alert Sound"
+      "sound":"Alerte sonore"
     },
     "title":"Horloge",
-    "alarm":"Alarm",
+    "alarm":"Alarmes",
     "clock":"Horloge",
-    "timer":"Timer",
-    "stopwatch":"Stopwatch",
-    "set":"Set",
-    "unset":"Unset",
-    "dismiss":"Dismiss",
-    "enable_audio":"Enable audio"
+    "timer":"Minuteur",
+    "stopwatch":"Chronomètre",
+    "set":"Appliquer",
+    "unset":"Annuler",
+    "dismiss":"Abandonner",
+    "enable_audio":"Activer le son"
   },
   "currency":{
     "name":"Devise ",
     "desc":"Vous permet de convertir entre deux des 169 devises.",
-    "to_label":"à"
+    "to_label":"à",
+    "recently_used":"Recently Used"
   },
   "drive":{
     "name":"Drive",
@@ -511,28 +512,28 @@
     }
   },
   "sitelink":{
-    "name":"Site Link",
-    "desc":"Displays a link, optionally with a title and thumbnail",
+    "name":"Lien du site",
+    "desc":"Affiche un lien, éventuellement avec un titre et une vignette",
     "settings":{
-      "link":"Link URL",
+      "link":"Lien URL",
       "link_placeholder":"http:\/\/www.google.com\/",
       "image":"URL de l'image",
-      "image_placeholder":"http:\/\/www.example.com\/image.png",
-      "color":"Image Background Color",
-      "style":"Image Style",
-      "style_fill":"Fill",
+      "image_placeholder":"http:\/\/www.exemple.fr\/image.png",
+      "color":"Couleur d'arrière-plan de la page",
+      "style":"Style d'images",
+      "style_fill":"Remplir",
       "style_center":"Centre"
     }
   },
   "stats":{
-    "name":"System Statistics",
-    "desc":"Keep an eye on your system with realtime statistics",
-    "memory":"Memory",
-    "battery":"Battery",
-    "usage":"usage",
-    "in_use":"in use",
-    "remaining":"remaining",
-    "charged":"Fully Charged",
+    "name":"Statistiques du système ",
+    "desc":"Gardez un œil sur votre système avec des statistiques en temps réel",
+    "memory":"RAM",
+    "battery":"Batterie",
+    "usage":"Utilité",
+    "in_use":"en cours d'utilisation",
+    "remaining":"restant",
+    "charged":"Charge complète",
     "idle":"Idle",
     "charging":"Charging",
     "discharging":"Discharging"
@@ -556,5 +557,45 @@
       "mode_teacher":"Teacher",
       "mode_student":"Student"
     }
+  },
+  "pushbullet":{
+    "name":"Pushbullet",
+    "desc":"Keep track of notifications from your phone and other devices",
+    "no_pushes":"No pushes found",
+    "sign_in":"Sign in",
+    "no_key":"It doesn't look like you're signed in to Pushbullet.  Sign in now to connect this widget."
+  },
+  "linkedin":{
+    "name":"LinkedIn",
+    "desc":"Displays your LinkedIn home stream"
+  },
+  "directions":{
+    "name":"Directions",
+    "desc":"Get directions to and from nearly anywhere right from your homepage",
+    "driving":"En voiture",
+    "transit":"Transports en commun",
+    "walking":"À pied",
+    "cycling":"Cycling",
+    "from":"Enter a starting point",
+    "to":"Enter a destination",
+    "loading":"Loading directions, please wait...",
+    "error":"Something went wrong while trying to load the directions you requested.",
+    "error2":"Please check the start and destination addresses you entered.",
+    "open_in_maps":"Open in Google Maps",
+    "via":"via"
+  },
+  "pocket":{
+    "name":"Pocket",
+    "desc":"Display a list of your saved articles, videos, and web pages from Pocket",
+    "settings":{
+      "links_shown":"Number of links shown",
+      "open":"Open links",
+      "open_pocket":"In Pocket",
+      "open_original":"At their original URL"
+    },
+    "by":"Par",
+    "no_links":"No links found",
+    "grant_access":"Grant access",
+    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
   }
 }

@@ -13,6 +13,16 @@
   "column_to_grid_warning":"Změnili jste rozložení ze sloupcového na rastrové (grid). Pokud budete pokračovat, ztratíte všechny vytvořené sloupce; vše bude přesunuto do levého horního rohu.\nOpravdu to chcete udělat?",
   "grid_to_column_warning":"Změnili jste rozložení z rastrového (grid) na sloupcové. Pokud budete pokračovat, ztratíte rozložení všech svých widgetů; vše bude přesunuto do prvního sloupce.\nOpravdu to chcete udělat?",
   "storage_warning":"Více než 90% synchronizovaného úložného prostoru bylo použito.\nPokud překročíte tento limit, iChrome přestane synchronizovat data a může i přestat fungovat.\nSituaci můžete zlepšit smazáním vlastních témat, poznámek a to-do listů, které nepoužíváte.",
+  "alert":{
+    "default_button":"Dismiss"
+  },
+  "storage":{
+    "signin":"Sign in to sync your settings",
+    "signin_desc":"iChrome has detected a sync profile under your email address.",
+    "signin_desc2":"Sign in with your Google account now to download and sync your configuration.",
+    "signin_btn":"Sign in",
+    "signin_dismiss":"Dismiss"
+  },
   "toolbar":{
     "placeholder":"Co hledáte?\n",
     "placeholder_ok":"Zadejte dotaz, nebo řekněte \"OK, Google\"",
@@ -43,7 +53,6 @@
       "review":"Recenze",
       "twitter":"Twitter",
       "webstore":"Webový obchod",
-      "donate":"Přispět",
       "by":"Avi Kohn"
     }
   },
@@ -59,15 +68,12 @@
       "general":"Obecné",
       "visual":"Vzhled",
       "specific":"Specifické pro záložku (tab).",
+      "sync":"Accounts and Sync",
       "advanced":"Pokročilé"
     },
     "general":{
       "search_url":"Hledat URL",
       "search_url_desc":"Toto je adresa, na kterou se budou odesílat dotazy vyhledáváni. V adrese se <b>%s<\/b> nahradí vyhledávaným textem",
-      "profile":"Profilový obrázek",
-      "profile_desc":"Tento obrázek se zobrazí na pravé straně horního panelu. Automaticky se doplní z Google profilu",
-      "name":"Jméno",
-      "name_desc":"Jméno použité v odkazu na Google+ v horním panelu. Doplní se automaticky z Google profilu",
       "ltab":"Chování odkazů",
       "ltab_label":"Jako výchozí otevírat odkazy v nové záložce",
       "search":"Chování vyhledávání",
@@ -133,6 +139,32 @@
       "delete_confirm":"Jste si opravdu jisti, že chcete odstranit tuto kartu? Tato akce je nevratná, všechna data ze všech widgetů v kartě budou navždy ztraceny.",
       "default":"Nastavit jako výchozí"
     },
+    "sync":{
+      "status_syncing":"iChrome is currently <b>syncing<\/b> your tabs and settings.",
+      "status_notsyncing":"iChrome is currently <b>not syncing<\/b> your tabs and settings.",
+      "status_notsyncing2":"Click Sync Now at the bottom of this page or sign in with your Google account to create a profile.",
+      "duplicate_profile":"A profile already exists under the email address below. To protect your security, iChrome can't use your sync profile until you verify that you own the address by signing in to your Google account.",
+      "name":"Name",
+      "fname":"First Name",
+      "lname":"Last Name",
+      "name_desc":"We'll use this to address you inside iChrome and in any communications.",
+      "email":"Email Address",
+      "email_desc":"This is used to identify your sync profile, we'll also use it if we need to get in touch with you.",
+      "signin":"Sign In",
+      "signin_btn":"Sign in with Google",
+      "signin_desc":"Sign in with your Google account to easily and securely add new computers to your sync profile.",
+      "signed_in":"iChrome is <b>connected<\/b> to your Google account.  Sign in on any new computers to instantly sync your configuration.",
+      "keep_data":"Keep local data?",
+      "keep_data_desc":"Would you like to keep your local data, and replace the configuration on other computers you may have in this sync group with it, or replace this computer's configuration with theirs?",
+      "keep_theirs":"Use Theirs",
+      "keep_local":"Keep Local",
+      "sync_now":"Sync Now",
+      "syncing":"Syncing...",
+      "last_synced":"Last synced",
+      "reset":"Reset Profile",
+      "resetting":"Resetting...",
+      "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers connected to this sync profile."
+    },
     "advanced":{
       "background":"Pozadí widgetu",
       "background_desc":"Klepněte na vzorku pro výběr barvy",
@@ -144,8 +176,6 @@
       "restore_confirm":"Jste si opravdu, ale opravdu jisti že chcete obnovit zálohu? Tato akce přepíše všechny lokální a synchronizovat data, neexistuje žádná záloha a žádný způsob, jak se vrátit.  KOMPLETNÍ aktuální konfigurace ve všech počítačích, které používají tento účtet Google, bude ztracena.",
       "css":"Vlastní CSS",
       "css_desc":"Toto pole můžete použít k upravení téměř každé vizuální část iChrome pomocí CSS (definice viz <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" \ntarget=\"_blank\">MDN<\/a>).<br \/><br \/>Z důvodu synchronizace nastavení, lze zadat maximálně 1000 znaků včetně mezer.",
-      "reset":"Resetovat iChrome",
-      "reset_confirm":"Jste si opravdu jisti, že chcete obnovit základní nastavení iChrome?\nTímto budou vymazány všechny data, jak lokální tak synchronizované, tato změna je nevratná. Smažete kompletní nastavení a to na všech počítačích, které používají tento účet Google.",
       "debug":"Debug Tools",
       "debug_confirm":"WARNING: These tools can erase your configuration in a single click, only use them if your developer instructs you to.\r\nAre you sure you want to continue?"
     }
