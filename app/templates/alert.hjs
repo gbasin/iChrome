@@ -4,6 +4,9 @@
 	{{#contents}}
 		<p>{{.}}</p>
 	{{/contents}}
+	{{^contents}}
+		{{{html}}}
+	{{/contents}}
 </div>
 
 <footer>

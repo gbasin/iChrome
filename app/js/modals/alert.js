@@ -45,7 +45,8 @@ define(["jquery", "lodash", "backbone", "core/render"], function($, _, Backbone,
 			var data = {
 				buttons: [],
 				title: this.title,
-				contents: this.contents
+				html: this.html || undefined,
+				contents: this.contents || undefined
 			};
 
 			var btns = this.buttons || {};
@@ -63,7 +64,7 @@ define(["jquery", "lodash", "backbone", "core/render"], function($, _, Backbone,
 				label: btns.positive
 			});
 
-			this.$el.addClass((this.classes || []).join(" ")).html(render("alert", data)).appendTo(document.body);
+			this.$el.addClass(this.classes).html(render("alert", data)).appendTo(document.body);
 
 
 			// This method is necessary for the transitions to animate
@@ -86,7 +87,7 @@ define(["jquery", "lodash", "backbone", "core/render"], function($, _, Backbone,
 	return function(options, cb) {
 		if (typeof options !== "object") {
 			options = {
-				contents: options
+				contents: Array.isArray(options) ? options : [options]
 			};
 		}
 

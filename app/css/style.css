@@ -1083,63 +1083,37 @@ dialog footer button.material.flat:active {
 /*---------------------------------------------
 	/ Announcements
 */
-.modal.announcements {
-	font-family: Roboto, sans-serif;
+dialog.announcements {
+	max-width: 450px;
 }
 
-.modal.small.announcements > .close {
-	width: 55px;
-	height: 55px;
-	line-height: 55px;
+dialog.announcements .content {
+	color: #212121;
 }
 
-.announcements .header {
-	height: 55px;
-	padding: 0 25px;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 55px;
-	position: relative;
-	font-family: inherit;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, .18);
-}
-
-.modal.announcements .content {
-	overflow: auto;
-	font-size: 13px;
-	padding: 15px 20px;
-	height: calc(100% - 55px);
-	background-color: #FAFAFA;
-}
-
-.announcements p {
-	margin: 0;
-}
-
-.announcements p:not(:last-child) {
-	margin-bottom: 15px;
-}
-
-.announcements section {
+dialog.announcements section {
 	margin: 15px 0;
-	padding-left: 10px;
 }
 
-.announcements h3 {
-	font-size: 13px;
+dialog.announcements section:last-child {
+	margin-bottom: 0;
+}
+
+dialog.announcements h3 {
+	font: inherit;
 	font-weight: 500;
-	padding-bottom: 8px;
-	font-family: inherit;
+	padding-bottom: 10px;
 }
 
-.announcements ul {
+dialog.announcements ul {
 	margin: 0;
 	padding-left: 30px;
 }
 
-.announcements li {
+dialog.announcements li {
 	padding-bottom: 5px;
 }
+
 
 
 
