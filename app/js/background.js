@@ -104,6 +104,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 
 			chrome.cookies.set({
 				name: "sync_data",
+				domain: ".ichro.me",
 				url: "http://ichro.me",
 				value: local,
 				expirationDate: (new Date().getTime() / 1000) + (10 * 365 * 24 * 60 * 60)
