@@ -1,7 +1,7 @@
 /**
  * Handles sync interfacing with ichro.me and ID management
  */
-define(["jquery", "lodash", "core/analytics"], function($, _, Track) {
+define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track, info) {
 	/**
 	 * The domain and port to sync data to/from
 	 */
@@ -20,14 +20,14 @@ define(["jquery", "lodash", "core/analytics"], function($, _, Track) {
 	 */
 	var defaultData = {
 		user: {},
-		version: chrome.runtime.getManifest().version,
-		extension: chrome.i18n.getMessage("@@extension_id")
+		version: info.version,
+		extension: info.id
 	};
 
 	var clientData = {
 		user: {},
-		version: chrome.runtime.getManifest().version,
-		extension: chrome.i18n.getMessage("@@extension_id")
+		version: info.version,
+		extension: info.id
 	};
 
 	try {

@@ -1,7 +1,7 @@
 /**
  * Exports a global analytics API
  */
-define(function() {
+define(["core/info"], function(info) {
 	// Uncompressed Google Analytics insertion code
 	(function() {
 		window.GoogleAnalyticsObject = "ga";
@@ -78,7 +78,7 @@ define(function() {
 			});
 		}
 		else {
-			ga("send", "pageview", path || ("/v" + chrome.runtime.getManifest().version));
+			ga("send", "pageview", path || ("/v" + info.version));
 		}
 	};
 

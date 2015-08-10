@@ -1,9 +1,9 @@
 /**
  * Announcements
  */
-define(["backbone", "modals/alert", "core/analytics", "i18n/i18n", "core/render"], function(Backbone, Alert, Track, Translate, render) {
+define(["backbone", "modals/alert", "core/analytics", "i18n/i18n", "core/info", "core/render"], function(Backbone, Alert, Track, Translate, info, render) {
 	var Model = Backbone.Model.extend({
-		url: "http://api.ichro.me/announcements?extension=" + chrome.i18n.getMessage("@@extension_id") + "&version=" + chrome.runtime.getManifest().version + "&lang=" + Translate("lang_code"),
+		url: "http://api.ichro.me/announcements?extension=" + info.id + "&version=" + info.version + "&lang=" + info.language,
 
 		defaults: {
 			count: 0,

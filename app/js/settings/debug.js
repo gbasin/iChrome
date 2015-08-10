@@ -1,7 +1,7 @@
 /**
  * The debug dialog.  This contains advanced tools that users can be instructed to use for troubleshooting.
  */
-define(["lodash", "jquery", "backbone", "storage/filesystem", "modals/modals", "core/render"], function(_, $, Backbone, FileSystem, Modal, render) {
+define(["lodash", "jquery", "backbone", "storage/filesystem", "modals/modals", "core/info", "core/render"], function(_, $, Backbone, FileSystem, Modal, info, render) {
 	var modal = new (Modal.extend({
 		width: 800,
 		classes: "debug"
@@ -51,7 +51,7 @@ define(["lodash", "jquery", "backbone", "storage/filesystem", "modals/modals", "
 
 						alert(
 							"Debug info (hit Ctrl+C or Cmd+C to copy):" + "\n" +
-							"iChrome Version: " + chrome.runtime.getManifest().version + "\n" +
+							"iChrome Version: " + info.version + "\n" +
 							"Chrome Version: " + (/Chrome\/([0-9.]+)/.exec(navigator.userAgent) || [])[1] + "\n" +
 							"Operating System: " + info.os + "\n" +
 							"OAuth keys: " + Object.keys(JSON.parse(localStorage.oauth || "{}")).join(", ") + "\n" +
