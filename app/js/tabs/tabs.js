@@ -250,20 +250,26 @@ define(
 
 									try {
 										if (view.widget.permissions) {
-											chrome.permissions.request({
+											chrome.permissions.contains({
 												permissions: view.widget.permissions
-											}, function(granted) {
-												// The page needs to be reloaded after a permission is granted
-												// so the API made available by it can be called (CR Bug 435141)
-												// 
-												// Unfortunately that still doesn't allow access to URLs like
-												// chrome://extension-icon until the browser is restarted
-												// 
-												// This is in a setTimeout so it goes to the end of the call stack
-												// so the page can be serialized and saved first
-												setTimeout(function() {
-													location.reload();
-												}, 0);
+											}, function(hasPermission) {
+												if (!hasPermission) {
+													chrome.permissions.request({
+														permissions: view.widget.permissions
+													}, function(granted) {
+														// The page needs to be reloaded after a permission is granted
+														// so the API made available by it can be called (CR Bug 435141)
+														// 
+														// Unfortunately that still doesn't allow access to URLs like
+														// chrome://extension-icon until the browser is restarted
+														// 
+														// This is in a setTimeout so it goes to the end of the call stack
+														// so the page can be serialized and saved first
+														setTimeout(function() {
+															location.reload();
+														}, 0);
+													});
+												}
 											});
 										}
 									}
