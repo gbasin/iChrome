@@ -1,7 +1,7 @@
 /**
  * This defines a constructor that creates a widget
  */
-define(["lodash", "jquery", "backbone", "core/status", "i18n/i18n", "core/render"], function(_, $, Backbone, Status, Translate, render) {
+define(["lodash", "jquery", "backbone", "core/status", "core/analytics", "i18n/i18n", "core/render"], function(_, $, Backbone, Status, Track, Translate, render) {
 	var i18n = Translate.getAll();
 
 	/**
@@ -26,6 +26,8 @@ define(["lodash", "jquery", "backbone", "core/status", "i18n/i18n", "core/render
 	 * @param  {String} msg The error that occurred
 	 */
 	Utils.prototype.error = function(msg) {
+		Track.queue("widgets", "error", this.widget.nicename, this.widget.config.size, "utils");
+
 		Status.error("An error occurred in the " + this.name + " widget: " + msg);
 
 		this.trigger("error", msg, this.widget);

@@ -244,6 +244,8 @@ define(
 								}
 
 								if (item.installing) {
+									Track.queue("widgets", "install", view.widget.nicename, view.widget.config.size);
+
 									Track.event("Widgets", "Install", view.widget.nicename);
 
 									view.preview = false;
@@ -275,6 +277,8 @@ define(
 									}
 									catch (e) {
 										Status.error("An error occurred while trying to render the " + view.widget.nicename + " widget!");
+
+										Track.queue("widgets", "error", view.widget.nicename, view.widget.config.size, "permissions");
 									}
 								}
 							}

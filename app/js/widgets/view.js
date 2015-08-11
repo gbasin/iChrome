@@ -167,6 +167,8 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 			this.widget.utils.render();
 
 			if (!this.preview) {
+				Track.queue("widgets", "view", this.widget.nicename, this.widget.config.size);
+
 				Track.event("Widgets", "View", this.widget.nicename);
 			}
 
@@ -210,6 +212,8 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 				this.widget.render(this.preview);
 			}
 			catch (e) {
+				Track.queue("widgets", "error", this.widget.nicename, this.widget.config.size, "render");
+
 				Status.error("An error occurred while trying to render the " + this.widget.nicename + " widget!");
 			}
 

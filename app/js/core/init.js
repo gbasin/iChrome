@@ -108,18 +108,8 @@ define(
 
 				// requestAnimationFrame ensures this runs after everything is done
 				requestAnimationFrame(function() {
-					var cTime = new Date().getTime(),
-						totalLoad = cTime - performance.timing.responseEnd,
-						time = (performance.timing.loadEventEnd || cTime) - performance.timing.responseEnd;
-
-					Status.log("Window load took " + time + "ms, actual load took " + totalLoad + "ms");
-
-					console.log("Window load took " + time + "ms, actual load took " + totalLoad + "ms");
-
-					Track.ga("send", "timing", "Page", "Onload", time);
-
-					Track.ga("send", "timing", "Page", "Complete", totalLoad);
-				});
+					Track.pageDone(this.model.get("toolbar"));
+				}.bind(this));
 			}
 		});
 
