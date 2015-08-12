@@ -195,19 +195,14 @@ define(
 			timeout = null;
 
 			// Local save
-			var local = {
-				user: storage.user,
-				tabs: _.map(storage.tabs, function(tab) {
-					return $.unextend({
-						theme: storage.settings.theme,
-						fixed: storage.settings.columns.split("-")[1] == "fixed"
-					}, $.unextend(defaults.tab, tab));
-				}),
-				cached: storage.cached,
-				themes: storage.themes,
-				settings: storage.settings,
-				modified: storage.modified
-			};
+			var local = _.pick(storage, "user", "cached", "themes", "settings", "modified");
+
+			local.tabs = _.map(storage.tabs, function(tab) {
+				return $.unextend({
+					theme: storage.settings.theme,
+					fixed: storage.settings.columns.split("-")[1] == "fixed"
+				}, $.unextend(defaults.tab, tab));
+			});
 
 			localStorage.config = JSON.stringify(local);
 
@@ -242,7 +237,7 @@ define(
 						storage.modified = local.modified = modified;
 
 						if (d.user) {
-							storage.user = d.user;
+							storage.user = local.user = d.user;
 						}
 
 						localStorage.config = JSON.stringify(local);
