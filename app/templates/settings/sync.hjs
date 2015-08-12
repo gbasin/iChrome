@@ -39,14 +39,14 @@
 			<label class="control-label col-sm-2" for="signin">{{i18n.settings.sync.signin}}</label>
 
 			<div class="col-sm-9">
-				{{#profile.user.googleid}}
+				{{#profile.user.signedIn}}
 					<p class="info">{{{i18n.settings.sync.signed_in}}}</p>
-				{{/profile.user.googleid}}
-				{{^profile.user.googleid}}
+				{{/profile.user.signedIn}}
+				{{^profile.user.signedIn}}
 					<p class="info">{{i18n.settings.sync.signin_desc}}</p>
 
 					<button type="button" id="signin" class="material red">{{i18n.settings.sync.signin_btn}}</button>
-				{{/profile.user.googleid}}
+				{{/profile.user.signedIn}}
 			</div>
 		</div>
 	</form>
