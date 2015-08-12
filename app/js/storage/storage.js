@@ -196,6 +196,7 @@ define(
 
 			// Local save
 			var local = {
+				user: storage.user,
 				tabs: _.map(storage.tabs, function(tab) {
 					return $.unextend({
 						theme: storage.settings.theme,
