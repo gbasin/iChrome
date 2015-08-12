@@ -192,6 +192,8 @@ define(
 		var save = function(sync, cb, useBeacon) {
 			Status.log("Starting storage save");
 
+			storage.settings = _.pick(storage.settings, Object.keys(defaults.settings));
+
 			timeout = null;
 
 			// Local save

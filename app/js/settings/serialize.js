@@ -166,7 +166,7 @@ define(["jquery", "lodash", "i18n/i18n"], function($, _, Translate) {
 			}
 		});
 
-		return _.defaults(settings, storage.settings);
+		return settings; // _.defaults(settings, storage.settings);
 	};
 
 	return serialize;
