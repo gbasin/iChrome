@@ -19,29 +19,6 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 
 
 	var view = Backbone.View.extend({
-		tagName: "section",
-		className: function() {
-			return "widget " + this.widget.nicename + " " + this.widget.config.size;
-		},
-
-		attributes: function() {
-			return {
-				"data-id": this.widget.internalID,
-				"data-name": this.widget.nicename,
-				"data-size": this.widget.config.size
-			};
-		},
-
-
-		events: {
-			"click .settings": function(e) {
-				new Settings({
-					widget: this.widget
-				});
-			}
-		},
-
-
 		/**
 		 * Updates the widget data from the model and rerenders it.
 		 * Called on init and model change.
@@ -130,9 +107,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 		constructor: function(options) {
 			if (options.preview) this.preview = true;
 			
-			var model = options.model;
-
-			var d = model.attributes,
+			var d = options.model.attributes,
 				widget = this.widget = _.assign(_.clone(Widgets[d.id], true), d);
 
 			widget.config = $.extend(true, _.clone(Widgets[d.id].config, true), d.config);
@@ -142,7 +117,31 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 			// Used to lookup a widget from it's element among other things
 			widget.internalID = _.uniqueId("widget");
 
-			Backbone.View.apply(this, arguments);
+
+			// Replacing the contents of the Backbone.View constructor with a
+			// simplified version cuts view creation time in half
+			this.cid = _.uniqueId("view");
+
+			this.model = options.model;
+
+			var el = document.createElement("section");
+
+			el.setAttribute("class", "widget " + this.widget.nicename + " " + this.widget.config.size);
+
+			el.setAttribute("data-id", this.widget.internalID);
+			el.setAttribute("data-name", this.widget.nicename);
+			el.setAttribute("data-size", this.widget.config.size);
+
+			this.el = el;
+			this.$el = $(el);
+
+			this.initialize();
+
+			this.$el.on("click", ".settings", function(e) {
+				new Settings({
+					widget: widget
+				});
+			});
 		},
 
 
