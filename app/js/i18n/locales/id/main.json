@@ -14,7 +14,10 @@
   "grid_to_column_warning":"You selected to change a tab from a grid-based layout to a column-based layout. If you continue you will lose all of your widget positioning; everything will be moved to the first column of the new tab.\r\nAre you sure you want to do this?",
   "storage_warning":"You have used more than 90% of the total synchronized storage space available.\r\nIf you reach the limit, iChrome will stop syncing your data and may stop working.\r\nYou can shrink the amount of space you use by deleting custom themes, notes and to-do lists that you don't use.",
   "alert":{
-    "default_button":"Dismiss"
+    "default_button":"Dismiss",
+    "confirm_title":"Are you sure you want to do this?",
+    "confirm_continue":"Continue",
+    "confirm_cancel":"Cancel"
   },
   "storage":{
     "signin":"Sign in to sync your settings",
@@ -161,19 +164,29 @@
       "sync_now":"Sync Now",
       "syncing":"Syncing...",
       "last_synced":"Last synced",
+      "backup":{
+        "title":"Backup & Restore",
+        "desc":"Click the button an any backup to roll iChrome back to the time displayed.  You can also use the button below to create a manual backup.",
+        "btn":"Backup now",
+        "restore":"Restore",
+        "download":"Download",
+        "download_name":"iChrome Backup",
+        "no_backups":"No backups found, click Backup Now to create one."
+      },
+      "restore":{
+        "file":"Restore from file",
+        "error":"An error occurred while trying to parse the provided data, please try again later.",
+        "confirm_desc":"This will overwrite all local and synced data.",
+        "confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
+      },
       "reset":"Reset Profile",
       "resetting":"Resetting...",
-      "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers connected to this sync profile."
+      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
+      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
     },
     "advanced":{
       "background":"Widget Background",
       "background_desc":"Click the swatch to select a color",
-      "backup":"Backup \/ Restore",
-      "backup_desc":"<b>To backup:<\/b> Click the Backup button and copy the text that appears in the field below.<br \/><b>To restore:<\/b> Paste the text you saved or copied before and click the Restore button.",
-      "backup_backup":"Backup",
-      "backup_restore":"Restore",
-      "restore_error":"An error occurred while trying to parse the provided data, please make sure you entered the EXACT text you backed up.",
-      "restore_confirm":"Are you really, really sure you want to do this?\r\nThis will overwrite all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers signed into this Google account.",
       "css":"Custom CSS",
       "css_desc":"You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.",
       "debug":"Debug Tools",

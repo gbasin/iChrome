@@ -14,7 +14,10 @@
   "grid_to_column_warning":"您选择将选项卡的布局方式从基于网格的布局改为基于列的布局。如果您确认继续将会失去您所有的现有小部件位置，然后一切挂件都将被移动到选项卡的第一列。您确定要这样做吗？",
   "storage_warning":"您已经使用了90%以上的同步储存空间 ，如果同步储存空间满，iChrome将停止同步您的数据并可能停止工作。您通过删除自定义主题、不需要的笔记和待办事项以缩小您的空间使用量。",
   "alert":{
-    "default_button":"Dismiss"
+    "default_button":"Dismiss",
+    "confirm_title":"Are you sure you want to do this?",
+    "confirm_continue":"Continue",
+    "confirm_cancel":"Cancel"
   },
   "storage":{
     "signin":"Sign in to sync your settings",
@@ -161,19 +164,29 @@
       "sync_now":"Sync Now",
       "syncing":"Syncing...",
       "last_synced":"Last synced",
+      "backup":{
+        "title":"Backup & Restore",
+        "desc":"Click the button an any backup to roll iChrome back to the time displayed.  You can also use the button below to create a manual backup.",
+        "btn":"Backup now",
+        "restore":"Restore",
+        "download":"Download",
+        "download_name":"iChrome Backup",
+        "no_backups":"No backups found, click Backup Now to create one."
+      },
+      "restore":{
+        "file":"Restore from file",
+        "error":"An error occurred while trying to parse the provided data, please try again later.",
+        "confirm_desc":"This will overwrite all local and synced data.",
+        "confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
+      },
       "reset":"Reset Profile",
       "resetting":"Resetting...",
-      "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers connected to this sync profile."
+      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
+      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
     },
     "advanced":{
       "background":"小部件背景",
       "background_desc":"单击调色板以选择颜色",
-      "backup":"备份\/还原",
-      "backup_desc":"<b>如何备份：<\/b>单击备份按钮，复制下面出现的文本。 <br\/> <b>如何还原：<\/b> 将备份的文本粘贴，然后单击还原按钮。",
-      "backup_backup":"备份",
-      "backup_restore":"还原",
-      "restore_error":"在解析您提供的数据时发生错误，请确认您输入的内容和备份时完全一致。",
-      "restore_confirm":"您真的确定要这样做吗？\n这将覆盖所有的本地和同步的数据，没有备份也没有办法撤销这个操作。您将丢失您在所有电脑登陆的Google账号同步的所有当前设置！",
       "css":"自定义 CSS",
       "css_desc":"您可以使用此功能自定义CSS （有关指引请见 <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\"target=\"_blank\"> MDN<\/a>） 以自由改变 iChrome 几乎所有可视的部分。<br\/><br\/> 因为此选项将会同步而同步有空间限制的缘故，您最多只能输入包括空格在内的1000个字符。",
       "debug":"Debug Tools",

@@ -14,7 +14,10 @@
   "grid_to_column_warning":"Одабрао си да промениш картицу са мрежног распореда на распоред са колонама. Ако наставиш изгубићеш све твоје позиције додатака; све ће бити премештено на прву колону нове картице.\nДа ли си сигуран да желиш ово да урадиш?",
   "storage_warning":"Искористио си више од 90% доступног целокупног синхронизованог места за чување.\nАко достигнеш лимит, iChrome ће престати да синхронизује твоје податке и може да престане да ради.\nМожеш да смањиш количину коришћеног простора тако што обришеш прилагођене теме, белешке и листе за-урадити које не користиш.",
   "alert":{
-    "default_button":"Dismiss"
+    "default_button":"Dismiss",
+    "confirm_title":"Are you sure you want to do this?",
+    "confirm_continue":"Continue",
+    "confirm_cancel":"Cancel"
   },
   "storage":{
     "signin":"Sign in to sync your settings",
@@ -161,19 +164,29 @@
       "sync_now":"Sync Now",
       "syncing":"Syncing...",
       "last_synced":"Last synced",
+      "backup":{
+        "title":"Backup & Restore",
+        "desc":"Click the button an any backup to roll iChrome back to the time displayed.  You can also use the button below to create a manual backup.",
+        "btn":"Backup now",
+        "restore":"Restore",
+        "download":"Download",
+        "download_name":"iChrome Backup",
+        "no_backups":"No backups found, click Backup Now to create one."
+      },
+      "restore":{
+        "file":"Restore from file",
+        "error":"An error occurred while trying to parse the provided data, please try again later.",
+        "confirm_desc":"This will overwrite all local and synced data.",
+        "confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
+      },
       "reset":"Reset Profile",
       "resetting":"Resetting...",
-      "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers connected to this sync profile."
+      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
+      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
     },
     "advanced":{
       "background":"Позадина додатка",
       "background_desc":"Кликни узорак да одабереш боју",
-      "backup":"Направи резервну копију \/ Обнови",
-      "backup_desc":"<b>За резервну копију:<\/b> Кликни Направи Резервну копију дугме и копирај текст који се појави у доњем пољу.<br \/><b>За обнову:<\/b> Проследи текст који си сачувао или копирао раније и кликни Обнови дугме.",
-      "backup_backup":"Направи резервну копију",
-      "backup_restore":"Обнови",
-      "restore_error":"Десила се грешка током раздвајања понуђених података, осигурај се да си унео ТАЧАН текст који си сачувао као резервну копију.",
-      "restore_confirm":"Да ли си стварно, стварно сигуран да желиш ово да урадиш?\nОво ће поништити све локалне и синхронизоване податке, не постоји резервна копија нити који други начин да поништиш ову акцију. Изгубићеш СВУ тренутну конфигурацију на свим рачунарима уписаним на овај Google рачун .",
       "css":"Подесиви ЦСС",
       "css_desc":"Можеш да користиш ово поље да прилагодиш скоро сваки визуални део iChrome-а користећи ЦСС(за дефиницију молимо погледајте <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Пошто ће ово бити синхронизовано, можеш да унесеш максимално 1000 карактера, укључујући и празан простор између знакова.",
       "debug":"Debug Tools",

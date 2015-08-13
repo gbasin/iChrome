@@ -14,7 +14,10 @@
   "grid_to_column_warning":"Вы изменяете раскладку с режима сетки на режим столбцов. При продолжении все виджеты забудут о своем расположении и будут помещены в самый первый столбец.\nВы уверены в своих действиях?",
   "storage_warning":"Вы достигли отметки 90% от доступного объема для синхронизации данных. При достижении лимита iChrome перестанет синхронизировать все ваши данные, и, может быть, даже перестанет работать. \nВы можете увеличить свободное пространство, удалив лишние темы, заметки и списки дел, которые вы не используете.",
   "alert":{
-    "default_button":"Выключить"
+    "default_button":"Выключить",
+    "confirm_title":"Are you sure you want to do this?",
+    "confirm_continue":"Continue",
+    "confirm_cancel":"Cancel"
   },
   "storage":{
     "signin":"Sign in to sync your settings",
@@ -161,19 +164,29 @@
       "sync_now":"Sync Now",
       "syncing":"Syncing...",
       "last_synced":"Last synced",
+      "backup":{
+        "title":"Backup & Restore",
+        "desc":"Click the button an any backup to roll iChrome back to the time displayed.  You can also use the button below to create a manual backup.",
+        "btn":"Backup now",
+        "restore":"Restore",
+        "download":"Download",
+        "download_name":"iChrome Backup",
+        "no_backups":"No backups found, click Backup Now to create one."
+      },
+      "restore":{
+        "file":"Restore from file",
+        "error":"An error occurred while trying to parse the provided data, please try again later.",
+        "confirm_desc":"This will overwrite all local and synced data.",
+        "confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
+      },
       "reset":"Reset Profile",
       "resetting":"Resetting...",
-      "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers connected to this sync profile."
+      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
+      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
     },
     "advanced":{
       "background":"Фон виджетов",
       "background_desc":"Для изменения цвета кликните по квадрату с ним",
-      "backup":"Резервная копия",
-      "backup_desc":"<b>Для сохранения:<\/b> нажмите кнопку \"Сделать резервную копию\" и скопируйте текст из поля ниже.<br \/><b>Для восстановления:<\/b> вставьте текст в поле, скопированный ранее и нажмите кнопку \"Восстановить\".",
-      "backup_backup":"Сделать резервную копию",
-      "backup_restore":"Восстановить",
-      "restore_error":"Возникла ошибка при попытке обработать введенные данные. Убедитесь что вы ввели ТО ЖЕ САМОЕ что и копировали до этого.",
-      "restore_confirm":"Вы уверены в своих действиях?\nЭто действие перезапишет все локальные и синхронизируемые данные без возможности отмены. Текущие настройки будут потеряны ПОЛНОСТЬЮ на ВСЕХ компьютерах, которые синхронизированы с этим аккаунтом Google.",
       "css":"Пользовательские CSS",
       "css_desc":"Вы можете использовать это поле для настройки почти любой визуальной части iChrome с помощью CSS (подробно о CSS вы можете почитать на <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Поскольку эта настройка синхронизируется - максимальная длина поля ограничена 1000 символами, включая пробелы.",
       "debug":"Инструменты отладки",

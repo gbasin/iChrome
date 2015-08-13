@@ -14,7 +14,10 @@
   "grid_to_column_warning":"U koos om een tabblad van raster-gebaseerd naar kolom-gebaseerd te veranderen. Als u doorgaat zult u al uw posities van widgets verliezen. Alles zal verplaatst worden naar de eerste kolom van de nieuwe tabblad.\nWeet u zeker dat u door wilt gaan?",
   "storage_warning":"U heeft meer dan 90% van de beschikbare gesynchroniseerde opslagruimte gebruikt. Als u de limiet bereikt zal iChrome uw data niet meer sychroniseren en eventueel stoppen met werken. U kunt de hoeveelheid opslagruimte die u gebruikt verminderen door niet gebuikte aangepaste thema's, notities en takenlijsten te verwijderen.",
   "alert":{
-    "default_button":"Dismiss"
+    "default_button":"Dismiss",
+    "confirm_title":"Are you sure you want to do this?",
+    "confirm_continue":"Continue",
+    "confirm_cancel":"Cancel"
   },
   "storage":{
     "signin":"Sign in to sync your settings",
@@ -161,19 +164,29 @@
       "sync_now":"Sync Now",
       "syncing":"Syncing...",
       "last_synced":"Last synced",
+      "backup":{
+        "title":"Backup & Restore",
+        "desc":"Click the button an any backup to roll iChrome back to the time displayed.  You can also use the button below to create a manual backup.",
+        "btn":"Backup now",
+        "restore":"Restore",
+        "download":"Download",
+        "download_name":"iChrome Backup",
+        "no_backups":"No backups found, click Backup Now to create one."
+      },
+      "restore":{
+        "file":"Restore from file",
+        "error":"An error occurred while trying to parse the provided data, please try again later.",
+        "confirm_desc":"This will overwrite all local and synced data.",
+        "confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
+      },
       "reset":"Reset Profile",
       "resetting":"Resetting...",
-      "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers connected to this sync profile."
+      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
+      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
     },
     "advanced":{
       "background":"Achtergrond van widget",
       "background_desc":"Klik op de kleurstaal om een kleur te selecteren",
-      "backup":"Back-up \/ Herstel",
-      "backup_desc":"<b>Backup:<\/b> Klik op de Backup knop en kopieer de tekst die hieronder verschijnt. <br\/><b>Herstellen:<\/b> Plaats de tekst die je op hebt geslagen en klik op de Herstel knop.",
-      "backup_backup":"Back-up",
-      "backup_restore":"Herstel",
-      "restore_error":"Er is een fout opgetreden bij het proberen om de verstrekte gegevens parseren, zorg ervoor dat u de exacte tekst van uw backup heeft ingevoerd.",
-      "restore_confirm":"Weet u heel, heel zeker dat je dit wil doen?\nDit zal alle lokale en gesynchroniseerde data overschrijven, er is geen back-up en geen enkele manier om dit ongedaan te maken. U zult uw volledige huidige configuratie verliezen op alle computers die ingelogd zijn op dit Google account.",
       "css":"Aangepaste CSS",
       "css_desc":"U kan dit veld gebruiken voor het aanpassen van bijna elk visueel deel van iChrome met behulp van CSS (voor de definitie zie <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Omdat dit zal worden gesynchroniseerd, kunt u maximum 1000 karakters invoeren, inclusief spaties.",
       "debug":"Debug Tools",

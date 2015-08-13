@@ -14,7 +14,10 @@
   "grid_to_column_warning":"タブをグリッドレイアウトからカラムレイアウトへ変更するよう選択しました。このまま続けると全てのウィジェットが消えて、全てが新しいタブの左端カラムへと移動します。\nこのまま続けてもよろしいですか？",
   "storage_warning":"利用可能な同期ストレージのうち90%以上を使っています。\n限界に達するとiChromeはデータの同期を停止して動作も停止するかもしれません。\nカスタムテーマや使っていないto-doリストなどを削除することでスペースを圧縮することができます。",
   "alert":{
-    "default_button":"Dismiss"
+    "default_button":"Dismiss",
+    "confirm_title":"Are you sure you want to do this?",
+    "confirm_continue":"Continue",
+    "confirm_cancel":"Cancel"
   },
   "storage":{
     "signin":"Sign in to sync your settings",
@@ -161,19 +164,29 @@
       "sync_now":"Sync Now",
       "syncing":"Syncing...",
       "last_synced":"Last synced",
+      "backup":{
+        "title":"Backup & Restore",
+        "desc":"Click the button an any backup to roll iChrome back to the time displayed.  You can also use the button below to create a manual backup.",
+        "btn":"Backup now",
+        "restore":"Restore",
+        "download":"Download",
+        "download_name":"iChrome Backup",
+        "no_backups":"No backups found, click Backup Now to create one."
+      },
+      "restore":{
+        "file":"Restore from file",
+        "error":"An error occurred while trying to parse the provided data, please try again later.",
+        "confirm_desc":"This will overwrite all local and synced data.",
+        "confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
+      },
       "reset":"Reset Profile",
       "resetting":"Resetting...",
-      "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers connected to this sync profile."
+      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
+      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
     },
     "advanced":{
       "background":"ウィジェットの背景",
       "background_desc":"色を選択するには色見本をクリックしてください",
-      "backup":"バックアップ \/ 復元",
-      "backup_desc":"<b>バックアップ:<\/b>バックアップ ボタンをクリックし、以下のフィールドに表示されるテキストをコピーします。 <br\/> <b>復元する:<\/b> 復元ボタンをクリックして保存したテキストを貼り付けます。",
-      "backup_backup":"バックアップ",
-      "backup_restore":"復元",
-      "restore_error":"入力されたデータを解析中にエラーが発生しました。 バックアップしたテキストを正確に入力してください。",
-      "restore_confirm":"本当に、本当にこれを実行したいですか？\nこれによりすべての同期されたローカルデータが上書きされ、バックアップも無ければ取り消すこともできません。このGoogleアカウントに関連付けられたすべてのコンピューターの全設定を失います。",
       "css":"カスタム CSS",
       "css_desc":"CSS（定義については <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>を参照）を使ってiChromeのほとんどのビジュアル部分をカスタマイズするためにこのフィールドを使用することができます。<br \/><br \/>これは同期されるため、スペースを含み最大1,000文字まで入力できます。",
       "debug":"Debug Tools",

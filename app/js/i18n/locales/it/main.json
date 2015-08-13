@@ -14,7 +14,10 @@
   "grid_to_column_warning":"Si è scelto di cambiare una scheda da un layout basato su griglia a un layout basato su colonne . Se continui perderai la posizione di tutti i tuoi widget; tutto sarà spostato nella prima colonna della nuova scheda. \nSei sicuro di volerlo fare?",
   "storage_warning":"È stato utilizzato più del 90% dello spazio totale di archiviazione sincronizzata disponibile. \nSe si raggiunge il limite, iChrome fermerà la sincronizzazione dei dati e potrebbe smettere di funzionare.\nÈ possibile ridurre la quantità di spazio di utilizzare eliminando temi personalizzati, note e to-do list che non usate.",
   "alert":{
-    "default_button":"Dismiss"
+    "default_button":"Dismiss",
+    "confirm_title":"Are you sure you want to do this?",
+    "confirm_continue":"Continue",
+    "confirm_cancel":"Cancel"
   },
   "storage":{
     "signin":"Sign in to sync your settings",
@@ -161,19 +164,29 @@
       "sync_now":"Sync Now",
       "syncing":"Syncing...",
       "last_synced":"Last synced",
+      "backup":{
+        "title":"Backup & Restore",
+        "desc":"Click the button an any backup to roll iChrome back to the time displayed.  You can also use the button below to create a manual backup.",
+        "btn":"Backup now",
+        "restore":"Restore",
+        "download":"Download",
+        "download_name":"iChrome Backup",
+        "no_backups":"No backups found, click Backup Now to create one."
+      },
+      "restore":{
+        "file":"Restore from file",
+        "error":"An error occurred while trying to parse the provided data, please try again later.",
+        "confirm_desc":"This will overwrite all local and synced data.",
+        "confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
+      },
       "reset":"Reset Profile",
       "resetting":"Resetting...",
-      "reset_confirm":"Are you really sure you want to reset iChrome?\r\nThis will erase all local and synced data, there is no backup and no way to undo this.  You will lose your ENTIRE current configuration on all computers connected to this sync profile."
+      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
+      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
     },
     "advanced":{
       "background":"Sfondo widget",
       "background_desc":"Clicca il rettangolo per selezionare un colore",
-      "backup":"Backup \/ Ripristino",
-      "backup_desc":"<b>Per fare il backup:<\/b> Clicca il pulsante di backup e copia il testo che apparirà nel campo sottostante.<br \/><b>Per ripristinare:<\/b> Incolla il testo che hai salvato o copiato in passato e clicca il pulsante ripristina.",
-      "backup_backup":"Backup",
-      "backup_restore":"Ripristina",
-      "restore_error":"Si è verificato un errore durante l'analisi dei dati forniti, per favore, assicurati di aver inserito ESATTAMENTE il testo che avevi salvato.",
-      "restore_confirm":"Sei assolutamente sicuro di volerlo fare?\nQuesta operazione cancellerà tutti i dati sincronizzati e locali, non c'è modo di annullare questa operazione. Perderai tutta la tua configurazione corrente su tutti i computers connessi in questo profilo Google.",
       "css":"CSS personalizzato",
       "css_desc":"Puoi usare questo campo per personalizzare praticamente la presentazione di ogni parte di iChrome usando il CSS (per una definizione dai un occhiata a <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Dato che il campo sarà sincronizzato, ti è possibile immettere un massimo di 1000 caratteri, inclusi spazzi.",
       "debug":"Debug Tools",
