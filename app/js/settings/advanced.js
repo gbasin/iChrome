@@ -1,21 +1,11 @@
 /**
  * This is the Advanced tab in the settings
  */
-define(["jquery", "backbone", "settings/debug", "storage/storage", "i18n/i18n", "core/render", "lib/jquery.spectrum"], function($, Backbone, Debug, Storage, Translate, render) {
+define(["backbone", "settings/debug", "storage/storage", "i18n/i18n", "core/render", "lib/jquery.spectrum"], function(Backbone, Debug, Storage, Translate, render) {
 	var Model = Backbone.Model.extend({
-			save: function(d, cb) {
-				if (d.user)		this.storage.user = d.user;
-				if (d.tabs)		this.storage.tabs = d.tabs;
-				if (d.themes)	this.storage.themes = d.themes;
-				if (d.settings)	this.storage.settings = d.settings;
-
-				this.get("sync")(true, cb);
-			},
 			init: function() {
 				Storage.on("done updated", function(storage) {
 					this.set(storage);
-
-					this.storage = storage;
 				}, this);
 			}
 		}),
@@ -23,17 +13,6 @@ define(["jquery", "backbone", "settings/debug", "storage/storage", "i18n/i18n", 
 			tagName: "div",
 			className: "tab advanced",
 			events: {
-				"click .btn.backup": function(e) {
-					e.preventDefault();
-
-					this.$("#backup").val(JSON.stringify({
-						user: this.model.get("user"),
-						themes: this.model.get("themes"),
-						settings: this.model.get("settings"),
-						tabs: this.model.get("tabsSync")
-					}));
-				},
-				"click .btn.restore": "restore",
 				"click .debug" :"debug"
 			},
 			debug: function(e) {
@@ -44,26 +23,6 @@ define(["jquery", "backbone", "settings/debug", "storage/storage", "i18n/i18n", 
 					else {
 						this.Debug.show();
 					}
-				}
-			},
-			restore: function(e) {
-				e.preventDefault();
-
-				if (!confirm(Translate("settings.advanced.restore_confirm"))) {
-					return;
-				}
-
-				try {
-					var settings = JSON.parse(this.$("#backup").val());
-
-					// Calling this.model.set will break the inheritance chain (a change to this.model.settings.search will instantly change all
-					// other copies of settings across iChrome) so this needs to be set directly onto the storage object
-					this.model.save(settings, function() {
-						this.trigger("restore");
-					}.bind(this));
-				}
-				catch(err) {
-					alert(Translate("settings.advanced.restore_error"));
 				}
 			},
 			initialize: function() {
@@ -80,7 +39,10 @@ define(["jquery", "backbone", "settings/debug", "storage/storage", "i18n/i18n", 
 				this.$("input.color").spectrum("destroy");
 
 				this.$el
-					.html(render("settings/advanced", this.model.get("settings")))
+					.html(render("settings/advanced", {
+						backups: this.model.get("backups"),
+						settings: this.model.get("settings")
+					}))
 					.find("input.color").spectrum({
 						showInput: true,
 						showAlpha: true,

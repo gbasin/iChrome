@@ -3536,6 +3536,57 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 
 
+
+/*---------------------------------------------
+	/ Settings / Sync / Backup
+*/
+.settings .backup ul {
+	width: 70%;
+	padding: 0;
+	margin-top: 25px;
+	border-radius: 3px;
+	box-shadow: 0 -1px 0 #E5E5E5,
+				0 0 2px rgba(0, 0, 0, .08),
+				0 2px 4px rgba(0, 0, 0, .16);
+}
+
+.settings .backup ul li {
+	display: block;
+}
+
+.settings .backup ul li:not(:last-child) {
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.settings .backup ul li h4 {
+	margin: 0;
+	color: #212121;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 50px;
+	padding-left: 18px;
+	display: inline-block;
+	font-family: Roboto, sans-serif;
+}
+
+.settings .backup ul li .buttons {
+	float: right;
+	padding: 9px 5px;
+}
+
+.settings .backup ul li .buttons button {
+	padding: 0 10px;
+}
+
+.settings .backup ul li .buttons button:hover:not(:focus) {
+	background: initial;
+}
+
+
+
+
+
+
 /*---------------------------------------------
 	/ Settings / Advanced
 */
@@ -3543,30 +3594,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	width: 20%;
 }
 
-.settings .backup .btn {
-	margin-top: 15px;
-}
-
-.settings .backup .restore {
-	margin-left: 15px;
-}
-
-.settings .backup #backup {
-	width: 80%;
-	height: 80px;
-	margin-top: 15px;
-	margin-right: 20%;
-}
-
 .settings .css textarea {
 	width: 70%;
 	height: 120px;
 	margin-top: 10px;
-}
-
-.settings .advanced .reset {
-	float: left;
-	color: #D43F3A;
 }
 
 .settings .advanced .debug {

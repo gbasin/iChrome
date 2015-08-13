@@ -388,6 +388,28 @@ define(
 		storage.Originals.tabs = JSON.parse(JSON.stringify(storage.tabs));
 
 
+		// Backup once a day, before any changes are made
+		if (new Date().getTime() - (localStorage.lastBackup || "0") > 864E5) {
+			var backups = JSON.parse(localStorage.backups || "[]");
+
+			backups.unshift({
+				date: new Date().getTime(),
+				data: {
+					syncData: API.getInfo(),
+					user: storage.user,
+					tabs: storage.tabsSync,
+					themes: storage.themes,
+					settings: storage.settings
+				}
+			});
+
+			localStorage.backups = JSON.stringify(backups.slice(0, 4));
+			localStorage.lastBackup = new Date().getTime();
+
+			backups = null;
+		}
+
+
 		// Load any updates from the sync server, sending the request before the page is rendered
 		loadSync();
 
