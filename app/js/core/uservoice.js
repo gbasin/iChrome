@@ -1,7 +1,7 @@
 /**
  * Initializes UserVoice and it's autoprompts
  */
-define(["storage/syncapi"], function(SyncAPI) {
+define(["storage/syncapi", "core/info"], function(SyncAPI, info) {
 	var initUV = function() {
 		var uv = document.createElement("script");
 
@@ -23,7 +23,7 @@ define(["storage/syncapi"], function(SyncAPI) {
 
 		var d = SyncAPI.getInfo();
 
-		var extension = chrome.i18n.getMessage("@@extension_id");
+		var extension = info;
 
 		if (extension === "oghkljobbhapacbahlneolfclkniiami") {
 			extension = "Main";

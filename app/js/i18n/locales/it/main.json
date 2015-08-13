@@ -13,6 +13,19 @@
   "column_to_grid_warning":"Si è scelto di cambiare una scheda da un layout basato su colonne a un layout basato su griglia. Se continui perderai tutte le tue colonne; tutto sarà spostato in alto a sinistra. \nSei sicuro di volerlo fare?",
   "grid_to_column_warning":"Si è scelto di cambiare una scheda da un layout basato su griglia a un layout basato su colonne . Se continui perderai la posizione di tutti i tuoi widget; tutto sarà spostato nella prima colonna della nuova scheda. \nSei sicuro di volerlo fare?",
   "storage_warning":"È stato utilizzato più del 90% dello spazio totale di archiviazione sincronizzata disponibile. \nSe si raggiunge il limite, iChrome fermerà la sincronizzazione dei dati e potrebbe smettere di funzionare.\nÈ possibile ridurre la quantità di spazio di utilizzare eliminando temi personalizzati, note e to-do list che non usate.",
+  "alert":{
+    "default_button":"Dismiss",
+    "confirm_title":"Are you sure you want to do this?",
+    "confirm_continue":"Continue",
+    "confirm_cancel":"Cancel"
+  },
+  "storage":{
+    "signin":"Sign in to sync your settings",
+    "signin_desc":"iChrome has detected a sync profile under your email address.",
+    "signin_desc2":"Sign in with your Google account now to download and sync your configuration.",
+    "signin_btn":"Sign in",
+    "signin_dismiss":"Dismiss"
+  },
   "toolbar":{
     "placeholder":"Inserisci i termini della tua ricerca",
     "placeholder_ok":"Inserisci i termini della tua ricerca o pronuncia \"OK, Google\"",
@@ -43,7 +56,6 @@
       "review":"Recensisci",
       "twitter":"Twitter",
       "webstore":"Webstore",
-      "donate":"Dona",
       "by":"Di Avi Kohn"
     }
   },
@@ -59,15 +71,12 @@
       "general":"Generale",
       "visual":"Apparenza",
       "specific":"Impostazioni Tab",
+      "sync":"Accounts and Sync",
       "advanced":"Avanzate"
     },
     "general":{
       "search_url":"URL di ricerca",
       "search_url_desc":"Questo è l'URL utilizzato per le ricerche. Metti <b>%s<\/b> nel punto in cui la query di ricerca dovrebbe andare",
-      "profile":"Foto del profilo",
-      "profile_desc":"Questa è l'immagine visualizzata a destra della barra degli strumenti. E' auto-popolata dal tuo profilo di Google",
-      "name":"Nome",
-      "name_desc":"Questo è usato per il collegamento Google+ nella barra degli strumenti. Viene anche auto-popolato dal tuo profilo di Google",
       "ltab":"Comportamento dei link",
       "ltab_label":"Apri link in una nuova scheda di default",
       "search":"Comportamento della ricerca",
@@ -133,19 +142,53 @@
       "delete_confirm":"Sei davvero sicuro di voler cancellare questa scheda? Quest'azione è irreversibile, comporta la perdita definitiva di tutti i dati provenienti da tutti i widget nella scheda.",
       "default":"Imposta come Predefinita"
     },
+    "sync":{
+      "status_syncing":"iChrome is currently <b>syncing<\/b> your tabs and settings.",
+      "status_notsyncing":"iChrome is currently <b>not syncing<\/b> your tabs and settings.",
+      "status_notsyncing2":"Click Sync Now at the bottom of this page or sign in with your Google account to create a profile.",
+      "duplicate_profile":"A profile already exists under the email address below. To protect your security, iChrome can't use your sync profile until you verify that you own the address by signing in to your Google account.",
+      "name":"Name",
+      "fname":"First Name",
+      "lname":"Last Name",
+      "name_desc":"We'll use this to address you inside iChrome and in any communications.",
+      "email":"Email Address",
+      "email_desc":"This is used to identify your sync profile, we'll also use it if we need to get in touch with you.",
+      "signin":"Sign In",
+      "signin_btn":"Sign in with Google",
+      "signin_desc":"Sign in with your Google account to easily and securely add new computers to your sync profile.",
+      "signed_in":"iChrome is <b>connected<\/b> to your Google account.  Sign in on any new computers to instantly sync your configuration.",
+      "keep_data":"Keep local data?",
+      "keep_data_desc":"Would you like to keep your local data, and replace the configuration on other computers you may have in this sync group with it, or replace this computer's configuration with theirs?",
+      "keep_theirs":"Use Theirs",
+      "keep_local":"Keep Local",
+      "sync_now":"Sync Now",
+      "syncing":"Syncing...",
+      "last_synced":"Last synced",
+      "backup":{
+        "title":"Backup & Restore",
+        "desc":"Click the button an any backup to roll iChrome back to the time displayed.  You can also use the button below to create a manual backup.",
+        "btn":"Backup now",
+        "restore":"Restore",
+        "download":"Download",
+        "download_name":"iChrome Backup",
+        "no_backups":"No backups found, click Backup Now to create one."
+      },
+      "restore":{
+        "file":"Restore from file",
+        "error":"An error occurred while trying to parse the provided data, please try again later.",
+        "confirm_desc":"This will overwrite all local and synced data.",
+        "confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
+      },
+      "reset":"Reset Profile",
+      "resetting":"Resetting...",
+      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
+      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
+    },
     "advanced":{
       "background":"Sfondo widget",
       "background_desc":"Clicca il rettangolo per selezionare un colore",
-      "backup":"Backup \/ Ripristino",
-      "backup_desc":"<b>Per fare il backup:<\/b> Clicca il pulsante di backup e copia il testo che apparirà nel campo sottostante.<br \/><b>Per ripristinare:<\/b> Incolla il testo che hai salvato o copiato in passato e clicca il pulsante ripristina.",
-      "backup_backup":"Backup",
-      "backup_restore":"Ripristina",
-      "restore_error":"Si è verificato un errore durante l'analisi dei dati forniti, per favore, assicurati di aver inserito ESATTAMENTE il testo che avevi salvato.",
-      "restore_confirm":"Sei assolutamente sicuro di volerlo fare?\nQuesta operazione cancellerà tutti i dati sincronizzati e locali, non c'è modo di annullare questa operazione. Perderai tutta la tua configurazione corrente su tutti i computers connessi in questo profilo Google.",
       "css":"CSS personalizzato",
       "css_desc":"Puoi usare questo campo per personalizzare praticamente la presentazione di ogni parte di iChrome usando il CSS (per una definizione dai un occhiata a <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Dato che il campo sarà sincronizzato, ti è possibile immettere un massimo di 1000 caratteri, inclusi spazzi.",
-      "reset":"Resetta iChrome",
-      "reset_confirm":"Sei assolutamente sicuro di voler resettare iChrome?\nQuesta operazione cancellerà tutti i dati sincronizzati e locali, non c'è modo di annullare questa operazione. Perderai tutta la tua configurazione corrente su tutti i computers connessi in questo profilo Google.",
       "debug":"Debug Tools",
       "debug_confirm":"WARNING: These tools can erase your configuration in a single click, only use them if your developer instructs you to.\r\nAre you sure you want to continue?"
     }

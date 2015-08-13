@@ -1083,63 +1083,37 @@ dialog footer button.material.flat:active {
 /*---------------------------------------------
 	/ Announcements
 */
-.modal.announcements {
-	font-family: Roboto, sans-serif;
+dialog.announcements {
+	max-width: 450px;
 }
 
-.modal.small.announcements > .close {
-	width: 55px;
-	height: 55px;
-	line-height: 55px;
+dialog.announcements .content {
+	color: #212121;
 }
 
-.announcements .header {
-	height: 55px;
-	padding: 0 25px;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 55px;
-	position: relative;
-	font-family: inherit;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, .18);
-}
-
-.modal.announcements .content {
-	overflow: auto;
-	font-size: 13px;
-	padding: 15px 20px;
-	height: calc(100% - 55px);
-	background-color: #FAFAFA;
-}
-
-.announcements p {
-	margin: 0;
-}
-
-.announcements p:not(:last-child) {
-	margin-bottom: 15px;
-}
-
-.announcements section {
+dialog.announcements section {
 	margin: 15px 0;
-	padding-left: 10px;
 }
 
-.announcements h3 {
-	font-size: 13px;
+dialog.announcements section:last-child {
+	margin-bottom: 0;
+}
+
+dialog.announcements h3 {
+	font: inherit;
 	font-weight: 500;
-	padding-bottom: 8px;
-	font-family: inherit;
+	padding-bottom: 10px;
 }
 
-.announcements ul {
+dialog.announcements ul {
 	margin: 0;
 	padding-left: 30px;
 }
 
-.announcements li {
+dialog.announcements li {
 	padding-bottom: 5px;
 }
+
 
 
 
@@ -3562,6 +3536,57 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 
 
+
+/*---------------------------------------------
+	/ Settings / Sync / Backup
+*/
+.settings .backup ul {
+	width: 70%;
+	padding: 0;
+	margin-top: 25px;
+	border-radius: 3px;
+	box-shadow: 0 -1px 0 #E5E5E5,
+				0 0 2px rgba(0, 0, 0, .08),
+				0 2px 4px rgba(0, 0, 0, .16);
+}
+
+.settings .backup ul li {
+	display: block;
+}
+
+.settings .backup ul li:not(:last-child) {
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.settings .backup ul li h4 {
+	margin: 0;
+	color: #212121;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 50px;
+	padding-left: 18px;
+	display: inline-block;
+	font-family: Roboto, sans-serif;
+}
+
+.settings .backup ul li .buttons {
+	float: right;
+	padding: 9px 5px;
+}
+
+.settings .backup ul li .buttons button {
+	padding: 0 10px;
+}
+
+.settings .backup ul li .buttons button:hover:not(:focus) {
+	background: initial;
+}
+
+
+
+
+
+
 /*---------------------------------------------
 	/ Settings / Advanced
 */
@@ -3569,30 +3594,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	width: 20%;
 }
 
-.settings .backup .btn {
-	margin-top: 15px;
-}
-
-.settings .backup .restore {
-	margin-left: 15px;
-}
-
-.settings .backup #backup {
-	width: 80%;
-	height: 80px;
-	margin-top: 15px;
-	margin-right: 20%;
-}
-
 .settings .css textarea {
 	width: 70%;
 	height: 120px;
 	margin-top: 10px;
-}
-
-.settings .advanced .reset {
-	float: left;
-	color: #D43F3A;
 }
 
 .settings .advanced .debug {

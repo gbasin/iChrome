@@ -60,6 +60,8 @@ define(["backbone", "storage/storage", "core/render", "core/analytics", "search/
 				if (typeof val !== "string") {
 					val = this.$("input").val().trim();
 
+					Track.queue("search", val);
+
 					Track.ga("send", {
 						useBeacon: true,
 						hitType: "pageview",
@@ -97,6 +99,8 @@ define(["backbone", "storage/storage", "core/render", "core/analytics", "search/
 				}, this);
 
 				this.Speech.on("result", function(val) {
+					Track.queue("search", val, true);
+
 					Track.ga("send", {
 						useBeacon: true,
 						hitType: "pageview",

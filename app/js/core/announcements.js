@@ -1,18 +1,9 @@
 /**
  * Announcements
  */
-define(["backbone", "modals/modals", "core/analytics", "core/render"], function(Backbone, Modal, Track, render) {
-	var modal = new (Modal.extend({
-		width: 450,
-		height: 530,
-		classes: "announcements",
-		close: function(e) {
-			return this.trigger("close").hide();
-		}
-	}))();
-
+define(["backbone", "modals/alert", "core/analytics", "i18n/i18n", "core/info", "core/render"], function(Backbone, Alert, Track, Translate, info, render) {
 	var Model = Backbone.Model.extend({
-		url: "http://ichro.me/announcements.json",
+		url: "http://api.ichro.me/announcements?extension=" + info.id + "&version=" + info.version + "&lang=" + info.language,
 
 		defaults: {
 			count: 0,
@@ -38,25 +29,12 @@ define(["backbone", "modals/modals", "core/analytics", "core/render"], function(
 				}, 3000);
 			}
 
-
-			/**
-			 * Sample announcement from server:
-			 *
-			 * {
-			 *     "count": 2,
-			 *     "alert": false,
-			 *     "announcement_id": 1,
-			 *     "title": "Test title",
-			 *     "contents": "<p>Test announcement</p><section><h3>Test</h3><ul><li>List item #1</li><li>List item #2</li></ul></section>"
-			 * }
-			 */
-
 			this.fetch();
 
 			// Refetch every hour
 			setInterval(function() {
 				this.fetch({
-					url: this.url + "?refetch=true"
+					url: this.url + "&refetch=1"
 				});
 			}.bind(this), 3600000);
 		},
@@ -77,24 +55,7 @@ define(["backbone", "modals/modals", "core/analytics", "core/render"], function(
 	});
 	
 	var View = Backbone.View.extend({
-		el: modal.content,
-
 		initialize: function() {
-			modal.on("close", function() {
-				this.trigger("dismissed");
-
-				if (this.model.get("isUpdate")) {
-					localStorage.removeItem("showWhatsNew");
-				}
-				else {
-					localStorage.dismissedAnnouncement = this.model.get("announcement_id");
-				}
-
-				this.model.clear({ silent: true }).set(this.model.defaults);
-
-				Track.event("Announcements", "Dismissed");
-			}, this);
-
 			this.model = new Model();
 
 			this.model.on("change", this.render, this).on("change:count", function() {
@@ -104,10 +65,41 @@ define(["backbone", "modals/modals", "core/analytics", "core/render"], function(
 			}, this).trigger("change change:count");
 		},
 
-		show: function() {
-			modal.show();
+		show: function(isAlert) {
+			var d = this.model.attributes;
 
-			Track.event("Announcements", "Shown", "Click");
+			Alert({
+				title: d.title,
+				classes: "announcements",
+				html: d.isUpdate ? render("whatsnew") : d.contents,
+				buttons: {
+					positive: d.action ? d.action.text : "Got it",
+					negative: d.action ? Translate("alert.default_button") : undefined
+				}
+			}, function(res) {
+				this.trigger("dismissed");
+
+				if (d.isUpdate) {
+					localStorage.removeItem("showWhatsNew");
+				}
+				else {
+					localStorage.dismissedAnnouncement = d.announcement_id;
+
+					if (d.action && res) {
+						chrome.tabs.create({
+							url: d.action.url
+						});
+					}
+				}
+
+				this.model.clear({
+					silent: true
+				}).set(this.model.defaults);
+
+				Track.event("Announcements", "Dismissed");
+			}.bind(this));
+
+			Track.event("Announcements", "Shown", isAlert ? "Alert" : "Click");
 		},
 
 		render: function() {
@@ -117,25 +109,8 @@ define(["backbone", "modals/modals", "core/analytics", "core/render"], function(
 				return;
 			}
 
-			if (d.isUpdate) {
-				this.$el.replaceWith(render("announcements", {
-					title: d.title,
-					isUpdate: true
-				}));
-			}
-			else {
-				this.$el.replaceWith(render("announcements", {
-					title: d.title,
-					contents: d.contents
-				}));
-			}
-
-			modal.mo.appendTo(document.body);
-
 			if (d.alert === true) {
-				modal.show();
-
-				Track.event("Announcements", "Shown", "Alert");
+				this.show(true);
 			}
 		}
 	});

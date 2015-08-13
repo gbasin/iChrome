@@ -493,6 +493,8 @@ define(
 								elm.appendTo(form);
 							}
 							catch (err) {
+								Track.queue("widgets", "error", this.widget.nicename, this.widget.config.size, "settings");
+
 								Status.error(err);
 							}
 						}

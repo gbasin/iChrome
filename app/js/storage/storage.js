@@ -192,21 +192,19 @@ define(
 		var save = function(sync, cb, useBeacon) {
 			Status.log("Starting storage save");
 
+			storage.settings = _.pick(storage.settings, Object.keys(defaults.settings));
+
 			timeout = null;
 
 			// Local save
-			var local = {
-				tabs: _.map(storage.tabs, function(tab) {
-					return $.unextend({
-						theme: storage.settings.theme,
-						fixed: storage.settings.columns.split("-")[1] == "fixed"
-					}, $.unextend(defaults.tab, tab));
-				}),
-				cached: storage.cached,
-				themes: storage.themes,
-				settings: storage.settings,
-				modified: storage.modified
-			};
+			var local = _.pick(storage, "user", "cached", "themes", "settings", "modified");
+
+			local.tabs = _.map(storage.tabs, function(tab) {
+				return $.unextend({
+					theme: storage.settings.theme,
+					fixed: storage.settings.columns.split("-")[1] == "fixed"
+				}, $.unextend(defaults.tab, tab));
+			});
 
 			localStorage.config = JSON.stringify(local);
 
@@ -241,7 +239,7 @@ define(
 						storage.modified = local.modified = modified;
 
 						if (d.user) {
-							storage.user = d.user;
+							storage.user = local.user = d.user;
 						}
 
 						localStorage.config = JSON.stringify(local);
@@ -388,6 +386,28 @@ define(
 
 
 		storage.Originals.tabs = JSON.parse(JSON.stringify(storage.tabs));
+
+
+		// Backup once a day, before any changes are made
+		if (new Date().getTime() - (localStorage.lastBackup || "0") > 864E5) {
+			var backups = JSON.parse(localStorage.backups || "[]");
+
+			backups.unshift({
+				date: new Date().getTime(),
+				data: {
+					syncData: API.getInfo(),
+					user: storage.user,
+					tabs: storage.tabsSync,
+					themes: storage.themes,
+					settings: storage.settings
+				}
+			});
+
+			localStorage.backups = JSON.stringify(backups.slice(0, 4));
+			localStorage.lastBackup = new Date().getTime();
+
+			backups = null;
+		}
 
 
 		// Load any updates from the sync server, sending the request before the page is rendered

@@ -1,7 +1,7 @@
 /**
  * Handles sync interfacing with ichro.me and ID management
  */
-define(["jquery", "lodash", "core/analytics"], function($, _, Track) {
+define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track, info) {
 	/**
 	 * The domain and port to sync data to/from
 	 */
@@ -20,14 +20,14 @@ define(["jquery", "lodash", "core/analytics"], function($, _, Track) {
 	 */
 	var defaultData = {
 		user: {},
-		version: chrome.runtime.getManifest().version,
-		extension: chrome.i18n.getMessage("@@extension_id")
+		version: info.version,
+		extension: info.id
 	};
 
 	var clientData = {
 		user: {},
-		version: chrome.runtime.getManifest().version,
-		extension: chrome.i18n.getMessage("@@extension_id")
+		version: info.version,
+		extension: info.id
 	};
 
 	try {
@@ -138,19 +138,53 @@ define(["jquery", "lodash", "core/analytics"], function($, _, Track) {
 
 	if (!(clientData.user.email && clientData.user.fname && clientData.user.lname && clientData.user.image)) {
 		var getUser = function() {
-			$.get("https://accounts.google.com/AddSession", function(d) {
-				d = $($.parseHTML(d
-					.replace(/ src="\/\//g, " data-src=\"https://")
-					.replace(/ src="/g, " data-src=\"")
-				));
+			var addOrigin = function(info) {
+				var headers = _.filter(info.requestHeaders, function(e) {
+					return e.name.toLowerCase() !== "origin";
+				});
 
-				var splitName = (d.find("#account-list li:first .account-name").text() || "").trim().split(" ");
+				headers.push({
+					name: "Origin",
+					value: "https://www.google.com"
+				});
 
-				clientData.user.fname = splitName.shift().trim() || undefined;
-				clientData.user.lname = splitName.join(" ").trim() || undefined;
+				return {
+					requestHeaders: headers
+				};
+			};
 
-				clientData.user.email = (d.find("#account-list li:first .account-email").text() || "").trim().toLowerCase() || undefined;
-				clientData.user.image = (d.find("#account-list li:first .account-image").attr("data-src") || "").trim().replace(/\?.*?$/, "") || undefined;
+			chrome.webRequest.onBeforeSendHeaders.addListener(addOrigin, {
+				urls: ["https://accounts.google.com/ListAccounts?source=ChromiumBrowser&json=standard"]
+			}, ["blocking", "requestHeaders"]);
+
+
+			// Field keys obtained from ParseListAccountsData in google_apis/gaia/gaia_auth_util.cc in the Chromium source
+			$.post("https://accounts.google.com/ListAccounts?source=ChromiumBrowser&json=standard", function(d) {
+				chrome.webRequest.onBeforeRequest.removeListener(addOrigin);
+
+				if (!Array.isArray(d)) {
+					try {
+						d = JSON.parse(d);
+					}
+					catch (e) {
+						return;
+					}
+				}
+
+				if (!d.length || d.length < 2 || !d[1] || !d[1].length) {
+					return;
+				}
+
+				d = d[1][0];
+
+				var name = (d[2] || "").trim().split(" ");
+
+				clientData.user.fname = name.shift().trim() || undefined;
+				clientData.user.lname = name.join(" ").trim() || undefined;
+
+				clientData.user.email = (d[3] || "").trim().toLowerCase() || undefined;
+				clientData.user.image = (d[4] || "").trim().replace(/\/w[0-9]+-h[0-9]+\//, "/").replace(/^\/\//, "https://") || undefined;
+				clientData.user.googleid = d[10];
 
 				saveData();
 			});

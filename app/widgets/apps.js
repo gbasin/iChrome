@@ -1,7 +1,7 @@
 /*
  * The Apps widget.
  */
-define(["jquery", "lodash"], function($, _) {
+define(["jquery", "lodash", "core/info"], function($, _, info) {
 	return {
 		id: 11,
 		size: 2,
@@ -83,7 +83,7 @@ define(["jquery", "lodash"], function($, _) {
 						return e.type !== "extension" && e.type !== "theme";
 					}),
 					apps = [],
-					id = chrome.app.getDetails().id,
+					id = info.id,
 					all = this.config.show == "all";
 
 				list.unshift({

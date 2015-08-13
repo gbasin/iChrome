@@ -84,15 +84,15 @@
     "desc":"Displays upcoming events from one or more of your Google calendars.",
     "settings":{
       "calendar":"कैलेंडर",
-      "events":"Events Shown",
       "show":"Show events from",
       "show_options":{
         "all":"All time",
         "today":"Today only"
       }
     },
-    "title":"My Calendar",
-    "noevents":"It doesn't look like there are any events in the near future.\n<br \/><br \/>\nTry selecting a calendar via the wrench icon in the top right."
+    "title":"Agenda",
+    "calendar":"कैलेंडर",
+    "noevents":"No events found in the near future, it looks like your schedule's clear!"
   },
   "clock":{
     "name":"Clock",
@@ -123,7 +123,8 @@
   "currency":{
     "name":"Currency",
     "desc":"Let's you convert between any two of 169 currencies.",
-    "to_label":"to"
+    "to_label":"to",
+    "recently_used":"Recently Used"
   },
   "drive":{
     "name":"ड्राइव",
@@ -556,5 +557,45 @@
       "mode_teacher":"Teacher",
       "mode_student":"Student"
     }
+  },
+  "pushbullet":{
+    "name":"Pushbullet",
+    "desc":"Keep track of notifications from your phone and other devices",
+    "no_pushes":"No pushes found",
+    "sign_in":"Sign in",
+    "no_key":"It doesn't look like you're signed in to Pushbullet.  Sign in now to connect this widget."
+  },
+  "linkedin":{
+    "name":"LinkedIn",
+    "desc":"Displays your LinkedIn home stream"
+  },
+  "directions":{
+    "name":"Directions",
+    "desc":"Get directions to and from nearly anywhere right from your homepage",
+    "driving":"Driving",
+    "transit":"Public Transit",
+    "walking":"Walking",
+    "cycling":"Cycling",
+    "from":"Enter a starting point",
+    "to":"Enter a destination",
+    "loading":"Loading directions, please wait...",
+    "error":"Something went wrong while trying to load the directions you requested.",
+    "error2":"Please check the start and destination addresses you entered.",
+    "open_in_maps":"Open in Google Maps",
+    "via":"via"
+  },
+  "pocket":{
+    "name":"Pocket",
+    "desc":"Display a list of your saved articles, videos, and web pages from Pocket",
+    "settings":{
+      "links_shown":"Number of links shown",
+      "open":"Open links",
+      "open_pocket":"In Pocket",
+      "open_original":"At their original URL"
+    },
+    "by":"द्वारा",
+    "no_links":"No links found",
+    "grant_access":"Grant access",
+    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
   }
 }

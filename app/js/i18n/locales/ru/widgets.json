@@ -84,19 +84,19 @@
     "desc":"Отображает предстоящие события для одного из ваших календарей Google.",
     "settings":{
       "calendar":"Календарь",
-      "events":"Количество отображаемых событий",
       "show":"Отображать события из",
       "show_options":{
         "all":"За всё время",
         "today":"Только сегодня"
       }
     },
-    "title":"Мой календарь",
-    "noevents":"Похоже, предстоящие события отсутствуют.\n<br \/><br \/>\nВы можете выбрать другой календарь в настройках виджета в правой верхней его части."
+    "title":"Agenda",
+    "calendar":"Календарь",
+    "noevents":"No events found in the near future, it looks like your schedule's clear!"
   },
   "clock":{
     "name":"Часы",
-    "desc":"Offers alarm, time, timer, and stopwatch functionality.",
+    "desc":"Отображает часы с будильником, таймером и секундомером.",
     "settings":{
       "timezone":"Часовой пояс",
       "timezone_local":"Системный",
@@ -108,22 +108,23 @@
         "ampmseconds":"AM\/PM - цифровые, без секунд",
         "24hourseconds":"24-часовые цифровые, без секунд"
       },
-      "sound":"Alert Sound"
+      "sound":"Звук оповещения"
     },
     "title":"Часы",
-    "alarm":"Alarm",
+    "alarm":"Будильник",
     "clock":"Часы",
-    "timer":"Timer",
-    "stopwatch":"Stopwatch",
-    "set":"Set",
-    "unset":"Unset",
-    "dismiss":"Dismiss",
-    "enable_audio":"Enable audio"
+    "timer":"Таймер",
+    "stopwatch":"Секундомер",
+    "set":"Установить",
+    "unset":"Отменить",
+    "dismiss":"Выключить",
+    "enable_audio":"Включить звук"
   },
   "currency":{
     "name":"Валюта",
     "desc":"Позволяет конвертировать значения между 169 валютами.",
-    "to_label":"в"
+    "to_label":"в",
+    "recently_used":"Recently Used"
   },
   "drive":{
     "name":"Диск",
@@ -250,8 +251,8 @@
     "desc":"Встраивает Google Plus в виджет"
   },
   "notifications":{
-    "name":"Google Notifications",
-    "desc":"Displays your Google Notifications from services such as Google+"
+    "name":"Уведомления Google",
+    "desc":"Отображает ваши уведомления Google, например Google+ и т.п."
   },
   "recentlyclosed":{
     "name":"Недавно закрытые вкладки",
@@ -511,50 +512,90 @@
     }
   },
   "sitelink":{
-    "name":"Site Link",
-    "desc":"Displays a link, optionally with a title and thumbnail",
+    "name":"Ссылка на сайт",
+    "desc":"Отображает ссылку на сайт с заголовком и миниатюрой",
     "settings":{
-      "link":"Link URL",
+      "link":"Адрес ссылки",
       "link_placeholder":"http:\/\/www.google.com\/",
       "image":"Адрес изображения",
       "image_placeholder":"http:\/\/www.example.com\/image.png",
-      "color":"Image Background Color",
-      "style":"Image Style",
-      "style_fill":"Fill",
+      "color":"Цвет фона",
+      "style":"Стиль изображения",
+      "style_fill":"Заполнить",
       "style_center":"По центру"
     }
   },
   "stats":{
-    "name":"System Statistics",
-    "desc":"Keep an eye on your system with realtime statistics",
-    "memory":"Memory",
-    "battery":"Battery",
-    "usage":"usage",
-    "in_use":"in use",
-    "remaining":"remaining",
-    "charged":"Fully Charged",
-    "idle":"Idle",
-    "charging":"Charging",
-    "discharging":"Discharging"
+    "name":"Статистика системы",
+    "desc":"Отображает системную информацию в реальном времени",
+    "memory":"Память",
+    "battery":"Аккумулятор",
+    "usage":"используется",
+    "in_use":"используется",
+    "remaining":"осталось",
+    "charged":"Зарядка закончена",
+    "idle":"Полностью заряжен",
+    "charging":"Зарядка",
+    "discharging":"Разрядка"
   },
   "search":{
     "name":"Поиск",
-    "desc":"Embed a search box in your page for easy access",
+    "desc":"Отображает строку поиска на странице для быстрого доступа",
     "settings":{
-      "placeholder":"Search Field Placeholder",
+      "placeholder":"Название строки поиска",
       "search_url":"URL для поиска",
-      "param":"Query Parameter",
-      "param_placeholder":"The parameter where the query goes, i.e. \"q\""
+      "param":"Параметр запроса",
+      "param_placeholder":"Параметр с которым будет выполняться запрос, напр. \"q\""
     },
-    "default_placeholder":"Search Google"
+    "default_placeholder":"Поиск в Google"
   },
   "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "name":"Класс от Google",
+    "desc":"Будьте в курсе ваших заданий и занятий на Google Classroom",
     "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
+      "mode":"Режим виджета",
+      "mode_teacher":"Преподаватель",
+      "mode_student":"Студент"
     }
+  },
+  "pushbullet":{
+    "name":"Pushbullet",
+    "desc":"Keep track of notifications from your phone and other devices",
+    "no_pushes":"No pushes found",
+    "sign_in":"Sign in",
+    "no_key":"It doesn't look like you're signed in to Pushbullet.  Sign in now to connect this widget."
+  },
+  "linkedin":{
+    "name":"LinkedIn",
+    "desc":"Displays your LinkedIn home stream"
+  },
+  "directions":{
+    "name":"Directions",
+    "desc":"Get directions to and from nearly anywhere right from your homepage",
+    "driving":"На автомобиле",
+    "transit":"На общественном транспорте",
+    "walking":"Пешком",
+    "cycling":"Cycling",
+    "from":"Enter a starting point",
+    "to":"Enter a destination",
+    "loading":"Loading directions, please wait...",
+    "error":"Something went wrong while trying to load the directions you requested.",
+    "error2":"Please check the start and destination addresses you entered.",
+    "open_in_maps":"Open in Google Maps",
+    "via":"via"
+  },
+  "pocket":{
+    "name":"Pocket",
+    "desc":"Display a list of your saved articles, videos, and web pages from Pocket",
+    "settings":{
+      "links_shown":"Number of links shown",
+      "open":"Open links",
+      "open_pocket":"In Pocket",
+      "open_original":"At their original URL"
+    },
+    "by":"изменил",
+    "no_links":"No links found",
+    "grant_access":"Grant access",
+    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
   }
 }
