@@ -19,7 +19,11 @@
 	"storage_warning": "You have used more than 90% of the total synchronized storage space available.\r\nIf you reach the limit, iChrome will stop syncing your data and may stop working.\r\nYou can shrink the amount of space you use by deleting custom themes, notes and to-do lists that you don't use.",
 
 	"alert": {
-		"default_button": "Dismiss"
+		"default_button": "Dismiss",
+
+		"confirm_title": "Are you sure you want to do this?",
+		"confirm_continue": "Continue",
+		"confirm_cancel": "Cancel"
 	},
 
 	"storage": {
