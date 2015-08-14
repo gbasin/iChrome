@@ -1576,7 +1576,12 @@ body.dragging .tab-container .tab > .remove {
 	left: 0;
 	right: 0;
 	bottom: 0;
+	max-height: 100vh;
 	position: absolute;
+}
+
+.toolbar ~ .tab-container .tab-nav {
+	top: -25px;
 }
 
 .tab-container.one-tab .tab-nav {
