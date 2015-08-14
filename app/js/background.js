@@ -137,6 +137,10 @@ chrome.runtime.onInstalled.addListener(function(details) {
 
 				chrome.storage.local.remove(["tabs", "settings", "themes", "cached"]);
 				chrome.storage.sync.remove(["tabs", "settings", "themes", "cached"]);
+ 
+				chrome.tabs.create({
+					url: "chrome-extension://" + chrome.i18n.getMessage("@@extension_id") + "/index.html"
+				});
 			});
 		}
 
