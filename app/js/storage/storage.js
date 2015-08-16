@@ -362,58 +362,90 @@ define(
 			}
 		};
 
-		var d = JSON.parse(localStorage.config || "{}");
+		var parseData = function(data) {
+			var d;
 
-		storage.user = d.user || defaults.user;
-		storage.tabs = d.tabs || defaults.tabs;
-		storage.themes = d.themes || defaults.themes;
-		storage.cached = d.cached || defaults.cached;
+			if (typeof data == "string") {
+				d = JSON.parse(data || localStorage.config || "{}");
+			}
+			else {
+				d = data || {};
+			}
 
-		storage.modified = d.modified;
+			storage.user = d.user || defaults.user;
+			storage.tabs = d.tabs || defaults.tabs;
+			storage.themes = d.themes || defaults.themes;
+			storage.cached = d.cached || defaults.cached;
 
-		if (d.settings) {
-			storage.settings = _.defaultsDeep(d.settings, defaults.settings);
+			storage.modified = d.modified;
+
+			if (d.settings) {
+				storage.settings = _.defaultsDeep(d.settings, defaults.settings);
+			}
+			else {
+				storage.settings = _.cloneDeep(defaults.settings);
+			}
+
+			storage.tabsSync = JSON.parse(getJSON(storage.tabs, storage.settings));
+
+			// Set the last saved and synced values to the just loaded data
+			lastSaved = JSON.stringify(_.pick(storage, "user", "tabs", "settings", "themes", "cached"));
+			lastSynced = JSON.stringify(_.pick(storage, "user", "tabsSync", "settings", "themes"));
+
+
+			storage.Originals.tabs = JSON.parse(JSON.stringify(storage.tabs));
+
+
+			// Backup once a day, before any changes are made
+			if (new Date().getTime() - (localStorage.lastBackup || "0") > 864E5) {
+				var backups = JSON.parse(localStorage.backups || "[]");
+
+				backups.unshift({
+					date: new Date().getTime(),
+					data: {
+						syncData: API.getInfo(),
+						user: storage.user,
+						tabs: storage.tabsSync,
+						themes: storage.themes,
+						settings: storage.settings
+					}
+				});
+
+				localStorage.backups = JSON.stringify(backups.slice(0, 4));
+				localStorage.lastBackup = new Date().getTime();
+
+				backups = null;
+			}
+
+
+			// Load any updates from the sync server, sending the request before the page is rendered
+			loadSync();
+
+			deferred.resolve(storage);
+		};
+
+		if (localStorage.config) {
+			parseData(localStorage.config);
 		}
 		else {
-			storage.settings = _.cloneDeep(defaults.settings);
-		}
-
-		storage.tabsSync = JSON.parse(getJSON(storage.tabs, storage.settings));
-
-		// Set the last saved and synced values to the just loaded data
-		lastSaved = JSON.stringify(_.pick(storage, "user", "tabs", "settings", "themes", "cached"));
-		lastSynced = JSON.stringify(_.pick(storage, "user", "tabsSync", "settings", "themes"));
-
-
-		storage.Originals.tabs = JSON.parse(JSON.stringify(storage.tabs));
-
-
-		// Backup once a day, before any changes are made
-		if (new Date().getTime() - (localStorage.lastBackup || "0") > 864E5) {
-			var backups = JSON.parse(localStorage.backups || "[]");
-
-			backups.unshift({
-				date: new Date().getTime(),
-				data: {
-					syncData: API.getInfo(),
-					user: storage.user,
-					tabs: storage.tabsSync,
-					themes: storage.themes,
-					settings: storage.settings
+			chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
+				if (typeof d.tabs == "string") {
+					try {
+						d.tabs = JSON.parse(d.tabs);
+					}
+					catch(e) {
+						return;
+					}
 				}
+
+				localStorage.config = JSON.stringify(d);
+
+				chrome.storage.local.remove(["tabs", "settings", "themes", "cached"]);
+				chrome.storage.sync.remove(["tabs", "settings", "themes", "cached"]);
+			
+				parseData(d);
 			});
-
-			localStorage.backups = JSON.stringify(backups.slice(0, 4));
-			localStorage.lastBackup = new Date().getTime();
-
-			backups = null;
 		}
-
-
-		// Load any updates from the sync server, sending the request before the page is rendered
-		loadSync();
-
-		deferred.resolve(storage);
 
 		return promise;
 	}
