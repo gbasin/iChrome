@@ -26,7 +26,7 @@ define(["lodash", "jquery", "backbone", "core/status", "core/analytics", "i18n/i
 	 * @param  {String} msg The error that occurred
 	 */
 	Utils.prototype.error = function(msg) {
-		Track.queue("widgets", "error", this.widget.nicename, this.widget.config.size, "utils");
+		Track.queue("widgets", "error", this.widget.nicename, this.widget.config.size, "utils", msg);
 
 		Status.error("An error occurred in the " + this.name + " widget: " + msg);
 

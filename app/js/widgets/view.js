@@ -211,7 +211,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 				this.widget.render(this.preview);
 			}
 			catch (e) {
-				Track.queue("widgets", "error", this.widget.nicename, this.widget.config.size, "render");
+				Track.queue("widgets", "error", this.widget.nicename, this.widget.config.size, "render", e.stack);
 
 				Status.error("An error occurred while trying to render the " + this.widget.nicename + " widget!");
 			}
