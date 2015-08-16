@@ -32,7 +32,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 
 
 			if (this.model.has("config")) {
-				this.widget.config = $.extend(true, _.clone(Widgets[this.widget.id].config), this.model.get("config"));
+				this.widget.config = $.extend(true, _.clone(Widgets[this.widget.id].config, true), this.model.get("config"));
 
 				this.widget.size = this.model.get("size") || Widgets[this.widget.id].size;
 
