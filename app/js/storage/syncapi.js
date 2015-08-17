@@ -122,7 +122,11 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 			name: "sync_data",
 			domain: ".ichro.me",
 			url: "http://ichro.me",
-			value: JSON.stringify(clientData),
+			value: JSON.stringify(_.assign({}, clientData, {
+				// If the second extension picks this up we don't want it to think
+				// the user is signed in and hide the button.
+				user: _.omit(clientData.user, "signedIn")
+			})),
 			expirationDate: (new Date().getTime() / 1000) + (10 * 365 * 24 * 60 * 60)
 		});
 	};
