@@ -352,19 +352,19 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 			var post = function(retry) {
 				var url = syncBase + (code ? "/authorize" : "") + (clientData.token ? "/" + clientData.token : "") + (code ? "?code=" + encodeURIComponent(code) : "");
 
-				var data = JSON.stringify(_.assign({}, data, clientData, {
+				var sData = JSON.stringify(_.assign({}, data, clientData, {
 					extension: info.id,
 					version: info.version
 				}));
 				
 				if (useBeacon) {
-					return cb(navigator.sendBeacon(url, new Blob([data], { type: "application/json" })));
+					return cb(navigator.sendBeacon(url, new Blob([sData], { type: "application/json" })));
 				}
 
 				$.ajax({
 					type: clientData.token && !code ? "PUT" : "POST",
 					url: url,
-					data: data,
+					data: sData,
 					contentType: "application/json",
 					timeout: 10000,
 					complete: function(xhr, status) {
