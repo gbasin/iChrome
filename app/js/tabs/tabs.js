@@ -278,7 +278,7 @@ define(
 									catch (e) {
 										Status.error("An error occurred while trying to render the " + view.widget.nicename + " widget!");
 
-										Track.queue("widgets", "error", view.widget.nicename, view.widget.config.size, "permissions");
+										Track.queue("widgets", "error", view.widget.nicename, view.widget.config.size, "permissions", e.stack);
 									}
 								}
 							}

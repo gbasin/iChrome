@@ -18,16 +18,8 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 	 * so clients under the same Chrome account are synced, and as a cookie at ichro.me
 	 * so they survive reinstalls or other local data erasures.
 	 */
-	var defaultData = {
-		user: {},
-		version: info.version,
-		extension: info.id
-	};
-
 	var clientData = {
-		user: {},
-		version: info.version,
-		extension: info.id
+		user: {}
 	};
 
 	try {
@@ -120,17 +112,21 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 			delete clientData.status;
 		}
 
-		localStorage.syncData = JSON.stringify(_.omit(clientData, "version", "extension"));
+		localStorage.syncData = JSON.stringify(clientData);
 
 		chrome.storage.sync.set({
-			syncData: _.omit(clientData, "client", "version", "extension")
+			syncData: _.omit(clientData, "client")
 		});
 
 		chrome.cookies.set({
 			name: "sync_data",
 			domain: ".ichro.me",
 			url: "http://ichro.me",
-			value: JSON.stringify(_.omit(clientData, "version", "extension")),
+			value: JSON.stringify(_.assign({}, clientData, {
+				// If the second extension picks this up we don't want it to think
+				// the user is signed in and hide the button.
+				user: _.omit(clientData.user, "signedIn")
+			})),
 			expirationDate: (new Date().getTime() / 1000) + (10 * 365 * 24 * 60 * 60)
 		});
 	};
@@ -224,7 +220,11 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 			var get = function(retry) {
 				$.ajax({
 					url: syncBase + "/" + clientData.token,
-					data: _.assign(_.pick(clientData, "client", "version", "extension"), params),
+					data: _.assign({
+						extension: info.id,
+						version: info.version,
+						client: clientData.client
+					}, params),
 					timeout: 10000,
 					complete: function(xhr, status) {
 						if ((xhr.status === 200 && xhr.responseJSON) || xhr.status === 304) {
@@ -273,7 +273,9 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 							// If the error occurs again, then the issue must be in our sync profile
 							// so we will have to recreate it.
 							if (retry && xhr.status.toString()[0] !== "5") {
-								clientData = _.clone(defaultData);
+								clientData = {
+									user: {}
+								};
 
 								delete localStorage.syncData;
 
@@ -290,7 +292,9 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 								cb("Server error");
 							}
 							else {
-								clientData = _.clone(defaultData);
+								clientData = {
+									user: {}
+								};
 
 								delete localStorage.syncData;
 
@@ -351,15 +355,20 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 
 			var post = function(retry) {
 				var url = syncBase + (code ? "/authorize" : "") + (clientData.token ? "/" + clientData.token : "") + (code ? "?code=" + encodeURIComponent(code) : "");
+
+				var sData = JSON.stringify(_.assign({}, data, clientData, {
+					extension: info.id,
+					version: info.version
+				}));
 				
 				if (useBeacon) {
-					return cb(navigator.sendBeacon(url, new Blob([JSON.stringify(_.assign({}, data, clientData))], { type: "application/json" })));
+					return cb(navigator.sendBeacon(url, new Blob([sData], { type: "application/json" })));
 				}
 
 				$.ajax({
 					type: clientData.token && !code ? "PUT" : "POST",
 					url: url,
-					data: JSON.stringify(_.assign({}, data, clientData)),
+					data: sData,
 					contentType: "application/json",
 					timeout: 10000,
 					complete: function(xhr, status) {
@@ -410,7 +419,9 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 							// If the error occurs again, then the issue must be in our sync profile
 							// so we will have to recreate it.
 							if (retry && xhr.status.toString()[0] !== "5" && !(code && xhr.status === 401)) {
-								clientData = _.clone(defaultData);
+								clientData = {
+									user: {}
+								};
 
 								delete localStorage.syncData;
 
@@ -427,7 +438,9 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 								cb("Server error");
 							}
 							else if (clientData.token) {
-								clientData = _.clone(defaultData);
+								clientData = {
+									user: {}
+								};
 
 								delete localStorage.syncData;
 

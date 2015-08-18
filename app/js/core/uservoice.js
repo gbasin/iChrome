@@ -23,7 +23,7 @@ define(["storage/syncapi", "core/info"], function(SyncAPI, info) {
 
 		var d = SyncAPI.getInfo();
 
-		var extension = info;
+		var extension = info.id;
 
 		if (extension === "oghkljobbhapacbahlneolfclkniiami") {
 			extension = "Main";

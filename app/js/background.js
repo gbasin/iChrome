@@ -144,7 +144,9 @@ chrome.runtime.onInstalled.addListener(function(details) {
 			});
 		}
 
-		localStorage.showWhatsNew = "true";
+		if (!details.previousVersion || details.previousVersion.indexOf("2.1.20") == -1) {
+			localStorage.showWhatsNew = "true";
+		}
 	}
 });
 
