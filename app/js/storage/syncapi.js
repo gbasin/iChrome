@@ -80,7 +80,7 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 		});
 
 		chrome.cookies.get({
-			name: "sync_data",
+			name: "sync_data_main",
 			url: "http://ichro.me"
 		}, function(d) {
 			try {
@@ -119,7 +119,7 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 		});
 
 		chrome.cookies.set({
-			name: "sync_data",
+			name: "sync_data_main",
 			domain: ".ichro.me",
 			url: "http://ichro.me",
 			value: JSON.stringify(_.assign({}, clientData, {
@@ -282,7 +282,7 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 								chrome.storage.sync.remove("syncData");
 
 								chrome.cookies.remove({
-									name: "sync_data",
+									name: "sync_data_main",
 									url: "http://ichro.me"
 								});
 
@@ -428,7 +428,7 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 								chrome.storage.sync.remove("syncData");
 
 								chrome.cookies.remove({
-									name: "sync_data",
+									name: "sync_data_main",
 									url: "http://ichro.me"
 								});
 
