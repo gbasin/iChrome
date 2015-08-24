@@ -141,17 +141,15 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 				var events = [],
 					multiple = this.config.calendars.length > 1,
 					params = {
-						maxResults: 50,
+						maxResults: 20,
 						singleEvents: true,
 						orderBy: "startTime",
 						timeZone: -(new Date().getTimezoneOffset() / 60),
-						timeMin: moment().startOf("week").format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
-						timeMax: moment().endOf("day").add(1, "ms").add(7, "days").format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
+						timeMin: moment().startOf("day").format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
 						fields: "summary,items(description,htmlLink,id,location,start,end,summary)"
 					};
 
 				if (this.config.show == "today") {
-					params.timeMin = moment().startOf("day").format("YYYY-MM-DDTHH:mm:ss.SSSZ");
 					params.timeMax = moment().endOf("day").format("YYYY-MM-DDTHH:mm:ss.SSSZ");
 				}
 
@@ -226,7 +224,7 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 				$.when.apply($, requests).then(function() {
 					events = events.sort(function(a, b) {
 						return a.start - b.start;
-					}).slice(0, 50);
+					}).slice(0, 20);
 
 
 					if (multiple && Object.keys(calendarColors).length) {
@@ -374,19 +372,19 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 				rangeEnd = moment(dt).endOf("day");
 			}
 			else {
-				rangeStart = moment(dt).startOf("week");
-				rangeEnd = moment(dt).endOf("day").add(7, "days");
+				rangeStart = moment(dt).startOf("day");
+				rangeEnd = null;
 			}
 
 			data.days = _.compact(_.map(data.days, function(e, i) {
 				var date = moment(new Date(i)),
 					dateStr = "";
 
-				if (date.isBefore(rangeStart) || date.isAfter(rangeEnd)) {
+				if (date.isBefore(rangeStart) || (rangeEnd && date.isAfter(rangeEnd))) {
 					return null;
 				}
 
-				if (date.diff(new Date(), "days") + 1 > 7) {
+				if (date.diff(new Date(), "days") + 1 >= 7) {
 					dateStr = date.format("dddd, MMMM Do YYYY");
 				}
 				else {
@@ -409,14 +407,6 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 			}
 
 			this.utils.render(data);
-
-
-			// Scroll today's section into view
-			var todayElm = this.elm.find(".agenda .date.today").parent()[0];
-
-			if (!todayElm) return;
-
-			todayElm.parentElement.scrollTop = todayElm.getBoundingClientRect().top - todayElm.offsetHeight - 8;
 		}
 	};
 });
