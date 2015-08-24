@@ -1,6 +1,8 @@
-<header>
-	<a href="https://www.google.com/calendar">{{title}}</a>
-</header>
+{{#title}}
+	<header>
+		<a href="https://www.google.com/calendar">{{title}}</a>
+	</header>
+{{/title}}
 
 <div class="agenda{{#multiple}} multiple{{/multiple}}">
 	{{#days}}

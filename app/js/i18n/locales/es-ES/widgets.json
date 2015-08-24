@@ -108,23 +108,23 @@
         "ampmseconds":"AM\/PM - Digital, No segundos",
         "24hourseconds":"24 horas - Digital, No segundos"
       },
-      "sound":"Alert Sound"
+      "sound":"Sonido de Alerta"
     },
     "title":"Reloj",
-    "alarm":"Alarm",
+    "alarm":"Alarma",
     "clock":"Reloj",
-    "timer":"Timer",
-    "stopwatch":"Stopwatch",
-    "set":"Set",
-    "unset":"Unset",
-    "dismiss":"Dismiss",
-    "enable_audio":"Enable audio"
+    "timer":"Temporizador",
+    "stopwatch":"Cronómetro",
+    "set":"Establecer",
+    "unset":"Anular",
+    "dismiss":"Ignorar",
+    "enable_audio":"Activar el sonido"
   },
   "currency":{
     "name":"Monedas",
     "desc":"¡ Convertir entre cualquiera de las dos monedas 169.",
     "to_label":"para",
-    "recently_used":"Recently Used"
+    "recently_used":"Usadas Recientemente"
   },
   "drive":{
     "name":"Disco",
@@ -515,54 +515,54 @@
     "name":"Site Link",
     "desc":"Displays a link, optionally with a title and thumbnail",
     "settings":{
-      "link":"Link URL",
+      "link":"URL del Enlace",
       "link_placeholder":"http:\/\/www.google.com\/",
       "image":"URL de la imagen",
       "image_placeholder":"http:\/\/www.example.com\/image.png",
-      "color":"Image Background Color",
-      "style":"Image Style",
-      "style_fill":"Fill",
+      "color":"Color de fondo del imagen",
+      "style":"Estilo de Imagen",
+      "style_fill":"Llenar",
       "style_center":"Centro"
     }
   },
   "stats":{
-    "name":"System Statistics",
-    "desc":"Keep an eye on your system with realtime statistics",
-    "memory":"Memory",
-    "battery":"Battery",
-    "usage":"usage",
-    "in_use":"in use",
-    "remaining":"remaining",
-    "charged":"Fully Charged",
-    "idle":"Idle",
-    "charging":"Charging",
-    "discharging":"Discharging"
+    "name":"Estadísticas del Sistema",
+    "desc":"Monitorear su sistema con estadísticas en tiempo real",
+    "memory":"Memoria",
+    "battery":"Batería",
+    "usage":"uso",
+    "in_use":"en uso",
+    "remaining":"restante",
+    "charged":"Carga completa",
+    "idle":"Inactivo",
+    "charging":"Cargando",
+    "discharging":"Descargando"
   },
   "search":{
     "name":"Buscar",
-    "desc":"Embed a search box in your page for easy access",
+    "desc":"Incrustar un cuadro de búsqueda en su página para facilitar el acceso",
     "settings":{
       "placeholder":"Search Field Placeholder",
       "search_url":"URL de búsqueda",
       "param":"Query Parameter",
       "param_placeholder":"The parameter where the query goes, i.e. \"q\""
     },
-    "default_placeholder":"Search Google"
+    "default_placeholder":"Buscar en Google"
   },
   "classroom":{
     "name":"Classroom",
     "desc":"Keep up to date with your Google Classroom assignments and classes",
     "settings":{
       "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
+      "mode_teacher":"Profesor",
+      "mode_student":"Estudiante"
     }
   },
   "pushbullet":{
     "name":"Pushbullet",
     "desc":"Keep track of notifications from your phone and other devices",
-    "no_pushes":"No pushes found",
-    "sign_in":"Sign in",
+    "no_pushes":"No se han encontrado pushes",
+    "sign_in":"Acceder",
     "no_key":"It doesn't look like you're signed in to Pushbullet.  Sign in now to connect this widget."
   },
   "linkedin":{
@@ -581,21 +581,21 @@
     "loading":"Loading directions, please wait...",
     "error":"Something went wrong while trying to load the directions you requested.",
     "error2":"Please check the start and destination addresses you entered.",
-    "open_in_maps":"Open in Google Maps",
-    "via":"via"
+    "open_in_maps":"Abrir en Google Maps",
+    "via":"mediante"
   },
   "pocket":{
     "name":"Pocket",
-    "desc":"Display a list of your saved articles, videos, and web pages from Pocket",
+    "desc":"Ver una lista sus artículos, videos y páginas guardados en Pocket",
     "settings":{
       "links_shown":"Number of links shown",
-      "open":"Open links",
-      "open_pocket":"In Pocket",
-      "open_original":"At their original URL"
+      "open":"Abrir enlaces",
+      "open_pocket":"En Pocket",
+      "open_original":"En su URL original"
     },
     "by":"Por",
-    "no_links":"No links found",
-    "grant_access":"Grant access",
-    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
+    "no_links":"No se han encontrado enlaces",
+    "grant_access":"Otorgar acceso",
+    "no_key":"Necesitará otorgar acceso a su cuenta de Pocket para que iChrome pueda cargar sus enlaces."
   }
 }

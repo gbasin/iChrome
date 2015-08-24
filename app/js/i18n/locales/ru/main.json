@@ -4,7 +4,7 @@
   "newtabName":"iChrome Новая Вкладка",
   "extName":"iChrome - ваша персональная страница в chrome",
   "extDescription":"ЛУЧШАЯ домашняя страница для Chrome. Красивые темы, десятки виджетов, превосходная скорость и настройки на любой вкус!",
-  "newtabDescription":"ЛУЧШАЯ домашняя страница для Chrome. Красивые темы, десятки виджетов, превосходная скорость и настройки на любой вкус!",
+  "newtabDescription":"ЛУЧШАЯ домашняя страница для Chrome. А теперь и для новых вкладок. Красивые темы, десятки виджетов, превосходная скорость и настройки на любой вкус!",
   "defaults":{
     "tab":"Главная",
     "me":"Я"
@@ -14,17 +14,17 @@
   "grid_to_column_warning":"Вы изменяете раскладку с режима сетки на режим столбцов. При продолжении все виджеты забудут о своем расположении и будут помещены в самый первый столбец.\nВы уверены в своих действиях?",
   "storage_warning":"Вы достигли отметки 90% от доступного объема для синхронизации данных. При достижении лимита iChrome перестанет синхронизировать все ваши данные, и, может быть, даже перестанет работать. \nВы можете увеличить свободное пространство, удалив лишние темы, заметки и списки дел, которые вы не используете.",
   "alert":{
-    "default_button":"Выключить",
-    "confirm_title":"Are you sure you want to do this?",
-    "confirm_continue":"Continue",
-    "confirm_cancel":"Cancel"
+    "default_button":"Отменить",
+    "confirm_title":"Вы уверены в своих действиях?",
+    "confirm_continue":"Продолжить",
+    "confirm_cancel":"Oтменить"
   },
   "storage":{
-    "signin":"Sign in to sync your settings",
-    "signin_desc":"iChrome has detected a sync profile under your email address.",
-    "signin_desc2":"Sign in with your Google account now to download and sync your configuration.",
-    "signin_btn":"Sign in",
-    "signin_dismiss":"Выключить"
+    "signin":"Войдите чтобы синхронизировать настройки",
+    "signin_desc":"iChrome обнаружил профиль синхронизации для Вашего адреса электронной почты.",
+    "signin_desc2":"Зарегистрируйтесь используя свою учетную запись Google для загружзки и синхронизации настроек.",
+    "signin_btn":"Войти",
+    "signin_dismiss":"Отменить"
   },
   "toolbar":{
     "placeholder":"Введите запрос",
@@ -54,15 +54,15 @@
       "support":"Поддержка",
       "feedback":"Обратная связь",
       "review":"Отзыв",
-      "twitter":"Мы в Twitter",
-      "webstore":"Мы в Webstore",
+      "twitter":"Твиттер",
+      "webstore":"Webstore",
       "by":"От Avi Kohn"
     }
   },
   "voice":{
     "listening":"Слушаю...",
     "searching":"Ищем: %s",
-    "missed":"Не понял тебя. <a>Повтори<\/a>"
+    "missed":"Непонятно. <a>Повтори<\/a>"
   },
   "settings":{
     "save":"Сохранить и Закрыть",
@@ -71,7 +71,7 @@
       "general":"Общие",
       "visual":"Внешний вид",
       "specific":"Индивидуальные для вкладок",
-      "sync":"Accounts and Sync",
+      "sync":"Учетные записи и синхронизация",
       "advanced":"Расширенные"
     },
     "general":{
@@ -143,46 +143,46 @@
       "default":"Установить по умолчанию"
     },
     "sync":{
-      "status_syncing":"iChrome is currently <b>syncing<\/b> your tabs and settings.",
-      "status_notsyncing":"iChrome is currently <b>not syncing<\/b> your tabs and settings.",
-      "status_notsyncing2":"Click Sync Now at the bottom of this page or sign in with your Google account to create a profile.",
-      "duplicate_profile":"A profile already exists under the email address below. To protect your security, iChrome can't use your sync profile until you verify that you own the address by signing in to your Google account.",
-      "name":"Name",
-      "fname":"First Name",
-      "lname":"Last Name",
-      "name_desc":"We'll use this to address you inside iChrome and in any communications.",
-      "email":"Email Address",
-      "email_desc":"This is used to identify your sync profile, we'll also use it if we need to get in touch with you.",
-      "signin":"Sign In",
-      "signin_btn":"Sign in with Google",
-      "signin_desc":"Sign in with your Google account to easily and securely add new computers to your sync profile.",
-      "signed_in":"iChrome is <b>connected<\/b> to your Google account.  Sign in on any new computers to instantly sync your configuration.",
-      "keep_data":"Keep local data?",
-      "keep_data_desc":"Would you like to keep your local data, and replace the configuration on other computers you may have in this sync group with it, or replace this computer's configuration with theirs?",
-      "keep_theirs":"Use Theirs",
-      "keep_local":"Keep Local",
-      "sync_now":"Sync Now",
-      "syncing":"Syncing...",
-      "last_synced":"Last synced",
+      "status_syncing":"iChrome <b>синхронизирует<\/b> ваши вкладки и параметры.",
+      "status_notsyncing":"iChrome <b>не синхронизирует<\/b> ваши вкладки и параметры.",
+      "status_notsyncing2":"Нажмите Синхронизировать сейчас в нижней части этой страницы или войдите в свой аккаунт Google для создания профиля.",
+      "duplicate_profile":"Для этого адреса эл. почты уже существует профиль. Для обеспечения вашей безопасности, iChrome не будет использовать этот профиль синхронизации пока вы не подтвердите, что вы владельц адреса, войдя в свой аккаунт Google.",
+      "name":"Имя",
+      "fname":"Имя",
+      "lname":"Фамилия",
+      "name_desc":"Мы будем это использовать при обращении к Вам внутри iChrome и в любых сообщениях.",
+      "email":"Адрес эл. почты",
+      "email_desc":"Используется для определения профиля синхронизации, а также мы будем использовать его для связи с вами.",
+      "signin":"Войти",
+      "signin_btn":"Войти через Google",
+      "signin_desc":"Войдите в свой аккаунт Google, чтобы легко и безопасно добавить новые компьютеры в ваш профиль синхронизации.",
+      "signed_in":"iChrome <b>подключен<\/b> к вашему Google аккаунту.  Войдите с любого компьютера для мгновенной синхронизации конфигурации.",
+      "keep_data":"Сохранять локальные данные?",
+      "keep_data_desc":"Вы хотите сохранить ваши локальные данные и заменить ими конфигурации на других компьютерах из этой группы синхронизации, или заменить конфигурацию этого компьютера их конфигурацими?",
+      "keep_theirs":"Использовать удаленые конфигурации",
+      "keep_local":"Использовать локальные",
+      "sync_now":"Синхронизировать сейчас",
+      "syncing":"Синхронизация...",
+      "last_synced":"Последняя синхронизация",
       "backup":{
-        "title":"Backup & Restore",
-        "desc":"Click the button an any backup to roll iChrome back to the time displayed.  You can also use the button below to create a manual backup.",
-        "btn":"Backup now",
-        "restore":"Restore",
-        "download":"Download",
-        "download_name":"iChrome Backup",
-        "no_backups":"No backups found, click Backup Now to create one."
+        "title":"Резервирование и восстановление",
+        "desc":"Нажмите кнопку любого резервного копирования, чтобы откатить iChrome обратно к тому моменту.  Можете использовать кнопку ниже для создания резервной копии вручную.",
+        "btn":"Резервировать сейчас",
+        "restore":"Восстановить",
+        "download":"Загрузить",
+        "download_name":"Резервная копия",
+        "no_backups":"Резервные копии не найдены, нажмите кнопку Резервировать сейчас для создания."
       },
       "restore":{
-        "file":"Restore from file",
-        "error":"An error occurred while trying to parse the provided data, please try again later.",
-        "confirm_desc":"This will overwrite all local and synced data.",
-        "confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
+        "file":"Восстановить из файла",
+        "error":"Произошла ошибка при обработке предоставленных данных, повторите попытку позже.",
+        "confirm_desc":"Это перезапишет все локальные и синхронизированные данные.",
+        "confirm_desc2":"Вы потеряете все текущие конфигурации на всех компьютерах, подключенных к этому профилю синхронизации."
       },
-      "reset":"Reset Profile",
-      "resetting":"Resetting...",
-      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
-      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
+      "reset":"Сбросить профиль",
+      "resetting":"Сброс...",
+      "reset_confirm_desc":"Это сотрет все локальные и синхронизированные данные, У вас нет резервной копии и будет невозможно вернуть все обратно.",
+      "reset_confirm_desc2":"Вы потеряете все текущие конфигурации на всех компьютерах, подключенных к этому профилю синхронизации."
     },
     "advanced":{
       "background":"Фон виджетов",
@@ -241,12 +241,12 @@
     "custom":"Свои",
     "create":"Создать свою тему",
     "url_or_upload":"или",
-    "upload_image":"Загрузите своё",
+    "upload_image":"Загрузите изображение",
     "edit_btn":"Изменить",
     "delete":"Удалить",
-    "use":"Выбрать",
+    "use":"Использовать",
     "preview":"Предпросмотр",
-    "author":"изменил",
+    "author":"Автор",
     "images":"%s изображений",
     "resolution":"Разрешение",
     "categories":"Категории",
