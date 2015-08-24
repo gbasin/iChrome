@@ -14,7 +14,7 @@
   "grid_to_column_warning":"Wybrano zmianę z układu siatki na kolumny. Jeśli zamierzasz kontynuować, stracisz położenie wszystkich widżetów i zostaną one umieszczone w prawym górnym rogu. Czy jesteś pewien że chcesz kontynuować?",
   "storage_warning":"Wykorzystałeś więcej niż 90% z całkowitej zsynchronizowanej przestrzeni dyskowej. Gdy już osiągniesz limit, iChrome przestanie synchronizować dane i może również przestać działać. Możesz zmniejszyć wykorzystanie powierzchni poprzez usuwanie niestandardowych tematów, notatek i list zadań które nie są używane.",
   "alert":{
-    "default_button":"Dismiss",
+    "default_button":"Odrzuć",
     "confirm_title":"Are you sure you want to do this?",
     "confirm_continue":"Continue",
     "confirm_cancel":"Cancel"
@@ -24,7 +24,7 @@
     "signin_desc":"iChrome has detected a sync profile under your email address.",
     "signin_desc2":"Sign in with your Google account now to download and sync your configuration.",
     "signin_btn":"Sign in",
-    "signin_dismiss":"Dismiss"
+    "signin_dismiss":"Odrzuć"
   },
   "toolbar":{
     "placeholder":"Wpisz słowa kluczowe",

@@ -87,8 +87,8 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 					"start": 1437604200000,
 					"end": 1437607800000,
 					"time": "6:30 PM - 7:30 PM",
-					"calendar": "h.e.kohn824@gmail.com",
-					"calendarId": "h.e.kohn824@gmail.com",
+					"calendar": "emailaddress@gmail.com",
+					"calendarId": "emailaddress@gmail.com",
 					"color": "#4986e7"
 				}
 			]

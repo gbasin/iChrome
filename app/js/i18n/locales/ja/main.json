@@ -14,17 +14,17 @@
   "grid_to_column_warning":"タブをグリッドレイアウトからカラムレイアウトへ変更するよう選択しました。このまま続けると全てのウィジェットが消えて、全てが新しいタブの左端カラムへと移動します。\nこのまま続けてもよろしいですか？",
   "storage_warning":"利用可能な同期ストレージのうち90%以上を使っています。\n限界に達するとiChromeはデータの同期を停止して動作も停止するかもしれません。\nカスタムテーマや使っていないto-doリストなどを削除することでスペースを圧縮することができます。",
   "alert":{
-    "default_button":"Dismiss",
-    "confirm_title":"Are you sure you want to do this?",
-    "confirm_continue":"Continue",
-    "confirm_cancel":"Cancel"
+    "default_button":"破棄",
+    "confirm_title":"実行してもいいですか？",
+    "confirm_continue":"次へ",
+    "confirm_cancel":"キャンセル"
   },
   "storage":{
-    "signin":"Sign in to sync your settings",
-    "signin_desc":"iChrome has detected a sync profile under your email address.",
-    "signin_desc2":"Sign in with your Google account now to download and sync your configuration.",
-    "signin_btn":"Sign in",
-    "signin_dismiss":"Dismiss"
+    "signin":"サインインして設定を同期します",
+    "signin_desc":"iChrome は、あなたのメールアドレスの同期プロファイルを検出しました",
+    "signin_desc2":"Google アカウントにサインインして、設定をダウンロードし同期してください。",
+    "signin_btn":"サインイン",
+    "signin_dismiss":"破棄"
   },
   "toolbar":{
     "placeholder":"検索条件を入力してください",
@@ -71,7 +71,7 @@
       "general":"一般",
       "visual":"見た目",
       "specific":"タブ",
-      "sync":"Accounts and Sync",
+      "sync":"アカウントと同期",
       "advanced":"高度な設定"
     },
     "general":{
@@ -145,10 +145,10 @@
     "sync":{
       "status_syncing":"iChrome is currently <b>syncing<\/b> your tabs and settings.",
       "status_notsyncing":"iChrome is currently <b>not syncing<\/b> your tabs and settings.",
-      "status_notsyncing2":"Click Sync Now at the bottom of this page or sign in with your Google account to create a profile.",
+      "status_notsyncing2":"アカウントを作成するには、このページの下部の[今すぐ同期]　をクリック。\nまたは、Googleアカウントでログインして下さい。",
       "duplicate_profile":"A profile already exists under the email address below. To protect your security, iChrome can't use your sync profile until you verify that you own the address by signing in to your Google account.",
       "name":"Name",
-      "fname":"First Name",
+      "fname":"名",
       "lname":"Last Name",
       "name_desc":"We'll use this to address you inside iChrome and in any communications.",
       "email":"Email Address",
