@@ -1581,6 +1581,10 @@
 }
 
 .medley .calendar .agenda {
+	max-height: 100%;
+}
+
+.medley .calendar .header ~ .agenda {
 	max-height: calc(100% - 55px);
 }
 
