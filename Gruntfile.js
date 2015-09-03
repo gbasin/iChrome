@@ -181,7 +181,7 @@ module.exports = function(grunt) {
 			webstore: {
 				options: {
 					name: "app",
-					optimize: "none",
+					optimize: "uglify2",
 					baseUrl: "build/js/",
 					out: "build/js/app.js",
 					mainConfigFile: "build/js/app.js"
