@@ -29,24 +29,19 @@
 		<div class="collapse">
 			<nav class="apps">
 				<div class="items">
-					<a href="https://plus.google.com/">
-						<img data-src="images/icons/plus.png" />
-						<span>+{{name}}</span>
-					</a>
-					
-					<a href="https://www.google.com/webhp">
+					<a href="https://www.google.com/">
 						<img data-src="images/icons/search.png" />
 						<span>{{i18n.toolbar.apps.search}}</span>
-					</a>
-					
-					<a href="https://www.youtube.com/">
-						<img data-src="images/icons/youtube.png" />
-						<span>{{i18n.toolbar.apps.youtube}}</span>
 					</a>
 					
 					<a href="https://maps.google.com/">
 						<img data-src="images/icons/maps.png" />
 						<span>{{i18n.toolbar.apps.maps}}</span>
+					</a>
+					
+					<a href="https://www.youtube.com/">
+						<img data-src="images/icons/youtube.png" />
+						<span>{{i18n.toolbar.apps.youtube}}</span>
 					</a>
 					
 					<a href="https://play.google.com/">
@@ -72,6 +67,11 @@
 					<a href="https://www.google.com/calendar">
 						<img data-src="images/icons/calendar.png" />
 						<span>{{i18n.toolbar.apps.calendar}}</span>
+					</a>
+
+					<a href="https://plus.google.com/">
+						<img data-src="images/icons/plus.png" />
+						<span>+{{name}}</span>
 					</a>
 				</div>
 

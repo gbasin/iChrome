@@ -825,14 +825,14 @@ dialog footer button.material.flat:active {
 }
 
 .toolbar .apps-toggle.active .collapse {
-	height: 370px;
+	height: 395px;
 }
 
 .toolbar .apps-toggle .apps {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	height: 370px;
+	height: 395px;
 	cursor: default;
 	font-size: 13px;
 	background: #FFF;
@@ -843,7 +843,7 @@ dialog footer button.material.flat:active {
 }
 
 .toolbar .apps .items {
-	height: 290px;
+	height: 315px;
 	display: flex;
 	margin: 20px 30px;
 	flex-flow: row wrap;
@@ -863,7 +863,7 @@ dialog footer button.material.flat:active {
 }
 
 .toolbar .apps img {
-	height: 60px;
+	height: 64px;
 	display: inline-block;
 }
 
@@ -2637,7 +2637,6 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	margin: 10px;
 	margin-right: 15px;
 	border-radius: 2px;
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .store .content .widget h2.title {
