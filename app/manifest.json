@@ -60,8 +60,7 @@
 		"cookies",
 		"topSites",
 		"sessions",
-		"http://*/",
-		"https://*/",
+		"<all_urls>",
 		"webRequest",
 		"system.cpu",
 		"system.memory",
@@ -75,7 +74,7 @@
 		"bookmarks",
 		"management"
 	],
-	"version": "2.1.20.7",
+	"version": "2.1.20.8",
 	"manifest_version": 2,
 	"default_locale": "en",
 	"short_name": "iChrome",
