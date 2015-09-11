@@ -2,8 +2,8 @@
  * The themes modal
  */
 define(
-	["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "themes/model", "themes/utils", "themes/custom", "themes/cacher", "i18n/i18n", "core/render"],
-	function(_, $, Backbone, Track, Modal, Model, Utils, Custom, Cacher, Translate, render) {
+	["lodash", "jquery", "backbone", "browser/api", "core/analytics", "modals/modals", "themes/model", "themes/utils", "themes/custom", "themes/cacher", "i18n/i18n", "core/render"],
+	function(_, $, Backbone, Browser, Track, Modal, Model, Utils, Custom, Cacher, Translate, render) {
 		var modal = new (Modal.extend({
 			classes: "themes",
 		}))();
@@ -216,8 +216,8 @@ define(
 				if (theme.oType == "sunrise_sunset") {
 					navigator.geolocation.getCurrentPosition(function(pos) {
 						if (pos && pos.coords) {
-							localStorage.lat = parseFloat(pos.coords.latitude.toFixed(2));
-							localStorage.lon = parseFloat(pos.coords.longitude.toFixed(2));
+							Browser.storage.lat = parseFloat(pos.coords.latitude.toFixed(2));
+							Browser.storage.lon = parseFloat(pos.coords.longitude.toFixed(2));
 						}
 
 						// There's no need to store the cacher in a variable since the events are passed on creation

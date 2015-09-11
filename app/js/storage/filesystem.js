@@ -1,6 +1,7 @@
 /**
  * This creates a basic global API so all modules using the HTML5 FileSystem can have a centralized config
  */
+/* global PERSISTENT */
 define(function() {
 	/**
 	 * Requests and asynchronously returns a FileSystem instance.

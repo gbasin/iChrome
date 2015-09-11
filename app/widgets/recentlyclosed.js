@@ -1,7 +1,7 @@
 /*
  * The Recently Closed widget.
  */
-define(["jquery", "lodash"], function($, _) {
+define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 	return {
 		id: 32,
 		size: 4,
@@ -43,7 +43,7 @@ define(["jquery", "lodash"], function($, _) {
 			if (!this.listening && !demo) {
 				this.listening = true;
 
-				chrome.sessions.onChanged.addListener(function() {
+				Browser.sessions.onChanged.addListener(function() {
 					this.render();
 				}.bind(this));
 			}
@@ -81,7 +81,7 @@ define(["jquery", "lodash"], function($, _) {
 				return this.utils.render(data);
 			}
 
-			chrome.sessions.getRecentlyClosed({
+			Browser.sessions.getRecentlyClosed({
 				maxResults: parseInt(this.config.tabs || 5)
 			}, function(sessions) {
 				data.tabs = _.compact(sessions.map(function(e, i) {
@@ -101,6 +101,8 @@ define(["jquery", "lodash"], function($, _) {
 					}
 
 					if (ret.id) {
+						ret.favicon = Browser.getFavicon(ret.url);
+
 						return ret;
 					}
 					else {
@@ -117,10 +119,10 @@ define(["jquery", "lodash"], function($, _) {
 			this.elm.off("click.recentlyclosed").on("click.recentlyclosed", "a.item", function(e) {
 				e.preventDefault();
 
-				chrome.sessions.restore(this.getAttribute("data-id"), function(session) {
+				Browser.sessions.restore(this.getAttribute("data-id"), function(session) {
 					if (target == "_self") {
-						chrome.tabs.getCurrent(function(tab) {
-							if (tab) chrome.tabs.remove(tab.id);
+						Browser.tabs.getCurrent(function(tab) {
+							if (tab) Browser.tabs.remove(tab.id);
 						});
 					}
 				});

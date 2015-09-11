@@ -1,8 +1,8 @@
 /**
  * This is the notification-like box shown at the bottom right, it's used for various announcements and notifications.
  */
-define(["backbone", "modals/modals", "core/render"], function(Backbone, Modal, render) {
-	if (localStorage.translateRequest == "true") {
+define(["backbone", "browser/api", "modals/modals", "core/render"], function(Backbone, Browser, Modal, render) {
+	if (Browser.storage.translateRequest == "true") {
 		var View = Backbone.View.extend({
 			tagName: "div",
 			className: "notification",
@@ -11,7 +11,7 @@ define(["backbone", "modals/modals", "core/render"], function(Backbone, Modal, r
 				"click .close": function(e) {
 					this.$el.removeClass("visible");
 
-					delete localStorage.translateRequest;
+					delete Browser.storage.translateRequest;
 				}
 			},
 			

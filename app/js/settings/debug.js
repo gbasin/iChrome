@@ -1,7 +1,7 @@
 /**
  * The debug dialog.  This contains advanced tools that users can be instructed to use for troubleshooting.
  */
-define(["lodash", "jquery", "backbone", "storage/filesystem", "modals/modals", "core/info", "core/render"], function(_, $, Backbone, FileSystem, Modal, info, render) {
+define(["lodash", "jquery", "backbone", "browser/api", "storage/filesystem", "modals/modals", "core/render"], function(_, $, Backbone, Browser, FileSystem, Modal, render) {
 	var modal = new (Modal.extend({
 		width: 800,
 		classes: "debug"
@@ -28,9 +28,9 @@ define(["lodash", "jquery", "backbone", "storage/filesystem", "modals/modals", "
 
 			switch (action) {
 				case "clear-localstorage":
-					localStorage.clear();
+					Browser.storage.clear();
 
-					this.setStatus("LocalStorage cleared");
+					this.setStatus("Local storage cleared");
 				break;
 
 				case "clear-fs":
@@ -38,7 +38,7 @@ define(["lodash", "jquery", "backbone", "storage/filesystem", "modals/modals", "
 				break;
 
 				case "clear-oauth":
-					delete localStorage.oauth;
+					delete Browser.storage.oauth;
 
 					this.setStatus("OAuth cache cleared");
 				break;
@@ -46,21 +46,21 @@ define(["lodash", "jquery", "backbone", "storage/filesystem", "modals/modals", "
 				case "get-info":
 					this.setStatus("Compiling information, please wait");
 
-					chrome.runtime.getPlatformInfo(function(info) {
+					Browser.runtime.getPlatformInfo(function(info) {
 						this.setStatus();
 
 						alert(
 							"Debug info (hit Ctrl+C or Cmd+C to copy):" + "\n" +
-							"iChrome Version: " + info.version + "\n" +
+							"iChrome Version: " + Browser.app.version + "\n" +
 							"Chrome Version: " + (/Chrome\/([0-9.]+)/.exec(navigator.userAgent) || [])[1] + "\n" +
 							"Operating System: " + info.os + "\n" +
-							"OAuth keys: " + Object.keys(JSON.parse(localStorage.oauth || "{}")).join(", ") + "\n" +
-							"Sync Token: " + JSON.parse(localStorage.syncData || "{}").token + "\n" +
-							"Sync Client: " + JSON.parse(localStorage.syncData || "{}").client + "\n" +
-							"Uses: " + localStorage.uses + "\n" +
-							"Cached themes: " + Object.keys(JSON.parse(localStorage.config || "{}").cached || {}).length + "\n" +
-							"Tabs: " + JSON.parse(localStorage.config || "{}").tabs.length + "\n" +
-							"Local data size: " + (localStorage.config || "").length
+							"OAuth keys: " + Object.keys(JSON.parse(Browser.storage.oauth || "{}")).join(", ") + "\n" +
+							"Sync Token: " + JSON.parse(Browser.storage.syncData || "{}").token + "\n" +
+							"Sync Client: " + JSON.parse(Browser.storage.syncData || "{}").client + "\n" +
+							"Uses: " + Browser.storage.uses + "\n" +
+							"Cached themes: " + Object.keys(JSON.parse(Browser.storage.config || "{}").cached || {}).length + "\n" +
+							"Tabs: " + JSON.parse(Browser.storage.config || "{}").tabs.length + "\n" +
+							"Local data size: " + (Browser.storage.config || "").length
 						);
 					}.bind(this));
 				break;
@@ -70,7 +70,7 @@ define(["lodash", "jquery", "backbone", "storage/filesystem", "modals/modals", "
 						"If an update is available, this may reload the extension in Chrome, closing any open iChrome tabs.  Before executing this, ensure that a tab other" +
 						" than iChrome is open otherwise Chrome itself will close.\r\nHit cancel to open a new tab and avoid this or OK to continue."
 					)) {
-						chrome.runtime.requestUpdateCheck(function(status, details) {
+						Browser.runtime.requestUpdateCheck(function(status, details) {
 							if (status == "throttled") {
 								this.setStatus("Update check failed due to throttling, try again later");
 							}
@@ -89,7 +89,7 @@ define(["lodash", "jquery", "backbone", "storage/filesystem", "modals/modals", "
 						"This will reload the extension in Chrome, closing any open iChrome tabs.  Before executing this, ensure that a tab other" +
 						" than iChrome is open otherwise Chrome itself will close.\r\nHit cancel to open a new tab and avoid this or OK to continue."
 					)) {
-						chrome.runtime.reload();
+						Browser.runtime.reload();
 					}
 				break;
 

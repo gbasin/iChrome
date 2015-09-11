@@ -2,8 +2,8 @@
  * Loads storage and returns a Promise that can be used to listen for updates
  */
 define(
-	["jquery", "lodash", "backbone", "core/status", "modals/alert", "i18n/i18n", "core/analytics", "storage/filesystem", "storage/syncapi", "storage/defaults", "storage/updatethemes", "storage/tojson"],
-	function($, _, Backbone, Status, Alert, Translate, Track, FileSystem, API, defaults, updateThemes, getJSON) {
+	["jquery", "lodash", "backbone", "browser/api", "core/status", "modals/alert", "i18n/i18n", "core/analytics", "storage/filesystem", "storage/syncapi", "storage/defaults", "storage/updatethemes", "storage/tojson"],
+	function($, _, Backbone, Browser, Status, Alert, Translate, Track, FileSystem, API, defaults, updateThemes, getJSON) {
 		var deferred = $.Deferred();
 
 		// This lets events get attached and fired on storage itself. It'll primarily be used as storage.on("updated", ...) and storage.trigger("updated")
@@ -73,7 +73,7 @@ define(
 
 
 		/**
-		 * Resets localStorage and FileSystem, but not the sync token and user data,
+		 * Resets Browser.storage and FileSystem, but not the sync token and user data,
 		 * to their original states.
 		 *
 		 * @api     public
@@ -82,15 +82,15 @@ define(
 		promise.reset = function(cb) {
 			FileSystem.clear(function() {
 				// A reset shouldn't affect these since we'll still want to sync when this is over
-				var uses = localStorage.uses,
-					syncData = localStorage.syncData;
+				var uses = Browser.storage.uses,
+					syncData = Browser.storage.syncData;
 
-				localStorage.clear();
+				Browser.storage.clear();
 
-				if (uses) localStorage.uses = uses;
-				if (syncData) localStorage.syncData = syncData;
+				if (uses) Browser.storage.uses = uses;
+				if (syncData) Browser.storage.syncData = syncData;
 
-				localStorage.installed = true; // Show the installation guide when the page is reloaded
+				Browser.storage.installed = true; // Show the installation guide when the page is reloaded
 
 				// Overwrite with the default configuration
 				_.assign(storage, _.pick(defaults, "user", "tabs", "settings", "themes", "cached"));
@@ -170,13 +170,13 @@ define(
 
 			var theme = defaultTab.theme || storage.settings.theme;
 
-			theme = storage.cached[theme] || storage.themes[theme.replace("custom", "")] || { image: "/images/defaulttheme.jpg" };
+			theme = storage.cached[theme] || storage.themes[theme.replace("custom", "")] || { image: "images/defaulttheme.jpg" };
 
 			if (!theme || !theme.image) {
 				return;
 			}
 
-			localStorage.themeImg = theme.image;
+			Browser.storage.themeImg = theme.image;
 		};
 
 
@@ -206,7 +206,7 @@ define(
 				}, $.unextend(defaults.tab, tab));
 			});
 
-			localStorage.config = JSON.stringify(local);
+			Browser.storage.config = JSON.stringify(local);
 
 			// Cache the default theme image
 			cacheTheme(storage);
@@ -242,13 +242,13 @@ define(
 							storage.user = local.user = d.user;
 						}
 
-						localStorage.config = JSON.stringify(local);
+						Browser.storage.config = JSON.stringify(local);
 					}
 
 					// If the status wasn't set, this is the first time this error has occurred
-					else if (err && err == "Duplicate" && (API.getInfo().status !== "duplicate" || localStorage.alertDuplicate)) {
+					else if (err && err == "Duplicate" && (API.getInfo().status !== "duplicate" || Browser.storage.alertDuplicate)) {
 						// Set a variable so the dialog will be shown until it's explicitly dismissed
-						localStorage.alertDuplicate = "true";
+						Browser.storage.alertDuplicate = "true";
 
 						Alert({
 							title: Translate("storage.signin"),
@@ -262,7 +262,7 @@ define(
 								API.authorize(storage);
 							}
 
-							delete localStorage.alertDuplicate;
+							delete Browser.storage.alertDuplicate;
 						}.bind(this));
 					}
 
@@ -366,7 +366,7 @@ define(
 			var d;
 
 			if (typeof data == "string") {
-				d = JSON.parse(data || localStorage.config || "{}");
+				d = JSON.parse(data || Browser.storage.config || "{}");
 			}
 			else {
 				d = data || {};
@@ -397,8 +397,8 @@ define(
 
 
 			// Backup once a day, before any changes are made
-			if (new Date().getTime() - (localStorage.lastBackup || "0") > 864E5) {
-				var backups = JSON.parse(localStorage.backups || "[]");
+			if (new Date().getTime() - (Browser.storage.lastBackup || "0") > 864E5) {
+				var backups = JSON.parse(Browser.storage.backups || "[]");
 
 				backups.unshift({
 					date: new Date().getTime(),
@@ -411,8 +411,8 @@ define(
 					}
 				});
 
-				localStorage.backups = JSON.stringify(backups.slice(0, 4));
-				localStorage.lastBackup = new Date().getTime();
+				Browser.storage.backups = JSON.stringify(backups.slice(0, 4));
+				Browser.storage.lastBackup = new Date().getTime();
 
 				backups = null;
 			}
@@ -424,27 +424,30 @@ define(
 			deferred.resolve(storage);
 		};
 
-		if (localStorage.config) {
-			parseData(localStorage.config);
+		if (Browser.storage.config) {
+			parseData(Browser.storage.config);
 		}
-		else {
-			chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
+		else if (Browser.chromeLocal) {
+			Browser.chromeLocal.get(["tabs", "settings", "themes", "cached"], function(d) {
 				if (typeof d.tabs == "string") {
 					try {
 						d.tabs = JSON.parse(d.tabs);
 					}
 					catch(e) {
-						return;
+						delete d.tabs;
 					}
 				}
 
-				localStorage.config = JSON.stringify(d);
+				Browser.storage.config = JSON.stringify(d);
 
-				chrome.storage.local.remove(["tabs", "settings", "themes", "cached"]);
-				chrome.storage.sync.remove(["tabs", "settings", "themes", "cached"]);
+				Browser.chromeLocal.remove(["tabs", "settings", "themes", "cached"]);
+				Browser.syncStorage.remove(["tabs", "settings", "themes", "cached"]);
 			
 				parseData(d);
 			});
+		}
+		else {
+			parseData();
 		}
 
 		return promise;

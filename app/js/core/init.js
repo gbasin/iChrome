@@ -2,8 +2,8 @@
  * The main iChrome view, this initializes everything.
  */
 define(
-	["jquery", "lodash", "backbone", "core/status", "core/analytics", "storage/storage", "core/css", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs", "modals/updated", "modals/getting-started", "modals/translate-request", "lib/extends"],
-	function($, _, Backbone, Status, Track, Storage, CSS, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
+	["jquery", "lodash", "browser/api", "backbone", "core/status", "core/analytics", "storage/storage", "core/css", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs", "modals/updated", "modals/getting-started", "modals/translate-request", "lib/extends"],
+	function($, _, Browser, Backbone, Status, Track, Storage, CSS, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
 		var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -120,7 +120,7 @@ define(
 		 * This makes the background image appear with the first render
 		 * and makes the first paint happen sooner
 		 */
-		var themeImg = localStorage.themeImg;
+		var themeImg = Browser.storage.themeImg;
 
 		if (themeImg) {
 			var loader = new Image();

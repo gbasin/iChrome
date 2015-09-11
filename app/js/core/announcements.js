@@ -1,9 +1,9 @@
 /**
  * Announcements
  */
-define(["backbone", "modals/alert", "core/analytics", "i18n/i18n", "core/info", "core/render"], function(Backbone, Alert, Track, Translate, info, render) {
+define(["backbone", "browser/api", "modals/alert", "core/analytics", "i18n/i18n", "core/render"], function(Backbone, Browser, Alert, Track, Translate, render) {
 	var Model = Backbone.Model.extend({
-		url: "http://api.ichro.me/announcements?extension=" + info.id + "&version=" + info.version + "&lang=" + info.language,
+		url: "http://api.ichro.me/announcements?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language,
 
 		defaults: {
 			count: 0,
@@ -11,20 +11,20 @@ define(["backbone", "modals/alert", "core/analytics", "i18n/i18n", "core/info", 
 		},
 
 		initialize: function() {
-			if (localStorage.showWhatsNew) {
+			if (Browser.storage.showWhatsNew) {
 				this.set({
 					count: 10,
 					isUpdate: true
 				});
 
 				setTimeout(function() {
-					var shown = (parseInt(localStorage.showWhatsNew) || 0) + 1;
+					var shown = (parseInt(Browser.storage.showWhatsNew) || 0) + 1;
 
 					if (shown >= 10) {
-						localStorage.removeItem("showWhatsNew");
+						Browser.storage.removeItem("showWhatsNew");
 					}
 					else {
-						localStorage.showWhatsNew = shown;
+						Browser.storage.showWhatsNew = shown;
 					}
 				}, 3000);
 			}
@@ -41,7 +41,7 @@ define(["backbone", "modals/alert", "core/analytics", "i18n/i18n", "core/info", 
 
 		parse: function(d) {
 			if (d && d.contents) {
-				if (d.announcement_id && d.announcement_id.toString() == localStorage.dismissedAnnouncement) {
+				if (d.announcement_id && d.announcement_id.toString() == Browser.storage.dismissedAnnouncement) {
 					return {};
 				}
 
@@ -80,13 +80,13 @@ define(["backbone", "modals/alert", "core/analytics", "i18n/i18n", "core/info", 
 				this.trigger("dismissed");
 
 				if (d.isUpdate) {
-					localStorage.removeItem("showWhatsNew");
+					Browser.storage.removeItem("showWhatsNew");
 				}
 				else {
-					localStorage.dismissedAnnouncement = d.announcement_id;
+					Browser.storage.dismissedAnnouncement = d.announcement_id;
 
 					if (d.action && res) {
-						chrome.tabs.create({
+						Browser.tabs.create({
 							url: d.action.url
 						});
 					}

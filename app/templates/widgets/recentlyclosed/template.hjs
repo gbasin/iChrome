@@ -3,7 +3,7 @@
 <div class="items">
 	{{#tabs}}
 		<a class="item" href="{{url}}" data-id="{{id}}">
-			<img class="favicon" src="chrome://favicon/{{url}}" />
+			<img class="favicon" src="{{favicon}}" />
 			<span class="title">{{title}}</span>
 		</a>
 	{{/tabs}}

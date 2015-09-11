@@ -21,7 +21,7 @@
 				<div class="status" data-tooltip="{{status}}">{{{status}}}</div>
 
 				<div class="team home">
-					<img class="icon" src="/images/sports/{{home_id}}.png" />
+					<img class="icon" src="images/sports/{{home_id}}.png" />
 
 					<div class="name" title="{{home_first}} {{home_last}}">{{home_first}} {{home_last}}</div>
 
@@ -31,7 +31,7 @@
 				</div>
 
 				<div class="team away">
-					<img class="icon" src="/images/sports/{{away_id}}.png" />
+					<img class="icon" src="images/sports/{{away_id}}.png" />
 
 					<div class="name" title="{{away_first}} {{away_last}}">{{away_first}} {{away_last}}</div>
 

@@ -125,7 +125,7 @@
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 	background-position: center top;
-	background-image: url("/images/weather/unknown.svg");
+	background-image: url("../images/weather/unknown.svg");
 }
 
 .weather .cond:before {
@@ -138,49 +138,49 @@
 
 .weather .cond.clear,
 .weather .cond.sunny {
-	background-image: url("/images/weather/sun.svg");
+	background-image: url("../images/weather/sun.svg");
 }
 
 .weather .cond.fog,
 .weather .cond.hazy {
-	background-image: url("/images/weather/fog.svg");
+	background-image: url("../images/weather/fog.svg");
 }
 
 .weather .cond.flurries,
 .weather .cond.chanceflurries {
-	background-image: url("/images/weather/flurries.svg");
+	background-image: url("../images/weather/flurries.svg");
 }
 
 .weather .cond.rain,
 .weather .cond.sleet,
 .weather .cond.chancerain,
 .weather .cond.chancesleet {
-	background-image: url("/images/weather/rain.svg");
+	background-image: url("../images/weather/rain.svg");
 }
 
 .weather .cond.snow,
 .weather .cond.chancesnow {
-	background-image: url("/images/weather/snow.svg");
+	background-image: url("../images/weather/snow.svg");
 }
 
 .weather .cond.tstorms,
 .weather .cond.chancetstorms {
-	background-image: url("/images/weather/tstorm.svg");
+	background-image: url("../images/weather/tstorm.svg");
 }
 
 .weather .cond.cloudy {
-	background-image: url("/images/weather/cloud.svg");
+	background-image: url("../images/weather/cloud.svg");
 }
 
 .weather .cond.drizzle {
-	background-image: url("/images/weather/drizzle.svg");
+	background-image: url("../images/weather/drizzle.svg");
 }
 
 .weather .cond.mostlycloudy,
 .weather .cond.mostlysunny,
 .weather .cond.partlycloudy,
 .weather .cond.partlysunny {
-	background-image: url("/images/weather/partcloud.svg");
+	background-image: url("../images/weather/partcloud.svg");
 }
 
 .weather .cond:after {
@@ -1276,22 +1276,22 @@
 	background: #333;
 	position: absolute;
 	box-sizing: border-box;
-	-webkit-transform-origin: -57px 0;
+	transform-origin: -57px 0;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
-.clock.analog .ticks div:nth-child(1)	{ -webkit-transform: rotate(0deg); }
-.clock.analog .ticks div:nth-child(2)	{ -webkit-transform: rotate(30deg); }
-.clock.analog .ticks div:nth-child(3)	{ -webkit-transform: rotate(60deg); }
-.clock.analog .ticks div:nth-child(4)	{ -webkit-transform: rotate(90deg); }
-.clock.analog .ticks div:nth-child(5)	{ -webkit-transform: rotate(120deg); }
-.clock.analog .ticks div:nth-child(6)	{ -webkit-transform: rotate(150deg); }
-.clock.analog .ticks div:nth-child(7)	{ -webkit-transform: rotate(180deg); }
-.clock.analog .ticks div:nth-child(8)	{ -webkit-transform: rotate(210deg); }
-.clock.analog .ticks div:nth-child(9)	{ -webkit-transform: rotate(240deg); }
-.clock.analog .ticks div:nth-child(10)	{ -webkit-transform: rotate(270deg); }
-.clock.analog .ticks div:nth-child(11)	{ -webkit-transform: rotate(300deg); }
-.clock.analog .ticks div:nth-child(12)	{ -webkit-transform: rotate(330deg); }
+.clock.analog .ticks div:nth-child(1)	{ transform: rotate(0deg); }
+.clock.analog .ticks div:nth-child(2)	{ transform: rotate(30deg); }
+.clock.analog .ticks div:nth-child(3)	{ transform: rotate(60deg); }
+.clock.analog .ticks div:nth-child(4)	{ transform: rotate(90deg); }
+.clock.analog .ticks div:nth-child(5)	{ transform: rotate(120deg); }
+.clock.analog .ticks div:nth-child(6)	{ transform: rotate(150deg); }
+.clock.analog .ticks div:nth-child(7)	{ transform: rotate(180deg); }
+.clock.analog .ticks div:nth-child(8)	{ transform: rotate(210deg); }
+.clock.analog .ticks div:nth-child(9)	{ transform: rotate(240deg); }
+.clock.analog .ticks div:nth-child(10)	{ transform: rotate(270deg); }
+.clock.analog .ticks div:nth-child(11)	{ transform: rotate(300deg); }
+.clock.analog .ticks div:nth-child(12)	{ transform: rotate(330deg); }
 
 
 .clock.analog .mticks {
@@ -1347,13 +1347,27 @@
 	position: relative;
 }
 
-.clock.analog .hour .hand { -webkit-animation: clock-rotate 43200s normal infinite linear; }
-.clock.analog .minute .hand { -webkit-animation: clock-rotate 3600s normal infinite linear; }
-.clock.analog .second .hand { -webkit-animation: clock-rotate 60s normal infinite steps(60, end); }
+.clock.analog .hour .hand {
+	animation: clock-rotate 43200s normal infinite linear;
+	-webkit-animation: clock-rotate 43200s normal infinite linear;
+}
+.clock.analog .minute .hand {
+	animation: clock-rotate 3600s normal infinite linear;
+	-webkit-animation: clock-rotate 3600s normal infinite linear;
+}
+.clock.analog .second .hand {
+	animation: clock-rotate 60s normal infinite steps(60, end);
+	-webkit-animation: clock-rotate 60s normal infinite steps(60, end);
+}
+
+@keyframes clock-rotate { 
+	0% { transform: translate(0, 0) rotate(0deg) translate(0, 0); }
+	100% { transform: translate(0, 0) rotate(360deg) translate(0, 0); }
+}
 
 @-webkit-keyframes clock-rotate { 
-	0% { -webkit-transform: translate(0, 0) rotate(0deg) translate(0, 0); }
-	100% { -webkit-transform: translate(0, 0) rotate(360deg) translate(0, 0); }
+	0% { transform: translate(0, 0) rotate(0deg) translate(0, 0); }
+	100% { transform: translate(0, 0) rotate(360deg) translate(0, 0); }
 }
 
 .clock.analog .second .hand div {
@@ -3746,12 +3760,15 @@ body.no-edit .bookmarks .tools {
 }
 
 .stats progress {
-	width: auto;
+	border: 0;
+	width: 100%;
 	height: 6px;
 	margin: 6px 0;
 	display: block;
 	overflow: hidden;
 	border-radius: 2px;
+	background: #BBDEFB;
+	-moz-appearance: none;
 	-webkit-appearance: none;
 }
 
@@ -3760,8 +3777,13 @@ body.no-edit .bookmarks .tools {
 	transition: width .5s ease;
 }
 
+.stats progress::-moz-progress-bar {
+	background: #2196F3;
+	transition: width .5s ease;
+}
+
 .stats progress::-webkit-progress-bar {
-	background: #BBDEFB;
+	background: inherit;
 }
 
 
@@ -3785,6 +3807,7 @@ body.no-edit .bookmarks .tools {
 	right: 0;
 	bottom: 0;
 	width: 100%;
+	height: 100%;
 	border-radius: 0;
 	position: absolute;
 	border: 0!important;

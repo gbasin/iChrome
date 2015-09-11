@@ -165,7 +165,7 @@ define(["jquery", "underscore", "backbone", "core/analytics", "storage/storage",
 				}, this).init();
 			},
 			setRec: function() {
-				this.recognition = new webkitSpeechRecognition();
+				this.recognition = new (window.webkitSpeechRecognition)();
 
 				this.recognition.continuous = true;
 				this.recognition.interimResults = true;

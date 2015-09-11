@@ -1,7 +1,7 @@
 /**
  * The widget view.  This does the coupling of Backbone => non-Backbone code.
  */
-define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widgets/widgets", "widgets/settings", "widgets/utils"], function($, _, Backbone, Status, Track, Widgets, Settings, Utils) {
+define(["jquery", "lodash", "backbone", "browser/api", "core/status", "core/analytics", "widgets/widgets", "widgets/settings", "widgets/utils"], function($, _, Backbone, Browser, Status, Track, Widgets, Settings, Utils) {
 	var sizes = {
 			1: "tiny",
 			2: "small",
@@ -106,9 +106,17 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 		 */
 		constructor: function(options) {
 			if (options.preview) this.preview = true;
-			
-			var d = options.model.attributes,
+
+			var disabled = false,
+				d = options.model.attributes,
 				widget = this.widget = _.assign(_.clone(Widgets[d.id], true), d);
+
+
+			// If a widget is unavailable we render its element so it doesn't
+			// get removed on other browsers and prevent it from getting initialized
+			if (widget.environments && widget.environments.indexOf(Browser.environment) === -1) {
+				disabled = true;
+			}
 
 			widget.config = $.extend(true, _.clone(Widgets[d.id].config, true), d.config);
 
@@ -126,7 +134,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 
 			var el = document.createElement("section");
 
-			el.setAttribute("class", "widget " + this.widget.nicename + " " + this.widget.config.size);
+			el.setAttribute("class", "widget " + this.widget.nicename + " " + this.widget.config.size + (disabled ? " hide" : ""));
 
 			el.setAttribute("data-id", this.widget.internalID);
 			el.setAttribute("data-name", this.widget.nicename);
@@ -135,13 +143,16 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "widget
 			this.el = el;
 			this.$el = $(el);
 
-			this.initialize();
 
-			this.$el.on("click", ".settings", function(e) {
-				new Settings({
-					widget: widget
+			if (!disabled) {
+				this.initialize();
+
+				this.$el.on("click", ".settings", function(e) {
+					new Settings({
+						widget: widget
+					});
 				});
-			});
+			}
 		},
 
 

@@ -1,3 +1,4 @@
+/* globals module,process */
 module.exports = function(grunt) {
 	var _ = require("lodash"),
 		path = require("path");
@@ -9,13 +10,12 @@ module.exports = function(grunt) {
 		jshint: {
 			options: {
 				globals: {
-					chrome: true,
 					define: true,
 					require: true,
-					PERSISTENT: true,
 					performance: true,
-					webkitSpeechRecognition: true
+					devicePixelRatio: true
 				},
+				moz: true,
 				devel: true,
 				browser: true,
 				nonstandard: true,
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 				futurehostile: true,
 				reporter: require("jshint-stylish")
 			},
-			all: ["app/widgets/*.js", "app/inject/js/*.js", "app/js/**/*.js", "!app/js/lib/*.js"]
+			all: ["**/*.js", "!node_modules/**/*.js", "!app/js/lib/*.js"]
 		},
 
 		// Copy the extension to a new directory for building

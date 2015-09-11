@@ -2,8 +2,8 @@
  * The tabs container-model.
  */
 define(
-	["lodash", "jquery", "backbone", "storage/storage", "storage/defaults", "core/status", "core/analytics", "tabs/collection", "i18n/i18n", "core/render"],
-	function(_, $, Backbone, Storage, Defaults, Status, Track, Tabs, Translate, render) {
+	["lodash", "jquery", "backbone", "browser/api", "storage/storage", "storage/defaults", "core/status", "core/analytics", "tabs/collection", "i18n/i18n", "core/render"],
+	function(_, $, Backbone, Browser, Storage, Defaults, Status, Track, Tabs, Translate, render) {
 		var Model = Backbone.Model.extend({
 				initialize: function() {
 					this.tabs = new Tabs();
@@ -252,11 +252,11 @@ define(
 
 									try {
 										if (view.widget.permissions) {
-											chrome.permissions.contains({
+											Browser.permissions.contains({
 												permissions: view.widget.permissions
 											}, function(hasPermission) {
 												if (!hasPermission) {
-													chrome.permissions.request({
+													Browser.permissions.request({
 														permissions: view.widget.permissions
 													}, function(granted) {
 														// The page needs to be reloaded after a permission is granted

@@ -2,8 +2,8 @@
  * The Sync tab in the settings
  */
 define([
-	"lodash", "jquery", "backbone", "moment", "storage/storage", "i18n/i18n", "storage/syncapi", "modals/alert", "core/render"
-], function(_, $, Backbone, moment, Storage, Translate, SyncAPI, Alert, render) {
+	"lodash", "jquery", "backbone", "moment", "browser/api", "storage/storage", "i18n/i18n", "storage/syncapi", "modals/alert", "core/render"
+], function(_, $, Backbone, moment, Browser, Storage, Translate, SyncAPI, Alert, render) {
 	var Model = Backbone.Model.extend({
 			save: function(d, cb) {
 				if (d.user)		this.storage.user = d.user;
@@ -19,7 +19,7 @@ define([
 			update: function(storage) {
 				storage = storage || this.storage;
 
-				var backups = _.map(JSON.parse(localStorage.backups || "[]"), function(e) {
+				var backups = _.map(JSON.parse(Browser.storage.backups || "[]"), function(e) {
 					return {
 						date: e.date,
 						label: e.label || moment(e.date).calendar()
@@ -100,7 +100,7 @@ define([
 			},
 			backup: function(backups, silent) {
 				if (!Array.isArray(backups)) {
-					backups = JSON.parse(localStorage.backups || "[]");
+					backups = JSON.parse(Browser.storage.backups || "[]");
 
 					silent = false;
 				}
@@ -118,8 +118,8 @@ define([
 
 				backups = backups.slice(0, 4);
 
-				localStorage.backups = JSON.stringify(backups);
-				localStorage.lastBackup = new Date().getTime();
+				Browser.storage.backups = JSON.stringify(backups);
+				Browser.storage.lastBackup = new Date().getTime();
 
 				this.model.set("backups", _.map(backups, function(e) {
 					return {
@@ -138,7 +138,7 @@ define([
 					confirm: true
 				}, function() {
 					try {
-						var backups = JSON.parse(localStorage.backups || "[]"),
+						var backups = JSON.parse(Browser.storage.backups || "[]"),
 							backup;
 
 						if (typeof e == "string") {
@@ -177,7 +177,7 @@ define([
 				try {
 					var date = parseInt(e.currentTarget.parentNode.parentNode.getAttribute("data-date"));
 
-					var backup = _.find(JSON.parse(localStorage.backups || "[]"), "date", date);
+					var backup = _.find(JSON.parse(Browser.storage.backups || "[]"), "date", date);
 
 					var a = document.createElement("a"),
 						url = URL.createObjectURL(new Blob([JSON.stringify(backup)], {

@@ -1,7 +1,7 @@
 /*
  * The Bookmarks widget.
  */
-define(["jquery", "lodash", "modals/modals"], function($, _, Modal) {
+define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Browser, Modal) {
 	return {
 		id: 16,
 		size: 2,
@@ -75,8 +75,8 @@ define(["jquery", "lodash", "modals/modals"], function($, _, Modal) {
 			this.utils.saveData(this.syncData);
 		},
 		addItem: function(data) {
-			var html = '<a class="link drag" href="' + data.url + '"><img class="favicon" src="chrome://favicon/' +
-				data.url + '" /><span class="title">' + data.title + '</span><div class="tools"><span class="' + 
+			var html = '<a class="link drag" href="' + data.url + '"><img class="favicon" src="' + Browser.getFavicon(data.url) +
+				'" /><span class="title">' + data.title + '</span><div class="tools"><span class="' + 
 				'edit">	&#xE606;</span><span class="delete">&#xE678;</span><span class="move">&#xE693;</span></div>';
 
 			this.editItem($(html).appendTo(this.sortable));
@@ -98,7 +98,7 @@ define(["jquery", "lodash", "modals/modals"], function($, _, Modal) {
 
 				item.attr("href", modal.url.val().trim().parseUrl())
 					.find(".title").text(modal.title.val().trim()).end()
-					.find(".favicon").attr("src", "chrome://favicon/" + modal.url.val().trim().parseUrl());
+					.find(".favicon").attr("src", Browser.getFavicon(modal.url.val().trim().parseUrl()));
 
 				this.save();
 			}.bind(this);
@@ -114,6 +114,14 @@ define(["jquery", "lodash", "modals/modals"], function($, _, Modal) {
 			}
 
 			var data = _.clone(this.syncData);
+
+			data.bookmarks = data.bookmarks.map(function(e) {
+				e = _.clone(e);
+
+				e.favicon = Browser.getFavicon(e.url);
+
+				return e;
+			});
 
 			if (this.config.title && this.config.title !== "") {
 				data.title = this.config.title;
@@ -185,15 +193,15 @@ define(["jquery", "lodash", "modals/modals"], function($, _, Modal) {
 				if (href.indexOf("chrome") === 0 && !$(e.target).is(".tools span")) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
 					e.preventDefault();
 
-					chrome.tabs.getCurrent(function(d) {
+					Browser.tabs.getCurrent(function(d) {
 						if (e.which == 2 || (e.currentTarget.target || $("base").attr("target")) == "_blank") {
-							chrome.tabs.create({
+							Browser.tabs.create({
 								url: href,
 								index: d.index + 1
 							});
 						}
 						else {
-							chrome.tabs.update(d.id, {
+							Browser.tabs.update(d.id, {
 								url: href
 							});
 						}

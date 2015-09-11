@@ -1,7 +1,7 @@
 /*
  * Pocket
  */
-define(["jquery", "lodash", "moment", "backbone", "oauth"], function($, _, moment, Backbone, OAuth) {
+define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], function($, _, moment, Backbone, Browser, OAuth) {
 	var View = Backbone.View.extend({
 		events: {
 			"click .no-key button": function(e) {
@@ -54,7 +54,7 @@ define(["jquery", "lodash", "moment", "backbone", "oauth"], function($, _, momen
 								.replace("{{requestToken}}", encodeURIComponent(d.code))
 								.replace("{{redirectURL}}", encodeURIComponent(that.config.redirectURL));
 
-							chrome.windows.create({
+							Browser.windows.create({
 								url: url,
 								width: 560,
 								height: 600,
@@ -65,11 +65,11 @@ define(["jquery", "lodash", "moment", "backbone", "oauth"], function($, _, momen
 							}, function(win) {
 								that.openWindow = win.id;
 
-								chrome.webRequest.onBeforeRequest.addListener(
+								Browser.webRequest.onBeforeRequest.addListener(
 									function(info) {
 										this.exchangeCode(d.code, cb);
 
-										chrome.windows.remove(win.id);
+										Browser.windows.remove(win.id);
 
 										return {
 											cancel: true
@@ -95,12 +95,12 @@ define(["jquery", "lodash", "moment", "backbone", "oauth"], function($, _, momen
 				};
 
 				if (typeof this.openWindow === "number") {
-					chrome.windows.get(this.openWindow, function(win) {
-						if (chrome.runtime.lastError) {
+					Browser.windows.get(this.openWindow, function(win) {
+						if (Browser.runtime.lastError) {
 							createWindow();
 						}
 						else {
-							chrome.windows.update(win.id, { focused: true });
+							Browser.windows.update(win.id, { focused: true });
 						}
 					});
 				}
