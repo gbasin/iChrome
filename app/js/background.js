@@ -46,7 +46,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 			});
 
 			chrome.cookies.get({
-				name: "sync_data",
+				name: "sync_data_main",
 				url: "http://ichro.me"
 			}, function(args, d) {
 				try {
@@ -105,7 +105,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 			});
 
 			chrome.cookies.set({
-				name: "sync_data",
+				name: "sync_data_main",
 				domain: ".ichro.me",
 				url: "http://ichro.me",
 				value: local,
