@@ -97,7 +97,7 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 					if (e.children) {
 						res[e.id] = e.title;
 
-						var subFolders = _.reduce(e.children, getFolders, {
+						var subFolders = _.reduce(_.sortBy(e.children, "index"), getFolders, {
 							label: e.title
 						});
 
@@ -120,11 +120,11 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 			// Even though this is a Chrome API call it takes as long as a web request
 			// and therefore should be part of a refresh pattern for faster loading
 			Browser.bookmarks.getSubTree(this.config.from, function(d) {
-				var bookmarks = _.map(d[0].children, function getItems(e) {
+				var getItems = function(e) {
 					if (e.children) {
 						return {
 							name: e.title,
-							items: _.map(e.children, getItems)
+							items: _.map(_.sortBy(e.children, "index"), getItems)
 						};
 					}
 					else {
@@ -144,7 +144,11 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 							title: (e.title || "").trim() || (e.url || "").replace(/^[A-z]+\:\/+(?:www\.)?/, "")
 						};
 					}
-				});
+				};
+
+
+				// Bookmarks in the root folder are not sorted properly
+				var bookmarks = _.map(_.sortBy(d[0].children, "index"), getItems);
 
 				this.data = {
 					bookmarks: bookmarks
