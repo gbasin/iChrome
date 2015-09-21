@@ -2277,6 +2277,14 @@ body.no-edit .bookmarks .tools {
 	margin: -5px -15px;
 }
 
+.medley .chrome_bookmarks .list {
+	max-height: calc(100% + 10px);
+}
+
+.medley .chrome_bookmarks .header ~ .list {
+	max-height: calc(100% - 32px);
+}
+
 .chrome_bookmarks .link,
 .chrome_bookmarks .folder {
 	color: #444;
