@@ -42,6 +42,7 @@ define(["i18n/i18n"], function(Translate) {
 			image: "images/profile.png"
 		},
 		settings: {
+			def: 1,
 			links: [],
 			ok: false,
 			apps: true,
