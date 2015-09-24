@@ -125,7 +125,7 @@ define(
 				}
 				else {
 					if (theme.images) {
-						theme.image = "http://themes.ichro.me/images/" + theme.images[Math.floor(Math.random() * theme.images.length)] + ".jpg";
+						theme.image = "https://themes.ichro.me/images/" + theme.images[Math.floor(Math.random() * theme.images.length)] + ".jpg";
 					}
 					else if (theme.oType == "feed") {
 						var specs = parent.find(".specs:first"),
@@ -151,7 +151,7 @@ define(
 						}.bind(this), theme);
 					}
 					else {
-						theme.image = "http://themes.ichro.me/images/" + theme.id + ".jpg";
+						theme.image = "https://themes.ichro.me/images/" + theme.id + ".jpg";
 					}
 				}
 

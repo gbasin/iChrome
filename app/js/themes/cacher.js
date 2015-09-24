@@ -116,7 +116,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 					dir.getFile(id + ".jpg", { create: true }, function(fe) {
 						var xhr = new XMLHttpRequest();
 
-						xhr.open("GET", (id == theme.id && theme.oType == "feed" ? theme.image : "http://themes.ichro.me/images/" + id + ".jpg"));
+						xhr.open("GET", (id == theme.id && theme.oType == "feed" ? theme.image : "https://themes.ichro.me/images/" + id + ".jpg"));
 
 						xhr.responseType = "blob";
 

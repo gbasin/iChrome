@@ -3,7 +3,7 @@
  */
 define(["backbone", "browser/api", "modals/alert", "core/analytics", "i18n/i18n", "core/render"], function(Backbone, Browser, Alert, Track, Translate, render) {
 	var Model = Backbone.Model.extend({
-		url: "http://api.ichro.me/announcements?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language,
+		url: "https://api.ichro.me/announcements?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language,
 
 		defaults: {
 			count: 0,

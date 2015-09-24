@@ -116,7 +116,7 @@ define(["jquery", "lodash"], function($, _) {
 			var mThemes;
 
 			if (queue.length) {
-				$.get("http://themes.ichro.me/manifest.json", function(d) {
+				$.get("https://themes.ichro.me/manifest.json", function(d) {
 					if (d && d.themes) {
 						mThemes = _.indexBy(_.map(d.themes, function(e) {
 							e.oType = e.type;

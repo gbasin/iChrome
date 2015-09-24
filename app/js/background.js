@@ -335,7 +335,7 @@ var cache = function(theme, cb) {
 			dir.getFile(id + ".jpg", { create: true }, function(fe) {
 				var xhr = new XMLHttpRequest();
 
-				xhr.open("GET", (id == theme.id && (theme.type == "feed" || (theme.oType && theme.oType == "feed")) ? theme.image : "http://themes.ichro.me/images/" + id + ".jpg"));
+				xhr.open("GET", (id == theme.id && (theme.type == "feed" || (theme.oType && theme.oType == "feed")) ? theme.image : "https://themes.ichro.me/images/" + id + ".jpg"));
 
 				xhr.responseType = "blob";
 
