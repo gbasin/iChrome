@@ -74,7 +74,7 @@ define(["backbone", "browser/api", "modals/alert", "core/analytics", "i18n/i18n"
 				html: d.isUpdate ? render("whatsnew") : d.contents,
 				buttons: {
 					positive: d.action ? d.action.text : "Got it",
-					negative: d.action ? Translate("alert.default_button") : undefined
+					negative: d.dismiss || (d.action ? Translate("alert.default_button") : undefined)
 				}
 			}, function(res) {
 				this.trigger("dismissed");
