@@ -1,9 +1,9 @@
 {
 	"extDescription": {
-		"message": "The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!"
+		"message": "Development extension description, see js/i18n/locales/en/main.json for release strings"
 	},
 	"extName": {
-		"message": "iChrome - your homepage, for chrome"
+		"message": "iChrome - Development Version"
 	},
 
 	"lang_code": {

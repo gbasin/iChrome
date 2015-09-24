@@ -1,6 +1,6 @@
 define(["lodash", "backbone", "themes/utils", "i18n/i18n"], function(_, Backbone, Utils, Translate) {
 	var model = Backbone.Model.extend({
-		url: "http://themes.ichro.me/manifest.json",
+		url: "https://themes.ichro.me/manifest.json",
 
 		defaults: {
 			index: [],
@@ -83,7 +83,7 @@ define(["lodash", "backbone", "themes/utils", "i18n/i18n"], function(_, Backbone
 
 				theme.filterCategories = e.categories;
 				theme.offline = !!cached[e.id];
-				theme.thumb = theme.thumb || "http://themes.ichro.me/thumbnails/" + e.id + ".png";
+				theme.thumb = theme.thumb || "https://themes.ichro.me/thumbnails/" + e.id + ".png";
 
 				if (e.resolution) {
 					theme.resolution = e.resolution[0] + "x" + e.resolution[1];

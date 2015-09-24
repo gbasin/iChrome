@@ -2,8 +2,8 @@
  * This generates the toolbar and its submodules
  */
 define(
-	["lodash", "jquery", "backbone", "core/analytics", "storage/storage", "storage/syncapi", "storage/defaults", "search/search", "menu/menu", "core/announcements", "core/render"],
-	function(_, $, Backbone, Track, Storage, SyncAPI, Defaults, Search, Menu, Announcements, render) {
+	["lodash", "jquery", "backbone", "browser/api", "core/analytics", "storage/storage", "storage/syncapi", "storage/defaults", "search/search", "menu/menu", "core/announcements", "core/render"],
+	function(_, $, Backbone, Browser, Track, Storage, SyncAPI, Defaults, Search, Menu, Announcements, render) {
 		var Model = Backbone.Model.extend({
 				init: function() {
 					Storage.on("done updated", function(storage) {
@@ -45,15 +45,15 @@ define(
 						if (href.indexOf("chrome") === 0 || $("base").attr("target") == "_blank") { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
 							e.preventDefault();
 
-							chrome.tabs.getCurrent(function(d) {
+							Browser.tabs.getCurrent(function(d) {
 								if (e.which == 2) {
-									chrome.tabs.create({
+									Browser.tabs.create({
 										url: href,
 										index: d.index + 1
 									});
 								}
 								else {
-									chrome.tabs.update(d.id, {
+									Browser.tabs.update(d.id, {
 										url: href
 									});
 								}

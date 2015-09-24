@@ -1,7 +1,7 @@
 /**
  * Exports a global analytics API
  */
-define(["lodash", "core/status", "core/info"], function(_, Status, info) {
+define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 	var sendQueue = [],
 		sendTimeout = null,
 		pageTime, totalLoad, toolbarStyle;
@@ -29,7 +29,7 @@ define(["lodash", "core/status", "core/info"], function(_, Status, info) {
 			]);
 		}
 
-		navigator.sendBeacon("http://stats.ichro.me/ingest?extension=" + info.id + "&version=" + info.version + "&lang=" + info.language, new Blob([JSON.stringify(sendQueue)], {
+		navigator.sendBeacon("http://stats.ichro.me/ingest?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language, new Blob([JSON.stringify(sendQueue)], {
 			type: "application/json"
 		}));
 
@@ -120,7 +120,7 @@ define(["lodash", "core/status", "core/info"], function(_, Status, info) {
 			});
 		}
 		else {
-			ga("send", "pageview", path || ("/v" + info.version + "/newtab"), {
+			ga("send", "pageview", path || ("/v" + Browser.app.version + (Browser.app.newTab ? "/newtab" : "")), {
 				transport: "beacon"
 			});
 		}
@@ -246,7 +246,7 @@ define(["lodash", "core/status", "core/info"], function(_, Status, info) {
 	// Track pageview with GA and internal counter
 	track.pageview();
 	
-	localStorage.uses = parseInt(localStorage.uses || 0) + 1;
+	Browser.storage.uses = parseInt(Browser.storage.uses || 0) + 1;
 
 	return track;
 });

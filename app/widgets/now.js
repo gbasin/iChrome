@@ -1,7 +1,7 @@
 /*
  * The Google Now widget.
  */
-define(["jquery", "oauth"], function($, OAuth) {
+define(["jquery", "oauth", "browser/api"], function($, OAuth, Browser) {
 	return {
 		id: 24,
 		size: 1,
@@ -104,7 +104,7 @@ define(["jquery", "oauth"], function($, OAuth) {
 					["757729443264-8l5120ej7h7hr8g0u45m3a5trf61a3tb.apps.googleusercontent.com", "__API_KEY_now.18__"],
 					["318821747372-eia0n4v9itjdeo75r1vngkm6oeb89rrm.apps.googleusercontent.com", "__API_KEY_now.19__"]
 				],
-				ls = localStorage.oauth,
+				ls = Browser.storage.oauth,
 				key;
 
 			if (ls) {

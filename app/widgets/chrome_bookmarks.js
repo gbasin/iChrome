@@ -1,7 +1,7 @@
 /*
  * The Chrome Bookmarks widget.
  */
-define(["jquery", "lodash", "moment"], function($, _, moment) {
+define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Browser) {
 	return {
 		id: 33,
 		size: 2,
@@ -48,12 +48,14 @@ define(["jquery", "lodash", "moment"], function($, _, moment) {
 				{
 					title: "Google",
 					date: "8:06 AM",
-					url: "http://www.google.com/"
+					url: "http://www.google.com/",
+					favicon: "chrome://favicon/size/16@4x/origin/http://www.google.com/"
 				},
 				{
 					title: "Facebook",
 					date: "Yesterday",
-					url: "http://www.facebook.com/"
+					url: "http://www.facebook.com/",
+					favicon: "chrome://favicon/size/16@4x/origin/http://www.facebook.com/"
 				},
 				{
 					name: "Sample Folder",
@@ -61,19 +63,22 @@ define(["jquery", "lodash", "moment"], function($, _, moment) {
 						{
 							title: "Youtube",
 							date: "Yesterday",
-							url: "http://www.youtube.com/"
+							url: "http://www.youtube.com/",
+							favicon: "chrome://favicon/size/16@4x/origin/http://www.youtube.com/"
 						},
 						{
 							title: "Amazon",
 							date: "Monday",
-							url: "http://www.amazon.com/"
+							url: "http://www.amazon.com/",
+							favicon: "chrome://favicon/size/16@4x/origin/http://www.amazon.com/"
 						}
 					]
 				},
 				{
 					title: "Wikipedia",
 					date: "Mar 5th 2015",
-					url: "http://www.wikipedia.org/"
+					url: "http://www.wikipedia.org/",
+					favicon: "chrome://favicon/size/16@4x/origin/http://www.wikipedia.org/"
 				}
 			]
 		},
@@ -85,14 +90,14 @@ define(["jquery", "lodash", "moment"], function($, _, moment) {
 		 * @param   {Function}  cb  The callback
 		 */
 		getFolders: function(cb) {
-			if (!chrome.bookmarks) return;
+			if (!Browser.bookmarks) return;
 
-			chrome.bookmarks.getTree(function(d) {
+			Browser.bookmarks.getTree(function(d) {
 				var folders = _.reduce(d[0].children, function getFolders(res, e) {
 					if (e.children) {
 						res[e.id] = e.title;
 
-						var subFolders = _.reduce(e.children, getFolders, {
+						var subFolders = _.reduce(_.sortBy(e.children, "index"), getFolders, {
 							label: e.title
 						});
 
@@ -110,16 +115,16 @@ define(["jquery", "lodash", "moment"], function($, _, moment) {
 
 
 		refresh: function() {
-			if (!chrome.bookmarks) return;
+			if (!Browser.bookmarks) return;
 
 			// Even though this is a Chrome API call it takes as long as a web request
 			// and therefore should be part of a refresh pattern for faster loading
-			chrome.bookmarks.getSubTree(this.config.from, function(d) {
-				var bookmarks = _.map(d[0].children, function getItems(e) {
+			Browser.bookmarks.getSubTree(this.config.from, function(d) {
+				var getItems = function(e) {
 					if (e.children) {
 						return {
 							name: e.title,
-							items: _.map(e.children, getItems)
+							items: _.map(_.sortBy(e.children, "index"), getItems)
 						};
 					}
 					else {
@@ -135,10 +140,15 @@ define(["jquery", "lodash", "moment"], function($, _, moment) {
 						return {
 							url: e.url,
 							date: date,
+							favicon: Browser.getFavicon(e.url),
 							title: (e.title || "").trim() || (e.url || "").replace(/^[A-z]+\:\/+(?:www\.)?/, "")
 						};
 					}
-				});
+				};
+
+
+				// Bookmarks in the root folder are not sorted properly
+				var bookmarks = _.map(_.sortBy(d[0].children, "index"), getItems);
 
 				this.data = {
 					bookmarks: bookmarks
@@ -158,12 +168,12 @@ define(["jquery", "lodash", "moment"], function($, _, moment) {
 
 				var render = this.render.bind(this, false);
 
-				if (chrome.bookmarks) {
-					chrome.bookmarks.onCreated.addListener(render);
-					chrome.bookmarks.onRemoved.addListener(render);
-					chrome.bookmarks.onChanged.addListener(render);
-					chrome.bookmarks.onMoved.addListener(render);
-					chrome.bookmarks.onChildrenReordered.addListener(render);
+				if (Browser.bookmarks) {
+					Browser.bookmarks.onCreated.addListener(render);
+					Browser.bookmarks.onRemoved.addListener(render);
+					Browser.bookmarks.onChanged.addListener(render);
+					Browser.bookmarks.onMoved.addListener(render);
+					Browser.bookmarks.onChildrenReordered.addListener(render);
 				}
 			}
 
@@ -193,15 +203,15 @@ define(["jquery", "lodash", "moment"], function($, _, moment) {
 
 				var href = this.getAttribute("href");
 
-				chrome.tabs.getCurrent(function(d) {
+				Browser.tabs.getCurrent(function(d) {
 					if (e.which == 2 || e.currentTarget.target == "_blank") {
-						chrome.tabs.create({
+						Browser.tabs.create({
 							url: href,
 							index: d.index + 1
 						});
 					}
 					else {
-						chrome.tabs.update(d.id, {
+						Browser.tabs.update(d.id, {
 							url: href
 						});
 					}

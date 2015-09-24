@@ -1,7 +1,7 @@
 /*
  * System Stats
  */
-define(["lodash", "jquery", "moment"], function(_, $, moment) {
+define(["lodash", "jquery", "moment", "browser/api"], function(_, $, moment, Browser) {
 	return {
 		id: 39,
 		size: 1,
@@ -27,7 +27,7 @@ define(["lodash", "jquery", "moment"], function(_, $, moment) {
 		 * Updates the CPU usage indicators
 		 */
 		updateCPU: function() {
-			chrome.system.cpu.getInfo(function(d) {
+			Browser.system.cpu.getInfo(function(d) {
 				var val;
 
 				this.cpuUsage.innerText = Math.floor(
@@ -79,7 +79,7 @@ define(["lodash", "jquery", "moment"], function(_, $, moment) {
 				},
 
 				cpu: function(cb) {
-					chrome.system.cpu.getInfo(function(d) {
+					Browser.system.cpu.getInfo(function(d) {
 						var coreInfo = this.cpuCoreInfo;
 
 						var data = {
@@ -107,7 +107,7 @@ define(["lodash", "jquery", "moment"], function(_, $, moment) {
 				},
 
 				ram: function(cb) {
-					chrome.system.memory.getInfo(function(d) {
+					Browser.system.memory.getInfo(function(d) {
 						var formatNum = function(num) {
 							var exp = Math.floor(Math.log(num) / Math.log(1024));
 

@@ -1,7 +1,7 @@
 /**
  * The OAuth library
  */
-define(["jquery", "lodash"], function($, _) {
+define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 	/**
 	 * The client constructor
 	 *
@@ -98,14 +98,14 @@ define(["jquery", "lodash"], function($, _) {
 
 
 		/**
-		 * Loads any stored keys under this configuration's name from localStorage
-		 * and updates this.data with any available data
+		 * Loads any stored keys under this configuration's name from the
+		 * browser's storage and updates this.data with any available data
 		 *
 		 * @api     private
-		 * @return  {Object}  The data retreived from localStorage
+		 * @return  {Object}  The data retreived from the browser's storage
 		 */
 		loadStorage: function() {
-			var data = localStorage.oauth;
+			var data = Browser.storage.oauth;
 
 			if (!data) {
 				return {};
@@ -123,13 +123,13 @@ define(["jquery", "lodash"], function($, _) {
 
 
 		/**
-		 * Saves this.data under the configuration name in localStorage
+		 * Saves this.data under the configuration name in the browser's storage
 		 *
 		 * @api     private
 		 */
 		saveStorage: function() {
 			if (this.data && Object.keys(this.data).length) {
-				var data = localStorage.oauth;
+				var data = Browser.storage.oauth;
 
 				if (data) {
 					data = JSON.parse(data);
@@ -140,7 +140,7 @@ define(["jquery", "lodash"], function($, _) {
 
 				data[this.config.name] = this.data;
 
-				localStorage.oauth = JSON.stringify(data);
+				Browser.storage.oauth = JSON.stringify(data);
 			}
 		},
 
@@ -218,7 +218,7 @@ define(["jquery", "lodash"], function($, _) {
 			var createWindow = function() {
 				that.openWindow = true;
 
-				chrome.windows.create({
+				Browser.windows.create({
 					url: url,
 					width: 560,
 					height: 600,
@@ -229,7 +229,7 @@ define(["jquery", "lodash"], function($, _) {
 				}, function(win) {
 					that.openWindow = win.id;
 
-					chrome.webRequest.onBeforeRequest.addListener(
+					Browser.webRequest.onBeforeRequest.addListener(
 						function(info) {
 							// Adapted from http://stackoverflow.com/a/3855394/900747
 							var params = {},
@@ -251,7 +251,7 @@ define(["jquery", "lodash"], function($, _) {
 								this.exchangeCode(params[this.config.codeParam], cb);
 							}
 
-							chrome.windows.remove(win.id);
+							Browser.windows.remove(win.id);
 
 							return {
 								cancel: true
@@ -268,12 +268,12 @@ define(["jquery", "lodash"], function($, _) {
 			};
 
 			if (typeof this.openWindow === "number") {
-				chrome.windows.get(this.openWindow, function(win) {
-					if (chrome.runtime.lastError) {
+				Browser.windows.get(this.openWindow, function(win) {
+					if (Browser.runtime.lastError) {
 						createWindow();
 					}
 					else {
-						chrome.windows.update(win.id, { focused: true });
+						Browser.windows.update(win.id, { focused: true });
 					}
 				});
 			}

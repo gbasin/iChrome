@@ -1,7 +1,7 @@
 /*
  * The Top Sites widget.
  */
-define(["jquery"], function($) {
+define(["jquery", "browser/api"], function($, Browser) {
 	return {
 		id: 12,
 		size: 2,
@@ -43,11 +43,15 @@ define(["jquery"], function($) {
 		render: function() {
 			var that = this;
 
-			chrome.topSites.get(function(sites) {
+			Browser.topSites.get(function(sites) {
 				that.utils.render({
 					title: that.config.title || false,
 					newTab: that.config.target == "_blank",
-					sites: sites.slice(0, that.config.show)
+					sites: sites.slice(0, that.config.show).map(function(e) {
+						e.favicon = Browser.getFavicon(e.url);
+
+						return e;
+					})
 				});
 			});
 		}

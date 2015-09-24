@@ -3,10 +3,10 @@
  */
 define(
 	[
-		"lodash", "jquery", "backbone", "core/analytics", "storage/storage", "storage/defaults", "i18n/i18n", "search/search",
-		"search/speech", "settings/settings", "widgets/store", "core/uservoice", "core/render"
+		"lodash", "jquery", "backbone", "browser/api", "core/analytics", "storage/storage", "storage/defaults", "i18n/i18n",
+		"search/search", "search/speech", "settings/settings", "widgets/store", "core/uservoice", "core/render"
 	],
-	function(_, $, Backbone, Track, Storage, Defaults, Translate, Search, Speech, Settings, Store, UserVoice, render) {
+	function(_, $, Backbone, Browser, Track, Storage, Defaults, Translate, Search, Speech, Settings, Store, UserVoice, render) {
 		var Model = Backbone.Model.extend({
 				init: function() {
 					Storage.on("done updated", function(storage) {
@@ -42,15 +42,15 @@ define(
 						if (href.indexOf("chrome") === 0 || $("base").attr("target") == "_blank") { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
 							e.preventDefault();
 
-							chrome.tabs.getCurrent(function(d) {
+							Browser.tabs.getCurrent(function(d) {
 								if (e.which == 2) {
-									chrome.tabs.create({
+									Browser.tabs.create({
 										url: href,
 										index: d.index + 1
 									});
 								}
 								else {
-									chrome.tabs.update(d.id, {
+									Browser.tabs.update(d.id, {
 										url: href
 									});
 								}
@@ -163,15 +163,15 @@ define(
 							if (elm.hasClass("custom") && elm.attr("href").indexOf("chrome") === 0) {
 								e.preventDefault();
 
-								chrome.tabs.getCurrent(function(d) {
+								Browser.tabs.getCurrent(function(d) {
 									if (e.which == 2 || $("base").attr("target") == "_blank") {
-										chrome.tabs.create({
+										Browser.tabs.create({
 											url: elm.attr("href"),
 											index: d.index + 1
 										});
 									}
 									else {
-										chrome.tabs.update(d.id, {
+										Browser.tabs.update(d.id, {
 											url: elm.attr("href")
 										});
 									}

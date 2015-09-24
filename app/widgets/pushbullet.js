@@ -1,11 +1,11 @@
 /*
  * Pushbullet
  */
-define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbone) {
+define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _, moment, Backbone, Browser) {
 	var View = Backbone.View.extend({
 		events: {
 			"click .no-key button": function(e) {
-				chrome.tabs.create({
+				Browser.tabs.create({
 					url: "https://www.pushbullet.com/signin"
 				});
 			}
@@ -77,7 +77,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 
 		initialize: function() {
 			if (!this.config.apiKey) {
-				return chrome.cookies.get({
+				return Browser.cookies.get({
 					name: "api_key",
 					url: "https://www.pushbullet.com"
 				}, function(args, cookie) {

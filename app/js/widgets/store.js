@@ -2,8 +2,8 @@
  * The widget store
  */
 define(
-	["lodash", "jquery", "backbone", "storage/storage", "i18n/i18n", "widgets/widgets", "widgets/view", "widgets/model", "widgets/utils", "core/analytics", "modals/modals", "core/render"],
-	function(_, $, Backbone, Storage, Translate, Widgets, Widget, WidgetModel, Utils, Track, Modal, render) {
+	["lodash", "jquery", "backbone", "browser/api", "storage/storage", "i18n/i18n", "widgets/widgets", "widgets/view", "widgets/model", "widgets/utils", "core/analytics", "modals/modals", "core/render"],
+	function(_, $, Backbone, Browser, Storage, Translate, Widgets, Widget, WidgetModel, Utils, Track, Modal, render) {
 		var sizes = {
 			tiny: Translate("widgets.sizes.tiny"),
 			small: Translate("widgets.sizes.small"),
@@ -23,7 +23,11 @@ define(
 		var Model = Backbone.Model.extend({
 				initialize: function() {
 					var widgets = _(Widgets).filter(function(widget) {
-						return !widget.unlisted;
+						if (widget.unlisted || (widget.environments && widget.environments.indexOf(Browser.environment) === -1)) {
+							return false;
+						}
+
+						return true;
 					}).map(function(widget) {
 						return {
 							id: widget.id,

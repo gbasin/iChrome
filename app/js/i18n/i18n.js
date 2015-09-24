@@ -5,14 +5,12 @@
  * the JSON plugin. They're then pre-processed and inlined at build time
  * using a system similar to the templates.
  */
-define(["lodash", "moment", "core/info", "i18n/locales"], function(_, moment, info, locales) {
+define(["lodash", "moment", "browser/api", "i18n/locales"], function(_, moment, Browser, locales) {
 	/**
 	 * This gets the language code from the Chrome-selected file, it effectively uses
 	 * Chrome's language code parsing while getting strings from its own internal locale files.
-	 * 
-	 * It also handles manually added localStorage overrides (for testing)
 	 */
-	var language = info.language;
+	var language = Browser.language || "en";
 
 	document.body.lang = language;
 

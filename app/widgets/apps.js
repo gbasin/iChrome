@@ -1,13 +1,14 @@
 /*
  * The Apps widget.
  */
-define(["jquery", "lodash", "core/info"], function($, _, info) {
+define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 	return {
 		id: 11,
 		size: 2,
 		order: 25,
 		nicename: "apps",
 		sizes: ["variable"],
+		environments: ["chrome"],
 		permissions: ["management"],
 		settings: [
 			{
@@ -78,12 +79,11 @@ define(["jquery", "lodash", "core/info"], function($, _, info) {
 		 * @param   {Function}  cb
 		 */
 		getApps: function(cb) {
-			chrome.management.getAll(function(d) {
+			Browser.management.getAll(function(d) {
 				var list = d.filter(function(e) {
 						return e.type !== "extension" && e.type !== "theme";
 					}),
 					apps = [],
-					id = info.id,
 					all = this.config.show == "all";
 
 				list.unshift({
@@ -116,7 +116,7 @@ define(["jquery", "lodash", "core/info"], function($, _, info) {
 				}
 
 				list.forEach(function(e, i) {
-					if (e.id !== id && (all || e.enabled)) {
+					if (e.id !== Browser.app.id && (all || e.enabled)) {
 						apps.push({
 							name: e.shortName,
 							id: e.id,
@@ -181,7 +181,7 @@ define(["jquery", "lodash", "core/info"], function($, _, info) {
 					]
 				});
 			}
-			else if (!chrome.management.getAll) {
+			else if (!Browser.management.getAll) {
 				return;
 			}
 
@@ -205,10 +205,10 @@ define(["jquery", "lodash", "core/info"], function($, _, info) {
 
 					var id = this.getAttribute("data-id");
 
-					chrome.management.launchApp(id, function() {
+					Browser.management.launchApp(id, function() {
 						if (self) {
-							chrome.tabs.getCurrent(function(d) {
-								chrome.tabs.remove(d.id);
+							Browser.tabs.getCurrent(function(d) {
+								Browser.tabs.remove(d.id);
 							});
 						}
 					});

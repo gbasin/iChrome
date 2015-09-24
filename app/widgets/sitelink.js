@@ -1,7 +1,7 @@
 /*
  * Site Link
  */
-define(["jquery", "lodash"], function($, _) {
+define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 	return {
 		id: 38,
 		size: 1,
@@ -50,7 +50,7 @@ define(["jquery", "lodash"], function($, _) {
 			color: "#E62D27",
 			title: "YouTube",
 			link: "https://www.youtube.com/",
-			image: "/images/sitelink_demo.png"
+			image: "images/sitelink_demo.png"
 		},
 		render: function() {
 			var data = _.clone(this.config);
@@ -65,15 +65,15 @@ define(["jquery", "lodash"], function($, _) {
 				if (href.indexOf("chrome") === 0) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
 					e.preventDefault();
 
-					chrome.tabs.getCurrent(function(d) {
+					Browser.tabs.getCurrent(function(d) {
 						if (e.which == 2 || (e.currentTarget.target || $("base").attr("target")) == "_blank") {
-							chrome.tabs.create({
+							Browser.tabs.create({
 								url: href,
 								index: d.index + 1
 							});
 						}
 						else {
-							chrome.tabs.update(d.id, {
+							Browser.tabs.update(d.id, {
 								url: href
 							});
 						}

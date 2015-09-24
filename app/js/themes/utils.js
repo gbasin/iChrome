@@ -1,7 +1,7 @@
 /**
  * The themes controller.  This manages almost everything related to theme usage
  */
-define(["lodash", "backbone", "storage/storage", "i18n/i18n"], function(_, Backbone, Storage, Translate) {
+define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], function(_, Backbone, Browser, Storage, Translate) {
 	var Model = Backbone.Model.extend({
 		initialize: function() {
 			Storage.on("done updated", function(storage) {
@@ -40,7 +40,7 @@ define(["lodash", "backbone", "storage/storage", "i18n/i18n"], function(_, Backb
 		 */
 		get: function(theme) {
 			var defTheme = {
-				image: "/images/defaulttheme.jpg"
+				image: "images/defaulttheme.jpg"
 			};
 
 			if (typeof theme == "object") {
@@ -106,8 +106,8 @@ define(["lodash", "backbone", "storage/storage", "i18n/i18n"], function(_, Backb
 							/* jshint ignore:end */
 						}
 
-						var lat = localStorage.lat,
-							lon = localStorage.lon,
+						var lat = Browser.storage.lat,
+							lon = Browser.storage.lon,
 							times;
 
 						if (lat && lon) {
@@ -121,8 +121,8 @@ define(["lodash", "backbone", "storage/storage", "i18n/i18n"], function(_, Backb
 							// It can't be in the background page since it needs permissions from the user.
 							navigator.geolocation.getCurrentPosition(function(pos) {
 								if (pos && pos.coords) {
-									localStorage.lat = parseFloat(pos.coords.latitude.toFixed(2));
-									localStorage.lon = parseFloat(pos.coords.longitude.toFixed(2));
+									Browser.storage.lat = parseFloat(pos.coords.latitude.toFixed(2));
+									Browser.storage.lon = parseFloat(pos.coords.longitude.toFixed(2));
 								}
 							});
 						}

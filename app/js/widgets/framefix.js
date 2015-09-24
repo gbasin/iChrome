@@ -1,7 +1,7 @@
 /**
  * This creates an onHeadersReceived listener on an as-needed basis.
  */
-define(["jquery"], function($) {
+define(["jquery", "browser/api"], function($, Browser) {
 	var listening = false,
 		attaching = false,
 		callbacks = [];
@@ -17,8 +17,8 @@ define(["jquery"], function($) {
 
 		attaching = true;
 
-		chrome.tabs.getCurrent(function(tab) {
-			chrome.webRequest.onHeadersReceived.addListener(
+		Browser.tabs.getCurrent(function(tab) {
+			Browser.webRequest.onHeadersReceived.addListener(
 				function(info) {
 					var headers = info.responseHeaders || [];
 
@@ -27,6 +27,12 @@ define(["jquery"], function($) {
 
 						if (header == "x-frame-options" || header == "frame-options") {
 							headers.splice(i, 1);
+						}
+						else if (header == "content-security-policy") {
+							// Remove any frame-ancestors CSP directives, this is actually spec-compliant
+							headers[i].value = headers[i].value.split(";").filter(function(e) {
+								return e.trim().toLowerCase().indexOf("frame-ancestors") !== 0;
+							}).join(";");
 						}
 					}
 

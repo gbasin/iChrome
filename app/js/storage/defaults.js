@@ -39,9 +39,10 @@ define(["i18n/i18n"], function(Translate) {
 		widgets: [9, 14, 1, 11, 17, 4], // These are the widget IDs from the default tab layout
 		user: {
 			fname: Translate("defaults.me"),
-			image: "/images/profile.png"
+			image: "images/profile.png"
 		},
 		settings: {
+			def: 1,
 			links: [],
 			ok: false,
 			apps: true,

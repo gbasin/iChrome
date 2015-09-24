@@ -1,7 +1,7 @@
 /*
  * The Twitter widget.
  */
-define(["jquery", "moment"], function($, moment) {
+define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 	return {
 		id: 26,
 		size: 1,
@@ -180,16 +180,16 @@ define(["jquery", "moment"], function($, moment) {
 
 							a.click();
 
-							chrome.webRequest.onBeforeRequest.addListener(
+							Browser.webRequest.onBeforeRequest.addListener(
 								function extract(info) {
-									chrome.webRequest.onBeforeRequest.removeListener(extract);
+									Browser.webRequest.onBeforeRequest.removeListener(extract);
 
 									var verifier = info.url.match(/[&\?]oauth_verifier=([^&]+)/)[1];
 
 									if (verifier) {
 										getFinal(token, secret, verifier);
 
-										chrome.tabs.remove(info.tabId);
+										Browser.tabs.remove(info.tabId);
 									}
 								},
 								{

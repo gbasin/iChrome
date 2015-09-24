@@ -53,8 +53,7 @@ define(["jquery", "backbone", "core/analytics", "storage/storage", "i18n/i18n", 
 
 						Track.event("Tabs", "Set as default", tab);
 
-						Storage.trigger("updated");
-
+						// The tab:default event triggers a save
 						this.trigger("tab:default");
 					}
 				},

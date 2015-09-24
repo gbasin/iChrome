@@ -1,7 +1,7 @@
 /*
  * Quotes
  */
-define(["jquery", "lodash"], function($, _) {
+define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 	return {
 		id: 35,
 		size: 2,
@@ -492,7 +492,7 @@ define(["jquery", "lodash"], function($, _) {
 
 				var d = this.data;
 
-				chrome.tabs.create({
+				Browser.tabs.create({
 					url: "https://twitter.com/intent/tweet?" +
 						"text=" + encodeURIComponent(d.noquotes ? d.body : '"' + d.body + '"' + (d.source ? ' — ' + d.source : "")) +
 						"&via=iChromeHQ&related=iChromeHQ"

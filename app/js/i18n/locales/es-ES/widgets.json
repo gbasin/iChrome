@@ -544,13 +544,13 @@
     "settings":{
       "placeholder":"Search Field Placeholder",
       "search_url":"URL de búsqueda",
-      "param":"Query Parameter",
+      "param":"Parámetro de consulta",
       "param_placeholder":"The parameter where the query goes, i.e. \"q\""
     },
     "default_placeholder":"Buscar en Google"
   },
   "classroom":{
-    "name":"Classroom",
+    "name":"Salón de Clases",
     "desc":"Keep up to date with your Google Classroom assignments and classes",
     "settings":{
       "mode":"Widget Mode",
@@ -570,17 +570,17 @@
     "desc":"Displays your LinkedIn home stream"
   },
   "directions":{
-    "name":"Directions",
+    "name":"Direcciones",
     "desc":"Get directions to and from nearly anywhere right from your homepage",
     "driving":"Conducción",
     "transit":"Transporte público",
     "walking":"Andando",
-    "cycling":"Cycling",
-    "from":"Enter a starting point",
-    "to":"Enter a destination",
-    "loading":"Loading directions, please wait...",
-    "error":"Something went wrong while trying to load the directions you requested.",
-    "error2":"Please check the start and destination addresses you entered.",
+    "cycling":"Ciclismo",
+    "from":"Introduzca un punto de partida",
+    "to":"Introduzca un destino",
+    "loading":"Cargando direcciones, por favor espere...",
+    "error":"Algo salió mal mientras trataba de cargar las direcciones solicitadas.",
+    "error2":"Por favor verifique las direcciones de inicio y destino que ha ingresado.",
     "open_in_maps":"Abrir en Google Maps",
     "via":"mediante"
   },
@@ -588,7 +588,7 @@
     "name":"Pocket",
     "desc":"Ver una lista sus artículos, videos y páginas guardados en Pocket",
     "settings":{
-      "links_shown":"Number of links shown",
+      "links_shown":"Número de enlaces mostrados",
       "open":"Abrir enlaces",
       "open_pocket":"En Pocket",
       "open_original":"En su URL original"

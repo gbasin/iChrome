@@ -1,7 +1,7 @@
 /**
  * Initializes UserVoice and it's autoprompts
  */
-define(["storage/syncapi", "core/info"], function(SyncAPI, info) {
+define(["storage/syncapi", "browser/api"], function(SyncAPI, Browser) {
 	var initUV = function() {
 		var uv = document.createElement("script");
 
@@ -23,19 +23,10 @@ define(["storage/syncapi", "core/info"], function(SyncAPI, info) {
 
 		var d = SyncAPI.getInfo();
 
-		var extension = info.id;
-
-		if (extension === "oghkljobbhapacbahlneolfclkniiami") {
-			extension = "Main";
-		}
-		else if (extension === "iccjgbbjckehppnpajnmplcccjcgbdep") {
-			extension = "New Tab";
-		}
-
 		window.UserVoice.push(["identify", {
 			email: d.user.email,
 			name: (d.user.fname + " " + d.user.lname).trim() || undefined,
-			type: extension
+			type: Browser.app.newTab ? "New Tab" : "Main"
 		}]);
 
 

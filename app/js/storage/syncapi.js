@@ -1,7 +1,7 @@
 /**
  * Handles sync interfacing with ichro.me and ID management
  */
-define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track, info) {
+define(["jquery", "lodash", "browser/api", "core/analytics"], function($, _, Browser, Track) {
 	/**
 	 * The domain and port to sync data to/from
 	 */
@@ -14,7 +14,7 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 	 * token that simultaneously identifies and grants access to a sync profile,
 	 * and a client ID to identify individual clients.
 	 *
-	 * Tokens are stored in localStorage for immediate use, Chrome's sync storage
+	 * Tokens are stored in Browser.storage for immediate use, Chrome's sync storage
 	 * so clients under the same Chrome account are synced, and as a cookie at ichro.me
 	 * so they survive reinstalls or other local data erasures.
 	 */
@@ -23,8 +23,8 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 	};
 
 	try {
-		if (localStorage.syncData) {
-			var d = JSON.parse(localStorage.syncData);
+		if (Browser.storage.syncData) {
+			var d = JSON.parse(Browser.storage.syncData);
 
 			_.assign(clientData, d);
 		}
@@ -71,7 +71,7 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 		// one of the first two might create a new sync token, but not have
 		// the email address from the old profile.  This ensures that the
 		// third computer will load and resave that data.
-		chrome.storage.sync.get("syncData", function(d) {
+		Browser.syncStorage.get("syncData", function(d) {
 			if (d && d.syncData) {
 				_.assign(clientData, d.syncData);
 			}
@@ -79,7 +79,7 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 			next();
 		});
 
-		chrome.cookies.get({
+		Browser.cookies.get({
 			name: "sync_data",
 			url: "http://ichro.me"
 		}, function(d) {
@@ -112,13 +112,13 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 			delete clientData.status;
 		}
 
-		localStorage.syncData = JSON.stringify(clientData);
+		Browser.storage.syncData = JSON.stringify(clientData);
 
-		chrome.storage.sync.set({
+		Browser.syncStorage.set({
 			syncData: _.omit(clientData, "client")
 		});
 
-		chrome.cookies.set({
+		Browser.cookies.set({
 			name: "sync_data",
 			domain: ".ichro.me",
 			url: "http://ichro.me",
@@ -149,14 +149,14 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 				};
 			};
 
-			chrome.webRequest.onBeforeSendHeaders.addListener(addOrigin, {
+			Browser.webRequest.onBeforeSendHeaders.addListener(addOrigin, {
 				urls: ["https://accounts.google.com/ListAccounts?source=ChromiumBrowser&json=standard"]
 			}, ["blocking", "requestHeaders"]);
 
 
 			// Field keys obtained from ParseListAccountsData in google_apis/gaia/gaia_auth_util.cc in the Chromium source
 			$.post("https://accounts.google.com/ListAccounts?source=ChromiumBrowser&json=standard", function(d) {
-				chrome.webRequest.onBeforeRequest.removeListener(addOrigin);
+				Browser.webRequest.onBeforeRequest.removeListener(addOrigin);
 
 				if (!Array.isArray(d)) {
 					try {
@@ -221,8 +221,8 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 				$.ajax({
 					url: syncBase + "/" + clientData.token,
 					data: _.assign({
-						extension: info.id,
-						version: info.version,
+						extension: Browser.app.id,
+						version: Browser.app.version,
 						client: clientData.client
 					}, params),
 					timeout: 10000,
@@ -277,11 +277,11 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 									user: {}
 								};
 
-								delete localStorage.syncData;
+								delete Browser.storage.syncData;
 
-								chrome.storage.sync.remove("syncData");
+								Browser.syncStorage.remove("syncData");
 
-								chrome.cookies.remove({
+								Browser.cookies.remove({
 									name: "sync_data",
 									url: "http://ichro.me"
 								});
@@ -296,7 +296,7 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 									user: {}
 								};
 
-								delete localStorage.syncData;
+								delete Browser.storage.syncData;
 
 								loadData(function() {
 									if (clientData.token) {
@@ -357,8 +357,8 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 				var url = syncBase + (code ? "/authorize" : "") + (clientData.token ? "/" + clientData.token : "") + (code ? "?code=" + encodeURIComponent(code) : "");
 
 				var sData = JSON.stringify(_.assign({}, data, clientData, {
-					extension: info.id,
-					version: info.version
+					extension: Browser.app.id,
+					version: Browser.app.version
 				}));
 				
 				if (useBeacon) {
@@ -423,11 +423,11 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 									user: {}
 								};
 
-								delete localStorage.syncData;
+								delete Browser.storage.syncData;
 
-								chrome.storage.sync.remove("syncData");
+								Browser.syncStorage.remove("syncData");
 
-								chrome.cookies.remove({
+								Browser.cookies.remove({
 									name: "sync_data",
 									url: "http://ichro.me"
 								});
@@ -442,7 +442,7 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 									user: {}
 								};
 
-								delete localStorage.syncData;
+								delete Browser.storage.syncData;
 
 								loadData(function() {
 									if (clientData.token) {
@@ -526,7 +526,7 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 		authorize: function(storage, sendData, cb) {
 			Track.event("Sync", "Authorize", "Start");
 
-			chrome.windows.create({
+			Browser.windows.create({
 				width: 560,
 				height: 600,
 				type: "popup",
@@ -535,7 +535,7 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 				top: Math.round((screen.availHeight - 600) / 2),
 				left: Math.round((screen.availWidth - 560) / 2)
 			}, function(win) {
-				chrome.webRequest.onBeforeRequest.addListener(
+				Browser.webRequest.onBeforeRequest.addListener(
 					function(info) {
 						// Adapted from http://stackoverflow.com/a/3855394/900747
 						var params = {},
@@ -588,7 +588,7 @@ define(["jquery", "lodash", "core/analytics", "core/info"], function($, _, Track
 							cb(true);
 						}
 
-						chrome.windows.remove(win.id);
+						Browser.windows.remove(win.id);
 
 						return {
 							cancel: true

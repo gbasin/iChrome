@@ -131,7 +131,7 @@ define(
 						this.Specific = new Specific({ themes: this.Themes });
 						this.Sync = new Sync();
 
-						this.Specific.on("tab:removed", function() {
+						this.Specific.on("tab:removed tab:default", function() {
 							// An empty function needs to be passed so the dialog isn't automatically closed
 							this.save(function() {});
 
