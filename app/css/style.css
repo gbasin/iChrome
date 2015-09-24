@@ -3829,7 +3829,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .sp-color { box-shadow: none; }
 .sp-input-container { float: right; line-height: 16px; width: calc(100% - 25px); display: inline; margin-bottom: 4px; }
 .sp-initial-disabled .sp-input-container { width: 100%; }
-input.sp-input { outline: 0; font-size: 12px!important; border: 0!important; background: transparent; padding: 0!important; margin: 0; width: 100%!important; color: #222!important;}
+input.sp-input[type="text"] { outline: 0; font-size: 12px; border: 0!important; background: transparent; padding: 0 3px 1px!important; margin: 0; width: 100%; color: #222;border-radius: 0;border-bottom: 1px dotted #BBB!important;}
 .sp-input.sp-validation-error { border: 1px solid red; background: #fdd; }
 .sp-picker-container, .sp-palette-container { float:left; position: relative; padding: 8px; padding-bottom: 300px; margin-bottom: -290px; }
 .sp-picker-container { width: 200px; }
