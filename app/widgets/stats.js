@@ -163,6 +163,7 @@ define(["lodash", "jquery", "moment", "browser/api"], function(_, $, moment, Bro
 		},
 
 		render: function(demo) {
+			if (this.cpuInterval) clearInterval(this.cpuInterval);	
 			if (demo) this.refresh();
 
 			this.utils.render(this.data);
