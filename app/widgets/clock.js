@@ -91,7 +91,9 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 			"click .alarm .set": "startAlarm"
 		},
 
-		interval: null,
+		intervalUpdateClock: null,
+		intervalUpdate: null,
+		intervalUpdateStopwatch: null,
 
 		formatTime: function(rTime, ms) {
 			var time = Math.floor(rTime / 1000);
@@ -360,7 +362,18 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 		},
 
 		render: function() {
-			clearInterval(this.interval);
+			if (this.intervalUpdateClock) {
+				clearInterval(this.intervalUpdateClock);
+			}
+
+			if (this.intervalUpdate) {
+				clearInterval(this.intervalUpdate);
+			}
+
+			if (this.intervalUpdateStopwatch) {
+				clearInterval(this.intervalUpdateStopwatch);
+			}
+
 
 			this.isAnalog = (this.config.format === "analog");
 
@@ -435,19 +448,19 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 			this.clockElm = this.$(".clock")[0];
 
 			if (this.config.size === "tiny") {
-				this.interval = setInterval(this.updateClock.bind(this), 1000);
+				this.intervalUpdateClock = setInterval(this.updateClock.bind(this), 1000);
 			}
 			else {
 				this.setCache();
 
-				this.interval = setInterval(this.update.bind(this), 1000);
+				this.intervalUpdate = setInterval(this.update.bind(this), 1000);
 
 				// The stopwatch displays milliseconds so it needs to update every ~50 ms
 				// instead of every 1000 to display a smooth progression
 				//
 				// This uses 53 instead of 50 so the numbers displayed aren't continuously
 				// repeated
-				this.interval = setInterval(this.updateStopwatch.bind(this), 53);
+				this.intervalUpdateStopwatch = setInterval(this.updateStopwatch.bind(this), 53);
 			}
 		}
 	});
