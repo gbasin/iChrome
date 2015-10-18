@@ -1,7 +1,7 @@
 /**
  * Handles sync interfacing with ichro.me and ID management
  */
-define(["jquery", "lodash", "browser/api", "core/analytics"], function($, _, Browser, Track) {
+define(["jquery", "lodash", "browser/api", "core/analytics", "core/pro"], function($, _, Browser, Track, Pro) {
 	/**
 	 * The domain and port to sync data to/from
 	 */
@@ -255,6 +255,11 @@ define(["jquery", "lodash", "browser/api", "core/analytics"], function($, _, Bro
 							}
 
 
+							if (d.proToken) {
+								Pro.updateToken(d.proToken);
+							}
+
+
 							cb(null, d);
 						}
 						else if (xhr.status === 0 || status === "timeout") {
@@ -391,6 +396,11 @@ define(["jquery", "lodash", "browser/api", "core/analytics"], function($, _, Bro
 
 							if (d.user || d.client || d.id && d.id !== clientData.token) {
 								saveData();
+							}
+
+
+							if (d.proToken) {
+								Pro.updateToken(d.proToken);
 							}
 
 
