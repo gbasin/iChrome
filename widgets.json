@@ -1,39 +1,32 @@
 {
 	"lang_code": "en-widgets",
-
 	"analytics": {
 		"name": "Analytics",
 		"desc": "Displays various metrics from a Google Analytics profile.",
-
 		"sessions": "sessions",
 		"pageviews": "Pageviews",
 		"pagesvisit": "Pages/visit",
 		"bouncerate": "Bounce Rate",
 		"completions": "Completions",
 		"noprofile": "It doesn't look like you selected a profile yet!\n<br /><br />\nTry selecting one via the wrench icon in the top right.",
-
 		"settings": {
 			"profile": "Profile"
 		}
 	},
-
 	"apps": {
 		"name": "Apps",
 		"desc": "Displays your currently installed Google Chrome applications.",
-
 		"settings": {
 			"format": "Widget Format",
 			"format_options": {
 				"tiles": "Tiles",
 				"list": "List"
 			},
-
 			"display": "Show",
 			"display_options": {
 				"all": "All apps",
 				"enabled": "Only enabled apps"
 			},
-
 			"sort": "Sort",
 			"sort_options": {
 				"id": "ID",
@@ -41,99 +34,72 @@
 				"offline": "Offline Enabled",
 				"available": "Availability"
 			},
-
 			"open": "Open apps in"
 		},
-
 		"store_app": "Store"
 	},
-
 	"bookmarks": {
 		"name": "Bookmarks",
 		"desc": "Displays selected and customized bookmarks, and other links.",
-
 		"settings": {
 			"title_placeholder": "Enter a widget title",
-
 			"layout": "Layout",
 			"layout_options": {
 				"single": "Single column",
 				"double": "Double column"
 			},
-
 			"open": "Open bookmarks in"
 		},
-
 		"edit": {
 			"dialog_title": "Edit Bookmark",
-
 			"title": "Bookmark Title",
 			"title_placeholder": "Google",
-
 			"url": "Bookmark URL",
 			"url_placeholder": "http://www.google.com/",
-
 			"save": "Save"
 		},
-
 		"new_caption": "New",
 		"new_bookmark": "Bookmark",
 		"new_folder": "Folder",
-
 		"drop_link": "Drop link here"
 	},
-
 	"chrome_bookmarks": {
 		"name": "Bookmarks",
 		"desc": "Displays your Chrome bookmarks, optionally from a specific folder.",
-
 		"settings": {
 			"title_placeholder": "Enter a widget title",
-
 			"from": "Show bookmarks from",
-
 			"open": "Open bookmarks in"
 		}
 	},
-
 	"calc": {
 		"name": "Calculator",
 		"desc": "Displays a calculator with support for basic operators.",
-
 		"error": "Error!",
 		"infinity": "Infinity",
 		"mismatch": "Mismatched parentheses"
 	},
-
 	"calendar": {
 		"name": "Calendar",
 		"desc": "Displays upcoming events from one or more of your Google calendars.",
-
 		"settings": {
 			"calendar": "Calendar",
-
 			"show": "Show events from",
 			"show_options": {
 				"all": "All time",
 				"today": "Today only"
 			}
 		},
-
 		"title": "Agenda",
-
 		"calendar": "Calendar",
-
 		"noevents": "No events found in the near future, it looks like your schedule's clear!"
 	},
-
 	"clock": {
 		"name": "Clock",
 		"desc": "Offers alarm, time, timer, and stopwatch functionality.",
-
 		"settings": {
 			"timezone": "Time Zone",
 			"timezone_local": "Local",
-
 			"format": "Clock Format",
 			"format_options": {
 				"ampm": "AM/PM - Digital",
@@ -142,50 +108,39 @@
 				"ampmseconds": "AM/PM - Digital, No Seconds",
 				"24hourseconds": "24 Hour - Digital, No Seconds"
 			},
-
 			"sound": "Alert Sound"
 		},
-
 		"title": "Clock",
-
 		"alarm": "Alarm",
 		"clock": "Clock",
 		"timer": "Timer",
 		"stopwatch": "Stopwatch",
-
 		"set": "Set",
 		"unset": "Unset",
 		"dismiss": "Dismiss",
 		"enable_audio": "Enable audio"
 	},
-
 	"currency": {
 		"name": "Currency",
 		"desc": "Let's you convert between any two of 169 currencies.",
-
 		"to_label": "to",
 		"recently_used": "Recently Used"
 	},
-
 	"facebook": {
 		"name": "Facebook",
 		"desc": "Embeds Facebook in a widget"
 	},
-
 	"feedly": {
 		"name": "Feedly",
 		"desc": "Displays articles from your Feedly account in a configurable format.",
-
 		"settings": {
 			"source": "Show articles from",
 			"source_feeds": "Feeds",
-
 			"show": "Show",
 			"show_options": {
 				"all": "All articles",
 				"unread": "Only unread articles"
 			},
-
 			"layout": "Layout",
 			"layout_options": {
 				"titles": "Titles only",
@@ -193,62 +148,48 @@
 				"cards": "Cards",
 				"cards_columns": "Cards (two columns)"
 			},
-			
 			"mark": "Mark an article as read when I",
 			"mark_options": {
 				"scroll": "Scroll past it or click it",
 				"click": "Just click it"
 			},
-			
 			"sort": "Sort Order",
 			"sort_options": {
 				"newest": "Newest first",
 				"oldest": "Oldest first"
 			}
 		},
-
 		"all": "All",
 		"saved": "Saved for later",
 		"uncategorized": "Uncategorized",
-
 		"author": "by",
 		"go_to_feedly": "Go To Feedly"
 	},
-
 	"gmail": {
 		"name": "Gmail",
 		"desc": "Displays your Gmail inbox where you can manage your email."
 	},
-
 	"iframe": {
 		"name": "iFrame",
 		"desc": "Displays a webpage of your choice within an iframe.",
-
 		"settings": {
 			"url": "Frame URL",
 			"url_placeholder": "i.e. http://www.google.com/",
-
 			"height": "Frame Height",
-
 			"padding": "Padding"
 		}
 	},
-
 	"keep": {
 		"name": "Keep",
 		"desc": "Embeds Google Keep in a widget"
 	},
-
 	"news": {
 		"name": "News",
 		"desc": "Displays the current top news by category and edition.",
-
 		"settings": {
 			"articles": "Articles Shown",
-
 			"edition": "Edition",
 			"edition_help": "If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
-
 			"topic": "Topic",
 			"topic_options": {
 				"top": "Top Stories",
@@ -262,22 +203,17 @@
 				"science": "Science",
 				"spotlight": "Spotlight"
 			},
-
 			"feed": "Custom Feed",
 			"feed_help": "This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
 			"feed_placeholder": "Enter a custom RSS feed to fetch news from",
-
 			"footer": "Footer URL",
 			"footer_placeholder": "Enter the URL that the \"More\" link should point to"
 		},
-
 		"more": "More"
 	},
-
 	"notes": {
 		"name": "Notes",
 		"desc": "Inserts a simple, editable, note.",
-
 		"settings": {
 			"color": "Note Color",
 			"color_options": {
@@ -288,53 +224,41 @@
 				"green": "Green",
 				"white": "White"
 			},
-
 			"font": "Font Face",
 			"fontsize": "Font Size"
 		}
 	},
-
 	"now": {
 		"name": "Google Now",
 		"desc": "Displays cards from Google Now including flight status and package tracking.",
-
 		"authorize": "You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
 		"authorize_btn": "Authorize",
-
 		"caught_up": "All caught up, nothing here.",
-
 		"no_title": "No Title"
 	},
-
 	"plus": {
 		"name": "Google+",
 		"desc": "Embeds Google Plus in a widget"
 	},
-
 	"notifications": {
 		"name": "Google Notifications",
 		"desc": "Displays your Google Notifications from services such as Google+"
 	},
-
 	"recentlyclosed": {
 		"name": "Recently Closed",
 		"desc": "Shows your recently closed tabs",
-
 		"settings": {
 			"tabs": "Tabs Shown",
 			"open": "Open tabs in"
 		}
 	},
-
 	"reddit": {
 		"name": "Reddit",
 		"desc": "Displays the top items on Reddit for any given subreddit.",
-
 		"settings": {
 			"subreddit": "Subreddit",
 			"subreddit_help": "Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
 			"subreddit_placeholder": "Enter a subreddit to show links from. (i.e. technology)",
-
 			"sort": "Sort Order",
 			"sort_options": {
 				"hot": "Hot",
@@ -344,161 +268,121 @@
 				"rising": "Rising",
 				"controversial": "Controversial"
 			},
-
 			"links": "Links Shown",
-
 			"click": "When I click a link show me",
 			"click_options": {
 				"link": "The link",
 				"comments": "The comments"
 			}
 		},
-
 		"more": "More"
 	},
-
 	"rss": {
 		"name": "RSS",
 		"desc": "Displays items from a RSS or Atom feed with optional images.",
-
 		"settings": {
 			"link": "Title Link",
 			"link_placeholder": "Enter a link for the widget title",
-
 			"url": "Feed URL",
 			"url_placeholder": "The URL of the RSS feed to be displayed",
-
 			"articles": "Articles Shown",
-
 			"view": "View",
 			"view_options": {
 				"images": "Image friendly",
 				"default": "Default"
 			},
-
 			"images": "Images",
 			"descriptions": "Descriptions"
 		},
-
 		"feed_error": "An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and/or modify the widget settings."
 	},
-
 	"sports": {
 		"name": "Sports",
 		"desc": "Displays scores and game information for selected leagues and/or teams.",
-
 		"settings": {
 			"league": "League",
 			"games": "Games Shown",
 			"team": "Team",
 			"teams": "Team",
-
 			"unavailable": "When team games are unavailable",
 			"unavailable_options": {
 				"other": "Show other games",
 				"none": "Show \"No Games\""
 			}
 		},
-
 		"error": "Something seems to have gone wrong",
 		"unknown_error": "Unknown Error",
-
 		"watch_on": "Watch on: %s",
 		"no_games": "No Games Scheduled"
 	},
-
 	"stocks": {
 		"name": "Stocks",
 		"desc": "Displays current information for any given stock symbol.",
-
 		"settings": {
 			"symbols": "Stock Symbol(s), comma separated",
 			"symbols_placeholder": "e.g. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
 			"symbols_help": "These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br /><br />\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https://www.google.com/finance\" target=\"_blank\">Google Finance</a>. For example, the Dow Jones index is <b>.DJI</b> and NYSE is <b>INDEXNYSEGIS:NYA</b>."
 		},
-
 		"as_of": "as of",
 		"exchange_time": "Exchange Time",
-
 		"open": "open",
 		"high": "high",
 		"low": "low",
 		"volume": "volume"
 	},
-
 	"todo": {
 		"name": "To-do",
 		"desc": "Displays an interactive to-do list with important and completed items.",
-
 		"title": "To-do list",
-
 		"settings": {
 			"color": "Font Color",
 			"color_options": {
 				"light": "Light",
 				"dark": "Dark"
 			},
-
 			"tags": "Tags",
 			"tags_placeholder": "Enter a tag name and press Enter"
 		},
-
 		"add": "Add Item",
-
 		"none": "None",
 		"important": "Important"
 	},
-
 	"tasks": {
 		"name": "Tasks",
 		"desc": "Displays an editable list of tasks from one of your Google Tasks lists.",
-
 		"title": "Tasks",
-
 		"settings": {
 			"list": "List"
 		},
-
 		"task_title": "Title",
 		"due_date": "Due date",
 		"notes": "Notes",
-
 		"add": "Add Item",
-
 		"delete_task": "Delete Task",
 		"move_up": "Move Up",
 		"move_down": "Move Down",
 		"done": "Done",
-
 		"due_today": "Due today",
 		"overdue": "Overdue",
-
 		"authorize": "You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
 	},
-
 	"topsites": {
 		"name": "Top Sites",
 		"desc": "Displays your most visited/top sites.",
-
 		"settings": {
 			"show": "Number of sites shown",
 			"open": "Open sites in"
 		}
 	},
-
 	"traffic": {
 		"name": "Traffic",
 		"desc": "Displays the current time in current traffic to home or work.",
-
 		"settings": {
 			"leave": "I leave home at",
-
 			"home": "Home Address",
 			"home_placeholder": "The destination that should be used after work",
-
 			"work": "Work Address",
 			"work_placeholder": "The destination that should be used before work",
-
 			"method": "Transit Method",
 			"method_options": {
 				"driving": "Driving",
@@ -506,106 +390,79 @@
 				"transit": "Public Transit"
 			}
 		},
-
 		"to_home": "to home",
 		"to_work": "to work"
 	},
-
 	"translate": {
 		"name": "Translate",
 		"desc": "Contains a small inline Google Translate textbox.",
-
 		"placeholder": "Enter the text you'd like to translate here, then hit \"Translate\" below.",
-
 		"button": "Translate",
 		"untranslate": "Untranslate",
 		"auto": "Auto (%s)",
-
 		"unknown": "Unknown",
 		"error": "Something went wrong while trying to translate that..."
 	},
-
 	"twitter": {
 		"name": "Twitter",
 		"desc": "Displays tweets from your home stream or a specified list.",
-
 		"settings": {
 			"source": "Show Tweets from",
 			"show": "Tweets Shown"
 		},
-
 		"authorize": "You'll need to authorize iChrome first",
-
 		"authorize_msg": "You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
 		"authorize_btn": "Authorize",
-
 		"no_tweets": "There don't seem to be any tweets here...",
-
 		"home": "Home",
 		"mentions": "Mentions",
 		"retweets": "Retweets of me",
 		"lists": "Lists",
-
 		"more": "More",
 		"reply": "Reply",
 		"retweet": "Retweet",
 		"favorite": "Favorite"
 	},
-
 	"unread": {
 		"name": "Unread",
 		"desc": "Displays the current number of unread emails in your Gmail inbox.",
-
 		"settings": {
 			"open": "When clicked open"
 		},
-
 		"unread_none": "unread emails",
 		"unread_one": "unread email",
 		"unread_many": "unread emails"
 	},
-
 	"voice": {
 		"name": "Voice",
 		"desc": "Displays the current number of missed calls and texts in your Google Voice account.",
-
 		"call": "Call from",
 		"text": "Text message from",
-
 		"missed": "missed in Voice",
-
 		"texts": "unread text messages",
 		"calls": "missed calls"
 	},
-
 	"weather": {
 		"name": "Weather",
 		"desc": "Displays the current weather and a forecast for the next 4 days.",
-
 		"settings": {
 			"location": "Location(s)",
 			"location_placeholder": "Enter a location and press Enter",
-
 			"temperature": "Temperature Units",
 			"wind": "Wind Speed Units"
 		},
-
 		"unknown": "Unknown",
-
 		"wind": "Wind Speed",
 		"chill": "Wind Chill",
 		"humidity": "Humidity"
 	},
-
 	"wolfram": {
 		"name": "Wolfram|Alpha",
 		"desc": "Inserts a small Wolfram|Alpha search box."
 	},
-
 	"youtube": {
 		"name": "YouTube",
 		"desc": "Displays either popular videos or videos from a specified user.",
-
 		"settings": {
 			"format": "Format",
 			"format_options": {
@@ -615,165 +472,130 @@
 				"four": "Four small",
 				"six": "Six small"
 			},
-
 			"from": "Show Videos From",
 			"from_help": "This must be an <b>exact</b> username as shown in the URL of the page when you're viewing their profile.\n<br /><br />\nThis value never includes spaces.",
 			"from_placeholder": "Leave blank to show Top Videos",
-
 			"open": "Open search results in"
 		},
-
 		"search": "Search YouTube",
 		"num_views": "views"
 	},
-
 	"quotes": {
 		"name": "Quotes",
 		"desc": "Displays a quote picked either every time you load the page or once daily.",
-
 		"settings": {
 			"source": "Source",
-
 			"method": "Load new quotes",
 			"method_options": {
 				"daily": "Once daily",
 				"random": "Every time I load the page"
 			}
 		},
-
 		"unknown_author": "Unknown"
 	},
-
 	"html": {
 		"name": "HTML",
 		"desc": "Displays completely custom HTML in an iframe.",
-
 		"settings": {
 			"html": "HTML",
-
 			"js": "JavaScript",
-
 			"height": "Widget Height"
 		}
 	},
-
 	"sitelink": {
 		"name": "Site Link",
 		"desc": "Displays a link, optionally with a title and thumbnail",
-
 		"settings": {
 			"link": "Link URL",
 			"link_placeholder": "http://www.google.com/",
-
 			"image": "Image URL",
 			"image_placeholder": "http://www.example.com/image.png",
-
 			"color": "Image Background Color",
-
 			"style": "Image Style",
 			"style_fill": "Fill",
 			"style_center": "Center"
 		}
 	},
-
 	"stats": {
 		"name": "System Statistics",
 		"desc": "Keep an eye on your system with realtime statistics",
-
 		"memory": "Memory",
 		"battery": "Battery",
-
 		"usage": "usage",
 		"in_use": "in use",
 		"remaining": "remaining",
-
 		"charged": "Fully Charged",
 		"idle": "Idle",
 		"charging": "Charging",
 		"discharging": "Discharging"
 	},
-
 	"search": {
 		"name": "Search",
 		"desc": "Embed a search box in your page for easy access",
-
 		"settings": {
 			"placeholder": "Search Field Placeholder",
-
 			"search_url": "Search URL",
-
 			"param": "Query Parameter",
 			"param_placeholder": "The parameter where the query goes, i.e. \"q\""
 		},
-
 		"default_placeholder": "Search Google"
 	},
-
 	"classroom": {
 		"name": "Classroom",
 		"desc": "Keep up to date with your Google Classroom assignments and classes",
-
 		"settings": {
 			"mode": "Widget Mode",
 			"mode_teacher": "Teacher",
 			"mode_student": "Student"
 		}
 	},
-
 	"pushbullet": {
 		"name": "Pushbullet",
 		"desc": "Keep track of notifications from your phone and other devices",
-
 		"no_pushes": "No pushes found",
-
 		"sign_in": "Sign in",
 		"no_key": "It doesn't look like you're signed in to Pushbullet.  Sign in now to connect this widget."
 	},
-
 	"linkedin": {
 		"name": "LinkedIn",
 		"desc": "Displays your LinkedIn home stream"
 	},
-
 	"directions": {
 		"name": "Directions",
 		"desc": "Get directions to and from nearly anywhere right from your homepage",
-
 		"driving": "Driving",
 		"transit": "Public Transit",
 		"walking": "Walking",
 		"cycling": "Cycling",
-
 		"from": "Enter a starting point",
 		"to": "Enter a destination",
-
 		"loading": "Loading directions, please wait...",
-
 		"error": "Something went wrong while trying to load the directions you requested.",
 		"error2": "Please check the start and destination addresses you entered.",
-
 		"open_in_maps": "Open in Google Maps",
-
 		"via": "via"
 	},
-
 	"pocket": {
 		"name": "Pocket",
 		"desc": "Display a list of your saved articles, videos, and web pages from Pocket",
-
 		"settings": {
 			"links_shown": "Number of links shown",
-
 			"open": "Open links",
 			"open_pocket": "In Pocket",
 			"open_original": "At their original URL"
 		},
-
 		"by": "By",
-
 		"no_links": "No links found",
-
 		"grant_access": "Grant access",
 		"no_key": "You'll need to give iChrome access to your Pocket account before it can load your links."
+	},
+	"drive": {
+		"name": "Drive",
+		"desc": "Displays recently changed files from your Google Drive.",
+		"settings": {
+			"files_shown": "Number of Files Shown"
+		},
+		"modified_by": "by",
+		"authMessage": "You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
 	}
 }

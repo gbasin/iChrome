@@ -3,7 +3,7 @@
 <div class="content">
 	{{#widgets}}
 		<div data-id="{{id}}" class="widget">
-			<img src="icons/{{nicename}}.png" />
+			<img src="{{icon}}" />
 
 			<h2 class="title">{{name}}</h2>
 

@@ -1,7 +1,6 @@
 /* globals module,process */
 module.exports = function(grunt) {
-	var _ = require("lodash"),
-		path = require("path");
+	var path = require("path");
 
 	grunt.initConfig({
 		keys: grunt.file.readJSON("keys.json"),
@@ -10,6 +9,7 @@ module.exports = function(grunt) {
 		jshint: {
 			options: {
 				globals: {
+					module: true, // module.exports is used by the imported Grunt tasks
 					define: true,
 					require: true,
 					performance: true,
@@ -151,40 +151,15 @@ module.exports = function(grunt) {
 				}
 			},
 			apikeys: {
-				files: {
-					"build/widgets/": "build/widgets/*.js"
-				},
+				src: "build/js/app.js",
+				dest: "build/js/app.js",
 				options: {
-					replacements: [
-						{
-							pattern: /__API_KEY_([A-z0-9\-\.]+)__/ig,
-							replacement: function(match, p1) {
-								return grunt.config.get("keys." + p1);
-							}
+					replacements: [{
+						pattern: /__API_KEY_([A-z0-9\-\.]+)__/ig,
+						replacement: function(match, p1) {
+							return grunt.config.get("keys." + p1);
 						}
-					]
-				}
-			}
-		},
-
-		// Compile JS
-		requirejs: {
-			build: {
-				options: {
-					name: "app",
-					optimize: "none",
-					baseUrl: "build/js/",
-					out: "build/js/app.js",
-					mainConfigFile: "build/js/app.js"
-				}
-			},
-			webstore: {
-				options: {
-					name: "app",
-					optimize: "uglify2",
-					baseUrl: "build/js/",
-					out: "build/js/app.js",
-					mainConfigFile: "build/js/app.js"
+					}]
 				}
 			}
 		},
@@ -219,152 +194,34 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-string-replace");
 	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-contrib-compress");
-	grunt.loadNpmTasks("grunt-contrib-requirejs");
 
-
-	/**
-	 * Concatenates the locale json files into one requirejs object module.
-	 *
-	 * This task also copies over the webstore required locale keys to the Chrome locale files
-	 *
-	 * @api    public
-	 */
-	grunt.registerMultiTask("i18n", "Compile iChrome i18n files", function() {
-		this.files.forEach(function(file) {
-			var locales = file.src.filter(function(filepath) {
-				if (!grunt.file.exists(filepath)) {
-					grunt.log.warn('Source file "' + filepath + '" not found.');
-
-					return false;
-				}
-				else {
-					return true;
-				}
-			}).map(function(filepath) {
-				return grunt.file.readJSON(filepath);
-			});
-
-
-			locales = _.zipObject(_.pluck(locales, "lang_code"), locales);
-
-			_.mapValues(locales, function(e, i) {
-				var lang = e.lang_code.replace("-widgets", "");
-
-				if (e.lang_code.indexOf("-widgets") !== -1 && locales[lang]) {
-					delete locales[e.lang_code];
-					delete e.lang_code;
-
-					_.assign(locales[lang].widgets, e);
-				}
-			});
-
-
-			var outDir = this.options().outDir;
-
-			_.each(locales, function(e, i) {
-				var data = {
-					lang_code: {
-						message: i
-					},
-					extDescription: {
-						message: e.extDescription
-					},
-					extName: {
-						message: e.extName
-					},
-					themes_upload_image: {
-						message: e.themes.upload_image
-					}
-				};
-
-				grunt.file.write(outDir + "/_locales/" + i.replace("-", "_") + "/messages.json", JSON.stringify(data));
-			});
-
-			grunt.file.write(file.dest, "define(" + JSON.stringify(locales) + ");");
-
-			grunt.log.writeln('File "' + file.dest + '" created.');
-		}.bind(this));
-	});
-
-
-	/**
-	 * Compiles the webstore description in each language from the locale files
-	 *
-	 * @api    public
-	 */
-	grunt.registerMultiTask("descriptions", "Compile iChrome description files", function() {
-		this.files.forEach(function(file) {
-			var locales = file.src.filter(function(filepath) {
-				if (!grunt.file.exists(filepath)) {
-					grunt.log.warn('Source file "' + filepath + '" not found.');
-
-					return false;
-				}
-				else {
-					return true;
-				}
-			}).map(function(filepath) {
-				return grunt.file.readJSON(filepath);
-			});
-
-			_.each(locales, function(locale, i) {
-				var name = locale.lang_code,
-					desc = "";
-
-				_.each(locale, function(e, i) {
-					if (i !== "lang_code" && i.indexOf("newtab") == -1 && typeof e == "string") {
-						desc += e + "\n\n";
-					}
-					else if (Array.isArray(e)) {
-						desc += "✔ " + e.join("\n✔ ") + "\n\n";
-					}
-				});
-
-				grunt.file.write(file.dest + "/" + name + ".txt", desc.trim());
-			});
-
-			grunt.log.writeln('Descriptions created under "' + file.dest + '".');
-		}.bind(this));
-	});
-
-
-	/**
-	 * Removes the Chrome extension key so it can be uploaded to the webstore
-	 *
-	 * @api    public
-	 */
-	grunt.registerTask("removekey", function() {
-		var manifest = grunt.file.readJSON("build/manifest.json");
-
-		delete manifest.key;
-
-		grunt.file.write("build/manifest.json", JSON.stringify(manifest, true, "\t"));
-	});
-
+	grunt.loadTasks("tasks");
 
 	grunt.registerTask("default", [
 		"jshint:all",
 		"copy:build",
+		"compileWidgets",
 		"i18n:compile",
 		"concat",
 		"hogan:compilebinder",
 		"hogan:compile",
-		"string-replace",
 		"requirejs:build",
+		"string-replace",
 		"clean:all"
 	]);
 
 	grunt.registerTask("webstore", [
 		"jshint:all",
 		"copy:build",
+		"compileWidgets",
 		"descriptions",
 		"i18n:compile",
 		"concat",
 		"hogan:compilebinder",
 		"hogan:compile",
-		"string-replace",
 		"removekey",
 		"requirejs:webstore",
+		"string-replace",
 		"clean:all",
 		"compress",
 		"clean:webstore"
@@ -373,14 +230,15 @@ module.exports = function(grunt) {
 	grunt.registerTask("travis", [
 		"jshint:all",
 		"copy:build",
+		"compileWidgets",
 		"descriptions",
 		"i18n:compile",
 		"concat",
 		"hogan:compilebinder",
 		"hogan:compile",
-		"string-replace:analytics",
 		"removekey",
 		"requirejs:build",
+		"string-replace:analytics",
 		"clean:all",
 		"compress",
 		"clean:travis"
@@ -405,12 +263,13 @@ module.exports = function(grunt) {
 	grunt.registerTask("jsonly", [
 		"jshint:all",
 		"copy:build",
+		"compileWidgets",
 		"i18n:compile",
 		"concat",
 		"hogan:compilebinder",
 		"hogan:compile",
-		"string-replace",
 		"requirejs:webstore",
+		"string-replace",
 		"copy:jsonly",
 		"clean:all",
 		"clean:webstore",

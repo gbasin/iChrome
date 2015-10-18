@@ -268,6 +268,25 @@
 
 		"delete_confirm": "Are you really sure you want to delete this widget?\r\nThis action is irreversible; all data from this widget will be permanently lost.",
 
+		"permissions_request": {
+			"title": "Access required",
+			"button": "Grant Access",
+			"desc": "This widget needs extra permissions before it can be used. Grant them using the button below."
+		},
+
+		"error": {
+			"explanation": "Something went wrong while we were trying to display this widget.",
+			"advice": "Try reinstalling the widget or reloading the page. Contact us if you see this message often.",
+
+			"support": "Support",
+			"refresh": "Refresh"
+		},
+
+		"auth": {
+			"message": "You'll need to give this widget access to your account before you can use it.",
+			"button": "Grant Access"
+		},
+
 		"shared": {
 			"settings": {
 				"title": "Widget Title",

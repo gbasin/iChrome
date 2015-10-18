@@ -1,37 +1,37 @@
 {{#input-text}}
-	<label for="widget-{{nicename}}">
+	<label for="widget-{{name}}">
 		{{label}}
 		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
-	<input type="text" class="form-control" id="widget-{{nicename}}" name="{{nicename}}" placeholder="{{placeholder}}" value="{{value}}" />
+	<input type="text" class="form-control" id="widget-{{name}}" name="{{name}}" placeholder="{{placeholder}}" value="{{value}}" />
 {{/input-text}}
 
 {{#input-textarea}}
-	<label for="widget-{{nicename}}">
+	<label for="widget-{{name}}">
 		{{label}}
 		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
-	<textarea class="form-control" id="widget-{{nicename}}" name="{{nicename}}" placeholder="{{placeholder}}">{{value}}</textarea>
+	<textarea class="form-control" id="widget-{{name}}" name="{{name}}" placeholder="{{placeholder}}">{{value}}</textarea>
 {{/input-textarea}}
 
 {{#input-color}}
-	<label for="widget-{{nicename}}">
+	<label for="widget-{{name}}">
 		{{label}}
 		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 	
-	<input type="text" class="form-control color" id="widget-{{nicename}}" name="{{nicename}}" value="{{value}}" />
+	<input type="text" class="form-control color" id="widget-{{name}}" name="{{name}}" value="{{value}}" />
 {{/input-color}}
 
 {{#input-select}}
-	<label for="widget-{{nicename}}">
+	<label for="widget-{{name}}">
 		{{label}}
 		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
-	<select class="form-control" id="widget-{{nicename}}" name="{{nicename}}" {{multiple}}>
+	<select class="form-control" id="widget-{{name}}" name="{{name}}" {{multiple}}>
 		{{#options}}
 			{{#group}}
 				<optgroup label="{{{nesting}}}{{group}}"></optgroup>
@@ -44,20 +44,20 @@
 {{/input-select}}
 
 {{#input-list}}
-	<label for="widget-{{nicename}}">
+	<label for="widget-{{name}}">
 		{{label}}
 		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 	
 	<div>
-		<input type="text" placeholder="{{placeholder}}" id="widget-{{nicename}}" />
+		<input type="text" placeholder="{{placeholder}}" id="widget-{{name}}" />
 
 		<div class="items">
 			{{#items}}
 				<div class="item">
-					{{#color}}<input type="text" class="color" name="{{nicename}}[][color]" value="{{color}}" />{{/color}}
+					{{#color}}<input type="text" class="color" name="{{name}}[][color]" value="{{color}}" />{{/color}}
 
-					<input type="text" name="{{nicename}}[]{{#color}}[name]{{/color}}" value="{{value}}" />
+					<input type="text" name="{{name}}[]{{#color}}[name]{{/color}}" value="{{value}}" />
 
 					<div class="tools">
 						<span class="up">&#xE6CF;</span>
@@ -72,9 +72,9 @@
 
 {{#input-list-item}}
 	<div class="item">
-		{{#color}}<input type="text" class="color" name="{{nicename}}[][color]" value="{{color}}" />{{/color}}
+		{{#color}}<input type="text" class="color" name="{{name}}[][color]" value="{{color}}" />{{/color}}
 
-		<input type="text" name="{{nicename}}[]{{#color}}[name]{{/color}}" value="{{value}}" />
+		<input type="text" name="{{name}}[]{{#color}}[name]{{/color}}" value="{{value}}" />
 
 		<div class="tools">
 			<span class="up">&#xE6CF;</span>
@@ -103,7 +103,7 @@
 	<div>
 		{{#options}}
 			<label class="checkbox-inline">
-				<input type="radio" name="{{nicename}}" value="{{value}}" {{checked}} />
+				<input type="radio" name="{{name}}" value="{{value}}" {{checked}} />
 				{{label}}
 			</label>
 		{{/options}}
@@ -111,19 +111,19 @@
 {{/input-radio}}
 
 {{#input-number}}
-	<label for="widget-{{nicename}}">
+	<label for="widget-{{name}}">
 		{{label}}
 		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
-	<input type="number" id="widget-{{nicename}}" name="{{nicename}}" class="form-control" min="{{min}}" max="{{max}}" value="{{value}}" />
+	<input type="number" id="widget-{{name}}" name="{{name}}" class="form-control" min="{{min}}" max="{{max}}" value="{{value}}" />
 {{/input-number}}
 
 {{#input-time}}
-	<label for="widget-{{nicename}}">
+	<label for="widget-{{name}}">
 		{{label}}
 		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
-	<input type="time" class="form-control" name="{{nicename}}" id="widget-{{nicename}}" value="{{value}}" placeholder="{{placeholder}}"/>
+	<input type="time" class="form-control" name="{{name}}" id="widget-{{name}}" value="{{value}}" placeholder="{{placeholder}}"/>
 {{/input-time}}

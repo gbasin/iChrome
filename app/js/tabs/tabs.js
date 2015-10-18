@@ -190,12 +190,6 @@ define(
 
 									item.reset = true;
 
-									var view = item.data("view");
-
-									if (view && view.widget && view.widget.loc) {
-										view.update.call(view);
-									}
-
 									item.isMoved = true;
 								}
 
@@ -230,56 +224,20 @@ define(
 							var view = {};
 
 							if (!item.removed && !item.reset && (view = item.data("view"))) {
+								view.onGrid = false;
+
 								if (item.parent().parent().hasClass("medley")) {
 									item.css(css);
 
-									view.widget.medley = true;
-
-									view.render();
+									view.onGrid = true;
 								}
-								else {
-									view.widget.medley = false;
 
-									view.render();
-								}
+								view.refresh();
 
 								if (item.installing) {
-									Track.queue("widgets", "install", view.widget.nicename, view.widget.config.size);
+									Track.queue("widgets", "install", view.widget.name, view.model.get("size"));
 
-									Track.event("Widgets", "Install", view.widget.nicename);
-
-									view.preview = false;
-
-									try {
-										if (view.widget.permissions) {
-											Browser.permissions.contains({
-												permissions: view.widget.permissions
-											}, function(hasPermission) {
-												if (!hasPermission) {
-													Browser.permissions.request({
-														permissions: view.widget.permissions
-													}, function(granted) {
-														// The page needs to be reloaded after a permission is granted
-														// so the API made available by it can be called (CR Bug 435141)
-														// 
-														// Unfortunately that still doesn't allow access to URLs like
-														// chrome://extension-icon until the browser is restarted
-														// 
-														// This is in a setTimeout so it goes to the end of the call stack
-														// so the page can be serialized and saved first
-														setTimeout(function() {
-															location.reload();
-														}, 0);
-													});
-												}
-											});
-										}
-									}
-									catch (e) {
-										Status.error("An error occurred while trying to render the " + view.widget.nicename + " widget!");
-
-										Track.queue("widgets", "error", view.widget.nicename, view.widget.config.size, "permissions", e.stack);
-									}
+									Track.event("Widgets", "Install", view.widget.name);
 								}
 							}
 

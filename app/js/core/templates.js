@@ -10,7 +10,8 @@ var templates = [
 		"settings",				"menu",					"settings/new-tab",
 		"settings/general",		"settings/visual",		"settings/advanced",
 		"settings/tab-specific","widget-settings.inputs","settings/debug",
-		"whatsnew",				"settings/sync",
+		"whatsnew",				"settings/sync",		"widgets/auth-required",
+		"widgets/error",
 
 		"widgets.weather",				"widgets.weather.desc",
 		"widgets.stocks",				"widgets.stocks.desc",
@@ -40,7 +41,6 @@ var templates = [
 		"widgets.now",					"widgets.now.desc",
 		"widgets.gmail",				"widgets.gmail.desc",
 		"widgets.twitter",				"widgets.twitter.desc",
-		"widgets.drive",				"widgets.drive.desc",
 		"widgets.calc",					"widgets.calc.desc",
 		"widgets.youtube",				"widgets.youtube.desc",
 		"widgets.plus",					"widgets.plus.desc",

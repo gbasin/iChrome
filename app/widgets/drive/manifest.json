@@ -1,0 +1,45 @@
+{
+	"id": 27,
+	"name": "drive",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["variable"],
+
+	"views": {
+		"default": "view"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"settings": [{
+		"type": "text",
+		"name": "title",
+		"label": "i18n.settings.title",
+		"placeholder": "i18n.settings.title_placeholder"
+	}, {
+		"type": "number",
+		"name": "files",
+		"label": "i18n.settings.files_shown",
+		"min": 1,
+		"max": 20
+	}],
+
+	"strings": {
+		"en": {
+			"name": "Drive",
+			"desc": "Displays recently changed files from your Google Drive.",
+
+			"settings": {
+				"files_shown": "Number of Files Shown"
+			},
+
+			"modified_by": "by",
+
+			"authMessage": "You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+		}
+	}
+}

@@ -2030,6 +2030,210 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 
 
+
+
+/*---------------------------------------------
+	/ Widgets / Splashes
+*/
+.widget.splash {
+	padding: 0;
+}
+
+.widget.splash .splash {
+	color: #FFF;
+	padding: 50px 0;
+	background: #888;
+	text-align: center;
+}
+
+.widget.splash .splash svg {
+	width: 150px;
+	height: 150px;
+	fill: currentColor;
+}
+
+.widget.splash .notice {
+	padding: 0;
+	background: #FBFBFB;
+	font: 400 14px/20px Roboto, sans-serif;
+}
+
+.widget.splash h2 {
+	margin: 0;
+	font: inherit;
+	font-size: 20px;
+	font-weight: 500;
+	padding: 24px 16px 0;
+}
+
+.widget.splash p {
+	margin: 0;
+	color: #757575;
+	line-height: 1.6;
+	padding: 16px 16px 0;
+}
+
+.widget.splash.tiny p:last-of-type {
+	padding-bottom: 16px;
+}
+
+.widget.splash footer {
+	padding: 8px;
+	text-align: right;
+}
+
+.widget.splash footer button.material.flat {
+	margin: 0;
+	padding: 0 8px;
+	min-width: 64px;
+	font-size: 14px;
+	line-height: 36px;
+}
+
+.widget.splash footer button.material.flat:hover:not(:focus) {
+	background: rgba(0, 0, 0, .05);
+}
+
+.widget.splash footer button.material.flat:active {
+	background: rgba(0, 0, 0, .075);
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Widget / Splashes / Tiny styles
+*/
+.widget.splash.tiny .splash {
+	padding: 20px 0;
+}
+
+.widget.splash.tiny .splash svg {
+	width: 100px;
+	height: 100px;
+}
+
+.widget.splash.tiny h2 {
+	display: none;
+}
+
+.widget.splash.tiny footer {
+	text-align: left;
+	padding: 8px 10px;
+}
+
+.widget.splash.tiny p:last-of-type {
+	padding-bottom: 0;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Widgets / Permissions Splash
+*/
+.widget.permissions-request .splash {
+	background: #20AA58;
+}
+
+.widget.permissions-request.tiny h2 {
+	display: none;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Widgets / Error Splash
+*/
+.widget.error .splash {
+	background: #F44336;
+}
+
+.widget.error.tiny .splash {
+	display: none;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Widget / Authorization
+*/
+.widget.auth-required {
+	padding: 0;
+}
+
+.widget.auth-required .notice {
+	color: #888;
+	text-align: center;
+	background: #F2F2F2;
+	padding-bottom: 55px;
+}
+
+.widget.auth-required .notice svg {
+	width: 150px;
+	height: 150px;
+	fill: currentColor;
+}
+
+.widget.auth-required .notice p {
+	padding: 0 35px;
+	line-height: 22px;
+	margin: 20px 0 15px;
+}
+
+.widget.auth-required .notice button {
+	margin-top: 10px;
+}
+
+.widget.auth-required .notice h2 {
+	padding: 15px;
+	font-size: 16px;
+	text-align: left;
+	font-family: Open Sans, sans-serif;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Widget / Authorization / Tiny Styles
+*/
+.widget.auth-required.tiny .notice {
+	padding-bottom: 20px;
+}
+
+.widget.auth-required.tiny .notice svg {
+	display: none;
+}
+
+.widget.auth-required.tiny .notice p {
+	margin: 10px 0;
+	padding: 0 15px;
+}
+
+
+
+
+
+
+
 /*---------------------------------------------
 	/ Widget Settings
 */
