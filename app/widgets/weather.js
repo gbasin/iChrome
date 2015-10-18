@@ -223,12 +223,12 @@ define(["jquery"], function($) {
 						var weather = [];
 
 						if (!(res && res.query && res.query.results && res.query.results.channel)) {
-							return this.utils.error.call(this, "An error occurred while trying to fetch the weather.");
+							return this.utils.error("An error occurred while trying to fetch the weather.");
 						}
 
 						(res.query.results.channel.length ? res.query.results.channel : [res.query.results.channel]).forEach(function(res, i) {
 							if (!(res && res.item && res.item.condition && res.item.condition.code)) {
-								return this.utils.error.call(this, "An error occurred while trying to fetch the weather.");
+								return this.utils.error("An error occurred while trying to fetch the weather.");
 							}
 
 							var w = {

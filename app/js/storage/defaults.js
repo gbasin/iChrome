@@ -9,26 +9,26 @@ define(["i18n/i18n"], function(Translate) {
 					[
 						{
 							id: 9,
-							size: 1
+							size: "tiny"
 						}, {
 							id: 14,
-							size: 1
+							size: "tiny"
 						}, {
 							id: 1,
-							size: 3
+							size: "medium"
 						}
 					], [
 						{
 							id: 35,
-							size: 5
+							size: "variable"
 						}, {
 							id: 17,
-							size: 5
+							size: "variable"
 						}
 					], [
 						{
 							id: 4,
-							size: 4
+							size: "large"
 						}
 					]
 				],
@@ -36,7 +36,7 @@ define(["i18n/i18n"], function(Translate) {
 				name: Translate("defaults.tab")
 			}
 		],
-		widgets: [9, 14, 1, 11, 17, 4], // These are the widget IDs from the default tab layout
+		widgets: [9, 14, 1, 35, 17, 4], // These are the widget IDs from the default tab layout
 		user: {
 			fname: Translate("defaults.me"),
 			image: "images/profile.png"

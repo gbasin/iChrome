@@ -1,7 +1,7 @@
 /**
  * These are various prototype and jQuery extends and utilities
  */
-require(["jquery"], function($) {
+define(["jquery"], function($) {
 	Number.prototype.abbr = function(min, precision) {
 		var value = this,
 			newValue = value,

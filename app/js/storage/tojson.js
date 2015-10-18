@@ -1,7 +1,7 @@
 /**
  * Converts a non-JSON.stringify()able tabs object to JSON.  This is used for syncing and comparing tab objects.
  */
-define(["jquery", "widgets/widgets", "storage/defaults"], function($, Widgets, defaults) {
+define(["jquery", "storage/defaults", "lib/extends"], function($, defaults) {
 	var toJSON = function(tabs, settings) {
 		var stabs = [];
 
@@ -34,8 +34,6 @@ define(["jquery", "widgets/widgets", "storage/defaults"], function($, Widgets, d
 									for (var ckey in w.config) {
 										if (ckey !== "size") config[ckey] = w.config[ckey];
 									}
-
-									config = $.unextend(Widgets[w.id].config, config);
 
 									if (JSON.stringify(config) !== "{}") widget.config = config;
 								}
