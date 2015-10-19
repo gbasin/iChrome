@@ -121,8 +121,6 @@ define([
 
 			if (!this.isPreview) {
 				Track.queue("widgets", "view", this.widget.name, this.model.get("size"));
-
-				Track.event("Widgets", "View", this.widget.name);
 			}
 
 			this.model.on("change", this.handleChange, this);

@@ -46,16 +46,16 @@ define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 
 		window.ga.l = new Date().getTime();
 
-		var script = document.createElement("script"),
-			firstScript = document.getElementsByTagName("script")[0];
-
-		script.async = true;
-		script.src = "https://ssl.google-analytics.com/analytics.js";
-
 		// Analytics are not critical, delay insertion
-		requestAnimationFrame(function() {
-			firstScript.parentNode.insertBefore(script,firstScript);
-		});
+		setTimeout(function() {
+			var script = document.createElement("script"),
+				firstScript = document.getElementsByTagName("script")[0];
+
+			script.async = true;
+			script.src = "https://ssl.google-analytics.com/analytics.js";
+
+			firstScript.parentNode.insertBefore(script, firstScript);
+		}, 0);
 
 
 		/* global ga */

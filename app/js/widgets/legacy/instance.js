@@ -100,8 +100,6 @@ define([
 
 			if (!this.preview) {
 				Track.queue("widgets", "view", this.widget.name, this.model.get("size"));
-
-				Track.event("Widgets", "View", this.widget.name);
 			}
 
 
