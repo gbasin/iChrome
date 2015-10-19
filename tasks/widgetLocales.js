@@ -1,10 +1,6 @@
 /**
  * Extracts strings from widgets so they can be uploaded to Crowdin in a single file
  */
-var css = require("css"),
-	_ = require("lodash"),
-	path = require("path");
-
 module.exports = function(grunt) {
 	grunt.registerTask("widgetLocales", "Processes widget strings", function() {
 		var manifests = grunt.file.expand("app/widgets/*/manifest.json");
@@ -14,9 +10,6 @@ module.exports = function(grunt) {
 
 		manifests.forEach(function(filepath, i) {
 			var manifest = grunt.file.readJSON(filepath);
-
-			var basePath = "app/widgets/" + manifest.name + "/";
-
 
 			// Copy translated strings to consolidated locale files.
 			if (manifest.strings && !localeFile[manifest.name]) {
