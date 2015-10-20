@@ -40,18 +40,41 @@ module.exports = function(grunt) {
 				dest: "build",
 				expand: true
 			},
-			jsonly: {
+			testrun: {
 				files: [{
 					src: "app/js/app.js",
 					dest: "app/js/app.unbuilt.js"
 				}, {
+					src: "app/css/style.css",
+					dest: "app/css/style.unbuilt.css"
+				}, {
 					src: "build/js/app.js",
 					dest: "app/js/app.js"
+				}, {
+					src: "build/css/style.css",
+					dest: "app/css/style.css"
 				}]
 			},
 			resetjs: {
-				src: "app/js/app.unbuilt.js",
-				dest: "app/js/app.js"
+				files: [{
+					src: "app/js/app.unbuilt.js",
+					dest: "app/js/app.js"
+				}, {
+					src: "app/css/style.unbuilt.css",
+					dest: "app/css/style.css"
+				}]
+			}
+		},
+
+		cssmin: {
+			options: {
+				roundingPrecision: -1,
+				shorthandCompacting: false
+			},
+			all: {
+				files: {
+					"build/css/style.css": ["build/css/style.css"]
+				}
 			}
 		},
 
@@ -149,7 +172,7 @@ module.exports = function(grunt) {
 			all: ["tmp", "build/**/Thumbs.db", "build/templates", "build/widgets", "build/js/*", "!build/js/lib", "build/js/lib/*", "!build/js/lib/require.js", "!build/js/app.js", "!build/js/background.js"],
 			webstore: ["build"],
 			travis: ["build", "webstore.zip", "descriptions"],
-			jsonly: ["app/js/app.unbuilt.js"]
+			testrun: ["app/js/app.unbuilt.js", "app/css/style.unbuilt.css"]
 		}
 	});
 
@@ -157,6 +180,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
+	grunt.loadNpmTasks("grunt-contrib-cssmin");
 	grunt.loadNpmTasks("grunt-string-replace");
 	grunt.loadNpmTasks("grunt-contrib-compress");
 
@@ -166,6 +190,7 @@ module.exports = function(grunt) {
 		"jshint:all",
 		"copy:build",
 		"compileWidgets",
+		"cssmin",
 		"i18n:compile",
 		"hogan:compilebinder",
 		"hogan:compile",
@@ -178,6 +203,7 @@ module.exports = function(grunt) {
 		"jshint:all",
 		"copy:build",
 		"compileWidgets",
+		"cssmin",
 		"descriptions",
 		"i18n:compile",
 		"hogan:compilebinder",
@@ -194,6 +220,7 @@ module.exports = function(grunt) {
 		"jshint:all",
 		"copy:build",
 		"compileWidgets",
+		"cssmin",
 		"descriptions",
 		"i18n:compile",
 		"hogan:compilebinder",
@@ -215,27 +242,28 @@ module.exports = function(grunt) {
 			output: process.stdout
 		});
 
-		rl.question("Press Enter to reset app.js: ", function(answer) {
+		rl.question("Press Enter to reset the app: ", function(answer) {
 			rl.close();
 
 			done();
 		});
 	});
 
-	grunt.registerTask("jsonly", [
+	grunt.registerTask("testrun", [
 		"jshint:all",
 		"copy:build",
 		"compileWidgets",
+		"cssmin",
 		"i18n:compile",
 		"hogan:compilebinder",
 		"hogan:compile",
 		"requirejs:webstore",
 		"string-replace",
-		"copy:jsonly",
+		"copy:testrun",
 		"clean:all",
 		"clean:webstore",
 		"waitReset",
 		"copy:resetjs",
-		"clean:jsonly"
+		"clean:testrun"
 	]);
 };
