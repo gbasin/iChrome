@@ -12,19 +12,15 @@ require.config({
 		"lodash": "lib/lodash",
 		"moment": "lib/moment",
 		"jquery": "lib/jquery",
+		"backbone": "lib/backbone",
 		"oauth2": "../oauth2/oauth2",
 		"widgetTemplate": "widgets/registry/template",
 		"jquery.serializejson": "lib/jquery.serializejson",
-		"backbone.documentmodel": "lib/backbone.documentmodel",
 		"backbone.viewcollection": "lib/backbone.viewcollection"
 	},
 	map: {
 		"*": {
-			"underscore": "lodash", // a Lodash Underscore build is not required for Backbone
-			"backbone": "backbone.documentmodel" // DocumentModel returns Backbone, therefore it's a variation of backbone and "not" an extension
-		},
-		"backbone.documentmodel": {
-			"backbone": "lib/backbone" // But it itself requires Backbone
+			"underscore": "lodash" // a Lodash Underscore build is not required for Backbone
 		}
 	},
 	shim: {

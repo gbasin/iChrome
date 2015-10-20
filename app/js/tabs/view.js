@@ -2,6 +2,8 @@
  * The tabs view.  This does the actual rendering of data, creaton of columns and widget insertion.
  */
 define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i18n", "themes/utils"], function($, _, Backbone, Status, Track, Translate, Themes) {
+	var GRID_SIZE = 10;
+
 	var view = Backbone.View.extend({
 		tagName: "div",
 		className: function() {
@@ -9,7 +11,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 		},
 
 		initialize: function() {
-			this.model.on("reset:columns set:columns add:columns remove:columns change:fixed change:medley", function() {
+			this.model.on("columns:change change:fixed change:medley", function() {
 				var options = _.last(arguments);
 
 				if (!(options && options.noRefresh)) {
@@ -17,7 +19,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 				}
 			}, this);
 
-			this.render();
+			this.render(true);
 		},
 
 
@@ -82,10 +84,10 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 						widget = that.data("view");
 
 					var loc = [
-						Math.round(that.position().top / 10),
-						Math.round(that.position().left / 10),
-						Math.round(that.outerWidth() / 10),
-						Math.round(that.outerHeight() / 10)
+						Math.round(that.position().top / GRID_SIZE),
+						Math.round(that.position().left / GRID_SIZE),
+						Math.round(that.outerWidth() / GRID_SIZE),
+						Math.round(that.outerHeight() / GRID_SIZE)
 					];
 
 					if (loc[0] < 0) loc[0] = 0;
@@ -112,7 +114,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 			}
 
 			_.each(columns, function(column, i) {
-				var collection = this.model.get("columns").at(i).get("value");
+				var collection = this.model.columns[i];
 
 				// Only update the collection if the order is different from the columns
 				if (_.pluck(collection.views, "cid").join(" ") !== _.pluck(column, "cid").join(" ")) {
@@ -157,7 +159,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 
 
 			if (trigger) {
-				this.model.trigger("sort", this.model, this.model.get("columns"));
+				this.model.trigger("sort", this.model, this.model.columns);
 
 				// Since the render only inserts columns and widgets it's not expensive
 				// This is called in requestAnimationFrame so there isn't a visible freeze
@@ -177,7 +179,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 		 * @api    private
 		 */
 		sortable: function() {
-			this.$el.children(".remove, .widgets-container.medley").add(this.$el.children(".widgets-container").children(".column")).sortable({
+			this.$el.children(".remove, .widgets-container.medley, .widgets-container > .column").sortable({
 				group: "columns",
 				handle: ".handle",
 				itemSelector: "section",
@@ -195,7 +197,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 			var body = $(document.body),
 				serialize = this.serialize.bind(this);
 
-			this.$el.on("mousedown", ".widget > .resize", function(e) {
+			this.$el.off("mousedown").on("mousedown", ".widget > .resize", function(e) {
 				var startX = e.pageX,
 					startY = e.pageY,
 					widget = this.parentNode,
@@ -218,8 +220,8 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 					e.preventDefault();
 
 					// -1 so it lines up with the insides of the grid squares
-					widget.style.width = ((10 * Math.round((startWidth + (e.pageX - startX)) / 10)) - 1) + "px";
-					widget.style.height = ((10 * Math.round((startHeight + (e.pageY - startY)) / 10)) - 1) + "px";
+					widget.style.width = ((Math.round((startWidth + (e.pageX - startX)) / GRID_SIZE) * GRID_SIZE) - 1) + "px";
+					widget.style.height = ((Math.round((startHeight + (e.pageY - startY)) / GRID_SIZE) * GRID_SIZE) - 1) + "px";
 
 
 					var max = widget.offsetTop + widget.offsetHeight;
@@ -250,7 +252,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 			// 
 			// So, we have to get the rootGroup directly from an element's `data` which we
 			// can then cleanup.
-			var elms = this.$el.children(".remove, .widgets-container.medley").add(this.$el.children(".widgets-container").children(".column")),
+			var elms = this.$el.children(".remove, .widgets-container.medley, .widgets-container > .column"),
 				dta = elms.first().data("sortable");
 
 			if (dta) {
@@ -266,72 +268,72 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 		},
 
 
-		render: function() {
+		render: function(initial) {
 			// Remove sortable
-			this.remove(true);
+			if (initial !== true) {
+				this.remove(true);
 
-			// If the sub-views are not detached and are still active then when the .html() is called the
-			// jQuery data will be removed from all descendants destroying all event handlers in the process.
-			this.$(".widgets-container > .column > .widget, .widgets-container.medley > .widget").detach();
+				// If the sub-views are not detached before $.html() is called,
+				// their data will be removed, destroying all event handlers.
+				this.$(".widgets-container > .column > .widget, .widgets-container.medley > .widget").detach();
+
+				// Call $.html() to remove any data or events related to $.sortable
+				this.$el.html("");
+			}
 
 
-			var medley = this.model.get("medley");
+			var isGrid = this.model.get("medley");
 
-			this.$el.html(
-				'<div class="remove">' + Translate("remove_widget") + '</div>' +
-				'<main class="widgets-container' +
-					(this.model.get("fixed") && !medley ? " fixed" : "") +
-					(medley ? " medley" : "") +
-				'"></main>'
-			);
+			// We use native methods here for speed
+			this.el.innerHTML = '<div class="remove">' + Translate("remove_widget") + '</div>';
 
-			var main = this.$("main"),
-				models = [];
 
-			this.model.get("columns").models.forEach(function(e, i) {
+			var main = document.createElement("main");
+
+			main.setAttribute("class", "widgets-container" + (this.model.get("fixed") && !isGrid ? " fixed" : "") + (isGrid ? " medley" : ""));
+
+
+			var models = _.map(this.model.columns, function(collection, i) {
 				var column = main;
 
-				if (!medley) {
-					column = $('<div class="column"></div>').appendTo(main);
+				if (!isGrid) {
+					column = document.createElement("div");
+
+					column.setAttribute("class", "column");
+
+					main.appendChild(column);
 				}
 
-				var collection = (e.get("value") || { views: [], models: [] });
+				_.each(collection.views, function(e) {
+					column.appendChild(e.el);
+				});
 
-				models.push(collection.models);
-
-				column.append(_.pluck(collection.views, "el"));
+				return collection.models;
 			});
 
 
-			if (medley) {
-				var max = this.$el.height() - 50;
+			this.el.appendChild(main);
 
-				/**
-				 * This is the number of pixels the bottom of the furthest widget from the top is.
-				 *
-				 * It uses Lodash and the model instead of elements since it's significantly faster
-				 *
-				 * @type {Number}
-				 */
-				var btm = _(models)
-					.flatten(true)
-					.pluck("attributes")
-					.pluck("loc") // Get the loc values of all widgets
-					.compact() // Remove invalid ones
-					.map(function(e) { // Convert the values to a height in pixels
-						return (e[0] + e[3]) * 10;
-					})
-					.tap(function(a) { // Add a 0 to the end just in case there are no values
-						a.push(0);
-					})
-					.max() // And finally, get the largest value
-					.valueOf();
+
+			if (isGrid) {
+				var max = this.el.offsetHeight - 50;
+
+				// This is the number of pixels the bottom of the furthest widget is from the top
+				var btm = _.max(_.each(_.flatten(models), function(e) {
+					var loc = e.get("loc");
+
+					if (loc) {
+						return (loc[0] + loc[3]) * GRID_SIZE;
+					}
+
+					return 0;
+				}));
 
 				if (btm > max) max = btm;
 
 				// The -50 and +50 makes sure that the container is either 50px from the bottom of
 				// the last widget or at the bottom of the tab but never past it if it isn't necessary
-				this.$el.find("main.widgets-container").css("height", max + 50);
+				main.style.height = (max + 50) + "px";
 
 				this.resizable();
 			}

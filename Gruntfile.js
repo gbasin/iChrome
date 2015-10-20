@@ -73,32 +73,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// Concat raw versions of templates into a temp file and replace the locale loader with a static precompiled version
-		concat: {
-			templates: {
-				files: {
-					"tmp/templates.js": ["build/templates/**/*.hjs"],
-				},
-				options: {
-					process: function(src, pathname) {
-						var name = path.relative(path.resolve("build/templates"), pathname).replace(/\\/g, "/");
-
-						if (/^widgets\/([a-z\-_]*)\/template\.hjs$/.test(name)) {
-							name = name.replace(/^widgets\/([a-z\-_]*)\/template\.hjs$/, "widgets.$1");
-						}
-						else if (/^widgets\/([a-z\-_]*)\/(.*)\.hjs$/.test(name)) {
-							name = name.replace(/^widgets\/([a-z\-_]*)\/(.*)\.hjs$/, "widgets.$1.$2");
-						}
-						else {
-							name = name.replace(".hjs", "");
-						}
-
-						return JSON.stringify(name) + ": " + JSON.stringify(src) + ",";
-					}
-				}
-			}
-		},
-
 		// Precompile templates
 		hogan: {
 			compilebinder: {
@@ -113,22 +87,14 @@ module.exports = function(grunt) {
 				options: {
 					binderPath: path.resolve("tmp/binder.js"),
 
-					// This isn't the intended usage, but exposeTemplates is passed
-					// straight to the binder template.  Because of that this works
-					// as a lambda.
-					exposeTemplates: function() {
-						// The slice removes the last comma from the file
-						return grunt.file.read("tmp/templates.js").slice(0, -1);
-					},
-
 					nameFunc: function(e) {
 						e = path.relative(path.resolve("build/templates"), e).replace(/\\/g, "/");
 
-						if (/^widgets\/([a-z\-]*)\/template\.hjs$/.test(e)) {
-							return e.replace(/^widgets\/([a-z\-]*)\/template\.hjs$/, "widgets.$1");
+						if (/^widgets\/([a-z\-_]*)\/template\.hjs$/.test(e)) {
+							return e.replace(/^widgets\/([a-z\-_]*)\/template\.hjs$/, "widgets.$1");
 						}
-						else if (/^widgets\/([a-z\-]*)\/(.*)\.hjs$/.test(e)) {
-							return e.replace(/^widgets\/([a-z\-]*)\/(.*)\.hjs$/, "widgets.$1.$2");
+						else if (/^widgets\/([a-z\-_]*)\/(.*)\.hjs$/.test(e)) {
+							return e.replace(/^widgets\/([a-z\-_]*)\/(.*)\.hjs$/, "widgets.$1.$2");
 						}
 						else {
 							return e.replace(".hjs", "");
@@ -192,7 +158,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-string-replace");
-	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-contrib-compress");
 
 	grunt.loadTasks("tasks");
@@ -202,7 +167,6 @@ module.exports = function(grunt) {
 		"copy:build",
 		"compileWidgets",
 		"i18n:compile",
-		"concat",
 		"hogan:compilebinder",
 		"hogan:compile",
 		"requirejs:build",
@@ -216,7 +180,6 @@ module.exports = function(grunt) {
 		"compileWidgets",
 		"descriptions",
 		"i18n:compile",
-		"concat",
 		"hogan:compilebinder",
 		"hogan:compile",
 		"removekey",
@@ -233,7 +196,6 @@ module.exports = function(grunt) {
 		"compileWidgets",
 		"descriptions",
 		"i18n:compile",
-		"concat",
 		"hogan:compilebinder",
 		"hogan:compile",
 		"removekey",
@@ -265,7 +227,6 @@ module.exports = function(grunt) {
 		"copy:build",
 		"compileWidgets",
 		"i18n:compile",
-		"concat",
 		"hogan:compilebinder",
 		"hogan:compile",
 		"requirejs:webstore",

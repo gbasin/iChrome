@@ -257,14 +257,14 @@ define([
 
 
 		/**
-		 * Gets a widget's template
+		 * Retrieves a widget's template
 		 *
 		 * @api    public
-		 * @param  {String} [name] The template to get
-		 * @return {String}        The retrieved template
+		 * @param  {String}  [name]  The template to get
+		 * @return {Hogan.Template}  The retrieved template
 		 */
 		getTemplate: function(name) {
-			return (render.getRaw("widgets." + this.widget.name + (name ? "." + name : "")) || "").replace(/\{\{&gt\;/gi, "{{>");
+			return render.getTemplate("widgets." + this.widget.name + (name ? "." + name : ""));
 		},
 
 
