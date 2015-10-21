@@ -179,7 +179,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 		 * @api    private
 		 */
 		sortable: function() {
-			this.$el.children(".remove, .widgets-container.medley, .widgets-container > .column").sortable({
+			this.$("> .remove, > .widgets-container.medley, > .widgets-container > .column").sortable({
 				group: "columns",
 				handle: ".handle",
 				itemSelector: "section",
@@ -252,7 +252,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 			// 
 			// So, we have to get the rootGroup directly from an element's `data` which we
 			// can then cleanup.
-			var elms = this.$el.children(".remove, .widgets-container.medley, .widgets-container > .column"),
+			var elms = this.$("> .remove, > .widgets-container.medley, > .widgets-container > .column"),
 				dta = elms.first().data("sortable");
 
 			if (dta) {
@@ -275,7 +275,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 
 				// If the sub-views are not detached before $.html() is called,
 				// their data will be removed, destroying all event handlers.
-				this.$(".widgets-container > .column > .widget, .widgets-container.medley > .widget").detach();
+				this.$("> .widgets-container > .column > .widget, > .widgets-container.medley > .widget").detach();
 
 				// Call $.html() to remove any data or events related to $.sortable
 				this.$el.html("");
