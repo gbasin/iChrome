@@ -3,8 +3,6 @@
 		<img class="favicon" src="{{favicon}}" />
 
 		<span class="title" title="{{title}}&#013;{{url}}">{{title}}</span>
-
-		<span class="date">{{date}}</span>
 	</a>
 {{/url}}
 {{^url}}

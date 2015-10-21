@@ -2318,12 +2318,15 @@ body.no-edit .bookmarks .tools {
 .chrome_bookmarks .title {
 	flex-grow: 1;
 	overflow: hidden;
+	padding-left: 8px;
 	white-space: nowrap;
-	padding: 0 10px 0 8px;
 	text-overflow: ellipsis;
 }
 
-.chrome_bookmarks .date,
+.chrome_bookmarks .folder .title {
+	padding-right: 10px;
+}
+
 .chrome_bookmarks .count {
 	color: #757575;
 	flex-shrink: 0;

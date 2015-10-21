@@ -47,13 +47,11 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 			bookmarks: [
 				{
 					title: "Google",
-					date: "8:06 AM",
 					url: "http://www.google.com/",
 					favicon: "chrome://favicon/size/16@4x/origin/http://www.google.com/"
 				},
 				{
 					title: "Facebook",
-					date: "Yesterday",
 					url: "http://www.facebook.com/",
 					favicon: "chrome://favicon/size/16@4x/origin/http://www.facebook.com/"
 				},
@@ -62,13 +60,11 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 					items: [
 						{
 							title: "Youtube",
-							date: "Yesterday",
 							url: "http://www.youtube.com/",
 							favicon: "chrome://favicon/size/16@4x/origin/http://www.youtube.com/"
 						},
 						{
 							title: "Amazon",
-							date: "Monday",
 							url: "http://www.amazon.com/",
 							favicon: "chrome://favicon/size/16@4x/origin/http://www.amazon.com/"
 						}
@@ -76,7 +72,6 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 				},
 				{
 					title: "Wikipedia",
-					date: "Mar 5th 2015",
 					url: "http://www.wikipedia.org/",
 					favicon: "chrome://favicon/size/16@4x/origin/http://www.wikipedia.org/"
 				}
@@ -128,18 +123,8 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 						};
 					}
 					else {
-						var date = moment(e.dateAdded);
-
-						if (date.diff(new Date(), "days") + 1 > 7) {
-							date = date.format("MMM Do YYYY");
-						}
-						else {
-							date = date.calendar().replace(" at 12:00 AM", "").replace("Today at ", "");
-						}
-
 						return {
 							url: e.url,
-							date: date,
 							favicon: Browser.getFavicon(e.url),
 							title: (e.title || "").trim() || (e.url || "").replace(/^[A-z]+\:\/+(?:www\.)?/, "")
 						};
@@ -181,10 +166,6 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 			var data = {
 				bookmarks: this.data.bookmarks
 			};
-
-			if (demo) {
-				data.bookmarks[3].date = moment().subtract(18, "days").format("MMM Do YYYY");
-			}
 
 
 			if (this.config.title && this.config.title !== "") {
