@@ -1793,7 +1793,18 @@ body.resizing .medley {
 	background: #FFF;
 	border-radius: 2px;
 	position: relative;
-	box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1);
+	animation: widget-box-shadow 0s 2s forwards;
+	-webkit-animation: widget-box-shadow 0s 2s forwards;
+}
+
+@keyframes widget-box-shadow {
+	from { box-shadow: none; }
+	to { box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1); }
+}
+
+@-webkit-keyframes widget-box-shadow {
+	from { box-shadow: none; }
+	to { box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1); }
 }
 
 .widgets-container .widget.tiny,
