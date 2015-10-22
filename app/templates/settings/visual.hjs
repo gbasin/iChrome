@@ -46,5 +46,18 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="form-group style pro">
+			<label class="control-label col-sm-2">{{i18n.settings.visual.style}}</label>
+
+			<div class="col-sm-9">
+				<span class="info">{{i18n.settings.visual.style_desc}}</span>
+
+				<div class="checkboxes col-sm-9">
+					<label><input type="radio" name="style" value="light" checked /> {{i18n.settings.visual.style_light}}</label>
+					<label><input type="radio" name="style" value="dark" {{^isPro}}disabled {{/isPro}}/> {{i18n.settings.visual.style_dark}} (<a class="preview" data-style="dark">{{i18n.settings.visual.style_preview}}</a>)</label>
+				</div>
+			</div>
+		</div>
 	</form>
 </div>

@@ -11,7 +11,7 @@ var templates = [
 		"settings/general",		"settings/visual",		"settings/advanced",
 		"settings/tab-specific","widget-settings.inputs","settings/debug",
 		"whatsnew",				"settings/sync",		"widgets/auth-required",
-		"widgets/error",
+		"widgets/error",		"widgets/permissions-request",
 
 		"widgets.weather",				"widgets.weather.desc",
 		"widgets.stocks",				"widgets.stocks.desc",

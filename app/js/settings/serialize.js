@@ -12,7 +12,8 @@ define(["jquery", "lodash", "i18n/i18n"], function($, _, Translate) {
 				plus: false,
 				voice: false,
 				gmail: false,
-				def: storage.settings.def
+				def: storage.settings.def,
+				editing: storage.settings.editing
 			},
 			booleans = ["ok", "ltab", "stab", "apps", "plus", "voice", "gmail"];
 

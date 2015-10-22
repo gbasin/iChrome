@@ -2,8 +2,8 @@
  * The main iChrome view, this initializes everything.
  */
 define(
-	["jquery", "lodash", "browser/api", "backbone", "core/status", "core/analytics", "storage/storage", "core/css", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs", "modals/updated", "modals/getting-started", "modals/translate-request", "lib/extends"],
-	function($, _, Browser, Backbone, Status, Track, Storage, CSS, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
+	["jquery", "lodash", "browser/api", "backbone", "core/pro", "core/status", "core/analytics", "storage/storage", "core/css", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs", "modals/updated", "modals/getting-started", "modals/translate-request", "lib/extends"],
+	function($, _, Browser, Backbone, Pro, Status, Track, Storage, CSS, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
 		var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -17,6 +17,7 @@ define(
 					}
 
 					this.set({
+						style: storage.settings.style,
 						toolbar: storage.settings.toolbar,
 						editing: storage.settings.editing,
 						target: storage.settings.ltab ? "_blank" : "_self"
@@ -83,7 +84,9 @@ define(
 
 					this.$el.removeClass("unloaded").children(".loading").remove();
 				}, this).on("change:editing", function() {
-					this.$el.toggleClass("no-edit", !this.model.get("editing"));
+					this.$el.toggleClass("no-edit", this.model.get("editing") === false);
+				}, this).on("change:style", function() {
+					this.$el.toggleClass("dark", Pro.isPro && this.model.get("style") === "dark");
 				}, this).on("change:target", function() {
 					$("base").attr("target", this.model.get("target"));
 				}, this).init();

@@ -30,7 +30,15 @@ define(["backbone", "storage/storage", "core/render"], function(Backbone, Storag
 				this.model.init();
 			},
 			render: function() {
-				this.$el.html(render("css", this.model.toJSON()));
+				var d = this.model.toJSON();
+
+				var defaultwColor = ["#fff", "rgb(255, 255, 255)"];
+
+				if (!d.wcolor || defaultwColor.indexOf(d.wcolor.toLowerCase()) !== -1) {
+					d.wcolor = false;
+				}
+
+				this.$el.html(render("css", d));
 
 				return this;
 			}

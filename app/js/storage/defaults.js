@@ -53,6 +53,7 @@ define(["i18n/i18n"], function(Translate) {
 			gmail: true,
 			editing: true,
 			wcolor: "#FFF",
+			style: "light",
 			toolbar: "full",
 			theme: "default",
 			"custom-css": "",

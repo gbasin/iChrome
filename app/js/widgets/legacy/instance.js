@@ -292,6 +292,8 @@ define([
 		 * @api     public
 		 */
 		refresh: function() {
+			if (this._requestingPermissions) return;
+
 			try {
 				this.instance.render(this.isPreview);
 			}

@@ -95,6 +95,11 @@ body {
 	-webkit-user-select: none;
 }
 
+body.dark {
+	color: #EEE;
+	background-color: #303030;
+}
+
 :not(select)::-webkit-scrollbar {
 	width: 8px;
 	height: 8px;
@@ -133,6 +138,13 @@ span.nested-link[data-href]:focus {
 	color: #2A6496;
 	cursor: pointer;
 	text-decoration: underline;
+}
+
+.dark a:hover,
+.dark a:focus,
+.dark span.nested-link[data-href]:hover,
+.dark span.nested-link[data-href]:focus {
+	color: #2196F3;
 }
 
 iframe[seamless] {
@@ -212,6 +224,23 @@ textarea {
 	border: 1px solid rgba(0, 0, 0, 0.1)!important;
 }
 
+.dark input[type="tel"],
+.dark input[type="text"],
+.dark input[type="time"],
+.dark input[type="date"],
+.dark input[type="email"],
+.dark input[type="search"],
+.dark input[type="number"],
+.dark select,
+.dark textarea {
+	color: #DDD;
+	border-color: rgba(255, 255, 255, .15)!important;
+}
+
+.dark select option {
+	background: #424242;
+}
+
 .widget input[type="tel"],
 .widget input[type="text"],
 .widget input[type="time"],
@@ -237,6 +266,18 @@ textarea:hover {
 	border-color: rgba(0, 0, 0, 0.2)!important;
 }
 
+.dark input[type="tel"]:hover,
+.dark input[type="text"]:hover,
+.dark input[type="time"]:hover,
+.dark input[type="date"]:hover,
+.dark input[type="email"]:hover,
+.dark input[type="search"]:hover,
+.dark input[type="number"]:hover,
+.dark select:hover,
+.dark textarea:hover {
+	border-color: rgba(255, 255, 255, 0.075)!important;
+}
+
 input[type="tel"]:focus,
 input[type="text"]:focus,
 input[type="time"]:focus,
@@ -248,6 +289,28 @@ select:focus,
 textarea:focus {
 	color: #333;
 	border-color: rgba(53, 141, 211, 0.75)!important;
+}
+
+.dark input[type="tel"]:hover,
+.dark input[type="text"]:hover,
+.dark input[type="time"]:hover,
+.dark input[type="date"]:hover,
+.dark input[type="email"]:hover,
+.dark input[type="search"]:hover,
+.dark input[type="number"]:hover,
+.dark select:hover,
+.dark textarea:hover,
+
+.dark input[type="tel"]:focus,
+.dark input[type="text"]:focus,
+.dark input[type="time"]:focus,
+.dark input[type="date"]:focus,
+.dark input[type="email"]:focus,
+.dark input[type="search"]:focus,
+.dark input[type="number"]:focus,
+.dark select:focus,
+.dark textarea:focus {
+	color: #EEE;
 }
 
 input[type="time"]::-webkit-clear-button,
@@ -284,6 +347,10 @@ input[type="date"]::-webkit-calendar-picker-indicator:before {
 	content: "\e6ce";
 	position: absolute;
 	font-family: Entypo;
+}
+
+.dark input[type="date"]::-webkit-calendar-picker-indicator:before {
+	color: #AAA;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator:hover {
@@ -474,6 +541,10 @@ button.material.toggle {
 	transition: all .2s ease;
 }
 
+.dark button.material.toggle {
+	color: #FFF;
+}
+
 button.material.toggle svg {
 	opacity: .7;
 }
@@ -533,6 +604,12 @@ input[type="checkbox"] {
 	-webkit-appearance: none;
 	vertical-align: text-bottom;
 	box-shadow: inset 0 0 0 1px #DDD;
+}
+
+.dark input[type="radio"]:not(:active):not(:checked),
+.dark input[type="checkbox"]:not(:active):not(:checked) {
+	background: #2A2A2A;
+	box-shadow: inset 0 0 0 1px #666;
 }
 
 input[type="checkbox"] {
@@ -724,21 +801,35 @@ dialog footer button.material.flat:active {
 	position: relative;
 }
 
+.dark .toolbar {
+	background: #505050;
+}
+
 .toolbar > div {
 	text-align: left;
 	vertical-align: top;
 	display: inline-block;
 }
 
-.toolbar .logo {
-	float: left;
-	padding: 14px 20px;
-	border-right: 1px solid #F0F0F0;
+.toolbar .logo,
+.toolbar .search {
+	border-right: 1px solid rgba(0, 0, 0, .075);
 }
 
-.toolbar .logo img {
-	height: 22px;
-	max-width: 150px;
+.dark .toolbar .logo,
+.dark .toolbar .search {
+	border-right-color: rgba(255, 255, 255, .1);
+}
+
+.toolbar .logo {
+	float: left;
+	width: 140px;
+	height: 100%;
+	background: url(/images/logo.svg) center/100px no-repeat;
+}
+
+.dark .toolbar .logo {
+	background-image: url(/images/logo_light.svg);
 }
 
 .toolbar .links {
@@ -753,10 +844,18 @@ dialog footer button.material.flat:active {
 	display: inline-block;
 }
 
+.dark .toolbar .links a {
+	color: #CCC;
+}
+
 .toolbar .links a:hover {
 	color: #444;
 	text-decoration: none;
 	border-bottom: 1px dotted;
+}
+
+.dark .toolbar .links a:hover {
+	color: #BBB;
 }
 
 .toolbar .menu-toggle {
@@ -850,6 +949,10 @@ dialog footer button.material.flat:active {
 	font-family: Roboto, sans-serif;
 }
 
+.dark .toolbar .apps-toggle .apps {
+	background: #383838;
+}
+
 .toolbar .apps .items {
 	height: 315px;
 	display: flex;
@@ -860,7 +963,7 @@ dialog footer button.material.flat:active {
 
 .toolbar .apps .items a {
 	width: 30%;
-	color: #444;
+	color: inherit;
 	padding: 8px 0;
 	font-size: 13px;
 	text-align: center;
@@ -888,6 +991,11 @@ dialog footer button.material.flat:active {
 	text-transform: uppercase;
 }
 
+.dark .toolbar .apps .more {
+	color: #FFF;
+	background: rgba(255, 255, 255, .06);
+}
+
 .toolbar .apps .more:hover {
 	background: #F0F0F0;
 }
@@ -909,7 +1017,10 @@ dialog footer button.material.flat:active {
 	width: 700px;
 	height: 100%;
 	position: relative;
-	border-right: 1px solid #F0F0F0;
+}
+
+.dark .toolbar .search {
+	border-right-color: rgba(255, 255, 255, .1);
 }
 
 .toolbar .search input {
@@ -923,12 +1034,17 @@ dialog footer button.material.flat:active {
 	line-height: 20px;
 	position: absolute;
 	border: 0!important;
+	background: inherit;
 	font-family: Open sans, sans-serif;
 	padding: 15px 55px 15px 30px!important;
 }
 
 .toolbar .search input:focus {
 	background: #FBFBFB;
+}
+
+.dark .toolbar .search input:focus {
+	background: #3A3A3A;
 }
 
 .toolbar .search .btn {
@@ -959,6 +1075,11 @@ dialog footer button.material.flat:active {
 	transition: opacity .3s ease-in-out,
 				transform .3s ease-in-out,
 				visibility 0s .3s;
+}
+
+.dark .toolbar .search .suggestions {
+	color: #EEE;
+	background: #383838;
 }
 
 .toolbar .search .suggestions.visible {
@@ -997,6 +1118,11 @@ dialog footer button.material.flat:active {
 	border-left-color: #888;
 }
 
+.dark .toolbar .search .suggestions div:hover,
+.dark .toolbar .search .suggestions div.active {
+	background: #303030;
+}
+
 .toolbar .search .suggestions div.active {
 	border-left-color: #738FFE;
 }
@@ -1014,6 +1140,11 @@ dialog footer button.material.flat:active {
 	background: no-repeat center;
 	background-size: auto 100%;
 	background-image: url(data:image/gif;base64,R0lGODlhHAAmAKIHAKqqqsvLy0hISObm5vf394uLiwAAAP///yH5BAEAAAcALAAAAAAcACYAAAO9eLpMIMYIQJi9DcYtKv6KtnHgB4yoAZSXKAyDy1rjoAzjzOQLrx8+4OanCAZnxiExGSEKmz3lj2lwUq3SZ3WZPbKuXGgxu9t4tLYDTkpIRQILF0x2G4lWipM7gj/oJQUkcXsCDCIFATULBCIcZ2tvB3QLDxETFnR/BgU/gRt9jX0gnpYMkJZpFzEoqQqJKAIBaQOVKHAXr3t7txgBjboSvB8EpLoFZywOAo3LFE5lYs/QW9LT1TRk1V7S2xYJADs=);
+}
+
+.dark .toolbar .search .speech {
+	opacity: .7;
+	-webkit-filter: invert();
 }
 
 .toolbar .search .speech:hover {
@@ -1209,6 +1340,10 @@ dialog.announcements li {
 	transition: width .3s cubic-bezier(0.190, 1.000, 0.220, 1.000);
 }
 
+.dark .menu-container {
+	background: #383838;
+}
+
 .toolbar .menu-container {
 	top: 100%;
 	max-height: calc(100vh - 100%);
@@ -1223,6 +1358,10 @@ dialog.announcements li {
 	flex-shrink: 0;
 	font-size: 14px;
 	font-family: Roboto, sans-serif;
+}
+
+.dark .menu {
+	color: #EEE;
 }
 
 .menu,
@@ -1249,7 +1388,7 @@ dialog.announcements li {
 }
 
 .menu [data-item] {
-	color: #646464;
+	color: inherit;
 	display: block;
 	cursor: pointer;
 	padding: 0 16px;
@@ -1266,6 +1405,11 @@ dialog.announcements li {
 	border-left-color: #646464;
 }
 
+.dark .menu [data-item]:hover,
+.dark .menu [data-item].active {
+	background: #303030;
+}
+
 .menu [data-item].active {
 	border-left-color: #53A93F;
 }
@@ -1275,6 +1419,11 @@ dialog.announcements li {
 	height: 18px;
 	margin-right: 8px;
 	vertical-align: text-bottom;
+}
+
+.dark .menu [data-item="settings"] svg path,
+.dark .menu [data-item="editmode"] svg path {
+	fill: #B5B5B5;
 }
 
 .menu [data-item] .state {
@@ -1291,6 +1440,10 @@ dialog.announcements li {
 .menu .separator {
 	margin: 8px 0;
 	border-top: 1px solid #E5E5E5;
+}
+
+.dark .menu .separator {
+	border-top-color: #555;
 }
 
 .menu .section h2 {
@@ -1369,6 +1522,10 @@ dialog.announcements li {
 	transition: opacity .3s 0s ease-in-out, visibility 0s .3s linear;
 }
 
+.dark .voicebar {
+	background: #424242;
+}
+
 .voicebar.visible {
 	opacity: 1;
 	visibility: visible;
@@ -1390,6 +1547,10 @@ dialog.announcements li {
 	padding: 0 100px 0 30px;
 	text-overflow: ellipsis;
 	font-family: Open Sans, sans-serif;
+}
+
+.dark .voicebar .text {
+	color: #EEE;
 }
 
 .voicebar .text a {
@@ -1450,6 +1611,7 @@ dialog.announcements li {
 .voicebar .close {
 	top: 8px;
 	right: 8px;
+	color: #444;
 	cursor: pointer;
 	font-size: 16px;
 	line-height: 10px;
@@ -1613,6 +1775,10 @@ body.dragging .tab-container .tab > .remove {
 	transition: opacity .15s cubic-bezier(0, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, .2, 1);
 }
 
+.dark .tab-nav nav {
+	background: #484848;
+}
+
 .tab-container:hover .tab-nav nav {
 	opacity: .9;
 }
@@ -1622,6 +1788,11 @@ body.dragging .tab-container .tab > .remove {
 	opacity: 1;
 	background: #FFF;
 	box-shadow: 0 0 6px rgba(0, 0, 0, .16), 0 6px 12px rgba(0, 0, 0, .32);
+}
+
+.dark .tab-nav nav:hover,
+.dark.dragging .tab-nav nav {
+	background: #555;
 }
 
 .dragging .tab-nav nav {
@@ -1643,6 +1814,10 @@ body.dragging .tab-container .tab > .remove {
 	line-height: 40px;
 	text-align: center;
 	font-family: Entypo;
+}
+
+.dark .tab-nav nav:before {
+	color: #DDD;
 }
 
 .tab-nav nav.next {
@@ -1785,6 +1960,7 @@ body.resizing .medley {
 .widgets-container .widget,
 .store-detail .preview .widget {
 	z-index: 1;
+	color: #333;
 	flex: 2 100%;
 	padding: 15px;
 	margin: 10px 2%;
@@ -1795,6 +1971,13 @@ body.resizing .medley {
 	position: relative;
 	animation: widget-box-shadow 0s 2s forwards;
 	-webkit-animation: widget-box-shadow 0s 2s forwards;
+}
+
+.dark .widget-preview .widget,
+.dark .widgets-container .widget,
+.dark .store-detail > .content > section.preview > .widget {
+	color: #EEE;
+	background: #333;
 }
 
 @keyframes widget-box-shadow {
@@ -1838,6 +2021,12 @@ body.resizing .medley {
 				0 -6px 3px rgba(255, 255, 255, 0.8);
 }
 
+.dark .widgets-container .widget .handle,
+.dark .store-detail .preview .widget .handle {
+	background: #DDD;
+	box-shadow: 0 6px #DDD, 0 -6px #DDD;
+}
+
 .widgets-container .widget:hover .handle,
 .widgets-container .widget:hover .settings,
 
@@ -1869,6 +2058,12 @@ body.resizing .medley {
 	font-size: 17px;
 	font-family: FontAwesome;
 	text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+}
+
+.dark .widgets-container .widget .settings,
+.dark .store-detail .preview .widget .settings {
+	color: #DDD;
+	text-shadow: none;
 }
 
 .widgets-container .widget .settings:before,
@@ -1908,8 +2103,8 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	content: "";
 	width: 20px;
 	height: 60px;
-	background: #FFF;
 	position: absolute;
+	background: inherit;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
 	transition: opacity .3s ease-in-out;
@@ -2069,6 +2264,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	font: 400 14px/20px Roboto, sans-serif;
 }
 
+.dark .widget.splash .notice {
+	background: #333;
+}
+
 .widget.splash h2 {
 	margin: 0;
 	font: inherit;
@@ -2082,6 +2281,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	color: #757575;
 	line-height: 1.6;
 	padding: 16px 16px 0;
+}
+
+.dark .widget.splash p {
+	color: #CCC;
 }
 
 .widget.splash.tiny p:last-of-type {
@@ -2170,6 +2373,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	background: #F44336;
 }
 
+.dark .widget.error button.support {
+	color: #DDD;
+}
+
 .widget.error.tiny .splash {
 	display: none;
 }
@@ -2192,6 +2399,11 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	text-align: center;
 	background: #F2F2F2;
 	padding-bottom: 55px;
+}
+
+.dark .widget.auth-required .notice {
+	color: #AAA;
+	background: #2A2A2A;
 }
 
 .widget.auth-required .notice svg {
@@ -2411,6 +2623,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	bottom: 0;
 	opacity: 0;
 	outline: 0;
+	color: #333;
 	margin: auto;
 	z-index: 9999;
 	position: fixed;
@@ -2476,6 +2689,64 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	content: "\E678";
 	font-family: Entypo;
 }
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Modal Styles / Dark Overrides
+
+	Modals are light, even when the dark theme is enabled
+*/
+.dark .modal:not(.store-detail) input[type="tel"],
+.dark .modal:not(.store-detail) input[type="text"],
+.dark .modal:not(.store-detail) input[type="time"],
+.dark .modal:not(.store-detail) input[type="date"],
+.dark .modal:not(.store-detail) input[type="email"],
+.dark .modal:not(.store-detail) input[type="search"],
+.dark .modal:not(.store-detail) input[type="number"],
+.dark .modal:not(.store-detail) select,
+.dark .modal:not(.store-detail) textarea {
+	color: #444;
+	border-color: rgba(0, 0, 0, 0.1)!important;
+}
+
+.dark .modal:not(.store-detail) select option {
+	background: #FFF;
+}
+
+.dark .modal:not(.store-detail) input[type="tel"]:hover,
+.dark .modal:not(.store-detail) input[type="text"]:hover,
+.dark .modal:not(.store-detail) input[type="time"]:hover,
+.dark .modal:not(.store-detail) input[type="date"]:hover,
+.dark .modal:not(.store-detail) input[type="email"]:hover,
+.dark .modal:not(.store-detail) input[type="search"]:hover,
+.dark .modal:not(.store-detail) input[type="number"]:hover,
+.dark .modal:not(.store-detail) select:hover,
+.dark .modal:not(.store-detail) textarea:hover,
+
+.dark .modal:not(.store-detail) input[type="tel"]:focus,
+.dark .modal:not(.store-detail) input[type="text"]:focus,
+.dark .modal:not(.store-detail) input[type="time"]:focus,
+.dark .modal:not(.store-detail) input[type="date"]:focus,
+.dark .modal:not(.store-detail) input[type="email"]:focus,
+.dark .modal:not(.store-detail) input[type="search"]:focus,
+.dark .modal:not(.store-detail) input[type="number"]:focus,
+.dark .modal:not(.store-detail) select:focus,
+.dark .modal:not(.store-detail) textarea:focus {
+	color: #333;
+}
+
+.dark .modal:not(.store-detail) input[type="radio"]:not(:active):not(:checked),
+.dark .modal:not(.store-detail) input[type="checkbox"]:not(:active):not(:checked) {
+	background: #F5F5F5;
+	box-shadow: inset 0 0 0 1px #DDD;
+}
+
+
 
 
 
@@ -3598,6 +3869,18 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	margin-left: 15px;
 }
 
+.settings .pro .control-label:after {
+	color: #FB8C00;
+	padding: 0 3px;
+	content: "Pro";
+	font-size: 11px;
+	margin-left: 5px;
+	border-radius: 2px;
+	text-transform: uppercase;
+	border: 1px solid currentColor;
+	font-family: Roboto, sans-serif;
+}
+
 .settings select {
 	height: 34px;
 }
@@ -3684,7 +3967,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Settings / Visual
 */
-.settings .toolbar-style .checkboxes label {
+.settings .visual .checkboxes label {
 	cursor: pointer;
 	font-weight: 400;
 	margin-right: 15px;

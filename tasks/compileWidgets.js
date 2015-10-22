@@ -46,12 +46,20 @@ module.exports = function(grunt) {
 
 				ast.stylesheet.rules = _.map(ast.stylesheet.rules, function prefixRule(e) {
 					if (e.selectors) {
-						e.selectors = _.map(e.selectors, function(selector) {
-							if (selector.trim() === ":root") {
-								return prefix;
-							}
+						e.selectors = _.map(e.selectors, function(e) {
+							e = e.trim();
 
-							return prefix + " " + selector;
+							// Dark styles are prefixed by the global dark selector
+							if (e.slice(0, 5) === ".dark") {
+								return ".dark " + prefix + e.substr(5);
+							}
+							else if (e.indexOf(":root") !== -1) {
+								// We do a simple replace to allow things like ":root.tiny"
+								return e.replace(":root", prefix);
+							}
+							else {
+								return prefix + " " + e;
+							}
 						});
 					}
 

@@ -1,23 +1,25 @@
 /**
  * This is the Visual tab in the settings
  */
-define(["lodash", "jquery", "backbone", "storage/storage", "i18n/i18n", "core/render"], function(_, $, Backbone, Storage, Translate, render) {
+define(["lodash", "jquery", "backbone", "storage/storage", "i18n/i18n", "core/pro", "core/render"], function(_, $, Backbone, Storage, Translate, Pro, render) {
 	var Model = Backbone.Model.extend({
 			getRender: function() {
-				var settings = _.clone(this.get("settings"));
+				var data = _.clone(this.get("settings"));
 
-				settings.themename = (this.get("cached")[settings.theme] || this.get("themes")[settings.theme.replace("custom", "")] || {}).name;
+				data.isPro = Pro.isPro;
 
-				if (typeof settings.toolbar == "boolean") {
-					if (settings.toolbar) {
-						settings.toolbar = "full";
+				data.themename = (this.get("cached")[data.theme] || this.get("themes")[data.theme.replace("custom", "")] || {}).name;
+
+				if (typeof data.toolbar == "boolean") {
+					if (data.toolbar) {
+						data.toolbar = "full";
 					}
 					else {
-						settings.toolbar = "button";
+						data.toolbar = "button";
 					}
 				}
 
-				return settings;
+				return data;
 			},
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -42,8 +44,15 @@ define(["lodash", "jquery", "backbone", "storage/storage", "i18n/i18n", "core/re
 						$(e.currentTarget).prev("input").val(id || theme.id).end()
 							.next(".current").text(theme.name || (typeof theme.id == "number" ? Translate("settings.visual.theme_placeholder", theme.id) : ""));
 					}, this);
+				},
+
+				"click .style .preview": function(e) {
+					e.preventDefault();
+
+					this.previewStyle(e.currentTarget.getAttribute("data-style"));
 				}
 			},
+
 			initialize: function(options) {
 				this.themes = options.themes;
 
@@ -51,12 +60,44 @@ define(["lodash", "jquery", "backbone", "storage/storage", "i18n/i18n", "core/re
 
 				this.model.on("change", this.render, this).init();
 			},
+
+
+			/**
+			 * Displays a preview of an app style
+			 *
+			 * @param   {String}  style  The style to preview
+			 */
+			previewStyle: function(style) {
+				$(document.body).addClass(style);
+
+				var hidePreview = function() {
+					clearTimeout(removeTimeout);
+
+					$(".modal.previewHidden, .modal-overlay.previewHidden").removeClass("previewHidden").addClass("visible");
+
+					previewOverlay.remove();
+
+					$(document.body).removeClass(style);
+				};
+
+				// Styles are a pro feature. Anyone can preview them, but we don't
+				// want them to "preview" one forever, so we hide the preview
+				// after 2 minutes
+				var removeTimeout = setTimeout(hidePreview, 120000);
+
+				var previewOverlay = $('<div class="preview-overlay visible"></div>').one("click", hidePreview).appendTo(document.body);
+
+				$(".modal.visible, .modal-overlay.visible").removeClass("visible").addClass("previewHidden");
+			},
+
+
 			render: function() {
 				var data = this.model.getRender();
 
 				this.$el
 					.html(render("settings/visual", data))
 					.find("#columns").val(this.model.get("settings").columns).end()
+					.find(".style input").filter(function() { return this.value == data.style; }).prop("checked", true).end()
 					.find(".toolbar-style input").filter(function() { return this.value == data.toolbar; }).prop("checked", true);
 
 				return this;

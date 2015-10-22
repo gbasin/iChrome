@@ -1,13 +1,17 @@
 {{#wcolor}}
 	.widget-preview .widget,
 	.widgets-container .widget,
-	.store-detail > .content > section.preview > .widget {
+	.store-detail > .content > section.preview > .widget,
+	.dark .widget-preview .widget,
+	.dark .widgets-container .widget,
+	.dark .store-detail > .content > section.preview > .widget {
 		background: {{wcolor}};
 	}
 {{/wcolor}}
 
 {{#hcolor}}
-	.toolbar {
+	.toolbar,
+	.dark .toolbar {
 		background: {{hcolor}};
 	}
 {{/hcolor}}

@@ -5,11 +5,23 @@
 define(["lodash"], function(_) {
 	var sElm;
 
-	var rootRegex = /[\ ]+:root/gi;
-
 	var prefixRule = function(prefix, rule) {
 		if (rule.selectorText) {
-			rule.selectorText = (prefix + " " + rule.selectorText.split(",").join(", " + prefix)).replace(rootRegex, "");
+			rule.selectorText = _.map(rule.selectorText.split(","), function(e) {
+				e = e.trim();
+
+				// Dark styles are prefixed by the global dark selector
+				if (e.slice(0, 5) === ".dark") {
+					return ".dark " + prefix + e.substr(5);
+				}
+				else if (e.indexOf(":root") !== -1) {
+					// We do a simple replace to allow things like ":root.tiny"
+					return e.replace(":root", prefix);
+				}
+				else {
+					return prefix + " " + e;
+				}
+			}).join(", ");
 		}
 		else if (rule.cssRules) {
 			_.each(rule.cssRules.length, _.bind(prefixRule, this, prefix));

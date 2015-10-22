@@ -142,25 +142,16 @@
 			"theme_placeholder": "Theme #%s",
 			"theme_select": "Select a theme",
 
-			"align": "Alignment",
-			"align_desc": "This will change the alignment of the widget columns",
-			"align_labels": {
-				"left": "Left",
-				"center": "Center",
-				"right": "Right"
-			},
-
-			"logo": "Logo URL",
-			"logo_desc": "This is the image shown at the left of the toolbar.  The default is <b>/images/logo.svg</b>",
-
 			"toolbar": "Toolbar Style",
 			"toolbar_desc": "This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
 			"toolbar_normal": "Normal",
 			"toolbar_button": "Button",
 
-			"animation": "Slide-in Animation",
-			"animation_desc": "This setting lets you enable or disable the slide-in animation that runs when you load the page",
-			"animation_label": "Enable the animation"
+			"style": "App Style",
+			"style_desc": "This controls the style of all widgets and iChrome itself.",
+			"style_light": "Light (default)",
+			"style_dark": "Dark",
+			"style_preview": "preview"
 		},
 
 		"specific": {

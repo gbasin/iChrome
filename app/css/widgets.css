@@ -29,6 +29,10 @@
 	font-family: Open Sans, sans-serif;
 }
 
+.dark .widget .header {
+	color: #EEE;
+}
+
 .widget.tiny .header {
 	font-size: 15px;
 	line-height: 15px;
@@ -49,6 +53,10 @@
 	text-align: center;
 }
 
+.dark .widget .details div {
+	color: #CCC;
+}
+
 .widget .details div:after,
 .widget .mainval:after {
 	color: #666;
@@ -59,6 +67,11 @@
 	content: attr(data-label);
 }
 
+.dark .widget .details div:after,
+.dark .widget .mainval:after {
+	color: #CCC;
+}
+
 .widget .mainval {
 	color: #1C9C40;
 	display: block;
@@ -67,6 +80,10 @@
 	line-height: 110px;
 	text-decoration: none;
 	font-family: Open Sans, sans-serif;
+}
+
+.dark .widget .mainval {
+	color: #4CAF50;
 }
 
 .widget .mainval:before { /* Without this :after won't be pushed down properly */
@@ -192,28 +209,6 @@
 	content: attr(data-label);
 }
 
-/*
-.weather .cond.clear:after			{ content: "Clear"; }
-.weather .cond.flurries:after		{ content: "Flurries"; }
-.weather .cond.fog:after			{ content: "Fog"; }
-.weather .cond.hazy:after			{ content: "Haze"; }
-.weather .cond.rain:after			{ content: "Rain"; }
-.weather .cond.sleet:after			{ content: "Sleet"; }
-.weather .cond.snow:after			{ content: "Snow"; }
-.weather .cond.sunny:after			{ content: "Sunny"; }
-.weather .cond.tstorms:after		{ content: "T-Storms"; }
-.weather .cond.cloudy:after			{ content: "Cloudy"; }
-.weather .cond.mostlycloudy:after	{ content: "Mostly Cloudy"; }
-.weather .cond.mostlysunny:after	{ content: "Mostly Sunny"; }
-.weather .cond.partlycloudy:after	{ content: "Partly Cloudy"; }
-.weather .cond.partlysunny:after	{ content: "Partly Sunny"; }
-.weather .cond.chanceflurries:after	{ content: "Chance Flurries"; }
-.weather .cond.chancerain:after		{ content: "Chance Rain"; }
-.weather .cond.chancesleet:after	{ content: "Chance Sleet"; }
-.weather .cond.chancesnow:after		{ content: "Chance Snow"; }
-.weather .cond.chancetstorms:after	{ content: "Chance T-Storms"; }
-*/
-
 .weather .temp {
 	font-size: 64px;
 	line-height: 45px;
@@ -255,6 +250,10 @@
 	justify-content: space-between;
 }
 
+.dark .weather .details {
+	color: #D5D5D5;
+}
+
 .weather .details span {
 	font-size: 14px;
 	font-weight: bold;
@@ -273,6 +272,10 @@
 	color: #555;
 	font-size: 45px;
 	content: "\e021";
+}
+
+.dark .weather .details .wind:before {
+	color: #AAA;
 }
 
 .weather .details .chill:before {
@@ -314,6 +317,12 @@
 	box-shadow: inset 0 1px rgba(255, 255, 255, 0.7);
 }
 
+.dark .weather .forecast {
+	box-shadow: none;
+	background: rgba(0, 0, 0, .1);
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .weather .forecast .day {
 	text-align: center;
 }
@@ -335,6 +344,10 @@
 
 .weather .forecast .low {
 	color: #888;
+}
+
+.dark .weather .forecast .low {
+	color: #AAA;
 }
 
 
@@ -398,11 +411,19 @@
 	margin-right: 10px;
 }
 
+.dark .stocks .info .stock span {
+	color: #EEE;
+}
+
 .stocks .info .relative {
 	color: #444;
 	font-size: 15px;
 	font-weight: bold;
 	margin: 10px 0 0 15px;
+}
+
+.dark .stocks .info .relative {
+	color: #BBB;
 }
 
 .stocks .val {
@@ -541,6 +562,13 @@
 	font-family: Open Sans, sans-serif;
 }
 
+.dark .rss .item,
+.dark .news .item,
+.dark .reddit .item,
+.dark .feedly .item {
+	color: #BBB;
+}
+
 .rss .item .excerpt,
 .news .item .excerpt,
 .reddit .item .content,
@@ -563,12 +591,26 @@
 	letter-spacing: -0.2px;
 }
 
+.dark .rss .item .title,
+.dark .news .item .title,
+.dark .reddit .item .title,
+.dark .feedly .item .title {
+	color: #FFF;
+}
+
 .rss .item span.nested-link[data-href],
 .news .item span.nested-link[data-href],
 .reddit .item span.nested-link[data-href],
 .feedly .item span.nested-link[data-href] {
 	color: #222;
 	font-weight: 600;
+}
+
+.dark .rss .item span.nested-link[data-href],
+.dark .news .item span.nested-link[data-href],
+.dark .reddit .item span.nested-link[data-href],
+.dark .feedly .item span.nested-link[data-href] {
+	color: #FFF;
 }
 
 .rss .item:visited .title,
@@ -581,6 +623,18 @@
 .reddit .item:visited span.nested-link[data-href],
 .feedly .item:visited span.nested-link[data-href] {
 	color: #555;
+}
+
+.dark .rss .item:visited .title,
+.dark .news .item:visited .title,
+.dark .reddit .item:visited .title,
+.dark .feedly .item:visited .title,
+
+.dark .rss .item:visited span.nested-link[data-href],
+.dark .news .item:visited span.nested-link[data-href],
+.dark .reddit .item:visited span.nested-link[data-href],
+.dark .feedly .item:visited span.nested-link[data-href] {
+	color: #BBB;
 }
 
 .rss .item img,
@@ -606,6 +660,13 @@
 	background: rgba(0, 0, 0, 0.03);
 }
 
+.dark .rss .item:hover,
+.dark .news .item:hover,
+.dark .reddit .item:hover,
+.dark .feedly .item:hover {
+	background: rgba(0, 0, 0, .15);
+}
+
 .news .more,
 .reddit .more,
 .feedly .more {
@@ -619,10 +680,22 @@
 	text-decoration: none;
 }
 
+.dark .news .more,
+.dark .reddit .more,
+.dark .feedly .more {
+	color: #BBB;
+}
+
 .news .more:hover,
 .reddit .more:hover,
 .feedly .more:hover {
 	background: rgba(0, 0, 0, 0.03);
+}
+
+.dark .news .more:hover,
+.dark .reddit .more:hover,
+.dark .feedly .more:hover {
+	background: rgba(0, 0, 0, .15);
 }
 
 
@@ -751,6 +824,11 @@
 	margin-right: 10px;
 }
 
+.dark .reddit .item .specs span,
+.dark .reddit .item span.nested-link[data-href] {
+	color: #CCC;
+}
+
 .reddit .item .specs span:before {
 	font-size: 14px;
 	margin-right: 5px;
@@ -810,8 +888,11 @@
 .feedly .item .img {
 	width: 70px;
 	height: 70px;
-	background: #DDD no-repeat center;
-	background-size: cover;
+	background: #DDD center/cover no-repeat;
+}
+
+.dark .feedly .item .img {
+	background-color: #222;
 }
 
 .feedly .item .img img {
@@ -866,6 +947,10 @@
 	vertical-align: top;
 	display: inline-block;
 	border: 1px solid #E0E0E0;
+}
+
+.dark .feedly .cards .item {
+	border-color: #555;
 }
 
 .feedly .cards .item .img {
@@ -962,6 +1047,10 @@
 	background: #FAFAFA;
 }
 
+.dark .widget.clock.small {
+	background: #2A2A2A;
+}
+
 .clock .section {
 	padding: 15px;
 	position: absolute;
@@ -986,6 +1075,10 @@
 	text-align: center;
 	line-height: 115px;
 	font-family: Open Sans, sans-serif;
+}
+
+.dark .clock .time {
+	color: #CCC;
 }
 
 .clock input:not([type="checkbox"]) {
@@ -1061,7 +1154,6 @@
 
 
 
-
 /*---------------------------------------------
 	/ Clock / Header
 */
@@ -1071,6 +1163,10 @@
 	background: #FFF;
 	margin: -15px -15px 0;
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.dark .clock header.tabs {
+	background: #3A3A3A;
 }
 
 .clock .tabs .item {
@@ -1088,8 +1184,16 @@
 	vertical-align: middle;
 }
 
+.dark .clock .tabs svg {
+	fill: #AAA;
+}
+
 .clock .tabs .item:hover svg {
 	fill: #444;
+}
+
+.dark .clock .tabs .item:not(.active):hover svg {
+	fill: #777;
 }
 
 .clock .tabs .item.active svg {
@@ -1134,6 +1238,10 @@
 	margin-top: 0;
 	border: 0!important;
 	padding: 0!important;
+}
+
+.dark .clock .alarm .date {
+	color: #AAA;
 }
 
 .clock .alarm .audio {
@@ -1482,6 +1590,10 @@
 	font-family: Open Sans, sans-serif;
 }
 
+.dark .widget.traffic .dest {
+	color: #CCC;
+}
+
 .widget.traffic .time {
 	color: #E43431;
 	font-size: 48px;
@@ -1489,6 +1601,10 @@
 	text-align: center;
 	margin-bottom: 20px;
 	font-family: Open Sans, sans-serif;
+}
+
+.dark .widget.traffic .time {
+	color: #F44336;
 }
 
 
@@ -1594,6 +1710,10 @@
 	background: #FAFAFA;
 }
 
+.dark .calendar .agenda {
+	background: #282828;
+}
+
 .medley .calendar .agenda {
 	max-height: 100%;
 }
@@ -1624,12 +1744,20 @@
 	box-shadow: 0 1px 3px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .12);
 }
 
+.dark .calendar .agenda .day .events {
+	background: #3A3A3A;
+}
+
 .calendar .agenda .day .event {
 	color: #333;
 	display: block;
 	font-size: 13px;
 	padding: 8px 15px;
 	text-decoration: none;
+}
+
+.dark .calendar .agenda .day .event {
+	color: #EEE;
 }
 
 .calendar .agenda.multiple .day .event {
@@ -1642,6 +1770,10 @@
 
 .calendar .agenda .day .event:hover {
 	background: #F5F5F5;
+}
+
+.dark .calendar .agenda .day .event:hover {
+	background: #303030;
 }
 
 .calendar .agenda .day .event > * {
@@ -1681,6 +1813,10 @@
 	display: inline-block;
 	text-decoration: none;
 	font-family: Open Sans, sans-serif;
+}
+
+.dark .apps .app {
+	color: #EEE;
 }
 
 .apps .app.holder {
@@ -1764,6 +1900,10 @@
 	font-family: Open Sans, sans-serif;
 }
 
+.dark .topsites .site {
+	color: #EEE;
+}
+
 .topsites .site:hover {
 	background: rgba(0, 0, 0, 0.03);
 }
@@ -1796,17 +1936,43 @@
 	height: calc(100% + 30px);
 }
 
+.dark .notes .note {
+	color: #333;
+}
+
 .notes .note.yellow	{ background: #FFFFB5; }
 .notes .note.blue	{ background: #B5E4FF; }
 .notes .note.red	{ background: #FFB5B5; }
 .notes .note.orange	{ background: #FFD280; }
 .notes .note.green	{ background: #99DA99; }
 
+.dark .notes .note.yellow	{ background: #F9A825; }
+.dark .notes .note.green	{ background: #4CAF50; }
+.dark .notes .note.orange	{ background: #FB8C00; }
+.dark .notes .note.blue		{ background: #2196F3; }
+
+.dark .notes .note.red {
+	color: #DDD;
+	background: #E53935;
+}
+
+.dark .notes .note.red .header {
+	color: #DDD;
+}
+
+.dark .notes .note.blue a {
+	color: #CCC;
+}
+
 .notes .note input.header {
 	border: 0!important;
 	padding: 0!important;
 	background: transparent;
 	font-family: Open Sans, sans-serif!important;
+}
+
+.dark .notes .note input.header {
+	color: #333;
 }
 
 .notes .note .content {
@@ -1857,6 +2023,11 @@
 	background: rgba(255, 255, 255, 1.7);
 }
 
+.dark .wolfram img {
+	background: #333;
+	box-shadow: 0 0 15px 10px #333;
+}
+
 .wolfram input,
 .wolfram input:hover,
 .wolfram input:focus {
@@ -1894,9 +2065,18 @@
 	font-family: Open Sans, sans-serif;
 }
 
+.dark .sports .game {
+	color: #EEE;
+}
+
 .sports .game:hover,
 .sports .no-games:hover {
 	background: rgba(0, 0, 0, 0.03);
+}
+
+.dark .sports .game:hover,
+.dark .sports .no-games:hover {
+	background: rgba(0, 0, 0, .15);
 }
 
 .sports .team {
@@ -1931,6 +2111,11 @@
 	text-align: right;
 }
 
+.dark .sports .status,
+.dark .sports .team .score {
+	color: #BBB;
+}
+
 .sports .status {
 	width: 40%;
 	float: right;
@@ -1947,6 +2132,10 @@
 	margin-top: 25px;
 	text-align: center;
 	text-decoration: none;
+}
+
+.dark .sports .no-games {
+	color: #CCC;
 }
 
 .sports .no-games .text {
@@ -2301,10 +2490,20 @@ body.no-edit .bookmarks .tools {
 	border-left: 3px solid transparent;
 }
 
+.dark .chrome_bookmarks .link,
+.dark .chrome_bookmarks .folder {
+	color: #DDD;
+}
+
 .chrome_bookmarks .link:hover,
 .chrome_bookmarks .folder:hover {
 	border-left-color: #1E88E5;
 	background: rgba(0, 0, 0, .03);
+}
+
+.dark .chrome_bookmarks .link:hover,
+.dark .chrome_bookmarks .folder:hover {
+	background: rgba(0, 0, 0, .15);
 }
 
 .chrome_bookmarks .favicon {
@@ -2334,6 +2533,13 @@ body.no-edit .bookmarks .tools {
 	font-family: Open Sans, sans-serif;
 }
 
+.dark .chrome_bookmarks .count {
+	color: #AAA;
+}
+
+
+
+
 
 
 /*---------------------------------------------
@@ -2348,8 +2554,16 @@ body.no-edit .bookmarks .tools {
 	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#444" viewBox="0 0 24 24"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/></svg>');
 }
 
+.dark .chrome_bookmarks .folder:before {
+	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#BBB" viewBox="0 0 24 24"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/></svg>');
+}
+
 .chrome_bookmarks .folder.active:before {
 	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#444" viewBox="0 0 24 24"><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/></svg>');
+}
+
+.dark .chrome_bookmarks .folder.active:before {
+	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#BBB" viewBox="0 0 24 24"><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/></svg>');
 }
 
 .chrome_bookmarks .folder .title {
@@ -2514,6 +2728,10 @@ body.no-edit .bookmarks .tools {
 	background-color: #FFECEC;
 }
 
+.dark .todo .item.important {
+	background-color: #443B3B;
+}
+
 .todo .item.important .title {
 	color: #E40400;
 }
@@ -2604,6 +2822,10 @@ body.no-edit .bookmarks .tools {
 	margin-right: -5px;
 }
 
+.dark .tasks .add {
+	color: #CCC;
+}
+
 .tasks:hover .add {
 	opacity: 1;
 }
@@ -2632,6 +2854,10 @@ body.no-edit .bookmarks .tools {
 	border-left: 3px solid transparent;
 	transition: all .2s cubic-bezier(.4, 0, .2, 1),
 				opacity .15s cubic-bezier(.4, 0, .2, 1);
+}
+
+.dark .tasks .item {
+	color: #E0E0E0;
 }
 
 .tasks .item.transitioning {
@@ -2697,6 +2923,10 @@ body.no-edit .bookmarks .tools {
 	color: #888;
 }
 
+.dark .tasks .check:checked + .title {
+	color: #AAA;
+}
+
 .tasks .title .strikethrough {
 	max-width: 100%;
 	overflow: hidden;
@@ -2741,6 +2971,10 @@ body.no-edit .bookmarks .tools {
 .tasks .check:checked ~ .due-date {
 	color: #757575;
 	pointer-events: none;
+}
+
+.dark .tasks .check:checked ~ .due-date {
+	color: #999;
 }
 
 
@@ -2791,6 +3025,10 @@ body.no-edit .bookmarks .tools {
 	margin-left: auto;
 }
 
+.dark .tasks .edit button.done {
+	color: #0ECEA8;
+}
+
 .tasks .edit button.icon {
 	padding: 3px 5px;
 }
@@ -2798,6 +3036,10 @@ body.no-edit .bookmarks .tools {
 .tasks .edit button.icon svg {
 	fill: #474747;
 	vertical-align: top;
+}
+
+.dark .tasks .edit button.icon svg {
+	fill: #CCC;
 }
 
 .tasks .edit button.delete svg {
@@ -2970,6 +3212,11 @@ body.no-edit .bookmarks .tools {
 	box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1);
 }
 
+.dark .now .card {
+	color: #EEE;
+	background: #333;
+}
+
 .now .card:not(:first-child) {
 	z-index: 9;
 	margin-top: 15px;
@@ -3008,6 +3255,10 @@ body.no-edit .bookmarks .tools {
 	height: 80px;
 	margin-right: 15px;
 	background: #F5F5F5 center no-repeat;
+}
+
+.dark .now .card .icon {
+	background-color: #2A2A2A;
 }
 
 .now .card h2 {
@@ -3052,6 +3303,11 @@ body.no-edit .bookmarks .tools {
 	box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1);
 }
 
+.dark .now .cards .buttons {
+	background: #2A2A2A;
+	border-top-color: #222;
+}
+
 .now .cards .buttons a {
 	flex: 1;
 	color: #333;
@@ -3062,9 +3318,17 @@ body.no-edit .bookmarks .tools {
 	text-decoration: none;
 }
 
+.dark .now .cards .buttons a {
+	color: #EEE;
+}
+
 .now .cards .buttons a:hover {
 	color: #006AD1;
 	background: #F7F7F7;
+}
+
+.dark .now .cards .buttons a:hover {
+	background: #333;
 }
 
 .now .buttons img {
@@ -3119,8 +3383,16 @@ body.no-edit .bookmarks .tools {
 	text-decoration: none;
 }
 
+.dark .twitter .tweet {
+	color: #BBB;
+}
+
 .twitter .tweet:hover {
 	background: rgba(0, 0, 0, .03);
+}
+
+.dark .twitter .tweet:hover {
+	background: rgba(0, 0, 0, .15);
 }
 
 .twitter .tweet .topbar {
@@ -3134,6 +3406,10 @@ body.no-edit .bookmarks .tools {
 	text-decoration: none;
 }
 
+.dark .twitter .topbar a.user {
+	color: #EEE;
+}
+
 .twitter .topbar a.user:hover {
 	color: #428BCA;
 }
@@ -3143,10 +3419,18 @@ body.no-edit .bookmarks .tools {
 	padding-left: 5px;
 }
 
+.dark .twitter .tweet .tweeter {
+	color: #AAA;
+}
+
 .twitter .tweet .age {
 	color: #777;
 	float: right;
 	font-size: 12px;
+}
+
+.dark .twitter .tweet .age {
+	color: #CCC;
 }
 
 .twitter .tweet .content {
@@ -3171,6 +3455,10 @@ body.no-edit .bookmarks .tools {
 	color: #777;
 	padding: 0 5px;
 	text-decoration: none;
+}
+
+.dark .twitter .tools a {
+	color: #BBB;
 }
 
 .twitter .tools a:hover {
@@ -3268,6 +3556,12 @@ body.no-edit .bookmarks .tools {
 	box-shadow: inset 1px 1px rgba(0, 0, 0, 0.06);
 }
 
+.dark .calc button {
+	color: #EEE;
+	background: #2A2A2A;
+	box-shadow: inset 1px 1px rgba(0, 0, 0, 0.15);
+}
+
 .calc .buttons button:hover {
 	background: #8BE;
 	box-shadow: inset 1px 1px 0 0 rgba(0, 0, 0, .06), inset -1px 0 0 rgba(0, 0, 0, .06);
@@ -3276,6 +3570,15 @@ body.no-edit .bookmarks .tools {
 .calc .buttons button:active,
 .calc button[data-id="equals"] {
 	background: #67A9E2;
+}
+
+.dark .calc .buttons button:hover,
+.dark .calc button[data-id="equals"] {
+	background: #1565C0;
+}
+
+.dark .calc .buttons button:active {
+	background: #0D47A1;
 }
 
 .calc button:hover + button:not(:nth-child(4n + 1)) {
@@ -3323,6 +3626,10 @@ body.no-edit .bookmarks .tools {
 	background: #F5F5F5!important;
 }
 
+.dark .youtube .searchbox input {
+	background: #484848!important;
+}
+
 .youtube .searchbox input:focus {
 	background: #EEE!important;
 }
@@ -3341,8 +3648,17 @@ body.no-edit .bookmarks .tools {
 	transition-property: color, background-color;
 }
 
+.dark .youtube .searchbox button {
+	color: #EEE;
+	background: #484848;
+}
+
 .youtube .searchbox button:hover {
 	background: #EAEAEA;
+}
+
+.dark .youtube .searchbox button:hover {
+	background: #303030;
 }
 
 .youtube .searchbox button:active {
@@ -3363,8 +3679,16 @@ body.no-edit .bookmarks .tools {
 		-1px 0 0 0 rgba(0, 0, 0, .05);
 }
 
+.dark .youtube .video {
+	background: #484848;
+}
+
 .youtube .video:hover {
 	background: #F9F9F9;
+}
+
+.dark .youtube .video:hover {
+	background: #404040;
 }
 
 .youtube .video:nth-child(2n) {
@@ -3404,8 +3728,16 @@ body.no-edit .bookmarks .tools {
 	font-family: Open Sans, sans-serif;
 }
 
+.dark .youtube .video h2 {
+	color: #EEE;
+}
+
 .youtube .video:hover h2 {
 	color: #28C;
+}
+
+.dark .youtube .video:hover h2 {
+	color: #BBB;
 }
 
 .youtube .video span {
@@ -3417,6 +3749,10 @@ body.no-edit .bookmarks .tools {
 	white-space: nowrap;
 	display: inline-block;
 	text-overflow: ellipsis;
+}
+
+.dark .youtube .video span {
+	color: #AAA;
 }
 
 .youtube .video .views {
@@ -3466,8 +3802,16 @@ body.no-edit .bookmarks .tools {
 	font-family: Open Sans, sans-serif;
 }
 
+.dark .recentlyclosed .item {
+	color: #EEE;
+}
+
 .recentlyclosed .item:hover {
-	background: rgba(0, 0, 0, 0.03);
+	background: rgba(0, 0, 0, .03);
+}
+
+.dark .recentlyclosed .item:hover {
+	background: rgba(0, 0, 0, .15);
 }
 
 .recentlyclosed .favicon {
@@ -3502,6 +3846,10 @@ body.no-edit .bookmarks .tools {
 	padding: 5px 5px 0;
 	-webkit-font-smoothing: antialiased;
 	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.dark .quotes blockquote {
+	color: #DDD;
 }
 
 .quotes blockquote > a {
@@ -3549,6 +3897,10 @@ body.no-edit .bookmarks .tools {
 	max-width: calc(100% - 70px);
 }
 
+.dark .quotes footer cite {
+	color: #BBB;
+}
+
 .quotes footer span {
 	opacity: 0;
 	float: left;
@@ -3574,6 +3926,10 @@ body.no-edit .bookmarks .tools {
 	fill: #444;
 	width: 20px;
 	height: 20px;
+}
+
+.dark .quotes footer .refresh svg {
+	fill: #BBB;
 }
 
 .quotes footer .refresh:hover svg {
@@ -3611,6 +3967,10 @@ body.no-edit .bookmarks .tools {
 	padding-bottom: 65%;
 	border-radius: 4px 4px 0 0;
 	box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+}
+
+.dark .sitelink .thumbnail {
+	background: #222;
 }
 
 .sitelink .thumbnail:not(.fill) {
@@ -3680,6 +4040,11 @@ body.no-edit .bookmarks .tools {
 	opacity: .6;
 	height: 36px;
 	display: inline-block;
+}
+
+.dark .stats .icon {
+	fill: #CCC;
+	opacity: 1;
 }
 
 .stats .status {
@@ -3764,6 +4129,10 @@ body.no-edit .bookmarks .tools {
 	position: absolute;
 }
 
+.dark .widget.search button.submit {
+	background: #1976D2;
+}
+
 .widget.search.tiny form {
 	height: 65px;
 }
@@ -3795,6 +4164,10 @@ body.no-edit .bookmarks .tools {
 	font-family: Roboto, sans-serif;
 }
 
+.dark .widget.pushbullet {
+	background: #2A2A2A;
+}
+
 .pushbullet a {
 	color: inherit;
 	text-decoration: none;
@@ -3809,6 +4182,10 @@ body.no-edit .bookmarks .tools {
 	background: #F8F8F8;
 	letter-spacing: .4px;
 	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
+}
+
+.dark .pushbullet header {
+	background: #3A3A3A;
 }
 
 .pushbullet .items {
@@ -3846,6 +4223,10 @@ body.no-edit .bookmarks .tools {
 	background-repeat: no-repeat;
 }
 
+.dark .pushbullet .item .thumb {
+	background-color: #555;
+}
+
 .pushbullet .item .sender {
 	font-weight: 500;
 }
@@ -3854,6 +4235,10 @@ body.no-edit .bookmarks .tools {
 	color: #666;
 	float: right;
 	font-size: 13px;
+}
+
+.dark .pushbullet .item .date {
+	color: #BBB;
 }
 
 .pushbullet .item .body {
@@ -3906,6 +4291,11 @@ body.no-edit .bookmarks .tools {
 	padding: 85px 10% 20px;
 }
 
+.dark .pushbullet .notice {
+	color: #BBB;
+	background: #282828;
+}
+
 .pushbullet .notice.no-key {
 	padding-top: 55px;
 }
@@ -3947,6 +4337,10 @@ body.no-edit .bookmarks .tools {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
 }
 
+.dark .directions .methods {
+	background: #484848;
+}
+
 .directions .methods button {
 	flex: 1;
 	margin: 0;
@@ -3955,6 +4349,10 @@ body.no-edit .bookmarks .tools {
 	padding: 10px 0;
 	transition: none;
 	border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.dark .directions .methods button {
+	color: #BBB;
 }
 
 .directions .methods button:hover {
@@ -3968,9 +4366,19 @@ body.no-edit .bookmarks .tools {
 	background: initial;
 }
 
+.dark .directions .methods button:hover,
+.dark .directions .methods button:focus,
+.dark .directions .methods button:active {
+	color: #EEE;
+}
+
 .directions .methods button.active {
 	color: #2196F3;
 	border-bottom-color: currentColor;
+}
+
+.dark .directions .methods button.active {
+	color: #42A5F5;
 }
 
 .directions input {
@@ -3985,6 +4393,12 @@ body.no-edit .bookmarks .tools {
 .directions input.to:hover,
 .directions input.to:focus {
 	border-top: 1px solid #E2E2E2!important;
+}
+
+.dark .directions input.to,
+.dark .directions input.to:hover,
+.dark .directions input.to:focus {
+	border-top-color: rgba(0, 0, 0, .2)!important;
 }
 
 .directions .map {
@@ -4006,10 +4420,18 @@ body.no-edit .bookmarks .tools {
 	background-color: #F5F5F5;
 }
 
+.dark .directions .notice {
+	background-color: #2A2A2A;
+}
+
 .directions .notice.visible {
 	height: auto;
 	padding: 30px 10% 20px;
 	border-top: 1px solid #E2E2E2;
+}
+
+.dark .directions .notice.visible {
+	border-top-color: #222;
 }
 
 .directions .notice p {
@@ -4032,6 +4454,10 @@ body.no-edit .bookmarks .tools {
 
 .directions .results .route:not(:last-child) {
 	border-bottom: 1px solid #E2E2E2;
+}
+
+.dark .directions .results .route:not(:last-child) {
+	border-bottom-color: #2A2A2A;
 }
 
 .directions .route .summary {
@@ -4079,6 +4505,10 @@ body.no-edit .bookmarks .tools {
 	margin-bottom: 0;
 	background: #F5F5F5;
 	transition: all .2s ease;
+}
+
+.dark .directions .steps {
+	background: #2A2A2A;
 }
 
 .directions .route.active .steps,
@@ -4166,11 +4596,19 @@ body.no-edit .bookmarks .tools {
 	background: #FAFAFA;
 }
 
+.dark .pocket .link:hover {
+	background: #2C2C2C;
+}
+
 .pocket .link .image {
 	width: 100px;
 	height: 95px;
 	display: inline-block;
 	background: #EAEAEA center/cover no-repeat;
+}
+
+.dark .pocket .link .image {
+	background-color: #2A2A2A;
 }
 
 .pocket .link .info {
@@ -4183,6 +4621,10 @@ body.no-edit .bookmarks .tools {
 .pocket .link:not(:last-child) .info {
 	padding-bottom: 14px;
 	border-bottom: 1px solid #EEE;
+}
+
+.dark .pocket .link:not(:last-child) .info {
+	border-bottom-color: #2A2A2A;
 }
 
 .pocket .link .title {
@@ -4227,6 +4669,11 @@ body.no-edit .bookmarks .tools {
 	text-align: center;
 	background: #F2F2F2;
 	padding: 85px 10% 20px;
+}
+
+.dark .pocket .notice {
+	color: #BBB;
+	background: #282828;
 }
 
 .pocket .notice.no-key {

@@ -10,6 +10,11 @@
 	border-top: 1px solid #EEE;
 }
 
+.dark .file {
+	color: #DDD;
+	border-top-color: #222;
+}
+
 .file:hover {
 	background-color: rgba(0, 0, 0, 0.01);
 }
@@ -50,6 +55,10 @@
 	margin-right: 15px;
 	background: #F5F5F5 center no-repeat;
 	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAB0SURBVFiF7dSxDYAwDERRj5cxWIY5MkrGocwIBroIEXIRnEVxln5rv8rm7taW1s1flm0w7T37CFBnEAxAOVpQBAVwLkYRNACKoAIQBB0wQoQAnhBhgB4iFHCHCAdcEaxPWIAqCzCVAAIIIIAAAggggAC/Auz27D1Yc1xjaQAAAABJRU5ErkJggg==");
+}
+
+.dark .file .icon {
+	background-color: #2A2A2A;
 }
 
 
