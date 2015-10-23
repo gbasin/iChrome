@@ -57,6 +57,10 @@
 	color: #CCC;
 }
 
+.dark.transparent .widget .details div {
+	color: #EEE;
+}
+
 .widget .details div:after,
 .widget .mainval:after {
 	color: #666;
@@ -70,6 +74,11 @@
 .dark .widget .details div:after,
 .dark .widget .mainval:after {
 	color: #CCC;
+}
+
+.dark.transparent .widget .details div:after,
+.dark.transparent .widget .mainval:after {
+	color: #DDD;
 }
 
 .widget .mainval {
@@ -424,6 +433,10 @@
 
 .dark .stocks .info .relative {
 	color: #BBB;
+}
+
+.dark.transparent .stocks .info .relative {
+	color: #DDD;
 }
 
 .stocks .val {
