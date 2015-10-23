@@ -1313,6 +1313,15 @@ dialog.announcements li {
 	transition: box-shadow .2s cubic-bezier(.4, 0, .2, 1), background-color .2s ease-in-out;
 }
 
+.dark .menu-toggle .menu-button {
+	color: #CCC;
+	background: #333;
+}
+
+.transparent.dark .menu-toggle .menu-button {
+	background: rgba(0, 0, 0, .4);
+}
+
 .menu-toggle .menu-button:before {
 	top: 12px;
 	left: 17px;
@@ -1325,6 +1334,14 @@ dialog.announcements li {
 
 .menu-toggle .menu-button:hover {
 	background-color: #D23F31;
+}
+
+.dark .menu-toggle .menu-button:hover {
+	background: #444;
+}
+
+.transparent.dark .menu-toggle .menu-button:hover {
+	background: rgba(0, 0, 0, .6);
 }
 
 .menu-toggle .menu-button:active {
