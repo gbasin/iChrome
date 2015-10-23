@@ -56,6 +56,8 @@
 				<div class="checkboxes col-sm-9">
 					<label><input type="radio" name="style" value="light" checked /> {{i18n.settings.visual.style_light}}</label>
 					<label><input type="radio" name="style" value="dark" {{^isPro}}disabled {{/isPro}}/> {{i18n.settings.visual.style_dark}} (<a class="preview" data-style="dark">{{i18n.settings.visual.style_preview}}</a>)</label>
+					<label><input type="radio" name="style" value="transparent dark" {{^isPro}}disabled {{/isPro}}/> {{i18n.settings.visual.style_transparent}} (<a class="preview" data-style="transparent dark">{{i18n.settings.visual.style_preview}}</a>)</label>
+					<label><input type="radio" name="style" value="transparent dark darker" {{^isPro}}disabled {{/isPro}}/> {{i18n.settings.visual.style_transparent_darker}} (<a class="preview" data-style="transparent dark darker">{{i18n.settings.visual.style_preview}}</a>)</label>
 				</div>
 			</div>
 		</div>

@@ -44,14 +44,18 @@ module.exports = function(grunt) {
 
 				var ast = css.parse(grunt.file.read(basePath + manifest.css));
 
+				var themeRegex = /^\.(?:dark|transparent|darker)(?:\.(?:dark|transparent|darker))?\s/;
+
 				ast.stylesheet.rules = _.map(ast.stylesheet.rules, function prefixRule(e) {
 					if (e.selectors) {
 						e.selectors = _.map(e.selectors, function(e) {
 							e = e.trim();
 
-							// Dark styles are prefixed by the global dark selector
-							if (e.slice(0, 5) === ".dark") {
-								return ".dark " + prefix + e.substr(5);
+							var themeSel = e.match(themeRegex);
+
+							// Theme styles are prefixed by their global selectors
+							if (themeSel && themeSel.length) {
+								return themeSel[0] + prefix + " " + e.replace(themeRegex, "");
 							}
 							else if (e.indexOf(":root") !== -1) {
 								// We do a simple replace to allow things like ":root.tiny"

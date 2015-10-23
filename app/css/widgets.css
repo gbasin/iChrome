@@ -474,6 +474,10 @@
 	text-align: left;
 }
 
+.dark .stocks table .ticker {
+	color: #EEE;
+}
+
 .stocks table .price {
 	color: #52A9CA;
 	font-size: 16px;
@@ -567,6 +571,13 @@
 .dark .reddit .item,
 .dark .feedly .item {
 	color: #BBB;
+}
+
+.dark.transparent .rss .item,
+.dark.transparent .news .item,
+.dark.transparent .reddit .item,
+.dark.transparent .feedly .item {
+	color: #EEE;
 }
 
 .rss .item .excerpt,
@@ -684,6 +695,12 @@
 .dark .reddit .more,
 .dark .feedly .more {
 	color: #BBB;
+}
+
+.dark.transparent .news .more,
+.dark.transparent .reddit .more,
+.dark.transparent .feedly .more {
+	color: #EEE;
 }
 
 .news .more:hover,
@@ -829,6 +846,11 @@
 	color: #CCC;
 }
 
+.dark.transparent .reddit .item .specs span,
+.dark.transparent .reddit .item span.nested-link[data-href] {
+	color: #EEE;
+}
+
 .reddit .item .specs span:before {
 	font-size: 14px;
 	margin-right: 5px;
@@ -895,6 +917,10 @@
 	background-color: #222;
 }
 
+.dark.transparent .feedly .item .img {
+	background-color: rgba(0, 0, 0, .2);
+}
+
 .feedly .item .img img {
 	width: 60%;
 	visibility: hidden;
@@ -951,6 +977,10 @@
 
 .dark .feedly .cards .item {
 	border-color: #555;
+}
+
+.dark.transparent .feedly .cards .item {
+	border-color: rgba(0, 0, 0, .2);
 }
 
 .feedly .cards .item .img {
@@ -1051,6 +1081,14 @@
 	background: #2A2A2A;
 }
 
+.dark.transparent .widget.clock.small {
+	background: rgba(0, 0, 0, .2);
+}
+
+.transparent.darker .widget.clock.small {
+	background: rgba(0, 0, 0, .6);
+}
+
 .clock .section {
 	padding: 15px;
 	position: absolute;
@@ -1079,6 +1117,10 @@
 
 .dark .clock .time {
 	color: #CCC;
+}
+
+.dark.transparent .clock .time {
+	color: #EEE;
 }
 
 .clock input:not([type="checkbox"]) {
@@ -1125,6 +1167,10 @@
 	text-align: center;
 }
 
+.dark.transparent .clock .date {
+	color: #42A5F5;
+}
+
 .clock .controls {
 	display: flex;
 	margin-top: 15px;
@@ -1167,6 +1213,14 @@
 
 .dark .clock header.tabs {
 	background: #3A3A3A;
+}
+
+.dark.transparent .clock header.tabs {
+	background: rgba(0, 0, 0, .15);
+}
+
+.transparent.darker .clock header.tabs {
+	background: rgba(0, 0, 0, .4);
 }
 
 .clock .tabs .item {
@@ -1689,6 +1743,10 @@
 	padding: 85px 10% 20px;
 }
 
+.dark.transparent .calendar .notice {
+	color: #EEE;
+}
+
 .calendar .notice p {
 	line-height: 22px;
 	margin: 5px 0 15px;
@@ -1712,6 +1770,10 @@
 
 .dark .calendar .agenda {
 	background: #282828;
+}
+
+.dark.transparent .calendar .agenda {
+	background: rgba(0, 0, 0, .15);
 }
 
 .medley .calendar .agenda {
@@ -1748,6 +1810,10 @@
 	background: #3A3A3A;
 }
 
+.dark.transparent .calendar .agenda .day .events {
+	background: rgba(0, 0, 0, .2);
+}
+
 .calendar .agenda .day .event {
 	color: #333;
 	display: block;
@@ -1774,6 +1840,10 @@
 
 .dark .calendar .agenda .day .event:hover {
 	background: #303030;
+}
+
+.dark.transparent .calendar .agenda .day .event:hover {
+	background: rgba(0, 0, 0, .2);
 }
 
 .calendar .agenda .day .event > * {
@@ -1940,6 +2010,10 @@
 	color: #333;
 }
 
+.dark.transparent .notes .note {
+	color: #FFF;
+}
+
 .notes .note.yellow	{ background: #FFFFB5; }
 .notes .note.blue	{ background: #B5E4FF; }
 .notes .note.red	{ background: #FFB5B5; }
@@ -1964,6 +2038,13 @@
 	color: #CCC;
 }
 
+/* These are the same colors as the dark theme ones, just at 50% */
+.dark.transparent .notes .note.yellow	{ background: rgba(249, 168, 37, .5); }
+.dark.transparent .notes .note.blue		{ background: rgba(33, 150, 243, .5); }
+.dark.transparent .notes .note.red		{ background: rgba(244, 67, 54, .5); }
+.dark.transparent .notes .note.orange	{ background: rgba(251, 140, 0, .5); }
+.dark.transparent .notes .note.green	{ background: rgba(76, 175, 80, .5); }
+
 .notes .note input.header {
 	border: 0!important;
 	padding: 0!important;
@@ -1973,6 +2054,10 @@
 
 .dark .notes .note input.header {
 	color: #333;
+}
+
+.dark.transparent .notes .note input.header {
+	color: #FFF;
 }
 
 .notes .note .content {
@@ -2026,6 +2111,15 @@
 .dark .wolfram img {
 	background: #333;
 	box-shadow: 0 0 15px 10px #333;
+}
+
+/**
+ * It would take significant work to get the widget functioning with a proper fade.
+ * Instead we just let the border show through. The widget is almost never used anyway.
+ */
+.dark.transparent .wolfram img {
+	background: none;
+	box-shadow: none;
 }
 
 .wolfram input,
@@ -2114,6 +2208,11 @@
 .dark .sports .status,
 .dark .sports .team .score {
 	color: #BBB;
+}
+
+.dark.transparent .sports .status,
+.dark.transparent .sports .team .score {
+	color: #EEE;
 }
 
 .sports .status {
@@ -2495,6 +2594,11 @@ body.no-edit .bookmarks .tools {
 	color: #DDD;
 }
 
+.dark.transparent .chrome_bookmarks .link,
+.dark.transparent .chrome_bookmarks .folder {
+	color: #EEE;
+}
+
 .chrome_bookmarks .link:hover,
 .chrome_bookmarks .folder:hover {
 	border-left-color: #1E88E5;
@@ -2623,6 +2727,10 @@ body.no-edit .bookmarks .tools {
 	display: block;
 }
 
+.dark.transparent .todo .list {
+	color: #BBB;
+}
+
 .todo .item {
 	height: 40px;
 	display: block;
@@ -2634,6 +2742,10 @@ body.no-edit .bookmarks .tools {
 
 .todo .item:hover {
 	background: rgba(0, 0, 0, 0.03);
+}
+
+.dark .todo .item:hover {
+	background: rgba(0, 0, 0, 0.15);
 }
 
 .todo .item.dragged {
@@ -2718,6 +2830,10 @@ body.no-edit .bookmarks .tools {
 	color: #AAA;
 }
 
+.dark.transparent .todo .item.done .check {
+	color: #888;
+}
+
 .todo .item.done .title,
 .todo .item.important.done .title {
 	color: #AAA;
@@ -2730,6 +2846,10 @@ body.no-edit .bookmarks .tools {
 
 .dark .todo .item.important {
 	background-color: #443B3B;
+}
+
+.dark.transparent .todo .item.important {
+	background-color: rgba(228, 4, 0, 0.35);
 }
 
 .todo .item.important .title {
@@ -2954,6 +3074,10 @@ body.no-edit .bookmarks .tools {
 	flex-shrink: 0;
 	font-size: 11px;
 	font-family: Open Sans, sans-serif;
+}
+
+.dark .tasks .due-date:not(.overdue):not(.due-today) {
+	color: #AAA;
 }
 
 .tasks .due-date.due-today {
@@ -3217,6 +3341,15 @@ body.no-edit .bookmarks .tools {
 	background: #333;
 }
 
+.dark.transparent .now .card {
+	background: rgba(0, 0, 0, .3);
+	color: #FFF;
+}
+
+.transparent.darker .now .card {
+	background: rgba(0, 0, 0, .6);
+}
+
 .now .card:not(:first-child) {
 	z-index: 9;
 	margin-top: 15px;
@@ -3235,6 +3368,10 @@ body.no-edit .bookmarks .tools {
 	cursor: pointer;
 	position: absolute;
 	font-family: Entypo;
+}
+
+.dark .now .card .dismiss {
+	color: #CCC;
 }
 
 .now .card:first-child .dismiss {
@@ -3259,6 +3396,10 @@ body.no-edit .bookmarks .tools {
 
 .dark .now .card .icon {
 	background-color: #2A2A2A;
+}
+
+.dark.transparent .now .card .icon {
+	background-color: rgba(0, 0, 0, .15);
 }
 
 .now .card h2 {
@@ -3308,6 +3449,15 @@ body.no-edit .bookmarks .tools {
 	border-top-color: #222;
 }
 
+.dark.transparent .now .cards .buttons {
+	background: rgba(0, 0, 0, .45);
+	border-top-color: rgba(0, 0, 0, .1);
+}
+
+.transparent.darker .now .cards .buttons {
+	background: rgba(0, 0, 0, .7);
+}
+
 .now .cards .buttons a {
 	flex: 1;
 	color: #333;
@@ -3329,6 +3479,10 @@ body.no-edit .bookmarks .tools {
 
 .dark .now .cards .buttons a:hover {
 	background: #333;
+}
+
+.dark.transparent .now .cards .buttons a:hover {
+	background: rgba(0, 0, 0, .25);
 }
 
 .now .buttons img {
@@ -3562,6 +3716,10 @@ body.no-edit .bookmarks .tools {
 	box-shadow: inset 1px 1px rgba(0, 0, 0, 0.15);
 }
 
+.dark.transparent .calc button {
+	background: rgba(0, 0, 0, .3);
+}
+
 .calc .buttons button:hover {
 	background: #8BE;
 	box-shadow: inset 1px 1px 0 0 rgba(0, 0, 0, .06), inset -1px 0 0 rgba(0, 0, 0, .06);
@@ -3577,8 +3735,17 @@ body.no-edit .bookmarks .tools {
 	background: #1565C0;
 }
 
+.dark.transparent .calc .buttons button:hover,
+.dark.transparent .calc button[data-id="equals"] {
+	background: rgba(21, 101, 192, .6);
+}
+
 .dark .calc .buttons button:active {
 	background: #0D47A1;
+}
+
+.dark.transparent .calc .buttons button:active {
+	background: #1565C0;
 }
 
 .calc button:hover + button:not(:nth-child(4n + 1)) {
@@ -3630,6 +3797,10 @@ body.no-edit .bookmarks .tools {
 	background: #484848!important;
 }
 
+.dark.transparent .youtube .searchbox input {
+	background: rgba(0, 0, 0, .2)!important;
+}
+
 .youtube .searchbox input:focus {
 	background: #EEE!important;
 }
@@ -3653,12 +3824,20 @@ body.no-edit .bookmarks .tools {
 	background: #484848;
 }
 
+.dark.transparent .youtube .searchbox button {
+	background: rgba(0, 0, 0, .2);
+}
+
 .youtube .searchbox button:hover {
 	background: #EAEAEA;
 }
 
 .dark .youtube .searchbox button:hover {
 	background: #303030;
+}
+
+.dark.transparent .youtube .searchbox button:hover {
+	background: rgba(0, 0, 0, .3);
 }
 
 .youtube .searchbox button:active {
@@ -3681,6 +3860,10 @@ body.no-edit .bookmarks .tools {
 
 .dark .youtube .video {
 	background: #484848;
+}
+
+.dark.transparent .youtube .video {
+	background: rgba(0, 0, 0, .2);
 }
 
 .youtube .video:hover {
@@ -3753,6 +3936,10 @@ body.no-edit .bookmarks .tools {
 
 .dark .youtube .video span {
 	color: #AAA;
+}
+
+.dark.transparent .youtube .video span {
+	color: #DDD;
 }
 
 .youtube .video .views {
@@ -3852,6 +4039,10 @@ body.no-edit .bookmarks .tools {
 	color: #DDD;
 }
 
+.dark.transparent .quotes blockquote {
+	color: #EEE;
+}
+
 .quotes blockquote > a {
 	color: inherit;
 	display: block;
@@ -3899,6 +4090,10 @@ body.no-edit .bookmarks .tools {
 
 .dark .quotes footer cite {
 	color: #BBB;
+}
+
+.dark.transparent .quotes footer cite {
+	color: #DDD;
 }
 
 .quotes footer span {
@@ -4133,6 +4328,10 @@ body.no-edit .bookmarks .tools {
 	background: #1976D2;
 }
 
+.dark.transparent .widget.search button.submit {
+	background: rgba(25, 118, 210, .6);
+}
+
 .widget.search.tiny form {
 	height: 65px;
 }
@@ -4186,6 +4385,10 @@ body.no-edit .bookmarks .tools {
 
 .dark .pushbullet header {
 	background: #3A3A3A;
+}
+
+.dark.transparent .pushbullet header {
+	background: rgba(0, 0, 0, .2);
 }
 
 .pushbullet .items {
@@ -4296,6 +4499,11 @@ body.no-edit .bookmarks .tools {
 	background: #282828;
 }
 
+.dark.transparent .pushbullet .notice {
+	color: #DDD;
+	background: rgba(0, 0, 0, .2);
+}
+
 .pushbullet .notice.no-key {
 	padding-top: 55px;
 }
@@ -4339,6 +4547,10 @@ body.no-edit .bookmarks .tools {
 
 .dark .directions .methods {
 	background: #484848;
+}
+
+.dark.transparent .directions .methods {
+	background: rgba(0, 0, 0, .3);
 }
 
 .directions .methods button {
@@ -4424,6 +4636,11 @@ body.no-edit .bookmarks .tools {
 	background-color: #2A2A2A;
 }
 
+.dark.transparent .directions .notice {
+	color: #DDD;
+	background: rgba(0, 0, 0, .3);
+}
+
 .directions .notice.visible {
 	height: auto;
 	padding: 30px 10% 20px;
@@ -4432,6 +4649,10 @@ body.no-edit .bookmarks .tools {
 
 .dark .directions .notice.visible {
 	border-top-color: #222;
+}
+
+.dark.transparent .directions .notice.visible {
+	border-top-color: rgba(0, 0, 0, .15);
 }
 
 .directions .notice p {
@@ -4509,6 +4730,10 @@ body.no-edit .bookmarks .tools {
 
 .dark .directions .steps {
 	background: #2A2A2A;
+}
+
+.dark.transparent .directions .steps {
+	background-color: rgba(0, 0, 0, .2);
 }
 
 .directions .route.active .steps,
@@ -4600,6 +4825,10 @@ body.no-edit .bookmarks .tools {
 	background: #2C2C2C;
 }
 
+.dark.transparent .pocket .link:hover {
+	background: rgba(0, 0, 0, .15);
+}
+
 .pocket .link .image {
 	width: 100px;
 	height: 95px;
@@ -4627,6 +4856,10 @@ body.no-edit .bookmarks .tools {
 	border-bottom-color: #2A2A2A;
 }
 
+.dark.transparent .pocket .link:not(:last-child) .info {
+	border-bottom-color: rgba(0, 0, 0, .2)
+}
+
 .pocket .link .title {
 	height: 40px;
 	font-size: 14px;
@@ -4648,6 +4881,10 @@ body.no-edit .bookmarks .tools {
 	display: block;
 	font-size: 12px;
 	line-height: 15px;
+}
+
+.dark.transparent .pocket .link .details {
+	color: #DDD;
 }
 
 .pocket .link .details .date {
@@ -4674,6 +4911,11 @@ body.no-edit .bookmarks .tools {
 .dark .pocket .notice {
 	color: #BBB;
 	background: #282828;
+}
+
+.dark.transparent .pocket .notice {
+	color: #DDD;
+	background: rgba(0, 0, 0, .2);
 }
 
 .pocket .notice.no-key {

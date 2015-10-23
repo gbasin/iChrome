@@ -5,14 +5,18 @@
 define(["lodash"], function(_) {
 	var sElm;
 
+	var themeRegex = /^\.(?:dark|transparent|darker)(?:\.(?:dark|transparent|darker))?\s/;
+
 	var prefixRule = function(prefix, rule) {
 		if (rule.selectorText) {
 			rule.selectorText = _.map(rule.selectorText.split(","), function(e) {
 				e = e.trim();
 
-				// Dark styles are prefixed by the global dark selector
-				if (e.slice(0, 5) === ".dark") {
-					return ".dark " + prefix + e.substr(5);
+				var themeSel = e.match(themeRegex);
+
+				// Theme styles are prefixed by their global selectors
+				if (themeSel && themeSel.length) {
+					return themeSel[0] + prefix + " " + e.replace(themeRegex, "");
 				}
 				else if (e.indexOf(":root") !== -1) {
 					// We do a simple replace to allow things like ":root.tiny"

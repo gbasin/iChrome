@@ -86,7 +86,12 @@ define(
 				}, this).on("change:editing", function() {
 					this.$el.toggleClass("no-edit", this.model.get("editing") === false);
 				}, this).on("change:style", function() {
-					this.$el.toggleClass("dark", Pro.isPro && this.model.get("style") === "dark");
+					if (Pro.isPro && this.model.get("style") !== "light") {
+						this.$el.addClass(this.model.get("style"));
+					}
+					else {
+						this.$el.removeClass(this.model.previous("style"));
+					}
 				}, this).on("change:target", function() {
 					$("base").attr("target", this.model.get("target"));
 				}, this).init();

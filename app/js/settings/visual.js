@@ -68,7 +68,11 @@ define(["lodash", "jquery", "backbone", "storage/storage", "i18n/i18n", "core/pr
 			 * @param   {String}  style  The style to preview
 			 */
 			previewStyle: function(style) {
-				$(document.body).addClass(style);
+				// Adaptive themes such as the transparent one need to
+				// restore the base style after they've been previewed
+				var oldClass = $(document.body).attr("class");
+
+				$(document.body).removeClass(this.model.get("settings").style).addClass(style);
 
 				var hidePreview = function() {
 					clearTimeout(removeTimeout);
@@ -77,7 +81,7 @@ define(["lodash", "jquery", "backbone", "storage/storage", "i18n/i18n", "core/pr
 
 					previewOverlay.remove();
 
-					$(document.body).removeClass(style);
+					$(document.body).attr("class", oldClass);
 				};
 
 				// Styles are a pro feature. Anyone can preview them, but we don't

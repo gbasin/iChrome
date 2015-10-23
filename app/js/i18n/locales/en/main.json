@@ -151,6 +151,8 @@
 			"style_desc": "This controls the style of all widgets and iChrome itself.",
 			"style_light": "Light (default)",
 			"style_dark": "Dark",
+			"style_transparent": "Transparent",
+			"style_transparent_darker": "Transparent - Darker",
 			"style_preview": "preview"
 		},
 

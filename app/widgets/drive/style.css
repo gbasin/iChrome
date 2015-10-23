@@ -15,8 +15,17 @@
 	border-top-color: #222;
 }
 
+.dark.transparent .file {
+	color: #EEE;
+	border-top-color: rgba(0, 0, 0, .1);
+}
+
 .file:hover {
 	background-color: rgba(0, 0, 0, 0.01);
+}
+
+.dark .file:hover {
+	background: rgba(0, 0, 0, .15);
 }
 
 .file:hover:after {
@@ -59,6 +68,10 @@
 
 .dark .file .icon {
 	background-color: #2A2A2A;
+}
+
+.dark.transparent .file .icon {
+	background-color: rgba(0, 0, 0, .1);
 }
 
 
