@@ -101,8 +101,8 @@ define(["lodash", "jquery", "backbone", "storage/storage", "i18n/i18n", "core/pr
 				this.$el
 					.html(render("settings/visual", data))
 					.find("#columns").val(this.model.get("settings").columns).end()
-					.find(".style input").filter(function() { return this.value == data.style; }).prop("checked", true).end()
-					.find(".toolbar-style input").filter(function() { return this.value == data.toolbar; }).prop("checked", true);
+					.find('.style input[value="' + data.style + '"]').prop("checked", true).end()
+					.find('.toolbar-style input[value="' + data.toolbar + '"]').prop("checked", true);
 
 				return this;
 			}
