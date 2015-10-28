@@ -9,6 +9,8 @@
 
 					{{#type}}<span class="type {{entypo}}" title="{{desc}}">{{{icon}}}</span>{{/type}}
 
+					{{#proOnly}}<span class="pro" title="{{i18n.themes.pro_only}}">Pro</span>{{/proOnly}}
+
 					{{name}}
 				</h2>
 			{{/name}}

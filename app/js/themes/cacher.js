@@ -104,6 +104,8 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 			length = ids.length,
 			err = this.error.bind(this);
 
+		var isVideo = this.theme.oType === "video";
+
 		FileSystem.get(function(fs) {
 			fs.root.getDirectory("Themes", { create: true }, function(dir) {
 				var active = 0;
@@ -113,10 +115,10 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 				ids.forEach(function(id, i) {
 					active++;
 
-					dir.getFile(id + ".jpg", { create: true }, function(fe) {
+					dir.getFile(id + (isVideo ? ".mp4" : ".jpg"), { create: true }, function(fe) {
 						var xhr = new XMLHttpRequest();
 
-						xhr.open("GET", (id == theme.id && theme.oType == "feed" ? theme.image : "https://themes.ichro.me/images/" + id + ".jpg"));
+						xhr.open("GET", (id == theme.id && theme.oType == "feed" ? theme.image : "https://themes.ichro.me/images/" + id + (isVideo ? ".mp4" : ".jpg")));
 
 						xhr.responseType = "blob";
 
@@ -134,12 +136,13 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 									// This stores the image as a theme
 									cached[id] = {
 										id: id,
-										offline: true,
-										image: fe.toURL()
+										offline: true
 									};
 
+									cached[id][isVideo ? "video" : "image"] = fe.toURL();
+
 									if (active === 0) {
-										that.cleanup(cached[id].image);
+										that.cleanup(cached[id][isVideo ? "video" : "image"]);
 									}
 									else {
 										// length - active might seem to be vulnerable to a race condition at first
@@ -289,15 +292,18 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 	 *
 	 * @api    private
 	 * @param  {String} [image] The image (if any) to set on the theme if it
-	 * doesn't have an images array
+	 *                          doesn't have an images array
 	 */
 	Cacher.prototype.cleanup = function(image) {
 		var theme = this.theme;
 
+		var isVideo = this.theme.oType === "video";
+
 		if (!theme.images && image) {
-			theme.image = image;
+			theme[isVideo ? "video" : "image"] = image;
 		}
 		else {
+			delete theme.video;
 			delete theme.image;
 		}
 
@@ -312,6 +318,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 		delete theme.size;
 		delete theme.stats;
 		delete theme.thumb;
+		delete theme.original;
 		delete theme.resolution;
 		delete theme.categories;
 		delete theme.filterCategories;

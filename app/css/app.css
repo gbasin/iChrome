@@ -104,6 +104,18 @@ body.dark.transparent {
 	color: #FFF;
 }
 
+#bg-video {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	position: fixed;
+	min-width: 100%;
+	min-height: 100%;
+	object-fit: cover;
+}
+
 :not(select)::-webkit-scrollbar {
 	width: 8px;
 	height: 8px;
@@ -3573,6 +3585,18 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 .themes .theme h2 span:not(:first-child) {
 	margin-right: 8px;
+}
+
+.themes .theme h2 span.pro {
+	margin-top: 0;
+	color: #FB8C00;
+	padding: 0 3px;
+	font-size: 11px;
+	line-height: 14px;
+	border-radius: 2px;
+	text-transform: uppercase;
+	border: 1px solid currentColor;
+	font-family: Roboto, sans-serif;
 }
 
 .themes .theme h2 .entypo {

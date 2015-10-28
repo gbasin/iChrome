@@ -1,6 +1,6 @@
-define(["lodash", "backbone", "themes/utils", "i18n/i18n"], function(_, Backbone, Utils, Translate) {
+define(["lodash", "backbone", "browser/api", "themes/utils", "i18n/i18n"], function(_, Backbone, Browser, Utils, Translate) {
 	var model = Backbone.Model.extend({
-		url: "https://themes.ichro.me/manifest.json",
+		url: "https://api.ichro.me/themes?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language,
 
 		defaults: {
 			index: [],
@@ -74,6 +74,10 @@ define(["lodash", "backbone", "themes/utils", "i18n/i18n"], function(_, Backbone
 					feed: {
 						icon: "&#xF09E;",
 						desc: Translate("themes.feed")
+					},
+					video: {
+						icon: "&#xF03D;",
+						desc: Translate("themes.video")
 					}
 				};
 
@@ -99,6 +103,10 @@ define(["lodash", "backbone", "themes/utils", "i18n/i18n"], function(_, Backbone
 					if (e.size) {
 						theme.stats += e.size;
 					}
+				}
+
+				if (e.type && e.type === "video") {
+					theme.proOnly = true;
 				}
 
 				if (e.type && types[e.type]) {

@@ -1,14 +1,12 @@
 /**
  * The tabs model/controller. This actually creates the tabs and handles things like nav and storage.
  */
-define(["lodash", "jquery", "backbone", "backbone.viewcollection", "tabs/model", "tabs/view"], function(_, $, Backbone, ViewCollection, Model, View) {
+define(["lodash", "jquery", "backbone", "themes/controller", "backbone.viewcollection", "tabs/model", "tabs/view"], function(_, $, Backbone, Themes, ViewCollection, Model, View) {
 	var Tabs = ViewCollection.extend({
 		model: Model,
 		view: View,
 
 		initialize: function() {
-			this.body = $(document.body);
-
 			this.on("views:change", this.navigate, this);
 
 
@@ -22,7 +20,7 @@ define(["lodash", "jquery", "backbone", "backbone.viewcollection", "tabs/model",
 
 
 		/**
-		 * Sets a tab as active and applies its theme to the body
+		 * Makes a tab active
 		 *
 		 * @api   private
 		 * @param {Backbone.View|Number} tab The tab or tab index to activate
@@ -37,7 +35,7 @@ define(["lodash", "jquery", "backbone", "backbone.viewcollection", "tabs/model",
 			}
 
 
-			this.body.attr("style", tab.getCSS.call(tab));
+			Themes.setTheme(tab.model.get("theme"));
 
 			tab.$el.addClass("active");
 

@@ -332,6 +332,9 @@
 		"random_daily": "This theme displays an image picked randomly every day",
 		"sunrise_sunset": "This theme displays an image based on the time of day",
 		"feed": "This theme displays an image selected daily from an external feed",
+		"video": "This theme displays a live video",
+
+		"pro_only": "This theme is only available to Pro users. Buy Pro in the settings.",
 		
 		"delete_confirm": "Are you really sure you would like to delete this theme?\r\nThis action is irreversible; the entire theme will be permanently lost.",
 		"delete_error": "An error occurred while trying to delete the theme.  Please try again later.",

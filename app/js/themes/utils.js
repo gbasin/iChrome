@@ -58,7 +58,8 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 
 
 		/**
-		 * Gets a themes image when given either a theme name or object
+		 * Provided with a theme ID or spec, returns the theme's image, which may
+		 * be a video.
 		 *
 		 * @api    public
 		 * @param  {String|Object} theme The theme to retrieve the image for
@@ -74,8 +75,8 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 			}
 
 
-			if (theme.image) {
-				image = theme.image;
+			if (theme.image || theme.video) {
+				image = theme.image || theme.video;
 			}
 			else if (theme.images) {
 				switch (theme.type) {
@@ -168,6 +169,21 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 					default:
 						image = this.model.get("cached")[theme.images[Math.floor(Math.random() * theme.images.length)]].image;
 					break;
+				}
+			}
+
+
+			// If an image can't be found, this is probably a preview. Return the
+			// remote URL
+			if (!image) {
+				if (theme.images) {
+					image = "https://themes.ichro.me/images/" + theme.images[Math.floor(Math.random() * theme.images.length)] + ".jpg";
+				}
+				else if ((theme.oType || theme.type) === "video") {
+					image = "https://themes.ichro.me/images/" + theme.id + ".mp4";
+				}
+				else {
+					image = "https://themes.ichro.me/images/" + theme.id + ".jpg";
 				}
 			}
 

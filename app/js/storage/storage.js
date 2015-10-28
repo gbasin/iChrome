@@ -173,6 +173,8 @@ define(
 			theme = storage.cached[theme] || storage.themes[theme.replace("custom", "")] || { image: "images/defaulttheme.jpg" };
 
 			if (!theme || !theme.image) {
+				delete Browser.storage.themeImg;
+
 				return;
 			}
 

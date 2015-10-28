@@ -1,7 +1,7 @@
 /**
  * This module handles theme changes from incoming sync data
  */
-define(["jquery", "lodash"], function($, _) {
+define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 	// The cacher depends on storage, so we need to load it at run time
 	var Cacher;
 
@@ -116,7 +116,7 @@ define(["jquery", "lodash"], function($, _) {
 			var mThemes;
 
 			if (queue.length) {
-				$.get("https://themes.ichro.me/manifest.json", function(d) {
+				$.get("https://api.ichro.me/themes?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language, function(d) {
 					if (d && d.themes) {
 						mThemes = _.indexBy(_.map(d.themes, function(e) {
 							e.oType = e.type;

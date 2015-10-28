@@ -1,7 +1,7 @@
 /**
  * The tabs view.  This does the actual rendering of data, creaton of columns and widget insertion.
  */
-define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i18n", "themes/utils"], function($, _, Backbone, Status, Track, Translate, Themes) {
+define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i18n"], function($, _, Backbone, Status, Track, Translate) {
 	var GRID_SIZE = 10;
 
 	var view = Backbone.View.extend({
@@ -20,49 +20,6 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 			}, this);
 
 			this.render(true);
-		},
-
-
-		/**
-		 * Get the tabs CSS based on it's theme
-		 *
-		 * @api    public
-		 * @return {String} A CSS string
-		 */
-		getCSS: function() {
-			var css = "",
-				theme = Themes.get(this.model.get("theme")),
-				image = Themes.getImage(theme);
-			
-			if (theme.color) {
-				css += "background-color: " + theme.color + ";";
-			}
-
-			if (image) {
-				css += "background-image: url(\"" + image + "\");";
-			}
-
-			if (theme.scaling) {
-				css += "background-size: " + theme.scaling + ";";
-			}
-
-			if (theme.position) {
-				css += "background-position: " + theme.position + ";";
-			}
-
-			if (theme.repeat) {
-				css += "background-repeat: " + theme.repeat + ";";
-			}
-
-			if (theme.fixed) {
-				css += "background-attachment: " + theme.fixed + ";";
-			}
-
-			if (theme["inline-css"]) {
-				css += theme["inline-css"];
-			}
-			
-			return css;
 		},
 
 
