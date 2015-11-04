@@ -46,20 +46,26 @@ module.exports = function(grunt) {
 
 				var themeRegex = /^\.(?:dark|transparent|darker)(?:\.(?:dark|transparent|darker))?\s/;
 
+				var variationsRegex = /^(?:\.(?:maximized|minimized|tiny|small|medium|large|variable|settings|auth-required|error|permissions-request))+/;
+
 				ast.stylesheet.rules = _.map(ast.stylesheet.rules, function prefixRule(e) {
 					if (e.selectors) {
 						e.selectors = _.map(e.selectors, function(e) {
 							e = e.trim();
 
-							var themeSel = e.match(themeRegex);
+							var themeSel = e.match(themeRegex),
+								variationSel = e.match(variationsRegex);
 
-							// Theme styles are prefixed by their global selectors
-							if (themeSel && themeSel.length) {
-								return themeSel[0] + prefix + " " + e.replace(themeRegex, "");
-							}
-							else if (e.indexOf(":root") !== -1) {
+							if (e.indexOf(":root") !== -1) {
 								// We do a simple replace to allow things like ":root.tiny"
 								return e.replace(":root", prefix);
+							}
+							// Theme styles are prefixed by their global selectors
+							else if (themeSel && themeSel.length) {
+								return themeSel[0] + prefix + " " + e.replace(themeRegex, "");
+							}
+							else if (variationSel && variationSel.length) {
+								return variationSel[0] + prefix + " " + e.replace(variationsRegex, "");
 							}
 							else {
 								return prefix + " " + e;

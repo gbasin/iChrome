@@ -10,6 +10,8 @@ define(["lodash", "backbone", "core/pro", "core/analytics"], function(_, Backbon
 			return this.widget.templates["default"];
 		},
 
+		Pro: Pro,
+
 		constructor: function(options) {
 			this.widget = options.widget;
 
@@ -22,13 +24,6 @@ define(["lodash", "backbone", "core/pro", "core/analytics"], function(_, Backbon
 			this.template = this.getTemplate();
 			this.cid = _.uniqueId("widgetView");
 			this.isPreview = options.instance.isPreview;
-
-			Object.defineProperty(this, "isPro", {
-				get: function() {
-					return Pro.isPro;
-				}
-			});
-
 
 			// Binding the translate method once, now, avoids unnecessary calls later
 			this.translate = _.bind(this.widget.translate, this.widget);

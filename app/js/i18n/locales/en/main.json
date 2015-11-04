@@ -259,6 +259,9 @@
 			"size": "Widget Size"
 		},
 
+		"minimize": "Minimize",
+		"maximize": "Maximize",
+
 		"delete_confirm": "Are you really sure you want to delete this widget?\r\nThis action is irreversible; all data from this widget will be permanently lost.",
 
 		"permissions_request": {

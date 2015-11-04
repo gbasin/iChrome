@@ -1,7 +1,7 @@
 /**
  * The widget wrapper model. This handles widget loading.
  */
-define(["lodash", "backbone", "browser/api", "i18n/i18n", "widgets/registry/css"], function(_, Backbone, Browser, Translate, CSSManager) {
+define(["lodash", "backbone", "core/pro", "browser/api", "i18n/i18n", "widgets/registry/css"], function(_, Backbone, Pro, Browser, Translate, CSSManager) {
 	var Widget = Backbone.Model.extend({
 		constructor: function(manifest) {
 			// Since widgets should be retrievable by both ID and name, we might
@@ -28,6 +28,8 @@ define(["lodash", "backbone", "browser/api", "i18n/i18n", "widgets/registry/css"
 			this.browserPermissions = manifest.browser_permissions || [];
 
 			this.isAvailable = !(manifest.environments && manifest.environments.indexOf(Browser.environment) === -1);
+
+			this.isMaximizable = Pro.isPro && (manifest.maximizable || (manifest.templates && manifest.templates.maximized) || (manifest.views && manifest.views.maximized));
 
 
 			this.enStrings = manifest.strings.en || {};
@@ -179,7 +181,7 @@ define(["lodash", "backbone", "browser/api", "i18n/i18n", "widgets/registry/css"
 
 				var vArr = [];
 
-				require(_.map(_.pick(m.views, "default", "minimized", "maximized"), function(e, k) {
+				require(_.map(m.views, function(e, k) {
 					vArr.push(k);
 
 					return basePath + e;

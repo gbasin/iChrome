@@ -5,6 +5,8 @@ define(["lodash", "backbone", "core/pro", "core/analytics", "widgets/oauth"], fu
 	var WidgetModel = Backbone.Model.extend({
 		idAttribute: "cid",
 
+		Pro: Pro,
+
 		constructor: function(attrs, options) {
 			// We can't call the default constructor since we need to run
 			// _.defaults() on the config and data properties. So, the contents
@@ -13,7 +15,6 @@ define(["lodash", "backbone", "core/pro", "core/analytics", "widgets/oauth"], fu
 			options = options || {};
 
 			// Set core properties
-			this.Pro = Pro;
 			this.attributes = {};
 			this.widget = options.widget;
 			this.id = this.widget.manifest.id;

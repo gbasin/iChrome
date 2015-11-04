@@ -104,6 +104,10 @@ body.dark.transparent {
 	color: #FFF;
 }
 
+body.widget-maximized {
+	overflow: hidden;
+}
+
 #bg-video {
 	top: 0;
 	left: 0;
@@ -621,6 +625,82 @@ button.material.toggle:focus:after {
 
 
 /*---------------------------------------------
+	/ Material Form styles
+*/
+.material-form {
+	padding: 8px 0;
+}
+
+.material-form .input {
+	margin: 0;
+	display: block;
+	font-weight: 400;
+	padding: 10px 16px;
+}
+
+.material-form .input span {
+	display: block;
+	font-size: 13px;
+	font-weight: 700;
+	margin-bottom: 3px;
+}
+
+.material-form select,
+.material-form textarea
+.material-form input[type="tel"],
+.material-form input[type="text"],
+.material-form input[type="time"],
+.material-form input[type="date"],
+.material-form input[type="email"],
+.material-form input[type="search"],
+.material-form input[type="number"] {
+	width: 100%;
+	font-size: 13px;
+	border-radius: 0;
+	padding: 5px 10px!important;
+	border-width: 0 0 1px!important;
+}
+
+.material-form fieldset {
+	margin-top: 8px;
+}
+
+.material-form legend {
+	border: 0;
+	margin: 0;
+	color: #2196F3;
+	font-size: 12px;
+	font-weight: 700;
+	padding: 10px 16px 0;
+	border-top: 1px solid #EEE;
+}
+
+.dark .material-form legend {
+	border-top-color: rgba(255, 255, 255, .15);
+}
+
+.material-form legend .help {
+	color: #666;
+	float: right;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.dark .material-form legend .help {
+	color: #999;
+}
+
+.material-form fieldset > .help {
+	font-size: 12px;
+	margin: 10px 16px;
+}
+
+
+
+
+
+
+/*---------------------------------------------
 	/ Forms / Checkbox and Radio Styles
 */
 input[type="radio"],
@@ -810,6 +890,14 @@ dialog footer button.material.flat:active {
 	border-bottom: 2px solid #689BEC;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
 	transition: visibility 0s .3s, opacity .3s 0s;
+}
+
+.dark .tooltip {
+	color: #CCC;
+	background: #333;
+	border-bottom-color: #2196F3;
+	border-top-color: rgba(0, 0, 0, .1);
+	box-shadow: 0 2px 2px rgba(255, 255, 255, .1);
 }
 
 .tooltip.visible {
@@ -1727,6 +1815,11 @@ dialog.announcements li {
 	flex-direction: row;
 }
 
+.widget-maximized .tab-container {
+	z-index: 9;
+	overflow: visible;
+}
+
 .tab-container .tab {
 	top: 0;
 	flex: 1;
@@ -2068,6 +2161,57 @@ body.resizing .medley {
 	to { box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1); }
 }
 
+.widgets-container .widget.maximized {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	z-index: 9;
+	position: fixed;
+	overflow-y: auto;
+	border-radius: 0;
+	transform: translateZ(0);
+	box-shadow: 0 19px 38px rgba(0, 0, 0, .30),
+				0 15px 12px rgba(0, 0, 0, .22);
+	animation-timing-function: cubic-bezier(.4, 0, .2, 1);
+	animation: maximize-shadow .3s, maximize .6s .1s forwards;
+}
+
+.widgets-container .widget.transition-out {
+	animation-timing-function: cubic-bezier(.4, 0, .2, 1);
+	animation: unmaximize .6s forwards, unmaximize-shadow .3s .5s forwards;
+}
+
+/* These animations need to be duplicated so they can be done completely in CSS */
+@keyframes maximize-shadow {
+	from { box-shadow: 0 2px 1px rgba(102, 102, 102, .1); }
+	to { box-shadow: 0 19px 38px rgba(0, 0, 0, .30), 0 15px 12px rgba(0, 0, 0, .22); }
+}
+
+@keyframes unmaximize-shadow {
+	from { box-shadow: 0 19px 38px rgba(0, 0, 0, .30), 0 15px 12px rgba(0, 0, 0, .22); }
+	to { box-shadow: 0 2px 1px rgba(102, 102, 102, .1); }
+}
+
+@keyframes maximize {
+	to {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+@keyframes unmaximize {
+	from {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+
 .widgets-container .widget.tiny,
 .store-detail .preview .widget.tiny {
 	flex: 1 46%;
@@ -2076,12 +2220,35 @@ body.resizing .medley {
 
 .widgets-container .widget .handle,
 .widgets-container .widget .settings,
+.widgets-container .widget .minimize,
+.widgets-container .widget .maximize,
 .store-detail .preview .widget .handle,
-.store-detail .preview .widget .settings {
+.store-detail .preview .widget .settings,
+.store-detail .preview .widget .minimize,
+.store-detail .preview .widget .maximize {
 	opacity: 0;
 	z-index: 9;
 	position: absolute;
 	transition: opacity .3s ease-in-out;
+}
+
+.widgets-container .widget .minimize,
+.widgets-container .widget .maximize,
+.store-detail .preview .widget .minimize,
+.store-detail .preview .widget .maximize  {
+	top: 5px;
+	fill: #666;
+	right: 24px;
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+}
+
+.dark .widgets-container .widget .minimize,
+.dark .widgets-container .widget .maximize,
+.dark .store-detail .preview .widget .minimize,
+.dark .store-detail .preview .widget .maximize {
+	fill: #CCC;
 }
 
 .widgets-container .widget .handle,
@@ -2107,9 +2274,13 @@ body.resizing .medley {
 
 .widgets-container .widget:hover .handle,
 .widgets-container .widget:hover .settings,
+.widgets-container .widget:hover .minimize,
+.widgets-container .widget:hover .maximize,
 
 .store-detail .preview .widget:hover .handle,
-.store-detail .preview .widget:hover .settings {
+.store-detail .preview .widget:hover .settings,
+.store-detail .preview .widget:hover .minimize,
+.store-detail .preview .widget:hover .maximize {
 	opacity: 1;
 }
 
@@ -3371,7 +3542,9 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 /* This doesn't have to use direct-desendant because widgets need to be tolerant of the handle and settings classes */
 .store-detail .preview .widget .handle,
-.store-detail .preview .widget .settings {
+.store-detail .preview .widget .settings,
+.store-detail .preview .widget .minimize,
+.store-detail .preview .widget .maximize {
 	pointer-events: none;
 }
 

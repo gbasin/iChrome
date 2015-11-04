@@ -142,6 +142,9 @@ define(
 						}
 					}.bind(this), theme);
 				}
+				else if (cached[theme.id]) {
+					theme = cached[theme.id];
+				}
 
 				Track.event("Themes", "Preview", theme.id);
 

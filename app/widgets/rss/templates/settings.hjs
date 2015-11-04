@@ -1,0 +1,56 @@
+<header>
+	<span class="title">{{i18n.settings.page_title}}</span>
+
+	<button type="button" class="material flat blue save">{{i18n.settings.save}}</button>
+</header>
+
+<form class="material-form">
+	<label class="input">
+		<span>{{i18n.settings.title}}</span>
+
+		<input type="text" name="title" placeholder="{{i18n.settings.title_placeholder}}" value="{{title}}" />
+	</label>
+
+	<label class="input">
+		<span>{{i18n.settings.link}}</span>
+
+		<input type="text" name="link" placeholder="{{i18n.settings.link_placeholder}}" value="{{link}}" />
+	</label>
+
+	<label class="input">
+		<span>{{i18n.settings.articles}}</span>
+
+		<input type="number" name="number" min="1" max="20" value="{{number}}" />
+	</label>
+
+	<fieldset class="feeds">
+		<legend>
+			{{i18n.settings.feeds}}
+
+			<span class="help">{{i18n.settings.feeds_help}}</span>
+		</legend>
+
+		{{#isPro}}
+			<input type="text" class="add" placeholder="{{i18n.settings.feeds_placeholder}}" />
+		{{/isPro}}
+		{{^isPro}}
+			<p class="help pro-only">{{i18n.settings.feeds_pro_only}}</p>
+		{{/isPro}}
+
+		<ul>
+			{{#feeds}}
+				<li>
+					<button type="button" class="material toggle delete">
+						<svg viewBox="0 0 24 24">
+							<path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path>
+						</svg>
+					</button>
+
+					<input type="text" name="feeds[][name]" class="name" placeholder="{{i18n.settings.feed_name_placeholder}}" value="{{name}}" />
+
+					<input type="text" name="feeds[][url]" class="url" placeholder="{{i18n.settings.feed_url_placeholder}}" value="{{url}}" />
+				</li>
+			{{/feeds}}
+		</ul>
+	</fieldset>
+</form>

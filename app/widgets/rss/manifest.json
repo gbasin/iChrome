@@ -1,0 +1,55 @@
+{
+	"id": 8,
+	"name": "rss",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["variable"],
+
+	"views": {
+		"default": "view",
+		"settings": "settings",
+		"maximized": "maximized"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs",
+		"settings": "templates/settings.hjs",
+		"maximized": "templates/maximized.hjs"
+	},
+
+	"strings": {
+		"en": {
+			"name": "RSS",
+			"desc": "Displays items from a RSS or Atom feed with optional images.",
+
+			"settings": {
+				"page_title": "Settings",
+				"save": "Save",
+
+				"title": "Widget Title",
+				"title_placeholder": "Enter a widget title or leave blank to hide",
+
+				"link": "Title Link",
+				"link_placeholder": "Enter a link for the widget title",
+
+				"feeds": "Feeds",
+				"feeds_help": "Click any feed to edit it",
+				"feeds_placeholder": "Enter a feed URL and press Enter to add",
+				"feeds_pro_only": "Only Pro users can have multiple feeds in each widget. Get Pro from the Accounts and Sync tab in the settings.",
+
+				"feed_name_placeholder": "Feed name",
+				"feed_url_placeholder": "Feed URL",
+
+				"articles": "Articles Shown"
+			},
+
+			"by": "By",
+
+			"all_articles": "All articles",
+
+			"feed_error": "An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and/or modify the widget settings."
+		}
+	}
+}

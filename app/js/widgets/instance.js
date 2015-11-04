@@ -2,8 +2,8 @@
  * The widget instance wrapper, manages elements, configuration and data persistence, settings, etc.
  */
 define([
-	"lodash", "backbone", "browser/api", "core/uservoice", "core/pro", "core/analytics", "core/status", "widgets/settings", "widgets/views/main", "widgets/views/maximized", "widgets/views/minimized", "widgets/model", "core/render"
-], function(_, Backbone, Browser, UserVoice, Pro, Track, Status, Settings, MainView, Maximized, Minimized, WidgetModel, render) {
+	"lodash", "jquery", "backbone", "browser/api", "core/uservoice", "core/pro", "core/analytics", "i18n/i18n", "core/status", "widgets/settings", "widgets/views/main", "widgets/views/maximized", "widgets/views/minimized", "widgets/model", "core/render"
+], function(_, $, Backbone, Browser, UserVoice, Pro, Track, Translate, Status, Settings, MainView, Maximized, Minimized, WidgetModel, render) {
 	var sizes = {
 		1: "tiny",
 		2: "small",
@@ -25,14 +25,19 @@ define([
 		},
 
 		events: {
-			"click .settings": function(e) {
+			"click > .settings": function(e) {
 				try {
-					new Settings({
-						instance: this,
-						model: this.model,
-						widget: this.widget,
-						config: this.widgetModel ? this.widgetModel.config : this.instance.config
-					});
+					if (this.widget.views && this.widget.views.settings) {
+						this.model.set("state", "settings");
+					}
+					else {
+						new Settings({
+							instance: this,
+							model: this.model,
+							widget: this.widget,
+							config: this.widgetModel ? this.widgetModel.config : this.instance.config
+						});
+					}
 				}
 				catch (err) {
 					this.error();
@@ -41,6 +46,14 @@ define([
 
 					Status.error("An error occurred while trying to open the settings for the " + this.widget.name + " widget!");
 				}
+			},
+
+			"click > .minimize": function(e) {
+				this.model.set("state", "default");
+			},
+
+			"click > .maximize": function(e) {
+				this.model.set("state", "maximized");
 			}
 		},
 
@@ -54,9 +67,14 @@ define([
 			this.model = options.model;
 			this.cid = _.uniqueId("widget");
 			this.isPreview = options.isPreview;
-			this.hasSettings = Array.isArray(this.widget.settings);
+			this.hasSettings = !!(Array.isArray(this.widget.settings) || (manifest.views && manifest.views.settings));
 
-			this.model.set("size", sizes[options.size || this.model.get("size") || manifest.defaultSize || manifest.sizes[0]]);
+			this.model.set({
+				state: "default",
+				size: sizes[options.size || this.model.get("size") || manifest.defaultSize || manifest.sizes[0]]
+			}, {
+				silent: true
+			});
 
 
 			// Create the element. Native methods are significantly faster than
@@ -290,10 +308,48 @@ define([
 		 * @param {Boolean}  [initial]  If this is the initial setup and no events should be fired
 		 */
 		updateState: function(initial) {
+			var state;
+
+			// Set the state
+			if (!Pro.isPro && this.model.get("state") !== "settings") {
+				state = "default";
+			}
+			else {
+				state = this.model.get("state");
+			}
+
+
 			// See if anything's changed
-			if ((this.state && this.state === this.model.get("state")) || !this.widget.isAvailable) {
+			if ((this.state && this.state === state) || !this.widget.isAvailable) {
 				return;
 			}
+
+			this.state = state;
+
+
+			var view = this.widget.views.default || MainView;
+
+			// Widgets can implement completely custom settings
+			if (state === "settings") {
+				view = this.widget.views.settings;
+			}
+			else if (state === "maximized") {
+				if (!this.model.previous("state") || this.model.previous("state") !== "maximized") {
+					// These methods need to be called before the widget view is replaced
+					this.maximize();
+				}
+
+				view = this.widget.views.maximized || Maximized;
+			}
+			else if (state === "minimized") {
+				view = this.widget.views.minimized || Minimized;
+			}
+
+
+			if (this.model.previous("state") === "maximized" && state !== "maximized") {
+				this.minimize();
+			}
+
 
 			if (this.widgetView) {
 				try {
@@ -310,27 +366,27 @@ define([
 				}
 			}
 
-			if (initial !== true) {
-				this.widgetModel.set("state", this.state);
-			}
-
 
 			if (!this.isPreview && this.widgetModel.oAuth && this.widget.requiresAuth && this.widgetModel.oAuth.hasToken && !this.widgetModel.oAuth.hasToken()) {
 				return this.renderAuth();
 			}
 
 
-			// Set the state
-			this.state = (Pro.isPro && this.model.get("state")) || "default";
-
-
-			var view = this.widget.views.default || MainView;
-
-			if (this.state === "maximized") {
-				view = this.widget.views.maximized || Maximized;
+			// We update the model before creating the new view since it might
+			// need to expect certain calls (i.e. view calls getRenderableData
+			// on init and the model needs to check its current state)
+			if (initial !== true) {
+				this.widgetModel.set("state", state);
 			}
-			else if (this.state === "minimized") {
-				view = this.widget.views.minimized || Minimized;
+
+
+			// If the state was maximized, then we're minimizing now, don't remove the class
+			if (this.model.previous("state") !== "default" && this.model.previous("state") !== "maximized") {
+				this.$el.removeClass(this.model.previous("state"));
+			}
+
+			if (state !== "default") {
+				this.$el.addClass(state);
 			}
 
 			try {
@@ -355,6 +411,81 @@ define([
 			}
 
 			this.render();
+		},
+
+
+		/**
+		 * Animates a widget to its maximized state
+		 */
+		maximize: function() {
+			var rect = this.el.getBoundingClientRect();
+
+			this.defaultHeight = rect.height;
+
+			this.$el
+				.css({
+					top: rect.top,
+					left: rect.left,
+					right: window.innerWidth - rect.right,
+					bottom: window.innerHeight - rect.bottom
+				})
+				.addClass("maximized")
+				.on("animationend", _.after(2, function(e) {
+					// Maximizing uses two animations. We disable both so they don't
+					// get triggered again if the tabs re-render
+					$(this).off("animationend").css({
+						top: "",
+						left: "",
+						right: "",
+						bottom: "",
+						animation: "none"
+					});
+				}))
+				.before('<section class="widget placeholder" style="height:' + rect.height + 'px"></section>');
+
+			$(document.body).addClass("widget-maximized");
+		},
+
+
+		/**
+		 * Animates a widget to its minimized state
+		 */
+		minimize: function() {
+			var placeholder = this.$el.prev(".placeholder");
+
+			if (!placeholder.length) {
+				placeholder = $('<section class="widget placeholder" style="height:' + this.defaultHeight + 'px"></section>').insertBefore(this.$el);
+			}
+
+			delete this.defaultHeight;
+
+
+			var rect = placeholder[0].getBoundingClientRect();
+
+			this.$el
+				.css({
+					animation: "",
+					top: rect.top,
+					left: rect.left,
+					right: window.innerWidth - rect.right,
+					bottom: window.innerHeight - rect.bottom
+				})
+				.addClass("transition-out")
+				.on("animationend", _.after(2, function(e) {
+					$(this)
+						.off("animationend")
+						.css({
+							top: "",
+							left: "",
+							right: "",
+							bottom: ""
+						})
+						.removeClass("maximized transition-out")
+						.prev(".placeholder")
+						.remove();
+
+					$(document.body).removeClass("widget-maximized");
+				}));
 		},
 
 
@@ -452,6 +583,8 @@ define([
 			}
 
 			if (this.model.hasChanged("state")) {
+				this.updateState();
+
 				set.state = this.model.get("state") || "default";
 			}
 
@@ -488,9 +621,8 @@ define([
 		 * @api     private
 		 */
 		updateModel: function() {
-			// All known properties (no custom ones are saved) except state, which
-			// the widget isn't alllowed to change, are copied
-			var set = _(this.widgetModel.attributes).pick("size", "config", "data", "syncData", "loc").mapValues(function(e, key) {
+			// All known properties (no custom ones are saved) are copied
+			var set = _(this.widgetModel.attributes).pick("state", "size", "config", "data", "syncData", "loc").mapValues(function(e, key) {
 				if (key == "config") {
 					return _.omit(this.widgetModel.get("config"), function(e, k) {
 						return this.widgetModel.defaults.config.hasOwnProperty(k) && e === this.widgetModel.defaults.config[k];
@@ -534,9 +666,20 @@ define([
 
 			// Here we safely use innerHTML since we don't want to destroy the
 			// widget view's event listeners
-			this.el.innerHTML = '<div class="handle"></div>' +
-			(this.hasSettings ? '\r\n<div class="settings">&#xF0AD;</div>' : "") +
-			'\r\n<div class="resize"></div>';
+			this.el.innerHTML = 
+				(this.state === "maximized" ?
+					'<div class="minimize" title="' + Translate("widgets.minimize") + '">' + 
+						'<svg viewBox="0 0 24 24"><path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"></path></svg>' + 
+					'</div>'
+				: "") +
+				(this.widget.isMaximizable && this.state !== "maximized" ?
+					'<div class="maximize" title="' + Translate("widgets.maximize") + '">' + 
+						'<svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"></path></svg>' + 
+					'</div>'
+				: "") +
+				'<div class="handle"></div>' +
+				(this.hasSettings ? '\r\n<div class="settings">&#xF0AD;</div>' : "") +
+				'\r\n<div class="resize"></div>';
 
 			if (this.widgetView && this.widgetView.el) {
 				this.el.insertBefore(this.widgetView.el, this.el.children[2]);

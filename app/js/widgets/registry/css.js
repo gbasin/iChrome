@@ -7,20 +7,26 @@ define(["lodash"], function(_) {
 
 	var themeRegex = /^\.(?:dark|transparent|darker)(?:\.(?:dark|transparent|darker))?\s/;
 
+	var variationsRegex = /^(?:\.(?:maximized|minimized|tiny|small|medium|large|variable|settings|auth-required|error|permissions-request))+/;
+
 	var prefixRule = function(prefix, rule) {
 		if (rule.selectorText) {
 			rule.selectorText = _.map(rule.selectorText.split(","), function(e) {
 				e = e.trim();
 
-				var themeSel = e.match(themeRegex);
+				var themeSel = e.match(themeRegex),
+					variationSel = e.match(variationsRegex);
 
-				// Theme styles are prefixed by their global selectors
-				if (themeSel && themeSel.length) {
-					return themeSel[0] + prefix + " " + e.replace(themeRegex, "");
-				}
-				else if (e.indexOf(":root") !== -1) {
+				if (e.indexOf(":root") !== -1) {
 					// We do a simple replace to allow things like ":root.tiny"
 					return e.replace(":root", prefix);
+				}
+				// Theme styles are prefixed by their global selectors
+				else if (themeSel && themeSel.length) {
+					return themeSel[0] + prefix + " " + e.replace(themeRegex, "");
+				}
+				else if (variationSel && variationSel.length) {
+					return variationSel[0] + prefix + " " + e.replace(variationsRegex, "");
 				}
 				else {
 					return prefix + " " + e;

@@ -357,32 +357,6 @@
 		"more": "More"
 	},
 
-	"rss": {
-		"name": "RSS",
-		"desc": "Displays items from a RSS or Atom feed with optional images.",
-
-		"settings": {
-			"link": "Title Link",
-			"link_placeholder": "Enter a link for the widget title",
-
-			"url": "Feed URL",
-			"url_placeholder": "The URL of the RSS feed to be displayed",
-
-			"articles": "Articles Shown",
-
-			"view": "View",
-			"view_options": {
-				"images": "Image friendly",
-				"default": "Default"
-			},
-
-			"images": "Images",
-			"descriptions": "Descriptions"
-		},
-
-		"feed_error": "An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and/or modify the widget settings."
-	},
-
 	"sports": {
 		"name": "Sports",
 		"desc": "Displays scores and game information for selected leagues and/or teams.",
