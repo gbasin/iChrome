@@ -239,41 +239,6 @@
 		"desc": "Embeds Google Keep in a widget"
 	},
 
-	"news": {
-		"name": "News",
-		"desc": "Displays the current top news by category and edition.",
-
-		"settings": {
-			"articles": "Articles Shown",
-
-			"edition": "Edition",
-			"edition_help": "If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
-
-			"topic": "Topic",
-			"topic_options": {
-				"top": "Top Stories",
-				"world": "World",
-				"nation": "Nation",
-				"business": "Business",
-				"sports": "Sports",
-				"technology": "Technology",
-				"entertainment": "Entertainment",
-				"health": "Health",
-				"science": "Science",
-				"spotlight": "Spotlight"
-			},
-
-			"feed": "Custom Feed",
-			"feed_help": "This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
-			"feed_placeholder": "Enter a custom RSS feed to fetch news from",
-
-			"footer": "Footer URL",
-			"footer_placeholder": "Enter the URL that the \"More\" link should point to"
-		},
-
-		"more": "More"
-	},
-
 	"notes": {
 		"name": "Notes",
 		"desc": "Inserts a simple, editable, note.",

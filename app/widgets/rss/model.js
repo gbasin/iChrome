@@ -250,9 +250,6 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 			if (activeTab === "all") {
 				return this.getAll();
 			}
-			else if (activeTab === "popular") {
-				return this.getPopular();
-			}
 
 			var feedURL = (this.config.feeds && this.config.feeds[activeTab].url) || this.config.url || "http://feeds.gawker.com/lifehacker/full";
 

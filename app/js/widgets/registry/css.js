@@ -43,6 +43,8 @@ define(["lodash"], function(_) {
 	var CSSManager = {
 		registeredWidgets: [],
 
+		cssText: "",
+
 		register: function(widget, css, isPrefixed) {
 			// No stylesheet exists yet, create one. We use this method so we can
 			// avoid all DOM lookups in built versions
@@ -56,7 +58,7 @@ define(["lodash"], function(_) {
 			// from
 			var sheetLength = sElm.sheet.cssRules.length;
 
-			sElm.appendChild(document.createTextNode(css));
+			sElm.innerText = this.cssText + css;
 
 			this.registeredWidgets[widget] = true;
 
@@ -66,7 +68,7 @@ define(["lodash"], function(_) {
 					length = sElm.sheet.cssRules.length;
 
 				while (++i < length) {
-					prefixRule(prefix, sElm.sheet.cssRules[i]);
+					this.cssText += "\n" + prefixRule(prefix, sElm.sheet.cssRules[i]);
 				}
 			}
 		}

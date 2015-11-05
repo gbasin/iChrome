@@ -522,13 +522,11 @@
 */
 .drive h2.header,
 .twitter h2.header,
-.widget.news h2.header,
 .widget.reddit h2.header,
 .widget.feedly h2.header {
 	margin-bottom: 25px;
 }
 
-.news .items,
 .drive .files,
 .reddit .items,
 .feedly .items,
@@ -539,7 +537,6 @@
 	overflow-x: hidden;
 }
 
-.medley .news .items,
 .medley .drive .files,
 .medley .reddit .items,
 .medley .feedly .items,
@@ -547,7 +544,6 @@
 	max-height: calc(100% + 30px);
 }
 
-.medley .news .items,
 .medley .reddit .items,
 .medley .feedly .items,
 .medley .drive .header ~ .files,
@@ -555,13 +551,11 @@
 	max-height: calc(100% - 12px);
 }
 
-.medley .news .header ~ .items,
 .medley .reddit .header ~ .items,
 .medley .feedly .header ~ .items {
 	max-height: calc(100% - 54px);
 }
 
-.news .item,
 .reddit .item,
 .feedly .item {
 	color: #555;
@@ -573,19 +567,16 @@
 	font-family: Open Sans, sans-serif;
 }
 
-.dark .news .item,
 .dark .reddit .item,
 .dark .feedly .item {
 	color: #BBB;
 }
 
-.dark.transparent .news .item,
 .dark.transparent .reddit .item,
 .dark.transparent .feedly .item {
 	color: #EEE;
 }
 
-.news .item .excerpt,
 .reddit .item .content,
 .feedly .item .content {
 	max-height: 75px;
@@ -593,7 +584,6 @@
 	overflow: hidden;
 }
 
-.news .item .title,
 .reddit .item .title,
 .feedly .item .title {
 	color: #222;
@@ -605,46 +595,38 @@
 	letter-spacing: -0.2px;
 }
 
-.dark .news .item .title,
 .dark .reddit .item .title,
 .dark .feedly .item .title {
 	color: #FFF;
 }
 
-.news .item span.nested-link[data-href],
 .reddit .item span.nested-link[data-href],
 .feedly .item span.nested-link[data-href] {
 	color: #222;
 	font-weight: 600;
 }
 
-.dark .news .item span.nested-link[data-href],
 .dark .reddit .item span.nested-link[data-href],
 .dark .feedly .item span.nested-link[data-href] {
 	color: #FFF;
 }
 
-.news .item:visited .title,
 .reddit .item:visited .title,
 .feedly .item:visited .title,
 
-.news .item:visited span.nested-link[data-href],
 .reddit .item:visited span.nested-link[data-href],
 .feedly .item:visited span.nested-link[data-href] {
 	color: #555;
 }
 
-.dark .news .item:visited .title,
 .dark .reddit .item:visited .title,
 .dark .feedly .item:visited .title,
 
-.dark .news .item:visited span.nested-link[data-href],
 .dark .reddit .item:visited span.nested-link[data-href],
 .dark .feedly .item:visited span.nested-link[data-href] {
 	color: #BBB;
 }
 
-.news .item img,
 .reddit .item .img,
 .feedly .item .img {
 	float: left;
@@ -652,25 +634,21 @@
 	height: calc(100% - 20px);
 }
 
-.news .item .desc,
 .reddit .item .desc,
 .feedly .item .desc {
 	margin-top: 5px;
 }
 
-.news .item:hover,
 .reddit .item:hover,
 .feedly .item:hover {
 	background: rgba(0, 0, 0, 0.03);
 }
 
-.dark .news .item:hover,
 .dark .reddit .item:hover,
 .dark .feedly .item:hover {
 	background: rgba(0, 0, 0, .15);
 }
 
-.news .more,
 .reddit .more,
 .feedly .more {
 	margin: -15px;
@@ -683,56 +661,24 @@
 	text-decoration: none;
 }
 
-.dark .news .more,
 .dark .reddit .more,
 .dark .feedly .more {
 	color: #BBB;
 }
 
-.dark.transparent .news .more,
 .dark.transparent .reddit .more,
 .dark.transparent .feedly .more {
 	color: #EEE;
 }
 
-.news .more:hover,
 .reddit .more:hover,
 .feedly .more:hover {
 	background: rgba(0, 0, 0, 0.03);
 }
 
-.dark .news .more:hover,
 .dark .reddit .more:hover,
 .dark .feedly .more:hover {
 	background: rgba(0, 0, 0, .15);
-}
-
-
-
-
-
-/*---------------------------------------------
-	/ News
-*/
-.news .item img {
-	height: 75px;
-}
-
-.news .item.featured {
-	max-height: initial;
-}
-
-.news .item.featured .excerpt {
-	max-height: 85px;
-}
-
-.news .item.featured img {
-	height: 80px;
-	margin: 5px 10px 0 0;
-}
-
-.news .item.featured .desc {
-	margin-top: 0;
 }
 
 
