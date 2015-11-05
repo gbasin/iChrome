@@ -69,7 +69,7 @@ define(["lodash", "jquery", "widgets/views/settings", "jquery.serializejson"], f
 						};
 
 						topic.html(_.map(topics, function(e) {
-							return '<option value="' + hEscape(e[0]) + '"' + (e[0] === edition.val() ? " selected" : "") + '>' + hEscape(e[1]) + '</option>';
+							return '<option value="' + hEscape(e[0]) + '"' + (e[0] === currTopic ? " selected" : "") + '>' + hEscape(e[1]) + '</option>';
 						}).join(""));
 					}, edition.val());
 				}
