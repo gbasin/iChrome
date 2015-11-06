@@ -2272,6 +2272,10 @@ body.resizing .medley {
 	box-shadow: 0 6px #DDD, 0 -6px #DDD;
 }
 
+.widgets-container .widget.maximized .handle {
+	display: none;
+}
+
 .widgets-container .widget:hover .handle,
 .widgets-container .widget:hover .settings,
 .widgets-container .widget:hover .minimize,
@@ -2313,6 +2317,10 @@ body.resizing .medley {
 .dark .store-detail .preview .widget .settings {
 	color: #DDD;
 	text-shadow: none;
+}
+
+.widgets-container .widget.maximized .settings {
+	top: 5px;
 }
 
 .widgets-container .widget .settings:before,
