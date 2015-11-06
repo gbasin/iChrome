@@ -107,25 +107,23 @@ define([
 				settings = this.$("form").serializeJSON();
 
 
-			if (settings.size) {
-				set.size = settings.size;
-
-				delete settings.size;
-			}
-
-
 			// jQuery.serializeJSON() doesn't parse multiple selects correctly
 			this.$("select[multiple]").each(function() {
 				settings[this.name] = $(this).val();
 			});
 
 
+			// This is assigned so custom properties that widgets add to their config are
+			// preserved (such as woeid and woeloc on the Weather widget)
+			_.assign(set.config, this.config, settings);
+
+
 			var defaultConfig = ((this.widget.model && this.widget.model.prototype.defaults) || this.widget.widget).config;
 
 			// This ensures that now-empty properties are still present in the
 			// settings object and override existing values
-			_.assign(settings, _(defaultConfig)
-				.pick(_.difference(_.keys(defaultConfig), _.keys(settings)))
+			_.assign(set.config, _(defaultConfig)
+				.pick(_.difference(_.keys(defaultConfig), _.keys(set.config)))
 				.mapValues(function(e, key) {
 					// If it's a string then it must be empty
 					if (typeof e == "string") {
@@ -153,15 +151,17 @@ define([
 			);
 
 
-			// This is assigned so custom properties that widgets add to their config are
-			// preserved (such as woeid and woeloc on the Weather widget)
-			_.assign(set.config, this.config, settings);
+			if (set.config.size) {
+				set.size = set.config.size;
+
+				delete set.config.size;
+			}
 
 
 			// This deletes properties that are only applicable at other sizes,
 			// such as the team field on the Sports widget.
 			_.each(this.widget.settings, function(e) {
-				if (e.sizes && e.sizes.indexOf(this.model.get("size")) === -1) {
+				if (e.sizes && e.sizes.indexOf(set.size || this.model.get("size")) === -1) {debugger;
 					delete set.config[e.name || e.nicename];
 				}
 			}, this);
