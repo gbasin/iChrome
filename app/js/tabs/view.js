@@ -11,7 +11,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 		},
 
 		initialize: function() {
-			this.model.on("columns:change change:fixed change:medley", function() {
+			this.model.on("columns:sort columns:update change:fixed change:medley", function() {
 				var options = _.last(arguments);
 
 				if (!(options && options.noRefresh)) {
@@ -113,6 +113,8 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 					collection.sortViews(true);
 				}
 			}, this);
+
+			this.model.serializeColumns(true);
 
 
 			if (trigger) {

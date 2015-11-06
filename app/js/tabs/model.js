@@ -30,6 +30,8 @@ define(["lodash", "backbone", "backbone.viewcollection", "widgets/registry"], fu
 				return new this.columnCollection(e);
 			}, this);
 
+			this.on("columns:change", this.serializeColumns, this);
+
 			this.on("change:columns", this.updateColumns, this);
 		},
 
@@ -45,6 +47,18 @@ define(["lodash", "backbone", "backbone.viewcollection", "widgets/registry"], fu
 			args[0] = "columns:" + event;
 
 			this.trigger.apply(this, args);
+		},
+
+
+		/**
+		 * Serializes the columns collections to JSON, updating the columns attribute
+		 *
+		 * @param  {Boolean}  [silent]  If the update should be silent
+		 */
+		serializeColumns: function(silent) {
+			this.set("columns", _.invoke(this.columns, "toJSON"), {
+				silent: silent === true
+			});
 		},
 
 

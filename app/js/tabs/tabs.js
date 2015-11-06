@@ -248,7 +248,7 @@ define(
 
 							$("#originalLoc").remove();
 
-							this.serialize();
+							this.serialize(true);
 						}.bind(this),
 						afterMove: function(placeholder, container) {
 							if (container.el[0].className.indexOf("widgets-container") == -1) {
@@ -299,18 +299,21 @@ define(
 
 
 				/**
-				 * Calls serialize on each of the tabs and re-renders them
+				 * Calls serialize on each of the tabs, optionally re-rendering them
 				 *
 				 * @api    private
+				 * @param  {Boolean}  [render]  If the tabs should be re-rendered
 				 */
-				serialize: function() {
+				serialize: function(render) {
 					_.invoke(this.model.tabs.views, "serialize");
 
 					// Since the render only inserts columns and widgets it's not expensive
 					// This is called in requestAnimationFrame so there isn't a visible freeze
-					window.requestAnimationFrame(function() {
-						_.invoke(this.model.tabs.views, "render");
-					}.bind(this));
+					if (render === true) {
+						window.requestAnimationFrame(function() {
+							_.invoke(this.model.tabs.views, "render");
+						}.bind(this));
+					}
 
 					this.model.storage.tabs = this.model.tabs.toJSON();
 
