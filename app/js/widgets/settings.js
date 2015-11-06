@@ -161,7 +161,7 @@ define([
 			// This deletes properties that are only applicable at other sizes,
 			// such as the team field on the Sports widget.
 			_.each(this.widget.settings, function(e) {
-				if (e.sizes && e.sizes.indexOf(set.size || this.model.get("size")) === -1) {debugger;
+				if (e.sizes && e.sizes.indexOf(set.size || this.model.get("size")) === -1) {
 					delete set.config[e.name || e.nicename];
 				}
 			}, this);
