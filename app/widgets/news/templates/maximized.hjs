@@ -43,7 +43,7 @@
 			<div class="desc">{{{desc}}}</div>
 
 			<div class="details">
-				<span class="source">{{source}}</span>
+				{{#source}}<span class="source">{{source}}</span>{{/source}}
 
 				<span class="date">{{date}}</span>
 			</div>
@@ -72,7 +72,7 @@
 				<div class="desc">{{{desc}}}</div>
 
 				<div class="details">
-					<span class="source">{{source}}</span>
+					{{#source}}<span class="source">{{source}}</span>{{/source}}
 
 					<span class="date">{{date}}</span>
 				</div>

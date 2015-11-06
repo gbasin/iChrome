@@ -24,6 +24,8 @@
 			"name": "News",
 			"desc": "Displays the current top news by category and edition.",
 
+			"all_stories": "All",
+
 			"settings": {
 				"page_title": "Settings",
 				"save": "Save",

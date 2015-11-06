@@ -22,6 +22,8 @@ define(["lodash", "backbone", "core/pro", "core/analytics", "widgets/oauth"], fu
 			this.name = this.widget.manifest.name;
 			this.isPreview = options.instance.isPreview;
 
+			this.translate = _.bind(this.widget.translate, this.widget);
+
 
 			var defaults = _.result(this, "defaults");
 

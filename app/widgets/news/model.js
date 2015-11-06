@@ -10,13 +10,14 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 				title: "i18n.name",
 				number: 5,
 				edition: "en-us",
-				topic: "rt_US",
+				topic: "$allStories",
 				custom: "",
 				link: "http://news.google.com"
 			},
 
 			data: {
 				topics: [
+					["$allStories", "All"],
 					["rt_US", "Top Stories", "cms-amp-AA9tmo2"],
 					["rt_usanatnews", "US", "cms-amp-AA9tmo3"],
 					["rt_World", "World", "cms-amp-AAaeSyj"],
@@ -125,6 +126,8 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 					return [d.categoryKey, d.sourceName, d.href];
 				});
 
+				topics.unshift(["$allStories", this.translate("all_stories")]);
+
 				cb.call(this, topics || []);
 			}.bind(this));
 		},
@@ -153,7 +156,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 				else if (self.type === "provider") {
 					sources[self.href] = e;
 				}
-				else if (self.type === "article" || self.type === "video") {
+				else if (self.type === "article" || self.type === "video" || self.type === "slideshow") {
 					articles.push(e);
 				}
 			});
@@ -206,7 +209,9 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 
 			var maximized = this.get("state") === "maximized";
 
-			$.getJSON("http://cdn.content.prod.cms.msn.com/common/abstract/id/" + _.find(this.data.topics, [activeTab])[2], {
+			var topic = _.find(this.data.topics, [activeTab]);
+
+			$.getJSON("http://cdn.content.prod.cms.msn.com/common/abstract/" + (topic[0] === "$allStories" ? "alias/compositestreambyname/today" : "id/" + topic[2]), {
 				count: maximized ? 45 : this.config.number,
 				market: this.config.edition,
 				tenant: "amp",

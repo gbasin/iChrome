@@ -34,7 +34,7 @@
 				<h3 class="title">
 					{{title}}
 
-					<span class="source">&mdash; {{source}}</span>
+					{{#source}}<span class="source">&mdash; {{source}}</span>{{/source}}
 				</h3>
 
 				{{{desc}}}
