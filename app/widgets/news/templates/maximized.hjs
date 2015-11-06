@@ -53,7 +53,7 @@
 	{{#items}}
 		<a href="{{url}}" class="item">
 			{{#list}}
-				{{#source}}<span class="source">{{source}}</span>{{/source}}
+				<span class="source">{{source}}</span>
 
 				<span class="desc">
 					<b class="title">{{title}}</b>
