@@ -1,0 +1,389 @@
+/*---------------------------------------------
+	/ Main Styles
+*/
+:root {
+	overflow: visible!important;
+	font-family: Roboto, sans-serif;
+}
+
+.header {
+	line-height: 18px;
+}
+
+.location ~ .location .header {
+	margin: 0 -15px 10px;
+	padding: 20px 20px 0;
+	border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.dark .location ~ .location .header {
+	border-top-color: rgba(0, 0, 0, .2);
+}
+
+.tiny .header {
+	margin: -3px 0 10px;
+}
+
+.tiny .location ~ .location .header {
+	margin: 10px -15px;
+	padding: 10px 15px 0px;
+}
+
+.header button {
+	float: right;
+	margin: -7px -5px 0 0;
+}
+
+.cond {
+	width: 128px;
+	height: 128px;
+	margin-left: 6%;
+	vertical-align: top;
+	display: inline-block;
+	background: url(icons/sunny.png) center/auto 110% no-repeat;
+}
+
+.temp {
+	font-size: 95px;
+	font-weight: 300;
+	padding-left: 10%;
+	line-height: 112px;
+	vertical-align: top;
+	display: inline-block;
+	font-family: Open Sans, sans-serif;
+}
+
+.tiny .temp {
+	padding: 0;
+	font-size: 70px;
+	line-height: 70px;
+}
+
+.temp .toggle {
+	top: -5px;
+	opacity: 0;
+	color: #888;
+	width: 15px;
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 20px;
+	padding-left: 5px;
+	display: inline-block;
+	vertical-align: super;
+	transition: opacity .2s ease;
+}
+
+:root:hover .temp .toggle {
+	opacity: 1;
+}
+
+.temp .toggle span:hover,
+.temp .toggle span.active {
+	color: #333;
+}
+
+.dark .temp .toggle span:hover,
+.dark .temp .toggle span.active {
+	color: #EEE;
+}
+
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Conditions
+*/
+.cond.rain				{ background-image: url(icons/rain.png); }
+.cond.snow				{ background-image: url(icons/snow.png); }
+.cond.sunny				{ background-image: url(icons/sunny.png); }
+.cond.cloudy			{ background-image: url(icons/cloudy.png); }
+.cond.tstorms			{ background-image: url(icons/tstorms.png); }
+.cond.showers			{ background-image: url(icons/showers.png); }
+.cond.lightsnow			{ background-image: url(icons/lightsnow.png); }
+.cond.lightrain			{ background-image: url(icons/lightrain.png); }
+.cond.clear-night		{ background-image: url(icons/clear-night.png); }
+.cond.partlycloudy		{ background-image: url(icons/partlycloudy.png); }
+.cond.lightrain-snow	{ background-image: url(icons/lightrain-snow.png); }
+.cond.partlycloudy-night{ background-image: url(icons/partlycloudy-night.png); }
+
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Details
+*/
+.details {
+	font-size: 0;
+	display: block;
+	padding: 0 15px;
+	margin: 5px 0 20px;
+}
+
+.details .status {
+	float: left;
+	width: 128px;
+	font-weight: 500;
+	text-align: center;
+}
+
+.details button.more {
+	float: right;
+	min-width: 60px;
+	margin: -7px -15px -7px 0;
+}
+
+.details div {
+	font-size: 13px;
+	font-weight: 500;
+	text-align: right;
+	display: inline-block;
+	width: calc((100% - 128px) / 2);
+}
+
+.dark .details div,
+.dark .details button.more {
+	color: #EEE;
+}
+
+.details div span {
+	color: #888;
+	font-size: 12px;
+	font-weight: 400;
+	padding-right: 5px;
+}
+
+.dark .details div span {
+	color: #CCC;
+}
+
+.details .wind svg {
+	width: 12px;
+	height: 12px;
+	fill: currentColor;
+}
+
+.details .wind svg path {
+	transform-origin: center;
+}
+
+.details.extended {
+	height: 0;
+	margin: 0 -15px;
+	padding-left: 0;
+	overflow: hidden;
+	background: #F5F5F5;
+	transform: translateZ(0);
+	transition: all .2s ease;
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, .24);
+}
+
+.dark .details.extended {
+	background: rgba(0, 0, 0, .15);
+}
+
+.details.extended.visible {
+	height: auto;
+	padding: 15px 15px 15px 0;
+}
+
+.details.extended div {
+	width: 50%;
+	font-size: 13px;
+	line-height: 22px;
+	padding-left: 15px;
+	vertical-align: top;
+}
+
+.details.extended div span {
+	float: left;
+	font-size: 11px;
+	text-transform: uppercase;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Forecast
+*/
+.forecast {
+	height: 115px;
+	margin: 5px -10px;
+	position: relative;
+}
+
+.forecast:focus {
+	outline: 0;
+}
+
+.location:last-child .forecast:last-child {
+	margin-bottom: -15px;
+}
+
+.forecast button {
+	margin: 0;
+	z-index: 1;
+	opacity: 0;
+	padding: 0;
+	left: -16px;
+	width: 32px;
+	height: 32px;
+	font-size: 20px;
+	background: #FFF;
+	position: absolute;
+	font-family: Entypo;
+	top: calc(50% - 10px);
+	transition: opacity .2s ease;
+}
+
+.dark .forecast button {
+	color: #FFF;
+	background: #404040;
+}
+
+.forecast button[disabled] {
+	display: none;
+}
+
+.forecast.is-pro:hover button {
+	opacity: 1;
+}
+
+.forecast button:before {
+	content: "\E6CD";
+	margin-left: -4px;
+}
+
+.forecast button.next {
+	left: initial;
+	right: -16px;
+}
+
+.forecast button.next:before {
+	content: "\E6D0";
+	margin-left: 0;
+}
+
+.forecast .items {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-size: 0;
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+}
+
+.forecast .items .pull {
+	height: 100%;
+	display: inline-block;
+	vertical-align: bottom;
+	transition: margin-left .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.forecast .item {
+	color: #888;
+	margin: 5px;
+	min-width: 50px;
+	font-size: 13px;
+	padding: 5px 8px;
+	text-align: center;
+	display: inline-block;
+	width: calc(20% - 10px);
+	height: calc(100% - 10px);
+}
+
+.dark .forecast .item {
+	color: #CCC;
+}
+
+.forecast.is-pro .item {
+	cursor: pointer;
+}
+
+.forecast .item.active,
+.forecast.is-pro .item:hover {
+	padding: 4px 7px;
+	border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.dark .forecast .item.active,
+.dark .forecast.is-pro .item:hover {
+	border-color: rgba(255, 255, 255, .2);
+}
+
+.forecast .cond {
+	width: 100%;
+	height: 42px;
+	margin: 8px 0;
+	display: block;
+}
+
+.forecast .period {
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+.forecast .high {
+	color: #333;
+}
+
+.dark .forecast .high {
+	color: #EEE;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Hourly forecast
+*/
+.forecast.hourly {
+	margin: 0 -15px;
+	border-top: 1px solid rgba(0, 0, 0, .075);
+}
+
+.dark .forecast.hourly {
+	border-top-color: rgba(0, 0, 0, .2);
+}
+
+.forecast.hourly .item {
+	margin: 0;
+	width: 65px;
+	height: 100%;
+	padding: 12px 1px;
+}
+
+.forecast.hourly .item:hover,
+.forecast.hourly .item.active {
+	padding: 12px 1px;
+	border-width: 0 1px;
+	background: rgba(0, 0, 0, .03);
+}
+
+.dark .forecast.hourly .item:hover,
+.dark .forecast.hourly .item.active {
+	background: rgba(0, 0, 0, .1);
+	border-color: rgba(0, 0, 0, .2);
+}
+
+.forecast.hourly .temp {
+	font: inherit;
+}

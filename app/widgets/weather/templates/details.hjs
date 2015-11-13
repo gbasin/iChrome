@@ -1,0 +1,58 @@
+<div class="cond {{current.conditions}}"></div>
+
+<span class="temp">
+	{{#current.temp}}{{current.temp}}{{/current.temp}}{{current.high}}&deg;<sup class="toggle">
+		<span data-units="{{unitsToggle.0.value}}" class="active">{{unitsToggle.0.label}}</span>
+		<span data-units="{{unitsToggle.1.value}}">{{unitsToggle.1.label}}</span>
+	</sup>
+</span>
+
+<div class="details">
+	<div class="status">{{current.caption}}</div>
+
+	{{^isPro}}
+		<div class="wind">
+			<span>{{i18n.wind}}</span>
+
+			<svg xmlns="http://www.w3.org/2000/svg" class="direction" viewBox="0 0 24 24">
+				<path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" style="transform: rotate({{current.windDir}}deg)" />
+			</svg>
+
+			{{current.windSpeed}} {{units.speed}}
+		</div>
+	{{/isPro}}
+
+	<div><span>{{i18n.precipitation}}</span> {{current.precip}}%</div>
+
+	{{#isPro}}<button type="button" class="material flat more">{{#showDetails}}{{i18n.less}}{{/showDetails}}{{^showDetails}}{{i18n.more}}{{/showDetails}}</button>{{/isPro}}
+</div>
+
+{{#isPro}}
+	{{#current}}
+		<div class="details extended{{#showDetails}} visible{{/showDetails}}">
+			{{#windSpeed}}
+				<div class="wind">
+					<span>{{i18n.wind}}</span>
+
+					<svg xmlns="http://www.w3.org/2000/svg" class="direction" viewBox="0 0 24 24">
+						<path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" style="transform: rotate({{windDir}}deg)" />
+					</svg>
+
+					{{windSpeed}} {{units.speed}}
+				</div>
+			{{/windSpeed}}
+
+			{{#uv}}<div><span>{{i18n.uv}}</span> {{uv}}</div>{{/uv}}
+			{{#feelsLike}}<div><span>{{i18n.feelslike}}</span> {{feelsLike}}&deg;</div>{{/feelsLike}}
+			{{#baro}}<div><span>{{i18n.barometer}}</span> {{baro}} {{units.pressure}}</div>{{/baro}}
+			{{#visibility}}<div><span>{{i18n.visibility}}</span> {{visibility}} {{units.distance}}</div>{{/visibility}}
+			{{#humidity}}<div><span>{{i18n.humidity}}</span> {{humidity}}%</div>{{/humidity}}
+			{{#dewPoint}}<div><span>{{i18n.dewpoint}}</span> {{dewPoint}}&deg;</div>{{/dewPoint}}
+			{{#moonPhase}}<div><span>{{i18n.moonphase}}</span> {{moonPhase}}</div>{{/moonPhase}}
+			{{#sunrise}}<div><span>{{i18n.sunrise}}</span> {{sunrise}}</div>{{/sunrise}}
+			{{#sunset}}<div><span>{{i18n.sunset}}</span> {{sunset}}</div>{{/sunset}}
+			{{#moonrise}}<div><span>{{i18n.moonrise}}</span> {{moonrise}}</div>{{/moonrise}}
+			{{#moonset}}<div><span>{{i18n.moonset}}</span> {{moonset}}</div>{{/moonset}}
+		</div>
+	{{/current}}
+{{/isPro}}
