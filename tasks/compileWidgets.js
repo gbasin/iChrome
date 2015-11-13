@@ -1,9 +1,10 @@
 /**
  * Prepares widgets to be built into the main JS file with the requirejs optimizer
  */
-var css = require("css"),
-	_ = require("lodash"),
-	path = require("path");
+var _ = require("lodash"),
+	path = require("path"),
+	rework = require("rework"),
+	reworkAssets = require("rework-assets");
 
 module.exports = function(grunt) {
 	grunt.registerTask("compileWidgets", "Compile widgets", function() {
@@ -42,54 +43,60 @@ module.exports = function(grunt) {
 			if (manifest.css) {
 				var prefix = ".widget." + manifest.name;
 
-				var ast = css.parse(grunt.file.read(basePath + manifest.css));
-
 				var themeRegex = /^\.(?:dark|transparent|darker)(?:\.(?:dark|transparent|darker))?\s/;
 
 				var variationsRegex = /^(?:\.(?:maximized|minimized|tiny|small|medium|large|variable|settings|auth-required|error|permissions-request))+/;
 
-				ast.stylesheet.rules = _.map(ast.stylesheet.rules, function prefixRule(e) {
-					if (e.selectors) {
-						e.selectors = _.map(e.selectors, function(e) {
-							e = e.trim();
+				var css = rework(grunt.file.read(basePath + manifest.css))
+					.use(reworkAssets({
+						src: path.parse(basePath + manifest.css).dir,
+						dest: path.resolve("build/assets"),
+						prefix: "../assets/"
+					}))
+					.use(function(sheet) {
+						sheet.rules = _.map(sheet.rules, function prefixRule(e) {
+							if (e.selectors) {
+								e.selectors = _.map(e.selectors, function(e) {
+									e = e.trim();
 
-							var themeSel = e.match(themeRegex),
-								variationSel = e.match(variationsRegex);
+									var themeSel = e.match(themeRegex),
+										variationSel = e.match(variationsRegex);
 
-							if (e.indexOf(":root") !== -1) {
-								// We do a simple replace to allow things like ":root.tiny"
-								return e.replace(":root", prefix);
+									if (e.indexOf(":root") !== -1) {
+										// We do a simple replace to allow things like ":root.tiny"
+										return e.replace(":root", prefix);
+									}
+									// Theme styles are prefixed by their global selectors
+									else if (themeSel && themeSel.length) {
+										return themeSel[0] + prefix + " " + e.replace(themeRegex, "");
+									}
+									else if (variationSel && variationSel.length) {
+										return variationSel[0] + prefix + " " + e.replace(variationsRegex, "");
+									}
+									else {
+										return prefix + " " + e;
+									}
+								});
 							}
-							// Theme styles are prefixed by their global selectors
-							else if (themeSel && themeSel.length) {
-								return themeSel[0] + prefix + " " + e.replace(themeRegex, "");
+
+							if (e.rules) {
+								e.rules = _.map(e.rules, prefixRule);
 							}
-							else if (variationSel && variationSel.length) {
-								return variationSel[0] + prefix + " " + e.replace(variationsRegex, "");
-							}
-							else {
-								return prefix + " " + e;
-							}
+
+							return e;
 						});
-					}
-
-					if (e.rules) {
-						e.rules = _.map(e.rules, prefixRule);
-					}
-
-					return e;
-				});
+					});
 
 				widgetCSS +=
 					"\n\n\n\n\n\n/*\n * / Widgets / " +
 					(manifest.strings && manifest.strings.en && manifest.strings.en.name) +
 					"\n */\n" +
-					css.stringify(ast, {
+					css.toString({
 						indent: "\t"
 					});
 
 
-				// Remove the entry from the manifest so it doesn't get loaded
+				// Remove the entry from the manifest so it doesn't get dynamically loaded
 				delete manifest.css;
 			}
 
