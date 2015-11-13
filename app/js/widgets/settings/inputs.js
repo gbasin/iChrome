@@ -21,21 +21,21 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 			input.value = _.result(input, "value");
 
 			elm.html(render("widget-settings.inputs", {
-				"input-text": _.pick(input, "name", "label", "value", "help", "placeholder")
+				"input-text": _.pick(input, "name", "label", "proHelper", "value", "help", "placeholder")
 			}));
 		},
 		textarea: function(input, elm) {
 			input.value = _.result(input, "value");
 
 			elm.html(render("widget-settings.inputs", {
-				"input-textarea": _.pick(input, "name", "label", "value", "help", "placeholder")
+				"input-textarea": _.pick(input, "name", "label", "proHelper", "value", "help", "placeholder")
 			}));
 		},
 		color: function(input, elm) {
 			input.value = _.result(input, "value");
 
 			elm.html(render("widget-settings.inputs", {
-				"input-color": _.pick(input, "name", "label", "value", "help")
+				"input-color": _.pick(input, "name", "label", "proHelper", "value", "help")
 			})).find("input.color").spectrum({
 				showInput: true,
 				showAlpha: true,
@@ -81,7 +81,7 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 			};
 
 
-			var data = _.pick(input, "name", "label", "help", "multiple");
+			var data = _.pick(input, "name", "label", "proHelper", "help", "multiple");
 
 			if (data.multiple) {
 				data.multiple = "multiple";
@@ -132,7 +132,7 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 			}
 		},
 		list: function(input, elm) {
-			var data = _.pick(input, "name", "label", "help", "placeholder");
+			var data = _.pick(input, "name", "label", "proHelper", "help", "placeholder");
 
 			data.items = _.map(input.value, function(e, key) {
 				if (typeof e == "object") {
@@ -185,7 +185,7 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 		},
 		size: function(input, elm, translate, settings) {
 			var sizes = settings.widget.sizes,
-				selected = settings.config.size || sizes[0].toLowerCase();
+				selected = settings.model.get("size") || (settings.widget.manifest && settings.widget.manifest.defaultSize) || sizes[0].toLowerCase();
 
 			sizes = sizes.map(function(e) {
 				return {
@@ -202,7 +202,7 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 			}));
 		},
 		radio: function(input, elm, translate) {
-			var data = _.pick(input, "name", "label", "help");
+			var data = _.pick(input, "name", "label", "proHelper", "help");
 
 			data.options = _.map(input.options, function(e, key) {
 				return {
@@ -220,14 +220,14 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 			input.value = _.result(input, "value");
 
 			elm.html(render("widget-settings.inputs", {
-				"input-number": _.pick(input, "name", "label", "min", "max", "value", "help", "placeholder")
+				"input-number": _.pick(input, "name", "label", "proHelper", "min", "max", "value", "help", "placeholder")
 			}));
 		},
 		time: function(input, elm) {
 			input.value = _.result(input, "value");
 
 			elm.html(render("widget-settings.inputs", {
-				"input-time": _.pick(input, "name", "label", "value", "help", "placeholder")
+				"input-time": _.pick(input, "name", "label", "proHelper", "value", "help", "placeholder")
 			}));
 		}
 	};

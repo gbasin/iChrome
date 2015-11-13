@@ -2771,6 +2771,18 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	display: block;
 }
 
+.widget-settings .form-group.pro > label:after {
+	color: #FB8C00;
+	padding: 0 3px;
+	content: "Pro";
+	font-size: 11px;
+	margin-left: 5px;
+	border-radius: 2px;
+	text-transform: uppercase;
+	border: 1px solid currentColor;
+	font-family: Roboto, sans-serif;
+}
+
 .widget-settings .help {
 	color: #777;
 	float: right;

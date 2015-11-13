@@ -4,7 +4,7 @@
 		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
-	<input type="text" class="form-control" id="widget-{{name}}" name="{{name}}" placeholder="{{placeholder}}" value="{{value}}" />
+	<input type="text" class="form-control" id="widget-{{name}}" name="{{name}}" placeholder="{{placeholder}}" value="{{value}}" {{proHelper}} />
 {{/input-text}}
 
 {{#input-textarea}}
@@ -13,7 +13,7 @@
 		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
-	<textarea class="form-control" id="widget-{{name}}" name="{{name}}" placeholder="{{placeholder}}">{{value}}</textarea>
+	<textarea class="form-control" id="widget-{{name}}" name="{{name}}" placeholder="{{placeholder}}" {{proHelper}}>{{value}}</textarea>
 {{/input-textarea}}
 
 {{#input-color}}
@@ -22,7 +22,7 @@
 		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 	
-	<input type="text" class="form-control color" id="widget-{{name}}" name="{{name}}" value="{{value}}" />
+	<input type="text" class="form-control color" id="widget-{{name}}" name="{{name}}" value="{{value}}" {{proHelper}} />
 {{/input-color}}
 
 {{#input-select}}
@@ -31,7 +31,7 @@
 		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
-	<select class="form-control" id="widget-{{name}}" name="{{name}}" {{multiple}}>
+	<select class="form-control" id="widget-{{name}}" name="{{name}}" {{multiple}} {{proHelper}}>
 		{{#options}}
 			{{#group}}
 				<optgroup label="{{{nesting}}}{{group}}"></optgroup>
@@ -50,14 +50,14 @@
 	</label>
 	
 	<div>
-		<input type="text" placeholder="{{placeholder}}" id="widget-{{name}}" />
+		<input type="text" placeholder="{{placeholder}}" id="widget-{{name}}" {{proHelper}} />
 
 		<div class="items">
 			{{#items}}
 				<div class="item">
-					{{#color}}<input type="text" class="color" name="{{name}}[][color]" value="{{color}}" />{{/color}}
+					{{#color}}<input type="text" class="color" name="{{name}}[][color]" value="{{color}}" {{proHelper}} />{{/color}}
 
-					<input type="text" name="{{name}}[]{{#color}}[name]{{/color}}" value="{{value}}" />
+					<input type="text" name="{{name}}[]{{#color}}[name]{{/color}}" value="{{value}}" {{proHelper}} />
 
 					<div class="tools">
 						<span class="up">&#xE6CF;</span>
@@ -72,9 +72,9 @@
 
 {{#input-list-item}}
 	<div class="item">
-		{{#color}}<input type="text" class="color" name="{{name}}[][color]" value="{{color}}" />{{/color}}
+		{{#color}}<input type="text" class="color" name="{{name}}[][color]" value="{{color}}" {{proHelper}} />{{/color}}
 
-		<input type="text" name="{{name}}[]{{#color}}[name]{{/color}}" value="{{value}}" />
+		<input type="text" name="{{name}}[]{{#color}}[name]{{/color}}" value="{{value}}" {{proHelper}} />
 
 		<div class="tools">
 			<span class="up">&#xE6CF;</span>
@@ -87,7 +87,7 @@
 {{#input-size}}
 	<label for="widget-size">{{i18n.widgets.settings.size}}</label>
 
-	<select class="form-control" id="widget-size" name="size">
+	<select class="form-control" id="widget-size" name="size" {{proHelper}}>
 		{{#sizes}}
 			<option value="{{size}}" {{selected}}>{{name}}</option>
 		{{/sizes}}
@@ -103,7 +103,7 @@
 	<div>
 		{{#options}}
 			<label class="checkbox-inline">
-				<input type="radio" name="{{name}}" value="{{value}}" {{checked}} />
+				<input type="radio" name="{{name}}" value="{{value}}" {{proHelper}}{{^proHelper}}{{checked}}{{/proHelper}} />
 				{{label}}
 			</label>
 		{{/options}}
@@ -116,7 +116,7 @@
 		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
-	<input type="number" id="widget-{{name}}" name="{{name}}" class="form-control" min="{{min}}" max="{{max}}" value="{{value}}" />
+	<input type="number" id="widget-{{name}}" name="{{name}}" class="form-control" min="{{min}}" max="{{max}}" value="{{value}}" {{proHelper}} />
 {{/input-number}}
 
 {{#input-time}}
@@ -125,5 +125,5 @@
 		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
-	<input type="time" class="form-control" name="{{name}}" id="widget-{{name}}" value="{{value}}" placeholder="{{placeholder}}"/>
+	<input type="time" class="form-control" name="{{name}}" id="widget-{{name}}" value="{{value}}" placeholder="{{placeholder}}" {{proHelper}} />
 {{/input-time}}
