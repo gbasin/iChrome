@@ -1,4 +1,4 @@
-define(["lodash", "widgets/model", "moment", "lib/jquery.numberformatter"], function(_, WidgetModel, moment) {
+define(["jquery", "lodash", "widgets/model", "moment", "lib/jquery.numberformatter"], function($, _, WidgetModel, moment) {
 	return WidgetModel.extend({
 		refreshInterval: function() {
 			return this.Pro.isPro ? 10000 : 300000;
@@ -186,7 +186,7 @@ define(["lodash", "widgets/model", "moment", "lib/jquery.numberformatter"], func
 					// This is no more or less safe than JSONP however, and the data is
 					// coming via a secure connection with Google
 					try {
-						d = eval("(" + d + ")");
+						d = eval("(" + d + ")"); // jshint ignore:line
 					}
 					catch (e) {
 						return;

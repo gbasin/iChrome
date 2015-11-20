@@ -275,7 +275,7 @@ define(["lodash", "jquery", "moment", "./lib/chart", "widgets/views/main"], func
 					
 					elements: {
 						line: {
-							tension: .1
+							tension: 0.1
 						}
 					},
 
