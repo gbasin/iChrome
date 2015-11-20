@@ -38,11 +38,11 @@ var legacyWidgets = [
 // We need to use a named module because the requirejs compiler can't inline an
 // anonymous module with dynamic dependencies properly
 define(widgets.concat(legacyWidgets, [
-	// These are used by various legacy widgets
-	"lib/jquery.numberformatter", "lib/jquery.sortable"
+	// Sortable is used by various legacy widgets
+	"lib/jquery.sortable"
 ]), function() {
 	return {
-		legacy: [].slice.call(arguments, widgets.length, -2),
+		legacy: [].slice.call(arguments, widgets.length, -1),
 		widgets: [].slice.call(arguments, 0, widgets.length)
 	};
 });

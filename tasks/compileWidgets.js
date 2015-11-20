@@ -153,7 +153,7 @@ module.exports = function(grunt) {
 
 		grunt.file.write("build/js/widgets/registry/index.js", "define(" + JSON.stringify(deps) + ", function() {" +
 			"return {" +
-				"legacy: [].slice.call(arguments, " + widgets.length + ", -2)," +
+				"legacy: [].slice.call(arguments, " + widgets.length + ", -1)," +
 				"widgets: [].slice.call(arguments, 0, " + widgets.length + ")" +
 			"};" +
 		"});");
