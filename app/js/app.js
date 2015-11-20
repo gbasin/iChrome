@@ -24,8 +24,7 @@ require.config({
 		}
 	},
 	shim: {
-		"lib/jquery.sortable": ["jquery"],
-		"lib/jquery.numberformatter": ["jquery", "lib/jshashtable"]
+		"lib/jquery.sortable": ["jquery"]
 	}
 });
 

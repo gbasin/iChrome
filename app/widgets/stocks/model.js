@@ -1,4 +1,4 @@
-define(["jquery", "lodash", "widgets/model", "moment", "lib/jquery.numberformatter"], function($, _, WidgetModel, moment) {
+define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetModel, moment) {
 	return WidgetModel.extend({
 		refreshInterval: function() {
 			return this.Pro.isPro ? 10000 : 300000;
