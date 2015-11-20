@@ -158,7 +158,7 @@ define([
 				this.widgetModel.refresh();
 
 				if (this.widgetModel.refreshInterval) {
-					this._refreshInterval = setInterval(_.bind(this.widgetModel.refresh, this.widgetModel), this.widgetModel.refreshInterval);
+					this._refreshInterval = setInterval(_.bind(this.widgetModel.refresh, this.widgetModel), _.result(this.widgetModel, "refreshInterval"));
 				}
 			}
 		},
@@ -311,7 +311,7 @@ define([
 			var state;
 
 			// Set the state
-			if (!Pro.isPro && this.model.get("state") !== "settings") {
+			if (!Pro.isPro && (this.model.get("state") === "maximized" || this.model.get("state") === "minimized")) {
 				state = "default";
 			}
 			else {
@@ -327,13 +327,10 @@ define([
 			this.state = state;
 
 
-			var view = this.widget.views.default || MainView;
+			var view = this.widget.views[state] || this.widget.views.default || MainView;
 
 			// Widgets can implement completely custom settings
-			if (state === "settings") {
-				view = this.widget.views.settings;
-			}
-			else if (state === "maximized") {
+			if (state === "maximized") {
 				if (!this.model.previous("state") || this.model.previous("state") !== "maximized") {
 					// These methods need to be called before the widget view is replaced
 					this.maximize();

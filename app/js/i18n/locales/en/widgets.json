@@ -346,25 +346,6 @@
 		"no_games": "No Games Scheduled"
 	},
 
-	"stocks": {
-		"name": "Stocks",
-		"desc": "Displays current information for any given stock symbol.",
-
-		"settings": {
-			"symbols": "Stock Symbol(s), comma separated",
-			"symbols_placeholder": "e.g. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-			"symbols_help": "These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br /><br />\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https://www.google.com/finance\" target=\"_blank\">Google Finance</a>. For example, the Dow Jones index is <b>.DJI</b> and NYSE is <b>INDEXNYSEGIS:NYA</b>."
-		},
-
-		"as_of": "as of",
-		"exchange_time": "Exchange Time",
-
-		"open": "open",
-		"high": "high",
-		"low": "low",
-		"volume": "volume"
-	},
-
 	"todo": {
 		"name": "To-do",
 		"desc": "Displays an interactive to-do list with important and completed items.",

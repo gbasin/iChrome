@@ -1,0 +1,26 @@
+{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+{{#tiny}}
+	<div class="val {{stocks.0.changeDirection}}" title="{{i18n.as_of}} {{stocks.0.date}} ({{i18n.exchange_time}}){{#stocks.0.extra}} ({{stocks.0.extra}}){{/stocks.0.extra}}">
+		<span class="price">{{stocks.0.value}}</span>
+
+		<span class="change">{{stocks.0.change}} ({{stocks.0.changePercent}}%)</span>
+	</div>
+{{/tiny}}
+{{^tiny}}
+	<div class="list{{^stocks.1}} single{{/stocks.1}}">
+		{{#stocks}}
+			<div class="stock {{changeDirection}}" title="{{i18n.as_of}} {{date}} ({{i18n.exchange_time}}){{#extra}} ({{extra}}){{/extra}}">
+				<div class="name">
+					<span class="name">{{name}}</span>
+					<span class="ticker">{{ticker}}</span> (<span class="exchange">{{exchange}}</span>)
+				</div>
+
+				<div class="price">
+					<span class="current">{{value}}</span>
+					<span class="change">{{change}} ({{changePercent}}%)</span>
+				</div>
+			</div>
+		{{/stocks}}
+	</div>
+{{/tiny}}

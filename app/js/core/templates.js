@@ -13,7 +13,6 @@ var templates = [
 		"whatsnew",				"settings/sync",		"widgets/auth-required",
 		"widgets/error",		"widgets/permissions-request",
 
-		"widgets.stocks",				"widgets.stocks.desc",
 		"widgets.clock",				"widgets.clock.desc",
 		"widgets.traffic",				"widgets.traffic.desc",
 		"widgets.analytics",			"widgets.analytics.desc",

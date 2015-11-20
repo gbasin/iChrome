@@ -1,0 +1,147 @@
+<header class="{{changeDirection}}">
+	<button type="button" class="material toggle back">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+			<path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+		</svg>
+	</button>
+
+	<div class="top-row">
+		<div class="name">
+			<span class="name">{{name}}</span>
+			<span class="ticker">{{ticker}}</span> (<span class="exchange">{{exchange}}</span>)
+		</div>
+
+		<div class="price">
+			<span class="current">{{value}}</span>
+			<span class="change">{{change}} ({{changePercent}}%)</span>
+		</div>
+	</div>
+
+	<ul class="tabs">
+		<li data-id="overview"{{#overview}} class="active"{{/overview}}>{{i18n.overview}}</li>
+		<li data-id="news"{{#news}} class="active"{{/news}}>{{i18n.news}}</li>
+	</ul>
+</header>
+
+{{#proSplash}}
+	<div class="splash pro-only">
+		<span class="badge">Pro</span>
+
+		<p>
+			{{i18n.pro_splash1}}
+			<br />
+			{{i18n.pro_splash2}}
+		</p>
+	</div>
+{{/proSplash}}
+
+{{#overview}}
+	<div class="chart">
+		<ul class="tabs picker">
+			<li data-value="1d" class="active">{{i18n.time_ranges.1d}}</li>
+			<li data-value="5d">{{i18n.time_ranges.5d}}</li>
+			<li data-value="1m">{{i18n.time_ranges.1m}}</li>
+			<li data-value="3m">{{i18n.time_ranges.3m}}</li>
+			<li data-value="1y">{{i18n.time_ranges.1y}}</li>
+			<li data-value="5y">{{i18n.time_ranges.5y}}</li>
+			<li data-value="max">{{i18n.time_ranges.max}}</li>
+		</ul>
+
+		<div class="tooltip">
+			<span class="price"></span>
+			<span class="time"></span>
+			<span class="date"></span>
+		</div>
+
+		<div class="canvas-wrapper">
+			<canvas width="300" height="200"></canvas>
+		</div>
+	</div>
+
+	<div class="details">
+		<div>
+			<span class="label">{{i18n.open}}</span>
+			<span class="value" data-field="open">{{open}}</span>
+		</div>
+
+		<div>
+			<span class="label">{{i18n.prev_close}}</span>
+			<span class="value" data-field="previousClose">{{previousClose}}</span>
+		</div>
+
+		<div>
+			<span class="label">{{i18n.high}}</span>
+			<span class="value" data-field="high">{{high}}</span>
+		</div>
+
+		<div>
+			<span class="label">{{i18n.52high}}</span>
+			<span class="value" data-field="high52">{{high52}}</span>
+		</div>
+
+		<div>
+			<span class="label">{{i18n.low}}</span>
+			<span class="value" data-field="low">{{low}}</span>
+		</div>
+
+		<div>
+			<span class="label">{{i18n.52low}}</span>
+			<span class="value" data-field="low52">{{low52}}</span>
+		</div>
+
+		<div>
+			<span class="label">{{i18n.volume}}</span>
+			<span class="value" data-field="volume">{{volume}}</span>
+		</div>
+
+		<div>
+			<span class="label">{{i18n.avg_volume}}</span>
+			<span class="value" data-field="averageVolume">{{averageVolume}}</span>
+		</div>
+
+		<div>
+			<span class="label">{{i18n.shares}}</span>
+			<span class="value" data-field="shares">{{shares}}</span>
+		</div>
+
+		<div>
+			<span class="label">{{i18n.cap}}</span>
+			<span class="value" data-field="marketCap">{{marketCap}}</span>
+		</div>
+
+		<div>
+			<span class="label">{{i18n.pe}}</span>
+			<span class="value" data-field="priceToEarnings">{{priceToEarnings}}</span>
+		</div>
+
+		<div>
+			<span class="label">{{i18n.eps}}</span>
+			<span class="value" data-field="earningsPerShare">{{earningsPerShare}}</span>
+		</div>
+
+		<div>
+			<span class="label">{{i18n.beta}}</span>
+			<span class="value" data-field="beta">{{beta}}</span>
+		</div>
+
+		<div>
+			<span class="label">{{i18n.inst_own}}</span>
+			<span class="value" data-field="institutional">{{institutional}}</span>
+		</div>
+	</div>
+{{/overview}}
+
+{{#news}}
+	<div class="news-items">
+		{{#items}}
+			<a href="{{url}}" class="item">
+				<h3 class="title">{{title}}</h3>
+
+				<p class="desc">{{{desc}}}</p>
+
+				<span class="source">{{source}}</span>
+				<span class="date">{{date}}</span>
+			</a>
+		{{/items}}
+	</div>
+{{/news}}
