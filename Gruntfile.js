@@ -53,9 +53,14 @@ module.exports = function(grunt) {
 				}, {
 					src: "build/css/style.css",
 					dest: "app/css/style.css"
+				}, {
+					expand: true,
+					cwd: "build/assets",
+					src: "**/*",
+					dest: "app/assets"
 				}]
 			},
-			resetjs: {
+			resetTestrun: {
 				files: [{
 					src: "app/js/app.unbuilt.js",
 					dest: "app/js/app.js"
@@ -172,7 +177,7 @@ module.exports = function(grunt) {
 			all: ["tmp", "build/**/Thumbs.db", "build/templates", "build/widgets", "build/js/*", "!build/js/lib", "build/js/lib/*", "!build/js/lib/require.js", "!build/js/app.js", "!build/js/background.js"],
 			webstore: ["build"],
 			travis: ["build", "webstore.zip", "descriptions"],
-			testrun: ["app/js/app.unbuilt.js", "app/css/style.unbuilt.css"]
+			testrun: ["app/js/app.unbuilt.js", "app/css/style.unbuilt.css", "app/assets"]
 		}
 	});
 
@@ -263,7 +268,7 @@ module.exports = function(grunt) {
 		"clean:all",
 		"clean:webstore",
 		"waitReset",
-		"copy:resetjs",
+		"copy:resetTestrun",
 		"clean:testrun"
 	]);
 };
