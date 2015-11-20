@@ -2834,6 +2834,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Widget Settings / List Input
 */
+.widget-settings .list > div,
 .widget-settings .list > div > input {
 	border-radius: 0;
 	position: relative;
@@ -2899,6 +2900,55 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	left: 35px;
 	width: calc(100% - 35px);
 }
+
+.widget-settings .list .suggestions {
+	top: 32px;
+	left: 1px;
+	right: 1px;
+	z-index: 2;
+	opacity: 0;
+	padding: 0;
+	cursor: pointer;
+	font-size: 13px;
+	background: #FFF;
+	position: absolute;
+	visibility: hidden;
+	font-family: Roboto, sans-serif;
+	box-shadow: 0 2px 3px -1px rgba(0, 0, 0, .3);
+	transition: opacity .2s ease, visibility 0s .2s;
+}
+
+.widget-settings .list .suggestions.visible {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity .2s ease, visibility 0s 0s;
+}
+
+.widget-settings .list .suggestions li {
+	padding: 0 12px;
+	overflow: hidden;
+	line-height: 30px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	border-left: 4px solid transparent;
+}
+
+.widget-settings .list .suggestions li:hover,
+.widget-settings .list .suggestions li.active {
+	background: #F5F5F5;
+	border-left-color: #888;
+}
+
+.dark .widget-settings .list .suggestions li:hover,
+.dark .widget-settings .list .suggestions li.active {
+	background: #303030;
+}
+
+.widget-settings .list .suggestions li.active {
+	border-left-color: #738FFE;
+}
+
+
 
 
 

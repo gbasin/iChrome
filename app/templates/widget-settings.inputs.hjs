@@ -52,6 +52,8 @@
 	<div>
 		<input type="text" placeholder="{{placeholder}}" id="widget-{{name}}" {{proHelper}} />
 
+		<ul class="suggestions"></ul>
+
 		<div class="items">
 			{{#items}}
 				<div class="item">

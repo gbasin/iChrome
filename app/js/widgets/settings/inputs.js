@@ -131,7 +131,13 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 				}));
 			}
 		},
-		list: function(input, elm) {
+		list: function(input, elm, translate, settings) {
+			var autocomplete = false;
+
+			if (typeof input.autocomplete == "string" && typeof settings.fnTarget[input.autocomplete] == "function") {
+				autocomplete = settings.fnTarget[input.autocomplete];
+			}
+
 			var data = _.pick(input, "name", "label", "proHelper", "help", "placeholder");
 
 			data.items = _.map(input.value, function(e, key) {
@@ -158,7 +164,7 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 
 					elm.find(".items").append(render("widget-settings.inputs", {
 						"input-list-item": {
-							value: $(this).val(),
+							value: (autocomplete && sElm.find("li.active").attr("data-value")) || $(this).val(),
 							name: input.name,
 							color: (input.color ? "#EEE" : false)
 						}
@@ -172,7 +178,7 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 					});
 
 
-					$(this).val("");
+					$(this).val("").trigger("input");
 				}
 			}).find("input.color").spectrum({
 				showInput: true,
@@ -182,6 +188,58 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 				preferredFormat: "rgb",
 				clickoutFiresChange: true
 			});
+
+
+			if (!autocomplete) return;
+
+			var inputElm = elm.find("input#widget-" + input.name);
+
+			var sElm = elm.find("ul.suggestions").on("mousedown", "li", function(e) {
+				$(e.currentTarget).addClass("active").siblings().removeClass("active");
+
+				inputElm.trigger($.Event("keydown", { which: 13 }));
+			});
+
+			var updateSuggestions = function(type, e) {
+				var val = inputElm.val();
+
+				if (val.trim() !== "" && type !== "focusout") {
+					sElm.addClass("visible");
+
+					autocomplete.call(settings.fnTarget, val, function(options) {
+						if (!options || !Array.isArray(options) || !options.length) {
+							return sElm.removeClass("visible");
+						}
+
+						sElm.html(_.map(options, function(e, i) {
+							if (typeof e !== "string" && typeof e !== "object") return;
+
+							return '<li' + (i === 0 ? ' class="active"' : '') + ' data-value="' + _.escape(e.value || e) + '">' + _.escape(e.label || e) + '</li>';
+						}).join(""));
+					});
+				}
+				else {
+					sElm.removeClass("visible");
+				}
+			};
+
+			inputElm
+				.on("focusin", updateSuggestions.bind(this, "focusin"))
+				.on("focusout", updateSuggestions.bind(this, "focusout"))
+				.on("input", updateSuggestions.bind(this, "input"))
+				.on("keydown", function(e) {
+					if (e.which !== 38 && e.which !== 40) return;
+
+					var active = sElm.find("li.active").removeClass("active");
+
+					active = active[e.which === 38 ? "prev" : "next"]();
+
+					if (!active.length) {
+						active = sElm.find("li")[e.which === 38 ? "last" : "first"]();
+					}
+
+					inputElm.val(active.addClass("active").attr("data-value"));
+				});
 		},
 		size: function(input, elm, translate, settings) {
 			var sizes = settings.widget.sizes,
