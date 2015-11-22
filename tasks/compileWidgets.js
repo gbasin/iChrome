@@ -142,14 +142,9 @@ module.exports = function(grunt) {
 			return "json!w/" + e + "/manifest.json";
 		});
 
-		legacyWidgets = legacyWidgets.map(function(e) {
+		var deps = widgets.concat(legacyWidgets.map(function(e) {
 			return "w/" + e;
-		});
-
-		var deps = widgets.concat(legacyWidgets, [
-			// These are used by various legacy widgets
-			"lib/jquery.numberformatter", "lib/jquery.sortable"
-		]);
+		}), ["lib/jquery.sortable"]);
 
 		grunt.file.write("build/js/widgets/registry/index.js", "define(" + JSON.stringify(deps) + ", function() {" +
 			"return {" +
