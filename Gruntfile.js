@@ -155,6 +155,17 @@ module.exports = function(grunt) {
 						}
 					}]
 				}
+			},
+			htmlmin: {
+				src: "build/**/*.hjs",
+				dest: "./",
+				expand: true,
+				options: {
+					replacements: [{
+						pattern: /\s*?\n\s*/g,
+						replacement: " "
+					}]
+				}
 			}
 		},
 
@@ -194,19 +205,22 @@ module.exports = function(grunt) {
 	grunt.registerTask("default", [
 		"jshint:all",
 		"copy:build",
+		"string-replace:htmlmin",
 		"compileWidgets",
 		"cssmin",
 		"i18n:compile",
 		"hogan:compilebinder",
 		"hogan:compile",
 		"requirejs:build",
-		"string-replace",
+		"string-replace:analytics",
+		"string-replace:apikeys",
 		"clean:all"
 	]);
 
 	grunt.registerTask("webstore", [
 		"jshint:all",
 		"copy:build",
+		"string-replace:htmlmin",
 		"compileWidgets",
 		"cssmin",
 		"descriptions",
@@ -215,7 +229,8 @@ module.exports = function(grunt) {
 		"hogan:compile",
 		"removekey",
 		"requirejs:webstore",
-		"string-replace",
+		"string-replace:analytics",
+		"string-replace:apikeys",
 		"clean:all",
 		"compress",
 		"clean:webstore"
@@ -224,6 +239,7 @@ module.exports = function(grunt) {
 	grunt.registerTask("travis", [
 		"jshint:all",
 		"copy:build",
+		"string-replace:htmlmin",
 		"compileWidgets",
 		"cssmin",
 		"descriptions",
@@ -257,13 +273,15 @@ module.exports = function(grunt) {
 	grunt.registerTask("testrun", [
 		"jshint:all",
 		"copy:build",
+		"string-replace:htmlmin",
 		"compileWidgets",
 		"cssmin",
 		"i18n:compile",
 		"hogan:compilebinder",
 		"hogan:compile",
 		"requirejs:webstore",
-		"string-replace",
+		"string-replace:analytics",
+		"string-replace:apikeys",
 		"copy:testrun",
 		"clean:all",
 		"clean:webstore",
