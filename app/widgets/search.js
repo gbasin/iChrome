@@ -41,6 +41,16 @@ define([], function() {
 
 		render: function() {
 			this.utils.render(this.config);
+
+			this.elm.find("form").on("submit", function(e) {
+				e.preventDefault();
+
+				var a = document.createElement("a");
+
+				a.href = this.config.url + (this.config.url.indexOf("?") !== -1 ? "&" : "?") + encodeURIComponent(this.config.param) + "=" + encodeURIComponent(this.elm.find(".searchbox").val());
+
+				a.click();
+			}.bind(this));
 		}
 	};
 });
