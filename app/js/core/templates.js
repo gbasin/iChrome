@@ -30,7 +30,6 @@ var templates = [
 		"widgets.todo",					"widgets.todo.desc",
 		"widgets.reddit",				"widgets.reddit.desc",
 		"widgets.feedly",				"widgets.feedly.desc",				"widgets.feedly.articles",
-		"widgets.translate",			"widgets.translate.desc",
 		"widgets.currency",				"widgets.currency.desc",
 		"widgets.voice",				"widgets.voice.desc",
 		"widgets.keep",					"widgets.keep.desc",

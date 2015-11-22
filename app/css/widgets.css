@@ -2697,58 +2697,6 @@ body.no-edit .bookmarks .tools {
 
 
 
-/*---------------------------------------------
-	/ Translate
-*/
-.translate form {
-	height: calc(100% - 30px);
-}
-
-.translate textarea {
-	width: 100%;
-	min-width: 100%;
-	max-width: 100%;
-	font-size: 13px;
-	min-height: 70px;
-	border-radius: 2px;
-	margin: 10px 0 15px;
-	height: calc(100% - 55px);
-	padding: 5px 8px!important;
-}
-
-.translate .selectbar {
-	float: left;
-	height: 34px;
-	line-height: 34px;
-	text-align: center;
-	width: calc(100% - 105px);
-}
-
-.translate .switch {
-	color: #000; /* See below */
-	cursor: pointer;
-	font-size: 18px;
-	font-family: Entypo;
-	text-shadow: 0 0 #000; /* Helps with font-scaling issues a bit, just enough that it looks OK. */
-}
-
-.translate select {
-	float: left;
-	height: 34px;
-	font-size: 13px;
-	width: calc(50% - 15px);
-	padding: 5px 6px!important;
-}
-
-.translate select:last-child {
-	float: right;
-}
-
-.translate button {
-	float: right;
-}
-
-
 
 
 
