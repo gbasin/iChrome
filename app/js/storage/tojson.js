@@ -1,58 +1,35 @@
 /**
  * Converts a non-JSON.stringify()able tabs object to JSON.  This is used for syncing and comparing tab objects.
  */
-define(["jquery", "storage/defaults", "lib/extends"], function($, defaults) {
+define(["lodash", "storage/defaults"], function(_, defaults) {
 	var toJSON = function(tabs, settings) {
-		var stabs = [];
+		var stabs = _.map(tabs, function(tab) {
+			tab = _.omit(tab, function(e, k) {
+				return defaults.tab[k] && e === defaults.tab[k] ||
+					k === "theme" && e === settings.theme ||
+					k === "fixed" && e === (settings.columns.split("-")[1] === "fixed");
+			});
 
-		tabs.forEach(function(t, i) {
-			var tab = {},
-				allowed = ["id", "size", "syncData", "loc"],
-				key;
+			tab.columns = _.map(tab.columns || [], function(column) {
+				return _.map(column, function(widget) {
+					widget = _.pick(widget, ["id", "loc", "size", "config", "syncData"]);
 
-			for (key in t) {
-				if (key !== "columns") {
-					tab[key] = t[key];
-				}
-				else {
-					tab.columns = [];
+					if (widget.config) {
+						if (Object.keys(widget.config).length === (widget.config.size ? 1 : 0)) {
+							delete widget.config;
+						}
+						else {
+							widget.config = _.clone(widget.config);
 
-					t[key].forEach(function(c, i) {
-						var column = [];
+							delete widget.config.size;
+						}
+					}
 
-						c.forEach(function(w, i) {
-							var widget = {},
-								wkey;
+					return widget;
+				});
+			});
 
-							for (wkey in w) {
-								if (allowed.indexOf(wkey) !== -1) {
-									widget[wkey] = w[wkey];
-								}
-								else if (wkey == "config") {
-									var config = {};
-
-									for (var ckey in w.config) {
-										if (ckey !== "size") config[ckey] = w.config[ckey];
-									}
-
-									if (JSON.stringify(config) !== "{}") widget.config = config;
-								}
-							}
-
-							column.push(widget);
-						});
-
-						tab.columns.push(column);
-					});
-				}
-			}
-
-			tab = $.unextend({
-				theme: settings.theme,
-				fixed: settings.columns.split("-")[1] == "fixed"
-			}, $.unextend(defaults.tab, tab));
-
-			stabs.push(tab);
+			return tab;
 		});
 
 		return JSON.stringify(stabs);
