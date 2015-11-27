@@ -4,9 +4,10 @@
 define(["jquery", "lodash", "core/analytics", "storage/defaults", "i18n/i18n", "core/render"], function($, _, Track, Defaults, Translate, render) {
 	return function(modal, storage, btns, item, forms) {
 		var id = storage.tabs.length + 1,
-			tab = _.assign(_.clone(Defaults.tabs, true), {
+			tab = _.assign({}, Defaults.tab, {
 				id: id,
 				columns: [],
+				theme: storage.settings.theme,
 				name: Translate("settings.specific.default_name"),
 				fixed: storage.settings.columns.split("-")[1] == "fixed"
 			}),
