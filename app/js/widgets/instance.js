@@ -145,17 +145,23 @@ define([
 
 			this.widgetModel.on("error", this.error, this);
 			this.widgetModel.on("change", this.updateModel, this);
+			this.widgetModel.on("refreshInterval:change", this.setRefresh, this);
 
-			this.setRefresh();
+			this.setRefresh(true);
 		},
 
 
 		/**
 		 * Sets an interval to refresh the widget
 		 */
-		setRefresh: function() {
+		setRefresh: function(initial) {
 			if (this.widgetModel.refresh && !this.isPreview && !this._authorizing) {
-				this.widgetModel.refresh();
+				if (!initial) {
+					clearInterval(this._refreshInterval);
+				}
+				else {
+					this.widgetModel.refresh();
+				}
 
 				if (this.widgetModel.refreshInterval) {
 					this._refreshInterval = setInterval(_.bind(this.widgetModel.refresh, this.widgetModel), _.result(this.widgetModel, "refreshInterval"));
@@ -521,7 +527,7 @@ define([
 
 					this.updateState(true);
 
-					this.setRefresh();
+					this.setRefresh(true);
 				}.bind(this));
 			}.bind(this));
 		},
