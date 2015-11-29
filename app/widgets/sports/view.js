@@ -57,6 +57,11 @@ define(["lodash", "jquery", "moment", "widgets/views/main"], function(_, $, mome
 				data.allView = activeView === "top";
 
 				data.sections = _(data.games).map(function(game, i) {
+					// If this is a V1-format game, skip
+					if (game.home_first) {
+						return;
+					}
+
 					game = _.clone(game);
 
 					// These are loser instead of winner so upcoming games are darker and higher contrast
@@ -86,7 +91,7 @@ define(["lodash", "jquery", "moment", "widgets/views/main"], function(_, $, mome
 					}
 
 					return game;
-				}).groupBy(data.allView ? "league" : "groupDate").map(function(e, k) {
+				}).compact().groupBy(data.allView ? "league" : "groupDate").map(function(e, k) {
 					var title;
 
 					if (data.allView) {
