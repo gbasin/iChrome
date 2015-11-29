@@ -1,5 +1,15 @@
-define(["lodash", "backbone", "core/pro", "core/analytics"], function(_, Backbone, Pro, Track) {
+define(["lodash", "backbone", "core/pro", "core/analytics", "storage/storage"], function(_, Backbone, Pro, Track, Storage) {
+	var isDark = false;
+
+	Storage.on("done updated", function(storage) {
+		isDark = Pro.isPro && storage.settings.style && storage.settings.style !== "light";
+	});
+
 	return Backbone.View.extend({
+		get isDark() {
+			return isDark;
+		},
+
 		/**
 		 * Returns a Hogan template that should be used to render this view.
 		 *
@@ -92,6 +102,7 @@ define(["lodash", "backbone", "core/pro", "core/analytics"], function(_, Backbon
 			// We only do a shallow clone, if widgets need a deep clone they
 			// still have to do it themselves
 			data = _.extend({
+				isDark: isDark,
 				isPro: Pro.isPro,
 				i18n: this.widget.strings
 			}, data || this.model.data);

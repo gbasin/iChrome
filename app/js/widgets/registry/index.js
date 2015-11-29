@@ -9,7 +9,7 @@
  * them automatically. Instead, they're manually included in the built file.
  */
 var widgets = [
-	"drive", "rss", "news", "weather", "stocks", "translate"
+	"drive", "rss", "news", "weather", "stocks", "translate", "sports"
 ].map(function(e) {
 	return "json!w/" + e + "/manifest.json";
 });
@@ -20,8 +20,7 @@ var legacyWidgets = [
 	"currency",			"facebook",			"feedly",
 	"gmail",			"iframe",			"keep",
 	"notes",			"now",
-	"plus",				"reddit",
-	"sports",			"todo",
+	"plus",				"reddit",			"todo",
 	"topsites",			"traffic",
 	"twitter",			"unread",			"voice",
 	"wolfram",			"youtube",

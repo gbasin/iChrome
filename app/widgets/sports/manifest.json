@@ -1,0 +1,45 @@
+{
+	"id": 15,
+	"name": "sports",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["variable"],
+
+	"views": {
+		"default": "view",
+		"settings": "settings"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs",
+		"settings": "templates/settings.hjs"
+	},
+
+	"strings": {
+		"en": {
+			"name": "Sports",
+			"desc": "Displays scores, schedules, and news from your favorite teams.",
+
+			"settings": {
+				"page_title": "Favorites",
+				"save": "Save",
+
+				"teams_placeholder": "Enter a team name and press Enter to add"
+			},
+
+			"scores": "Scores",
+			"news": "News",
+
+			"last_play": "Last play",
+			"no_games": "No games found",
+
+			"preview": "Preview",
+			"tickets": "Tickets",
+			"live": "Live",
+			"recap": "Recap",
+			"box_score": "Box Score"
+		}
+	}
+}

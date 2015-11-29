@@ -23,7 +23,6 @@ var templates = [
 		"widgets.topsites",				"widgets.topsites.desc",
 		"widgets.notes",				"widgets.notes.desc",
 		"widgets.wolfram",				"widgets.wolfram.desc",
-		"widgets.sports",				"widgets.sports.desc",
 		"widgets.tasks",				"widgets.tasks.desc",				"widgets.tasks.item",
 		"widgets.bookmarks",			"widgets.bookmarks.desc",			"widgets.bookmarks.listing",
 		"widgets.chrome_bookmarks",		"widgets.chrome_bookmarks.desc",	"widgets.chrome_bookmarks.listing",

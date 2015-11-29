@@ -1,0 +1,33 @@
+<header>
+	<span class="title">{{i18n.settings.page_title}}</span>
+
+	<button type="button" class="material flat blue save">{{i18n.settings.save}}</button>
+</header>
+
+<form class="material-form">
+	<div class="add" tabindex="-1">
+		<input type="text" placeholder="{{i18n.settings.teams_placeholder}}" />
+
+		<ul class="suggestions"></ul>
+	</div>
+
+	<ul class="list">
+		{{#teams}}
+			<li data-value="{{json}}">
+				<img class="logo" src="{{#isDark}}{{logoDark}}{{/isDark}}{{^isDark}}{{logo}}{{/isDark}}" />
+
+				<div class="name">
+					<h3>{{location}} {{name}}</h3>
+
+					<span class="league">{{league}}</span>
+				</div>
+
+				<button type="button" class="material toggle delete">
+					<svg viewBox="0 0 24 24">
+						<path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path>
+					</svg>
+				</button>
+			</li>
+		{{/teams}}
+	</ul>
+</form>

@@ -322,30 +322,6 @@
 		"more": "More"
 	},
 
-	"sports": {
-		"name": "Sports",
-		"desc": "Displays scores and game information for selected leagues and/or teams.",
-
-		"settings": {
-			"league": "League",
-			"games": "Games Shown",
-			"team": "Team",
-			"teams": "Team",
-
-			"unavailable": "When team games are unavailable",
-			"unavailable_options": {
-				"other": "Show other games",
-				"none": "Show \"No Games\""
-			}
-		},
-
-		"error": "Something seems to have gone wrong",
-		"unknown_error": "Unknown Error",
-
-		"watch_on": "Watch on: %s",
-		"no_games": "No Games Scheduled"
-	},
-
 	"todo": {
 		"name": "To-do",
 		"desc": "Displays an interactive to-do list with important and completed items.",
