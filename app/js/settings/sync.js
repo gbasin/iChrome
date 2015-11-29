@@ -37,8 +37,10 @@ define([
 				this.set({
 					profile: profile,
 					backups: backups,
+					user: storage.user,
 					themes: storage.themes,
 					cached: storage.cached,
+					tabsSync: storage.tabsSync,
 					settings: storage.settings,
 					lastSync: moment(storage.modified).format("MMMM Do, YYYY h:mm A")
 				});
