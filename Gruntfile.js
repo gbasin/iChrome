@@ -1,3 +1,4 @@
+/* globals module,process */
 module.exports = function(grunt) {
 	var path = require("path");
 
