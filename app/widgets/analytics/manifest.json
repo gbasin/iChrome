@@ -1,0 +1,54 @@
+{
+	"id": 3,
+	"name": "analytics",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["tiny", "medium"],
+
+	"defaultSize": "medium",
+
+	"views": {
+		"default": "view"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"settings": [{
+		"type": "text",
+		"name": "title",
+		"label": "i18n.settings.title",
+		"placeholder": "i18n.settings.title_placeholder",
+		"defaultVal": ""
+	}, {
+		"type": "size"
+	}, {
+		"type": "select",
+		"name": "profile",
+		"label": "i18n.settings.profile",
+		"options": "getProfiles"
+	}],
+
+	"strings": {
+		"en": {
+			"name": "Analytics",
+			"desc": "Displays various metrics from a Google Analytics profile.",
+
+			"sessions": "sessions",
+			"pageviews": "Pageviews",
+			"pagesvisit": "Pages/visit",
+			"bouncerate": "Bounce Rate",
+			"completions": "Completions",
+
+			"noprofile_title": "No profile selected",
+			"noprofile": "It doesn't look like you've selected a profile yet!\n<br />\nTry selecting one via the wrench icon at the top right.",
+
+			"settings": {
+				"profile": "Profile"
+			}
+		}
+	}
+}

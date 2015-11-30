@@ -1,22 +1,6 @@
 {
 	"lang_code": "en-widgets",
 
-	"analytics": {
-		"name": "Analytics",
-		"desc": "Displays various metrics from a Google Analytics profile.",
-
-		"sessions": "sessions",
-		"pageviews": "Pageviews",
-		"pagesvisit": "Pages/visit",
-		"bouncerate": "Bounce Rate",
-		"completions": "Completions",
-		"noprofile": "It doesn't look like you selected a profile yet!\n<br /><br />\nTry selecting one via the wrench icon in the top right.",
-
-		"settings": {
-			"profile": "Profile"
-		}
-	},
-
 	"apps": {
 		"name": "Apps",
 		"desc": "Displays your currently installed Google Chrome applications.",

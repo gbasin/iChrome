@@ -1,57 +1,32 @@
-/*
- * The Analytics widget.
- */
-define(["jquery", "oauth"], function($, OAuth) {
-	return {
-		id: 3,
-		size: 2,
-		order: 28,
-		interval: 300000,
-		nicename: "analytics",
-		sizes: ["tiny", "medium"],
-		preconfig: true,
-		settings: [
-			{
-				type: "text",
-				nicename: "title",
-				label: "i18n.settings.title",
-				placeholder: "i18n.settings.title_placeholder",
-				defaultVal: ""
-			},
-			{
-				type: "size"
-			},
-			{
-				type: "select",
-				nicename: "profile",
-				label: "i18n.settings.profile",
-				options: "getProfiles"
-			}
-		],
-		config: {
-			title: "",
-			size: "medium",
-			profile: false
-		},
-		data: {
-			visits: 5605,
-			pageviews: 15033,
-			bounceRate: 12.57,
-			completions: 4853,
-			pagesVisit: 8.54
-		},
-		oAuth: false,
-		setOAuth: function() {
-			this.oAuth = new OAuth({
-				name: "analytics",
-				id: "559765430405-5rvu6sms3mc111781cfgp1atb097rrph.apps.googleusercontent.com",
-				secret: "__API_KEY_analytics__",
-				scope: "https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/analytics"
-			});
-		},
-		getProfiles: function(cb) {
-			if (!this.oAuth) this.setOAuth();
+define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
+	return WidgetModel.extend({
+		refreshInterval: 300000,
 
+		defaults: {
+			config: {
+				title: "Google Analytics™",
+				size: "medium",
+				profile: false
+			},
+
+			data: {
+				visits: 5605,
+				pageviews: 15033,
+				bounceRate: 12.57,
+				completions: 4853,
+				pagesVisit: 8.54
+			},
+
+			range: "today"
+		},
+
+		oAuth: {
+			id: "559765430405-5rvu6sms3mc111781cfgp1atb097rrph.apps.googleusercontent.com",
+			secret: "__API_KEY_analytics__",
+			scope: "https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/analytics"
+		},
+
+		getProfiles: function(cb) {
 			var done = 0,
 				errors = 0,
 				profiles = [],
@@ -137,64 +112,65 @@ define(["jquery", "oauth"], function($, OAuth) {
 				});
 			});
 		},
-		refresh: function() {
-			if (!this.oAuth) this.setOAuth();
 
+		refresh: function() {
 			if (!this.config.profile) {
 				return false;
 			}
+
+
+			var start, end;
+
+			switch (this.get("range")) {
+				case "yesterday":
+					start = end = "yesterday";
+				break;
+
+				case "pastweek":
+					start = "7daysAgo";
+					end = "today";
+				break;
+
+				default:
+					start = end = "today";
+				break;
+			}
+
 
 			this.oAuth.ajax({
 				type: "GET",
 				dataType: "json",
 				data: {
 					ids: "ga:" + this.config.profile,
-					"start-date": "today",
-					"end-date": "today",
+					"start-date": start,
+					"end-date": end,
 					"max-results": 1,
 					metrics: "ga:visits,ga:pageviews,ga:visitBounceRate,ga:goal1Completions"
 				},
 				url: "https://www.googleapis.com/analytics/v3/data/ga",
 				success: function(d) {
-					if (d && d.rows && d.rows[0] && d.rows[0].length == 4) {
-						var result = d.rows[0],
-							data = {
-								visits:			parseInt(result[0]),
-								pageviews:		parseInt(result[1]),
-								bounceRate:		parseFloat(parseFloat(result[2]).toFixed(2)),
-								completions:	parseInt(result[3]),
+					if (d && d.rows && d.rows[0] && d.rows[0].length === 4) {
+						var result = d.rows[0];
 
-								pagesVisit: parseFloat((result[1] / result[0]).toFixed(2))
-							};
+						var data = _.mapValues({
+							visits: result[0],
+							pageviews: result[1],
+							bounceRate: parseInt(result[2] * 100) / 100,
+							completions: result[3],
+							pagesVisit: parseInt((result[1] / result[0]) * 100) / 100
+						}, function(e) {
+							return parseInt(e).toLocaleString();
+						});
 
-						this.data = data;
-
-						this.render();
-
-						this.utils.saveData(this.data);
+						if (this.get("range") === "today") {
+							this.saveData(data);
+						}
+						else {
+							this.trigger("data:loaded", data);
+						}
 					}
-				}.bind(this)
+				}
 			});
-		},
-		render: function(demo) {
-			var data = $.extend({}, this.data);
-
-			if (data.visits)		data.visits			= data.visits.toLocaleString().replace(/,/g, "<b>,</b>");
-			if (data.pageviews)		data.pageviews		= data.pageviews.toLocaleString();
-			if (data.bounceRate)	data.bounceRate		= data.bounceRate.toLocaleString() + "%";
-			if (data.completions)	data.completions	= data.completions.toLocaleString();
-			if (data.visitors)		data.visitors		= data.visitors.toLocaleString();
-			if (data.pagesVisit)	data.pagesVisit		= data.pagesVisit.toLocaleString();
-
-			if (this.config.title && this.config.title !== "") {
-				data.title = this.config.title;
-			}
-
-			if (!this.config.profile && !demo) {
-				data.noProfile = true;
-			}
-
-			this.utils.render(data);
 		}
-	};
+	});
 });

@@ -15,7 +15,6 @@ var templates = [
 
 		"widgets.clock",				"widgets.clock.desc",
 		"widgets.traffic",				"widgets.traffic.desc",
-		"widgets.analytics",			"widgets.analytics.desc",
 		"widgets.unread",				"widgets.unread.desc",
 		"widgets.iframe",				"widgets.iframe.desc",
 		"widgets.calendar",				"widgets.calendar.desc",

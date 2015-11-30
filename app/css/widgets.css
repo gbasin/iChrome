@@ -1200,38 +1200,6 @@
 
 
 
-/*---------------------------------------------
-	/ Analytics
-*/
-.analytics .mainval {
-	font-size: 95px;
-	margin-bottom: 15px;
-}
-
-.analytics .no-profile.header {
-	margin: 5px;
-	font-size: 14px;
-	line-height: 20px;
-}
-
-.analytics .details div:after {
-	text-transform: lowercase;
-}
-
-
-
-
-
-/*---------------------------------------------
-	/ Analytics / Tiny
-*/
-.analytics.tiny .mainval {
-	margin-bottom: 0;
-}
-
-
-
-
 
 /*---------------------------------------------
 	/ Calendar
