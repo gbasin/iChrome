@@ -5,28 +5,54 @@ iChrome is a highly customizable, iGoogle homepage replacement extension influen
 
 This is the full source for iChrome except for API secrets which have been replaced with placeholders.
 
-## Roadmap
+## Jump to Section
+
+* [Setup](#setup)
+* [Road Map](#road-map)
+* [Contributing](#contributing)
+* [Style Guide](#style-guide)
+* [License](#license)
+
+## Setup
+[[Back To Top]](#jump-to-section)
+
+Follow these steps to run iChrome in Google Chrome as a developer.
+
+- Open the url chrome://extensions/ in Google Chrome.
+- Click to enable *Developer mode* so that you see developer options.
+- Click the "Load unpackaged extensions..."
+- Browse to the location where iChrome repo is installed, and select the sub-directory `iChrome/app` as the extension source.
+
+> If you already have iChrome installed from the Google Play store, then remove the extension before doing the above.
+
+## Road Map
+[[Back To Top]](#jump-to-section)
 
 #### V2.x
+
  - A real website
 
 ### V2.2
+
 These are very much in flux, any of them could be postponed or skipped.
 
 ##### iChrome Pro:
+
    - Prioritized support and suggestions
    - 2 fully synced themes per tab.
-   - The ability to create dynamic custom themes (video, slideshows, time and date dependent) that are hosted on iChrome servers
+   - The ability to create dynamic custom themes (video, slide-shows, time and date dependent) that are hosted on iChrome servers
    - 30 online backups
    - "Parental" controls with the ability to blacklist widgets and lock configurations remotely
    - Possibly maximizable widgets
-   - Various widget features including realtime stocks with charts, realtime analytics, more accurate weather, etc.
+   - Various widget features including real-time stocks with charts, real-time analytics, more accurate weather, etc.
 
 ## Contributing
+[[Back To Top]](#jump-to-section)
 
 If you'd like to contribute, please fork the repo and submit a pull request.
 
 ## Style Guide
+[[Back To Top]](#jump-to-section)
 
  - Code is indented with 4 space tabs, never spaces
  - Double quotes are always used unless the string contains double quotes, such as with HTML
@@ -36,6 +62,7 @@ If you'd like to contribute, please fork the repo and submit a pull request.
  - Performance should always be favored over readability for small snippets. i.e. `$(body).append($('<div></div>').attr("data-id", id.split("-")[1]))` instead of `var elm = $('<div></div>'), id = id.split("-")[1]; elm.attr("data-id", id)....`
 
 ## License
+[[Back To Top]](#jump-to-section)
 
 iChrome is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US).
 

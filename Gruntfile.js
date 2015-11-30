@@ -2,6 +2,10 @@
 module.exports = function(grunt) {
 	var path = require("path");
 
+    if(!grunt.file.exists('keys.json')) {
+        grunt.fail.fatal("Must create keys.json file before running grunt.");
+    }
+
 	grunt.initConfig({
 		keys: grunt.file.readJSON("keys.json"),
 		pkg: grunt.file.readJSON("package.json"),
