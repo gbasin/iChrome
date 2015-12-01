@@ -1,6 +1,11 @@
 /*---------------------------------------------
 	/ Main Styles
 */
+:root {
+	padding: 15px;
+	font-family: inherit;
+}
+
 .file {
 	color: #333;
 	display: block;

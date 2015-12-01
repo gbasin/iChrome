@@ -18,6 +18,10 @@ define([
 	};
 
 	var LegacyInstance = WidgetInstance.extend({
+		className: function() {
+			return "widget legacy " + this.widget.name + " " + this.model.get("size") + (this.widget.isAvailable === false ? " hide" : "");
+		},
+
 		/**
 		 * This needs to be overridden since attributes and className need to use this.widget
 		 *

@@ -2,8 +2,8 @@
 	/ Main Styles
 */
 :root {
+	padding: 15px;
 	overflow: visible!important;
-	font-family: Roboto, sans-serif;
 }
 
 .header {

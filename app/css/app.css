@@ -2120,17 +2120,24 @@ body.resizing .medley {
 .widgets-container .widget,
 .store-detail .preview .widget {
 	z-index: 1;
-	color: #333;
 	flex: 2 100%;
-	padding: 15px;
+	color: #212121;
 	margin: 10px 2%;
 	overflow: hidden;
 	min-height: 50px;
 	background: #FFF;
 	border-radius: 2px;
 	position: relative;
+	font-family: Roboto, sans-serif;
 	animation: widget-box-shadow 0s 2s forwards;
 	-webkit-animation: widget-box-shadow 0s 2s forwards;
+}
+
+.widgets-container .widget.legacy,
+.store-detail .preview .widget.legacy {
+	color: #333;
+	padding: 15px;
+	font-family: inherit;
 }
 
 .dark .widget-preview .widget,
@@ -3605,13 +3612,18 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 .store-detail > .content > section.preview > .widget {
 	width: 410px;
-	padding: 15px;
 	font-size: 14px;
 	overflow: hidden;
 	background: #FFF;
 	border-radius: 2px;
+	font-family: Roboto, sans-serif;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, .12),
 				0 1px 2px rgba(0, 0, 0, .2);
+}
+
+.store-detail > .content > section.preview > .widget.legacy {
+	padding: 15px;
+	font-family: Open Sans, sans-serif;
 }
 
 /* This doesn't have to use direct-desendant because widgets need to be tolerant of the handle and settings classes */
