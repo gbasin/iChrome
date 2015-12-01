@@ -326,7 +326,7 @@ define([
 
 
 			// See if anything's changed
-			if ((this.state && this.state === state) || !this.widget.isAvailable) {
+			if (!initial && ((this.state && this.state === state) || !this.widget.isAvailable)) {
 				return;
 			}
 
