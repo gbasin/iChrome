@@ -9,7 +9,11 @@ define(["lodash", "backbone", "backbone.viewcollection", "widgets/registry"], fu
 			}
 		},
 		model: Backbone.Model.extend({
-			idAttribute: "cid"
+			idAttribute: "cid",
+
+			validate: function(attrs) {
+				return !attrs.id || !Registry.get(attrs.id);
+			}
 		})
 	});
 
@@ -27,7 +31,9 @@ define(["lodash", "backbone", "backbone.viewcollection", "widgets/registry"], fu
 
 
 			this.columns = _.map(this.get("columns"), function(e) {
-				return new this.columnCollection(e);
+				return new this.columnCollection(e, {
+					validate: true
+				});
 			}, this);
 
 			this.on("columns:change", this.serializeColumns, this);
@@ -89,7 +95,9 @@ define(["lodash", "backbone", "backbone.viewcollection", "widgets/registry"], fu
 					return column;
 				}
 
-				return new this.columnCollection(e);
+				return new this.columnCollection(e, {
+					validate: true
+				});
 			}, this);
 
 
