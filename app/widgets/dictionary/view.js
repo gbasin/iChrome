@@ -52,9 +52,9 @@ define(["lodash", "jquery", "browser/api", "widgets/views/main"], function(_, $,
 				else {
 					this.render({
 						error: true
-					})
+					});
 				}
-			}.bind(this))
+			}.bind(this));
 		},
 
 		/**
@@ -77,7 +77,7 @@ define(["lodash", "jquery", "browser/api", "widgets/views/main"], function(_, $,
 					expandElms.css("display", "");
 
 					// Trigger layout so we always render properly
-					definition[0].offsetHeight;
+					definition[0].offsetHeight; // jshint ignore:line
 				}
 			}
 			else if (expandElms.length) {
