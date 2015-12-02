@@ -1,4 +1,4 @@
-define(["jquery", "lodash", "widgets/model"], function($, _, WidgetModel) {
+define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Browser, WidgetModel) {
 	return WidgetModel.extend({
 		defaults: {
 			data: {
@@ -109,8 +109,112 @@ define(["jquery", "lodash", "widgets/model"], function($, _, WidgetModel) {
 			}
 		},
 
+		getDefinition: function(word, cb) {
+			$.ajax({
+				type: "GET",
+				headers: {
+					// The API is referrer locked to the dictionary extension
+					"X-Origin": "chrome-extension://mgijmajocgfcbeboacabfgobmjgjcoja",
+					"X-Referer": "chrome-extension://mgijmajocgfcbeboacabfgobmjgjcoja"
+				},
+				url: "https://content.googleapis.com/dictionaryextension/v1/knowledge/search",
+				data: {
+					term: word,
+					language: Browser.language,
+					country: "US",
+					key: "__API_KEY_dictionary__"
+				},
+				success: function(d) {
+					if (!d || !d.dictionaryData || !d.dictionaryData[0]) {
+						return cb.call(this, true);
+					}
+
+					var webDefinitions = _.pluck(d.dictionaryData[0].webDefinitions, "definition");
+
+					if ((!d.dictionaryData[0].entries || !d.dictionaryData[0].entries[0]) && webDefinitions && webDefinitions.length) {
+						cb.call(this, null, {
+							word: word,
+							webDefinitions: webDefinitions
+						});
+					}
+
+					d = d.dictionaryData[0].entries[0];
+
+					var ret = {
+						word: d.headword,
+						uses: _.map(d.senseFamilies, function(e) {
+							return {
+								form: _.pluck(e.partsOfSpeechs, "value").join(", "),
+
+								forms: _.map(e.morphUnits, function(e) {
+									return {
+										form: e.wordForm,
+										desc: e.formType && e.formType.description
+									};
+								}),
+
+								definitions: _.map(e.senses, function(e) {
+									var ret = {
+										labels: _.flatten(_.values(e.labelSet)),
+										definition: e.definition && e.definition.text,
+										synonymGroups: _(e.thesaurusEntries).pluck("synonyms").flatten().compact().map(function(e) {
+											return {
+												register: e.register || undefined,
+												synonyms: _.map(e.nyms, function(e) {
+													return {
+														text: e.nym,
+														noDef: e.numEntries ? undefined : true
+													};
+												})
+											};
+										}).value(),
+										antonymGroups:  _(e.thesaurusEntries).pluck("antonyms").flatten().compact().map(function(e) {
+											return {
+												register: e.register || undefined,
+												antonyms: _.map(e.nyms, function(e) {
+													return {
+														text: e.nym,
+														noDef: e.numEntries ? undefined : true
+													};
+												})
+											};
+										}).value()
+									};
+
+									if (e.exampleGroups && e.exampleGroups[0] && e.exampleGroups[0].examples && e.exampleGroups[0].examples[0]) {
+										ret.example = e.exampleGroups[0].examples[0];
+									}
+
+									if (!ret.labels.length) {
+										delete ret.labels;
+									}
+
+									return ret;
+								})
+							};
+						})
+					};
+
+					if (webDefinitions && webDefinitions.length) {
+						ret.webDefinitions = webDefinitions;
+					}
+
+					if (d.phonetics && d.phonetics[0]) {
+						ret.audio = d.phonetics[0].drEyeAudio;
+						ret.pronunciation = d.phonetics[0].text;
+					}
+
+					cb.call(this, null, ret);
+				}.bind(this)
+			});
+		},
+
 		refresh: function() {
-			
+			this.getDefinition("test", function(err, definition) {
+				this.saveData({
+					definition: definition
+				});
+			});
 		}
 	});
 });
