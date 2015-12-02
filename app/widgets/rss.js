@@ -105,82 +105,93 @@ define(["jquery", "lodash"], function($, _) {
 				}
 			]
 		},
-		parseEntry: function(itm, i) {
-			var html = $("<div>" + (itm.content || "")
-					.replace(/ src="\/\//g, " data-src=\"https://")
-					.replace(/ src="/g, " data-src=\"")
-					.replace(/ src='\/\//g, " data-src='https://")
-					.replace(/ src='/g, " data-src='") +
-				"</div>"),
-				item = {
-					title: (itm.title || "").trim(),
-					url: (itm.link || "").trim()
-				};
-
+		
+		/**
+		 * Parses a feed entry, removing tracking tokens, ads, and sharing buttons
+		 *
+		 * @param   {Object}   e           The item to parse
+		 * @return  {Object}               A parsed, normalized entry
+		 */
+		parseEntry: function(e) {
+			var html = $("<div>" + ((e.summary && e.summary.content) || (e.content && e.content.content) || "")
+				.replace(/ src="\/\//g, " data-src=\"https://")
+				.replace(/ src="/g, " data-src=\"")
+				.replace(/ src='\/\//g, " data-src='https://")
+				.replace(/ src='/g, " data-src='") +
+			"</div>");
 
 			// Cleanup tracking images, feedburner ads, etc.
-			html.find(".mf-viral, .feedflare, img[width=1], img[height=1], img[data-src^='http://da.feedsportal.com']").remove();
-
-
-			item.image = _(itm.mediaGroups)
-				.pluck("contents")
-				.flatten(true)
-				.filter(function(e) {
-					return e.medium === "image" && e.height >= 35 && e.width >= 35;
-				})
-				.pluck("url")
-				.value()[0];
-
-			if (!item.image || item.image === "") {
-				if (html.find("img[data-src]").length) {
-					item.image = html.find("img[data-src]").first().attr("data-src");
-				}
-				else if (html.find("iframe[data-chomp-id]").length) {
-					item.image = "http://img.youtube.com/vi/" + html.find("iframe[data-chomp-id]").attr("data-chomp-id") + "/1.jpg";
-				}
-				else {
-					delete item.image;
-				}
-			}
-
-
-			// Fix various image sizing issues, etc.
-			if (item.image) {
-				if (item.image.indexOf("s-nbcnews.com") !== -1 && ((item.image.indexOf("?") == -1 && (item.image += "?")) || (item.image += "&"))) {
-					item.image += "height=70";
-				}
-				else if (item.image.indexOf("gawkerassets.com") !== -1) {
-					item.image = item.image.replace("/ku-xlarge", "/ku-medium");
-				}
-			}
-
-			html.find("*").not("a, b, i, strong, u").each(function() {
-				if (this.children.length) {
-					$(this).children().unwrap();
-				}
-				else {
-					$(this).replaceWith(this.innerHTML);
+			_.each(html[0].querySelectorAll('.mf-viral, .feedflare, img[width="1"], img[height="1"], img[data-src^="http://da.feedsportal.com"]'), function(e) {
+				if (e && e.parentNode) {
+					e.parentNode.removeChild(e);
 				}
 			});
 
-			html.find("*").not("a, b, i, strong, u").remove();
+
+			var item = {
+				title: (e.title || "").trim(),
+				url: ((_.find(e.alternate, { type: "text/html" }) || {}).href || "").trim()
+			};
 
 
-			var fChild = html.children().first();
+			if (e.visual && e.visual.url && e.visual.url !== "none") {
+				item.image = e.visual.url;
+			}
+			else if (html.find("img[data-src]").length) {
+				item.image = html.find("img[data-src]").first().attr("data-src");
+			}
+			else if (html.find("iframe[data-chomp-id]").length) {
+				item.image = "http://img.youtube.com/vi/" + html.find("iframe[data-chomp-id]").attr("data-chomp-id") + "/1.jpg";
+			}
 
-			if ((fChild.text() || "").toLowerCase() == item.title.toLowerCase()) {
+
+			// Find any element that isn't allowed and replace it with its contents
+			_.each(html[0].querySelectorAll("*:not(a):not(b):not(i):not(strong):not(u)"), function(e) {
+				if (e.children.length) {
+					$(e).children().unwrap();
+				}
+				else {
+					$(e).replaceWith(e.innerHTML);
+				}
+			});
+
+			// Then remove anything that's left
+			_.each(html[0].querySelectorAll("*:not(a):not(b):not(i):not(strong):not(u)"), function(e) {
+				if (e && e.parentNode) {
+					e.parentNode.removeChild(e);
+				}
+			});
+
+
+			// If the first element in the description is empty or the article's
+			// title repeated, remove it
+			var fChild = html.children().first(),
+				text = (fChild.text() || "").trim();
+
+			if (!text || text.toLowerCase() == item.title.toLowerCase()) {
 				fChild.remove();
 			}
 
+
+			// If the description is blank (maybe it only had an image that's now
+			// been removed), remove it
 			if (!html[0].innerHTML.trim().length) {
 				delete item.desc;
 			}
-			else {
-				html.find("a").each(function() {
-					var span = $('<span class="nested-link" data-target="_blank"></span>'),
-						href = this.getAttribute("href") || "http://www.google.com/";
 
-					span.text(this.innerText.replace(/\n/g, "  ").trim());
+			// Otherwise, make every link nested so it can still be clicked
+			else {
+				_.each(html[0].querySelectorAll("a"), function(e) {
+					var span = document.createElement("span");
+
+					span.setAttribute("class", "nested-link");
+					span.setAttribute("data-target", "blank");
+					span.setAttribute("class", "nested-link");
+
+					span.innerText = e.innerText.replace(/\n/g, "  ").trim();
+
+
+					var href = e.getAttribute("href") || "http://www.google.com/";
 
 					if (href.trim().indexOf("//") === 0) {
 						href =  "http:" + href.trim();
@@ -192,16 +203,18 @@ define(["jquery", "lodash"], function($, _) {
 						href = href.trim();
 					}
 
-					span.attr("data-href", href);
+					span.setAttribute("data-href", href);
 
-					$(this).replaceWith(span);
+
+					$(e).replaceWith(span);
 				});
 
-				item.desc = html.html().trim();
+				item.desc = html[0].innerHTML.trim();
 			}
 
 			return item;
 		},
+
 		refresh: function() {
 			var url = this.config.url;
 
@@ -212,21 +225,17 @@ define(["jquery", "lodash"], function($, _) {
 				url = url.parseUrl();
 			}
 
-			$.getJSON("http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=" + this.config.number + "&q=" + encodeURIComponent(url), function(d) {
-				try {
-					if (!d || typeof d !== "object" || !d.responseData || !d.responseData.feed) {
-						throw new Error("Failed to load feed");
-					}
-
+			$.getJSON("http://cloud.feedly.com/v3/streams/contents?count=" + this.config.number + "&streamId=feed%2F" + encodeURIComponent(url), function(d) {
+				if (d && d.items) {
 					this.data = {
-						items: (d.responseData.feed.entries || []).map(this.parseEntry.bind(this))
+						items: _.map(d.items, this.parseEntry, this)
 					};
 
 					this.render.call(this);
 
 					this.utils.saveData(this.data);
 				}
-				catch(e) {
+				else {
 					alert(this.utils.translate("feed_error", url));
 				}
 			}.bind(this));
