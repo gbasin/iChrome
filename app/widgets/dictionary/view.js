@@ -57,31 +57,14 @@ define(["lodash", "jquery", "browser/api", "widgets/views/main"], function(_, $,
 			}.bind(this));
 		},
 
-		/**
-		 * After the widget's been rendered, we check the expanded height to
-		 * see if the button should be hidden and we should just expand by default
-		 */
 		onRender: function() {
-			var definition = this.$(".definition"),
-				expandElms = this.$(".forms, ol li .synonyms, ol li .antonyms, .usage:nth-of-type(n + 3), .usage ~ .web-definitions");
+			// If we're already expanded, keep it that way
+			if (this._isExpanded) {
+				this.$(".forms, ol li .synonyms, ol li .antonyms, .usage:nth-of-type(n + 3), .usage ~ .web-definitions").css("display", "block");
 
-			expandElms.css("display", "block");
+				this.$("ol li:nth-child(n + 2)").css("display", "list-item");
 
-			expandElms.add(this.$("ol li:nth-child(n + 2)").css("display", "list-item"));
-
-			if (definition[0] && definition[0].offsetHeight > 350) {
-				if (this._isExpanded) {
-					this.$("button.more").text(this.translate("less")).attr("data-state", "maximized");
-				}
-				else {
-					expandElms.css("display", "");
-
-					// Trigger layout so we always render properly
-					definition[0].offsetHeight; // jshint ignore:line
-				}
-			}
-			else if (expandElms.length) {
-				this.$("button.more").remove();
+				this.$("button.more").text(this.translate("less")).attr("data-state", "maximized");
 			}
 		}
 	});
