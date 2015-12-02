@@ -18,7 +18,19 @@
 	"strings": {
 		"en": {
 			"name": "Dictionary",
-			"desc": "Quickly look up the definition and synonyms for a word"
+			"desc": "Quickly look up the definition and synonyms for a word",
+
+			"search_placeholder": "Enter a word or term here",
+
+			"more": "More",
+			"less": "Less",
+
+			"synonyms": "Synonyms",
+			"antonyms": "Antonyms",
+
+			"web_definitions": "Web definitions",
+
+			"no_definitions": "No definitions found"
 		}
 	}
 }

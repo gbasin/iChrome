@@ -1,5 +1,5 @@
 <header data-m-icon-before="search">
-	<input type="search" placeholder="Enter a word or term here" />
+	<input type="search" placeholder="{{i18n.search_placeholder}}" />
 </header>
 
 {{#loading}}
@@ -12,7 +12,7 @@
 {{^loading}}
 	{{#definition}}
 		<div class="definition">
-			{{#uses.0}}<button type="button" class="material flat blue more" data-state="collapsed">More</button>{{/uses.0}}
+			{{#uses.0}}<button type="button" class="material flat blue more" data-state="collapsed">{{i18n.more}}</button>{{/uses.0}}
 
 			<h2 class="term">{{term}}</h2>
 
@@ -49,7 +49,7 @@
 
 								{{#synonymGroups.0}}
 									<div class="synonyms">
-										<i class="title">Synonyms:</i>
+										<i class="title">{{i18n.synonyms}}:</i>
 
 										{{#synonymGroups}}
 											<span class="group">
@@ -67,7 +67,7 @@
 
 								{{#antonymGroups.0}}
 									<div class="antonyms">
-										<i class="title">Antonyms:</i>
+										<i class="title">{{i18n.antonyms}}:</i>
 
 										{{#antonymGroups}}
 											<span class="group">
@@ -86,7 +86,7 @@
 
 			{{#webDefinitions.0}}
 				<div class="web-definitions">
-					<h2>Web definitions</h2>
+					<h2>{{i18n.web_definitions}}</h2>
 
 					{{#webDefinitions}}<p>{{webDefinitions}}</p>{{/webDefinitions}}
 				</div>
@@ -99,7 +99,7 @@
 				<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
 			</svg>
 
-			<p>No definition found</p>
+			<p>{{i18n.no_definitions}}</p>
 		</div>
 	{{/definition}}
 {{/loading}}
