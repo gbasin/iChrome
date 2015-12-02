@@ -59,6 +59,7 @@ div.definition {
 }
 
 .definition .audio {
+	outline: 0;
 	padding: 0;
 	opacity: .6;
 	border: initial;
@@ -150,6 +151,20 @@ div.definition {
 	text-transform: uppercase;
 }
 
+.web-definitions {
+	font-size: 13px;
+	padding-top: 15px;
+}
+
+.web-definitions h2 {
+	font: inherit;
+	font-weight: 500;
+}
+
+.web-definitions p {
+	padding: 5px 10px 0;
+}
+
 
 
 
@@ -163,6 +178,7 @@ div.definition {
 .definition ol li .synonyms,
 .definition ol li .antonyms,
 .definition ol li:nth-child(n + 2),
-.definition .usage:nth-of-type(n + 3) {
+.definition .usage:nth-of-type(n + 3),
+.definition .usage ~ .web-definitions {
 	display: none;
 }

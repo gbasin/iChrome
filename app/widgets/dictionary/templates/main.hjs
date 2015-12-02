@@ -12,15 +12,17 @@
 
 {{#definition}}
 	<div class="definition">
-		<button type="button" class="material flat blue more" data-state="collapsed">More</button>
+		{{#uses.0}}<button type="button" class="material flat blue more" data-state="collapsed">More</button>{{/uses.0}}
 
 		<h2 class="word">{{word}}</h2>
 
-		<h3 class="pronunciation">
-			<span>{{pronunciation}}</span>
+		{{#pronunciation}}
+			<h3 class="pronunciation">
+				<span>{{pronunciation}}</span>
 
-			{{#audio}}<button type="button" class="audio m-icon" data-url="{{audio}}">volume_up</button>{{/audio}}
-		</h3>
+				{{#audio}}<button type="button" class="audio m-icon" data-url="{{audio}}">volume_up</button>{{/audio}}
+			</h3>
+		{{/pronunciation}}
 
 		{{#uses}}
 			<div class="usage">
@@ -81,5 +83,13 @@
 				</ol>
 			</div>
 		{{/uses}}
+
+		{{#webDefinitions.0}}
+			<div class="web-definitions">
+				<h2>Web definitions</h2>
+
+				{{#webDefinitions}}<p>{{webDefinitions}}</p>{{/webDefinitions}}
+			</div>
+		{{/webDefinitions.0}}
 	</div>
 {{/definition}}
