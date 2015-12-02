@@ -41,7 +41,7 @@ div.definition {
 	margin: 0 -5px 0 0;
 }
 
-.definition .word {
+.definition .term {
 	font: inherit;
 	font-size: 24px;
 	font-weight: 500;
@@ -125,6 +125,11 @@ div.definition {
 	text-transform: lowercase;
 }
 
+.definition ol li .synonyms .group:not(:last-child):after,
+.definition ol li .antonyms .group:not(:last-child):after {
+	content: ";";
+}
+
 .definition ol li .synonyms .group span:not(:last-child):after,
 .definition ol li .antonyms .group span:not(:last-child):after {
 	color: #777;
@@ -146,6 +151,7 @@ div.definition {
 	font-size: 11px;
 	padding: 3px 5px;
 	background: #EEE;
+	margin-right: 5px;
 	letter-spacing: .2px;
 	display: inline-block;
 	text-transform: uppercase;
@@ -181,4 +187,106 @@ div.definition {
 .definition .usage:nth-of-type(n + 3),
 .definition .usage ~ .web-definitions {
 	display: none;
+}
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Loading screen
+*/
+.loading {
+	height: 225px;
+	position: relative;
+}
+
+.loading svg {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+}
+
+.spinner {
+	-webkit-animation: rotator 1.4s linear infinite;
+}
+
+.spinner circle {
+	stroke-dashoffset: 0;
+	stroke-dasharray: 187;
+	transform-origin: center;
+	animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@-webkit-keyframes rotator {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(270deg);
+	}
+}
+
+@-webkit-keyframes colors {
+	0%		{ stroke: #4285F4; }
+	25%		{ stroke: #DE3E35; }
+	50%		{ stroke: #F7C223; }
+	75%		{ stroke: #1B9A59; }
+	100%	{ stroke: #4285F4; }
+}
+
+@-webkit-keyframes dash {
+	0% {
+		stroke-dashoffset: 187;
+	}
+	50% {
+		stroke-dashoffset: 46.75;
+		transform: rotate(135deg);
+	}
+	100% {
+		stroke-dashoffset: 187;
+		transform: rotate(450deg);
+	}
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ No definition splash
+*/
+.splash.no-definition {
+	color: #888;
+	padding: 40px 0;
+	text-align: center;
+	background: #F2F2F2;
+}
+
+.dark .no-definition {
+	color: #AAA;
+	background: #2A2A2A;
+}
+
+.dark.transparent .no-definition {
+	color: #DDD;
+	background: rgba(0, 0, 0, .2);
+}
+
+.no-definition svg {
+	width: 125px;
+	height: 125px;
+	fill: currentColor;
+}
+
+.no-definition p {
+	padding: 0 35px;
+	margin: 15px 0 0;
+	line-height: 22px;
 }

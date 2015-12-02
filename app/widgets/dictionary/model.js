@@ -2,8 +2,9 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 	return WidgetModel.extend({
 		defaults: {
 			data: {
+				defaultWord: "test",
 				definition: {
-					word: "test",
+					term: "test",
 					uses: [{
 						form: "noun",
 						forms: [
@@ -148,7 +149,7 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 			}
 		},
 
-		getDefinition: function(word, cb) {
+		getDefinition: function(term, cb) {
 			$.ajax({
 				type: "GET",
 				headers: {
@@ -158,7 +159,7 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 				},
 				url: "https://content.googleapis.com/dictionaryextension/v1/knowledge/search",
 				data: {
-					term: word,
+					term: term,
 					language: Browser.language,
 					country: "US",
 					key: "__API_KEY_dictionary__"
@@ -172,7 +173,7 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 
 					if ((!d.dictionaryData[0].entries || !d.dictionaryData[0].entries[0]) && webDefinitions && webDefinitions.length) {
 						cb.call(this, null, {
-							word: word,
+							term: term,
 							webDefinitions: webDefinitions
 						});
 					}
@@ -180,7 +181,7 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 					d = d.dictionaryData[0].entries[0];
 
 					var ret = {
-						word: d.headword,
+						term: d.syllabifiedHeadword || term,
 						uses: _.map(d.senseFamilies, function(e) {
 							return {
 								form: _.pluck(e.partsOfSpeechs, "value").join(", "),
@@ -241,18 +242,43 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 					if (d.phonetics && d.phonetics[0]) {
 						ret.audio = d.phonetics[0].drEyeAudio;
 						ret.pronunciation = d.phonetics[0].text;
+
+						if (ret.audio && ret.audio.indexOf("//") === 0) {
+							ret.audio = "https:" + ret.audio;
+						}
 					}
 
 					cb.call(this, null, ret);
 				}.bind(this)
-			});
+			}).fail(cb.bind(this, true, null));
 		},
 
-		refresh: function() {
-			this.getDefinition("test", function(err, definition) {
-				this.saveData({
-					definition: definition
-				});
+		getWordOfDay: function(cb) {
+			$.getJSON("https://cloud.feedly.com/v3/mixes/contents?count=1&streamId=feed%2Fhttp%3A%2F%2Fdictionary.reference.com%2Fwordoftheday%2Fwotd.rss", function(d) {
+				if (d && d.items && d.items[0] && d.items[0].title) {
+					cb.call(this, null, d.items[0].title.split(":")[0].trim());
+				}
+				else {
+					cb.call(this, true);
+				}
+			}.bind(this)).fail(cb.bind(this, true, null));
+		},
+
+		/**
+		 * We override this so we only refresh once on init
+		 */
+		initialize: function() {
+			this.getWordOfDay(function(err, word) {
+				if (!err && word) {
+					this.getDefinition(word, function(err, definition) {
+						if (!err && definition) {
+							this.saveData({
+								defaultWord: word,
+								definition: definition
+							});
+						}
+					});
+				}
 			});
 		}
 	});
