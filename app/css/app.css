@@ -58,12 +58,56 @@
 	src: url("../fonts/RobotoBold.woff");
 }
 
-
 @font-face {
 	font-style: normal;
 	font-weight: normal;
 	font-family: "FontAwesome";
 	src: url("../fonts/fontawesome.woff");
+}
+
+@font-face {
+	font-style: normal;
+	font-weight: normal;
+	font-family: "Material Icons";
+	src: url("../fonts/MaterialIcons.woff");
+}
+
+.m-icon,
+[data-m-icon-after]:after,
+[data-m-icon-before]:before {
+	width: 1em;
+	height: 1em;
+	direction: ltr;
+	line-height: 1;
+	font-size: 24px;
+	word-wrap: normal;
+	font-style: normal;
+	text-align: center;
+	font-weight: normal;
+	white-space: nowrap;
+	text-transform: none;
+	display: inline-block;
+	letter-spacing: normal;
+	vertical-align: middle;
+	font-family: "Material Icons";
+	font-feature-settings: "liga";
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+[data-m-icon-after]:after,
+[data-m-icon-before]:before {
+	height: auto;
+	line-height: inherit;
+}
+
+[data-m-icon-after]:after {
+	content: attr(data-m-icon-after);
+}
+
+[data-m-icon-before]:before {
+	content: attr(data-m-icon-before);
 }
 
 
