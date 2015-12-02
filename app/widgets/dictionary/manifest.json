@@ -1,0 +1,24 @@
+{
+	"id": 46,
+	"name": "dictionary",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["medium"],
+
+	"views": {
+		"default": "view"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"strings": {
+		"en": {
+			"name": "Dictionary",
+			"desc": "Quickly look up the definition and synonyms for a word"
+		}
+	}
+}
