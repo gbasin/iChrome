@@ -86,6 +86,10 @@ div.definition {
 	font-size: 13px;
 }
 
+.definition .forms .form:not(:last-child):after {
+	content: ";";
+}
+
 .definition .forms .value {
 	font-weight: 700;
 }
@@ -118,6 +122,13 @@ div.definition {
 .definition ol li .synonyms .title,
 .definition ol li .antonyms .title {
 	text-transform: lowercase;
+}
+
+.definition ol li .synonyms .group span:not(:last-child):after,
+.definition ol li .antonyms .group span:not(:last-child):after {
+	color: #777;
+	content: ",";
+	text-decoration: none;
 }
 
 .definition ol li .has-def {

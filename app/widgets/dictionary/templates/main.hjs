@@ -28,10 +28,7 @@
 
 				<div class="forms">
 					{{#forms}}
-						<span class="form">
-							<span class="desc">{{desc}}:</span>
-							<span class="value">{{form}}</span>;
-						</span>
+						<span class="form"><span class="desc">{{desc}}:</span> <span class="value">{{form}}</span></span>
 					{{/forms}}
 				</div>
 
@@ -57,7 +54,7 @@
 											{{#register}}<i class="register">{{register}}</i>{{/register}}
 
 											{{#synonyms}}
-												<span{{^noDef}} class="has-def"{{/noDef}}>{{text}}</span>,
+												<span{{^noDef}} class="has-def"{{/noDef}}>{{text}}</span>
 											{{/synonyms}}
 										</span>
 									{{/synonymGroups}}
@@ -73,7 +70,7 @@
 											{{#register}}<i class="register">{{register}}</i>{{/register}}
 
 											{{#antonyms}}
-												<span{{^noDef}} class="has-def"{{/noDef}}>{{text}}</span>,
+												<span{{^noDef}} class="has-def"{{/noDef}}>{{text}}</span>
 											{{/antonyms}}
 										</span>
 									{{/antonymGroups}}
