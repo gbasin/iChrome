@@ -111,6 +111,7 @@ div.definition {
 .definition ol li .synonyms,
 .definition ol li .antonyms {
 	color: #777;
+	font-size: 12px;
 	padding-top: 2px;
 }
 
