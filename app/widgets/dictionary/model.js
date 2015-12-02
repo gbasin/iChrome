@@ -171,17 +171,24 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 
 					var webDefinitions = _.pluck(d.dictionaryData[0].webDefinitions, "definition");
 
-					if ((!d.dictionaryData[0].entries || !d.dictionaryData[0].entries[0]) && webDefinitions && webDefinitions.length) {
-						cb.call(this, null, {
-							term: term,
-							webDefinitions: webDefinitions
-						});
+					if (!d.dictionaryData[0].entries || !d.dictionaryData[0].entries[0]) {
+						if (webDefinitions && webDefinitions.length) {
+							cb.call(this, null, {
+								term: term,
+								webDefinitions: webDefinitions
+							});
+						}
+						else {
+							cb.call(this, true);
+						}
+
+						return;
 					}
 
 					d = d.dictionaryData[0].entries[0];
 
 					var ret = {
-						term: d.syllabifiedHeadword || term,
+						term: d.syllabifiedHeadword || (d.subentries && d.subentries[0] && d.subentries[0].lemma) || term,
 						uses: _.map(d.senseFamilies, function(e) {
 							return {
 								form: _.pluck(e.partsOfSpeechs, "value").join(", "),
@@ -234,6 +241,54 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 							};
 						})
 					};
+
+					// Support phrases
+					if (d.subentries && d.subentries.length) {
+						ret.uses = ret.uses.concat(_.map(d.subentries, function(e) {
+							return {
+								form: (e.senseFamily && e.senseFamily.labelSet && e.senseFamily.labelSet.registers).join(", "),
+
+								definitions: _.map(e.senseFamily && e.senseFamily.senses, function(e) {
+									var ret = {
+										labels: _.flatten(_.values(e.labelSet)),
+										definition: e.definition && e.definition.text,
+										synonymGroups: _(e.thesaurusEntries).pluck("synonyms").flatten().compact().map(function(e) {
+											return {
+												register: e.register || undefined,
+												synonyms: _.map(e.nyms, function(e) {
+													return {
+														text: e.nym,
+														noDef: e.numEntries ? undefined : true
+													};
+												})
+											};
+										}).value(),
+										antonymGroups:  _(e.thesaurusEntries).pluck("antonyms").flatten().compact().map(function(e) {
+											return {
+												register: e.register || undefined,
+												antonyms: _.map(e.nyms, function(e) {
+													return {
+														text: e.nym,
+														noDef: e.numEntries ? undefined : true
+													};
+												})
+											};
+										}).value()
+									};
+
+									if (e.exampleGroups && e.exampleGroups[0] && e.exampleGroups[0].examples && e.exampleGroups[0].examples[0]) {
+										ret.example = e.exampleGroups[0].examples[0];
+									}
+
+									if (!ret.labels.length) {
+										delete ret.labels;
+									}
+
+									return ret;
+								})
+							};
+						}));
+					}
 
 					if (webDefinitions && webDefinitions.length) {
 						ret.webDefinitions = webDefinitions;
