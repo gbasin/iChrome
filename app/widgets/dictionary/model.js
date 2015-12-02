@@ -4,107 +4,146 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 			data: {
 				definition: {
 					word: "test",
-					pronunciation: "test",
-					audio: "https://ssl.gstatic.com/dictionary/static/sounds/de/0/test.mp3",
 					uses: [{
 						form: "noun",
-						forms: [{
-							desc: "noun",
-							form: "test"
-						}, {
-							desc: "plural noun",
-							form: "tests"
-						}],
-						definitions: [{
-							definition: "a procedure intended to establish the quality, performance, or reliability of something, especially before it is taken into widespread use.",
-							example: "no sparking was visible during the tests",
-							synonymGroups: [{
-								synonyms: [{
-									text: "trial"
+						forms: [
+							{
+								form: "test",
+								desc: "noun"
+							},
+							{
+								form: "tests",
+								desc: "plural noun"
+							}
+						],
+						definitions: [
+							{
+								definition: "a procedure intended to establish the quality, performance, or reliability of something, especially before it is taken into widespread use.",
+								synonymGroups: [{
+									synonyms: [
+										{ text: "trial" },
+										{ text: "experiment" },
+										{ text: "test case" },
+										{ text: "case study" },
+										{
+											text: "pilot study",
+											noDef: true
+										},
+										{ text: "trial run" },
+										{ text: "tryout" },
+										{ text: "dry run" }
+									]
 								}, {
-									text: "experiment"
+									synonyms: [
+										{ text: "check" },
+										{ text: "examination" },
+										{ text: "assessment" },
+										{ text: "evaluation" },
+										{ text: "appraisal" },
+										{ text: "investigation" },
+										{ text: "inspection" },
+										{ text: "analysis" },
+										{ text: "scrutiny" },
+										{ text: "study" },
+										{ text: "probe" },
+										{ text: "exploration" }
+									]
 								}, {
-									text: "test case"
+									synonyms: [
+										{ text: "screening" },
+										{ text: "workup" }
+									]
 								}, {
-									text: "case study"
-								}, {
-									noDef: true,
-									text: "pilot study"
-								}, {
-									text: "trial run"
-								}, {
-									text: "tryout"
-								}, {
-									text: "dry run"
-								}]
-							}, {
-								register: "technical",
-								synonyms: [{
-									text: "assay"
-								}]
-							}],
-							antonymGroups: [{
-								antonyms: [{
-									text: "break"
-								}, {
-									text: "repair"
-								}]
-							}]
-						}, {
-							labels: ["Metallurgy"],
-							definition: "a movable hearth in a reverberating furnace, used for separating gold or silver from lead."
-						}]
+									register: "technical",
+									synonyms: [
+										{ text: "assay" }
+									]
+								}],
+								example: "no sparking was visible during the tests"
+							},
+							{
+								labels: ["Metallurgy"],
+								definition: "a movable hearth in a reverberating furnace, used for separating gold or silver from lead."
+							}
+						]
 					}, {
 						form: "verb",
 						forms: [{
-							desc: "verb",
-							form: "test"
+							form: "test",
+							desc: "verb"
 						}, {
-							desc: "3rd person present",
-							form: "tests"
+							form: "tests",
+							desc: "3rd person present"
 						}, {
-							desc: "past tense",
-							form: "tested"
+							form: "tested",
+							desc: "past tense"
 						}, {
-							desc: "past participle",
-							form: "tested"
+							form: "tested",
+							desc: "past participle"
 						}, {
-							desc: "gerund or present participle",
-							form: "testing"
+							form: "testing",
+							desc: "gerund or present participle"
 						}],
-						definitions: [{
-							definition: "take measures to check the quality, performance, or reliability of (something), especially before putting it into widespread use or practice.",
-							example: "this range has not been tested on animals",
-							synonymGroups: [{
-								synonyms: [{
-									noDef: true,
-									text: "try out"
-								}, {
-									noDef: true,
-									text: "put to the test"
-								}, {
-									noDef: true,
-									text: "put through its paces"
-								}, {
-									noDef: true,
-									text: "experiment with"
-								}, {
-									text: "check"
-								}, {
-									text: "examine"
-								}, {
-									text: "assess"
-								}, {
-									text: "evaluate"
-								}]
-							}, {
-								register: "technical",
-								synonyms: [{
-									text: "assay"
-								}]
-							}],
-						}]
-					}]
+						definitions: [
+							{
+								definition: "take measures to check the quality, performance, or reliability of (something), especially before putting it into widespread use or practice.",
+								synonymGroups: [{
+									synonyms: [
+										{
+											text: "try out",
+											noDef: true
+										}, {
+											text: "put to the test",
+											noDef: true
+										}, {
+											text: "put through its paces",
+											noDef: true
+										}, {
+											text: "experiment with",
+											noDef: true
+										},
+										{ text: "pilot" }
+									]
+								},
+								{
+									synonyms: [
+										{ text: "check" },
+										{ text: "examine" },
+										{ text: "assess" },
+										{ text: "evaluate" },
+										{ text: "appraise" },
+										{ text: "investigate" },
+										{ text: "analyze" },
+										{ text: "scrutinize" },
+										{ text: "study" },
+										{ text: "probe" },
+										{ text: "explore" },
+										{ text: "trial" }
+									]
+								},
+								{
+									synonyms: [
+										{ text: "sample" }
+									]
+								},
+								{
+									synonyms: [
+										{ text: "screen" }
+									]
+								},
+								{
+									register: "technical",
+									synonyms: [
+										{ text: "assay" }
+									]
+								}],
+								example: "this range has not been tested on animals"
+							}
+						]
+					}],
+					webDefinitions: ["put to the test, as for its quality, or give experimental use to; \"This approach has been tried with good results\"; \"Test this recipe\""],
+					audio: "//ssl.gstatic.com/dictionary/static/sounds/de/0/test.mp3",
+					pronunciation: "test"
 				}
 			}
 		},
