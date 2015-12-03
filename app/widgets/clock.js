@@ -338,7 +338,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				this.audio.loop = true;
 				this.audio.volume = 0.3;
 				this.audio.autoplay = true;
-				this.audio.src = "http://ichro.me/widgets/clock/audio/" + this.config.sound + ".ogg";
+				this.audio.src = "https://ichro.me/widgets/clock/audio/" + this.config.sound + ".ogg";
 			}
 		},
 
