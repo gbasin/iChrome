@@ -78,7 +78,7 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 			if (theme.image || theme.video) {
 				image = theme.image || theme.video;
 			}
-			else if (theme.images) {
+			else if (theme.images && typeof this.model.get("cached")[theme.id] !== "undefined") {
 				switch (theme.type) {
 					case "random_daily":
 						// Because of the way this is done, all themes will show the same image on different
@@ -133,7 +133,7 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 
 
 						var dt = new Date().getTime();
-						
+
 						rand = Math.sin(new Date().setHours(0, 0, 0, 0)) * 10000;
 
 
