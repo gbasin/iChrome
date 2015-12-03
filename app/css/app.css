@@ -265,6 +265,114 @@ body > .loading h2 {
 
 
 
+
+
+
+/*---------------------------------------------
+	/ Background info
+*/
+.bg-info {
+	z-index: 2;
+	color: #FFF;
+	right: 10px;
+	bottom: 10px;
+	position: fixed;
+	cursor: pointer;
+}
+
+.bg-info .icon {
+	text-shadow: 0 0 3px rgba(0, 0, 0, .5);
+}
+
+.bg-info .panel {
+	right: 0;
+	bottom: 0;
+	width: 400px;
+	color: #212121;
+	cursor: default;
+	background: #FFF;
+	position: absolute;
+	border-radius: 2px;
+	font-family: Roboto, sans-serif;
+	transform: translateY(calc(100% + 10px));
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2),
+				0 1px 1px 0 rgba(0, 0, 0, .14),
+				0 2px 1px -1px rgba(0, 0, 0, .12);
+	transition: transform .2s cubic-bezier(.4, 0, .2, 1);
+}
+
+.bg-info .panel.visible {
+	transform: translateY(0);
+}
+
+.bg-info .panel:before {
+	content: "";
+	position: absolute;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, .4));
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 45px;
+}
+
+.bg-info button.toggle.close {
+	top: 5px;
+	margin: 0;
+	right: 5px;
+	z-index: 1;
+	opacity: 0;
+	color: #FFF;
+	position: absolute;
+}
+
+.bg-info:hover button.toggle.close {
+	opacity: 1;
+}
+
+.bg-info button.toggle.close svg {
+	opacity: .9;
+}
+
+.bg-info .image-info {
+	padding: 10px 15px;
+}
+
+.bg-info .name {
+	font: inherit;
+	font-size: 16px;
+}
+
+.bg-info .footer {
+	height: 32px;
+	text-align: right;
+	margin: 10px -5px 0;
+}
+
+.bg-info .copyright,
+.bg-info .footer .theme {
+	color: #666;
+	font-size: 12px;
+	line-height: 20px;
+	display: inline-block;
+}
+
+.bg-info .footer .theme {
+	margin-top: 8px;
+}
+
+.bg-info .footer button.material.flat {
+	float: left;
+	padding: 0 8px;
+	min-width: 60px;
+	margin: 0 8px 0 0;
+}
+
+
+
+
+
+
+
 /*---------------------------------------------
 	/ Forms
 */
@@ -933,7 +1041,7 @@ dialog footer button.material.flat:active {
 	position: absolute;
 	visibility: hidden;
 	word-break: break-word;
-	border-top: 1px solid #F5F5F5;  
+	border-top: 1px solid #F5F5F5;
 	font-family: Roboto, sans-serif;
 	border-bottom: 2px solid #689BEC;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
