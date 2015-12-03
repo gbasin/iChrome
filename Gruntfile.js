@@ -225,7 +225,7 @@ module.exports = function(grunt) {
 			var id = js.match(/\sid:\s(\d+),/);
 			var name = js.match(/\snicename:\s["'](\w+)["'],/);
 			return {
-				id: id ? ~~id[1] : 0,
+				id: id ? parseInt(id[1]) : 0,
 				name: name ?  name[1] : "n/a",
 				legacy: true,
 				path: path
