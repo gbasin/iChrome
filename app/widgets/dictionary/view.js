@@ -7,7 +7,6 @@ define(["lodash", "jquery", "browser/api", "widgets/views/main"], function(_, $,
 				this.$(".forms, ol li .synonyms, ol li .antonyms, ol li:nth-child(n + 2), .usage:nth-of-type(n + 3), .usage ~ .web-definitions")[this._isExpanded ? "slideDown" : "slideUp"](300);
 
 				e.currentTarget.textContent = this.translate(this._isExpanded ? "less" : "more");
-				e.currentTarget.setAttribute("data-state", this._isExpanded ? "maximized" : "collapsed");
 			},
 
 			"click button.audio": function(e) {
@@ -64,7 +63,7 @@ define(["lodash", "jquery", "browser/api", "widgets/views/main"], function(_, $,
 
 				this.$("ol li:nth-child(n + 2)").css("display", "list-item");
 
-				this.$("button.more").text(this.translate("less")).attr("data-state", "maximized");
+				this.$("button.more").text(this.translate("less"));
 			}
 		}
 	});

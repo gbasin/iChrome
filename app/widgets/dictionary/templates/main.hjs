@@ -12,7 +12,7 @@
 {{^loading}}
 	{{#definition}}
 		<div class="definition">
-			{{#uses.0}}<button type="button" class="material flat blue more" data-state="collapsed">{{i18n.more}}</button>{{/uses.0}}
+			{{#uses.0}}<button type="button" class="material flat blue more">{{i18n.more}}</button>{{/uses.0}}
 
 			<h2 class="term">{{term}}</h2>
 
