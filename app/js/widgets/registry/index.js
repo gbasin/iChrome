@@ -10,7 +10,7 @@
  */
 var widgets = [
 	"drive", "rss", "news", "weather", "stocks", "translate", "sports",
-	"analytics"
+	"analytics", "dictionary"
 ].map(function(e) {
 	return "json!w/" + e + "/manifest.json";
 });
