@@ -229,7 +229,7 @@ module.exports = function(grunt) {
 				name: name ?  name[1] : "n/a",
 				legacy: true,
 				path: path
-			}
+			};
 		});
 		// print a report
 		_.each(_.sortBy(_.flatten([widgets, legacy]), "id"), function (manifest) {
