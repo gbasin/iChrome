@@ -337,7 +337,7 @@
 		"video": "This theme displays a live video",
 
 		"pro_only": "This theme is only available to Pro users. Buy Pro in the settings.",
-		
+
 		"delete_confirm": "Are you really sure you would like to delete this theme?\r\nThis action is irreversible; the entire theme will be permanently lost.",
 		"delete_error": "An error occurred while trying to delete the theme.  Please try again later.",
 
@@ -347,6 +347,14 @@
 		"caching": "Please wait, caching theme...",
 		"cache_status": "%s of %s images cached",
 		"cache_error": "An error occurred while trying to cache the theme.  Please try again later",
+
+		"bginfo": {
+			"view": "View",
+			"source": "Source",
+			"unknown": "Unknown",
+			"download": "Download",
+			"pro_only": "Only Pro users can download background images and videos"
+		},
 
 		"edit": {
 			"title": "Edit Theme",
