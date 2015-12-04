@@ -77,7 +77,6 @@
 	"version": "3.0.0.0",
 	"manifest_version": 2,
 	"default_locale": "en",
-	"short_name": "iChrome",
 	"offline_enabled": true,
 	"name": "__MSG_extName__",
 	"minimum_chrome_version": "39.0",
