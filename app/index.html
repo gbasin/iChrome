@@ -6,11 +6,75 @@
 		<base target="_self" />
 		<meta charset="utf-8" />
 		<meta name="google" value="notranslate" />
-
-		<link href="css/style.css" rel="stylesheet" />
 	</head>
 
 	<body class="unloaded">
+		<div class="loading">
+			<!-- This is nested inside the element so it gets cleaned up after load along with the element -->
+			<style>
+				body > .loading {
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					z-index: 999;
+					position: fixed;
+					background: top left/1px no-repeat #F0F0F0;
+					background-image: inherit;
+				}
+
+				body > .loading img {
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					margin: auto;
+					width: 128px;
+					height: 128px;
+					position: absolute;
+					animation: colorfade .4s cubic-bezier(.4, 0, .2, 1) forwards;
+				}
+
+				@keyframes colorfade {
+					from {
+						opacity: .3;
+						-webkit-filter: grayscale(1);
+					}
+					to {
+						opacity: 1;
+						-webkit-filter: grayscale(0);
+					}
+				}
+
+				body > .loading .font-preloader {
+					color: #F0F0F0;
+					font-weight: 300;
+				}
+
+				body > .loading .font-preloader *			{ font-style: normal; }
+
+				body > .loading .font-preloader i,
+				body > .loading .font-preloader .icons		{ font-weight: 400; }
+				body > .loading .font-preloader s			{ font-weight: 500; }
+				body > .loading .font-preloader .open-sans s{ font-weight: 600; }
+				body > .loading .font-preloader u			{ font-weight: 700; }
+
+				body > .loading .font-preloader .roboto		{ font-family: Roboto; }
+				body > .loading .font-preloader .open-sans	{ font-family: Open Sans; }
+				body > .loading .font-preloader .icons i	{ font-family: Material Icons; }
+				body > .loading .font-preloader .icons s	{ font-family: Entypo; }
+				body > .loading .font-preloader .icons u	{ font-family: FontAwesome; }
+			</style>
+
+			<div class="font-preloader">
+				<span class="roboto">f<i>o</i><s>n</s><u>t</u> <b>p</b></span><span class="open-sans">r<i>e</i><s>-</s><b>l</b></span><span class="icons"><i>o</i><s>a</s><u>d</u>er</span>
+			</div>
+
+			<img src="icon/128.png" />
+		</div>
+
+		<link href="css/style.css" rel="stylesheet" />
+
 		<div class="voicebar">
 			<div class="text">Listening...</div>
 
@@ -25,21 +89,6 @@
 			</div>
 
 			<div class="close">&#xF00D;</div>
-		</div>
-
-		<!--
-			Storage occasionally freezes up, especially when starting Chrome.
-			Therefore a loading screen needs to be shown even though it usually won't be seen.
-
-			This can't be feasibly localized since inline scripts are disallowed and an external script defeats the purpose.
-			The general meaning should be conveyed even if it's in another language though, so it should still work as-is.
-		-->
-		<div class="loading">
-			<span class="text">
-				<h2>Loading your settings from Chrome...</h2>
-				<br /><br />
-				If you see this for more than ~2 seconds, something probably went wrong.  <a href="http://ichrome.uservoice.com/">Support</a>
-			</span>
 		</div>
 
 		<div class="speech-overlay"></div>

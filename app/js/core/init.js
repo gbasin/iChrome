@@ -89,7 +89,20 @@ define([
 					this.$el.prepend(this.MenuButton.render().el);
 				}
 
-				this.$el.removeClass("unloaded").children(".loading").remove();
+
+				var loader = this.$el.removeClass("unloaded").children(".loading");
+
+				var animationPlayer = loader[0].animate([
+					{ opacity: 1 },
+					{ opacity: 0 }
+				], {
+					duration: 100,
+					easing: "cubic-bezier(.4, 0, .2, 1)"
+				});
+
+				animationPlayer.onfinish = function() {
+					loader.remove();
+				};
 			}, this).on("change:editing", function() {
 				this.$el.toggleClass("no-edit", this.model.get("editing") === false);
 			}, this).on("change:style", function() {
