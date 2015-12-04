@@ -194,7 +194,7 @@ define(["backbone", "core/pro", "i18n/i18n", "core/analytics", "modals/alert", "
 			}
 
 
-			if (theme.name && theme.name !== this.data.name) {
+			if (theme.name && theme.name !== this.data.name && theme.name !== this.data.copyright) {
 				this.data.themename = theme.name;
 			}
 
