@@ -72,7 +72,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 					}
 				}
 				catch (e) {}
-				
+
 				next();
 			}.bind(this, arguments));
 		};
@@ -139,7 +139,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 
 				chrome.storage.local.remove(["tabs", "settings", "themes", "cached"]);
 				chrome.storage.sync.remove(["tabs", "settings", "themes", "cached"]);
- 
+
 				chrome.tabs.create({
 					url: "chrome-extension://" + chrome.i18n.getMessage("@@extension_id") + "/index.html"
 				});
@@ -245,7 +245,7 @@ var getFeed = function(theme, cb, next) {
 						var url = doc.querySelector(theme.selector);
 
 						if (theme.attr == "text") {
-							url = url.innerText;
+							url = url.textContent;
 						}
 						else if (theme.attr == "html") {
 							url = url.innerHTML;
@@ -264,6 +264,31 @@ var getFeed = function(theme, cb, next) {
 							utils.res = JSON.parse(d);
 						}
 					}
+
+					// Special case handling until a better theme system can be implemented with ServiceWorker
+					try {
+						if ((theme.id === 82 || theme.id === 83) && utils.res.images && utils.res.images[0] && utils.res.images[0].copyright) {
+							theme.currentImage = {
+								source: utils.res.images[0].copyrightsource,
+								name: utils.res.images[0].copyright.replace(utils.res.images[0].copyrightsource, "").replace(/\(\s*?\)/g, "").trim()
+							};
+						}
+						else if (theme.id === 84 && utils.res.free && utils.res.free[0]) {
+							theme.currentImage = {
+								name: utils.res.free[0].title,
+								source: utils.res.free[0].vendor
+							};
+						}
+						else if (theme.id === 86) {
+							theme.currentImage = {
+								name: doc.querySelector("item title").textContent,
+								source: doc.querySelector("item source").textContent,
+								desc: doc.querySelector("item description").textContent,
+								url: doc.querySelector("item guid").textContent
+							};
+						}
+					}
+					catch (e) {}
 
 					theme.image = Hogan.compile(theme.format).render(utils);
 
@@ -323,7 +348,7 @@ var cache = function(theme, cb) {
 			cache(theme, cb);
 		}, err);
 	}
-	
+
 	var fs = window.fs;
 
 	fs.root.getDirectory("Themes", { create: true }, function(dir) {
@@ -387,7 +412,7 @@ var refreshFeeds = function() {
 
 	if (d.cached) {
 		cached = d.cached;
-		
+
 		var active = 0,
 			start = new Date().getTime() - 1000 * 60 * 60 * 24,
 			key;

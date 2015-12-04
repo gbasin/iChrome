@@ -66,7 +66,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 		else if (!theme) {
 			theme = this.theme;
 		}
-		
+
 
 		var cached = this.model.get("cached"),
 			ids;
@@ -268,6 +268,31 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 						utils.res = JSON.parse(d);
 					}
 				}
+
+				// Special case handling until a better theme system can be implemented with ServiceWorker
+				try {
+					if ((theme.id === 82 || theme.id === 83) && utils.res.images && utils.res.images[0] && utils.res.images[0].copyright) {
+						theme.currentImage = {
+							source: utils.res.images[0].copyrightsource,
+							name: utils.res.images[0].copyright.replace(utils.res.images[0].copyrightsource, "").replace(/\(\s*?\)/g, "").trim()
+						};
+					}
+					else if (theme.id === 84 && utils.res.free && utils.res.free[0]) {
+						theme.currentImage = {
+							name: utils.res.free[0].title,
+							source: utils.res.free[0].vendor
+						};
+					}
+					else if (theme.id === 86) {
+						theme.currentImage = {
+							name: doc.querySelector("item title").textContent,
+							source: doc.querySelector("item source").textContent,
+							desc: doc.querySelector("item description").textContent,
+							url: doc.querySelector("item guid").textContent
+						};
+					}
+				}
+				catch (e) {}
 
 				theme.image = Hogan.compile(theme.format).render(utils);
 
@@ -487,7 +512,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 								});
 							},
 							reader = dir.createReader();
-						
+
 						(function read() { // Recursive and self executing, necessary as per the specs
 							reader.readEntries(function(results) {
 								if (!results.length) {
