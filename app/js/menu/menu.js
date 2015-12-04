@@ -102,40 +102,6 @@ define(
 							this.open("store");
 						break;
 
-						case "view":
-							$(document.body).prepend(
-								'<style id="theme-view-style-elm">' +
-									'body > * {' + 
-										'opacity: 0!important;' +
-										'pointer-events: none;' +
-										'transition: opacity .3s ease-in-out!important;' +
-									'}' +
-								'</style>'
-							);
-
-							var startX = e.clientX,
-								startY = e.clientY;
-
-							// This delays the attaching till after the events have finished bubbling, otherwise mousemove will get called immediately
-							requestAnimationFrame(function() {
-								$(document.body).on("mousemove.menu", function(e) {
-									if (Math.abs(e.clientX - startX) >= 30 || Math.abs(e.clientY - startY) >= 30) {
-										$(document.body).off("mousemove.menu");
-
-										var tStyle = $("#theme-view-style-elm").html(
-											"body > * {" +
-												"transition: opacity .3s ease-in-out!important;" +
-											"}"
-										);
-
-										setTimeout(function() { tStyle.remove(); }, 300);
-									}
-								});
-							});
-
-							Track.event("Menu", "View Background");
-						break;
-
 						case "editmode":
 							e.stopPropagation();
 

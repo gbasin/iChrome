@@ -54,7 +54,6 @@
 	"menu": {
 		"settings":			"Settings",
 		"widgets":			"Widgets",
-		"background":		"Show Background",
 		"editing":			"Editing",
 		"editing_enabled":	"Enabled",
 		"editing_disabled":	"Disabled",

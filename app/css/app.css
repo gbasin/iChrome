@@ -1952,28 +1952,6 @@ dialog.announcements li {
 
 
 
-
-/*---------------------------------------------
-	/ Theme Viewer
-*/
-.theme-view {
-	right: 0;
-	top: 70px;
-	z-index: 99;
-	padding: 0 5px;
-	cursor: pointer;
-	font-size: 20px;
-	position: absolute;
-	font-family: Entypo;
-	color: rgba(0, 0, 0, 0.1);
-	text-shadow: 0 0 rgba(255, 255, 255, 0.1);
-}
-
-
-
-
-
-
 /*---------------------------------------------
 	/ Tabs Layout
 */
