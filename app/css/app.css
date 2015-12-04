@@ -612,12 +612,29 @@ button.material:active {
 	background: #E0E0E0;
 }
 
+button.material[disabled],
+button.material.red[disabled],
+button.material.blue[disabled],
+button.material.green[disabled],
+button.material.orange[disabled],
+button.material.flat.red[disabled],
+button.material.flat.blue[disabled],
+button.material.flat.green[disabled],
+button.material.flat.orange[disabled],
+
 button.material.disabled,
-button.material[disabled] {
+button.material.red.disabled,
+button.material.blue.disabled,
+button.material.green.disabled,
+button.material.orange.disabled,
+button.material.flat.red.disabled,
+button.material.flat.blue.disabled,
+button.material.flat.green.disabled,
+button.material.flat.orange.disabled {
 	cursor: default;
 	box-shadow: none;
-	color: rgba(0, 0, 0, 0.5);
-	background: rgba(0, 0, 0, 0.12);
+	color: rgba(0, 0, 0, .5);
+	background: rgba(0, 0, 0, .12);
 }
 
 button.material svg {
