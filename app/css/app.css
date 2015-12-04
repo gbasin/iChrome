@@ -657,6 +657,28 @@ button.material.flat.orange.disabled {
 	color: rgba(0, 0, 0, .5);
 }
 
+.dark button.material[disabled],
+.dark button.material.red[disabled],
+.dark button.material.blue[disabled],
+.dark button.material.green[disabled],
+.dark button.material.orange[disabled],
+.dark button.material.flat.red[disabled],
+.dark button.material.flat.blue[disabled],
+.dark button.material.flat.green[disabled],
+.dark button.material.flat.orange[disabled],
+
+.dark button.material.disabled,
+.dark button.material.red.disabled,
+.dark button.material.blue.disabled,
+.dark button.material.green.disabled,
+.dark button.material.orange.disabled,
+.dark button.material.flat.red.disabled,
+.dark button.material.flat.blue.disabled,
+.dark button.material.flat.green.disabled,
+.dark button.material.flat.orange.disabled {
+	color: rgba(255, 255, 255, .5);
+}
+
 button.material svg {
 	width: 24px;
 	height: 24px;
