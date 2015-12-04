@@ -300,6 +300,11 @@ body > .loading h2 {
 				0 2px 1px -1px rgba(0, 0, 0, .12);
 }
 
+.dark .bg-info .panel {
+	color: #EEE;
+	background: #333;
+}
+
 .bg-info .panel:before {
 	content: "";
 	position: absolute;
@@ -338,6 +343,10 @@ body > .loading h2 {
 	background-position: top center;
 }
 
+.dark .bg-info .preview {
+	background-color: #222;
+}
+
 .bg-info .image-info {
 	padding: 10px 15px;
 }
@@ -351,6 +360,10 @@ body > .loading h2 {
 	color: #666;
 	font-size: 12px;
 	line-height: 20px;
+}
+
+.dark .bg-info .subheader {
+	color: #CCC;
 }
 
 .bg-info p.desc {
@@ -642,7 +655,6 @@ button.material.flat.orange.disabled {
 	cursor: default;
 	box-shadow: none;
 	color: rgba(0, 0, 0, .5);
-	background: rgba(0, 0, 0, .12);
 }
 
 button.material svg {
