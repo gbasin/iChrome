@@ -238,9 +238,12 @@ var getFeed = function(theme, cb, next) {
 				var d = xhr.responseText;
 
 				try {
+					var doc;
+
 					if (theme.selector && theme.attr) {
-						var parser = new DOMParser(),
-							doc = parser.parseFromString(d, "text/xml");
+						var parser = new DOMParser();
+
+						doc = parser.parseFromString(d, "text/xml");
 
 						var url = doc.querySelector(theme.selector);
 

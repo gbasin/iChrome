@@ -245,8 +245,12 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 		$.get(Hogan.compile(theme.url).render(utils), function(d) {
 			try {
+				var doc;
+
 				if (theme.selector && theme.attr) {
-					var url = $(d).find(theme.selector);
+					doc = $(d);
+
+					var url = doc.find(theme.selector);
 
 					if (theme.attr == "text") {
 						url = url.text();
@@ -285,10 +289,10 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 					}
 					else if (theme.id === 86) {
 						theme.currentImage = {
-							name: doc.querySelector("item title").textContent,
-							source: doc.querySelector("item source").textContent,
-							desc: doc.querySelector("item description").textContent,
-							url: doc.querySelector("item guid").textContent
+							name: doc.find("item title").text(),
+							source: doc.find("item source").text(),
+							desc: doc.find("item description").text(),
+							url: doc.find("item guid").text()
 						};
 					}
 				}

@@ -1,7 +1,7 @@
 /**
  * Displays information about the currently displayed background image or video
  */
-define(["backbone", "core/pro", "i18n/i18n", "core/analytics", "modals/alert", "themes/controller", "themes/utils", "core/render"], function(Backbone, Pro, Translate, Track, Alert, Themes, Utils, render) {
+define(["lodash", "backbone", "core/pro", "i18n/i18n", "core/analytics", "modals/alert", "themes/controller", "themes/utils", "core/render"], function(_, Backbone, Pro, Translate, Track, Alert, Themes, Utils, render) {
 	var View = Backbone.View.extend({
 		tagName: "section",
 		className: "panel",
@@ -141,8 +141,8 @@ define(["backbone", "core/pro", "i18n/i18n", "core/analytics", "modals/alert", "
 			if ((theme.oType || theme.type) === "video") {
 				var canvas = document.createElement("canvas");
 
-				canvas.width = Themes.video.videoWidth > 800 ? Themes.video.videoWidth / 2 : Theme.video.videoWidth;
-				canvas.height = Themes.video.videoHeight > 400 ? Themes.video.videoHeight / 2 : Theme.video.videoHeight;
+				canvas.width = Themes.video.videoWidth > 800 ? Themes.video.videoWidth / 2 : Themes.video.videoWidth;
+				canvas.height = Themes.video.videoHeight > 400 ? Themes.video.videoHeight / 2 : Themes.video.videoHeight;
 
 				var ctx = canvas.getContext("2d");
 
