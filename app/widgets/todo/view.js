@@ -126,7 +126,7 @@ define(["jquery", "widgets/views/main", "lib/jquery.sortable"], function($, Widg
 					item.css(position);
 				},
 				onDrop: function(item, container, _super) {
-					this.serialize()
+					this.serialize();
 
 					_super(item, container);
 				}.bind(this),
