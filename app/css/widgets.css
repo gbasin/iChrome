@@ -1446,53 +1446,6 @@
 
 
 /*---------------------------------------------
-	/ Top Sites
-*/
-.widget.topsites h2.header {
-	margin-bottom: 25px;
-}
-
-.topsites .sites {
-	margin: -15px;
-	display: block;
-}
-
-.topsites .site {
-	color: #666;
-	display: block;
-	padding: 10px 15px;
-	text-decoration: none;
-	font-family: Open Sans, sans-serif;
-}
-
-.dark .topsites .site {
-	color: #EEE;
-}
-
-.topsites .site:hover {
-	background: rgba(0, 0, 0, 0.03);
-}
-
-.topsites .favicon {
-	width: 16px;
-	margin-right: 5px;
-	border-radius: 2px;
-}
-
-.topsites .title {
-	overflow: hidden;
-	white-space: nowrap;
-	display: inline-block;
-	vertical-align: middle;
-	text-overflow: ellipsis;
-	width: calc(100% - 25px);
-}
-
-
-
-
-
-/*---------------------------------------------
 	/ Notes
 */
 .notes .note {

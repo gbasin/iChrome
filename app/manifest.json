@@ -58,7 +58,6 @@
 	"permissions": [
 		"storage",
 		"cookies",
-		"topSites",
 		"sessions",
 		"<all_urls>",
 		"webRequest",
@@ -71,6 +70,7 @@
 	],
 	"optional_permissions": [
 		"tabs",
+		"topSites",
 		"bookmarks",
 		"management"
 	],

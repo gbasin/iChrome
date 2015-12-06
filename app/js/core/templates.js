@@ -19,7 +19,6 @@ var templates = [
 		"widgets.iframe",				"widgets.iframe.desc",
 		"widgets.calendar",				"widgets.calendar.desc",
 		"widgets.apps",					"widgets.apps.desc",
-		"widgets.topsites",				"widgets.topsites.desc",
 		"widgets.notes",				"widgets.notes.desc",
 		"widgets.wolfram",				"widgets.wolfram.desc",
 		"widgets.tasks",				"widgets.tasks.desc",				"widgets.tasks.item",

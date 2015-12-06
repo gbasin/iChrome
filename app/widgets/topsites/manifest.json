@@ -1,0 +1,43 @@
+{
+	"id": 12,
+	"name": "topsites",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["variable"],
+
+	"browser_permissions": ["topSites"],
+
+	"views": {
+		"default": "view"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"settings": [{
+		"type": "text",
+		"name": "title",
+		"label": "i18n.settings.title",
+		"placeholder": "i18n.settings.title_placeholder"
+	}, {
+		"type": "number",
+		"name": "show",
+		"label": "i18n.settings.show",
+		"min": 1,
+		"max": 20
+	}],
+
+	"strings": {
+		"en": {
+			"name": "Top Sites",
+			"desc": "Displays your most visited/top sites.",
+
+			"settings": {
+				"show": "Number of sites shown"
+			}
+		}
+	}
+}

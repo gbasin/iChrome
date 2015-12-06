@@ -346,16 +346,6 @@
 		"authorize": "You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
 	},
 
-	"topsites": {
-		"name": "Top Sites",
-		"desc": "Displays your most visited/top sites.",
-
-		"settings": {
-			"show": "Number of sites shown",
-			"open": "Open sites in"
-		}
-	},
-
 	"traffic": {
 		"name": "Traffic",
 		"desc": "Displays the current time in current traffic to home or work.",
