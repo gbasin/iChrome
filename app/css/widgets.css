@@ -2276,53 +2276,6 @@ body.no-edit .bookmarks .tools {
 
 
 
-
-
-
-/*---------------------------------------------
-	/ Currency
-*/
-.currency .selectbar,
-.currency .inputs {
-	width: 100%;
-	font-size: 13px;
-	position: relative;
-	text-align: center;
-	display: inline-block;
-}
-
-.currency .inputs {
-	margin: 5px 0;
-}
-
-.currency select,
-.currency input {
-	z-index: 1;
-	float: left;
-	height: 34px;
-	font-size: 13px;
-	position: relative;
-	width: calc(50% - 15px);
-	padding: 5px 6px!important;
-}
-
-.currency select:last-child,
-.currency input:last-child {
-	float: right;
-}
-
-.currency span.to {
-	left: 0;
-	z-index: 0;
-	width: 100%;
-	bottom: -14px;
-	position: absolute;
-}
-
-
-
-
-
 /*---------------------------------------------
 	/ iframe widgets shared
 */
