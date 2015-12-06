@@ -77,6 +77,16 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 			ids = (theme.images || []).filter(function(e) {
 				return !cached[e];
 			});
+
+			// If this is something like a dynamic theme, inherit information
+			// about the current image and the last fetched time
+			if (cached[theme.id].currentImage) {
+				theme.currentImage = cached[theme.id].currentImage;
+			}
+
+			if (cached[theme.id].lastFetched) {
+				theme.lastFetched = cached[theme.id].lastFetched;
+			}
 		}
 		else {
 			if (theme.images) {
