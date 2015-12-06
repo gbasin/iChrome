@@ -265,7 +265,7 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 						selected: code === "USD"
 					};
 				});
-			}
+			};
 
 			data.recentTo = mapRecents(data.recentTo);
 			data.recentFrom = mapRecents(data.recentFrom);
