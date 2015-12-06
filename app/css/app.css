@@ -747,6 +747,14 @@ button.material.toggle {
 	color: #FFF;
 }
 
+button.material.toggle.m-icon {
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 24px;
+	text-transform: none;
+	font-family: Material Icons;
+}
+
 button.material.toggle svg {
 	opacity: .7;
 }
