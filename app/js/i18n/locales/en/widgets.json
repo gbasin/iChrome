@@ -177,13 +177,13 @@
 				"cards": "Cards",
 				"cards_columns": "Cards (two columns)"
 			},
-			
+
 			"mark": "Mark an article as read when I",
 			"mark_options": {
 				"scroll": "Scroll past it or click it",
 				"click": "Just click it"
 			},
-			
+
 			"sort": "Sort Order",
 			"sort_options": {
 				"newest": "Newest first",
@@ -263,16 +263,6 @@
 	"notifications": {
 		"name": "Google Notifications",
 		"desc": "Displays your Google Notifications from services such as Google+"
-	},
-
-	"recentlyclosed": {
-		"name": "Recently Closed",
-		"desc": "Shows your recently closed tabs",
-
-		"settings": {
-			"tabs": "Tabs Shown",
-			"open": "Open tabs in"
-		}
 	},
 
 	"reddit": {

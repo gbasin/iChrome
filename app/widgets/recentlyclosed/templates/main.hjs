@@ -1,0 +1,7 @@
+{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+<div class="items">
+	{{#tabs}}
+		<a class="item" href="{{url}}" data-id="{{id}}" style="background-image: url('{{favicon}}')">{{title}}</a>
+	{{/tabs}}
+</div>

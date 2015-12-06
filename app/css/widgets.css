@@ -3266,56 +3266,6 @@ body.no-edit .bookmarks .tools {
 
 
 
-/*---------------------------------------------
-	/ Recently Closed
-*/
-.widget.recentlyclosed h2.header {
-	margin-bottom: 25px;
-}
-
-.recentlyclosed .items {
-	margin: -15px;
-	display: block;
-}
-
-.recentlyclosed .item {
-	color: #666;
-	display: block;
-	padding: 10px 15px;
-	text-decoration: none;
-	font-family: Open Sans, sans-serif;
-}
-
-.dark .recentlyclosed .item {
-	color: #EEE;
-}
-
-.recentlyclosed .item:hover {
-	background: rgba(0, 0, 0, .03);
-}
-
-.dark .recentlyclosed .item:hover {
-	background: rgba(0, 0, 0, .15);
-}
-
-.recentlyclosed .favicon {
-	width: 16px;
-	margin-right: 5px;
-	border-radius: 2px;
-}
-
-.recentlyclosed .title {
-	overflow: hidden;
-	white-space: nowrap;
-	display: inline-block;
-	vertical-align: middle;
-	text-overflow: ellipsis;
-	width: calc(100% - 25px);
-}
-
-
-
-
 
 
 
@@ -3447,8 +3397,8 @@ body.no-edit .bookmarks .tools {
 	text-decoration: none;
 }
 .widget.sitelink h2.header {
-	margin: 0!important;
 	padding: 12px;
+	margin: 0!important;
 }
 
 .sitelink .thumbnail {

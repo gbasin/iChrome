@@ -1,7 +1,7 @@
 /**
  * This module is required by the registry and handles widget loading before
  * registration.
- * 
+ *
  * All new widgets need to be added to this file, or they won't be available
  * through the registry.
  *
@@ -10,7 +10,7 @@
  */
 var widgets = [
 	"drive", "rss", "news", "weather", "stocks", "translate", "sports",
-	"analytics", "dictionary"
+	"analytics", "dictionary", "recentlyclosed"
 ].map(function(e) {
 	return "json!w/" + e + "/manifest.json";
 });
@@ -25,7 +25,7 @@ var legacyWidgets = [
 	"topsites",			"traffic",
 	"twitter",			"unread",			"voice",
 	"wolfram",			"youtube",
-	"recentlyclosed",	"chrome_bookmarks",	"tasks",
+	"chrome_bookmarks",	"tasks",
 	"quotes",			"html",				"notifications",
 	"sitelink",			"stats",			"search",
 	"classroom",		"pushbullet",		"linkedin",

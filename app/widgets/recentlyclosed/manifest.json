@@ -1,0 +1,56 @@
+{
+	"id": 32,
+	"name": "recentlyclosed",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["variable"],
+
+	"browser_permissions": ["tabs"],
+
+	"views": {
+		"default": "view"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"settings": [{
+		"type": "text",
+		"name": "title",
+		"label": "i18n.settings.title",
+		"placeholder": "i18n.settings.title_placeholder"
+	},
+	{
+		"type": "number",
+		"label": "i18n.settings.tabs",
+		"name": "tabs",
+		"min": 1,
+		"max": 20
+	},
+	{
+		"type": "radio",
+		"name": "target",
+		"label": "i18n.settings.open",
+		"options": {
+			"_self": "i18n.settings.open_options.current",
+			"_blank": "i18n.settings.open_options.blank"
+		}
+	}],
+
+	"strings": {
+		"en": {
+			"name": "Recently Closed",
+			"desc": "Shows your recently closed tabs",
+
+			"settings": {
+				"tabs": "Tabs Shown",
+				"open": "Open tabs in"
+			},
+
+			"more": "more"
+		}
+	}
+}
