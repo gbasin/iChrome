@@ -38,7 +38,7 @@ define(["lodash", "backbone", "core/pro", "core/analytics", "widgets/oauth"], fu
 			this.changed = {};
 
 			// Convenience properties to access the data and config attributes.
-			// 
+			//
 			// Since these are objects modifications made to them will not trigger
 			// a change event, and therefore won't persist changes unless the
 			// events are fired manually. Since we'll need to make a convenience
@@ -46,10 +46,12 @@ define(["lodash", "backbone", "core/pro", "core/analytics", "widgets/oauth"], fu
 			// this.get("config") calls everywhere.
 			this.data = this.attributes.data;
 			this.config = this.attributes.config;
+			this.syncData = this.attributes.syncData;
 
-			this.on("change:data change:config", function() {
+			this.on("change:data change:syncData change:config", function() {
 				this.data = this.attributes.data;
 				this.config = this.attributes.config;
+				this.syncData = this.attributes.syncData;
 			}, this);
 
 
@@ -124,10 +126,27 @@ define(["lodash", "backbone", "core/pro", "core/analytics", "widgets/oauth"], fu
 
 			// This is the simplest way to ensure that the appropriate
 			// change events get triggered.
-			// 
+			//
 			// The parent widget instance listens for change events, so we
 			// don't need to do anything beyond that
 			this.trigger("change:data", this, this.data, { widgetChange: true });
+			this.trigger("change", this, { widgetChange: true });
+		},
+
+
+		/**
+		 * See above, but for syncData
+		 */
+		saveSyncData: function(data) {
+			if (data) {
+				this.syncData = data;
+			}
+
+			this.set("syncData", this.syncData, {
+				silent: true
+			});
+
+			this.trigger("change:syncData", this, this.syncData, { widgetChange: true });
 			this.trigger("change", this, { widgetChange: true });
 		},
 
@@ -152,7 +171,7 @@ define(["lodash", "backbone", "core/pro", "core/analytics", "widgets/oauth"], fu
 
 			// This is the simplest way to ensure that the appropriate
 			// change events get triggered.
-			// 
+			//
 			// The parent widget instance listens for change events, so we
 			// don't need to do anything beyond that
 			this.trigger("change:config", this, this.config, { widgetChange: true });
