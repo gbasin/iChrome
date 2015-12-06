@@ -143,7 +143,7 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 						]
 					}],
 					webDefinitions: ["put to the test, as for its quality, or give experimental use to; \"This approach has been tried with good results\"; \"Test this recipe\""],
-					audio: "//ssl.gstatic.com/dictionary/static/sounds/de/0/test.mp3",
+					audio: "https://ssl.gstatic.com/dictionary/static/sounds/de/0/test.mp3",
 					pronunciation: "test"
 				}
 			}
