@@ -2,19 +2,14 @@
 	/ Main Styles
 */
 .selectbar {
-	color: #FFF;
 	font-size: 0;
-	background: #2196F3;
+	background: rgba(0, 0, 0, .03);
 	box-shadow: rgba(0, 0, 0, .12) 0 1px 3px,
 				rgba(0, 0, 0, .24) 0 1px 2px;
 }
 
 .dark .selectbar {
-	background: #1565C0;
-}
-
-.dark.transparent .selectbar {
-	background: rgba(21, 101, 192, .5);
+	background: rgba(0, 0, 0, .15);
 }
 
 .selectbar select {
@@ -33,22 +28,9 @@
 	margin: 0 0 0 15px;
 }
 
-.selectbar select option {
-	color: #333;
-}
-
-.dark .selectbar select option {
-	color: inherit;
-}
-
 .selectbar .swap {
 	margin: 6px -6px;
 	vertical-align: top;
-}
-
-.selectbar .swap svg {
-	fill: #FFF;
-	opacity: 1;
 }
 
 .status {
