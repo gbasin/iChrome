@@ -6,7 +6,8 @@
 	overflow: visible!important;
 }
 
-.header {
+h2.header {
+	padding: 0;
 	line-height: 18px;
 }
 

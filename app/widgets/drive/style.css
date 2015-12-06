@@ -2,8 +2,21 @@
 	/ Main Styles
 */
 :root {
-	padding: 15px;
 	font-family: inherit;
+}
+
+.files {
+	padding: 0;
+	max-height: 600px;
+	overflow-x: hidden;
+}
+
+.medley .files {
+	max-height: 100%;
+}
+
+.medley .header ~ .files {
+	max-height: calc(100% - 45px);
 }
 
 .file {

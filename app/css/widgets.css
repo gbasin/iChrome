@@ -24,16 +24,26 @@
 */
 .widget .header {
 	color: #666;
-	font-size: 16px;
-	margin-bottom: 10px;
-	font-family: Open Sans, sans-serif;
+	padding: 0 15px;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 45px;
+	font-family: inherit;
 }
 
 .dark .widget .header {
 	color: #EEE;
 }
 
-.widget.tiny .header {
+.widget.legacy .header {
+	padding: 0;
+	font-size: 16px;
+	line-height: 18px;
+	margin-bottom: 10px;
+	font-family: Open Sans, sans-serif;
+}
+
+.widget.legacy.tiny .header {
 	font-size: 15px;
 	line-height: 15px;
 	margin-bottom: 15px;
@@ -144,14 +154,12 @@
 /*---------------------------------------------
 	/ List style widgets
 */
-.drive h2.header,
 .twitter h2.header,
 .widget.reddit h2.header,
 .widget.feedly h2.header {
 	margin-bottom: 25px;
 }
 
-.drive .files,
 .reddit .items,
 .feedly .items,
 .twitter .tweets {
@@ -161,7 +169,6 @@
 	overflow-x: hidden;
 }
 
-.medley .drive .files,
 .medley .reddit .items,
 .medley .feedly .items,
 .medley .twitter .tweets {
@@ -170,7 +177,6 @@
 
 .medley .reddit .items,
 .medley .feedly .items,
-.medley .drive .header ~ .files,
 .medley .twitter .header ~ .tweets {
 	max-height: calc(100% - 12px);
 }
@@ -994,7 +1000,7 @@
 				20.39509px	62.76974px	#333,	13.72213px	64.55775px	#333,	6.89884px	65.63845px	#333,
 				-6.89893px	65.63844px	#333,	-13.72222px	64.55773px	#333,	-20.39517px	62.76971px	#333,
 				-26.84467px	60.29398px	#333,	-38.79388px	53.39509px	#333,	-44.16267px	49.04751px	#333,
-				-49.0476px	44.16257px	#333,	-53.39516px	38.79377px	#333,	-60.29403px	26.84455px	#333,	
+				-49.0476px	44.16257px	#333,	-53.39516px	38.79377px	#333,	-60.29403px	26.84455px	#333,
 				-62.76975px	20.39505px	#333,	-64.55776px	13.72209px	#333,	-65.63845px	6.89879px	#333,
 				-65.63844px	-6.89897px	#333,	-64.55772px	-13.72226px	#333,	-62.7697px	-20.39521px	#333,
 				-60.29396px	-26.84471px	#333,	-53.39506px	-38.79391px	#333,	-49.04749px	-44.1627px	#333,
@@ -1043,12 +1049,12 @@
 	-webkit-animation: clock-rotate 60s normal infinite steps(60, end);
 }
 
-@keyframes clock-rotate { 
+@keyframes clock-rotate {
 	0% { transform: translate(0, 0) rotate(0deg) translate(0, 0); }
 	100% { transform: translate(0, 0) rotate(360deg) translate(0, 0); }
 }
 
-@-webkit-keyframes clock-rotate { 
+@-webkit-keyframes clock-rotate {
 	0% { transform: translate(0, 0) rotate(0deg) translate(0, 0); }
 	100% { transform: translate(0, 0) rotate(360deg) translate(0, 0); }
 }
@@ -3441,7 +3447,7 @@ body.no-edit .bookmarks .tools {
 	text-decoration: none;
 }
 .widget.sitelink h2.header {
-	margin: 0;
+	margin: 0!important;
 	padding: 12px;
 }
 
