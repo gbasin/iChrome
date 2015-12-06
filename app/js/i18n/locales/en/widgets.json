@@ -296,29 +296,6 @@
 		"more": "More"
 	},
 
-	"todo": {
-		"name": "To-do",
-		"desc": "Displays an interactive to-do list with important and completed items.",
-
-		"title": "To-do list",
-
-		"settings": {
-			"color": "Font Color",
-			"color_options": {
-				"light": "Light",
-				"dark": "Dark"
-			},
-
-			"tags": "Tags",
-			"tags_placeholder": "Enter a tag name and press Enter"
-		},
-
-		"add": "Add Item",
-
-		"none": "None",
-		"important": "Important"
-	},
-
 	"tasks": {
 		"name": "Tasks",
 		"desc": "Displays an editable list of tasks from one of your Google Tasks lists.",
