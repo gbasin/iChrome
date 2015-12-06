@@ -59,6 +59,10 @@ define(["lodash"], function(_) {
 			var sheetLength = sElm.sheet.cssRules.length;
 
 			sElm.textContent = this.cssText + css.replace(/url\(\s*?['"]?(.*?)['"]?\s*\)/g, function($0, $1) {
+				if ($1.slice(0, 5) === "data:") {
+					return 'url("' + $1.replace(/"/g, '\\"') + '")';
+				}
+
 				return 'url("' + new URL($1, location.origin + "/widgets/" + widget + "/").pathname + '")';
 			});
 
