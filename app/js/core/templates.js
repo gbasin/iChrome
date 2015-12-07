@@ -14,7 +14,6 @@ var templates = [
 		"widgets/error",		"bginfo",				"widgets/permissions-request",
 
 		"widgets.clock",				"widgets.clock.desc",
-		"widgets.unread",				"widgets.unread.desc",
 		"widgets.iframe",				"widgets.iframe.desc",
 		"widgets.calendar",				"widgets.calendar.desc",
 		"widgets.apps",					"widgets.apps.desc",

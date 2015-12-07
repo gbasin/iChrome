@@ -1,0 +1,4 @@
+<a href="{{#inbox}}https://inbox.google.com/u/{{user}}{{/inbox}}{{^inbox}}https://mail.google.com/?authuser={{user}}{{/inbox}}">
+	<span class="value" data-tooltip="{{#messages}}<b>{{subject}}</b><br />{{excerpt}}<br /><br />{{/messages}}">{{count}}</span>
+	<span class="label">{{label}}</span>
+</a>

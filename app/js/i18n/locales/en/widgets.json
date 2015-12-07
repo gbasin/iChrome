@@ -342,19 +342,6 @@
 		"favorite": "Favorite"
 	},
 
-	"unread": {
-		"name": "Unread",
-		"desc": "Displays the current number of unread emails in your Gmail inbox.",
-
-		"settings": {
-			"open": "When clicked open"
-		},
-
-		"unread_none": "unread emails",
-		"unread_one": "unread email",
-		"unread_many": "unread emails"
-	},
-
 	"voice": {
 		"name": "Voice",
 		"desc": "Displays the current number of missed calls and texts in your Google Voice account.",
