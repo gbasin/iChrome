@@ -54,8 +54,8 @@ define(
 				},
 
 				events: {
-					"click .tab-nav > nav": function(e) {
-						this.model.tabs.navigate($(e.currentTarget).attr("class"));
+					"click .tab-nav button": function(e) {
+						this.model.tabs.navigate($(e.currentTarget).attr("data-direction"));
 					},
 					"keydown": function(e) {
 						if (e.which == 37) this.model.tabs.navigate("prev");
@@ -64,14 +64,14 @@ define(
 					"keydown .widgets-container .widget": function(e) {
 						if (e.currentTarget.className.indexOf("dragged") == -1) e.stopPropagation();
 					},
-					"mouseover .tab-nav > nav": function(e) {
+					"mouseover .tab-nav button": function(e) {
 						if ($(document.body).hasClass("dragging")) {
 							this.timeout = setTimeout(function() {
-								this.model.tabs.navigate($(e.currentTarget).attr("class"));
+								this.model.tabs.navigate($(e.currentTarget).attr("data-direction"));
 							}.bind(this), 500);
 						}
 					},
-					"mouseout .tab-nav > nav": function(e) {
+					"mouseout .tab-nav button": function(e) {
 						clearTimeout(this.timeout);
 					}
 				},
@@ -329,11 +329,11 @@ define(
 					this.$el
 						.html(
 							'<div class="tab-nav">' +
-								'<nav class="prev"></nav>' +
-								'<nav class="next"></nav>' +
+								'<button type="button" class="material fab m-icon prev" data-direction="prev">navigate_before</button>' +
+								'<button type="button" class="material fab m-icon next" data-direction="next">navigate_next</button>' +
 							'</div>'
 						)
-						.toggleClass("one-tab", this.model.tabs.length == 1)
+						.toggleClass("one-tab", this.model.tabs.length === 1)
 						.append(_.pluck(this.model.tabs.views, "el"));
 
 					return this;
