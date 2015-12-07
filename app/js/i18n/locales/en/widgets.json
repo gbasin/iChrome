@@ -342,19 +342,6 @@
 		"favorite": "Favorite"
 	},
 
-	"voice": {
-		"name": "Voice",
-		"desc": "Displays the current number of missed calls and texts in your Google Voice account.",
-
-		"call": "Call from",
-		"text": "Text message from",
-
-		"missed": "missed in Voice",
-
-		"texts": "unread text messages",
-		"calls": "missed calls"
-	},
-
 	"wolfram": {
 		"name": "Wolfram|Alpha",
 		"desc": "Inserts a small Wolfram|Alpha search box."
