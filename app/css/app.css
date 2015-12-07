@@ -2080,7 +2080,7 @@ body.dragging .tab-container .tab > .remove {
 	cursor: pointer;
 	margin-top: -20px;
 	border-radius: 50%;
-	position: absolute;
+	position: fixed;
 	background: #FAFAFA;
 	box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
 	transition: opacity .15s cubic-bezier(0, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, .2, 1);
