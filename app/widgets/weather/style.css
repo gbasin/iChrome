@@ -44,6 +44,12 @@ h2.header {
 	background: url(icons/sunny.png) center/auto 110% no-repeat;
 }
 
+.current .cond.rain,
+.current .cond.lightrain {
+	background-size: auto 95%;
+	background-position: bottom center;
+}
+
 .temp {
 	font-size: 95px;
 	font-weight: 300;
