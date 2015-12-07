@@ -162,6 +162,7 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 					return "sunny";
 
 				case 3:
+				case 4:
 					return "partlycloudy";
 
 				case 5:
@@ -173,9 +174,11 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 					return "cloudy";
 
 				case 8:
+				case 19:
 					return "lightrain";
 
 				case 14:
+				case 22:
 					return "rain";
 
 				case 10:

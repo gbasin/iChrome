@@ -14,8 +14,6 @@ var templates = [
 		"widgets/error",		"bginfo",				"widgets/permissions-request",
 
 		"widgets.clock",				"widgets.clock.desc",
-		"widgets.traffic",				"widgets.traffic.desc",
-		"widgets.unread",				"widgets.unread.desc",
 		"widgets.iframe",				"widgets.iframe.desc",
 		"widgets.calendar",				"widgets.calendar.desc",
 		"widgets.apps",					"widgets.apps.desc",
@@ -26,7 +24,6 @@ var templates = [
 		"widgets.chrome_bookmarks",		"widgets.chrome_bookmarks.desc",	"widgets.chrome_bookmarks.listing",
 		"widgets.reddit",				"widgets.reddit.desc",
 		"widgets.feedly",				"widgets.feedly.desc",				"widgets.feedly.articles",
-		"widgets.voice",				"widgets.voice.desc",
 		"widgets.keep",					"widgets.keep.desc",
 		"widgets.now",					"widgets.now.desc",
 		"widgets.gmail",				"widgets.gmail.desc",

@@ -597,7 +597,7 @@
 	/ Clock
 */
 .widget.clock {
-	font-family: Roboto, sans-serif;
+	font-family: Roboto, sans-serif!important;
 }
 
 .widget.clock.small {
@@ -1151,60 +1151,6 @@
 
 
 
-/*---------------------------------------------
-	/ Traffic
-*/
-.widget.traffic {
-	cursor: pointer;
-}
-
-.widget.traffic a {
-	color: inherit;
-	text-decoration: none;
-}
-
-.widget.traffic .dest {
-	font-size: 16px;
-	margin-top: 10px;
-	line-height: 15px;
-	text-align: center;
-	font-family: Open Sans, sans-serif;
-}
-
-.dark .widget.traffic .dest {
-	color: #CCC;
-}
-
-.widget.traffic .time {
-	color: #E43431;
-	font-size: 48px;
-	line-height: 65px;
-	text-align: center;
-	margin-bottom: 20px;
-	font-family: Open Sans, sans-serif;
-}
-
-.dark .widget.traffic .time {
-	color: #F44336;
-}
-
-
-
-
-
-/*---------------------------------------------
-	/ Traffic / Tiny
-*/
-.widget.traffic.tiny .time {
-	font-size: 45px;
-	margin-bottom: 0;
-	line-height: 50px;
-	white-space: nowrap;
-}
-
-
-
-
 
 
 /*---------------------------------------------
@@ -1212,7 +1158,7 @@
 */
 .widget.calendar {
 	padding: 0!important;
-	font-family: Roboto, sans-serif;
+	font-family: Roboto, sans-serif!important;
 }
 
 .calendar header {
@@ -3154,7 +3100,7 @@ body.no-edit .bookmarks .tools {
 	/ System Stats
 */
 .stats {
-	font-family: Roboto, sans-serif;
+	font-family: Roboto, sans-serif!important;
 }
 
 .stats .header {
@@ -3311,7 +3257,7 @@ body.no-edit .bookmarks .tools {
 */
 .widget.pushbullet {
 	padding: 0!important;
-	font-family: Roboto, sans-serif;
+	font-family: Roboto, sans-serif!important;
 }
 
 .dark .widget.pushbullet {
@@ -3486,7 +3432,7 @@ body.no-edit .bookmarks .tools {
 */
 .widget.directions {
 	padding: 0!important;
-	font-family: Roboto, sans-serif;
+	font-family: Roboto, sans-serif!important;
 }
 
 .directions .methods {
@@ -3736,7 +3682,7 @@ body.no-edit .bookmarks .tools {
 */
 .widget.pocket {
 	padding: 0!important;
-	font-family: Roboto, sans-serif;
+	font-family: Roboto, sans-serif!important;
 }
 
 .pocket header {

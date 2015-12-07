@@ -1,0 +1,51 @@
+{
+	"id": 6,
+	"name": "unread",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"defaultSize": "tiny",
+	"sizes": ["tiny", "small"],
+
+	"views": {
+		"default": "view"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"settings": [{
+		"type": "text",
+		"name": "user",
+		"label": "i18n.settings.account",
+		"help": "i18n.settings.account_help",
+		"placeholder": "i18n.settings.account_placeholder"
+	}, {
+		"type": "size"
+	}, {
+		"type": "radio",
+		"name": "open",
+		"label": "i18n.settings.open",
+		"options": {
+			"inbox": "Inbox",
+			"gmail": "Gmail"
+		}
+	}],
+
+	"strings": {
+		"en": {
+			"name": "Unread",
+			"desc": "Displays the current number of unread emails in your Gmail inbox.",
+
+			"settings": {
+				"open": "When clicked open"
+			},
+
+			"unread_none": "unread emails",
+			"unread_one": "unread email",
+			"unread_many": "unread emails"
+		}
+	}
+}

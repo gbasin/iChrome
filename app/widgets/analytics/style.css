@@ -165,6 +165,11 @@ header .options li.selected {
 	color: #CCC;
 }
 
+.tiny .sessions .label {
+	font-size: 16px;
+	line-height: 25px;
+}
+
 .details {
 	margin: 15px 10px;
 }
@@ -256,9 +261,6 @@ header .options li.selected {
 /*---------------------------------------------
 	/ No profile notice
 */
-/*---------------------------------------------
-	/ Widget / Authorization
-*/
 .no-profile {
 	color: #888;
 	text-align: center;
@@ -302,28 +304,6 @@ header .options li.selected {
 
 
 /*---------------------------------------------
-	/ Widget / Authorization / Tiny Styles
-*/
-.tiny .no-profile {
-	padding-bottom: 20px;
-}
-
-.tiny .no-profile svg {
-	display: none;
-}
-
-.tiny .no-profile p {
-	margin: 10px 0;
-	padding: 0 15px;
-}
-
-
-
-
-
-
-
-/*---------------------------------------------
 	/ Tiny styles
 */
 .tiny header.has-title {
@@ -339,4 +319,17 @@ header .options li.selected {
 	line-height: 60px;
 	padding-bottom: 0;
 	font-family: inherit;
+}
+
+.tiny .no-profile {
+	padding-bottom: 20px;
+}
+
+.tiny .no-profile svg {
+	display: none;
+}
+
+.tiny .no-profile p {
+	margin: 10px 0;
+	padding: 0 15px;
 }

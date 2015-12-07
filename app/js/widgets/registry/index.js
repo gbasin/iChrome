@@ -11,7 +11,7 @@
 var widgets = [
 	"drive", "rss", "news", "weather", "stocks", "translate", "sports",
 	"analytics", "dictionary", "recentlyclosed", "topsites", "todo",
-	"currency"
+	"currency", "traffic", "unread", "voice"
 ].map(function(e) {
 	return "json!w/" + e + "/manifest.json";
 });
@@ -23,8 +23,7 @@ var legacyWidgets = [
 	"gmail",			"iframe",			"keep",
 	"notes",			"now",
 	"plus",				"reddit",
-	"traffic",
-	"twitter",			"unread",			"voice",
+	"twitter",
 	"wolfram",			"youtube",
 	"chrome_bookmarks",	"tasks",
 	"quotes",			"html",				"notifications",

@@ -315,31 +315,6 @@
 		"authorize": "You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
 	},
 
-	"traffic": {
-		"name": "Traffic",
-		"desc": "Displays the current time in current traffic to home or work.",
-
-		"settings": {
-			"leave": "I leave home at",
-
-			"home": "Home Address",
-			"home_placeholder": "The destination that should be used after work",
-
-			"work": "Work Address",
-			"work_placeholder": "The destination that should be used before work",
-
-			"method": "Transit Method",
-			"method_options": {
-				"driving": "Driving",
-				"walking": "Walking",
-				"transit": "Public Transit"
-			}
-		},
-
-		"to_home": "to home",
-		"to_work": "to work"
-	},
-
 	"twitter": {
 		"name": "Twitter",
 		"desc": "Displays tweets from your home stream or a specified list.",
@@ -365,32 +340,6 @@
 		"reply": "Reply",
 		"retweet": "Retweet",
 		"favorite": "Favorite"
-	},
-
-	"unread": {
-		"name": "Unread",
-		"desc": "Displays the current number of unread emails in your Gmail inbox.",
-
-		"settings": {
-			"open": "When clicked open"
-		},
-
-		"unread_none": "unread emails",
-		"unread_one": "unread email",
-		"unread_many": "unread emails"
-	},
-
-	"voice": {
-		"name": "Voice",
-		"desc": "Displays the current number of missed calls and texts in your Google Voice account.",
-
-		"call": "Call from",
-		"text": "Text message from",
-
-		"missed": "missed in Voice",
-
-		"texts": "unread text messages",
-		"calls": "missed calls"
 	},
 
 	"wolfram": {
