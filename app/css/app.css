@@ -573,7 +573,7 @@ button.material {
 	text-align: center;
 	text-transform: uppercase;
 	font-family: Roboto, sans-serif;
-	transition: all .15s ease-in-out;
+	transition: all .15s cubic-bezier(.4, 0, .2, 1);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
@@ -585,6 +585,14 @@ button.material:active {
 
 button.material:active {
 	background: #E0E0E0;
+}
+
+button.material.m-icon {
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 24px;
+	text-transform: none;
+	font-family: Material Icons;
 }
 
 button.material[disabled],
@@ -745,14 +753,6 @@ button.material.toggle {
 
 .dark button.material.toggle {
 	color: #FFF;
-}
-
-button.material.toggle.m-icon {
-	font-size: 24px;
-	font-weight: 400;
-	line-height: 24px;
-	text-transform: none;
-	font-family: Material Icons;
 }
 
 button.material.toggle svg {
@@ -2053,97 +2053,55 @@ body.dragging .tab-container .tab > .remove {
 /*---------------------------------------------
 	/ Tabs Layout / Nav
 */
-.tab-container .tab-nav {
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	max-height: 100vh;
-	position: absolute;
-}
-
-.toolbar ~ .tab-container .tab-nav {
-	top: -25px;
-}
-
 .tab-container.one-tab .tab-nav {
 	display: none;
 }
 
-.tab-nav nav {
+.tab-nav button,
+.tab-nav button:active {
 	top: 50%;
 	left: 10px;
 	opacity: 0;
 	z-index: 1;
-	width: 40px;
-	height: 40px;
-	cursor: pointer;
+	position: fixed;
 	margin-top: -20px;
-	border-radius: 50%;
-	position: absolute;
 	background: #FAFAFA;
-	box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
-	transition: opacity .15s cubic-bezier(0, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, .2, 1);
 }
 
-.dark .tab-nav nav {
-	background: #484848;
+.dark .tab-nav button,
+.dark .tab-nav button:active {
+	color: #EEE;
+	background: #303030;
 }
 
-.tab-container:hover .tab-nav nav {
+.tab-container:hover .tab-nav button {
 	opacity: .9;
 }
 
-.tab-nav nav:hover,
-.dragging .tab-nav nav {
+.dragging .tab-nav button,
+.tab-container .tab-nav button:hover,
+.tab-container .tab-nav button:focus {
 	opacity: 1;
-	background: #FFF;
-	box-shadow: 0 0 6px rgba(0, 0, 0, .16), 0 6px 12px rgba(0, 0, 0, .32);
-}
-
-.dark .tab-nav nav:hover,
-.dark.dragging .tab-nav nav {
-	background: #555;
-}
-
-.dragging .tab-nav nav {
-	z-index: 999999;
-}
-
-.tab-nav nav:active {
-	box-shadow: 0 0 8px rgba(0, 0, 0, .18), 0 8px 16px rgba(0, 0, 0, .36);
-}
-
-.tab-nav nav:before {
-	color: #444;
-	width: 36px;
-	height: 40px;
-	display: block;
-	cursor: pointer;
-	font-size: 20px;
-	content: "\E6CD";
-	line-height: 40px;
-	text-align: center;
-	font-family: Entypo;
-}
-
-.dark .tab-nav nav:before {
-	color: #DDD;
-}
-
-.tab-nav nav.next {
-	left: auto;
-	right: 10px;
-}
-
-.tab-nav nav.next:before {
-	width: 40px;
-	content: "\E6D0";
 }
 
 .dragging .tab-container {
 	z-index: initial;
 }
+
+.dragging .tab-nav button {
+	z-index: 999999;
+}
+
+.tab-nav button.prev {
+	/* Offset the arrow 2px to the left */
+	padding-left: 6px;
+}
+
+.tab-nav button.next {
+	left: auto;
+	right: 10px;
+}
+
 
 
 
