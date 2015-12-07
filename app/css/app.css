@@ -573,7 +573,7 @@ button.material {
 	text-align: center;
 	text-transform: uppercase;
 	font-family: Roboto, sans-serif;
-	transition: all .15s ease-in-out;
+	transition: all .15s cubic-bezier(.4, 0, .2, 1);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
@@ -585,6 +585,14 @@ button.material:active {
 
 button.material:active {
 	background: #E0E0E0;
+}
+
+button.material.m-icon {
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 24px;
+	text-transform: none;
+	font-family: Material Icons;
 }
 
 button.material[disabled],
@@ -745,14 +753,6 @@ button.material.toggle {
 
 .dark button.material.toggle {
 	color: #FFF;
-}
-
-button.material.toggle.m-icon {
-	font-size: 24px;
-	font-weight: 400;
-	line-height: 24px;
-	text-transform: none;
-	font-family: Material Icons;
 }
 
 button.material.toggle svg {
