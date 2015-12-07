@@ -1,5 +1,0 @@
-<a href="https://www.google.com/maps/dir/{{fromEnc}}/{{toEnc}}">
-	<div class="time">{{time}}</div>
-
-	<h2 class="dest">{{dest}}</h2>
-</a>

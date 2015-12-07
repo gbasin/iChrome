@@ -1,0 +1,38 @@
+/*---------------------------------------------
+	/ Main Styles
+*/
+a {
+	color: inherit;
+	display: block;
+	padding: 10px 0;
+	text-align: center;
+	text-decoration: none;
+}
+
+.value {
+	color: #E53935;
+	display: block;
+	font-size: 50px;
+	font-weight: 300;
+	line-height: 80px;
+}
+
+.dark .value {
+	color: #F44336;
+}
+
+.tiny .value {
+	font-size: 45px;
+	line-height: 60px;
+	font-family: inherit;
+}
+
+.label {
+	font-size: 20px;
+	font-weight: 300;
+	letter-spacing: .2px;
+}
+
+.dark .label {
+	color: #CCC;
+}
