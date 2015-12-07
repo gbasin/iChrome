@@ -165,6 +165,10 @@ header .options li.selected {
 	color: #CCC;
 }
 
+.tiny .sessions .label {
+	font-size: 16px;
+}
+
 .details {
 	margin: 15px 10px;
 }

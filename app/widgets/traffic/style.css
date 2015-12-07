@@ -36,3 +36,7 @@ a {
 .dark .label {
 	color: #CCC;
 }
+
+.tiny .label {
+	font-size: 16px;
+}
