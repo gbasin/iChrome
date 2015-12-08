@@ -43,7 +43,7 @@ module.exports = function (grunt) {
 		sass: {
 			dev: {
 				options: {
-					compass: true,
+					sourceMap: true,
 					lineNumbers: true
 				},
 				src: ['app/**/*.scss'],
@@ -52,9 +52,8 @@ module.exports = function (grunt) {
 			},
 			build: {
 				options: {
-					compass: true,
 					sourcemap: 'none',
-					style: 'compressed'
+					outputStyle: 'compressed'
 				},
 				src: ['build/**/*.scss'],
 				expand: true,
@@ -248,13 +247,13 @@ module.exports = function (grunt) {
 	});
 
 	grunt.loadNpmTasks("grunt-hogan");
+	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-cssmin");
 	grunt.loadNpmTasks("grunt-string-replace");
 	grunt.loadNpmTasks("grunt-contrib-compress");
-	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.loadTasks("tasks");
