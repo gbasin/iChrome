@@ -5,7 +5,7 @@
 module.exports = function (grunt) {
 	var path = require("path");
 
-	if (!grunt.file.exists('keys.json')) {
+	if (!grunt.file.exists("keys.json")) {
 		grunt.fail.fatal("Must create keys.json file before running grunt.");
 	}
 
@@ -43,21 +43,24 @@ module.exports = function (grunt) {
 		sass: {
 			dev: {
 				options: {
-					sourceMap: true,
-					lineNumbers: true
+					indentWidth: 1,
+					indentType: "tab",
+					sourceComments: true,
+					outputStyle: "expanded",
+					sourceMap: "app/css/style.css.map"
 				},
-				src: ['app/**/*.scss'],
+				src: ["app/**/*.scss"],
 				expand: true,
-				ext: '.css'
+				ext: ".css"
 			},
 			build: {
 				options: {
-					sourcemap: 'none',
-					outputStyle: 'compressed'
+					sourcemap: "none",
+					outputStyle: "compressed"
 				},
-				src: ['build/**/*.scss'],
+				src: ["build/**/*.scss"],
 				expand: true,
-				ext: '.css'
+				ext: ".css"
 			}
 		},
 
@@ -70,11 +73,11 @@ module.exports = function (grunt) {
 					interrupt: true
 				},
 				files: [
-					'app/**/*.scss',
-					'app/**/*.sass'
+					"app/**/*.scss",
+					"app/**/*.sass"
 				],
 				tasks: [
-					'sass:dev'
+					"sass:dev"
 				]
 			}
 		},
@@ -247,14 +250,14 @@ module.exports = function (grunt) {
 	});
 
 	grunt.loadNpmTasks("grunt-hogan");
-	grunt.loadNpmTasks('grunt-sass');
+	grunt.loadNpmTasks("grunt-sass");
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-cssmin");
 	grunt.loadNpmTasks("grunt-string-replace");
 	grunt.loadNpmTasks("grunt-contrib-compress");
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks("grunt-contrib-watch");
 
 	grunt.loadTasks("tasks");
 
