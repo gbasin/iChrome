@@ -1455,7 +1455,8 @@ dialog footer button.material.flat:active {
 
 .dark .toolbar .search .speech {
 	opacity: .7;
-	-webkit-filter: invert();
+	// mathew: wrap filters in #{ } so that they aren't handled as SASS functions.
+	-webkit-filter: #{"invert()"};
 }
 
 .toolbar .search .speech:hover {

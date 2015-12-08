@@ -1,10 +1,13 @@
+/**
+ * @param {IGrunt} grunt
+ */
 /* globals module,process */
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 	var path = require("path");
 
-    if(!grunt.file.exists('keys.json')) {
-        grunt.fail.fatal("Must create keys.json file before running grunt.");
-    }
+	if (!grunt.file.exists('keys.json')) {
+		grunt.fail.fatal("Must create keys.json file before running grunt.");
+	}
 
 	grunt.initConfig({
 		keys: grunt.file.readJSON("keys.json"),
@@ -33,14 +36,57 @@ module.exports = function(grunt) {
 				futurehostile: true,
 				reporter: require("jshint-stylish")
 			},
-			all: ["**/*.js", "!node_modules/**/*.js", "!app/js/lib/*.js"]
+			all: ["app/**/*.js", "!node_modules/**/*.js", "!app/js/lib/*.js"]
+		},
+
+		// compile SASS files
+		sass: {
+			dev: {
+				options: {
+					sourceMap: true,
+					lineNumbers: true
+				},
+				src: ['app/**/*.scss'],
+				expand: true,
+				ext: '.css'
+			},
+			build: {
+				options: {
+					sourcemap: 'none',
+					outputStyle: 'compressed'
+				},
+				src: ['build/**/*.scss'],
+				expand: true,
+				ext: '.css'
+			}
+		},
+
+		// compile files for changes
+		watch: {
+			sass: {
+				options: {
+					atBegin: true,
+					spawn: false,
+					interrupt: true
+				},
+				files: [
+					'app/**/*.scss',
+					'app/**/*.sass'
+				],
+				tasks: [
+					'sass:dev'
+				]
+			}
 		},
 
 		// Copy the extension to a new directory for building
 		copy: {
 			build: {
 				cwd: "app",
-				src: [ "**" ],
+				src: [
+					"**",
+					"!**/*.css.map"
+				],
 				dest: "build",
 				expand: true
 			},
@@ -110,7 +156,7 @@ module.exports = function(grunt) {
 			compilebinder: {
 				src: "binder.hjs",
 				dest: path.resolve("tmp/binder.js"),
-				options: { binderName: "bootstrap" }
+				options: {binderName: "bootstrap"}
 			},
 
 			compile: {
@@ -119,7 +165,7 @@ module.exports = function(grunt) {
 				options: {
 					binderPath: path.resolve("tmp/binder.js"),
 
-					nameFunc: function(e) {
+					nameFunc: function (e) {
 						e = path.relative(path.resolve("build/templates"), e).replace(/\\/g, "/");
 
 						if (/^widgets\/([a-z\-_]*)\/template\.hjs$/.test(e)) {
@@ -154,7 +200,7 @@ module.exports = function(grunt) {
 				options: {
 					replacements: [{
 						pattern: /__API_KEY_([A-z0-9\-\.]+)__/ig,
-						replacement: function(match, p1) {
+						replacement: function (match, p1) {
 							return grunt.config.get("keys." + p1);
 						}
 					}]
@@ -178,7 +224,11 @@ module.exports = function(grunt) {
 			webstore: {
 				dest: "/",
 				cwd: "build",
-				src: ["**/*"],
+				src: [
+					"**/*",
+					"!**/*.scss",
+					"!**/*.sass"
+				],
 				expand: true,
 				options: {
 					mode: "zip",
@@ -189,7 +239,7 @@ module.exports = function(grunt) {
 
 		// Clean up excess JS files
 		clean: {
-			all: ["tmp", "build/**/Thumbs.db", "build/templates", "build/widgets", "build/js/*", "!build/js/lib", "build/js/lib/*", "!build/js/lib/require.js", "!build/js/app.js", "!build/js/background.js"],
+			all: ["tmp", "build/**/Thumbs.db", "build/templates", "build/widgets", "build/js/*", "!build/js/lib", "build/js/lib/*", "!build/js/lib/require.js", "!build/js/app.js", "!build/js/background.js", "build/**/*.scss"],
 			webstore: ["build"],
 			travis: ["build", "webstore.zip", "descriptions"],
 			testrun: ["app/js/app.unbuilt.js", "app/css/style.unbuilt.css", "app/assets"]
@@ -197,18 +247,21 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks("grunt-hogan");
+	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-cssmin");
 	grunt.loadNpmTasks("grunt-string-replace");
 	grunt.loadNpmTasks("grunt-contrib-compress");
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.loadTasks("tasks");
 
 	grunt.registerTask("default", [
 		"jshint:all",
 		"copy:build",
+		"sass:build",
 		"string-replace:htmlmin",
 		"compileWidgets",
 		"cssmin",
@@ -224,6 +277,7 @@ module.exports = function(grunt) {
 	grunt.registerTask("webstore", [
 		"jshint:all",
 		"copy:build",
+		"sass:build",
 		"string-replace:htmlmin",
 		"compileWidgets",
 		"cssmin",
@@ -243,6 +297,7 @@ module.exports = function(grunt) {
 	grunt.registerTask("travis", [
 		"jshint:all",
 		"copy:build",
+		"sass:build",
 		"string-replace:htmlmin",
 		"compileWidgets",
 		"cssmin",
@@ -259,7 +314,7 @@ module.exports = function(grunt) {
 	]);
 
 
-	grunt.registerTask("waitReset", function() {
+	grunt.registerTask("waitReset", function () {
 		var done = this.async();
 
 		var rl = require("readline").createInterface({
@@ -267,7 +322,7 @@ module.exports = function(grunt) {
 			output: process.stdout
 		});
 
-		rl.question("Press Enter to reset the app: ", function(answer) {
+		rl.question("Press Enter to reset the app: ", function (answer) {
 			rl.close();
 
 			done();
@@ -277,6 +332,7 @@ module.exports = function(grunt) {
 	grunt.registerTask("testrun", [
 		"jshint:all",
 		"copy:build",
+		"sass:build",
 		"string-replace:htmlmin",
 		"compileWidgets",
 		"cssmin",

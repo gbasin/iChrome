@@ -1,3 +1,5 @@
+/build
+/.sass-cache
 /.idea
 lib-cov
 coverage
