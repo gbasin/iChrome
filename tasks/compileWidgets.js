@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 
 		var manifests = grunt.file.expand("build/widgets/*/manifest.json");
 
-		var widgetCSS = grunt.file.read("build/css/widgets.css");
+		var styleSheet = grunt.file.read("build/css/style.css");
 
 
 		var locales = grunt.file.expand("build/js/i18n/locales/*/widgets.json", "!build/js/i18n/locales/en/widgets.json").map(function(filepath) {
@@ -87,7 +87,7 @@ module.exports = function(grunt) {
 						});
 					});
 
-				widgetCSS +=
+				styleSheet +=
 					"\n\n\n\n\n\n/*\n * / Widgets / " +
 					(manifest.strings && manifest.strings.en && manifest.strings.en.name) +
 					"\n */\n" +
@@ -133,7 +133,7 @@ module.exports = function(grunt) {
 
 		grunt.option("widgetModules", assets);
 
-		grunt.file.write("build/css/widgets.css", widgetCSS);
+		grunt.file.write("build/css/style.css", styleSheet);
 
 
 		// Create the entry-point module. This requires each of the widgets so
