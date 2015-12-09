@@ -45,7 +45,7 @@ define(["lodash", "jquery", "browser/api"], function(_, $, Browser) {
 			return this;
 		},
 
-		
+
 		/**
 		 * Proxies jQuery.ajax, adding the Pro token (if available) in a header
 		 * to each request.
@@ -70,7 +70,7 @@ define(["lodash", "jquery", "browser/api"], function(_, $, Browser) {
 			if (config.url && config.url[0] === "/") {
 				config.url = "https://api.ichro.me" + config.url;
 			}
-			
+
 			return $.ajax(config);
 		}
 	};
