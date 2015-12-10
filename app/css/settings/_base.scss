@@ -65,6 +65,7 @@ body > .settings {
 		}
 
 		main.content {
+			outline: 0;
 			overflow: auto;
 			padding: 20px 0;
 			max-height: calc(100% - 55px);

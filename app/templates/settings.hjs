@@ -65,7 +65,7 @@
 		<h2 class="page-name">Settings &ndash; Toolbar</h2>
 	</header>
 
-	<main class="content">
+	<main class="content" tabindex="-1">
 		<section class="style">
 			<h3>Style</h3>
 

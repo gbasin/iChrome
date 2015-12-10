@@ -5,6 +5,9 @@ define(["lodash", "jquery", "backbone", "core/analytics", "core/render"], functi
 	var View = Backbone.View.extend({
 		tagName: "div",
 		className: "settings",
+		attributes: {
+			tabindex: -1
+		},
 
 		events: {
 			"keydown": function(e) {
