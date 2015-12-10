@@ -352,6 +352,7 @@ iframe[seamless] {
 	/ Forms
 */
 input[type="tel"],
+input[type="url"],
 input[type="text"],
 input[type="time"],
 input[type="date"],
@@ -371,6 +372,7 @@ textarea {
 }
 
 .dark input[type="tel"],
+.dark input[type="url"],
 .dark input[type="text"],
 .dark input[type="time"],
 .dark input[type="date"],
@@ -384,6 +386,7 @@ textarea {
 }
 
 .dark.transparent input[type="tel"],
+.dark.transparent input[type="url"],
 .dark.transparent input[type="text"],
 .dark.transparent input[type="time"],
 .dark.transparent input[type="date"],
@@ -401,6 +404,7 @@ textarea {
 }
 
 .widget input[type="tel"],
+.widget input[type="url"],
 .widget input[type="text"],
 .widget input[type="time"],
 .widget input[type="date"],
@@ -413,6 +417,7 @@ textarea {
 }
 
 input[type="tel"]:hover,
+input[type="url"]:hover,
 input[type="text"]:hover,
 input[type="time"]:hover,
 input[type="date"]:hover,
@@ -426,6 +431,7 @@ textarea:hover {
 }
 
 .dark input[type="tel"]:hover,
+.dark input[type="url"]:hover,
 .dark input[type="text"]:hover,
 .dark input[type="time"]:hover,
 .dark input[type="date"]:hover,
@@ -438,6 +444,7 @@ textarea:hover {
 }
 
 input[type="tel"]:focus,
+input[type="url"]:focus,
 input[type="text"]:focus,
 input[type="time"]:focus,
 input[type="date"]:focus,
@@ -451,6 +458,7 @@ textarea:focus {
 }
 
 .dark input[type="tel"]:hover,
+.dark input[type="url"]:hover,
 .dark input[type="text"]:hover,
 .dark input[type="time"]:hover,
 .dark input[type="date"]:hover,
@@ -461,6 +469,7 @@ textarea:focus {
 .dark textarea:hover,
 
 .dark input[type="tel"]:focus,
+.dark input[type="url"]:focus,
 .dark input[type="text"]:focus,
 .dark input[type="time"]:focus,
 .dark input[type="date"]:focus,
