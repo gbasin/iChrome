@@ -49,7 +49,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "core/render"], functi
 		},
 
 		render: function() {
-			this.$el.html(render("settings"));
+			this.$el.html(render("settings")).find("main").focus();
 
 			return this;
 		}

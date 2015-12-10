@@ -1,0 +1,15 @@
+<header>
+	<h2 class="page-name">Settings &ndash; Miscellaneous</h2>
+</header>
+
+<main class="content" tabindex="-1">
+	<section>
+		<label class="input switch">
+			<h4>Open links in a new tab by default</h4>
+
+			<input type="checkbox" name="open-links-in-new-tab" value="1" checked />
+
+			<span class="switch"></span>
+		</label>
+	</section>
+</main>

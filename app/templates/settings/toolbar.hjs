@@ -3,7 +3,7 @@
 </header>
 
 <main class="content" tabindex="-1">
-	<section class="style">
+	<section class="style" data-id="style">
 		<h3>Style</h3>
 
 		<p class="desc">This controls the style of the toolbar.  It can either appear normally or as an out of the way button</p>
@@ -23,7 +23,7 @@
 		</div>
 	</section>
 
-	<section class="search" data-id="search-engine">
+	<section class="search" data-id="search">
 		<h3>Search</h3>
 
 		<p class="desc">These settings control how the search box and voice search function</p>
