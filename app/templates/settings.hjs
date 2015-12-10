@@ -1,21 +1,73 @@
-<h2 class="title">{{i18n.menu.settings}}</h2>
+<div class="side-nav">
+	<button type="button" class="material flat exit" data-m-icon-before="navigate_before">Exit Settings</button>
 
-<button class="btn btn-primary save">{{i18n.settings.save}}</button>
-
-<ul class="nav">
-	<li data-tab="general" class="active">{{i18n.settings.labels.general}}</li>
-	<li data-tab="visual">{{i18n.settings.labels.visual}}</li>
-	<li data-tab="specific" class="specific nested">
-		<h3>{{i18n.settings.labels.specific}}</h3>
-
+	<nav>
 		<ul>
-			{{#tabs}}<li data-id="{{id}}" class="{{active}}">{{name}}</li>{{/tabs}}
-			<li data-id="new">{{i18n.settings.new_tab}}</li>
+			<li data-id="accounts">
+				<span class="header">Accounts and sync</span>
+			</li>
+
+			<li data-id="toolbar" class="active">
+				<span class="header">Toolbar</span>
+
+				<ul class="sections">
+					<li data-id="style">Style</li>
+					<li data-id="search">Search</li>
+					<li data-id="links">Links</li>
+				</ul>
+			</li>
+
+			<li data-id="visual">
+				<span class="header">Visual</span>
+
+				<ul class="sections">
+					<li data-id="background">Background</li>
+					<li data-id="layout">Layout</li>
+					<li data-id="theme">App theme</li>
+				</ul>
+			</li>
+
+			<li data-id="tabs">
+				<span class="header">Tabs</span>
+			</li>
+
+			<li data-id="widgets">
+				<span class="header">Widgets</span>
+			</li>
+
+			<li data-id="pro">
+				<span class="header">Pro</span>
+			</li>
+
+			<li data-id="advanced">
+				<span class="header">Advanced</span>
+
+				<ul class="sections">
+					<li data-id="backup">Backup and restore</li>
+					<li data-id="css">Custom CSS</li>
+					<li data-id="debug">Debug Tools</li>
+				</ul>
+			</li>
+
+			<li data-id="support">
+				<span class="header">Help and support</span>
+			</li>
+
+			<li data-id="suggest">
+				<span class="header">Suggest a feature</span>
+			</li>
 		</ul>
 	</li>
 	<li data-tab="sync">{{i18n.settings.labels.sync}}</li>
 	<li data-tab="advanced">{{i18n.settings.labels.advanced}}</li>
 </ul>
+<div class="page toolbar" data-id="toolbar">
+	<header>
+		<h2 class="page-name">Settings &ndash; Toolbar</h2>
+	</header>
+
+	<main class="content">
 
 <div class="tabs">
+	</main>
 </div>
