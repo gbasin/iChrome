@@ -7,7 +7,7 @@
 				<span class="header">Accounts and sync</span>
 			</li>
 
-			<li data-id="toolbar" class="active">
+			<li data-id="toolbar">
 				<span class="header">Toolbar</span>
 
 				<ul class="sections">
@@ -39,6 +39,10 @@
 				<span class="header">Pro</span>
 			</li>
 
+			<li data-id="misc" class="active">
+				<span class="header">Miscellaneous</span>
+			</li>
+
 			<li data-id="advanced">
 				<span class="header">Advanced</span>
 
@@ -60,134 +64,20 @@
 	</nav>
 </div>
 
-<div class="page toolbar" data-id="toolbar">
+<div class="page misc" data-id="misc">
 	<header>
-		<h2 class="page-name">Settings &ndash; Toolbar</h2>
+		<h2 class="page-name">Settings &ndash; Miscellaneous</h2>
 	</header>
 
 	<main class="content" tabindex="-1">
-		<section class="style">
-			<h3>Style</h3>
-
-			<p class="desc">This controls the style of the toolbar.  It can either appear normally or as an out of the way button</p>
-
-			<div class="input radios no-label">
-				<label>
-					<input type="radio" name="style" value="normal" checked />
-
-					<span>Normal</span>
-				</label>
-
-				<label>
-					<input type="radio" name="style" value="button" />
-
-					<span>Button</span>
-				</label>
-			</div>
-		</section>
-
-		<section class="search" data-id="search-engine">
-			<h3>Search</h3>
-
-			<p class="desc">These settings control how the search box and voice search function</p>
-
-			<div class="input select other">
-				<label>
-					<h4>Search Engine</h4>
-
-					<select name="search-engine">
-						<option value="https://google.com/search?q=%s">Google (Default)</option>
-						<option value="https://search.yahoo.com/search?p=%s">Yahoo!</option>
-						<option value="https://www.bing.com/search?q=%s">Bing</option>
-						<option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
-						<option value="http://www.ask.com/web?q=%s">Ask</option>
-						<option value="http://search.aol.com/aol/search?q=%s">AOL</option>
-						<option value="custom">Custom</option>
-					</select>
-				</label>
-
-				<label class="input other">
-					<span class="desc">Enter a URL that queries should be sent to, with <b>%s</b> where the query should go.</span>
-
-					<input type="text" name="search-url" placeholder="i.e. https://google.com/search?q=%s" />
-				</label>
-			</div>
-
+		<section>
 			<label class="input switch">
-				<h4>Enable voice search</h4>
+				<h4>Open links in a new tab by default</h4>
 
-				<input type="checkbox" name="voice-search" value="1" checked />
+				<input type="checkbox" name="open-links-in-new-tab" value="1" checked />
 
 				<span class="switch"></span>
 			</label>
-
-			<label class="input switch">
-				<h4>Enable "OK Google" hotword detection</h4>
-
-				<input type="checkbox" name="ok-google" value="1" />
-
-				<span class="switch"></span>
-			</label>
-
-			<label class="input switch">
-				<h4>Open search results in a new tab</h4>
-
-				<input type="checkbox" name="new-tab" value="1" />
-
-				<span class="switch"></span>
-			</label>
-		</section>
-
-		<section class="links" data-id="links">
-			<h3>Links</h3>
-
-			<p class="desc">These are the items shown at the right of the toolbar</p>
-
-			<label class="input switch">
-				<h4>Google Plus</h4>
-
-				<input type="checkbox" name="google-plus" value="1" checked />
-
-				<span class="switch"></span>
-			</label>
-
-			<label class="input switch">
-				<h4>Gmail</h4>
-
-				<input type="checkbox" name="gmail" value="1" checked />
-
-				<span class="switch"></span>
-			</label>
-
-			<label class="input switch">
-				<h4>Apps menu</h4>
-
-				<input type="checkbox" name="apps-menu" value="1" checked />
-
-				<span class="switch"></span>
-			</label>
-
-			<div class="input custom-links">
-				<h4>Custom links</h4>
-
-				<span class="note">Maximum of 3 allowed, <span class="pro-badge"></span> users get 8</span>
-
-				<div class="link">
-					<input type="text" name="name" placeholder="Link text" value="CloudFlare" />
-
-					<input type="url" name="url" placeholder="Link URL, i.e. https://www.google.com/" value="https://www.cloudflare.com/" />
-
-					<button type="button" class="material toggle m-icon remove">close</button>
-				</div>
-
-				<div class="link new">
-					<input type="text" name="name" placeholder="Link text" />
-
-					<input type="url" name="url" placeholder="Link URL, i.e. https://www.google.com/" />
-
-					<button type="button" class="material toggle m-icon remove">close</button>
-				</div>
-			</div>
 		</section>
 	</main>
 </div>
