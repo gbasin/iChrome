@@ -1,0 +1,66 @@
+.side-nav {
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+	width: 250px;
+	background: #FFF;
+	position: absolute;
+	border-right: 1px solid rgba(0, 0, 0, .075);
+
+	button.exit {
+		margin: 0;
+		width: 100%;
+		font: inherit;
+		padding: 0 20px;
+		font-size: 18px;
+		text-align: left;
+		line-height: 54px;
+		text-transform: none;
+		background: rgba(0, 0, 0, .05);
+		border-bottom: 1px solid rgba(0, 0, 0, .05);
+
+		&:hover {
+			background: rgba(0, 0, 0, .075);
+		}
+
+		&:before {
+			vertical-align: top;
+		}
+	}
+
+	nav {
+		overflow: auto;
+		padding: 12px 0;
+		font-size: 13px;
+		height: calc(100% - 55px);
+
+		ul {
+			padding: 0;
+		}
+
+		li .header {
+			display: block;
+			font-weight: bold;
+			line-height: 40px;
+			padding: 0 0 0 25px;
+			letter-spacing: .2px;
+		}
+
+		li .header:hover,
+		.sections li:hover {
+			cursor: pointer;
+			background: rgba(0, 0, 0, .05);
+		}
+
+		li.active .header {
+			color: $accent-color;
+		}
+
+		ul.sections li {
+			line-height: 35px;
+			padding-left: 45px;
+			color: #333;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+&.toolbar .custom-links .link {
+	font-size: 0;
+	margin: 0 -25px;
+	text-align: left;
+	padding: 10px 20px;
+
+	&:first-of-type {
+		margin-top: 15px;
+	}
+
+	input {
+		font-size: 14px;
+		margin-right: 10px;
+		vertical-align: middle;
+		width: calc((100% - 56px) / 2);
+	}
+
+	button.remove {
+		margin: 0;
+	}
+
+	&.new button.remove {
+		display: none;
+	}
+}

@@ -1,0 +1,101 @@
+/**
+ * Radio inputs
+ */
+&.radios label {
+	font-size: 0;
+	font-weight: 400;
+	line-height: 20px;
+	margin: 0 15px 0 0;
+	vertical-align: top;
+
+	span {
+		font-size: 14px;
+		padding-left: 5px;
+		vertical-align: top;
+	}
+}
+
+
+/**
+ * Select with an "other" option
+ */
+&.select.other {
+	padding: 0;
+
+	label {
+		margin: 0;
+		font: inherit;
+		display: block;
+		padding: 20px 25px;
+	}
+
+	label.other {
+		border: 0;
+		height: 0;
+		padding: 0 25px;
+		overflow: hidden;
+		transition: all .2s $transition-easing;
+
+		&.visible {
+			height: 52px;
+			margin-top: -10px;
+			padding-bottom: 20px;
+		}
+	}
+}
+
+
+/**
+ * Switches
+ */
+&.switch {
+	input[type="checkbox"] {
+		display: none;
+
+		& + .switch {
+			width: 40px;
+			height: 16px;
+			cursor: pointer;
+			position: relative;
+			border-radius: 8px;
+			display: inline-block;
+			vertical-align: middle;
+			background: rgba(0, 0, 0, .26);
+			transition: background .3s $transition-easing;
+
+			&:before {
+				top: -4px;
+				left: -4px;
+				content: "";
+				width: 24px;
+				height: 24px;
+				position: absolute;
+				border-radius: 50%;
+				background: #FAFAFA;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, .28);
+				transition: left .3s $transition-easing,
+							background .3s $transition-easing,
+							box-shadow .3s $transition-easing;
+			}
+
+			&:active:before {
+				box-shadow: 0 2px 8px rgba(0, 0, 0, .28),
+							0 0 0 20px rgba(#808080, .1);
+			}
+		}
+
+		&:checked + .switch {
+			background: rgba($md-blue-500, .5);
+
+			&:before {
+				left: 20px;
+				background: $md-blue-500;
+			}
+
+			&:active:before {
+				box-shadow: 0 2px 8px rgba(0, 0, 0, .28),
+							0 0 0 20px rgba($md-blue-500, .2);
+			}
+		}
+	}
+}
