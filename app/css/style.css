@@ -5333,12 +5333,8 @@ body > .settings .page.tabs .input button.default {
 	position: relative;
 }
 
-/* line 2, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_advanced.scss */
-body > .settings .page.advanced .backups .actions button {
-	margin-right: 10px;
-}
-
-/* line 139, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 138, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+body > .settings .item,
 body > .settings .input {
 	margin: 0;
 	font: inherit;
@@ -5347,6 +5343,55 @@ body > .settings .input {
 	line-height: 32px;
 	padding: 20px 25px;
 	border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* line 148, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+body > .settings .item h4,
+body > .settings .input h4 {
+	float: left;
+	font-size: 16px;
+	display: inline-block;
+}
+
+/* line 154, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+body > .settings .item .note,
+body > .settings .input .note {
+	color: #757575;
+	font-size: 13px;
+	line-height: 25px;
+}
+
+/* line 160, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+body > .settings .item .desc,
+body > .settings .input .desc {
+	float: left;
+	font-size: 13px;
+	text-align: left;
+	line-height: 20px;
+	max-width: calc(100% - 300px);
+}
+
+/* line 167, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+body > .settings .item .desc + input,
+body > .settings .input .desc + input {
+	width: 285px;
+}
+
+/* line 172, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+body > .settings .item .value,
+body > .settings .input .value {
+	max-width: 60%;
+	font-size: 14px;
+}
+
+/* line 177, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+body > .settings .item.no-label button + button,
+body > .settings .input.no-label button + button {
+	margin-left: 10px;
+}
+
+/* line 182, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+body > .settings .input {
 	/**
  * Radio
  */
@@ -5362,34 +5407,6 @@ body > .settings .input {
 	/**
  * Textarea
  */
-}
-
-/* line 148, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
-body > .settings .input h4 {
-	float: left;
-	font-size: 16px;
-	display: inline-block;
-}
-
-/* line 154, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
-body > .settings .input .note {
-	color: #757575;
-	font-size: 13px;
-	line-height: 25px;
-}
-
-/* line 160, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
-body > .settings .input .desc {
-	float: left;
-	font-size: 13px;
-	text-align: left;
-	line-height: 20px;
-	max-width: calc(100% - 300px);
-}
-
-/* line 167, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
-body > .settings .input .desc + input {
-	width: 285px;
 }
 
 /* line 4, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_controls.scss */
