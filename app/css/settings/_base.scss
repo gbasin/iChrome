@@ -133,9 +133,9 @@ body > .settings {
 		@import "pages/toolbar";
 		@import "pages/visual";
 		@import "pages/tabs";
-		@import "pages/advanced";
 	}
 
+	.item,
 	.input {
 		margin: 0;
 		font: inherit;
@@ -169,6 +169,17 @@ body > .settings {
 			}
 		}
 
+		.value {
+			max-width: 60%;
+			font-size: 14px;
+		}
+
+		&.no-label button + button {
+			margin-left: 10px;
+		}
+	}
+
+	.input {
 		@import "controls";
 	}
 }
