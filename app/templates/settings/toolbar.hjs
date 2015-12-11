@@ -30,7 +30,7 @@
 
 		<div class="input select other">
 			<label>
-				<h4>Search Engine</h4>
+				<h4>Search engine</h4>
 
 				<select name="search-engine">
 					<option value="https://google.com/search?q=%s">Google (Default)</option>

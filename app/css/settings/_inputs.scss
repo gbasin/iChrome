@@ -1,8 +1,12 @@
+button {
+	margin: 0;
+}
+
 select {
 	width: auto;
-	border-radius: 0;
-	font: inherit;
 	height: 32px;
+	font: inherit;
+	border-radius: 0;
 	border: 0!important;
 	padding: 0 0 0 25px!important;
 }

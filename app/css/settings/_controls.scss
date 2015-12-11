@@ -1,11 +1,10 @@
 /**
- * Radio inputs
+ * Radio
  */
 &.radios label {
 	font-size: 0;
 	font-weight: 400;
-	line-height: 20px;
-	margin: 0 15px 0 0;
+	margin: 0 0 0 15px;
 	vertical-align: top;
 
 	span {
@@ -13,6 +12,10 @@
 		padding-left: 5px;
 		vertical-align: top;
 	}
+}
+
+&.radios.no-label label {
+	margin: 0 15px 0 0;
 }
 
 
@@ -97,5 +100,42 @@
 							0 0 0 20px rgba($md-blue-500, .2);
 			}
 		}
+	}
+}
+
+/**
+ * Text
+ */
+&.text {
+	cursor: text;
+	text-align: left;
+	position: relative;
+
+	&:focus {
+		background: rgba(0, 0, 0, .05);
+	}
+
+	h4 {
+		z-index: 1;
+		float: none;
+		position: relative;
+	}
+
+	input {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		font-size: 16px;
+		text-align: right;
+		position: absolute;
+		border: 0!important;
+		background: transparent;
+		padding: 20px 25px 20px 40%!important;
+	}
+
+	input:focus {
+		background: rgba(0, 0, 0, .05);
 	}
 }

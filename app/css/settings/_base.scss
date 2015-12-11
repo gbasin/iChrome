@@ -29,18 +29,16 @@ body > .settings {
 		cursor: pointer;
 	}
 
-	.pro-badge {
-		&:after {
-			padding: 0 3px;
-			content: "Pro";
-			font-size: 11px;
-			font-weight: 500;
-			border-radius: 2px;
-			color: $md-orange-600;
-			text-transform: uppercase;
-			border: 1px solid currentColor;
-			font-family: Roboto, sans-serif;
-		}
+	.pro-badge:after {
+		padding: 0 3px;
+		content: "Pro";
+		font-size: 11px;
+		font-weight: 500;
+		border-radius: 2px;
+		color: $md-orange-600;
+		text-transform: uppercase;
+		border: 1px solid currentColor;
+		font-family: Roboto, sans-serif;
 	}
 
 	@import "inputs";
@@ -77,6 +75,15 @@ body > .settings {
 			margin: 30px auto;
 			box-shadow: $md-shadow-1dp;
 
+			&.pro-only h3:after {
+				@extend .pro-badge:after;
+
+				float: right;
+				font-size: 13px;
+				font-weight: 600;
+				border-width: 2px;
+			}
+
 			h3 {
 				font-size: 18px;
 				padding: 25px 25px 15px;
@@ -95,12 +102,35 @@ body > .settings {
 				&.no-label {
 					margin-top: 0;
 					text-align: left;
-					padding-top: 15px;
+				}
+			}
+
+			&.list-select {
+				.input {
+					text-align: left;
+
+					&:hover {
+						background: rgba(0, 0, 0, .03);
+					}
+				}
+
+				label {
+					h4 {
+						float: none;
+					}
+
+					input {
+						width: 20px;
+						height: 20px;
+						margin: 6px 15px 6px 0;
+						vertical-align: top;
+					}
 				}
 			}
 		}
 
 		@import "pages/toolbar";
+		@import "pages/visual";
 	}
 
 	.input {
@@ -115,6 +145,7 @@ body > .settings {
 		h4 {
 			float: left;
 			font-size: 16px;
+			display: inline-block;
 		}
 
 		.note {
