@@ -54,11 +54,11 @@
 			</li>
 
 			<li data-id="support">
-				<span class="header">Help and support</span>
+				<a class="header" href="https://ichrome.uservoice.com/knowledgebase" target="_blank">Help and support</a>
 			</li>
 
 			<li data-id="suggest">
-				<span class="header">Suggest a feature</span>
+				<a class="header" href="https://ichrome.uservoice.com/" target="_blank">Suggest a feature</a>
 			</li>
 		</ul>
 	</nav>
