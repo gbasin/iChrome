@@ -122,8 +122,8 @@ body > .settings {
 					input {
 						width: 20px;
 						height: 20px;
-						margin: 6px 15px 6px 0;
 						vertical-align: top;
+						margin: 6px 15px 6px 0;
 					}
 				}
 			}
@@ -131,6 +131,7 @@ body > .settings {
 
 		@import "pages/toolbar";
 		@import "pages/visual";
+		@import "pages/tabs";
 	}
 
 	.input {

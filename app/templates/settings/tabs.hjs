@@ -1,0 +1,43 @@
+<header>
+	<h2 class="page-name">Settings &ndash; Tabs</h2>
+</header>
+
+<main class="content" tabindex="-1">
+	<section class="tabs" data-id="tabs">
+		<h3>
+			Tabs
+
+			<button type="button" class="material blue create-new">Create new</button>
+		</h3>
+
+		<p class="desc">
+			Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.
+			<br /><br />
+			You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.
+		</p>
+
+		<div class="input text">
+			<input type="text" name="tab-name" value="Home" placeholder="Enter a tab name" maxlength="40" />
+
+			<button type="button" class="material flat blue default" data-action="make-default" disabled>Make default</button>
+
+			<button type="button" class="material toggle m-icon" data-action="move-up">keyboard_arrow_up</button>
+
+			<button type="button" class="material toggle m-icon" data-action="move-down">keyboard_arrow_down</button>
+
+			<button type="button" class="material toggle m-icon" data-action="delete">delete</button>
+		</div>
+
+		<div class="input text">
+			<input type="text" name="tab-name" value="New tab" placeholder="Enter a tab name" maxlength="40" />
+
+			<button type="button" class="material flat blue default" data-action="make-default">Make default</button>
+
+			<button type="button" class="material toggle m-icon" data-action="move-up">keyboard_arrow_up</button>
+
+			<button type="button" class="material toggle m-icon" data-action="move-down">keyboard_arrow_down</button>
+
+			<button type="button" class="material toggle m-icon" data-action="delete">delete</button>
+		</div>
+	</section>
+</main>
