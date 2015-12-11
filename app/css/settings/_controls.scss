@@ -29,7 +29,7 @@
 		margin: 0;
 		font: inherit;
 		display: block;
-		padding: 20px 25px;
+		padding: $input-padding;
 	}
 
 	label.other {
@@ -111,10 +111,6 @@
 	text-align: left;
 	position: relative;
 
-	&:focus {
-		background: rgba(0, 0, 0, .05);
-	}
-
 	h4 {
 		z-index: 1;
 		float: none;
@@ -133,9 +129,38 @@
 		border: 0!important;
 		background: transparent;
 		padding: 20px 25px 20px 40%!important;
+
+		&:focus {
+			background: rgba(0, 0, 0, .05);
+		}
+	}
+}
+
+/**
+ * Textarea
+ */
+&.textarea {
+	padding: 0;
+	cursor: text;
+	text-align: left;
+
+	h4 {
+		float: none;
+		display: block;
+		padding: $input-padding;
+		padding-bottom: 10px;
 	}
 
-	input:focus {
-		background: rgba(0, 0, 0, .05);
+	textarea {
+		width: 100%;
+		font-size: 16px;
+		min-height: 50px;
+		border: 0!important;
+		background: transparent;
+		padding: $input-padding!important;
+
+		&:focus {
+			background: rgba(0, 0, 0, .05);
+		}
 	}
 }

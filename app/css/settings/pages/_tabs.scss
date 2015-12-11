@@ -13,9 +13,9 @@
 	}
 
 	h3:after {
+		clear: both;
 		content: "";
 		display: block;
-		clear: both;
 	}
 
 	.input button.default {

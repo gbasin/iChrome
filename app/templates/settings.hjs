@@ -27,7 +27,7 @@
 				</ul>
 			</li>
 
-			<li data-id="tabs" class="active">
+			<li data-id="tabs">
 				<span class="header">Tabs</span>
 			</li>
 
@@ -43,13 +43,13 @@
 				<span class="header">Miscellaneous</span>
 			</li>
 
-			<li data-id="advanced">
+			<li data-id="advanced" class="active">
 				<span class="header">Advanced</span>
 
 				<ul class="sections">
-					<li data-id="backup">Backup and restore</li>
+					<li data-id="backups">Backup and restore</li>
 					<li data-id="css">Custom CSS</li>
-					<li data-id="debug">Debug tools</li>
+					<li data-id="debug-tools">Debug tools</li>
 				</ul>
 			</li>
 
@@ -64,47 +64,77 @@
 	</nav>
 </div>
 
-<div class="page tabs" data-id="tabs">
+<div class="page advanced" data-id="advanced">
 	<header>
-		<h2 class="page-name">Settings &ndash; Tabs</h2>
+		<h2 class="page-name">Settings &ndash; Advanced</h2>
 	</header>
 
 	<main class="content" tabindex="-1">
-		<section class="tabs" data-id="tabs">
-			<h3>
-				Tabs
-
-				<button type="button" class="material blue create-new">Create new</button>
-			</h3>
+		<section class="backups" data-id="backups">
+			<h3>Backup and restore</h3>
 
 			<p class="desc">
-				Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.
+				Backups have complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.
 				<br /><br />
-				You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.
+				Use the buttons below to roll iChrome back to a particular date or download one of your backups.
 			</p>
 
-			<div class="input text">
-				<input type="text" name="tab-name" value="Home" placeholder="Enter a tab name" maxlength="40" />
+			<div class="input no-label actions">
+				<button type="button" class="material blue backup">Backup now</button>
 
-				<button type="button" class="material flat blue default" data-action="make-default" disabled>Make default</button>
-
-				<button type="button" class="material toggle m-icon" data-action="move-up">keyboard_arrow_up</button>
-
-				<button type="button" class="material toggle m-icon" data-action="move-down">keyboard_arrow_down</button>
-
-				<button type="button" class="material toggle m-icon" data-action="delete">delete</button>
+				<button type="button" class="material blue restore">Restore from file</button>
 			</div>
 
-			<div class="input text">
-				<input type="text" name="tab-name" value="New tab" placeholder="Enter a tab name" maxlength="40" />
+			<div class="input" data-date="1449842127821">
+				<h4>Today at 8:55 AM</h4>
 
-				<button type="button" class="material flat blue default" data-action="make-default">Make default</button>
+				<button type="button" class="material flat blue" data-action="download">Download</button>
 
-				<button type="button" class="material toggle m-icon" data-action="move-up">keyboard_arrow_up</button>
+				<button type="button" class="material flat blue" data-action="restore">Restore</button>
+			</div>
 
-				<button type="button" class="material toggle m-icon" data-action="move-down">keyboard_arrow_down</button>
+			<div class="input" data-date="1449754273460">
+				<h4>Yesterday at 8:31 AM</h4>
 
-				<button type="button" class="material toggle m-icon" data-action="delete">delete</button>
+				<button type="button" class="material flat blue" data-action="download">Download</button>
+
+				<button type="button" class="material flat blue" data-action="restore">Restore</button>
+			</div>
+
+			<div class="input" data-date="1449026029975">
+				<h4>12/01/2015</h4>
+
+				<button type="button" class="material flat blue" data-action="download">Download</button>
+
+				<button type="button" class="material flat blue" data-action="restore">Restore</button>
+			</div>
+
+			<div class="input" data-date="1448637878867">
+				<h4>11/27/2015</h4>
+
+				<button type="button" class="material flat blue" data-action="download">Download</button>
+
+				<button type="button" class="material flat blue" data-action="restore">Restore</button>
+			</div>
+		</section>
+
+		<section class="css" data-id="css">
+			<h3>Custom CSS</h3>
+
+			<p class="desc">You can use CSS (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="blank">definition</a>) to customize almost any part of iChrome.</p>
+
+			<div class="input textarea">
+				<textarea name="css" maxlength="1000" placeholder="Enter up to 1000 characters of CSS here"></textarea>
+			</div>
+		</section>
+
+		<section class="debug-tools" data-id="debug-tools">
+			<h3>Debug tools</h3>
+
+			<p class="desc"><b>WARNING:</b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.</p>
+
+			<div class="input no-label">
+				<button type="button" class="material red">Open tools</button>
 			</div>
 		</section>
 	</main>
