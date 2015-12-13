@@ -30,7 +30,7 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 							var html = '<div class="suggestion active">' + _.escape(val) + '</div>',
 								num = 1;
 
-							d[1].forEach(function(e, i) {
+							d[1].forEach(function(e) {
 								if (num > 10) return;
 
 								if (e[0] !== val) {

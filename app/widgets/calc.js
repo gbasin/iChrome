@@ -1,7 +1,7 @@
 /*
  * The Calculator widget.
  */
-define(["jquery"], function($) {
+define(function() {
 	return {
 		id: 28,
 		size: 4,
@@ -177,7 +177,7 @@ define(["jquery"], function($) {
 				if (e.which === 13) {
 					calculate();
 				}
-			}).on("input", function(e) {
+			}).on("input", function() {
 				var val = d0.value.replace(/[^ +\-()1234567890*\/×x\.÷]/g, "");
 
 				if (d0.value !== val) {
@@ -188,7 +188,7 @@ define(["jquery"], function($) {
 
 					d0.setSelectionRange(start, end);
 				}
-			}).on("focusout", function(e) {
+			}).on("focusout", function() {
 				d0.value = d0.value // See calculate() for comments
 					.replace(/[^ +\-()1234567890*\/x\.×÷]|[\-+\/\*\.]{2}/g, "")
 					.replace(/[0-9\.]+/g, function(match) {

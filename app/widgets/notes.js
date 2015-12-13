@@ -63,16 +63,16 @@ define(["jquery"], function($) {
 				// Speed is of the essence, use mostly vanilla JS here
 				this.div.innerHTML = this.noteElm[0].innerHTML;
 
-				[].forEach.call(this.div.querySelectorAll("div"), function(e, i) {
+				[].forEach.call(this.div.querySelectorAll("div"), function(e) {
 					$(e).replaceWith("<br>" + e.innerHTML);
 				});
 
-				[].forEach.call(this.div.querySelectorAll(":not(pre):not(blockquote):not(figure):not(hr):not(a):not(b):not(u):not(i):not(img):not(strong):not(p):not(sub):not(sup):not(br)"), function(e, i) {
+				[].forEach.call(this.div.querySelectorAll(":not(pre):not(blockquote):not(figure):not(hr):not(a):not(b):not(u):not(i):not(img):not(strong):not(p):not(sub):not(sup):not(br)"), function(e) {
 					$(e).replaceWith(e.innerHTML);
 				});
 
-				[].forEach.call(this.div.querySelectorAll("pre, blockquote, figure, hr, a, b, u, i, img, strong, p, sub, sup, br"), function(e, i) {
-					[].forEach.call(e.attributes, function(a, i) {
+				[].forEach.call(this.div.querySelectorAll("pre, blockquote, figure, hr, a, b, u, i, img, strong, p, sub, sup, br"), function(e) {
+					[].forEach.call(e.attributes, function(a) {
 						if (a.name === "style" && a.value.indexOf("block;") !== -1) {
 							e.innerHTML = "<br>" + e.innerHTML;
 

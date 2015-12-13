@@ -33,7 +33,7 @@ define(
 					"click .apps-toggle": "toggleApps",
 					"click .menu-toggle": Menu.toggle.bind(Menu),
 
-					"click .announcements": function(e) {
+					"click .announcements": function() {
 						Announcements.show();
 					},
 					"click .apps a.icon": function(e) {
@@ -79,7 +79,7 @@ define(
 
 					if (!elm.hasClass("active")) {
 						if (!this.appsLoaded) {
-							elm.find("img[data-src]").each(function(e, i) {
+							elm.find("img[data-src]").each(function() {
 								this.setAttribute("src", this.getAttribute("data-src"));
 
 								this.removeAttribute("data-src");

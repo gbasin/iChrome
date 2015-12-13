@@ -49,7 +49,7 @@ define(["lodash", "./view", "moment"], function(_, MainView, moment) {
 		},
 
 
-		onBeforeRender: function(data, demo) {
+		onBeforeRender: function(data) {
 			data.layout = this.layout;
 
 			data.list = this.layout === "list";

@@ -82,7 +82,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 
 					var taskLists = {};
 
-					d.items.forEach(function(e, i) {
+					d.items.forEach(function(e) {
 						taskLists[e.id] = e.title;
 					});
 
@@ -101,7 +101,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 				url: "https://www.googleapis.com/tasks/v1/lists/" + this.config.list + "/tasks?fields=items(completed%2Cdue%2Cid%2Cnotes%2Cstatus%2Ctitle)",
 				success: function(d) {
 					if (d && d.items) {
-						var items = d.items.map(function(e, i) {
+						var items = d.items.map(function(e) {
 							var ret = {
 								id: e.id,
 								title: e.title.trim(),
@@ -294,7 +294,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 			var that = this;
 
 			this.elm.off(".tasks")
-				.on("click.tasks", "button.add", function(e) {
+				.on("click.tasks", "button.add", function() {
 					if (that.addForm) return;
 
 					that.addForm = $('<div class="item edit transitioning add" style="height: 0;">' + that.utils.renderTemplate("item", { edit: true }) + '</div>');
@@ -332,7 +332,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 						item.find(".title").val(val);
 					}, 150);
 				})
-				.on("click.tasks", ".item.edit .done", function(e) {
+				.on("click.tasks", ".item.edit .done", function() {
 					that.save($(this).parent());
 				})
 				.on("keydown.tasks", ".item.edit input, .item.edit .done", function(e) {
@@ -341,7 +341,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 				.on("keydown.tasks", ".item.edit textarea", function(e) {
 					if (e.which === 13 && e.shiftKey) that.save($(this).parent());
 				})
-				.on("click.tasks", ".item.edit .delete", function(e) {
+				.on("click.tasks", ".item.edit .delete", function() {
 					var item = $(this).parent(),
 						id = item.attr("data-id");
 
@@ -372,7 +372,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 						}
 					});
 				})
-				.on("click.tasks", ".item.edit .move-up", function(e) {
+				.on("click.tasks", ".item.edit .move-up", function() {
 					var item = $(this).parent(),
 						id = item.attr("data-id");
 
@@ -384,7 +384,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 						type: "POST",
 						url: "https://www.googleapis.com/tasks/v1/lists/" + that.config.list + "/tasks/" + id + "/move" +
 								"?previous=" + item.prev().attr("data-id"),
-						success: function(xhr) {
+						success: function() {
 							var idx = _.findIndex(that.data.items, { id: id });
 
 							that.data.items.splice(idx - 1, 0, that.data.items.splice(idx, 1)[0]);
@@ -393,7 +393,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 						}
 					});
 				})
-				.on("click.tasks", ".item.edit .move-down", function(e) {
+				.on("click.tasks", ".item.edit .move-down", function() {
 					var item = $(this).parent(),
 						id = item.attr("data-id");
 
@@ -405,7 +405,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 						type: "POST",
 						url: "https://www.googleapis.com/tasks/v1/lists/" + that.config.list + "/tasks/" + id + "/move" +
 								"?previous=" + item.prev().attr("data-id"),
-						success: function(xhr) {
+						success: function() {
 							var idx = _.findIndex(that.data.items, { id: id });
 
 							that.data.items.splice(idx + 1, 0, that.data.items.splice(idx, 1)[0]);
@@ -414,7 +414,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 						}
 					});
 				})
-				.on("focusout.tasks", ".item.edit .due-date", function(e) {
+				.on("focusout.tasks", ".item.edit .due-date", function() {
 					if (this.value) {
 						var date = moment(this.value);
 
@@ -425,7 +425,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 						this.value = date.format("MMMM Do YYYY");
 					}
 				})
-				.on("change.tasks", ".item .check", function(e) {
+				.on("change.tasks", ".item .check", function() {
 					var check = this,
 						id = this.parentNode.getAttribute("data-id");
 

@@ -206,7 +206,7 @@ define(["jquery", "moment"], function($, moment) {
 			$.get("http://www.reddit.com/" + (config.subreddit && config.subreddit !== "" ? "r/" + config.subreddit : "") + (config.sort && config.sort !== "" && config.sort !== "hot" ? "/" + config.sort : "") + ".json?limit=10", function(d) {
 				var links = [];
 
-				d.data.children.slice(0, 10).forEach(function(e, i) {
+				d.data.children.slice(0, 10).forEach(function(e) {
 					e = e.data;
 
 					var link = {
@@ -243,7 +243,7 @@ define(["jquery", "moment"], function($, moment) {
 
 			data.links = data.links.slice(0, this.config.number || 5);
 
-			data.links.forEach(function(e, i) {
+			data.links.forEach(function(e) {
 				if (demo) e.created = moment(e.created).from([2014, 0, 1, 11]).replace("hour", "hr").replace("minute", "min").replace("a few ", "");
 				else e.created = moment(e.created).fromNow().replace("hour", "hr").replace("minute", "min").replace("a few ", "");
 

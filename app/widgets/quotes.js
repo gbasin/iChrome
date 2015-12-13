@@ -83,7 +83,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 			iheartquotes: {
 				url: "http://www.iheartquotes.com/api/v1/random?max_lines=4&max_characters=130&format=json",
 
-				parse: function(d, unknown) {
+				parse: function(d) {
 					return {
 						body: d.quote.trim(),
 						noquotes: true,
@@ -96,7 +96,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 			quotationspage: {
 				url: "http://www.quotationspage.com/random.php3?number=1&collection%5B%5D=mgm&collection%5B%5D=motivate&collection%5B%5D=classic",
 
-				parse: function(d, unknown) {
+				parse: function(d) {
 					d = $($.parseHTML(d
 						.replace(/ src="\/\//g, " data-src=\"https://")
 						.replace(/ src="/g, " data-src=\"")
@@ -116,7 +116,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 			thinkexist: {
 				url: "http://en.thinkexist.com/rss.asp?special=random",
 
-				parse: function(d, unknown) {
+				parse: function(d) {
 					d = $(d);
 
 					return {

@@ -56,7 +56,7 @@ define(["lodash", "jquery", "moment", "widgets/views/main"], function(_, $, mome
 
 				data.allView = activeView === "top";
 
-				data.sections = _(data.games).map(function(game, i) {
+				data.sections = _(data.games).map(function(game) {
 					// If this is a V1-format game, skip
 					if (game.home_first) {
 						return;
@@ -84,7 +84,7 @@ define(["lodash", "jquery", "moment", "widgets/views/main"], function(_, $, mome
 						game.pre = true;
 
 						game.shortDate = mDate.format("LT");
-						
+
 						if (game.broadcasts) {
 							game.broadcasts = game.broadcasts.join(", ");
 						}
@@ -157,7 +157,7 @@ define(["lodash", "jquery", "moment", "widgets/views/main"], function(_, $, mome
 			return data;
 		},
 
-		onRender: function(data) {
+		onRender: function() {
 			if (this._scrollTop) {
 				this.$(".games").scrollTop(this._scrollTop);
 			}

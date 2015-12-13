@@ -27,7 +27,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 				queue.push(newData.settings.theme);
 			}
 
-			newData.tabs.forEach(function(e, i) {
+			newData.tabs.forEach(function(e) {
 				if (e.theme && parseInt(e.theme) && !storage.cached[e.theme]) {
 					queue.push(e.theme);
 				}
@@ -43,7 +43,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 						}
 					});
 				}
-				
+
 				var save = function() {
 					newData.cached = storage.cached;
 
@@ -52,7 +52,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 
 				if (themesChanged) {
 					// Any combination of changes could've happened, delete and recache everything
-					
+
 					var cacheNew = function() {
 						if (newData.themes.length) {
 							queue = _.map(newData.themes, function(e, i) {
@@ -61,11 +61,11 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 										if (queue.length) {
 											return queue.pop()();
 										}
-										
+
 										save();
 									};
 								}
-								
+
 								if (e.image.indexOf("#OrigURL:") !== -1) {
 									e.image = e.image.split("#OrigURL:")[1];
 								}
@@ -75,7 +75,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 										if (queue.length) {
 											return queue.pop()();
 										}
-										
+
 										save();
 									});
 								};

@@ -4,7 +4,7 @@
 define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], function($, _, moment, Backbone, Browser, OAuth) {
 	var View = Backbone.View.extend({
 		events: {
-			"click .no-key button": function(e) {
+			"click .no-key button": function() {
 				(this.oAuth || this.setOAuth()).startAuthFlow(this.refresh.bind(this));
 			}
 		},
@@ -66,7 +66,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 								that.openWindow = win.id;
 
 								Browser.webRequest.onBeforeRequest.addListener(
-									function(info) {
+									function() {
 										this.exchangeCode(d.code, cb);
 
 										Browser.windows.remove(win.id);
@@ -153,7 +153,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 			};
 
 			this.oAuth.ajax = function(config) {
-				this.getToken(function(token, data) {
+				this.getToken(function(token) {
 					if (!config.data) {
 						config.data = {};
 					}

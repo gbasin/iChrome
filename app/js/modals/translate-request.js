@@ -8,7 +8,7 @@ define(["backbone", "browser/api", "modals/modals", "core/render"], function(Bac
 			className: "notification",
 
 			events: {
-				"click .close": function(e) {
+				"click .close": function() {
 					this.$el.removeClass("visible");
 
 					delete Browser.storage.translateRequest;

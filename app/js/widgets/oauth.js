@@ -96,11 +96,11 @@ define(["lodash", "oauth"], function(_, OAuth) {
 	};
 
 	WidgetOAuth.prototype.refreshToken = function(cb, silent) {
-		return OAuth.prototype.refreshToken.call(this, this._bind(cb));
+		return OAuth.prototype.refreshToken.call(this, this._bind(cb), silent);
 	};
 
 	WidgetOAuth.prototype.startAuthFlow = function(cb, silent) {
-		return OAuth.prototype.startAuthFlow.call(this, this._bind(cb));
+		return OAuth.prototype.startAuthFlow.call(this, this._bind(cb), silent);
 	};
 
 	WidgetOAuth.prototype.ajax = function(params) {

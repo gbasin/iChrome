@@ -114,7 +114,7 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 
 					var calendars = {};
 
-					d.items.forEach(function(e, i) {
+					d.items.forEach(function(e) {
 						calendars[e.id] = e.summary;
 					});
 
@@ -168,7 +168,7 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 						success: function(d) {
 							if (!d || !d.items) return;
 
-							d.items.forEach(function(e, i) {
+							d.items.forEach(function(e) {
 								if (e.backgroundColor) {
 									calendarColors[e.id] = e.backgroundColor;
 								}
@@ -188,7 +188,7 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 						},
 						success: function(d) {
 							if (d && d.items) {
-								events = events.concat(_.map(d.items, function(e, i) {
+								events = events.concat(_.map(d.items, function(e) {
 									var event = {
 										link: e.htmlLink,
 										title: e.summary,

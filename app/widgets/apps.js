@@ -104,7 +104,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 						});
 					break;
 					case "offline":
-						list.sort(function(a, b) {
+						list.sort(function(a) {
 							return a.offlineEnabled;
 						});
 					break;
@@ -115,7 +115,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 					break;
 				}
 
-				list.forEach(function(e, i) {
+				list.forEach(function(e) {
 					if (e.id !== Browser.app.id && (all || e.enabled)) {
 						apps.push({
 							name: e.shortName,
@@ -216,7 +216,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 					distance: 20,
 					itemSelector: ".app",
 					placeholder: "<div class=\"app holder\"/>",
-					onDragStart: function(item, container, _super) {
+					onDragStart: function(item) {
 						var width = item.outerWidth(),
 							height = item.outerHeight();
 

@@ -53,7 +53,7 @@ define(function() {
 			(function read() { // Recursive and self executing, necessary as per the specs
 				reader.readEntries(function(results) {
 					if (results.length) {
-						results.forEach(function(e, i) {
+						results.forEach(function(e) {
 							length++;
 
 							if (e.isDirectory) {

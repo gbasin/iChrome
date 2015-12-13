@@ -274,7 +274,7 @@ define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Brow
 				}
 
 				link.end().end().html("").parent().removeClass("active");
-			}).on("click", ".new > a", function(e) {
+			}).on("click", ".new > a", function() {
 				if (!that.adding) {
 					if ($(this).attr("data-type") === "folder") {
 						var html = '<div class="folder drag"><input type="text" class="name" disabled /><div class="tools"><span class="' +
@@ -300,7 +300,7 @@ define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Brow
 				dynamicDimensions: true,
 				containerSelector: ".folder .items, .list",
 				placeholder: "<a class=\"link holder\"/>",
-				onDragStart: function(item, container, _super) {
+				onDragStart: function(item) {
 					item.css({
 						height: item.outerHeight(),
 						width: item.outerWidth()
@@ -308,7 +308,7 @@ define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Brow
 
 					item.addClass("dragged");
 				},
-				onDrag: function(item, position, _super) {
+				onDrag: function(item, position) {
 					var ctx = $(item.context),
 						ctp = ctx.position(),
 						ctpp = ctx.parent().position();

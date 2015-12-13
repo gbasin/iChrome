@@ -4,7 +4,7 @@
 define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _, moment, Backbone, Browser) {
 	var View = Backbone.View.extend({
 		events: {
-			"click .no-key button": function(e) {
+			"click .no-key button": function() {
 				Browser.tabs.create({
 					url: "https://www.pushbullet.com/signin"
 				});
@@ -159,7 +159,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 				.sortBy(function(a, b) {
 					return b.created - a.created;
 				})
-				.map(function(e, i) {
+				.map(function(e) {
 					try {
 						var parsed = {
 							id: e.iden,

@@ -280,7 +280,7 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 			return data;
 		},
 
-		onRender: function(data) {
+		onRender: function() {
 			this.$("select.from").val(this.data.from);
 			this.$("select.to").val(this.data.to);
 		}

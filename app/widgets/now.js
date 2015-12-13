@@ -243,7 +243,7 @@ define(["jquery", "oauth", "browser/api"], function($, OAuth, Browser) {
 				that.oAuth.ajax({
 					type: "DELETE",
 					url: "https://www.googleapis.com/chromenow/v1/notifications/" + card.id + "?chromeNotificationId=" + encodeURIComponent(card.cnId) + "&age=29&duration=" + card.duration,
-					success: function(d) {
+					success: function() {
 						this.data.cards.splice(this.data.cards.indexOf(card), 1);
 
 						if (elm.hasClass("btns")) {

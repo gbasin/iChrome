@@ -49,7 +49,7 @@ define(["lodash", "./view", "moment"], function(_, MainView, moment) {
 		},
 
 
-		onBeforeRender: function(data, demo) {
+		onBeforeRender: function(data) {
 			data.layout = this.layout;
 
 			data.list = this.layout === "list";
@@ -78,9 +78,9 @@ define(["lodash", "./view", "moment"], function(_, MainView, moment) {
 
 						if (featured === 1) {
 							// Bing identifies the subject in images, resizing them to focus appropriately
-							// 
+							//
 							// We calculate the final size at 2x and request a scaled image
-							// 
+							//
 							// The calculation here is a 60% flex-basis + a flex-grow of 3 (takes 0.75 of
 							// available space) times the remaining 10% of the container width (after the
 							// two flex-basis's) minus 20px combined margin from both featured articles
@@ -115,7 +115,7 @@ define(["lodash", "./view", "moment"], function(_, MainView, moment) {
 
 				var defaultTab = [];
 
-				var tabs = _.compact(_.map(this.model.data.topics, function(e, i) {
+				var tabs = _.compact(_.map(this.model.data.topics, function(e) {
 					e = {
 						id: e[0],
 						name: e[1],

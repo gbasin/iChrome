@@ -134,7 +134,7 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 						this.config.resolvedLocs = [];
 						this.config.resolvedNames = [];
 
-						_.each(d.locations, function(e, i) {
+						_.each(d.locations, function(e) {
 							this.config.location.push(e.name);
 							this.config.resolvedNames.push(e.name);
 							this.config.resolvedLocs.push([e.lat, e.lon]);

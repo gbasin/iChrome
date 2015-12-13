@@ -128,7 +128,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 			return columns;
 		},
 
-		
+
 		/**
 		 * Initializes sortable.
 		 *
@@ -208,7 +208,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 		remove: function(sortable) {
 			// jQuery sortable doesn't have a method for removing containers from
 			// groups without destroying the entire group or for accessing them directly.
-			// 
+			//
 			// So, we have to get the rootGroup directly from an element's `data` which we
 			// can then cleanup.
 			var elms = this.$("> .remove, > .widgets-container.medley, > .widgets-container > .column"),
@@ -252,7 +252,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 			main.setAttribute("class", "widgets-container" + (this.model.get("fixed") && !isGrid ? " fixed" : "") + (isGrid ? " medley" : ""));
 
 
-			var models = _.map(this.model.columns, function(collection, i) {
+			var models = _.map(this.model.columns, function(collection) {
 				var column = main;
 
 				if (!isGrid) {

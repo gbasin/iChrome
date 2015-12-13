@@ -17,7 +17,7 @@ define(["jquery", "lodash", "i18n/i18n"], function($, _, Translate) {
 			},
 			booleans = ["ok", "ltab", "stab", "apps", "plus", "voice", "gmail"];
 
-		modal.find(".general form, .visual form, .advanced form").serializeArray().forEach(function(e, i) {
+		modal.find(".general form, .visual form, .advanced form").serializeArray().forEach(function(e) {
 			if (booleans.indexOf(e.name) !== -1) {
 				settings[e.name] = true; // jQuery will only include a boolean value when serializing if it's checked/true
 			}
@@ -54,7 +54,7 @@ define(["jquery", "lodash", "i18n/i18n"], function($, _, Translate) {
 			if (!tab) return;
 
 			// Serialize its settings
-			$(this).serializeArray().forEach(function(e, i) {
+			$(this).serializeArray().forEach(function(e) {
 				if (e.value !== "") tabSettings[e.name] = e.value;
 			});
 

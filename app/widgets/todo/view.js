@@ -102,12 +102,12 @@ define(["jquery", "widgets/views/main", "lib/jquery.sortable"], function($, Widg
 			return data;
 		},
 
-		onRender: function(data) {
+		onRender: function() {
 			this.sortable = this.$(".list").sortable({
 				handle: ".move",
 				itemSelector: ".item",
 				placeholder: "<div class=\"item holder\"/>",
-				onDragStart: function(item, container, _super) {
+				onDragStart: function(item) {
 					item.css({
 						height: item.outerHeight(),
 						width: item.outerWidth()
@@ -115,7 +115,7 @@ define(["jquery", "widgets/views/main", "lib/jquery.sortable"], function($, Widg
 
 					item.addClass("dragged");
 				},
-				onDrag: function(item, position, _super) {
+				onDrag: function(item, position) {
 					var ctx = $(item.context),
 						ctp = ctx.position(),
 						ctpp = ctx.parent().position();

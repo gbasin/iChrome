@@ -2,8 +2,8 @@
  * The tabs container-model.
  */
 define(
-	["lodash", "jquery", "backbone", "browser/api", "storage/storage", "storage/defaults", "core/status", "core/analytics", "tabs/collection", "i18n/i18n", "core/render"],
-	function(_, $, Backbone, Browser, Storage, Defaults, Status, Track, Tabs, Translate, render) {
+	["lodash", "jquery", "backbone", "browser/api", "storage/storage", "storage/defaults", "core/status", "core/analytics", "tabs/collection", "i18n/i18n"],
+	function(_, $, Backbone, Browser, Storage, Defaults, Status, Track, Tabs, Translate) {
 		var Model = Backbone.Model.extend({
 				initialize: function() {
 					this.tabs = new Tabs();
@@ -71,7 +71,7 @@ define(
 							}.bind(this), 500);
 						}
 					},
-					"mouseout .tab-nav button": function(e) {
+					"mouseout .tab-nav button": function() {
 						clearTimeout(this.timeout);
 					}
 				},
@@ -130,7 +130,7 @@ define(
 						itemSelector: "section",
 						dynamicDimensions: true,
 						placeholder: "<section class=\"placeholder\"/>",
-						onDragStart: function(item, container, _super) {
+						onDragStart: function(item) {
 							var ret = item.triggerHandler("sortabledragstart", arguments);
 
 							if (ret) {
@@ -152,7 +152,7 @@ define(
 							tcOTop = tc.offsetTop;
 							tcHeight = tc.offsetHeight;
 						},
-						onDrag: function(item, position, _super) {
+						onDrag: function(item, position) {
 							if (item.context) {
 								position.top -= item.context.offsetTop;
 								position.left -= item.context.offsetLeft;
@@ -174,7 +174,7 @@ define(
 							item[0].style.top = position.top + "px";
 							item[0].style.left = position.left + "px";
 						},
-						onBeforeDrop: function(item, placeholder, group, _super) {
+						onBeforeDrop: function(item, placeholder) {
 							if (placeholder.parent() && placeholder.parent().is(".remove")) {
 								if (item.installing || confirm(Translate("widgets.delete_confirm"))) {
 									item.remove();

@@ -122,7 +122,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 				that.trigger("progress", length, 0);
 
-				ids.forEach(function(id, i) {
+				ids.forEach(function(id) {
 					active++;
 
 					dir.getFile(id + (isVideo ? ".mp4" : ".jpg"), { create: true }, function(fe) {
@@ -132,7 +132,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 						xhr.responseType = "blob";
 
-						xhr.onload = function(e) {
+						xhr.onload = function() {
 							if (xhr.status !== 200) {
 								return err();
 							}
@@ -140,7 +140,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 							var blob = xhr.response;
 
 							fe.createWriter(function(writer) {
-								writer.onwrite = function(e) {
+								writer.onwrite = function() {
 									active--;
 
 									// This stores the image as a theme
@@ -239,7 +239,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 		// These are utilities that the URL and image parser are rendered with
 		// They can be used to incorporate things like random numbers
-		Object.getOwnPropertyNames(Math).forEach(function(e, i) {
+		Object.getOwnPropertyNames(Math).forEach(function(e) {
 			if (typeof Math[e] === "function") {
 				utils.Math[e] = function() {
 					return function(args) {
@@ -423,7 +423,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 							xhr.responseType = "blob";
 
-							xhr.onload = function(e) {
+							xhr.onload = function() {
 								if (xhr.status !== 200) {
 									return err();
 								}
@@ -431,7 +431,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 								var blob = xhr.response;
 
 								fe.createWriter(function(writer) {
-									writer.onwrite = function(e) {
+									writer.onwrite = function() {
 										theme.image = fe.toURL() + "#OrigURL:" + url;
 
 										theme.offline = true;
@@ -500,7 +500,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 								var length = entries.length,
 									done = 0;
 
-								entries.forEach(function(e, i) {
+								entries.forEach(function(e) {
 									var nName = parseInt(e.name);
 
 									if (typeof nName !== "undefined" && nName > id && themes[nName] && (nName + "").length === e.name.length) { // The theme name is just a number
@@ -574,7 +574,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 					tDir.getDirectory("Custom", { create: true }, function(dir) {
 						dir.getFile(id, { create: true }, function(fe) {
 							fe.createWriter(function(writer) {
-								writer.onwrite = function(e) {
+								writer.onwrite = function() {
 									theme.image = fe.toURL();
 
 									theme.offline = true;

@@ -31,7 +31,7 @@ define(["jquery", "backbone"], function($, Backbone) {
 
 			return this;
 		},
-		close: function(e) { // This is an overridable close method that is called from event handlers, it lets the content intercept closes.
+		close: function() { // This is an overridable close method that is called from event handlers, it lets the content intercept closes.
 			return this.hide();
 		},
 		destroy: function() {

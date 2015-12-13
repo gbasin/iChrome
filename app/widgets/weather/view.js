@@ -224,7 +224,7 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 
 		activeDays: {},
 
-		onBeforeRender: function(data, demo) {
+		onBeforeRender: function(data) {
 			if (!data.weather) {
 				data.weather = [];
 			}
@@ -247,7 +247,7 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 
 
 			if (this.Pro.isPro) {
-				data.weather = _.each(data.weather, function(loc, i) {
+				data.weather = _.each(data.weather, function(loc) {
 					if (loc.forecast && loc.forecast[0]) {
 						loc.forecast[0].active = true;
 					}

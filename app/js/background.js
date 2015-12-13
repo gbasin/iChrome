@@ -153,7 +153,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 });
 
 chrome.webRequest.onBeforeRequest.addListener(
-	function(info) {
+	function() {
 		return {
 			redirectUrl: "chrome-extension://" + chrome.i18n.getMessage("@@extension_id") + "/index.html"
 		};
@@ -215,7 +215,7 @@ var getFeed = function(theme, cb, next) {
 		};
 
 	// These are utilities that the URL and image parse are rendered with. With them the URL can incorporate things like a random number.
-	Object.getOwnPropertyNames(Math).forEach(function(e, i) {
+	Object.getOwnPropertyNames(Math).forEach(function(e) {
 		if (typeof Math[e] === "function") {
 			utils.Math[e] = function() {
 				return function(args) {
@@ -357,7 +357,7 @@ var cache = function(theme, cb) {
 	fs.root.getDirectory("Themes", { create: true }, function(dir) {
 		var active = 0;
 
-		ids.forEach(function(id, i) {
+		ids.forEach(function(id) {
 			active++;
 
 			dir.getFile(id + ".jpg", { create: true }, function(fe) {
@@ -367,7 +367,7 @@ var cache = function(theme, cb) {
 
 				xhr.responseType = "blob";
 
-				xhr.onload = function(e) {
+				xhr.onload = function() {
 					if (xhr.status !== 200) {
 						return err();
 					}
@@ -375,7 +375,7 @@ var cache = function(theme, cb) {
 					var blob = xhr.response;
 
 					fe.createWriter(function(writer) {
-						writer.onwrite = function(e) {
+						writer.onwrite = function() {
 							active--;
 
 							// This stores the image as a theme

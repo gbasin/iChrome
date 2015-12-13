@@ -93,7 +93,7 @@ define(["lodash", "moment", "widgets/views/main"], function(_, moment, WidgetVie
 		},
 
 
-		onBeforeRender: function(data, demo) {
+		onBeforeRender: function(data) {
 			if (!data.loading) {
 				data.items = _.map(data.items, function(e) {
 					e = _.clone(e);
@@ -114,7 +114,7 @@ define(["lodash", "moment", "widgets/views/main"], function(_, moment, WidgetVie
 
 				var defaultTab = [];
 
-				var tabs = _.compact(_.map(this.model.data.topics, function(e, i) {
+				var tabs = _.compact(_.map(this.model.data.topics, function(e) {
 					e = {
 						id: e[0],
 						name: e[1],
@@ -157,7 +157,7 @@ define(["lodash", "moment", "widgets/views/main"], function(_, moment, WidgetVie
 
 
 			if (data.images) {
-				this.$("img").on("error", function(e) {
+				this.$("img").on("error", function() {
 					this.style.height = "20px";
 				});
 			}

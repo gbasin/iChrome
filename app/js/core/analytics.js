@@ -198,7 +198,7 @@ define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 	 *
 	 * @api     public
 	 */
-	track.queue = function(type) {
+	track.queue = function() {
 		// Still need to wait for Chrome 45 to use arrow functions (e => !e)
 		var params = _.dropRightWhile(arguments, function(e) { return !e; });
 
@@ -245,7 +245,7 @@ define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 
 	// Track pageview with GA and internal counter
 	track.pageview();
-	
+
 	Browser.storage.uses = parseInt(Browser.storage.uses || 0) + 1;
 
 	return track;

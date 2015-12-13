@@ -100,7 +100,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 							label: this.utils.translate("lists")
 						};
 
-						d.forEach(function(e, i) {
+						d.forEach(function(e) {
 							sources.lists[e.id_str] = e.name;
 						});
 					}
@@ -125,7 +125,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 								token = "",
 								secret = "";
 
-							t.forEach(function(e, i) {
+							t.forEach(function(e) {
 								var split = e.split("=");
 
 								if (split[0] === "oauth_token") {
@@ -161,7 +161,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 							token = "",
 							secret = "";
 
-						t.forEach(function(e, i) {
+						t.forEach(function(e) {
 							var split = e.split("=");
 
 							if (split[0] === "oauth_token") {
@@ -247,7 +247,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 			else {
 				url = options.url.split("?");
 
-				((url && url[1]) || "").split("&").forEach(function(e, i) {
+				((url && url[1]) || "").split("&").forEach(function(e) {
 					var param = e.split("=");
 
 					if (param[0]) parameters[param[0]] = param[1] || "";
@@ -353,7 +353,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 							}
 						};
 
-						d.forEach(function(e, i) {
+						d.forEach(function(e) {
 							var retweet = e.retweeted_status || false;
 
 							var tweet = {
@@ -367,7 +367,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 
 							var replaces = [];
 
-							(retweet ? retweet.entities : e.entities).hashtags.forEach(function(e, i) {
+							(retweet ? retweet.entities : e.entities).hashtags.forEach(function(e) {
 								replaces.push({
 									loc: e.indices,
 									text: '<a href="http://www.twitter.com/search?q=%23' +
@@ -378,14 +378,14 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 								});
 							});
 
-							(retweet ? retweet.entities : e.entities).urls.forEach(function(e, i) {
+							(retweet ? retweet.entities : e.entities).urls.forEach(function(e) {
 								replaces.push({
 									loc: e.indices,
 									text: '<a href="' + hEscape(e.url) + '" target="_blank">' + hEscape(e.display_url) + '</a>'
 								});
 							});
 
-							(retweet ? retweet.entities : e.entities).user_mentions.forEach(function(e, i) {
+							(retweet ? retweet.entities : e.entities).user_mentions.forEach(function(e) {
 								replaces.push({
 									loc: e.indices,
 									text: '<a href="http://www.twitter.com/' +
@@ -400,7 +400,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 								return b.loc[1] - a.loc[1];
 							});
 
-							replaces.forEach(function(e, i) {
+							replaces.forEach(function(e) {
 								tweet.content = tweet.content.substr(0, e.loc[0]) + e.text + tweet.content.substr(e.loc[1]);
 							});
 
@@ -438,7 +438,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 
 			var data = $.extend(true, {}, this.data);
 
-			data.tweets.forEach(function(e, i) {
+			data.tweets.forEach(function(e) {
 				e.age = moment(e.age).fromNow(true)
 							.replace(" years", "y").replace(" months", "mth")
 							.replace(" weeks", "w").replace(" days", "d")

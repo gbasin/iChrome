@@ -15,7 +15,7 @@ define(["backbone", "settings/debug", "storage/storage", "i18n/i18n", "core/rend
 			events: {
 				"click .debug" :"debug"
 			},
-			debug: function(e) {
+			debug: function() {
 				if (confirm(Translate("settings.advanced.debug_confirm"))) {
 					if (!this.Debug) {
 						this.Debug = new Debug();
@@ -32,7 +32,7 @@ define(["backbone", "settings/debug", "storage/storage", "i18n/i18n", "core/rend
 			},
 			remove: function() {
 				this.$("input.color").spectrum("destroy");
-				
+
 				Backbone.View.prototype.remove.call(this);
 			},
 			render: function() {

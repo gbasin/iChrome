@@ -14,7 +14,7 @@ define(
 
 						var set = _.clone(storage.settings);
 
-						set.tabs = _.map(storage.tabs, function(e, i) {
+						set.tabs = _.map(storage.tabs, function(e) {
 							return {
 								id: e.id,
 								name: e.name || Defaults.tab.name

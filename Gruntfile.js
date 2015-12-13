@@ -30,9 +30,9 @@ module.exports = function (grunt) {
 				noarg: true,
 				undef: true,
 				eqeqeq: true,
+				unused: true,
 				bitwise: true,
 				latedef: true,
-				unused: "vars",
 				loopfunc: true,
 				futurehostile: true,
 				reporter: require("jshint-stylish")

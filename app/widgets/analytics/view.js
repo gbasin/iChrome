@@ -10,7 +10,7 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 			}
 		},
 
-		initialize: function(e) {
+		initialize: function() {
 			WidgetView.prototype.initialize.call(this);
 
 			this.listenTo(this.model, "data:loaded", this.render);

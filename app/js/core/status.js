@@ -12,7 +12,7 @@ define(["moment"], function(moment) {
 
 	return {
 		get: function(which) {
-			logs[which || "status"].forEach(function(e, i) {
+			logs[which || "status"].forEach(function(e) {
 				console.log(moment(e[0]).toISOString().replace("T", " ").replace("Z", "") + "\t\t\t\t" + e[1]);
 			});
 

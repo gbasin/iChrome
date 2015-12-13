@@ -420,8 +420,8 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 							label: this.utils.translate("settings.source_feeds")
 						};
 
-						d.forEach(function(e, i) {
-							e.categories.forEach(function(c, i) {
+						d.forEach(function(e) {
+							e.categories.forEach(function(c) {
 								categories[c.id] = c.label;
 							});
 
@@ -492,7 +492,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 						':not([data-src*="share-buttons"])' +			':not([data-src*="musictapp"])' +
 						':not([data-src*="donate.png"])' +				':not([data-src*="/pagead"])' +
 						':not([data-src*="assets/feed-tw"])' +			':not([data-src*="feedsportal.com/social"])'
-					)).forEach(function(e, i) {
+					)).forEach(function(e) {
 						srcs.push(e.getAttribute("data-src"));
 					});
 
@@ -529,7 +529,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				return articles;
 			}
 
-			d.items.forEach(function(e, i) {
+			d.items.forEach(function(e) {
 				var article = {
 					id: e.id,
 					title: e.title,
@@ -555,7 +555,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				}
 
 				if (e.tags && e.tags[0]) {
-					e.tags.forEach(function(t, i) {
+					e.tags.forEach(function(t) {
 						if (t.id === "user/" + oAuth.data.id + "/tag/global.saved") {
 							article.saved = true;
 						}
@@ -649,7 +649,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 						}),
 						contentType: "application/json",
 						url: "http://cloud.feedly.com/v3/markers",
-						success: function(d) {
+						success: function() {
 							submitting = false;
 						}
 					});
@@ -657,7 +657,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 					last = new Date().getTime();
 				};
 
-			this.elm.find(".items").on("mousedown", ".item", function(e) {
+			this.elm.find(".items").on("mousedown", ".item", function() {
 				// mousedown handles left, middle, and right clicks
 
 				var id = $(this).attr("data-id");
@@ -686,7 +686,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 					that.oAuth.ajax({
 						type: "DELETE",
 						url: "http://cloud.feedly.com/v3/tags/" + encodeURIComponent("user/" + that.oAuth.data.id + "/tag/global.saved") + "/" + encodeURIComponent(elm.parents(".item").first().attr("data-id")),
-						complete: function(d) {
+						complete: function() {
 							elm.removeClass("saved").text(parseInt(elm.text()) - 1);
 						}
 					});
@@ -698,12 +698,12 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 							entryId: elm.parents(".item").first().attr("data-id")
 						}),
 						url: "http://cloud.feedly.com/v3/tags/" + encodeURIComponent("user/" + that.oAuth.data.id + "/tag/global.saved"),
-						complete: function(d) {
+						complete: function() {
 							elm.addClass("saved").text(parseInt(elm.text()) + 1);
 						}
 					});
 				}
-			}).on("scroll", function(e) {
+			}).on("scroll", function() {
 				if (!loading && next && (this.scrollHeight - this.offsetHeight) < (this.scrollTop + this.offsetHeight)) {
 					loading = true;
 
@@ -744,7 +744,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 								}));
 							}
 							else {
-								articles.forEach(function(e, i) {
+								articles.forEach(function(e) {
 									e.age = moment(e.date).fromNow(true).replace("hour", "hr").replace("minute", "min").replace("an ", "1 ").replace("a ", "1 ").replace("a few ", "");
 								});
 
@@ -805,7 +805,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				});
 			}
 			else {
-				data.articles.forEach(function(e, i) {
+				data.articles.forEach(function(e) {
 					e.age = moment(e.date).fromNow(true).replace("hour", "hr").replace("minute", "min").replace("an ", "1 ").replace("a ", "1 ").replace("a few ", "");
 				});
 

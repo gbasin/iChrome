@@ -23,7 +23,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 						this.save(e); // This calls preventDefault
 					}
 				},
-				"change #upload": function(e) {
+				"change #upload": function() {
 					this.$("#image").val("").change();
 				}
 			},
@@ -190,7 +190,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 			serialize: function() {
 				var theme = {};
 
-				this.$("form").serializeArray().forEach(function(e, i) {
+				this.$("form").serializeArray().forEach(function(e) {
 					if (e.value) theme[e.name] = e.value;
 				});
 

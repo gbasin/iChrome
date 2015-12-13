@@ -89,7 +89,7 @@ define(["lodash", "widgets/model"], function(_, WidgetModel) {
 					var files = [];
 
 					if (d && d.items) {
-						d.items.forEach(function(e, i) {
+						d.items.forEach(function(e) {
 							var file = {
 								name: e.title,
 								icon: e.iconLink,
@@ -108,7 +108,7 @@ define(["lodash", "widgets/model"], function(_, WidgetModel) {
 							files.push(file);
 						});
 
-						
+
 						// When called with an argument, saveData sets this.data in addition to persisting
 						// its value
 						this.saveData({

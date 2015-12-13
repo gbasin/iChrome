@@ -59,7 +59,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				this.utils.saveData();
 			},
 
-			"click .stopwatch .reset": function(e) {
+			"click .stopwatch .reset": function() {
 				delete this.data.stopwatch;
 
 				this.stopwatchElm.innerHTML = "0:00";
@@ -77,7 +77,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				}
 			},
 
-			"click .timer .reset": function(e) {
+			"click .timer .reset": function() {
 				delete this.data.timer;
 
 				this.timerElm.innerHTML = "0:00";
@@ -179,7 +179,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 			}
 		},
 
-		startTimer: function(e) {
+		startTimer: function() {
 			if (this.data.timer && this.data.timer.start) {
 				this.data.timer.running = !this.data.timer.running;
 
@@ -263,7 +263,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 			this.timerElm.innerHTML = formatted;
 		},
 
-		startAlarm: function(e) {
+		startAlarm: function() {
 			if (this.data.alarm && this.data.alarm.set) {
 				this.data.alarm.set = !this.data.alarm.set;
 			}

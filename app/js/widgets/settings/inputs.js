@@ -140,7 +140,7 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 
 			var data = _.pick(input, "name", "label", "proHelper", "help", "placeholder");
 
-			data.items = _.map(input.value, function(e, key) {
+			data.items = _.map(input.value, function(e) {
 				if (typeof e === "object") {
 					return {
 						color: (input.color ? (e.color || "#EEE") : false),
@@ -200,7 +200,7 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 				inputElm.trigger($.Event("keydown", { which: 13 }));
 			});
 
-			var updateSuggestions = function(type, e) {
+			var updateSuggestions = function(type) {
 				var val = inputElm.val();
 
 				if (val.trim() !== "" && type !== "focusout") {

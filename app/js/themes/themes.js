@@ -35,9 +35,8 @@ define(
 			 * Creates a new custom theme
 			 *
 			 * @api    private
-			 * @param  {Event} e The event
 			 */
-			createTheme: function(e) {
+			createTheme: function() {
 				this.createModal = new Custom();
 
 				this.createModal.on("save", function() {
@@ -319,7 +318,7 @@ define(
 				Track.pageview("Themes", "/themes");
 			},
 
-			initialize: function(options) {
+			initialize: function() {
 				this.model = new Model();
 
 				modal.mo.appendTo(document.body);

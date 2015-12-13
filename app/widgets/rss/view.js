@@ -93,7 +93,7 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 		},
 
 
-		onBeforeRender: function(data, demo) {
+		onBeforeRender: function(data) {
 			if (!data.loading) {
 				data.items = _.map(data.items.slice(0, this.model.config.number || 5), function(e) {
 					e = _.clone(e);
@@ -162,7 +162,7 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 
 
 			if (data.images) {
-				this.$("img").on("error", function(e) {
+				this.$("img").on("error", function() {
 					this.style.height = "20px";
 				});
 			}

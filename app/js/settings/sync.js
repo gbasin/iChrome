@@ -75,7 +75,7 @@ define([
 						this.render();
 					}.bind(this), {}, true);
 				},
-				"click #signin": function(e) {
+				"click #signin": function() {
 					Alert({
 						title: Translate("settings.sync.keep_data"),
 						contents: [Translate("settings.sync.keep_data_desc")],
@@ -84,14 +84,14 @@ define([
 							positive: Translate("settings.sync.keep_local")
 						}
 					}, function(sendData) {
-						SyncAPI.authorize(this.model.storage, sendData, function(err, res) {
+						SyncAPI.authorize(this.model.storage, sendData, function() {
 							this.model.update();
 
 							this.render();
 						}.bind(this));
 					}.bind(this));
 				},
-				"click .backup button.restore-file": function(e) {
+				"click .backup button.restore-file": function() {
 					this.$(".backup input[type=file]").click();
 				},
 

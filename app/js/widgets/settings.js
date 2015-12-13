@@ -124,7 +124,7 @@ define([
 			// settings object and override existing values
 			_.assign(set.config, _(defaultConfig)
 				.pick(_.difference(_.keys(defaultConfig), _.keys(set.config)))
-				.mapValues(function(e, key) {
+				.mapValues(function(e) {
 					// If it's a string then it must be empty
 					if (typeof e === "string") {
 						return "";
@@ -244,7 +244,7 @@ define([
 				return val;
 			}, this);
 
-			_.each(this.widget.settings, function(e, i) {
+			_.each(this.widget.settings, function(e) {
 				if (!e.type || !inputs[e.type]) return;
 
 

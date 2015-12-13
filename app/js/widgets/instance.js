@@ -25,7 +25,7 @@ define([
 		},
 
 		events: {
-			"click > .settings": function(e) {
+			"click > .settings": function() {
 				try {
 					if (this.widget.views && this.widget.views.settings) {
 						this.model.set("state", "settings");
@@ -48,11 +48,11 @@ define([
 				}
 			},
 
-			"click > .minimize": function(e) {
+			"click > .minimize": function() {
 				this.model.set("state", "default");
 			},
 
-			"click > .maximize": function(e) {
+			"click > .maximize": function() {
 				this.model.set("state", "maximized");
 			}
 		},
@@ -194,7 +194,7 @@ define([
 
 				this.el.innerHTML = '<div class="handle"></div>' + render("widgets/permissions-request");
 
-				this.$el.on("click", ".notice button", function(e) {
+				this.$el.on("click", ".notice button", function() {
 					Browser.permissions.request({
 						permissions: this.widget.browserPermissions
 					}, function(granted) {
@@ -204,7 +204,9 @@ define([
 						//
 						// Unfortunately that still doesn't allow access to URLs like
 						// chrome://extension-icon until the browser is restarted
-						location.reload();
+						if (granted) {
+							location.reload();
+						}
 					});
 				}.bind(this));
 			}, this);
@@ -247,13 +249,13 @@ define([
 			render("widgets/error", data) + '\r\n<div class="resize"></div>';
 
 
-			this.$el.on("click.error", ".notice button.refresh", function(e) {
+			this.$el.on("click.error", ".notice button.refresh", function() {
 				this.$el.off(".error").removeClass("splash error");
 
 				delete this._errored;
 
 				this.initialize();
-			}.bind(this)).on("click.error", ".notice button.support", function(e) {
+			}.bind(this)).on("click.error", ".notice button.support", function() {
 				UserVoice("showLightbox", "classic_widget", { mode: "support" });
 			});
 		},
@@ -433,7 +435,7 @@ define([
 					bottom: window.innerHeight - rect.bottom
 				})
 				.addClass("maximized")
-				.on("animationend", _.after(2, function(e) {
+				.on("animationend", _.after(2, function() {
 					// Maximizing uses two animations. We disable both so they don't
 					// get triggered again if the tabs re-render
 					$(this).off("animationend").css({
@@ -474,7 +476,7 @@ define([
 					bottom: window.innerHeight - rect.bottom
 				})
 				.addClass("transition-out")
-				.on("animationend", _.after(2, function(e) {
+				.on("animationend", _.after(2, function() {
 					$(this)
 						.off("animationend")
 						.css({
@@ -519,7 +521,7 @@ define([
 			this.el.innerHTML = '<div class="handle"></div>' + render("widgets/auth-required", data);
 
 
-			this.$el.on("click.auth-required", ".notice button", function(e) {
+			this.$el.on("click.auth-required", ".notice button", function() {
 				this.widgetModel.oAuth.getToken(function() {
 					this.$el.off(".auth-required").removeClass("auth-required");
 
