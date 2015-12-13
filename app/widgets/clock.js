@@ -33,7 +33,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 
 				this.utils.saveConfig();
 			},
-			
+
 			"click .stopwatch .start-stop": function(e) {
 				if (this.data.stopwatch && this.data.stopwatch.start) {
 					this.data.stopwatch.running = !this.data.stopwatch.running;
@@ -59,7 +59,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				this.utils.saveData();
 			},
 
-			"click .stopwatch .reset": function(e) {
+			"click .stopwatch .reset": function() {
 				delete this.data.stopwatch;
 
 				this.stopwatchElm.innerHTML = "0:00";
@@ -68,16 +68,16 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 
 				this.utils.saveData();
 			},
-			
+
 			"click .timer .start-stop": "startTimer",
-			
+
 			"keydown .timer input.time": function(e) {
 				if (e.which === 13) {
 					this.startTimer(e);
 				}
 			},
 
-			"click .timer .reset": function(e) {
+			"click .timer .reset": function() {
 				delete this.data.timer;
 
 				this.timerElm.innerHTML = "0:00";
@@ -87,7 +87,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 
 				this.utils.saveData();
 			},
-			
+
 			"keydown .alarm input.time": function(e) {
 				if (e.which === 13) {
 					this.startAlarm(e);
@@ -133,24 +133,26 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 			if (this.config.format.indexOf("ampm") === 0) {
 				hours = (hours > 12 ? hours - 12 : hours);
 
-				if (hours === 0) hours = 12;
+				if (hours === 0) {
+					hours = 12;
+				}
 
-				html += (am ? " am" : " pm") + (this.config.format == "ampms" ? " no-seconds" : "");
+				html += (am ? " am" : " pm") + (this.config.format === "ampms" ? " no-seconds" : "");
 			}
 			else {
-				html += " full" + (this.config.format == "fulls" ? " no-seconds" : "");
+				html += " full" + (this.config.format === "fulls" ? " no-seconds" : "");
 			}
-			
+
 			html += '">' + hours + ":" + minutes.pad();
 
-			if (this.config.size == "tiny" && this.config.format.indexOf("ampm") === 0) {
-				html += "<span>" + (this.config.format == "ampm" ? seconds.pad() : "") + "</span></div>";
+			if (this.config.size === "tiny" && this.config.format.indexOf("ampm") === 0) {
+				html += "<span>" + (this.config.format === "ampm" ? seconds.pad() : "") + "</span></div>";
 			}
-			else if (this.config.size != "tiny") {
+			else if (this.config.size !== "tiny") {
 				// moment(dt) is slower so avoid it when possible
 				var date = (this.config.timezone !== "auto" ? moment(dt).format("dddd, MMMM Do YYYY") : moment().format("dddd, MMMM Do YYYY"));
 
-				if (this.config.format == "ampm" || this.config.format == "full") {
+				if (this.config.format === "ampm" || this.config.format === "full") {
 					html += ":" + seconds.pad();
 				}
 
@@ -179,7 +181,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 			}
 		},
 
-		startTimer: function(e) {
+		startTimer: function() {
 			if (this.data.timer && this.data.timer.start) {
 				this.data.timer.running = !this.data.timer.running;
 
@@ -201,10 +203,10 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				var multiples = [1E3, 6E4, 36E5, 864E5];
 
 				// This splits 0:00:00:00.00 into ["0", "00", "00", "00.00"].
-				// 
+				//
 				// Then it reverses it, so it's [seconds, minutes, hours, days] and limits
 				// it to 4 values.
-				// 
+				//
 				// Each value is then multiplied in order by its ms multiplier. They're combined
 				// leaving a single total ms value for the time input
 				var duration = _(input.value.split(":")).compact().reverse().take(4).reduce(function(total, e, i) {
@@ -263,7 +265,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 			this.timerElm.innerHTML = formatted;
 		},
 
-		startAlarm: function(e) {
+		startAlarm: function() {
 			if (this.data.alarm && this.data.alarm.set) {
 				this.data.alarm.set = !this.data.alarm.set;
 			}
@@ -327,8 +329,13 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 		update: function() {
 			this.updateClock();
 
-			if (this.data.alarm && this.data.alarm.set) this.updateAlarm();
-			if (this.data.timer && this.data.timer.running) this.updateTimer();
+			if (this.data.alarm && this.data.alarm.set) {
+				this.updateAlarm();
+			}
+
+			if (this.data.timer && this.data.timer.running) {
+				this.updateTimer();
+			}
 		},
 
 		playAudio: function() {
@@ -361,7 +368,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 		render: function() {
 			clearInterval(this.interval);
 
-			this.isAnalog = (this.config.format == "analog");
+			this.isAnalog = (this.config.format === "analog");
 
 			this.$el.toggleClass("analog", this.isAnalog);
 
@@ -443,7 +450,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 
 				// The stopwatch displays milliseconds so it needs to update every ~50 ms
 				// instead of every 1000 to display a smooth progression
-				// 
+				//
 				// This uses 53 instead of 50 so the numbers displayed aren't continuously
 				// repeated
 				this.interval = setInterval(this.updateStopwatch.bind(this), 53);
@@ -581,7 +588,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 					el: this.elm
 				});
 			}
-			
+
 			this.view.render();
 		}
 	};

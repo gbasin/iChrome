@@ -71,7 +71,7 @@ define(
 							wModal.content.find(".sizes").sortable({
 								group: "columns",
 								drop: false
-							}).find("section.handle").on("sortabledragstart", function(e, item, container, _super) {
+							}).find("section.handle").on("sortabledragstart", function(e, item) {
 								var newView = Registry.createInstance(new Backbone.Model({
 									id: id,
 									size: item.attr("data-size")

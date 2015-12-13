@@ -181,7 +181,7 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 			},
 
 			"keyup input": function(e) {
-				if (e.which == 17) {
+				if (e.which === 17) {
 					this._ctrlDown = false;
 				}
 			},
@@ -280,7 +280,7 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 			return data;
 		},
 
-		onRender: function(data) {
+		onRender: function() {
 			this.$("select.from").val(this.data.from);
 			this.$("select.to").val(this.data.to);
 		}

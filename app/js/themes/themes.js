@@ -35,9 +35,8 @@ define(
 			 * Creates a new custom theme
 			 *
 			 * @api    private
-			 * @param  {Event} e The event
 			 */
-			createTheme: function(e) {
+			createTheme: function() {
 				this.createModal = new Custom();
 
 				this.createModal.on("save", function() {
@@ -111,13 +110,15 @@ define(
 
 				if (parent.hasClass("custom")) {
 					Track.event("Themes", "Preview", "custom" + id);
-					
+
 					return this.trigger("preview", custom[id], "custom" + id);
 				}
 
 				var theme = _.clone(themes[index[id]]);
 
-				if (!theme) return;
+				if (!theme) {
+					return;
+				}
 
 				if (!cached[theme.id] && theme.oType === "feed") {
 					var specs = parent.find(".specs:first"),
@@ -176,8 +177,9 @@ define(
 
 				var theme = _.clone(themes[index[id]]);
 
-				if (!theme) return;
-
+				if (!theme) {
+					return;
+				}
 
 				var specs = parent.find(".specs:first"),
 					oHtml = specs.html(),
@@ -215,7 +217,7 @@ define(
 				}
 
 
-				if (theme.oType == "sunrise_sunset") {
+				if (theme.oType === "sunrise_sunset") {
 					navigator.geolocation.getCurrentPosition(function(pos) {
 						if (pos && pos.coords) {
 							Browser.storage.lat = parseFloat(pos.coords.latitude.toFixed(2));
@@ -244,7 +246,7 @@ define(
 					themes = [];
 
 
-				if (id == "custom") {
+				if (id === "custom") {
 					themes = this.model.get("custom");
 				}
 				else if ((id = parseInt(id)) || id === 0) {
@@ -284,7 +286,9 @@ define(
 				var length = this.images.length;
 
 				// There might not be any images left to lazy-load
-				if (!length) return;
+				if (!length) {
+					return;
+				}
 
 				var coords,
 					innerHeight = window.innerHeight; // Querying innerHeight can get costly in a loop
@@ -319,7 +323,7 @@ define(
 				Track.pageview("Themes", "/themes");
 			},
 
-			initialize: function(options) {
+			initialize: function() {
 				this.model = new Model();
 
 				modal.mo.appendTo(document.body);

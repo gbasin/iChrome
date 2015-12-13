@@ -26,11 +26,11 @@ define(["lodash", "jquery", "backbone", "themes/controller", "backbone.viewcolle
 		 * @param {Backbone.View|Number} tab The tab or tab index to activate
 		 */
 		setActive: function(tab) {
-			if (typeof tab == "number") {
+			if (typeof tab === "number") {
 				tab = this.views[tab];
 			}
 
-			if (this.indexOf(tab.model) == this.active && tab.$el.hasClass("active")) {
+			if (this.indexOf(tab.model) === this.active && tab.$el.hasClass("active")) {
 				return;
 			}
 
@@ -57,10 +57,10 @@ define(["lodash", "jquery", "backbone", "themes/controller", "backbone.viewcolle
 		navigate: function(to) {
 			var i = ((this.active + 1) || this.default || 1) - 1;
 
-			if (typeof to == "number") {
+			if (typeof to === "number") {
 				i = to - 1;
 			}
-			else if (typeof to == "string") {
+			else if (typeof to === "string") {
 				switch (to) {
 					case "next":
 						i++;

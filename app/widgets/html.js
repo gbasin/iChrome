@@ -1,7 +1,7 @@
 /*
  * HTML
  */
-define(["jquery"], function($) {
+define(function() {
 	return {
 		id: 36,
 		size: 4,

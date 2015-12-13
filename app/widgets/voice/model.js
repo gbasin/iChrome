@@ -38,7 +38,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 					var call = this.translate("call"),
 						text = this.translate("text");
 
-					data.messages = _(d.messages).filter("isRead").map(function(e, id) {
+					data.messages = _(d.messages).filter("isRead").map(function(e) {
 						return {
 							from: e.displayNumber,
 							date: e.relativeStartTime,

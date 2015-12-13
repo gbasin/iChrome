@@ -84,7 +84,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 						return e.type !== "extension" && e.type !== "theme";
 					}),
 					apps = [],
-					all = this.config.show == "all";
+					all = this.config.show === "all";
 
 				list.unshift({
 					enabled: true,
@@ -104,7 +104,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 						});
 					break;
 					case "offline":
-						list.sort(function(a, b) {
+						list.sort(function(a) {
 							return a.offlineEnabled;
 						});
 					break;
@@ -115,7 +115,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 					break;
 				}
 
-				list.forEach(function(e, i) {
+				list.forEach(function(e) {
 					if (e.id !== Browser.app.id && (all || e.enabled)) {
 						apps.push({
 							name: e.shortName,
@@ -129,7 +129,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 				if (this.syncData && this.syncData.order) {
 					// This creates an hash that can be used to look up the
 					// _.sortBy compatible sort value of a given app id.
-					// 
+					//
 					// This method with negative reversed indexes causes apps
 					// that are sorted to stay in position while new apps get
 					// appended to the end of the list in their original order.
@@ -190,7 +190,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 					apps.title = this.config.title;
 				}
 
-				if (this.config.view == "tiles") {
+				if (this.config.view === "tiles") {
 					apps.tiles = true;
 				}
 
@@ -198,7 +198,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 
 
 				var that = this,
-					self = this.config.target == "_self";
+					self = this.config.target === "_self";
 
 				this.sortable = this.elm.off("click.apps").on("click.apps", ".app", function(e) {
 					e.preventDefault();
@@ -216,7 +216,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 					distance: 20,
 					itemSelector: ".app",
 					placeholder: "<div class=\"app holder\"/>",
-					onDragStart: function(item, container, _super) {
+					onDragStart: function(item) {
 						var width = item.outerWidth(),
 							height = item.outerHeight();
 

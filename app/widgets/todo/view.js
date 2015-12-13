@@ -36,7 +36,7 @@ define(["jquery", "widgets/views/main", "lib/jquery.sortable"], function($, Widg
 			},
 
 			"keydown .item .title": function(e) {
-				if (e.which == 13) {
+				if (e.which === 13) {
 					e.preventDefault();
 
 					this.addItem($(e.currentTarget).parent());
@@ -79,8 +79,12 @@ define(["jquery", "widgets/views/main", "lib/jquery.sortable"], function($, Widg
 							}) +
 						'</div></div></div>';
 
-			if (after) $(html).insertAfter(after).find(".title").focus();
-			else $(html).appendTo(this.sortable).find(".title").focus();
+			if (after) {
+				$(html).insertAfter(after).find(".title").focus();
+			}
+			else {
+				$(html).appendTo(this.sortable).find(".title").focus();
+			}
 
 			this.serialize();
 		},
@@ -102,12 +106,12 @@ define(["jquery", "widgets/views/main", "lib/jquery.sortable"], function($, Widg
 			return data;
 		},
 
-		onRender: function(data) {
+		onRender: function() {
 			this.sortable = this.$(".list").sortable({
 				handle: ".move",
 				itemSelector: ".item",
 				placeholder: "<div class=\"item holder\"/>",
-				onDragStart: function(item, container, _super) {
+				onDragStart: function(item) {
 					item.css({
 						height: item.outerHeight(),
 						width: item.outerWidth()
@@ -115,7 +119,7 @@ define(["jquery", "widgets/views/main", "lib/jquery.sortable"], function($, Widg
 
 					item.addClass("dragged");
 				},
-				onDrag: function(item, position, _super) {
+				onDrag: function(item, position) {
 					var ctx = $(item.context),
 						ctp = ctx.position(),
 						ctpp = ctx.parent().position();

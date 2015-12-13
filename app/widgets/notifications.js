@@ -22,7 +22,9 @@ define(["jquery", "lodash", "widgets/framefix"], function($, _, frameFix) {
 			size: "variable"
 		},
 		render: function() {
-			if (!frameFix(this.render, this, arguments)) return;
+			if (!frameFix(this.render, this, arguments)) {
+				return;
+			}
 
 			if (!this.frameId) {
 				this.frameId = _.uniqueId(this.nicename);

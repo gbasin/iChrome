@@ -4,7 +4,7 @@
 define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _, moment, Backbone, Browser) {
 	var View = Backbone.View.extend({
 		events: {
-			"click .no-key button": function(e) {
+			"click .no-key button": function() {
 				Browser.tabs.create({
 					url: "https://www.pushbullet.com/signin"
 				});
@@ -159,7 +159,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 				.sortBy(function(a, b) {
 					return b.created - a.created;
 				})
-				.map(function(e, i) {
+				.map(function(e) {
 					try {
 						var parsed = {
 							id: e.iden,
@@ -172,7 +172,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 							}
 						};
 
-						if (e.type == "note" || e.type == "link") {
+						if (e.type === "note" || e.type === "link") {
 							parsed.title = e.title;
 							parsed.body = e.body;
 
@@ -185,7 +185,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 								parsed.linkText = e.url;
 							}
 						}
-						else if (e.type == "file") {
+						else if (e.type === "file") {
 							parsed.body = e.body;
 							parsed.link = e.file_url;
 							parsed.linkText = e.file_name;
@@ -294,7 +294,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 					el: this.elm
 				});
 			}
-			
+
 			this.view.render();
 		}
 	};

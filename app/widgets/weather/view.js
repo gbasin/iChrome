@@ -5,7 +5,7 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 				e.preventDefault();
 				e.stopPropagation();
 
-				this.model.config.units = e.currentTarget.getAttribute("data-units") == "metric" ? "metric" : "imperial";
+				this.model.config.units = e.currentTarget.getAttribute("data-units") === "metric" ? "metric" : "imperial";
 
 				this.model.saveConfig();
 
@@ -62,7 +62,9 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 					dir = "prev";
 				}
 
-				if (!dir) return;
+				if (!dir) {
+					return;
+				}
 
 				// Stop the tabs from scrolling
 				e.stopPropagation();
@@ -109,7 +111,9 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 
 
 		loadDailyForecast: function(e) {
-			if (!this.Pro.isPro) return;
+			if (!this.Pro.isPro) {
+				return;
+			}
 
 			var elm = $(e.currentTarget),
 				loc = elm.parents(".location").first();
@@ -224,7 +228,7 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 
 		activeDays: {},
 
-		onBeforeRender: function(data, demo) {
+		onBeforeRender: function(data) {
 			if (!data.weather) {
 				data.weather = [];
 			}
@@ -247,7 +251,7 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 
 
 			if (this.Pro.isPro) {
-				data.weather = _.each(data.weather, function(loc, i) {
+				data.weather = _.each(data.weather, function(loc) {
 					if (loc.forecast && loc.forecast[0]) {
 						loc.forecast[0].active = true;
 					}

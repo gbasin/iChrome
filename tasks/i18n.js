@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 
 			locales = _.zipObject(_.pluck(locales, "lang_code"), locales);
 
-			_.mapValues(locales, function(e, i) {
+			_.mapValues(locales, function(e) {
 				var lang = e.lang_code.replace("-widgets", "");
 
 				if (e.lang_code.indexOf("-widgets") !== -1 && locales[lang]) {

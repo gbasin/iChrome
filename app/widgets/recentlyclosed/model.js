@@ -45,7 +45,7 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 				maxResults: parseInt(this.config.tabs || 5)
 			}, function(sessions) {
 				this.saveData({
-					tabs: _.compact(_.map(sessions, function(e, i) {
+					tabs: _.compact(_.map(sessions, function(e) {
 						var ret = {};
 
 						if (e.tab) {

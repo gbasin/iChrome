@@ -2,8 +2,8 @@
  * The tabs container-model.
  */
 define(
-	["lodash", "jquery", "backbone", "browser/api", "storage/storage", "storage/defaults", "core/status", "core/analytics", "tabs/collection", "i18n/i18n", "core/render"],
-	function(_, $, Backbone, Browser, Storage, Defaults, Status, Track, Tabs, Translate, render) {
+	["lodash", "jquery", "backbone", "browser/api", "storage/storage", "storage/defaults", "core/status", "core/analytics", "tabs/collection", "i18n/i18n"],
+	function(_, $, Backbone, Browser, Storage, Defaults, Status, Track, Tabs, Translate) {
 		var Model = Backbone.Model.extend({
 				initialize: function() {
 					this.tabs = new Tabs();
@@ -14,7 +14,7 @@ define(
 						if (!(data && data.tabSort)) {
 							var defaults = _.assign({}, Defaults.tab, {
 								theme: storage.settings.theme,
-								fixed: storage.settings.columns.split("-")[1] == "fixed"
+								fixed: storage.settings.columns.split("-")[1] === "fixed"
 							});
 
 
@@ -58,11 +58,17 @@ define(
 						this.model.tabs.navigate($(e.currentTarget).attr("data-direction"));
 					},
 					"keydown": function(e) {
-						if (e.which == 37) this.model.tabs.navigate("prev");
-						else if (e.which == 39) this.model.tabs.navigate("next");
+						if (e.which === 37) {
+							this.model.tabs.navigate("prev");
+						}
+						else if (e.which === 39) {
+							this.model.tabs.navigate("next");
+						}
 					},
 					"keydown .widgets-container .widget": function(e) {
-						if (e.currentTarget.className.indexOf("dragged") == -1) e.stopPropagation();
+						if (e.currentTarget.className.indexOf("dragged") === -1) {
+							e.stopPropagation();
+						}
 					},
 					"mouseover .tab-nav button": function(e) {
 						if ($(document.body).hasClass("dragging")) {
@@ -71,7 +77,7 @@ define(
 							}.bind(this), 500);
 						}
 					},
-					"mouseout .tab-nav button": function(e) {
+					"mouseout .tab-nav button": function() {
 						clearTimeout(this.timeout);
 					}
 				},
@@ -130,7 +136,7 @@ define(
 						itemSelector: "section",
 						dynamicDimensions: true,
 						placeholder: "<section class=\"placeholder\"/>",
-						onDragStart: function(item, container, _super) {
+						onDragStart: function(item) {
 							var ret = item.triggerHandler("sortabledragstart", arguments);
 
 							if (ret) {
@@ -152,7 +158,7 @@ define(
 							tcOTop = tc.offsetTop;
 							tcHeight = tc.offsetHeight;
 						},
-						onDrag: function(item, position, _super) {
+						onDrag: function(item, position) {
 							if (item.context) {
 								position.top -= item.context.offsetTop;
 								position.left -= item.context.offsetLeft;
@@ -174,7 +180,7 @@ define(
 							item[0].style.top = position.top + "px";
 							item[0].style.left = position.left + "px";
 						},
-						onBeforeDrop: function(item, placeholder, group, _super) {
+						onBeforeDrop: function(item, placeholder) {
 							if (placeholder.parent() && placeholder.parent().is(".remove")) {
 								if (item.installing || confirm(Translate("widgets.delete_confirm"))) {
 									item.remove();
@@ -251,7 +257,7 @@ define(
 							this.serialize(true);
 						}.bind(this),
 						afterMove: function(placeholder, container) {
-							if (container.el[0].className.indexOf("widgets-container") == -1) {
+							if (container.el[0].className.indexOf("widgets-container") === -1) {
 								onGrid = false;
 
 								placeholder[0].style.width = container.group.item[0].offsetWidth + "px";
@@ -286,7 +292,7 @@ define(
 					var dta = elm.data("sortable");
 
 					if (dta) {
-						if (dta.rootGroup.containers.length == 1) {
+						if (dta.rootGroup.containers.length === 1) {
 							dta.rootGroup.containers = [];
 						}
 						else {

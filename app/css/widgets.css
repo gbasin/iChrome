@@ -793,8 +793,8 @@
 }
 
 /* line 720, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.clock .start-stop.started #start,
-.clock .start-stop:not(.started) #stop {
+.clock .start-stop.started .start,
+.clock .start-stop:not(.started) .stop {
 	display: none;
 }
 

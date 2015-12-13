@@ -38,7 +38,6 @@ span.nested-link[data-href] {
 	/ Tabs
 */
 .tabs {
-	margin: 0;
 	padding: 0;
 	display: block;
 	margin: 0 -25px;
@@ -466,7 +465,7 @@ header .title ~ .tabs {
 /* This pushes the rest of the contents to the bottom */
 .maximized .items.cards .item.featured:before {
 	content: "";
-	flex: 1 0 0%;
+	flex: 1 0 0;
 }
 
 .maximized .items.cards .item.featured span.nested-link[data-href] {

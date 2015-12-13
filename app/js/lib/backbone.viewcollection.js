@@ -103,22 +103,24 @@ define(["lodash", "backbone"], function(_, Backbone) {
 		 * @param {Boolean}                             silent Whether or not to emit an event
 		 */
 		removeView: function(e, silent) {
+			var view;
+
 			if (e instanceof Backbone.View) {
 				var i = this.views.indexOf(e);
 
 				if (i !== -1) {
-					var view = this.views.splice(i, 1)[0];
+					view = this.views.splice(i, 1)[0];
 				}
 			}
 			else if (e instanceof Backbone.Model) {
-				var view = _.remove(this.views, {
+				view = _.remove(this.views, {
 					model: {
 						cid: e.cid
 					}
 				})[0];
 			}
-			else if (typeof e == "string") {
-				var view = _.remove(this.views, {
+			else if (typeof e === "string") {
+				view = _.remove(this.views, {
 					model: {
 						cid: e
 					}

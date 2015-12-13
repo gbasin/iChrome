@@ -1,7 +1,7 @@
 /*
  * The Wolfram|Alpha widget.
  */
-define(["jquery"], function($) {
+define(function() {
 	return {
 		id: 5,
 		size: 1,

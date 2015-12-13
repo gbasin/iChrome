@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 		locales = _.zipObject(_.pluck(locales, "lang_code"), locales);
 
 
-		manifests.forEach(function(filepath, i) {
+		manifests.forEach(function(filepath) {
 			var manifest = grunt.file.readJSON(filepath);
 
 			var basePath = "build/widgets/" + manifest.name + "/";

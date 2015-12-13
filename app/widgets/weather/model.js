@@ -134,7 +134,7 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 						this.config.resolvedLocs = [];
 						this.config.resolvedNames = [];
 
-						_.each(d.locations, function(e, i) {
+						_.each(d.locations, function(e) {
 							this.config.location.push(e.name);
 							this.config.resolvedNames.push(e.name);
 							this.config.resolvedLocs.push([e.lat, e.lon]);
@@ -153,7 +153,7 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 		},
 
 		getCondition: function(code) {
-			if (typeof code == "string") {
+			if (typeof code === "string") {
 				code = parseInt(code);
 			}
 
@@ -254,7 +254,9 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 							hourly: this.config.hourly === "enabled" ? true : null
 						}
 					}).done(function(d) {
-						if (!d) return;
+						if (!d) {
+							return;
+						}
 
 						if (typeof d !== "object") {
 							try {
@@ -280,10 +282,21 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 								d.conditions = this.getCondition(d.icon);
 							}
 
-							if (d.sunrise) d.sunrise = moment(d.sunrise).format("LT");
-							if (d.sunset) d.sunset = moment(d.sunset).format("LT");
-							if (d.moonrise) d.moonrise = moment(d.moonrise).format("LT");
-							if (d.moonset) d.moonset = moment(d.moonset).format("LT");
+							if (d.sunrise) {
+								d.sunrise = moment(d.sunrise).format("LT");
+							}
+
+							if (d.sunset) {
+								d.sunset = moment(d.sunset).format("LT");
+							}
+
+							if (d.moonrise) {
+								d.moonrise = moment(d.moonrise).format("LT");
+							}
+
+							if (d.moonset) {
+								d.moonset = moment(d.moonset).format("LT");
+							}
 
 							return d;
 						}.bind(this);
@@ -313,11 +326,11 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 				}, this);
 			};
 
-			if (typeof this.config.location == "string") {
+			if (typeof this.config.location === "string") {
 				this.config.location = [this.config.location];
 			}
 
-			if (this.config.resolvedLocs && this.config.resolvedLocs.join("|") == this.config.location.join("|")) {
+			if (this.config.resolvedLocs && this.config.resolvedLocs.join("|") === this.config.location.join("|")) {
 				get.call(this);
 			}
 			else {

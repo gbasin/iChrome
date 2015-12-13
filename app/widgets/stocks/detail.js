@@ -72,7 +72,7 @@ define(["lodash", "jquery", "moment", "./lib/chart", "widgets/views/main"], func
 		},
 
 		events: {
-			"click header button.back": function(e) {
+			"click header button.back": function() {
 				this.model.set("state", "default");
 			},
 
@@ -197,8 +197,9 @@ define(["lodash", "jquery", "moment", "./lib/chart", "widgets/views/main"], func
 
 			var canvas = this.$(".chart canvas");
 
-			if (!canvas.length) return;
-
+			if (!canvas.length) {
+				return;
+			}
 
 			var tipElm = this.$(".chart .tooltip");
 
@@ -231,7 +232,7 @@ define(["lodash", "jquery", "moment", "./lib/chart", "widgets/views/main"], func
 
 						// This is a bit hacky, but it ensures that the hovered point is the same as the one
 						// the tooltip is shown for, and that there's only ever one
-						onHover: function(active) {
+						onHover: function() {
 							this.active = this.tooltipActive = this.active.length ? [this.active[0]] : [];
 						}
 					},
@@ -272,7 +273,7 @@ define(["lodash", "jquery", "moment", "./lib/chart", "widgets/views/main"], func
 							tipElm.addClass("visible").toggleClass("right", tooltip.x < 150);
 						}.bind(this)
 					},
-					
+
 					elements: {
 						line: {
 							tension: 0.1

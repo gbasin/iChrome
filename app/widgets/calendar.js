@@ -103,18 +103,22 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 			});
 		},
 		getCalendars: function(cb) {
-			if (!this.oAuth) this.setOAuth();
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
 
 			this.oAuth.ajax({
 				type: "GET",
 				dataType: "json",
 				url: "https://www.googleapis.com/calendar/v3/users/me/calendarList/",
 				success: function(d) {
-					if (!d || !d.items) return cb("error");
+					if (!d || !d.items) {
+						return cb("error");
+					}
 
 					var calendars = {};
 
-					d.items.forEach(function(e, i) {
+					d.items.forEach(function(e) {
 						calendars[e.id] = e.summary;
 					});
 
@@ -123,7 +127,9 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 			});
 		},
 		refresh: function() {
-			if (!this.oAuth) this.setOAuth();
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
 
 			if (!this.config.calendars || !this.config.calendars.length) {
 				if (this.config.calendar) {
@@ -149,7 +155,7 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 						fields: "summary,items(description,htmlLink,id,location,start,end,summary)"
 					};
 
-				if (this.config.show == "today") {
+				if (this.config.show === "today") {
 					params.timeMax = moment().endOf("day").format("YYYY-MM-DDTHH:mm:ss.SSSZ");
 				}
 
@@ -166,9 +172,11 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 							xhr.setRequestHeader("Authorization", "Bearer " + token);
 						},
 						success: function(d) {
-							if (!d || !d.items) return;
+							if (!d || !d.items) {
+								return;
+							}
 
-							d.items.forEach(function(e, i) {
+							d.items.forEach(function(e) {
 								if (e.backgroundColor) {
 									calendarColors[e.id] = e.backgroundColor;
 								}
@@ -188,7 +196,7 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 						},
 						success: function(d) {
 							if (d && d.items) {
-								events = events.concat(_.map(d.items, function(e, i) {
+								events = events.concat(_.map(d.items, function(e) {
 									var event = {
 										link: e.htmlLink,
 										title: e.summary,
@@ -367,7 +375,7 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 			var today = moment(dt).startOf("day"),
 				rangeStart, rangeEnd;
 
-			if (this.config.show == "today") {
+			if (this.config.show === "today") {
 				rangeStart = moment(dt).startOf("day");
 				rangeEnd = moment(dt).endOf("day");
 			}

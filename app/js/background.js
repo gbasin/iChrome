@@ -10,7 +10,7 @@ var Hogan={};
 /* globals chrome,PERSISTENT */
 
 chrome.runtime.onInstalled.addListener(function(details) {
-	if (details.reason == "install") {
+	if (details.reason === "install") {
 		// NOTE: These two methods have been copied from storage/syncapi.js and lightly modified
 		// Changes made here should be reflected there.
 		var clientData = {};
@@ -38,7 +38,9 @@ chrome.runtime.onInstalled.addListener(function(details) {
 			chrome.storage.sync.get("syncData", function(d) {
 				if (d && d.syncData) {
 					for (var key in d.syncData) {
-						clientData[key] = d.syncData[key];
+						if (d.syncData.hasOwnProperty(key)) {
+							clientData[key] = d.syncData[key];
+						}
 					}
 				}
 
@@ -59,14 +61,16 @@ chrome.runtime.onInstalled.addListener(function(details) {
 						// keep it, but add the new information
 						if (clientData.token) {
 							for (key in d) {
-								if (key !== "token" && key !== "client") {
+								if (d.hasOwnProperty(key) && key !== "token" && key !== "client") {
 									clientData[key] = d[key];
 								}
 							}
 						}
 						else {
 							for (key in d) {
-								clientData[key] = d[key];
+								if (d.hasOwnProperty(key)) {
+									clientData[key] = d[key];
+								}
 							}
 						}
 					}
@@ -80,7 +84,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 		var saveData = function() {
 			var local = JSON.stringify((function(data) {
 				for (var key in clientData) {
-					if (key !== "version" && key !== "extension") {
+					if (clientData.hasOwnProperty(key) && key !== "version" && key !== "extension") {
 						data[key] = clientData[key];
 					}
 				}
@@ -90,7 +94,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 
 			var sync = JSON.stringify((function(data) {
 				for (var key in clientData) {
-					if (key !== "client" && key !== "version" && key !== "extension") {
+					if (clientData.hasOwnProperty(key) && key !== "client" && key !== "version" && key !== "extension") {
 						data[key] = clientData[key];
 					}
 				}
@@ -123,10 +127,10 @@ chrome.runtime.onInstalled.addListener(function(details) {
 			}
 		});
 	}
-	else if (details.reason == "update") {
+	else if (details.reason === "update") {
 		if (!localStorage.config) {
 			chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
-				if (typeof d.tabs == "string") {
+				if (typeof d.tabs === "string") {
 					try {
 						d.tabs = JSON.parse(d.tabs);
 					}
@@ -146,14 +150,14 @@ chrome.runtime.onInstalled.addListener(function(details) {
 			});
 		}
 
-		if (!details.previousVersion || details.previousVersion.indexOf("2.1.20") == -1) {
+		if (!details.previousVersion || details.previousVersion.indexOf("2.1.20") === -1) {
 			localStorage.showWhatsNew = "true";
 		}
 	}
 });
 
 chrome.webRequest.onBeforeRequest.addListener(
-	function(info) {
+	function() {
 		return {
 			redirectUrl: "chrome-extension://" + chrome.i18n.getMessage("@@extension_id") + "/index.html"
 		};
@@ -172,7 +176,7 @@ chrome.webRequest.onAuthRequired.addListener(
 				length = views.length;
 
 			while (++i < length) {
-				if (views[i].tabId == info.tabId) {
+				if (views[i].tabId === info.tabId) {
 					return {
 						cancel: true
 					};
@@ -215,8 +219,8 @@ var getFeed = function(theme, cb, next) {
 		};
 
 	// These are utilities that the URL and image parse are rendered with. With them the URL can incorporate things like a random number.
-	Object.getOwnPropertyNames(Math).forEach(function(e, i) {
-		if (typeof Math[e] == "function") {
+	Object.getOwnPropertyNames(Math).forEach(function(e) {
+		if (typeof Math[e] === "function") {
 			utils.Math[e] = function() {
 				return function(args) {
 					return Math[e].apply(window, args.split(", "));
@@ -233,8 +237,8 @@ var getFeed = function(theme, cb, next) {
 	xhr.open("GET", Hogan.compile(theme.url).render(utils), true);
 
 	xhr.onreadystatechange = function() {
-		if (xhr.readyState == 4) {
-			if (xhr.status == 200) {
+		if (xhr.readyState === 4) {
+			if (xhr.status === 200) {
 				var d = xhr.responseText;
 
 				try {
@@ -247,10 +251,10 @@ var getFeed = function(theme, cb, next) {
 
 						var url = doc.querySelector(theme.selector);
 
-						if (theme.attr == "text") {
+						if (theme.attr === "text") {
 							url = url.textContent;
 						}
-						else if (theme.attr == "html") {
+						else if (theme.attr === "html") {
 							url = url.innerHTML;
 						}
 						else {
@@ -260,7 +264,7 @@ var getFeed = function(theme, cb, next) {
 						utils.res = url;
 					}
 					else {
-						if (typeof d == "object") {
+						if (typeof d === "object") {
 							utils.res = d;
 						}
 						else {
@@ -333,7 +337,7 @@ var cache = function(theme, cb) {
 	}
 
 	var err = function(e) {
-			if (e && e.name == "InvalidStateError") {
+			if (e && e.name === "InvalidStateError") {
 				return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
 					window.fs = fs;
 
@@ -357,17 +361,17 @@ var cache = function(theme, cb) {
 	fs.root.getDirectory("Themes", { create: true }, function(dir) {
 		var active = 0;
 
-		ids.forEach(function(id, i) {
+		ids.forEach(function(id) {
 			active++;
 
 			dir.getFile(id + ".jpg", { create: true }, function(fe) {
 				var xhr = new XMLHttpRequest();
 
-				xhr.open("GET", (id == theme.id && (theme.type == "feed" || (theme.oType && theme.oType == "feed")) ? theme.image : "https://themes.ichro.me/images/" + id + ".jpg"));
+				xhr.open("GET", (id === theme.id && (theme.type === "feed" || (theme.oType && theme.oType === "feed")) ? theme.image : "https://themes.ichro.me/images/" + id + ".jpg"));
 
 				xhr.responseType = "blob";
 
-				xhr.onload = function(e) {
+				xhr.onload = function() {
 					if (xhr.status !== 200) {
 						return err();
 					}
@@ -375,7 +379,7 @@ var cache = function(theme, cb) {
 					var blob = xhr.response;
 
 					fe.createWriter(function(writer) {
-						writer.onwrite = function(e) {
+						writer.onwrite = function() {
 							active--;
 
 							// This stores the image as a theme
@@ -421,24 +425,26 @@ var refreshFeeds = function() {
 			key;
 
 		for (key in cached) {
-			var theme = cached[key];
+			if (cached.hasOwnProperty(key)) {
+				var theme = cached[key];
 
-			if ((theme.type == "feed" || (theme.oType && theme.oType == "feed")) && ((theme.lastFetched && theme.lastFetched <= start) || !theme.lastFetched)) {
-				active++;
+				if ((theme.type === "feed" || (theme.oType && theme.oType === "feed")) && ((theme.lastFetched && theme.lastFetched <= start) || !theme.lastFetched)) {
+					active++;
 
-				console.log("Updating cached theme " + key + ", last fetched on " + new Date(theme.lastFetched));
+					console.log("Updating cached theme " + key + ", last fetched on " + new Date(theme.lastFetched));
 
-				getFeed(theme, function() {
-					active--;
+					getFeed(theme, function() {
+						active--;
 
-					if (active === 0) {
-						var d = JSON.parse(localStorage.config || "{}");
+						if (active === 0) {
+							var d = JSON.parse(localStorage.config || "{}");
 
-						d.cached = cached;
+							d.cached = cached;
 
-						localStorage.config = JSON.stringify(d);
-					}
-				}, cache);
+							localStorage.config = JSON.stringify(d);
+						}
+					}, cache);
+				}
 			}
 		}
 	}

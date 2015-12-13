@@ -65,7 +65,7 @@ define(["jquery", "lodash", "browser/api", "core/analytics", "core/pro"], functi
 
 		// These are loaded one after the next since they might contain
 		// different levels of information.
-		// 
+		//
 		// For example, if iChrome is uninstalled on 3 computers in a sync
 		// group, and cookies are cleared on two, when it's reinstalled
 		// one of the first two might create a new sync token, but not have
@@ -98,7 +98,7 @@ define(["jquery", "lodash", "browser/api", "core/analytics", "core/pro"], functi
 				}
 			}
 			catch (e) {}
-			
+
 			next();
 		});
 	};
@@ -273,7 +273,7 @@ define(["jquery", "lodash", "browser/api", "core/analytics", "core/pro"], functi
 						else {
 							// If a non-network error occurred, something must be wrong with
 							// our token(s), the data on the server, or the server itself.
-							// 
+							//
 							// So, we erase our local tokens and reload them from the synced storage.
 							// If the error occurs again, then the issue must be in our sync profile
 							// so we will have to recreate it.
@@ -365,7 +365,7 @@ define(["jquery", "lodash", "browser/api", "core/analytics", "core/pro"], functi
 					extension: Browser.app.id,
 					version: Browser.app.version
 				}));
-				
+
 				if (useBeacon) {
 					return cb(navigator.sendBeacon(url, new Blob([sData], { type: "application/json" })));
 				}
@@ -424,7 +424,7 @@ define(["jquery", "lodash", "browser/api", "core/analytics", "core/pro"], functi
 						else {
 							// If a non-network error occurred, something must be wrong with
 							// our token(s), the data on the server, or the server itself.
-							// 
+							//
 							// So, we erase our local tokens and reload them from the synced storage.
 							// If the error occurs again, then the issue must be in our sync profile
 							// so we will have to recreate it.
@@ -562,7 +562,9 @@ define(["jquery", "lodash", "browser/api", "core/analytics", "core/pro"], functi
 
 								params[param] = decodeURIComponent(e.substr(idx + 1).replace(/\+/g, " "));
 
-								if (param == "code") return false;
+								if (param === "code") {
+									return false;
+								}
 							}
 						});
 
@@ -591,7 +593,9 @@ define(["jquery", "lodash", "browser/api", "core/analytics", "core/pro"], functi
 									Track.event("Sync", "Authorize", "Error");
 								}
 
-								if (cb) cb();
+								if (cb) {
+									cb();
+								}
 							}, false, params.code);
 						}
 						else if (cb) {

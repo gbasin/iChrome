@@ -127,7 +127,6 @@ header .options li.selected {
 	/ Tabs
 */
 .tabs {
-	margin: 0;
 	padding: 0;
 	display: block;
 	margin: 0 -25px;
@@ -411,7 +410,7 @@ header .options li.selected {
 	background: #F5F5F5;
 	transform: translateZ(0);
 	transition: all .2s ease;
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 3px -3px inset;
+	box-shadow: rgba(0, 0, 0, 0.24) 0 4px 3px -3px inset;
 
 }
 
@@ -634,7 +633,7 @@ header .options li.selected {
 }
 
 .dark.transparent .news .item .desc,
-.darktransparent .news. .item .content {
+.dark.transparent .news .item .content {
 	color: #DDD;
 }
 

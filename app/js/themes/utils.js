@@ -43,10 +43,10 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 				image: "images/defaulttheme.jpg"
 			};
 
-			if (typeof theme == "object") {
+			if (typeof theme === "object") {
 				theme = (this.model.get("cached")[theme.id] || this.model.get("custom")[theme.id.replace("custom", "")] || defTheme);
 			}
-			else if (theme == "default") {
+			else if (theme === "default") {
 				theme = defTheme;
 			}
 			else {

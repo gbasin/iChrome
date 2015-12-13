@@ -35,7 +35,7 @@ define(["jquery"], function($) {
 	Number.prototype.pad = function() {
 		var num = this.toString();
 
-		return (num.length == 1) ? "0" + num : num;
+		return (num.length === 1) ? "0" + num : num;
 	};
 
 	$.animateNumber = function(from, to, speed, elm, prefix) {
@@ -119,19 +119,19 @@ define(["jquery"], function($) {
 			var e = obj2[k],
 				c = obj1[k];
 
-			if (typeof e == "undefined") {
+			if (typeof e === "undefined") {
 				continue;
 			}
-			else if (typeof c == "undefined") {
+			else if (typeof c === "undefined") {
 				newObj[k] = e;
 			}
 			else if (e === null) {
 				newObj[k] = e;
 			}
-			else if (typeof e == "object" && typeof e.length == "number" && JSON.stringify(e) !== JSON.stringify(c)) {
+			else if (typeof e === "object" && typeof e.length === "number" && JSON.stringify(e) !== JSON.stringify(c)) {
 				newObj[k] = e;
 			}
-			else if (typeof e == "object" && typeof e.length == "undefined" && JSON.stringify(e) !== JSON.stringify(c)) {
+			else if (typeof e === "object" && typeof e.length === "undefined" && JSON.stringify(e) !== JSON.stringify(c)) {
 				newObj[k] = $.unextend(c, e);
 			}
 			else if (e.toString() !== c.toString()) {
@@ -143,13 +143,13 @@ define(["jquery"], function($) {
 	};
 
 	String.prototype.parseUrl = function() {
-		if (this.indexOf("://") == 0) {
+		if (this.indexOf("://") === 0) {
 			return "https" + this;
 		}
-		else if (this.indexOf("data:") == 0 || this.indexOf("filesystem:") == 0 || this.indexOf("blob:") == 0) {
+		else if (this.indexOf("data:") === 0 || this.indexOf("filesystem:") === 0 || this.indexOf("blob:") === 0) {
 			return this.toString();
 		}
-		else if (this.indexOf("://") == -1) {
+		else if (this.indexOf("://") === -1) {
 			return "http://" + this;
 		}
 		else {
@@ -160,7 +160,7 @@ define(["jquery"], function($) {
 
 	/**
 	 * Extracted and modified from Lodash V3.0.0-pre: https://github.com/lodash/lodash/blob/master/dist/lodash.js#L7915
-	 * 
+	 *
 	 * @license
 	 * Lo-Dash 3.0.0-pre <http://lodash.com/>
 	 * Copyright 2012-2014 The Dojo Foundation <http://dojofoundation.org/>

@@ -96,7 +96,7 @@ define(["lodash", "jquery", "browser/api", "widgets/views/main"], function(_, $,
 		events: {
 			"input textarea.from": "exec",
 
-			"change select.from, select.to": function(e) {
+			"change select.from, select.to": function() {
 				this.model.saveData({
 					from: this.from.val(),
 					to: this.to.val()
@@ -105,7 +105,7 @@ define(["lodash", "jquery", "browser/api", "widgets/views/main"], function(_, $,
 				this.exec();
 			},
 
-			"click button.swap": function(e) {
+			"click button.swap": function() {
 				var currFrom = this.from.val(),
 					currTo = this.to.val();
 

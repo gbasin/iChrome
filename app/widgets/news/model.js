@@ -105,7 +105,9 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 			this.set("activeTab", this.config.topic);
 
 			this.on("change", function(model, options) {
-				if (options && options.widgetChange === true) return;
+				if (options && options.widgetChange === true) {
+					return;
+				}
 
 				this.refresh();
 			}, this);
@@ -149,7 +151,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 
 			_.each(docs, function(e) {
 				var self = (e._links && e._links.self && e._links.self[0]) || {};
-				
+
 				if (self.type === "image") {
 					images[self.href] = e;
 				}

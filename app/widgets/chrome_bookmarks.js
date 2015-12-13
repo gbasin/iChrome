@@ -85,7 +85,9 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 		 * @param   {Function}  cb  The callback
 		 */
 		getFolders: function(cb) {
-			if (!Browser.bookmarks) return;
+			if (!Browser.bookmarks) {
+				return;
+			}
 
 			Browser.bookmarks.getTree(function(d) {
 				var folders = _.reduce(d[0].children, function getFolders(res, e) {
@@ -110,7 +112,9 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 
 
 		refresh: function() {
-			if (!Browser.bookmarks) return;
+			if (!Browser.bookmarks) {
+				return;
+			}
 
 			// Even though this is a Chrome API call it takes as long as a web request
 			// and therefore should be part of a refresh pattern for faster loading
@@ -172,7 +176,7 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 				data.title = this.config.title;
 			}
 
-			if (this.config.target && this.config.target == "_blank") {
+			if (this.config.target && this.config.target === "_blank") {
 				data.newTab = true;
 			}
 
@@ -185,7 +189,7 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 				var href = this.getAttribute("href");
 
 				Browser.tabs.getCurrent(function(d) {
-					if (e.which == 2 || e.currentTarget.target == "_blank") {
+					if (e.which === 2 || e.currentTarget.target === "_blank") {
 						Browser.tabs.create({
 							url: href,
 							index: d.index + 1

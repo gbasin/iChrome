@@ -78,7 +78,7 @@ define(["lodash", "browser/api", "i18n/i18n", "widgets/registry/css", "widgets/r
 			// Translate default config properties
 			if (this.widget && this.widget.config) {
 				this.widget.config = _.mapValues(this.widget.config, function(str) {
-					if (typeof str == "string" && str.slice(0, 5) === "i18n.") {
+					if (typeof str === "string" && str.slice(0, 5) === "i18n.") {
 						return this.translate(str.substr(5));
 					}
 					else {

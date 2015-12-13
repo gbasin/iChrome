@@ -37,7 +37,7 @@ define(["lodash", "backbone", "core/pro", "i18n/i18n", "core/analytics", "modals
 			"click button.view": function(e) {
 				this.body.prepend(
 					'<style id="theme-view-style-elm">' +
-						'body > *:not(#bg-video) {' +
+						'body > *:not(.bg-video) {' +
 							'opacity: 0!important;' +
 							'pointer-events: none;' +
 							'transition: opacity .3s ease-in-out!important;' +
@@ -53,7 +53,7 @@ define(["lodash", "backbone", "core/pro", "i18n/i18n", "core/analytics", "modals
 					this.body.on("mousemove.menu", function(e) {
 						if (Math.abs(e.clientX - startX) >= 30 || Math.abs(e.clientY - startY) >= 30) {
 							var tStyle = this.body.off("mousemove.menu").children().first().html(
-								"body > *:not(#bg-video) {" +
+								"body > *:not(.bg-video) {" +
 									"transition: opacity .3s ease-in-out!important;" +
 								"}"
 							);
@@ -88,7 +88,9 @@ define(["lodash", "backbone", "core/pro", "i18n/i18n", "core/analytics", "modals
 
 			var theme = Themes.theme;
 
-			if (!theme) return;
+			if (!theme) {
+				return;
+			}
 
 			this.render(theme);
 
@@ -129,7 +131,9 @@ define(["lodash", "backbone", "core/pro", "i18n/i18n", "core/analytics", "modals
 					image: this.body[0].style.backgroundImage.replace(/.*\s?url\([\'\"]?/, "").replace(/[\'\"]?\).*/, "")
 				});
 
-				if (!theme.currentImage) return;
+				if (!theme.currentImage) {
+					return;
+				}
 
 				downloadUrl = Utils.getImage(theme.currentImage);
 			}

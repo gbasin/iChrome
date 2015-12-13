@@ -61,7 +61,9 @@ define([
 			// If the widget isn't available we create the element anyway so it's
 			// preserved during serialization, but don't initialize it or call
 			// any widget code
-			if (!this.widget.isAvailable) return;
+			if (!this.widget.isAvailable) {
+				return;
+			}
 
 			this.updateLoc();
 
@@ -121,7 +123,9 @@ define([
 				Status.error("An error occurred while trying to render the " + this.widget.name + " widget!");
 			}
 
-			if (this.instance.refresh && !this.isPreview) this.instance.refresh();
+			if (this.instance.refresh && !this.isPreview) {
+				this.instance.refresh();
+			}
 
 
 			if (this.instance.interval) {
@@ -203,7 +207,9 @@ define([
 					Status.error("An error occurred while trying to render the " + this.widget.name + " widget!");
 				}
 
-				if (this.instance.refresh && !this.isPreview) this.instance.refresh();
+				if (this.instance.refresh && !this.isPreview) {
+					this.instance.refresh();
+				}
 			}
 
 
@@ -212,7 +218,7 @@ define([
 			// The tabs collection listens for widget save events and triggers
 			// a sync. We only want to do that when something other than the
 			// widget state changes (otherwise maximizing would trigger a save)
-			if (changedKeys.length !== 1 || changedKeys.indexOf("state") == -1) {
+			if (changedKeys.length !== 1 || changedKeys.indexOf("state") === -1) {
 				this.model.trigger("save");
 			}
 		},
@@ -227,7 +233,7 @@ define([
 			// All known properties (no custom ones are saved) except state, which
 			// the widget isn't alllowed to change, are copied
 			var set = _(this.instance).pick("size", "config", "data", "syncData", "loc").mapValues(function(e, key) {
-				if (key == "config") {
+				if (key === "config") {
 					var config = $.unextend(this.widget.widget.config, e);
 
 					delete config.size;
@@ -296,7 +302,9 @@ define([
 		 * @api     public
 		 */
 		refresh: function() {
-			if (this._requestingPermissions) return;
+			if (this._requestingPermissions) {
+				return;
+			}
 
 			try {
 				this.instance.render(this.isPreview);
@@ -327,7 +335,7 @@ define([
 
 			data.i18n = this.widget.strings || {};
 
-			this.el.innerHTML = 
+			this.el.innerHTML =
 				'<div class="handle"></div>' +
 				(this.hasSettings ? '\r\n<div class="settings">&#xF0AD;</div>' : "") +
 				render("widgets." + this.widget.name, data, partials) +

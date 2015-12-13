@@ -53,7 +53,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 	 */
 	Cacher.prototype.cache = function(theme) {
 		// If this is an RSS theme, get the image from the feed first
-		if (typeof theme == "undefined" && this.theme.oType == "feed") {
+		if (typeof theme === "undefined" && this.theme.oType === "feed") {
 			return this.getFeed(this.cache.bind(this));
 		}
 
@@ -122,17 +122,17 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 				that.trigger("progress", length, 0);
 
-				ids.forEach(function(id, i) {
+				ids.forEach(function(id) {
 					active++;
 
 					dir.getFile(id + (isVideo ? ".mp4" : ".jpg"), { create: true }, function(fe) {
 						var xhr = new XMLHttpRequest();
 
-						xhr.open("GET", (id == theme.id && theme.oType == "feed" ? theme.image : "https://themes.ichro.me/images/" + id + (isVideo ? ".mp4" : ".jpg")));
+						xhr.open("GET", (id === theme.id && theme.oType === "feed" ? theme.image : "https://themes.ichro.me/images/" + id + (isVideo ? ".mp4" : ".jpg")));
 
 						xhr.responseType = "blob";
 
-						xhr.onload = function(e) {
+						xhr.onload = function() {
 							if (xhr.status !== 200) {
 								return err();
 							}
@@ -140,7 +140,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 							var blob = xhr.response;
 
 							fe.createWriter(function(writer) {
-								writer.onwrite = function(e) {
+								writer.onwrite = function() {
 									active--;
 
 									// This stores the image as a theme
@@ -185,7 +185,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 	Cacher.prototype.error = function(e) {
 		// If the FS object has "expired", maybe because of slow
 		// requests, restart the caching
-		if (e && e.name == "InvalidStateError") {
+		if (e && e.name === "InvalidStateError") {
 			return this.cache(this.theme);
 		}
 
@@ -239,8 +239,8 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 		// These are utilities that the URL and image parser are rendered with
 		// They can be used to incorporate things like random numbers
-		Object.getOwnPropertyNames(Math).forEach(function(e, i) {
-			if (typeof Math[e] == "function") {
+		Object.getOwnPropertyNames(Math).forEach(function(e) {
+			if (typeof Math[e] === "function") {
 				utils.Math[e] = function() {
 					return function(args) {
 						return Math[e].apply(window, args.split(", "));
@@ -262,10 +262,10 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 					var url = doc.find(theme.selector);
 
-					if (theme.attr == "text") {
+					if (theme.attr === "text") {
 						url = url.text();
 					}
-					else if (theme.attr == "html") {
+					else if (theme.attr === "html") {
 						url = url.html();
 					}
 					else {
@@ -275,7 +275,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 					utils.res = url;
 				}
 				else {
-					if (typeof d == "object") {
+					if (typeof d === "object") {
 						utils.res = d;
 					}
 					else {
@@ -396,7 +396,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 
 			var err = function(e) {
-				if (e && e.name == "InvalidStateError") {
+				if (e && e.name === "InvalidStateError") {
 					return this.cache(theme, id, cb);
 				}
 
@@ -423,7 +423,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 							xhr.responseType = "blob";
 
-							xhr.onload = function(e) {
+							xhr.onload = function() {
 								if (xhr.status !== 200) {
 									return err();
 								}
@@ -431,7 +431,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 								var blob = xhr.response;
 
 								fe.createWriter(function(writer) {
-									writer.onwrite = function(e) {
+									writer.onwrite = function() {
 										theme.image = fe.toURL() + "#OrigURL:" + url;
 
 										theme.offline = true;
@@ -484,7 +484,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 		 */
 		reEnumerate: function(id, cb) {
 			var err = function(e) {
-					if (e && e.name == "InvalidStateError") {
+					if (e && e.name === "InvalidStateError") {
 						return this.reEnumerate(id, cb);
 					}
 
@@ -500,10 +500,10 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 								var length = entries.length,
 									done = 0;
 
-								entries.forEach(function(e, i) {
+								entries.forEach(function(e) {
 									var nName = parseInt(e.name);
 
-									if (typeof nName !== "undefined" && nName > id && themes[nName] && (nName + "").length == e.name.length) { // The theme name is just a number
+									if (typeof nName !== "undefined" && nName > id && themes[nName] && (nName + "").length === e.name.length) { // The theme name is just a number
 										e.moveTo(dir, nName - 1, function(fe) {
 											var oURL = themes[nName].image.split("#OrigURL:")[1];
 
@@ -511,7 +511,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 											done++;
 
-											if (done == length) {
+											if (done === length) {
 												cb();
 											}
 										});
@@ -519,7 +519,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 									else {
 										done++;
 
-										if (done == length) {
+										if (done === length) {
 											cb();
 										}
 									}
@@ -560,7 +560,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 		 */
 		saveUpload: function(theme, file, id, cb) {
 			var err = function(e) {
-				if (e && e.name == "InvalidStateError") {
+				if (e && e.name === "InvalidStateError") {
 					return this.saveUpload(theme, file, id, cb);
 				}
 
@@ -574,7 +574,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 					tDir.getDirectory("Custom", { create: true }, function(dir) {
 						dir.getFile(id, { create: true }, function(fe) {
 							fe.createWriter(function(writer) {
-								writer.onwrite = function(e) {
+								writer.onwrite = function() {
 									theme.image = fe.toURL();
 
 									theme.offline = true;
@@ -602,7 +602,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 		 */
 		deleteImage: function(id, cb) {
 			var err = function(e) {
-				if (e && e.name == "InvalidStateError") {
+				if (e && e.name === "InvalidStateError") {
 					return this.deleteImage(id, cb);
 				}
 

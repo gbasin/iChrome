@@ -161,7 +161,7 @@ body.widget-maximized {
 }
 
 /* line 155, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-#bg-video {
+.bg-video {
 	top: 0;
 	left: 0;
 	right: 0;
@@ -4299,7 +4299,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 }
 
 /* line 4051, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-.themes.create #image {
+.themes.create input.image {
 	width: 56%;
 }
 
@@ -4407,10 +4407,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 }
 
 /* line 4152, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-.themes.create #image:lang(ru),
-.themes.create #image:lang(cs),
-.themes.create #image:lang(ja),
-.themes.create #image:lang(tr) {
+.themes.create .image:lang(ru),
+.themes.create .image:lang(cs),
+.themes.create .image:lang(ja),
+.themes.create .image:lang(tr) {
 	width: 54%;
 }
 
@@ -4631,7 +4631,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .sp-clear-enabled .sp-clear {
 	display: block;
 	position: absolute;
-	top: 0px;
+	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 84%;
@@ -6370,8 +6370,8 @@ body > .settings .input.textarea textarea:focus {
 }
 
 /* line 720, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.clock .start-stop.started #start,
-.clock .start-stop:not(.started) #stop {
+.clock .start-stop.started .start,
+.clock .start-stop:not(.started) .stop {
 	display: none;
 }
 

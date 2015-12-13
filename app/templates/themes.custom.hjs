@@ -5,8 +5,8 @@
 	<div class="form-group">
 		<label for="name">{{i18n.themes.edit.name}}</label>
 
-		{{#name}}<input type="text" class="form-control" id="name" name="name" placeholder="{{i18n.themes.edit.name_placeholder}}" value="{{name}}" />{{/name}}
-		{{^name}}<input type="text" class="form-control" id="name" name="name" placeholder="{{i18n.themes.edit.name_placeholder}}" value="{{i18n.themes.default_name}}" />{{/name}}
+		{{#name}}<input type="text" class="form-control name" id="name" name="name" placeholder="{{i18n.themes.edit.name_placeholder}}" value="{{name}}" />{{/name}}
+		{{^name}}<input type="text" class="form-control name" id="name" name="name" placeholder="{{i18n.themes.edit.name_placeholder}}" value="{{i18n.themes.default_name}}" />{{/name}}
 	</div>
 
 	<div class="form-group">
@@ -17,20 +17,20 @@
 
 			<div class="upload">{{i18n.themes.url_or_upload}}<input type="file" class="btn btn-primary" id="upload" /></div>
 
-			<input type="text" class="form-control" id="image" name="image" placeholder="{{i18n.themes.edit.image_placeholder}}" value="{{image}}" />
+			<input type="text" class="form-control image" id="image" name="image" placeholder="{{i18n.themes.edit.image_placeholder}}" value="{{image}}" />
 		</div>
 	</div>
 
 	<div class="form-group color">
 		<label for="color">{{i18n.themes.edit.color}}</label>
 
-		<input type="text" class="form-control" id="color" name="color" value="{{color}}" />
+		<input type="text" class="form-control color" id="color" name="color" value="{{color}}" />
 	</div>
 
 	<div class="form-group">
 		<label for="position">{{i18n.themes.edit.position}}</label>
 
-		<select class="form-control" id="position" name="position">
+		<select class="form-control position" id="position" name="position">
 			<option value="center">{{i18n.themes.edit.position_options.center}}</option>
 			<option value="top left">{{i18n.themes.edit.position_options.top_left}}</option>
 			<option value="top center" selected>{{i18n.themes.edit.position_options.top_center}}</option>
@@ -44,7 +44,7 @@
 	<div class="form-group">
 		<label for="scaling">{{i18n.themes.edit.scaling}}</label>
 
-		<select class="form-control" id="scaling" name="scaling">
+		<select class="form-control scaling" id="scaling" name="scaling">
 			<option value="cover">{{i18n.themes.edit.scaling_options.auto}}</option>
 			<option value="100% auto">{{i18n.themes.edit.scaling_options.width}}</option>
 			<option value="auto 100%">{{i18n.themes.edit.scaling_options.height}}</option>
@@ -55,7 +55,7 @@
 	<div class="form-group">
 		<label for="repeat">{{i18n.themes.edit.repeat}}</label>
 
-		<select class="form-control" id="repeat" name="repeat">
+		<select class="form-control repeat" id="repeat" name="repeat">
 			<option value="no-repeat">{{i18n.themes.edit.repeat_options.none}}</option>
 			<option value="repeat-x">{{i18n.themes.edit.repeat_options.horizontal}}</option>
 			<option value="repeat-y">{{i18n.themes.edit.repeat_options.vertical}}</option>

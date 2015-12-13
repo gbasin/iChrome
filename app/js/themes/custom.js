@@ -16,15 +16,15 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 			events: {
 				"click .btn.save": "save",
 				"click .btn.preview": "preview",
-				"change #color, #image, #upload, #position, #scaling, #repeat": "updatePreview",
+				"change .color, .image, .upload input, .position, .scaling, .repeat": "updatePreview",
 
 				"click input:not([type=radio], [type=checkbox]), textarea, select": function(e) {
-					if (e.which == 13) {
+					if (e.which === 13) {
 						this.save(e); // This calls preventDefault
 					}
 				},
-				"change #upload": function(e) {
-					this.$("#image").val("").change();
+				"change .upload input": function() {
+					this.$(".image").val("").change();
 				}
 			},
 
@@ -35,7 +35,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 			 * @api    private
 			 */
 			updatePreview: function() {
-				var image = this.$("#image").val(),
+				var image = this.$(".image").val(),
 					upload,
 					next = function(url) {
 						this.$(".preview").first().css({
@@ -51,7 +51,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 				if (image) {
 					next(image);
 				}
-				else if ((upload = this.$("#upload")[0].files).length) {
+				else if ((upload = this.$(".upload input")[0].files).length) {
 					var fr = new FileReader();
 
 					fr.onloadend = function() {
@@ -90,7 +90,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 				var theme = this.serialize(),
 					upload;
 
-				if (!theme.image && (upload = this.$("#upload")[0].files).length) {
+				if (!theme.image && (upload = this.$(".upload input")[0].files).length) {
 					var fr = new FileReader();
 
 					fr.onloadend = function() {
@@ -116,7 +116,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 			 * @param  {Event|Function} [e] The event to call preventDefault() on or a callback function
 			 */
 			save: function(e) {
-				if (typeof e == "function") {
+				if (typeof e === "function") {
 					var cb = e;
 				}
 				else if (e && e.preventDefault) {
@@ -132,7 +132,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 
 				var next = function(d) {
 					theme = d || theme;
-					
+
 					if (editing && themes[this.editing]) {
 						Cacher.prototype.model.storage.themes[this.editing] = theme;
 					}
@@ -156,7 +156,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 
 				var upload;
 
-				if (theme.image && typeof theme.image == "string") {
+				if (theme.image && typeof theme.image === "string") {
 					try { // This is a user-provided URL, anything could happen
 						Cacher.Custom.cache(theme, id, next);
 					}
@@ -164,7 +164,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 						alert(Translate("themes.edit.cache_error"));
 					}
 				}
-				else if ((upload = this.$("#upload")[0].files).length) {
+				else if ((upload = this.$(".upload input")[0].files).length) {
 					try { // Again, who knows what could go wrong
 						Cacher.Custom.saveUpload(theme, upload[0], id, next);
 					}
@@ -190,8 +190,10 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 			serialize: function() {
 				var theme = {};
 
-				this.$("form").serializeArray().forEach(function(e, i) {
-					if (e.value) theme[e.name] = e.value;
+				this.$("form").serializeArray().forEach(function(e) {
+					if (e.value) {
+						theme[e.name] = e.value;
+					}
 				});
 
 				return theme;
@@ -220,7 +222,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 
 
 			initialize: function(options) {
-				if (options && typeof options.theme == "number") {
+				if (options && typeof options.theme === "number") {
 					this.model = new Model(Utils.model.get("custom")[options.theme]);
 
 					this.editing = options.theme;
@@ -238,7 +240,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 
 			remove: function() {
 				this.$("#color").spectrum("destroy");
-				
+
 				Backbone.View.prototype.remove.call(this);
 			},
 

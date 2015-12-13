@@ -3,10 +3,10 @@ var _ = require('lodash');
 /**
  * @param {IGrunt} grunt
  */
-module.exports = function (grunt) {
-	grunt.task.registerTask("widgets", "Displays a summary of widgets.", function (arg) {
+module.exports = function(grunt) {
+	grunt.task.registerTask("widgets", "Displays a summary of widgets.", function() {
 		// read all the manifests
-		var widgets = _.map(grunt.file.expand("./app/widgets/**/manifest.json"), function (path) {
+		var widgets = _.map(grunt.file.expand("./app/widgets/**/manifest.json"), function(path) {
 			var json = grunt.file.readJSON(path);
 			return {
 				id: json.id,
@@ -15,8 +15,9 @@ module.exports = function (grunt) {
 				path: path
 			};
 		});
+
 		// read all the legacy widgets
-		var legacy = _.map(grunt.file.expand("./app/widgets/*.js"), function (path) {
+		var legacy = _.map(grunt.file.expand("./app/widgets/*.js"), function(path) {
 			var js = grunt.file.read(path);
 			var id = js.match(/\sid:\s(\d+),/);
 			var name = js.match(/\snicename:\s["'](\w+)["'],/);
@@ -27,8 +28,9 @@ module.exports = function (grunt) {
 				path: path
 			};
 		});
+
 		// print a report
-		_.each(_.sortBy(_.flatten([widgets, legacy]), "id"), function (manifest) {
+		_.each(_.sortBy(_.flatten([widgets, legacy]), "id"), function(manifest) {
 			grunt.log.writeln(" id:" + manifest.id + " name:" + manifest.name + " legacy:" + manifest.legacy);
 			grunt.log.verbose.writeln(manifest.path);
 		});

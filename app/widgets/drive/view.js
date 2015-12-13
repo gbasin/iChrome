@@ -1,7 +1,7 @@
 define(["lodash", "widgets/views/main", "moment"], function(_, WidgetView, moment) {
 	return WidgetView.extend({
-		onBeforeRender: function(data, demo) {
-			data.files = _.map(data.files, function(e, i) {
+		onBeforeRender: function(data) {
+			data.files = _.map(data.files, function(e) {
 				// A clone inside the loop is faster than a deep clone of the
 				// entire data object
 				e = _.clone(e);

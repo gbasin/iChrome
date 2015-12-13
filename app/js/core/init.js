@@ -8,7 +8,7 @@ define([
 	var Model = Backbone.Model.extend({
 		init: function() {
 			Storage.on("done updated", function(storage) {
-				if (typeof storage.settings.toolbar == "boolean") {
+				if (typeof storage.settings.toolbar === "boolean") {
 					if (storage.settings.toolbar) {
 						storage.settings.toolbar = "full";
 					}
@@ -72,19 +72,31 @@ define([
 			// This only fires on change otherwise users with the
 			// button might see a FOUT (Flash Of Unchosen Toolbar)
 			this.model.on("change:toolbar", function() {
-				if (this.model.get("toolbar") == "full") {
-					if (!this.Toolbar) this.Toolbar = new Toolbar();
+				if (this.model.get("toolbar") === "full") {
+					if (!this.Toolbar) {
+						this.Toolbar = new Toolbar();
+					}
 
-					if (this.MenuButton) this.MenuButton.$el.detach();
-					else Track.event("Toolbar", "Load"); // If a menu button doesn't exist this isn't a setting change
+					if (this.MenuButton) {
+						this.MenuButton.$el.detach();
+					}
+					else {
+						Track.event("Toolbar", "Load"); // If a menu button doesn't exist this isn't a setting change
+					}
 
 					this.$el.prepend(this.Toolbar.render().el);
 				}
 				else {
-					if (!this.MenuButton) this.MenuButton = new MenuButton();
+					if (!this.MenuButton) {
+						this.MenuButton = new MenuButton();
+					}
 
-					if (this.Toolbar) this.Toolbar.$el.detach();
-					else Track.event("Menu Button", "Load");
+					if (this.Toolbar) {
+						this.Toolbar.$el.detach();
+					}
+					else {
+						Track.event("Menu Button", "Load");
+					}
 
 					this.$el.prepend(this.MenuButton.render().el);
 				}

@@ -10,7 +10,7 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 				if (tab === this.model.get("activeTab")) {
 					this.model.refresh();
 				}
-				
+
 				this.model.set("activeTab", tab);
 
 				this.render({
@@ -72,7 +72,9 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 		updateTabs: function(scrollLeft) {
 			var tabs = this.$("ul.tabs");
 
-			if (!tabs.length) return;
+			if (!tabs.length) {
+				return;
+			}
 
 			var scrollWidth = tabs[0].scrollWidth,
 				offsetWidth = tabs[0].offsetWidth;
@@ -93,7 +95,7 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 		},
 
 
-		onBeforeRender: function(data, demo) {
+		onBeforeRender: function(data) {
 			if (!data.loading) {
 				data.items = _.map(data.items.slice(0, this.model.config.number || 5), function(e) {
 					e = _.clone(e);
@@ -119,7 +121,7 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 				data.link = this.model.config.link.parseUrl();
 			}
 
-			if (this.model.config.view && this.model.config.view == "images") {
+			if (this.model.config.view && this.model.config.view === "images") {
 				data.images = true;
 			}
 
@@ -131,7 +133,9 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 					return {
 						id: i,
 						name: e.name,
-						active: i == activeTab // The == is intentional here, IDs are not necessarily numerical
+
+						// The == is intentional here, IDs are not necessarily numerical
+						active: i == activeTab // jshint ignore:line
 					};
 				});
 			}
@@ -160,7 +164,7 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 
 
 			if (data.images) {
-				this.$("img").on("error", function(e) {
+				this.$("img").on("error", function() {
 					this.style.height = "20px";
 				});
 			}

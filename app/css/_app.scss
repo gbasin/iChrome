@@ -152,7 +152,7 @@ body.widget-maximized {
 	overflow: hidden;
 }
 
-#bg-video {
+.bg-video {
 	top: 0;
 	left: 0;
 	right: 0;
@@ -4048,7 +4048,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	border-radius: 2px;
 }
 
-.themes.create #image {
+.themes.create input.image {
 	width: 56%;
 }
 
@@ -4149,10 +4149,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	width: calc(60% - 50px);
 }
 
-.themes.create #image:lang(ru),
-.themes.create #image:lang(cs),
-.themes.create #image:lang(ja),
-.themes.create #image:lang(tr) {
+.themes.create .image:lang(ru),
+.themes.create .image:lang(cs),
+.themes.create .image:lang(ja),
+.themes.create .image:lang(tr) {
 	width: 54%;
 }
 
@@ -4271,7 +4271,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .sp-alpha { display: none; position: absolute; bottom: -20px; right: 0; left: 0; height: 10px; }
 .sp-clear { display: none; }
 .sp-clear.sp-clear-display { background-position: center; }
-.sp-clear-enabled .sp-clear { display: block; position:absolute; top:0px; right:0; bottom:0; left:84%; height: 28px; }
+.sp-clear-enabled .sp-clear { display: block; position:absolute; top:0; right:0; bottom:0; left:84%; height: 28px; }
 .sp-palette-disabled .sp-palette-container { display: none; }
 .sp-initial-disabled .sp-initial { display: none; }
 .sp-sat { background-image: linear-gradient(to right, #fff, rgba(204, 154, 129, 0)); }

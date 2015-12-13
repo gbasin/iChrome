@@ -717,8 +717,8 @@
 	margin-left: -6px;
 }
 
-.clock .start-stop.started #start,
-.clock .start-stop:not(.started) #stop {
+.clock .start-stop.started .start,
+.clock .start-stop:not(.started) .stop {
 	display: none;
 }
 

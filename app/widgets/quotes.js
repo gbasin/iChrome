@@ -49,7 +49,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 
 		/**
 		 * Contains a listing of sources.
-		 * 
+		 *
 		 * Each source must either be an array of quotes or a specification for
 		 * a URL to fetch and a parser function.
 		 *
@@ -83,7 +83,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 			iheartquotes: {
 				url: "http://www.iheartquotes.com/api/v1/random?max_lines=4&max_characters=130&format=json",
 
-				parse: function(d, unknown) {
+				parse: function(d) {
 					return {
 						body: d.quote.trim(),
 						noquotes: true,
@@ -96,7 +96,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 			quotationspage: {
 				url: "http://www.quotationspage.com/random.php3?number=1&collection%5B%5D=mgm&collection%5B%5D=motivate&collection%5B%5D=classic",
 
-				parse: function(d, unknown) {
+				parse: function(d) {
 					d = $($.parseHTML(d
 						.replace(/ src="\/\//g, " data-src=\"https://")
 						.replace(/ src="/g, " data-src=\"")
@@ -116,7 +116,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 			thinkexist: {
 				url: "http://en.thinkexist.com/rss.asp?special=random",
 
-				parse: function(d, unknown) {
+				parse: function(d) {
 					d = $(d);
 
 					return {
@@ -411,7 +411,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 		},
 
 		refresh: function(force) {
-			if (!force && this.config.method == "daily" && this.data.date && (new Date().getTime() - this.data.date) < 864E5) {
+			if (!force && this.config.method === "daily" && this.data.date && (new Date().getTime() - this.data.date) < 864E5) {
 				return;
 			}
 
@@ -431,10 +431,15 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 						quote.source = this.utils.translate("unknown_author");
 					}
 
-					if (!quote.link) delete quote.link;
-					if (!quote.source) delete quote.source;
+					if (!quote.link) {
+						delete quote.link;
+					}
+
+					if (!quote.source) {
+						delete quote.source;
+					}
 				}
-				
+
 				this.data = quote;
 
 				this.data.date = new Date().getTime();
@@ -443,7 +448,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 
 				this.utils.saveData(this.data);
 			}
-			else if (source && source.url && typeof source.parse == "function") {
+			else if (source && source.url && typeof source.parse === "function") {
 				$.ajax({
 					cache: false,
 					method: "GET",
@@ -459,10 +464,17 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 								quote = false;
 							}
 
-							if (!quote) return;
+							if (!quote) {
+								return;
+							}
 
-							if (!quote.link) delete quote.link;
-							if (!quote.source) delete quote.source;
+							if (!quote.link) {
+								delete quote.link;
+							}
+
+							if (!quote.source) {
+								delete quote.source;
+							}
 
 							this.data = quote;
 
@@ -479,7 +491,9 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 
 
 		render: function(demo) {
-			if (demo) return this.refresh();
+			if (demo) {
+				return this.refresh();
+			}
 
 			var data = _.clone(this.data);
 

@@ -24,15 +24,15 @@ define(["backbone", "storage/storage", "core/render", "core/analytics", "search/
 					e.preventDefault();
 				}
 
-				if (e.which == 13) {
+				if (e.which === 13) {
 					this.submit();
 				}
-				else if (e.which == 38) {
+				else if (e.which === 38) {
 					this.Suggestions.setFocus("prev");
 
 					Track.event("Search", "Suggestions", "Key Prev");
 				}
-				else if (e.which == 40) {
+				else if (e.which === 40) {
 					this.Suggestions.setFocus("next");
 
 					Track.event("Search", "Suggestions", "Key Next");
@@ -48,7 +48,7 @@ define(["backbone", "storage/storage", "core/render", "core/analytics", "search/
 						this.trigger("typing:start");
 					}
 				}
-				else if (!w || (w == "focusout")) { // If either w (which) isn't set or w is focusout; if w is not focusin
+				else if (!w || (w === "focusout")) { // If either w (which) isn't set or w is focusout; if w is not focusin
 					this.Suggestions.hide();
 
 					if (this.model.get("toolbar")) {

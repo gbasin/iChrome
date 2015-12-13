@@ -9,7 +9,7 @@ s.textContent = "(" + (function() {
 		oOpen = window.open;
 
 	window.eval = function(js) {
-		if (js == "win.frameElement.src") {
+		if (js === "win.frameElement.src") {
 			document.write(
 				"<style>" +
 					".vCxOb," +
@@ -44,7 +44,7 @@ s.textContent = "(" + (function() {
 	/*jshint +W061 */
 
 	window.open = function(url, target) {
-		if (url === window.location && (target == "_top" || target == "_parent")) {
+		if (url === window.location && (target === "_top" || target === "_parent")) {
 			throw "Framebusting busted";
 		}
 		else {

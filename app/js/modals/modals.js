@@ -1,8 +1,8 @@
 /**
  * This is the modal dialog base view.
- * 
+ *
  * Because it has so many methods of its own, it needs to be created and then have its element set as a base element for the actual modal content (i.e. the store).
- * 
+ *
  * See modals/updated for a simple usage example.
  */
 define(["jquery", "backbone"], function($, Backbone) {
@@ -31,7 +31,7 @@ define(["jquery", "backbone"], function($, Backbone) {
 
 			return this;
 		},
-		close: function(e) { // This is an overridable close method that is called from event handlers, it lets the content intercept closes.
+		close: function() { // This is an overridable close method that is called from event handlers, it lets the content intercept closes.
 			return this.hide();
 		},
 		destroy: function() {
@@ -54,9 +54,17 @@ define(["jquery", "backbone"], function($, Backbone) {
 			// Construct an object of CSS properties based on the options passed
 			var css = {};
 
-			if (this.width)			css.width = this.width;
-			if (this.height)		css.maxHeight = this.height;
-			if (this.realHeight)	css.height = this.realHeight;
+			if (this.width) {
+				css.width = this.width;
+			}
+
+			if (this.height) {
+				css.maxHeight = this.height;
+			}
+
+			if (this.realHeight) {
+				css.height = this.realHeight;
+			}
 
 			this.$el.css(css);
 
@@ -83,7 +91,7 @@ define(["jquery", "backbone"], function($, Backbone) {
 				It can't be attached in "events" since it has to be triggered for both the modal and the overlay.
 			*/
 			this.mo.on("keydown", function(e) {
-				if (e.keyCode == 27) {
+				if (e.keyCode === 27) {
 					this.close(e);
 				}
 			}.bind(this));

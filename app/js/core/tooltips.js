@@ -83,9 +83,8 @@ define(["jquery", "backbone", "core/analytics", "core/render"], function($, Back
 		 * Handles the mouse leave event, hiding the tooltip
 		 *
 		 * @api    private
-		 * @param  {Event}  e The event
 		 */
-		mouseLeave: function(e) {
+		mouseLeave: function() {
 			clearTimeout(this.timeout);
 
 			this.$el.removeClass("visible");

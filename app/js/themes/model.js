@@ -8,7 +8,7 @@ define(["lodash", "backbone", "browser/api", "themes/utils", "i18n/i18n"], funct
 			custom: [],
 			categories: []
 		},
-		
+
 		initialize: function() {
 			Utils.model.on("change:cached", function() {
 				this.parse(this.manifest);
@@ -81,8 +81,8 @@ define(["lodash", "backbone", "browser/api", "themes/utils", "i18n/i18n"], funct
 					}
 				};
 
-			
-			d.themes.forEach(function(e, i) {
+
+			d.themes.forEach(function(e) {
 				var theme = _.clone(e);
 
 				theme.filterCategories = e.categories;
@@ -126,7 +126,7 @@ define(["lodash", "backbone", "browser/api", "themes/utils", "i18n/i18n"], funct
 
 				var categories = [];
 
-				e.categories.forEach(function(e, i) {
+				e.categories.forEach(function(e) {
 					if (d.categories[e]) {
 						categories.push(d.categories[e]);
 					}

@@ -25,7 +25,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 
 					this.saveData({
 						count: parseInt(d.find("fullcount").text()) || 0,
-						messages: _.map(d.find("entry").toArray().slice(0, 4), function(e, i) {
+						messages: _.map(d.find("entry").toArray().slice(0, 4), function(e) {
 							return {
 								subject: e.querySelector("title").textContent,
 								excerpt: e.querySelector("summary").textContent

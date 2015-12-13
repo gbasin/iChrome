@@ -2,7 +2,7 @@
  * This is the Updated dialog, it's only shown after a large update is released
  */
 define(["backbone", "browser/api", "modals/modals", "core/render"], function(Backbone, Browser, Modal, render) {
-	if (Browser.storage.updated == "true") {
+	if (Browser.storage.updated === "true") {
 		var modal = new (Modal.extend({
 				height: 640,
 				classes: "updated",

@@ -19,12 +19,12 @@ module.exports = function(grunt) {
 				return grunt.file.readJSON(filepath);
 			});
 
-			_.each(locales, function(locale, i) {
+			_.each(locales, function(locale) {
 				var name = locale.lang_code,
 					desc = "";
 
 				_.each(locale, function(e, i) {
-					if (i !== "lang_code" && i.indexOf("newtab") == -1 && typeof e == "string") {
+					if (i !== "lang_code" && i.indexOf("newtab") === -1 && typeof e === "string") {
 						desc += e + "\n\n";
 					}
 					else if (Array.isArray(e)) {
