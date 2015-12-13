@@ -96,10 +96,12 @@ define(["lodash", "jquery", "backbone", "browser/api", "storage/filesystem", "mo
 				break;
 
 				case "execute":
-					var out = eval($(".console textarea").val()); // jshint ignore:line
+					var textarea = $(".console textarea");
+
+					var out = eval(textarea.val()); // jshint ignore:line
 
 					if (out) {
-						$(".console textarea").val("Output: " + out.toString());
+						textarea.val("Output: " + out.toString());
 					}
 				break;
 			}
