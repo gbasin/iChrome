@@ -14,7 +14,7 @@ define(
 						if (!(data && data.tabSort)) {
 							var defaults = _.assign({}, Defaults.tab, {
 								theme: storage.settings.theme,
-								fixed: storage.settings.columns.split("-")[1] == "fixed"
+								fixed: storage.settings.columns.split("-")[1] === "fixed"
 							});
 
 
@@ -58,11 +58,11 @@ define(
 						this.model.tabs.navigate($(e.currentTarget).attr("data-direction"));
 					},
 					"keydown": function(e) {
-						if (e.which == 37) this.model.tabs.navigate("prev");
-						else if (e.which == 39) this.model.tabs.navigate("next");
+						if (e.which === 37) this.model.tabs.navigate("prev");
+						else if (e.which === 39) this.model.tabs.navigate("next");
 					},
 					"keydown .widgets-container .widget": function(e) {
-						if (e.currentTarget.className.indexOf("dragged") == -1) e.stopPropagation();
+						if (e.currentTarget.className.indexOf("dragged") === -1) e.stopPropagation();
 					},
 					"mouseover .tab-nav button": function(e) {
 						if ($(document.body).hasClass("dragging")) {
@@ -251,7 +251,7 @@ define(
 							this.serialize(true);
 						}.bind(this),
 						afterMove: function(placeholder, container) {
-							if (container.el[0].className.indexOf("widgets-container") == -1) {
+							if (container.el[0].className.indexOf("widgets-container") === -1) {
 								onGrid = false;
 
 								placeholder[0].style.width = container.group.item[0].offsetWidth + "px";
@@ -286,7 +286,7 @@ define(
 					var dta = elm.data("sortable");
 
 					if (dta) {
-						if (dta.rootGroup.containers.length == 1) {
+						if (dta.rootGroup.containers.length === 1) {
 							dta.rootGroup.containers = [];
 						}
 						else {

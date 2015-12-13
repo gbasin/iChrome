@@ -212,7 +212,7 @@ define([
 			// The tabs collection listens for widget save events and triggers
 			// a sync. We only want to do that when something other than the
 			// widget state changes (otherwise maximizing would trigger a save)
-			if (changedKeys.length !== 1 || changedKeys.indexOf("state") == -1) {
+			if (changedKeys.length !== 1 || changedKeys.indexOf("state") === -1) {
 				this.model.trigger("save");
 			}
 		},
@@ -227,7 +227,7 @@ define([
 			// All known properties (no custom ones are saved) except state, which
 			// the widget isn't alllowed to change, are copied
 			var set = _(this.instance).pick("size", "config", "data", "syncData", "loc").mapValues(function(e, key) {
-				if (key == "config") {
+				if (key === "config") {
 					var config = $.unextend(this.widget.widget.config, e);
 
 					delete config.size;
@@ -327,7 +327,7 @@ define([
 
 			data.i18n = this.widget.strings || {};
 
-			this.el.innerHTML = 
+			this.el.innerHTML =
 				'<div class="handle"></div>' +
 				(this.hasSettings ? '\r\n<div class="settings">&#xF0AD;</div>' : "") +
 				render("widgets." + this.widget.name, data, partials) +

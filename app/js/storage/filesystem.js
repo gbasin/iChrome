@@ -38,7 +38,7 @@ define(function() {
 	 */
 	get.clear = function(cb, oErr) {
 		var err = function(err) {
-			if (typeof oErr == "function") {
+			if (typeof oErr === "function") {
 				oErr.apply(this, err);
 			}
 			else {

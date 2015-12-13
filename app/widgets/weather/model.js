@@ -153,7 +153,7 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 		},
 
 		getCondition: function(code) {
-			if (typeof code == "string") {
+			if (typeof code === "string") {
 				code = parseInt(code);
 			}
 
@@ -313,11 +313,11 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 				}, this);
 			};
 
-			if (typeof this.config.location == "string") {
+			if (typeof this.config.location === "string") {
 				this.config.location = [this.config.location];
 			}
 
-			if (this.config.resolvedLocs && this.config.resolvedLocs.join("|") == this.config.location.join("|")) {
+			if (this.config.resolvedLocs && this.config.resolvedLocs.join("|") === this.config.location.join("|")) {
 				get.call(this);
 			}
 			else {

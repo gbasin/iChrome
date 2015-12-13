@@ -154,7 +154,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 			var fChild = html.children().first(),
 				text = (fChild.text() || "").trim();
 
-			if (!text || text.toLowerCase() == item.title.toLowerCase()) {
+			if (!text || text.toLowerCase() === item.title.toLowerCase()) {
 				fChild.remove();
 			}
 

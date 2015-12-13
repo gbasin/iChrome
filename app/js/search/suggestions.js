@@ -62,7 +62,7 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 			setFocus: function(which) {
 				var active;
 
-				if (which == "next") {
+				if (which === "next") {
 					this.clearFocus(true);
 
 					this.current++;
@@ -75,14 +75,14 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 						this.current = 0;
 					}
 				}
-				else if (which == "prev") {
+				else if (which === "prev") {
 					this.clearFocus(true);
 
 					this.current--;
 
 					active = this.$("div").eq(this.current).addClass("active");
 				}
-				else if (typeof which == "number") {
+				else if (typeof which === "number") {
 					this.clearFocus();
 
 					active = this.$("div").eq(which).addClass("active");

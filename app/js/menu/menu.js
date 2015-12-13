@@ -39,11 +39,11 @@ define(
 					"click a.custom-link": function(e) {
 						var href = e.currentTarget.getAttribute("href");
 
-						if (href.indexOf("chrome") === 0 || $("base").attr("target") == "_blank") { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
+						if (href.indexOf("chrome") === 0 || $("base").attr("target") === "_blank") { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
 							e.preventDefault();
 
 							Browser.tabs.getCurrent(function(d) {
-								if (e.which == 2) {
+								if (e.which === 2) {
 									Browser.tabs.create({
 										url: href,
 										index: d.index + 1
@@ -130,7 +130,7 @@ define(
 								e.preventDefault();
 
 								Browser.tabs.getCurrent(function(d) {
-									if (e.which == 2 || $("base").attr("target") == "_blank") {
+									if (e.which === 2 || $("base").attr("target") === "_blank") {
 										Browser.tabs.create({
 											url: elm.attr("href"),
 											index: d.index + 1
@@ -193,7 +193,7 @@ define(
 				 * @param  {Backbone.Model}        model  The tab model
 				 */
 				navigate: function(which, view, model) {
-					if (typeof which == "string" || typeof which == "number") {
+					if (typeof which === "string" || typeof which === "number") {
 						this.$(".section.tabs div[data-id=" + ((model && model.get("id")) || (which + 1)) + "]").addClass("active").siblings().removeClass("active");
 					}
 					else {
@@ -232,7 +232,7 @@ define(
 						show = undefined;
 					}
 
-					if (!this.$el.hasClass("visible") && (typeof show == "undefined" || show === true)) {
+					if (!this.$el.hasClass("visible") && (typeof show === "undefined" || show === true)) {
 						// If this doesn't include the toggle switch the event will bubble to the body which will in turn re-hide the menu
 						var elms = this.$el.parent();
 

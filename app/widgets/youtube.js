@@ -120,7 +120,7 @@ define(["jquery", "moment"], function($, moment) {
 						this.refresh();
 					}.bind(this));
 				}
-				
+
 				url += "playlistItems?playlistId=" + encodeURIComponent(this.config.resolvedId) + "&part=snippet&fields=items(id,snippet(title,description,thumbnails/high/url,resourceId/videoId,channelTitle))";
 			}
 			else {
@@ -197,7 +197,7 @@ define(["jquery", "moment"], function($, moment) {
 				});
 			}
 
-			data.newTab = this.config.target == "_blank";
+			data.newTab = this.config.target === "_blank";
 
 			this.utils.render(data);
 		}

@@ -182,7 +182,7 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 				url: "https://www.google.com/finance/kd?output=json&sort=date&keydevs=1&recnews=0&cid=" + id,
 				success: function(d) {
 					// We unfortunately need to eval the response to properly parse it
-					// 
+					//
 					// This is no more or less safe than JSONP however, and the data is
 					// coming via a secure connection with Google
 					try {
@@ -275,7 +275,7 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 							beta: e.beta,
 							earningsPerShare: e.eps,
 							priceToEarnings: e.pe || ((e.el || e.l) / e.eps).toLocaleString(),
-							extraInfo: e.s == "1" ? "Pre Market" : e.s == "2" ? "After Hours" : null
+							extraInfo: e.s === "1" ? "Pre Market" : e.s === "2" ? "After Hours" : null
 						};
 					});
 

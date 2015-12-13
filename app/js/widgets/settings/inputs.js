@@ -48,9 +48,9 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 		select: function(input, elm, translate, settings, form) {
 			var loop = function(options, level) {
 				level = level || 0;
-				
+
 				var nesting = "&nbsp;".repeat(4 * level),
-					values = (typeof input.value == "object" ? input.value : [input.value]) || [];
+					values = (typeof input.value === "object" ? input.value : [input.value]) || [];
 
 				var ret = [];
 
@@ -63,10 +63,10 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 				}
 
 				return _.compact(ret.concat(_.map(options, function(e, key) {
-					if (key == "label") {
+					if (key === "label") {
 						return false;
 					}
-					else if (typeof e == "object") {
+					else if (typeof e === "object") {
 						return loop(e, level + 1);
 					}
 					else {
@@ -88,9 +88,9 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 			}
 
 
-			if (typeof input.options == "string" && typeof settings.fnTarget[input.options] == "function") {
+			if (typeof input.options === "string" && typeof settings.fnTarget[input.options] === "function") {
 				// Only function values can be chained
-				if (typeof input.chained == "string") {
+				if (typeof input.chained === "string") {
 					var cb = function(val) {
 						settings.fnTarget[input.options](function(options) {
 							var val = elm.find("select").val();
@@ -134,14 +134,14 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 		list: function(input, elm, translate, settings) {
 			var autocomplete = false;
 
-			if (typeof input.autocomplete == "string" && typeof settings.fnTarget[input.autocomplete] == "function") {
+			if (typeof input.autocomplete === "string" && typeof settings.fnTarget[input.autocomplete] === "function") {
 				autocomplete = settings.fnTarget[input.autocomplete];
 			}
 
 			var data = _.pick(input, "name", "label", "proHelper", "help", "placeholder");
 
 			data.items = _.map(input.value, function(e, key) {
-				if (typeof e == "object") {
+				if (typeof e === "object") {
 					return {
 						color: (input.color ? (e.color || "#EEE") : false),
 						value: e.name
@@ -157,7 +157,7 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 			elm.addClass("list").html(render("widget-settings.inputs", {
 				"input-list": data
 			})).on("keydown", "input#widget-" + input.name, function(e) {
-				if (e.which == 13) {
+				if (e.which === 13) {
 					e.preventDefault();
 					e.stopPropagation();
 
@@ -248,7 +248,7 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 			sizes = sizes.map(function(e) {
 				return {
 					size: e,
-					selected: (e == selected ? "selected" : ""),
+					selected: (e === selected ? "selected" : ""),
 					name: sizeMap[e]
 				};
 			});
@@ -266,7 +266,7 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 				return {
 					value: key,
 					label: translate(e),
-					checked: (key == input.value ? "checked" : "")
+					checked: (key === input.value ? "checked" : "")
 				};
 			});
 

@@ -21,7 +21,7 @@ define(["jquery", "lodash", "i18n/i18n"], function($, _, Translate) {
 			if (booleans.indexOf(e.name) !== -1) {
 				settings[e.name] = true; // jQuery will only include a boolean value when serializing if it's checked/true
 			}
-			else if (e.name == "custom-css") { // Limit custom CSS
+			else if (e.name === "custom-css") { // Limit custom CSS
 				settings["custom-css"] = e.value.slice(0, 1000);
 			}
 			else if (e.value !== "") { // If it's neither just set it
@@ -59,7 +59,7 @@ define(["jquery", "lodash", "i18n/i18n"], function($, _, Translate) {
 			});
 
 			for (key in tabSettings) {
-				if (key == "name") {
+				if (key === "name") {
 					tab[key] = tabSettings[key];
 				}
 
@@ -68,9 +68,9 @@ define(["jquery", "lodash", "i18n/i18n"], function($, _, Translate) {
 					if ( // If
 						settings[key] && // The key is set, it should be but JIC...
 						( // And
-							tabSettings[key] == settings[key] || // The Tab Specific setting is the same as the main setting
+							tabSettings[key] === settings[key] || // The Tab Specific setting is the same as the main setting
 							( // Or
-								storage.settings[key] && tabSettings[key] == storage.settings[key] // The Tab Specific setting is the same as the _previous_ main setting
+								storage.settings[key] && tabSettings[key] === storage.settings[key] // The Tab Specific setting is the same as the _previous_ main setting
 							)
 						)
 					) { // Then set the Tab Specific value to the main setting value
@@ -82,9 +82,9 @@ define(["jquery", "lodash", "i18n/i18n"], function($, _, Translate) {
 				}
 
 				// If this is the columns key they might need to be reprocessed so the arrays are merged
-				else if (key == "columns") {
+				else if (key === "columns") {
 					// Again, see above, but this time just with the columns property
-					if (settings.columns && (tabSettings.columns == settings.columns || (storage.settings.columns && tabSettings.columns == storage.settings.columns))) {
+					if (settings.columns && (tabSettings.columns === settings.columns || (storage.settings.columns && tabSettings.columns === storage.settings.columns))) {
 						columns = settings.columns.split("-");
 					}
 					else {
@@ -95,7 +95,7 @@ define(["jquery", "lodash", "i18n/i18n"], function($, _, Translate) {
 					var wasMedley = false;
 
 					// If the new layout is "medley", AKA grid-based
-					if (columns[0] == "medley") {
+					if (columns[0] === "medley") {
 						columns = ["1", "fixed"]; // The number of columns is 1 for conversion and storage
 
 						if ( // If it wasn't previously a medley tab, then confirm
@@ -125,13 +125,13 @@ define(["jquery", "lodash", "i18n/i18n"], function($, _, Translate) {
 					number = parseInt(columns[0] || "0");
 
 					// Set the fixed boolean
-					tab.fixed = (columns[1] && columns[1] == "fixed");
+					tab.fixed = (columns[1] && columns[1] === "fixed");
 
 
 					var i;
 
 					// If the column number hasn't changed
-					if (tab.columns.length == number) {
+					if (tab.columns.length === number) {
 						if (wasMedley) { // And it was a medley column (this is only set if the value was changed)
 							tab.columns[0].forEach(function(w, i) {
 								delete w.loc; // Delete each widgets loc property

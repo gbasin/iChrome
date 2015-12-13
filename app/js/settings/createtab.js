@@ -9,9 +9,9 @@ define(["jquery", "lodash", "core/analytics", "storage/defaults", "i18n/i18n", "
 				columns: [],
 				theme: storage.settings.theme,
 				name: Translate("settings.specific.default_name"),
-				fixed: storage.settings.columns.split("-")[1] == "fixed"
+				fixed: storage.settings.columns.split("-")[1] === "fixed"
 			}),
-			medley = storage.settings.columns.split("-")[0] == "medley";
+			medley = storage.settings.columns.split("-")[0] === "medley";
 
 		if (medley) {
 			tab.columns.push([]);

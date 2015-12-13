@@ -73,7 +73,7 @@ define(["jquery"], function($) {
 
 				[].forEach.call(this.div.querySelectorAll("pre, blockquote, figure, hr, a, b, u, i, img, strong, p, sub, sup, br"), function(e, i) {
 					[].forEach.call(e.attributes, function(a, i) {
-						if (a.name == "style" && a.value.indexOf("block;") !== -1) {
+						if (a.name === "style" && a.value.indexOf("block;") !== -1) {
 							e.innerHTML = "<br>" + e.innerHTML;
 
 							e.removeAttribute(a.name);

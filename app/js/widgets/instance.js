@@ -16,7 +16,7 @@ define([
 		large: "large",
 		variable: "variable"
 	};
-	
+
 	var GRID_SIZE = 10;
 
 	var WidgetInstance = Backbone.View.extend({
@@ -201,7 +201,7 @@ define([
 						// The page needs to be reloaded after a permission is granted
 						// so the API made available by it can be called (CR Bug 435141,
 						// fixed in Chrome 45)
-						// 
+						//
 						// Unfortunately that still doesn't allow access to URLs like
 						// chrome://extension-icon until the browser is restarted
 						location.reload();
@@ -612,7 +612,7 @@ define([
 			// The tabs collection listens for widget save events and triggers
 			// a sync. We only want to do that when something other than the
 			// widget state changes (otherwise maximizing would trigger a save)
-			if (changedKeys.length !== 1 || changedKeys.indexOf("state") == -1) {
+			if (changedKeys.length !== 1 || changedKeys.indexOf("state") === -1) {
 				this.model.trigger("save");
 			}
 		},
@@ -626,7 +626,7 @@ define([
 		updateModel: function() {
 			// All known properties (no custom ones are saved) are copied
 			var set = _(this.widgetModel.attributes).pick("state", "size", "config", "data", "syncData", "loc").mapValues(function(e, key) {
-				if (key == "config") {
+				if (key === "config") {
 					return _.omit(this.widgetModel.get("config"), function(e, k) {
 						return this.widgetModel.defaults.config.hasOwnProperty(k) && e === this.widgetModel.defaults.config[k];
 					}, this);
@@ -669,15 +669,15 @@ define([
 
 			// Here we safely use innerHTML since we don't want to destroy the
 			// widget view's event listeners
-			this.el.innerHTML = 
+			this.el.innerHTML =
 				(this.state === "maximized" ?
-					'<div class="minimize" title="' + Translate("widgets.minimize") + '">' + 
-						'<svg viewBox="0 0 24 24"><path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"></path></svg>' + 
+					'<div class="minimize" title="' + Translate("widgets.minimize") + '">' +
+						'<svg viewBox="0 0 24 24"><path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"></path></svg>' +
 					'</div>'
 				: "") +
 				(this.widget.isMaximizable && this.state !== "maximized" ?
-					'<div class="maximize" title="' + Translate("widgets.maximize") + '">' + 
-						'<svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"></path></svg>' + 
+					'<div class="maximize" title="' + Translate("widgets.maximize") + '">' +
+						'<svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"></path></svg>' +
 					'</div>'
 				: "") +
 				'<div class="handle"></div>' +

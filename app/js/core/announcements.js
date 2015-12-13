@@ -41,7 +41,7 @@ define(["backbone", "browser/api", "modals/alert", "core/analytics", "i18n/i18n"
 
 		parse: function(d) {
 			if (d && d.contents) {
-				if (d.announcement_id && d.announcement_id.toString() == Browser.storage.dismissedAnnouncement) {
+				if (d.announcement_id && d.announcement_id.toString() === Browser.storage.dismissedAnnouncement) {
 					return {};
 				}
 
@@ -53,7 +53,7 @@ define(["backbone", "browser/api", "modals/alert", "core/analytics", "i18n/i18n"
 			return d;
 		}
 	});
-	
+
 	var View = Backbone.View.extend({
 		initialize: function() {
 			this.model = new Model();

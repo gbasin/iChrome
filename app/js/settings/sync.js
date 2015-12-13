@@ -132,7 +132,7 @@ define([
 					silent: silent
 				});
 
-				backups = null;	
+				backups = null;
 			},
 			restore: function(e) {
 				Alert({
@@ -143,7 +143,7 @@ define([
 						var backups = JSON.parse(Browser.storage.backups || "[]"),
 							backup;
 
-						if (typeof e == "string") {
+						if (typeof e === "string") {
 							backup = JSON.parse(e).data;
 						}
 						else {

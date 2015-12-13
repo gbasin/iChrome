@@ -117,7 +117,7 @@ define(["lodash", "backbone"], function(_, Backbone) {
 					}
 				})[0];
 			}
-			else if (typeof e == "string") {
+			else if (typeof e === "string") {
 				var view = _.remove(this.views, {
 					model: {
 						cid: e

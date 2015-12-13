@@ -105,7 +105,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 							var ret = {
 								id: e.id,
 								title: e.title.trim(),
-								done: e.status == "completed"
+								done: e.status === "completed"
 							};
 
 							if (e.notes) {
@@ -181,7 +181,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 					data: JSON.stringify(dta),
 					contentType: "application/json",
 					complete: function(xhr) {
-						if (xhr.status == 200 && xhr.responseJSON && xhr.responseJSON.id) {
+						if (xhr.status === 200 && xhr.responseJSON && xhr.responseJSON.id) {
 							item.attr("data-id", xhr.responseJSON.id);
 
 							if (dta.due) dta.due = dta.due.getTime();
@@ -206,7 +206,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 			}
 			else {
 				var id = elm.attr("data-id");
-				
+
 				item = _.find(this.data.items, {
 					id: id
 				});
@@ -283,7 +283,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 
 
 			var oAuth = this.oAuth;
-			
+
 			// If this is a demo, or not authenticated, it shouldn't attempt any requests
 			if (demo || !this.oAuth) {
 				oAuth = {

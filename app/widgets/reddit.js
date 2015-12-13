@@ -222,7 +222,7 @@ define(["jquery", "moment"], function($, moment) {
 						comments: e.num_comments.toLocaleString()
 					};
 
-					if (e.thumbnail && e.thumbnail !== "" && e.thumbnail.trim().indexOf("http") == "0") {
+					if (e.thumbnail && e.thumbnail !== "" && e.thumbnail.trim().indexOf("http") === "0") {
 						link.image = e.thumbnail.trim();
 					}
 
@@ -247,11 +247,11 @@ define(["jquery", "moment"], function($, moment) {
 				if (demo) e.created = moment(e.created).from([2014, 0, 1, 11]).replace("hour", "hr").replace("minute", "min").replace("a few ", "");
 				else e.created = moment(e.created).fromNow().replace("hour", "hr").replace("minute", "min").replace("a few ", "");
 
-				if (!e.subreddit.toLowerCase || e.subreddit.toLowerCase() == this.config.subreddit.toLowerCase()) {
+				if (!e.subreddit.toLowerCase || e.subreddit.toLowerCase() === this.config.subreddit.toLowerCase()) {
 					e.subreddit = false;
 				}
 
-				if (this.config.click && this.config.click == "comments") {
+				if (this.config.click && this.config.click === "comments") {
 					e.link = "http://www.reddit.com" + e.permalink;
 				}
 
@@ -266,7 +266,7 @@ define(["jquery", "moment"], function($, moment) {
 				data.title = this.config.title;
 			}
 
-			if (this.config.link && this.config.link == "show") {
+			if (this.config.link && this.config.link === "show") {
 				data.link = "http://www.reddit.com/" + (this.config.subreddit && this.config.subreddit !== "" ? "r/" + this.config.subreddit : "");
 			}
 

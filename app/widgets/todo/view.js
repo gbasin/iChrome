@@ -36,7 +36,7 @@ define(["jquery", "widgets/views/main", "lib/jquery.sortable"], function($, Widg
 			},
 
 			"keydown .item .title": function(e) {
-				if (e.which == 13) {
+				if (e.which === 13) {
 					e.preventDefault();
 
 					this.addItem($(e.currentTarget).parent());

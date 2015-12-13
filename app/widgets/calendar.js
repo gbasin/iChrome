@@ -149,7 +149,7 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 						fields: "summary,items(description,htmlLink,id,location,start,end,summary)"
 					};
 
-				if (this.config.show == "today") {
+				if (this.config.show === "today") {
 					params.timeMax = moment().endOf("day").format("YYYY-MM-DDTHH:mm:ss.SSSZ");
 				}
 
@@ -367,7 +367,7 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 			var today = moment(dt).startOf("day"),
 				rangeStart, rangeEnd;
 
-			if (this.config.show == "today") {
+			if (this.config.show === "today") {
 				rangeStart = moment(dt).startOf("day");
 				rangeEnd = moment(dt).endOf("day");
 			}

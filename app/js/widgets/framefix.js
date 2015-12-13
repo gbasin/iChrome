@@ -25,10 +25,10 @@ define(["jquery", "browser/api"], function($, Browser) {
 					for (var i = headers.length - 1; i >= 0; --i) {
 						var header = headers[i].name.toLowerCase();
 
-						if (header == "x-frame-options" || header == "frame-options") {
+						if (header === "x-frame-options" || header === "frame-options") {
 							headers.splice(i, 1);
 						}
-						else if (header == "content-security-policy") {
+						else if (header === "content-security-policy") {
 							// Remove any frame-ancestors CSP directives, this is actually spec-compliant
 							headers[i].value = headers[i].value.split(";").filter(function(e) {
 								return e.trim().toLowerCase().indexOf("frame-ancestors") !== 0;

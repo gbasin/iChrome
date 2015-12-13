@@ -157,7 +157,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 					if (!config.data) {
 						config.data = {};
 					}
-					
+
 					config.data.consumer_key = this.config.id;
 					config.data.access_token = token;
 
@@ -181,7 +181,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 
 			var url = new URL(oUrl);
 
-			var vars = "?f=t&lq=1" + (url.protocol == "https:" ? "&ssl=1" : "");
+			var vars = "?f=t&lq=1" + (url.protocol === "https:" ? "&ssl=1" : "");
 
 			if (url.protocol !== "http:" && url.protocol !== "https:") {
 				return oUrl;
@@ -206,7 +206,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 			if (!this.oAuth.hasToken()) return this.render();
 
 			var getImageURL = this.getImageURL,
-				original = this.config.open == "original";
+				original = this.config.open === "original";
 
 			this.oAuth.ajax({
 				type: "POST",
@@ -350,12 +350,12 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 		},
 		refresh: function() {
 			this.ensureView();
-			
+
 			this.view.refresh();
 		},
 		render: function(demo) {
 			this.ensureView();
-			
+
 			this.view.render(demo);
 		}
 	};

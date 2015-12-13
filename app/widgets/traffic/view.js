@@ -30,7 +30,7 @@ define(["moment", "widgets/views/main"], function(moment, WidgetView) {
 				if (hours > 0 && hours !== 1) {
 					data.time += "hours ";
 				}
-				else if (hours == 1) {
+				else if (hours === 1) {
 					data.time += "hour ";
 				}
 

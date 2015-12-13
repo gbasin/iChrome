@@ -33,7 +33,7 @@ define(["jquery", "underscore", "backbone", "core/analytics", "storage/storage",
 				this.restart();
 
 				this.setText(Translate("voice.listening"));
-				
+
 				this.$el.add(this.overlay).addClass("visible");
 
 				this.inProgress = true;
@@ -102,7 +102,7 @@ define(["jquery", "underscore", "backbone", "core/analytics", "storage/storage",
 				for (var i = arr.length - 1; i >= 0; i--) {
 					var word = arr[i].replace(/[^A-z0-9]/ig, "");
 
-					if (word.indexOf("google") !== -1 || word.indexOf("okay") !== -1 || word == "ok" || word == "computer") {
+					if (word.indexOf("google") !== -1 || word.indexOf("okay") !== -1 || word === "ok" || word === "computer") {
 						return true;
 					}
 				}
@@ -148,7 +148,7 @@ define(["jquery", "underscore", "backbone", "core/analytics", "storage/storage",
 
 				this.model = new Model();
 
-				// Even though init could return this; there's a chance that the callback will be called asynchronously and this.model won't be defined yet 
+				// Even though init could return this; there's a chance that the callback will be called asynchronously and this.model won't be defined yet
 				this.model.on("change:ok change:voice", function() {
 					if (!this.recognition) {
 						this.setRec();

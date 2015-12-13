@@ -42,7 +42,7 @@ define(
 						Track.pageview("Settings: " + tab[0].toUpperCase() + tab.slice(1), "/settings/" + tab);
 					},
 					"keydown input:not([type=radio], [type=checkbox]), select": function(e) { // Even though this isn't in the tab views the events bubble
-						if (e.which == 13) {
+						if (e.which === 13) {
 							this.save(e); // This calls preventDefault and modal.hide in one shot
 						}
 					},
@@ -54,7 +54,7 @@ define(
 							e.stopPropagation();
 						}
 
-						if (elm.attr("data-id") == "new") {
+						if (elm.attr("data-id") === "new") {
 							return createTab(modal, this.model.attributes, this.$(".specific .btns"), elm, forms);
 						}
 
@@ -68,7 +68,7 @@ define(
 				save: function(e) {
 					var cb;
 
-					if (typeof e == "function") {
+					if (typeof e === "function") {
 						cb = e;
 					}
 					else if (e && e.preventDefault) {
@@ -154,7 +154,7 @@ define(
 					var data = {
 						tabs: []
 					};
-					
+
 					this.model.get("tabs").forEach(function(tab, i) {
 						data.tabs.push({
 							name: tab.name || Defaults.tab.name,

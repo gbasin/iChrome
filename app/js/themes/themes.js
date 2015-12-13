@@ -111,7 +111,7 @@ define(
 
 				if (parent.hasClass("custom")) {
 					Track.event("Themes", "Preview", "custom" + id);
-					
+
 					return this.trigger("preview", custom[id], "custom" + id);
 				}
 
@@ -215,7 +215,7 @@ define(
 				}
 
 
-				if (theme.oType == "sunrise_sunset") {
+				if (theme.oType === "sunrise_sunset") {
 					navigator.geolocation.getCurrentPosition(function(pos) {
 						if (pos && pos.coords) {
 							Browser.storage.lat = parseFloat(pos.coords.latitude.toFixed(2));
@@ -244,7 +244,7 @@ define(
 					themes = [];
 
 
-				if (id == "custom") {
+				if (id === "custom") {
 					themes = this.model.get("custom");
 				}
 				else if ((id = parseInt(id)) || id === 0) {

@@ -5,7 +5,7 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 				e.preventDefault();
 				e.stopPropagation();
 
-				this.model.config.units = e.currentTarget.getAttribute("data-units") == "metric" ? "metric" : "imperial";
+				this.model.config.units = e.currentTarget.getAttribute("data-units") === "metric" ? "metric" : "imperial";
 
 				this.model.saveConfig();
 

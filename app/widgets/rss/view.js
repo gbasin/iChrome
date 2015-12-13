@@ -10,7 +10,7 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 				if (tab === this.model.get("activeTab")) {
 					this.model.refresh();
 				}
-				
+
 				this.model.set("activeTab", tab);
 
 				this.render({
@@ -119,7 +119,7 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 				data.link = this.model.config.link.parseUrl();
 			}
 
-			if (this.model.config.view && this.model.config.view == "images") {
+			if (this.model.config.view && this.model.config.view === "images") {
 				data.images = true;
 			}
 
@@ -131,7 +131,9 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 					return {
 						id: i,
 						name: e.name,
-						active: i == activeTab // The == is intentional here, IDs are not necessarily numerical
+
+						// The == is intentional here, IDs are not necessarily numerical
+						active: i == activeTab // jshint ignore:line
 					};
 				});
 			}

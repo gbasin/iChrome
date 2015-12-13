@@ -42,11 +42,11 @@ define(
 					"click a.custom-link": function(e) {
 						var href = e.currentTarget.getAttribute("href");
 
-						if (href.indexOf("chrome") === 0 || $("base").attr("target") == "_blank") { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
+						if (href.indexOf("chrome") === 0 || $("base").attr("target") === "_blank") { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
 							e.preventDefault();
 
 							Browser.tabs.getCurrent(function(d) {
-								if (e.which == 2) {
+								if (e.which === 2) {
 									Browser.tabs.create({
 										url: href,
 										index: d.index + 1
@@ -126,7 +126,7 @@ define(
 
 
 				render: function() {
-					var toolbar = this.model.get("toolbar") == "full" || this.model.get("toolbar") === true;
+					var toolbar = this.model.get("toolbar") === "full" || this.model.get("toolbar") === true;
 
 					if (toolbar) {
 						this.Menu.$el.detach();

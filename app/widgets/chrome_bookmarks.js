@@ -172,7 +172,7 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 				data.title = this.config.title;
 			}
 
-			if (this.config.target && this.config.target == "_blank") {
+			if (this.config.target && this.config.target === "_blank") {
 				data.newTab = true;
 			}
 
@@ -185,7 +185,7 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 				var href = this.getAttribute("href");
 
 				Browser.tabs.getCurrent(function(d) {
-					if (e.which == 2 || e.currentTarget.target == "_blank") {
+					if (e.which === 2 || e.currentTarget.target === "_blank") {
 						Browser.tabs.create({
 							url: href,
 							index: d.index + 1

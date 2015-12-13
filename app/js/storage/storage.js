@@ -46,7 +46,7 @@ define(
 		 */
 		promise.on = function(events, cb, ctx) {
 			// If the promise is resolved and a done event is being attached, trigger it
-			if (promise.state() == "resolved" && events.split(" ").indexOf("done") !== -1) {
+			if (promise.state() === "resolved" && events.split(" ").indexOf("done") !== -1) {
 				if (ctx) {
 					cb.call(ctx, storage, promise);
 				}
@@ -144,7 +144,7 @@ define(
 						promise.trigger("updated");
 					});
 				}
-				else if (err && err == "No token") {
+				else if (err && err === "No token") {
 					save(true, _.noop);
 				}
 				else {
@@ -187,7 +187,7 @@ define(
 		 *
 		 * @api     private
 		 * @param   {Boolean}      sync       Whether or not to sync storage
-		 * @param   {Function}     cb         
+		 * @param   {Function}     cb
 		 * @param   {Boolean}      useBeacon  If a beacon should be used for this sync
 		 * @return  {null|Beacon}             If useBeacon was specified, the beacon is returned
 		 */
@@ -204,7 +204,7 @@ define(
 			local.tabs = _.map(storage.tabs, function(tab) {
 				return $.unextend({
 					theme: storage.settings.theme,
-					fixed: storage.settings.columns.split("-")[1] == "fixed"
+					fixed: storage.settings.columns.split("-")[1] === "fixed"
 				}, $.unextend(defaults.tab, tab));
 			});
 
@@ -248,7 +248,7 @@ define(
 					}
 
 					// If the status wasn't set, this is the first time this error has occurred
-					else if (err && err == "Duplicate" && (API.getInfo().status !== "duplicate" || Browser.storage.alertDuplicate)) {
+					else if (err && err === "Duplicate" && (API.getInfo().status !== "duplicate" || Browser.storage.alertDuplicate)) {
 						// Set a variable so the dialog will be shown until it's explicitly dismissed
 						Browser.storage.alertDuplicate = "true";
 
@@ -295,16 +295,16 @@ define(
 			 *                                   should be forced, regardless of changes since the last sync.
 			 */
 			sync: function(now, cb, data, forceSync) {
-				if (typeof now == "function") {
+				if (typeof now === "function") {
 					cb = now;
 					now = undefined;
 				}
-				else if (typeof now == "object") {
+				else if (typeof now === "object") {
 					data = now;
 					cb = undefined;
 					now = undefined;
 				}
-				else if (typeof cb == "object") {
+				else if (typeof cb === "object") {
 					data = cb;
 					cb = undefined;
 				}
@@ -367,7 +367,7 @@ define(
 		var parseData = function(data) {
 			var d;
 
-			if (typeof data == "string") {
+			if (typeof data === "string") {
 				d = JSON.parse(data || Browser.storage.config || "{}");
 			}
 			else {
@@ -431,7 +431,7 @@ define(
 		}
 		else if (Browser.chromeLocal) {
 			Browser.chromeLocal.get(["tabs", "settings", "themes", "cached"], function(d) {
-				if (typeof d.tabs == "string") {
+				if (typeof d.tabs === "string") {
 					try {
 						d.tabs = JSON.parse(d.tabs);
 					}
@@ -444,7 +444,7 @@ define(
 
 				Browser.chromeLocal.remove(["tabs", "settings", "themes", "cached"]);
 				Browser.syncStorage.remove(["tabs", "settings", "themes", "cached"]);
-			
+
 				parseData(d);
 			});
 		}

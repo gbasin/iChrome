@@ -5,7 +5,7 @@ define(["lodash", "jquery", "browser/api", "widgets/views/main"], function(_, $,
 				e.preventDefault();
 
 				Browser.sessions.restore(e.currentTarget.getAttribute("data-id"), function(session) {
-					if (this.model.config.target == "_self") {
+					if (this.model.config.target === "_self") {
 						Browser.tabs.getCurrent(function(tab) {
 							if (tab) Browser.tabs.remove(tab.id);
 						});

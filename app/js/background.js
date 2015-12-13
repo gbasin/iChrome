@@ -10,7 +10,7 @@ var Hogan={};
 /* globals chrome,PERSISTENT */
 
 chrome.runtime.onInstalled.addListener(function(details) {
-	if (details.reason == "install") {
+	if (details.reason === "install") {
 		// NOTE: These two methods have been copied from storage/syncapi.js and lightly modified
 		// Changes made here should be reflected there.
 		var clientData = {};
@@ -123,10 +123,10 @@ chrome.runtime.onInstalled.addListener(function(details) {
 			}
 		});
 	}
-	else if (details.reason == "update") {
+	else if (details.reason === "update") {
 		if (!localStorage.config) {
 			chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
-				if (typeof d.tabs == "string") {
+				if (typeof d.tabs === "string") {
 					try {
 						d.tabs = JSON.parse(d.tabs);
 					}
@@ -146,7 +146,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 			});
 		}
 
-		if (!details.previousVersion || details.previousVersion.indexOf("2.1.20") == -1) {
+		if (!details.previousVersion || details.previousVersion.indexOf("2.1.20") === -1) {
 			localStorage.showWhatsNew = "true";
 		}
 	}
@@ -172,7 +172,7 @@ chrome.webRequest.onAuthRequired.addListener(
 				length = views.length;
 
 			while (++i < length) {
-				if (views[i].tabId == info.tabId) {
+				if (views[i].tabId === info.tabId) {
 					return {
 						cancel: true
 					};
@@ -216,7 +216,7 @@ var getFeed = function(theme, cb, next) {
 
 	// These are utilities that the URL and image parse are rendered with. With them the URL can incorporate things like a random number.
 	Object.getOwnPropertyNames(Math).forEach(function(e, i) {
-		if (typeof Math[e] == "function") {
+		if (typeof Math[e] === "function") {
 			utils.Math[e] = function() {
 				return function(args) {
 					return Math[e].apply(window, args.split(", "));
@@ -233,8 +233,8 @@ var getFeed = function(theme, cb, next) {
 	xhr.open("GET", Hogan.compile(theme.url).render(utils), true);
 
 	xhr.onreadystatechange = function() {
-		if (xhr.readyState == 4) {
-			if (xhr.status == 200) {
+		if (xhr.readyState === 4) {
+			if (xhr.status === 200) {
 				var d = xhr.responseText;
 
 				try {
@@ -247,10 +247,10 @@ var getFeed = function(theme, cb, next) {
 
 						var url = doc.querySelector(theme.selector);
 
-						if (theme.attr == "text") {
+						if (theme.attr === "text") {
 							url = url.textContent;
 						}
-						else if (theme.attr == "html") {
+						else if (theme.attr === "html") {
 							url = url.innerHTML;
 						}
 						else {
@@ -260,7 +260,7 @@ var getFeed = function(theme, cb, next) {
 						utils.res = url;
 					}
 					else {
-						if (typeof d == "object") {
+						if (typeof d === "object") {
 							utils.res = d;
 						}
 						else {
@@ -333,7 +333,7 @@ var cache = function(theme, cb) {
 	}
 
 	var err = function(e) {
-			if (e && e.name == "InvalidStateError") {
+			if (e && e.name === "InvalidStateError") {
 				return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
 					window.fs = fs;
 
@@ -363,7 +363,7 @@ var cache = function(theme, cb) {
 			dir.getFile(id + ".jpg", { create: true }, function(fe) {
 				var xhr = new XMLHttpRequest();
 
-				xhr.open("GET", (id == theme.id && (theme.type == "feed" || (theme.oType && theme.oType == "feed")) ? theme.image : "https://themes.ichro.me/images/" + id + ".jpg"));
+				xhr.open("GET", (id === theme.id && (theme.type === "feed" || (theme.oType && theme.oType === "feed")) ? theme.image : "https://themes.ichro.me/images/" + id + ".jpg"));
 
 				xhr.responseType = "blob";
 
@@ -423,7 +423,7 @@ var refreshFeeds = function() {
 		for (key in cached) {
 			var theme = cached[key];
 
-			if ((theme.type == "feed" || (theme.oType && theme.oType == "feed")) && ((theme.lastFetched && theme.lastFetched <= start) || !theme.lastFetched)) {
+			if ((theme.type === "feed" || (theme.oType && theme.oType === "feed")) && ((theme.lastFetched && theme.lastFetched <= start) || !theme.lastFetched)) {
 				active++;
 
 				console.log("Updating cached theme " + key + ", last fetched on " + new Date(theme.lastFetched));

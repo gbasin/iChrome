@@ -11,7 +11,7 @@ define(["jquery", "lodash", "backbone", "i18n/i18n", "core/render"], function($,
 
 		events: {
 			"click button": function(e) {
-				var positive = e.currentTarget.getAttribute("data-action") == "positive";
+				var positive = e.currentTarget.getAttribute("data-action") === "positive";
 
 				// If this is a confirmation, don't call the cb on failure
 				if (this.cb && (!this.confirm || positive)) {

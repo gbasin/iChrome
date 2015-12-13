@@ -160,7 +160,7 @@ define(["lodash", "backbone", "core/pro", "browser/api", "i18n/i18n", "widgets/r
 					// Translate default config properties
 					if (model.prototype.defaults && model.prototype.defaults.config) {
 						model.prototype.defaults.config = _.mapValues(model.prototype.defaults.config, function(str) {
-							if (typeof str == "string" && str.slice(0, 5) === "i18n.") {
+							if (typeof str === "string" && str.slice(0, 5) === "i18n.") {
 								return this.translate(str.substr(5));
 							}
 							else {
@@ -256,7 +256,7 @@ define(["lodash", "backbone", "core/pro", "browser/api", "i18n/i18n", "widgets/r
 		loadTemplates: function(basePath, cb) {
 			var templates = {};
 
-			var done = 0,	
+			var done = 0,
 				total = Object.keys(this.manifest.templates).length;
 
 			_.each(this.manifest.templates, function(path, name) {

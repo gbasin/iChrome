@@ -62,13 +62,13 @@ define(["lodash", "jquery", "moment", "browser/api"], function(_, $, moment, Bro
 				battery: function(cb) {
 					navigator.getBattery().then(function(d) {
 						var data = {
-							status: d.charging ? (d.level == 1 ? this.utils.translate("charged") : this.utils.translate("charging")) : (d.level == 1 ? this.utils.translate("idle") : this.utils.translate("discharging")),
+							status: d.charging ? (d.level === 1 ? this.utils.translate("charged") : this.utils.translate("charging")) : (d.level === 1 ? this.utils.translate("idle") : this.utils.translate("discharging")),
 							percent: Math.floor(d.level * 100)
 						};
 
-						var time = d.dischargingTime == Infinity ? d.chargingTime : d.dischargingTime;
+						var time = d.dischargingTime === Infinity ? d.chargingTime : d.dischargingTime;
 
-						if (time != Infinity && time !== 0) {
+						if (time !== Infinity && time !== 0) {
 							data.remaining = moment.duration(time, "seconds").humanize();
 						}
 

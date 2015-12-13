@@ -24,22 +24,22 @@ define([
 		events: {
 			"click .btn.save": "save",
 			"keydown input, select": function(e) {
-				if (e.which == 13) this.save(e);
+				if (e.which === 13) this.save(e);
 			},
 			"keydown textarea": function(e) {
-				if (e.which == 13 && e.shiftKey) this.save(e);
+				if (e.which === 13 && e.shiftKey) this.save(e);
 			},
 
 
 			/**
 			 * Input Events
 			 */
-			
+
 			// Size
 			"change #widget-size": function() {
 				this.trigger("sizeChange", this.$("#widget-size").val());
 			},
-			
+
 			// List
 			"click .list .tools span": function(e) {
 				var t = $(e.currentTarget),
@@ -60,7 +60,7 @@ define([
 
 			// Number
 			"keydown input[type=number]": function(e) {
-				if (e.keyCode == 17) {
+				if (e.keyCode === 17) {
 					ctrlDown = true;
 				}
 
@@ -68,14 +68,14 @@ define([
 						((e.keyCode > 47 && e.keyCode < 58) ||
 						(e.keyCode > 36 && e.keyCode < 41) ||
 						(e.keyCode > 95 && e.keyCode < 106) ||
-						e.keyCode == 8 ||
-						e.keyCode == 9 ||
-						e.keyCode == 46 ||
-						e.keyCode == 17 ||
-						e.keyCode == 65);
+						e.keyCode === 8 ||
+						e.keyCode === 9 ||
+						e.keyCode === 46 ||
+						e.keyCode === 17 ||
+						e.keyCode === 65);
 			},
 			"keyup input[type=number]": function(e) {
-				if (e.keyCode == 17) {
+				if (e.keyCode === 17) {
 					ctrlDown = false;
 				}
 			},
@@ -126,13 +126,13 @@ define([
 				.pick(_.difference(_.keys(defaultConfig), _.keys(set.config)))
 				.mapValues(function(e, key) {
 					// If it's a string then it must be empty
-					if (typeof e == "string") {
+					if (typeof e === "string") {
 						return "";
 					}
 
 					// If it's boolean and not present it must have been an
 					// unchecked checkbox and therefore false
-					else if (typeof e == "boolean") {
+					else if (typeof e === "boolean") {
 						return false;
 					}
 
@@ -170,7 +170,7 @@ define([
 			this.modal.hide();
 
 			Track.event("Widgets", "Configure", this.widget.name);
-			
+
 
 			// We assign directly to the actual widget instance, thereby allowing
 			// any default-removal code to run

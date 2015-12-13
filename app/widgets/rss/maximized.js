@@ -99,7 +99,7 @@ define(["lodash", "./view", "moment"], function(_, MainView, moment) {
 				data.link = this.model.config.link.parseUrl();
 			}
 
-			if (this.model.config.view && this.model.config.view == "images") {
+			if (this.model.config.view && this.model.config.view === "images") {
 				data.images = true;
 			}
 
@@ -110,7 +110,7 @@ define(["lodash", "./view", "moment"], function(_, MainView, moment) {
 				return {
 					id: i,
 					name: e.name,
-					active: i == activeTab
+					active: i == activeTab // jshint ignore:line
 				};
 			});
 

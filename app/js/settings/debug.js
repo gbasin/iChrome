@@ -71,10 +71,10 @@ define(["lodash", "jquery", "backbone", "browser/api", "storage/filesystem", "mo
 						" than iChrome is open otherwise Chrome itself will close.\r\nHit cancel to open a new tab and avoid this or OK to continue."
 					)) {
 						Browser.runtime.requestUpdateCheck(function(status, details) {
-							if (status == "throttled") {
+							if (status === "throttled") {
 								this.setStatus("Update check failed due to throttling, try again later");
 							}
-							else if (status == "update_available") {
+							else if (status === "update_available") {
 								this.setStatus((details && details.version) + " available.  Update is pending and should install momentarily.");
 							}
 							else {

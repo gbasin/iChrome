@@ -115,7 +115,7 @@ s.textContent = "(" + (function(window, document, undefined) {
 			// The EventTarget on which the touch point started when it was first placed on the surface,
 			// even if the touch point has since moved outside the interactive area of that element.
 			// also, when the target doesnt exist anymore, we update it
-			if (ev.type == 'mousedown' || !eventTarget || (eventTarget && !eventTarget.dispatchEvent)) {
+			if (ev.type === 'mousedown' || !eventTarget || (eventTarget && !eventTarget.dispatchEvent)) {
 				eventTarget = ev.target;
 			}
 
@@ -142,7 +142,7 @@ s.textContent = "(" + (function(window, document, undefined) {
 			}
 
 			// reset
-			if (ev.type == 'mouseup') {
+			if (ev.type === 'mouseup') {
 				multiTouchStartPos = null;
 				isMultiTouch = false;
 				eventTarget = null;
@@ -200,12 +200,12 @@ s.textContent = "(" + (function(window, document, undefined) {
 	 */
 	function getActiveTouches(mouseEv, eventName) {
 		// empty list
-		if (mouseEv.type == 'mouseup') {
+		if (mouseEv.type === 'mouseup') {
 			return new TouchList();
 		}
 
 		var touchList = createTouchList(mouseEv);
-		if(isMultiTouch && mouseEv.type != 'mouseup' && eventName == 'touchend') {
+		if(isMultiTouch && mouseEv.type !== 'mouseup' && eventName === 'touchend') {
 			touchList.splice(1, 1);
 		}
 		return touchList;
@@ -225,8 +225,8 @@ s.textContent = "(" + (function(window, document, undefined) {
 		//
 		// but when the mouseEv.type is mouseup, we want to send all touches because then
 		// no new input will be possible
-		if(isMultiTouch && mouseEv.type != 'mouseup' &&
-			(eventName == 'touchstart' || eventName == 'touchend')) {
+		if(isMultiTouch && mouseEv.type !== 'mouseup' &&
+			(eventName === 'touchstart' || eventName === 'touchend')) {
 			touchList.splice(0, 1);
 		}
 

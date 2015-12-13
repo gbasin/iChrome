@@ -1,8 +1,8 @@
 /**
  * This is the modal dialog base view.
- * 
+ *
  * Because it has so many methods of its own, it needs to be created and then have its element set as a base element for the actual modal content (i.e. the store).
- * 
+ *
  * See modals/updated for a simple usage example.
  */
 define(["jquery", "backbone"], function($, Backbone) {
@@ -83,7 +83,7 @@ define(["jquery", "backbone"], function($, Backbone) {
 				It can't be attached in "events" since it has to be triggered for both the modal and the overlay.
 			*/
 			this.mo.on("keydown", function(e) {
-				if (e.keyCode == 27) {
+				if (e.keyCode === 27) {
 					this.close(e);
 				}
 			}.bind(this));

@@ -181,7 +181,7 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 			},
 
 			"keyup input": function(e) {
-				if (e.which == 17) {
+				if (e.which === 17) {
 					this._ctrlDown = false;
 				}
 			},

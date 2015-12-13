@@ -49,7 +49,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 
 		/**
 		 * Contains a listing of sources.
-		 * 
+		 *
 		 * Each source must either be an array of quotes or a specification for
 		 * a URL to fetch and a parser function.
 		 *
@@ -411,7 +411,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 		},
 
 		refresh: function(force) {
-			if (!force && this.config.method == "daily" && this.data.date && (new Date().getTime() - this.data.date) < 864E5) {
+			if (!force && this.config.method === "daily" && this.data.date && (new Date().getTime() - this.data.date) < 864E5) {
 				return;
 			}
 
@@ -434,7 +434,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 					if (!quote.link) delete quote.link;
 					if (!quote.source) delete quote.source;
 				}
-				
+
 				this.data = quote;
 
 				this.data.date = new Date().getTime();
@@ -443,7 +443,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 
 				this.utils.saveData(this.data);
 			}
-			else if (source && source.url && typeof source.parse == "function") {
+			else if (source && source.url && typeof source.parse === "function") {
 				$.ajax({
 					cache: false,
 					method: "GET",

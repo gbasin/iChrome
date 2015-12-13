@@ -39,7 +39,7 @@ define(["jquery", "backbone", "core/analytics", "storage/storage", "i18n/i18n", 
 
 						this.trigger("tab:removed");
 					}
-					else if (this.$("form").length == 1) {
+					else if (this.$("form").length === 1) {
 						alert(Translate("settings.specific.delete_disallowed"));
 					}
 				},
@@ -64,7 +64,7 @@ define(["jquery", "backbone", "core/analytics", "storage/storage", "i18n/i18n", 
 
 					this.themes.once("use", function(theme, id) {
 						$(e.currentTarget).prev("input").val(id || theme.id).end()
-							.next(".current").text(theme.name || (typeof theme.id == "number" ? Translate("settings.visual.theme_placeholder", theme.id) : ""));
+							.next(".current").text(theme.name || (typeof theme.id === "number" ? Translate("settings.visual.theme_placeholder", theme.id) : ""));
 					}, this);
 				}
 			},
@@ -90,7 +90,7 @@ define(["jquery", "backbone", "core/analytics", "storage/storage", "i18n/i18n", 
 						columns: (tab.medley ? "medley" : (tab.columns.length || 3)),
 						active: (i === 0 ? "active" : ""),
 						themename: (
-							theme == "default" ?
+							theme === "default" ?
 								Translate("settings.visual.theme") :
 							(
 								this.get("cached")[theme] || this.get("themes")[(theme).replace("custom", "")] || {}
@@ -103,7 +103,7 @@ define(["jquery", "backbone", "core/analytics", "storage/storage", "i18n/i18n", 
 
 				data.tabs.forEach(function(tab, i) {
 					this.$("form[data-tab='" + tab.id + "']")
-						.find("#columns" + tab.id).val(tab.columns == "medley" ? "medley" : tab.columns + (tab.fixed ? "-fixed" : "-fluid"));
+						.find("#columns" + tab.id).val(tab.columns === "medley" ? "medley" : tab.columns + (tab.fixed ? "-fixed" : "-fluid"));
 				}.bind(this));
 
 				return this;

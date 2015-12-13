@@ -67,7 +67,7 @@ define(["jquery"], function($) {
 
 						str = str.replace(/[^()]/g, "");
 
-						while (s != str) { 
+						while (s !== str) {
 							s = str;
 
 							str = str.replace(/\(\)/g, "");
@@ -95,7 +95,7 @@ define(["jquery"], function($) {
 					if (typeof answer !== "number" || isNaN(answer)) {
 						d0.value = this.utils.translate("error");
 					}
-					else if (answer == Infinity || answer == -Infinity) {
+					else if (answer === Infinity || answer === -Infinity) {
 						d0.value = this.utils.translate("infinity");
 					}
 					else {
@@ -168,19 +168,19 @@ define(["jquery"], function($) {
 					}
 
 					overwrite = false;
-					
+
 					d0.focus();
 				}
 			});
 
 			display.on("keydown", function(e) {
-				if (e.which == 13) {
+				if (e.which === 13) {
 					calculate();
 				}
 			}).on("input", function(e) {
 				var val = d0.value.replace(/[^ +\-()1234567890*\/×x\.÷]/g, "");
 
-				if (d0.value != val) {
+				if (d0.value !== val) {
 					var start = d0.selectionStart - 1, // These are -1 since the cursor is just after the entered text and we want to be before
 						end = d0.selectionEnd - 1;
 

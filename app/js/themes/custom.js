@@ -19,7 +19,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 				"change #color, #image, #upload, #position, #scaling, #repeat": "updatePreview",
 
 				"click input:not([type=radio], [type=checkbox]), textarea, select": function(e) {
-					if (e.which == 13) {
+					if (e.which === 13) {
 						this.save(e); // This calls preventDefault
 					}
 				},
@@ -116,7 +116,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 			 * @param  {Event|Function} [e] The event to call preventDefault() on or a callback function
 			 */
 			save: function(e) {
-				if (typeof e == "function") {
+				if (typeof e === "function") {
 					var cb = e;
 				}
 				else if (e && e.preventDefault) {
@@ -132,7 +132,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 
 				var next = function(d) {
 					theme = d || theme;
-					
+
 					if (editing && themes[this.editing]) {
 						Cacher.prototype.model.storage.themes[this.editing] = theme;
 					}
@@ -156,7 +156,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 
 				var upload;
 
-				if (theme.image && typeof theme.image == "string") {
+				if (theme.image && typeof theme.image === "string") {
 					try { // This is a user-provided URL, anything could happen
 						Cacher.Custom.cache(theme, id, next);
 					}
@@ -220,7 +220,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 
 
 			initialize: function(options) {
-				if (options && typeof options.theme == "number") {
+				if (options && typeof options.theme === "number") {
 					this.model = new Model(Utils.model.get("custom")[options.theme]);
 
 					this.editing = options.theme;
@@ -238,7 +238,7 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 
 			remove: function() {
 				this.$("#color").spectrum("destroy");
-				
+
 				Backbone.View.prototype.remove.call(this);
 			},
 

@@ -479,7 +479,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 						':not([data-src*="feed-injector"])' +			':not([data-src*="/plugins/"])' +
 						':not([data-src*="_icon_"])' +					':not([data-src*="/ad-"])' +
 						':not([data-src*="buysellads"])' +				':not([data-src*="holstee"])' +
-						':not([data-src*="/ad_"])' +					':not([data-src*="/button/"])' +	
+						':not([data-src*="/ad_"])' +					':not([data-src*="/button/"])' +
 						':not([data-src*="/sponsors/"])' +				':not([data-src*="googlesyndication.com"])' +
 						':not([data-src*="/adx"])' +					':not([data-src*="assets/feed-fb"])' +
 						':not([data-src*="feedburner.com/~ff"])' +		':not([data-src*="gstatic.com"])' +
@@ -517,7 +517,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 							if (["image/jpeg", "image/png"].indexOf(article.enclosure[i].type) >= 0) {
 								image = article.enclosure[i].href;
 								break;
-							} 
+							}
 						}
 					}
 
@@ -525,7 +525,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				},
 				div = document.createElement("div");
 
-			if (!(typeof d.items == "object" && typeof d.items.forEach !== "undefined")) {
+			if (!(typeof d.items === "object" && typeof d.items.forEach !== "undefined")) {
 				return articles;
 			}
 
@@ -556,7 +556,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 				if (e.tags && e.tags[0]) {
 					e.tags.forEach(function(t, i) {
-						if (t.id == "user/" + oAuth.data.id + "/tag/global.saved") {
+						if (t.id === "user/" + oAuth.data.id + "/tag/global.saved") {
 							article.saved = true;
 						}
 					});
@@ -569,7 +569,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				if (e.origin) {
 					article.source = names[e.origin.streamId || ""] || e.origin.title || e.title;
 				}
-				
+
 				if (e.enclosure) { //sometime this object contains the image
 					article.enclosure = e.enclosure;
 				}
@@ -577,11 +577,11 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				if (e.visual) {
 					article.visual = e.visual;
 				}
-				
+
 				article.image = getImage(article);
 
 				articles.push(article);
-			});			
+			});
 
 			return articles;
 		},
@@ -593,7 +593,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 			req({
 				type: "GET",
-				url: "http://cloud.feedly.com/v3/streams/contents?count=10&streamId=" + encodeURIComponent(this.config.source) + (this.config.show == "unread" ? "&unreadOnly=true" : "") + "&ranked=" + this.config.sort,
+				url: "http://cloud.feedly.com/v3/streams/contents?count=10&streamId=" + encodeURIComponent(this.config.source) + (this.config.show === "unread" ? "&unreadOnly=true" : "") + "&ranked=" + this.config.sort,
 				success: function(d) {
 					if (!d) {
 						return;
@@ -661,7 +661,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				// mousedown handles left, middle, and right clicks
 
 				var id = $(this).attr("data-id");
-				
+
 				if (!sent.hasOwnProperty(id)) {
 					sent[id] = true;
 
@@ -709,7 +709,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 					that.oAuth.ajax({
 						type: "GET",
-						url: "http://cloud.feedly.com/v3/streams/contents?count=20&streamId=" + encodeURIComponent(that.config.source) + "&continuation=" + encodeURIComponent(next) + (that.config.show == "unread" ? "&unreadOnly=true" : "") + "&ranked=" + that.config.sort,
+						url: "http://cloud.feedly.com/v3/streams/contents?count=20&streamId=" + encodeURIComponent(that.config.source) + "&continuation=" + encodeURIComponent(next) + (that.config.show === "unread" ? "&unreadOnly=true" : "") + "&ranked=" + that.config.sort,
 						success: function(d) {
 							if (!(d)) {
 								return;
@@ -719,7 +719,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 							var articles = that.getArticles(d);
 
-							if (that.config.view == "cards dual") {
+							if (that.config.view === "cards dual") {
 								var column1 = [],
 									column2 = [],
 									columns = $(this).find(".column");
@@ -760,14 +760,14 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 					});
 				}
 
-				if (that.config.mark == "scroll" && !submitting && new Date().getTime() - last > 5000) {
+				if (that.config.mark === "scroll" && !submitting && new Date().getTime() - last > 5000) {
 					clearTimeout(sendout);
 
 					outset = false;
 
 					submit.call(this);
 				}
-				else if (that.config.mark == "scroll" && !submitting && !outset) {
+				else if (that.config.mark === "scroll" && !submitting && !outset) {
 					setTimeout(function() {
 						outset = false;
 
@@ -781,7 +781,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 		render: function(demo) {
 			var data = $.extend(true, {}, this.data || {articles:[]});
 
-			if (this.config.view == "cards dual") {
+			if (this.config.view === "cards dual") {
 				var articles = [],
 					column2 = [];
 
@@ -818,7 +818,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				data.title = this.config.title;
 			}
 
-			data.link = this.config.link == "show";
+			data.link = this.config.link === "show";
 
 			data.class = this.config.view;
 

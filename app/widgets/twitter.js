@@ -128,10 +128,10 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 							t.forEach(function(e, i) {
 								var split = e.split("=");
 
-								if (split[0] == "oauth_token") {
+								if (split[0] === "oauth_token") {
 									token = split[1];
 								}
-								else if (split[0] == "oauth_token_secret") {
+								else if (split[0] === "oauth_token_secret") {
 									secret = split[1];
 								}
 							});
@@ -164,10 +164,10 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 						t.forEach(function(e, i) {
 							var split = e.split("=");
 
-							if (split[0] == "oauth_token") {
+							if (split[0] === "oauth_token") {
 								token = split[1];
 							}
-							else if (split[0] == "oauth_token_secret") {
+							else if (split[0] === "oauth_token_secret") {
 								secret = split[1];
 							}
 						});
@@ -207,7 +207,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 				secret = s || this.config.secret || "";
 
 			var CryptoJS = this.CryptoJS;
-			
+
 			if (!this.CryptoJS) {
 				/*
 					CryptoJS v3.1.2
@@ -255,7 +255,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 
 				url = url[0];
 			}
-			
+
 			// Generate nonce
 			for (var i = 0; i < 33; i++) {
 				code += Math.floor((Math.random() * 100) % 10);
@@ -265,7 +265,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 			var consumer_key = "nYjEzkjKdyWotLXmbSjjA",
 				nonce = encodeURIComponent(btoa(code)),
 				timestamp = Math.floor(new Date().getTime() / 1000);
-			
+
 			token = encodeURIComponent(token);
 
 			var params = [
@@ -291,13 +291,13 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 
 			// Generate OAuth header
 			options.beforeSend = function(xhr) {
-				xhr.setRequestHeader("Authorization", 'OAuth ' + 
-					'oauth_consumer_key="' + consumer_key + '", ' + 
-					'oauth_nonce="' + nonce + '", ' + 
-					'oauth_signature="' + encodeURIComponent(signature) + '", ' + 
-					'oauth_signature_method="HMAC-SHA1", ' + 
-					'oauth_timestamp="' + timestamp + '", ' + 
-					'oauth_token="' + (token || "") + '", ' + 
+				xhr.setRequestHeader("Authorization", 'OAuth ' +
+					'oauth_consumer_key="' + consumer_key + '", ' +
+					'oauth_nonce="' + nonce + '", ' +
+					'oauth_signature="' + encodeURIComponent(signature) + '", ' +
+					'oauth_signature_method="HMAC-SHA1", ' +
+					'oauth_timestamp="' + timestamp + '", ' +
+					'oauth_token="' + (token || "") + '", ' +
 					'oauth_version="1.0"');
 
 			};
@@ -313,13 +313,13 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 			var url = "",
 				source = this.config.source;
 
-			if (source == "home" || !source) {
+			if (source === "home" || !source) {
 				url = "https://api.twitter.com/1.1/statuses/home_timeline.json?";
 			}
-			else if (source == "retweets") {
+			else if (source === "retweets") {
 				url = "https://api.twitter.com/1.1/statuses/retweets_of_me.json?";
 			}
-			else if (source == "mentions") {
+			else if (source === "mentions") {
 				url = "https://api.twitter.com/1.1/statuses/mentions_timeline.json?";
 			}
 			else {
@@ -335,7 +335,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 					if (d && d.forEach) {
 						var hEscape = function(str) {
 							str = String(str || "");
-							
+
 							// Based off of Hogan.js' escape method
 							var amp		= /&/g,
 								lt		= /</g,
@@ -427,7 +427,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 			});
 		},
 		render: function(key) {
-			if (key == "authorize" || (!this.config.token && !key)) {
+			if (key === "authorize" || (!this.config.token && !key)) {
 				this.utils.render({
 					authorize: true,
 					title: (this.config.title && this.config.title !== "" ? this.config.title : false)

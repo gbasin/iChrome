@@ -10,7 +10,7 @@ define(["lodash", "jquery", "backbone", "storage/storage", "i18n/i18n", "core/pr
 
 				data.themename = (this.get("cached")[data.theme] || this.get("themes")[data.theme.replace("custom", "")] || {}).name;
 
-				if (typeof data.toolbar == "boolean") {
+				if (typeof data.toolbar === "boolean") {
 					if (data.toolbar) {
 						data.toolbar = "full";
 					}
@@ -42,7 +42,7 @@ define(["lodash", "jquery", "backbone", "storage/storage", "i18n/i18n", "core/pr
 
 					this.themes.once("use", function(theme, id) {
 						$(e.currentTarget).prev("input").val(id || theme.id).end()
-							.next(".current").text(theme.name || (typeof theme.id == "number" ? Translate("settings.visual.theme_placeholder", theme.id) : ""));
+							.next(".current").text(theme.name || (typeof theme.id === "number" ? Translate("settings.visual.theme_placeholder", theme.id) : ""));
 					}, this);
 				},
 

@@ -172,7 +172,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 							}
 						};
 
-						if (e.type == "note" || e.type == "link") {
+						if (e.type === "note" || e.type === "link") {
 							parsed.title = e.title;
 							parsed.body = e.body;
 
@@ -185,7 +185,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 								parsed.linkText = e.url;
 							}
 						}
-						else if (e.type == "file") {
+						else if (e.type === "file") {
 							parsed.body = e.body;
 							parsed.link = e.file_url;
 							parsed.linkText = e.file_name;
@@ -294,7 +294,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 					el: this.elm
 				});
 			}
-			
+
 			this.view.render();
 		}
 	};

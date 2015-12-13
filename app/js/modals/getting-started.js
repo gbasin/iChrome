@@ -4,7 +4,7 @@
 define(
 	["jquery", "backbone", "browser/api", "modals/modals", "core/analytics", "core/render"],
 	function($, Backbone, Browser, Modal, Track, render) {
-		var installed = Browser.storage.installed == "true",
+		var installed = Browser.storage.installed === "true",
 			modal = new (Modal.extend({
 				classes: "getting-started",
 
@@ -68,7 +68,7 @@ define(
 
 					requestAnimationFrame(this.show.bind(this));
 				},
-				
+
 				render: function() {
 					this.$el.html(render("getting-started", {
 						newtab: Browser.app.newTab

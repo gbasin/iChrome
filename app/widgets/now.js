@@ -172,7 +172,7 @@ define(["jquery", "oauth", "browser/api"], function($, OAuth, Browser) {
 								}
 
 								if (co.buttons && e.actionUrls && e.actionUrls.buttonUrls &&
-									e.actionUrls.buttonUrls.length == co.buttons.length) {
+									e.actionUrls.buttonUrls.length === co.buttons.length) {
 									card.buttons = [];
 
 									co.buttons.forEach(function(btn, i) {
@@ -213,7 +213,7 @@ define(["jquery", "oauth", "browser/api"], function($, OAuth, Browser) {
 		render: function(key) {
 			if (!this.oAuth) this.setOAuth();
 
-			if (key == "authorize") {
+			if (key === "authorize") {
 				this.utils.render({ authorize: true });
 
 				return this.elm.find(".authorize").on("click", function(e) {
@@ -245,7 +245,7 @@ define(["jquery", "oauth", "browser/api"], function($, OAuth, Browser) {
 					url: "https://www.googleapis.com/chromenow/v1/notifications/" + card.id + "?chromeNotificationId=" + encodeURIComponent(card.cnId) + "&age=29&duration=" + card.duration,
 					success: function(d) {
 						this.data.cards.splice(this.data.cards.indexOf(card), 1);
-					
+
 						if (elm.hasClass("btns")) {
 							elm.next(".buttons").remove().end().remove();
 						}
