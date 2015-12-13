@@ -254,7 +254,9 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 							hourly: this.config.hourly === "enabled" ? true : null
 						}
 					}).done(function(d) {
-						if (!d) return;
+						if (!d) {
+							return;
+						}
 
 						if (typeof d !== "object") {
 							try {
@@ -280,10 +282,21 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 								d.conditions = this.getCondition(d.icon);
 							}
 
-							if (d.sunrise) d.sunrise = moment(d.sunrise).format("LT");
-							if (d.sunset) d.sunset = moment(d.sunset).format("LT");
-							if (d.moonrise) d.moonrise = moment(d.moonrise).format("LT");
-							if (d.moonset) d.moonset = moment(d.moonset).format("LT");
+							if (d.sunrise) {
+								d.sunrise = moment(d.sunrise).format("LT");
+							}
+
+							if (d.sunset) {
+								d.sunset = moment(d.sunset).format("LT");
+							}
+
+							if (d.moonrise) {
+								d.moonrise = moment(d.moonrise).format("LT");
+							}
+
+							if (d.moonset) {
+								d.moonset = moment(d.moonset).format("LT");
+							}
 
 							return d;
 						}.bind(this);

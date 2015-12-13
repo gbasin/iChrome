@@ -83,7 +83,9 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 				}
 
 				cb(_(d.matches).map(function(e) {
-					if (!e.e || !e.t) return;
+					if (!e.e || !e.t) {
+						return;
+					}
 
 					return {
 						value: e.e + ":" + e.t,
@@ -199,7 +201,9 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 					cb(_(d.clusters).map(function(e) {
 						e = e.a && e.a[0];
 
-						if (!e) return;
+						if (!e) {
+							return;
+						}
 
 						return {
 							url: e.u,

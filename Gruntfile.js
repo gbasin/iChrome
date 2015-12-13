@@ -38,7 +38,7 @@ module.exports = function (grunt) {
 				futurehostile: true,
 				reporter: require("jshint-stylish")
 			},
-			all: ["app/**/*.js", "!node_modules/**/*.js", "!app/js/lib/*.js"]
+			all: ["**/*.js", "!node_modules/**/*.js", "!app/js/lib/*.js"]
 		},
 
 		// compile SASS files
@@ -327,7 +327,7 @@ module.exports = function (grunt) {
 			output: process.stdout
 		});
 
-		rl.question("Press Enter to reset the app: ", function (answer) {
+		rl.question("Press Enter to reset the app: ", function() {
 			rl.close();
 
 			done();

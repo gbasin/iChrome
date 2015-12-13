@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 		var localeFile = grunt.file.readJSON("app/js/i18n/locales/en/widgets.json");
 
 
-		manifests.forEach(function(filepath, i) {
+		manifests.forEach(function(filepath) {
 			var manifest = grunt.file.readJSON(filepath);
 
 			// Copy translated strings to consolidated locale files.

@@ -62,7 +62,9 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 					dir = "prev";
 				}
 
-				if (!dir) return;
+				if (!dir) {
+					return;
+				}
 
 				// Stop the tabs from scrolling
 				e.stopPropagation();
@@ -109,7 +111,9 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 
 
 		loadDailyForecast: function(e) {
-			if (!this.Pro.isPro) return;
+			if (!this.Pro.isPro) {
+				return;
+			}
 
 			var elm = $(e.currentTarget),
 				loc = elm.parents(".location").first();

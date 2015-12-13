@@ -250,7 +250,9 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 				((url && url[1]) || "").split("&").forEach(function(e) {
 					var param = e.split("=");
 
-					if (param[0]) parameters[param[0]] = param[1] || "";
+					if (param[0]) {
+						parameters[param[0]] = param[1] || "";
+					}
 				});
 
 				url = url[0];

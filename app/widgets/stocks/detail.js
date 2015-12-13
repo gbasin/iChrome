@@ -197,8 +197,9 @@ define(["lodash", "jquery", "moment", "./lib/chart", "widgets/views/main"], func
 
 			var canvas = this.$(".chart canvas");
 
-			if (!canvas.length) return;
-
+			if (!canvas.length) {
+				return;
+			}
 
 			var tipElm = this.$(".chart .tooltip");
 

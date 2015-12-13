@@ -163,7 +163,9 @@ define(["lodash", "jquery", "moment", "browser/api"], function(_, $, moment, Bro
 		},
 
 		render: function(demo) {
-			if (demo) this.refresh();
+			if (demo) {
+				this.refresh();
+			}
 
 			this.utils.render(this.data);
 

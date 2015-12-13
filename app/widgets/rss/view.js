@@ -72,7 +72,9 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 		updateTabs: function(scrollLeft) {
 			var tabs = this.$("ul.tabs");
 
-			if (!tabs.length) return;
+			if (!tabs.length) {
+				return;
+			}
 
 			var scrollWidth = tabs[0].scrollWidth,
 				offsetWidth = tabs[0].offsetWidth;

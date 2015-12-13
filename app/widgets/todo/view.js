@@ -79,8 +79,12 @@ define(["jquery", "widgets/views/main", "lib/jquery.sortable"], function($, Widg
 							}) +
 						'</div></div></div>';
 
-			if (after) $(html).insertAfter(after).find(".title").focus();
-			else $(html).appendTo(this.sortable).find(".title").focus();
+			if (after) {
+				$(html).insertAfter(after).find(".title").focus();
+			}
+			else {
+				$(html).appendTo(this.sortable).find(".title").focus();
+			}
 
 			this.serialize();
 		},

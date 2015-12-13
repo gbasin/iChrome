@@ -71,14 +71,18 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 		 * @param   {Function}  cb  The callback function
 		 */
 		getLists: function(cb) {
-			if (!this.oAuth) this.setOAuth();
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
 
 			this.oAuth.ajax({
 				type: "GET",
 				dataType: "json",
 				url: "https://www.googleapis.com/tasks/v1/users/@me/lists?fields=items(id%2Ctitle)",
 				success: function(d) {
-					if (!d || !d.items) return cb("error");
+					if (!d || !d.items) {
+						return cb("error");
+					}
 
 					var taskLists = {};
 
@@ -92,8 +96,13 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 		},
 
 		refresh: function() {
-			if (!this.oAuth) this.setOAuth();
-			if (!this.config.list) return false;
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
+
+			if (!this.config.list) {
+				return false;
+			}
 
 			this.oAuth.ajax({
 				type: "GET",
@@ -173,7 +182,9 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 			if (elm.is(this.addForm)) {
 				item = $('<div class="item">' + this.utils.renderTemplate("item", this.formatItem(dta)) + "</div>").insertAfter(elm);
 
-				if (dta.due) dta.due = new Date(dta.due);
+				if (dta.due) {
+					dta.due = new Date(dta.due);
+				}
 
 				oAuth.ajax({
 					type: "POST",
@@ -184,7 +195,9 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 						if (xhr.status === 200 && xhr.responseJSON && xhr.responseJSON.id) {
 							item.attr("data-id", xhr.responseJSON.id);
 
-							if (dta.due) dta.due = dta.due.getTime();
+							if (dta.due) {
+								dta.due = dta.due.getTime();
+							}
 
 							dta.id = xhr.responseJSON.id;
 
@@ -215,7 +228,9 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 
 				this.utils.saveData(this.data);
 
-				if (dta.due) dta.due = new Date(dta.due).toISOString();
+				if (dta.due) {
+					dta.due = new Date(dta.due).toISOString();
+				}
 
 				oAuth.ajax({
 					type: "PATCH",
@@ -295,7 +310,9 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 
 			this.elm.off(".tasks")
 				.on("click.tasks", "button.add", function() {
-					if (that.addForm) return;
+					if (that.addForm) {
+						return;
+					}
 
 					that.addForm = $('<div class="item edit transitioning add" style="height: 0;">' + that.utils.renderTemplate("item", { edit: true }) + '</div>');
 
@@ -306,7 +323,9 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 					});
 				})
 				.on("click.tasks", ".item:not(.edit)", function(e) {
-					if ($(e.target).is(".check")) return;
+					if ($(e.target).is(".check")) {
+						return;
+					}
 
 					var item = $(this);
 
@@ -336,10 +355,14 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 					that.save($(this).parent());
 				})
 				.on("keydown.tasks", ".item.edit input, .item.edit .done", function(e) {
-					if (e.which === 13) that.save($(this).parent());
+					if (e.which === 13) {
+						that.save($(this).parent());
+					}
 				})
 				.on("keydown.tasks", ".item.edit textarea", function(e) {
-					if (e.which === 13 && e.shiftKey) that.save($(this).parent());
+					if (e.which === 13 && e.shiftKey) {
+						that.save($(this).parent());
+					}
 				})
 				.on("click.tasks", ".item.edit .delete", function() {
 					var item = $(this).parent(),
@@ -376,7 +399,9 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 					var item = $(this).parent(),
 						id = item.attr("data-id");
 
-					if (!item.prev().length) return;
+					if (!item.prev().length) {
+						return;
+					}
 
 					item.insertBefore(item.prev());
 
@@ -397,7 +422,9 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 					var item = $(this).parent(),
 						id = item.attr("data-id");
 
-					if (!item.next().length) return;
+					if (!item.next().length) {
+						return;
+					}
 
 					item.insertAfter(item.next());
 
