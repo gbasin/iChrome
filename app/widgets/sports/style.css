@@ -411,7 +411,7 @@ header .options li.selected {
 	background: #F5F5F5;
 	transform: translateZ(0);
 	transition: all .2s ease;
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 3px -3px inset;
+	box-shadow: rgba(0, 0, 0, 0.24) 0 4px 3px -3px inset;
 
 }
 

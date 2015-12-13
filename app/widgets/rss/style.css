@@ -466,7 +466,7 @@ header .title ~ .tabs {
 /* This pushes the rest of the contents to the bottom */
 .maximized .items.cards .item.featured:before {
 	content: "";
-	flex: 1 0 0%;
+	flex: 1 0 0;
 }
 
 .maximized .items.cards .item.featured span.nested-link[data-href] {

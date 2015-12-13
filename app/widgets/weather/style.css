@@ -27,7 +27,7 @@ h2.header {
 
 .tiny .location ~ .location .header {
 	margin: 10px -15px;
-	padding: 10px 15px 0px;
+	padding: 10px 15px 0;
 }
 
 .header button {
