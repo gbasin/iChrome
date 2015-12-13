@@ -152,7 +152,7 @@ body.widget-maximized {
 	overflow: hidden;
 }
 
-#bg-video {
+.bg-video {
 	top: 0;
 	left: 0;
 	right: 0;
@@ -4039,7 +4039,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	border-radius: 2px;
 }
 
-.themes.create #image {
+.themes.create .image {
 	width: 56%;
 }
 
@@ -4140,10 +4140,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	width: calc(60% - 50px);
 }
 
-.themes.create #image:lang(ru),
-.themes.create #image:lang(cs),
-.themes.create #image:lang(ja),
-.themes.create #image:lang(tr) {
+.themes.create .image:lang(ru),
+.themes.create .image:lang(cs),
+.themes.create .image:lang(ja),
+.themes.create .image:lang(tr) {
 	width: 54%;
 }
 
@@ -4510,7 +4510,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	max-width: 200px;
 }
 
-.settings .sync #fname {
+.settings .sync .fname {
 	margin-right: 10px;
 }
 

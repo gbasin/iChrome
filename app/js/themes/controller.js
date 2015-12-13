@@ -106,7 +106,7 @@ define(["lodash", "jquery", "backbone", "core/pro", "themes/utils"], function(_,
 					this.video.loop = true;
 					this.video.autoplay = true;
 
-					this.video.setAttribute("id", "bg-video");
+					this.video.setAttribute("class", "bg-video");
 
 					this.$el.prepend(this.video);
 				}

@@ -20,7 +20,7 @@
 			<div class="col-sm-9">
 				<span class="info">{{i18n.settings.sync.name_desc}}</span>
 
-				<input type="text" id="fname" name="fname" placeholder="{{i18n.settings.sync.fname}}" value="{{profile.user.fname}}" />
+				<input type="text" class="fname" id="fname" name="fname" placeholder="{{i18n.settings.sync.fname}}" value="{{profile.user.fname}}" />
 				<input type="text" id="lname" name="lname" placeholder="{{i18n.settings.sync.lname}}" value="{{profile.user.lname}}" />
 			</div>
 		</div>
