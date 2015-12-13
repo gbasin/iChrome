@@ -157,7 +157,7 @@ body.widget-maximized {
 }
 
 /* line 155, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-#bg-video {
+.bg-video {
 	top: 0;
 	left: 0;
 	right: 0;
@@ -4279,7 +4279,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 }
 
 /* line 4042, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-.themes.create #image {
+.themes.create .image {
 	width: 56%;
 }
 
@@ -4387,10 +4387,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 }
 
 /* line 4143, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-.themes.create #image:lang(ru),
-.themes.create #image:lang(cs),
-.themes.create #image:lang(ja),
-.themes.create #image:lang(tr) {
+.themes.create .image:lang(ru),
+.themes.create .image:lang(cs),
+.themes.create .image:lang(ja),
+.themes.create .image:lang(tr) {
 	width: 54%;
 }
 
@@ -4776,7 +4776,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 }
 
 /* line 4513, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-.settings .sync #fname {
+.settings .sync .fname {
 	margin-right: 10px;
 }
 
@@ -5159,7 +5159,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .sp-clear-enabled .sp-clear {
 	display: block;
 	position: absolute;
-	top: 0px;
+	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 84%;
@@ -6242,8 +6242,8 @@ input.sp-input[type="text"] {
 }
 
 /* line 720, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.clock .start-stop.started #start,
-.clock .start-stop:not(.started) #stop {
+.clock .start-stop.started .start,
+.clock .start-stop:not(.started) .stop {
 	display: none;
 }
 
