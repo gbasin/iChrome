@@ -27,10 +27,6 @@
 				<span class="header">Tabs</span>
 			</li>
 
-			<li data-id="widgets">
-				<span class="header">Widgets</span>
-			</li>
-
 			<li data-id="pro">
 				<span class="header">Pro</span>
 			</li>
