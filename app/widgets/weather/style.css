@@ -104,10 +104,11 @@ h2.header {
 
 /*---------------------------------------------
 	/ Conditions
+
+	This list is missing .cond.sunny because that's the default icon
 */
 .cond.rain				{ background-image: url(icons/rain.png); }
 .cond.snow				{ background-image: url(icons/snow.png); }
-.cond.sunny				{ background-image: url(icons/sunny.png); }
 .cond.cloudy			{ background-image: url(icons/cloudy.png); }
 .cond.tstorms			{ background-image: url(icons/tstorms.png); }
 .cond.showers			{ background-image: url(icons/showers.png); }
