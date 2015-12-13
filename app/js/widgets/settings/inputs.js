@@ -107,7 +107,9 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 						}, val);
 					};
 
-					if (settings.config[input.chained]) cb(settings.config[input.chained]);
+					if (settings.config[input.chained]) {
+						cb(settings.config[input.chained]);
+					}
 
 					form.on("change", "#widget-" + input.chained, function() {
 						cb($(this).val());
@@ -190,7 +192,9 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 			});
 
 
-			if (!autocomplete) return;
+			if (!autocomplete) {
+				return;
+			}
 
 			var inputElm = elm.find("input#widget-" + input.name);
 
@@ -212,7 +216,9 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 						}
 
 						sElm.html(_.map(options, function(e, i) {
-							if (typeof e !== "string" && typeof e !== "object") return;
+							if (typeof e !== "string" && typeof e !== "object") {
+								return;
+							}
 
 							return '<li' + (i === 0 ? ' class="active"' : '') + ' data-value="' + _.escape(e.value || e) + '">' + _.escape(e.label || e) + '</li>';
 						}).join(""));
@@ -228,7 +234,9 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 				.on("focusout", updateSuggestions.bind(this, "focusout"))
 				.on("input", updateSuggestions.bind(this, "input"))
 				.on("keydown", function(e) {
-					if (e.which !== 38 && e.which !== 40) return;
+					if (e.which !== 38 && e.which !== 40) {
+						return;
+					}
 
 					var active = sElm.find("li.active").removeClass("active");
 

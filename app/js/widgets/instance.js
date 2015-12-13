@@ -95,7 +95,9 @@ define([
 			// If the widget isn't available we create the element anyway so it's
 			// preserved during serialization, but don't initialize it or call
 			// any widget code
-			if (!this.widget.isAvailable) return;
+			if (!this.widget.isAvailable) {
+				return;
+			}
 
 			this.updateLoc();
 

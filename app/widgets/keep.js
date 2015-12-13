@@ -22,8 +22,10 @@ define(["jquery", "widgets/framefix"], function($, frameFix) {
 			size: "variable"
 		},
 		render: function() {
-			if (!frameFix(this.render, this, arguments)) return;
-			
+			if (!frameFix(this.render, this, arguments)) {
+				return;
+			}
+
 			this.utils.render({
 				url: "https://keep.google.com/keep/u/0/",
 				height: this.config.height || 400

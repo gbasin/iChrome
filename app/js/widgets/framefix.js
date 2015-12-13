@@ -7,13 +7,17 @@ define(["jquery", "browser/api"], function($, Browser) {
 		callbacks = [];
 
 	var check = function(cb, ctx, args) {
-		if (listening) return true;
+		if (listening) {
+			return true;
+		}
 
 		callbacks.push(function() {
 			cb.apply(ctx, args);
 		});
 
-		if (attaching) return false;
+		if (attaching) {
+			return false;
+		}
 
 		attaching = true;
 

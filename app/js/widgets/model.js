@@ -67,7 +67,9 @@ define(["lodash", "backbone", "core/pro", "core/analytics", "widgets/oauth"], fu
 		initialize: function() {
 			if (this.refresh) {
 				this.on("change", function(model, options) {
-					if (options && options.widgetChange === true) return;
+					if (options && options.widgetChange === true) {
+						return;
+					}
 
 					this.refresh();
 				}, this);

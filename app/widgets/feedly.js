@@ -401,7 +401,9 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 			});
 		},
 		getSources: function(cb) {
-			if (!this.oAuth) this.setOAuth();
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
 
 			var oAuth = this.oAuth;
 
@@ -436,7 +438,9 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 			}.bind(this));
 		},
 		getArticles: function(d) {
-			if (!this.oAuth) this.setOAuth();
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
 
 			var names = this.names,
 				articles = [],
@@ -588,8 +592,12 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 		refresh: function() {
 			var req;
 
-			if (this.config.source.indexOf("feed/") === 0 && !this.oAuth.hasToken()) req = $.ajax;
-			else req = this.oAuth.ajax.bind(this.oAuth);
+			if (this.config.source.indexOf("feed/") === 0 && !this.oAuth.hasToken()) {
+				req = $.ajax;
+			}
+			else {
+				req = this.oAuth.ajax.bind(this.oAuth);
+			}
 
 			req({
 				type: "GET",
@@ -613,7 +621,9 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 			});
 		},
 		setHandlers: function() {
-			if (!this.oAuth) this.setOAuth();
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
 
 			var loading = false,
 				that = this,
@@ -824,7 +834,9 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 			this.utils.render(data);
 
-			if (!demo) this.setHandlers();
+			if (!demo) {
+				this.setHandlers();
+			}
 		}
 	};
 });

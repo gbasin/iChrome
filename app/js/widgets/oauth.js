@@ -18,7 +18,9 @@ define(["lodash", "oauth"], function(_, OAuth) {
 
 		var config = _.clone(_.result(this.model, "oAuth"));
 
-		if (!config) return;
+		if (!config) {
+			return;
+		}
 
 		config.name = config.name || this.model.name;
 

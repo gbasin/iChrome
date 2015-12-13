@@ -34,9 +34,13 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 				properties = {},
 				data = {},
 				compile = function() {
-					if (errors !== 0) cb("Error");
+					if (errors !== 0) {
+						return cb("Error");
+					}
 
-					if (++done < 3) return;
+					if (++done < 3) {
+						return;
+					}
 
 					profiles.forEach(function(e) {
 						data[e.account] = data[e.account] || {label: accounts[e.account]};
@@ -57,7 +61,9 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 						xhr.setRequestHeader("Authorization", "Bearer " + token);
 					},
 					success: function(d) {
-						if (!d || !d.items) return errors++;
+						if (!d || !d.items) {
+							return errors++;
+						}
 
 						d.items.forEach(function(e) {
 							accounts[e.id] = e.name;
@@ -75,7 +81,9 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 						xhr.setRequestHeader("Authorization", "Bearer " + token);
 					},
 					success: function(d) {
-						if (!d || !d.items) return errors++;
+						if (!d || !d.items) {
+							return errors++;
+						}
 
 						d.items.forEach(function(e) {
 							properties[e.id] = {
@@ -96,7 +104,9 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 						xhr.setRequestHeader("Authorization", "Bearer " + token);
 					},
 					success: function(d) {
-						if (!d || !d.items) return errors++;
+						if (!d || !d.items) {
+							return errors++;
+						}
 
 						d.items.forEach(function(e) {
 							profiles.push({

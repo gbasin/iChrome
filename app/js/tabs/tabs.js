@@ -58,11 +58,17 @@ define(
 						this.model.tabs.navigate($(e.currentTarget).attr("data-direction"));
 					},
 					"keydown": function(e) {
-						if (e.which === 37) this.model.tabs.navigate("prev");
-						else if (e.which === 39) this.model.tabs.navigate("next");
+						if (e.which === 37) {
+							this.model.tabs.navigate("prev");
+						}
+						else if (e.which === 39) {
+							this.model.tabs.navigate("next");
+						}
 					},
 					"keydown .widgets-container .widget": function(e) {
-						if (e.currentTarget.className.indexOf("dragged") === -1) e.stopPropagation();
+						if (e.currentTarget.className.indexOf("dragged") === -1) {
+							e.stopPropagation();
+						}
 					},
 					"mouseover .tab-nav button": function(e) {
 						if ($(document.body).hasClass("dragging")) {

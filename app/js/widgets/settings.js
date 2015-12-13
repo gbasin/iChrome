@@ -24,10 +24,14 @@ define([
 		events: {
 			"click .btn.save": "save",
 			"keydown input, select": function(e) {
-				if (e.which === 13) this.save(e);
+				if (e.which === 13) {
+					this.save(e);
+				}
 			},
 			"keydown textarea": function(e) {
-				if (e.which === 13 && e.shiftKey) this.save(e);
+				if (e.which === 13 && e.shiftKey) {
+					this.save(e);
+				}
 			},
 
 
@@ -245,8 +249,9 @@ define([
 			}, this);
 
 			_.each(this.widget.settings, function(e) {
-				if (!e.type || !inputs[e.type]) return;
-
+				if (!e.type || !inputs[e.type]) {
+					return;
+				}
 
 				var input = _.clone(e);
 

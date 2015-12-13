@@ -6,10 +6,21 @@ define([
 ], function(_, $, Backbone, moment, Browser, Storage, Translate, SyncAPI, Alert, render) {
 	var Model = Backbone.Model.extend({
 			save: function(d, cb) {
-				if (d.user)		this.storage.user = d.user;
-				if (d.tabs)		this.storage.tabs = d.tabs;
-				if (d.themes)	this.storage.themes = d.themes;
-				if (d.settings)	this.storage.settings = d.settings;
+				if (d.user) {
+					this.storage.user = d.user;
+				}
+
+				if (d.tabs) {
+					this.storage.tabs = d.tabs;
+				}
+
+				if (d.themes) {
+					this.storage.themes = d.themes;
+				}
+
+				if (d.settings) {
+					this.storage.settings = d.settings;
+				}
 
 				this.storage.sync(true, cb);
 			},

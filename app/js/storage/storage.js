@@ -57,7 +57,9 @@ define(
 				// Remove the event so it doesn't get called from the promise.done() function
 				events = events.replace(/(?:^| )done(?:$| )/, "");
 
-				if (!events) return;
+				if (!events) {
+					return;
+				}
 			}
 
 			Backbone.Events.on.call(promise, events, cb, ctx);
@@ -67,8 +69,12 @@ define(
 
 		// When storage is updated it should be synced
 		promise.on("updated", function() {
-			if (!saving) storage.sync();
-			else saving = false;
+			if (!saving) {
+				storage.sync();
+			}
+			else {
+				saving = false;
+			}
 		});
 
 
@@ -87,8 +93,13 @@ define(
 
 				Browser.storage.clear();
 
-				if (uses) Browser.storage.uses = uses;
-				if (syncData) Browser.storage.syncData = syncData;
+				if (uses) {
+					Browser.storage.uses = uses;
+				}
+
+				if (syncData) {
+					Browser.storage.syncData = syncData;
+				}
 
 				Browser.storage.installed = true; // Show the installation guide when the page is reloaded
 
@@ -99,7 +110,9 @@ define(
 
 				// Force a save and sync
 				save(true, function() {
-					if (cb) cb();
+					if (cb) {
+						cb();
+					}
 				});
 			});
 		};

@@ -73,18 +73,30 @@ define([
 			// button might see a FOUT (Flash Of Unchosen Toolbar)
 			this.model.on("change:toolbar", function() {
 				if (this.model.get("toolbar") === "full") {
-					if (!this.Toolbar) this.Toolbar = new Toolbar();
+					if (!this.Toolbar) {
+						this.Toolbar = new Toolbar();
+					}
 
-					if (this.MenuButton) this.MenuButton.$el.detach();
-					else Track.event("Toolbar", "Load"); // If a menu button doesn't exist this isn't a setting change
+					if (this.MenuButton) {
+						this.MenuButton.$el.detach();
+					}
+					else {
+						Track.event("Toolbar", "Load"); // If a menu button doesn't exist this isn't a setting change
+					}
 
 					this.$el.prepend(this.Toolbar.render().el);
 				}
 				else {
-					if (!this.MenuButton) this.MenuButton = new MenuButton();
+					if (!this.MenuButton) {
+						this.MenuButton = new MenuButton();
+					}
 
-					if (this.Toolbar) this.Toolbar.$el.detach();
-					else Track.event("Menu Button", "Load");
+					if (this.Toolbar) {
+						this.Toolbar.$el.detach();
+					}
+					else {
+						Track.event("Menu Button", "Load");
+					}
 
 					this.$el.prepend(this.MenuButton.render().el);
 				}

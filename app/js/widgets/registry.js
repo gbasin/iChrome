@@ -51,7 +51,9 @@ define([
 		createInstance: function(model, isPreview) {
 			var widget = this.get(model.get("id"));
 
-			if (!widget) return;
+			if (!widget) {
+				return;
+			}
 
 			// If this is a legacy widget, return a legacy widget instance, which
 			// exposes the same API but operates differently internally

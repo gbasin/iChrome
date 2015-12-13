@@ -54,9 +54,17 @@ define(["jquery", "backbone"], function($, Backbone) {
 			// Construct an object of CSS properties based on the options passed
 			var css = {};
 
-			if (this.width)			css.width = this.width;
-			if (this.height)		css.maxHeight = this.height;
-			if (this.realHeight)	css.height = this.realHeight;
+			if (this.width) {
+				css.width = this.width;
+			}
+
+			if (this.height) {
+				css.maxHeight = this.height;
+			}
+
+			if (this.realHeight) {
+				css.height = this.realHeight;
+			}
 
 			this.$el.css(css);
 

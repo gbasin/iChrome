@@ -31,7 +31,9 @@ define(["jquery", "widgets/framefix"], function($, frameFix) {
 			size: "variable"
 		},
 		render: function() {
-			if (!frameFix(this.render, this, arguments)) return;
+			if (!frameFix(this.render, this, arguments)) {
+				return;
+			}
 
 			this.utils.render({
 				url: "https://classroom.google.com/u/" + (this.config.user || 0) + (this.config.mode === "teacher" ? "/ta/not-reviewed/all" : "/a/not-turned-in/all")

@@ -431,8 +431,13 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 						quote.source = this.utils.translate("unknown_author");
 					}
 
-					if (!quote.link) delete quote.link;
-					if (!quote.source) delete quote.source;
+					if (!quote.link) {
+						delete quote.link;
+					}
+
+					if (!quote.source) {
+						delete quote.source;
+					}
 				}
 
 				this.data = quote;
@@ -459,10 +464,17 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 								quote = false;
 							}
 
-							if (!quote) return;
+							if (!quote) {
+								return;
+							}
 
-							if (!quote.link) delete quote.link;
-							if (!quote.source) delete quote.source;
+							if (!quote.link) {
+								delete quote.link;
+							}
+
+							if (!quote.source) {
+								delete quote.source;
+							}
 
 							this.data = quote;
 
@@ -479,7 +491,9 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 
 
 		render: function(demo) {
-			if (demo) return this.refresh();
+			if (demo) {
+				return this.refresh();
+			}
 
 			var data = _.clone(this.data);
 

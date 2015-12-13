@@ -59,7 +59,7 @@ define(["lodash", "jquery", "backbone", "core/pro", "themes/utils"], function(_,
 		getCSS: function(theme) {
 			var css = "",
 				image = Utils.getImage(theme);
-			
+
 			if (theme.color) {
 				css += "background-color: " + theme.color + ";";
 			}
@@ -87,7 +87,7 @@ define(["lodash", "jquery", "backbone", "core/pro", "themes/utils"], function(_,
 			if (theme["inline-css"]) {
 				css += theme["inline-css"];
 			}
-			
+
 			return css;
 		},
 
@@ -96,7 +96,9 @@ define(["lodash", "jquery", "backbone", "core/pro", "themes/utils"], function(_,
 			theme = theme || this.theme;
 
 			if ((theme.oType || theme.type) === "video") {
-				if (!preview && !Pro.isPro) return;
+				if (!preview && !Pro.isPro) {
+					return;
+				}
 
 				if (!this.video) {
 					this.video = document.createElement("video");
@@ -108,7 +110,7 @@ define(["lodash", "jquery", "backbone", "core/pro", "themes/utils"], function(_,
 
 					this.$el.prepend(this.video);
 				}
-				
+
 				this.video.src = Utils.getImage(theme);
 			}
 			else {

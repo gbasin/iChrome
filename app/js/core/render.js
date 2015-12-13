@@ -8,7 +8,7 @@ define(["lodash", "hogan", "core/status", "i18n/i18n", "core/analytics", "core/t
 
 	var render = function(template, data, partials) {
 		var compiled = render.getTemplate(template);
-			
+
 		if (!compiled) {
 			Track.queue("templates", "notfound", template);
 
@@ -17,8 +17,10 @@ define(["lodash", "hogan", "core/status", "i18n/i18n", "core/analytics", "core/t
 
 		data = _.clone(data || {});
 
-		if (!data.i18n) data.i18n = i18n;
-		
+		if (!data.i18n) {
+			data.i18n = i18n;
+		}
+
 		return compiled.render(data, partials);
 	};
 

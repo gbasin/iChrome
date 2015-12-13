@@ -126,7 +126,9 @@ define(["jquery", "oauth", "browser/api"], function($, OAuth, Browser) {
 			});
 		},
 		refresh: function() {
-			if (!this.oAuth) this.setOAuth();
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
 
 			if (!this.oAuth.hasToken()) {
 				return this.render("authorize");
@@ -143,7 +145,9 @@ define(["jquery", "oauth", "browser/api"], function($, OAuth, Browser) {
 
 					if (d && d.notifications) {
 						d.notifications.forEach(function(e, i) {
-							if (i > 15) return;
+							if (i > 15) {
+								return;
+							}
 
 							var card = {
 								index: cards.length,
@@ -159,9 +163,13 @@ define(["jquery", "oauth", "browser/api"], function($, OAuth, Browser) {
 
 								card.priority = co.priority || -1;
 
-								if (co.message) card.desc = co.message.replace(/\n/g, "  ");
+								if (co.message) {
+									card.desc = co.message.replace(/\n/g, "  ");
+								}
 
-								if (co.iconUrl) card.icon = co.iconUrl;
+								if (co.iconUrl) {
+									card.icon = co.iconUrl;
+								}
 
 								if (co.imageUrl && co.imageUrl.length < 100000) {
 									card.image = co.imageUrl;
@@ -181,9 +189,13 @@ define(["jquery", "oauth", "browser/api"], function($, OAuth, Browser) {
 											link: e.actionUrls.buttonUrls[i] || "#"
 										};
 
-										if (btn.iconUrl) button.btnIcon = btn.iconUrl;
+										if (btn.iconUrl) {
+											button.btnIcon = btn.iconUrl;
+										}
 
-										if (btn.title) card.buttons.push(button);
+										if (btn.title) {
+											card.buttons.push(button);
+										}
 									});
 
 									if (card.buttons.length) {
@@ -211,7 +223,9 @@ define(["jquery", "oauth", "browser/api"], function($, OAuth, Browser) {
 			});
 		},
 		render: function(key) {
-			if (!this.oAuth) this.setOAuth();
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
 
 			if (key === "authorize") {
 				this.utils.render({ authorize: true });
@@ -238,7 +252,9 @@ define(["jquery", "oauth", "browser/api"], function($, OAuth, Browser) {
 
 				var card = that.data.cards[elm.attr("data-index")];
 
-				if (!card) return;
+				if (!card) {
+					return;
+				}
 
 				that.oAuth.ajax({
 					type: "DELETE",

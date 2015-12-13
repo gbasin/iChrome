@@ -133,7 +133,9 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 			if (this.config.format.indexOf("ampm") === 0) {
 				hours = (hours > 12 ? hours - 12 : hours);
 
-				if (hours === 0) hours = 12;
+				if (hours === 0) {
+					hours = 12;
+				}
 
 				html += (am ? " am" : " pm") + (this.config.format === "ampms" ? " no-seconds" : "");
 			}
@@ -327,8 +329,13 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 		update: function() {
 			this.updateClock();
 
-			if (this.data.alarm && this.data.alarm.set) this.updateAlarm();
-			if (this.data.timer && this.data.timer.running) this.updateTimer();
+			if (this.data.alarm && this.data.alarm.set) {
+				this.updateAlarm();
+			}
+
+			if (this.data.timer && this.data.timer.running) {
+				this.updateTimer();
+			}
 		},
 
 		playAudio: function() {

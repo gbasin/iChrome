@@ -562,7 +562,9 @@ define(["jquery", "lodash", "browser/api", "core/analytics", "core/pro"], functi
 
 								params[param] = decodeURIComponent(e.substr(idx + 1).replace(/\+/g, " "));
 
-								if (param === "code") return false;
+								if (param === "code") {
+									return false;
+								}
 							}
 						});
 
@@ -591,7 +593,9 @@ define(["jquery", "lodash", "browser/api", "core/analytics", "core/pro"], functi
 									Track.event("Sync", "Authorize", "Error");
 								}
 
-								if (cb) cb();
+								if (cb) {
+									cb();
+								}
 							}, false, params.code);
 						}
 						else if (cb) {

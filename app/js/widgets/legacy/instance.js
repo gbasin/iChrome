@@ -61,7 +61,9 @@ define([
 			// If the widget isn't available we create the element anyway so it's
 			// preserved during serialization, but don't initialize it or call
 			// any widget code
-			if (!this.widget.isAvailable) return;
+			if (!this.widget.isAvailable) {
+				return;
+			}
 
 			this.updateLoc();
 
@@ -121,7 +123,9 @@ define([
 				Status.error("An error occurred while trying to render the " + this.widget.name + " widget!");
 			}
 
-			if (this.instance.refresh && !this.isPreview) this.instance.refresh();
+			if (this.instance.refresh && !this.isPreview) {
+				this.instance.refresh();
+			}
 
 
 			if (this.instance.interval) {
@@ -203,7 +207,9 @@ define([
 					Status.error("An error occurred while trying to render the " + this.widget.name + " widget!");
 				}
 
-				if (this.instance.refresh && !this.isPreview) this.instance.refresh();
+				if (this.instance.refresh && !this.isPreview) {
+					this.instance.refresh();
+				}
 			}
 
 
@@ -296,7 +302,9 @@ define([
 		 * @api     public
 		 */
 		refresh: function() {
-			if (this._requestingPermissions) return;
+			if (this._requestingPermissions) {
+				return;
+			}
 
 			try {
 				this.instance.render(this.isPreview);

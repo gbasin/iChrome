@@ -85,7 +85,9 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 		 * @param   {Function}  cb  The callback
 		 */
 		getFolders: function(cb) {
-			if (!Browser.bookmarks) return;
+			if (!Browser.bookmarks) {
+				return;
+			}
 
 			Browser.bookmarks.getTree(function(d) {
 				var folders = _.reduce(d[0].children, function getFolders(res, e) {
@@ -110,7 +112,9 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 
 
 		refresh: function() {
-			if (!Browser.bookmarks) return;
+			if (!Browser.bookmarks) {
+				return;
+			}
 
 			// Even though this is a Chrome API call it takes as long as a web request
 			// and therefore should be part of a refresh pattern for faster loading

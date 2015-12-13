@@ -51,11 +51,15 @@ define(["jquery", "lodash", "i18n/i18n"], function($, _, Translate) {
 				number, columns, key;
 
 			// If the tab's ID isn't in the storage.tabs array it doesn't exist or is corrupt, skip it
-			if (!tab) return;
+			if (!tab) {
+				return;
+			}
 
 			// Serialize its settings
 			$(this).serializeArray().forEach(function(e) {
-				if (e.value !== "") tabSettings[e.name] = e.value;
+				if (e.value !== "") {
+					tabSettings[e.name] = e.value;
+				}
 			});
 
 			for (key in tabSettings) {

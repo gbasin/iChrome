@@ -88,7 +88,9 @@ define(["lodash", "backbone", "core/pro", "i18n/i18n", "core/analytics", "modals
 
 			var theme = Themes.theme;
 
-			if (!theme) return;
+			if (!theme) {
+				return;
+			}
 
 			this.render(theme);
 
@@ -129,7 +131,9 @@ define(["lodash", "backbone", "core/pro", "i18n/i18n", "core/analytics", "modals
 					image: this.body[0].style.backgroundImage.replace(/.*\s?url\([\'\"]?/, "").replace(/[\'\"]?\).*/, "")
 				});
 
-				if (!theme.currentImage) return;
+				if (!theme.currentImage) {
+					return;
+				}
 
 				downloadUrl = Utils.getImage(theme.currentImage);
 			}

@@ -244,8 +244,12 @@ define(["jquery", "moment"], function($, moment) {
 			data.links = data.links.slice(0, this.config.number || 5);
 
 			data.links.forEach(function(e) {
-				if (demo) e.created = moment(e.created).from([2014, 0, 1, 11]).replace("hour", "hr").replace("minute", "min").replace("a few ", "");
-				else e.created = moment(e.created).fromNow().replace("hour", "hr").replace("minute", "min").replace("a few ", "");
+				if (demo) {
+					e.created = moment(e.created).from([2014, 0, 1, 11]).replace("hour", "hr").replace("minute", "min").replace("a few ", "");
+				}
+				else {
+					e.created = moment(e.created).fromNow().replace("hour", "hr").replace("minute", "min").replace("a few ", "");
+				}
 
 				if (!e.subreddit.toLowerCase || e.subreddit.toLowerCase() === this.config.subreddit.toLowerCase()) {
 					e.subreddit = false;

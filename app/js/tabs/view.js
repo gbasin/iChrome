@@ -47,8 +47,13 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 						Math.round(that.outerHeight() / GRID_SIZE)
 					];
 
-					if (loc[0] < 0) loc[0] = 0;
-					if (loc[1] < 0) loc[1] = 0;
+					if (loc[0] < 0) {
+						loc[0] = 0;
+					}
+
+					if (loc[1] < 0) {
+						loc[1] = 0;
+					}
 
 					// This is silent so a save isn't triggered prematurely
 					widget.model.set("loc", loc, { silent: true });
@@ -223,7 +228,9 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 			}
 
 
-			if (sortable !== true) Backbone.View.prototype.remove.call(this);
+			if (sortable !== true) {
+				Backbone.View.prototype.remove.call(this);
+			}
 		},
 
 
@@ -288,7 +295,9 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 					return 0;
 				}));
 
-				if (btm > max) max = btm;
+				if (btm > max) {
+					max = btm;
+				}
 
 				// The -50 and +50 makes sure that the container is either 50px from the bottom of
 				// the last widget or at the bottom of the tab but never past it if it isn't necessary

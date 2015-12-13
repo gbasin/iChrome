@@ -39,7 +39,9 @@ define(["jquery", "widgets/framefix"], function($, frameFix) {
 			url: "http://mail.google.com/mail/mu/mp/?source=ig&mui=igh"
 		},
 		render: function() {
-			if (!frameFix(this.render, this, arguments)) return;
+			if (!frameFix(this.render, this, arguments)) {
+				return;
+			}
 
 			this.utils.render({
 				url: (this.config.url && this.config.url.parseUrl()) || "http://mail.google.com/mail/mu/mp/?source=ig&mui=igh",

@@ -31,7 +31,9 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 								num = 1;
 
 							d[1].forEach(function(e) {
-								if (num > 10) return;
+								if (num > 10) {
+									return;
+								}
 
 								if (e[0] !== val) {
 									html += '<div class="suggestion">' + _.escape(e[0]) + '</div>';
@@ -44,7 +46,9 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 
 							this.$el.html(html);
 
-							if (this.visible) this.show(); // If hide() has been called since the request has been sent this will be false, therefore the list shouldn't be shown
+							if (this.visible) {
+								this.show(); // If hide() has been called since the request has been sent this will be false, therefore the list shouldn't be shown
+							}
 						}.bind(this)
 					});
 				}
@@ -95,7 +99,9 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 			clearFocus: function(skipVar) {
 				this.$("div.active").removeClass("active");
 
-				if (!skipVar) this.current = 0; // If we're in the middle of changing the focus, preserve the old current val
+				if (!skipVar) {
+					this.current = 0; // If we're in the middle of changing the focus, preserve the old current val
+				}
 			}
 		});
 

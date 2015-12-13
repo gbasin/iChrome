@@ -116,7 +116,9 @@ define(
 
 				var theme = _.clone(themes[index[id]]);
 
-				if (!theme) return;
+				if (!theme) {
+					return;
+				}
 
 				if (!cached[theme.id] && theme.oType === "feed") {
 					var specs = parent.find(".specs:first"),
@@ -175,8 +177,9 @@ define(
 
 				var theme = _.clone(themes[index[id]]);
 
-				if (!theme) return;
-
+				if (!theme) {
+					return;
+				}
 
 				var specs = parent.find(".specs:first"),
 					oHtml = specs.html(),
@@ -283,7 +286,9 @@ define(
 				var length = this.images.length;
 
 				// There might not be any images left to lazy-load
-				if (!length) return;
+				if (!length) {
+					return;
+				}
 
 				var coords,
 					innerHeight = window.innerHeight; // Querying innerHeight can get costly in a loop

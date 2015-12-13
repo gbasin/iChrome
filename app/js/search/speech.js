@@ -73,8 +73,12 @@ define(["jquery", "underscore", "backbone", "core/analytics", "storage/storage",
 				}
 			},
 			setText: function(text) {
-				if (text && text !== "") this.$(".text").text(text);
-				else this.$(".text").html(Translate("voice.missed"));
+				if (text && text !== "") {
+					this.$(".text").text(text);
+				}
+				else {
+					this.$(".text").html(Translate("voice.missed"));
+				}
 			},
 			animate: function() {
 				var val = Math.round((0.1 + 0.7 * Math.random()) * 40),

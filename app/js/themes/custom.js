@@ -191,7 +191,9 @@ define(["lodash", "jquery", "backbone", "core/analytics", "modals/modals", "them
 				var theme = {};
 
 				this.$("form").serializeArray().forEach(function(e) {
-					if (e.value) theme[e.name] = e.value;
+					if (e.value) {
+						theme[e.name] = e.value;
+					}
 				});
 
 				return theme;

@@ -75,7 +75,9 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 			this.set("activeTab", 0);
 
 			this.on("change", function(model, options) {
-				if (options && options.widgetChange === true) return;
+				if (options && options.widgetChange === true) {
+					return;
+				}
 
 				this.refresh();
 			}, this);
@@ -220,7 +222,9 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 			_.spread($.when).call($, _.map(feeds, function(e) {
 				return $.getJSON("http://cloud.feedly.com/v3/streams/contents?count=" + numPerFeed + "&streamId=feed%2F" + encodeURIComponent(e));
 			})).done(function() {
-				if (this.get("activeTab") !== "all") return;
+				if (this.get("activeTab") !== "all") {
+					return;
+				}
 
 				var entries = _(arguments)
 					.map(function(d) {

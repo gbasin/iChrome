@@ -17,8 +17,12 @@ define(["jquery", "backbone", "storage/storage", "modals/getting-started", "core
 				"change .links .options label:first-child input": function(e) {
 					var elm = $(e.currentTarget);
 
-					if (elm.is(":checked")) elm.parents("div").first().addClass("visible");
-					else elm.parents("div").first().removeClass("visible").find("input").val("");
+					if (elm.is(":checked")) {
+						elm.parents("div").first().addClass("visible");
+					}
+					else {
+						elm.parents("div").first().removeClass("visible").find("input").val("");
+					}
 				},
 				"click .btns .guide": function(e) {
 					e.preventDefault();

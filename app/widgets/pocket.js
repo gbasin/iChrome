@@ -177,7 +177,9 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 		 * @return  {String}        The parsed, scaled URL
 		 */
 		getImageURL: function(oUrl) {
-			if (!oUrl) return;
+			if (!oUrl) {
+				return;
+			}
 
 			var url = new URL(oUrl);
 
@@ -201,9 +203,13 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 		},
 
 		refresh: function() {
-			if (!this.oAuth) this.setOAuth();
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
 
-			if (!this.oAuth.hasToken()) return this.render();
+			if (!this.oAuth.hasToken()) {
+				return this.render();
+			}
 
 			var getImageURL = this.getImageURL,
 				original = this.config.open === "original";
@@ -216,7 +222,9 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 					detailType: "complete"
 				},
 				success: function(d) {
-					if (!d) return;
+					if (!d) {
+						return;
+					}
 
 					this.data.links = _(d.list).sortBy("sort_id").map(function(e) {
 						var ret = {

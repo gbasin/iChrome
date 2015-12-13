@@ -24,7 +24,9 @@ define(["lodash", "jquery", "backbone", "browser/api", "storage/filesystem", "mo
 		execute: function(e) {
 			var action = e.currentTarget.getAttribute("data-action");
 
-			if (!action) return;
+			if (!action) {
+				return;
+			}
 
 			switch (action) {
 				case "clear-localstorage":

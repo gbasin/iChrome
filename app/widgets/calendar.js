@@ -103,14 +103,18 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 			});
 		},
 		getCalendars: function(cb) {
-			if (!this.oAuth) this.setOAuth();
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
 
 			this.oAuth.ajax({
 				type: "GET",
 				dataType: "json",
 				url: "https://www.googleapis.com/calendar/v3/users/me/calendarList/",
 				success: function(d) {
-					if (!d || !d.items) return cb("error");
+					if (!d || !d.items) {
+						return cb("error");
+					}
 
 					var calendars = {};
 
@@ -123,7 +127,9 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 			});
 		},
 		refresh: function() {
-			if (!this.oAuth) this.setOAuth();
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
 
 			if (!this.config.calendars || !this.config.calendars.length) {
 				if (this.config.calendar) {
@@ -166,7 +172,9 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 							xhr.setRequestHeader("Authorization", "Bearer " + token);
 						},
 						success: function(d) {
-							if (!d || !d.items) return;
+							if (!d || !d.items) {
+								return;
+							}
 
 							d.items.forEach(function(e) {
 								if (e.backgroundColor) {
