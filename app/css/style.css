@@ -4279,7 +4279,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 }
 
 /* line 4042, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-.themes.create .image {
+.themes.create input.image {
 	width: 56%;
 }
 
