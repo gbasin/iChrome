@@ -281,7 +281,9 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 
 			// Encode parameters
 			for (key in parameters) {
-				params.push(encodeURIComponent(key) + "=" + encodeURIComponent(parameters[key]));
+				if (parameters.hasOwnProperty(key)) {
+					params.push(encodeURIComponent(key) + "=" + encodeURIComponent(parameters[key]));
+				}
 			}
 
 			// Build base string

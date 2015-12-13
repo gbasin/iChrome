@@ -38,7 +38,9 @@ chrome.runtime.onInstalled.addListener(function(details) {
 			chrome.storage.sync.get("syncData", function(d) {
 				if (d && d.syncData) {
 					for (var key in d.syncData) {
-						clientData[key] = d.syncData[key];
+						if (d.syncData.hasOwnProperty(key)) {
+							clientData[key] = d.syncData[key];
+						}
 					}
 				}
 
@@ -59,14 +61,16 @@ chrome.runtime.onInstalled.addListener(function(details) {
 						// keep it, but add the new information
 						if (clientData.token) {
 							for (key in d) {
-								if (key !== "token" && key !== "client") {
+								if (d.hasOwnProperty(key) && key !== "token" && key !== "client") {
 									clientData[key] = d[key];
 								}
 							}
 						}
 						else {
 							for (key in d) {
-								clientData[key] = d[key];
+								if (d.hasOwnProperty(key)) {
+									clientData[key] = d[key];
+								}
 							}
 						}
 					}
@@ -80,7 +84,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 		var saveData = function() {
 			var local = JSON.stringify((function(data) {
 				for (var key in clientData) {
-					if (key !== "version" && key !== "extension") {
+					if (clientData.hasOwnProperty(key) && key !== "version" && key !== "extension") {
 						data[key] = clientData[key];
 					}
 				}
@@ -90,7 +94,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 
 			var sync = JSON.stringify((function(data) {
 				for (var key in clientData) {
-					if (key !== "client" && key !== "version" && key !== "extension") {
+					if (clientData.hasOwnProperty(key) && key !== "client" && key !== "version" && key !== "extension") {
 						data[key] = clientData[key];
 					}
 				}
@@ -421,24 +425,26 @@ var refreshFeeds = function() {
 			key;
 
 		for (key in cached) {
-			var theme = cached[key];
+			if (cached.hasOwnProperty(key)) {
+				var theme = cached[key];
 
-			if ((theme.type === "feed" || (theme.oType && theme.oType === "feed")) && ((theme.lastFetched && theme.lastFetched <= start) || !theme.lastFetched)) {
-				active++;
+				if ((theme.type === "feed" || (theme.oType && theme.oType === "feed")) && ((theme.lastFetched && theme.lastFetched <= start) || !theme.lastFetched)) {
+					active++;
 
-				console.log("Updating cached theme " + key + ", last fetched on " + new Date(theme.lastFetched));
+					console.log("Updating cached theme " + key + ", last fetched on " + new Date(theme.lastFetched));
 
-				getFeed(theme, function() {
-					active--;
+					getFeed(theme, function() {
+						active--;
 
-					if (active === 0) {
-						var d = JSON.parse(localStorage.config || "{}");
+						if (active === 0) {
+							var d = JSON.parse(localStorage.config || "{}");
 
-						d.cached = cached;
+							d.cached = cached;
 
-						localStorage.config = JSON.stringify(d);
-					}
-				}, cache);
+							localStorage.config = JSON.stringify(d);
+						}
+					}, cache);
+				}
 			}
 		}
 	}
