@@ -130,6 +130,12 @@ body > .settings {
 				box-shadow: none;
 				max-width: 1200px;
 				line-height: 20px;
+
+				p {
+					padding: 0;
+					font-size: 20px;
+					line-height: 30px;
+				}
 			}
 
 			&.list-select {

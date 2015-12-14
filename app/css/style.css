@@ -5250,22 +5250,29 @@ body > .settings .page section.text {
 	line-height: 20px;
 }
 
-/* line 136, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 134, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+body > .settings .page section.text p {
+	padding: 0;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+/* line 142, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .page section.list-select .input {
 	text-align: left;
 }
 
-/* line 139, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 145, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .page section.list-select .input:hover {
 	background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 145, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 151, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .page section.list-select label h4 {
 	float: none;
 }
 
-/* line 149, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 155, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .page section.list-select label input {
 	width: 20px;
 	height: 20px;
@@ -5374,25 +5381,18 @@ body > .settings .page.widgets img.widget-demo {
 }
 
 /* line 12, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_widgets.scss */
-body > .settings .page.widgets p {
-	padding: 0;
-	font-size: 20px;
-	line-height: 30px;
-}
-
-/* line 18, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_widgets.scss */
 body > .settings .page.widgets ol {
 	margin-top: 25px;
 	line-height: 25px;
 	padding-left: 60px;
 }
 
-/* line 23, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_widgets.scss */
+/* line 17, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_widgets.scss */
 body > .settings .page.widgets ol li {
 	padding-top: 8px;
 }
 
-/* line 165, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 171, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .item,
 body > .settings .input {
 	margin: 0;
@@ -5404,7 +5404,7 @@ body > .settings .input {
 	border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-/* line 175, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 181, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .item h4,
 body > .settings .input h4 {
 	float: left;
@@ -5412,7 +5412,7 @@ body > .settings .input h4 {
 	display: inline-block;
 }
 
-/* line 181, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 187, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .item .note,
 body > .settings .input .note {
 	color: #757575;
@@ -5420,7 +5420,7 @@ body > .settings .input .note {
 	line-height: 25px;
 }
 
-/* line 187, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 193, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .item .desc,
 body > .settings .input .desc {
 	float: left;
@@ -5430,26 +5430,26 @@ body > .settings .input .desc {
 	max-width: calc(100% - 300px);
 }
 
-/* line 194, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 200, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .item .desc + input,
 body > .settings .input .desc + input {
 	width: 285px;
 }
 
-/* line 199, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 205, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .item .value,
 body > .settings .input .value {
 	max-width: 60%;
 	font-size: 14px;
 }
 
-/* line 204, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 210, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .item.no-label button + button,
 body > .settings .input.no-label button + button {
 	margin-left: 10px;
 }
 
-/* line 209, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 215, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .input {
 	/**
  * Radio
