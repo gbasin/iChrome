@@ -31,7 +31,7 @@
 				<span class="header">Widgets</span>
 			</li>
 
-			<li data-id="pro" class="active">
+			<li data-id="pro">
 				<span class="header">Pro</span>
 			</li>
 
@@ -62,16 +62,4 @@
 			</li>
 		</ul>
 	</nav>
-</div>
-
-<div class="page pro" data-id="pro">
-	<header class="large-header">
-		<h2 class="page-name">Pro</h2>
-	</header>
-
-	<main class="content" tabindex="-1">
-		<section class="text">
-			<p>Temporary placeholder page</p>
-		</section>
-	</main>
 </div>

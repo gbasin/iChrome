@@ -7,9 +7,13 @@ var templates = [
 		"store",				"store-detail",			"themes",
 		"themes.listing",		"themes.custom",		"widget-settings",
 		"getting-started",		"translate-request",	"alert",
-		"settings",				"menu",					"widget-settings.inputs",
-		"whatsnew",				"widgets/auth-required","widgets/error",
-		"bginfo",				"widgets/permissions-request",
+		"menu",					"widget-settings.inputs","whatsnew",
+		"widgets/auth-required","widgets/error",		"bginfo",
+		"widgets/permissions-request",
+
+		"settings",				"settings/accounts",	"settings/advanced",
+		"settings/misc",		"settings/tabs",		"settings/toolbar",
+		"settings/visual",		"settings/widgets",		"settings/pro",
 
 		"widgets.clock",				"widgets.clock.desc",
 		"widgets.iframe",				"widgets.iframe.desc",

@@ -8,6 +8,7 @@ body > .settings {
 	right: 0;
 	bottom: 0;
 	outline: 0;
+	opacity: 0;
 	z-index: 9999;
 	display: none;
 	position: fixed;
@@ -15,8 +16,10 @@ body > .settings {
 	background: #F5F5F5;
 	padding-left: 250px;
 	font-family: Roboto, sans-serif;
+	transition: opacity .3s $transition-easing;
 
 	&.visible {
+		opacity: 1;
 		display: block;
 	}
 
