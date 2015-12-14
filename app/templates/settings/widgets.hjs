@@ -14,9 +14,9 @@
 
 		<ol>
 			<li>Move your mouse over any widget</li>
-			<li>Click the wrench icon that appears at the top right of the widget. If none appears then this widget doesn't have any settings that can be customized.</li>
-			<li>Edit any of the settings shown</li>
-			<li>Click Save to save your changes, or any part of the background to get rid of them</li>
+			<li>Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.</li>
+			<li>Edit any of the settings shown in the dialog that's displayed</li>
+			<li>Click Save to save your changes, or any part of the background to discard of them</li>
 		</ol>
 	</section>
 </main>
