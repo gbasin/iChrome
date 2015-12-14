@@ -27,11 +27,15 @@
 				<span class="header">Tabs</span>
 			</li>
 
+			<li data-id="widgets" class="active">
+				<span class="header">Widgets</span>
+			</li>
+
 			<li data-id="pro">
 				<span class="header">Pro</span>
 			</li>
 
-			<li data-id="accounts" class="active">
+			<li data-id="accounts">
 				<span class="header">Accounts and sync</span>
 			</li>
 
@@ -60,22 +64,27 @@
 	</nav>
 </div>
 
-<div class="page accounts" data-id="accounts">
-	<header>
-		<h2 class="page-name">Settings &ndash; Accounts and sync</h2>
+<div class="page widgets" data-id="widgets">
+	<header class="large-header">
+		<h2 class="page-name">Widgets</h2>
 	</header>
 
 	<main class="content" tabindex="-1">
-		<section class="status" data-id="status">
-			<h3>Status</h3>
+		<section class="text">
+			<img class="widget-demo" src="images/widget_demo.png" />
 
-			<p class="desc">You are currently <b>signed in</b> as Avi Kohn (support@ichro.me).</p>
+			<p>
+				Widgets have their own settings and can't be customized here.
+				<br /><br />
+				To edit a widget's settings, follow these steps:
+			</p>
 
-			<div class="input no-label actions">
-				<button type="button" class="material red reset">Reset profile</button>
-
-				<button type="button" class="material sign-out">Sign out</button>
-			</div>
+			<ol>
+				<li>Move your mouse over any widget</li>
+				<li>Click the wrench icon that appears at the top right of the widget. If none appears then this widget doesn't have any settings that can be customized.</li>
+				<li>Edit any of the settings shown</li>
+				<li>Click Save to save your changes, or any part of the background to get rid of them</li>
+			</ol>
 		</section>
 	</main>
 </div>

@@ -1,0 +1,22 @@
+<header class="large-header">
+	<h2 class="page-name">Widgets</h2>
+</header>
+
+<main class="content" tabindex="-1">
+	<section class="text">
+		<img class="widget-demo" src="images/widget_demo.png" />
+
+		<p>
+			Widgets have their own settings and can't be customized here.
+			<br /><br />
+			To edit a widget's settings, follow these steps:
+		</p>
+
+		<ol>
+			<li>Move your mouse over any widget</li>
+			<li>Click the wrench icon that appears at the top right of the widget. If none appears then this widget doesn't have any settings that can be customized.</li>
+			<li>Edit any of the settings shown</li>
+			<li>Click Save to save your changes, or any part of the background to get rid of them</li>
+		</ol>
+	</section>
+</main>

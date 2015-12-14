@@ -5170,7 +5170,27 @@ body > .settings .page header h2 {
 	font-size: 20px;
 }
 
-/* line 66, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 65, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+body > .settings .page header.large-header {
+	height: 256px;
+	box-shadow: none;
+	padding-top: 115px;
+}
+
+/* line 70, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+body > .settings .page header.large-header h2 {
+	margin: 0 auto;
+	font-size: 55px;
+	line-height: 1.5;
+	max-width: 1200px;
+}
+
+/* line 77, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+body > .settings .page header.large-header + main.content {
+	height: calc(100% - 256px);
+}
+
+/* line 83, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .page main.content {
 	outline: 0;
 	overflow: auto;
@@ -5178,7 +5198,7 @@ body > .settings .page main.content {
 	max-height: calc(100% - 55px);
 }
 
-/* line 73, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 90, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .page section {
 	width: 800px;
 	background: #FFF;
@@ -5186,7 +5206,7 @@ body > .settings .page section {
 	box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.2), 0 1px 1px 0px rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
 
-/* line 79, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 96, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .page section.pro-only h3:after {
 	float: right;
 	font-size: 13px;
@@ -5194,48 +5214,58 @@ body > .settings .page section.pro-only h3:after {
 	border-width: 2px;
 }
 
-/* line 88, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 105, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .page section h3 {
 	font-size: 18px;
 	padding: 25px 25px 15px;
 }
 
-/* line 93, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 110, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .page section p {
 	margin: 0;
 	padding: 0 25px;
 }
 
-/* line 98, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 115, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .page section p + .input,
 body > .settings .page section h3 + .input {
 	border-top: 0;
 	margin-top: 15px;
 }
 
-/* line 103, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 120, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .page section p + .input.no-label,
 body > .settings .page section h3 + .input.no-label {
 	margin-top: 0;
 	text-align: left;
 }
 
-/* line 110, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 126, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+body > .settings .page section.text {
+	width: auto;
+	font-size: 16px;
+	background: none;
+	box-shadow: none;
+	max-width: 1200px;
+	line-height: 20px;
+}
+
+/* line 136, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .page section.list-select .input {
 	text-align: left;
 }
 
-/* line 113, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 139, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .page section.list-select .input:hover {
 	background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 119, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 145, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .page section.list-select label h4 {
 	float: none;
 }
 
-/* line 123, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 149, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .page section.list-select label input {
 	width: 20px;
 	height: 20px;
@@ -5322,18 +5352,47 @@ body > .settings .page.tabs .input.text input {
 }
 
 /* line 15, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_tabs.scss */
-body > .settings .page.tabs h3:after {
-	clear: both;
-	content: "";
-	display: block;
+body > .settings .page.tabs h3 {
+	overflow: hidden;
 }
 
-/* line 21, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_tabs.scss */
+/* line 19, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_tabs.scss */
 body > .settings .page.tabs .input button.default {
 	position: relative;
 }
 
-/* line 138, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 2, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_widgets.scss */
+body > .settings .page.widgets section.text {
+	overflow: hidden;
+}
+
+/* line 6, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_widgets.scss */
+body > .settings .page.widgets img.widget-demo {
+	width: 515px;
+	float: right;
+	margin-left: 50px;
+}
+
+/* line 12, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_widgets.scss */
+body > .settings .page.widgets p {
+	padding: 0;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+/* line 18, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_widgets.scss */
+body > .settings .page.widgets ol {
+	margin-top: 25px;
+	line-height: 25px;
+	padding-left: 60px;
+}
+
+/* line 23, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_widgets.scss */
+body > .settings .page.widgets ol li {
+	padding-top: 8px;
+}
+
+/* line 165, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .item,
 body > .settings .input {
 	margin: 0;
@@ -5345,7 +5404,7 @@ body > .settings .input {
 	border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-/* line 148, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 175, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .item h4,
 body > .settings .input h4 {
 	float: left;
@@ -5353,7 +5412,7 @@ body > .settings .input h4 {
 	display: inline-block;
 }
 
-/* line 154, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 181, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .item .note,
 body > .settings .input .note {
 	color: #757575;
@@ -5361,7 +5420,7 @@ body > .settings .input .note {
 	line-height: 25px;
 }
 
-/* line 160, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 187, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .item .desc,
 body > .settings .input .desc {
 	float: left;
@@ -5371,26 +5430,26 @@ body > .settings .input .desc {
 	max-width: calc(100% - 300px);
 }
 
-/* line 167, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 194, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .item .desc + input,
 body > .settings .input .desc + input {
 	width: 285px;
 }
 
-/* line 172, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 199, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .item .value,
 body > .settings .input .value {
 	max-width: 60%;
 	font-size: 14px;
 }
 
-/* line 177, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 204, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .item.no-label button + button,
 body > .settings .input.no-label button + button {
 	margin-left: 10px;
 }
 
-/* line 182, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 209, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 body > .settings .input {
 	/**
  * Radio

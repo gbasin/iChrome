@@ -1,0 +1,27 @@
+&.widgets {
+	section.text {
+		overflow: hidden;
+	}
+
+	img.widget-demo {
+		width: 515px;
+		float: right;
+		margin-left: 50px;
+	}
+
+	p {
+		padding: 0;
+		font-size: 20px;
+		line-height: 30px;
+	}
+
+	ol {
+		margin-top: 25px;
+		line-height: 25px;
+		padding-left: 60px;
+
+		li {
+			padding-top: 8px;
+		}
+	}
+}

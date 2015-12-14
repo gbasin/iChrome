@@ -12,10 +12,8 @@
 		}
 	}
 
-	h3:after {
-		clear: both;
-		content: "";
-		display: block;
+	h3 {
+		overflow: hidden;
 	}
 
 	.input button.default {

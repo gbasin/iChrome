@@ -61,6 +61,23 @@ body > .settings {
 			h2 {
 				font-size: 20px;
 			}
+
+			&.large-header {
+				height: 256px;
+				box-shadow: none;
+				padding-top: 115px;
+
+				h2 {
+					margin: 0 auto;
+					font-size: 55px;
+					line-height: 1.5;
+					max-width: 1200px;
+				}
+
+				& + main.content {
+					height: calc(100% - 256px);
+				}
+			}
 		}
 
 		main.content {
@@ -106,6 +123,15 @@ body > .settings {
 				}
 			}
 
+			&.text {
+				width: auto;
+				font-size: 16px;
+				background: none;
+				box-shadow: none;
+				max-width: 1200px;
+				line-height: 20px;
+			}
+
 			&.list-select {
 				.input {
 					text-align: left;
@@ -133,6 +159,7 @@ body > .settings {
 		@import "pages/toolbar";
 		@import "pages/visual";
 		@import "pages/tabs";
+		@import "pages/widgets";
 	}
 
 	.item,
