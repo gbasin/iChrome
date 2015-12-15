@@ -10,17 +10,20 @@ body > .settings {
 	outline: 0;
 	opacity: 0;
 	z-index: 9999;
-	display: none;
 	position: fixed;
 	color: $text-color;
+	visibility: hidden;
 	background: #F5F5F5;
 	padding-left: 250px;
 	font-family: Roboto, sans-serif;
-	transition: opacity .3s $transition-easing;
+	transition: visibility .3s 0s linear,
+				opacity .3s $transition-easing;
 
 	&.visible {
 		opacity: 1;
-		display: block;
+		visibility: visible;
+		transition: visibility 0s 0s linear,
+					opacity .3s $transition-easing;
 	}
 
 	h1, h2, h3, h4, h5, h6 {

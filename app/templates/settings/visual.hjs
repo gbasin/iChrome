@@ -1,103 +1,103 @@
 <header>
-	<h2 class="page-name">Settings &ndash; Visual</h2>
+	<h2 class="page-name">{{i18n.settings.title}} &ndash; {{i18n.settings.nav.visual}}</h2>
 </header>
 
 <main class="content" tabindex="-1">
 	<section class="background" data-id="background">
-		<h3>Background</h3>
+		<h3>{{i18n.settings.visual.background.title}}</h3>
 
 		<p class="desc">
-			This is the image or set of images shown as a background to your tabs
+			{{i18n.settings.visual.background.desc}}
 			<br /><br />
-			<b>Current theme:</b> <span>Bing Photo of the Day</span>
+			<b>{{i18n.settings.visual.background.current}}:</b> <span class="current-background">{{currentBackground}}{{^currentBackground}}{{i18n.settings.visual.background.custom}}{{/currentBackground}}</span>
 		</p>
 
 		<div class="input no-label">
-			<button type="button" class="material blue select">Select a theme</button>
+			<button type="button" class="material blue select">{{i18n.settings.visual.background.select}}</button>
 
-			<span class="or">or</span>
+			<span class="or">{{i18n.settings.visual.background.or}}</span>
 
-			<input type="url" name="background-url" placeholder="Enter an image URL" />
+			<input type="url" name="background-url" placeholder="{{i18n.settings.visual.background.url_placeholder}}"{{#backgroundURL}} value="{{backgroundURL}}"{{/backgroundURL}} />
 		</div>
 	</section>
 
 	<section class="layout" data-id="layout">
-		<h3>Layout</h3>
+		<h3>{{i18n.settings.visual.layout.title}}</h3>
 
-		<p class="desc">Here you can adjust the type and number of columns in each tab</p>
+		<p class="desc">{{i18n.settings.visual.layout.desc}}</p>
 
-		<div class="input radios no-label">
+		<div class="input main radios no-label">
 			<label>
 				<input type="radio" name="layout" value="columns" checked />
 
-				<span>Columns</span>
+				<span>{{i18n.settings.visual.layout.columns}}</span>
 			</label>
 
 			<label>
 				<input type="radio" name="layout" value="grid" />
 
-				<span>Grid</span>
+				<span>{{i18n.settings.visual.layout.grid}}</span>
 			</label>
 		</div>
 
 		<label class="input text">
-			<h4>Number of columns</h4>
+			<h4>{{i18n.settings.visual.layout.columns_number}}</h4>
 
-			<input type="number" name="columns" min="1" max="5" placeholder="3" value="3" />
+			<input type="number" name="columns" min="1" max="5" placeholder="3" value="{{columns}}" />
 		</label>
 
 		<div class="input radios">
-			<h4>Column width</h4>
+			<h4>{{i18n.settings.visual.layout.column_width}}</h4>
 
 			<label>
-				<input type="radio" name="column-width" value="fixed" checked />
+				<input type="radio" name="column_width" value="fixed" checked />
 
-				<span>Fixed</span>
+				<span>{{i18n.settings.visual.layout.column_width_fixed}}</span>
 			</label>
 
 			<label>
-				<input type="radio" name="column-width" value="fluid" />
+				<input type="radio" name="column_width" value="fluid" />
 
-				<span>Fluid</span>
+				<span>{{i18n.settings.visual.layout.column_width_fluid}}</span>
 			</label>
 		</div>
 	</section>
 
 	<section class="theme list-select pro-only" data-id="theme">
-		<h3>App theme</h3>
+		<h3>{{i18n.settings.visual.theme.title}}</h3>
 
-		<p class="desc">The app theme controls the style of iChrome itself and all widgets.</p>
+		<p class="desc">{{i18n.settings.visual.theme.desc}}</p>
 
-		<label class="input">
+		<label class="input" data-id="light">
 			<input type="radio" name="theme" value="light" checked />
 
-			<h4>Light (default)</h4>
+			<h4>{{i18n.settings.visual.theme.light}}</h4>
 
-			<button type="button" class="material flat blue">Preview</button>
+			<button type="button" class="material flat blue preview">{{i18n.settings.visual.theme.preview}}</button>
 		</label>
 
-		<label class="input">
+		<label class="input" data-id="dark">
 			<input type="radio" name="theme" value="dark" />
 
-			<h4>Dark</h4>
+			<h4>{{i18n.settings.visual.theme.dark}}</h4>
 
-			<button type="button" class="material flat blue">Preview</button>
+			<button type="button" class="material flat blue preview">{{i18n.settings.visual.theme.preview}}</button>
 		</label>
 
-		<label class="input">
-			<input type="radio" name="theme" value="transparent" />
+		<label class="input" data-id="transparent dark">
+			<input type="radio" name="theme" value="transparent dark" />
 
-			<h4>Transparent</h4>
+			<h4>{{i18n.settings.visual.theme.transparent}}</h4>
 
-			<button type="button" class="material flat blue">Preview</button>
+			<button type="button" class="material flat blue preview">{{i18n.settings.visual.theme.preview}}</button>
 		</label>
 
-		<label class="input">
-			<input type="radio" name="theme" value="transparent-darker" />
+		<label class="input" data-id="transparent dark darker">
+			<input type="radio" name="theme" value="transparent dark darker" />
 
-			<h4>Transparent (darker)</h4>
+			<h4>{{i18n.settings.visual.theme.transparent_darker}}</h4>
 
-			<button type="button" class="material flat blue">Preview</button>
+			<button type="button" class="material flat blue preview">{{i18n.settings.visual.theme.preview}}</button>
 		</label>
 	</section>
 </main>

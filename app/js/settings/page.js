@@ -1,7 +1,7 @@
 /**
  * The settings page base
  */
-define(["lodash", "jquery", "backbone", "core/pro", "core/render"], function(_, $, Backbone, Pro, render) {
+define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/render"], function(_, $, Backbone, Pro, model, render) {
 	var View = Backbone.View.extend({
 		constructor: function(options) {
 			this.tagName = "div";
@@ -18,7 +18,20 @@ define(["lodash", "jquery", "backbone", "core/pro", "core/render"], function(_, 
 				}, data), partials);
 			};
 
+			// All pages share a single settings model
+			this.model = model();
+
 			Backbone.View.prototype.constructor.call(this, options);
+
+			// change fires on text inputs when they're focused out, which is what we want,
+			// and as changes happen on others, which is also what we want
+			this.$el.on("change", "input, textarea, select", function(e) {
+				this.onInputChange(e.currentTarget, e.name, e.value);
+			}.bind(this)).on("keydown", "input", function(e) {
+				if (e.keyCode && e.keyCode === 13) {
+					this.onInputChange(e.currentTarget, e.name, e.value);
+				}
+			}.bind(this));
 		},
 
 		transitionIn: function(cb) {
@@ -131,11 +144,48 @@ define(["lodash", "jquery", "backbone", "core/pro", "core/render"], function(_, 
 			}
 		},
 
+
+		/**
+		 * Sets the values of all radio and checkbox inputs
+		 *
+		 * @param  {Object}  data  The rendered data
+		 */
+		setRadios: function(data) {
+			var radios = this.radios,
+				elms = this.el.querySelectorAll("input[type='radio'], input[type='checkbox']");
+
+			if (this.radios && elms.length) {
+				_.each(elms, function(e) {
+					if (radios[e.name] && data[radios[e.name]] && data[radios[e.name]] === e.value) {
+						e.checked = true;
+					}
+				});
+			}
+		},
+
+		onBeforeRender: function(data) {
+			return data;
+		},
+
 		render: function() {
-			this.$el.html(this.template());
+			var data = this.model.toJSON();
+
+			this.trigger("before:render", data);
+
+			data = this.onBeforeRender(data);
+
+			this.$el.html(this.template(data));
+
+			this.setRadios(data);
+
+			this.trigger("render", data);
+
+			this.onRender(data);
 
 			return this;
-		}
+		},
+
+		onRender: _.noop
 	});
 
 	return View;

@@ -321,6 +321,8 @@ define(
 				modal.show();
 
 				Track.pageview("Themes", "/themes");
+
+				return this;
 			},
 
 			initialize: function() {
@@ -370,6 +372,8 @@ define(
 			}
 		});
 
-		return View;
+		return _.once(function() {
+			return new View();
+		});
 	}
 );
