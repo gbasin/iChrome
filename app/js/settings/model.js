@@ -7,19 +7,17 @@ define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage)
 			Storage.on("done updated", function(storage) {
 				this.storage = storage;
 
-				this.set(_.assign({}, storage.settings, {
-					_tabs: storage.tabs
-				}), {
-					initial: true
+				this.set(storage.settings, {
+					external: true
 				});
 			}, this);
 
 			this.on("change:columns", function(model, value, options) {
-				if ((options && options.initial === true) || !model.previous("columns")) {
+				if ((options && options.external === true) || !model.previous("columns")) {
 					return;
 				}
 
-				this.handleLayoutChange(model, value);
+				this.handleLayoutChange(value);
 			}, this);
 		},
 

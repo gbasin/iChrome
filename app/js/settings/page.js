@@ -26,10 +26,10 @@ define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/rend
 			// change fires on text inputs when they're focused out, which is what we want,
 			// and as changes happen on others, which is also what we want
 			this.$el.on("change", "input, textarea, select", function(e) {
-				this.onInputChange(e.currentTarget, e.name, e.value);
+				this.onInputChange(e.currentTarget, e.currentTarget.name, e.currentTarget.value);
 			}.bind(this)).on("keydown", "input", function(e) {
 				if (e.keyCode && e.keyCode === 13) {
-					this.onInputChange(e.currentTarget, e.name, e.value);
+					this.onInputChange(e.currentTarget, e.currentTarget.name, e.currentTarget.value);
 				}
 			}.bind(this));
 		},

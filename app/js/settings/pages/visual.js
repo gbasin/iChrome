@@ -41,18 +41,18 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 
 				case "layout":
 					var next = function() {
-						this.model.set("columns", this.$("input[name=columns]").val() + "-" + this.$("input[name=column_width]:checked").val());
+						this.model.set("columns", value === "columns" ? this.$("input[name=columns]").val() + "-" + this.$("input[name=column_width]:checked").val() : "medley");
 
 						$(elm).parents(".input").siblings(".input")[value === "columns" ? "slideDown" : "slideUp"](300);
 					};
 
 					if ((value === "columns" && this.model.get("columns") === "medley") || (value === "grid" && this.model.get("columns") !== "medley")) {
 						Alert({
-							title: Translate("settings.layout.column_warning.title"),
-							contents: Translate("settings.layout.column_warning." + (value === "columns" ? "grid_to_column" : "column_to_grid")),
+							title: Translate("settings.visual.layout.column_warning.title"),
+							contents: [Translate("settings.visual.layout.column_warning." + (value === "columns" ? "grid_to_column" : "column_to_grid"))],
 							buttons: {
-								positive: Translate("settings.layout.column_warning.continue"),
-								negative: Translate("settings.layout.column_warning.cancel")
+								positive: Translate("settings.visual.layout.column_warning.continue"),
+								negative: Translate("settings.visual.layout.column_warning.cancel")
 							}
 						}, function(accepted) {
 							if (accepted) {
@@ -64,7 +64,7 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 						}.bind(this));
 					}
 					else {
-						next();
+						next.call(this);
 					}
 				break;
 
@@ -77,7 +77,7 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 				break;
 
 				case "theme":
-					this.model.set("style", (value && Pro.isPro) || "light");
+					this.model.set("style", (Pro.isPro && value) || "light");
 				break;
 			}
 		},
