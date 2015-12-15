@@ -22,7 +22,25 @@ define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/rend
 			this.model = model();
 
 			this.model.on(this.monitorProps ? "change:" + this.monitorProps.join(" change:") : "change", _.throttle(function() {
+				// Get a selector for the currently focused element so we can restore focus
+				var el = this.$(":focus")[0];
+
+				var focusedElm = [];
+
+				while (el && el.parentElement && el !== this.el) {
+					focusedElm.unshift(el.tagName + ":nth-child(" + (Array.prototype.indexOf.call(el.parentElement.children, el) + 1) + ")");
+
+					el = el.parentElement;
+				}
+
+				focusedElm = focusedElm.join(" > ");
+
+
 				this.render();
+
+				if (focusedElm) {
+					this.$("> " + focusedElm).focus();
+				}
 			}, 100), this);
 
 			Backbone.View.prototype.constructor.call(this, options);
@@ -37,6 +55,19 @@ define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/rend
 				}
 			}.bind(this));
 		},
+
+
+		/**
+		 * General input change handler
+		 *
+		 * @param   {HTMLElement}  elm    The input element
+		 * @param   {String}       name   The name of the input
+		 * @param   {String}       value  The value of the input
+		 */
+		onInputChange: function(elm, name, value) {
+			this.model.set(name, value);
+		},
+
 
 		transitionIn: function(cb) {
 			this.render();
