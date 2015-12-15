@@ -11,6 +11,8 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 			column_width: "column_width"
 		},
 
+		monitorProps: ["theme", "backgroundURL", "columns", "style"],
+
 		events: {
 			"click .background button.select": function() {
 				themePicker().show().once("use", function(theme, id) {

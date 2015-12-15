@@ -21,6 +21,10 @@ define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/rend
 			// All pages share a single settings model
 			this.model = model();
 
+			this.model.on(this.monitorProps ? "change:" + this.monitorProps.join(" change:") : "change", _.throttle(function() {
+				this.render();
+			}, 100), this);
+
 			Backbone.View.prototype.constructor.call(this, options);
 
 			// change fires on text inputs when they're focused out, which is what we want,
