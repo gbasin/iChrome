@@ -964,6 +964,51 @@ input[type="radio"]:checked {
 
 
 
+
+
+/*---------------------------------------------
+	/ Snackbar
+*/
+.snackbar {
+	left: 24px;
+	color: #FFF;
+	bottom: 24px;
+	display: flex;
+	z-index: 999999;
+	font-size: 14px;
+	position: fixed;
+	min-width: 288px;
+	max-width: 568px;
+	line-height: 20px;
+	padding: 14px 24px;
+	border-radius: 2px;
+	letter-spacing: .2px;
+	background-color: #323232;
+	font-family: Roboto, sans-serif;
+	box-shadow: 0 0 2px rgba(0, 0, 0, .12),
+				0 2px 4px rgba(0, 0, 0, .24);
+}
+
+.snackbar button.material.flat {
+	float: right;
+	padding: 0 12px;
+	min-width: initial;
+	margin: -6px -12px -6px 36px;
+}
+
+.snackbar .text {
+	flex: 1;
+}
+
+
+
+
+
+
+
+
+
+
 /*---------------------------------------------
 	/ Alert Dialog Style
 */

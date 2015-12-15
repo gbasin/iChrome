@@ -18,7 +18,23 @@ define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage)
 				}
 
 				this.handleLayoutChange(value);
-			}, this);
+			}, this).on("change", function(model, options) {
+				if (options && options.external === true) {
+					return;
+				}
+
+				this.saving = true;
+
+				this.trigger("save:start");
+
+				this.storage.settings = this.toJSON();
+
+				this.storage.sync(true, function() {
+					this.saving = false;
+
+					this.trigger("save save:finish");
+				}.bind(this));
+			});
 		},
 
 

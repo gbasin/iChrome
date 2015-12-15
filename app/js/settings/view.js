@@ -2,11 +2,11 @@
  * The settings view
  */
 define([
-	"lodash", "jquery", "backbone", "core/analytics", "core/render",
+	"lodash", "jquery", "backbone", "core/analytics", "i18n/i18n", "modals/snackbar", "settings/model", "core/render",
 
 	"settings/pages/accounts", "settings/pages/advanced", "settings/pages/misc", "settings/pages/pro",
 	"settings/pages/tabs", "settings/pages/toolbar", "settings/pages/visual", "settings/pages/widgets"
-], function(_, $, Backbone, Track, render, Accounts, Advanced, Misc, Pro, Tabs, Toolbar, Visual, Widgets) {
+], function(_, $, Backbone, Track, Translate, Snackbar, model, render, Accounts, Advanced, Misc, Pro, Tabs, Toolbar, Visual, Widgets) {
 	var pages = {
 		accounts: Accounts,
 		advanced: Advanced,
@@ -142,6 +142,12 @@ define([
 		},
 
 		initialize: function() {
+			this.model = model();
+
+			this.listenTo(this.model, "save", function() {
+				new Snackbar(Translate("settings.saved"));
+			});
+
 			this.show();
 		}
 	});

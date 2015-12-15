@@ -75,6 +75,7 @@
 	"settings": {
 		"title": "Settings",
 		"exit": "Exit settings",
+		"saved": "Settings saved",
 
 		"nav": {
 			"visual": "Visual",
