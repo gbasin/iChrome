@@ -132,13 +132,8 @@
 				"column_width_fluid": "Fluid",
 
 				"column_warning": {
-					"title": "Are you sure you want to continue?",
-
 					"column_to_grid": "Changing to a grid-based layout will move all of your widgets to the top left corner.",
-					"grid_to_column": "Changing to a column-based layout will move all of your widgets to the first column.",
-
-					"cancel": "Cancel",
-					"continue": "Continue"
+					"grid_to_column": "Changing to a column-based layout will move all of your widgets to the first column."
 				}
 			},
 

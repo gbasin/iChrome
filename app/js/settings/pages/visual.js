@@ -50,20 +50,16 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 
 					if ((value === "columns" && this.model.get("columns") === "medley") || (value === "grid" && this.model.get("columns") !== "medley")) {
 						Alert({
-							title: Translate("settings.visual.layout.column_warning.title"),
-							contents: [Translate("settings.visual.layout.column_warning." + (value === "columns" ? "grid_to_column" : "column_to_grid"))],
-							buttons: {
-								positive: Translate("settings.visual.layout.column_warning.continue"),
-								negative: Translate("settings.visual.layout.column_warning.cancel")
-							}
-						}, function(accepted) {
-							if (accepted) {
+							confirm: true,
+							contents: [Translate("settings.visual.layout.column_warning." + (value === "columns" ? "grid_to_column" : "column_to_grid"))]
+						}).on("select", function(confirmed) {
+							if (confirmed) {
 								next.call(this);
 							}
 							else {
 								this.$("input[name=layout]:not(:checked)")[0].checked = true;
 							}
-						}.bind(this));
+						}, this);
 					}
 					else {
 						next.call(this);
