@@ -98,7 +98,11 @@ define([
 		},
 
 		show: function() {
-			delete this._activePage;
+			if (this._activePage) {
+				this.pages[this._activePage].$el.detach();
+
+				delete this._activePage;
+			}
 
 			this.$el.html(render("settings"));
 
