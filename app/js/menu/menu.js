@@ -3,16 +3,18 @@
  */
 define(
 	[
-		"lodash", "jquery", "backbone", "browser/api", "core/analytics", "storage/storage", "storage/defaults", "i18n/i18n",
+		"lodash", "jquery", "backbone", "browser/api", "core/pro", "core/analytics", "storage/storage", "storage/defaults", "i18n/i18n",
 		"search/search", "search/speech", "settings/view", "widgets/store", "core/uservoice", "core/render"
 	],
-	function(_, $, Backbone, Browser, Track, Storage, Defaults, Translate, Search, Speech, Settings, Store, UserVoice, render) {
+	function(_, $, Backbone, Browser, Pro, Track, Storage, Defaults, Translate, Search, Speech, Settings, Store, UserVoice, render) {
 		var Model = Backbone.Model.extend({
 				init: function() {
 					Storage.on("done updated", function(storage) {
 						this.storage = storage;
 
 						var set = _.clone(storage.settings);
+
+						set.links = _.take(set.links, Pro.isPro ? 8 : 3);
 
 						set.tabs = _.map(storage.tabs, function(e) {
 							return {
