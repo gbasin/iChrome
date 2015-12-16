@@ -17,13 +17,13 @@ body > .settings {
 	padding-left: 250px;
 	font-family: Roboto, sans-serif;
 	transition: visibility .3s 0s linear,
-				opacity .3s $transition-easing;
+				opacity .3s $default-easing;
 
 	&.visible {
 		opacity: 1;
 		visibility: visible;
 		transition: visibility 0s 0s linear,
-					opacity .3s $transition-easing;
+					opacity .3s $default-easing;
 	}
 
 	h1, h2, h3, h4, h5, h6 {

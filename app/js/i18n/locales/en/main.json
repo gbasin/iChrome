@@ -189,6 +189,18 @@
 			"link_tab": "Open links in a new tab by default"
 		},
 
+		"tabs": {
+			"create_new": "Create new",
+			"make_default": "Make default",
+
+			"desc1": "Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
+			"desc2": "You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
+
+			"name_placeholder": "Enter a tab name",
+
+			"delete_confirm": "This action is irreversible. All data from all widgets in the tab will be permanently lost."
+		},
+
 
 		"sync": {
 			"status_syncing": "iChrome is currently <b>syncing</b> your tabs and settings.",

@@ -17,8 +17,6 @@ define(["jquery", "lodash", "backbone"], function($, _, Backbone) {
 				this.cb();
 
 				this.trigger("actionClick");
-
-				this.close();
 			}
 		},
 
@@ -40,7 +38,7 @@ define(["jquery", "lodash", "backbone"], function($, _, Backbone) {
 					openSnackbar = null;
 				}
 
-				if (cb) {
+				if (typeof cb === "function") {
 					cb();
 				}
 			}.bind(this);
@@ -74,7 +72,7 @@ define(["jquery", "lodash", "backbone"], function($, _, Backbone) {
 				_.assign(this, options);
 			}
 
-			if (cb) {
+			if (typeof cb === "function") {
 				this.cb = cb;
 			}
 
@@ -85,7 +83,7 @@ define(["jquery", "lodash", "backbone"], function($, _, Backbone) {
 					if (this._isPendingClose) {
 						this.remove();
 
-						if (this._pendingCloseCB) {
+						if (typeof this._pendingCloseCB === "function") {
 							this._pendingCloseCB();
 						}
 
@@ -118,7 +116,7 @@ define(["jquery", "lodash", "backbone"], function($, _, Backbone) {
 				this.el.appendChild(btn);
 			}
 
-			this.$el.appendTo(document.body);
+			this.$el.appendTo(document.body).on("click", this.close.bind(this));
 
 
 			// Animate into view

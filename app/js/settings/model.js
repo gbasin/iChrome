@@ -7,7 +7,9 @@ define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage)
 			Storage.on("done updated", function(storage) {
 				this.storage = storage;
 
-				this.set(storage.settings, {
+				this.set(_.assign({
+					_tabs: storage.tabs
+				}, storage.settings), {
 					external: true
 				});
 			}, this);
@@ -27,7 +29,9 @@ define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage)
 
 				this.trigger("save:start");
 
-				this.storage.settings = this.toJSON();
+				this.storage.settings = _.omit(this.toJSON(), "_tabs");
+
+				this.storage.tabs = this.get("_tabs");
 
 				this.storage.sync(true, function() {
 					this.saving = false;

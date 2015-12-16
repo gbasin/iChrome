@@ -975,8 +975,9 @@ input[type="radio"]:checked {
 	bottom: 24px;
 	display: flex;
 	z-index: 999999;
-	font-size: 14px;
+	cursor: pointer;
 	position: fixed;
+	font-size: 14px;
 	min-width: 288px;
 	max-width: 568px;
 	line-height: 20px;

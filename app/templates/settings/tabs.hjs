@@ -1,43 +1,33 @@
 <header>
-	<h2 class="page-name">Settings &ndash; Tabs</h2>
+	<h2 class="page-name">{{i18n.settings.title}} &ndash; {{i18n.settings.nav.tabs}}</h2>
 </header>
 
 <main class="content" tabindex="-1">
 	<section class="tabs" data-id="tabs">
 		<h3>
-			Tabs
+			{{i18n.settings.nav.tabs}}
 
-			<button type="button" class="material blue create-new">Create new</button>
+			<button type="button" class="material blue create-new">{{i18n.settings.tabs.create_new}}</button>
 		</h3>
 
 		<p class="desc">
-			Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.
+			{{i18n.settings.tabs.desc1}}
 			<br /><br />
-			You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.
+			{{i18n.settings.tabs.desc2}}
 		</p>
 
-		<div class="input text">
-			<input type="text" name="tab-name" value="Home" placeholder="Enter a tab name" maxlength="40" />
+		{{#tabs}}
+			<div class="input text tab" data-id="{{index}}">
+				<input type="text" name="tab-name" placeholder="{{i18n.settings.tabs.name_placeholder}}" maxlength="40" value="{{name}}" />
 
-			<button type="button" class="material flat blue default" data-action="make-default" disabled>Make default</button>
+				<button type="button" class="material flat blue default" data-action="make-default"{{#isDefault}} disabled{{/isDefault}}>{{i18n.settings.tabs.make_default}}</button>
 
-			<button type="button" class="material toggle m-icon" data-action="move-up">keyboard_arrow_up</button>
+				<button type="button" class="material toggle m-icon" data-action="move-up">keyboard_arrow_up</button>
 
-			<button type="button" class="material toggle m-icon" data-action="move-down">keyboard_arrow_down</button>
+				<button type="button" class="material toggle m-icon" data-action="move-down">keyboard_arrow_down</button>
 
-			<button type="button" class="material toggle m-icon" data-action="delete">delete</button>
-		</div>
-
-		<div class="input text">
-			<input type="text" name="tab-name" value="New tab" placeholder="Enter a tab name" maxlength="40" />
-
-			<button type="button" class="material flat blue default" data-action="make-default">Make default</button>
-
-			<button type="button" class="material toggle m-icon" data-action="move-up">keyboard_arrow_up</button>
-
-			<button type="button" class="material toggle m-icon" data-action="move-down">keyboard_arrow_down</button>
-
-			<button type="button" class="material toggle m-icon" data-action="delete">delete</button>
-		</div>
+				<button type="button" class="material toggle m-icon" data-action="delete">delete</button>
+			</div>
+		{{/tabs}}
 	</section>
 </main>

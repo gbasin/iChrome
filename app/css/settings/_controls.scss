@@ -37,7 +37,7 @@
 		height: 0;
 		padding: 0 25px;
 		overflow: hidden;
-		transition: all .2s $transition-easing;
+		transition: all .2s $default-easing;
 
 		&.visible {
 			height: 52px;
@@ -64,7 +64,7 @@
 			display: inline-block;
 			vertical-align: middle;
 			background: rgba(0, 0, 0, .26);
-			transition: background .3s $transition-easing;
+			transition: background .3s $default-easing;
 
 			&:before {
 				top: -4px;
@@ -76,9 +76,9 @@
 				border-radius: 50%;
 				background: #FAFAFA;
 				box-shadow: 0 2px 8px rgba(0, 0, 0, .28);
-				transition: left .3s $transition-easing,
-							background .3s $transition-easing,
-							box-shadow .3s $transition-easing;
+				transition: left .3s $default-easing,
+							background .3s $default-easing,
+							box-shadow .3s $default-easing;
 			}
 
 			&:active:before {
