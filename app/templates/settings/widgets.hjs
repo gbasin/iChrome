@@ -1,5 +1,5 @@
 <header class="large-header">
-	<h2 class="page-name">Widgets</h2>
+	<h2 class="page-name">{{i18n.settings.nav.widgets}}</h2>
 </header>
 
 <main class="content" tabindex="-1">
@@ -7,16 +7,16 @@
 		<img class="widget-demo" src="images/widget_demo.png" />
 
 		<p>
-			Widgets have their own settings and can't be customized here.
+			{{i18n.settings.widgets.desc1}}
 			<br /><br />
-			To edit a widget's settings, follow these steps:
+			{{i18n.settings.widgets.desc2}}
 		</p>
 
 		<ol>
-			<li>Move your mouse over any widget</li>
-			<li>Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.</li>
-			<li>Edit any of the settings shown in the dialog that's displayed</li>
-			<li>Click Save to save your changes, or any part of the background to discard of them</li>
+			<li>{{i18n.settings.widgets.steps1}}</li>
+			<li>{{i18n.settings.widgets.steps2}}</li>
+			<li>{{i18n.settings.widgets.steps3}}</li>
+			<li>{{i18n.settings.widgets.steps4}}</li>
 		</ol>
 	</section>
 </main>

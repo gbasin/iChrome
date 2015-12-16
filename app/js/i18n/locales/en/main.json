@@ -251,6 +251,16 @@
 				"desc": "<b>WARNING:</b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
 				"open": "Open tools"
 			}
+		},
+
+		"widgets": {
+			"desc1": "Widgets have their own settings and can't be customized here.",
+			"desc2": "To edit a widget's settings, follow these steps:",
+
+			"steps1": "Move your mouse over any widget",
+			"steps2": "Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
+			"steps3": "Edit any of the settings shown in the dialog that's displayed",
+			"steps4": "Click Save to save your changes, or any part of the background to discard of them"
 		}
 	},
 
