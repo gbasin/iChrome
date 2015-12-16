@@ -12,6 +12,8 @@ define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage)
 				}, storage.settings), {
 					external: true
 				});
+
+				this.trigger("storage:updated");
 			}, this);
 
 			this.on("change:columns", function(model, value, options) {
