@@ -149,6 +149,42 @@
 			}
 		},
 
+		"toolbar": {
+			"style": {
+				"title": "Style",
+				"desc": "This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
+				"normal": "Normal",
+				"button": "Button"
+			},
+
+			"search": {
+				"title": "Search",
+				"desc": "These settings control how the search box and voice search function",
+
+				"engine": "Search engine",
+				"engines_google": "Google (Default)",
+				"engines_custom": "Custom",
+				"engines_custom_desc": "Enter a URL that queries should be sent to, with <b>%s</b> where the query should go.",
+
+				"voice": "Enable voice search",
+				"ok_google": "Enable \"OK Google\" hotword detection",
+				"search_tab": "Open search results in a new tab"
+			},
+
+			"links": {
+				"title": "Links",
+				"desc": "These are the items shown at the right of the toolbar",
+
+				"apps": "Apps menu",
+
+				"custom": "Custom links",
+				"custom_note1": "Maximum of 3 allowed",
+				"custom_note2": "users get 8",
+				"custom_name_placeholder": "Link text",
+				"custom_url_placeholder": "Link URL, i.e. https://www.google.com/"
+			}
+		},
+
 
 		"sync": {
 			"status_syncing": "iChrome is currently <b>syncing</b> your tabs and settings.",

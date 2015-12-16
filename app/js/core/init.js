@@ -69,6 +69,8 @@ define([
 		initialize: function() {
 			this.model = new Model();
 
+			var loaded = false;
+
 			// This only fires on change otherwise users with the
 			// button might see a FOUT (Flash Of Unchosen Toolbar)
 			this.model.on("change:toolbar", function() {
@@ -102,19 +104,23 @@ define([
 				}
 
 
-				var loader = this.$el.removeClass("unloaded").children(".loading");
+				if (!loaded) {
+					loaded = true;
 
-				var animationPlayer = loader[0].animate([
-					{ opacity: 1 },
-					{ opacity: 0 }
-				], {
-					duration: 100,
-					easing: "cubic-bezier(.4, 0, .2, 1)"
-				});
+					var loader = this.$el.removeClass("unloaded").children(".loading");
 
-				animationPlayer.onfinish = function() {
-					loader.remove();
-				};
+					var animationPlayer = loader[0].animate([
+						{ opacity: 1 },
+						{ opacity: 0 }
+					], {
+						duration: 100,
+						easing: "cubic-bezier(.4, 0, .2, 1)"
+					});
+
+					animationPlayer.onfinish = function() {
+						loader.remove();
+					};
+				}
 			}, this).on("change:editing", function() {
 				this.$el.toggleClass("no-edit", this.model.get("editing") === false);
 			}, this).on("change:style", function() {

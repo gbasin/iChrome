@@ -5321,7 +5321,7 @@ body > .settings .page section.list-select label input {
 }
 
 /* line 1, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_toolbar.scss */
-body > .settings .page.toolbar .custom-links .link {
+body > .settings .page.toolbar .links .link {
 	font-size: 0;
 	margin: 0 -25px;
 	text-align: left;
@@ -5329,12 +5329,12 @@ body > .settings .page.toolbar .custom-links .link {
 }
 
 /* line 7, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_toolbar.scss */
-body > .settings .page.toolbar .custom-links .link:first-of-type {
+body > .settings .page.toolbar .links .link:first-of-type {
 	margin-top: 15px;
 }
 
 /* line 11, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_toolbar.scss */
-body > .settings .page.toolbar .custom-links .link input {
+body > .settings .page.toolbar .links .link input {
 	font-size: 14px;
 	margin-right: 10px;
 	vertical-align: middle;
@@ -5342,12 +5342,12 @@ body > .settings .page.toolbar .custom-links .link input {
 }
 
 /* line 18, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_toolbar.scss */
-body > .settings .page.toolbar .custom-links .link button.remove {
+body > .settings .page.toolbar .links .link button.remove {
 	margin: 0;
 }
 
 /* line 22, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_toolbar.scss */
-body > .settings .page.toolbar .custom-links .link.new button.remove {
+body > .settings .page.toolbar .links .link.new button.remove {
 	display: none;
 }
 

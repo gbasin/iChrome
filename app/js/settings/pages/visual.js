@@ -5,7 +5,7 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 	var View = Page.extend({
 		id: "visual",
 
-		radios: {
+		dynamicControls: {
 			theme: "style",
 			layout: "layout",
 			column_width: "column_width"
@@ -43,7 +43,9 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 
 				case "layout":
 					var next = function() {
-						this.model.set("columns", value === "columns" ? this.$("input[name=columns]").val() + "-" + this.$("input[name=column_width]:checked").val() : "medley");
+						this.model.set("columns", value === "columns" ? this.$("input[name=columns]").val() + "-" + this.$("input[name=column_width]:checked").val() : "medley", {
+							noRender: true
+						});
 
 						$(elm).parents(".input").siblings(".input")[value === "columns" ? "slideDown" : "slideUp"](300);
 					};
@@ -67,15 +69,21 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 				break;
 
 				case "columns":
-					this.model.set("columns", value + "-" + this.$("input[name=column_width]:checked").val());
+					this.model.set("columns", value + "-" + this.$("input[name=column_width]:checked").val(), {
+						noRender: true
+					});
 				break;
 
 				case "column_width":
-					this.model.set("columns", parseInt(this.$("input[name=columns]").val() || 3) + "-" + value);
+					this.model.set("columns", parseInt(this.$("input[name=columns]").val() || 3) + "-" + value, {
+						noRender: true
+					});
 				break;
 
 				case "theme":
-					this.model.set("style", (Pro.isPro && value) || "light");
+					this.model.set("style", (Pro.isPro && value) || "light", {
+						noRender: true
+					});
 				break;
 			}
 		},

@@ -108,8 +108,11 @@ define([
 
 			this.navigate(this.$(".side-nav nav > ul > li:first"));
 
-			// The settings are a "page", not a modal. The body shouldn't scroll.
-			$(document.body).css("overflow", "hidden");
+			// The settings are a "page", not a modal. The document shouldn't scroll.
+			//
+			// This is done on the documentElement so it isn't erased when the tabs
+			// are re-rendered (updating the CSS of the body element).
+			$(document.documentElement).css("overflow", "hidden");
 
 			this.$el.appendTo(document.body).addClass("visible")[0].animate([
 				{ opacity: 0 },

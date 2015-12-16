@@ -1,57 +1,57 @@
 <header>
-	<h2 class="page-name">Settings &ndash; Toolbar</h2>
+	<h2 class="page-name">{{i18n.settings.title}} &ndash; {{i18n.settings.nav.toolbar}}</h2>
 </header>
 
 <main class="content" tabindex="-1">
 	<section class="style" data-id="style">
-		<h3>Style</h3>
+		<h3>{{i18n.settings.toolbar.style.title}}</h3>
 
-		<p class="desc">This controls the style of the toolbar.  It can either appear normally or as an out of the way button</p>
+		<p class="desc">{{i18n.settings.toolbar.style.desc}}</p>
 
 		<div class="input radios no-label">
 			<label>
-				<input type="radio" name="style" value="normal" checked />
+				<input type="radio" name="style" value="full" checked />
 
-				<span>Normal</span>
+				<span>{{i18n.settings.toolbar.style.normal}}</span>
 			</label>
 
 			<label>
 				<input type="radio" name="style" value="button" />
 
-				<span>Button</span>
+				<span>{{i18n.settings.toolbar.style.button}}</span>
 			</label>
 		</div>
 	</section>
 
 	<section class="search" data-id="search">
-		<h3>Search</h3>
+		<h3>{{i18n.settings.toolbar.search.title}}</h3>
 
-		<p class="desc">These settings control how the search box and voice search function</p>
+		<p class="desc">{{i18n.settings.toolbar.search.desc}}</p>
 
 		<div class="input select other">
 			<label>
-				<h4>Search engine</h4>
+				<h4>{{i18n.settings.toolbar.search.engine}}</h4>
 
 				<select name="search-engine">
-					<option value="https://google.com/search?q=%s">Google (Default)</option>
+					<option value="https://google.com/search?q=%s">{{i18n.settings.toolbar.search.engines_google}}</option>
 					<option value="https://search.yahoo.com/search?p=%s">Yahoo!</option>
 					<option value="https://www.bing.com/search?q=%s">Bing</option>
 					<option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
 					<option value="http://www.ask.com/web?q=%s">Ask</option>
 					<option value="http://search.aol.com/aol/search?q=%s">AOL</option>
-					<option value="custom">Custom</option>
+					<option value="custom">{{i18n.settings.toolbar.search.engines_custom}}</option>
 				</select>
 			</label>
 
-			<label class="input other">
-				<span class="desc">Enter a URL that queries should be sent to, with <b>%s</b> where the query should go.</span>
+			<label class="input other{{#customSearchURL}} visible{{/customSearchURL}}">
+				<span class="desc">{{{i18n.settings.toolbar.search.engines_custom_desc}}}</span>
 
-				<input type="text" name="search-url" placeholder="i.e. https://google.com/search?q=%s" />
+				<input type="text" name="search-url" placeholder="i.e. https://google.com/search?q=%s" value="{{customSearchURL}}" />
 			</label>
 		</div>
 
 		<label class="input switch">
-			<h4>Enable voice search</h4>
+			<h4>{{i18n.settings.toolbar.search.voice}}</h4>
 
 			<input type="checkbox" name="voice-search" value="1" checked />
 
@@ -59,7 +59,7 @@
 		</label>
 
 		<label class="input switch">
-			<h4>Enable "OK Google" hotword detection</h4>
+			<h4>{{i18n.settings.toolbar.search.ok_google}}</h4>
 
 			<input type="checkbox" name="ok-google" value="1" />
 
@@ -67,7 +67,7 @@
 		</label>
 
 		<label class="input switch">
-			<h4>Open search results in a new tab</h4>
+			<h4>{{i18n.settings.toolbar.search.search_tab}}</h4>
 
 			<input type="checkbox" name="new-tab" value="1" />
 
@@ -76,12 +76,12 @@
 	</section>
 
 	<section class="links" data-id="links">
-		<h3>Links</h3>
+		<h3>{{i18n.settings.toolbar.links.title}}</h3>
 
-		<p class="desc">These are the items shown at the right of the toolbar</p>
+		<p class="desc">{{i18n.settings.toolbar.links.desc}}</p>
 
 		<label class="input switch">
-			<h4>Google Plus</h4>
+			<h4>Google+</h4>
 
 			<input type="checkbox" name="google-plus" value="1" checked />
 
@@ -97,33 +97,37 @@
 		</label>
 
 		<label class="input switch">
-			<h4>Apps menu</h4>
+			<h4>{{i18n.settings.toolbar.links.apps}}</h4>
 
 			<input type="checkbox" name="apps-menu" value="1" checked />
 
 			<span class="switch"></span>
 		</label>
 
-		<div class="input custom-links">
-			<h4>Custom links</h4>
+		<div class="input links">
+			<h4>{{i18n.settings.toolbar.links.custom}}</h4>
 
-			<span class="note">Maximum of 3 allowed, <span class="pro-badge"></span> users get 8</span>
+			<span class="note">{{i18n.settings.toolbar.links.custom_note1}}, <span class="pro-badge"></span> {{i18n.settings.toolbar.links.custom_note2}}</span>
 
-			<div class="link">
-				<input type="text" name="name" placeholder="Link text" value="CloudFlare" />
+			{{#customLinks}}
+				<div class="link" data-link="{{i}}">
+					<input type="text" name="link-text" placeholder="{{i18n.settings.toolbar.links.custom_name_placeholder}}" value="{{text}}" />
 
-				<input type="url" name="url" placeholder="Link URL, i.e. https://www.google.com/" value="https://www.cloudflare.com/" />
+					<input type="url" name="link-url" placeholder="{{i18n.settings.toolbar.links.custom_url_placeholder}}" value="{{link}}" />
 
-				<button type="button" class="material toggle m-icon remove">close</button>
-			</div>
+					<button type="button" class="material toggle m-icon remove">close</button>
+				</div>
+			{{/customLinks}}
 
-			<div class="link new">
-				<input type="text" name="name" placeholder="Link text" />
+			{{#canAddLinks}}
+				<div class="link new" data-link="new">
+					<input type="text" name="link-text" placeholder="{{i18n.settings.toolbar.links.custom_name_placeholder}}" />
 
-				<input type="url" name="url" placeholder="Link URL, i.e. https://www.google.com/" />
+					<input type="url" name="link-url" placeholder="{{i18n.settings.toolbar.links.custom_url_placeholder}}" />
 
-				<button type="button" class="material toggle m-icon remove">close</button>
-			</div>
+					<button type="button" class="material toggle m-icon remove">close</button>
+				</div>
+			{{/canAddLinks}}
 		</div>
 	</section>
 </main>

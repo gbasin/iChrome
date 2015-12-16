@@ -22,6 +22,12 @@ define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/rend
 			this.model = model();
 
 			this.model.on(this.monitorProps ? "change:" + this.monitorProps.join(" change:") : "change", _.throttle(function() {
+				var options = _.last(arguments);
+
+				if (options && options.noRender) {
+					return;
+				}
+
 				// Get a selector for the currently focused element so we can restore focus
 				var el = this.$(":focus")[0];
 
@@ -36,7 +42,13 @@ define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/rend
 				focusedElm = focusedElm.join(" > ");
 
 
+				var scrollTop = this.$("main").scrollTop();
+
+
 				this.render();
+
+
+				this.$("main").scrollTop(scrollTop);
 
 				if (focusedElm) {
 					this.$("> " + focusedElm).focus();
@@ -45,15 +57,23 @@ define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/rend
 
 			Backbone.View.prototype.constructor.call(this, options);
 
-			// change fires on text inputs when they're focused out, which is what we want,
+
+			// The change event fires on text inputs when they're focused out, which is what we want,
 			// and as changes happen on others, which is also what we want
-			this.$el.on("change", "input, textarea, select", function(e) {
-				this.onInputChange(e.currentTarget, e.currentTarget.name, e.currentTarget.value);
-			}.bind(this)).on("keydown", "input", function(e) {
-				if (e.keyCode && e.keyCode === 13) {
-					this.onInputChange(e.currentTarget, e.currentTarget.name, e.currentTarget.value);
+			var inputChange = function(e) {
+				var value;
+
+				if (e.currentTarget.type === "checkbox") {
+					value = e.currentTarget.checked;
 				}
-			}.bind(this));
+				else {
+					value = e.currentTarget.value;
+				}
+
+				this.onInputChange(e.currentTarget, e.currentTarget.name, value);
+			}.bind(this);
+
+			this.$el.on("change", "input, textarea, select", inputChange);
 		},
 
 
@@ -185,17 +205,31 @@ define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/rend
 		 *
 		 * @param  {Object}  data  The rendered data
 		 */
-		setRadios: function(data) {
-			var radios = this.radios,
-				elms = this.el.querySelectorAll("input[type='radio'], input[type='checkbox']");
+		setDynamicControls: function(data) {
+			var controls = this.dynamicControls,
+				elms = this.el.querySelectorAll("input[type='radio'], input[type='checkbox'], select");
 
-			if (this.radios && elms.length) {
-				_.each(elms, function(e) {
-					if (radios[e.name] && data[radios[e.name]] && data[radios[e.name]] === e.value) {
+			if (!controls || !elms.length) {
+				return;
+			}
+
+			_.each(elms, function(e) {
+				if (!controls[e.name] || typeof data[controls[e.name]] === "undefined") {
+					return;
+				}
+
+				if (e.type === "checkbox") {
+					e.checked = !!data[controls[e.name]];
+				}
+				else if (e.type === "radio") {
+					if (data[controls[e.name]] === e.value) {
 						e.checked = true;
 					}
-				});
-			}
+				}
+				else if (e.tagName.toLowerCase() === "select") {
+					e.value = data[controls[e.name]];
+				}
+			});
 		},
 
 		onBeforeRender: function(data) {
@@ -211,7 +245,7 @@ define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/rend
 
 			this.$el.html(this.template(data));
 
-			this.setRadios(data);
+			this.setDynamicControls(data);
 
 			this.trigger("render", data);
 
