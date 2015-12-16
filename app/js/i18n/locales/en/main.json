@@ -185,6 +185,10 @@
 			}
 		},
 
+		"misc": {
+			"link_tab": "Open links in a new tab by default"
+		},
+
 
 		"sync": {
 			"status_syncing": "iChrome is currently <b>syncing</b> your tabs and settings.",

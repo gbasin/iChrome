@@ -85,7 +85,9 @@ define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/rend
 		 * @param   {String}       value  The value of the input
 		 */
 		onInputChange: function(elm, name, value) {
-			this.model.set(name, value);
+			this.model.set(name, value, {
+				noRender: true
+			});
 		},
 
 
