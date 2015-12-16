@@ -140,8 +140,14 @@ define([
 			}.bind(this);
 		},
 
-		createTab: function() {
 
+		/**
+		 * Displays the tabs page and creates a new tab
+		 */
+		createTab: function() {
+			this.navigate(this.$(".side-nav nav > ul > li[data-id='tabs']"));
+
+			this.pages.tabs.createTab();
 		},
 
 		initialize: function() {
