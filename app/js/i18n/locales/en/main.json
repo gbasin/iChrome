@@ -206,7 +206,7 @@
 				"title": "Status",
 
 				"signed_in": "You are currently <b>signed in</b> as %s (%s).",
-				"reset_profile": "Reset profile",
+				"reset_account": "Reset account",
 				"sign_out": "Sign out",
 
 				"signed_out": "You are <b>not currently signed in</b>. Sign in with your Google account now to securely store and sync your configuration.",
@@ -219,7 +219,38 @@
 			"keep_local": "Keep Local",
 
 			"reset_confirm_desc": "This will erase all local and synced data, there is no backup and no way to undo this.",
-			"reset_confirm_desc2": "You will lose your entire current configuration on all computers connected to this sync profile."
+			"reset_confirm_desc2": "You will lose your entire current configuration on all computers connected to this account."
+		},
+
+		"advanced": {
+			"backups": {
+				"title": "Backup and restore",
+				"desc": "Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
+				"desc2": "Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
+
+				"backup": "Backup now",
+				"upload": "Restore from file",
+
+				"download": "Download",
+				"restore": "Restore",
+
+				"download_name": "iChrome Backup",
+
+				"restore_confirm": "This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
+				"restore_error": "An error occurred while trying to parse the provided data, please try again later."
+			},
+
+			"css": {
+				"title": "Custom CSS",
+				"desc": "You can use CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definition</a>) to customize almost any part of iChrome.",
+				"placeholder": "Enter up to 1000 characters of CSS here"
+			},
+
+			"debug_tools": {
+				"title": "Debug tools",
+				"desc": "<b>WARNING:</b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
+				"open": "Open tools"
+			}
 		}
 	},
 

@@ -10,7 +10,7 @@
 			<p class="desc">{{{signedInMsg}}}</p>
 
 			<div class="input no-label actions">
-				<button type="button" class="material red reset">{{i18n.settings.accounts.status.reset_profile}}</button>
+				<button type="button" class="material red reset">{{i18n.settings.accounts.status.reset_account}}</button>
 
 				<button type="button" class="material sign-out">{{i18n.settings.accounts.status.sign_out}}</button>
 			</div>

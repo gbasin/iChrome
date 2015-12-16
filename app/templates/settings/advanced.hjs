@@ -1,73 +1,53 @@
 <header>
-	<h2 class="page-name">Settings &ndash; Advanced</h2>
+	<h2 class="page-name">{{i18n.settings.title}} &ndash; {{i18n.settings.nav.advanced}}</h2>
 </header>
 
 <main class="content" tabindex="-1">
 	<section class="backups" data-id="backups">
-		<h3>Backup and restore</h3>
+		<h3>{{i18n.settings.advanced.backups.title}}</h3>
 
 		<p class="desc">
-			Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.
+			{{i18n.settings.advanced.backups.desc}}
 			<br /><br />
-			Use the buttons below to roll iChrome back to a particular date or download one of your backups.
+			{{i18n.settings.advanced.backups.desc2}}
 		</p>
 
 		<div class="input no-label actions">
-			<button type="button" class="material blue backup">Backup now</button>
+			<input type="file" name="backup-upload" class="upload hide" />
 
-			<button type="button" class="material blue restore">Restore from file</button>
+			<button type="button" class="material blue backup">{{i18n.settings.advanced.backups.backup}}</button>
+
+			<button type="button" class="material blue upload">{{i18n.settings.advanced.backups.upload}}</button>
 		</div>
 
-		<div class="input" data-date="1449842127821">
-			<h4>Today at 8:55 AM</h4>
+		{{#backups}}
+			<div class="input backup" data-date="{{date}}">
+				<h4>{{label}}</h4>
 
-			<button type="button" class="material flat blue" data-action="download">Download</button>
+				<button type="button" class="material flat blue download">{{i18n.settings.advanced.backups.download}}</button>
 
-			<button type="button" class="material flat blue" data-action="restore">Restore</button>
-		</div>
-
-		<div class="input" data-date="1449754273460">
-			<h4>Yesterday at 8:31 AM</h4>
-
-			<button type="button" class="material flat blue" data-action="download">Download</button>
-
-			<button type="button" class="material flat blue" data-action="restore">Restore</button>
-		</div>
-
-		<div class="input" data-date="1449026029975">
-			<h4>12/01/2015</h4>
-
-			<button type="button" class="material flat blue" data-action="download">Download</button>
-
-			<button type="button" class="material flat blue" data-action="restore">Restore</button>
-		</div>
-
-		<div class="input" data-date="1448637878867">
-			<h4>11/27/2015</h4>
-
-			<button type="button" class="material flat blue" data-action="download">Download</button>
-
-			<button type="button" class="material flat blue" data-action="restore">Restore</button>
-		</div>
+				<button type="button" class="material flat blue restore">{{i18n.settings.advanced.backups.restore}}</button>
+			</div>
+		{{/backups}}
 	</section>
 
 	<section class="css" data-id="css">
-		<h3>Custom CSS</h3>
+		<h3>{{i18n.settings.advanced.css.title}}</h3>
 
-		<p class="desc">You can use CSS (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="blank">definition</a>) to customize almost any part of iChrome.</p>
+		<p class="desc">{{{i18n.settings.advanced.css.desc}}}</p>
 
 		<div class="input textarea">
-			<textarea name="css" maxlength="1000" placeholder="Enter up to 1000 characters of CSS here"></textarea>
+			<textarea name="css" maxlength="1000" placeholder="{{i18n.settings.advanced.css.placeholder}}">{{css}}</textarea>
 		</div>
 	</section>
 
 	<section class="debug-tools" data-id="debug-tools">
-		<h3>Debug tools</h3>
+		<h3>{{i18n.settings.advanced.debug_tools.title}}</h3>
 
-		<p class="desc"><b>WARNING:</b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.</p>
+		<p class="desc">{{{i18n.settings.advanced.debug_tools.desc}}}</p>
 
 		<div class="input no-label">
-			<button type="button" class="material red">Open tools</button>
+			<button type="button" class="material red">{{i18n.settings.advanced.debug_tools.open}}</button>
 		</div>
 	</section>
 </main>
