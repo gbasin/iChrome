@@ -18,6 +18,16 @@ define(["lodash"], function(_) {
 			}
 
 
+			if (typeof settings.toolbar === "boolean") {
+				if (settings.toolbar) {
+					settings.toolbar = "full";
+				}
+				else {
+					settings.toolbar = "button";
+				}
+			}
+
+
 			// Renames
 			_.each({
 				def: "defaultTab",

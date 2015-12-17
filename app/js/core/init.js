@@ -12,15 +12,6 @@ define([
 			});
 
 			Storage.on("done updated", function(storage) {
-				if (typeof storage.settings.toolbar === "boolean") {
-					if (storage.settings.toolbar) {
-						storage.settings.toolbar = "full";
-					}
-					else {
-						storage.settings.toolbar = "button";
-					}
-				}
-
 				this.set({
 					style: storage.settings.style,
 					theme: storage.settings.theme,

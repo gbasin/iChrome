@@ -181,7 +181,14 @@ define([
 
 		var cacheTheme = function() {
 			// We can't use the theme utils here since they require storage
-			var image = (storage.cached[storage.settings.theme] || storage.themes[storage.settings.theme.replace("custom", "")] || { image: "images/defaulttheme.jpg" }).image;
+			var image;
+
+			if (storage.settings.theme === "custom") {
+				image = storage.settings.backgroundImage;
+			}
+			else {
+				image = (storage.cached[storage.settings.theme] || storage.themes[storage.settings.theme.replace("custom", "")] || { image: "images/defaulttheme.jpg" }).image;
+			}
 
 			if (!image || image.slice(-4) === ".mp4") {
 				delete Browser.storage.themeImg;

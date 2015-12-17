@@ -7,7 +7,8 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 			Storage.on("done updated", function(storage) {
 				this.set({
 					custom: storage.themes,
-					cached: storage.cached
+					cached: storage.cached,
+					backgroundImage: storage.settings.backgroundImage
 				});
 			}, this);
 		}
@@ -44,7 +45,13 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 			};
 
 			if (typeof theme === "object") {
-				theme = (this.model.get("cached")[theme.id] || this.model.get("custom")[theme.id.replace("custom", "")] || defTheme);
+				theme = (this.model.get("cached")[theme.id] || this.model.get("custom")[theme.id.replace("custom", "")] || theme);
+			}
+			else if (theme === "custom") {
+				theme = {
+					id: "custom",
+					image: this.model.get("backgroundImage")
+				};
 			}
 			else if (theme === "default") {
 				theme = defTheme;

@@ -11,12 +11,14 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 			column_width: "column_width"
 		},
 
-		monitorProps: ["theme", "backgroundURL", "layout", "columns", "columnWidth", "style"],
+		monitorProps: ["theme", "backgroundImage", "layout", "columns", "columnWidth", "style"],
 
 		events: {
 			"click .background button.select": function() {
 				themePicker().show().once("use", function(theme, id) {
-					this.model.set("theme", id || theme.id);
+					this.model.set("theme", id || theme.id, {
+						noRender: true
+					});
 
 					this.$(".current-background").text(theme.name || (typeof theme.id === "number" ? Translate("settings.visual.unnamed", theme.id) : ""));
 				}, this);
@@ -38,7 +40,9 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 		onInputChange: function(elm, name, value) {
 			switch (name) {
 				case "background-url":
-					// TODO: Implement
+					this.model.set("theme", "custom");
+
+					this.model.set("backgroundImage", value);
 				break;
 
 				case "layout":
@@ -127,7 +131,7 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 			return {
 				// Background
 				currentBackground: (Utils.get(data.theme) || {}).name,
-				backgroundURL: data.theme === "custom" ? data.backgroundURL : null,
+				backgroundURL: data.theme === "custom" ? data.backgroundImage : null,
 
 				// Layout
 				layout: data.layout,
