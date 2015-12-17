@@ -38,6 +38,10 @@ define(["lodash", "backbone", "core/pro", "core/analytics", "storage/storage"], 
 			// Binding the translate method once, now, avoids unnecessary calls later
 			this.translate = _.bind(this.widget.translate, this.widget);
 
+			if (options.errorHandler) {
+				this.on("error", options.errorHandler);
+			}
+
 
 			// Create the content element
 			this.el = document.createElement("div");

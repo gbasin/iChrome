@@ -402,10 +402,9 @@ define([
 					// select properties
 					instance: this,
 					widget: this.widget,
-					model: this.widgetModel
+					model: this.widgetModel,
+					errorHandler: this.error.bind(this)
 				});
-
-				this.widgetView.on("error", this.error, this);
 			}
 			catch (e) {
 				this.error();
