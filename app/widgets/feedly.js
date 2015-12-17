@@ -2,6 +2,40 @@
  * The Feedly widget.
  */
 define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
+	var abbreviate = function(num, min, precision) {
+		var newValue = num;
+
+		min = min || 1000;
+		precision = precision || 3;
+
+		if (num >= min) {
+			var suffixes = ["", "K", "M", "B","T"],
+				suffixNum = Math.floor((("" + parseInt(num)).length - 1) / 3),
+				shortValue = "";
+
+			for (var length = precision; length >= 1; length--) {
+				shortValue = parseFloat((suffixNum !== 0 ? (num / Math.pow(1000, suffixNum)) : num).toPrecision(length));
+
+				var dotLessShortValue = (shortValue + "").replace(/[^A-z0-9 ]+/g, "");
+
+				if (dotLessShortValue.length <= precision) {
+					break;
+				}
+			}
+
+			if (shortValue % 1 !== 0) {
+				shortValue = shortValue.toFixed(1);
+			}
+
+			newValue = shortValue + suffixes[suffixNum];
+		}
+		else {
+			newValue = newValue.toLocaleString();
+		}
+
+		return newValue;
+	};
+
 	return {
 		id: 19,
 		size: 6,
@@ -540,7 +574,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 					author: e.author,
 					unread: !!e.unread,
 					date: e.published || 0,
-					recommendations: parseInt(e.engagement || 0).abbr(1000, 2)
+					recommendations: abbreviate(parseInt(e.engagement || 0, 1000, 2))
 				};
 
 				if (e.content) {

@@ -40,6 +40,12 @@ define(["lodash"], function(_) {
 		},
 
 		tabs: function(tabs) {
+			_.each(tabs, function(tab, i) {
+				if (tab.theme) {
+					delete tabs[i].theme;
+				}
+			});
+
 			return tabs;
 		}
 	};

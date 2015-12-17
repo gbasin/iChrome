@@ -27,12 +27,6 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 				queue.push(newData.settings.theme);
 			}
 
-			newData.tabs.forEach(function(e) {
-				if (e.theme && parseInt(e.theme) && !storage.cached[e.theme]) {
-					queue.push(e.theme);
-				}
-			});
-
 			var next = function() {
 				if (queue.length) {
 					var theme = mThemes[queue.pop()];

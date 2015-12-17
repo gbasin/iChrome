@@ -1,4 +1,4 @@
-define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
+define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, WidgetModel, parseUrl) {
 	return WidgetModel.extend({
 		refreshInterval: 300000,
 
@@ -209,7 +209,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 		 */
 		getAll: function() {
 			var feeds = _.uniq(_.map(this.config.feeds, function(e) {
-				return (e.url || "http://feeds.gawker.com/lifehacker/full").parseUrl();
+				return parseUrl(e.url || "http://feeds.gawker.com/lifehacker/full");
 			}));
 
 			if (!feeds.length) {
@@ -260,7 +260,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 			var maximized = this.get("state") === "maximized";
 
 			// Switch to /v3/mixes/contents to get the most popular entries instead of the newest
-			$.getJSON("http://cloud.feedly.com/v3/streams/contents?count=" + (maximized ? 45 : this.config.number) + "&streamId=feed%2F" + encodeURIComponent(feedURL.parseUrl()), function(d) {
+			$.getJSON("http://cloud.feedly.com/v3/streams/contents?count=" + (maximized ? 45 : this.config.number) + "&streamId=feed%2F" + encodeURIComponent(parseUrl(feedURL)), function(d) {
 				// If the active feed has changed (i.e. the user has switched tabs
 				// twice before the request finished), we don't want to emit any entries
 				if (d && d.items && this.get("activeTab") === activeTab) {

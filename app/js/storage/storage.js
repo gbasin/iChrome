@@ -180,19 +180,16 @@ define([
 			dString = JSON.stringify(_.pick(defaults, "user", "tabs", "settings", "themes", "cached"));
 
 		var cacheTheme = function() {
-			var defaultTab = storage.tabs[(storage.settings.def || 1) - 1];
+			// We can't use the theme utils here since they require storage
+			var image = (storage.cached[storage.settings.theme] || storage.themes[storage.settings.theme.replace("custom", "")] || { image: "images/defaulttheme.jpg" }).image;
 
-			var theme = defaultTab.theme || storage.settings.theme;
-
-			theme = storage.cached[theme] || storage.themes[theme.replace("custom", "")] || { image: "images/defaulttheme.jpg" };
-
-			if (!theme || !theme.image) {
+			if (!image || image.slice(-4) === ".mp4") {
 				delete Browser.storage.themeImg;
 
 				return;
 			}
 
-			Browser.storage.themeImg = theme.image;
+			Browser.storage.themeImg = image;
 		};
 
 
@@ -214,10 +211,10 @@ define([
 			var local = _.pick(storage, "user", "cached", "themes", "settings", "modified");
 
 			local.tabs = _.map(storage.tabs, function(tab) {
-				return $.unextend({
-					theme: storage.settings.theme,
-					fixed: storage.settings.columns.split("-")[1] === "fixed"
-				}, $.unextend(defaults.tab, tab));
+				return unextend({
+					medley: storage.settings.layout === "grid",
+					fixed: storage.settings.columnWidth === "fixed"
+				}, unextend(defaults.tab, tab));
 			});
 
 			Browser.storage.config = JSON.stringify(local);

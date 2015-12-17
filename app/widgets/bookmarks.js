@@ -1,7 +1,7 @@
 /*
  * The Bookmarks widget.
  */
-define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Browser, Modal) {
+define(["jquery", "lodash", "browser/api", "modals/modals", "lib/parseurl"], function($, _, Browser, Modal, parseUrl) {
 	return {
 		id: 16,
 		size: 2,
@@ -96,9 +96,9 @@ define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Brow
 
 				modal.hide();
 
-				item.attr("href", modal.url.val().trim().parseUrl())
+				item.attr("href", parseUrl(modal.url.val().trim()))
 					.find(".title").text(modal.title.val().trim()).end()
-					.find(".favicon").attr("src", Browser.getFavicon(modal.url.val().trim().parseUrl()));
+					.find(".favicon").attr("src", Browser.getFavicon(parseUrl(modal.url.val().trim())));
 
 				this.save();
 			}.bind(this);

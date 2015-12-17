@@ -1,4 +1,4 @@
-define(["lodash", "jquery", "widgets/views/settings", "jquery.serializejson"], function(_, $, WidgetView) {
+define(["lodash", "jquery", "widgets/views/settings", "jquery.serializejson", "lib/parseurl"], function(_, $, WidgetView, parseUrl) {
 	return WidgetView.extend({
 		events: {
 			"click header button.save": "serialize",
@@ -15,7 +15,7 @@ define(["lodash", "jquery", "widgets/views/settings", "jquery.serializejson"], f
 
 			"keydown .feeds input.add": function(e) {
 				if (e.which === 13) {
-					var url = e.currentTarget.value.parseUrl();
+					var url = parseUrl(e.currentTarget.value);
 
 					e.currentTarget.value = "";
 

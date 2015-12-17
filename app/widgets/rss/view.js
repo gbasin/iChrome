@@ -1,4 +1,4 @@
-define(["lodash", "widgets/views/main"], function(_, WidgetView) {
+define(["lodash", "widgets/views/main", "lib/parseurl"], function(_, WidgetView, parseUrl) {
 	return WidgetView.extend({
 		events: {
 			"click .tabs button": "scrollTabs",
@@ -118,7 +118,7 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 			}
 
 			if (this.model.config.link) {
-				data.link = this.model.config.link.parseUrl();
+				data.link = parseUrl(this.model.config.link);
 			}
 
 			if (this.model.config.view && this.model.config.view === "images") {
