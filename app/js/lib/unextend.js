@@ -10,13 +10,14 @@ define(function() {
 		var newObj = {};
 
 		for (var k in obj2) {
+			if (!obj2.hasOwnProperty(k)) {
+				continue;
+			}
+
 			var e = obj2[k],
 				c = obj1[k];
 
-			if (typeof e === "undefined") {
-				continue;
-			}
-			else if (typeof c === "undefined") {
+			if (typeof c === "undefined") {
 				newObj[k] = e;
 			}
 			else if (e === null) {
