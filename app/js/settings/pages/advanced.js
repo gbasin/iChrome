@@ -7,7 +7,7 @@ define([
 	var View = Page.extend({
 		id: "advanced",
 
-		monitorProps: ["custom-css"],
+		monitorProps: ["customCSS"],
 
 		events: {
 			"click .backups button.backup": function() {
@@ -174,7 +174,7 @@ define([
 		onInputChange: function(elm, name, value) {
 			switch (name) {
 				case "css":
-					this.model.set("custom-css", value);
+					this.model.set("customCSS", value);
 				break;
 
 				case "backup-upload":
@@ -203,7 +203,7 @@ define([
 					};
 				}),
 
-				css: data["custom-css"]
+				css: data.customCSS
 			};
 		}
 	});

@@ -21,7 +21,7 @@ define([
 					style: storage.settings.style,
 					toolbar: storage.settings.toolbar,
 					editing: storage.settings.editing,
-					target: storage.settings.ltab ? "_blank" : "_self"
+					target: storage.settings.openLinksInNewTab ? "_blank" : "_self"
 				});
 			}, this);
 

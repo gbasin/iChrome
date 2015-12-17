@@ -24,14 +24,14 @@ define(
 								tabs: JSON.stringify(_.map(storage.tabs, function(e) {
 									return _.omit(e, "columns");
 								})),
-								default: (storage.settings.def || 1),
+								default: (storage.settings.defaultTab || 1),
 								defaults: defaults
 							});
 
 							this.storage = storage;
 
 							this.tabs.defaults = defaults;
-							this.tabs.default = (storage.settings.def || 1);
+							this.tabs.default = (storage.settings.defaultTab || 1);
 
 
 							if (this.get("tabs") !== oTabs) {

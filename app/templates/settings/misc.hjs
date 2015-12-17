@@ -7,7 +7,7 @@
 		<label class="input switch">
 			<h4>{{i18n.settings.misc.link_tab}}</h4>
 
-			<input type="checkbox" name="ltab" value="1" checked />
+			<input type="checkbox" name="openLinksInNewTab" value="1" checked />
 
 			<span class="switch"></span>
 		</label>

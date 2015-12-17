@@ -6,10 +6,10 @@ define(["settings/page"], function(Page) {
 		id: "misc",
 
 		dynamicControls: {
-			"ltab": "ltab"
+			"openLinksInNewTab": "openLinksInNewTab"
 		},
 
-		monitorProps: ["ltab"]
+		monitorProps: ["openLinksInNewTab"]
 	});
 
 	return View;

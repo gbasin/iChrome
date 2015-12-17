@@ -5,7 +5,7 @@ define(["lodash", "i18n/i18n", "modals/alert", "settings/page"], function(_, Tra
 	var View = Page.extend({
 		id: "tabs",
 
-		monitorProps: ["def", "_tabs"],
+		monitorProps: ["defaultTab", "_tabs"],
 
 		events: {
 			"click .tabs .tab[data-id] button[data-action]": function(e) {
@@ -17,13 +17,13 @@ define(["lodash", "i18n/i18n", "modals/alert", "settings/page"], function(_, Tra
 				var tab = tabs[tabIndex];
 
 				var save = function() {
-					var defaultTab = this.model.get("def");
+					var defaultTab = this.model.get("defaultTab");
 
 					var set = {};
 
 					set._tabs = _.map(tabs, function(e, i) {
-						if (e.id === defaultTab && !set.def) {
-							set.def = i + 1;
+						if (e.id === defaultTab && !set.defaultTab) {
+							set.defaultTab = i + 1;
 						}
 
 						e.id = i + 1;
@@ -33,14 +33,14 @@ define(["lodash", "i18n/i18n", "modals/alert", "settings/page"], function(_, Tra
 
 					// If the default tab wasn't found, then it must have been deleted.
 					// Set the first tab as default.
-					set.def = set.def || 1;
+					set.defaultTab = set.defaultTab || 1;
 
 					this.model.set(set);
 				}.bind(this);
 
 				switch (action) {
 					case "make-default":
-						this.model.set("def", tab.id);
+						this.model.set("defaultTab", tab.id);
 					break;
 
 					case "delete":
@@ -135,7 +135,7 @@ define(["lodash", "i18n/i18n", "modals/alert", "settings/page"], function(_, Tra
 					return {
 						name: e.name,
 						index: e.id - 1,
-						isDefault: e.id === data.def
+						isDefault: e.id === data.defaultTab
 					};
 				})
 			};

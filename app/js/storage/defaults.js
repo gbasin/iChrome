@@ -41,31 +41,31 @@ define(["i18n/i18n"], function(Translate) {
 			fname: Translate("defaults.me"),
 			image: "images/profile.png"
 		},
+
+		// Settings. Check deprecate.js when adding or removing any settings
 		settings: {
-			def: 1,
+			openLinksInNewTab: true,
+
 			links: [],
 			ok: false,
 			apps: true,
 			plus: true,
-			ltab: true,
-			stab: false,
 			voice: true,
 			gmail: true,
-			editing: true,
-			wcolor: "#FFF",
-			style: "light",
 			toolbar: "full",
+			searchInNewTab: false,
+			searchURL: "https://google.com/search?q=%s",
+
+			editing: true,
+			customCSS: "",
+			style: "light",
 			theme: "default",
 			"custom-css": "",
-			columns: "3-fixed",
 			"search-url": "https://google.com/search?q=%s"
 		},
 		themes: [],
 		cached: {},
 		tab: {
-			fixed: true,
-			medley: false,
-			theme: "default",
 			name: Translate("defaults.tab")
 		}
 	};

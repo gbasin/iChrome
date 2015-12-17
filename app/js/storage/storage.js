@@ -1,9 +1,10 @@
 /**
  * Loads storage and returns a Promise that can be used to listen for updates
  */
-define(
-	["jquery", "lodash", "backbone", "browser/api", "core/status", "modals/alert", "i18n/i18n", "core/analytics", "storage/filesystem", "storage/syncapi", "storage/defaults", "storage/updatethemes", "storage/tojson"],
-	function($, _, Backbone, Browser, Status, Alert, Translate, Track, FileSystem, API, defaults, updateThemes, getJSON) {
+define([
+	"jquery", "lodash", "backbone", "browser/api", "core/status", "modals/alert", "i18n/i18n", "core/analytics", "storage/filesystem",
+	"storage/syncapi", "storage/deprecate", "storage/defaults", "storage/updatethemes", "storage/tojson", "lib/unextend"
+], function($, _, Backbone, Browser, Status, Alert, Translate, Track, FileSystem, API, Deprecate, defaults, updateThemes, getJSON, unextend) {
 		var deferred = $.Deferred();
 
 		// This lets events get attached and fired on storage itself. It'll primarily be used as storage.on("updated", ...) and storage.trigger("updated")
@@ -207,8 +208,6 @@ define(
 		var save = function(sync, cb, useBeacon) {
 			Status.log("Starting storage save");
 
-			storage.settings = _.pick(storage.settings, Object.keys(defaults.settings));
-
 			timeout = null;
 
 			// Local save
@@ -388,14 +387,14 @@ define(
 			}
 
 			storage.user = d.user || defaults.user;
-			storage.tabs = d.tabs || defaults.tabs;
 			storage.themes = d.themes || defaults.themes;
 			storage.cached = d.cached || defaults.cached;
+			storage.tabs = Deprecate.tabs(d.tabs || defaults.tabs);
 
 			storage.modified = d.modified;
 
 			if (d.settings) {
-				storage.settings = _.defaultsDeep(d.settings, defaults.settings);
+				storage.settings = _.defaultsDeep(Deprecate.settings(d.settings), defaults.settings);
 			}
 			else {
 				storage.settings = _.cloneDeep(defaults.settings);

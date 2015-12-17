@@ -20,13 +20,13 @@ define(["lodash", "jquery", "core/pro", "settings/page"], function(_, $, Pro, Pa
 			"search-url": "customSearchURL",
 			"voice-search": "voice",
 			"ok-google": "ok_google",
-			"new-tab": "resultsInNewTab",
+			"new-tab": "searchInNewTab",
 			"google-plus": "gplus",
 			"gmail": "gmail",
 			"apps-menu": "apps"
 		},
 
-		monitorProps: ["apps", "gmail", "links", "ok", "plus", "search-url", "stab", "toolbar", "voice"],
+		monitorProps: ["apps", "gmail", "links", "ok", "plus", "searchURL", "searchInNewTab", "toolbar", "voice"],
 
 		events: {
 			"click .links button.remove": function(e) {
@@ -55,7 +55,7 @@ define(["lodash", "jquery", "core/pro", "settings/page"], function(_, $, Pro, Pa
 				"style": "toolbar",
 				"voice-search": "voice",
 				"ok-google": "ok",
-				"new-tab": "stab",
+				"new-tab": "searchInNewTab",
 				"google-plus": "plus",
 				"gmail": "gmail",
 				"apps-menu": "apps"
@@ -69,10 +69,10 @@ define(["lodash", "jquery", "core/pro", "settings/page"], function(_, $, Pro, Pa
 			else if (name === "search-engine" && value === "custom") {
 				$(elm).parents(".input").first().children(".input.other").addClass("visible");
 			}
-			else if (name === "search-engine" || name === "search-url") {
+			else if (name === "search-engine" || name === "searchURL") {
 				$(elm).parents(".input").first().children(".input.other").removeClass("visible");
 
-				this.model.set("search-url", value, {
+				this.model.set("searchURL", value, {
 					noRender: true
 				});
 			}
@@ -103,10 +103,10 @@ define(["lodash", "jquery", "core/pro", "settings/page"], function(_, $, Pro, Pa
 		onBeforeRender: function(data) {
 			var ret = {
 				style: data.toolbar,
-				searchEngine: searchEngineURLs.indexOf(data["search-url"]) === -1 ? "custom" : data["search-url"],
+				searchEngine: searchEngineURLs.indexOf(data.searchURL) === -1 ? "custom" : data.searchURL,
 				voice: data.voice,
 				ok_google: data.ok,
-				resultsInNewTab: data.stab,
+				searchInNewTab: data.searchInNewTab,
 				gplus: data.plus,
 				gmail: data.gmail,
 				apps: data.apps,
@@ -117,7 +117,7 @@ define(["lodash", "jquery", "core/pro", "settings/page"], function(_, $, Pro, Pa
 			};
 
 			if (ret.searchEngine === "custom") {
-				ret.customSearchURL = data["search-url"];
+				ret.customSearchURL = data.searchURL;
 			}
 
 			return ret;
