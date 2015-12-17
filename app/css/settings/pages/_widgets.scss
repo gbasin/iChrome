@@ -7,6 +7,12 @@
 		width: 396px;
 		float: right;
 		margin-left: 50px;
+
+		@media (max-width: 1100px) {
+			& {
+				display: none;
+			}
+		}
 	}
 
 	ol {
