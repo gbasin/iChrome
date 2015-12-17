@@ -136,7 +136,7 @@ define([
 			}).onfinish = function() {
 				this.$el.removeClass("visible");
 
-				$(document.body).css("overflow", "");
+				$(document.documentElement).css("overflow", "");
 			}.bind(this);
 		},
 
