@@ -79,7 +79,7 @@ define(["lodash", "i18n/i18n", "modals/alert", "settings/page"], function(_, Tra
 		createTab: function() {
 			var tabs = _.clone(this.model.get("_tabs"));
 
-			var columns = parseInt(this.model.get("columns").split("-")[0]) || 1;
+			var columns = this.model.get("columns");
 
 			var tab = {
 				name: "",

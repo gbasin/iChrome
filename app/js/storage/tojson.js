@@ -6,8 +6,8 @@ define(["lodash", "storage/defaults"], function(_, defaults) {
 		var stabs = _.map(tabs, function(tab) {
 			tab = _.omit(tab, function(e, k) {
 				return defaults.tab[k] && e === defaults.tab[k] ||
-					k === "theme" && e === settings.theme ||
-					k === "fixed" && e === (settings.columns.split("-")[1] === "fixed");
+					k === "medley" && e === (settings.layout === "grid") ||
+					k === "fixed" && e === (settings.columnWidth === "fixed");
 			});
 
 			tab.columns = _.map(tab.columns || [], function(column) {

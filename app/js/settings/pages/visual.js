@@ -11,7 +11,7 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 			column_width: "column_width"
 		},
 
-		monitorProps: ["theme", "backgroundURL", "columns", "style"],
+		monitorProps: ["theme", "backgroundURL", "layout", "columns", "columnWidth", "style"],
 
 		events: {
 			"click .background button.select": function() {
@@ -43,14 +43,14 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 
 				case "layout":
 					var next = function() {
-						this.model.set("columns", value === "columns" ? this.$("input[name=columns]").val() + "-" + this.$("input[name=column_width]:checked").val() : "medley", {
+						this.model.set("layout", value, {
 							noRender: true
 						});
 
 						$(elm).parents(".input").siblings(".input")[value === "columns" ? "slideDown" : "slideUp"](300);
 					};
 
-					if ((value === "columns" && this.model.get("columns") === "medley") || (value === "grid" && this.model.get("columns") !== "medley")) {
+					if ((value === "columns" && this.model.get("layout") === "grid") || (value === "grid" && this.model.get("layout") !== "columns")) {
 						Alert({
 							confirm: true,
 							contents: [Translate("settings.visual.layout.column_warning." + (value === "columns" ? "grid_to_column" : "column_to_grid"))]
@@ -69,13 +69,13 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 				break;
 
 				case "columns":
-					this.model.set("columns", value + "-" + this.$("input[name=column_width]:checked").val(), {
+					this.model.set("columns", parseInt(value), {
 						noRender: true
 					});
 				break;
 
 				case "column_width":
-					this.model.set("columns", parseInt(this.$("input[name=columns]").val() || 3) + "-" + value, {
+					this.model.set("columnWidth", value, {
 						noRender: true
 					});
 				break;
@@ -130,9 +130,9 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 				backgroundURL: data.theme === "custom" ? data.backgroundURL : null,
 
 				// Layout
-				columns: parseInt(data.columns.split("-")[0]) || 1,
-				layout: data.columns === "medley" ? "grid" : "columns",
-				column_width: data.columns.split("-")[1] === "fluid" ? "fluid" : "fixed",
+				layout: data.layout,
+				columns: data.columns,
+				column_width: data.columnWidth,
 
 				// Style
 				style: Pro.isPro ? data.style : "light"

@@ -60,8 +60,11 @@ define(["i18n/i18n"], function(Translate) {
 			customCSS: "",
 			style: "light",
 			theme: "default",
-			"custom-css": "",
-			"search-url": "https://google.com/search?q=%s"
+
+			columns: 3,
+			defaultTab: 1,
+			layout: "columns",
+			columnWidth: "fixed"
 		},
 		themes: [],
 		cached: {},

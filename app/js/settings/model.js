@@ -16,13 +16,17 @@ define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage)
 				this.trigger("storage:updated");
 			}, this);
 
-			this.on("change:columns", function(model, value, options) {
-				if ((options && options.external === true) || !model.previous("columns")) {
-					return;
-				}
+			_.each(["layout", "columns"], function(prop) {
+				this.on("change:" + prop, function(model, value, options) {
+					if ((options && options.external === true) || !model.previous(prop)) {
+						return;
+					}
 
-				this.handleLayoutChange(value);
-			}, this).on("change", function(model, options) {
+					this.handleLayoutChange(prop, value);
+				}, this);
+			}, this);
+
+			this.on("change", function(model, options) {
 				if (options && options.external === true) {
 					return;
 				}
@@ -45,46 +49,42 @@ define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage)
 
 
 		/**
-		 * Handles changes to the tab layout
+		 * Handles changes to the tab layout.
 		 *
-		 * @param   {String}  value  The new layout
+		 * This function does not save its results since change:* event handlers are
+		 * always called before general change handlers in Backbone. So, the general
+		 * handler will be called just after this runs and will save the _tabs property.
+		 *
+		 * @param   {String}  prop   The name of the property that changed
+		 * @param   {*}       value  The new value
 		 */
-		handleLayoutChange: function(value) {
-			var previous = this.previous("columns");
+		handleLayoutChange: function(prop, value) {
+			this.set("_tabs", _.map(this.get("_tabs"), function(tab) {
+				var wasGrid = prop === "layout" && (typeof tab.medley === "boolean" ? tab.medley : this.previous("layout") === "grid") && value !== "grid";
 
-			previous = {
-				type: previous.split("-")[1] || previous,
-				number: parseInt(previous.split("-")[0]) || 1
-			};
-
-			var current = {
-				type: value.split("-")[1] || value,
-				number: parseInt(value.split("-")[0]) || 1
-			};
-
-
-			_.each(this.storage.tabs, function(tab) {
-				var wasGrid = (typeof tab.medley === "boolean" ? tab.medley : previous.type === "medley") && current.type !== "medley";
-
-				tab.fixed = current.type === "fixed";
-				tab.medley = current.type === "medley";
-
+				// Remove the legacy layout properties
+				if (typeof tab.fixed !== "undefined" || typeof tab.medley !== "undefined") {
+					delete tab.fixed;
+					delete tab.medley;
+				}
 
 				// Increase or decrease the number of columns as appropriate
-				if (tab.columns.length < current.number) {
-					for (var i = current.number - tab.columns.length; i > 0; i--) {
-						tab.columns.push([]); // Push empty columns until the value is reached
+				if (prop === "columns") {
+					if (tab.columns.length < value) {
+						for (var i = value - tab.columns.length; i > 0; i--) {
+							tab.columns.push([]); // Push empty columns until the value is reached
+						}
+					}
+					else if (tab.columns.length > value) {
+						// Move all widgets in extra columns to the first
+						tab.columns[0] = tab.columns[0].concat(_.flatten(_.takeRight(tab.columns, tab.columns.length - value)));
+
+						// And delete the extra columns
+						tab.columns.splice(value);
 					}
 				}
-				else if (tab.columns.length > current.number) {
-					// Move all widgets in extra columns to the first
-					tab.columns[0] = tab.columns[0].concat(_.flatten(_.takeRight(tab.columns, tab.columns.length - current.number)));
 
-					// And delete the extra columns
-					tab.columns.splice(current.number);
-				}
-
-				// If this was a grid, remove the extra loc property
+				// If this was a grid-based tab, remove the extra loc property on each widget
 				if (wasGrid) {
 					tab.columns = _.map(tab.columns, function(col) {
 						return _.map(col, function(e) {
@@ -94,7 +94,9 @@ define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage)
 						});
 					});
 				}
-			});
+
+				return tab;
+			}, this));
 		}
 	});
 

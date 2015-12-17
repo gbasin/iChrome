@@ -4,6 +4,20 @@
 define(["lodash"], function(_) {
 	var Deprecate = {
 		settings: function(settings) {
+			// The new layout specification format sets the columns property to a number,
+			// unless the layout is grid-based in which case it's removed.
+			if (typeof settings.columns === "string" && !settings.hasOwnProperty("layout")) {
+				var parsed = {
+					type: settings.columns.split("-")[1] || settings.columns,
+					number: parseInt(settings.columns.split("-")[0]) || 1
+				};
+
+				settings.columns = parsed.number;
+				settings.layout = parsed.type === "medley" ? "grid" : "columns";
+				settings.columnWidth = parsed.type === "medley" ? "fixed" : parsed.type;
+			}
+
+
 			// Renames
 			_.each({
 				def: "defaultTab",
