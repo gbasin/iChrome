@@ -231,7 +231,7 @@ define(
 							if (!item.removed && !item.reset && (view = item.data("view"))) {
 								view.onGrid = false;
 
-								if (item.parent().parent().hasClass("medley")) {
+								if (item.parent().parent().hasClass("grid")) {
 									item.css(css);
 
 									view.onGrid = true;

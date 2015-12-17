@@ -60,12 +60,12 @@ define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage)
 		 */
 		handleLayoutChange: function(prop, value) {
 			this.set("_tabs", _.map(this.get("_tabs"), function(tab) {
-				var wasGrid = prop === "layout" && (typeof tab.medley === "boolean" ? tab.medley : this.previous("layout") === "grid") && value !== "grid";
+				var wasGrid = prop === "layout" && (typeof tab.isGrid === "boolean" ? tab.isGrid : this.previous("layout") === "grid") && value !== "grid";
 
 				// Remove the legacy layout properties
-				if (typeof tab.fixed !== "undefined" || typeof tab.medley !== "undefined") {
+				if (typeof tab.fixed !== "undefined" || typeof tab.isGrid !== "undefined") {
 					delete tab.fixed;
-					delete tab.medley;
+					delete tab.isGrid;
 				}
 
 				// Increase or decrease the number of columns as appropriate

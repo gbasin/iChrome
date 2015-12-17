@@ -169,20 +169,20 @@
 	overflow-x: hidden;
 }
 
-.medley .reddit .items,
-.medley .feedly .items,
-.medley .twitter .tweets {
+.grid .reddit .items,
+.grid .feedly .items,
+.grid .twitter .tweets {
 	max-height: calc(100% + 30px);
 }
 
-.medley .reddit .items,
-.medley .feedly .items,
-.medley .twitter .header ~ .tweets {
+.grid .reddit .items,
+.grid .feedly .items,
+.grid .twitter .header ~ .tweets {
 	max-height: calc(100% - 12px);
 }
 
-.medley .reddit .header ~ .items,
-.medley .feedly .header ~ .items {
+.grid .reddit .header ~ .items,
+.grid .feedly .header ~ .items {
 	max-height: calc(100% - 54px);
 }
 
@@ -425,7 +425,7 @@
 	position: relative;
 }
 
-.medley .feedly .items {
+.grid .feedly .items {
 	max-height: 100%;
 	height: calc(100% - 54px);
 }
@@ -1217,11 +1217,11 @@
 	background: rgba(0, 0, 0, .15);
 }
 
-.medley .calendar .agenda {
+.grid .calendar .agenda {
 	max-height: 100%;
 }
 
-.medley .calendar .header ~ .agenda {
+.grid .calendar .header ~ .agenda {
 	max-height: calc(100% - 55px);
 }
 
@@ -1813,11 +1813,11 @@ body.no-edit .bookmarks .tools {
 	margin: -5px -15px;
 }
 
-.medley .chrome_bookmarks .list {
+.grid .chrome_bookmarks .list {
 	max-height: calc(100% + 10px);
 }
 
-.medley .chrome_bookmarks .header ~ .list {
+.grid .chrome_bookmarks .header ~ .list {
 	max-height: calc(100% - 32px);
 }
 
@@ -3294,7 +3294,7 @@ body.no-edit .bookmarks .tools {
 	max-height: 400px;
 }
 
-.medley .pushbullet .items {
+.grid .pushbullet .items {
 	max-height: calc(100% - 55px);
 }
 

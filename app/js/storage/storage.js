@@ -212,7 +212,7 @@ define([
 
 			local.tabs = _.map(storage.tabs, function(tab) {
 				return unextend({
-					medley: storage.settings.layout === "grid",
+					isGrid: storage.settings.layout === "grid",
 					fixed: storage.settings.columnWidth === "fixed"
 				}, unextend(defaults.tab, tab));
 			});

@@ -2167,15 +2167,15 @@ body > .widgets-container {
 
 
 /*---------------------------------------------
-	/ Widgets Layout / Medley
+	/ Widgets Layout / Grid Layout
 */
-.medley .widgets-container {
+.grid .widgets-container {
 	margin: 0;
 	display: block;
 	position: relative;
 }
 
-.medley .widgets-container > .widget {
+.grid .widgets-container > .widget {
 	margin: 0;
 	width: 400px;
 	min-width: 0;
@@ -2184,7 +2184,7 @@ body > .widgets-container {
 	max-width: 100%!important;
 }
 
-.medley .widgets-container > .widget:hover {
+.grid .widgets-container > .widget:hover {
 	z-index: 2;
 }
 
@@ -2193,7 +2193,7 @@ body > .widgets-container {
 	pointer-events: none;
 }
 
-.medley .widget > .resize {
+.grid .widget > .resize {
 	opacity: 0;
 	right: 2px;
 	width: 7px;
@@ -2207,16 +2207,16 @@ body > .widgets-container {
 	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAO0lEQVQIW2NkwAHS0tL+M2KTA0nMmjWLEUMSJgHShCKJLIEimZ6e/n/mzJlwxSA+mINNAqSQEd0oZIUA4SYkbYptwU0AAAAASUVORK5CYII=");
 }
 
-.medley .widget:hover > .resize {
+.grid .widget:hover > .resize {
 	opacity: 1;
 }
 
-.medley .widgets-container .placeholder {
+.grid .widgets-container .placeholder {
 	display: none;
 }
 
-body.dragging .medley,
-body.resizing .medley {
+body.dragging .grid,
+body.resizing .grid {
 	background-size: 10px 10px!important;
 	background-position: -1px -1px!important;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.3) 1px, rgba(0, 0, 0, 0) 1px),

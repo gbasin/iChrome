@@ -58,6 +58,12 @@ define(["lodash"], function(_) {
 				if (tab.theme) {
 					delete tabs[i].theme;
 				}
+
+				if (typeof tab.medley !== "undefined") {
+					tab.isGrid = tab.medley;
+
+					delete tab.medley;
+				}
 			});
 
 			return tabs;

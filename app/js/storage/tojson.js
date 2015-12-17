@@ -6,7 +6,7 @@ define(["lodash", "storage/defaults"], function(_, defaults) {
 		var stabs = _.map(tabs, function(tab) {
 			tab = _.omit(tab, function(e, k) {
 				return defaults.tab[k] && e === defaults.tab[k] ||
-					k === "medley" && e === (settings.layout === "grid") ||
+					k === "isGrid" && e === (settings.layout === "grid") ||
 					k === "fixed" && e === (settings.columnWidth === "fixed");
 			});
 

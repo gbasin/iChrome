@@ -2398,17 +2398,17 @@ body > .widgets-container {
 }
 
 /*---------------------------------------------
-	/ Widgets Layout / Medley
+	/ Widgets Layout / Grid Layout
 */
 /* line 2172, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-.medley .widgets-container {
+.grid .widgets-container {
 	margin: 0;
 	display: block;
 	position: relative;
 }
 
 /* line 2178, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-.medley .widgets-container > .widget {
+.grid .widgets-container > .widget {
 	margin: 0;
 	width: 400px;
 	min-width: 0;
@@ -2418,7 +2418,7 @@ body > .widgets-container {
 }
 
 /* line 2187, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-.medley .widgets-container > .widget:hover {
+.grid .widgets-container > .widget:hover {
 	z-index: 2;
 }
 
@@ -2429,7 +2429,7 @@ body > .widgets-container {
 }
 
 /* line 2196, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-.medley .widget > .resize {
+.grid .widget > .resize {
 	opacity: 0;
 	right: 2px;
 	width: 7px;
@@ -2444,18 +2444,18 @@ body > .widgets-container {
 }
 
 /* line 2210, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-.medley .widget:hover > .resize {
+.grid .widget:hover > .resize {
 	opacity: 1;
 }
 
 /* line 2214, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-.medley .widgets-container .placeholder {
+.grid .widgets-container .placeholder {
 	display: none;
 }
 
 /* line 2218, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-body.dragging .medley,
-body.resizing .medley {
+body.dragging .grid,
+body.resizing .grid {
 	background-size: 10px 10px !important;
 	background-position: -1px -1px !important;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.3) 1px, transparent 1px) !important;
@@ -6101,22 +6101,22 @@ input.sp-input[type="text"] {
 }
 
 /* line 172, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .reddit .items,
-.medley .feedly .items,
-.medley .twitter .tweets {
+.grid .reddit .items,
+.grid .feedly .items,
+.grid .twitter .tweets {
 	max-height: calc(100% + 30px);
 }
 
 /* line 178, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .reddit .items,
-.medley .feedly .items,
-.medley .twitter .header ~ .tweets {
+.grid .reddit .items,
+.grid .feedly .items,
+.grid .twitter .header ~ .tweets {
 	max-height: calc(100% - 12px);
 }
 
 /* line 184, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .reddit .header ~ .items,
-.medley .feedly .header ~ .items {
+.grid .reddit .header ~ .items,
+.grid .feedly .header ~ .items {
 	max-height: calc(100% - 54px);
 }
 
@@ -6386,7 +6386,7 @@ input.sp-input[type="text"] {
 }
 
 /* line 428, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .feedly .items {
+.grid .feedly .items {
 	max-height: 100%;
 	height: calc(100% - 54px);
 }
@@ -7262,12 +7262,12 @@ input.sp-input[type="text"] {
 }
 
 /* line 1220, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .calendar .agenda {
+.grid .calendar .agenda {
 	max-height: 100%;
 }
 
 /* line 1224, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .calendar .header ~ .agenda {
+.grid .calendar .header ~ .agenda {
 	max-height: calc(100% - 55px);
 }
 
@@ -7954,12 +7954,12 @@ body.no-edit .bookmarks .tools {
 }
 
 /* line 1816, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .chrome_bookmarks .list {
+.grid .chrome_bookmarks .list {
 	max-height: calc(100% + 10px);
 }
 
 /* line 1820, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .chrome_bookmarks .header ~ .list {
+.grid .chrome_bookmarks .header ~ .list {
 	max-height: calc(100% - 32px);
 }
 
@@ -9569,7 +9569,7 @@ body.no-edit .bookmarks .tools {
 }
 
 /* line 3297, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .pushbullet .items {
+.grid .pushbullet .items {
 	max-height: calc(100% - 55px);
 }
 
