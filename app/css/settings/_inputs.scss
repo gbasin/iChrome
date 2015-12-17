@@ -3,6 +3,10 @@ button.material {
 	margin: 0;
 }
 
+input, textarea, select {
+	background: transparent;
+}
+
 select {
 	width: auto;
 	height: 32px;

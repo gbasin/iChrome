@@ -8,6 +8,10 @@
 	position: absolute;
 	border-right: 1px solid rgba(0, 0, 0, .075);
 
+	.dark & {
+		background: #303030;
+	}
+
 	button.exit {
 		margin: 0;
 		width: 100%;
@@ -20,8 +24,17 @@
 		background: rgba(0, 0, 0, .05);
 		border-bottom: 1px solid rgba(0, 0, 0, .05);
 
+		.dark & {
+			color: #FFF;
+			background: rgba(0, 0, 0, .15);
+		}
+
 		&:hover {
 			background: rgba(0, 0, 0, .075);
+
+			.dark & {
+				background: rgba(0, 0, 0, .25);
+			}
 		}
 
 		&:before {
@@ -80,6 +93,10 @@
 			color: #333;
 			line-height: 35px;
 			padding-left: 45px;
+
+			.dark & {
+				color: #DDD;
+			}
 
 			&:hover {
 				cursor: pointer;

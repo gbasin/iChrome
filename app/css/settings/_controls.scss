@@ -66,6 +66,10 @@
 			background: rgba(0, 0, 0, .26);
 			transition: background .3s $default-easing;
 
+			.dark & {
+				background: rgba(255, 255, 255, .30);
+			}
+
 			&:before {
 				top: -4px;
 				left: -4px;
@@ -74,11 +78,15 @@
 				height: 24px;
 				position: absolute;
 				border-radius: 50%;
-				background: #FAFAFA;
+				background: $md-grey-50;
 				box-shadow: 0 2px 8px rgba(0, 0, 0, .28);
 				transition: left .3s $default-easing,
 							background .3s $default-easing,
 							box-shadow .3s $default-easing;
+
+				.dark & {
+					background: $md-grey-400;
+				}
 			}
 
 			&:active:before {
@@ -88,16 +96,16 @@
 		}
 
 		&:checked + .switch {
-			background: rgba($md-blue-500, .5);
+			background: rgba($accent-color, .5);
 
 			&:before {
 				left: 20px;
-				background: $md-blue-500;
+				background: $accent-color;
 			}
 
 			&:active:before {
 				box-shadow: 0 2px 8px rgba(0, 0, 0, .28),
-							0 0 0 20px rgba($md-blue-500, .2);
+							0 0 0 20px rgba($accent-color, .2);
 			}
 		}
 	}
@@ -132,6 +140,10 @@
 
 		&:focus {
 			background: rgba(0, 0, 0, .05);
+
+			.dark & {
+				background: rgba(0, 0, 0, .15);
+			}
 		}
 	}
 }
@@ -161,6 +173,10 @@
 
 		&:focus {
 			background: rgba(0, 0, 0, .05);
+
+			.dark & {
+				background: rgba(0, 0, 0, .15);
+			}
 		}
 	}
 }

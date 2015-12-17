@@ -4,7 +4,8 @@ $input-padding: 20px 25px;
 
 @import "debug-tools";
 
-body > .settings {
+// This has the app class so it doesn't match things like the widget settings icon
+.app.settings {
 	top: 0;
 	left: 0;
 	right: 0;
@@ -28,6 +29,11 @@ body > .settings {
 					opacity .3s $default-easing;
 	}
 
+	.dark & {
+		color: #FFF;
+		background: #212121;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
 		margin: 0;
 		padding: 0;
@@ -36,6 +42,10 @@ body > .settings {
 
 	label {
 		cursor: pointer;
+	}
+
+	.dark & a {
+		color: #03A9F4;
 	}
 
 	.pro-badge:after {
@@ -100,6 +110,10 @@ body > .settings {
 			background: #FFF;
 			margin: 30px auto;
 			box-shadow: $md-shadow-1dp;
+
+			.dark & {
+				background: $md-dark-bg;
+			}
 
 			&.pro-only h3:after {
 				@extend .pro-badge:after;
@@ -196,6 +210,10 @@ body > .settings {
 			color: #757575;
 			font-size: 13px;
 			line-height: 25px;
+
+			.dark & {
+				color: #AAA;
+			}
 		}
 
 		.desc {

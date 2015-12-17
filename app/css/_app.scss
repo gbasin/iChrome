@@ -369,116 +369,44 @@ textarea {
 	box-shadow: none!important;
 	padding: 5px 6px 5px 12px!important;
 	border: 1px solid rgba(0, 0, 0, 0.1)!important;
-}
 
-.dark input[type="tel"],
-.dark input[type="url"],
-.dark input[type="text"],
-.dark input[type="time"],
-.dark input[type="date"],
-.dark input[type="email"],
-.dark input[type="search"],
-.dark input[type="number"],
-.dark select,
-.dark textarea {
-	color: #DDD;
-	border-color: rgba(255, 255, 255, .15)!important;
-}
+	.dark & {
+		color: #DDD;
+		border-color: rgba(255, 255, 255, .15)!important;
+	}
 
-.dark.transparent input[type="tel"],
-.dark.transparent input[type="url"],
-.dark.transparent input[type="text"],
-.dark.transparent input[type="time"],
-.dark.transparent input[type="date"],
-.dark.transparent input[type="email"],
-.dark.transparent input[type="search"],
-.dark.transparent input[type="number"],
-.dark.transparent select,
-.dark.transparent textarea {
-	color: #FFF;
+	.dark.transparent & {
+		color: #FFF;
+	}
+
+	.widget & {
+		background: transparent;
+	}
+
+	&:hover {
+		color: #333;
+		border-color: rgba(0, 0, 0, 0.2)!important;
+
+		.dark & {
+			border-color: rgba(255, 255, 255, 0.075)!important;
+		}
+	}
+
+	&:focus,
+	.dark &:focus {
+		color: #333;
+		border-color: rgba(53, 141, 211, 0.75)!important;
+	}
+
+	.dark &:hover,
+	.dark &:focus {
+		color: #EEE;
+	}
 }
 
 .dark select option,
 .dark select optgroup {
 	background: #424242;
-}
-
-.widget input[type="tel"],
-.widget input[type="url"],
-.widget input[type="text"],
-.widget input[type="time"],
-.widget input[type="date"],
-.widget input[type="email"],
-.widget input[type="search"],
-.widget input[type="number"],
-.widget select,
-.widget textarea {
-	background: transparent;
-}
-
-input[type="tel"]:hover,
-input[type="url"]:hover,
-input[type="text"]:hover,
-input[type="time"]:hover,
-input[type="date"]:hover,
-input[type="email"]:hover,
-input[type="search"]:hover,
-input[type="number"]:hover,
-select:hover,
-textarea:hover {
-	color: #333;
-	border-color: rgba(0, 0, 0, 0.2)!important;
-}
-
-.dark input[type="tel"]:hover,
-.dark input[type="url"]:hover,
-.dark input[type="text"]:hover,
-.dark input[type="time"]:hover,
-.dark input[type="date"]:hover,
-.dark input[type="email"]:hover,
-.dark input[type="search"]:hover,
-.dark input[type="number"]:hover,
-.dark select:hover,
-.dark textarea:hover {
-	border-color: rgba(255, 255, 255, 0.075)!important;
-}
-
-input[type="tel"]:focus,
-input[type="url"]:focus,
-input[type="text"]:focus,
-input[type="time"]:focus,
-input[type="date"]:focus,
-input[type="email"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-select:focus,
-textarea:focus {
-	color: #333;
-	border-color: rgba(53, 141, 211, 0.75)!important;
-}
-
-.dark input[type="tel"]:hover,
-.dark input[type="url"]:hover,
-.dark input[type="text"]:hover,
-.dark input[type="time"]:hover,
-.dark input[type="date"]:hover,
-.dark input[type="email"]:hover,
-.dark input[type="search"]:hover,
-.dark input[type="number"]:hover,
-.dark select:hover,
-.dark textarea:hover,
-
-.dark input[type="tel"]:focus,
-.dark input[type="url"]:focus,
-.dark input[type="text"]:focus,
-.dark input[type="time"]:focus,
-.dark input[type="date"]:focus,
-.dark input[type="email"]:focus,
-.dark input[type="search"]:focus,
-.dark input[type="number"]:focus,
-.dark select:focus,
-.dark textarea:focus {
-	color: #EEE;
 }
 
 input[type="time"]::-webkit-clear-button,
@@ -990,6 +918,10 @@ input[type="radio"]:checked {
 				0 2px 4px rgba(0, 0, 0, .24);
 }
 
+.dark .snackbar {
+	background: #424242;
+}
+
 .snackbar button.material.flat {
 	float: right;
 	padding: 0 12px;
@@ -1024,6 +956,10 @@ dialog {
 	transform: scale(1);
 	font: 400 14px/20px Roboto, sans-serif;
 	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24);
+}
+
+.dark dialog {
+	background: #424242;
 }
 
 dialog:not([open]) {
@@ -1065,10 +1001,18 @@ dialog h2 {
 	padding: 0 24px 20px;
 }
 
+.dark dialog h2 {
+	color: #FFF;
+}
+
 dialog .content {
 	color: #757575;
 	line-height: 1.6;
 	padding: 0 24px 24px;
+}
+
+.dark dialog .content {
+	color: #CCC;
 }
 
 dialog .content p:last-child {
@@ -1086,6 +1030,10 @@ dialog footer button.material.flat {
 	min-width: 64px;
 	font-size: 14px;
 	line-height: 36px;
+}
+
+.dark dialog footer button.flat {
+	color: #FFF;
 }
 
 dialog footer button.material.flat:hover:not(:focus) {

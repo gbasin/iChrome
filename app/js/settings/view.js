@@ -20,7 +20,7 @@ define([
 
 	var View = Backbone.View.extend({
 		tagName: "div",
-		className: "settings",
+		className: "app settings",
 		attributes: {
 			tabindex: -1
 		},
