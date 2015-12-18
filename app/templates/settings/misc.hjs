@@ -1,0 +1,15 @@
+<header>
+	<h2 class="page-name">{{i18n.settings.title}} &ndash; {{i18n.settings.nav.misc}}</h2>
+</header>
+
+<main class="content" tabindex="-1">
+	<section>
+		<label class="input switch">
+			<h4>{{i18n.settings.misc.link_tab}}</h4>
+
+			<input type="checkbox" name="openLinksInNewTab" value="1" checked />
+
+			<span class="switch"></span>
+		</label>
+	</section>
+</main>

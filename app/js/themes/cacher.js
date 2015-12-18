@@ -1,7 +1,7 @@
 /**
  * This manages theme downloading and caching
  */
-define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/storage", "core/status"], function(_, $, Hogan, Backbone, FileSystem, Storage, Status) {
+define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/storage", "core/status", "lib/parseurl"], function(_, $, Hogan, Backbone, FileSystem, Storage, Status, parseUrl) {
 	var Model = Backbone.Model.extend({
 		initialize: function() {
 			Storage.on("done updated", function(storage) {
@@ -406,7 +406,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 			}.bind(this);
 
 
-			var url = theme.image.parseUrl(),
+			var url = parseUrl(theme.image),
 				ext = url.match(/\.([0-9a-z]+)(?:[\?#]|$)/i);
 
 			if (ext && ext[1] && !ext[1].match(/^(jpg|png|gif|svg|webp|bmp)$/i)) {

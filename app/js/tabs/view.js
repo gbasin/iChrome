@@ -7,11 +7,11 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 	var view = Backbone.View.extend({
 		tagName: "div",
 		className: function() {
-			return "tab" + (this.model.get("medley") ? " medley" : "");
+			return "tab" + (this.model.get("isGrid") ? " isGrid" : "");
 		},
 
 		initialize: function() {
-			this.model.on("columns:sort columns:update columns:reset change:fixed change:medley", function() {
+			this.model.on("columns:sort columns:update columns:reset change:fixed change:isGrid", function() {
 				var options = _.last(arguments);
 
 				if (!(options && options.noRefresh)) {
@@ -33,7 +33,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 		serialize: function(trigger) {
 			var columns = [];
 
-			if (this.model.get("medley")) {
+			if (this.model.get("isGrid")) {
 				var column = [];
 
 				this.$(".widget").each(function() {
@@ -143,7 +143,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 		 * @api    private
 		 */
 		sortable: function() {
-			this.$("> .remove, > .widgets-container.medley, > .widgets-container > .column").sortable({
+			this.$("> .remove, > .widgets-container.grid, > .widgets-container > .column").sortable({
 				group: "columns",
 				handle: ".handle",
 				itemSelector: "section",
@@ -216,7 +216,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 			//
 			// So, we have to get the rootGroup directly from an element's `data` which we
 			// can then cleanup.
-			var elms = this.$("> .remove, > .widgets-container.medley, > .widgets-container > .column"),
+			var elms = this.$("> .remove, > .widgets-container.grid, > .widgets-container > .column"),
 				dta = elms.first().data("sortable");
 
 			if (dta) {
@@ -241,14 +241,14 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 
 				// If the sub-views are not detached before $.html() is called,
 				// their data will be removed, destroying all event handlers.
-				this.$("> .widgets-container > .column > .widget, > .widgets-container.medley > .widget").detach();
+				this.$("> .widgets-container > .column > .widget, > .widgets-container.grid > .widget").detach();
 
 				// Call $.html() to remove any data or events related to $.sortable
 				this.$el.html("");
 			}
 
 
-			var isGrid = this.model.get("medley");
+			var isGrid = this.model.get("isGrid");
 
 			// We use native methods here for speed
 			this.el.innerHTML = '<div class="remove">' + Translate("remove_widget") + '</div>';
@@ -256,7 +256,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 
 			var main = document.createElement("main");
 
-			main.setAttribute("class", "widgets-container" + (this.model.get("fixed") && !isGrid ? " fixed" : "") + (isGrid ? " medley" : ""));
+			main.setAttribute("class", "widgets-container" + (this.model.get("fixed") && !isGrid ? " fixed" : "") + (isGrid ? " isGrid" : ""));
 
 
 			var models = _.map(this.model.columns, function(collection) {

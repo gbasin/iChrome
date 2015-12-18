@@ -13,8 +13,7 @@ define(
 					Storage.on("done updated", function(storage, promise, data) {
 						if (!(data && data.tabSort)) {
 							var defaults = _.assign({}, Defaults.tab, {
-								theme: storage.settings.theme,
-								fixed: storage.settings.columns.split("-")[1] === "fixed"
+								fixed: storage.settings.columnWidth === "fixed"
 							});
 
 
@@ -24,14 +23,14 @@ define(
 								tabs: JSON.stringify(_.map(storage.tabs, function(e) {
 									return _.omit(e, "columns");
 								})),
-								default: (storage.settings.def || 1),
+								default: (storage.settings.defaultTab || 1),
 								defaults: defaults
 							});
 
 							this.storage = storage;
 
 							this.tabs.defaults = defaults;
-							this.tabs.default = (storage.settings.def || 1);
+							this.tabs.default = (storage.settings.defaultTab || 1);
 
 
 							if (this.get("tabs") !== oTabs) {
@@ -232,7 +231,7 @@ define(
 							if (!item.removed && !item.reset && (view = item.data("view"))) {
 								view.onGrid = false;
 
-								if (item.parent().parent().hasClass("medley")) {
+								if (item.parent().parent().hasClass("grid")) {
 									item.css(css);
 
 									view.onGrid = true;

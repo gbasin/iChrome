@@ -1,0 +1,33 @@
+<header>
+	<h2 class="page-name">{{i18n.settings.title}} &ndash; {{i18n.settings.nav.tabs}}</h2>
+</header>
+
+<main class="content" tabindex="-1">
+	<section class="tabs" data-id="tabs">
+		<h3>
+			{{i18n.settings.nav.tabs}}
+
+			<button type="button" class="material blue create-new">{{i18n.settings.tabs.create_new}}</button>
+		</h3>
+
+		<p class="desc">
+			{{i18n.settings.tabs.desc1}}
+			<br /><br />
+			{{i18n.settings.tabs.desc2}}
+		</p>
+
+		{{#tabs}}
+			<div class="input text tab" data-id="{{index}}">
+				<input type="text" name="tab-name" placeholder="{{i18n.settings.tabs.name_placeholder}}" maxlength="40" value="{{name}}" />
+
+				<button type="button" class="material flat blue default" data-action="make-default"{{#isDefault}} disabled{{/isDefault}}>{{i18n.settings.tabs.make_default}}</button>
+
+				<button type="button" class="material toggle m-icon" data-action="move-up">keyboard_arrow_up</button>
+
+				<button type="button" class="material toggle m-icon" data-action="move-down">keyboard_arrow_down</button>
+
+				<button type="button" class="material toggle m-icon" data-action="delete">delete</button>
+			</div>
+		{{/tabs}}
+	</section>
+</main>

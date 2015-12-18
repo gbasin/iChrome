@@ -1,7 +1,7 @@
 /**
  * The tabs model/controller. This actually creates the tabs and handles things like nav and storage.
  */
-define(["lodash", "jquery", "backbone", "themes/controller", "backbone.viewcollection", "tabs/model", "tabs/view"], function(_, $, Backbone, Themes, ViewCollection, Model, View) {
+define(["lodash", "jquery", "backbone", "backbone.viewcollection", "tabs/model", "tabs/view"], function(_, $, Backbone, ViewCollection, Model, View) {
 	var Tabs = ViewCollection.extend({
 		model: Model,
 		view: View,
@@ -34,8 +34,6 @@ define(["lodash", "jquery", "backbone", "themes/controller", "backbone.viewcolle
 				return;
 			}
 
-
-			Themes.setTheme(tab.model.get("theme"));
 
 			tab.$el.addClass("active");
 

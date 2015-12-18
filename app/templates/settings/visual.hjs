@@ -1,65 +1,103 @@
-<h2 class="header">{{i18n.settings.labels.visual}}</h2>
+<header>
+	<h2 class="page-name">{{i18n.settings.title}} &ndash; {{i18n.settings.nav.visual}}</h2>
+</header>
 
-<div class="content">
-	<form class="form-horizontal">
-		<div class="form-group">
-			<label class="control-label col-sm-2">{{i18n.settings.visual.layout}}</label>
+<main class="content" tabindex="-1">
+	<section class="background" data-id="background">
+		<h3>{{i18n.settings.visual.background.title}}</h3>
 
-			<div class="col-sm-9">
-				<select id="columns" name="columns">
-					<option value="1-fixed">{{i18n.settings.visual.layout_options.1_fixed}}</option>
-					<option value="1-fluid">{{i18n.settings.visual.layout_options.1_fluid}}</option>
-					<option value="2-fixed">{{i18n.settings.visual.layout_options.2_fixed}}</option>
-					<option value="2-fluid">{{i18n.settings.visual.layout_options.2_fluid}}</option>
-					<option value="3-fixed">{{i18n.settings.visual.layout_options.3_fixed}}</option>
-					<option value="3-fluid">{{i18n.settings.visual.layout_options.3_fluid}}</option>
-					<option value="4-fixed">{{i18n.settings.visual.layout_options.4_fixed}}</option>
-					<option value="4-fluid">{{i18n.settings.visual.layout_options.4_fluid}}</option>
-					<option value="5-fixed">{{i18n.settings.visual.layout_options.5_fixed}}</option>
-					<option value="5-fluid">{{i18n.settings.visual.layout_options.5_fluid}}</option>
-					<option value="medley">{{i18n.settings.visual.layout_options.grid}}</option>
-				</select>
-			</div>
+		<p class="desc">
+			{{i18n.settings.visual.background.desc}}
+			<br /><br />
+			<b>{{i18n.settings.visual.background.current}}:</b> <span class="current-background">{{currentBackground}}{{^currentBackground}}{{i18n.settings.visual.background.custom}}{{/currentBackground}}</span>
+		</p>
+
+		<div class="input no-label">
+			<button type="button" class="material blue select">{{i18n.settings.visual.background.select}}</button>
+
+			<span class="or">{{i18n.settings.visual.background.or}}</span>
+
+			<input type="url" name="background-url" placeholder="{{i18n.settings.visual.background.url_placeholder}}"{{#backgroundURL}} value="{{backgroundURL}}"{{/backgroundURL}} />
+		</div>
+	</section>
+
+	<section class="layout" data-id="layout">
+		<h3>{{i18n.settings.visual.layout.title}}</h3>
+
+		<p class="desc">{{i18n.settings.visual.layout.desc}}</p>
+
+		<div class="input main radios no-label">
+			<label>
+				<input type="radio" name="layout" value="columns" checked />
+
+				<span>{{i18n.settings.visual.layout.columns}}</span>
+			</label>
+
+			<label>
+				<input type="radio" name="layout" value="grid" />
+
+				<span>{{i18n.settings.visual.layout.grid}}</span>
+			</label>
 		</div>
 
-		<div class="form-group">
-			<label class="control-label col-sm-2" for="theme-btn">{{i18n.settings.visual.theme}}</label>
+		<label class="input text">
+			<h4>{{i18n.settings.visual.layout.columns_number}}</h4>
 
-			<div class="col-sm-9">
-				<input type="hidden" name="theme" value="{{theme}}" />
-				
-				<button class="btn btn-primary theme" id="theme-btn">{{i18n.settings.visual.theme_select}}</button>
+			<input type="number" name="columns" min="1" max="5" placeholder="3" value="{{columns}}" />
+		</label>
 
-				<span class="current">{{themename}}</span>
-			</div>
+		<div class="input radios">
+			<h4>{{i18n.settings.visual.layout.column_width}}</h4>
+
+			<label>
+				<input type="radio" name="column_width" value="fixed" checked />
+
+				<span>{{i18n.settings.visual.layout.column_width_fixed}}</span>
+			</label>
+
+			<label>
+				<input type="radio" name="column_width" value="fluid" />
+
+				<span>{{i18n.settings.visual.layout.column_width_fluid}}</span>
+			</label>
 		</div>
+	</section>
 
-		<div class="form-group toolbar-style">
-			<label class="control-label col-sm-2">{{i18n.settings.visual.toolbar}}</label>
+	<section class="theme list-select pro-only" data-id="theme">
+		<h3>{{i18n.settings.visual.theme.title}}</h3>
 
-			<div class="col-sm-9">
-				<span class="info">{{i18n.settings.visual.toolbar_desc}}</span>
+		<p class="desc">{{i18n.settings.visual.theme.desc}}</p>
 
-				<div class="checkboxes col-sm-9">
-					<label><input type="radio" name="toolbar" value="full" checked/> {{i18n.settings.visual.toolbar_normal}}</label>
-					<label><input type="radio" name="toolbar" value="button" /> {{i18n.settings.visual.toolbar_button}}</label>
-				</div>
-			</div>
-		</div>
+		<label class="input" data-id="light">
+			<input type="radio" name="theme" value="light" checked />
 
-		<div class="form-group style pro">
-			<label class="control-label col-sm-2">{{i18n.settings.visual.style}}</label>
+			<h4>{{i18n.settings.visual.theme.light}}</h4>
 
-			<div class="col-sm-9">
-				<span class="info">{{i18n.settings.visual.style_desc}}</span>
+			<button type="button" class="material flat blue preview">{{i18n.settings.visual.theme.preview}}</button>
+		</label>
 
-				<div class="checkboxes col-sm-9">
-					<label><input type="radio" name="style" value="light" checked /> {{i18n.settings.visual.style_light}}</label>
-					<label><input type="radio" name="style" value="dark" {{^isPro}}disabled {{/isPro}}/> {{i18n.settings.visual.style_dark}} (<a class="preview" data-style="dark">{{i18n.settings.visual.style_preview}}</a>)</label>
-					<label><input type="radio" name="style" value="transparent dark" {{^isPro}}disabled {{/isPro}}/> {{i18n.settings.visual.style_transparent}} (<a class="preview" data-style="transparent dark">{{i18n.settings.visual.style_preview}}</a>)</label>
-					<label><input type="radio" name="style" value="transparent dark darker" {{^isPro}}disabled {{/isPro}}/> {{i18n.settings.visual.style_transparent_darker}} (<a class="preview" data-style="transparent dark darker">{{i18n.settings.visual.style_preview}}</a>)</label>
-				</div>
-			</div>
-		</div>
-	</form>
-</div>
+		<label class="input" data-id="dark">
+			<input type="radio" name="theme" value="dark" />
+
+			<h4>{{i18n.settings.visual.theme.dark}}</h4>
+
+			<button type="button" class="material flat blue preview">{{i18n.settings.visual.theme.preview}}</button>
+		</label>
+
+		<label class="input" data-id="transparent dark">
+			<input type="radio" name="theme" value="transparent dark" />
+
+			<h4>{{i18n.settings.visual.theme.transparent}}</h4>
+
+			<button type="button" class="material flat blue preview">{{i18n.settings.visual.theme.preview}}</button>
+		</label>
+
+		<label class="input" data-id="transparent dark darker">
+			<input type="radio" name="theme" value="transparent dark darker" />
+
+			<h4>{{i18n.settings.visual.theme.transparent_darker}}</h4>
+
+			<button type="button" class="material flat blue preview">{{i18n.settings.visual.theme.preview}}</button>
+		</label>
+	</section>
+</main>

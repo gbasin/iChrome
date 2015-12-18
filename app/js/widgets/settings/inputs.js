@@ -49,7 +49,7 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 			var loop = function(options, level) {
 				level = level || 0;
 
-				var nesting = "&nbsp;".repeat(4 * level),
+				var nesting = _.repeat("&nbsp;", 4 * level),
 					values = (typeof input.value === "object" ? input.value : [input.value]) || [];
 
 				var ret = [];
@@ -58,7 +58,7 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 				if (options.label) {
 					ret.push({
 						group: translate(options.label),
-						nesting: "&nbsp;".repeat(4 * ((level || 1) - 1))
+						nesting: _.repeat("&nbsp;", 4 * ((level || 1) - 1))
 					});
 				}
 

@@ -1,21 +1,65 @@
-<h2 class="title">{{i18n.menu.settings}}</h2>
+<div class="side-nav">
+	<button type="button" class="material flat exit" data-m-icon-before="navigate_before">{{i18n.settings.exit}}</button>
 
-<button class="btn btn-primary save">{{i18n.settings.save}}</button>
-
-<ul class="nav">
-	<li data-tab="general" class="active">{{i18n.settings.labels.general}}</li>
-	<li data-tab="visual">{{i18n.settings.labels.visual}}</li>
-	<li data-tab="specific" class="specific nested">
-		<h3>{{i18n.settings.labels.specific}}</h3>
-
+	<nav>
 		<ul>
-			{{#tabs}}<li data-id="{{id}}" class="{{active}}">{{name}}</li>{{/tabs}}
-			<li data-id="new">{{i18n.settings.new_tab}}</li>
-		</ul>
-	</li>
-	<li data-tab="sync">{{i18n.settings.labels.sync}}</li>
-	<li data-tab="advanced">{{i18n.settings.labels.advanced}}</li>
-</ul>
+			<li data-id="visual">
+				<span class="header">{{i18n.settings.nav.visual}}</span>
 
-<div class="tabs">
+				<ul class="sections">
+					<li data-id="background">{{i18n.settings.nav.visual_sections.background}}</li>
+					<li data-id="layout">{{i18n.settings.nav.visual_sections.layout}}</li>
+					<li data-id="theme">{{i18n.settings.nav.visual_sections.theme}}</li>
+				</ul>
+			</li>
+
+			<li data-id="toolbar">
+				<span class="header">{{i18n.settings.nav.toolbar}}</span>
+
+				<ul class="sections">
+					<li data-id="style">{{i18n.settings.nav.toolbar_sections.style}}</li>
+					<li data-id="search">{{i18n.settings.nav.toolbar_sections.search}}</li>
+					<li data-id="links">{{i18n.settings.nav.toolbar_sections.links}}</li>
+				</ul>
+			</li>
+
+			<li data-id="tabs">
+				<span class="header">{{i18n.settings.nav.tabs}}</span>
+			</li>
+
+			<li data-id="widgets">
+				<span class="header">{{i18n.settings.nav.widgets}}</span>
+			</li>
+
+			<li data-id="pro">
+				<span class="header">{{i18n.settings.nav.pro}}</span>
+			</li>
+
+			<li data-id="accounts">
+				<span class="header">{{i18n.settings.nav.accounts}}</span>
+			</li>
+
+			<li data-id="misc">
+				<span class="header">{{i18n.settings.nav.misc}}</span>
+			</li>
+
+			<li data-id="advanced">
+				<span class="header">{{i18n.settings.nav.advanced}}</span>
+
+				<ul class="sections">
+					<li data-id="backups">{{i18n.settings.nav.advanced_sections.backups}}</li>
+					<li data-id="css">{{i18n.settings.nav.advanced_sections.css}}</li>
+					<li data-id="debug-tools">{{i18n.settings.nav.advanced_sections.debug_tools}}</li>
+				</ul>
+			</li>
+
+			<li data-id="support">
+				<a class="header" href="https://ichrome.uservoice.com/knowledgebase" target="_blank">{{i18n.settings.nav.support}}</a>
+			</li>
+
+			<li data-id="suggest">
+				<a class="header" href="https://ichrome.uservoice.com/" target="_blank">{{i18n.settings.nav.suggest}}</a>
+			</li>
+		</ul>
+	</nav>
 </div>

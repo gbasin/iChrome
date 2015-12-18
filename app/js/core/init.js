@@ -2,26 +2,22 @@
  * The main iChrome view, this initializes everything.
  */
 define([
-	"jquery", "lodash", "browser/api", "backbone", "core/pro", "core/status", "core/analytics", "storage/storage", "core/css", "themes/bginfo", "core/tooltips",
-	"menu/menu", "menu/toolbar", "menu/button", "tabs/tabs", "modals/updated", "modals/getting-started", "modals/translate-request", "lib/extends"
-], function($, _, Browser, Backbone, Pro, Status, Track, Storage, CSS, BGInfo, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
+	"jquery", "lodash", "browser/api", "backbone", "core/pro", "core/status", "core/analytics", "storage/storage", "core/css",
+	"themes/controller", "themes/bginfo", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs"
+], function($, _, Browser, Backbone, Pro, Status, Track, Storage, CSS, Themes, BGInfo, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
 	var Model = Backbone.Model.extend({
 		init: function() {
-			Storage.on("done updated", function(storage) {
-				if (typeof storage.settings.toolbar === "boolean") {
-					if (storage.settings.toolbar) {
-						storage.settings.toolbar = "full";
-					}
-					else {
-						storage.settings.toolbar = "button";
-					}
-				}
+			this.on("change:theme", function() {
+				Themes.setTheme(this.get("theme"));
+			});
 
+			Storage.on("done updated", function(storage) {
 				this.set({
 					style: storage.settings.style,
+					theme: storage.settings.theme,
 					toolbar: storage.settings.toolbar,
 					editing: storage.settings.editing,
-					target: storage.settings.ltab ? "_blank" : "_self"
+					target: storage.settings.openLinksInNewTab ? "_blank" : "_self"
 				});
 			}, this);
 
@@ -69,6 +65,8 @@ define([
 		initialize: function() {
 			this.model = new Model();
 
+			var loaded = false;
+
 			// This only fires on change otherwise users with the
 			// button might see a FOUT (Flash Of Unchosen Toolbar)
 			this.model.on("change:toolbar", function() {
@@ -102,19 +100,23 @@ define([
 				}
 
 
-				var loader = this.$el.removeClass("unloaded").children(".loading");
+				if (!loaded) {
+					loaded = true;
 
-				var animationPlayer = loader[0].animate([
-					{ opacity: 1 },
-					{ opacity: 0 }
-				], {
-					duration: 100,
-					easing: "cubic-bezier(.4, 0, .2, 1)"
-				});
+					var loader = this.$el.removeClass("unloaded").children(".loading");
 
-				animationPlayer.onfinish = function() {
-					loader.remove();
-				};
+					var animationPlayer = loader[0].animate([
+						{ opacity: 1 },
+						{ opacity: 0 }
+					], {
+						duration: 100,
+						easing: "cubic-bezier(.4, 0, .2, 1)"
+					});
+
+					animationPlayer.onfinish = function() {
+						loader.remove();
+					};
+				}
 			}, this).on("change:editing", function() {
 				this.$el.toggleClass("no-edit", this.model.get("editing") === false);
 			}, this).on("change:style", function() {

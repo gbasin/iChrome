@@ -3,16 +3,18 @@
  */
 define(
 	[
-		"lodash", "jquery", "backbone", "browser/api", "core/analytics", "storage/storage", "storage/defaults", "i18n/i18n",
-		"search/search", "search/speech", "settings/settings", "widgets/store", "core/uservoice", "core/render"
+		"lodash", "jquery", "backbone", "browser/api", "core/pro", "core/analytics", "storage/storage", "storage/defaults", "i18n/i18n",
+		"search/search", "search/speech", "settings/view", "widgets/store", "core/uservoice", "core/render"
 	],
-	function(_, $, Backbone, Browser, Track, Storage, Defaults, Translate, Search, Speech, Settings, Store, UserVoice, render) {
+	function(_, $, Backbone, Browser, Pro, Track, Storage, Defaults, Translate, Search, Speech, Settings, Store, UserVoice, render) {
 		var Model = Backbone.Model.extend({
 				init: function() {
 					Storage.on("done updated", function(storage) {
 						this.storage = storage;
 
 						var set = _.clone(storage.settings);
+
+						set.links = _.take(set.links, Pro.isPro ? 8 : 3);
 
 						set.tabs = _.map(storage.tabs, function(e) {
 							return {
@@ -66,6 +68,9 @@ define(
 						if (!this.Settings) {
 							this.Settings = new Settings();
 						}
+						else {
+							this.Settings.show();
+						}
 
 						this.Settings.createTab();
 					},
@@ -95,11 +100,21 @@ define(
 
 					switch (elm.attr("data-item")) {
 						case "settings":
-							this.open("settings");
+							if (!this.Settings) {
+								this.Settings = new Settings();
+							}
+							else {
+								this.Settings.show();
+							}
 						break;
 
 						case "widgets":
-							this.open("store");
+							if (!this.Store) {
+								this.Store = new Store();
+							}
+
+							// This delays displaying the modal until after the init JS is done so the animation is smooth
+							requestAnimationFrame(this.Store.show.bind(this.Store));
 						break;
 
 						case "editmode":
@@ -158,29 +173,6 @@ define(
 							Track.event("Menu", "Tab Navigation");
 						break;
 					}
-				},
-
-
-				/**
-				 * This method allows other modules to open the store and settings
-				 *
-				 * @api     public
-				 * @param   {String}  [which]  Which modal to open, "store" or "settings", defaults to "settings".
-				 * @return  {Backbone.View}    The view of the modal that was just opened
-				 */
-				open: function(which) {
-					var isStore = which === "store";
-
-					which = isStore ? "Store" : "Settings";
-
-					if (!this[which]) {
-						this[which] = isStore ? new Store() : new Settings();
-					}
-
-					// This delays displaying the modal until after the init JS is done so the animation is smooth
-					requestAnimationFrame(this[which].show.bind(this[which]));
-
-					return this[which];
 				},
 
 

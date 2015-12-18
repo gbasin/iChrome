@@ -1,7 +1,7 @@
 /*
  * The iFrame widget.
  */
-define(["jquery", "widgets/framefix"], function($, frameFix) {
+define(["jquery", "widgets/framefix", "lib/parseurl"], function($, frameFix, parseUrl) {
 	return {
 		id: 7,
 		size: 4,
@@ -44,7 +44,7 @@ define(["jquery", "widgets/framefix"], function($, frameFix) {
 			}
 
 			this.utils.render({
-				url: (this.config.url && this.config.url.parseUrl()) || "http://mail.google.com/mail/mu/mp/?source=ig&mui=igh",
+				url: (this.config.url && parseUrl(this.config.url)) || "http://mail.google.com/mail/mu/mp/?source=ig&mui=igh",
 				padding: (this.config.padding === "true"),
 				height: this.config.height || 400
 			});

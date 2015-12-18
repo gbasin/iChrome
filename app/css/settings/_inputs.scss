@@ -1,0 +1,35 @@
+button,
+button.material {
+	margin: 0;
+}
+
+input, textarea, select {
+	background: transparent;
+}
+
+select {
+	width: auto;
+	height: 32px;
+	font: inherit;
+	border-radius: 0;
+	border: 0!important;
+	padding: 0 0 0 25px!important;
+}
+
+textarea,
+input[type="tel"],
+input[type="url"],
+input[type="text"],
+input[type="time"],
+input[type="date"],
+input[type="email"],
+input[type="search"],
+input[type="number"] {
+	font: inherit;
+	border-radius: 0;
+	line-height: 20px;
+	padding: 6px 10px 4px!important;
+	border-width: 0 0 1px 0!important;
+}
+
+@import "inputs/radio";

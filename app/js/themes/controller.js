@@ -19,7 +19,7 @@ define(["lodash", "jquery", "backbone", "core/pro", "themes/utils"], function(_,
 			var hidePreview = function() {
 				clearTimeout(removeTimeout);
 
-				$(".modal.previewHidden, .modal-overlay.previewHidden").removeClass("previewHidden").addClass("visible");
+				$(".previewHidden").removeClass("previewHidden").addClass("visible");
 
 				previewOverlay.remove();
 
@@ -33,7 +33,7 @@ define(["lodash", "jquery", "backbone", "core/pro", "themes/utils"], function(_,
 
 			var previewOverlay = $('<div class="preview-overlay visible"></div>').one("click", hidePreview).appendTo(this.el);
 
-			$(".modal.visible, .modal-overlay.visible").removeClass("visible").addClass("previewHidden");
+			$(".modal.visible, .settings.visible, .modal-overlay.visible").removeClass("visible").addClass("previewHidden");
 		},
 
 

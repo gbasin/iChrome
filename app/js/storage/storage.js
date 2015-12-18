@@ -1,9 +1,10 @@
 /**
  * Loads storage and returns a Promise that can be used to listen for updates
  */
-define(
-	["jquery", "lodash", "backbone", "browser/api", "core/status", "modals/alert", "i18n/i18n", "core/analytics", "storage/filesystem", "storage/syncapi", "storage/defaults", "storage/updatethemes", "storage/tojson"],
-	function($, _, Backbone, Browser, Status, Alert, Translate, Track, FileSystem, API, defaults, updateThemes, getJSON) {
+define([
+	"jquery", "lodash", "backbone", "browser/api", "core/status", "modals/alert", "i18n/i18n", "core/analytics", "storage/filesystem",
+	"storage/syncapi", "storage/deprecate", "storage/defaults", "storage/updatethemes", "storage/tojson", "lib/unextend"
+], function($, _, Backbone, Browser, Status, Alert, Translate, Track, FileSystem, API, Deprecate, defaults, updateThemes, getJSON, unextend) {
 		var deferred = $.Deferred();
 
 		// This lets events get attached and fired on storage itself. It'll primarily be used as storage.on("updated", ...) and storage.trigger("updated")
@@ -179,19 +180,23 @@ define(
 			dString = JSON.stringify(_.pick(defaults, "user", "tabs", "settings", "themes", "cached"));
 
 		var cacheTheme = function() {
-			var defaultTab = storage.tabs[(storage.settings.def || 1) - 1];
+			// We can't use the theme utils here since they require storage
+			var image;
 
-			var theme = defaultTab.theme || storage.settings.theme;
+			if (storage.settings.theme === "custom") {
+				image = storage.settings.backgroundImage;
+			}
+			else {
+				image = (storage.cached[storage.settings.theme] || storage.themes[storage.settings.theme.replace("custom", "")] || { image: "images/defaulttheme.jpg" }).image;
+			}
 
-			theme = storage.cached[theme] || storage.themes[theme.replace("custom", "")] || { image: "images/defaulttheme.jpg" };
-
-			if (!theme || !theme.image) {
+			if (!image || image.slice(-4) === ".mp4") {
 				delete Browser.storage.themeImg;
 
 				return;
 			}
 
-			Browser.storage.themeImg = theme.image;
+			Browser.storage.themeImg = image;
 		};
 
 
@@ -207,18 +212,16 @@ define(
 		var save = function(sync, cb, useBeacon) {
 			Status.log("Starting storage save");
 
-			storage.settings = _.pick(storage.settings, Object.keys(defaults.settings));
-
 			timeout = null;
 
 			// Local save
 			var local = _.pick(storage, "user", "cached", "themes", "settings", "modified");
 
 			local.tabs = _.map(storage.tabs, function(tab) {
-				return $.unextend({
-					theme: storage.settings.theme,
-					fixed: storage.settings.columns.split("-")[1] === "fixed"
-				}, $.unextend(defaults.tab, tab));
+				return unextend({
+					isGrid: storage.settings.layout === "grid",
+					fixed: storage.settings.columnWidth === "fixed"
+				}, unextend(defaults.tab, tab));
 			});
 
 			Browser.storage.config = JSON.stringify(local);
@@ -388,14 +391,14 @@ define(
 			}
 
 			storage.user = d.user || defaults.user;
-			storage.tabs = d.tabs || defaults.tabs;
 			storage.themes = d.themes || defaults.themes;
 			storage.cached = d.cached || defaults.cached;
+			storage.tabs = Deprecate.tabs(d.tabs || defaults.tabs);
 
 			storage.modified = d.modified;
 
 			if (d.settings) {
-				storage.settings = _.defaultsDeep(d.settings, defaults.settings);
+				storage.settings = _.defaultsDeep(Deprecate.settings(d.settings), defaults.settings);
 			}
 			else {
 				storage.settings = _.cloneDeep(defaults.settings);

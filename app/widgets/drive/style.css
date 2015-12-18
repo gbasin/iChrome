@@ -11,11 +11,11 @@
 	overflow-x: hidden;
 }
 
-.medley .files {
+.grid .files {
 	max-height: 100%;
 }
 
-.medley .header ~ .files {
+.grid .header ~ .files {
 	max-height: calc(100% - 45px);
 }
 

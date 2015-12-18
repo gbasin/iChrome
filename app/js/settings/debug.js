@@ -1,10 +1,10 @@
 /**
- * The debug dialog.  This contains advanced tools that users can be instructed to use for troubleshooting.
+ * The debug tools. This contains advanced tools that users can be instructed to use for troubleshooting.
  */
-define(["lodash", "jquery", "backbone", "browser/api", "storage/filesystem", "modals/modals", "core/render"], function(_, $, Backbone, Browser, FileSystem, Modal, render) {
+define(["backbone", "browser/api", "storage/filesystem", "modals/modals", "core/render"], function(Backbone, Browser, FileSystem, Modal, render) {
 	var modal = new (Modal.extend({
 		width: 800,
-		classes: "debug"
+		classes: "debug-tools"
 	}))();
 
 	var View = Backbone.View.extend({
@@ -96,7 +96,7 @@ define(["lodash", "jquery", "backbone", "browser/api", "storage/filesystem", "mo
 				break;
 
 				case "execute":
-					var textarea = $(".console textarea");
+					var textarea = this.$(".console textarea");
 
 					var out = eval(textarea.val()); // jshint ignore:line
 

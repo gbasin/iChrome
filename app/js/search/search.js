@@ -70,12 +70,12 @@ define(["backbone", "storage/storage", "core/render", "core/analytics", "search/
 					});
 				}
 
-				var searchURL = (this.model.get("search-url") || "https://www.google.com/search?q=%s"),
+				var searchURL = this.model.get("searchURL") || "https://www.google.com/search?q=%s",
 					link = document.createElement("a");
 
 				link.setAttribute("href", searchURL.replace("%s", encodeURIComponent(val)));
 
-				link.setAttribute("target", (this.model.get("stab") ? "_blank" : "_self"));
+				link.setAttribute("target", (this.model.get("searchInNewTab") ? "_blank" : "_self"));
 
 				link.click();
 			},

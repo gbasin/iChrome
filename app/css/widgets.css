@@ -179,22 +179,22 @@
 }
 
 /* line 172, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .reddit .items,
-.medley .feedly .items,
-.medley .twitter .tweets {
+.grid .reddit .items,
+.grid .feedly .items,
+.grid .twitter .tweets {
 	max-height: calc(100% + 30px);
 }
 
 /* line 178, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .reddit .items,
-.medley .feedly .items,
-.medley .twitter .header ~ .tweets {
+.grid .reddit .items,
+.grid .feedly .items,
+.grid .twitter .header ~ .tweets {
 	max-height: calc(100% - 12px);
 }
 
 /* line 184, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .reddit .header ~ .items,
-.medley .feedly .header ~ .items {
+.grid .reddit .header ~ .items,
+.grid .feedly .header ~ .items {
 	max-height: calc(100% - 54px);
 }
 
@@ -464,7 +464,7 @@
 }
 
 /* line 428, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .feedly .items {
+.grid .feedly .items {
 	max-height: 100%;
 	height: calc(100% - 54px);
 }
@@ -1340,12 +1340,12 @@
 }
 
 /* line 1220, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .calendar .agenda {
+.grid .calendar .agenda {
 	max-height: 100%;
 }
 
 /* line 1224, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .calendar .header ~ .agenda {
+.grid .calendar .header ~ .agenda {
 	max-height: calc(100% - 55px);
 }
 
@@ -2032,12 +2032,12 @@ body.no-edit .bookmarks .tools {
 }
 
 /* line 1816, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .chrome_bookmarks .list {
+.grid .chrome_bookmarks .list {
 	max-height: calc(100% + 10px);
 }
 
 /* line 1820, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .chrome_bookmarks .header ~ .list {
+.grid .chrome_bookmarks .header ~ .list {
 	max-height: calc(100% - 32px);
 }
 
@@ -3647,7 +3647,7 @@ body.no-edit .bookmarks .tools {
 }
 
 /* line 3297, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
-.medley .pushbullet .items {
+.grid .pushbullet .items {
 	max-height: calc(100% - 55px);
 }
 

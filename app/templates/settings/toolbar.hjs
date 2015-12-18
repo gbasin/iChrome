@@ -1,0 +1,133 @@
+<header>
+	<h2 class="page-name">{{i18n.settings.title}} &ndash; {{i18n.settings.nav.toolbar}}</h2>
+</header>
+
+<main class="content" tabindex="-1">
+	<section class="style" data-id="style">
+		<h3>{{i18n.settings.toolbar.style.title}}</h3>
+
+		<p class="desc">{{i18n.settings.toolbar.style.desc}}</p>
+
+		<div class="input radios no-label">
+			<label>
+				<input type="radio" name="style" value="full" checked />
+
+				<span>{{i18n.settings.toolbar.style.normal}}</span>
+			</label>
+
+			<label>
+				<input type="radio" name="style" value="button" />
+
+				<span>{{i18n.settings.toolbar.style.button}}</span>
+			</label>
+		</div>
+	</section>
+
+	<section class="search" data-id="search">
+		<h3>{{i18n.settings.toolbar.search.title}}</h3>
+
+		<p class="desc">{{i18n.settings.toolbar.search.desc}}</p>
+
+		<div class="input select other">
+			<label>
+				<h4>{{i18n.settings.toolbar.search.engine}}</h4>
+
+				<select name="search-engine">
+					<option value="https://google.com/search?q=%s">{{i18n.settings.toolbar.search.engines_google}}</option>
+					<option value="https://search.yahoo.com/search?p=%s">Yahoo!</option>
+					<option value="https://www.bing.com/search?q=%s">Bing</option>
+					<option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
+					<option value="http://www.ask.com/web?q=%s">Ask</option>
+					<option value="http://search.aol.com/aol/search?q=%s">AOL</option>
+					<option value="custom">{{i18n.settings.toolbar.search.engines_custom}}</option>
+				</select>
+			</label>
+
+			<label class="input other{{#customSearchURL}} visible{{/customSearchURL}}">
+				<span class="desc">{{{i18n.settings.toolbar.search.engines_custom_desc}}}</span>
+
+				<input type="text" name="search-url" placeholder="i.e. https://google.com/search?q=%s" value="{{customSearchURL}}" />
+			</label>
+		</div>
+
+		<label class="input switch">
+			<h4>{{i18n.settings.toolbar.search.voice}}</h4>
+
+			<input type="checkbox" name="voice-search" value="1" checked />
+
+			<span class="switch"></span>
+		</label>
+
+		<label class="input switch">
+			<h4>{{i18n.settings.toolbar.search.ok_google}}</h4>
+
+			<input type="checkbox" name="ok-google" value="1" />
+
+			<span class="switch"></span>
+		</label>
+
+		<label class="input switch">
+			<h4>{{i18n.settings.toolbar.search.search_tab}}</h4>
+
+			<input type="checkbox" name="new-tab" value="1" />
+
+			<span class="switch"></span>
+		</label>
+	</section>
+
+	<section class="links" data-id="links">
+		<h3>{{i18n.settings.toolbar.links.title}}</h3>
+
+		<p class="desc">{{i18n.settings.toolbar.links.desc}}</p>
+
+		<label class="input switch">
+			<h4>Google+</h4>
+
+			<input type="checkbox" name="google-plus" value="1" checked />
+
+			<span class="switch"></span>
+		</label>
+
+		<label class="input switch">
+			<h4>Gmail</h4>
+
+			<input type="checkbox" name="gmail" value="1" checked />
+
+			<span class="switch"></span>
+		</label>
+
+		<label class="input switch">
+			<h4>{{i18n.settings.toolbar.links.apps}}</h4>
+
+			<input type="checkbox" name="apps-menu" value="1" checked />
+
+			<span class="switch"></span>
+		</label>
+
+		<div class="input links">
+			<h4>{{i18n.settings.toolbar.links.custom}}</h4>
+
+			<span class="note">{{i18n.settings.toolbar.links.custom_note1}}, <span class="pro-badge"></span> {{i18n.settings.toolbar.links.custom_note2}}</span>
+
+			{{#customLinks}}
+				<div class="link" data-link="{{i}}">
+					<input type="text" name="link-text" placeholder="{{i18n.settings.toolbar.links.custom_name_placeholder}}" value="{{text}}" />
+
+					<input type="url" name="link-url" placeholder="{{i18n.settings.toolbar.links.custom_url_placeholder}}" value="{{link}}" />
+
+					<button type="button" class="material toggle m-icon remove">close</button>
+				</div>
+			{{/customLinks}}
+
+			{{#canAddLinks}}
+				<div class="link new" data-link="new">
+					<input type="text" name="link-text" placeholder="{{i18n.settings.toolbar.links.custom_name_placeholder}}" />
+
+					<input type="url" name="link-url" placeholder="{{i18n.settings.toolbar.links.custom_url_placeholder}}" />
+
+					<button type="button" class="material toggle m-icon remove">close</button>
+				</div>
+			{{/canAddLinks}}
+		</div>
+	</section>
+</main>

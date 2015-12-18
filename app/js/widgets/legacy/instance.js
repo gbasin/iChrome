@@ -2,8 +2,8 @@
  * The legacy widget instance wrapper
  */
 define([
-	"jquery", "lodash", "backbone", "browser/api", "core/status", "core/analytics", "widgets/instance", "widgets/settings", "core/render"
-], function($, _, Backbone, Browser, Status, Track, WidgetInstance, Settings, render) {
+	"jquery", "lodash", "backbone", "browser/api", "core/status", "core/analytics", "widgets/instance", "widgets/settings", "lib/unextend", "core/render"
+], function($, _, Backbone, Browser, Status, Track, WidgetInstance, Settings, unextend, render) {
 	var sizes = {
 		1: "tiny",
 		2: "small",
@@ -234,7 +234,7 @@ define([
 			// the widget isn't alllowed to change, are copied
 			var set = _(this.instance).pick("size", "config", "data", "syncData", "loc").mapValues(function(e, key) {
 				if (key === "config") {
-					var config = $.unextend(this.widget.widget.config, e);
+					var config = unextend(this.widget.widget.config, e);
 
 					delete config.size;
 

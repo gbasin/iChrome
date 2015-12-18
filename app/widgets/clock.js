@@ -2,12 +2,6 @@
  * The Clock widget.
  */
 define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbone) {
-	var padThree = function(num) {
-		num = num.toString();
-
-		return ((num.length === 1) ? "00" : (num.length === 2) ? "0" : "") + num;
-	};
-
 	var View = Backbone.View.extend({
 		events: {
 			"click header.tabs .item": function(e) {
@@ -107,13 +101,13 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				minutes = parseInt((time % 3600) / 60);
 
 			if (days) {
-				return days + ":" + hours.pad() + ":" + minutes.pad() + ":" + (time % 60).pad();
+				return days + ":" + _.pad(hours, 2, "0") + ":" + _.pad(minutes, 2, "0") + ":" + _.pad(time % 60, 2, "0");
 			}
 			else if (hours) {
-				return hours + ":" + minutes.pad() + ":" + (time % 60).pad();
+				return hours + ":" + _.pad(minutes, 2, "0") + ":" + _.pad(time % 60, 2, "0");
 			}
 			else {
-				return minutes + ":" + (time % 60).pad() + (ms ? "." + padThree(rTime % 1000) : "");
+				return minutes + ":" + _.pad(time % 60, 2, "0") + (ms ? "." + _.pad(rTime % 1000, 3, "0") : "");
 			}
 		},
 
@@ -143,17 +137,17 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				html += " full" + (this.config.format === "fulls" ? " no-seconds" : "");
 			}
 
-			html += '">' + hours + ":" + minutes.pad();
+			html += '">' + hours + ":" + _.pad(minutes, 2, "0");
 
 			if (this.config.size === "tiny" && this.config.format.indexOf("ampm") === 0) {
-				html += "<span>" + (this.config.format === "ampm" ? seconds.pad() : "") + "</span></div>";
+				html += "<span>" + (this.config.format === "ampm" ? _.pad(seconds, 2, "0") : "") + "</span></div>";
 			}
 			else if (this.config.size !== "tiny") {
 				// moment(dt) is slower so avoid it when possible
 				var date = (this.config.timezone !== "auto" ? moment(dt).format("dddd, MMMM Do YYYY") : moment().format("dddd, MMMM Do YYYY"));
 
 				if (this.config.format === "ampm" || this.config.format === "full") {
-					html += ":" + seconds.pad();
+					html += ":" + _.pad(seconds, 2, "0");
 				}
 
 				html += '</div><div class="date">' + date + "</div>";
@@ -428,7 +422,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 
 				data.alarm = data.alarm || {};
 
-				data.alarm.timeStr = data.alarm.time ? new Date(data.alarm.time).getHours().pad() + ":" + new Date(data.alarm.time).getMinutes().pad() : "07:00";
+				data.alarm.timeStr = data.alarm.time ? _.pad(new Date(data.alarm.time).getHours(), 2, "0") + ":" + _.pad(new Date(data.alarm.time).getMinutes(), 2, "0") : "07:00";
 			}
 
 			this.utils.render(data);

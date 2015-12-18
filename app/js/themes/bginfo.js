@@ -89,7 +89,7 @@ define(["lodash", "backbone", "core/pro", "i18n/i18n", "core/analytics", "modals
 			var theme = Themes.theme;
 
 			if (!theme) {
-				return;
+				return this.remove();
 			}
 
 			this.render(theme);

@@ -14,10 +14,6 @@
 
 	"remove_widget": "Remove",
 
-	"column_to_grid_warning": "You selected to change a tab from a column-based layout to a grid-based layout. If you continue you will lose all of your columns; everything will be moved to the top left corner.\r\nAre you sure you want to do this?",
-	"grid_to_column_warning": "You selected to change a tab from a grid-based layout to a column-based layout. If you continue you will lose all of your widget positioning; everything will be moved to the first column of the new tab.\r\nAre you sure you want to do this?",
-	"storage_warning": "You have used more than 90% of the total synchronized storage space available.\r\nIf you reach the limit, iChrome will stop syncing your data and may stop working.\r\nYou can shrink the amount of space you use by deleting custom themes, notes and to-do lists that you don't use.",
-
 	"alert": {
 		"default_button": "Dismiss",
 
@@ -77,162 +73,194 @@
 	},
 
 	"settings": {
-		"save":		"Save & Close",
-		"new_tab":	"Create New",
+		"title": "Settings",
+		"exit": "Exit settings",
+		"saved": "Settings saved",
 
-		"labels": {
-			"general":	"General",
-			"visual":	"Visual",
-			"specific":	"Tab Specific",
-			"sync":		"Accounts and Sync",
-			"advanced":	"Advanced"
-		},
-
-		"general": {
-			"search_url": "Search URL",
-			"search_url_desc": "This is the URL that the search box will submit searches to. Put <b>%s</b> where the search query should go",
-
-			"ltab": "Link Behavior",
-			"ltab_label": "Open links in a new tab by default",
-
-			"search": "Search Behavior",
-			"search_label": "Open search results in a new tab",
-
-			"voice": "Voice Search",
-			"voice_search": "Enable voice search",
-			"voice_ok": "Enable \"OK Google\" hotword detection",
-
-			"links": "Toolbar Links",
-			"links_desc": "Here you can choose which links will show in the right section of the toolbar:",
-
-			"links_items": {
-				"plus": "Google Plus",
-				"gmail": "Gmail",
-				"apps": "Apps Menu",
-				"link1": "Custom Link 1",
-				"link2": "Custom Link 2",
-				"link3": "Custom Link 3",
-
-				"text_holder": "Link text",
-				"link_holder": "Link URL, i.e. http://www.google.com/"
+		"nav": {
+			"visual": "Visual",
+			"visual_sections": {
+				"background": "Background",
+				"layout": "Layout",
+				"theme": "App theme"
 			},
 
-			"guide": "Installation Guide",
-			"guide_desc": "Reshow the guide that was shown when iChrome was first installed"
+			"toolbar": "Toolbar",
+			"toolbar_sections": {
+				"style": "Style",
+				"search": "Search",
+				"links": "Links"
+			},
+
+			"tabs": "Tabs",
+			"widgets": "Widgets",
+			"pro": "Pro",
+			"accounts": "Accounts and sync",
+			"misc": "Miscellaneous",
+
+			"advanced": "Advanced",
+			"advanced_sections": {
+				"backups": "Backup and restore",
+				"css": "Custom CSS",
+				"debug_tools": "Debug tools"
+			},
+
+			"support": "Help and support",
+			"suggest": "Suggest a feature"
 		},
 
 		"visual": {
-			"layout": "Layout",
-			"layout_options": {
-				"1_fixed": "One column, fixed width",
-				"1_fluid": "One column, fluid width",
-				"2_fixed": "Two columns, fixed width",
-				"2_fluid": "Two columns, fluid width",
-				"3_fixed": "Three columns, fixed width",
-				"3_fluid": "Three columns, fluid width",
-				"4_fixed": "Four columns, fixed width",
-				"4_fluid": "Four columns, fluid width",
-				"5_fixed": "Five columns, fixed width",
-				"5_fluid": "Five columns, fluid width",
-				"grid": "Grid-based, customizable width"
+			"background": {
+				"title": "Background",
+				"desc": "This is the image or set of images shown as a background to your tabs",
+				"current": "Current background",
+				"custom": "Custom",
+				"unnamed": "Theme %s",
+				"select": "Select a theme",
+				"or": "or",
+				"url_placeholder": "Enter an image URL"
 			},
 
-			"theme": "Default Theme",
-			"theme_placeholder": "Theme #%s",
-			"theme_select": "Select a theme",
+			"layout": {
+				"title": "Layout",
+				"desc": "Here you can adjust the type and number of columns in each tab",
+				"columns": "Columns",
+				"grid": "Grid",
+				"columns_number": "Number of columns",
+				"column_width": "Column width",
+				"column_width_fixed": "Fixed",
+				"column_width_fluid": "Fluid",
 
-			"toolbar": "Toolbar Style",
-			"toolbar_desc": "This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
-			"toolbar_normal": "Normal",
-			"toolbar_button": "Button",
+				"column_warning": {
+					"column_to_grid": "Changing to a grid-based layout will move all of your widgets to the top left corner.",
+					"grid_to_column": "Changing to a column-based layout will move all of your widgets to the first column."
+				}
+			},
 
-			"style": "App Style",
-			"style_desc": "This controls the style of all widgets and iChrome itself.",
-			"style_light": "Light (default)",
-			"style_dark": "Dark",
-			"style_transparent": "Transparent",
-			"style_transparent_darker": "Transparent - Darker",
-			"style_preview": "preview"
+			"theme": {
+				"title": "App theme",
+				"desc": "The app theme controls the style of iChrome itself and all widgets",
+				"preview": "Preview",
+
+				"light": "Light (default)",
+				"dark": "Dark",
+				"transparent": "Transparent",
+				"transparent_darker": "Transparent (darker)"
+			}
 		},
 
-		"specific": {
-			"name": "Tab Name",
-			"default_name": "New Tab",
+		"toolbar": {
+			"style": {
+				"title": "Style",
+				"desc": "This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
+				"normal": "Normal",
+				"button": "Button"
+			},
 
-			"delete": "Delete tab",
-			"delete_disallowed": "You cannot delete the only remaining tab.",
-			"delete_confirm": "Are you really sure you want to delete this tab?\r\nThis action is irreversible, all data from all widgets in the tab will be permanently lost.",
+			"search": {
+				"title": "Search",
+				"desc": "These settings control how the search box and voice search function",
 
-			"default": "Set as default"
+				"engine": "Search engine",
+				"engines_google": "Google (Default)",
+				"engines_custom": "Custom",
+				"engines_custom_desc": "Enter a URL that queries should be sent to, with <b>%s</b> where the query should go.",
+
+				"voice": "Enable voice search",
+				"ok_google": "Enable \"OK Google\" hotword detection",
+				"search_tab": "Open search results in a new tab"
+			},
+
+			"links": {
+				"title": "Links",
+				"desc": "These are the items shown at the right of the toolbar",
+
+				"apps": "Apps menu",
+
+				"custom": "Custom links",
+				"custom_note1": "Maximum of 3 allowed",
+				"custom_note2": "users get 8",
+				"custom_name_placeholder": "Link text",
+				"custom_url_placeholder": "Link URL, i.e. https://www.google.com/"
+			}
 		},
 
-		"sync": {
-			"status_syncing": "iChrome is currently <b>syncing</b> your tabs and settings.",
-			"status_notsyncing": "iChrome is currently <b>not syncing</b> your tabs and settings.",
-			"status_notsyncing2": "Click Sync Now at the bottom of this page or sign in with your Google account to create a profile.",
+		"misc": {
+			"link_tab": "Open links in a new tab by default"
+		},
 
-			"duplicate_profile": "A profile already exists under the email address below. To protect your security, iChrome can't use your sync profile until you verify that you own the address by signing in to your Google account.",
+		"tabs": {
+			"create_new": "Create new",
+			"make_default": "Make default",
 
-			"name": "Name",
-			"fname": "First Name",
-			"lname": "Last Name",
-			"name_desc": "We'll use this to address you inside iChrome and in any communications.",
+			"desc1": "Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
+			"desc2": "You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
 
-			"email": "Email Address",
-			"email_desc": "This is used to identify your sync profile, we'll also use it if we need to get in touch with you.",
+			"name_placeholder": "Enter a tab name",
 
-			"signin": "Sign In",
-			"signin_btn": "Sign in with Google",
-			"signin_desc": "Sign in with your Google account to easily and securely add new computers to your sync profile.",
-			"signed_in": "iChrome is <b>connected</b> to your Google account.  Sign in on any new computers to instantly sync your configuration.",
+			"delete_confirm": "This action is irreversible. All data from all widgets in the tab will be permanently lost."
+		},
+
+		"accounts": {
+			"status": {
+				"title": "Status",
+
+				"signed_in": "You are currently <b>signed in</b> as %s (%s).",
+				"reset_account": "Reset account",
+				"sign_out": "Sign out",
+
+				"signed_out": "You are <b>not currently signed in</b>. Sign in with your Google account now to securely store and sync your configuration.",
+				"sign_in": "Sign in with Google"
+			},
 
 			"keep_data": "Keep local data?",
-			"keep_data_desc": "Would you like to keep your local data, and replace the configuration on other computers you may have in this sync group with it, or replace this computer's configuration with theirs?",
-			"keep_theirs": "Use Theirs",
+			"keep_data_desc": "Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
+			"keep_account": "Use account",
 			"keep_local": "Keep Local",
 
-			"sync_now": "Sync Now",
-			"syncing": "Syncing...",
-
-			"last_synced": "Last synced",
-
-			"backup": {
-				"title": "Backup & Restore",
-				"desc": "Click the button an any backup to roll iChrome back to the time displayed.  You can also use the button below to create a manual backup.",
-
-				"btn": "Backup now",
-
-				"restore": "Restore",
-				"download": "Download",
-				"download_name": "iChrome Backup",
-
-				"no_backups": "No backups found, click Backup Now to create one."
-			},
-
-			"restore": {
-				"file": "Restore from file",
-
-				"error": "An error occurred while trying to parse the provided data, please try again later.",
-
-				"confirm_desc": "This will overwrite all local and synced data.",
-				"confirm_desc2": "You will lose your entire current configuration on all computers connected to this sync profile."
-			},
-
-			"reset": "Reset Profile",
-			"resetting": "Resetting...",
 			"reset_confirm_desc": "This will erase all local and synced data, there is no backup and no way to undo this.",
-			"reset_confirm_desc2": "You will lose your entire current configuration on all computers connected to this sync profile."
+			"reset_confirm_desc2": "You will lose your entire current configuration on all computers connected to this account."
 		},
 
 		"advanced": {
-			"background": "Widget Background",
-			"background_desc": "Click the swatch to select a color",
+			"backups": {
+				"title": "Backup and restore",
+				"desc": "Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
+				"desc2": "Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
 
-			"css": "Custom CSS",
-			"css_desc": "You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"_blank\">MDN</a>).<br /><br />Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.",
+				"backup": "Backup now",
+				"upload": "Restore from file",
 
-			"debug": "Debug Tools",
-			"debug_confirm": "WARNING: These tools can erase your configuration in a single click, only use them if your developer instructs you to.\r\nAre you sure you want to continue?"
+				"download": "Download",
+				"restore": "Restore",
+
+				"download_name": "iChrome Backup",
+
+				"restore_confirm": "This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
+				"restore_error": "An error occurred while trying to parse the provided data, please try again later."
+			},
+
+			"css": {
+				"title": "Custom CSS",
+				"desc": "You can use CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definition</a>) to customize almost any part of iChrome.",
+				"placeholder": "Enter up to 1000 characters of CSS here"
+			},
+
+			"debug_tools": {
+				"title": "Debug tools",
+				"desc": "<b>WARNING:</b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
+				"open": "Open tools"
+			}
+		},
+
+		"widgets": {
+			"desc1": "Widgets have their own settings and can't be customized here.",
+			"desc2": "To edit a widget's settings, follow these steps:",
+
+			"steps1": "Move your mouse over any widget",
+			"steps2": "Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
+			"steps3": "Edit any of the settings shown in the dialog that's displayed",
+			"steps4": "Click Save to save your changes, or any part of the background to discard of them"
 		}
 	},
 

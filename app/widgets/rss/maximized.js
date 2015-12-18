@@ -1,4 +1,4 @@
-define(["lodash", "./view", "moment"], function(_, MainView, moment) {
+define(["lodash", "./view", "moment", "lib/parseurl"], function(_, MainView, moment, parseUrl) {
 	return MainView.extend({
 		events: _.assign({
 			"click header button.layout": function(e) {
@@ -96,7 +96,7 @@ define(["lodash", "./view", "moment"], function(_, MainView, moment) {
 			}
 
 			if (this.model.config.link) {
-				data.link = this.model.config.link.parseUrl();
+				data.link = parseUrl(this.model.config.link);
 			}
 
 			if (this.model.config.view && this.model.config.view === "images") {
