@@ -1,8 +1,8 @@
 {
   "lang_code":"es",
   "language":"Español",
+  "extName":"iChrome",
   "newtabName":"iChrome New Tab",
-  "extName":"iChrome- Tu página de inicio, para Chrome",
   "extDescription":"La MEJOR página de inicio para Chrome. ¡Hermosos temas, docenas de widgets, a la velocidad del rayo, increíblemente personalizable!",
   "newtabDescription":"La MEJOR nueva pestaña para Chrome. ¡Hermosos temas, docenas de widgets, a la velocidad del rayo, increíblemente personalizable!",
   "defaults":{
@@ -10,9 +10,6 @@
     "me":"Yo"
   },
   "remove_widget":"Quitar",
-  "column_to_grid_warning":"Ha seleccionado cambiar una pestaña de un diseño basado en columnas a un diseño basado en cuadrícula. Si continúas, perderá todas sus columnas; todo se trasladará a la esquina superior izquierda. ¿Seguro que quieres hacer esto?",
-  "grid_to_column_warning":"Ha seleccionado cambiar una pestaña de un diseño basado en cuadrícula a un diseño basado en columnas. Si continúas, perderá todas sus columnas; todo se trasladará a la primera columna de la nueva pestaña. ¿Seguro que quieres hacer esto?",
-  "storage_warning":"Has utilizado más del 90% del espacio total de almacenamiento sincronizado. Si llegas al límite, iChrome deja de sincronizar sus datos y puede dejar de funcionar. Puedes reducir la cantidad de espacio que utilizas borrando temas personalizados, notas y listas de tareas que no estás usando.",
   "alert":{
     "default_button":"Ignorar",
     "confirm_title":"¿Está seguro de que quiere hacer esto?",
@@ -44,7 +41,6 @@
   "menu":{
     "settings":"Ajustes",
     "widgets":"Applicaciones",
-    "background":"Mostrar fondo de pantalla",
     "editing":"Edición",
     "editing_enabled":"Habilitado",
     "editing_disabled":"Deshabilitado",
@@ -65,132 +61,158 @@
     "missed":"No entendí. <a>Intente Nuevamente<\/a>"
   },
   "settings":{
-    "save":"Guardar y Cerrar",
-    "new_tab":"Crear Nuevo",
-    "labels":{
-      "general":"General",
+    "title":"Ajustes",
+    "exit":"Exit settings",
+    "saved":"Settings saved",
+    "nav":{
       "visual":"Visual",
-      "specific":"Pestaña específica",
-      "sync":"Cuentas y sincronización",
-      "advanced":"Avanzado"
-    },
-    "general":{
-      "search_url":"URL de búsqueda",
-      "search_url_desc":"Esta es la URL que presentará el cuadro de búsqueda busca. Poner <b>%s<\/b> donde debe ir a la consulta de búsqueda",
-      "ltab":"El funcionamiento de el enlace",
-      "ltab_label":"Abrir vínculos en una nueva pestaña predeterminada",
-      "search":"Comportamiento de búsqueda",
-      "search_label":"Resultados de la búsqueda abrir en una pestaña nueva",
-      "voice":"Búsqueda por voz",
-      "voice_search":"Activar búsqueda por voz",
-      "voice_ok":"Habilitar la detección de hotword \"Google OK\"",
-      "links":"Enlaces de la barra de herramientas",
-      "links_desc":"Aquí usted puede elegir que une se mostrará en la sección derecha de la barra de herramientas:",
-      "links_items":{
-        "plus":"Google Plus",
-        "gmail":"Gmail",
-        "apps":"Menu de Aplicaciones",
-        "link1":"Enlaze Personalizado 1",
-        "link2":"Enlaze Personalizado 2",
-        "link3":"Enlaze Personalizado 3",
-        "text_holder":"Texto de enlaze",
-        "link_holder":"URL de enlaze, (http:\/\/www.google.com\/)"
+      "visual_sections":{
+        "background":"Background",
+        "layout":"Diseño",
+        "theme":"App theme"
       },
-      "guide":"Guía de Instalación",
-      "guide_desc":"Volver a mostrar la guía de inicio de iChrome"
+      "toolbar":"Toolbar",
+      "toolbar_sections":{
+        "style":"Style",
+        "search":"Buscar",
+        "links":"Links"
+      },
+      "tabs":"Pestañas",
+      "widgets":"Applicaciones",
+      "pro":"Pro",
+      "accounts":"Accounts and sync",
+      "misc":"Miscellaneous",
+      "advanced":"Advanced",
+      "advanced_sections":{
+        "backups":"Backup and restore",
+        "css":"Custom CSS",
+        "debug_tools":"Debug tools"
+      },
+      "support":"Help and support",
+      "suggest":"Suggest a feature"
     },
     "visual":{
-      "layout":"Diseño",
-      "layout_options":{
-        "1_fixed":"Una columna, de ancho fijo",
-        "1_fluid":"Una columna, de ancho fluido",
-        "2_fixed":"Dos columnas, ancho fijo",
-        "2_fluid":"Dos columnas, de ancho fluido",
-        "3_fixed":"Tres columnas, ancho fijo",
-        "3_fluid":"Tres columnas, ancho fluido",
-        "4_fixed":"Cuatro columnas, ancho fijo",
-        "4_fluid":"Cuatro columnas, de ancho fluido",
-        "5_fixed":"Cinco columnas, ancho fijo",
-        "5_fluid":"Cinco columnas, ancho fluido",
-        "grid":"Ancho basado en cuadrícula y personalizable"
+      "background":{
+        "title":"Background",
+        "desc":"This is the image or set of images shown as a background to your tabs",
+        "current":"Current background",
+        "custom":"Personlizado",
+        "unnamed":"Theme %s",
+        "select":"Select a theme",
+        "or":"o",
+        "url_placeholder":"Enter an image URL"
       },
-      "theme":"Tema predeterminado",
-      "theme_placeholder":"Tema # %s",
-      "theme_select":"Seleccione un tema",
-      "align":"Alineación",
-      "align_desc":"Esto va a cambiar la alineación de las columnas de widget",
-      "align_labels":{
-        "left":"Izquierda",
-        "center":"Centro",
-        "right":"Derecha"
+      "layout":{
+        "title":"Diseño",
+        "desc":"Here you can adjust the type and number of columns in each tab",
+        "columns":"Columns",
+        "grid":"Grid",
+        "columns_number":"Number of columns",
+        "column_width":"Column width",
+        "column_width_fixed":"Fixed",
+        "column_width_fluid":"Fluid",
+        "column_warning":{
+          "column_to_grid":"Changing to a grid-based layout will move all of your widgets to the top left corner.",
+          "grid_to_column":"Changing to a column-based layout will move all of your widgets to the first column."
+        }
       },
-      "logo":"Logo URL",
-      "logo_desc":"Esta es la imagen que aparece a la izquierda de la barra de herramientas.  El estandar es <b>\/images\/logo.svg<\/b>",
-      "toolbar":"Estilo de la barra de herramientas",
-      "toolbar_desc":"Controla el estilo de la barra de herramientas.  Tampoco puede aparecer normalmente o como una salida del botón de modo",
-      "toolbar_normal":"Normal",
-      "toolbar_button":"Botón",
-      "animation":"Slide-in de animación",
-      "animation_desc":"Esta opción le permite activar o desactivar la animación de diapositivas que se ejecuta cuando se carga la página",
-      "animation_label":"Activar la animación"
+      "theme":{
+        "title":"App theme",
+        "desc":"The app theme controls the style of iChrome itself and all widgets",
+        "preview":"Avance",
+        "light":"Light (default)",
+        "dark":"Oscuro",
+        "transparent":"Transparent",
+        "transparent_darker":"Transparent (darker)"
+      }
     },
-    "specific":{
-      "name":"Nombre de Pestaña",
-      "default_name":"Nueva pestaña",
-      "delete":"Eliminar Pestaña",
-      "delete_disallowed":"No puedes eliminar la última pestaña que queda.",
-      "delete_confirm":"¿Está seguro de querer eliminar esta pestaña?\nEsta acción es irreversible, y todos los datos de todos los widgets de esta pestaña se perderán permanentemente.",
-      "default":"Establecer como predeterminado"
+    "toolbar":{
+      "style":{
+        "title":"Style",
+        "desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
+        "normal":"Normal",
+        "button":"Button"
+      },
+      "search":{
+        "title":"Buscar",
+        "desc":"These settings control how the search box and voice search function",
+        "engine":"Search engine",
+        "engines_google":"Google (Default)",
+        "engines_custom":"Personlizado",
+        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
+        "voice":"Enable voice search",
+        "ok_google":"Enable \"OK Google\" hotword detection",
+        "search_tab":"Open search results in a new tab"
+      },
+      "links":{
+        "title":"Links",
+        "desc":"These are the items shown at the right of the toolbar",
+        "apps":"Apps menu",
+        "custom":"Custom links",
+        "custom_note1":"Maximum of 3 allowed",
+        "custom_note2":"users get 8",
+        "custom_name_placeholder":"Link text",
+        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+      }
     },
-    "sync":{
-      "status_syncing":"iChrome está <b>sincronizando<\/b> sus pestañas y ajustes.",
-      "status_notsyncing":"iChrome <b>no está sincronizando<\/b> sus pestañas y ajustes.",
-      "status_notsyncing2":"Haga clic en Sincronizar Ahora en la parte inferior de esta página o de acceder con su cuenta de Google para crear un perfil.",
-      "duplicate_profile":"Ya existe un perfil bajo la siguiente dirección de correo electrónico. Para proteger su seguridad, iChrome no puede utilizar su perfil de sincronización hasta que usted acceda a su cuenta de Google para verificar que esa dirección le pertenece.",
-      "name":"Nombre",
-      "fname":"Nombres",
-      "lname":"Apellidos",
-      "name_desc":"Usaremos esto para dirigirnos hacia usted dentro de iChrome y en las comunicaciones.",
-      "email":"Dirección de Correo Electrónico",
-      "email_desc":"Esto se utiliza para identificar el perfil de sincronización. También lo utilizaremos si necesitamos comunicarnos con usted.",
-      "signin":"Acceder",
-      "signin_btn":"Acceder con Google",
-      "signin_desc":"Iniciar sesión con su cuenta de Google para añadir nuevos dispositivos a su perfil de sincronización.",
-      "signed_in":"iChrome está <b>conectado<\/b> a su cuenta de Google.  Acceder a nuevos dispositivos para sincronizar su configuración al instante.",
-      "keep_data":"¿Mantener datos locales?",
-      "keep_data_desc":"¿Desea mantener sus datos locales y remplazar la configuración de sus otros dispositivos del presente grupo de sincronización o remplazar la configuración de este equipo con los datos de los otros dispositivos?",
-      "keep_theirs":"Utilizar datos de otros dispositivos",
-      "keep_local":"Mantener local",
-      "sync_now":"Sincronizar ahora",
-      "syncing":"Sincronizando...",
-      "last_synced":"Última sincronización",
-      "backup":{
-        "title":"Copia de seguridad y Restauración",
-        "desc":"Haga clic en una copia de seguridad para restaurar la configuración de iChrome guardado.  También puede utilizar el botón de abajo para crear una copia de seguridad manual.",
-        "btn":"Realizar copia de seguridad ahora",
-        "restore":"Restaurar",
-        "download":"Descargar",
-        "download_name":"iChrome Copia de Seguridad",
-        "no_backups":"No existen copias de seguridad. Haga clic en Copia de Seguridad ahora para crear una."
+    "misc":{
+      "link_tab":"Open links in a new tab by default"
+    },
+    "tabs":{
+      "create_new":"Create new",
+      "make_default":"Make default",
+      "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
+      "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
+      "name_placeholder":"Enter a tab name",
+      "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
+    },
+    "accounts":{
+      "status":{
+        "title":"Status",
+        "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
+        "reset_account":"Reset account",
+        "sign_out":"Sign out",
+        "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
+        "sign_in":"Sign in with Google"
       },
-      "restore":{
-        "file":"Restaurar desde un archivo",
-        "error":"Se ha producido un error al intentar analizar los datos, intente más tarde.",
-        "confirm_desc":"Esta acción sobrescribirá todos los datos locales y sincronizados.",
-        "confirm_desc2":"Usted perderá su configuración actual completa en todos los dispositivos conectados a este perfil de sincronización."
-      },
-      "reset":"Restablecer Perfil",
-      "resetting":"Restableciendo...",
-      "reset_confirm_desc":"Esto borrará todos los datos sincronizados y locales, no hay ninguna copia de seguridad y no hay manera de deshacer esto.",
-      "reset_confirm_desc2":"Usted perderá su configuración actual completa en todos los dispositivos conectados a este perfil de sincronización."
+      "keep_data":"Keep local data?",
+      "keep_data_desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
+      "keep_account":"Use account",
+      "keep_local":"Keep Local",
+      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
+      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this account."
     },
     "advanced":{
-      "background":"Fondo de widget",
-      "background_desc":"Haga clic en la muestra para seleccionar un color",
-      "css":"CSS personalizado",
-      "css_desc":"Puede utilizar este campo para personalizar casi cualquier elemento visual de iChrome usando CSS (para una definición, por favor vea el <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\"> MDN<\/a>). <br \/><br \/> puesto que esto se sincronizarán, sólo puede ingresar un máximo de 1000 caracteres, incluyendo espacios en blanco.",
-      "debug":"Herramientas de Depuración",
-      "debug_confirm":"ADVERTENCIA: Estas herramientas pueden borrar su configuración en un solo clic, sólo utilizarlas si su desarrollador indica hacerlo. ¿Está seguro de que desea continuar?"
+      "backups":{
+        "title":"Backup and restore",
+        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
+        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
+        "backup":"Backup now",
+        "upload":"Restore from file",
+        "download":"Download",
+        "restore":"Restore",
+        "download_name":"iChrome Backup",
+        "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
+        "restore_error":"An error occurred while trying to parse the provided data, please try again later."
+      },
+      "css":{
+        "title":"Custom CSS",
+        "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
+        "placeholder":"Enter up to 1000 characters of CSS here"
+      },
+      "debug_tools":{
+        "title":"Debug tools",
+        "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
+        "open":"Open tools"
+      }
+    },
+    "widgets":{
+      "desc1":"Widgets have their own settings and can't be customized here.",
+      "desc2":"To edit a widget's settings, follow these steps:",
+      "steps1":"Move your mouse over any widget",
+      "steps2":"Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
+      "steps3":"Edit any of the settings shown in the dialog that's displayed",
+      "steps4":"Click Save to save your changes, or any part of the background to discard of them"
     }
   },
   "store":{
@@ -212,7 +234,24 @@
       "save":"Guardar",
       "size":"Tamaño del widget"
     },
+    "minimize":"Minimize",
+    "maximize":"Maximize",
     "delete_confirm":"¿Estás seguro de que desea eliminar este widget? Esta acción es irreversible; todos los datos de este widget se perderán permanentemente.",
+    "permissions_request":{
+      "title":"Access required",
+      "button":"Grant Access",
+      "desc":"This widget needs extra permissions before it can be used. Grant them using the button below."
+    },
+    "error":{
+      "explanation":"Something went wrong while we were trying to display this widget.",
+      "advice":"Try reinstalling the widget or reloading the page. Contact us if you see this message often.",
+      "support":"Soporte",
+      "refresh":"Refresh"
+    },
+    "auth":{
+      "message":"You'll need to give this widget access to your account before you can use it.",
+      "button":"Grant Access"
+    },
     "shared":{
       "settings":{
         "title":"Título de widget",
@@ -255,6 +294,8 @@
     "random_daily":"Este tema muestra una imagen escogida al azar cada día",
     "sunrise_sunset":"Este tema muestra una imagen basada en la hora del día",
     "feed":"Este tema muestra una imagen seleccionada diario de alimentación externo",
+    "video":"This theme displays a live video",
+    "pro_only":"This theme is only available to Pro users. Buy Pro in the settings.",
     "delete_confirm":"¿Estás seguro de que desea eliminar este tema? Esta acción es irreversible; el tema entero se perderá permanentemente.",
     "delete_error":"Se ha producido un error al intentar eliminar el tema.  Inténtalo de nuevo más tarde.",
     "feed_fetching":"Por favor espere, obteniendo datos...",
@@ -262,6 +303,13 @@
     "caching":"Por favor espere, almacenamiento en caché de tema...",
     "cache_status":"%s de %s imágenes en caché",
     "cache_error":"Se ha producido un error al intentar eliminar el tema.  Inténtalo de nuevo más tarde",
+    "bginfo":{
+      "view":"View",
+      "source":"Fuente",
+      "unknown":"Desconocido",
+      "download":"Download",
+      "pro_only":"Only Pro users can download background images and videos"
+    },
     "edit":{
       "title":"Editar Tema",
       "create_title":"Crear Tema",

@@ -1,8 +1,8 @@
 {
   "lang_code":"bn",
   "language":"বাংলা",
+  "extName":"iChrome",
   "newtabName":"iChrome নতুন ট্যাব",
-  "extName":"iChrome - ক্রোমের জন্য , আপনার মূল পাতা",
   "extDescription":"The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
   "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
   "defaults":{
@@ -10,9 +10,6 @@
     "me":"আমি"
   },
   "remove_widget":"বাতিল",
-  "column_to_grid_warning":"You selected to change a tab from a column-based layout to a grid-based layout. If you continue you will lose all of your columns; everything will be moved to the top left corner.\r\nAre you sure you want to do this?",
-  "grid_to_column_warning":"You selected to change a tab from a grid-based layout to a column-based layout. If you continue you will lose all of your widget positioning; everything will be moved to the first column of the new tab.\r\nAre you sure you want to do this?",
-  "storage_warning":"You have used more than 90% of the total synchronized storage space available.\r\nIf you reach the limit, iChrome will stop syncing your data and may stop working.\r\nYou can shrink the amount of space you use by deleting custom themes, notes and to-do lists that you don't use.",
   "alert":{
     "default_button":"Dismiss",
     "confirm_title":"Are you sure you want to do this?",
@@ -44,7 +41,6 @@
   "menu":{
     "settings":"সেটিংস",
     "widgets":"উইজেট",
-    "background":"পটভূমি দেখান",
     "editing":"সম্পাদনা",
     "editing_enabled":"সক্রিয়",
     "editing_disabled":"নিষ্ক্রিয়",
@@ -65,132 +61,158 @@
     "missed":"এটা বুঝা যায়নি। <a>আবার চেষ্টা করুন<\/a>"
   },
   "settings":{
-    "save":"সংরক্ষণ ও বন্ধ করুন",
-    "new_tab":"নতুন তৈরি করুন",
-    "labels":{
-      "general":"সাধারণ",
-      "visual":"রূপকল্প",
-      "specific":"নির্দিষ্ট ট্যাব",
-      "sync":"Accounts and Sync",
-      "advanced":"উচ্চতর"
-    },
-    "general":{
-      "search_url":"URL অনুসন্ধান",
-      "search_url_desc":"This is the URL that the search box will submit searches to. Put <b>%s<\/b> where the search query should go",
-      "ltab":"Link Behavior",
-      "ltab_label":"Open links in a new tab by default",
-      "search":"অনুসন্ধানের আচরণ",
-      "search_label":"একটি নতুন ট্যাবে অনুসন্ধানের ফলাফল খুলুন",
-      "voice":"কণ্ঠ অনুসন্ধান",
-      "voice_search":"কন্ঠস্বর অনুসন্ধান সক্ষম করুন",
-      "voice_ok":"Enable \"OK Google\" hotword detection",
-      "links":"Toolbar Links",
-      "links_desc":"Here you can choose which links will show in the right section of the toolbar:",
-      "links_items":{
-        "plus":"গুগল প্লাস",
-        "gmail":"জিমেইল",
-        "apps":"অ্যাপ মেনু",
-        "link1":"Custom Link 1",
-        "link2":"Custom Link 2",
-        "link3":"Custom Link 3",
-        "text_holder":"Link text",
-        "link_holder":"লিংক URL, উদা. http:\/\/www.google.com.bd\/"
+    "title":"সেটিংস",
+    "exit":"Exit settings",
+    "saved":"Settings saved",
+    "nav":{
+      "visual":"Visual",
+      "visual_sections":{
+        "background":"Background",
+        "layout":"লেআউট",
+        "theme":"App theme"
       },
-      "guide":"ইনস্টলকরণের সহায়িকা",
-      "guide_desc":"Reshow the guide that was shown when iChrome was first installed"
+      "toolbar":"Toolbar",
+      "toolbar_sections":{
+        "style":"Style",
+        "search":"অনুসন্ধান",
+        "links":"Links"
+      },
+      "tabs":"ট্যাব",
+      "widgets":"উইজেট",
+      "pro":"Pro",
+      "accounts":"Accounts and sync",
+      "misc":"Miscellaneous",
+      "advanced":"Advanced",
+      "advanced_sections":{
+        "backups":"Backup and restore",
+        "css":"Custom CSS",
+        "debug_tools":"Debug tools"
+      },
+      "support":"Help and support",
+      "suggest":"Suggest a feature"
     },
     "visual":{
-      "layout":"লেআউট",
-      "layout_options":{
-        "1_fixed":"One column, fixed width",
-        "1_fluid":"One column, fluid width",
-        "2_fixed":"Two columns, fixed width",
-        "2_fluid":"Two columns, fluid width",
-        "3_fixed":"Three columns, fixed width",
-        "3_fluid":"Three columns, fluid width",
-        "4_fixed":"Four columns, fixed width",
-        "4_fluid":"Four columns, fluid width",
-        "5_fixed":"Five columns, fixed width",
-        "5_fluid":"Five columns, fluid width",
-        "grid":"Grid-based, customizable width"
+      "background":{
+        "title":"Background",
+        "desc":"This is the image or set of images shown as a background to your tabs",
+        "current":"Current background",
+        "custom":"স্বনির্ধারিত",
+        "unnamed":"Theme %s",
+        "select":"Select a theme",
+        "or":"অথবা",
+        "url_placeholder":"Enter an image URL"
       },
-      "theme":"ডিফল্ট থিম",
-      "theme_placeholder":"থিম #%s",
-      "theme_select":"থিম নির্বাচন করুন",
-      "align":"সারিবদ্ধতা",
-      "align_desc":"This will change the alignment of the widget columns",
-      "align_labels":{
-        "left":"বামদিকে",
-        "center":"কেন্দ্রে",
-        "right":"ডানদিকে"
+      "layout":{
+        "title":"লেআউট",
+        "desc":"Here you can adjust the type and number of columns in each tab",
+        "columns":"Columns",
+        "grid":"Grid",
+        "columns_number":"Number of columns",
+        "column_width":"Column width",
+        "column_width_fixed":"Fixed",
+        "column_width_fluid":"Fluid",
+        "column_warning":{
+          "column_to_grid":"Changing to a grid-based layout will move all of your widgets to the top left corner.",
+          "grid_to_column":"Changing to a column-based layout will move all of your widgets to the first column."
+        }
       },
-      "logo":"লোগো URL",
-      "logo_desc":"This is the image shown at the left of the toolbar.  The default is <b>\/images\/logo.svg<\/b>",
-      "toolbar":"সরঞ্জামদণ্ডের শৈলী",
-      "toolbar_desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
-      "toolbar_normal":"স্বাভাবিক",
-      "toolbar_button":"বোতাম",
-      "animation":"Slide-in Animation",
-      "animation_desc":"This setting lets you enable or disable the slide-in animation that runs when you load the page",
-      "animation_label":"এনিমেশন সক্রিয় করুন"
+      "theme":{
+        "title":"App theme",
+        "desc":"The app theme controls the style of iChrome itself and all widgets",
+        "preview":"প্রাকদর্শন",
+        "light":"Light (default)",
+        "dark":"গাঢ়",
+        "transparent":"Transparent",
+        "transparent_darker":"Transparent (darker)"
+      }
     },
-    "specific":{
-      "name":"ট্যাবের নাম",
-      "default_name":"নতুন ট্যাব",
-      "delete":"ট্যাব মুছে ফেলুন",
-      "delete_disallowed":"আপনি অবশিষ্ট ট্যাবটি মুছে ফেলতে পারবেন না।",
-      "delete_confirm":"Are you really sure you want to delete this tab?\r\nThis action is irreversible, all data from all widgets in the tab will be permanently lost.",
-      "default":"ডিফল্ট হিসাবে নির্বাচন করুন"
+    "toolbar":{
+      "style":{
+        "title":"Style",
+        "desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
+        "normal":"Normal",
+        "button":"Button"
+      },
+      "search":{
+        "title":"অনুসন্ধান",
+        "desc":"These settings control how the search box and voice search function",
+        "engine":"Search engine",
+        "engines_google":"Google (Default)",
+        "engines_custom":"স্বনির্ধারিত",
+        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
+        "voice":"Enable voice search",
+        "ok_google":"Enable \"OK Google\" hotword detection",
+        "search_tab":"Open search results in a new tab"
+      },
+      "links":{
+        "title":"Links",
+        "desc":"These are the items shown at the right of the toolbar",
+        "apps":"Apps menu",
+        "custom":"Custom links",
+        "custom_note1":"Maximum of 3 allowed",
+        "custom_note2":"users get 8",
+        "custom_name_placeholder":"Link text",
+        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+      }
     },
-    "sync":{
-      "status_syncing":"iChrome is currently <b>syncing<\/b> your tabs and settings.",
-      "status_notsyncing":"iChrome is currently <b>not syncing<\/b> your tabs and settings.",
-      "status_notsyncing2":"Click Sync Now at the bottom of this page or sign in with your Google account to create a profile.",
-      "duplicate_profile":"A profile already exists under the email address below. To protect your security, iChrome can't use your sync profile until you verify that you own the address by signing in to your Google account.",
-      "name":"Name",
-      "fname":"First Name",
-      "lname":"Last Name",
-      "name_desc":"We'll use this to address you inside iChrome and in any communications.",
-      "email":"Email Address",
-      "email_desc":"This is used to identify your sync profile, we'll also use it if we need to get in touch with you.",
-      "signin":"Sign In",
-      "signin_btn":"Sign in with Google",
-      "signin_desc":"Sign in with your Google account to easily and securely add new computers to your sync profile.",
-      "signed_in":"iChrome is <b>connected<\/b> to your Google account.  Sign in on any new computers to instantly sync your configuration.",
+    "misc":{
+      "link_tab":"Open links in a new tab by default"
+    },
+    "tabs":{
+      "create_new":"Create new",
+      "make_default":"Make default",
+      "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
+      "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
+      "name_placeholder":"Enter a tab name",
+      "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
+    },
+    "accounts":{
+      "status":{
+        "title":"Status",
+        "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
+        "reset_account":"Reset account",
+        "sign_out":"Sign out",
+        "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
+        "sign_in":"Sign in with Google"
+      },
       "keep_data":"Keep local data?",
-      "keep_data_desc":"Would you like to keep your local data, and replace the configuration on other computers you may have in this sync group with it, or replace this computer's configuration with theirs?",
-      "keep_theirs":"Use Theirs",
+      "keep_data_desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
+      "keep_account":"Use account",
       "keep_local":"Keep Local",
-      "sync_now":"Sync Now",
-      "syncing":"Syncing...",
-      "last_synced":"Last synced",
-      "backup":{
-        "title":"Backup & Restore",
-        "desc":"Click the button an any backup to roll iChrome back to the time displayed.  You can also use the button below to create a manual backup.",
-        "btn":"Backup now",
-        "restore":"Restore",
-        "download":"Download",
-        "download_name":"iChrome Backup",
-        "no_backups":"No backups found, click Backup Now to create one."
-      },
-      "restore":{
-        "file":"Restore from file",
-        "error":"An error occurred while trying to parse the provided data, please try again later.",
-        "confirm_desc":"This will overwrite all local and synced data.",
-        "confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
-      },
-      "reset":"Reset Profile",
-      "resetting":"Resetting...",
       "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
-      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
+      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this account."
     },
     "advanced":{
-      "background":"উইজেটের পটভূমি",
-      "background_desc":"Click the swatch to select a color",
-      "css":"স্বনির্ধারিত CSS",
-      "css_desc":"You can use this field to customize almost any visual part of iChrome using CSS (for a definition please see the <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Since this will be synced, you can only enter a maximum of 1000 characters, including whitespace.",
-      "debug":"Debug Tools",
-      "debug_confirm":"WARNING: These tools can erase your configuration in a single click, only use them if your developer instructs you to.\r\nAre you sure you want to continue?"
+      "backups":{
+        "title":"Backup and restore",
+        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
+        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
+        "backup":"Backup now",
+        "upload":"Restore from file",
+        "download":"Download",
+        "restore":"Restore",
+        "download_name":"iChrome Backup",
+        "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
+        "restore_error":"An error occurred while trying to parse the provided data, please try again later."
+      },
+      "css":{
+        "title":"Custom CSS",
+        "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
+        "placeholder":"Enter up to 1000 characters of CSS here"
+      },
+      "debug_tools":{
+        "title":"Debug tools",
+        "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
+        "open":"Open tools"
+      }
+    },
+    "widgets":{
+      "desc1":"Widgets have their own settings and can't be customized here.",
+      "desc2":"To edit a widget's settings, follow these steps:",
+      "steps1":"Move your mouse over any widget",
+      "steps2":"Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
+      "steps3":"Edit any of the settings shown in the dialog that's displayed",
+      "steps4":"Click Save to save your changes, or any part of the background to discard of them"
     }
   },
   "store":{
@@ -212,7 +234,24 @@
       "save":"সংরক্ষণ",
       "size":"উইজেটের আকার"
     },
+    "minimize":"Minimize",
+    "maximize":"Maximize",
     "delete_confirm":"Are you really sure you want to delete this widget?\r\nThis action is irreversible; all data from this widget will be permanently lost.",
+    "permissions_request":{
+      "title":"Access required",
+      "button":"Grant Access",
+      "desc":"This widget needs extra permissions before it can be used. Grant them using the button below."
+    },
+    "error":{
+      "explanation":"Something went wrong while we were trying to display this widget.",
+      "advice":"Try reinstalling the widget or reloading the page. Contact us if you see this message often.",
+      "support":"সমর্থন",
+      "refresh":"Refresh"
+    },
+    "auth":{
+      "message":"You'll need to give this widget access to your account before you can use it.",
+      "button":"Grant Access"
+    },
     "shared":{
       "settings":{
         "title":"উইজেটের শিরোনাম",
@@ -255,6 +294,8 @@
     "random_daily":"This theme displays an image picked randomly every day",
     "sunrise_sunset":"This theme displays an image based on the time of day",
     "feed":"This theme displays an image selected daily from an external feed",
+    "video":"This theme displays a live video",
+    "pro_only":"This theme is only available to Pro users. Buy Pro in the settings.",
     "delete_confirm":"Are you really sure you would like to delete this theme?\r\nThis action is irreversible; the entire theme will be permanently lost.",
     "delete_error":"An error occurred while trying to delete the theme.  Please try again later.",
     "feed_fetching":"Please wait, fetching feed...",
@@ -262,6 +303,13 @@
     "caching":"Please wait, caching theme...",
     "cache_status":"%s of %s images cached",
     "cache_error":"An error occurred while trying to cache the theme.  Please try again later",
+    "bginfo":{
+      "view":"View",
+      "source":"উৎস",
+      "unknown":"অজানা",
+      "download":"Download",
+      "pro_only":"Only Pro users can download background images and videos"
+    },
     "edit":{
       "title":"থিম সম্পাদনা করুন",
       "create_title":"থিম তৈরি করুন",

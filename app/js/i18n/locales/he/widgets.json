@@ -1,32 +1,32 @@
 {
-  "lang_code":"uk-widgets",
+  "lang_code":"en-widgets",
   "apps":{
-    "name":"Додатки",
-    "desc":"Відображає ваші інстальовані програми Google Chrome.",
+    "name":"Apps",
+    "desc":"Displays your currently installed Google Chrome applications.",
     "settings":{
-      "format":"Формат віджету",
+      "format":"Widget Format",
       "format_options":{
         "tiles":"Tiles",
-        "list":"Список"
+        "list":"List"
       },
-      "display":"Показати",
+      "display":"Show",
       "display_options":{
-        "all":"Усі додатки",
-        "enabled":"Лише активні додатки"
+        "all":"All apps",
+        "enabled":"Only enabled apps"
       },
-      "sort":"Упорядкувати",
+      "sort":"Sort",
       "sort_options":{
         "id":"ID",
-        "alphabetically":"За алфавітом",
-        "offline":"Увімкнено офлайн",
-        "available":"Доступність"
+        "alphabetically":"Alphabetically",
+        "offline":"Offline Enabled",
+        "available":"Availability"
       },
-      "open":"Відкривати додатки у"
+      "open":"Open apps in"
     },
-    "store_app":"Крамниця"
+    "store_app":"Store"
   },
   "bookmarks":{
-    "name":"Закладки",
+    "name":"Bookmarks",
     "desc":"Displays selected and customized bookmarks, and other links.",
     "settings":{
       "title_placeholder":"Enter a widget title",
@@ -43,15 +43,15 @@
       "title_placeholder":"Google",
       "url":"Bookmark URL",
       "url_placeholder":"http:\/\/www.google.com\/",
-      "save":"Зберегти"
+      "save":"Save"
     },
-    "new_caption":"Нова",
-    "new_bookmark":"Закладка",
-    "new_folder":"Тека",
+    "new_caption":"New",
+    "new_bookmark":"Bookmark",
+    "new_folder":"Folder",
     "drop_link":"Drop link here"
   },
   "chrome_bookmarks":{
-    "name":"Закладки",
+    "name":"Bookmarks",
     "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
     "settings":{
       "title_placeholder":"Enter a widget title",
@@ -62,15 +62,15 @@
   "calc":{
     "name":"Calculator",
     "desc":"Displays a calculator with support for basic operators.",
-    "error":"Помилка!",
-    "infinity":"Нескінченно",
+    "error":"Error!",
+    "infinity":"Infinity",
     "mismatch":"Mismatched parentheses"
   },
   "calendar":{
-    "name":"Календар",
+    "name":"Calendar",
     "desc":"Displays upcoming events from one or more of your Google calendars.",
     "settings":{
-      "calendar":"Календар",
+      "calendar":"Calendar",
       "show":"Show events from",
       "show_options":{
         "all":"All time",
@@ -78,7 +78,7 @@
       }
     },
     "title":"Agenda",
-    "calendar":"Календар",
+    "calendar":"Calendar",
     "noevents":"No events found in the near future, it looks like your schedule's clear!"
   },
   "clock":{
@@ -117,7 +117,7 @@
     "settings":{
       "source":"Show articles from",
       "source_feeds":"Feeds",
-      "show":"Показати",
+      "show":"Show",
       "show_options":{
         "all":"All articles",
         "unread":"Only unread articles"
@@ -143,7 +143,7 @@
     "all":"All",
     "saved":"Saved for later",
     "uncategorized":"Uncategorized",
-    "author":"за",
+    "author":"by",
     "go_to_feedly":"Go To Feedly"
   },
   "gmail":{
@@ -208,7 +208,7 @@
       "sort_options":{
         "hot":"Hot",
         "top":"Top",
-        "new":"Нова",
+        "new":"New",
         "gilded":"Gilded",
         "rising":"Rising",
         "controversial":"Controversial"
@@ -220,14 +220,14 @@
         "comments":"The comments"
       }
     },
-    "more":"Більше"
+    "more":"More"
   },
   "tasks":{
     "name":"Tasks",
     "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
     "title":"Tasks",
     "settings":{
-      "list":"Список"
+      "list":"List"
     },
     "task_title":"Title",
     "due_date":"Due date",
@@ -252,11 +252,11 @@
     "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
     "authorize_btn":"Authorize",
     "no_tweets":"There don't seem to be any tweets here...",
-    "home":"Додому",
+    "home":"Home",
     "mentions":"Mentions",
     "retweets":"Retweets of me",
     "lists":"Lists",
-    "more":"Більше",
+    "more":"More",
     "reply":"Reply",
     "retweet":"Retweet",
     "favorite":"Favorite"
@@ -335,11 +335,11 @@
     "discharging":"Discharging"
   },
   "search":{
-    "name":"Пошук",
+    "name":"Search",
     "desc":"Embed a search box in your page for easy access",
     "settings":{
       "placeholder":"Search Field Placeholder",
-      "search_url":"Пошук посилання",
+      "search_url":"Search URL",
       "param":"Query Parameter",
       "param_placeholder":"The parameter where the query goes, i.e. \"q\""
     },
@@ -389,27 +389,27 @@
       "open_pocket":"In Pocket",
       "open_original":"At their original URL"
     },
-    "by":"за",
+    "by":"By",
     "no_links":"No links found",
     "grant_access":"Grant access",
     "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
   },
   "analytics":{
-    "name":"Аналітика",
-    "desc":"Відображення різноманітних показників з профілю Google Analytics.",
-    "sessions":"сесії",
-    "pageviews":"Переглядів сторінок",
-    "pagesvisit":"Сторінки\/відвідування",
+    "name":"Analytics",
+    "desc":"Displays various metrics from a Google Analytics profile.",
+    "sessions":"sessions",
+    "pageviews":"Pageviews",
+    "pagesvisit":"Pages\/visit",
     "bouncerate":"Bounce Rate",
     "completions":"Completions",
     "noprofile_title":"No profile selected",
-    "noprofile":"Схоже, ви ще не вибрали профіль.\n<br \/><br \/>\nОберіть за натиснувши на значок гайкового ключа у верхньому правому кутку.",
+    "noprofile":"It doesn't look like you've selected a profile yet!\n<br \/>\nTry selecting one via the wrench icon at the top right.",
     "settings":{
-      "profile":"Профіль"
+      "profile":"Profile"
     }
   },
   "currency":{
-    "name":"Валюта",
+    "name":"Currency",
     "desc":"Let's you convert between any two of 169 currencies.",
     "to_label":"to",
     "recently_used":"Recently Used"
@@ -418,7 +418,7 @@
     "name":"Dictionary",
     "desc":"Quickly look up the definition and synonyms for a word",
     "search_placeholder":"Enter a word or term here",
-    "more":"Більше",
+    "more":"More",
     "less":"Less",
     "synonyms":"Synonyms",
     "antonyms":"Antonyms",
@@ -431,16 +431,16 @@
     "settings":{
       "files_shown":"Number of Files Shown"
     },
-    "modified_by":"за",
+    "modified_by":"by",
     "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
   },
   "news":{
-    "name":"Новини",
+    "name":"News",
     "desc":"Displays the current top news by category and edition.",
     "all_stories":"All",
     "settings":{
-      "page_title":"Налаштування",
-      "save":"Зберегти",
+      "page_title":"Settings",
+      "save":"Save",
       "title":"Widget Title",
       "title_placeholder":"Enter a widget title or leave blank to hide",
       "articles":"Articles Shown",
@@ -461,8 +461,8 @@
     "name":"RSS",
     "desc":"Displays items from a RSS or Atom feed with optional images.",
     "settings":{
-      "page_title":"Налаштування",
-      "save":"Зберегти",
+      "page_title":"Settings",
+      "save":"Save",
       "title":"Widget Title",
       "title_placeholder":"Enter a widget title or leave blank to hide",
       "link":"Title Link",
@@ -475,7 +475,7 @@
       "feed_url_placeholder":"Feed URL",
       "articles":"Articles Shown"
     },
-    "by":"за",
+    "by":"By",
     "all_articles":"All articles",
     "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
   },
@@ -484,11 +484,11 @@
     "desc":"Displays scores, schedules, and news from your favorite teams.",
     "settings":{
       "page_title":"Favorites",
-      "save":"Зберегти",
+      "save":"Save",
       "teams_placeholder":"Enter a team name and press Enter to add"
     },
     "scores":"Scores",
-    "news":"Новини",
+    "news":"News",
     "last_play":"Last play",
     "no_games":"No games found",
     "preview":"Preview",
@@ -507,7 +507,7 @@
     "as_of":"as of",
     "exchange_time":"Exchange Time",
     "overview":"Overview",
-    "news":"Новини",
+    "news":"News",
     "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
     "pro_splash2":"Buy Pro in the settings.",
     "time_ranges":{
@@ -614,12 +614,12 @@
       "units":"Units",
       "units_imperial":"Imperial (Fahrenheit)",
       "units_metric":"Metric (Celsius)",
-      "enabled":"Увімкнено",
-      "disabled":"Вимкнено",
+      "enabled":"Enabled",
+      "disabled":"Disabled",
       "forecast":"Forecasts",
       "hourly":"Hourly forecasts"
     },
-    "more":"Більше",
+    "more":"More",
     "less":"Less",
     "wind":"Wind",
     "precipitation":"Precip",

@@ -1,18 +1,5 @@
 {
   "lang_code":"es-widgets",
-  "analytics":{
-    "name":"Analítica",
-    "desc":"Muestra varias métricas de un perfil de Google Analytics.",
-    "sessions":"sesiones",
-    "pageviews":"Visitas de Pagina",
-    "pagesvisit":"Páginas\/visita",
-    "bouncerate":"Tasa de rebote",
-    "completions":"Terminaciones",
-    "noprofile":"No parece que se ha seleccionado un perfil todavía!\n<br \/><br \/>\nPruebe a seleccionar una vía el icono de llave inglesa en la parte superior derecha.",
-    "settings":{
-      "profile":"PERFIL"
-    }
-  },
   "apps":{
     "name":"Aplicaciónes",
     "desc":"Muestra tus aplicaciones Google Chrome instalados actualmente.",
@@ -120,22 +107,6 @@
     "dismiss":"Ignorar",
     "enable_audio":"Activar el sonido"
   },
-  "currency":{
-    "name":"Monedas",
-    "desc":"¡ Convertir entre cualquiera de las dos monedas 169.",
-    "to_label":"para",
-    "recently_used":"Usadas Recientemente"
-  },
-  "drive":{
-    "name":"Disco",
-    "desc":"Muestra ha cambiado recientemente los archivos del disco de Google.",
-    "settings":{
-      "files_shown":"Número de archivos que se muestran"
-    },
-    "modified_by":"por",
-    "authorize":"Necesitarás dar permisos iChrome para ver los archivos desde el disco de Google antes de que algo va a aparecer aquí.",
-    "authorize_btn":"Autorizar"
-  },
   "facebook":{
     "name":"Facebook",
     "desc":"Incrusta Facebook en un widget"
@@ -193,34 +164,6 @@
     "name":"Mantener",
     "desc":"Incrusta Google mantenga en un widget"
   },
-  "news":{
-    "name":"News",
-    "desc":"Muestra la actualidad superior de categoría y edición.",
-    "settings":{
-      "articles":"Artículos que se muestra",
-      "edition":"Edición",
-      "edition_help":"Si su edición o tema no aparece aquí, por favor ingrese un Google News feed URL en el siguiente campo personalizado de alimentación (ver el texto de ayuda hay una explicación).",
-      "topic":"Tema",
-      "topic_options":{
-        "top":"Noticias del momento",
-        "world":"Mundo",
-        "nation":"Nación",
-        "business":"Negocios",
-        "sports":"Deportes",
-        "technology":"Tecnología",
-        "entertainment":"Entretenimiento",
-        "health":"Salud",
-        "science":"Ciencias",
-        "spotlight":"Destacado"
-      },
-      "feed":"Custom Feed",
-      "feed_help":"Este es el avance en la dirección URL que aparece en la parte inferior de cada página de Google News, busque un icono naranja de RSS y un enlace que dice \"RSS\"",
-      "feed_placeholder":"Introduzca un feed RSS personalizado para traer noticias de",
-      "footer":"Pie de página URL",
-      "footer_placeholder":"Introduzca la URL que debe señalar el enlace \"Más\""
-    },
-    "more":"Más"
-  },
   "notes":{
     "name":"Notas",
     "desc":"Inserta una nota simple, editable.",
@@ -254,14 +197,6 @@
     "name":"Notificaciones de Google",
     "desc":"Muestra tus notificaciones de Google de servicios tales como Google +"
   },
-  "recentlyclosed":{
-    "name":"Recientemente cerrados",
-    "desc":"Muestra tus pestañas cerradas recientemente",
-    "settings":{
-      "tabs":"Lengüetas que se muestra",
-      "open":"Pestañas abiertas en"
-    }
-  },
   "reddit":{
     "name":"Reddit",
     "desc":"Muestra los elementos principales en Reddit para cualquier subreddit dado.",
@@ -287,76 +222,6 @@
     },
     "more":"Más"
   },
-  "rss":{
-    "name":"RSS",
-    "desc":"Muestra los elementos de un RSS o Atom feed con imágenes opcionales.",
-    "settings":{
-      "link":"Título enlace",
-      "link_placeholder":"Introduzca un enlace para el título del widget",
-      "url":"URL de la fuente web",
-      "url_placeholder":"La URL del feed RSS para mostrarse",
-      "articles":"Artículos que se muestra",
-      "view":"Ver",
-      "view_options":{
-        "images":"Imagen amigable",
-        "default":"Predeterminado"
-      },
-      "images":"Imágenes",
-      "descriptions":"Descripciones"
-    },
-    "feed_error":"Ha producido un error al tratar de buscar el alimento en: %s. Por favor verifique la dirección URL o modificar la configuración del widget."
-  },
-  "sports":{
-    "name":"Deportes",
-    "desc":"Muestra las puntuaciones y la información sobre el juego de las ligas o equipos.",
-    "settings":{
-      "league":"Liga",
-      "games":"Concursos",
-      "team":"Equipo",
-      "teams":"Equipos",
-      "unavailable":"Cuando los partidos de la selección están disponibles",
-      "unavailable_options":{
-        "other":"Mostrar otros juegos",
-        "none":"Mostrar \"No hay juegos\""
-      }
-    },
-    "error":"Algo que parece haber salido mal",
-    "unknown_error":"Error Desconocido",
-    "watch_on":"Ver en: %s",
-    "no_games":"No hay juegos programados"
-  },
-  "stocks":{
-    "name":"Acciones",
-    "desc":"Muestra información actual para cualquier símbolo bursátil determinado.",
-    "settings":{
-      "symbols":"Símbolos stock, separados por comas",
-      "symbols_placeholder":"por ejemplo NASDAQ: GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"Estas son las acciones como se muestra en un formato TICKER: intercambio.\n<br \/><br \/>\nPara índices, por favor use las bolsas y teletipos como se muestra en <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. Por ejemplo, el índice Dow Jones es <b>.DJI<\/b> y NYSE es <b>INDEXNYSEGIS:NYA<\/b>."
-    },
-    "as_of":"desde",
-    "exchange_time":"Cambio de Tiempo",
-    "open":"abrir",
-    "high":"alto",
-    "low":"bajo",
-    "volume":"volumen"
-  },
-  "todo":{
-    "name":"Tareas",
-    "desc":"Muestra una lista de tareas interactivas con elementos importantes y completados.",
-    "title":"Lista de tareas",
-    "settings":{
-      "color":"Color del texto",
-      "color_options":{
-        "light":"Aclarado",
-        "dark":"Oscuro"
-      },
-      "tags":"Etiquetas",
-      "tags_placeholder":"Escriba un nombre de etiqueta y pulse Enter"
-    },
-    "add":"Añadir Artículo",
-    "none":"Ninguno",
-    "important":"Importante"
-  },
   "tasks":{
     "name":"tareas",
     "desc":"Muestra una lista de tareas de una de sus tareas de Google editable aparecen.",
@@ -375,43 +240,6 @@
     "due_today":"Vencen hoy",
     "overdue":"Atrasado",
     "authorize":"Usted necesitará seleccionar una lista de sus tareas de Google mediante la configuración antes de que nada puede ser mostrado aquí."
-  },
-  "topsites":{
-    "name":"Paginas web principales",
-    "desc":"Muestra los sitios más visitados y la parte superior.",
-    "settings":{
-      "show":"Número de sitios de muestra",
-      "open":"Sitios abiertos en"
-    }
-  },
-  "traffic":{
-    "name":"Tráfico",
-    "desc":"Muestra la hora actual en el tráfico actual a casa o el trabajo.",
-    "settings":{
-      "leave":"Me voy a casa en",
-      "home":"Dirección de casa",
-      "home_placeholder":"El destino que debe utilizarse después del trabajo",
-      "work":"Dirección del trabajo",
-      "work_placeholder":"El destino que debe ser usado antes del trabajo",
-      "method":"Método del tránsito",
-      "method_options":{
-        "driving":"Conducción",
-        "walking":"Andando",
-        "transit":"Transporte público"
-      }
-    },
-    "to_home":"a casa",
-    "to_work":"para trabajar"
-  },
-  "translate":{
-    "name":"Traducir",
-    "desc":"Contiene un pequeño inline Google Translate textbox.",
-    "placeholder":"Introduzca el texto que desea traducir aquí, entonces a \"Traducir\" más abajo.",
-    "button":"Traducir",
-    "untranslate":"Intraducir",
-    "auto":"Auto (%s)",
-    "unknown":"Desconocido",
-    "error":"Algo salió mal al intentar traducir eso..."
   },
   "twitter":{
     "name":"Twitter",
@@ -433,40 +261,8 @@
     "retweet":"Retweetear",
     "favorite":"Favorito"
   },
-  "unread":{
-    "name":"Sin leer",
-    "desc":"Muestra el número actual de mensajes no leídos en su bandeja de entrada de Gmail.",
-    "settings":{
-      "open":"Cuando hace clic en abrir"
-    },
-    "unread_none":"e-mails no leídos",
-    "unread_one":"e-mails no leídos",
-    "unread_many":"e-mails no leídos"
-  },
-  "voice":{
-    "name":"Voz",
-    "desc":"Muestra el número actual de textos y llamadas perdidas en tu cuenta de Google Voice.",
-    "call":"Llamar desde",
-    "text":"Mensaje de texto",
-    "missed":"perdido en voz",
-    "texts":"mensajes de texto no leídos",
-    "calls":"llamadas perdidas"
-  },
-  "weather":{
-    "name":"Tiempo metereològico",
-    "desc":"Muestra el tiempo actual y un pronóstico para los próximos 4 días.",
-    "settings":{
-      "location":"Localización(es)",
-      "location_placeholder":"Escriba una ubicación y pulse Enter",
-      "temperature":"Unidad de Temperatura",
-      "wind":"Unidades de velocidad de viento"
-    },
-    "unknown":"Desconocido",
-    "wind":"Velocidad de viento",
-    "chill":"Frio de Viento",
-    "humidity":"Humedad"
-  },
   "wolfram":{
+    "name":"Wolfram|Alpha",
     "desc":"Inserta un pequeño Wolfram|Buscador de alfa."
   },
   "youtube":{
@@ -597,5 +393,246 @@
     "no_links":"No se han encontrado enlaces",
     "grant_access":"Otorgar acceso",
     "no_key":"Necesitará otorgar acceso a su cuenta de Pocket para que iChrome pueda cargar sus enlaces."
+  },
+  "analytics":{
+    "name":"Analítica",
+    "desc":"Muestra varias métricas de un perfil de Google Analytics.",
+    "sessions":"sesiones",
+    "pageviews":"Visitas de Pagina",
+    "pagesvisit":"Páginas\/visita",
+    "bouncerate":"Tasa de rebote",
+    "completions":"Terminaciones",
+    "noprofile_title":"No profile selected",
+    "noprofile":"No parece que se ha seleccionado un perfil todavía!\n<br \/><br \/>\nPruebe a seleccionar una vía el icono de llave inglesa en la parte superior derecha.",
+    "settings":{
+      "profile":"PERFIL"
+    }
+  },
+  "currency":{
+    "name":"Monedas",
+    "desc":"¡ Convertir entre cualquiera de las dos monedas 169.",
+    "to_label":"para",
+    "recently_used":"Usadas Recientemente"
+  },
+  "dictionary":{
+    "name":"Dictionary",
+    "desc":"Quickly look up the definition and synonyms for a word",
+    "search_placeholder":"Enter a word or term here",
+    "more":"Más",
+    "less":"Less",
+    "synonyms":"Synonyms",
+    "antonyms":"Antonyms",
+    "web_definitions":"Web definitions",
+    "no_definitions":"No definitions found"
+  },
+  "drive":{
+    "name":"Disco",
+    "desc":"Muestra ha cambiado recientemente los archivos del disco de Google.",
+    "settings":{
+      "files_shown":"Número de archivos que se muestran"
+    },
+    "modified_by":"por",
+    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "news":{
+    "name":"News",
+    "desc":"Muestra la actualidad superior de categoría y edición.",
+    "all_stories":"Todos",
+    "settings":{
+      "page_title":"Ajustes",
+      "save":"Guardar",
+      "title":"Título de widget",
+      "title_placeholder":"Introduzca el título de un widget o deje en blanco para ocultar",
+      "articles":"Artículos que se muestra",
+      "edition":"Edición",
+      "default_topic":"Default Topic"
+    }
+  },
+  "recentlyclosed":{
+    "name":"Recientemente cerrados",
+    "desc":"Muestra tus pestañas cerradas recientemente",
+    "settings":{
+      "tabs":"Lengüetas que se muestra",
+      "open":"Pestañas abiertas en"
+    },
+    "more":"more"
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"Muestra los elementos de un RSS o Atom feed con imágenes opcionales.",
+    "settings":{
+      "page_title":"Ajustes",
+      "save":"Guardar",
+      "title":"Título de widget",
+      "title_placeholder":"Introduzca el título de un widget o deje en blanco para ocultar",
+      "link":"Título enlace",
+      "link_placeholder":"Introduzca un enlace para el título del widget",
+      "feeds":"Entradas",
+      "feeds_help":"Click any feed to edit it",
+      "feeds_placeholder":"Enter a feed URL and press Enter to add",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro from the Accounts and Sync tab in the settings.",
+      "feed_name_placeholder":"Feed name",
+      "feed_url_placeholder":"Feed URL",
+      "articles":"Artículos que se muestra"
+    },
+    "by":"Por",
+    "all_articles":"Todos los artículos",
+    "feed_error":"Ha producido un error al tratar de buscar el alimento en: %s. Por favor verifique la dirección URL o modificar la configuración del widget."
+  },
+  "sports":{
+    "name":"Deportes",
+    "desc":"Displays scores, schedules, and news from your favorite teams.",
+    "settings":{
+      "page_title":"Favorites",
+      "save":"Guardar",
+      "teams_placeholder":"Enter a team name and press Enter to add"
+    },
+    "scores":"Scores",
+    "news":"News",
+    "last_play":"Last play",
+    "no_games":"No games found",
+    "preview":"Avance",
+    "tickets":"Tickets",
+    "live":"Live",
+    "recap":"Recap",
+    "box_score":"Box Score"
+  },
+  "stocks":{
+    "name":"Acciones",
+    "desc":"Muestra información actual para cualquier símbolo bursátil determinado.",
+    "settings":{
+      "stocks":"Acciones",
+      "stocks_placeholder":"Type a company or exchange name and hit Enter"
+    },
+    "as_of":"desde",
+    "exchange_time":"Cambio de Tiempo",
+    "overview":"Overview",
+    "news":"News",
+    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
+    "pro_splash2":"Buy Pro in the settings.",
+    "time_ranges":{
+      "1d":"1d",
+      "5d":"5d",
+      "1m":"1m",
+      "3m":"3m",
+      "1y":"1y",
+      "5y":"5y",
+      "max":"max"
+    },
+    "open":"abrir",
+    "prev_close":"Previous Close",
+    "high":"alto",
+    "52high":"52 week high",
+    "low":"bajo",
+    "52low":"52 week low",
+    "volume":"volumen",
+    "avg_volume":"Avg. Volume",
+    "shares":"Shares",
+    "cap":"Market Cap",
+    "pe":"Price \/ Earnings",
+    "eps":"EPS",
+    "beta":"Beta",
+    "inst_own":"Inst. own"
+  },
+  "todo":{
+    "name":"Tareas",
+    "desc":"Muestra una lista de tareas interactivas con elementos importantes y completados.",
+    "title":"Lista de tareas",
+    "settings":{
+      "color":"Color del texto",
+      "color_options":{
+        "light":"Aclarado",
+        "dark":"Oscuro"
+      },
+      "tags":"Etiquetas",
+      "tags_placeholder":"Escriba un nombre de etiqueta y pulse Enter"
+    },
+    "add":"Añadir Artículo",
+    "none":"Ninguno",
+    "important":"Importante"
+  },
+  "topsites":{
+    "name":"Paginas web principales",
+    "desc":"Muestra los sitios más visitados y la parte superior.",
+    "settings":{
+      "show":"Número de sitios de muestra"
+    }
+  },
+  "traffic":{
+    "name":"Tráfico",
+    "desc":"Muestra la hora actual en el tráfico actual a casa o el trabajo.",
+    "settings":{
+      "leave":"Me voy a casa en",
+      "home":"Dirección de casa",
+      "home_placeholder":"El destino que debe utilizarse después del trabajo",
+      "work":"Dirección del trabajo",
+      "work_placeholder":"El destino que debe ser usado antes del trabajo",
+      "method":"Método del tránsito",
+      "method_options":{
+        "driving":"Conducción",
+        "walking":"Andando",
+        "transit":"Transporte público"
+      }
+    },
+    "to_home":"a casa",
+    "to_work":"para trabajar"
+  },
+  "translate":{
+    "name":"Traducir",
+    "desc":"Lets you quickly translate to and from 90 languages as you type",
+    "from_placeholder":"Start typing here",
+    "to_placeholder":"Translated text will appear here",
+    "detect_lang":"Detect language",
+    "translating":"Translating...",
+    "unknown":"Desconocido"
+  },
+  "unread":{
+    "name":"Sin leer",
+    "desc":"Muestra el número actual de mensajes no leídos en su bandeja de entrada de Gmail.",
+    "settings":{
+      "open":"Cuando hace clic en abrir"
+    },
+    "unread_none":"e-mails no leídos",
+    "unread_one":"e-mails no leídos",
+    "unread_many":"e-mails no leídos"
+  },
+  "voice":{
+    "name":"Voz",
+    "desc":"Muestra el número actual de textos y llamadas perdidas en tu cuenta de Google Voice.",
+    "call":"Llamar desde",
+    "text":"Mensaje de texto",
+    "missed":"perdido en voz",
+    "texts":"mensajes de texto no leídos",
+    "calls":"llamadas perdidas"
+  },
+  "weather":{
+    "name":"Tiempo metereològico",
+    "desc":"Muestra el tiempo actual y un pronóstico para los próximos 4 días.",
+    "settings":{
+      "location":"Localización(es)",
+      "location_placeholder":"Escriba una ubicación y pulse Enter",
+      "units":"Units",
+      "units_imperial":"Imperial (Fahrenheit)",
+      "units_metric":"Metric (Celsius)",
+      "enabled":"Habilitado",
+      "disabled":"Deshabilitado",
+      "forecast":"Forecasts",
+      "hourly":"Hourly forecasts"
+    },
+    "more":"Más",
+    "less":"Less",
+    "wind":"Velocidad de viento",
+    "precipitation":"Precip",
+    "uv":"UV index",
+    "feelslike":"Feels like",
+    "barometer":"Barometer",
+    "visibility":"Visibility",
+    "humidity":"Humedad",
+    "dewpoint":"Dew point",
+    "moonphase":"Moon",
+    "sunrise":"Sunrise",
+    "sunset":"Sunset",
+    "moonrise":"Moonrise",
+    "moonset":"Moonset"
   }
 }

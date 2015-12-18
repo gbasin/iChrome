@@ -1,18 +1,5 @@
 {
   "lang_code":"ja-widgets",
-  "analytics":{
-    "name":"解析",
-    "desc":"Googleアナリティクスプロフィールからさまざまな統計情報を表示",
-    "sessions":"セッション",
-    "pageviews":"ページビュー",
-    "pagesvisit":"ページ\/訪問",
-    "bouncerate":"直帰率",
-    "completions":"補完",
-    "noprofile":"まだプロフィールが選択されていないようです！\n<br \/><br \/>\n右上の設定アイコンから１つ選択してみてください。",
-    "settings":{
-      "profile":"プロフィール"
-    }
-  },
   "apps":{
     "name":"Apps",
     "desc":"現在インストールされているGoogle Chromeのアプリケーションが表示されます。",
@@ -120,22 +107,6 @@
     "dismiss":"Dismiss",
     "enable_audio":"Enable audio"
   },
-  "currency":{
-    "name":"通貨",
-    "desc":"169 通貨の中から、 2 つの通貨を変換してみましょう。",
-    "to_label":"から",
-    "recently_used":"Recently Used"
-  },
-  "drive":{
-    "name":"ドライブ",
-    "desc":"最近Google ドライブで変更されたファイルを表示します",
-    "settings":{
-      "files_shown":"ファイルの数が表示される"
-    },
-    "modified_by":"By",
-    "authorize":"こちらに何かを表示するためには、iChromeにあなたのGoogleドライブからファイルを読み込むための許可を与える必要があります。",
-    "authorize_btn":"承認"
-  },
   "facebook":{
     "name":"Facebook",
     "desc":"ウィジェットに Facebook を埋め込みます"
@@ -193,34 +164,6 @@
     "name":"保持",
     "desc":"埋め込み型 Google Keep ウィジェット"
   },
-  "news":{
-    "name":"ニュース",
-    "desc":"カテゴリと版によって現在のトップニュースを表示します。",
-    "settings":{
-      "articles":"表示される記事",
-      "edition":"版",
-      "edition_help":"表示したい版もしくはトピックがここに表示されない場合は、GoogleニュースフィードのURLを下記のカスタムフィードの欄に入力してください（詳細はフィールドのヘルプを御覧ください）。",
-      "topic":"トピック",
-      "topic_options":{
-        "top":"トップ記事",
-        "world":"世界",
-        "nation":"国内",
-        "business":"ビジネス",
-        "sports":"スポーツ",
-        "technology":"テクノロジー",
-        "entertainment":"エンターテイメント",
-        "health":"健康",
-        "science":"科学",
-        "spotlight":"スポットライト"
-      },
-      "feed":"カスタム フィード",
-      "feed_help":"すべてのGoogleニュースページの下に記載されているURLのフィードです。オレンジ色のRSSアイコンもしくはリンク文字のRSSを探してみてください。",
-      "feed_placeholder":"ニュースを取得するカスタム RSS フィードを入力してください。",
-      "footer":"フッター URL",
-      "footer_placeholder":"\"もっと表示\" のリンクを押すと表示されるURLを入力してください。"
-    },
-    "more":"もっと"
-  },
   "notes":{
     "name":"メモ",
     "desc":"シンプルで、編集可能なメモを挿入します。",
@@ -254,14 +197,6 @@
     "name":"Google Notifications",
     "desc":"Displays your Google Notifications from services such as Google+"
   },
-  "recentlyclosed":{
-    "name":"最近閉じた",
-    "desc":"最近閉じたタブを示します",
-    "settings":{
-      "tabs":"表示されるタブ",
-      "open":"タブの開き方"
-    }
-  },
   "reddit":{
     "name":"Reddit",
     "desc":"指定されたsubredditに対するReddit のトップアイテムを表示します。",
@@ -287,76 +222,6 @@
     },
     "more":"もっと"
   },
-  "rss":{
-    "name":"RSS",
-    "desc":"RSSもしくはAtomフィードからのアイテムをオプション画像とともに表示",
-    "settings":{
-      "link":"タイトルのリンク",
-      "link_placeholder":"ウィジェットのタイトルのリンクを入力します。",
-      "url":"フィードの URL",
-      "url_placeholder":"表示される RSS フィードの URL",
-      "articles":"表示される記事",
-      "view":"図",
-      "view_options":{
-        "images":"大きく表示",
-        "default":"初期設定"
-      },
-      "images":"画像",
-      "descriptions":"説明"
-    },
-    "feed_error":"フィードを取得しようとしてエラーが発生しました：%s。\nURLを再度チェックするか、ウィジェットの設定を確かめてください。"
-  },
-  "sports":{
-    "name":"スポーツ",
-    "desc":"選択したリーグやチームのスコアや試合情報を表示します。",
-    "settings":{
-      "league":"リーグ",
-      "games":"ゲーム",
-      "team":"チーム",
-      "teams":"チーム",
-      "unavailable":"チームの試合情報が取得できない場合",
-      "unavailable_options":{
-        "other":"他のゲームを表示します。",
-        "none":"「試合はありません」を表示"
-      }
-    },
-    "error":"何かが間違っているようです。",
-    "unknown_error":"不明なエラー",
-    "watch_on":"%s で試合を見る",
-    "no_games":"試合の予定はありません。"
-  },
-  "stocks":{
-    "name":"株",
-    "desc":"指定した銘柄の現況を表示します。",
-    "settings":{
-      "symbols":"銘柄をカンマで区切って指定",
-      "symbols_placeholder":"例）　NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"TICKER:EXCHANGE形式で表示したい銘柄があるはずです。\n<br \/><br \/>\n指数の指定には、<a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a> のようにTickersとExchangesを使用してください。 例えば、ダウ・ジョーンズ指数は <b>.DJI<\/b> で NYSE は <b>INDEXNYSEGIS:NYA<\/b>になります。"
-    },
-    "as_of":"時点",
-    "exchange_time":"取引時間",
-    "open":"開始値",
-    "high":"高い",
-    "low":"低い",
-    "volume":"取引量"
-  },
-  "todo":{
-    "name":"To-Do",
-    "desc":"重要なことや完了したアイテムなど、インタラクティブなTo-Doリストを表示します。",
-    "title":"To-Doリスト",
-    "settings":{
-      "color":"フォントの色",
-      "color_options":{
-        "light":"明るい",
-        "dark":"暗い"
-      },
-      "tags":"タグ",
-      "tags_placeholder":"タグを入力してEnterキーを押します"
-    },
-    "add":"項目を追加",
-    "none":"未設定",
-    "important":"重要"
-  },
   "tasks":{
     "name":"Tasks",
     "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
@@ -375,43 +240,6 @@
     "due_today":"Due today",
     "overdue":"Overdue",
     "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
-  },
-  "topsites":{
-    "name":"トップサイト",
-    "desc":"最も訪問したサイト\/トップサイトを表示します。",
-    "settings":{
-      "show":"表示されるサイトの数",
-      "open":"サイトの開き方"
-    }
-  },
-  "traffic":{
-    "name":"トラフィック",
-    "desc":"自宅もしくは職場までの現在の交通状況でかかる時間を表示します。",
-    "settings":{
-      "leave":"自宅を出発する時間",
-      "home":"自宅住所",
-      "home_placeholder":"仕事の後に行く場所",
-      "work":"職場の住所",
-      "work_placeholder":"仕事の前にいる場所",
-      "method":"交通手段",
-      "method_options":{
-        "driving":"車",
-        "walking":"徒歩",
-        "transit":"公共機関"
-      }
-    },
-    "to_home":"自宅へ",
-    "to_work":"職場へ"
-  },
-  "translate":{
-    "name":"翻訳",
-    "desc":"小さなインラインのGoogle翻訳テキストボックスを設置します。",
-    "placeholder":"翻訳したい文章をここに入力し、下記の「翻訳」ボタンを押してください。",
-    "button":"翻訳",
-    "untranslate":"原文に戻す",
-    "auto":"言語を検出する (%s)",
-    "unknown":"不明",
-    "error":"翻訳中に何かが起こり、完了できませんでした"
   },
   "twitter":{
     "name":"Twitter",
@@ -433,40 +261,8 @@
     "retweet":"リツイート",
     "favorite":"お気に入り"
   },
-  "unread":{
-    "name":"未読",
-    "desc":"Gmailの受信トレイにある未読メールの数を表示",
-    "settings":{
-      "open":"クリックすると開く"
-    },
-    "unread_none":"未読メール",
-    "unread_one":"未読のメール",
-    "unread_many":"未読メール"
-  },
-  "voice":{
-    "name":"Voice",
-    "desc":"Google Voiceアカウントの不在着信した電話やメッセージの数を表示",
-    "call":"発信元",
-    "text":"送信元",
-    "missed":"不在着信ボイス",
-    "texts":"未読メッセージ",
-    "calls":"不在着信"
-  },
-  "weather":{
-    "name":"天気",
-    "desc":"現在の天気とこの先４日間の予報を表示",
-    "settings":{
-      "location":"場所",
-      "location_placeholder":"場所を入力してEnterキーを押してください",
-      "temperature":"温度の単位",
-      "wind":"風の単位"
-    },
-    "unknown":"不明",
-    "wind":"風速",
-    "chill":"体感温度",
-    "humidity":"湿度"
-  },
   "wolfram":{
+    "name":"Wolfram|Alpha",
     "desc":"Wolfram|Alpha の小さな検索ボックスを挿入します。"
   },
   "youtube":{
@@ -597,5 +393,246 @@
     "no_links":"No links found",
     "grant_access":"Grant access",
     "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
+  },
+  "analytics":{
+    "name":"解析",
+    "desc":"Googleアナリティクスプロフィールからさまざまな統計情報を表示",
+    "sessions":"セッション",
+    "pageviews":"ページビュー",
+    "pagesvisit":"ページ\/訪問",
+    "bouncerate":"直帰率",
+    "completions":"補完",
+    "noprofile_title":"No profile selected",
+    "noprofile":"まだプロフィールが選択されていないようです！\n<br \/><br \/>\n右上の設定アイコンから１つ選択してみてください。",
+    "settings":{
+      "profile":"プロフィール"
+    }
+  },
+  "currency":{
+    "name":"通貨",
+    "desc":"169 通貨の中から、 2 つの通貨を変換してみましょう。",
+    "to_label":"から",
+    "recently_used":"Recently Used"
+  },
+  "dictionary":{
+    "name":"Dictionary",
+    "desc":"Quickly look up the definition and synonyms for a word",
+    "search_placeholder":"Enter a word or term here",
+    "more":"もっと",
+    "less":"Less",
+    "synonyms":"Synonyms",
+    "antonyms":"Antonyms",
+    "web_definitions":"Web definitions",
+    "no_definitions":"No definitions found"
+  },
+  "drive":{
+    "name":"ドライブ",
+    "desc":"最近Google ドライブで変更されたファイルを表示します",
+    "settings":{
+      "files_shown":"ファイルの数が表示される"
+    },
+    "modified_by":"By",
+    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "news":{
+    "name":"ニュース",
+    "desc":"カテゴリと版によって現在のトップニュースを表示します。",
+    "all_stories":"すべて",
+    "settings":{
+      "page_title":"設定",
+      "save":"保存",
+      "title":"ウィジェットタイトル",
+      "title_placeholder":"ウィジェットのタイトルを入力するか、空白のままは非表示になります",
+      "articles":"表示される記事",
+      "edition":"版",
+      "default_topic":"Default Topic"
+    }
+  },
+  "recentlyclosed":{
+    "name":"最近閉じた",
+    "desc":"最近閉じたタブを示します",
+    "settings":{
+      "tabs":"表示されるタブ",
+      "open":"タブの開き方"
+    },
+    "more":"more"
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"RSSもしくはAtomフィードからのアイテムをオプション画像とともに表示",
+    "settings":{
+      "page_title":"設定",
+      "save":"保存",
+      "title":"ウィジェットタイトル",
+      "title_placeholder":"ウィジェットのタイトルを入力するか、空白のままは非表示になります",
+      "link":"タイトルのリンク",
+      "link_placeholder":"ウィジェットのタイトルのリンクを入力します。",
+      "feeds":"フィード",
+      "feeds_help":"Click any feed to edit it",
+      "feeds_placeholder":"Enter a feed URL and press Enter to add",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro from the Accounts and Sync tab in the settings.",
+      "feed_name_placeholder":"Feed name",
+      "feed_url_placeholder":"Feed URL",
+      "articles":"表示される記事"
+    },
+    "by":"By",
+    "all_articles":"すべての記事",
+    "feed_error":"フィードを取得しようとしてエラーが発生しました：%s。\nURLを再度チェックするか、ウィジェットの設定を確かめてください。"
+  },
+  "sports":{
+    "name":"スポーツ",
+    "desc":"Displays scores, schedules, and news from your favorite teams.",
+    "settings":{
+      "page_title":"Favorites",
+      "save":"保存",
+      "teams_placeholder":"Enter a team name and press Enter to add"
+    },
+    "scores":"Scores",
+    "news":"ニュース",
+    "last_play":"Last play",
+    "no_games":"No games found",
+    "preview":"プレビュー",
+    "tickets":"Tickets",
+    "live":"Live",
+    "recap":"Recap",
+    "box_score":"Box Score"
+  },
+  "stocks":{
+    "name":"株",
+    "desc":"指定した銘柄の現況を表示します。",
+    "settings":{
+      "stocks":"株",
+      "stocks_placeholder":"Type a company or exchange name and hit Enter"
+    },
+    "as_of":"時点",
+    "exchange_time":"取引時間",
+    "overview":"Overview",
+    "news":"ニュース",
+    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
+    "pro_splash2":"Buy Pro in the settings.",
+    "time_ranges":{
+      "1d":"1d",
+      "5d":"5d",
+      "1m":"1m",
+      "3m":"3m",
+      "1y":"1y",
+      "5y":"5y",
+      "max":"max"
+    },
+    "open":"開始値",
+    "prev_close":"Previous Close",
+    "high":"高い",
+    "52high":"52 week high",
+    "low":"低い",
+    "52low":"52 week low",
+    "volume":"取引量",
+    "avg_volume":"Avg. Volume",
+    "shares":"Shares",
+    "cap":"Market Cap",
+    "pe":"Price \/ Earnings",
+    "eps":"EPS",
+    "beta":"Beta",
+    "inst_own":"Inst. own"
+  },
+  "todo":{
+    "name":"To-Do",
+    "desc":"重要なことや完了したアイテムなど、インタラクティブなTo-Doリストを表示します。",
+    "title":"To-Doリスト",
+    "settings":{
+      "color":"フォントの色",
+      "color_options":{
+        "light":"明るい",
+        "dark":"暗い"
+      },
+      "tags":"タグ",
+      "tags_placeholder":"タグを入力してEnterキーを押します"
+    },
+    "add":"項目を追加",
+    "none":"未設定",
+    "important":"重要"
+  },
+  "topsites":{
+    "name":"トップサイト",
+    "desc":"最も訪問したサイト\/トップサイトを表示します。",
+    "settings":{
+      "show":"表示されるサイトの数"
+    }
+  },
+  "traffic":{
+    "name":"トラフィック",
+    "desc":"自宅もしくは職場までの現在の交通状況でかかる時間を表示します。",
+    "settings":{
+      "leave":"自宅を出発する時間",
+      "home":"自宅住所",
+      "home_placeholder":"仕事の後に行く場所",
+      "work":"職場の住所",
+      "work_placeholder":"仕事の前にいる場所",
+      "method":"交通手段",
+      "method_options":{
+        "driving":"車",
+        "walking":"徒歩",
+        "transit":"公共機関"
+      }
+    },
+    "to_home":"自宅へ",
+    "to_work":"職場へ"
+  },
+  "translate":{
+    "name":"翻訳",
+    "desc":"Lets you quickly translate to and from 90 languages as you type",
+    "from_placeholder":"Start typing here",
+    "to_placeholder":"Translated text will appear here",
+    "detect_lang":"Detect language",
+    "translating":"Translating...",
+    "unknown":"不明"
+  },
+  "unread":{
+    "name":"未読",
+    "desc":"Gmailの受信トレイにある未読メールの数を表示",
+    "settings":{
+      "open":"クリックすると開く"
+    },
+    "unread_none":"未読メール",
+    "unread_one":"未読のメール",
+    "unread_many":"未読メール"
+  },
+  "voice":{
+    "name":"Voice",
+    "desc":"Google Voiceアカウントの不在着信した電話やメッセージの数を表示",
+    "call":"発信元",
+    "text":"送信元",
+    "missed":"不在着信ボイス",
+    "texts":"未読メッセージ",
+    "calls":"不在着信"
+  },
+  "weather":{
+    "name":"天気",
+    "desc":"現在の天気とこの先４日間の予報を表示",
+    "settings":{
+      "location":"場所",
+      "location_placeholder":"場所を入力してEnterキーを押してください",
+      "units":"Units",
+      "units_imperial":"Imperial (Fahrenheit)",
+      "units_metric":"Metric (Celsius)",
+      "enabled":"有効",
+      "disabled":"無効",
+      "forecast":"Forecasts",
+      "hourly":"Hourly forecasts"
+    },
+    "more":"もっと",
+    "less":"Less",
+    "wind":"風速",
+    "precipitation":"Precip",
+    "uv":"UV index",
+    "feelslike":"Feels like",
+    "barometer":"Barometer",
+    "visibility":"Visibility",
+    "humidity":"湿度",
+    "dewpoint":"Dew point",
+    "moonphase":"Moon",
+    "sunrise":"Sunrise",
+    "sunset":"Sunset",
+    "moonrise":"Moonrise",
+    "moonset":"Moonset"
   }
 }

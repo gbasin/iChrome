@@ -37,7 +37,7 @@
 				"feeds": "Feeds",
 				"feeds_help": "Click any feed to edit it",
 				"feeds_placeholder": "Enter a feed URL and press Enter to add",
-				"feeds_pro_only": "Only Pro users can have multiple feeds in each widget. Get Pro from the Accounts and Sync tab in the settings.",
+				"feeds_pro_only": "Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
 
 				"feed_name_placeholder": "Feed name",
 				"feed_url_placeholder": "Feed URL",

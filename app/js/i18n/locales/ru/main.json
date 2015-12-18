@@ -1,8 +1,8 @@
 {
   "lang_code":"ru",
   "language":"Русский",
+  "extName":"iChrome",
   "newtabName":"iChrome Новая Вкладка",
-  "extName":"iChrome - ваша персональная страница в chrome",
   "extDescription":"ЛУЧШАЯ домашняя страница для Chrome. Красивые темы, десятки виджетов, превосходная скорость и настройки на любой вкус!",
   "newtabDescription":"ЛУЧШАЯ домашняя страница для Chrome. А теперь и для новых вкладок. Красивые темы, десятки виджетов, превосходная скорость и настройки на любой вкус!",
   "defaults":{
@@ -10,9 +10,6 @@
     "me":"Я"
   },
   "remove_widget":"Удалить",
-  "column_to_grid_warning":"Вы изменяете раскладку с режима столбцов на режим сетки. При продолжении разбивка на столбцы потеряется, а все виджеты будут помещены в левый верхний угол.\nВы уверены в своих действиях?",
-  "grid_to_column_warning":"Вы изменяете раскладку с режима сетки на режим столбцов. При продолжении все виджеты забудут о своем расположении и будут помещены в самый первый столбец.\nВы уверены в своих действиях?",
-  "storage_warning":"Вы достигли отметки 90% от доступного объема для синхронизации данных. При достижении лимита iChrome перестанет синхронизировать все ваши данные, и, может быть, даже перестанет работать. \nВы можете увеличить свободное пространство, удалив лишние темы, заметки и списки дел, которые вы не используете.",
   "alert":{
     "default_button":"Отклонить",
     "confirm_title":"Вы уверены в своих действиях?",
@@ -44,7 +41,6 @@
   "menu":{
     "settings":"Настройки",
     "widgets":"Виджеты",
-    "background":"Показать фон",
     "editing":"Редактирование",
     "editing_enabled":"Включено",
     "editing_disabled":"Отключено",
@@ -65,132 +61,158 @@
     "missed":"Непонятно. <a>Повтори<\/a>"
   },
   "settings":{
-    "save":"Сохранить и Закрыть",
-    "new_tab":"Создать новую",
-    "labels":{
-      "general":"Общие",
-      "visual":"Внешний вид",
-      "specific":"Индивидуальные для вкладок",
-      "sync":"Учетные записи и синхронизация",
-      "advanced":"Расширенные"
-    },
-    "general":{
-      "search_url":"URL для поиска",
-      "search_url_desc":"Адрес поисковой системы. Для подстановки строки поиска используйте параметр <b>%s<\/b>",
-      "ltab":"Поведение ссылок",
-      "ltab_label":"По умолчанию открывать ссылки в новой вкладке",
-      "search":"Поведение поля поиска",
-      "search_label":"Открывать результаты поиска в новой вкладке",
-      "voice":"Голосовой Поиск",
-      "voice_search":"Включить голосовой поиск",
-      "voice_ok":"Автоматически начинать поиск при произношении \"OK Google\"",
-      "links":"Ссылки в панели",
-      "links_desc":"Вы можете выбрать, какие ссылки будут показаны в правой части панели:",
-      "links_items":{
-        "plus":"Google Plus",
-        "gmail":"Gmail",
-        "apps":"Меню Приложений",
-        "link1":"Своя ссылка 1",
-        "link2":"Своя ссылка 2",
-        "link3":"Своя ссылка 3",
-        "text_holder":"Название",
-        "link_holder":"Адрес, напр. http:\/\/www.google.com\/"
+    "title":"Настройки",
+    "exit":"Exit settings",
+    "saved":"Settings saved",
+    "nav":{
+      "visual":"Visual",
+      "visual_sections":{
+        "background":"Background",
+        "layout":"Раскладка",
+        "theme":"App theme"
       },
-      "guide":"Помощь по настройке",
-      "guide_desc":"Показать еще раз вводную инструкцию, которую вы видели при первом открытии iChrome"
+      "toolbar":"Toolbar",
+      "toolbar_sections":{
+        "style":"Style",
+        "search":"Поиск",
+        "links":"Links"
+      },
+      "tabs":"Вкладки",
+      "widgets":"Виджеты",
+      "pro":"Pro",
+      "accounts":"Accounts and sync",
+      "misc":"Miscellaneous",
+      "advanced":"Advanced",
+      "advanced_sections":{
+        "backups":"Backup and restore",
+        "css":"Custom CSS",
+        "debug_tools":"Debug tools"
+      },
+      "support":"Help and support",
+      "suggest":"Suggest a feature"
     },
     "visual":{
-      "layout":"Раскладка",
-      "layout_options":{
-        "1_fixed":"Один столбец, ширина фиксирована",
-        "1_fluid":"Один столбец, резиновый",
-        "2_fixed":"Два столбца, ширина фиксированная",
-        "2_fluid":"Два столбца, резиновые",
-        "3_fixed":"Три столбца, ширина фиксированная",
-        "3_fluid":"Три столбца, резиновые",
-        "4_fixed":"Четыре столбца, ширина фиксированная",
-        "4_fluid":"Четыре столбца, резиновые",
-        "5_fixed":"Пять столбцов, ширина фиксированная",
-        "5_fluid":"Пять столбцов, резиновые",
-        "grid":"Сетка, ширина настраиваемая"
+      "background":{
+        "title":"Background",
+        "desc":"This is the image or set of images shown as a background to your tabs",
+        "current":"Current background",
+        "custom":"Свои",
+        "unnamed":"Theme %s",
+        "select":"Select a theme",
+        "or":"или",
+        "url_placeholder":"Enter an image URL"
       },
-      "theme":"Тема по умолчанию",
-      "theme_placeholder":"Тема #%s",
-      "theme_select":"Выберите тему",
-      "align":"Выравнивание",
-      "align_desc":"Изменяет выравнивание виджетов в столбце",
-      "align_labels":{
-        "left":"По левой стороне",
-        "center":"По центру",
-        "right":"По правой стороне"
+      "layout":{
+        "title":"Раскладка",
+        "desc":"Here you can adjust the type and number of columns in each tab",
+        "columns":"Columns",
+        "grid":"Grid",
+        "columns_number":"Number of columns",
+        "column_width":"Column width",
+        "column_width_fixed":"Fixed",
+        "column_width_fluid":"Fluid",
+        "column_warning":{
+          "column_to_grid":"Changing to a grid-based layout will move all of your widgets to the top left corner.",
+          "grid_to_column":"Changing to a column-based layout will move all of your widgets to the first column."
+        }
       },
-      "logo":"Адрес логотипа",
-      "logo_desc":"Изображение, отображаемое в левом верхнем углу панели. Значение по умолчанию:  <b>\/images\/logo.svg<\/b>",
-      "toolbar":"Вид панели",
-      "toolbar_desc":"Изменяет отображение панели. Панель может отображаться всегда, либо только при клике по соответствующей кнопке",
-      "toolbar_normal":"Всегда",
-      "toolbar_button":"По нажатию",
-      "animation":"Анимация при открытии",
-      "animation_desc":"Вы можете включить или выключить анимацию, отображаемую при открытии новой вкладки",
-      "animation_label":"Включить анимацию"
+      "theme":{
+        "title":"App theme",
+        "desc":"The app theme controls the style of iChrome itself and all widgets",
+        "preview":"Предпросмотр",
+        "light":"Light (default)",
+        "dark":"Темный",
+        "transparent":"Transparent",
+        "transparent_darker":"Transparent (darker)"
+      }
     },
-    "specific":{
-      "name":"Название вкладки",
-      "default_name":"Создать вкладку",
-      "delete":"Удалить вкладку",
-      "delete_disallowed":"Вы не можете удалить последнюю оставшуюся вкладку.",
-      "delete_confirm":"Вы уверены, что хотите удалить эту вкладку?\nЭто действие невозможно отменить. Данные всех виджетов на этой вкладке будут удалены безвозвратно.",
-      "default":"Установить по умолчанию"
+    "toolbar":{
+      "style":{
+        "title":"Style",
+        "desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
+        "normal":"Normal",
+        "button":"Button"
+      },
+      "search":{
+        "title":"Поиск",
+        "desc":"These settings control how the search box and voice search function",
+        "engine":"Search engine",
+        "engines_google":"Google (Default)",
+        "engines_custom":"Свои",
+        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
+        "voice":"Enable voice search",
+        "ok_google":"Enable \"OK Google\" hotword detection",
+        "search_tab":"Open search results in a new tab"
+      },
+      "links":{
+        "title":"Links",
+        "desc":"These are the items shown at the right of the toolbar",
+        "apps":"Apps menu",
+        "custom":"Custom links",
+        "custom_note1":"Maximum of 3 allowed",
+        "custom_note2":"users get 8",
+        "custom_name_placeholder":"Link text",
+        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+      }
     },
-    "sync":{
-      "status_syncing":"iChrome <b>синхронизирует<\/b> ваши вкладки и параметры.",
-      "status_notsyncing":"iChrome <b>не синхронизирует<\/b> ваши вкладки и параметры.",
-      "status_notsyncing2":"Нажмите Синхронизировать сейчас в нижней части этой страницы или войдите в свой аккаунт Google для создания профиля.",
-      "duplicate_profile":"Для этого адреса эл. почты уже существует профиль. Для обеспечения вашей безопасности, iChrome не будет использовать этот профиль синхронизации пока вы не подтвердите, что вы владельц адреса, войдя в свой аккаунт Google.",
-      "name":"Имя",
-      "fname":"Имя",
-      "lname":"Фамилия",
-      "name_desc":"Мы будем это использовать при обращении к Вам внутри iChrome и в любых сообщениях.",
-      "email":"Адрес эл. почты",
-      "email_desc":"Используется для определения профиля синхронизации, а также мы будем использовать его для связи с вами.",
-      "signin":"Войти",
-      "signin_btn":"Войти через Google",
-      "signin_desc":"Войдите в свой аккаунт Google, чтобы легко и безопасно добавить новые компьютеры в ваш профиль синхронизации.",
-      "signed_in":"iChrome <b>подключен<\/b> к вашему Google аккаунту.  Войдите с любого компьютера для мгновенной синхронизации конфигурации.",
-      "keep_data":"Сохранять локальные данные?",
-      "keep_data_desc":"Вы хотите сохранить ваши локальные данные и заменить ими конфигурации на других компьютерах из этой группы синхронизации, или заменить конфигурацию этого компьютера их конфигурацими?",
-      "keep_theirs":"Использовать удаленые конфигурации",
-      "keep_local":"Использовать локальные",
-      "sync_now":"Синхронизировать сейчас",
-      "syncing":"Синхронизация...",
-      "last_synced":"Последняя синхронизация",
-      "backup":{
-        "title":"Резервирование и восстановление",
-        "desc":"Нажмите кнопку любого резервного копирования, чтобы откатить iChrome обратно к тому моменту.  Можете использовать кнопку ниже для создания резервной копии вручную.",
-        "btn":"Резервировать сейчас",
-        "restore":"Восстановить",
-        "download":"Загрузить",
-        "download_name":"Резервная копия",
-        "no_backups":"Резервные копии не найдены, нажмите кнопку Резервировать сейчас для создания."
+    "misc":{
+      "link_tab":"Open links in a new tab by default"
+    },
+    "tabs":{
+      "create_new":"Create new",
+      "make_default":"Make default",
+      "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
+      "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
+      "name_placeholder":"Enter a tab name",
+      "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
+    },
+    "accounts":{
+      "status":{
+        "title":"Status",
+        "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
+        "reset_account":"Reset account",
+        "sign_out":"Sign out",
+        "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
+        "sign_in":"Sign in with Google"
       },
-      "restore":{
-        "file":"Восстановить из файла",
-        "error":"Произошла ошибка при обработке предоставленных данных, повторите попытку позже.",
-        "confirm_desc":"Это перезапишет все локальные и синхронизированные данные.",
-        "confirm_desc2":"Вы потеряете все текущие конфигурации на всех компьютерах, подключенных к этому профилю синхронизации."
-      },
-      "reset":"Сбросить профиль",
-      "resetting":"Сброс...",
-      "reset_confirm_desc":"Это сотрет все локальные и синхронизированные данные, У вас нет резервной копии и будет невозможно вернуть все обратно.",
-      "reset_confirm_desc2":"Вы потеряете все текущие конфигурации на всех компьютерах, подключенных к этому профилю синхронизации."
+      "keep_data":"Keep local data?",
+      "keep_data_desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
+      "keep_account":"Use account",
+      "keep_local":"Keep Local",
+      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
+      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this account."
     },
     "advanced":{
-      "background":"Фон виджетов",
-      "background_desc":"Для изменения цвета кликните по квадрату с ним",
-      "css":"Пользовательские CSS",
-      "css_desc":"Вы можете использовать это поле для настройки почти любой визуальной части iChrome с помощью CSS (подробно о CSS вы можете почитать на <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>).<br \/><br \/>Поскольку эта настройка синхронизируется - максимальная длина поля ограничена 1000 символами, включая пробелы.",
-      "debug":"Инструменты отладки",
-      "debug_confirm":"ВНИМАНИЕ: Эти инструменты могут причинить вред вашей конфигурации, поэтому используйте их только если вы являетесь разработчиком.\nВы уверены, что хотите продолжить?"
+      "backups":{
+        "title":"Backup and restore",
+        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
+        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
+        "backup":"Backup now",
+        "upload":"Restore from file",
+        "download":"Download",
+        "restore":"Restore",
+        "download_name":"iChrome Backup",
+        "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
+        "restore_error":"An error occurred while trying to parse the provided data, please try again later."
+      },
+      "css":{
+        "title":"Custom CSS",
+        "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
+        "placeholder":"Enter up to 1000 characters of CSS here"
+      },
+      "debug_tools":{
+        "title":"Debug tools",
+        "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
+        "open":"Open tools"
+      }
+    },
+    "widgets":{
+      "desc1":"Widgets have their own settings and can't be customized here.",
+      "desc2":"To edit a widget's settings, follow these steps:",
+      "steps1":"Move your mouse over any widget",
+      "steps2":"Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
+      "steps3":"Edit any of the settings shown in the dialog that's displayed",
+      "steps4":"Click Save to save your changes, or any part of the background to discard of them"
     }
   },
   "store":{
@@ -212,7 +234,24 @@
       "save":"Сохранить",
       "size":"Размер виджета"
     },
+    "minimize":"Minimize",
+    "maximize":"Maximize",
     "delete_confirm":"Вы действительно хотите убрать виджет?\nЭто действие невозможно отменить. Все данные этого виджета будут удалены безвозвратно.",
+    "permissions_request":{
+      "title":"Access required",
+      "button":"Grant Access",
+      "desc":"This widget needs extra permissions before it can be used. Grant them using the button below."
+    },
+    "error":{
+      "explanation":"Something went wrong while we were trying to display this widget.",
+      "advice":"Try reinstalling the widget or reloading the page. Contact us if you see this message often.",
+      "support":"Поддержка",
+      "refresh":"Refresh"
+    },
+    "auth":{
+      "message":"You'll need to give this widget access to your account before you can use it.",
+      "button":"Grant Access"
+    },
     "shared":{
       "settings":{
         "title":"Заголовок виджета",
@@ -255,6 +294,8 @@
     "random_daily":"Тема показывает случайно выбранное каждый день изображение",
     "sunrise_sunset":"Тема показывает изображение в зависимости от времени суток",
     "feed":"Тема показывает изображение из внешнего источника",
+    "video":"This theme displays a live video",
+    "pro_only":"This theme is only available to Pro users. Buy Pro in the settings.",
     "delete_confirm":"Вы действительно хотите удалить эту тему?\nЭто действие невозможно отменить.",
     "delete_error":"Ошибка удаления темы. Попробуйте снова.",
     "feed_fetching":"Подождите, лента загружается...",
@@ -262,6 +303,13 @@
     "caching":"Тема скачивается. Пожалуйста, подождите...",
     "cache_status":"скачано %s из %s изображений",
     "cache_error":"Ошибка скачивания темы. Попробуйте снова",
+    "bginfo":{
+      "view":"View",
+      "source":"Источник",
+      "unknown":"Неизвестно",
+      "download":"Download",
+      "pro_only":"Only Pro users can download background images and videos"
+    },
     "edit":{
       "title":"Изменить тему",
       "create_title":"Создать тему",

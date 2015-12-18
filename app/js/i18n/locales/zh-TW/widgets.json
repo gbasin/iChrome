@@ -1,18 +1,5 @@
 {
   "lang_code":"zh-TW-widgets",
-  "analytics":{
-    "name":"分析報表",
-    "desc":"從您個人的Google報表中顯示各種指標",
-    "sessions":"連線對話",
-    "pageviews":"網頁點閱次數",
-    "pagesvisit":"頁面\/訪問",
-    "bouncerate":"跳出率",
-    "completions":"落成",
-    "noprofile":"看起來您仍未選擇一個設定檔!\n<br \/><br \/>\n請試著在右上角的扳手圖示中選擇一個。",
-    "settings":{
-      "profile":"設定檔"
-    }
-  },
   "apps":{
     "name":"應用程式",
     "desc":"顯示當前安裝的Chrome瀏覽器的應用程序。",
@@ -120,22 +107,6 @@
     "dismiss":"Dismiss",
     "enable_audio":"Enable audio"
   },
-  "currency":{
-    "name":"貨幣",
-    "desc":"讓妳在169種貨幣中進行任兩種轉換",
-    "to_label":"至",
-    "recently_used":"Recently Used"
-  },
-  "drive":{
-    "name":"Drive",
-    "desc":"顯示您的Google Drive中最近更改的檔案",
-    "settings":{
-      "files_shown":"顯示的檔案個數"
-    },
-    "modified_by":"由",
-    "authorize":"你需要給予iChrome許可才能在此查看Google Drive的檔案",
-    "authorize_btn":"授權"
-  },
   "facebook":{
     "name":"FACEBOOK",
     "desc":"將Facebook嵌入小工具中"
@@ -193,34 +164,6 @@
     "name":"保留",
     "desc":"在小工具嵌入 Google Keep"
   },
-  "news":{
-    "name":"新聞",
-    "desc":"按類別和版本顯示目前的頭條新聞。",
-    "settings":{
-      "articles":"文章顯示",
-      "edition":"版本",
-      "edition_help":"如果此處未列出您的版本或主題，請在下面的自訂來源欄位中(參照說明文本那裏的解釋)輸入一則谷歌新聞位址源。",
-      "topic":"主题",
-      "topic_options":{
-        "top":"要聞",
-        "world":"世界",
-        "nation":"國家",
-        "business":"經濟",
-        "sports":"體育",
-        "technology":"科技",
-        "entertainment":"娛樂",
-        "health":"健康",
-        "science":"科學",
-        "spotlight":"頭條消息"
-      },
-      "feed":"自訂的訂閱",
-      "feed_help":"這是在每個谷歌新聞頁面底部列出的位址源，請找尋一個橘色RSS圖示和一個\"RSS\"連結。",
-      "feed_placeholder":"輸入一個自訂的 RSS 訂閱源來擷取新聞。",
-      "footer":"頁腳 URL",
-      "footer_placeholder":"輸入\"更多\"連結應該指向的位址。"
-    },
-    "more":"更多"
-  },
   "notes":{
     "name":"備註",
     "desc":"插入一個簡單，可編輯的備忘錄。",
@@ -254,14 +197,6 @@
     "name":"Google Notifications",
     "desc":"Displays your Google Notifications from services such as Google+"
   },
-  "recentlyclosed":{
-    "name":"最近關閉",
-    "desc":"顯示您最近關閉的標籤頁",
-    "settings":{
-      "tabs":"顯示的標籤頁",
-      "open":"打開標籤頁於"
-    }
-  },
   "reddit":{
     "name":"熱迪特",
     "desc":"根據提供的reddit細目顯示Reddit上熱門話題。",
@@ -287,76 +222,6 @@
     },
     "more":"更多"
   },
-  "rss":{
-    "name":"RSS",
-    "desc":"將項從 RSS 或 Atom 源與可選的圖像顯示。",
-    "settings":{
-      "link":"標題連結",
-      "link_placeholder":"為小部件標題輸入一個連結",
-      "url":"訂閱 URL",
-      "url_placeholder":"要顯示的 RRS 訂閱源的 URL",
-      "articles":"文章顯示",
-      "view":"檢視",
-      "view_options":{
-        "images":"友好的圖像",
-        "default":"預設"
-      },
-      "images":"圖片",
-      "descriptions":"描述"
-    },
-    "feed_error":"試圖獲取進料時出錯： %s。請仔細檢查該 URL 和\/或修改小部件設置。"
-  },
-  "sports":{
-    "name":"體育",
-    "desc":"對選取的聯盟和\/或球隊顯示比分和球賽資訊。",
-    "settings":{
-      "league":"聯盟",
-      "games":"顯示的遊戲",
-      "team":"隊伍",
-      "teams":"隊伍",
-      "unavailable":"當團隊遊戲是不可用",
-      "unavailable_options":{
-        "other":"顯示其他遊戲",
-        "none":"顯示\"沒有遊戲\""
-      }
-    },
-    "error":"事情似乎已經錯了",
-    "unknown_error":"不明錯誤",
-    "watch_on":"觀察： %s",
-    "no_games":"沒有預定的遊戲"
-  },
-  "stocks":{
-    "name":"股票",
-    "desc":"任何給定的股票符號的的顯示當前資訊。",
-    "settings":{
-      "symbols":"股票代號，用逗號分隔",
-      "symbols_placeholder":"例如 NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"這些都是你會喜歡的股票代號： 交換格式所示。\n<br \/><br \/>\n對於索引，請使用代號和交流關於 <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\"> 谷歌財經<\/a> 所示。例如，道鐘斯指數是 <b>。DJI<\/b> 和紐約證券交易所是 <b>INDEXNYSEGIS:NYA<\/b>。"
-    },
-    "as_of":"作為",
-    "exchange_time":"交換時間",
-    "open":"開啟",
-    "high":"高",
-    "low":"低",
-    "volume":"交易量"
-  },
-  "todo":{
-    "name":"待辦事項",
-    "desc":"顯示包含重要事項及已完成事項的待辦事項清單",
-    "title":"待辦清單",
-    "settings":{
-      "color":"字型顏色",
-      "color_options":{
-        "light":"淺色",
-        "dark":"暗色"
-      },
-      "tags":"標籤",
-      "tags_placeholder":"輸入標記的名稱並按 enter 鍵"
-    },
-    "add":"加入項目",
-    "none":"無",
-    "important":"重要"
-  },
   "tasks":{
     "name":"任務",
     "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
@@ -375,43 +240,6 @@
     "due_today":"今天到期",
     "overdue":"逾期",
     "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
-  },
-  "topsites":{
-    "name":"置頂網站",
-    "desc":"顥示您最常去\/熱門網站",
-    "settings":{
-      "show":"顯示的網站的數目",
-      "open":"打開網站於"
-    }
-  },
-  "traffic":{
-    "name":"交通",
-    "desc":"顥示當前交通狀況下回家或上班所需時間",
-    "settings":{
-      "leave":"我離開家於",
-      "home":"住家地址",
-      "home_placeholder":"下班後的目的地",
-      "work":"工作地址",
-      "work_placeholder":"上班前的目的地",
-      "method":"交通方式",
-      "method_options":{
-        "driving":"駕駛",
-        "walking":"步行",
-        "transit":"公共交通"
-      }
-    },
-    "to_home":"回家",
-    "to_work":"前往工作"
-  },
-  "translate":{
-    "name":"翻譯",
-    "desc":"包含一個小的內嵌 Google 翻譯文字方塊。",
-    "placeholder":"輸入你想要翻譯文字，那就點擊下面的\"翻譯\"。",
-    "button":"翻譯",
-    "untranslate":"沒有翻譯",
-    "auto":"自動 (%s)",
-    "unknown":"未知",
-    "error":"翻譯這句時出現了一些錯誤..."
   },
   "twitter":{
     "name":"Twitter",
@@ -433,40 +261,8 @@
     "retweet":"轉推",
     "favorite":"我的最愛"
   },
-  "unread":{
-    "name":"未讀取",
-    "desc":"在你的 Gmail 收件匣中顯示當前的未讀郵件數量。",
-    "settings":{
-      "open":"當點下打開時"
-    },
-    "unread_none":"未讀的郵件",
-    "unread_one":"未讀的郵件",
-    "unread_many":"未讀的郵件"
-  },
-  "voice":{
-    "name":"語音",
-    "desc":"在你的 Google Voice 帳戶顯示未接來電和簡訊的數目。",
-    "call":"來電從",
-    "text":"文字訊息從",
-    "missed":"未收聽留言",
-    "texts":"未讀簡訊",
-    "calls":"未接來電"
-  },
-  "weather":{
-    "name":"天氣",
-    "desc":"顯示目前的天氣和接下來的 4 天天氣預報。",
-    "settings":{
-      "location":"位置",
-      "location_placeholder":"請輸入一個位置，然後按 enter 鍵",
-      "temperature":"溫度單位",
-      "wind":"風速單位"
-    },
-    "unknown":"未知",
-    "wind":"風速",
-    "chill":"風寒指數",
-    "humidity":"濕度"
-  },
   "wolfram":{
+    "name":"Wolfram|Alpha",
     "desc":"插入一個小的 Wolfram|Alpha 搜尋框。"
   },
   "youtube":{
@@ -597,5 +393,246 @@
     "no_links":"No links found",
     "grant_access":"Grant access",
     "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
+  },
+  "analytics":{
+    "name":"分析報表",
+    "desc":"從您個人的Google報表中顯示各種指標",
+    "sessions":"連線對話",
+    "pageviews":"網頁點閱次數",
+    "pagesvisit":"頁面\/訪問",
+    "bouncerate":"跳出率",
+    "completions":"落成",
+    "noprofile_title":"No profile selected",
+    "noprofile":"看起來您仍未選擇一個設定檔!\n<br \/><br \/>\n請試著在右上角的扳手圖示中選擇一個。",
+    "settings":{
+      "profile":"設定檔"
+    }
+  },
+  "currency":{
+    "name":"貨幣",
+    "desc":"讓妳在169種貨幣中進行任兩種轉換",
+    "to_label":"至",
+    "recently_used":"Recently Used"
+  },
+  "dictionary":{
+    "name":"Dictionary",
+    "desc":"Quickly look up the definition and synonyms for a word",
+    "search_placeholder":"Enter a word or term here",
+    "more":"更多",
+    "less":"Less",
+    "synonyms":"Synonyms",
+    "antonyms":"Antonyms",
+    "web_definitions":"Web definitions",
+    "no_definitions":"No definitions found"
+  },
+  "drive":{
+    "name":"Drive",
+    "desc":"顯示您的Google Drive中最近更改的檔案",
+    "settings":{
+      "files_shown":"顯示的檔案個數"
+    },
+    "modified_by":"由",
+    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "news":{
+    "name":"新聞",
+    "desc":"按類別和版本顯示目前的頭條新聞。",
+    "all_stories":"全部",
+    "settings":{
+      "page_title":"設定",
+      "save":"儲存",
+      "title":"小工具標題",
+      "title_placeholder":"輸入小工具標題，保留空白的話標題列就不會顯示",
+      "articles":"文章顯示",
+      "edition":"版本",
+      "default_topic":"Default Topic"
+    }
+  },
+  "recentlyclosed":{
+    "name":"最近關閉",
+    "desc":"顯示您最近關閉的標籤頁",
+    "settings":{
+      "tabs":"顯示的標籤頁",
+      "open":"打開標籤頁於"
+    },
+    "more":"more"
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"將項從 RSS 或 Atom 源與可選的圖像顯示。",
+    "settings":{
+      "page_title":"設定",
+      "save":"儲存",
+      "title":"小工具標題",
+      "title_placeholder":"輸入小工具標題，保留空白的話標題列就不會顯示",
+      "link":"標題連結",
+      "link_placeholder":"為小部件標題輸入一個連結",
+      "feeds":"訂閱",
+      "feeds_help":"Click any feed to edit it",
+      "feeds_placeholder":"Enter a feed URL and press Enter to add",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro from the Accounts and Sync tab in the settings.",
+      "feed_name_placeholder":"Feed name",
+      "feed_url_placeholder":"Feed URL",
+      "articles":"文章顯示"
+    },
+    "by":"由",
+    "all_articles":"所有文章",
+    "feed_error":"試圖獲取進料時出錯： %s。請仔細檢查該 URL 和\/或修改小部件設置。"
+  },
+  "sports":{
+    "name":"體育",
+    "desc":"Displays scores, schedules, and news from your favorite teams.",
+    "settings":{
+      "page_title":"Favorites",
+      "save":"儲存",
+      "teams_placeholder":"Enter a team name and press Enter to add"
+    },
+    "scores":"Scores",
+    "news":"新聞",
+    "last_play":"Last play",
+    "no_games":"No games found",
+    "preview":"預覽",
+    "tickets":"Tickets",
+    "live":"Live",
+    "recap":"Recap",
+    "box_score":"Box Score"
+  },
+  "stocks":{
+    "name":"股票",
+    "desc":"任何給定的股票符號的的顯示當前資訊。",
+    "settings":{
+      "stocks":"股票",
+      "stocks_placeholder":"Type a company or exchange name and hit Enter"
+    },
+    "as_of":"作為",
+    "exchange_time":"交換時間",
+    "overview":"Overview",
+    "news":"新聞",
+    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
+    "pro_splash2":"Buy Pro in the settings.",
+    "time_ranges":{
+      "1d":"1d",
+      "5d":"5d",
+      "1m":"1m",
+      "3m":"3m",
+      "1y":"1y",
+      "5y":"5y",
+      "max":"max"
+    },
+    "open":"開啟",
+    "prev_close":"Previous Close",
+    "high":"高",
+    "52high":"52 week high",
+    "low":"低",
+    "52low":"52 week low",
+    "volume":"交易量",
+    "avg_volume":"Avg. Volume",
+    "shares":"Shares",
+    "cap":"Market Cap",
+    "pe":"Price \/ Earnings",
+    "eps":"EPS",
+    "beta":"Beta",
+    "inst_own":"Inst. own"
+  },
+  "todo":{
+    "name":"待辦事項",
+    "desc":"顯示包含重要事項及已完成事項的待辦事項清單",
+    "title":"待辦清單",
+    "settings":{
+      "color":"字型顏色",
+      "color_options":{
+        "light":"淺色",
+        "dark":"暗色"
+      },
+      "tags":"標籤",
+      "tags_placeholder":"輸入標記的名稱並按 enter 鍵"
+    },
+    "add":"加入項目",
+    "none":"無",
+    "important":"重要"
+  },
+  "topsites":{
+    "name":"置頂網站",
+    "desc":"顥示您最常去\/熱門網站",
+    "settings":{
+      "show":"顯示的網站的數目"
+    }
+  },
+  "traffic":{
+    "name":"交通",
+    "desc":"顥示當前交通狀況下回家或上班所需時間",
+    "settings":{
+      "leave":"我離開家於",
+      "home":"住家地址",
+      "home_placeholder":"下班後的目的地",
+      "work":"工作地址",
+      "work_placeholder":"上班前的目的地",
+      "method":"交通方式",
+      "method_options":{
+        "driving":"駕駛",
+        "walking":"步行",
+        "transit":"公共交通"
+      }
+    },
+    "to_home":"回家",
+    "to_work":"前往工作"
+  },
+  "translate":{
+    "name":"翻譯",
+    "desc":"Lets you quickly translate to and from 90 languages as you type",
+    "from_placeholder":"Start typing here",
+    "to_placeholder":"Translated text will appear here",
+    "detect_lang":"Detect language",
+    "translating":"Translating...",
+    "unknown":"未知"
+  },
+  "unread":{
+    "name":"未讀取",
+    "desc":"在你的 Gmail 收件匣中顯示當前的未讀郵件數量。",
+    "settings":{
+      "open":"當點下打開時"
+    },
+    "unread_none":"未讀的郵件",
+    "unread_one":"未讀的郵件",
+    "unread_many":"未讀的郵件"
+  },
+  "voice":{
+    "name":"語音",
+    "desc":"在你的 Google Voice 帳戶顯示未接來電和簡訊的數目。",
+    "call":"來電從",
+    "text":"文字訊息從",
+    "missed":"未收聽留言",
+    "texts":"未讀簡訊",
+    "calls":"未接來電"
+  },
+  "weather":{
+    "name":"天氣",
+    "desc":"顯示目前的天氣和接下來的 4 天天氣預報。",
+    "settings":{
+      "location":"位置",
+      "location_placeholder":"請輸入一個位置，然後按 enter 鍵",
+      "units":"Units",
+      "units_imperial":"Imperial (Fahrenheit)",
+      "units_metric":"Metric (Celsius)",
+      "enabled":"開啟",
+      "disabled":"關閉",
+      "forecast":"Forecasts",
+      "hourly":"Hourly forecasts"
+    },
+    "more":"更多",
+    "less":"Less",
+    "wind":"風速",
+    "precipitation":"Precip",
+    "uv":"UV index",
+    "feelslike":"Feels like",
+    "barometer":"Barometer",
+    "visibility":"Visibility",
+    "humidity":"濕度",
+    "dewpoint":"Dew point",
+    "moonphase":"Moon",
+    "sunrise":"Sunrise",
+    "sunset":"Sunset",
+    "moonrise":"Moonrise",
+    "moonset":"Moonset"
   }
 }
