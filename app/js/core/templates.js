@@ -6,10 +6,9 @@ var templates = [
 		"css",					"toolbar",				"search",
 		"store",				"store-detail",			"themes",
 		"themes.listing",		"themes.custom",		"widget-settings",
-		"getting-started",		"translate-request",	"alert",
-		"menu",					"widget-settings.inputs","whatsnew",
-		"widgets/auth-required","widgets/error",		"bginfo",
-		"widgets/permissions-request",
+		"getting-started",		"alert",				"menu",
+		"widget-settings.inputs","whatsnew",			"bginfo",
+		"widgets/auth-required","widgets/error",		"widgets/permissions-request",
 
 		"settings",				"settings/accounts",	"settings/advanced",
 		"settings/misc",		"settings/tabs",		"settings/toolbar",
