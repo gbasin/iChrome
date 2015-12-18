@@ -29,7 +29,7 @@ define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 			]);
 		}
 
-		navigator.sendBeacon("http://stats.ichro.me/ingest?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language, new Blob([JSON.stringify(sendQueue)], {
+		navigator.sendBeacon("https://stats.ichro.me/ingest?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language, new Blob([JSON.stringify(sendQueue)], {
 			type: "application/json"
 		}));
 
