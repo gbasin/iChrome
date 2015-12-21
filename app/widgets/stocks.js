@@ -68,7 +68,7 @@ define(["jquery", "lodash", "moment"], function($, _, moment) {
 
 					d.forEach(function(e, i) {
 						stock = {
-							value: parseFloat((e.el_fix || e.l_fix).replace(/[^0-9\.\-]/g, "")),
+							value: parseFloat(e.el || e.l),
 							ticker: e.t,
 							exchange: e.e,
 							up: (e.ec || e.c).indexOf("-") !== 0,
