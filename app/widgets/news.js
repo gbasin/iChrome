@@ -1,7 +1,7 @@
 /*
  * The News widget.
  */
-define(["jquery"], function($) {
+define(["lodash", "jquery"], function(_, $) {
 	return {
 		id: 4,
 		size: 6,
@@ -119,7 +119,7 @@ define(["jquery"], function($) {
 
 			edition = edition || "us";
 
-			if (edition == "pt-BR_br") {
+			if (edition === "pt-BR_br") {
 				topics.t = topics.snc + " / " + topics.tc;
 				topics.po = topics.ir;
 
@@ -130,38 +130,41 @@ define(["jquery"], function($) {
 			cb(topics);
 		},
 		refresh: function() {
-			var config = this.config;
+			var url = this.config.custom ? this.config.custom.parseUrl() : ("https://news.google.com/news/feeds?ned=" + this.config.edition + "&topic=" + (this.config.topic !== "top" ? this.config.topic : "") + "&output=rss");
 
-			$.get((config.custom && config.custom !== "") ? config.custom.parseUrl() : ("https://news.google.com/news/feeds?ned=" + config.edition + "&topic=" + (config.topic !== "top" ? config.topic : "") + "&output=rss"), function(d) {
-				d = $(d);
-
-				var items = d.find("item"),
-					news = {
-						items: []
+			$.getJSON("http://cloud.feedly.com/v3/streams/contents?count=10&streamId=feed%2F" + encodeURIComponent(url), function(d) {
+				var items = _.map(d.items, function(e) {
+					var html = $("<div>" +
+						((e.summary && e.summary.content) || (e.content && e.content.content) || "")
+							.replace(/ src="\/\//g, " data-src=\"https://")
+							.replace(/ src="/g, " data-src=\"")
+							.replace(/ src='\/\//g, " data-src='https://")
+							.replace(/ src='/g, " data-src='") +
+					"</div>");
+					
+					var ret = {
+						title: (e.title || "").trim(),
+						url: ((_.find(e.alternate, { type: "text/html" }) || {}).href || "").trim(),
+						desc: html.find("td:nth-child(2) div:nth-of-type(2) font:nth-of-type(2)").find("*").remove().end().text().trim()
 					};
 
-				items.each(function(i) {
-					var itm = $(this),
-						html = $("<div>" + itm.find("description").text().replace(/ src="\/\//g, " data-src=\"https://").replace(/ src="http"/g, " data-src=\"http") + "</div>"),
-						item = {
-							title: itm.find("title").text().trim(),
-							url: itm.find("link").text().trim(),
-							image: html.find("img[data-src]").first().attr("data-src"),
-							desc: html.find(".lh font:nth-of-type(2)").find("*").remove().end().text().trim()
-						};
-
-					if (!item.desc) {
-						item.desc = html.text().trim();
+					if (e.visual && e.visual.url && e.visual.url !== "none") {
+						ret.image = e.visual.url;
+					}
+					else {
+						ret.image = html.find("img[data-src]").first().attr("data-src");
 					}
 
-					if (!item.image) {
-						delete item.image;
-					}
-
-					news.items.push(item);
+					return ret;
 				});
 
-				this.data = news;
+				this.data = {
+					items: items
+				};
+
+				this.render.call(this);
+
+				this.utils.saveData(this.data);
 
 				this.render.call(this);
 
