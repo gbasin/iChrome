@@ -187,7 +187,7 @@ define([
 				image = storage.settings.backgroundImage;
 			}
 			else {
-				image = (storage.cached[storage.settings.theme] || storage.themes[storage.settings.theme.replace("custom", "")] || { image: "images/defaulttheme.jpg" }).image;
+				image = (storage.cached[storage.settings.theme] || storage.themes[storage.settings.theme.replace("custom", "")] || storage.cached[0]).image;
 			}
 
 			if (!image || image.slice(-4) === ".mp4") {
@@ -394,6 +394,10 @@ define([
 			storage.themes = d.themes || defaults.themes;
 			storage.cached = d.cached || defaults.cached;
 			storage.tabs = Deprecate.tabs(d.tabs || defaults.tabs);
+
+			if (!storage.cached[0]) {
+				storage.cached[0] = defaults.cached[0];
+			}
 
 			storage.modified = d.modified;
 

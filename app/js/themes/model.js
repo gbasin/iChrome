@@ -1,6 +1,6 @@
 define(["lodash", "backbone", "browser/api", "themes/utils", "i18n/i18n"], function(_, Backbone, Browser, Utils, Translate) {
 	var model = Backbone.Model.extend({
-		url: "https://api.ichro.me/themes?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language,
+		url: "https://api.ichro.me/themes/v1/list?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language,
 
 		defaults: {
 			index: [],

@@ -40,9 +40,7 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 		 * @return {Object}        The retrieved theme
 		 */
 		get: function(theme) {
-			var defTheme = {
-				image: "images/defaulttheme.jpg"
-			};
+			var defTheme = this.model.get("cached")[0];
 
 			if (typeof theme === "object") {
 				theme = (this.model.get("cached")[theme.id] || this.model.get("custom")[theme.id.replace("custom", "")] || theme);

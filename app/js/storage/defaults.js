@@ -67,7 +67,19 @@ define(["i18n/i18n"], function(Translate) {
 			columnWidth: "fixed"
 		},
 		themes: [],
-		cached: {},
+
+		// Keep the default theme spec in sync with the background page's fallback
+		cached: {
+			0: {
+				id: 0,
+				type: "feed",
+				offline: true,
+				name: "Default theme",
+				format: "{{res.url}}",
+				image: "images/defaulttheme.jpg",
+				url: "https://api.ichro.me/themes/v1/default/getImage"
+			}
+		},
 		tab: {
 			name: Translate("defaults.tab")
 		}

@@ -274,7 +274,14 @@ var getFeed = function(theme, cb, next) {
 
 					// Special case handling until a better theme system can be implemented with ServiceWorker
 					try {
-						if ((theme.id === 82 || theme.id === 83) && utils.res.images && utils.res.images[0] && utils.res.images[0].copyright) {
+						if (theme.id === 0) {
+							theme.currentImage = {
+								name: utils.res.name,
+								url: utils.res.sourceUrl,
+								source: (utils.res.author && utils.res.source ? utils.res.author + " — " : utils.res.author) + (utils.res.copyright || utils.res.source || "")
+							};
+						}
+						else if ((theme.id === 82 || theme.id === 83) && utils.res.images && utils.res.images[0] && utils.res.images[0].copyright) {
 							theme.currentImage = {
 								source: utils.res.images[0].copyrightsource,
 								name: utils.res.images[0].copyright.replace(utils.res.images[0].copyrightsource, "").replace(/\(\s*?\)/g, "").trim()
@@ -419,6 +426,18 @@ var refreshFeeds = function() {
 
 	if (d.cached) {
 		cached = d.cached;
+
+		if (!cached[0]) {
+			cached[0] = {
+				id: 0,
+				type: "feed",
+				offline: true,
+				name: "Default theme",
+				format: "{{res.url}}",
+				image: "images/defaulttheme.jpg",
+				url: "https://api.ichro.me/themes/v1/default/getImage"
+			};
+		}
 
 		var active = 0,
 			start = new Date().getTime() - 1000 * 60 * 60 * 24,
