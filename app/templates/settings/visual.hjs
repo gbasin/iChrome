@@ -77,7 +77,7 @@
 		</label>
 
 		<label class="input" data-id="dark">
-			<input type="radio" name="theme" value="dark" />
+			<input type="radio" name="theme" value="dark" {{^isPro}}disabled {{/isPro}}/>
 
 			<h4>{{i18n.settings.visual.theme.dark}}</h4>
 
@@ -85,7 +85,7 @@
 		</label>
 
 		<label class="input" data-id="transparent dark">
-			<input type="radio" name="theme" value="transparent dark" />
+			<input type="radio" name="theme" value="transparent dark" {{^isPro}}disabled {{/isPro}}/>
 
 			<h4>{{i18n.settings.visual.theme.transparent}}</h4>
 
@@ -93,7 +93,7 @@
 		</label>
 
 		<label class="input" data-id="transparent dark darker">
-			<input type="radio" name="theme" value="transparent dark darker" />
+			<input type="radio" name="theme" value="transparent dark darker" {{^isPro}}disabled {{/isPro}}/>
 
 			<h4>{{i18n.settings.visual.theme.transparent_darker}}</h4>
 
