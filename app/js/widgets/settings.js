@@ -207,6 +207,8 @@ define([
 
 			this.modal.on("destroy", function() {
 				this.$("input.color").spectrum("destroy");
+			}, this).on("hide", function() {
+				this.trigger("hide");
 			}, this);
 
 			this.modal.mo.appendTo(document.body);

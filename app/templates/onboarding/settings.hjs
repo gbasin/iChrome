@@ -1,0 +1,33 @@
+{{#labels}}
+	<ul class="labels">
+		<li>{{i18n.onboarding.settings.tooltips.settings}}</li>
+		<li>{{i18n.onboarding.settings.tooltips.widgets}}</li>
+		<li>{{i18n.onboarding.settings.tooltips.editing}}</li>
+
+		<li class="custom-links">{{i18n.onboarding.settings.tooltips.links}}</li>
+		<li class="tabs">{{i18n.onboarding.settings.tooltips.tabs}}</li>
+		<li class="support">{{i18n.onboarding.settings.tooltips.support}}</li>
+	</ul>
+{{/labels}}
+
+{{#overlayCaption}}
+	<div class="caption">
+		<p><b>{{i18n.onboarding.settings.finished}}</b></p>
+
+		<p>{{{i18n.onboarding.settings.finished_next}}}</p>
+
+		<p>{{i18n.onboarding.settings.finished_contact}}</p>
+	</div>
+{{/overlayCaption}}
+
+{{#intro}}
+	<div class="caption bottom-left">
+		<p>{{{i18n.onboarding.settings.intro}}}</p>
+
+		<p>{{i18n.onboarding.settings.instructions}}</p>
+
+		<button type="button" class="button material flat skip">{{i18n.onboarding.settings.skip}}</button>
+	</div>
+
+	<div class="action-mask"></div>
+{{/intro}}

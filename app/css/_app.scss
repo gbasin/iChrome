@@ -532,6 +532,12 @@ button.material.m-icon {
 	font-family: Material Icons;
 }
 
+button.material.large {
+	padding: 0 20px;
+	font-size: 14px;
+	line-height: 42px;
+}
+
 button.material[disabled],
 button.material.red[disabled],
 button.material.blue[disabled],
@@ -2400,16 +2406,17 @@ body.resizing .grid {
 	display: none;
 }
 
-.widgets-container .widget:hover .handle,
-.widgets-container .widget:hover .settings,
-.widgets-container .widget:hover .minimize,
-.widgets-container .widget:hover .maximize,
-
-.store-detail .preview .widget:hover .handle,
-.store-detail .preview .widget:hover .settings,
-.store-detail .preview .widget:hover .minimize,
-.store-detail .preview .widget:hover .maximize {
-	opacity: 1;
+.widgets-container .widget,
+.store-detail .preview .widget {
+	&:hover,
+	&.hovered {
+		.handle,
+		.settings,
+		.minimize,
+		.maximize {
+			opacity: 1;
+		}
+	}
 }
 
 .widgets-container .widget .handle:before,
@@ -3368,148 +3375,6 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 
 
-
-
-
-
-/*---------------------------------------------
-	/ New Tab dialog
-*/
-.new-tab form {
-	margin: 25px;
-}
-
-.new-tab input {
-	width: 100%;
-}
-
-.new-tab .btn {
-	float: right;
-	margin-top: 10px;
-	margin-right: 25px;
-}
-
-
-
-
-
-/*---------------------------------------------
-	/ Getting Started
-*/
-.modal-overlay.getting-started {
-	background: rgba(0, 0, 0, .3);
-}
-
-.modal.getting-started {
-	width: 800px;
-	height: 600px;
-	max-height: 100%;
-	overflow: visible;
-	border-radius: 6px;
-	box-shadow: 0 4px 32px rgba(0, 0, 0, .4);
-}
-
-.modal.getting-started:lang(de),
-.modal.getting-started:lang(fr),
-.modal.getting-started:lang(es),
-.modal.getting-started:lang(ru),
-.modal.getting-started:lang(sr),
-.modal.getting-started:lang(cs),
-.modal.getting-started:lang(it),
-.modal.getting-started:lang(nl) {
-	height: 620px;
-}
-
-.getting-started .slide {
-	z-index: 0;
-	opacity: 0;
-	color: #444;
-	width: 100%;
-	height: 100%;
-	background: #FFF;
-	position: absolute;
-	border-radius: 6px;
-	font-family: Roboto;
-	transition: opacity .4s cubic-bezier(0, 0, .2, 1);
-}
-
-.getting-started .slide.active {
-	z-index: 1;
-	opacity: 1;
-}
-
-.getting-started .hero {
-	height: 390px;
-	background-size: 100%;
-	background-color: #ECECEC;
-	background-repeat: no-repeat;
-	border-top-left-radius: 6px;
-	border-top-right-radius: 6px;
-	background-position: bottom center;
-}
-
-.getting-started .caption {
-	padding: 30px;
-}
-
-.getting-started .caption h2 {
-	font-size: 22px;
-	margin-bottom: 20px;
-}
-
-.getting-started .caption p {
-	margin-bottom: 25px;
-}
-
-.getting-started .caption p:last-child {
-	margin-bottom: 0;
-}
-
-.getting-started .nav div {
-	top: 50%;
-	z-index: 1;
-	left: -80px;
-	width: 40px;
-	height: 40px;
-	cursor: pointer;
-	margin-top: -20px;
-	border-radius: 50%;
-	position: absolute;
-	background: #F6F6F6;
-	box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
-	transition: opacity .15s cubic-bezier(0, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, .2, 1);
-}
-
-.getting-started .nav div:hover {
-	background: #EDEDED;
-}
-
-.getting-started .nav div:active {
-	background: #E5E5E5;
-}
-
-.getting-started .nav .next {
-	left: auto;
-	right: -80px;
-}
-
-.getting-started .nav div:before {
-	color: #444;
-	width: 36px;
-	height: 40px;
-	display: block;
-	cursor: pointer;
-	font-size: 20px;
-	content: "\E6CD";
-	line-height: 40px;
-	text-align: center;
-	font-family: Entypo;
-}
-
-.getting-started .nav .next:before {
-	width: 40px;
-	content: "\E6D0";
-}
 
 
 

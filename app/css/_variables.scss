@@ -38,7 +38,7 @@ $md-shadow-z5: $md-shadow-13dp;
 // These are used by a number of Google properties. The list and comments are from http://sebastien-gabriel.com/rca-appendix/
 $default-easing: cubic-bezier(.4, 0, .2, 1); // For most motion
 $alternate-easing: cubic-bezier(0, .84, .13, .99); // Another motion curve with "follow through"
-$fade-out-easing: cubic-bezier(.4, 0, 1, 1); // For fade outs or exiting the scene
-$fade-in-easing: cubic-bezier(0, 0, .2, 1); // For fading in or entering the scene
+$fast-in: cubic-bezier(0, 0, .2, 1); // For fading in or entering the scene
+$fast-out: cubic-bezier(.4, 0, 1, 1); // For fade outs or exiting the scene
 
 $text-color: #212121;

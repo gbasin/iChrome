@@ -119,7 +119,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 
 		loadData(function() {
 			if (!clientData.token) {
-				localStorage.installed = "true";
+				localStorage.firstRun = "true";
 
 				chrome.tabs.create({
 					url: "index.html"

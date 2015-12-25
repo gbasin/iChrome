@@ -18,11 +18,15 @@ define(["jquery", "backbone"], function($, Backbone) {
 		destroyOnHide: false,
 
 		show: function() {
+			this.trigger("show");
+
 			this.mo.addClass("visible").end().focus();
 
 			return this;
 		},
 		hide: function() {
+			this.trigger("hide");
+
 			this.mo.removeClass("visible");
 
 			if (this.destroyOnHide) {

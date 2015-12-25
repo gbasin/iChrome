@@ -36,7 +36,11 @@ define([
 							model: this.model,
 							widget: this.widget,
 							config: this.widgetModel ? this.widgetModel.config : this.instance.config
-						});
+						}).once("hide", function() {
+							this.trigger("settings:hide");
+						}, this);
+
+						this.trigger("settings:show");
 					}
 				}
 				catch (err) {

@@ -232,13 +232,13 @@ define(
 
 						$(document.body).on("click.menu", function(e) {
 							if (!elms.is(e.target)) {
-								this.$el.removeClass("visible");
-
-								$(document.body).off("click.menu");
+								this.toggle(false);
 							}
 						}.bind(this));
 
 						this.$el.addClass("visible");
+
+						this.trigger("show");
 
 						Track.event("Menu", "Show");
 					}
@@ -246,6 +246,8 @@ define(
 						$(document.body).off("click.menu");
 
 						this.$el.removeClass("visible");
+
+						this.trigger("hide");
 
 						Track.event("Menu", "Hide");
 					}

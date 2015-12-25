@@ -22,6 +22,64 @@
 		"confirm_cancel": "Cancel"
 	},
 
+	"onboarding": {
+		"modal": {
+			"tagline": "All the sites and apps you use, in one place",
+
+			"wrong_extension": "Want iChrome on your new tab page instead?",
+			"wrong_extension_newtab": "Want iChrome on your home page instead?",
+			"wrong_extension_action": "Click here",
+
+			"about": "iChrome's all about tabs and widgets",
+			"about_desc": "Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
+
+			"terms": "Note: By proceeding, you agree to iChrome's <a href=\"https://ichro.me/tos\" target=\"_blank\">Terms</a>, <a href=\"https://ichro.me/privacy\" target=\"_blank\">Privacy Policy</a>, and <a href=\"https://ichro.me/cookies\" target=\"_blank\">Cookie Use</a>",
+
+			"sign_in": "Sign in with your Google account",
+			"sign_in_desc": "Sign in with your Google account before getting started to securely save your changes online.",
+			"sign_in_desc2": "You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
+			"sign_in_button": "Sign in with Google",
+
+			"have_account": "It looks like you already have an account!",
+			"have_account_desc": "All your tabs and widgets are ready to use!",
+
+			"get_started": "Let's get started!",
+			"get_started_desc": "You're good to go! Let's get your page set up."
+		},
+
+		"widgets": {
+			"configure": "Let's configure a widget.",
+			"configure_desc": "Click the wrench to open the weather widget's <b>settings</b>.",
+			"configure_skip": "Skip",
+
+			"settings": "Replace <b>San Francisco, CA</b> with your location, then press <b>Save</b>.",
+
+			"move": "You can <b>drag</b> widgets using the highlighted handle to move them.",
+			"remove": "When dragging a widget, drop it on the red bar (not shown) to <b>remove</b> it.",
+
+			"done": "Got it"
+		},
+
+		"settings": {
+			"intro": "Now let's take a look at <b>the menu</b> and see what else you can do.",
+			"instructions": "Click the highlighted image to open it.",
+			"skip": "Skip",
+
+			"tooltips": {
+				"settings": "Change the way iChrome looks and works",
+				"widgets": "Add new widgets - you can have as many as you want",
+				"editing": "Show or hide the editing buttons on widgets",
+				"links": "This is a list of links, add sites you use often in the settings",
+				"tabs": "These are your tabs. You can add more in the settings",
+				"support": "Send us a message or leave a review here"
+			},
+
+			"finished": "That's it!",
+			"finished_next": "Choose an option from the menu (try starting with <b>Widgets</b>) and set your page up!",
+			"finished_contact": "Use the support link if you need any help and we'll get back to you ASAP."
+		}
+	},
+
 	"storage": {
 		"signin": "Sign in to sync your settings",
 		"signin_desc": "iChrome has detected a sync profile under your email address.",
@@ -435,27 +493,6 @@
 
 			"cache_error": "An error occurred while trying to cache the image you provided, please double-check the URL.",
 			"upload_error": "An error occurred while trying to upload the file you provided, please make sure that it's a reasonable size and an image."
-		}
-	},
-
-	"intro": {
-		"slide1": {
-			"title": "Welcome to iChrome!",
-			"line1": "If you want iChrome as your start page, you'll need to set the URL of this page in your settings (<a href=\"https://support.google.com/chrome/answer/95314\" target=\"_blank\">instructions</a>).  Otherwise, if you want it as a new tab or both home and new tab pages, please install <a href=\"https://chrome.google.com/webstore/detail/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome New Tab</a> instead.",
-			"newtab_line1": "If you want iChrome to only show when you start Chrome and not every time you open a new tab please install <a href=\"https://chrome.google.com/webstore/detail/oghkljobbhapacbahlneolfclkniiami\">the main iChrome extension</a> instead of this one.",
-			"line2": "This introduction is only 3 slides long and will give a quick overview of how to do basic things in iChrome.  When you're ready hit the next arrow at the right."
-		},
-
-		"slide2": {
-			"title": "Widgets",
-			"line1": "Widgets are the core of iChrome.  You can configure and move them using the wrench and handle icons shown when hovering at the top right.  To remove one, start dragging it and drop it onto the red bar that appears.",
-			"line2": "New widgets can be added by clicking the Widgets item under the menu at the top right of the page (shown in the next slide)."
-		},
-
-		"slide3": {
-			"title": "Customizing",
-			"line1": "You can change almost anything else you'd want to via the menu at the top right.  There you can configure the way your page looks, how iChrome works and get new widgets.",
-			"line2": "Other things you can do include creating individual tabs, each with themes and widgets of their own, custom themes, or configuring the tiniest thing like what links are shown in the toolbar."
 		}
 	}
 }

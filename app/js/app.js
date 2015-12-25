@@ -42,6 +42,6 @@ require.s.contexts._.nextTick = function(fn) {
 /**
  * Init.  This requires storage to start loading as early as possible.
  */
-require(["core/init", "modals/getting-started"], function(app) {
+require(["core/init", "onboarding/controller"], function(app) {
 	window.App = app;
 });
