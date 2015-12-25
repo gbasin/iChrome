@@ -247,7 +247,7 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, Wid
 			// We save the active feed in case it changes before the request is finished
 			var activeTab = this.get("activeTab");
 
-			if (!this.Pro.isPro && activeTab !== 0) {
+			if (!this.Auth.isPro && activeTab !== 0) {
 				return this.set("activeTab", 0);
 			}
 

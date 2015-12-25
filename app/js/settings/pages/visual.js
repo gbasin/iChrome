@@ -1,7 +1,7 @@
 /**
  * The visual settings page
  */
-define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "themes/utils", "themes/themes"], function($, Translate, Alert, Pro, Page, Utils, themePicker) {
+define(["jquery", "i18n/i18n", "modals/alert", "core/auth", "settings/page", "themes/utils", "themes/themes"], function($, Translate, Alert, Auth, Page, Utils, themePicker) {
 	var View = Page.extend({
 		id: "visual",
 
@@ -85,7 +85,7 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 				break;
 
 				case "theme":
-					this.model.set("style", (Pro.isPro && value) || "light", {
+					this.model.set("style", (Auth.isPro && value) || "light", {
 						noRender: true
 					});
 				break;
@@ -139,7 +139,7 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/pro", "settings/page", "the
 				column_width: data.columnWidth,
 
 				// Style
-				style: Pro.isPro ? data.style : "light"
+				style: Auth.isPro ? data.style : "light"
 			};
 		}
 	});

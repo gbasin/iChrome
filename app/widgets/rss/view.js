@@ -126,7 +126,7 @@ define(["lodash", "widgets/views/main", "lib/parseurl"], function(_, WidgetView,
 			}
 
 
-			if (this.Pro.isPro && this.model.config.feeds && this.model.config.feeds.length > 1) {
+			if (this.Auth.isPro && this.model.config.feeds && this.model.config.feeds.length > 1) {
 				var activeTab = this.model.get("activeTab") || 0;
 
 				data.tabs = _.map(this.model.config.feeds, function(e, i) {

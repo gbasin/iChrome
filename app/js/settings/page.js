@@ -1,7 +1,7 @@
 /**
  * The settings page base
  */
-define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/render"], function(_, $, Backbone, Pro, model, render) {
+define(["lodash", "jquery", "backbone", "core/auth", "settings/model", "core/render"], function(_, $, Backbone, Auth, model, render) {
 	var View = Backbone.View.extend({
 		constructor: function(options) {
 			this.tagName = "div";
@@ -14,7 +14,7 @@ define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/rend
 
 			this.template = function(data, partials) {
 				return render("settings/" + this.id, _.assign({
-					isPro: Pro.isPro
+					isPro: Auth.isPro
 				}, data), partials);
 			};
 

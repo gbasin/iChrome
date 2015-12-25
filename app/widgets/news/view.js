@@ -111,7 +111,7 @@ define(["lodash", "moment", "widgets/views/main"], function(_, moment, WidgetVie
 			}
 
 
-			if (this.Pro.isPro && this.model.data.topics) {
+			if (this.Auth.isPro && this.model.data.topics) {
 				var activeTab = this.model.get("activeTab");
 
 				var defaultTab = [];

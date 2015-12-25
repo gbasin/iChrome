@@ -126,7 +126,7 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 
 			arr.forEach(function(e, i, a) { a[i] = e.replace(/\|/g, " "); });
 
-			this.Pro.ajax({
+			this.Auth.ajax({
 				url: "/weather/locations/resolve/" + encodeURIComponent(arr.join("|")),
 				success: function(d) {
 					if (d && d.locations) {
@@ -245,7 +245,7 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 						loc = [37.777, -122.42];
 					}
 
-					this.Pro.ajax({
+					this.Auth.ajax({
 						url: "/weather",
 						data: {
 							lat: loc[0],

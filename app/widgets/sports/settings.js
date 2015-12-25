@@ -74,7 +74,7 @@ define(["lodash", "jquery", "widgets/views/settings", "jquery.serializejson"], f
 			if (val.trim() !== "" && type !== "focusout") {
 				sElm.addClass("visible");
 
-				this.Pro.ajax({
+				this.Auth.ajax({
 					url: "/sports/v1/teams/" + encodeURIComponent(val),
 					success: function(d) {
 						if (!d || !Array.isArray(d) || !d.length) {

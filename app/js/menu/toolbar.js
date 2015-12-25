@@ -2,15 +2,15 @@
  * This generates the toolbar and its submodules
  */
 define([
-	"lodash", "jquery", "backbone", "browser/api", "core/pro", "core/analytics", "storage/storage", "storage/syncapi",
+	"lodash", "jquery", "backbone", "browser/api", "core/auth", "core/analytics", "storage/storage", "storage/syncapi",
 	"storage/defaults", "search/search", "menu/menu", "core/announcements", "core/render"
-], function(_, $, Backbone, Browser, Pro, Track, Storage, SyncAPI, Defaults, Search, Menu, Announcements, render) {
+], function(_, $, Backbone, Browser, Auth, Track, Storage, SyncAPI, Defaults, Search, Menu, Announcements, render) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
 					var set = _.clone(storage.settings);
 
-					set.links = _.take(set.links, Pro.isPro ? 8 : 3);
+					set.links = _.take(set.links, Auth.isPro ? 8 : 3);
 
 					var d = SyncAPI.getInfo();
 

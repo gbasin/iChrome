@@ -1,7 +1,7 @@
 /**
  * Handles sync interfacing with ichro.me and ID management
  */
-define(["jquery", "lodash", "browser/api", "core/analytics", "core/pro"], function($, _, Browser, Track, Pro) {
+define(["jquery", "lodash", "browser/api", "core/analytics", "core/auth"], function($, _, Browser, Track, Auth) {
 	/**
 	 * The domain and port to sync data to/from
 	 */
@@ -255,8 +255,8 @@ define(["jquery", "lodash", "browser/api", "core/analytics", "core/pro"], functi
 							}
 
 
-							if (d.proToken) {
-								Pro.updateToken(d.proToken);
+							if (d.accessToken) {
+								Auth.updateAccessToken(d.accessToken);
 							}
 
 
@@ -399,8 +399,8 @@ define(["jquery", "lodash", "browser/api", "core/analytics", "core/pro"], functi
 							}
 
 
-							if (d.proToken) {
-								Pro.updateToken(d.proToken);
+							if (d.accessToken) {
+								Auth.updateAccessToken(d.accessToken);
 							}
 
 

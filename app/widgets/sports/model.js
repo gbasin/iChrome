@@ -229,7 +229,7 @@ define(["jquery", "lodash", "widgets/model"], function($, _, WidgetModel) {
 		},
 
 		getNews: function() {
-			this.Pro.ajax({
+			this.Auth.ajax({
 				url: "/sports/v1/news" + (!this._activeView || this._activeView === "favorites" || this._activeView === "all" ? "" : "/" + this._activeView),
 				success: function(d) {
 					this.trigger("news:loaded", {
@@ -262,7 +262,7 @@ define(["jquery", "lodash", "widgets/model"], function($, _, WidgetModel) {
 				url += this._activeView;
 			}
 
-			this.Pro.ajax({
+			this.Auth.ajax({
 				url: url,
 				success: function(d) {
 					if (this._activeView !== requestedView) {

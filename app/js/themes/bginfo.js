@@ -1,7 +1,7 @@
 /**
  * Displays information about the currently displayed background image or video
  */
-define(["lodash", "backbone", "core/pro", "i18n/i18n", "core/analytics", "modals/alert", "themes/controller", "themes/utils", "core/render"], function(_, Backbone, Pro, Translate, Track, Alert, Themes, Utils, render) {
+define(["lodash", "backbone", "core/auth", "i18n/i18n", "core/analytics", "modals/alert", "themes/controller", "themes/utils", "core/render"], function(_, Backbone, Auth, Translate, Track, Alert, Themes, Utils, render) {
 	var View = Backbone.View.extend({
 		tagName: "section",
 		className: "panel",
@@ -12,7 +12,7 @@ define(["lodash", "backbone", "core/pro", "i18n/i18n", "core/analytics", "modals
 
 		events: {
 			"click button.download": function() {
-				if (!Pro.isPro) {
+				if (!Auth.isPro) {
 					return Alert(Translate("themes.bginfo.pro_only"));
 				}
 
@@ -50,9 +50,9 @@ define(["lodash", "backbone", "core/pro", "i18n/i18n", "core/analytics", "modals
 
 				// This delays the attaching till after the events have finished bubbling, otherwise mousemove will get called immediately
 				requestAnimationFrame(function() {
-					this.body.on("mousemove.menu", function(e) {
+					this.body.on("mousemove.bgpreview", function(e) {
 						if (Math.abs(e.clientX - startX) >= 30 || Math.abs(e.clientY - startY) >= 30) {
-							var tStyle = this.body.off("mousemove.menu").children().first().html(
+							var tStyle = this.body.off("mousemove.bgpreview").children().first().html(
 								"body > *:not(.bg-video) {" +
 									"transition: opacity .3s ease-in-out!important;" +
 								"}"
@@ -160,7 +160,7 @@ define(["lodash", "backbone", "core/pro", "i18n/i18n", "core/analytics", "modals
 
 
 			this.data = {
-				isPro: Pro.isPro,
+				isPro: Auth.isPro,
 				preview: preview,
 				downloadUrl: downloadUrl
 			};

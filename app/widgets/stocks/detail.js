@@ -77,7 +77,7 @@ define(["lodash", "jquery", "moment", "./lib/chart", "widgets/views/main"], func
 			},
 
 			"click header .tabs li": function(e) {
-				if (!this.Pro.isPro) {
+				if (!this.Auth.isPro) {
 					$(e.currentTarget).addClass("active").siblings().removeClass("active");
 
 					return;
@@ -334,7 +334,7 @@ define(["lodash", "jquery", "moment", "./lib/chart", "widgets/views/main"], func
 				delete this.chart;
 			}
 
-			if (this.Pro.isPro) {
+			if (this.Auth.isPro) {
 				data[this.state] = true;
 			}
 			else {

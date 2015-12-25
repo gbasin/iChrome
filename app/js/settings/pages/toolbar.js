@@ -1,7 +1,7 @@
 /**
  * The toolbar settings page
  */
-define(["lodash", "jquery", "core/pro", "settings/page"], function(_, $, Pro, Page) {
+define(["lodash", "jquery", "core/auth", "settings/page"], function(_, $, Auth, Page) {
 	var searchEngineURLs = [
 		"https://google.com/search?q=%s",
 		"https://search.yahoo.com/search?p=%s",
@@ -113,7 +113,7 @@ define(["lodash", "jquery", "core/pro", "settings/page"], function(_, $, Pro, Pa
 				customLinks: _.map(data.links, function(e, i) {
 					return _.assign({}, e, { i: i });
 				}),
-				canAddLinks: data.links.length < (Pro.isPro ? 8 : 3)
+				canAddLinks: data.links.length < (Auth.isPro ? 8 : 3)
 			};
 
 			if (ret.searchEngine === "custom") {

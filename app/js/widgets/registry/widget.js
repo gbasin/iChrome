@@ -1,7 +1,7 @@
 /**
  * The widget wrapper model. This handles widget loading.
  */
-define(["lodash", "backbone", "core/pro", "browser/api", "i18n/i18n", "widgets/registry/css"], function(_, Backbone, Pro, Browser, Translate, CSSManager) {
+define(["lodash", "backbone", "core/auth", "browser/api", "i18n/i18n", "widgets/registry/css"], function(_, Backbone, Auth, Browser, Translate, CSSManager) {
 	var Widget = Backbone.Model.extend({
 		constructor: function(manifest) {
 			// Since widgets should be retrievable by both ID and name, we might
@@ -29,7 +29,7 @@ define(["lodash", "backbone", "core/pro", "browser/api", "i18n/i18n", "widgets/r
 
 			this.isAvailable = !(manifest.environments && manifest.environments.indexOf(Browser.environment) === -1);
 
-			this.isMaximizable = Pro.isPro && (manifest.maximizable || (manifest.templates && manifest.templates.maximized) || (manifest.views && manifest.views.maximized));
+			this.isMaximizable = Auth.isPro && (manifest.maximizable || (manifest.templates && manifest.templates.maximized) || (manifest.views && manifest.views.maximized));
 
 
 			this.enStrings = manifest.strings.en || {};
