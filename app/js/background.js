@@ -424,46 +424,44 @@ var cache = function(theme, cb) {
 var refreshFeeds = function() {
 	var d = JSON.parse(localStorage.config || "{}");
 
-	if (d.cached) {
-		cached = d.cached;
+	cached = d.cached || {};
 
-		if (!cached[0]) {
-			cached[0] = {
-				id: 0,
-				type: "feed",
-				offline: true,
-				name: "Default theme",
-				format: "{{res.url}}",
-				image: "images/defaulttheme.jpg",
-				url: "https://api.ichro.me/themes/v1/default/getImage"
-			};
-		}
+	if (!cached[0]) {
+		cached[0] = {
+			id: 0,
+			type: "feed",
+			offline: true,
+			name: "Default theme",
+			format: "{{res.url}}",
+			image: "images/defaulttheme.jpg",
+			url: "https://api.ichro.me/themes/v1/default/getImage"
+		};
+	}
 
-		var active = 0,
-			start = new Date().getTime() - 1000 * 60 * 60 * 24,
-			key;
+	var active = 0,
+		start = new Date().getTime() - 1000 * 60 * 60 * 24,
+		key;
 
-		for (key in cached) {
-			if (cached.hasOwnProperty(key)) {
-				var theme = cached[key];
+	for (key in cached) {
+		if (cached.hasOwnProperty(key)) {
+			var theme = cached[key];
 
-				if ((theme.type === "feed" || (theme.oType && theme.oType === "feed")) && ((theme.lastFetched && theme.lastFetched <= start) || !theme.lastFetched)) {
-					active++;
+			if ((theme.type === "feed" || (theme.oType && theme.oType === "feed")) && ((theme.lastFetched && theme.lastFetched <= start) || !theme.lastFetched)) {
+				active++;
 
-					console.log("Updating cached theme " + key + ", last fetched on " + new Date(theme.lastFetched));
+				console.log("Updating cached theme " + key + ", last fetched on " + new Date(theme.lastFetched));
 
-					getFeed(theme, function() {
-						active--;
+				getFeed(theme, function() {
+					active--;
 
-						if (active === 0) {
-							var d = JSON.parse(localStorage.config || "{}");
+					if (active === 0) {
+						var d = JSON.parse(localStorage.config || "{}");
 
-							d.cached = cached;
+						d.cached = cached;
 
-							localStorage.config = JSON.stringify(d);
-						}
-					}, cache);
-				}
+						localStorage.config = JSON.stringify(d);
+					}
+				}, cache);
 			}
 		}
 	}
