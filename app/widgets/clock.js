@@ -101,13 +101,13 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				minutes = parseInt((time % 3600) / 60);
 
 			if (days) {
-				return days + ":" + _.pad(hours, 2, "0") + ":" + _.pad(minutes, 2, "0") + ":" + _.pad(time % 60, 2, "0");
+				return days + ":" + _.padLeft(hours, 2, "0") + ":" + _.padLeft(minutes, 2, "0") + ":" + _.padLeft(time % 60, 2, "0");
 			}
 			else if (hours) {
-				return hours + ":" + _.pad(minutes, 2, "0") + ":" + _.pad(time % 60, 2, "0");
+				return hours + ":" + _.padLeft(minutes, 2, "0") + ":" + _.padLeft(time % 60, 2, "0");
 			}
 			else {
-				return minutes + ":" + _.pad(time % 60, 2, "0") + (ms ? "." + _.pad(rTime % 1000, 3, "0") : "");
+				return minutes + ":" + _.padLeft(time % 60, 2, "0") + (ms ? "." + _.padLeft(rTime % 1000, 3, "0") : "");
 			}
 		},
 
@@ -137,17 +137,17 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				html += " full" + (this.config.format === "fulls" ? " no-seconds" : "");
 			}
 
-			html += '">' + hours + ":" + _.pad(minutes, 2, "0");
+			html += '">' + hours + ":" + _.padLeft(minutes, 2, "0");
 
 			if (this.config.size === "tiny" && this.config.format.indexOf("ampm") === 0) {
-				html += "<span>" + (this.config.format === "ampm" ? _.pad(seconds, 2, "0") : "") + "</span></div>";
+				html += "<span>" + (this.config.format === "ampm" ? _.padLeft(seconds, 2, "0") : "") + "</span></div>";
 			}
 			else if (this.config.size !== "tiny") {
 				// moment(dt) is slower so avoid it when possible
 				var date = (this.config.timezone !== "auto" ? moment(dt).format("dddd, MMMM Do YYYY") : moment().format("dddd, MMMM Do YYYY"));
 
 				if (this.config.format === "ampm" || this.config.format === "full") {
-					html += ":" + _.pad(seconds, 2, "0");
+					html += ":" + _.padLeft(seconds, 2, "0");
 				}
 
 				html += '</div><div class="date">' + date + "</div>";
@@ -422,7 +422,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 
 				data.alarm = data.alarm || {};
 
-				data.alarm.timeStr = data.alarm.time ? _.pad(new Date(data.alarm.time).getHours(), 2, "0") + ":" + _.pad(new Date(data.alarm.time).getMinutes(), 2, "0") : "07:00";
+				data.alarm.timeStr = data.alarm.time ? _.padLeft(new Date(data.alarm.time).getHours(), 2, "0") + ":" + _.padLeft(new Date(data.alarm.time).getMinutes(), 2, "0") : "07:00";
 			}
 
 			this.utils.render(data);

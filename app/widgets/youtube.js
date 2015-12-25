@@ -175,7 +175,7 @@ define(["lodash", "jquery", "moment"], function(_, $, moment) {
 							description: e.snippet.description,
 							views: parseInt((e.statistics && e.statistics.viewCount) || 0),
 							thumb: (e.snippet && e.snippet.thumbnails && e.snippet.thumbnails.high && e.snippet.thumbnails.high.url) || "",
-							duration: (d ? (d.hours() ? d.hours() + ":" + _.pad(d.minutes(), 2, "0") : d.minutes()) + ":" + _.pad(d.seconds(), 2, "0") : "0:00"),
+							duration: (d ? (d.hours() ? d.hours() + ":" + _.padLeft(d.minutes(), 2, "0") : d.minutes()) + ":" + _.padLeft(d.seconds(), 2, "0") : "0:00"),
 							url: "https://www.youtube.com/watch?v=" + encodeURIComponent((e.snippet && e.snippet.resourceId && e.snippet.resourceId.videoId) || e.id)
 						};
 					});
