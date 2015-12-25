@@ -439,7 +439,7 @@ var refreshFeeds = function() {
 	}
 
 	var active = 0,
-		start = new Date().getTime() - 1000 * 60 * 60 * 24,
+		start = new Date().getTime() - 60 * 60 * 1000,
 		key;
 
 	for (key in cached) {
@@ -467,6 +467,6 @@ var refreshFeeds = function() {
 	}
 };
 
-setInterval(refreshFeeds, 18E5);
+setInterval(refreshFeeds, 60 * 60 * 1000);
 
 refreshFeeds();
