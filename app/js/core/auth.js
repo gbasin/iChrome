@@ -6,25 +6,53 @@
  * posts authorization (usually a Google login token) and the server responds with
  * access and refresh tokens.
  */
-define(["jquery", "browser/api"], function($, Browser) {
-	var API_HOST = "https://api.ichro.me";
+define(["lodash", "jquery", "backbone", "browser/api"], function(_, $, Backbone, Browser) {
+	var API_HOST = "http://localhost:4000/api"; // "https://api.ichro.me";
 
-	var Auth = {
-		data: {
-			token: "",
-			expiry: 0,
-			refreshToken: ""
-		},
+	var Auth = Backbone.Model.extend({
 		isPro: false,
+
+
+		initialize: function() {
+			this.on("change:token", this.updateAccessToken, this);
+
+			this.on("change", function(model, options) {
+				if (options && options.internal) {
+					return;
+				}
+
+				Browser.storage.authToken = JSON.stringify(this.toJSON());
+			});
+
+			try {
+				this.set(JSON.parse(Browser.storage.authToken));
+			}
+			catch (e) {}
+		},
+
+
+		/**
+		 * Signs the user out, revoking the current token and erasing local authorization data
+		 *
+		 * TODO: Make this method wipe user information and maybe even the page so it's a true sign out
+		 */
+		signout: function() {
+			if (this.has("refreshToken")) {
+				$.post(API_HOST + "/oauth/v1/token/revoke?refresh_token=" + encodeURIComponent(this.get("refreshToken")));
+			}
+
+			this.clear();
+		},
 
 
 		/**
 		 * Updates the current token
 		 *
 		 * @api     public
-		 * @param   {String}  token  The token to update with
 		 */
-		updateAccessToken: function(token) {
+		updateAccessToken: function() {
+			var token = this.get("token");
+
 			if (!token) {
 				return;
 			}
@@ -41,20 +69,60 @@ define(["jquery", "browser/api"], function($, Browser) {
 			}
 
 
-			this.data.token = token;
-
-			this.data.expiry = payload.exp * 1000;
-
-			Browser.storage.authToken = JSON.stringify(this.data);
-
+			this.set("expiry", payload.exp * 1000, {
+				internal: true
+			});
 
 			if (payload.plan) {
-				this.plan = payload.plan;
+				this.set("plan", payload.plan);
+			}
+			else {
+				this.unset("plan");
 			}
 
-			this.isPro = this.plan && this.plan !== "free";
+			this.isPro = this.has("plan") && this.get("plan") !== "free";
 
 			return this;
+		},
+
+
+		_refreshing: false,
+
+
+		refreshToken: function() {
+			this._refreshing = true;
+
+			$.post(API_HOST + "/oauth/v1/token/refresh", "refresh_token=" + encodeURIComponent(this.get("refreshToken")), function(d) {
+				if (typeof d !== "object") {
+					d = JSON.parse(d);
+				}
+
+				if (!d.error && d.token) {
+					var data = {
+						token: d.token,
+						expiry: d.expiry * 1000
+					};
+
+					// If we get a new refresh token, update that too
+					if (d.refreshToken) {
+						data.refreshToken = d.refreshToken;
+					}
+
+					this._refreshing = false;
+
+					this.set(data);
+
+					this.trigger("refreshed");
+				}
+			}.bind(this)).fail(function(xhr) {
+				// An error likely means our token isn't valid, so we sign the user out
+				if (xhr.status.toString()[0] === "4") {
+					this.signout();
+				}
+
+				// If something fails, the next request coming through should retry
+				this._refreshing = false;
+			}.bind(this));
 		},
 
 
@@ -72,26 +140,34 @@ define(["jquery", "browser/api"], function($, Browser) {
 		 *                         called _after_ the auth token is added.
 		 */
 		ajax: function(config) {
-			if (Auth.data.token) {
+			if (this.has("expiry") && new Date().getTime() > this.get("expiry")) {
+				this.refreshToken();
+			}
+
+			// If we're refreshing the token, wait till that's done
+			if (this._refreshing) {
+				this.once("refreshed", this.ajax.bind(this, config));
+
+				return;
+			}
+
+			if (this.has("token")) {
 				config.headers = config.headers || {};
 
-				config.headers.Authorization = "Bearer " + Auth.data.token;
+				config.headers.Authorization = "Bearer " + this.get("token");
 			}
 
 			if (config.url && config.url[0] === "/") {
 				config.url = API_HOST + config.url;
 			}
 
-			return $.ajax(config);
+			return $.ajax(config).fail(function(xhr) {
+				if (this.has("token") && xhr.status === 401 && xhr.responseText.trim().toLowerCase().indexOf("invalid_token") !== -1) {
+					this.refreshToken();
+				}
+			}.bind(this));
 		}
-	};
+	});
 
-	try {
-		Auth.data = JSON.parse(Browser.storage.authToken);
-
-		Auth.updateAccessToken(Auth.data.token);
-	}
-	catch (e) {}
-
-	return Auth;
+	return new Auth();
 });
