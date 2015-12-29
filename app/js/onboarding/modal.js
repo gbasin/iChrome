@@ -1,10 +1,26 @@
 /**
  * The onboarding modal
  */
-define(["backbone", "browser/api", "core/analytics", "modals/modals", "core/render"], function(Backbone, Browser, Track, Modal, render) {
+define([
+	"backbone", "browser/api", "core/analytics", "storage/storage", "modals/modals", "core/auth", "storage/syncapi", "core/render"
+], function(Backbone, Browser, Track, Storage, Modal, Auth, SyncAPI, render) {
 	var View = Backbone.View.extend({
 		events: {
-			"click .nav button": "navClick"
+			"click .nav button": "navigate",
+
+			"click .sign-in button.sign-in": function() {
+				Storage.once("done", function(storage) {
+					SyncAPI.authorize(storage, false, function(err, isNewUser) {
+						if (err) {
+							return;
+						}
+
+						this.navigate(this.$(".slide." + (isNewUser ? "new-user" : "existing-user")));
+
+						this._userType = (isNewUser ? "new" : "existing") + (Auth.isPro ? "_pro" : "");
+					}.bind(this));
+				}, this);
+			}
 		},
 
 
@@ -12,9 +28,9 @@ define(["backbone", "browser/api", "core/analytics", "modals/modals", "core/rend
 		 * Handles click events on the nav buttons
 		 *
 		 * @api    private
-		 * @param  {Event} e
+		 * @param  {Event|jQuery}  e  A click event or specific slide to navigate to
 		 */
-		navClick: function(e) {
+		navigate: function(e) {
 			if (!this._interactionTracked) {
 				// It's important to know how many users don't even click to see the next slide
 				Track.event("Onboarding", "Modal", "Interaction");
@@ -25,24 +41,27 @@ define(["backbone", "browser/api", "core/analytics", "modals/modals", "core/rend
 			var active = this.$(".slide.active"),
 				page;
 
-			if (e.currentTarget.getAttribute("data-direction") === "prev") {
+			if (e.jquery) {
+				page = e;
+			}
+			else if (e.currentTarget.getAttribute("data-direction") === "prev") {
 				page = active.prev(".slide");
 			}
 			else {
 				page = active.next(".slide");
 			}
 
-			if (page.length) {
+			if (page.length && !active.hasClass("final")) {
 				active.removeClass("active");
 
 				page.addClass("active");
 
-				this.$(".nav button.next").toggleClass("finish", !page.next().length);
+				this.$(".nav button.next").toggleClass("finish", !page.next(":not(.final)").length);
 			}
 			else if (active.attr("data-id") !== "1") {
 				this.modal.hide();
 
-				this.trigger("close");
+				this.trigger("close", this._userType || "unknown");
 			}
 
 			var slideID = page.attr("data-id");
