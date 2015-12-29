@@ -68,29 +68,6 @@ chrome.webRequest.onBeforeRequest.addListener(
 	["blocking"]
 );
 
-chrome.webRequest.onAuthRequired.addListener(
-	function(info) {
-		if (info.tabId !== -1 && info.scheme.toLowerCase().trim() === "basic") {
-			var i = -1,
-				views = chrome.extension.getViews(),
-				length = views.length;
-
-			while (++i < length) {
-				if (views[i].tabId === info.tabId) {
-					return {
-						cancel: true
-					};
-				}
-			}
-		}
-	},
-	{
-		urls: [ "https://mail.google.com/mail/u/*/feed/atom/" ],
-		types: [ "xmlhttprequest" ]
-	},
-	["blocking"]
-);
-
 /**
  * Feed refresh manager
  */
