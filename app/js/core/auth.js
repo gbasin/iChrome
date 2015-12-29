@@ -21,7 +21,7 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 			}, this);
 
 			try {
-				this.set(JSON.parse(Browser.storage.authToken));
+				this.set(JSON.parse(Browser.storage.authData));
 			}
 			catch (e) {}
 
@@ -32,7 +32,7 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 					return;
 				}
 
-				Browser.storage.authToken = JSON.stringify(this.toJSON());
+				Browser.storage.authData = JSON.stringify(this.toJSON());
 			});
 		},
 
@@ -53,8 +53,6 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 
 				FileSystem.clear(function() {
 					Browser.storage.clear();
-
-					Browser.storage.firstRun = true; // Show the installation guide when the page is reloaded
 
 					window.onbeforeunload = null;
 
@@ -153,19 +151,10 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 			this.set({
 				isPro: this.isPro,
 				user: payload.sub,
-				plan: payload.plan,
 				expiry: payload.exp * 1000,
+				plan: payload.plan || "free",
 				subscription: payload.subscription
-			}, {
-				internal: true
 			});
-
-			if (payload.plan) {
-				this.set("plan", payload.plan);
-			}
-			else {
-				this.unset("plan");
-			}
 
 			return this;
 		},

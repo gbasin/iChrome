@@ -10,6 +10,8 @@ define(["jquery", "backbone", "core/analytics", "menu/menu", "core/render"], fun
 			"click button.skip": function() {
 				this.transitionOut();
 
+				this.trigger("complete");
+
 				this.stopListening();
 			}
 		},

@@ -90,7 +90,7 @@ define([
 			FileSystem.clear(function() {
 				// A reset shouldn't affect these since we'll still want to sync when this is over
 				var uses = Browser.storage.uses,
-					authToken = Browser.storage.authToken;
+					authData = Browser.storage.authData;
 
 				Browser.storage.clear();
 
@@ -98,8 +98,8 @@ define([
 					Browser.storage.uses = uses;
 				}
 
-				if (authToken) {
-					Browser.storage.authToken = authToken;
+				if (authData) {
+					Browser.storage.authData = authData;
 				}
 
 				Browser.storage.firstRun = true; // Show the installation guide when the page is reloaded

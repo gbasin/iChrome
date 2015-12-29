@@ -23,12 +23,12 @@ define(["core/auth", "storage/storage", "browser/api"], function(Auth, Storage, 
 
 		Storage.on("done", function(storage) {
 			window.UserVoice.push(["identify", {
-				id: Auth.get("user"),
+				id: Auth.get("user") || "",
 				email: storage.user.email,
 				name: (storage.user.fname + " " + storage.user.lname).trim() || undefined,
 				type: Browser.app.newTab ? "New Tab" : "Main",
 				account: {
-					id: Auth.get("subscription") || null,
+					id: Auth.get("subscription") || "",
 					plan: Auth.get("plan") || "free"
 				}
 			}]);

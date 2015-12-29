@@ -4982,15 +4982,32 @@ input.sp-input[type="text"] {
 	text-decoration: underline;
 }
 
-/* line 109, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
-.onboarding.modal .slide.sign-in {
+/* line 110, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+.onboarding.modal .slide.sign-in .pending, .onboarding.modal .slide.sign-in .complete {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
 	display: flex;
 	flex-flow: column;
+	position: absolute;
+	transition: opacity 0.4s cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* line 121, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+.onboarding.modal .slide.sign-in .pending.visible, .onboarding.modal .slide.sign-in .complete.visible {
+	z-index: 1;
+	opacity: 1;
+}
+
+/* line 127, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+.onboarding.modal .slide.sign-in .pending {
 	align-items: flex-end;
 }
 
-/* line 114, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
-.onboarding.modal .slide.sign-in .btn-container {
+/* line 130, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+.onboarding.modal .slide.sign-in .pending .btn-container {
 	flex: 1 0;
 	width: 100%;
 	display: flex;
@@ -5001,20 +5018,18 @@ input.sp-input[type="text"] {
 	border-bottom-right-radius: 6px;
 }
 
-/* line 126, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
-.onboarding.modal .slide.final {
-	display: flex;
+/* line 142, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+.onboarding.modal .slide.sign-in .complete {
 	font-size: 18px;
-	flex-flow: column;
 	justify-content: center;
 }
 
-/* line 132, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
-.onboarding.modal .slide.final h2 {
+/* line 146, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+.onboarding.modal .slide.sign-in .complete h2 {
 	font-size: 30px;
 }
 
-/* line 137, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 152, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .onboarding.modal .slide h2 {
 	font-size: 24px;
 	font-weight: 400;
@@ -5022,7 +5037,7 @@ input.sp-input[type="text"] {
 	font-family: inherit;
 }
 
-/* line 144, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 159, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .onboarding.modal .slide .hero {
 	height: 390px;
 	background-size: 100%;
@@ -5033,24 +5048,24 @@ input.sp-input[type="text"] {
 	background-position: bottom center;
 }
 
-/* line 154, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 169, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .onboarding.modal .slide .caption {
 	font-size: 15px;
 	line-height: 24px;
 	padding: 32px 80px;
 }
 
-/* line 159, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 174, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .onboarding.modal .slide .caption p {
 	margin-bottom: 25px;
 }
 
-/* line 163, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 178, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .onboarding.modal .slide .caption p:last-child {
 	margin-bottom: 0;
 }
 
-/* line 168, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 183, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .onboarding.modal .slide .footer.note {
 	left: 0;
 	right: 0;
@@ -5058,7 +5073,7 @@ input.sp-input[type="text"] {
 	position: absolute;
 }
 
-/* line 178, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 193, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase {
 	width: 80px;
 	z-index: 40;
@@ -5070,7 +5085,7 @@ input.sp-input[type="text"] {
 	font-family: Roboto, sans-serif;
 }
 
-/* line 188, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 203, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase:before {
 	width: 100%;
 	content: "";
@@ -5086,22 +5101,22 @@ input.sp-input[type="text"] {
 	border: solid 8192px #FFF;
 }
 
-/* line 203, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 218, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase.blue:before {
 	border-color: #3367D6;
 }
 
-/* line 207, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 222, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase.orange:before {
 	border-color: #E65100;
 }
 
-/* line 211, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 226, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase.green:before {
 	border-color: #0B8043;
 }
 
-/* line 215, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 230, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase:after {
 	content: "";
 	display: block;
@@ -5109,7 +5124,7 @@ input.sp-input[type="text"] {
 	box-shadow: inset 0 2px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* line 222, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 237, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase:after,
 .showcase .action-mask {
 	top: 0;
@@ -5120,7 +5135,7 @@ input.sp-input[type="text"] {
 	border-radius: 50%;
 }
 
-/* line 232, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 247, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase .action-mask {
 	z-index: 1;
 	width: 24px;
@@ -5128,51 +5143,51 @@ input.sp-input[type="text"] {
 	margin: auto;
 }
 
-/* line 239, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 254, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase.settings .action-mask {
 	width: 50px;
 	height: 50px;
 }
 
-/* line 244, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 259, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase .caption {
 	color: #FFF;
 	cursor: default;
 	position: absolute;
 }
 
-/* line 249, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 264, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase .caption.top-left {
 	right: 100%;
 	bottom: 100%;
 }
 
-/* line 254, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 269, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase .caption.top-right {
 	left: 100%;
 	bottom: 100%;
 }
 
-/* line 259, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 274, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase .caption.bottom-left {
 	top: 100%;
 	right: 100%;
 }
 
-/* line 264, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 279, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase .caption.bottom-right {
 	top: 100%;
 	left: 100%;
 }
 
-/* line 269, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 284, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase .caption p {
 	width: 360px;
 	font-size: 22px;
 	line-height: 1.5;
 }
 
-/* line 275, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 290, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .showcase .caption button {
 	color: #FFF;
 	font-size: 16px;
@@ -5181,12 +5196,12 @@ input.sp-input[type="text"] {
 	pointer-events: auto;
 }
 
-/* line 285, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 300, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .widget-settings.tutorial.modal-overlay {
 	background: rgba(0, 0, 0, 0.7);
 }
 
-/* line 288, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 303, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .widget-settings.tutorial.modal-overlay .caption {
 	top: 50%;
 	color: #FFF;
@@ -5200,18 +5215,18 @@ input.sp-input[type="text"] {
 	font-family: Roboto, sans-serif;
 }
 
-/* line 302, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 317, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial {
 	overflow: visible;
 }
 
-/* line 305, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 320, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .menu {
 	z-index: 1;
 	position: relative;
 }
 
-/* line 310, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 325, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .labels {
 	top: 0;
 	bottom: 0;
@@ -5225,7 +5240,7 @@ input.sp-input[type="text"] {
 	position: absolute;
 }
 
-/* line 322, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 337, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .labels li {
 	margin: 11px 5px;
 	padding: 2px 6px;
@@ -5238,7 +5253,7 @@ input.sp-input[type="text"] {
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
-/* line 333, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 348, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .labels li:after {
 	top: 50%;
 	width: 0;
@@ -5252,28 +5267,28 @@ input.sp-input[type="text"] {
 	border-left-color: rgba(70, 70, 70, 0.9);
 }
 
-/* line 347, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 362, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .labels li.custom-links, .menu-container.tutorial .labels li.tabs, .menu-container.tutorial .labels li.support {
 	right: 0;
 	position: absolute;
 }
 
-/* line 352, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 367, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .labels li.custom-links {
 	top: 151px;
 }
 
-/* line 357, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 372, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .labels li.tabs {
 	top: 254px;
 }
 
-/* line 362, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 377, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .labels li.support {
 	top: 340px;
 }
 
-/* line 369, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 384, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .menu-tutorial-overlay {
 	top: 0;
 	left: 0;
@@ -5285,7 +5300,7 @@ input.sp-input[type="text"] {
 	background: #E65100;
 }
 
-/* line 379, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 394, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .menu-tutorial-overlay .caption {
 	top: 125px;
 	color: #FFF;
@@ -5298,13 +5313,13 @@ input.sp-input[type="text"] {
 }
 
 @media (max-width: 1366px) {
-	/* line 391, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+	/* line 406, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 	.menu-tutorial-overlay .caption {
 		left: 40px;
 	}
 }
 
-/* line 396, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
+/* line 411, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_onboarding.scss */
 .menu-tutorial-overlay + header.toolbar {
 	z-index: 3;
 }

@@ -15,7 +15,7 @@ define([
 							return;
 						}
 
-						this.navigate(this.$(".slide." + (isNewUser ? "new-user" : "existing-user")));
+						this.$(".slide.sign-in .complete." + (isNewUser ? "new" : "existing")).addClass("visible").siblings().removeClass("visible");
 
 						this._userType = (isNewUser ? "new" : "existing") + (Auth.isPro ? "_pro" : "");
 					}.bind(this));
@@ -28,7 +28,7 @@ define([
 		 * Handles click events on the nav buttons
 		 *
 		 * @api    private
-		 * @param  {Event|jQuery}  e  A click event or specific slide to navigate to
+		 * @param  {Event}  e  A click event
 		 */
 		navigate: function(e) {
 			if (!this._interactionTracked) {
@@ -41,22 +41,19 @@ define([
 			var active = this.$(".slide.active"),
 				page;
 
-			if (e.jquery) {
-				page = e;
-			}
-			else if (e.currentTarget.getAttribute("data-direction") === "prev") {
+			if (e.currentTarget.getAttribute("data-direction") === "prev") {
 				page = active.prev(".slide");
 			}
 			else {
 				page = active.next(".slide");
 			}
 
-			if (page.length && !active.hasClass("final")) {
+			if (page.length) {
 				active.removeClass("active");
 
 				page.addClass("active");
 
-				this.$(".nav button.next").toggleClass("finish", !page.next(":not(.final)").length);
+				this.$(".nav button.next").toggleClass("finish", !page.next(".slide").length);
 			}
 			else if (active.attr("data-id") !== "1") {
 				this.modal.hide();

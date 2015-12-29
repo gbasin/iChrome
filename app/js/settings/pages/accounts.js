@@ -18,7 +18,10 @@ define([
 					}
 				}, function(sendData) {
 					SyncAPI.authorize(this.model.storage, sendData, function() {
-						this.render();
+						// If the user is Pro, we need to reload so the app initializes properly
+						if (Auth.isPro) {
+							location.reload();
+						}
 					}.bind(this));
 				}.bind(this));
 			},
@@ -46,7 +49,7 @@ define([
 		onBeforeRender: function() {
 			return {
 				signedIn: Auth.isSignedIn,
-				signedInMsg: Translate("settings.accounts.status.signed_in", this.storage.user.fname + " " + this.storage.user.lname, this.storage.user.email)
+				signedInMsg: Translate("settings.accounts.status.signed_in", this.model.storage.user.fname + " " + this.model.storage.user.lname, this.model.storage.user.email)
 			};
 		}
 	});
