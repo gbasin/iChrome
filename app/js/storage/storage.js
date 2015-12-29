@@ -90,7 +90,7 @@ define([
 			FileSystem.clear(function() {
 				// A reset shouldn't affect these since we'll still want to sync when this is over
 				var uses = Browser.storage.uses,
-					syncData = Browser.storage.syncData;
+					authToken = Browser.storage.authToken;
 
 				Browser.storage.clear();
 
@@ -98,11 +98,11 @@ define([
 					Browser.storage.uses = uses;
 				}
 
-				if (syncData) {
-					Browser.storage.syncData = syncData;
+				if (authToken) {
+					Browser.storage.authToken = authToken;
 				}
 
-				Browser.storage.installed = true; // Show the installation guide when the page is reloaded
+				Browser.storage.firstRun = true; // Show the installation guide when the page is reloaded
 
 				// Overwrite with the default configuration
 				_.assign(storage, _.pick(defaults, "user", "tabs", "settings", "themes", "cached"));

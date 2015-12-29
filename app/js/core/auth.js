@@ -6,14 +6,22 @@
  * posts authorization (usually a Google login token) and the server responds with
  * access and refresh tokens.
  */
-define(["lodash", "jquery", "backbone", "browser/api"], function(_, $, Backbone, Browser) {
+define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/alert", "storage/filesystem"], function(_, $, Backbone, Browser, Translate, Alert, FileSystem) {
 	var API_HOST = "http://localhost:4000/api"; // "https://api.ichro.me";
 
 	var Auth = Backbone.Model.extend({
 		isPro: false,
 
-
 		initialize: function() {
+			this.on("change:isPro", function() {
+				this.isPro = this.get("isPro");
+			}, this);
+
+			try {
+				this.set(JSON.parse(Browser.storage.authToken));
+			}
+			catch (e) {}
+
 			this.on("change:token", this.updateAccessToken, this);
 
 			this.on("change", function(model, options) {
@@ -23,25 +31,84 @@ define(["lodash", "jquery", "backbone", "browser/api"], function(_, $, Backbone,
 
 				Browser.storage.authToken = JSON.stringify(this.toJSON());
 			});
-
-			try {
-				this.set(JSON.parse(Browser.storage.authToken));
-			}
-			catch (e) {}
 		},
 
 
 		/**
 		 * Signs the user out, revoking the current token and erasing local authorization data
-		 *
-		 * TODO: Make this method wipe user information and maybe even the page so it's a true sign out
 		 */
 		signout: function() {
-			if (this.has("refreshToken")) {
-				$.post(API_HOST + "/oauth/v1/token/revoke?refresh_token=" + encodeURIComponent(this.get("refreshToken")));
-			}
+			Alert({
+				contents: [Translate("storage.signout_confirm")],
+				confirm: true
+			}, function() {
+				if (this.has("refreshToken")) {
+					$.post(API_HOST + "/oauth/v1/token/revoke?refresh_token=" + encodeURIComponent(this.get("refreshToken")));
+				}
 
-			this.clear();
+				this.clear();
+
+				FileSystem.clear(function() {
+					Browser.storage.clear();
+
+					Browser.storage.firstRun = true; // Show the installation guide when the page is reloaded
+
+					window.onbeforeunload = null;
+
+					location.reload();
+				});
+			}.bind(this));
+		},
+
+
+		/**
+		 * Initiates and handles the authorization flow
+		 *
+		 * @param   {Function}  cb
+		 */
+		authorize: function(cb) {
+			var that = this;
+
+			Browser.windows.create({
+				width: 560,
+				height: 600,
+				type: "popup",
+				focused: true,
+				url: API_HOST + "/oauth/v1/authorize?extension=" + (Browser.app.newTab ? "newtab" : "main"),
+				top: Math.round((screen.availHeight - 600) / 2),
+				left: Math.round((screen.availWidth - 560) / 2)
+			}, function(win) {
+				// We cancel the final request to issue the token and make it ourselves
+				Browser.webRequest.onBeforeRequest.addListener(function(info) {
+					$.getJSON(info.url, function(d) {
+						if (!d || d.error || !d.token) {
+							return cb(d.error || true);
+						}
+
+						this.set({
+							token: d.token,
+							expiry: d.expiry * 1000,
+							refreshToken: d.refreshToken
+						});
+
+						cb(null, !!d.isNewUser);
+					}.bind(that)).fail(function() {
+						cb(true);
+					});
+
+					Browser.windows.remove(win.id);
+
+					return {
+						cancel: true
+					};
+				}, {
+					windowId: win.id,
+					types: ["main_frame"],
+					urls: [API_HOST + "/oauth/v1/token*"]
+				}, [
+					"blocking"
+				]);
+			});
 		},
 
 
@@ -69,7 +136,12 @@ define(["lodash", "jquery", "backbone", "browser/api"], function(_, $, Backbone,
 			}
 
 
-			this.set("expiry", payload.exp * 1000, {
+			this.isPro = payload.plan && payload.plan !== "free";
+
+			this.set({
+				isPro: this.isPro,
+				expiry: payload.exp * 1000
+			}, {
 				internal: true
 			});
 
@@ -80,19 +152,15 @@ define(["lodash", "jquery", "backbone", "browser/api"], function(_, $, Backbone,
 				this.unset("plan");
 			}
 
-			this.isPro = this.has("plan") && this.get("plan") !== "free";
-
 			return this;
 		},
 
 
-		_refreshing: false,
+		_refreshPromise: null,
 
 
 		refreshToken: function() {
-			this._refreshing = true;
-
-			$.post(API_HOST + "/oauth/v1/token/refresh", "refresh_token=" + encodeURIComponent(this.get("refreshToken")), function(d) {
+			this._refreshPromise = $.post(API_HOST + "/oauth/v1/token/refresh", "refresh_token=" + encodeURIComponent(this.get("refreshToken")), function(d) {
 				if (typeof d !== "object") {
 					d = JSON.parse(d);
 				}
@@ -108,12 +176,12 @@ define(["lodash", "jquery", "backbone", "browser/api"], function(_, $, Backbone,
 						data.refreshToken = d.refreshToken;
 					}
 
-					this._refreshing = false;
-
 					this.set(data);
 
 					this.trigger("refreshed");
 				}
+
+				this._refreshPromise = null;
 			}.bind(this)).fail(function(xhr) {
 				// An error likely means our token isn't valid, so we sign the user out
 				if (xhr.status.toString()[0] === "4") {
@@ -121,7 +189,7 @@ define(["lodash", "jquery", "backbone", "browser/api"], function(_, $, Backbone,
 				}
 
 				// If something fails, the next request coming through should retry
-				this._refreshing = false;
+				this._refreshPromise = null;
 			}.bind(this));
 		},
 
@@ -140,25 +208,23 @@ define(["lodash", "jquery", "backbone", "browser/api"], function(_, $, Backbone,
 		 *                         called _after_ the auth token is added.
 		 */
 		ajax: function(config) {
-			if (this.has("expiry") && new Date().getTime() > this.get("expiry")) {
-				this.refreshToken();
-			}
-
-			// If we're refreshing the token, wait till that's done
-			if (this._refreshing) {
-				this.once("refreshed", this.ajax.bind(this, config));
-
-				return;
-			}
-
-			if (this.has("token")) {
-				config.headers = config.headers || {};
-
-				config.headers.Authorization = "Bearer " + this.get("token");
-			}
-
 			if (config.url && config.url[0] === "/") {
 				config.url = API_HOST + config.url;
+
+				if (this.has("expiry") && new Date().getTime() > this.get("expiry")) {
+					this.refreshToken();
+				}
+
+				// If we're refreshing the token, wait till that's done
+				if (this._refreshPromise) {
+					return this._refreshPromise.then(this.ajax.bind(this, config));
+				}
+
+				if (this.has("token")) {
+					config.headers = config.headers || {};
+
+					config.headers.Authorization = "Bearer " + this.get("token");
+				}
 			}
 
 			return $.ajax(config).fail(function(xhr) {

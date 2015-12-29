@@ -165,92 +165,49 @@ define(["lodash", "browser/api", "core/analytics", "core/auth"], function(_, Bro
 		 *                                 the configurations on other computers.  Defaults to false
 		 * @param   {Function} [cb]        The callback
 		 */
-		authorize: _.noop
+		authorize: function(storage, sendData, cb) {
+			cb = cb || _.noop;
 
-		/*function(storage, sendData, cb) {
-			Track.event("Sync", "Authorize", "Start");
+			Auth.authorize(function(err, isNewUser) {
+				if (err) {
+					cb(err);
 
-			Browser.windows.create({
-				width: 560,
-				height: 600,
-				type: "popup",
-				focused: true,
-				url: SYNC_URL + "/signin",
-				top: Math.round((screen.availHeight - 600) / 2),
-				left: Math.round((screen.availWidth - 560) / 2)
-			}, function(win) {
-				Browser.webRequest.onBeforeRequest.addListener(
-					function(info) {
-						// Adapted from http://stackoverflow.com/a/3855394/900747
-						var params = {},
-							idx, param;
+					Track.event("Sync", "Authorize", "Error");
 
-						_.each(new URL(info.url).search.substr(1).split("&"), function(e) {
-							idx = e.indexOf("=");
+					return;
+				}
 
-							if (idx === -1) {
-								params[e] = "";
-							}
-							else {
-								param = e.substring(0, idx);
+				var data = {};
 
-								params[param] = decodeURIComponent(e.substr(idx + 1).replace(/\+/g, " "));
+				if (sendData) {
+					data = {
+						tabs: storage.tabsSync,
+						themes: storage.themes,
+						settings: storage.settings
+					};
+				}
 
-								if (param === "code") {
-									return false;
-								}
-							}
-						});
+				syncAPI.sync(data, function(err, d) {
+					if (err || !d) {
+						Track.event("Sync", "Authorize", "Error");
 
-						if (params.code) {
-							var data = {};
+						cb(null, isNewUser);
 
-							if (sendData) {
-								data = {
-									tabs: storage.tabsSync,
-									themes: storage.themes,
-									settings: storage.settings
-								};
-							}
+						return;
+					}
 
-							syncAPI.sync(data, function(err, d) {
-								if (!err && d) {
-									Track.event("Sync", "Authorize", "Success");
+					Track.event("Sync", "Authorize", "Success");
 
-									_.assign(storage, _.pick(d, "user", "tabs", "themes", "settings"));
+					_.assign(storage, _.pick(d, "user", "tabs", "themes", "settings"));
 
-									// This results in two requests going to the server, but it's the
-									// simplest way to get all the metadata set up properly.
-									storage.sync();
-								}
-								else {
-									Track.event("Sync", "Authorize", "Error");
-								}
+					// This results in two requests going to the server, but it's the
+					// simplest way to get all the metadata set up properly.
+					storage.sync();
 
-								if (cb) {
-									cb();
-								}
-							}, false, params.code);
-						}
-						else if (cb) {
-							cb(true);
-						}
-
-						Browser.windows.remove(win.id);
-
-						return {
-							cancel: true
-						};
-					},
-					{
-						windowId: win.id,
-						types: ["main_frame"],
-						urls: ["https://sync.ichro.me/authorize*"]
-					},
-					["blocking"]
-				);
+					cb(null, isNewUser);
+				});
 			});
-		}*/
+		}
 	};
 
 	return syncAPI;
