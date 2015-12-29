@@ -1,7 +1,7 @@
 /**
  * Initializes UserVoice and it's autoprompts
  */
-define(["storage/syncapi", "browser/api"], function(SyncAPI, Browser) {
+define(["core/auth", "storage/storage", "browser/api"], function(Auth, Storage, Browser) {
 	var initUV = function() {
 		var uv = document.createElement("script");
 
@@ -21,13 +21,18 @@ define(["storage/syncapi", "browser/api"], function(SyncAPI, Browser) {
 		}]);
 
 
-		var d = SyncAPI.getInfo();
-
-		window.UserVoice.push(["identify", {
-			email: d.user.email,
-			name: (d.user.fname + " " + d.user.lname).trim() || undefined,
-			type: Browser.app.newTab ? "New Tab" : "Main"
-		}]);
+		Storage.on("done", function(storage) {
+			window.UserVoice.push(["identify", {
+				id: Auth.get("user"),
+				email: storage.user.email,
+				name: (storage.user.fname + " " + storage.user.lname).trim() || undefined,
+				type: Browser.app.newTab ? "New Tab" : "Main",
+				account: {
+					id: Auth.get("subscription") || null,
+					plan: Auth.get("plan") || "free"
+				}
+			}]);
+		});
 
 
 		window.UserVoice.push(["autoprompt", {

@@ -2,8 +2,8 @@
  * The advanced settings page
  */
 define([
-	"lodash", "moment", "browser/api", "i18n/i18n", "modals/alert", "settings/page", "storage/syncapi", "settings/debug"
-], function(_, moment, Browser, Translate, Alert, Page, SyncAPI, DebugTools) {
+	"lodash", "moment", "browser/api", "i18n/i18n", "modals/alert", "settings/page", "settings/debug"
+], function(_, moment, Browser, Translate, Alert, Page, DebugTools) {
 	var View = Page.extend({
 		id: "advanced",
 
@@ -52,8 +52,6 @@ define([
 			backups.unshift({
 				date: new Date().getTime(),
 				data: {
-					syncData: SyncAPI.getInfo(),
-					user: this.model.storage.user,
 					themes: this.model.storage.themes,
 					settings: this.model.storage.settings,
 					tabs: this.model.storage.tabsSync
@@ -97,13 +95,7 @@ define([
 					// Make sure that the restored data won't get overwritten with incoming sync data
 					backup.modified = new Date().getTime();
 
-					if (backup.syncData) {
-						SyncAPI.saveInfo(backup.syncData);
-
-						delete backup.syncData;
-					}
-
-					_.assign(this.model.storage, _.pick(backup, "user", "tabs", "themes", "settings"));
+					_.assign(this.model.storage, _.pick(backup, "tabs", "themes", "settings"));
 
 					this.model.storage.sync(true, function() {
 						this.trigger("restore");

@@ -2,8 +2,8 @@
  * The accounts and sync settings page
  */
 define([
-	"jquery", "lodash", "i18n/i18n", "modals/alert", "storage/storage", "storage/syncapi", "settings/page"
-], function($, _, Translate, Alert, Storage, SyncAPI, Page) {
+	"jquery", "lodash", "i18n/i18n", "modals/alert", "core/auth", "storage/storage", "storage/syncapi", "settings/page"
+], function($, _, Translate, Alert, Auth, Storage, SyncAPI, Page) {
 	var View = Page.extend({
 		id: "accounts",
 
@@ -35,8 +35,7 @@ define([
 			},
 
 			"click button.sign-out": function() {
-				// TODO: Implement
-				Alert("Sign out can't be implemented until the sync system is switched to an accounts system.");
+				Auth.signout();
 			}
 		},
 
@@ -45,11 +44,9 @@ define([
 		},
 
 		onBeforeRender: function() {
-			var profile = SyncAPI.getInfo().user || {};
-
 			return {
-				signedIn: !!SyncAPI.getInfo().token,
-				signedInMsg: Translate("settings.accounts.status.signed_in", profile.fname + " " + profile.lname, profile.email)
+				signedIn: Auth.isSignedIn,
+				signedInMsg: Translate("settings.accounts.status.signed_in", this.storage.user.fname + " " + this.storage.user.lname, this.storage.user.email)
 			};
 		}
 	});

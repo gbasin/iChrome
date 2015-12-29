@@ -11,10 +11,13 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 
 	var Auth = Backbone.Model.extend({
 		isPro: false,
+		isSignedIn: false,
 
 		initialize: function() {
 			this.on("change:isPro", function() {
 				this.isPro = this.get("isPro");
+			}, this).on("change:user", function() {
+				this.isSignedIn = !!this.get("user");
 			}, this);
 
 			try {
@@ -36,12 +39,12 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 
 		/**
 		 * Signs the user out, revoking the current token and erasing local authorization data
+		 *
+		 * @param {Boolean}  [fromError]  If this sign out is due to an error (such as a token being revoked),
+		 *                                in which case the user is silently signed out.
 		 */
-		signout: function() {
-			Alert({
-				contents: [Translate("storage.signout_confirm")],
-				confirm: true
-			}, function() {
+		signout: function(fromError) {
+			var cb = function() {
 				if (this.has("refreshToken")) {
 					$.post(API_HOST + "/oauth/v1/token/revoke?refresh_token=" + encodeURIComponent(this.get("refreshToken")));
 				}
@@ -57,7 +60,16 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 
 					location.reload();
 				});
-			}.bind(this));
+			}.bind(this);
+
+			if (fromError) {
+				return cb();
+			}
+
+			Alert({
+				contents: [Translate("storage.signout_confirm")],
+				confirm: true
+			}, cb);
 		},
 
 
@@ -140,7 +152,10 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 
 			this.set({
 				isPro: this.isPro,
-				expiry: payload.exp * 1000
+				user: payload.sub,
+				plan: payload.plan,
+				expiry: payload.exp * 1000,
+				subscription: payload.subscription
 			}, {
 				internal: true
 			});

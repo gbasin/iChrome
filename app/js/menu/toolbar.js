@@ -2,9 +2,9 @@
  * This generates the toolbar and its submodules
  */
 define([
-	"lodash", "jquery", "backbone", "browser/api", "core/auth", "core/analytics", "storage/storage", "storage/syncapi",
+	"lodash", "jquery", "backbone", "browser/api", "core/auth", "core/analytics", "storage/storage",
 	"storage/defaults", "search/search", "menu/menu", "core/announcements", "core/render"
-], function(_, $, Backbone, Browser, Auth, Track, Storage, SyncAPI, Defaults, Search, Menu, Announcements, render) {
+], function(_, $, Backbone, Browser, Auth, Track, Storage, Defaults, Search, Menu, Announcements, render) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -12,11 +12,9 @@ define([
 
 					set.links = _.take(set.links, Auth.isPro ? 8 : 3);
 
-					var d = SyncAPI.getInfo();
+					set.name = storage.user.fname || Defaults.user.fname;
 
-					set.name = d.user.fname || Defaults.user.fname;
-
-					set.profileimage = d.user.image ? d.user.image + "?sz=72" : Defaults.user.image;
+					set.profileimage = storage.user.image ? storage.user.image.replace("s128-c", "s72-c") : Defaults.user.image;
 
 					Announcements.off("countchange", null, this).on("countchange", function(count) {
 						this.set("announcements", count);

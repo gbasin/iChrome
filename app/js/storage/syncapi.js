@@ -12,14 +12,19 @@ define(["lodash", "browser/api", "core/analytics", "core/auth"], function(_, Bro
 		 *
 		 * @api     public
 		 * @param   {Number}    [params]  Any URL parameters to append to the request
-		 * @param   {Function}  cb        Has a Node-style signature of (error, data).
-		 *                                Possible errors are "Network error" and "Server error"
+		 * @param   {Function}  cb        Has a Node-style signature of (err, data). This will be called
+		 *                                with no arguments if the user is not signed in. Possible errors
+		 *                                are "Network error" and "Server error".
 		 * @param   {Boolean}   [retry]   If this request is a retry
 		 */
 		get: function get(params, cb, retry) {
 			if (typeof params === "function") {
 				cb = params;
 				params = null;
+			}
+
+			if (!Auth.isSignedIn) {
+				return cb();
 			}
 
 			Auth.ajax({
@@ -50,7 +55,7 @@ define(["lodash", "browser/api", "core/analytics", "core/auth"], function(_, Bro
 					}
 					else if (retry) {
 						// If an error occurs, we try again. If the request fails twice, we sign the user out.
-						Auth.signout();
+						Auth.signout(true);
 
 						cb("Server error");
 					}
@@ -67,8 +72,9 @@ define(["lodash", "browser/api", "core/analytics", "core/auth"], function(_, Bro
 		 *
 		 * @api     public
 		 * @param   {Object}    data         The data to sync to the server
-		 * @param   {Function}  [cb]         Has a Node-style signature of (error, data).
-		 *                                   Possible errors are "Network error", "No data", or "Server error"
+		 * @param   {Function}  [cb]         Has a Node-style signature of (err, data). This will be called without
+		 *                                   any arguments if the user isn't signed in. Possible errors are
+		 *                                   "Network error", "No data", or "Server error".
 		 * @param   {Boolean}   [useBeacon]  Whether or not to use a beacon to send the request
 		 * @param   {Boolean}   [retry]      If this request is a retry
 		 */
@@ -79,6 +85,10 @@ define(["lodash", "browser/api", "core/analytics", "core/auth"], function(_, Bro
 			}
 			else if (!cb) {
 				cb = _.noop;
+			}
+
+			if (!Auth.isSignedIn) {
+				return cb();
 			}
 
 			if (!data || typeof data !== "object") {
@@ -116,7 +126,7 @@ define(["lodash", "browser/api", "core/analytics", "core/auth"], function(_, Bro
 					}
 					else if (retry) {
 						// If an error occurs, we try again. If the request fails twice, we sign the user out.
-						Auth.signout();
+						Auth.signout(true);
 
 						cb("Server error");
 					}
@@ -129,34 +139,7 @@ define(["lodash", "browser/api", "core/analytics", "core/auth"], function(_, Bro
 
 
 		/**
-		 * Returns the sync profile information.
-		 *
-		 * Since this method is synchronous, it will not pull data from secondary sources.
-		 * If it's called immediately on reinstall, for example, it won't return data.
-		 *
-		 * @api     public
-		 * @return  {Object}  The sync profile information
-		 */
-		getInfo: function() {
-			return {user:{}}; //clientData;
-		},
-
-
-		/**
-		 * Overwrites sync profile information with the provided object
-		 *
-		 * @api     public
-		 * @param   {Object}  data  The complete sync profile information to save
-		 */
-		saveInfo: function(data) {
-			clientData = _.clone(data);
-
-			saveData();
-		},
-
-
-		/**
-		 * Requests access to the user's Google profile to create or connect to a sync profile
+		 * Prompts the user to sign in and then syncs with the server
 		 *
 		 * @api     public
 		 * @param   {Storage}  storage     The iChrome storage interface.  This will be used to
