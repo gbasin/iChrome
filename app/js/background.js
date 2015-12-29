@@ -11,120 +11,10 @@ var Hogan={};
 
 chrome.runtime.onInstalled.addListener(function(details) {
 	if (details.reason === "install") {
-		// NOTE: These two methods have been copied from storage/syncapi.js and lightly modified
-		// Changes made here should be reflected there.
-		var clientData = {};
+		localStorage.firstRun = "true";
 
-		var loadData = function(cb) {
-			if (clientData.token) {
-				return cb(clientData);
-			}
-
-			var done = 0;
-
-			var next = function() {
-				if (done++) {
-					if (clientData.token) {
-						cb(clientData);
-					}
-					else {
-						cb();
-					}
-
-					saveData();
-				}
-			};
-
-			chrome.storage.sync.get("syncData", function(d) {
-				if (d && d.syncData) {
-					for (var key in d.syncData) {
-						if (d.syncData.hasOwnProperty(key)) {
-							clientData[key] = d.syncData[key];
-						}
-					}
-				}
-
-				next();
-			});
-
-			chrome.cookies.get({
-				name: "sync_data_main",
-				url: "http://ichro.me"
-			}, function(args, d) {
-				try {
-					d = d && d.value && JSON.parse(d.value);
-
-					var key;
-
-					if (d) {
-						// If a token is already set from the sync storage,
-						// keep it, but add the new information
-						if (clientData.token) {
-							for (key in d) {
-								if (d.hasOwnProperty(key) && key !== "token" && key !== "client") {
-									clientData[key] = d[key];
-								}
-							}
-						}
-						else {
-							for (key in d) {
-								if (d.hasOwnProperty(key)) {
-									clientData[key] = d[key];
-								}
-							}
-						}
-					}
-				}
-				catch (e) {}
-
-				next();
-			}.bind(this, arguments));
-		};
-
-		var saveData = function() {
-			var local = JSON.stringify((function(data) {
-				for (var key in clientData) {
-					if (clientData.hasOwnProperty(key) && key !== "version" && key !== "extension") {
-						data[key] = clientData[key];
-					}
-				}
-
-				return data;
-			})({}));
-
-			var sync = JSON.stringify((function(data) {
-				for (var key in clientData) {
-					if (clientData.hasOwnProperty(key) && key !== "client" && key !== "version" && key !== "extension") {
-						data[key] = clientData[key];
-					}
-				}
-
-				return data;
-			})({}));
-
-			localStorage.syncData = local;
-
-			chrome.storage.sync.set({
-				syncData: sync
-			});
-
-			chrome.cookies.set({
-				name: "sync_data_main",
-				domain: ".ichro.me",
-				url: "http://ichro.me",
-				value: local,
-				expirationDate: (new Date().getTime() / 1000) + (10 * 365 * 24 * 60 * 60)
-			});
-		};
-
-		loadData(function() {
-			if (!clientData.token) {
-				localStorage.firstRun = "true";
-
-				chrome.tabs.create({
-					url: "index.html"
-				});
-			}
+		chrome.tabs.create({
+			url: "index.html"
 		});
 	}
 	else if (details.reason === "update") {
@@ -145,12 +35,22 @@ chrome.runtime.onInstalled.addListener(function(details) {
 				chrome.storage.sync.remove(["tabs", "settings", "themes", "cached"]);
 
 				chrome.tabs.create({
-					url: "chrome-extension://" + chrome.i18n.getMessage("@@extension_id") + "/index.html"
+					url: "index.html"
 				});
 			});
 		}
 
-		if (!details.previousVersion || details.previousVersion.indexOf("2.1.20") === -1) {
+		if (localStorage.syncData) {
+			// Clear old sync system data
+			chrome.cookies.get({
+				name: "sync_data_main",
+				url: "http://ichro.me"
+			});
+
+			chrome.storage.sync.remove("syncData");
+		}
+
+		if (!details.previousVersion || details.previousVersion.indexOf("3.0.0") !== 0) {
 			localStorage.showWhatsNew = "true";
 		}
 	}
