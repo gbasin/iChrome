@@ -37,14 +37,14 @@ define(["lodash", "browser/api", "core/analytics", "core/auth"], function(_, Bro
 					if ((xhr.status === 200 && xhr.responseJSON) || xhr.status === 304) {
 						var d = xhr.responseJSON;
 
-						if (!d) {
+						if (d && d.accessToken) {
+							Auth.set("token", d.accessToken);
+						}
+
+						if (!d || d.isModified === false) {
 							return cb(null, {
 								modified: false
 							});
-						}
-
-						if (d.accessToken) {
-							Auth.set("token", d.accessToken);
 						}
 
 
@@ -100,6 +100,10 @@ define(["lodash", "browser/api", "core/analytics", "core/auth"], function(_, Bro
 			}));
 
 			if (useBeacon) {
+				if (Auth.has("token")) {
+					sData.authToken = Auth.get("token");
+				}
+
 				return cb(navigator.sendBeacon(SYNC_URL, new Blob([sData], { type: "application/json" })));
 			}
 

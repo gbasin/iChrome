@@ -189,7 +189,7 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 			}.bind(this)).fail(function(xhr) {
 				// An error likely means our token isn't valid, so we sign the user out
 				if (xhr.status.toString()[0] === "4") {
-					this.signout();
+					this.signout(true);
 				}
 
 				// If something fails, the next request coming through should retry
