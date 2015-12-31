@@ -321,6 +321,34 @@
 			"steps2": "Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
 			"steps3": "Edit any of the settings shown in the dialog that's displayed",
 			"steps4": "Click Save to save your changes, or any part of the background to discard of them"
+		},
+
+		"pro": {
+			"promo": {
+				"monthly_price": "$2 per month",
+				"yearly_price": "or $20 per year",
+				"upgrade_btn": "Upgrade Now",
+
+				"themes": "Themes",
+				"themes_desc": "See more of your backgrounds with dark and transparent themes",
+
+				"bgs": "Live backgrounds",
+				"bgs_desc": "Bring your page to life with 20 live high-definition backgrounds",
+
+				"widgets": "Maximizable widgets",
+				"widgets_desc": "Take iChrome to another level with maximizable widgets",
+
+				"more_header": "And more",
+				"stocks": "Realtime stocks with extended and historical information",
+				"rss": "Support for multiple RSS feeds per widget",
+				"tabbed_widgets": "Tabbed news and RSS widgets",
+				"bg_downloads": "Downloadable backgrounds",
+				"weather": "Hourly weather forecasts up to 10 days out",
+				"toolbar": "More toolbar links",
+				"support": "Prioritized support and suggestions",
+
+				"buy_pro": "Buy Pro"
+			}
 		}
 	},
 

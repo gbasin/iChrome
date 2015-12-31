@@ -1361,7 +1361,7 @@ header.toolbar {
 		background: #3A3A3A;
 	}
 
-	.dark.transparent .search input:focus {
+	.dark.transparent & .search input:focus {
 		background: rgba(0, 0, 0, .15);
 	}
 
@@ -1550,6 +1550,10 @@ dialog.announcements {
 
 dialog.announcements .content {
 	color: #212121;
+}
+
+.dark dialog.announcements .content {
+	color: #EEE;
 }
 
 dialog.announcements section {
