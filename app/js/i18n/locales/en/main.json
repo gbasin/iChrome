@@ -348,6 +348,27 @@
 				"support": "Prioritized support and suggestions",
 
 				"buy_pro": "Buy Pro"
+			},
+
+			"checkout": {
+				"title": "Checkout",
+
+				"payment_options": "Pay",
+				"pay_monthly": "Monthly ($2)",
+				"pay_yearly": "Yearly ($20)",
+
+				"cancel": "Cancel",
+				"subscribe": "Subscribe",
+
+				"braintree_notice": "Payments securely processed by Braintree.",
+				"monthly_notice": "By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
+				"yearly_notice": "By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
+
+				"thank_you": "Thank you for your purchase!",
+				"thank_you2": "iChrome will reload in a few seconds and you'll be all set!",
+
+				"error": "Something went wrong while trying to process your payment.",
+				"error2": "Please try again later or email us at support@ichro.me"
 			}
 		}
 	},

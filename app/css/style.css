@@ -6133,6 +6133,197 @@ input.sp-input[type="text"] {
 	margin-bottom: 35px;
 }
 
+/* line 139, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	z-index: 9999;
+	position: fixed;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.2);
+}
+
+/* line 151, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog {
+	width: 370px;
+	background: #FFF;
+	overflow: hidden;
+	border-radius: 3px;
+	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* line 158, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog header {
+	color: #FFF;
+	text-align: left;
+	padding: 20px 24px;
+	background: #2196F3;
+	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
+}
+
+/* line 165, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog header h2 {
+	padding: 0;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+/* line 173, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog .content {
+	padding: 0;
+	color: #212121;
+}
+
+/* line 177, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog .content.success, .app.settings .page.pro .checkout-container .dialog .content.error {
+	height: 350px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* line 183, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog .content.success p, .app.settings .page.pro .checkout-container .dialog .content.error p {
+	font-size: 16px;
+	text-align: center;
+	margin: 0 10% 20px;
+}
+
+/* line 188, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog .content.success p.thank-you, .app.settings .page.pro .checkout-container .dialog .content.error p.thank-you {
+	font-size: 18px;
+}
+
+/* line 195, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog .input {
+	border-top: 0;
+	text-align: left;
+	padding: 12px 24px;
+}
+
+/* line 201, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog .input h3 {
+	font-size: 14px;
+	font-weight: 700;
+}
+
+/* line 206, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog .braintree-dropin {
+	padding: 12px 24px;
+}
+
+/* line 210, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog button,
+.app.settings .page.pro .checkout-container .dialog button.material {
+	margin: 0 8px;
+	min-width: 64px;
+}
+
+/* line 216, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog footer {
+	text-align: right;
+	padding: 8px 8px 16px;
+}
+
+/* line 220, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog footer .notice {
+	margin: 0;
+	font-size: 12px;
+	line-height: 20px;
+	text-align: center;
+	color: #757575;
+	padding: 12px 12px 0;
+}
+
+/* line 230, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog .loading {
+	height: 350px;
+	position: relative;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+/* line 235, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog .loading svg {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+}
+
+/* line 244, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog .loading .spinner {
+	-webkit-animation: rotator 1.4s linear infinite;
+}
+
+/* line 247, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog .loading .spinner circle {
+	stroke-dashoffset: 0;
+	stroke-dasharray: 187;
+	transform-origin: center;
+	-webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+/* line 255, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog .loading footer {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+}
+
+/* line 261, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
+.app.settings .page.pro .checkout-container .dialog .loading footer .notice {
+	display: none;
+}
+
+@-webkit-keyframes rotator {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(270deg);
+	}
+}
+
+@-webkit-keyframes colors {
+	0% {
+		stroke: #4285F4;
+	}
+	25% {
+		stroke: #DE3E35;
+	}
+	50% {
+		stroke: #F7C223;
+	}
+	75% {
+		stroke: #1B9A59;
+	}
+	100% {
+		stroke: #4285F4;
+	}
+}
+
+@-webkit-keyframes dash {
+	0% {
+		stroke-dashoffset: 187;
+	}
+	50% {
+		stroke-dashoffset: 46.75;
+		transform: rotate(135deg);
+	}
+	100% {
+		stroke-dashoffset: 187;
+		transform: rotate(450deg);
+	}
+}
+
 /* line 213, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 .app.settings .item,
 .app.settings .input {

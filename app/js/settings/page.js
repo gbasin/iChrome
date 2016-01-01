@@ -243,7 +243,13 @@ define(["lodash", "jquery", "backbone", "core/auth", "settings/model", "core/ren
 
 			this.trigger("before:render", data);
 
-			data = this.onBeforeRender(data);
+			var ret = this.onBeforeRender(data);
+
+			if (ret === false) {
+				return this;
+			}
+
+			data = ret || data;
 
 			this.$el.html(this.template(data));
 

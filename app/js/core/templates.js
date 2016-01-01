@@ -15,7 +15,7 @@ var templates = [
 		"settings",				"settings/accounts",	"settings/advanced",
 		"settings/misc",		"settings/tabs",		"settings/toolbar",
 		"settings/visual",		"settings/widgets",		"settings/pro",
-		"settings/debug",
+		"settings/debug",		"settings/pro-checkout",
 
 		"widgets.clock",				"widgets.clock.desc",
 		"widgets.iframe",				"widgets.iframe.desc",
