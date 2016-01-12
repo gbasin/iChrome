@@ -1,13 +1,20 @@
 <div class="dialog">
 	<header>
-		<h2>{{i18n.settings.pro.checkout.title}}</h2>
+		{{#updating}}
+			<h2>{{i18n.settings.pro.checkout.updating_title}}</h2>
+		{{/updating}}
+		{{^updating}}
+			<h2>{{i18n.settings.pro.checkout.title}}</h2>
+		{{/updating}}
 	</header>
 
 	{{#success}}
 		<div class="content success">
 			<p class="thank-you">{{i18n.settings.pro.checkout.thank_you}}</p>
 
-			<p>{{i18n.settings.pro.checkout.thank_you2}}</p>
+			{{^updating}}
+				<p>{{i18n.settings.pro.checkout.thank_you2}}</p>
+			{{/updating}}
 		</div>
 	{{/success}}
 
@@ -49,12 +56,17 @@
 			<footer>
 				<button type="button" class="material flat cancel">{{i18n.settings.pro.checkout.cancel}}</button>
 
-				<button type="submit" class="material blue checkout"{{#loading}} disabled{{/loading}}>{{i18n.settings.pro.checkout.subscribe}}</button>
+				<button type="submit" class="material blue checkout"{{#loading}} disabled{{/loading}}>{{#updating}}{{i18n.settings.pro.checkout.update}}{{/updating}}{{^updating}}{{i18n.settings.pro.checkout.subscribe}}{{/updating}}</button>
 
 				<p class="notice">
 					{{i18n.settings.pro.checkout.braintree_notice}}
 					<br />
-					<span class="recurring">{{i18n.settings.pro.checkout.monthly_notice}}</span>
+					{{#updating}}
+						<span class="cycle-change"></span>
+					{{/updating}}
+					{{^updating}}
+						<span class="recurring">{{i18n.settings.pro.checkout.monthly_notice}}</span>
+					{{/updating}}
 				</p>
 			</footer>
 		</form>

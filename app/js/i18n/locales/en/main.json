@@ -328,6 +328,8 @@
 				"monthly_price": "$2 per month",
 				"yearly_price": "or $20 per year",
 				"upgrade_btn": "Upgrade Now",
+				"business": "Interested in buying Pro for your business or school?",
+				"business_contact": "Contact us",
 
 				"themes": "Themes",
 				"themes_desc": "See more of your backgrounds with dark and transparent themes",
@@ -352,23 +354,59 @@
 
 			"checkout": {
 				"title": "Checkout",
+				"updating_title": "Update plan",
 
 				"payment_options": "Pay",
 				"pay_monthly": "Monthly ($2)",
 				"pay_yearly": "Yearly ($20)",
 
 				"cancel": "Cancel",
+				"update": "Update",
 				"subscribe": "Subscribe",
 
 				"braintree_notice": "Payments securely processed by Braintree.",
 				"monthly_notice": "By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
 				"yearly_notice": "By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
+				"update_notice": "Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
 
-				"thank_you": "Thank you for your purchase!",
+				"thank_you": "Thank you for buying iChrome Pro!",
 				"thank_you2": "iChrome will reload in a few seconds and you'll be all set!",
 
 				"error": "Something went wrong while trying to process your payment.",
 				"error2": "Please try again later or email us at support@ichro.me"
+			},
+
+			"plan": {
+				"title": "Plan",
+
+				"desc": "You are currently subscribed to iChrome Pro (%s)",
+
+				"types": {
+					"monthly": "Monthly",
+					"yearly": "Yearly",
+					"business": "Business",
+					"education": "Education",
+					"custom": "Custom"
+				},
+
+				"uneditable_desc": "Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us</a> to update or cancel your subscription.",
+
+				"status": "Status",
+				"status_active": "Active",
+				"status_trial": "Trial",
+				"status_pastdue": "Past due",
+
+				"subscription_date": "Subscription date",
+				"paid_through": "Paid through",
+				"next_bill": "Next bill",
+				"next_bill_value": "$%s on %s",
+
+				"update_plan": "Update plan",
+				"update_billing": "Update billing",
+				"cancel": "Cancel subscription",
+
+				"cancel_notice": "Your subscription will be canceled immediately",
+				"cancel_notice2": "If you would like a refund, please contact us at support@ichro.me"
 			}
 		}
 	},

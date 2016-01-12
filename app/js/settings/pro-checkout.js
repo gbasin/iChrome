@@ -1,7 +1,7 @@
 /**
  * The checkout dialog. An actual <dialog> can't be used here since the drop in UI might need to show an overlay.
  */
-define(["lodash", "jquery", "backbone", "core/auth", "core/render"], function(_, $, Backbone, Auth, render) {
+define(["lodash", "jquery", "i18n/i18n", "backbone", "core/auth", "core/render"], function(_, $, Translate, Backbone, Auth, render) {
 	var View = Backbone.View.extend({
 		tagName: "div",
 		className: "checkout-container",
@@ -27,6 +27,19 @@ define(["lodash", "jquery", "backbone", "core/auth", "core/render"], function(_,
 				}.bind(this);
 
 				return this;
+			},
+
+			"change input[name=pay]": function(e) {
+				var msg = "";
+
+				if (!this.isUpdating) {
+					msg = Translate("settings.pro.checkout." + (e.currentTarget.value === "monthly" ? "monthly" : "yearly") + "_notice");
+				}
+				else if (Auth.get("plan") !== ("pro_" + e.currentTarget.value)) {
+					msg = Translate("settings.pro.checkout.update_notice");
+				}
+
+				this.$("footer .notice span").text(msg);
 			}
 		},
 
@@ -35,11 +48,14 @@ define(["lodash", "jquery", "backbone", "core/auth", "core/render"], function(_,
 				return this.remove();
 			}
 
+			this.isUpdating = !!options.update;
+
 			this.$overlay = $('<div class="checkout-dialog-overlay></div>').appendTo(options.container);
 
 			this.$el.html(render("settings/pro-checkout", {
 				form: true,
-				loading: true
+				loading: true,
+				updating: this.isUpdating
 			})).appendTo(options.container);
 
 			this.getClientToken();
@@ -67,7 +83,8 @@ define(["lodash", "jquery", "backbone", "core/auth", "core/render"], function(_,
 
 			this.$el.html(render("settings/pro-checkout", {
 				form: true,
-				loading: true
+				loading: true,
+				updating: this.isUpdating
 			}));
 
 			Auth.ajax({
@@ -78,27 +95,34 @@ define(["lodash", "jquery", "backbone", "core/auth", "core/render"], function(_,
 					paymentNonce: paymentNonce
 				},
 				success: function(d) {
-					if (d && d.authToken) {
-						Auth.set("token", d.authToken);
+					if (d && d.success) {
+						if (d.authToken) {
+							Auth.set("token", d.authToken);
+						}
 
 						this.$el.html(render("settings/pro-checkout", {
-							success: true
+							success: true,
+							updating: this.isUpdating
 						}));
 
 						// Changes to the Pro state require a reload since it's used during initialization
-						setTimeout(function() {
-							location.reload();
-						}, 4000);
+						if (!this.isUpdating) {
+							setTimeout(function() {
+								location.reload();
+							}, 4000);
+						}
 					}
 					else {
 						this.$el.html(render("settings/pro-checkout", {
-							error: true
+							error: true,
+							updating: this.isUpdating
 						}));
 					}
 				}.bind(this)
 			}).fail(function() {
 				this.$el.html(render("settings/pro-checkout", {
-					error: true
+					error: true,
+					updating: this.isUpdating
 				}));
 			}.bind(this));
 		},
@@ -115,8 +139,13 @@ define(["lodash", "jquery", "backbone", "core/auth", "core/render"], function(_,
 						}
 
 						this.$el.html(render("settings/pro-checkout", {
-							form: true
+							form: true,
+							updating: this.isUpdating
 						}));
+
+						if (Auth.get("plan") === "pro_yearly") {
+							this.$("input[name=pay][value=yearly]").prop("checked", true);
+						}
 
 						braintree.setup(d.token, "dropin", {
 							enableCORS: true,

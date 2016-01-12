@@ -21,7 +21,7 @@ define(["lodash", "jquery", "backbone", "core/auth", "settings/model", "core/ren
 			// All pages share a single settings model
 			this.model = model();
 
-			this.model.on(this.monitorProps ? "change:" + this.monitorProps.join(" change:") : "change", _.throttle(function() {
+			this.listenTo(this.model, this.monitorProps ? "change:" + this.monitorProps.join(" change:") : "change", _.throttle(function() {
 				var options = _.last(arguments);
 
 				if (options && options.noRender) {
@@ -53,7 +53,7 @@ define(["lodash", "jquery", "backbone", "core/auth", "settings/model", "core/ren
 				if (focusedElm) {
 					this.$("> " + focusedElm).focus();
 				}
-			}, 100), this);
+			}, 100));
 
 			Backbone.View.prototype.constructor.call(this, options);
 
