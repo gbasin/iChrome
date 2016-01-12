@@ -38,7 +38,13 @@ define(["lodash", "browser/api", "core/analytics", "core/auth"], function(_, Bro
 						var d = xhr.responseJSON;
 
 						if (d && d.accessToken) {
+							var wasPro = Auth.isPro;
+
 							Auth.set("token", d.accessToken);
+
+							if (Auth.isPro !== wasPro) {
+								location.reload();
+							}
 						}
 
 						if (!d || d.isModified === false) {
@@ -117,11 +123,15 @@ define(["lodash", "browser/api", "core/analytics", "core/auth"], function(_, Bro
 					if (xhr.status === 200 && xhr.responseJSON) {
 						var d = xhr.responseJSON;
 
+						if (d && d.accessToken) {
+							var wasPro = Auth.isPro;
 
-						if (d.accessToken) {
 							Auth.set("token", d.accessToken);
-						}
 
+							if (Auth.isPro !== wasPro) {
+								location.reload();
+							}
+						}
 
 						cb(null, d);
 					}
