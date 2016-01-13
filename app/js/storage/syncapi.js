@@ -1,9 +1,25 @@
 /**
  * Handles sync interfacing with ichro.me and ID management
  */
-define(["lodash", "browser/api", "core/analytics", "core/auth"], function(_, Browser, Track, Auth) {
+define(["lodash", "browser/api", "i18n/i18n", "modals/alert", "core/analytics", "core/auth"], function(_, Browser, Translate, Alert, Track, Auth) {
 	// The sync API URL
 	var SYNC_URL = "/sync/v1";
+
+
+	var pastDueAlerted = false;
+
+	var handlePastDue = function() {
+		if (pastDueAlerted) {
+			return;
+		}
+
+		pastDueAlerted = true;
+
+		Alert({
+			title: Translate("storage.pastdue"),
+			contents: [Translate("storage.pastdue_desc")]
+		});
+	};
 
 
 	var syncAPI = {
@@ -45,6 +61,10 @@ define(["lodash", "browser/api", "core/analytics", "core/auth"], function(_, Bro
 							if (Auth.isPro !== wasPro) {
 								location.reload();
 							}
+						}
+
+						if (d && d.subscriptionPastDue) {
+							handlePastDue();
 						}
 
 						if (!d || d.isModified === false) {
@@ -123,7 +143,7 @@ define(["lodash", "browser/api", "core/analytics", "core/auth"], function(_, Bro
 					if (xhr.status === 200 && xhr.responseJSON) {
 						var d = xhr.responseJSON;
 
-						if (d && d.accessToken) {
+						if (d.accessToken) {
 							var wasPro = Auth.isPro;
 
 							Auth.set("token", d.accessToken);
@@ -131,6 +151,10 @@ define(["lodash", "browser/api", "core/analytics", "core/auth"], function(_, Bro
 							if (Auth.isPro !== wasPro) {
 								location.reload();
 							}
+						}
+
+						if (d.subscriptionPastDue) {
+							handlePastDue();
 						}
 
 						cb(null, d);

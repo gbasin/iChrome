@@ -1,7 +1,7 @@
 /**
  * The settings page base
  */
-define(["lodash", "jquery", "backbone", "core/auth", "settings/model", "core/render"], function(_, $, Backbone, Auth, model, render) {
+define(["lodash", "jquery", "backbone", "core/analytics", "core/auth", "settings/model", "core/render"], function(_, $, Backbone, Track, Auth, model, render) {
 	var View = Backbone.View.extend({
 		constructor: function(options) {
 			this.tagName = "div";
@@ -144,6 +144,8 @@ define(["lodash", "jquery", "backbone", "core/auth", "settings/model", "core/ren
 					player.onfinish = done;
 				});
 			}
+
+			Track.pageview("Settings: " + this.id, "/settings/" + this.id);
 		},
 
 		transitionOut: function(cb) {

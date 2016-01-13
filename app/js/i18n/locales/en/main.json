@@ -87,7 +87,10 @@
 		"signin_btn": "Sign in",
 		"signin_dismiss": "Dismiss",
 
-		"signout_confirm": "Signing out will erase your local backups"
+		"signout_confirm": "Signing out will erase your local backups",
+
+		"pastdue": "Your subscription is past due",
+		"pastdue_desc": "Please update your billing information in the settings"
 	},
 
 	"toolbar": {

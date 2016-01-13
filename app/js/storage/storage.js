@@ -2,9 +2,9 @@
  * Loads storage and returns a Promise that can be used to listen for updates
  */
 define([
-	"jquery", "lodash", "backbone", "browser/api", "core/status", "modals/alert", "i18n/i18n", "core/analytics", "storage/filesystem",
+	"jquery", "lodash", "backbone", "browser/api", "core/status", "core/analytics", "storage/filesystem",
 	"core/auth", "storage/syncapi", "storage/deprecate", "storage/defaults", "storage/updatethemes", "storage/tojson", "lib/unextend"
-], function($, _, Backbone, Browser, Status, Alert, Translate, Track, FileSystem, Auth, API, Deprecate, defaults, updateThemes, getJSON, unextend) {
+], function($, _, Backbone, Browser, Status, Track, FileSystem, Auth, API, Deprecate, defaults, updateThemes, getJSON, unextend) {
 		var deferred = $.Deferred();
 
 		// This lets events get attached and fired on storage itself. It'll primarily be used as storage.on("updated", ...) and storage.trigger("updated")
