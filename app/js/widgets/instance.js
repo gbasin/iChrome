@@ -2,8 +2,8 @@
  * The widget instance wrapper, manages elements, configuration and data persistence, settings, etc.
  */
 define([
-	"lodash", "jquery", "backbone", "browser/api", "core/uservoice", "core/pro", "core/analytics", "i18n/i18n", "core/status", "widgets/settings", "widgets/views/main", "widgets/views/maximized", "widgets/views/minimized", "widgets/model", "core/render"
-], function(_, $, Backbone, Browser, UserVoice, Pro, Track, Translate, Status, Settings, MainView, Maximized, Minimized, WidgetModel, render) {
+	"lodash", "jquery", "backbone", "browser/api", "core/uservoice", "core/auth", "core/analytics", "i18n/i18n", "core/status", "widgets/settings", "widgets/views/main", "widgets/views/maximized", "widgets/views/minimized", "widgets/model", "core/render"
+], function(_, $, Backbone, Browser, UserVoice, Auth, Track, Translate, Status, Settings, MainView, Maximized, Minimized, WidgetModel, render) {
 	var sizes = {
 		1: "tiny",
 		2: "small",
@@ -325,7 +325,7 @@ define([
 			var state;
 
 			// Set the state
-			if (!Pro.isPro && (this.model.get("state") === "maximized" || this.model.get("state") === "minimized")) {
+			if (!Auth.isPro && (this.model.get("state") === "maximized" || this.model.get("state") === "minimized")) {
 				state = "default";
 			}
 			else {

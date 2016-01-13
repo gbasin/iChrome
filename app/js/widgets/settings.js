@@ -2,8 +2,8 @@
  * The widget settings dialog
  */
 define([
-	"jquery", "lodash", "backbone", "core/pro", "storage/storage", "i18n/i18n", "core/analytics", "core/status", "modals/modals", "widgets/registry", "widgets/settings/inputs", "core/render", "jquery.serializejson", "lib/jquery.spectrum"
-], function($, _, Backbone, Pro, Storage, Translate, Track, Status, Modal, Registry, inputs, render) {
+	"jquery", "lodash", "backbone", "core/auth", "storage/storage", "i18n/i18n", "core/analytics", "core/status", "modals/modals", "widgets/registry", "widgets/settings/inputs", "core/render", "jquery.serializejson", "lib/jquery.spectrum"
+], function($, _, Backbone, Auth, Storage, Translate, Track, Status, Modal, Registry, inputs, render) {
 	var modal = Modal.extend({
 		width: 400,
 		height: 535,
@@ -269,7 +269,7 @@ define([
 				var elm = $('<div class="form-group' + (input.pro ? " pro" : "") + '"></div>');
 
 
-				if (input.pro && !Pro.isPro) {
+				if (input.pro && !Auth.isPro) {
 					input.proHelper = "disabled";
 				}
 

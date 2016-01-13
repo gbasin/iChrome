@@ -205,7 +205,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 			// We save the active tab in case it changes before the request is finished
 			var activeTab = this.get("activeTab");
 
-			if (!this.Pro.isPro && activeTab !== this.config.topic) {
+			if (!this.Auth.isPro && activeTab !== this.config.topic) {
 				return this.set("activeTab", this.config.topic);
 			}
 

@@ -81,11 +81,14 @@
 	},
 
 	"storage": {
-		"signin": "Sign in to sync your settings",
-		"signin_desc": "iChrome has detected a sync profile under your email address.",
-		"signin_desc2": "Sign in with your Google account now to download and sync your configuration.",
+		"signin": "Sign in with Google now to securely save and sync your configuration",
 		"signin_btn": "Sign in",
-		"signin_dismiss": "Dismiss"
+		"signin_dismiss": "Dismiss",
+
+		"signout_confirm": "Signing out will erase your local backups",
+
+		"pastdue": "Your subscription is past due",
+		"pastdue_desc": "Please update your billing information in the settings"
 	},
 
 	"toolbar": {
@@ -274,7 +277,7 @@
 			"keep_data": "Keep local data?",
 			"keep_data_desc": "Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
 			"keep_account": "Use account",
-			"keep_local": "Keep Local",
+			"keep_local": "Keep local",
 
 			"reset_confirm_desc": "This will erase all local and synced data, there is no backup and no way to undo this.",
 			"reset_confirm_desc2": "You will lose your entire current configuration on all computers connected to this account."
@@ -319,6 +322,97 @@
 			"steps2": "Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
 			"steps3": "Edit any of the settings shown in the dialog that's displayed",
 			"steps4": "Click Save to save your changes, or any part of the background to discard of them"
+		},
+
+		"pro": {
+			"promo": {
+				"monthly_price": "$2 per month",
+				"yearly_price": "or $20 per year",
+				"upgrade_btn": "Upgrade Now",
+				"business": "Interested in buying Pro for your business or school?",
+				"business_contact": "Contact us",
+
+				"themes": "Themes",
+				"themes_desc": "See more of your backgrounds with dark and transparent themes",
+
+				"bgs": "Live backgrounds",
+				"bgs_desc": "Bring your page to life with 20 live high-definition backgrounds",
+
+				"widgets": "Maximizable widgets",
+				"widgets_desc": "Take iChrome to another level with maximizable widgets",
+
+				"more_header": "And more",
+				"stocks": "Realtime stocks with extended and historical information",
+				"rss": "Support for multiple RSS feeds per widget",
+				"tabbed_widgets": "Tabbed news and RSS widgets",
+				"bg_downloads": "Downloadable backgrounds",
+				"weather": "Hourly weather forecasts up to 10 days out",
+				"toolbar": "More toolbar links",
+				"support": "Prioritized support and suggestions",
+
+				"buy_pro": "Buy Pro"
+			},
+
+			"checkout": {
+				"title": "Checkout",
+				"updating_title": "Update plan",
+
+				"payment_options": "Pay",
+				"pay_monthly": "Monthly ($2)",
+				"pay_yearly": "Yearly ($20)",
+
+				"cancel": "Cancel",
+				"update": "Update",
+				"subscribe": "Subscribe",
+
+				"braintree_notice": "Payments securely processed by Braintree.",
+				"monthly_notice": "By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
+				"yearly_notice": "By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
+				"update_notice": "Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
+
+				"thank_you": "Thank you for buying iChrome Pro!",
+				"thank_you2": "iChrome will reload in a few seconds and you'll be all set!",
+
+				"error": "Something went wrong while trying to process your payment.",
+				"error2": "Please try again later or email us at support@ichro.me",
+
+				"signin": "Sign in",
+				"signin_desc": "You need to sign in before buying Pro so we can make sure it's you",
+				"signin_btn": "Sign in"
+			},
+
+			"plan": {
+				"title": "Plan",
+
+				"desc": "You are currently subscribed to iChrome Pro (%s)",
+
+				"types": {
+					"monthly": "Monthly",
+					"yearly": "Yearly",
+					"business": "Business",
+					"education": "Education",
+					"custom": "Custom"
+				},
+
+				"uneditable_desc": "Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us</a> to update or cancel your subscription.",
+
+				"status": "Status",
+				"status_active": "Active",
+				"status_trial": "Trial",
+				"status_pastdue": "Past due",
+
+				"subscription_date": "Subscription date",
+				"paid_through": "Paid through",
+				"next_bill": "Next bill",
+				"next_bill_value": "$%s on %s",
+
+				"update_plan": "Update plan",
+				"update_billing": "Update billing",
+				"cancel": "Cancel subscription",
+
+				"cancel_notice": "Your subscription will be canceled immediately",
+				"cancel_notice2": "If you would like a refund, please contact us at support@ichro.me"
+			}
 		}
 	},
 

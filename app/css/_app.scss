@@ -945,6 +945,33 @@ input[type="radio"]:checked {
 
 
 
+/*---------------------------------------------
+	/ Sync sign in snackbar
+*/
+.snackbar.sync-signin {
+	left: 50%;
+	bottom: 0;
+	width: 650px;
+	cursor: default;
+	max-width: initial;
+	transform: translateX(-50%);
+
+	button.material.flat {
+		color: #EEE;
+		margin-left: 12px;
+
+		&.signin {
+			color: #66BB6A;
+		}
+	}
+}
+
+
+
+
+
+
+
 
 
 
@@ -1361,7 +1388,7 @@ header.toolbar {
 		background: #3A3A3A;
 	}
 
-	.dark.transparent .search input:focus {
+	.dark.transparent & .search input:focus {
 		background: rgba(0, 0, 0, .15);
 	}
 
@@ -1550,6 +1577,10 @@ dialog.announcements {
 
 dialog.announcements .content {
 	color: #212121;
+}
+
+.dark dialog.announcements .content {
+	color: #EEE;
 }
 
 dialog.announcements section {

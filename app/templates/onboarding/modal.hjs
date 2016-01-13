@@ -30,28 +30,30 @@
 	<span class="footer note">{{{i18n.onboarding.modal.terms}}}</span>
 </section>
 
-<section class="slide sign-in" data-id="3">
-	<div class="caption">
-		<h2>{{i18n.onboarding.modal.sign_in}}</h2>
+<section class="slide sign-in final" data-id="3">
+	<div class="pending visible">
+		<div class="caption">
+			<h2>{{i18n.onboarding.modal.sign_in}}</h2>
 
-		<p>{{i18n.onboarding.modal.sign_in_desc}}</p>
+			<p>{{i18n.onboarding.modal.sign_in_desc}}</p>
 
-		<p>{{i18n.onboarding.modal.sign_in_desc2}}</p>
+			<p>{{i18n.onboarding.modal.sign_in_desc2}}</p>
+		</div>
+
+		<div class="btn-container">
+			<button type="button" class="material large red sign-in">{{i18n.onboarding.modal.sign_in_button}}</button>
+		</div>
 	</div>
 
-	<div class="btn-container">
-		<button type="button" class="material large red sign-in">{{i18n.onboarding.modal.sign_in_button}}</button>
+	<div class="complete existing">
+		<h2>{{i18n.onboarding.modal.have_account}}</h2>
+
+		<p>{{i18n.onboarding.modal.have_account_desc}}</p>
 	</div>
-</section>
 
-<section class="slide final had-account" data-id="4">
-	<h2>{{i18n.onboarding.modal.have_account}}</h2>
+	<div class="complete new">
+		<h2>{{i18n.onboarding.modal.get_started}}</h2>
 
-	<p>{{i18n.onboarding.modal.have_account_desc}}</p>
-</section>
-
-<section class="slide final" data-id="5">
-	<h2>{{i18n.onboarding.modal.get_started}}</h2>
-
-	<p>{{i18n.onboarding.modal.get_started_desc}}</p>
+		<p>{{i18n.onboarding.modal.get_started_desc}}</p>
+	</div>
 </section>

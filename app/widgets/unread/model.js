@@ -1,4 +1,4 @@
-define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
+define(["lodash", "jquery", "browser/api", "widgets/model"], function(_, $, Browser, WidgetModel) {
 	return WidgetModel.extend({
 		refreshInterval: 120000,
 
@@ -19,6 +19,17 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 		},
 
 		refresh: function() {
+			var cancelFn = function() {
+				return {
+					cancel: true
+				};
+			};
+
+			Browser.webRequest.onAuthRequired.addListener(cancelFn, {
+				urls: ["https://mail.google.com/mail/u/*/feed/atom/"],
+				types: ["xmlhttprequest"]
+			}, ["blocking"]);
+
 			$.get("https://mail.google.com/mail/u/" + (this.config.user || 0) + "/feed/atom/", function(d) {
 				try {
 					d = $(d);
@@ -44,7 +55,9 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 					count: 0,
 					messages: []
 				});
-			}.bind(this));
+			}.bind(this)).always(function() {
+				Browser.webRequest.onAuthRequired.removeListener(cancelFn);
+			});
 		}
 	});
 });

@@ -2,8 +2,8 @@
  * The accounts and sync settings page
  */
 define([
-	"jquery", "lodash", "i18n/i18n", "modals/alert", "storage/storage", "storage/syncapi", "settings/page"
-], function($, _, Translate, Alert, Storage, SyncAPI, Page) {
+	"jquery", "lodash", "i18n/i18n", "modals/alert", "core/auth", "storage/storage", "storage/syncapi", "settings/page"
+], function($, _, Translate, Alert, Auth, Storage, SyncAPI, Page) {
 	var View = Page.extend({
 		id: "accounts",
 
@@ -18,7 +18,10 @@ define([
 					}
 				}, function(sendData) {
 					SyncAPI.authorize(this.model.storage, sendData, function() {
-						this.render();
+						// If the user is Pro, we need to reload so the app initializes properly
+						if (Auth.isPro) {
+							location.reload();
+						}
 					}.bind(this));
 				}.bind(this));
 			},
@@ -35,8 +38,7 @@ define([
 			},
 
 			"click button.sign-out": function() {
-				// TODO: Implement
-				Alert("Sign out can't be implemented until the sync system is switched to an accounts system.");
+				Auth.signout();
 			}
 		},
 
@@ -45,11 +47,9 @@ define([
 		},
 
 		onBeforeRender: function() {
-			var profile = SyncAPI.getInfo().user || {};
-
 			return {
-				signedIn: !!SyncAPI.getInfo().token,
-				signedInMsg: Translate("settings.accounts.status.signed_in", profile.fname + " " + profile.lname, profile.email)
+				signedIn: Auth.isSignedIn,
+				signedInMsg: Translate("settings.accounts.status.signed_in", this.model.storage.user.fname + " " + this.model.storage.user.lname, this.model.storage.user.email)
 			};
 		}
 	});

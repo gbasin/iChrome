@@ -73,11 +73,20 @@ define(["jquery", "backbone", "i18n/i18n", "core/analytics", "core/render"], fun
 			this.listenToOnce(this.widgetView, "settings:hide", this.showSecondScreen);
 		},
 
-		initialize: function() {
+		initialize: function(retry) {
+			retry = retry === true;
+
 			this.$targetEl = $(".widget.weather > .settings").first();
 
-			if (!this.$targetEl.length) {
-				return this.trigger("complete");
+			if (!this.$targetEl.length && !retry) {
+				if (retry) {
+					this.trigger("complete");
+				}
+				else {
+					setTimeout(this.initialize.bind(this, true), 1000);
+				}
+
+				return;
 			}
 
 			this.widgetView = this.$targetEl.parent().data("view");

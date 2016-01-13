@@ -150,7 +150,7 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 		},
 
 		getDefinition: function(term, cb) {
-			this.Pro.ajax({
+			this.Auth.ajax({
 				type: "GET",
 				url: "/dictionary/v1/definition/" + encodeURIComponent(term),
 				data: {

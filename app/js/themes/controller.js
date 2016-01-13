@@ -1,7 +1,7 @@
 /**
  * This module controls theme displaying and previewing
  */
-define(["lodash", "jquery", "backbone", "core/pro", "themes/utils"], function(_, $, Backbone, Pro, Utils) {
+define(["lodash", "jquery", "backbone", "core/auth", "themes/utils"], function(_, $, Backbone, Auth, Utils) {
 	var Themes = Backbone.View.extend({
 		el: "body",
 
@@ -96,7 +96,7 @@ define(["lodash", "jquery", "backbone", "core/pro", "themes/utils"], function(_,
 			theme = theme || this.theme;
 
 			if ((theme.oType || theme.type) === "video") {
-				if (!preview && !Pro.isPro) {
+				if (!preview && !Auth.isPro) {
 					return;
 				}
 

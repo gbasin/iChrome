@@ -1,8 +1,8 @@
-define(["lodash", "backbone", "core/pro", "core/analytics", "storage/storage"], function(_, Backbone, Pro, Track, Storage) {
+define(["lodash", "backbone", "core/auth", "core/analytics", "storage/storage"], function(_, Backbone, Auth, Track, Storage) {
 	var isDark = false;
 
 	Storage.on("done updated", function(storage) {
-		isDark = Pro.isPro && storage.settings.style && storage.settings.style !== "light";
+		isDark = Auth.isPro && storage.settings.style && storage.settings.style !== "light";
 	});
 
 	return Backbone.View.extend({
@@ -20,7 +20,7 @@ define(["lodash", "backbone", "core/pro", "core/analytics", "storage/storage"], 
 			return this.widget.templates["default"];
 		},
 
-		Pro: Pro,
+		Auth: Auth,
 
 		constructor: function(options) {
 			this.widget = options.widget;
@@ -107,7 +107,7 @@ define(["lodash", "backbone", "core/pro", "core/analytics", "storage/storage"], 
 			// still have to do it themselves
 			data = _.extend({
 				isDark: isDark,
-				isPro: Pro.isPro,
+				isPro: Auth.isPro,
 				i18n: this.widget.strings
 			}, data || this.model.data);
 

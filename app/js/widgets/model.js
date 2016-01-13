@@ -1,11 +1,11 @@
 /**
  * The widget model
  */
-define(["lodash", "backbone", "core/pro", "core/analytics", "widgets/oauth"], function(_, Backbone, Pro, Track, WidgetOAuth) {
+define(["lodash", "backbone", "core/auth", "core/analytics", "widgets/oauth"], function(_, Backbone, Auth, Track, WidgetOAuth) {
 	var WidgetModel = Backbone.Model.extend({
 		idAttribute: "cid",
 
-		Pro: Pro,
+		Auth: Auth,
 
 		constructor: function(attrs, options) {
 			// We can't call the default constructor since we need to run

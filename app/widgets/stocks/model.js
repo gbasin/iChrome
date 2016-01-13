@@ -1,7 +1,7 @@
 define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetModel, moment) {
 	return WidgetModel.extend({
 		refreshInterval: function() {
-			return this.Pro.isPro ? 10000 : 300000;
+			return this.Auth.isPro ? 10000 : 300000;
 		},
 
 		defaults: {
@@ -225,7 +225,7 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 			if (isDetail) {
 				symbol = this.activeSymbol.join(":");
 
-				if (this.Pro.isPro) {
+				if (this.Auth.isPro) {
 					this.getChartData(this.activeSymbol[0], this.activeSymbol[1], this.chartPeriod || "1d", function(chartData) {
 						if (isDetail && this.activeSymbol.join(":") === symbol) {
 							this.trigger("chart:loaded", chartData);

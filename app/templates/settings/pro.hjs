@@ -1,9 +1,128 @@
-<header class="large-header">
-	<h2 class="page-name">{{i18n.settings.nav.pro}}</h2>
-</header>
+{{#isPro}}
+	<header>
+		<h2 class="page-name">{{i18n.settings.title}} &ndash; {{i18n.settings.nav.pro}}</h2>
+	</header>
 
-<main class="content" tabindex="-1">
-	<section class="text">
-		<p>Temporary placeholder page</p>
-	</section>
-</main>
+	<main class="content" tabindex="-1">
+		<section class="plan" data-id="plan">
+			<h3>{{i18n.settings.pro.plan.title}}</h3>
+
+			<p class="desc">{{desc}}</p>
+
+			{{#uneditable}}
+				<p class="uneditable">{{{i18n.settings.pro.plan.uneditable_desc}}}</p>
+			{{/uneditable}}
+
+			{{^uneditable}}
+				<ul class="info">
+					{{#status}}
+						<li>
+							<b>{{i18n.settings.pro.plan.status}}</b>
+							<span>{{status}}</span>
+						</li>
+					{{/status}}
+
+					{{#subscriptionDate}}
+						<li>
+							<b>{{i18n.settings.pro.plan.subscription_date}}</b>
+							<span>{{subscriptionDate}}</span>
+						</li>
+					{{/subscriptionDate}}
+
+					{{#paidThrough}}
+						<li>
+							<b>{{i18n.settings.pro.plan.paid_through}}</b>
+							<span>{{paidThrough}}</span>
+						</li>
+					{{/paidThrough}}
+
+					{{#nextBill}}
+						<li>
+							<b>{{i18n.settings.pro.plan.next_bill}}</b>
+							<span>{{nextBill}}</span>
+						</li>
+					{{/nextBill}}
+				</ul>
+
+				<div class="input no-label actions">
+					<button type="button" class="material update-plan">{{i18n.settings.pro.plan.update_plan}}</button>
+
+					<button type="button" class="material update-billing">{{i18n.settings.pro.plan.update_billing}}</button>
+
+					<button type="button" class="material red cancel">{{i18n.settings.pro.plan.cancel}}</button>
+				</div>
+			{{/uneditable}}
+		</section>
+	</main>
+{{/isPro}}
+{{^isPro}}
+	<main class="content" tabindex="-1">
+		<header class="large-header">
+			<h2 class="page-name">iChrome Pro</h2>
+
+			<h3 class="subheader pricing">
+				{{i18n.settings.pro.promo.monthly_price}}
+
+				<span class="yearly">{{i18n.settings.pro.promo.yearly_price}}</span>
+			</h3>
+
+			<button type="button" class="material large blue upgrade">{{i18n.settings.pro.promo.upgrade_btn}}</button>
+
+			<p class="business">{{i18n.settings.pro.promo.business}} <a href="mailto:support@ichro.me">{{i18n.settings.pro.promo.business_contact}}</a></p>
+		</header>
+
+		<section>
+			<div class="content">
+				<h3>{{i18n.settings.pro.promo.themes}}</h3>
+
+				<p>{{i18n.settings.pro.promo.themes_desc}}</p>
+			</div>
+
+			<div class="media" style="background-image: url(https://ichro.me/img/pro/themes.png)"></div>
+		</section>
+
+		<section class="live-bgs">
+			<div class="content">
+				<h3>{{i18n.settings.pro.promo.bgs}}</h3>
+
+				<p>{{i18n.settings.pro.promo.bgs_desc}}</p>
+			</div>
+
+			<video class="media" src="https://ichro.me/img/pro/backgrounds.mp4" autoplay loop></video>
+		</section>
+
+		<section>
+			<div class="content">
+				<h3>{{i18n.settings.pro.promo.widgets}}</h3>
+
+				<p>{{i18n.settings.pro.promo.widgets_desc}}</p>
+			</div>
+
+			<div class="media" style="background-image: url(https://ichro.me/img/pro/widgets.png)"></div>
+		</section>
+
+		<section class="more">
+			<div class="content">
+				<h3>{{i18n.settings.pro.promo.more_header}}</h3>
+
+				<ul>
+					<li>{{i18n.settings.pro.promo.stocks}}</li>
+					<li>{{i18n.settings.pro.promo.rss}}</li>
+					<li>{{i18n.settings.pro.promo.tabbed_widgets}}</li>
+					<li>{{i18n.settings.pro.promo.bg_downloads}}</li>
+					<li>{{i18n.settings.pro.promo.weather}}</li>
+					<li>{{i18n.settings.pro.promo.toolbar}}</li>
+					<li>{{i18n.settings.pro.promo.support}}</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="get">
+			<div class="content">
+				<h3>{{i18n.settings.pro.promo.buy_pro}}</h3>
+
+				<button type="button" class="material large blue upgrade">{{i18n.settings.pro.promo.upgrade_btn}}</button>
+			</div>
+		</section>
+	</main>
+{{/isPro}}

@@ -122,7 +122,7 @@ define([
 				easing: "cubic-bezier(.4, 0, .2, 1)"
 			});
 
-			//Track.pageview("Settings", "/settings");
+			Track.pageview("Settings", "/settings");
 		},
 
 		hide: function() {

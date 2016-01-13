@@ -19,14 +19,10 @@ $input-padding: 20px 25px;
 	background: #F5F5F5;
 	padding-left: 250px;
 	font-family: Roboto, sans-serif;
-	transition: visibility .3s 0s linear,
-				opacity .3s $default-easing;
 
 	&.visible {
 		opacity: 1;
 		visibility: visible;
-		transition: visibility 0s 0s linear,
-					opacity .3s $default-easing;
 	}
 
 	.dark & {
@@ -207,6 +203,7 @@ $input-padding: 20px 25px;
 		@import "pages/visual";
 		@import "pages/tabs";
 		@import "pages/widgets";
+		@import "pages/pro";
 	}
 
 	.item,

@@ -16,7 +16,8 @@ require.config({
 		"oauth2": "../oauth2/oauth2",
 		"widgetTemplate": "widgets/registry/template",
 		"jquery.serializejson": "lib/jquery.serializejson",
-		"backbone.viewcollection": "lib/backbone.viewcollection"
+		"backbone.viewcollection": "lib/backbone.viewcollection",
+		"braintree": "https://js.braintreegateway.com/v2/braintree"
 	},
 	map: {
 		"*": {
@@ -40,8 +41,8 @@ require.s.contexts._.nextTick = function(fn) {
 
 
 /**
- * Init.  This requires storage to start loading as early as possible.
+ * Init
  */
-require(["core/init", "onboarding/controller"], function(app) {
+require(["core/init", "onboarding/controller", "notices/signin"], function(app) {
 	window.App = app;
 });

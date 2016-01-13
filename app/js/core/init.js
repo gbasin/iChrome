@@ -2,9 +2,9 @@
  * The main iChrome view, this initializes everything.
  */
 define([
-	"jquery", "lodash", "browser/api", "backbone", "core/pro", "core/status", "core/analytics", "storage/storage", "core/css",
+	"jquery", "lodash", "browser/api", "backbone", "core/auth", "core/status", "core/analytics", "storage/storage", "core/css",
 	"themes/controller", "themes/bginfo", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs"
-], function($, _, Browser, Backbone, Pro, Status, Track, Storage, CSS, Themes, BGInfo, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
+], function($, _, Browser, Backbone, Auth, Status, Track, Storage, CSS, Themes, BGInfo, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
 	var Model = Backbone.Model.extend({
 		init: function() {
 			this.on("change:theme", function() {
@@ -122,7 +122,7 @@ define([
 			}, this).on("change:style", function() {
 				this.$el.removeClass(this.model.previous("style"));
 
-				if (Pro.isPro && this.model.get("style") !== "light") {
+				if (Auth.isPro && this.model.get("style") !== "light") {
 					this.$el.addClass(this.model.get("style"));
 				}
 			}, this).on("change:target", function() {

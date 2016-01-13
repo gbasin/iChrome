@@ -2,8 +2,8 @@
  * The themes modal
  */
 define(
-	["lodash", "jquery", "backbone", "browser/api", "core/pro", "core/analytics", "modals/modals", "themes/model", "themes/controller", "themes/utils", "themes/custom", "themes/cacher", "i18n/i18n", "core/render"],
-	function(_, $, Backbone, Browser, Pro, Track, Modal, Model, Themes, Utils, Custom, Cacher, Translate, render) {
+	["lodash", "jquery", "backbone", "browser/api", "core/auth", "core/analytics", "modals/modals", "themes/model", "themes/controller", "themes/utils", "themes/custom", "themes/cacher", "i18n/i18n", "core/render"],
+	function(_, $, Backbone, Browser, Auth, Track, Modal, Model, Themes, Utils, Custom, Cacher, Translate, render) {
 		var modal = new (Modal.extend({
 			classes: "themes",
 		}))();
@@ -206,7 +206,7 @@ define(
 					};
 
 
-				if (theme.proOnly && !Pro.isPro) {
+				if (theme.proOnly && !Auth.isPro) {
 					specs.html("<span>" + Translate("themes.pro_only") + "</span>");
 
 					setTimeout(function() {

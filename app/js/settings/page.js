@@ -1,7 +1,7 @@
 /**
  * The settings page base
  */
-define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/render"], function(_, $, Backbone, Pro, model, render) {
+define(["lodash", "jquery", "backbone", "core/analytics", "core/auth", "settings/model", "core/render"], function(_, $, Backbone, Track, Auth, model, render) {
 	var View = Backbone.View.extend({
 		constructor: function(options) {
 			this.tagName = "div";
@@ -14,14 +14,14 @@ define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/rend
 
 			this.template = function(data, partials) {
 				return render("settings/" + this.id, _.assign({
-					isPro: Pro.isPro
+					isPro: Auth.isPro
 				}, data), partials);
 			};
 
 			// All pages share a single settings model
 			this.model = model();
 
-			this.model.on(this.monitorProps ? "change:" + this.monitorProps.join(" change:") : "change", _.throttle(function() {
+			this.listenTo(this.model, this.monitorProps ? "change:" + this.monitorProps.join(" change:") : "change", _.throttle(function() {
 				var options = _.last(arguments);
 
 				if (options && options.noRender) {
@@ -53,7 +53,7 @@ define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/rend
 				if (focusedElm) {
 					this.$("> " + focusedElm).focus();
 				}
-			}, 100), this);
+			}, 100));
 
 			Backbone.View.prototype.constructor.call(this, options);
 
@@ -144,6 +144,8 @@ define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/rend
 					player.onfinish = done;
 				});
 			}
+
+			Track.pageview("Settings: " + this.id, "/settings/" + this.id);
 		},
 
 		transitionOut: function(cb) {
@@ -243,7 +245,13 @@ define(["lodash", "jquery", "backbone", "core/pro", "settings/model", "core/rend
 
 			this.trigger("before:render", data);
 
-			data = this.onBeforeRender(data);
+			var ret = this.onBeforeRender(data);
+
+			if (ret === false) {
+				return this;
+			}
+
+			data = ret || data;
 
 			this.$el.html(this.template(data));
 

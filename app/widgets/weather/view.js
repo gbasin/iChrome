@@ -111,7 +111,7 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 
 
 		loadDailyForecast: function(e) {
-			if (!this.Pro.isPro) {
+			if (!this.Auth.isPro) {
 				return;
 			}
 
@@ -129,7 +129,7 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 
 			loc.children(".current").html(this.widget.templates.details.render({
 				current: dayForecast,
-				isPro: this.Pro.isPro,
+				isPro: this.Auth.isPro,
 				i18n: this.widget.strings,
 				units: this.model.data.units,
 				showDetails: loc.find(".current .details.extended").hasClass("visible")
@@ -168,7 +168,7 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 
 			loc.children(".current").html(this.widget.templates.details.render({
 				current: hourForecast,
-				isPro: this.Pro.isPro,
+				isPro: this.Auth.isPro,
 				i18n: this.widget.strings,
 				units: this.model.data.units,
 				showDetails: loc.find(".current .details.extended").hasClass("visible")
@@ -250,7 +250,7 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 			}
 
 
-			if (this.Pro.isPro) {
+			if (this.Auth.isPro) {
 				data.weather = _.each(data.weather, function(loc) {
 					if (loc.forecast && loc.forecast[0]) {
 						loc.forecast[0].active = true;

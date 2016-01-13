@@ -2,9 +2,9 @@
  * Loads storage and returns a Promise that can be used to listen for updates
  */
 define([
-	"jquery", "lodash", "backbone", "browser/api", "core/status", "modals/alert", "i18n/i18n", "core/analytics", "storage/filesystem",
-	"storage/syncapi", "storage/deprecate", "storage/defaults", "storage/updatethemes", "storage/tojson", "lib/unextend"
-], function($, _, Backbone, Browser, Status, Alert, Translate, Track, FileSystem, API, Deprecate, defaults, updateThemes, getJSON, unextend) {
+	"jquery", "lodash", "backbone", "browser/api", "core/status", "core/analytics", "storage/filesystem",
+	"core/auth", "storage/syncapi", "storage/deprecate", "storage/defaults", "storage/updatethemes", "storage/tojson", "lib/unextend"
+], function($, _, Backbone, Browser, Status, Track, FileSystem, Auth, API, Deprecate, defaults, updateThemes, getJSON, unextend) {
 		var deferred = $.Deferred();
 
 		// This lets events get attached and fired on storage itself. It'll primarily be used as storage.on("updated", ...) and storage.trigger("updated")
@@ -90,7 +90,7 @@ define([
 			FileSystem.clear(function() {
 				// A reset shouldn't affect these since we'll still want to sync when this is over
 				var uses = Browser.storage.uses,
-					syncData = Browser.storage.syncData;
+					authData = Browser.storage.authData;
 
 				Browser.storage.clear();
 
@@ -98,14 +98,14 @@ define([
 					Browser.storage.uses = uses;
 				}
 
-				if (syncData) {
-					Browser.storage.syncData = syncData;
+				if (authData) {
+					Browser.storage.authData = authData;
 				}
 
-				Browser.storage.installed = true; // Show the installation guide when the page is reloaded
+				Browser.storage.firstRun = true; // Show the installation guide when the page is reloaded
 
 				// Overwrite with the default configuration
-				_.assign(storage, _.pick(defaults, "user", "tabs", "settings", "themes", "cached"));
+				_.assign(storage, _.pick(defaults, "tabs", "settings", "themes", "cached"));
 
 				storage.tabsSync = JSON.parse(getJSON(storage.tabs, storage.settings));
 
@@ -126,6 +126,10 @@ define([
 		 * @param   {Boolean}  fromInterval  Whether or not this call is from an interval, used for tracking.
 		 */
 		var loadSync = function(fromInterval) {
+			if (!Auth.isSignedIn) {
+				return;
+			}
+
 			var mark = Track.time();
 
 			API.get({
@@ -231,7 +235,7 @@ define([
 
 
 			// Sync save
-			if (sync) {
+			if (Auth.isSignedIn && sync) {
 				if (useBeacon) {
 					Status.log("Sending sync beacon");
 
@@ -261,27 +265,6 @@ define([
 						}
 
 						Browser.storage.config = JSON.stringify(local);
-					}
-
-					// If the status wasn't set, this is the first time this error has occurred
-					else if (err && err === "Duplicate" && (API.getInfo().status !== "duplicate" || Browser.storage.alertDuplicate)) {
-						// Set a variable so the dialog will be shown until it's explicitly dismissed
-						Browser.storage.alertDuplicate = "true";
-
-						Alert({
-							title: Translate("storage.signin"),
-							contents: [Translate("storage.signin_desc"), Translate("storage.signin_desc2")],
-							buttons: {
-								negative: Translate("storage.signin_dismiss"),
-								positive: Translate("storage.signin_btn")
-							}
-						}, function(signin) {
-							if (signin) {
-								API.authorize(storage);
-							}
-
-							delete Browser.storage.alertDuplicate;
-						}.bind(this));
 					}
 
 					mark("Sync", "Save");
@@ -399,7 +382,7 @@ define([
 				storage.cached[0] = defaults.cached[0];
 			}
 
-			storage.modified = d.modified;
+			storage.modified = d.modified || 0;
 
 			if (d.settings) {
 				storage.settings = _.defaultsDeep(Deprecate.settings(d.settings), defaults.settings);
@@ -425,8 +408,6 @@ define([
 				backups.unshift({
 					date: new Date().getTime(),
 					data: {
-						syncData: API.getInfo(),
-						user: storage.user,
 						tabs: storage.tabsSync,
 						themes: storage.themes,
 						settings: storage.settings

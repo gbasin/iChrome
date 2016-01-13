@@ -18,12 +18,12 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 
 		var newData = _.pick(d, "user", "tabs", "themes", "settings");
 
-		var themesChanged = (JSON.stringify(oldData.themes) !== JSON.stringify(newData.themes));
+		var themesChanged = newData.themes && (JSON.stringify(oldData.themes) !== JSON.stringify(newData.themes));
 
 		var save = function() {
 			var queue = [];
 
-			if (newData.settings.theme && parseInt(newData.settings.theme) && !storage.cached[newData.settings.theme]) {
+			if (newData.settings && newData.settings.theme && parseInt(newData.settings.theme) && !storage.cached[newData.settings.theme]) {
 				queue.push(newData.settings.theme);
 			}
 
