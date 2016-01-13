@@ -176,7 +176,7 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, Wid
 					span.setAttribute("data-target", "blank");
 					span.setAttribute("class", "nested-link");
 
-					span.innerText = e.innerText.replace(/\n/g, "  ").trim();
+					span.textContent = e.textContent.replace(/\n/g, "  ").trim();
 
 
 					var href = e.getAttribute("href") || "http://www.google.com/";

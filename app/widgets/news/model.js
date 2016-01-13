@@ -175,7 +175,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 
 				return {
 					title: e.title || "",
-					desc: textDiv.innerText.trim(),
+					desc: textDiv.textContent.trim(),
 					date: new Date(e.displayPublishedDateTime).getTime(),
 					image: maximized ? image : image.replace(".img", "_m5_h190_w200.jpg"),
 					url: (((e._links && e._links.self && e._links.self[0]) || {}).href || "").replace("cms-amp-", "http://a.msn.com/r/2/"),
