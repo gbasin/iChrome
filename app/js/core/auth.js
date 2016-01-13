@@ -7,7 +7,7 @@
  * access and refresh tokens.
  */
 define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/alert", "storage/filesystem"], function(_, $, Backbone, Browser, Translate, Alert, FileSystem) {
-	var API_HOST = "http://localhost:4000/api"; // "https://api.ichro.me";
+	var API_HOST = "https://api.ichro.me";
 
 	var Auth = Backbone.Model.extend({
 		isPro: false,
