@@ -45,33 +45,31 @@
 						-webkit-filter: grayscale(0);
 					}
 				}
-
-				body > .loading .font-preloader {
-					color: #F0F0F0;
-					font-weight: 300;
-				}
-
-				body > .loading .font-preloader *			{ font-style: normal; }
-
-				body > .loading .font-preloader i,
-				body > .loading .font-preloader .icons		{ font-weight: 400; }
-				body > .loading .font-preloader s			{ font-weight: 500; }
-				body > .loading .font-preloader .open-sans s{ font-weight: 600; }
-				body > .loading .font-preloader u			{ font-weight: 700; }
-
-				body > .loading .font-preloader .roboto		{ font-family: Roboto; }
-				body > .loading .font-preloader .open-sans	{ font-family: Open Sans; }
-				body > .loading .font-preloader .icons i	{ font-family: Material Icons; }
-				body > .loading .font-preloader .icons s	{ font-family: Entypo; }
-				body > .loading .font-preloader .icons u	{ font-family: FontAwesome; }
 			</style>
-
-			<div class="font-preloader">
-				<span class="roboto">f<i>o</i><s>n</s><u>t</u> <b>p</b></span><span class="open-sans">r<i>e</i><s>-</s><b>l</b></span><span class="icons"><i>o</i><s>a</s><u>d</u>er</span>
-			</div>
 
 			<img src="icon/128.png" />
 		</div>
+
+		<!--
+			The hash listed in the manifest's CSP must be updated any time this script is changed
+		-->
+		<script>
+			(function() {
+				// Preload all fonts using the Font Loading API so they're available for the first paint
+				document.fonts.load("300 16px Open Sans, Roboto");
+				document.fonts.load("400 16px Open Sans, Roboto, FontAwesome, Entypo, Material Icons");
+				document.fonts.load("500 16px Roboto");
+				document.fonts.load("600 16px Open Sans");
+				document.fonts.load("700 16px Open Sans, Roboto");
+
+				// Preload the default background image, again so it's available at the first paint
+				if (localStorage.themeImg) {
+					var img = new Image();
+
+					img.src = localStorage.themeImg;
+				}
+			})();
+		</script>
 
 		<link href="css/style.css" rel="stylesheet" />
 
