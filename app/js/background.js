@@ -10,7 +10,7 @@ var Hogan={};
 /* globals chrome,PERSISTENT */
 
 chrome.runtime.onInstalled.addListener(function(details) {
-	if (details.reason === "install") {
+	if (!details || !details.reason || details.reason === "install") {
 		localStorage.firstRun = "true";
 
 		chrome.tabs.create({
