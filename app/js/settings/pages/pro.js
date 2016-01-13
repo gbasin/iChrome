@@ -126,9 +126,9 @@ define([
 
 					this._subscriptionInfo = {
 						status: Translate("settings.pro.plan.status_" + d.status),
-						subscriptionDate: moment(d.subscribed).format("LL"),
-						paidThrough: moment(d.paidThrough).format("LL"),
-						nextBill: Translate("settings.pro.plan.next_bill_value", d.nextBillAmount * 1, moment(d.paidThrough).format("LL"))
+						subscriptionDate: moment.utc(d.subscribed).format("LL"),
+						paidThrough: moment.utc(d.paidThrough).format("LL"),
+						nextBill: Translate("settings.pro.plan.next_bill_value", d.nextBillAmount * 1, moment.utc(d.nextBillDate).format("LL"))
 					};
 
 					this.render();
