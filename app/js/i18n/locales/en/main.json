@@ -81,9 +81,7 @@
 	},
 
 	"storage": {
-		"signin": "Sign in to sync your settings",
-		"signin_desc": "iChrome has detected a sync profile under your email address.",
-		"signin_desc2": "Sign in with your Google account now to download and sync your configuration.",
+		"signin": "Sign in with Google now to securely save and sync your configuration",
 		"signin_btn": "Sign in",
 		"signin_dismiss": "Dismiss",
 

@@ -945,6 +945,33 @@ input[type="radio"]:checked {
 
 
 
+/*---------------------------------------------
+	/ Sync sign in snackbar
+*/
+.snackbar.sync-signin {
+	left: 50%;
+	bottom: 0;
+	width: 650px;
+	cursor: default;
+	max-width: initial;
+	transform: translateX(-50%);
+
+	button.material.flat {
+		color: #EEE;
+		margin-left: 12px;
+
+		&.signin {
+			color: #66BB6A;
+		}
+	}
+}
+
+
+
+
+
+
+
 
 
 

@@ -52,6 +52,7 @@ chrome.runtime.onInstalled.addListener(function(details) {
 
 		if (!details.previousVersion || details.previousVersion.indexOf("3.0.0") !== 0) {
 			localStorage.showWhatsNew = "true";
+			localStorage.showSignInNotice = "true";
 		}
 	}
 });
