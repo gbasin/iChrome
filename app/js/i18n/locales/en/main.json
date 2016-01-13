@@ -277,7 +277,7 @@
 			"keep_data": "Keep local data?",
 			"keep_data_desc": "Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
 			"keep_account": "Use account",
-			"keep_local": "Keep Local",
+			"keep_local": "Keep local",
 
 			"reset_confirm_desc": "This will erase all local and synced data, there is no backup and no way to undo this.",
 			"reset_confirm_desc2": "You will lose your entire current configuration on all computers connected to this account."
@@ -374,7 +374,11 @@
 				"thank_you2": "iChrome will reload in a few seconds and you'll be all set!",
 
 				"error": "Something went wrong while trying to process your payment.",
-				"error2": "Please try again later or email us at support@ichro.me"
+				"error2": "Please try again later or email us at support@ichro.me",
+
+				"signin": "Sign in",
+				"signin_desc": "You need to sign in before buying Pro so we can make sure it's you",
+				"signin_btn": "Sign in"
 			},
 
 			"plan": {

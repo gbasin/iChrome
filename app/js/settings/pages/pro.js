@@ -2,8 +2,8 @@
  * The Pro settings page
  */
 define([
-	"lodash", "moment", "core/auth", "modals/alert", "i18n/i18n", "settings/page", "core/uservoice", "settings/pro-checkout"
-], function(_, moment, Auth, Alert, Translate, Page, UserVoice, Checkout) {
+	"lodash", "moment", "core/auth", "modals/alert", "i18n/i18n", "storage/storage", "storage/syncapi", "settings/page", "core/uservoice", "settings/pro-checkout"
+], function(_, moment, Auth, Alert, Translate, Storage, SyncAPI, Page, UserVoice, Checkout) {
 	if (!Auth.isPro) {
 		var PromoView = Page.extend({
 			id: "pro",
@@ -11,8 +11,45 @@ define([
 
 			events: {
 				"click button.upgrade": function() {
+					var container = this.$el;
+
+					if (!Auth.isSignedIn) {
+						Alert({
+							confirm: true,
+							title: Translate("settings.pro.checkout.signin"),
+							contents: [Translate("settings.pro.checkout.signin_desc")],
+							buttons: {
+								positive: Translate("settings.pro.checkout.signin_btn")
+							}
+						}, function() {
+							Alert({
+								title: Translate("settings.accounts.keep_data"),
+								contents: [Translate("settings.accounts.keep_data_desc")],
+								buttons: {
+									negative: Translate("settings.accounts.keep_account"),
+									positive: Translate("settings.accounts.keep_local")
+								}
+							}, function(sendData) {
+								Storage.on("done", function(storage) {
+									SyncAPI.authorize(storage, sendData, function() {
+										if (Auth.isPro) {
+											location.reload();
+										}
+										else {
+											new Checkout({
+												container: container
+											});
+										}
+									});
+								});
+							});
+						});
+
+						return;
+					}
+
 					new Checkout({
-						container: this.$el
+						container: container
 					});
 				},
 

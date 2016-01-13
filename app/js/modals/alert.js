@@ -44,7 +44,7 @@ define(["jquery", "lodash", "backbone", "i18n/i18n", "core/render"], function($,
 
 		initialize: function() {
 			if (this.confirm) {
-				if (!this.title) {
+				if (!this.title && this.title !== false) {
 					this.title = Translate("alert.confirm_title");
 				}
 
