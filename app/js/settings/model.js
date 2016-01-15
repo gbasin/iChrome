@@ -83,6 +83,10 @@ define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage)
 						tab.columns.splice(value);
 					}
 				}
+				else if (tab.columns.length > 1) {
+					// Move all widgets in all columns to the first
+					tab.columns = [_.flatten(tab.columns)];
+				}
 
 				// If this was a grid-based tab, remove the extra loc property on each widget
 				if (wasGrid) {

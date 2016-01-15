@@ -7,11 +7,11 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 	var view = Backbone.View.extend({
 		tagName: "div",
 		className: function() {
-			return "tab" + (this.model.get("isGrid") ? " isGrid" : "");
+			return "tab" + (this.model.get("isGrid") ? " grid" : "");
 		},
 
 		initialize: function() {
-			this.model.on("columns:sort columns:update columns:reset change:fixed change:isGrid", function() {
+			this.model.on("columns:sort columns:update columns:reset update:columns change:fixed change:isGrid", function() {
 				var options = _.last(arguments);
 
 				if (!(options && options.noRefresh)) {
@@ -256,7 +256,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 
 			var main = document.createElement("main");
 
-			main.setAttribute("class", "widgets-container" + (this.model.get("fixed") && !isGrid ? " fixed" : "") + (isGrid ? " isGrid" : ""));
+			main.setAttribute("class", "widgets-container" + (this.model.get("fixed") && !isGrid ? " fixed" : "") + (isGrid ? " grid" : ""));
 
 
 			var models = _.map(this.model.columns, function(collection) {

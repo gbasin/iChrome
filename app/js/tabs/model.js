@@ -42,6 +42,44 @@ define(["lodash", "backbone", "backbone.viewcollection", "widgets/registry"], fu
 		},
 
 
+		parse: function(data) {
+			var defaults;
+
+			// If these properties are missing from the new data, they
+			// need to be set back to their defaults
+			if (typeof data.isGrid === "undefined" && this.has("isGrid")) {
+				defaults = _.result(this, "defaults");
+
+				data.isGrid = defaults.isGrid;
+
+				if (typeof defaults.isGrid === "undefined") {
+					this.unset("isGrid");
+				}
+			}
+
+			if (typeof data.fixed === "undefined" && this.has("fixed")) {
+				defaults = defaults || _.result(this, "defaults");
+
+				data.fixed = defaults.fixed;
+
+				if (typeof defaults.fixed === "undefined") {
+					this.unset("fixed");
+				}
+			}
+
+			return data;
+		},
+
+
+		toJSON: function() {
+			var defaults = _.result(this, "defaults");
+
+			return _.omit(this.attributes, function(e, k) {
+				return (k === "isGrid" || k === "fixed") && e === defaults[k];
+			});
+		},
+
+
 		/**
 		 * Bubbles column events
 		 */
@@ -80,6 +118,8 @@ define(["lodash", "backbone", "backbone.viewcollection", "widgets/registry"], fu
 			var tempColumns = this.columns.slice();
 
 
+			var created = false;
+
 			this.columns = _.map(this.get("columns"), function(e) {
 				// Get the old column and data, shifting so we can easily
 				// destroy remaining columns later
@@ -95,6 +135,8 @@ define(["lodash", "backbone", "backbone.viewcollection", "widgets/registry"], fu
 					return column;
 				}
 
+				created = true;
+
 				return new this.columnCollection(e, {
 					validate: true
 				});
@@ -108,7 +150,12 @@ define(["lodash", "backbone", "backbone.viewcollection", "widgets/registry"], fu
 				e.off("all", this.onColumnEvent, this);
 
 				e.reset();
-			});
+			}, this);
+
+
+			if (tempColumns.length || created) {
+				this.trigger("update:columns");
+			}
 		}
 	});
 

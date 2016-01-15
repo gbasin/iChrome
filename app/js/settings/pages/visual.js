@@ -54,7 +54,7 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/auth", "settings/page", "th
 						$(elm).parents(".input").siblings(".input")[value === "columns" ? "slideDown" : "slideUp"](300);
 					};
 
-					if ((value === "columns" && this.model.get("layout") === "grid") || (value === "grid" && this.model.get("layout") !== "columns")) {
+					if ((value === "columns" && this.model.get("layout") === "grid") || (value === "grid" && this.model.get("layout") === "columns")) {
 						Alert({
 							confirm: true,
 							contents: [Translate("settings.visual.layout.column_warning." + (value === "columns" ? "grid_to_column" : "column_to_grid"))]

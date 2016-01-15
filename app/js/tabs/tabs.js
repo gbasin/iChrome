@@ -13,6 +13,7 @@ define(
 					Storage.on("done updated", function(storage, promise, data) {
 						if (!(data && data.tabSort)) {
 							var defaults = _.assign({}, Defaults.tab, {
+								isGrid: storage.settings.layout === "grid",
 								fixed: storage.settings.columnWidth === "fixed"
 							});
 
@@ -34,10 +35,14 @@ define(
 
 
 							if (this.get("tabs") !== oTabs) {
-								this.tabs.reset(JSON.parse(JSON.stringify(storage.tabs || [])));
+								this.tabs.reset(JSON.parse(JSON.stringify(storage.tabs || [])), {
+									parse: true
+								});
 							}
 							else {
-								this.tabs.set(JSON.parse(JSON.stringify(storage.tabs || [])));
+								this.tabs.set(JSON.parse(JSON.stringify(storage.tabs || [])), {
+									parse: true
+								});
 							}
 
 							this.tabs.navigate();
