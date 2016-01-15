@@ -430,10 +430,13 @@ define([
 		maximize: function() {
 			var rect = this.el.getBoundingClientRect();
 
-			this.defaultHeight = rect.height;
+			this.placeholderStyle = 'height:' + rect.height + 'px;' + this.$el.attr("style");
 
 			this.$el
 				.css({
+					// We need to unset the width and height properties for grid-based layouts
+					width: "",
+					height: "",
 					top: rect.top,
 					left: rect.left,
 					right: window.innerWidth - rect.right,
@@ -450,8 +453,9 @@ define([
 						bottom: "",
 						animation: "none"
 					});
-				}))
-				.before('<section class="widget placeholder" style="height:' + rect.height + 'px"></section>');
+				}));
+
+			$('<section class="widget placeholder"></section>').attr("style", this.placeholderStyle).insertBefore(this.$el);
 
 			$(document.body).addClass("widget-maximized");
 		},
@@ -464,13 +468,15 @@ define([
 			var placeholder = this.$el.prev(".placeholder");
 
 			if (!placeholder.length) {
-				placeholder = $('<section class="widget placeholder" style="height:' + this.defaultHeight + 'px"></section>').insertBefore(this.$el);
+				placeholder = $('<section class="widget placeholder"></section>').attr("style", this.placeholderStyle).insertBefore(this.$el);
 			}
 
-			delete this.defaultHeight;
+			delete this.placeholderStyle;
 
 
 			var rect = placeholder[0].getBoundingClientRect();
+
+			var updateLoc = this.updateLoc.bind(this);
 
 			this.$el
 				.css({
@@ -493,6 +499,8 @@ define([
 						.removeClass("maximized transition-out")
 						.prev(".placeholder")
 						.remove();
+
+					updateLoc();
 
 					$(document.body).removeClass("widget-maximized");
 				}));

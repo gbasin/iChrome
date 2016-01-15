@@ -2216,9 +2216,12 @@ body > .widgets-container {
 	margin: 0;
 	width: 400px;
 	min-width: 0;
-	min-height: 70px;
 	position: absolute;
 	max-width: 100%!important;
+
+	&.maximized {
+		width: auto;
+	}
 }
 
 .grid .widgets-container > .widget:hover {
@@ -2231,6 +2234,7 @@ body > .widgets-container {
 }
 
 .grid .widget > .resize {
+	z-index: 9;
 	opacity: 0;
 	right: 2px;
 	width: 7px;
@@ -2249,7 +2253,7 @@ body > .widgets-container {
 }
 
 .grid .widgets-container .placeholder {
-	display: none;
+	visibility: hidden;
 }
 
 body.dragging .grid,
@@ -2623,6 +2627,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	/ Widgets Layout / Drag Styles
 */
 .widgets-container .dragged {
+	margin: 0;
 	opacity: .95;
 	z-index: 99999;
 	position: absolute;
