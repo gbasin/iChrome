@@ -47,7 +47,7 @@ define(["jquery", "widgets/views/main", "lib/jquery.sortable"], function($, Widg
 		initialize: function() {
 			// We check the viewChange flag so we don't re-render every time a
 			// box is ticked or an item moved
-			this.listenTo(this.model, "change", function(model, options) {console.log(options);
+			this.listenTo(this.model, "change", function(model, options) {
 				if (!options.viewChange) {
 					this.render();
 				}
