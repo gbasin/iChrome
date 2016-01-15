@@ -5,28 +5,28 @@
 	font-weight: 300;
 	font-style: normal;
 	font-family: "Open Sans";
-	src: url("../fonts/opensanslight.woff");
+	src: url("../fonts/opensanslight.woff2");
 }
 
 @font-face {
 	font-weight: 400;
 	font-style: normal;
 	font-family: "Open Sans";
-	src: url("../fonts/opensansnormal.woff");
+	src: url("../fonts/opensansnormal.woff2");
 }
 
 @font-face {
 	font-weight: 600;
 	font-style: normal;
 	font-family: "Open Sans";
-	src: url("../fonts/opensanssemibold.woff");
+	src: url("../fonts/opensanssemibold.woff2");
 }
 
 @font-face {
 	font-weight: 700;
 	font-style: normal;
 	font-family: "Open Sans";
-	src: url("../fonts/opensansbold.woff");
+	src: url("../fonts/opensansbold.woff2");
 }
 
 
@@ -34,42 +34,42 @@
 	font-weight: 300;
 	font-style: normal;
 	font-family: "Roboto";
-	src: url("../fonts/robotolight.woff");
+	src: url("../fonts/robotolight.woff2");
 }
 
 @font-face {
 	font-weight: 400;
 	font-style: normal;
 	font-family: "Roboto";
-	src: url("../fonts/robotonormal.woff");
+	src: url("../fonts/robotonormal.woff2");
 }
 
 @font-face {
 	font-weight: 500;
 	font-style: normal;
 	font-family: "Roboto";
-	src: url("../fonts/robotomedium.woff");
+	src: url("../fonts/robotomedium.woff2");
 }
 
 @font-face {
 	font-weight: 700;
 	font-style: normal;
 	font-family: "Roboto";
-	src: url("../fonts/robotobold.woff");
+	src: url("../fonts/robotobold.woff2");
 }
 
 @font-face {
 	font-style: normal;
 	font-weight: normal;
 	font-family: "Entypo";
-	src: url("../fonts/entypo.woff");
+	src: url("../fonts/entypo.woff2");
 }
 
 @font-face {
 	font-style: normal;
 	font-weight: normal;
 	font-family: "Material Icons";
-	src: url("../fonts/materialicons.woff");
+	src: url("../fonts/materialicons.woff2");
 }
 
 .m-icon,
@@ -1713,7 +1713,7 @@ dialog.announcements li {
 	padding: 5px 0;
 	overflow: auto;
 	flex-shrink: 0;
-	font-size: 14px;
+	font-size: 15px;
 	font-family: Roboto, sans-serif;
 }
 
@@ -2923,7 +2923,9 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	content: "Pro";
 	font-size: 11px;
 	margin-left: 5px;
+	line-height: 15px;
 	border-radius: 2px;
+	display: inline-block;
 	text-transform: uppercase;
 	border: 1px solid currentColor;
 	font-family: Roboto, sans-serif;
