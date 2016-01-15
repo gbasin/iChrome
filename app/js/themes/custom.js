@@ -38,7 +38,7 @@ define([
 			 */
 			updatePreview: function() {
 				var image = this.$(".image").val(),
-					upload,
+					uploadInput = this.$(".upload input")[0],
 					next = function(url) {
 						this.$(".preview").first().css({
 							backgroundColor: this.$("#color").val(),
@@ -53,7 +53,7 @@ define([
 				if (image) {
 					next(image);
 				}
-				else if ((upload = this.$(".upload input")[0].files).length) {
+				else if (uploadInput && uploadInput.files.length) {
 					var fr = new FileReader();
 
 					fr.onloadend = function() {
@@ -65,7 +65,7 @@ define([
 						}
 					};
 
-					fr.readAsDataURL(upload[0]);
+					fr.readAsDataURL(uploadInput.files[0]);
 				}
 				else {
 					next();
@@ -90,9 +90,9 @@ define([
 				}.bind(this);
 
 				var theme = this.serialize(),
-					upload;
+					uploadInput = this.$(".upload input")[0];
 
-				if (!theme.image && (upload = this.$(".upload input")[0].files).length) {
+				if (!theme.image && uploadInput && uploadInput.files.length) {
 					var fr = new FileReader();
 
 					fr.onloadend = function() {
@@ -103,7 +103,7 @@ define([
 						next(theme);
 					};
 
-					fr.readAsDataURL(upload[0]);
+					fr.readAsDataURL(uploadInput.files[0]);
 				}
 				else {
 					next(theme);
