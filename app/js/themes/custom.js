@@ -3,7 +3,7 @@
  */
 define([
 	"lodash", "jquery", "backbone", "core/analytics", "modals/modals", "themes/utils", "themes/cacher", "i18n/i18n", "core/render", "lib/unextend", "lib/jquery.spectrum"
-], function(_, $, Backbone, Track, Modal, Utils, Cacher, Translate, unextend, render) {
+], function(_, $, Backbone, Track, Modal, Utils, Cacher, Translate, render, unextend) {
 	var Model =  Backbone.Model.extend({
 			defaults: function() {
 				return _.clone(Utils.defaults);
