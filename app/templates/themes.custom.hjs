@@ -13,7 +13,7 @@
 		<label for="image">{{i18n.themes.edit.image}}</label>
 
 		<div>
-			<div class="help" data-tooltip="{{i18n.themes.edit.image_help}}"></div>
+			<div class="help" data-m-icon-before="help" data-tooltip="{{i18n.themes.edit.image_help}}"></div>
 
 			<div class="upload">{{i18n.themes.url_or_upload}}<input type="file" class="btn btn-primary" id="upload" /></div>
 

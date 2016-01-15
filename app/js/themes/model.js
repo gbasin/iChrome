@@ -59,24 +59,22 @@ define(["lodash", "backbone", "browser/api", "themes/utils", "i18n/i18n"], funct
 				types = {
 					random: {
 						icon: "&#xE69C;",
-						entypo: "entypo",
 						desc: Translate("themes.random")
 					},
 					random_daily: {
-						icon: "&#xF073;",
+						icon: "&#xE63F;",
 						desc: Translate("themes.random_daily")
 					},
 					sunrise_sunset: {
 						icon: "&#xE63D;",
-						entypo: "entypo",
 						desc: Translate("themes.sunrise_sunset")
 					},
 					feed: {
-						icon: "&#xF09E;",
+						icon: "&#xE66A;",
 						desc: Translate("themes.feed")
 					},
 					video: {
-						icon: "&#xF03D;",
+						icon: "&#xE69D;",
 						desc: Translate("themes.video")
 					}
 				};
