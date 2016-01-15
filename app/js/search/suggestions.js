@@ -9,7 +9,7 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 				"mousedown .suggestion": function(e) {
 					Track.event("Search", "Suggestions", "Click");
 
-					this.trigger("select", e.currentTarget.innerText);
+					this.trigger("select", e.currentTarget.textContent);
 				}
 			},
 			current: 0,

@@ -30,7 +30,7 @@ define(["lodash", "jquery", "moment", "browser/api"], function(_, $, moment, Bro
 			Browser.system.cpu.getInfo(function(d) {
 				var val;
 
-				this.cpuUsage.innerText = Math.floor(
+				this.cpuUsage.textContent = Math.floor(
 					_.reduce(
 						_.map(d.processors, function(d, i) {
 							val = ((d.usage.user + d.usage.kernel) - this.cpuCoreInfo[i].usage) / (d.usage.total - this.cpuCoreInfo[i].total) * 100;

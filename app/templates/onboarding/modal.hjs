@@ -19,7 +19,7 @@
 </section>
 
 <section class="slide about" data-id="2">
-	<div class="hero" style="background-image: url(images/onboarding-slide.webp)"></div>
+	<div class="hero" style="background-image: url(images/onboarding.png)"></div>
 
 	<div class="caption">
 		<h2>{{i18n.onboarding.modal.about}}</h2>

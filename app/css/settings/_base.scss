@@ -49,8 +49,10 @@ $input-padding: 20px 25px;
 		content: "Pro";
 		font-size: 11px;
 		font-weight: 500;
+		line-height: 15px;
 		border-radius: 2px;
 		color: $md-orange-600;
+		display: inline-block;
 		text-transform: uppercase;
 		border: 1px solid currentColor;
 		font-family: Roboto, sans-serif;
@@ -131,6 +133,7 @@ $input-padding: 20px 25px;
 				font-size: 13px;
 				font-weight: 600;
 				border-width: 2px;
+				line-height: 17px;
 			}
 
 			h3 {

@@ -5,28 +5,28 @@
 	font-weight: 300;
 	font-style: normal;
 	font-family: "Open Sans";
-	src: url("../fonts/OpenSansLight.woff");
+	src: url("../fonts/opensanslight.woff2");
 }
 
 @font-face {
 	font-weight: 400;
 	font-style: normal;
 	font-family: "Open Sans";
-	src: url("../fonts/OpenSansNormal.woff");
+	src: url("../fonts/opensansnormal.woff2");
 }
 
 @font-face {
 	font-weight: 600;
 	font-style: normal;
 	font-family: "Open Sans";
-	src: url("../fonts/OpenSansSemiBold.woff");
+	src: url("../fonts/opensanssemibold.woff2");
 }
 
 @font-face {
 	font-weight: 700;
 	font-style: normal;
 	font-family: "Open Sans";
-	src: url("../fonts/OpenSansBold.woff");
+	src: url("../fonts/opensansbold.woff2");
 }
 
 
@@ -34,42 +34,42 @@
 	font-weight: 300;
 	font-style: normal;
 	font-family: "Roboto";
-	src: url("../fonts/RobotoLight.woff");
+	src: url("../fonts/robotolight.woff2");
 }
 
 @font-face {
 	font-weight: 400;
 	font-style: normal;
 	font-family: "Roboto";
-	src: url("../fonts/RobotoNormal.woff");
+	src: url("../fonts/robotonormal.woff2");
 }
 
 @font-face {
 	font-weight: 500;
 	font-style: normal;
 	font-family: "Roboto";
-	src: url("../fonts/RobotoMedium.woff");
+	src: url("../fonts/robotomedium.woff2");
 }
 
 @font-face {
 	font-weight: 700;
 	font-style: normal;
 	font-family: "Roboto";
-	src: url("../fonts/RobotoBold.woff");
+	src: url("../fonts/robotobold.woff2");
 }
 
 @font-face {
 	font-style: normal;
 	font-weight: normal;
-	font-family: "FontAwesome";
-	src: url("../fonts/fontawesome.woff");
+	font-family: "Entypo";
+	src: url("../fonts/entypo.woff2");
 }
 
 @font-face {
 	font-style: normal;
 	font-weight: normal;
 	font-family: "Material Icons";
-	src: url("../fonts/MaterialIcons.woff");
+	src: url("../fonts/materialicons.woff2");
 }
 
 .m-icon,
@@ -1392,18 +1392,6 @@ header.toolbar {
 		background: rgba(0, 0, 0, .15);
 	}
 
-	.search .btn {
-		z-index: 9;
-		flex: 1 75px;
-		min-width: 75px;
-		max-width: 75px;
-		padding: 6px 30px;
-		vertical-align: top;
-		font-family: FontAwesome;
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-	}
-
 	.search .suggestions {
 		left: 0;
 		right: 0;
@@ -1725,7 +1713,7 @@ dialog.announcements li {
 	padding: 5px 0;
 	overflow: auto;
 	flex-shrink: 0;
-	font-size: 14px;
+	font-size: 15px;
 	font-family: Roboto, sans-serif;
 }
 
@@ -1841,7 +1829,7 @@ dialog.announcements li {
 	color: #AAA;
 	font-size: 11px;
 	line-height: 18px;
-	padding: 20px 0 10px 15px;
+	padding: 15px 0 8px 15px;
 }
 
 .menu .footer:lang(ja) {
@@ -1860,6 +1848,16 @@ dialog.announcements li {
 .menu .footer a:focus {
 	color: #427FED;
 	text-decoration: none;
+}
+
+.menu .footer .social-buttons {
+	margin: 0 5px 8px;
+}
+
+.menu .footer .social-buttons a {
+	width: 22px;
+	margin-right: 15px;
+	display: inline-block;
 }
 
 .menu .footer a[rel="license"] {
@@ -1947,9 +1945,7 @@ dialog.announcements li {
 	background: #E23C3C;
 	border-radius: 100%;
 	vertical-align: middle;
-	font-family: FontAwesome;
 	transition: all .2s ease-in-out;
-	-webkit-font-smoothing: antialiased;
 	border: 1px solid rgba(0, 0, 0, .1);
 	text-shadow: 0 1px 2px rgba(0, 0, 0, .2);
 	box-shadow: 0 0 0 15px #E5E5E5, 0 0 1px 16px rgba(0, 0, 0, .2), inset 0 0 1px 1px rgba(255, 255, 255, .3);
@@ -1978,14 +1974,14 @@ dialog.announcements li {
 }
 
 .voicebar .close {
-	top: 8px;
-	right: 8px;
+	top: 5px;
+	right: 5px;
 	color: #444;
 	cursor: pointer;
-	font-size: 16px;
-	line-height: 10px;
+	font-size: 20px;
+	line-height: 16px;
 	position: absolute;
-	font-family: FontAwesome;
+	font-family: Entypo;
 }
 
 .voicebar .close:hover {
@@ -2474,8 +2470,6 @@ body.resizing .grid {
 	right: 5px;
 	color: #666;
 	cursor: pointer;
-	font-size: 17px;
-	font-family: FontAwesome;
 	text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
 }
 
@@ -2944,7 +2938,9 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	content: "Pro";
 	font-size: 11px;
 	margin-left: 5px;
+	line-height: 15px;
 	border-radius: 2px;
+	display: inline-block;
 	text-transform: uppercase;
 	border: 1px solid currentColor;
 	font-family: Roboto, sans-serif;
@@ -2964,8 +2960,6 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 .widget-settings .help:before {
 	font-size: 14px;
-	content: "\f059";
-	font-family: FontAwesome;
 }
 
 .widget-settings select,
@@ -3273,103 +3267,6 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 .modal.small > .close:before {
 	font-size: 30px;
-}
-
-
-
-
-
-
-
-/*---------------------------------------------
-	/ Notification Styles
-*/
-.notification {
-	opacity: 0;
-	right: 15px;
-	bottom: 15px;
-	margin: auto;
-	width: 400px;
-	z-index: 99999;
-	position: fixed;
-	overflow: hidden;
-	background: #FFF;
-	max-height: 500px;
-	padding: 15px 10px;
-	visibility: hidden;
-	border-radius: 2px;
-	font-family: Open Sans, sans-serif;
-	transform: translateY(50px) translateZ(0);
-	transition: all .25s ease-in-out, visibility 0s .25s;
-	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), 0 0 2px 1px rgba(0, 0, 0, 0.15);
-}
-
-.notification.visible {
-	opacity: 1;
-	visibility: visible;
-	transform: translateY(0) translateZ(0);
-	transition: all .25s ease-in-out, visibility 0s 0s;
-}
-
-.notification div.close {
-	top: 5px;
-	right: 10px;
-	color: #404040;
-	cursor: pointer;
-	position: absolute;
-}
-
-.notification div.close:hover {
-	color: #428BCA;
-}
-
-.notification div.close:before {
-	content: "\f00d";
-	font-family: FontAwesome;
-}
-
-.notification .title {
-	margin: 0;
-	color: #111;
-	font-size: 14px;
-	padding-left: 5px;
-	padding-bottom: 20px;
-	font-family: Open Sans, sans-serif;
-}
-
-.notification .content {
-	color: #4B4B4B;
-	overflow: auto;
-	padding: 0 15px;
-	font-size: 12px;
-	max-height: calc(100% - 30px);
-}
-
-.notification ul {
-	padding-left: 15px;
-	padding-right: 8px;
-	margin: 15px 0 20px;
-}
-
-.notification li {
-	width: 46%;
-	color: #555;
-	padding: 3px 0;
-	font-size: 12px;
-	position: relative;
-	display: inline-block;
-}
-
-.notification a {
-	float: right;
-	font-size: 12px;
-	margin-top: 8px;
-	display: inline-block;
-}
-
-.notification .btn {
-	float: left;
-	margin-top: 0;
 }
 
 
@@ -3850,10 +3747,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .themes .theme h2 span {
 	color: #666;
 	float: right;
-	font-size: 14px;
+	font-size: 15px;
 	margin-top: -2px;
 	font-weight: normal;
-	font-family: FontAwesome;
+	font-family: Entypo;
 }
 
 .themes .theme h2 span:not(:first-child) {
@@ -3870,11 +3767,6 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	text-transform: uppercase;
 	border: 1px solid currentColor;
 	font-family: Roboto, sans-serif;
-}
-
-.themes .theme h2 .entypo {
-	font-size: 15px;
-	font-family: Entypo;
 }
 
 .themes .theme .specs {
@@ -3985,8 +3877,6 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 .themes.create .help:before {
 	font-size: 14px;
-	content: "\f059";
-	font-family: FontAwesome;
 }
 
 .themes.create .content > .preview {
