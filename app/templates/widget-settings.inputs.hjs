@@ -1,7 +1,7 @@
 {{#input-text}}
 	<label for="widget-{{name}}">
 		{{label}}
-		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
+		{{#help}}<div class="help" data-m-icon-before="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
 	<input type="text" class="form-control" id="widget-{{name}}" name="{{name}}" placeholder="{{placeholder}}" value="{{value}}" {{proHelper}} />
@@ -10,7 +10,7 @@
 {{#input-textarea}}
 	<label for="widget-{{name}}">
 		{{label}}
-		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
+		{{#help}}<div class="help" data-m-icon-before="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
 	<textarea class="form-control" id="widget-{{name}}" name="{{name}}" placeholder="{{placeholder}}" {{proHelper}}>{{value}}</textarea>
@@ -19,16 +19,16 @@
 {{#input-color}}
 	<label for="widget-{{name}}">
 		{{label}}
-		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
+		{{#help}}<div class="help" data-m-icon-before="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
-	
+
 	<input type="text" class="form-control color" id="widget-{{name}}" name="{{name}}" value="{{value}}" {{proHelper}} />
 {{/input-color}}
 
 {{#input-select}}
 	<label for="widget-{{name}}">
 		{{label}}
-		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
+		{{#help}}<div class="help" data-m-icon-before="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
 	<select class="form-control" id="widget-{{name}}" name="{{name}}" {{multiple}} {{proHelper}}>
@@ -46,9 +46,9 @@
 {{#input-list}}
 	<label for="widget-{{name}}">
 		{{label}}
-		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
+		{{#help}}<div class="help" data-m-icon-before="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
-	
+
 	<div>
 		<input type="text" placeholder="{{placeholder}}" id="widget-{{name}}" {{proHelper}} />
 
@@ -99,7 +99,7 @@
 {{#input-radio}}
 	<label>
 		{{label}}
-		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
+		{{#help}}<div class="help" data-m-icon-before="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
 	<div>
@@ -115,7 +115,7 @@
 {{#input-number}}
 	<label for="widget-{{name}}">
 		{{label}}
-		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
+		{{#help}}<div class="help" data-m-icon-before="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
 	<input type="number" id="widget-{{name}}" name="{{name}}" class="form-control" min="{{min}}" max="{{max}}" value="{{value}}" {{proHelper}} />
@@ -124,7 +124,7 @@
 {{#input-time}}
 	<label for="widget-{{name}}">
 		{{label}}
-		{{#help}}<div class="help" data-tooltip="{{help}}"></div>{{/help}}
+		{{#help}}<div class="help" data-m-icon-before="help" data-tooltip="{{help}}"></div>{{/help}}
 	</label>
 
 	<input type="time" class="form-control" name="{{name}}" id="widget-{{name}}" value="{{value}}" placeholder="{{placeholder}}" {{proHelper}} />

@@ -160,7 +160,7 @@ define(["lodash", "jquery", "moment", "./lib/chart", "widgets/views/main"], func
 				.children(".change").text(this.stock.change + " (" + this.stock.changePercent + "%)");
 
 			this.$(".details div span.value").each(function() {
-				this.innerText = stock[this.getAttribute("data-field")];
+				this.textContent = stock[this.getAttribute("data-field")];
 			});
 		},
 

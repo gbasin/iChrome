@@ -48,14 +48,35 @@
 	</div>
 
 	<div class="footer">
+		<div class="social-buttons">
+			<a href="https://www.twitter.com/iChromeHQ" target="_blank" class="twitter">
+				<svg xmlns="http://www.w3.org/2000/svg" width="19.69" height="16" viewBox="423.89 491.854 19.69 16">
+					<path fill="#55ACEE" d="M443.58 493.747c-.725.322-1.502.538-2.32.637.834-.5 1.475-1.29 1.775-2.234-.78.464-1.643.8-2.565.982-.736-.787-1.786-1.277-2.948-1.277-2.23 0-4.04 1.81-4.04 4.04 0 .314.036.623.105.918-3.356-.168-6.333-1.776-8.325-4.22-.348.595-.547 1.29-.547 2.03 0 1.4.713 2.637 1.798 3.362-.664-.02-1.286-.204-1.83-.507v.052c0 1.957 1.39 3.59 3.24 3.96-.34.093-.695.144-1.064.144-.263 0-.516-.027-.763-.073.515 1.605 2.006 2.773 3.772 2.806-1.382 1.084-3.122 1.73-5.017 1.73-.326 0-.647-.02-.964-.056 1.786 1.145 3.908 1.814 6.19 1.814 7.43 0 11.493-6.155 11.493-11.493 0-.176-.005-.348-.014-.522.793-.568 1.48-1.28 2.02-2.09z"></path>
+				</svg>
+			</a>
+
+			<a href="https://plus.google.com/105753616949940055287" target="_blank" class="gplus">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25.73" height="16" viewBox="302.21 393.45 25.73 16">
+					<path fill="#DB4437" d="M325.058 397.558h-2.163v2.883h-2.883v2.02h2.883v2.883h2.163v-2.883h2.883v-2.09h-2.882v-2.812zm-14.848 2.234v3.243h4.325c-.29 1.874-1.946 3.243-4.325 3.243-2.595 0-4.756-2.234-4.756-4.83 0-2.593 2.09-4.827 4.756-4.827 1.226 0 2.234.36 3.1 1.226l2.307-2.306c-1.442-1.297-3.244-2.09-5.406-2.09-4.395 0-8 3.604-8 8s3.605 8 8 8c4.686 0 7.713-3.314 7.713-7.855 0-.576-.072-1.225-.144-1.802h-7.57z"></path>
+				</svg>
+			</a>
+
+			<a href="https://www.facebook.com/iChrome-1116504205031129/" target="_blank" class="facebook">
+				<svg xmlns="http://www.w3.org/2000/svg" width="8.31" height="16" viewBox="301.845 388 8.31 16">
+					<path fill="#48649F" d="M307.238 404v-7.3h2.45l.367-2.844h-2.817v-1.815c0-.822.23-1.383 1.41-1.383h1.507v-2.546c-.262-.03-1.153-.11-2.196-.11-2.17 0-3.657 1.325-3.657 3.76v2.1h-2.458v2.844h2.458V404h2.935z"></path>
+				</svg>
+			</a>
+		</div>
+
 		<a href="http://ichrome.uservoice.com/" class="support">{{i18n.menu.footer.support}}</a> &nbsp;·&nbsp;
 		<a href="http://ichrome.uservoice.com/" class="feedback">{{i18n.menu.footer.feedback}}</a> &nbsp;·&nbsp;
 		<a href="https://chrome.google.com/webstore/detail/ichrome/oghkljobbhapacbahlneolfclkniiami/reviews">{{i18n.menu.footer.review}}</a>
 
 		<br />
 
-		<a href="http://www.twitter.com/iChromeHQ">{{i18n.menu.footer.twitter}}</a> &nbsp;·&nbsp;
-		<a href="https://chrome.google.com/webstore/detail/ichrome/oghkljobbhapacbahlneolfclkniiami">{{i18n.menu.footer.webstore}}</a>
+		<a href="https://ichro.me/tos" class="terms">{{i18n.menu.footer.terms}}</a> &nbsp;·&nbsp;
+		<a href="https://ichro.me/privacy" class="privacy">{{i18n.menu.footer.privacy}}</a> &nbsp;·&nbsp;
+		<a href="https://ichro.me/cookies" class="cookies">{{i18n.menu.footer.cookies}}</a>
 
 		<hr class="separator" />
 

@@ -582,14 +582,14 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 					div.innerHTML = article.content;
 
-					article.excerpt = div.innerText.trim().slice(0, 300).replace(/\n/g, "  ");
+					article.excerpt = div.textContent.trim().slice(0, 300).replace(/\n/g, "  ");
 				}
 				else if (e.summary) {
 					article.content = e.summary.content || "";
 
 					div.innerHTML = article.content;
 
-					article.excerpt = div.innerText.trim().slice(0, 300).replace(/\n/g, "  ");
+					article.excerpt = div.textContent.trim().slice(0, 300).replace(/\n/g, "  ");
 				}
 
 				if (e.tags && e.tags[0]) {

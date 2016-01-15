@@ -1,25 +1,4 @@
 /*---------------------------------------------
-	/ Fonts
-*/
-@font-face {
-	font-style: normal;
-	font-weight: normal;
-	font-family: "Entypo";
-	src: url("../fonts/entypo.woff");
-}
-
-@font-face {
-	font-style: normal;
-	font-weight: normal;
-	font-family: "Climacons";
-	src: url("../fonts/climacons.woff");
-}
-
-
-
-
-
-/*---------------------------------------------
 	/ Widget Globals
 */
 .widget .header {
@@ -230,29 +209,23 @@
 	color: #FFF;
 }
 
-.reddit .item span.nested-link[data-href],
 .feedly .item span.nested-link[data-href] {
 	color: #222;
 	font-weight: 600;
 }
 
-.dark .reddit .item span.nested-link[data-href],
 .dark .feedly .item span.nested-link[data-href] {
 	color: #FFF;
 }
 
 .reddit .item:visited .title,
 .feedly .item:visited .title,
-
-.reddit .item:visited span.nested-link[data-href],
 .feedly .item:visited span.nested-link[data-href] {
 	color: #555;
 }
 
 .dark .reddit .item:visited .title,
 .dark .feedly .item:visited .title,
-
-.dark .reddit .item:visited span.nested-link[data-href],
 .dark .feedly .item:visited span.nested-link[data-href] {
 	color: #BBB;
 }
@@ -382,34 +355,15 @@
 	font-size: 14px;
 	margin-right: 5px;
 	line-height: 18px;
-	font-family: FontAwesome;
-}
-
-.reddit .item .specs .score:before {
-	content: "\f062";
-	font-size: 12px;
-	line-height: 16px;
 	vertical-align: text-top;
 }
 
+.reddit .item .specs .score:before {
+	content: "arrow_upward";
+}
+
 .reddit .item .specs .score.down:before {
-	content: "\f062";
-}
-
-.reddit .item .posted:before {
-	content: "\f017";
-}
-
-.reddit .item .comments:before {
-	content: "\f086";
-}
-
-.reddit .item .subreddit:before {
-	content: "\f03c";
-}
-
-.reddit .item .user:before {
-	content: "\f007";
+	content: "arrow_downward";
 }
 
 
@@ -1659,19 +1613,8 @@ body.no-edit .bookmarks .tools {
 	color: #666;
 	cursor: pointer;
 	background: #FFF;
+	padding-left: 5px;
 	position: relative;
-}
-
-.bookmarks .folder:before {
-	color: #777;
-	font-size: 14px;
-	content: "\F0DA";
-	margin-left: 15px;
-	font-family: FontAwesome;
-}
-
-.bookmarks .folder.active:before {
-	content: "\F0D7";
 }
 
 .bookmarks .folder .tools {
@@ -3009,9 +2952,9 @@ body.no-edit .bookmarks .tools {
 .quotes footer .tweet:before {
 	color: #55ACEE;
 	font-size: 20px;
-	content: "\F099";
+	content: "\E6F4";
 	line-height: 20px;
-	font-family: FontAwesome;
+	font-family: Entypo;
 }
 
 .quotes footer .refresh svg {
@@ -3200,6 +3143,7 @@ body.no-edit .bookmarks .tools {
 	bottom: 0;
 	width: 100%;
 	height: 100%;
+	font-size: 15px;
 	border-radius: 0;
 	position: absolute;
 	border: 0!important;
