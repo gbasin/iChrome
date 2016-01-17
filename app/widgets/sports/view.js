@@ -8,11 +8,16 @@ define(["lodash", "jquery", "moment", "widgets/views/main"], function(_, $, mome
 			"click header .tabs li": function(e) {
 				this.model._state = e.currentTarget.getAttribute("data-id");
 
-				this.render({
-					loading: true
-				});
+				if (this.model._state === "news" && !this.Auth.isPro) {
+					this.render();
+				}
+				else {
+					this.render({
+						loading: true
+					});
 
-				this.model.refresh();
+					this.model.refresh();
+				}
 			},
 
 			"click header .select .options li": function(e) {
@@ -39,6 +44,14 @@ define(["lodash", "jquery", "moment", "widgets/views/main"], function(_, $, mome
 
 		onBeforeRender: function(data) {
 			var activeView = this.model._activeView || (this.model.config.teams.length ? "favorites" : "top");
+
+			data.news = this.model._state === "news";
+
+			if (data.news && !this.Auth.isPro) {
+				data.proSplash = true;
+
+				delete data.games;
+			}
 
 			if (data.games) {
 				var open = [];
@@ -115,9 +128,6 @@ define(["lodash", "jquery", "moment", "widgets/views/main"], function(_, $, mome
 					});
 				}
 			}
-
-			data.news = this.model._state === "news";
-
 
 			data.views = _.map({
 				"favorites": "Favorites",

@@ -241,6 +241,10 @@ define(["jquery", "lodash", "widgets/model"], function($, _, WidgetModel) {
 
 		refresh: function() {
 			if (this._state === "news") {
+				if (!this.Auth.isPro) {
+					return;
+				}
+
 				return this.getNews();
 			}
 

@@ -62,7 +62,7 @@ header .select ul.options {
 	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14),
 				0 1px 10px 0 rgba(0, 0, 0, .12),
 				0 2px 4px -1px rgba(0, 0, 0, .2);
-	animation: menu-out .3s cubic-bezier(.4, 0, .2, 1);
+	animation: analytics-menu-out .3s cubic-bezier(.4, 0, .2, 1);
 }
 
 .dark header .select ul.options {
@@ -72,10 +72,10 @@ header .select ul.options {
 header .select:focus ul.options {
 	visibility: visible;
 	transition-delay: 0s;
-	animation: menu-in .3s cubic-bezier(.4, 0, .2, 1) forwards;
+	animation: analytics-menu-in .3s cubic-bezier(.4, 0, .2, 1) forwards;
 }
 
-@keyframes menu-in {
+@keyframes analytics-menu-in {
 	30% {
 		max-height: 35px;
 	}
@@ -88,7 +88,7 @@ header .select:focus ul.options {
 	}
 }
 
-@keyframes menu-out {
+@keyframes analytics-menu-out {
 	0% {
 		max-height: 125px;
 	}

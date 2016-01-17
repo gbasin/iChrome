@@ -23,6 +23,18 @@
 	</div>
 {{/loading}}
 
+{{#proSplash}}
+	<div class="splash pro-only">
+		<span class="badge">Pro</span>
+
+		<p>
+			{{i18n.pro_splash1}}
+			<br />
+			{{i18n.pro_splash2}}
+		</p>
+	</div>
+{{/proSplash}}
+
 {{#news}}
 	<div class="news">
 		{{#articles}}

@@ -52,7 +52,7 @@ header .select ul.options {
 	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14),
 				0 1px 10px 0 rgba(0, 0, 0, .12),
 				0 2px 4px -1px rgba(0, 0, 0, .2);
-	animation: menu-out .3s cubic-bezier(.4, 0, .2, 1);
+	animation: sports-menu-out .3s cubic-bezier(.4, 0, .2, 1);
 }
 
 .dark header .select ul.options {
@@ -62,10 +62,10 @@ header .select ul.options {
 header .select:focus ul.options {
 	visibility: visible;
 	transition-delay: 0s;
-	animation: menu-in .3s cubic-bezier(.4, 0, .2, 1) forwards;
+	animation: sports-menu-in .3s cubic-bezier(.4, 0, .2, 1) forwards;
 }
 
-@keyframes menu-in {
+@keyframes sports-menu-in {
 	30% {
 		max-height: 35px;
 	}
@@ -78,7 +78,7 @@ header .select:focus ul.options {
 	}
 }
 
-@keyframes menu-out {
+@keyframes sports-menu-out {
 	0% {
 		max-height: 300px;
 	}
@@ -560,6 +560,48 @@ header .options li.selected {
 	font-weight: 500;
 	margin-right: 5px;
 	text-transform: uppercase;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Pro splash
+*/
+.pro-only {
+	color: #888;
+	text-align: center;
+	background: #F2F2F2;
+	padding: 65px 0 80px;
+}
+
+.dark .pro-only {
+	color: #AAA;
+	background: #2A2A2A;
+}
+
+.dark.transparent .pro-only {
+	color: #DDD;
+	background: rgba(0, 0, 0, .2);
+}
+
+.pro-only .badge {
+	color: #FB8C00;
+	padding: 0 15px;
+	font-size: 75px;
+	font-weight: 300;
+	border-radius: 10px;
+	text-transform: uppercase;
+	border: 4px solid currentColor;
+}
+
+.pro-only p {
+	padding: 0 35px;
+	line-height: 22px;
+	margin: 30px 0 15px;
 }
 
 
