@@ -69,18 +69,20 @@ define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage)
 				}
 
 				// Increase or decrease the number of columns as appropriate
-				if (prop === "columns") {
-					if (tab.columns.length < value) {
-						for (var i = value - tab.columns.length; i > 0; i--) {
+				if (prop === "columns" || wasGrid) {
+					var columns = wasGrid ? this.get("columns") : value;
+
+					if (tab.columns.length < columns) {
+						for (var i = columns - tab.columns.length; i > 0; i--) {
 							tab.columns.push([]); // Push empty columns until the value is reached
 						}
 					}
-					else if (tab.columns.length > value) {
+					else if (tab.columns.length > columns) {
 						// Move all widgets in extra columns to the first
-						tab.columns[0] = tab.columns[0].concat(_.flatten(_.takeRight(tab.columns, tab.columns.length - value)));
+						tab.columns[0] = tab.columns[0].concat(_.flatten(_.takeRight(tab.columns, tab.columns.length - columns)));
 
 						// And delete the extra columns
-						tab.columns.splice(value);
+						tab.columns.splice(columns);
 					}
 				}
 				else if (tab.columns.length > 1) {

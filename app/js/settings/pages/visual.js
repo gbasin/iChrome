@@ -141,6 +141,12 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/auth", "settings/page", "th
 				// Style
 				style: Auth.isPro ? data.style : "light"
 			};
+		},
+
+		onRender: function(data) {
+			if (data.layout === "grid") {
+				this.$("section.layout .input.main").siblings(".input").css("display", "none");
+			}
 		}
 	});
 
