@@ -11,7 +11,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 		},
 
 		initialize: function() {
-			this.model.on("columns:sort columns:update columns:reset update:columns change:fixed change:isGrid", function() {
+			this.model.on("columns:sort columns:update columns:reset columns:views:change update:columns change:fixed change:isGrid", function() {
 				var options = _.last(arguments);
 
 				if (!(options && options.noRefresh)) {
