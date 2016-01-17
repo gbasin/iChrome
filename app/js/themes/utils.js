@@ -82,6 +82,12 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 
 			if (theme.image || theme.video) {
 				image = theme.image || theme.video;
+
+				// When updating a dynamic theme's background image we need to
+				// make sure the browser sees a change
+				if (image.indexOf("filesystem") === 0) {
+					image += "?nocache=" + new Date().getTime();
+				}
 			}
 			else if (theme.images && typeof this.model.get("cached")[theme.id] !== "undefined") {
 				switch (theme.type) {

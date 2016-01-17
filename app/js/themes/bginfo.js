@@ -1,7 +1,9 @@
 /**
  * Displays information about the currently displayed background image or video
  */
-define(["lodash", "backbone", "core/auth", "i18n/i18n", "core/analytics", "modals/alert", "themes/controller", "themes/utils", "core/render"], function(_, Backbone, Auth, Translate, Track, Alert, Themes, Utils, render) {
+define([
+	"lodash", "backbone", "core/auth", "i18n/i18n", "core/analytics", "modals/alert", "themes/controller", "themes/utils", "core/render"
+], function(_, Backbone, Auth, Translate, Track, Alert, Themes, Utils, render) {
 	var View = Backbone.View.extend({
 		tagName: "section",
 		className: "panel",
@@ -86,13 +88,11 @@ define(["lodash", "backbone", "core/auth", "i18n/i18n", "core/analytics", "modal
 		initialize: function(options) {
 			this.body = options.body;
 
-			var theme = Themes.theme;
-
-			if (!theme) {
-				return this.remove();
+			if (this.render() === true) {
+				return;
 			}
 
-			this.render(theme);
+			this.listenTo(Themes, "change:theme", this.render);
 
 
 			var elms = this.$("*").add(this.$el);
@@ -115,7 +115,15 @@ define(["lodash", "backbone", "core/auth", "i18n/i18n", "core/analytics", "modal
 			Track.event("BG Info", "Show");
 		},
 
-		render: function(theme) {
+		render: function() {
+			var theme = Themes.theme;
+
+			if (!theme) {
+				this.remove();
+
+				return true;
+			}
+
 			var preview, downloadUrl;
 
 			// If the theme has multiple images then Utils.getImage might return a random one and

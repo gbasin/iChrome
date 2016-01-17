@@ -6,6 +6,23 @@ define(["lodash", "jquery", "backbone", "core/auth", "themes/utils"], function(_
 		el: "body",
 
 
+		initialize: function() {
+			this.listenTo(Utils.model, "change:cached", function() {
+				var newTheme = Utils.get(this.theme);
+
+				// If the theme itself hasn't changed and it's a random one, we
+				// don't want to pick a new image
+				if (newTheme.image || newTheme.video || JSON.stringify(this.theme) !== JSON.stringify(newTheme)) {
+					this.theme = newTheme;
+
+					this.render();
+
+					this.trigger("change:theme");
+				}
+			});
+		},
+
+
 		/**
 		 * Previews a theme, hiding all modals and adding a transparent overlay
 		 *
@@ -47,6 +64,8 @@ define(["lodash", "jquery", "backbone", "core/auth", "themes/utils"], function(_
 			this.theme = Utils.get(theme);
 
 			this.render();
+
+			this.trigger("change:theme");
 		},
 
 

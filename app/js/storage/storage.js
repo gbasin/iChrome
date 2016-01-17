@@ -278,8 +278,6 @@ define([
 		};
 
 		var storage = {
-			Originals: {},
-
 			/**
 			 * Schedules a storage save
 			 *
@@ -397,10 +395,6 @@ define([
 			lastSaved = JSON.stringify(_.pick(storage, "user", "tabs", "settings", "themes", "cached"));
 			lastSynced = JSON.stringify(_.pick(storage, "user", "tabsSync", "settings", "themes"));
 
-
-			storage.Originals.tabs = JSON.parse(JSON.stringify(storage.tabs));
-
-
 			// Backup once a day, before any changes are made
 			if (new Date().getTime() - (Browser.storage.lastBackup || "0") > 864E5) {
 				var backups = JSON.parse(Browser.storage.backups || "[]");
@@ -452,6 +446,48 @@ define([
 		else {
 			parseData();
 		}
+
+
+		// Listen for storage changes from the background and other pages
+		window.addEventListener("storage", function(e) {
+			if (!e || e.key !== "config" || !e.newValue) {
+				return;
+			}
+
+			var changed,
+				oldData = JSON.parse(e.oldValue),
+				newData = JSON.parse(e.newValue);
+
+			_.each(newData, function(e, k) {
+				// Note that this uses oldData.settings in both cases. We don't
+				// want settings changed to be misinterpreted as tab changes.
+				if (k === "tabs" && getJSON(oldData.tabs, oldData.settings) !== getJSON(newData.tabs, oldData.settings)) {
+					changed = true;
+
+					storage.tabs = e;
+				}
+				else if (["user", "themes", "settings", "cached"].indexOf(k) !== -1 && JSON.stringify(e) !== JSON.stringify(oldData[k])) {
+					changed = true;
+
+					storage[k] = e;
+				}
+			});
+
+			if (!changed) {
+				return;
+			}
+
+			console.log("Detected localStorage change, updating");
+
+			storage.modified = new Date(e).getTime();
+
+			storage.tabsSync = JSON.parse(getJSON(storage.tabs, storage.settings));
+
+			lastSaved = JSON.stringify(_.pick(storage, "user", "tabs", "settings", "themes", "cached"));
+			lastSynced = JSON.stringify(_.pick(storage, "user", "tabsSync", "settings", "themes"));
+
+			promise.trigger("updated");
+		});
 
 		return promise;
 	}

@@ -25,6 +25,28 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 			}
 			catch (e) {}
 
+			// Listen for auth changes from the background and other pages
+			window.addEventListener("storage", function(e) {
+				if (!e || e.key !== "authData") {
+					return;
+				}
+
+				// If we were just signed out, reload
+				if (!e.newValue) {
+					return location.reload();
+				}
+
+				var wasPro = this.isPro;
+
+				this.clear({
+					silent: true
+				}).set(JSON.parse(e.newValue));
+
+				if (this.isPro !== wasPro) {
+					location.reload();
+				}
+			}.bind(this));
+
 			this.on("change:token", this.updateAccessToken, this);
 
 			this.on("change", function(model, options) {
