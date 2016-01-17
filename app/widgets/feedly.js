@@ -574,7 +574,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 					author: e.author,
 					unread: !!e.unread,
 					date: e.published || 0,
-					recommendations: abbreviate(parseInt(e.engagement || 0, 1000, 2))
+					recommendations: abbreviate(parseInt(e.engagement || 0), 1000, 2)
 				};
 
 				if (e.content) {
