@@ -156,7 +156,7 @@ var getFeed = function(theme, cb, next) {
 							theme.currentImage = {
 								name: utils.res.name,
 								url: utils.res.sourceUrl,
-								source: (utils.res.author && utils.res.source ? utils.res.author + " — " : utils.res.author) + (utils.res.copyright || utils.res.source || "")
+								source: (utils.res.author || "") + (utils.res.author && (utils.res.copyright || utils.res.source) ? " — " : "") + (utils.res.copyright || utils.res.source || "")
 							};
 						}
 						else if ((theme.id === 82 || theme.id === 83) && utils.res.images && utils.res.images[0] && utils.res.images[0].copyright) {
