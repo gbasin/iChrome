@@ -29,7 +29,6 @@ var templates = [
 		"widgets.feedly",				"widgets.feedly.desc",				"widgets.feedly.articles",
 		"widgets.keep",					"widgets.keep.desc",
 		"widgets.now",					"widgets.now.desc",
-		"widgets.gmail",				"widgets.gmail.desc",
 		"widgets.twitter",				"widgets.twitter.desc",
 		"widgets.calc",					"widgets.calc.desc",
 		"widgets.youtube",				"widgets.youtube.desc",

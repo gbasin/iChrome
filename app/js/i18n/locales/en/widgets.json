@@ -191,11 +191,6 @@
 		"go_to_feedly": "Go To Feedly"
 	},
 
-	"gmail": {
-		"name": "Gmail",
-		"desc": "Displays your Gmail inbox where you can manage your email."
-	},
-
 	"keep": {
 		"name": "Keep",
 		"desc": "Embeds Google Keep in a widget"

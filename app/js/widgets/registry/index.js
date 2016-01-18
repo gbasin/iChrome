@@ -14,7 +14,8 @@ var widgets = [
 	"sports",			"analytics",		"dictionary",
 	"recentlyclosed",	"topsites",			"todo",
 	"currency",			"traffic",			"unread",
-	"voice",			"iframe",			"classroom"
+	"voice",			"iframe",			"classroom",
+	"gmail"
 ].map(function(e) {
 	return "json!w/" + e + "/manifest.json";
 });
@@ -22,7 +23,7 @@ var widgets = [
 var legacyWidgets = [
 	"apps",				"bookmarks",		"calc",
 	"calendar",			"clock",			"facebook",
-	"feedly",			"gmail",			"keep",
+	"feedly",			"keep",
 	"notes",			"now",				"plus",
 	"reddit",			"twitter",			"wolfram",
 	"youtube",			"chrome_bookmarks",	"tasks",
