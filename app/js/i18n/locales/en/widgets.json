@@ -191,11 +191,6 @@
 		"go_to_feedly": "Go To Feedly"
 	},
 
-	"keep": {
-		"name": "Keep",
-		"desc": "Embeds Google Keep in a widget"
-	},
-
 	"notes": {
 		"name": "Notes",
 		"desc": "Inserts a simple, editable, note.",

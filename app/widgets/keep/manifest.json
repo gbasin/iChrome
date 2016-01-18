@@ -1,0 +1,41 @@
+{
+	"id": 23,
+	"tabbed": true,
+	"name": "keep",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["variable"],
+
+	"views": {
+		"default": "view",
+		"maximized": "maximized"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"settings": [{
+		"type": "text",
+		"name": "user",
+		"label": "i18n.settings.account",
+		"help": "i18n.settings.account_help",
+		"placeholder": "i18n.settings.account_placeholder"
+	},
+	{
+		"type": "number",
+		"label": "i18n.settings.height",
+		"name": "height",
+		"min": 100,
+		"max": 800
+	}],
+
+	"strings": {
+		"en": {
+			"name": "Keep",
+			"desc": "Embeds Google Keep in a widget"
+		}
+	}
+}

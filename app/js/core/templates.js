@@ -27,7 +27,6 @@ var templates = [
 		"widgets.chrome_bookmarks",		"widgets.chrome_bookmarks.desc",	"widgets.chrome_bookmarks.listing",
 		"widgets.reddit",				"widgets.reddit.desc",
 		"widgets.feedly",				"widgets.feedly.desc",				"widgets.feedly.articles",
-		"widgets.keep",					"widgets.keep.desc",
 		"widgets.now",					"widgets.now.desc",
 		"widgets.twitter",				"widgets.twitter.desc",
 		"widgets.calc",					"widgets.calc.desc",
