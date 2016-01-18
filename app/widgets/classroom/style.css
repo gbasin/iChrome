@@ -1,0 +1,19 @@
+/*---------------------------------------------
+	/ Main Styles
+*/
+:root {
+	padding: 0!important;
+}
+
+.content {
+	height: 100%;
+}
+
+.content.has-padding {
+	padding: 20px;
+}
+
+iframe {
+	width: 100%;
+	height: 100%;
+}

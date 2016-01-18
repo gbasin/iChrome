@@ -14,7 +14,7 @@ var widgets = [
 	"sports",			"analytics",		"dictionary",
 	"recentlyclosed",	"topsites",			"todo",
 	"currency",			"traffic",			"unread",
-	"voice",			"iframe"
+	"voice",			"iframe",			"classroom"
 ].map(function(e) {
 	return "json!w/" + e + "/manifest.json";
 });
@@ -28,7 +28,7 @@ var legacyWidgets = [
 	"youtube",			"chrome_bookmarks",	"tasks",
 	"quotes",			"html",				"notifications",
 	"sitelink",			"stats",			"search",
-	"classroom",		"pushbullet",		"linkedin",
+	"pushbullet",		"linkedin",
 	"directions",		"pocket"
 ].map(function(e) {
 	return "w/" + e;

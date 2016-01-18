@@ -440,17 +440,6 @@
 		"default_placeholder": "Search Google"
 	},
 
-	"classroom": {
-		"name": "Classroom",
-		"desc": "Keep up to date with your Google Classroom assignments and classes",
-
-		"settings": {
-			"mode": "Widget Mode",
-			"mode_teacher": "Teacher",
-			"mode_student": "Student"
-		}
-	},
-
 	"pushbullet": {
 		"name": "Pushbullet",
 		"desc": "Keep track of notifications from your phone and other devices",

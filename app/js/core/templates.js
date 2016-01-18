@@ -41,7 +41,6 @@ var templates = [
 		"widgets.sitelink",				"widgets.sitelink.desc",
 		"widgets.stats",				"widgets.stats.desc",
 		"widgets.search",				"widgets.search.desc",
-		"widgets.classroom",			"widgets.classroom.desc",
 		"widgets.pushbullet",			"widgets.pushbullet.desc",
 		"widgets.linkedin",				"widgets.linkedin.desc",
 		"widgets.directions",			"widgets.directions.desc",

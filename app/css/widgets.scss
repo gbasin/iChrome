@@ -2174,7 +2174,6 @@ body.no-edit .bookmarks .tools {
 .widget.gmail,
 .widget.linkedin,
 .widget.facebook,
-.widget.classroom,
 .widget.notifications {
 	padding: 0!important;
 }
@@ -2185,7 +2184,6 @@ body.no-edit .bookmarks .tools {
 .gmail iframe,
 .linkedin iframe,
 .facebook iframe,
-.classroom iframe,
 .notifications iframe {
 	width: 100%;
 	height: 100%;
@@ -3173,19 +3171,6 @@ body.no-edit .bookmarks .tools {
 
 .widget.search.tiny form {
 	height: 65px;
-}
-
-
-
-
-
-
-
-/*---------------------------------------------
-	/ Classroom
-*/
-.widget.classroom {
-	height: 450px;
 }
 
 
