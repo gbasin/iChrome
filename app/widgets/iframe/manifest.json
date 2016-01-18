@@ -1,0 +1,58 @@
+{
+	"id": 7,
+	"tabbed": true,
+	"name": "iframe",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["variable"],
+
+	"views": {
+		"default": "view",
+		"maximized": "maximized"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"settings": [{
+		"type": "text",
+		"name": "url",
+		"label": "i18n.settings.url",
+		"placeholder": "i18n.settings.url_placeholder"
+	},
+	{
+		"type": "number",
+		"label": "i18n.settings.height",
+		"name": "height",
+		"min": 100,
+		"max": 800
+	},
+	{
+		"type": "radio",
+		"name": "padding",
+		"label": "i18n.settings.padding",
+		"options": {
+			"true": "i18n.settings.on",
+			"false": "i18n.settings.off"
+		}
+	}],
+
+	"strings": {
+		"en": {
+			"name": "iFrame",
+			"desc": "Displays a webpage of your choice within an iframe.",
+
+			"settings": {
+				"url": "Frame URL",
+				"url_placeholder": "i.e. http://www.google.com/",
+
+				"height": "Frame Height",
+
+				"padding": "Padding"
+			}
+		}
+	}
+}

@@ -1,4 +1,4 @@
-define(["lodash", "backbone", "core/auth", "core/analytics", "storage/storage"], function(_, Backbone, Auth, Track, Storage) {
+define(["lodash", "backbone", "core/auth", "core/analytics", "storage/storage", "widgets/framefix"], function(_, Backbone, Auth, Track, Storage, frameFix) {
 	var isDark = false;
 
 	Storage.on("done updated", function(storage) {
@@ -103,6 +103,10 @@ define(["lodash", "backbone", "core/auth", "core/analytics", "storage/storage"],
 		 * @param  {Object}  [partials] Any partials that the template should be rendered with
 		 */
 		render: function(data, partials) {
+			if (this.isFrame && !frameFix(this.render, this, arguments)) {
+				return;
+			}
+
 			// We only do a shallow clone, if widgets need a deep clone they
 			// still have to do it themselves
 			data = _.extend({

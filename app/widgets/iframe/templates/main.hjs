@@ -1,0 +1,1 @@
+<iframe src="{{url}}" sandbox="allow-same-origin allow-popups allow-forms allow-scripts" seamless></iframe>

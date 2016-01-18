@@ -19,6 +19,8 @@ define(["lodash", "backbone", "core/auth", "browser/api", "i18n/i18n", "widgets/
 
 			this.settings = manifest.settings;
 
+			this.isTabbed = manifest.tabbed === true;
+
 			this.isListed = manifest.listed !== false;
 
 			this.requiresAuth = manifest.requiresAuth !== false;

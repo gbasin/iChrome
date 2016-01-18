@@ -21,7 +21,7 @@ define([
 
 	var WidgetInstance = Backbone.View.extend({
 		className: function() {
-			return "widget " + this.widget.name + " " + this.model.get("size") + (this.widget.isAvailable === false ? " hide" : "");
+			return "widget " + this.widget.name + " " + this.model.get("size") + (this.widget.isTabbed === true ? " tabbed" : "") + (this.widget.isAvailable === false ? " hide" : "");
 		},
 
 		events: {

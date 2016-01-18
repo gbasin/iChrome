@@ -6,6 +6,10 @@ define(function() {
 	 * @return  {String}       The converted URL
 	 */
 	return function(str) {
+		if (typeof str !== "string") {
+			return str;
+		}
+
 		if (str.indexOf("://") === 0) {
 			return "https" + str;
 		}

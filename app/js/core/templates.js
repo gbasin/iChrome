@@ -18,7 +18,6 @@ var templates = [
 		"settings/debug",		"settings/pro-checkout",
 
 		"widgets.clock",				"widgets.clock.desc",
-		"widgets.iframe",				"widgets.iframe.desc",
 		"widgets.calendar",				"widgets.calendar.desc",
 		"widgets.apps",					"widgets.apps.desc",
 		"widgets.notes",				"widgets.notes.desc",

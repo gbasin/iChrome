@@ -2509,6 +2509,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	/ Widgets Layout / Tabbed Widgets
 */
 .widgets-container .widget.tabbed {
+	z-index: 2;
 	overflow: visible;
 }
 
@@ -2518,8 +2519,8 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	z-index: 9;
 	opacity: 0;
 	content: "";
-	width: 20px;
-	height: 60px;
+	width: 22px;
+	height: 50px;
 	position: absolute;
 	background: inherit;
 	border-top-right-radius: 3px;
@@ -2528,8 +2529,21 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	box-shadow: 1px 2px 1px rgba(102, 102, 102, .1);
 }
 
+.widgets-container .widget.tabbed.maximized:before {
+	left: calc(100% - 22px);
+	border-radius: 0 0 0 3px;
+}
+
 .widgets-container .widget.tabbed:hover:before {
 	opacity: 1;
+}
+
+.widgets-container .widget.tabbed .maximize,
+.widgets-container .widget.tabbed .maximize {
+	top: 50px;
+	right: -22px;
+	background: inherit;
+	box-shadow: 1px 2px 1px rgba(102, 102, 102, .1);
 }
 
 .widgets-container .widget.tabbed .handle {
@@ -2545,6 +2559,16 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	box-shadow: none;
 	background: transparent;
 }
+
+.widgets-container .widget.tabbed.maximized .settings {
+	right: 2px;
+}
+
+.widgets-container .widget.tabbed .minimize {
+	top: 25px;
+	right: -1px;
+}
+
 
 
 

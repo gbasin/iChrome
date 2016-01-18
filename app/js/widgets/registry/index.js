@@ -9,23 +9,23 @@
  * them automatically. Instead, they're manually included in the built file.
  */
 var widgets = [
-	"drive", "rss", "news", "weather", "stocks", "translate", "sports",
-	"analytics", "dictionary", "recentlyclosed", "topsites", "todo",
-	"currency", "traffic", "unread", "voice"
+	"drive",			"rss",				"news",
+	"weather",			"stocks",			"translate",
+	"sports",			"analytics",		"dictionary",
+	"recentlyclosed",	"topsites",			"todo",
+	"currency",			"traffic",			"unread",
+	"voice",			"iframe"
 ].map(function(e) {
 	return "json!w/" + e + "/manifest.json";
 });
 
 var legacyWidgets = [
-	"apps",				"bookmarks",
-	"calc",				"calendar",			"clock",
-	"facebook",			"feedly",
-	"gmail",			"iframe",			"keep",
-	"notes",			"now",
-	"plus",				"reddit",
-	"twitter",
-	"wolfram",			"youtube",
-	"chrome_bookmarks",	"tasks",
+	"apps",				"bookmarks",		"calc",
+	"calendar",			"clock",			"facebook",
+	"feedly",			"gmail",			"keep",
+	"notes",			"now",				"plus",
+	"reddit",			"twitter",			"wolfram",
+	"youtube",			"chrome_bookmarks",	"tasks",
 	"quotes",			"html",				"notifications",
 	"sitelink",			"stats",			"search",
 	"classroom",		"pushbullet",		"linkedin",

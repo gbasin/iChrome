@@ -196,20 +196,6 @@
 		"desc": "Displays your Gmail inbox where you can manage your email."
 	},
 
-	"iframe": {
-		"name": "iFrame",
-		"desc": "Displays a webpage of your choice within an iframe.",
-
-		"settings": {
-			"url": "Frame URL",
-			"url_placeholder": "i.e. http://www.google.com/",
-
-			"height": "Frame Height",
-
-			"padding": "Padding"
-		}
-	},
-
 	"keep": {
 		"name": "Keep",
 		"desc": "Embeds Google Keep in a widget"
