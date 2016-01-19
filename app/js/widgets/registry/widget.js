@@ -25,11 +25,11 @@ define(["lodash", "backbone", "core/auth", "browser/api", "i18n/i18n", "widgets/
 
 			this.requiresAuth = manifest.requiresAuth !== false;
 
-			this.icon = "widgets/" + this.name + "/" + manifest.icon;
-
 			this.browserPermissions = manifest.browser_permissions || [];
 
 			this.isAvailable = !(manifest.environments && manifest.environments.indexOf(Browser.environment) === -1);
+
+			this.icon = manifest.isCompiled ? "icons/" + manifest.icon : "widgets/" + this.name + "/" + manifest.icon;
 
 			this.isMaximizable = Auth.isPro && (manifest.maximizable || (manifest.templates && manifest.templates.maximized) || (manifest.views && manifest.views.maximized));
 

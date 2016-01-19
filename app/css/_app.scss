@@ -2897,7 +2897,8 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Widgets / Splashes
 */
-.widget.splash {
+.widget.splash,
+.widget.legacy.splash {
 	padding: 0;
 }
 
@@ -3058,7 +3059,8 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Widget / Authorization
 */
-.widget.auth-required {
+.widget.auth-required,
+.widget.legacy.auth-required {
 	padding: 0;
 }
 
