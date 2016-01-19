@@ -11,7 +11,7 @@ define(["jquery", "backbone", "i18n/i18n", "core/analytics", "core/render"], fun
 				this.transitionOut(function() {
 					this.remove();
 
-					this.$targetEl.parent().addClass("hovered");
+					this.$targetEl.parent().removeClass("hovered");
 
 					this.trigger("complete");
 				});
