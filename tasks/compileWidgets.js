@@ -101,6 +101,14 @@ module.exports = function(grunt) {
 			}
 
 
+			// Copy icon to main directory
+			var iconName = manifest.name + manifest.icon.replace("icon", "");
+
+			grunt.file.copy(basePath + manifest.icon, "build/icons/" + iconName);
+
+			manifest.icon = iconName;
+
+
 			// Copy translated strings from consolidated locale files. The locale files
 			// are populated for translation in the widgetLocales tasks
 			if (manifest.strings) {
@@ -125,7 +133,7 @@ module.exports = function(grunt) {
 
 
 			// Mark as compiled so the loader knows to register this widget's
-			// CSS with the manager
+			// CSS with the manager and load the icon from the main directory
 			manifest.isCompiled = true;
 
 			grunt.file.write(basePath + "manifest.json", JSON.stringify(manifest, true, "\t"));
