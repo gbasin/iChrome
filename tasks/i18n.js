@@ -24,6 +24,10 @@ module.exports = function(grunt) {
 
 			locales = _.zipObject(_.pluck(locales, "lang_code"), locales);
 
+			var widgets = _.map(grunt.file.expand("build/widgets/*/manifest.json"), function(filepath) {
+				return grunt.file.readJSON(filepath).name;
+			});
+
 			_.mapValues(locales, function(e) {
 				var lang = e.lang_code.replace("-widgets", "");
 
@@ -31,7 +35,7 @@ module.exports = function(grunt) {
 					delete locales[e.lang_code];
 					delete e.lang_code;
 
-					_.assign(locales[lang].widgets, e);
+					_.assign(locales[lang].widgets, _.omit(e, widgets));
 				}
 			});
 
