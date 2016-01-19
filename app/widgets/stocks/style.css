@@ -93,9 +93,12 @@ h2.header {
 	font-size: 50px;
 	font-weight: 300;
 	line-height: 50px;
-	margin-top: -15px;
 	text-align: center;
 	padding: 15px 0 10px;
+}
+
+.tiny .header ~ .val {
+	margin-top: -15px;
 }
 
 .tiny .val .change {
