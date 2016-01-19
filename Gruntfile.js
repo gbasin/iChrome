@@ -1,7 +1,13 @@
+/**
+ * @param {IGrunt} grunt
+ */
 /* globals module,process */
-module.exports = function(grunt) {
-	var _ = require("lodash"),
-		path = require("path");
+module.exports = function (grunt) {
+	var path = require("path");
+
+	if (!grunt.file.exists("keys.json")) {
+		grunt.fail.fatal("Must create keys.json file before running grunt.");
+	}
 
 	grunt.initConfig({
 		keys: grunt.file.readJSON("keys.json"),
@@ -10,6 +16,7 @@ module.exports = function(grunt) {
 		jshint: {
 			options: {
 				globals: {
+					module: true, // module.exports is used by the imported Grunt tasks
 					define: true,
 					require: true,
 					performance: true,
@@ -22,9 +29,11 @@ module.exports = function(grunt) {
 
 				noarg: true,
 				undef: true,
+				curly: true,
+				eqeqeq: true,
+				unused: true,
 				bitwise: true,
 				latedef: true,
-				unused: "vars",
 				loopfunc: true,
 				futurehostile: true,
 				reporter: require("jshint-stylish")
@@ -32,26 +41,100 @@ module.exports = function(grunt) {
 			all: ["**/*.js", "!node_modules/**/*.js", "!app/js/lib/*.js"]
 		},
 
+		// compile SASS files
+		sass: {
+			dev: {
+				options: {
+					indentWidth: 1,
+					indentType: "tab",
+					sourceComments: true,
+					outputStyle: "expanded",
+					sourceMap: "app/css/style.css.map"
+				},
+				src: ["app/**/*.scss"],
+				expand: true,
+				ext: ".css"
+			},
+			build: {
+				options: {
+					sourcemap: "none",
+					outputStyle: "compressed"
+				},
+				src: ["build/**/*.scss"],
+				expand: true,
+				ext: ".css"
+			}
+		},
+
+		// compile files for changes
+		watch: {
+			sass: {
+				options: {
+					atBegin: true,
+					spawn: false,
+					interrupt: true
+				},
+				files: [
+					"app/**/*.scss",
+					"app/**/*.sass"
+				],
+				tasks: [
+					"sass:dev"
+				]
+			}
+		},
+
 		// Copy the extension to a new directory for building
 		copy: {
 			build: {
 				cwd: "app",
-				src: [ "**" ],
+				src: [
+					"**",
+					"!**/*.css.map"
+				],
 				dest: "build",
 				expand: true
 			},
-			jsonly: {
+			testrun: {
 				files: [{
 					src: "app/js/app.js",
 					dest: "app/js/app.unbuilt.js"
 				}, {
+					src: "app/css/style.css",
+					dest: "app/css/style.unbuilt.css"
+				}, {
 					src: "build/js/app.js",
 					dest: "app/js/app.js"
+				}, {
+					src: "build/css/style.css",
+					dest: "app/css/style.css"
+				}, {
+					expand: true,
+					cwd: "build/assets",
+					src: "**/*",
+					dest: "app/assets"
 				}]
 			},
-			resetjs: {
-				src: "app/js/app.unbuilt.js",
-				dest: "app/js/app.js"
+			resetTestrun: {
+				files: [{
+					src: "app/js/app.unbuilt.js",
+					dest: "app/js/app.js"
+				}, {
+					src: "app/css/style.unbuilt.css",
+					dest: "app/css/style.css"
+				}]
+			}
+		},
+
+		cssmin: {
+			options: {
+				roundingPrecision: -1,
+				shorthandCompacting: false
+			},
+			all: {
+				files: {
+					"build/css/style.css": ["build/css/style.css"]
+				}
 			}
 		},
 
@@ -73,38 +156,12 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// Concat raw versions of templates into a temp file and replace the locale loader with a static precompiled version
-		concat: {
-			templates: {
-				files: {
-					"tmp/templates.js": ["build/templates/**/*.hjs"],
-				},
-				options: {
-					process: function(src, pathname) {
-						var name = path.relative(path.resolve("build/templates"), pathname).replace(/\\/g, "/");
-
-						if (/^widgets\/([a-z\-_]*)\/template\.hjs$/.test(name)) {
-							name = name.replace(/^widgets\/([a-z\-_]*)\/template\.hjs$/, "widgets.$1");
-						}
-						else if (/^widgets\/([a-z\-_]*)\/(.*)\.hjs$/.test(name)) {
-							name = name.replace(/^widgets\/([a-z\-_]*)\/(.*)\.hjs$/, "widgets.$1.$2");
-						}
-						else {
-							name = name.replace(".hjs", "");
-						}
-
-						return JSON.stringify(name) + ": " + JSON.stringify(src) + ",";
-					}
-				}
-			}
-		},
-
 		// Precompile templates
 		hogan: {
 			compilebinder: {
 				src: "binder.hjs",
 				dest: path.resolve("tmp/binder.js"),
-				options: { binderName: "bootstrap" }
+				options: {binderName: "bootstrap"}
 			},
 
 			compile: {
@@ -113,22 +170,14 @@ module.exports = function(grunt) {
 				options: {
 					binderPath: path.resolve("tmp/binder.js"),
 
-					// This isn't the intended usage, but exposeTemplates is passed
-					// straight to the binder template.  Because of that this works
-					// as a lambda.
-					exposeTemplates: function() {
-						// The slice removes the last comma from the file
-						return grunt.file.read("tmp/templates.js").slice(0, -1);
-					},
-
-					nameFunc: function(e) {
+					nameFunc: function (e) {
 						e = path.relative(path.resolve("build/templates"), e).replace(/\\/g, "/");
 
-						if (/^widgets\/([a-z\-]*)\/template\.hjs$/.test(e)) {
-							return e.replace(/^widgets\/([a-z\-]*)\/template\.hjs$/, "widgets.$1");
+						if (/^widgets\/([a-z\-_]*)\/template\.hjs$/.test(e)) {
+							return e.replace(/^widgets\/([a-z\-_]*)\/template\.hjs$/, "widgets.$1");
 						}
-						else if (/^widgets\/([a-z\-]*)\/(.*)\.hjs$/.test(e)) {
-							return e.replace(/^widgets\/([a-z\-]*)\/(.*)\.hjs$/, "widgets.$1.$2");
+						else if (/^widgets\/([a-z\-_]*)\/(.*)\.hjs$/.test(e)) {
+							return e.replace(/^widgets\/([a-z\-_]*)\/(.*)\.hjs$/, "widgets.$1.$2");
 						}
 						else {
 							return e.replace(".hjs", "");
@@ -151,40 +200,26 @@ module.exports = function(grunt) {
 				}
 			},
 			apikeys: {
-				files: {
-					"build/widgets/": "build/widgets/*.js"
-				},
+				src: "build/js/app.js",
+				dest: "build/js/app.js",
 				options: {
-					replacements: [
-						{
-							pattern: /__API_KEY_([A-z0-9\-\.]+)__/ig,
-							replacement: function(match, p1) {
-								return grunt.config.get("keys." + p1);
-							}
+					replacements: [{
+						pattern: /__API_KEY_([A-z0-9\-\.]+)__/ig,
+						replacement: function (match, p1) {
+							return grunt.config.get("keys." + p1);
 						}
-					]
-				}
-			}
-		},
-
-		// Compile JS
-		requirejs: {
-			build: {
-				options: {
-					name: "app",
-					optimize: "none",
-					baseUrl: "build/js/",
-					out: "build/js/app.js",
-					mainConfigFile: "build/js/app.js"
+					}]
 				}
 			},
-			webstore: {
+			htmlmin: {
+				src: "build/**/*.hjs",
+				dest: "./",
+				expand: true,
 				options: {
-					name: "app",
-					optimize: "uglify2",
-					baseUrl: "build/js/",
-					out: "build/js/app.js",
-					mainConfigFile: "build/js/app.js"
+					replacements: [{
+						pattern: /\s*?\n\s*/g,
+						replacement: " "
+					}]
 				}
 			}
 		},
@@ -194,7 +229,11 @@ module.exports = function(grunt) {
 			webstore: {
 				dest: "/",
 				cwd: "build",
-				src: ["**/*"],
+				src: [
+					"**/*",
+					"!**/*.scss",
+					"!**/*.sass"
+				],
 				expand: true,
 				options: {
 					mode: "zip",
@@ -205,167 +244,56 @@ module.exports = function(grunt) {
 
 		// Clean up excess JS files
 		clean: {
-			all: ["tmp", "build/**/Thumbs.db", "build/templates", "build/widgets", "build/js/*", "!build/js/lib", "build/js/lib/*", "!build/js/lib/require.js", "!build/js/app.js", "!build/js/background.js"],
+			all: ["tmp", "build/**/Thumbs.db", "build/templates", "build/widgets", "build/js/*", "!build/js/lib", "build/js/lib/*", "!build/js/lib/require.js", "!build/js/app.js", "!build/js/background.js", "build/**/*.scss"],
 			webstore: ["build"],
 			travis: ["build", "webstore.zip", "descriptions"],
-			jsonly: ["app/js/app.unbuilt.js"]
+			testrun: ["app/js/app.unbuilt.js", "app/css/style.unbuilt.css", "app/assets"]
 		}
 	});
 
 	grunt.loadNpmTasks("grunt-hogan");
+	grunt.loadNpmTasks("grunt-sass");
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-clean");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
+	grunt.loadNpmTasks("grunt-contrib-cssmin");
 	grunt.loadNpmTasks("grunt-string-replace");
-	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-contrib-compress");
-	grunt.loadNpmTasks("grunt-contrib-requirejs");
+	grunt.loadNpmTasks("grunt-contrib-watch");
 
-
-	/**
-	 * Concatenates the locale json files into one requirejs object module.
-	 *
-	 * This task also copies over the webstore required locale keys to the Chrome locale files
-	 *
-	 * @api    public
-	 */
-	grunt.registerMultiTask("i18n", "Compile iChrome i18n files", function() {
-		this.files.forEach(function(file) {
-			var locales = file.src.filter(function(filepath) {
-				if (!grunt.file.exists(filepath)) {
-					grunt.log.warn('Source file "' + filepath + '" not found.');
-
-					return false;
-				}
-				else {
-					return true;
-				}
-			}).map(function(filepath) {
-				return grunt.file.readJSON(filepath);
-			});
-
-
-			locales = _.zipObject(_.pluck(locales, "lang_code"), locales);
-
-			_.mapValues(locales, function(e, i) {
-				var lang = e.lang_code.replace("-widgets", "");
-
-				if (e.lang_code.indexOf("-widgets") !== -1 && locales[lang]) {
-					delete locales[e.lang_code];
-					delete e.lang_code;
-
-					_.assign(locales[lang].widgets, e);
-				}
-			});
-
-
-			var outDir = this.options().outDir;
-
-			_.each(locales, function(e, i) {
-				var data = {
-					lang_code: {
-						message: i
-					},
-					extDescription: {
-						message: e.newtabDescription
-					},
-					extName: {
-						message: e.newtabName
-					},
-					themes_upload_image: {
-						message: e.themes.upload_image
-					}
-				};
-
-				grunt.file.write(outDir + "/_locales/" + i.replace("-", "_") + "/messages.json", JSON.stringify(data));
-			});
-
-			grunt.file.write(file.dest, "define(" + JSON.stringify(locales) + ");");
-
-			grunt.log.writeln('File "' + file.dest + '" created.');
-		}.bind(this));
-	});
-
-
-	/**
-	 * Compiles the webstore description in each language from the locale files
-	 *
-	 * @api    public
-	 */
-	grunt.registerMultiTask("descriptions", "Compile iChrome description files", function() {
-		this.files.forEach(function(file) {
-			var locales = file.src.filter(function(filepath) {
-				if (!grunt.file.exists(filepath)) {
-					grunt.log.warn('Source file "' + filepath + '" not found.');
-
-					return false;
-				}
-				else {
-					return true;
-				}
-			}).map(function(filepath) {
-				return grunt.file.readJSON(filepath);
-			});
-
-			_.each(locales, function(locale, i) {
-				var name = locale.lang_code,
-					desc = "";
-
-				_.each(locale, function(e, i) {
-					// Line 1 and the link are duplicated for new tab as newtab_line_1 and newtab_link
-					if (["lang_code", "line_1", "link"].indexOf(i) == -1 && typeof e == "string") {
-						desc += e + "\n\n";
-					}
-					else if (Array.isArray(e)) {
-						desc += "✔ " + e.join("\n✔ ") + "\n\n";
-					}
-				});
-
-				grunt.file.write(file.dest + "/" + name + ".txt", desc.trim());
-			});
-
-			grunt.log.writeln('Descriptions created under "' + file.dest + '".');
-		}.bind(this));
-	});
-
-
-	/**
-	 * Removes the Chrome extension key so it can be uploaded to the webstore
-	 *
-	 * @api    public
-	 */
-	grunt.registerTask("removekey", function() {
-		var manifest = grunt.file.readJSON("build/manifest.json");
-
-		delete manifest.key;
-
-		grunt.file.write("build/manifest.json", JSON.stringify(manifest, true, "\t"));
-	});
-
+	grunt.loadTasks("tasks");
 
 	grunt.registerTask("default", [
 		"jshint:all",
 		"copy:build",
+		"sass:build",
+		"string-replace:htmlmin",
+		"compileWidgets",
+		"cssmin",
 		"i18n:compile",
-		"concat",
 		"hogan:compilebinder",
 		"hogan:compile",
-		"string-replace",
 		"requirejs:build",
+		"string-replace:analytics",
+		"string-replace:apikeys",
 		"clean:all"
 	]);
 
 	grunt.registerTask("webstore", [
 		"jshint:all",
 		"copy:build",
+		"sass:build",
+		"string-replace:htmlmin",
+		"compileWidgets",
+		"cssmin",
 		"descriptions",
 		"i18n:compile",
-		"concat",
 		"hogan:compilebinder",
 		"hogan:compile",
-		"string-replace",
 		"removekey",
 		"requirejs:webstore",
+		"string-replace:analytics",
+		"string-replace:apikeys",
 		"clean:all",
 		"compress",
 		"clean:webstore"
@@ -374,21 +302,24 @@ module.exports = function(grunt) {
 	grunt.registerTask("travis", [
 		"jshint:all",
 		"copy:build",
+		"sass:build",
+		"string-replace:htmlmin",
+		"compileWidgets",
+		"cssmin",
 		"descriptions",
 		"i18n:compile",
-		"concat",
 		"hogan:compilebinder",
 		"hogan:compile",
-		"string-replace:analytics",
 		"removekey",
 		"requirejs:build",
+		"string-replace:analytics",
 		"clean:all",
 		"compress",
 		"clean:travis"
 	]);
 
 
-	grunt.registerTask("waitReset", function() {
+	grunt.registerTask("waitReset", function () {
 		var done = this.async();
 
 		var rl = require("readline").createInterface({
@@ -396,27 +327,31 @@ module.exports = function(grunt) {
 			output: process.stdout
 		});
 
-		rl.question("Press Enter to reset app.js: ", function(answer) {
+		rl.question("Press Enter to reset the app: ", function() {
 			rl.close();
 
 			done();
 		});
 	});
 
-	grunt.registerTask("jsonly", [
+	grunt.registerTask("testrun", [
 		"jshint:all",
 		"copy:build",
+		"sass:build",
+		"string-replace:htmlmin",
+		"compileWidgets",
+		"cssmin",
 		"i18n:compile",
-		"concat",
 		"hogan:compilebinder",
 		"hogan:compile",
-		"string-replace",
 		"requirejs:webstore",
-		"copy:jsonly",
+		"string-replace:analytics",
+		"string-replace:apikeys",
+		"copy:testrun",
 		"clean:all",
 		"clean:webstore",
 		"waitReset",
-		"copy:resetjs",
-		"clean:jsonly"
+		"copy:resetTestrun",
+		"clean:testrun"
 	]);
 };

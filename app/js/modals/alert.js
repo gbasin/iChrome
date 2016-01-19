@@ -11,7 +11,7 @@ define(["jquery", "lodash", "backbone", "i18n/i18n", "core/render"], function($,
 
 		events: {
 			"click button": function(e) {
-				var positive = e.currentTarget.getAttribute("data-action") == "positive";
+				var positive = e.currentTarget.getAttribute("data-action") === "positive";
 
 				// If this is a confirmation, don't call the cb on failure
 				if (this.cb && (!this.confirm || positive)) {
@@ -20,11 +20,11 @@ define(["jquery", "lodash", "backbone", "i18n/i18n", "core/render"], function($,
 
 				this.trigger("select", positive);
 
-				this.close();
+				this.hide();
 			}
 		},
 
-		close: function() {
+		hide: function() {
 			this.el.open = false;
 
 			setTimeout(function() {
@@ -42,9 +42,28 @@ define(["jquery", "lodash", "backbone", "i18n/i18n", "core/render"], function($,
 			return this;
 		},
 
+		show: function() {
+			// This method is necessary for the transitions to animate
+			this.el.showModal();
+
+			this.$el.addClass("no-transition");
+
+			this.el.open = false;
+
+			setTimeout(function() {
+				this.$el.removeClass("no-transition");
+
+				this.el.open = true;
+			}.bind(this), 0);
+
+			// Chrome creates a new focus layer for dialogs, focusing the first
+			// focusable element.  This disables that.
+			this.$("a, button, :input, [tabindex]").first().blur();
+		},
+
 		initialize: function() {
 			if (this.confirm) {
-				if (!this.title) {
+				if (!this.title && this.title !== false) {
 					this.title = Translate("alert.confirm_title");
 				}
 
@@ -83,28 +102,12 @@ define(["jquery", "lodash", "backbone", "i18n/i18n", "core/render"], function($,
 
 			this.$el.addClass(this.classes).html(render("alert", data)).appendTo(document.body);
 
-
-			// This method is necessary for the transitions to animate
-			this.el.showModal();
-
-			this.$el.addClass("no-transition");
-
-			this.el.open = false;
-
-			setTimeout(function() {
-				this.$el.removeClass("no-transition");
-
-				this.el.open = true;
-			}.bind(this), 0);
-
-			// Chrome creates a new focus layer for dialogs, focusing the first
-			// focusable element.  This disables that.
-			this.$("a, button, :input, [tabindex]").first().blur();
+			this.show();
 		}
 	});
 
-	return function(options, cb) {
-		if (typeof options !== "object") {
+	var alertFn = function(options, cb) {
+		if (typeof options !== "object" || Array.isArray(options)) {
 			options = {
 				contents: Array.isArray(options) ? options : [options]
 			};
@@ -116,4 +119,8 @@ define(["jquery", "lodash", "backbone", "i18n/i18n", "core/render"], function($,
 
 		return new (Alert.extend(options))();
 	};
+
+	alertFn.view = Alert;
+
+	return alertFn;
 });

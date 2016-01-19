@@ -2,6 +2,40 @@
  * The Feedly widget.
  */
 define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
+	var abbreviate = function(num, min, precision) {
+		var newValue = num;
+
+		min = min || 1000;
+		precision = precision || 3;
+
+		if (num >= min) {
+			var suffixes = ["", "K", "M", "B","T"],
+				suffixNum = Math.floor((("" + parseInt(num)).length - 1) / 3),
+				shortValue = "";
+
+			for (var length = precision; length >= 1; length--) {
+				shortValue = parseFloat((suffixNum !== 0 ? (num / Math.pow(1000, suffixNum)) : num).toPrecision(length));
+
+				var dotLessShortValue = (shortValue + "").replace(/[^A-z0-9 ]+/g, "");
+
+				if (dotLessShortValue.length <= precision) {
+					break;
+				}
+			}
+
+			if (shortValue % 1 !== 0) {
+				shortValue = shortValue.toFixed(1);
+			}
+
+			newValue = shortValue + suffixes[suffixNum];
+		}
+		else {
+			newValue = newValue.toLocaleString();
+		}
+
+		return newValue;
+	};
+
 	return {
 		id: 19,
 		size: 6,
@@ -401,7 +435,9 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 			});
 		},
 		getSources: function(cb) {
-			if (!this.oAuth) this.setOAuth();
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
 
 			var oAuth = this.oAuth;
 
@@ -420,8 +456,8 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 							label: this.utils.translate("settings.source_feeds")
 						};
 
-						d.forEach(function(e, i) {
-							e.categories.forEach(function(c, i) {
+						d.forEach(function(e) {
+							e.categories.forEach(function(c) {
 								categories[c.id] = c.label;
 							});
 
@@ -436,7 +472,9 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 			}.bind(this));
 		},
 		getArticles: function(d) {
-			if (!this.oAuth) this.setOAuth();
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
 
 			var names = this.names,
 				articles = [],
@@ -479,7 +517,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 						':not([data-src*="feed-injector"])' +			':not([data-src*="/plugins/"])' +
 						':not([data-src*="_icon_"])' +					':not([data-src*="/ad-"])' +
 						':not([data-src*="buysellads"])' +				':not([data-src*="holstee"])' +
-						':not([data-src*="/ad_"])' +					':not([data-src*="/button/"])' +	
+						':not([data-src*="/ad_"])' +					':not([data-src*="/button/"])' +
 						':not([data-src*="/sponsors/"])' +				':not([data-src*="googlesyndication.com"])' +
 						':not([data-src*="/adx"])' +					':not([data-src*="assets/feed-fb"])' +
 						':not([data-src*="feedburner.com/~ff"])' +		':not([data-src*="gstatic.com"])' +
@@ -492,7 +530,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 						':not([data-src*="share-buttons"])' +			':not([data-src*="musictapp"])' +
 						':not([data-src*="donate.png"])' +				':not([data-src*="/pagead"])' +
 						':not([data-src*="assets/feed-tw"])' +			':not([data-src*="feedsportal.com/social"])'
-					)).forEach(function(e, i) {
+					)).forEach(function(e) {
 						srcs.push(e.getAttribute("data-src"));
 					});
 
@@ -517,7 +555,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 							if (["image/jpeg", "image/png"].indexOf(article.enclosure[i].type) >= 0) {
 								image = article.enclosure[i].href;
 								break;
-							} 
+							}
 						}
 					}
 
@@ -525,18 +563,18 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				},
 				div = document.createElement("div");
 
-			if (!(typeof d.items == "object" && typeof d.items.forEach !== "undefined")) {
+			if (!(typeof d.items === "object" && typeof d.items.forEach !== "undefined")) {
 				return articles;
 			}
 
-			d.items.forEach(function(e, i) {
+			d.items.forEach(function(e) {
 				var article = {
 					id: e.id,
 					title: e.title,
 					author: e.author,
 					unread: !!e.unread,
 					date: e.published || 0,
-					recommendations: parseInt(e.engagement || 0).abbr(1000, 2)
+					recommendations: abbreviate(parseInt(e.engagement || 0), 1000, 2)
 				};
 
 				if (e.content) {
@@ -544,19 +582,19 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 					div.innerHTML = article.content;
 
-					article.excerpt = div.innerText.trim().slice(0, 300).replace(/\n/g, "  ");
+					article.excerpt = div.textContent.trim().slice(0, 300).replace(/\n/g, "  ");
 				}
 				else if (e.summary) {
 					article.content = e.summary.content || "";
 
 					div.innerHTML = article.content;
 
-					article.excerpt = div.innerText.trim().slice(0, 300).replace(/\n/g, "  ");
+					article.excerpt = div.textContent.trim().slice(0, 300).replace(/\n/g, "  ");
 				}
 
 				if (e.tags && e.tags[0]) {
-					e.tags.forEach(function(t, i) {
-						if (t.id == "user/" + oAuth.data.id + "/tag/global.saved") {
+					e.tags.forEach(function(t) {
+						if (t.id === "user/" + oAuth.data.id + "/tag/global.saved") {
 							article.saved = true;
 						}
 					});
@@ -569,7 +607,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				if (e.origin) {
 					article.source = names[e.origin.streamId || ""] || e.origin.title || e.title;
 				}
-				
+
 				if (e.enclosure) { //sometime this object contains the image
 					article.enclosure = e.enclosure;
 				}
@@ -577,23 +615,27 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				if (e.visual) {
 					article.visual = e.visual;
 				}
-				
+
 				article.image = getImage(article);
 
 				articles.push(article);
-			});			
+			});
 
 			return articles;
 		},
 		refresh: function() {
 			var req;
 
-			if (this.config.source.indexOf("feed/") === 0 && !this.oAuth.hasToken()) req = $.ajax;
-			else req = this.oAuth.ajax.bind(this.oAuth);
+			if (this.config.source.indexOf("feed/") === 0 && !this.oAuth.hasToken()) {
+				req = $.ajax;
+			}
+			else {
+				req = this.oAuth.ajax.bind(this.oAuth);
+			}
 
 			req({
 				type: "GET",
-				url: "http://cloud.feedly.com/v3/streams/contents?count=10&streamId=" + encodeURIComponent(this.config.source) + (this.config.show == "unread" ? "&unreadOnly=true" : "") + "&ranked=" + this.config.sort,
+				url: "http://cloud.feedly.com/v3/streams/contents?count=10&streamId=" + encodeURIComponent(this.config.source) + (this.config.show === "unread" ? "&unreadOnly=true" : "") + "&ranked=" + this.config.sort,
 				success: function(d) {
 					if (!d) {
 						return;
@@ -613,7 +655,9 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 			});
 		},
 		setHandlers: function() {
-			if (!this.oAuth) this.setOAuth();
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
 
 			var loading = false,
 				that = this,
@@ -649,7 +693,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 						}),
 						contentType: "application/json",
 						url: "http://cloud.feedly.com/v3/markers",
-						success: function(d) {
+						success: function() {
 							submitting = false;
 						}
 					});
@@ -657,11 +701,11 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 					last = new Date().getTime();
 				};
 
-			this.elm.find(".items").on("mousedown", ".item", function(e) {
+			this.elm.find(".items").on("mousedown", ".item", function() {
 				// mousedown handles left, middle, and right clicks
 
 				var id = $(this).attr("data-id");
-				
+
 				if (!sent.hasOwnProperty(id)) {
 					sent[id] = true;
 
@@ -686,7 +730,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 					that.oAuth.ajax({
 						type: "DELETE",
 						url: "http://cloud.feedly.com/v3/tags/" + encodeURIComponent("user/" + that.oAuth.data.id + "/tag/global.saved") + "/" + encodeURIComponent(elm.parents(".item").first().attr("data-id")),
-						complete: function(d) {
+						complete: function() {
 							elm.removeClass("saved").text(parseInt(elm.text()) - 1);
 						}
 					});
@@ -698,18 +742,18 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 							entryId: elm.parents(".item").first().attr("data-id")
 						}),
 						url: "http://cloud.feedly.com/v3/tags/" + encodeURIComponent("user/" + that.oAuth.data.id + "/tag/global.saved"),
-						complete: function(d) {
+						complete: function() {
 							elm.addClass("saved").text(parseInt(elm.text()) + 1);
 						}
 					});
 				}
-			}).on("scroll", function(e) {
+			}).on("scroll", function() {
 				if (!loading && next && (this.scrollHeight - this.offsetHeight) < (this.scrollTop + this.offsetHeight)) {
 					loading = true;
 
 					that.oAuth.ajax({
 						type: "GET",
-						url: "http://cloud.feedly.com/v3/streams/contents?count=20&streamId=" + encodeURIComponent(that.config.source) + "&continuation=" + encodeURIComponent(next) + (that.config.show == "unread" ? "&unreadOnly=true" : "") + "&ranked=" + that.config.sort,
+						url: "http://cloud.feedly.com/v3/streams/contents?count=20&streamId=" + encodeURIComponent(that.config.source) + "&continuation=" + encodeURIComponent(next) + (that.config.show === "unread" ? "&unreadOnly=true" : "") + "&ranked=" + that.config.sort,
 						success: function(d) {
 							if (!(d)) {
 								return;
@@ -719,7 +763,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 							var articles = that.getArticles(d);
 
-							if (that.config.view == "cards dual") {
+							if (that.config.view === "cards dual") {
 								var column1 = [],
 									column2 = [],
 									columns = $(this).find(".column");
@@ -744,7 +788,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 								}));
 							}
 							else {
-								articles.forEach(function(e, i) {
+								articles.forEach(function(e) {
 									e.age = moment(e.date).fromNow(true).replace("hour", "hr").replace("minute", "min").replace("an ", "1 ").replace("a ", "1 ").replace("a few ", "");
 								});
 
@@ -760,14 +804,14 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 					});
 				}
 
-				if (that.config.mark == "scroll" && !submitting && new Date().getTime() - last > 5000) {
+				if (that.config.mark === "scroll" && !submitting && new Date().getTime() - last > 5000) {
 					clearTimeout(sendout);
 
 					outset = false;
 
 					submit.call(this);
 				}
-				else if (that.config.mark == "scroll" && !submitting && !outset) {
+				else if (that.config.mark === "scroll" && !submitting && !outset) {
 					setTimeout(function() {
 						outset = false;
 
@@ -781,7 +825,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 		render: function(demo) {
 			var data = $.extend(true, {}, this.data || {articles:[]});
 
-			if (this.config.view == "cards dual") {
+			if (this.config.view === "cards dual") {
 				var articles = [],
 					column2 = [];
 
@@ -805,7 +849,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				});
 			}
 			else {
-				data.articles.forEach(function(e, i) {
+				data.articles.forEach(function(e) {
 					e.age = moment(e.date).fromNow(true).replace("hour", "hr").replace("minute", "min").replace("an ", "1 ").replace("a ", "1 ").replace("a few ", "");
 				});
 
@@ -818,13 +862,15 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				data.title = this.config.title;
 			}
 
-			data.link = this.config.link == "show";
+			data.link = this.config.link === "show";
 
 			data.class = this.config.view;
 
 			this.utils.render(data);
 
-			if (!demo) this.setHandlers();
+			if (!demo) {
+				this.setHandlers();
+			}
 		}
 	};
 });

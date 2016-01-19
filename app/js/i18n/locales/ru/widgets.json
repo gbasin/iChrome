@@ -1,18 +1,5 @@
 {
   "lang_code":"ru-widgets",
-  "analytics":{
-    "name":"Аналитика",
-    "desc":"Отображает различные метрики из профиля Google Analytics.",
-    "sessions":"Сеансы",
-    "pageviews":"Страницы",
-    "pagesvisit":"Страниц\/сеанс",
-    "bouncerate":"Показатель отказов",
-    "completions":"Цели",
-    "noprofile":"Похоже, вы не выбрали профиль GA!\n<br \/><br \/>\nВыберите профиль, щелкнув кнопку настройки виджета в его правом верхнем углу.",
-    "settings":{
-      "profile":"Профиль"
-    }
-  },
   "apps":{
     "name":"Приложения",
     "desc":"Отображает список установленных приложений в Google Chrome.",
@@ -120,22 +107,6 @@
     "dismiss":"Выключить",
     "enable_audio":"Включить звук"
   },
-  "currency":{
-    "name":"Валюта",
-    "desc":"Позволяет конвертировать значения между 169 валютами.",
-    "to_label":"в",
-    "recently_used":"Недавно использованные"
-  },
-  "drive":{
-    "name":"Диск",
-    "desc":"Отображает последние изменения в вашем Google Диске.",
-    "settings":{
-      "files_shown":"Количество отображаемых файлов"
-    },
-    "modified_by":"изменил",
-    "authorize":"Для отображения списка файлов необходимо авторизовать iChrome в Google Диске.",
-    "authorize_btn":"Авторизация"
-  },
   "facebook":{
     "name":"Facebook",
     "desc":"Встраивает Facebook в виджет"
@@ -175,52 +146,6 @@
     "author":"автор",
     "go_to_feedly":"Перейти к Feedly"
   },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"Отображает входящие письма из Gmail с возможностью управления ими."
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"Отображает указанную веб-страницу внутри виджета с помощью iframe.",
-    "settings":{
-      "url":"URL-адрес для отображения",
-      "url_placeholder":"напр. http:\/\/www.google.com\/",
-      "height":"Высота фрейма",
-      "padding":"Отступ"
-    }
-  },
-  "keep":{
-    "name":"Keep",
-    "desc":"Встраивает Google Keep в виджет"
-  },
-  "news":{
-    "name":"Новости",
-    "desc":"Отображает актуальные новости по категории и изданию.",
-    "settings":{
-      "articles":"Количество отображаемых статей",
-      "edition":"Издание",
-      "edition_help":"Если вашего издания или темы нет в списке, введите ее URL-адрес из Google News в поле Своя лента ниже (подробности смотрите в разделе Справка)",
-      "topic":"Тема",
-      "topic_options":{
-        "top":"Лучшее",
-        "world":"Мир",
-        "nation":"Страна",
-        "business":"Бизнес",
-        "sports":"Спорт",
-        "technology":"Технологии",
-        "entertainment":"Развлечения",
-        "health":"Здоровье",
-        "science":"Наука",
-        "spotlight":"В центре внимания"
-      },
-      "feed":"Своя лента",
-      "feed_help":"URL-адрес канала. Найти его можно на нижней части страниц Google News, оранжевая иконка RSS с одноименным названием",
-      "feed_placeholder":"Введите адрес RSS канала",
-      "footer":"Ссылка в нижней части виджета",
-      "footer_placeholder":"Введите адрес страницы со всеми новостями этого канала"
-    },
-    "more":"Ещё"
-  },
   "notes":{
     "name":"Заметки",
     "desc":"Очень простые заметки.",
@@ -254,14 +179,6 @@
     "name":"Уведомления Google",
     "desc":"Отображает ваши уведомления Google, например Google+ и т.п."
   },
-  "recentlyclosed":{
-    "name":"Недавно закрытые вкладки",
-    "desc":"Отображает список недавно закрытых вкладок",
-    "settings":{
-      "tabs":"Количество отображаемых вкладок",
-      "open":"Открывать во вкладке"
-    }
-  },
   "reddit":{
     "name":"Reddit",
     "desc":"Отображает лучшее с Reddit из любого выбранного субреддита.",
@@ -287,76 +204,6 @@
     },
     "more":"Ещё"
   },
-  "rss":{
-    "name":"RSS",
-    "desc":"Отображает записи из RSS канала.",
-    "settings":{
-      "link":"Ссылка для заголовка",
-      "link_placeholder":"Введите ссылку для заголовка виджета",
-      "url":"Адрес канала",
-      "url_placeholder":"URL-адрес отображаемого канала",
-      "articles":"Количество отображаемых статей",
-      "view":"Отображение",
-      "view_options":{
-        "images":"С большими картинками",
-        "default":"По умолчанию"
-      },
-      "images":"Изображения",
-      "descriptions":"Описание"
-    },
-    "feed_error":"Не удается получить содержимое канала %s. Перепроверьте или исправьте URL-адрес канала в настройках виджета."
-  },
-  "sports":{
-    "name":"Спорт",
-    "desc":"Отображает результаты игр выбранных лиг и команд.",
-    "settings":{
-      "league":"Лига",
-      "games":"Количество отображаемых игр",
-      "team":"Команда",
-      "teams":"Команда",
-      "unavailable":"При недоступности данных игры",
-      "unavailable_options":{
-        "other":"Показывать другие игры",
-        "none":"Не показывать ничего"
-      }
-    },
-    "error":"Что-то пошло не так",
-    "unknown_error":"Неизвестная ошибка",
-    "watch_on":"Смотреть на: %s",
-    "no_games":"Предстоящие игры отсутствуют"
-  },
-  "stocks":{
-    "name":"Котировки",
-    "desc":"Отображает информацию о выбранных знаках.",
-    "settings":{
-      "symbols":"Знак(и), через запятую",
-      "symbols_placeholder":"напр. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"Знаки акций в формате TICKER:EXCHANGE.\n<br \/><br \/>\nДля просмотра доступных тикеров и знаков обмена смотрите <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. Например индекс Dow Jones имеет вид <b>.DJI<\/b>, индекс NYSE -  <b>INDEXNYSEGIS:NYA<\/b>."
-    },
-    "as_of":"На",
-    "exchange_time":"Время обмена",
-    "open":"открытие",
-    "high":"закрытие",
-    "low":"минимум",
-    "volume":"объем"
-  },
-  "todo":{
-    "name":"Список дел",
-    "desc":"Отображает список задач с приоритетами и состоянием готовности.",
-    "title":"Список дел",
-    "settings":{
-      "color":"Цвет шрифта",
-      "color_options":{
-        "light":"Светлый",
-        "dark":"Темный"
-      },
-      "tags":"Метки",
-      "tags_placeholder":"Введите название метки и нажмите Enter"
-    },
-    "add":"Добавить",
-    "none":"Обычное",
-    "important":"Важное"
-  },
   "tasks":{
     "name":"Задачи",
     "desc":"Отображать редактируемый список задач из одного из ваших списков Google Tasks.",
@@ -375,43 +222,6 @@
     "due_today":"Завершающиеся сегодня",
     "overdue":"Просроченные",
     "authorize":"Для отображения чего-либо сначала нужно выбрать список в Google Tasks с помощью Настроек."
-  },
-  "topsites":{
-    "name":"Популярные сайты",
-    "desc":"Отображает список Ваших популярных по посещаемости сайтов.",
-    "settings":{
-      "show":"Количество отображаемых сайтов",
-      "open":"Открывать сайты в"
-    }
-  },
-  "traffic":{
-    "name":"Пробки",
-    "desc":"Отображает время до дома или работы с учетом пробок.",
-    "settings":{
-      "leave":"Выхожу из дома в",
-      "home":"Домашний адрес",
-      "home_placeholder":"Адрес по которому вы едете после работы",
-      "work":"Рабочий адрес",
-      "work_placeholder":"Адрес вашего места работы",
-      "method":"Способ передвижения",
-      "method_options":{
-        "driving":"На автомобиле",
-        "walking":"Пешком",
-        "transit":"На общественном транспорте"
-      }
-    },
-    "to_home":"до дома",
-    "to_work":"до работы"
-  },
-  "translate":{
-    "name":"Перевести",
-    "desc":"Перевод текста с помощью Google Переводчика.",
-    "placeholder":"Введите текст, который вы хотите перевести и нажмите \"Перевести\".",
-    "button":"Перевести",
-    "untranslate":"Вернуть",
-    "auto":"Автоматически (%s)",
-    "unknown":"Неизвестно",
-    "error":"Что-то пошло не так. Не удалось выполнить перевод..."
   },
   "twitter":{
     "name":"Мы в Twitter",
@@ -433,40 +243,8 @@
     "retweet":"Ретвитнуть",
     "favorite":"В избранное"
   },
-  "unread":{
-    "name":"Непрочитанные",
-    "desc":"Отображает количество непрочитанных писем из вашего почтового ящика Gmail.",
-    "settings":{
-      "open":"Открывать при нажатии"
-    },
-    "unread_none":"непрочитанных писем",
-    "unread_one":"непрочитанное письмо",
-    "unread_many":"непрочитанных писем"
-  },
-  "voice":{
-    "name":"Звонки",
-    "desc":"Отображает количество пропущенных звонков из профиля Google Voice.",
-    "call":"Звонок от",
-    "text":"Сообщение от",
-    "missed":"пропущенных звонков",
-    "texts":"непрочитанных сообщений",
-    "calls":"пропущенных звонков"
-  },
-  "weather":{
-    "name":"Погода",
-    "desc":"Отображает текущую погоду и прогноз на 4 дня.",
-    "settings":{
-      "location":"Местоположение(я)",
-      "location_placeholder":"Введите местоположение и нажмите Enter",
-      "temperature":"Единица измерения температуры",
-      "wind":"Единица измерения скорость ветра"
-    },
-    "unknown":"Неизвестно",
-    "wind":"Скорость ветра",
-    "chill":"Температура ветра",
-    "humidity":"Влажность"
-  },
   "wolfram":{
+    "name":"Wolfram|Alpha",
     "desc":"Отображает поисковую строку Wolfram|Alpha."
   },
   "youtube":{
@@ -549,15 +327,6 @@
     },
     "default_placeholder":"Поиск в Google"
   },
-  "classroom":{
-    "name":"Класс от Google",
-    "desc":"Будьте в курсе ваших заданий и занятий на Google Classroom",
-    "settings":{
-      "mode":"Режим виджета",
-      "mode_teacher":"Преподаватель",
-      "mode_student":"Студент"
-    }
-  },
   "pushbullet":{
     "name":"Pushbullet",
     "desc":"Отслеживать сообщения от вашего телефона и других устройств",
@@ -597,5 +366,275 @@
     "no_links":"Ссылки не найдены",
     "grant_access":"Предоставить доступ",
     "no_key":"Вам нужно будет предоставить iChrome доступ к учетной записи Кармана чтобы загружать ваши ссылки."
+  },
+  "analytics":{
+    "name":"Аналитика",
+    "desc":"Отображает различные метрики из профиля Google Analytics.",
+    "sessions":"Сеансы",
+    "pageviews":"Страницы",
+    "pagesvisit":"Страниц\/сеанс",
+    "bouncerate":"Показатель отказов",
+    "completions":"Цели",
+    "noprofile_title":"No profile selected",
+    "noprofile":"Похоже, вы не выбрали профиль GA!\n<br \/><br \/>\nВыберите профиль, щелкнув кнопку настройки виджета в его правом верхнем углу.",
+    "settings":{
+      "profile":"Профиль"
+    }
+  },
+  "classroom":{
+    "name":"Класс от Google",
+    "desc":"Будьте в курсе ваших заданий и занятий на Google Classroom",
+    "settings":{
+      "mode":"Режим виджета",
+      "mode_teacher":"Преподаватель",
+      "mode_student":"Студент"
+    }
+  },
+  "currency":{
+    "name":"Валюта",
+    "desc":"Позволяет конвертировать значения между 169 валютами.",
+    "to_label":"в",
+    "recently_used":"Недавно использованные"
+  },
+  "dictionary":{
+    "name":"Dictionary",
+    "desc":"Quickly look up the definition and synonyms for a word",
+    "search_placeholder":"Enter a word or term here",
+    "more":"Ещё",
+    "less":"Less",
+    "synonyms":"Synonyms",
+    "antonyms":"Antonyms",
+    "web_definitions":"Web definitions",
+    "no_definitions":"No definitions found"
+  },
+  "drive":{
+    "name":"Диск",
+    "desc":"Отображает последние изменения в вашем Google Диске.",
+    "settings":{
+      "files_shown":"Количество отображаемых файлов"
+    },
+    "modified_by":"изменил",
+    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Отображает входящие письма из Gmail с возможностью управления ими."
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Отображает указанную веб-страницу внутри виджета с помощью iframe.",
+    "settings":{
+      "url":"URL-адрес для отображения",
+      "url_placeholder":"напр. http:\/\/www.google.com\/",
+      "height":"Высота фрейма",
+      "padding":"Отступ"
+    }
+  },
+  "keep":{
+    "name":"Keep",
+    "desc":"Встраивает Google Keep в виджет"
+  },
+  "news":{
+    "name":"Новости",
+    "desc":"Отображает актуальные новости по категории и изданию.",
+    "all_stories":"Все",
+    "settings":{
+      "page_title":"Настройки",
+      "save":"Сохранить",
+      "title":"Заголовок виджета",
+      "title_placeholder":"Введите заголовок виджета или оставьте поле пустым чтобы скрыть заголовок",
+      "articles":"Количество отображаемых статей",
+      "edition":"Издание",
+      "default_topic":"Default Topic"
+    }
+  },
+  "recentlyclosed":{
+    "name":"Недавно закрытые вкладки",
+    "desc":"Отображает список недавно закрытых вкладок",
+    "settings":{
+      "tabs":"Количество отображаемых вкладок",
+      "open":"Открывать во вкладке"
+    },
+    "more":"more"
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"Отображает записи из RSS канала.",
+    "settings":{
+      "page_title":"Настройки",
+      "save":"Сохранить",
+      "title":"Заголовок виджета",
+      "title_placeholder":"Введите заголовок виджета или оставьте поле пустым чтобы скрыть заголовок",
+      "link":"Ссылка для заголовка",
+      "link_placeholder":"Введите ссылку для заголовка виджета",
+      "feeds":"Каналы",
+      "feeds_help":"Click any feed to edit it",
+      "feeds_placeholder":"Enter a feed URL and press Enter to add",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
+      "feed_name_placeholder":"Feed name",
+      "feed_url_placeholder":"Feed URL",
+      "articles":"Количество отображаемых статей"
+    },
+    "by":"Автор",
+    "all_articles":"Все статьи",
+    "feed_error":"Не удается получить содержимое канала %s. Перепроверьте или исправьте URL-адрес канала в настройках виджета."
+  },
+  "sports":{
+    "name":"Спорт",
+    "desc":"Displays scores, schedules, and news from your favorite teams.",
+    "settings":{
+      "page_title":"Favorites",
+      "save":"Сохранить",
+      "teams_placeholder":"Enter a team name and press Enter to add"
+    },
+    "scores":"Scores",
+    "news":"Новости",
+    "last_play":"Last play",
+    "no_games":"No games found",
+    "pro_splash1":"Sports news is a Pro-only feature.",
+    "pro_splash2":"Buy Pro in the settings.",
+    "preview":"Предпросмотр",
+    "tickets":"Tickets",
+    "live":"Live",
+    "recap":"Recap",
+    "box_score":"Box Score"
+  },
+  "stocks":{
+    "name":"Котировки",
+    "desc":"Отображает информацию о выбранных знаках.",
+    "settings":{
+      "stocks":"Котировки",
+      "stocks_placeholder":"Type a company or exchange name and hit Enter"
+    },
+    "as_of":"На",
+    "exchange_time":"Время обмена",
+    "overview":"Overview",
+    "news":"Новости",
+    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
+    "pro_splash2":"Buy Pro in the settings.",
+    "time_ranges":{
+      "1d":"1d",
+      "5d":"5d",
+      "1m":"1m",
+      "3m":"3m",
+      "1y":"1y",
+      "5y":"5y",
+      "max":"max"
+    },
+    "open":"открытие",
+    "prev_close":"Previous Close",
+    "high":"закрытие",
+    "52high":"52 week high",
+    "low":"минимум",
+    "52low":"52 week low",
+    "volume":"объем",
+    "avg_volume":"Avg. Volume",
+    "shares":"Shares",
+    "cap":"Market Cap",
+    "pe":"Price \/ Earnings",
+    "eps":"EPS",
+    "beta":"Beta",
+    "inst_own":"Inst. own"
+  },
+  "todo":{
+    "name":"Список дел",
+    "desc":"Отображает список задач с приоритетами и состоянием готовности.",
+    "title":"Список дел",
+    "settings":{
+      "color":"Цвет шрифта",
+      "color_options":{
+        "light":"Светлый",
+        "dark":"Темный"
+      },
+      "tags":"Метки",
+      "tags_placeholder":"Введите название метки и нажмите Enter"
+    },
+    "add":"Добавить",
+    "none":"Обычное",
+    "important":"Важное"
+  },
+  "topsites":{
+    "name":"Популярные сайты",
+    "desc":"Отображает список Ваших популярных по посещаемости сайтов.",
+    "settings":{
+      "show":"Количество отображаемых сайтов"
+    }
+  },
+  "traffic":{
+    "name":"Пробки",
+    "desc":"Отображает время до дома или работы с учетом пробок.",
+    "settings":{
+      "leave":"Выхожу из дома в",
+      "home":"Домашний адрес",
+      "home_placeholder":"Адрес по которому вы едете после работы",
+      "work":"Рабочий адрес",
+      "work_placeholder":"Адрес вашего места работы",
+      "method":"Способ передвижения",
+      "method_options":{
+        "driving":"На автомобиле",
+        "walking":"Пешком",
+        "transit":"На общественном транспорте"
+      }
+    },
+    "to_home":"до дома",
+    "to_work":"до работы"
+  },
+  "translate":{
+    "name":"Перевести",
+    "desc":"Lets you quickly translate to and from 90 languages as you type",
+    "from_placeholder":"Start typing here",
+    "to_placeholder":"Translated text will appear here",
+    "detect_lang":"Detect language",
+    "translating":"Translating...",
+    "unknown":"Неизвестно"
+  },
+  "unread":{
+    "name":"Непрочитанные",
+    "desc":"Отображает количество непрочитанных писем из вашего почтового ящика Gmail.",
+    "settings":{
+      "open":"Открывать при нажатии"
+    },
+    "unread_none":"непрочитанных писем",
+    "unread_one":"непрочитанное письмо",
+    "unread_many":"непрочитанных писем"
+  },
+  "voice":{
+    "name":"Звонки",
+    "desc":"Отображает количество пропущенных звонков из профиля Google Voice.",
+    "call":"Звонок от",
+    "text":"Сообщение от",
+    "missed":"пропущенных звонков",
+    "texts":"непрочитанных сообщений",
+    "calls":"пропущенных звонков"
+  },
+  "weather":{
+    "name":"Погода",
+    "desc":"Отображает текущую погоду и прогноз на 4 дня.",
+    "settings":{
+      "location":"Местоположение(я)",
+      "location_placeholder":"Введите местоположение и нажмите Enter",
+      "units":"Units",
+      "units_imperial":"Imperial (Fahrenheit)",
+      "units_metric":"Metric (Celsius)",
+      "enabled":"Включено",
+      "disabled":"Отключено",
+      "forecast":"Forecasts",
+      "hourly":"Hourly forecasts"
+    },
+    "more":"Ещё",
+    "less":"Less",
+    "wind":"Скорость ветра",
+    "precipitation":"Precip",
+    "uv":"UV index",
+    "feelslike":"Feels like",
+    "barometer":"Barometer",
+    "visibility":"Visibility",
+    "humidity":"Влажность",
+    "dewpoint":"Dew point",
+    "moonphase":"Moon",
+    "sunrise":"Sunrise",
+    "sunset":"Sunset",
+    "moonrise":"Moonrise",
+    "moonset":"Moonset"
   }
 }

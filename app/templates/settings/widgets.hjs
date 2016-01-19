@@ -1,0 +1,22 @@
+<header class="large-header">
+	<h2 class="page-name">{{i18n.settings.nav.widgets}}</h2>
+</header>
+
+<main class="content" tabindex="-1">
+	<section class="text">
+		<img class="widget-demo" src="images/widget_demo.png" />
+
+		<p>
+			{{i18n.settings.widgets.desc1}}
+			<br /><br />
+			{{i18n.settings.widgets.desc2}}
+		</p>
+
+		<ol>
+			<li>{{i18n.settings.widgets.steps1}}</li>
+			<li>{{i18n.settings.widgets.steps2}}</li>
+			<li>{{i18n.settings.widgets.steps3}}</li>
+			<li>{{i18n.settings.widgets.steps4}}</li>
+		</ol>
+	</section>
+</main>

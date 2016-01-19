@@ -27,7 +27,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 		this.config = _.assign({
 			scope: null,
 			codeParam: "code",
-			authURL: "https://accounts.google.com/o/oauth2/auth?" + 
+			authURL: "https://accounts.google.com/o/oauth2/auth?" +
 				"approval_prompt=force&client_id={{clientID}}&redirect_uri={{redirectURL}}&scope={{scope}}&access_type=offline&response_type=code",
 			tokenURL: "https://www.googleapis.com/oauth2/v3/token",
 			tokenParams: "code={{code}}&client_id={{clientID}}&client_secret={{secret}}&redirect_uri={{redirectURL}}&grant_type=authorization_code",
@@ -49,9 +49,13 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 		 * @param   {Boolean}   silent  Whether or not to retreive the key silently, i.e. just check
 		 */
 		getToken: function(cb, silent) {
-			if (!cb) return;
+			if (!cb) {
+				return;
+			}
 
-			if (!this.data.token) this.loadStorage();
+			if (!this.data.token) {
+				this.loadStorage();
+			}
 
 			if (this.data.token) {
 				if (new Date().getTime() >= this.data.expiry) {
@@ -92,7 +96,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 					return false;
 				}
 			}
-			
+
 			return true;
 		},
 
@@ -346,11 +350,13 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 				if (config.beforeSend) {
 					var oldBS = config.beforeSend;
 				}
-				
+
 				config.beforeSend = function(xhr) {
 					xhr.setRequestHeader("Authorization", ((data && data.type) || "Bearer") + " " + token);
 
-					if (oldBS) oldBS.apply(config, arguments);
+					if (oldBS) {
+						oldBS.apply(config, arguments);
+					}
 				};
 
 				$.ajax(config);

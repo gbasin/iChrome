@@ -3,68 +3,91 @@
  */
 define(["i18n/i18n"], function(Translate) {
 	return {
-		tabs: [
-			{
-				columns: [
-					[
-						{
-							id: 9,
-							size: 1
-						}, {
-							id: 14,
-							size: 1
-						}, {
-							id: 1,
-							size: 3
+		tabs: [{
+			columns: [
+				[
+					{
+						id: 1,
+						size: "variable"
+					}, {
+						id: 9,
+						size: "tiny"
+					}, {
+						id: 14,
+						size: "tiny",
+						config: {
+							title: "Google, Inc."
 						}
-					], [
-						{
-							id: 35,
-							size: 5
-						}, {
-							id: 17,
-							size: 5
-						}
-					], [
-						{
-							id: 4,
-							size: 4
-						}
-					]
-				],
-				id: 1,
-				name: Translate("defaults.tab")
-			}
-		],
-		widgets: [9, 14, 1, 11, 17, 4], // These are the widget IDs from the default tab layout
+					}, {
+						id: 17,
+						size: "variable"
+					}
+				], [
+					{
+						id: 35,
+						size: "variable"
+					}, {
+						id: 15,
+						size: "variable"
+					}
+				], [
+					{
+						id: 4,
+						size: "large"
+					}, {
+						id: 46,
+						size: "medium"
+					}
+				]
+			],
+			id: 1,
+			name: Translate("defaults.tab")
+		}],
+
 		user: {
 			fname: Translate("defaults.me"),
 			image: "images/profile.png"
 		},
+
+		// Settings. Check deprecate.js when adding or removing any settings
 		settings: {
-			def: 1,
+			openLinksInNewTab: false,
+
 			links: [],
 			ok: false,
 			apps: true,
 			plus: true,
-			ltab: false,
-			stab: false,
 			voice: true,
 			gmail: true,
-			editing: true,
-			wcolor: "#FFF",
 			toolbar: "full",
+			searchInNewTab: false,
+			searchURL: "https://google.com/search?q=%s",
+
+			editing: true,
+			customCSS: "",
+			style: "light",
 			theme: "default",
-			"custom-css": "",
-			columns: "3-fixed",
-			"search-url": "https://google.com/search?q=%s"
+
+			columns: 3,
+			defaultTab: 1,
+			layout: "columns",
+			columnWidth: "fixed"
 		},
 		themes: [],
-		cached: {},
+
+		// Keep the default theme spec in sync with the background page's fallback
+		cached: {
+			0: {
+				id: 0,
+				type: "feed",
+				offline: true,
+				name: "Default theme",
+				format: "{{res.url}}",
+				image: "images/defaulttheme.jpg",
+				url: "https://api.ichro.me/themes/v1/default/getImage"
+			}
+		},
 		tab: {
-			fixed: true,
-			medley: false,
-			theme: "default",
 			name: Translate("defaults.tab")
 		}
 	};

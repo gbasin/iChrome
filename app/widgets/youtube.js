@@ -1,7 +1,41 @@
 /*
  * The Youtube widget.
  */
-define(["jquery", "moment"], function($, moment) {
+define(["lodash", "jquery", "moment"], function(_, $, moment) {
+	var abbreviate = function(num, min, precision) {
+		var newValue = num;
+
+		min = min || 1000;
+		precision = precision || 3;
+
+		if (num >= min) {
+			var suffixes = ["", "K", "M", "B","T"],
+				suffixNum = Math.floor((("" + parseInt(num)).length - 1) / 3),
+				shortValue = "";
+
+			for (var length = precision; length >= 1; length--) {
+				shortValue = parseFloat((suffixNum !== 0 ? (num / Math.pow(1000, suffixNum)) : num).toPrecision(length));
+
+				var dotLessShortValue = (shortValue + "").replace(/[^A-z0-9 ]+/g, "");
+
+				if (dotLessShortValue.length <= precision) {
+					break;
+				}
+			}
+
+			if (shortValue % 1 !== 0) {
+				shortValue = shortValue.toFixed(1);
+			}
+
+			newValue = shortValue + suffixes[suffixNum];
+		}
+		else {
+			newValue = newValue.toLocaleString();
+		}
+
+		return newValue;
+	};
+
 	return {
 		id: 29,
 		size: 6,
@@ -120,7 +154,7 @@ define(["jquery", "moment"], function($, moment) {
 						this.refresh();
 					}.bind(this));
 				}
-				
+
 				url += "playlistItems?playlistId=" + encodeURIComponent(this.config.resolvedId) + "&part=snippet&fields=items(id,snippet(title,description,thumbnails/high/url,resourceId/videoId,channelTitle))";
 			}
 			else {
@@ -141,7 +175,7 @@ define(["jquery", "moment"], function($, moment) {
 							description: e.snippet.description,
 							views: parseInt((e.statistics && e.statistics.viewCount) || 0),
 							thumb: (e.snippet && e.snippet.thumbnails && e.snippet.thumbnails.high && e.snippet.thumbnails.high.url) || "",
-							duration: (d ? (d.hours() ? d.hours() + ":" + d.minutes().pad() : d.minutes()) + ":" + d.seconds().pad() : "0:00"),
+							duration: (d ? (d.hours() ? d.hours() + ":" + _.padLeft(d.minutes(), 2, "0") : d.minutes()) + ":" + _.padLeft(d.seconds(), 2, "0") : "0:00"),
 							url: "https://www.youtube.com/watch?v=" + encodeURIComponent((e.snippet && e.snippet.resourceId && e.snippet.resourceId.videoId) || e.id)
 						};
 					});
@@ -193,11 +227,11 @@ define(["jquery", "moment"], function($, moment) {
 
 			if (data.videos) {
 				data.videos.forEach(function(e) {
-					e.views = e.views.abbr();
+					e.views = abbreviate(e.views);
 				});
 			}
 
-			data.newTab = this.config.target == "_blank";
+			data.newTab = this.config.target === "_blank";
 
 			this.utils.render(data);
 		}

@@ -2,7 +2,7 @@
  * A View Collection, used by tabs and columns to create collections of models with corresponding views
  */
 define(["lodash", "backbone"], function(_, Backbone) {
-	var ViewCollection = Backbone.DocumentCollection.extend({
+	var ViewCollection = Backbone.Collection.extend({
 		view: Backbone.View,
 
 
@@ -43,13 +43,15 @@ define(["lodash", "backbone"], function(_, Backbone) {
 		resetViews: function() {
 			// This function needs to work off of a difference otherwise views will be destroyed
 			// erasing event handlers and other jQuery data from their respective elements
-			_(this.views).pluck("model").difference(this.models).each(function(e) {
-				this.removeView(e, true);
-			}, this).value();
+			var viewModels = _.pluck(this.views, "model");
 
-			_(this.models).difference(_.pluck(this.views, "model")).each(function(e) {
+			_.each(_.difference(viewModels, this.models), function(e) {
+				this.removeView(e, true);
+			}, this);
+
+			_.each(_.difference(this.models, viewModels), function(e) {
 				this.addView(e, true, true);
-			}, this).value();
+			}, this);
 
 			this.sortViews(true);
 
@@ -101,22 +103,24 @@ define(["lodash", "backbone"], function(_, Backbone) {
 		 * @param {Boolean}                             silent Whether or not to emit an event
 		 */
 		removeView: function(e, silent) {
-			if (e instanceof this.view) {
+			var view;
+
+			if (e instanceof Backbone.View) {
 				var i = this.views.indexOf(e);
 
 				if (i !== -1) {
-					var view = this.views.splice(i, 1)[0];
+					view = this.views.splice(i, 1)[0];
 				}
 			}
-			else if (e instanceof this.model) {
-				var view = _.remove(this.views, {
+			else if (e instanceof Backbone.Model) {
+				view = _.remove(this.views, {
 					model: {
 						cid: e.cid
 					}
 				})[0];
 			}
-			else if (typeof e == "string") {
-				var view = _.remove(this.views, {
+			else if (typeof e === "string") {
+				view = _.remove(this.views, {
 					model: {
 						cid: e
 					}
@@ -142,7 +146,7 @@ define(["lodash", "backbone"], function(_, Backbone) {
 			// it's synchronous it'll never get seen by anything else
 			this.resetting = true;
 
-			Backbone.DocumentCollection.prototype.reset.call(this, models, options);
+			Backbone.Collection.prototype.reset.call(this, models, options);
 
 			delete this.resetting;
 
@@ -152,7 +156,7 @@ define(["lodash", "backbone"], function(_, Backbone) {
 		},
 
 		_reset: function() {
-			Backbone.DocumentCollection.prototype._reset.call(this);
+			Backbone.Collection.prototype._reset.call(this);
 
 			if (this.views) {
 				_.each(_.clone(this.views), function(e) {
@@ -168,7 +172,7 @@ define(["lodash", "backbone"], function(_, Backbone) {
 			// See above
 			this.adding = true;
 
-			Backbone.DocumentCollection.prototype.add.call(this, models, options);
+			Backbone.Collection.prototype.add.call(this, models, options);
 
 			delete this.adding;
 
@@ -188,7 +192,7 @@ define(["lodash", "backbone"], function(_, Backbone) {
 		set: function(models, options) {
 			this.setting = true;
 
-			Backbone.DocumentCollection.prototype.set.call(this, models, options);
+			Backbone.Collection.prototype.set.call(this, models, options);
 
 			delete this.setting;
 
@@ -202,7 +206,7 @@ define(["lodash", "backbone"], function(_, Backbone) {
 		remove: function(models, options) {
 			this.removing = true;
 
-			Backbone.DocumentCollection.prototype.remove.call(this, models, options);
+			Backbone.Collection.prototype.remove.call(this, models, options);
 
 			delete this.removing;
 
@@ -220,7 +224,7 @@ define(["lodash", "backbone"], function(_, Backbone) {
 		},
 
 		sort: function(options) {
-			Backbone.DocumentCollection.prototype.sort.call(this, options);
+			Backbone.Collection.prototype.sort.call(this, options);
 
 			if (!this.resetting && !this.setting) {
 				this.resetViews();

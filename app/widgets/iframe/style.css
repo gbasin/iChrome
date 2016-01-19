@@ -1,0 +1,15 @@
+/*---------------------------------------------
+	/ Main Styles
+*/
+.content {
+	height: 100%;
+}
+
+.content.has-padding {
+	padding: 20px;
+}
+
+iframe {
+	width: 100%;
+	height: 100%;
+}

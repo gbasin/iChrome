@@ -1,0 +1,61 @@
+{{#weather}}
+	<div class="location" data-index="{{index}}">
+		<h2 class="header">{{name}}</h2>
+
+		{{#tiny}}
+			<span class="temp">
+				{{current.temp}}&deg;<sup class="toggle">
+					<span data-units="{{unitsToggle.0.value}}" class="active">{{unitsToggle.0.label}}</span>
+					<span data-units="{{unitsToggle.1.value}}">{{unitsToggle.1.label}}</span>
+				</sup>
+			</span>
+		{{/tiny}}
+		{{^tiny}}
+			<div class="current">
+				{{>details}}
+			</div>
+
+			{{#forecast.0.date}}
+				<div class="forecast daily{{#isPro}} is-pro{{/isPro}}" tabindex="-1">
+					<button type="button" class="material fab prev" data-direction="left" disabled></button>
+
+					<div class="items">
+						<div class="pull"></div>
+
+						{{#forecast}}
+							<div class="item{{#active}} active{{/active}}" data-index="{{index}}">
+								<div class="period">{{date}}</div>
+								<div class="cond {{conditions}}" title="{{caption}}"></div>
+								<span class="high">{{high}}&deg;</span> / <span class="low">{{low}}&deg;</span>
+							</div>
+						{{/forecast}}
+					</div>
+
+					<button type="button" class="material fab next" data-direction="right"></button>
+				</div>
+			{{/forecast.0.date}}
+
+			{{#forecast.0.hourly.0}}
+				<div class="forecast hourly{{#isPro}} is-pro{{/isPro}}" tabindex="-1">
+					<button type="button" class="material fab prev" data-direction="left" disabled></button>
+
+					<div class="items">
+						<div class="pull"></div>
+
+						{{#forecast.0.hourly}}
+							<div class="item" data-index="{{index}}">
+								<div class="period">{{date}}</div>
+
+								<div class="cond {{conditions}}" title="{{caption}}"></div>
+
+								<span class="temp">{{temp}}&deg;</span>
+							</div>
+						{{/forecast.0.hourly}}
+					</div>
+
+					<button type="button" class="material fab next" data-direction="right"></button>
+				</div>
+			{{/forecast.0.hourly.0}}
+		{{/tiny}}
+	</div>
+{{/weather}}

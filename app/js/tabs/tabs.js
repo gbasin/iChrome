@@ -2,8 +2,8 @@
  * The tabs container-model.
  */
 define(
-	["lodash", "jquery", "backbone", "browser/api", "storage/storage", "storage/defaults", "core/status", "core/analytics", "tabs/collection", "i18n/i18n", "core/render"],
-	function(_, $, Backbone, Browser, Storage, Defaults, Status, Track, Tabs, Translate, render) {
+	["lodash", "jquery", "backbone", "browser/api", "storage/storage", "storage/defaults", "core/status", "core/analytics", "tabs/collection", "i18n/i18n"],
+	function(_, $, Backbone, Browser, Storage, Defaults, Status, Track, Tabs, Translate) {
 		var Model = Backbone.Model.extend({
 				initialize: function() {
 					this.tabs = new Tabs();
@@ -13,8 +13,8 @@ define(
 					Storage.on("done updated", function(storage, promise, data) {
 						if (!(data && data.tabSort)) {
 							var defaults = _.assign({}, Defaults.tab, {
-								theme: storage.settings.theme,
-								fixed: storage.settings.columns.split("-")[1] == "fixed"
+								isGrid: storage.settings.layout === "grid",
+								fixed: storage.settings.columnWidth === "fixed"
 							});
 
 
@@ -24,21 +24,25 @@ define(
 								tabs: JSON.stringify(_.map(storage.tabs, function(e) {
 									return _.omit(e, "columns");
 								})),
-								default: (storage.settings.def || 1),
+								default: (storage.settings.defaultTab || 1),
 								defaults: defaults
 							});
 
 							this.storage = storage;
 
 							this.tabs.defaults = defaults;
-							this.tabs.default = (storage.settings.def || 1);
+							this.tabs.default = (storage.settings.defaultTab || 1);
 
 
 							if (this.get("tabs") !== oTabs) {
-								this.tabs.reset(JSON.parse(JSON.stringify(storage.tabs || [])));
+								this.tabs.reset(JSON.parse(JSON.stringify(storage.tabs || [])), {
+									parse: true
+								});
 							}
 							else {
-								this.tabs.set(JSON.parse(JSON.stringify(storage.tabs || [])));
+								this.tabs.set(JSON.parse(JSON.stringify(storage.tabs || [])), {
+									parse: true
+								});
 							}
 
 							this.tabs.navigate();
@@ -54,24 +58,30 @@ define(
 				},
 
 				events: {
-					"click .tab-nav > nav": function(e) {
-						this.model.tabs.navigate($(e.currentTarget).attr("class"));
+					"click .tab-nav button": function(e) {
+						this.model.tabs.navigate($(e.currentTarget).attr("data-direction"));
 					},
 					"keydown": function(e) {
-						if (e.which == 37) this.model.tabs.navigate("prev");
-						else if (e.which == 39) this.model.tabs.navigate("next");
+						if (e.which === 37) {
+							this.model.tabs.navigate("prev");
+						}
+						else if (e.which === 39) {
+							this.model.tabs.navigate("next");
+						}
 					},
 					"keydown .widgets-container .widget": function(e) {
-						if (e.currentTarget.className.indexOf("dragged") == -1) e.stopPropagation();
+						if (e.currentTarget.className.indexOf("dragged") === -1) {
+							e.stopPropagation();
+						}
 					},
-					"mouseover .tab-nav > nav": function(e) {
+					"mouseover .tab-nav button": function(e) {
 						if ($(document.body).hasClass("dragging")) {
 							this.timeout = setTimeout(function() {
-								this.model.tabs.navigate($(e.currentTarget).attr("class"));
+								this.model.tabs.navigate($(e.currentTarget).attr("data-direction"));
 							}.bind(this), 500);
 						}
 					},
-					"mouseout .tab-nav > nav": function(e) {
+					"mouseout .tab-nav button": function() {
 						clearTimeout(this.timeout);
 					}
 				},
@@ -90,7 +100,7 @@ define(
 
 					this.model.tabs
 						.on("views:change", this.render, this)
-						.on("sort save:columns.value", function() {
+						.on("sort columns:save change:columns", function() {
 							this.model.storage.tabs = this.model.tabs.toJSON();
 
 							this.model.storage.sync({ tabSort: true });
@@ -130,7 +140,7 @@ define(
 						itemSelector: "section",
 						dynamicDimensions: true,
 						placeholder: "<section class=\"placeholder\"/>",
-						onDragStart: function(item, container, _super) {
+						onDragStart: function(item) {
 							var ret = item.triggerHandler("sortabledragstart", arguments);
 
 							if (ret) {
@@ -152,7 +162,7 @@ define(
 							tcOTop = tc.offsetTop;
 							tcHeight = tc.offsetHeight;
 						},
-						onDrag: function(item, position, _super) {
+						onDrag: function(item, position) {
 							if (item.context) {
 								position.top -= item.context.offsetTop;
 								position.left -= item.context.offsetLeft;
@@ -174,7 +184,7 @@ define(
 							item[0].style.top = position.top + "px";
 							item[0].style.left = position.left + "px";
 						},
-						onBeforeDrop: function(item, placeholder, group, _super) {
+						onBeforeDrop: function(item, placeholder) {
 							if (placeholder.parent() && placeholder.parent().is(".remove")) {
 								if (item.installing || confirm(Translate("widgets.delete_confirm"))) {
 									item.remove();
@@ -189,12 +199,6 @@ define(
 									item.insertBefore("#originalLoc");
 
 									item.reset = true;
-
-									var view = item.data("view");
-
-									if (view && view.widget && view.widget.loc) {
-										view.update.call(view);
-									}
 
 									item.isMoved = true;
 								}
@@ -230,56 +234,20 @@ define(
 							var view = {};
 
 							if (!item.removed && !item.reset && (view = item.data("view"))) {
-								if (item.parent().parent().hasClass("medley")) {
+								view.onGrid = false;
+
+								if (item.parent().parent().hasClass("grid")) {
 									item.css(css);
 
-									view.widget.medley = true;
-
-									view.render();
+									view.onGrid = true;
 								}
-								else {
-									view.widget.medley = false;
 
-									view.render();
-								}
+								view.refresh();
 
 								if (item.installing) {
-									Track.queue("widgets", "install", view.widget.nicename, view.widget.config.size);
+									Track.queue("widgets", "install", view.widget.name, view.model.get("size"));
 
-									Track.event("Widgets", "Install", view.widget.nicename);
-
-									view.preview = false;
-
-									try {
-										if (view.widget.permissions) {
-											Browser.permissions.contains({
-												permissions: view.widget.permissions
-											}, function(hasPermission) {
-												if (!hasPermission) {
-													Browser.permissions.request({
-														permissions: view.widget.permissions
-													}, function(granted) {
-														// The page needs to be reloaded after a permission is granted
-														// so the API made available by it can be called (CR Bug 435141)
-														// 
-														// Unfortunately that still doesn't allow access to URLs like
-														// chrome://extension-icon until the browser is restarted
-														// 
-														// This is in a setTimeout so it goes to the end of the call stack
-														// so the page can be serialized and saved first
-														setTimeout(function() {
-															location.reload();
-														}, 0);
-													});
-												}
-											});
-										}
-									}
-									catch (e) {
-										Status.error("An error occurred while trying to render the " + view.widget.nicename + " widget!");
-
-										Track.queue("widgets", "error", view.widget.nicename, view.widget.config.size, "permissions", e.stack);
-									}
+									Track.event("Widgets", "Install", view.widget.name);
 								}
 							}
 
@@ -290,10 +258,10 @@ define(
 
 							$("#originalLoc").remove();
 
-							this.serialize();
+							this.serialize(true);
 						}.bind(this),
 						afterMove: function(placeholder, container) {
-							if (container.el[0].className.indexOf("widgets-container") == -1) {
+							if (container.el[0].className.indexOf("widgets-container") === -1) {
 								onGrid = false;
 
 								placeholder[0].style.width = container.group.item[0].offsetWidth + "px";
@@ -328,7 +296,7 @@ define(
 					var dta = elm.data("sortable");
 
 					if (dta) {
-						if (dta.rootGroup.containers.length == 1) {
+						if (dta.rootGroup.containers.length === 1) {
 							dta.rootGroup.containers = [];
 						}
 						else {
@@ -341,18 +309,21 @@ define(
 
 
 				/**
-				 * Calls serialize on each of the tabs and re-renders them
+				 * Calls serialize on each of the tabs, optionally re-rendering them
 				 *
 				 * @api    private
+				 * @param  {Boolean}  [render]  If the tabs should be re-rendered
 				 */
-				serialize: function() {
+				serialize: function(render) {
 					_.invoke(this.model.tabs.views, "serialize");
 
 					// Since the render only inserts columns and widgets it's not expensive
 					// This is called in requestAnimationFrame so there isn't a visible freeze
-					window.requestAnimationFrame(function() {
-						_.invoke(this.model.tabs.views, "render");
-					}.bind(this));
+					if (render === true) {
+						window.requestAnimationFrame(function() {
+							_.invoke(this.model.tabs.views, "render");
+						}.bind(this));
+					}
 
 					this.model.storage.tabs = this.model.tabs.toJSON();
 
@@ -368,11 +339,11 @@ define(
 					this.$el
 						.html(
 							'<div class="tab-nav">' +
-								'<nav class="prev"></nav>' +
-								'<nav class="next"></nav>' +
+								'<button type="button" class="material fab m-icon prev" data-direction="prev">navigate_before</button>' +
+								'<button type="button" class="material fab m-icon next" data-direction="next">navigate_next</button>' +
 							'</div>'
 						)
-						.toggleClass("one-tab", this.model.tabs.length == 1)
+						.toggleClass("one-tab", this.model.tabs.length === 1)
 						.append(_.pluck(this.model.tabs.views, "el"));
 
 					return this;

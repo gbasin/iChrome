@@ -2,8 +2,8 @@
  * The widget store
  */
 define(
-	["lodash", "jquery", "backbone", "browser/api", "storage/storage", "i18n/i18n", "widgets/widgets", "widgets/view", "widgets/model", "widgets/utils", "core/analytics", "modals/modals", "core/render"],
-	function(_, $, Backbone, Browser, Storage, Translate, Widgets, Widget, WidgetModel, Utils, Track, Modal, render) {
+	["lodash", "jquery", "backbone", "browser/api", "storage/storage", "i18n/i18n", "widgets/registry", "core/analytics", "modals/modals", "core/render"],
+	function(_, $, Backbone, Browser, Storage, Translate, Registry, Track, Modal, render) {
 		var sizes = {
 			tiny: Translate("widgets.sizes.tiny"),
 			small: Translate("widgets.sizes.small"),
@@ -12,31 +12,18 @@ define(
 			variable: Translate("widgets.sizes.variable")
 		};
 
-		var resolve = function(widget, string) {
-			return Utils.prototype.resolve.call({ widget: widget }, string);
-		};
-
-		var translate = function(widget, id) {
-			return Utils.prototype.translate.call({ widget: widget }, id);
-		};
-
 		var Model = Backbone.Model.extend({
 				initialize: function() {
-					var widgets = _(Widgets).filter(function(widget) {
-						if (widget.unlisted || (widget.environments && widget.environments.indexOf(Browser.environment) === -1)) {
-							return false;
-						}
-
-						return true;
+					var widgets = Registry.chain().filter(function(widget) {
+						return widget.isListed && widget.isAvailable;
 					}).map(function(widget) {
 						return {
 							id: widget.id,
-							order: widget.order,
-							nicename: widget.nicename,
-							name: widget.name ? resolve(widget, widget.name) : translate(widget, "name"),
-							desc: widget.desc ? resolve(widget, widget.desc) : translate(widget, "desc")
+							icon: widget.icon,
+							name: widget.translate("name"),
+							desc: widget.translate("desc")
 						};
-					}).uniq("id").value().sort(function(a, b) {
+					}).value().sort(function(a, b) {
 						// sensitivity: "accent" ensures that accented characters differ
 						// while ignoring case and avoiding a toLocaleLowerCase() call
 						return a.name.localeCompare(b.name, "en", { sensitivity: "accent" });
@@ -62,74 +49,71 @@ define(
 
 
 						var id = parseInt($(e.currentTarget).attr("data-id")),
-							widget = Widgets[id],
-							view = new Widget({
-								model: new WidgetModel({
-									id: id,
-									size: widget.config && widget.config.size || { size: widget.sizes[0] }
-								}),
-								preview: true
-							});
+							widget = Registry.get(id),
+							view = Registry.createInstance(new Backbone.Model({ id: id }), true);
 
-						wModal.content.replaceWith(
-							render("store-detail", {
-								name: widget.name ? resolve(widget, widget.name) : translate(widget, "name"),
-								sizes: widget.sizes.map(function(e) { return [e, sizes[e]]; }),
-								desc: Utils.prototype.renderTemplate.call({ widget: widget }, "desc")
-							})
-						);
+						// The getDesc method might need to load the template remotely,
+						// so it needs to be async. But, in a compiled version this
+						// will never take longer than requestAnimationFrame
+						widget.getDesc(function(descHTML) {
+							wModal.content.replaceWith(
+								render("store-detail", {
+									name: widget.translate("name"),
+									sizes: widget.sizes.map(function(e) { return [e, sizes[e]]; }),
+									desc: descHTML
+								})
+							);
 
-						wModal.content = wModal.$(".content");
+							wModal.content = wModal.$(".content");
 
-						Track.pageview("Store: " + widget.nicename, "/store/" + widget.nicename);
+							Track.pageview("Store: " + widget.name, "/store/" + widget.name);
 
-						wModal.content.find(".sizes").sortable({
-							group: "columns",
-							drop: false
-						}).find("section.handle").on("sortabledragstart", function(e, item, container, _super) {
-							var newView = new Widget({
-								model: new WidgetModel({
+							wModal.content.find(".sizes").sortable({
+								group: "columns",
+								drop: false
+							}).find("section.handle").on("sortabledragstart", function(e, item) {
+								var newView = Registry.createInstance(new Backbone.Model({
 									id: id,
 									size: item.attr("data-size")
-								})
+								}));
+
+								// This lets it render completely before getting dragged
+								view.$el.replaceWith(newView.$el);
+
+								view.remove();
+
+
+								var width = newView.el.offsetWidth,
+									css = {
+										width: width,
+										minWidth: width,
+										maxWidth: width,
+										height: newView.el.offsetHeight
+									};
+
+								item.clone().insertAfter(item);
+
+								item.replaceWith(newView.$el);
+
+								// This way any events attached by jquery.sortable stay intact
+								item[0] = newView.el;
+
+								wModal.close();
+								modal.hide();
+
+								item.css(css).addClass("dragged").appendTo("body > .widgets-container");
+
+								item.installing = true;
+
+								return item;
 							});
 
-							// This lets it render completely before getting dragged
-							view.$el.replaceWith(newView.$el);
+							wModal.content.find("section.preview").append(view.el);
 
-							view.remove();
+							wModal.mo.appendTo(document.body);
 
-
-							var width = newView.el.offsetWidth,
-								css = {
-									width: width,
-									minWidth: width,
-									maxWidth: width,
-									height: newView.el.offsetHeight
-								};
-
-							item.clone().insertAfter(item);
-
-							item.replaceWith(newView.$el);
-
-							// This way any events attached by jquery.sortable stay intact
-							item[0] = newView.el;
-
-							wModal.close();
-							modal.hide();
-
-							item.css(css).addClass("dragged").appendTo("body > .widgets-container");
-
-							item.installing = true;
-
-							return item;
+							requestAnimationFrame(wModal.show.bind(wModal));
 						});
-
-						wModal.content.find("section.preview").append(view.el);
-
-						wModal.mo.appendTo(document.body);
-
-						requestAnimationFrame(wModal.show.bind(wModal));
 					}
 				},
 

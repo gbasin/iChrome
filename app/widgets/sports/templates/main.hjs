@@ -1,0 +1,191 @@
+<header>
+	<div class="select" tabindex="-1">
+		<span class="selected">{{activeView}}</span>
+
+		<ul class="options">
+			{{#views}}
+				<li data-id="{{id}}"{{#active}} class="selected"{{/active}}>{{name}}</li>
+			{{/views}}
+		</ul>
+	</div>
+
+	<ul class="tabs">
+		<li data-id="scores"{{^news}} class="active"{{/news}}>{{i18n.scores}}</li>
+		<li data-id="news"{{#news}} class="active"{{/news}}>{{i18n.news}}</li>
+	</ul>
+</header>
+
+{{#loading}}
+	<div class="loading">
+		<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+			<circle fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+		</svg>
+	</div>
+{{/loading}}
+
+{{#proSplash}}
+	<div class="splash pro-only">
+		<span class="badge">Pro</span>
+
+		<p>
+			{{i18n.pro_splash1}}
+			<br />
+			{{i18n.pro_splash2}}
+		</p>
+	</div>
+{{/proSplash}}
+
+{{#news}}
+	<div class="news">
+		{{#articles}}
+			<a href="{{link}}" class="item">
+				{{#image}}<div class="image" style="background-image: url('{{image}}');"></div>{{/image}}
+
+				<div class="content{{#desc}} desc{{/desc}}">
+					<h3 class="title">
+						{{title}}
+
+						{{#source}}<span class="source">&mdash; {{source}}</span>{{/source}}
+					</h3>
+
+					{{desc}}
+				</div>
+			</a>
+		{{/articles}}
+	</div>
+{{/news}}
+{{^news}}
+	{{^loading}}{{^games}}
+		<div class="splash no-games">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+				<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"></path>
+			</svg>
+
+			<p>{{i18n.no_games}}</p>
+		</div>
+	{{/games}}{{/loading}}
+
+	<div class="games">
+		{{#sections}}
+			<section>
+				{{#title}}<h3>{{title}}</h3>{{/title}}
+
+				{{#games}}
+					<div class="game {{sport}}">
+						<div class="summary">
+							<div class="teams">
+								<div class="away {{away_loser}}">
+									<img class="icon" src="{{#isDark}}{{away.logoDark}}{{/isDark}}{{^isDark}}{{away.logo}}{{/isDark}}" />
+
+									<span class="name" title="{{away.location}} {{away.name}}">{{away.location}} {{away.name}}</span>
+
+									<span class="score">{{away.score}}{{#pre}}{{away.record}}{{/pre}}</span>
+								</div>
+
+								<div class="home {{home_loser}}">
+									<img class="icon" src="{{#isDark}}{{home.logoDark}}{{/isDark}}{{^isDark}}{{home.logo}}{{/isDark}}" />
+
+									<span class="name" title="{{home.location}} {{home.name}}">{{home.location}} {{home.name}}</span>
+
+									<span class="score">{{home.score}}{{#pre}}{{home.record}}{{/pre}}</span>
+								</div>
+							</div>
+
+							<div class="status">
+								{{#pre}}
+									<span>{{shortDate}}</span>
+									{{#broadcasts}}<span>{{broadcasts}}</span>{{/broadcasts}}
+								{{/pre}}
+								{{^pre}}
+									<span>{{label}}</span>
+								{{/pre}}
+							</div>
+						</div>
+
+						<div class="extended {{extendedVisible}}" data-id="{{id}}">
+							{{#note}}<span class="note">{{note}}</span>{{/note}}
+							<span class="date">{{longDate}}</span>
+							<span class="venue">{{venue}}</span>
+
+							<div class="overview">
+								{{#away}}
+									<div class="team away" style="background-image: url('{{#isDark}}{{logoDark}}{{/isDark}}{{^isDark}}{{logo}}{{/isDark}}')">
+										<span class="location">{{location}}</span>
+										<span class="name">{{name}}</span>
+										{{#record}}<span class="record">({{record}})</span>{{/record}}
+									</div>
+								{{/away}}
+
+								<div class="status">
+									{{#pre}}
+										<span class="time">{{shortDate}}</span>
+										<span class="broadcasts">&nbsp;{{#broadcasts}}TV: {{broadcasts}}{{/broadcasts}}</span>
+									{{/pre}}
+									{{^pre}}
+										<span class="score">{{away.score}} - {{home.score}}</span>
+										<span class="status">{{label}}</span>
+									{{/pre}}
+								</div>
+
+								{{#home}}
+									<div class="team home" style="background-image: url('{{#isDark}}{{logoDark}}{{/isDark}}{{^isDark}}{{logo}}{{/isDark}}')">
+										<span class="location">{{location}}</span>
+										<span class="name">{{name}}</span>
+										{{#record}}<span class="record">({{record}})</span>{{/record}}
+									</div>
+								{{/home}}
+							</div>
+
+							{{#lastPlay}}
+								<div class="lastplay">
+									<h4>
+										{{i18n.last_play}}
+
+										{{#secondaryPlayText}}<span>{{secondaryPlayText}}</span>{{/secondaryPlayText}}
+									</h4>
+
+									<span>{{lastPlay}}</span>
+								</div>
+							{{/lastPlay}}
+
+							{{#linescoreKey.0}}
+								<table class="linescores">
+									<thead>
+										<tr>
+											<td></td>
+											{{#linescoreKey}}<td>{{.}}</td>{{/linescoreKey}}
+										</tr>
+									</thead>
+
+									<tbody>
+										<tr>
+											<td class="team" title="{{away.location}} {{away.name}}">{{away.name}}</td>
+											{{#away.linescores}}<td>{{.}}</td>{{/away.linescores}}
+										</tr>
+
+										<tr>
+											<td class="team" title="{{home.location}} {{home.name}}">{{home.name}}</td>
+											{{#home.linescores}}<td>{{.}}</td>{{/home.linescores}}
+										</tr>
+									</tbody>
+								</table>
+							{{/linescoreKey.0}}
+
+							<div class="links">
+								{{#pre}}
+									{{#preview}}<a href="{{preview}}">{{i18n.preview}}</a>{{/preview}}
+									{{#tickets}}<a href="{{tickets}}">{{i18n.tickets}}</a>{{/tickets}}
+								{{/pre}}
+								{{^pre}}
+									{{#live}}<a href="{{live}}">{{i18n.live}}</a>{{/live}}
+									{{^live}}{{#recap}}<a href="{{recap}}">{{i18n.recap}}</a>{{/recap}}{{/live}}
+									{{#boxscore}}<a href="{{boxscore}}">{{i18n.box_score}}</a>{{/boxscore}}
+								{{/pre}}
+							</div>
+						</div>
+					</div>
+				{{/games}}
+			</section>
+		{{/sections}}
+	</div>
+{{/news}}

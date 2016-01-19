@@ -7,7 +7,8 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 			Storage.on("done updated", function(storage) {
 				this.set({
 					custom: storage.themes,
-					cached: storage.cached
+					cached: storage.cached,
+					backgroundImage: storage.settings.backgroundImage
 				});
 			}, this);
 		}
@@ -39,14 +40,18 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 		 * @return {Object}        The retrieved theme
 		 */
 		get: function(theme) {
-			var defTheme = {
-				image: "images/defaulttheme.jpg"
-			};
+			var defTheme = this.model.get("cached")[0];
 
-			if (typeof theme == "object") {
-				theme = (this.model.get("cached")[theme.id] || this.model.get("custom")[theme.id.replace("custom", "")] || defTheme);
+			if (typeof theme === "object") {
+				theme = (this.model.get("cached")[theme.id] || this.model.get("custom")[theme.id.replace("custom", "")] || theme);
 			}
-			else if (theme == "default") {
+			else if (theme === "custom") {
+				theme = {
+					id: "custom",
+					image: this.model.get("backgroundImage")
+				};
+			}
+			else if (typeof theme !== "string" || theme === "default") {
 				theme = defTheme;
 			}
 			else {
@@ -58,7 +63,8 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 
 
 		/**
-		 * Gets a themes image when given either a theme name or object
+		 * Provided with a theme ID or spec, returns the theme's image, which may
+		 * be a video.
 		 *
 		 * @api    public
 		 * @param  {String|Object} theme The theme to retrieve the image for
@@ -74,10 +80,16 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 			}
 
 
-			if (theme.image) {
-				image = theme.image;
+			if (theme.image || theme.video) {
+				image = theme.image || theme.video;
+
+				// When updating a dynamic theme's background image we need to
+				// make sure the browser sees a change
+				if (image.indexOf("filesystem") === 0) {
+					image += "?nocache=" + new Date().getTime();
+				}
 			}
-			else if (theme.images) {
+			else if (theme.images && typeof this.model.get("cached")[theme.id] !== "undefined") {
 				switch (theme.type) {
 					case "random_daily":
 						// Because of the way this is done, all themes will show the same image on different
@@ -132,7 +144,7 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 
 
 						var dt = new Date().getTime();
-						
+
 						rand = Math.sin(new Date().setHours(0, 0, 0, 0)) * 10000;
 
 
@@ -168,6 +180,21 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 					default:
 						image = this.model.get("cached")[theme.images[Math.floor(Math.random() * theme.images.length)]].image;
 					break;
+				}
+			}
+
+
+			// If an image can't be found, this is probably a preview. Return the
+			// remote URL
+			if (!image) {
+				if (theme.images) {
+					image = "https://themes.ichro.me/images/" + theme.images[Math.floor(Math.random() * theme.images.length)] + ".jpg";
+				}
+				else if ((theme.oType || theme.type) === "video") {
+					image = "https://themes.ichro.me/images/" + theme.id + ".mp4";
+				}
+				else {
+					image = "https://themes.ichro.me/images/" + theme.id + ".jpg";
 				}
 			}
 

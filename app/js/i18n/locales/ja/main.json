@@ -1,8 +1,8 @@
 {
   "lang_code":"ja",
   "language":"日本語",
+  "extName":"iChrome",
   "newtabName":"iChrome 新しいタブ",
-  "extName":"iChrome - あなただけのChromeを作りましょう",
   "extDescription":"Chromeのための最高のホームページ。最高のテーマ、たくさんのウィジェット、超高速、カスタマイズが自由自在！",
   "newtabDescription":"Chromeのための最高のホームページ。新しいタブにしましょう。見事なテーマ、多数のウィジェット、さらに超高速。めちゃくちゃにカスタマイズ できます！",
   "defaults":{
@@ -10,21 +10,69 @@
     "me":"自分"
   },
   "remove_widget":"削除",
-  "column_to_grid_warning":"カラムレイアウトからタブレイアウトへの変更を選択しました。このまま続けると全てのカラムが消えて、全てが左上へと移動します。\nこのまま続けてもよろしいですか？",
-  "grid_to_column_warning":"タブをグリッドレイアウトからカラムレイアウトへ変更するよう選択しました。このまま続けると全てのウィジェットが消えて、全てが新しいタブの左端カラムへと移動します。\nこのまま続けてもよろしいですか？",
-  "storage_warning":"利用可能な同期ストレージのうち90%以上を使っています。\n限界に達するとiChromeはデータの同期を停止して動作も停止するかもしれません。\nカスタムテーマや使っていないto-doリストなどを削除することでスペースを圧縮することができます。",
   "alert":{
     "default_button":"破棄",
     "confirm_title":"実行してもいいですか？",
     "confirm_continue":"次へ",
     "confirm_cancel":"キャンセル"
   },
+  "onboarding":{
+    "modal":{
+      "tagline":"All the sites and apps you use, in one place",
+      "wrong_extension":"Want iChrome on your new tab page instead?",
+      "wrong_extension_newtab":"Want iChrome on your home page instead?",
+      "wrong_extension_action":"Click here",
+      "about":"iChrome's all about tabs and widgets",
+      "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
+      "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privacy Policy<\/a>",
+      "sign_in":"Sign in with your Google account",
+      "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
+      "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
+      "sign_in_button":"Sign in with Google",
+      "have_account":"It looks like you already have an account!",
+      "have_account_desc":"All your tabs and widgets are ready to use!",
+      "get_started":"Let's get started!",
+      "get_started_desc":"You're good to go! Let's get your page set up."
+    },
+    "widgets":{
+      "configure":"Let's configure a widget.",
+      "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
+      "configure_skip":"Skip",
+      "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
+      "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
+      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
+      "done":"Got it"
+    },
+    "settings":{
+      "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
+      "instructions":"Click the highlighted image to open it.",
+      "skip":"Skip",
+      "tooltips":{
+        "settings":"Change the way iChrome looks and works",
+        "widgets":"Add new widgets - you can have as many as you want",
+        "editing":"Show or hide the editing buttons on widgets",
+        "links":"This is a list of links, add sites you use often in the settings",
+        "tabs":"These are your tabs. You can add more in the settings",
+        "support":"Send us a message or leave a review here"
+      },
+      "finished":"That's it!",
+      "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
+      "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
+    }
+  },
   "storage":{
-    "signin":"サインインして設定を同期します",
-    "signin_desc":"iChrome は、あなたのメールアドレスの同期プロファイルを検出しました",
-    "signin_desc2":"Google アカウントにサインインして、設定をダウンロードし同期してください。",
+    "signin":"Sign in with Google now to securely save and sync your configuration",
     "signin_btn":"サインイン",
-    "signin_dismiss":"破棄"
+    "signin_dismiss":"破棄",
+    "signin_confirm":{
+      "title":"Keep local data?",
+      "desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
+      "keep_account":"Use account",
+      "keep_local":"Keep local"
+    },
+    "signout_confirm":"Signing out will erase your local backups",
+    "pastdue":"Your subscription is past due",
+    "pastdue_desc":"Please update your billing information in the settings"
   },
   "toolbar":{
     "placeholder":"検索条件を入力してください",
@@ -44,7 +92,6 @@
   "menu":{
     "settings":"設定",
     "widgets":"ウィジェット",
-    "background":"背景を表示",
     "editing":"編集",
     "editing_enabled":"有効",
     "editing_disabled":"無効",
@@ -54,8 +101,8 @@
       "support":"サポート",
       "feedback":"フィードバック",
       "review":"レビュー",
-      "twitter":"Twitter",
-      "webstore":"ストア",
+      "terms":"Terms",
+      "privacy":"Privacy",
       "by":"By Avi Kohn"
     }
   },
@@ -65,132 +112,225 @@
     "missed":"取得できませんでした。<a>もう一度やり直してください<\/a>。"
   },
   "settings":{
-    "save":"保存して閉じる",
-    "new_tab":"新規作成",
-    "labels":{
-      "general":"一般",
-      "visual":"見た目",
-      "specific":"タブ",
-      "sync":"アカウントと同期",
-      "advanced":"高度な設定"
-    },
-    "general":{
-      "search_url":"検索エンジンURL",
-      "search_url_desc":"これは、検索ボックスが検索を送信する先のURLです。検索クエリを入力する欄に <b>%s<\/b> を入力してください。",
-      "ltab":"Link Behavior",
-      "ltab_label":"Open links in a new tab by default",
-      "search":"検索行動",
-      "search_label":"新しいタブで検索結果を見る",
-      "voice":"音声検索",
-      "voice_search":"音声検索を有効にする",
-      "voice_ok":"”OK Google\"ホットワード検出を有効にする",
-      "links":"ツールバーリンク",
-      "links_desc":"ここではツールバーの右側セクションにどのリンクを表示させるかを選ぶことができます。",
-      "links_items":{
-        "plus":"Google+",
-        "gmail":"Gmail",
-        "apps":"Appsメニュー",
-        "link1":"カスタムリンク1",
-        "link2":"カスタムリンク2",
-        "link3":"カスタムリンク3",
-        "text_holder":"リンクテキスト",
-        "link_holder":"リンクURL, 例: http:\/\/www.google.com\/"
+    "title":"設定",
+    "exit":"Exit settings",
+    "saved":"Settings saved",
+    "nav":{
+      "visual":"Visual",
+      "visual_sections":{
+        "background":"Background",
+        "layout":"レイアウト",
+        "theme":"App theme"
       },
-      "guide":"インストールガイド",
-      "guide_desc":"iChromeを最初にインストールしたときに表示されたガイドをもう一度見る"
+      "toolbar":"Toolbar",
+      "toolbar_sections":{
+        "style":"Style",
+        "search":"検索",
+        "links":"Links"
+      },
+      "tabs":"タブ",
+      "widgets":"ウィジェット",
+      "pro":"Pro",
+      "accounts":"Account",
+      "misc":"Miscellaneous",
+      "advanced":"Advanced",
+      "advanced_sections":{
+        "backups":"Backup and restore",
+        "css":"Custom CSS",
+        "debug_tools":"Debug tools"
+      },
+      "support":"Help and support",
+      "suggest":"Suggest a feature"
     },
     "visual":{
-      "layout":"レイアウト",
-      "layout_options":{
-        "1_fixed":"1 列、固定幅",
-        "1_fluid":"1 列、可変幅",
-        "2_fixed":"2 列、固定幅",
-        "2_fluid":"2 列、可変幅",
-        "3_fixed":"3 列、固定幅",
-        "3_fluid":"3 列、可変幅",
-        "4_fixed":"4 列、固定幅",
-        "4_fluid":"4 列、可変幅",
-        "5_fixed":"5 列、固定幅",
-        "5_fluid":"5 列、可変幅",
-        "grid":"グリッドベース、可変幅"
+      "background":{
+        "title":"Background",
+        "desc":"This is the image or set of images shown as a background to your tabs",
+        "current":"Current background",
+        "custom":"カスタム",
+        "unnamed":"Theme %s",
+        "select":"Select a theme",
+        "or":"または",
+        "url_placeholder":"Enter an image URL"
       },
-      "theme":"デフォルトのテーマ",
-      "theme_placeholder":"テーマ #%s",
-      "theme_select":"テーマの選択",
-      "align":"配置",
-      "align_desc":"これはウィジェットの列の配置を変更します。",
-      "align_labels":{
-        "left":"左寄り",
-        "center":"中央揃え",
-        "right":"右寄り"
+      "layout":{
+        "title":"レイアウト",
+        "desc":"Here you can adjust the type and number of columns in each tab",
+        "columns":"Columns",
+        "grid":"Grid",
+        "columns_number":"Number of columns",
+        "column_width":"Column width",
+        "column_width_fixed":"Fixed",
+        "column_width_fluid":"Fluid",
+        "column_warning":{
+          "column_to_grid":"Changing to a grid-based layout will move all of your widgets to the top left corner.",
+          "grid_to_column":"Changing to a column-based layout will move all of your widgets to the first column."
+        }
       },
-      "logo":"ロゴの URL",
-      "logo_desc":"これは、ツールバーの左側に表示されるイメージです。既定値は <b>\/images\/logo.svg<\/b>",
-      "toolbar":"ツールバーのスタイル",
-      "toolbar_desc":"これは、ツールバーのスタイルを決定します。",
-      "toolbar_normal":"標準",
-      "toolbar_button":"ボタン",
-      "animation":"スライドでのアニメーション",
-      "animation_desc":"ページを読み込むときのスライドのアニメーションの有無を設定できます。",
-      "animation_label":"アニメーションを有効にします。"
+      "theme":{
+        "title":"App theme",
+        "desc":"The app theme controls the style of iChrome itself and all widgets",
+        "preview":"プレビュー",
+        "light":"Light (default)",
+        "dark":"暗い",
+        "transparent":"Transparent",
+        "transparent_darker":"Transparent (darker)"
+      }
     },
-    "specific":{
-      "name":"タブ名",
-      "default_name":"新しいタブ",
-      "delete":"タブの削除",
-      "delete_disallowed":"残り１つのタブは削除できません。",
-      "delete_confirm":"このタブを削除するとタブ内のすべてのウィジェットからのすべてのデータは永久に失われます。\n削除しても本当によろしいですか？",
-      "default":"デフォルトとして設定"
+    "toolbar":{
+      "style":{
+        "title":"Style",
+        "desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
+        "normal":"Normal",
+        "button":"Button"
+      },
+      "search":{
+        "title":"検索",
+        "desc":"These settings control how the search box and voice search function",
+        "engine":"Search engine",
+        "engines_google":"Google (Default)",
+        "engines_custom":"カスタム",
+        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
+        "voice":"Enable voice search",
+        "ok_google":"Enable \"OK Google\" hotword detection",
+        "search_tab":"Open search results in a new tab"
+      },
+      "links":{
+        "title":"Links",
+        "desc":"These are the items shown at the right of the toolbar",
+        "apps":"Apps menu",
+        "custom":"Custom links",
+        "custom_note1":"Maximum of 3 allowed",
+        "custom_note2":"users get 8",
+        "custom_name_placeholder":"Link text",
+        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+      }
     },
-    "sync":{
-      "status_syncing":"iChrome is currently <b>syncing<\/b> your tabs and settings.",
-      "status_notsyncing":"iChrome is currently <b>not syncing<\/b> your tabs and settings.",
-      "status_notsyncing2":"アカウントを作成するには、このページの下部の[今すぐ同期]　をクリック。\nまたは、Googleアカウントでログインして下さい。",
-      "duplicate_profile":"A profile already exists under the email address below. To protect your security, iChrome can't use your sync profile until you verify that you own the address by signing in to your Google account.",
-      "name":"Name",
-      "fname":"名",
-      "lname":"Last Name",
-      "name_desc":"We'll use this to address you inside iChrome and in any communications.",
-      "email":"Email Address",
-      "email_desc":"This is used to identify your sync profile, we'll also use it if we need to get in touch with you.",
-      "signin":"Sign In",
-      "signin_btn":"Sign in with Google",
-      "signin_desc":"Sign in with your Google account to easily and securely add new computers to your sync profile.",
-      "signed_in":"iChrome is <b>connected<\/b> to your Google account.  Sign in on any new computers to instantly sync your configuration.",
-      "keep_data":"Keep local data?",
-      "keep_data_desc":"Would you like to keep your local data, and replace the configuration on other computers you may have in this sync group with it, or replace this computer's configuration with theirs?",
-      "keep_theirs":"Use Theirs",
-      "keep_local":"Keep Local",
-      "sync_now":"Sync Now",
-      "syncing":"Syncing...",
-      "last_synced":"Last synced",
-      "backup":{
-        "title":"Backup & Restore",
-        "desc":"Click the button an any backup to roll iChrome back to the time displayed.  You can also use the button below to create a manual backup.",
-        "btn":"Backup now",
-        "restore":"Restore",
-        "download":"Download",
-        "download_name":"iChrome Backup",
-        "no_backups":"No backups found, click Backup Now to create one."
+    "misc":{
+      "link_tab":"Open links in a new tab by default"
+    },
+    "tabs":{
+      "create_new":"Create new",
+      "make_default":"Make default",
+      "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
+      "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
+      "name_placeholder":"Enter a tab name",
+      "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
+    },
+    "accounts":{
+      "status":{
+        "title":"Status",
+        "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
+        "reset_account":"Reset account",
+        "sign_out":"Sign out",
+        "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
+        "sign_in":"Sign in with Google"
       },
-      "restore":{
-        "file":"Restore from file",
-        "error":"An error occurred while trying to parse the provided data, please try again later.",
-        "confirm_desc":"This will overwrite all local and synced data.",
-        "confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
-      },
-      "reset":"Reset Profile",
-      "resetting":"Resetting...",
       "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
-      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
+      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this account."
     },
     "advanced":{
-      "background":"ウィジェットの背景",
-      "background_desc":"色を選択するには色見本をクリックしてください",
-      "css":"カスタム CSS",
-      "css_desc":"CSS（定義については <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"_blank\">MDN<\/a>を参照）を使ってiChromeのほとんどのビジュアル部分をカスタマイズするためにこのフィールドを使用することができます。<br \/><br \/>これは同期されるため、スペースを含み最大1,000文字まで入力できます。",
-      "debug":"Debug Tools",
-      "debug_confirm":"WARNING: These tools can erase your configuration in a single click, only use them if your developer instructs you to.\r\nAre you sure you want to continue?"
+      "backups":{
+        "title":"Backup and restore",
+        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
+        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
+        "backup":"Backup now",
+        "upload":"Restore from file",
+        "download":"Download",
+        "restore":"Restore",
+        "download_name":"iChrome Backup",
+        "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
+        "restore_error":"An error occurred while trying to parse the provided data, please try again later."
+      },
+      "css":{
+        "title":"Custom CSS",
+        "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
+        "placeholder":"Enter up to 1000 characters of CSS here"
+      },
+      "debug_tools":{
+        "title":"Debug tools",
+        "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
+        "open":"Open tools"
+      }
+    },
+    "widgets":{
+      "desc1":"Widgets have their own settings and can't be customized here.",
+      "desc2":"To edit a widget's settings, follow these steps:",
+      "steps1":"Move your mouse over any widget",
+      "steps2":"Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
+      "steps3":"Edit any of the settings shown in the dialog that's displayed",
+      "steps4":"Click Save to save your changes, or any part of the background to discard of them"
+    },
+    "pro":{
+      "promo":{
+        "monthly_price":"$2 per month",
+        "yearly_price":"or $20 per year",
+        "upgrade_btn":"Upgrade Now",
+        "business":"Interested in buying Pro for your business or school?",
+        "business_contact":"Contact us",
+        "themes":"テーマ",
+        "themes_desc":"See more of your backgrounds with dark and transparent themes",
+        "bgs":"Live backgrounds",
+        "bgs_desc":"Bring your page to life with 20 live high-definition backgrounds",
+        "widgets":"Maximizable widgets",
+        "widgets_desc":"Take iChrome to another level with maximizable widgets",
+        "more_header":"And more",
+        "stocks":"Realtime stocks with extended and historical information",
+        "rss":"Support for multiple RSS feeds per widget",
+        "sports":"General and league-specific sports news",
+        "tabbed_widgets":"Tabbed news and RSS widgets",
+        "bg_downloads":"Downloadable backgrounds",
+        "weather":"Hourly weather forecasts up to 10 days out",
+        "toolbar":"More toolbar links",
+        "support":"Prioritized support and suggestions",
+        "buy_pro":"Buy Pro"
+      },
+      "checkout":{
+        "title":"Checkout",
+        "updating_title":"Update plan",
+        "payment_options":"Pay",
+        "pay_monthly":"Monthly ($2)",
+        "pay_yearly":"Yearly ($20)",
+        "cancel":"キャンセル",
+        "update":"Update",
+        "subscribe":"Subscribe",
+        "braintree_notice":"Payments securely processed by Braintree.",
+        "monthly_notice":"By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
+        "yearly_notice":"By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
+        "update_notice":"Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
+        "thank_you":"Thank you for buying iChrome Pro!",
+        "thank_you2":"iChrome will reload in a few seconds and you'll be all set!",
+        "error":"Something went wrong while trying to process your payment.",
+        "error2":"Please try again later or email us at support@ichro.me",
+        "signin":"Sign in",
+        "signin_desc":"You need to sign in before buying Pro so we can make sure it's you",
+        "signin_btn":"Sign in"
+      },
+      "plan":{
+        "title":"Plan",
+        "desc":"You are currently subscribed to iChrome Pro (%s)",
+        "types":{
+          "monthly":"Monthly",
+          "yearly":"Yearly",
+          "business":"Business",
+          "education":"Education",
+          "custom":"カスタム"
+        },
+        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
+        "status":"Status",
+        "status_active":"Active",
+        "status_trial":"Trial",
+        "status_pastdue":"Past due",
+        "subscription_date":"Subscription date",
+        "paid_through":"Paid through",
+        "next_bill":"Next bill",
+        "next_bill_value":"$%s on %s",
+        "update_plan":"Update plan",
+        "update_billing":"Update billing",
+        "cancel":"Cancel subscription",
+        "cancel_notice":"Your subscription will be canceled immediately",
+        "cancel_notice2":"If you would like a refund, please contact us at support@ichro.me"
+      }
     }
   },
   "store":{
@@ -212,7 +352,24 @@
       "save":"保存",
       "size":"ウィジェットサイズ"
     },
+    "minimize":"Minimize",
+    "maximize":"Maximize",
     "delete_confirm":"このウィジェットを削除するとこのウィジェットのデータは永久に失われます。\n削除しても本当によろしいですか？",
+    "permissions_request":{
+      "title":"Access required",
+      "button":"Grant Access",
+      "desc":"This widget needs extra permissions before it can be used. Grant them using the button below."
+    },
+    "error":{
+      "explanation":"Something went wrong while we were trying to display this widget.",
+      "advice":"Try reinstalling the widget or reloading the page. Contact us if you see this message often.",
+      "support":"サポート",
+      "refresh":"Refresh"
+    },
+    "auth":{
+      "message":"You'll need to give this widget access to your account before you can use it.",
+      "button":"Grant Access"
+    },
     "shared":{
       "settings":{
         "title":"ウィジェットタイトル",
@@ -255,6 +412,8 @@
     "random_daily":"このテーマは毎日ランダムに選ばれたイメージを表示します。",
     "sunrise_sunset":"このテーマはその日の時間によってイメージを表示します。",
     "feed":"このテーマは毎日外部フィードから選ばれたイメージを表示します。",
+    "video":"This theme displays a live video",
+    "pro_only":"This theme is only available to Pro users. Buy Pro in the settings.",
     "delete_confirm":"このテーマを削除しますか？\nこのアクションは取り消せません。すべてのテーマが完全に消えます。",
     "delete_error":"テーマを削除しようとしてエラーが発生しました。もう一度やり直してください。",
     "feed_fetching":"フィードを取得しています。しばらくお待ちください。",
@@ -262,6 +421,13 @@
     "caching":"読み込み中です。しばらくお待ちください。",
     "cache_status":"%s 中 %s の画像がキャッシュされました",
     "cache_error":"テーマをキャッシュしようとしたときにエラーが発生しました。後でもう一度お試しください",
+    "bginfo":{
+      "view":"View",
+      "source":"Source",
+      "unknown":"不明",
+      "download":"Download",
+      "pro_only":"Only Pro users can download background images and videos"
+    },
     "edit":{
       "title":"テーマ編集",
       "create_title":"テーマ作成",
@@ -304,24 +470,6 @@
       "save":"保存して閉じる",
       "cache_error":"画像の読み込み中にエラーが発生しました。このURLをダブルクリックしてください。",
       "upload_error":"ファイルのアップロード中にエラーが発生しました。ファイルのサイズが適切であることを確認してください。"
-    }
-  },
-  "intro":{
-    "slide1":{
-      "title":"ようこそ、iChromeへ!",
-      "line1":"iChrome をスタートページにしたい場合は、設定でそのURLをセット (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\">手順<\/a>) します。または新しいタブで開く、もしくはホームとは別の新しいタブで開く場合は、<a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\">iChrome 新しいタブ<\/a> をインストールしてください。",
-      "newtab_line1":"iChromeを新しいタブが開く度に開くのではなく、Chromeを最初に起動した時だけスタートページに表示する場合は、こちらではなく <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\">メインiChrome エクステンション<\/a> をインストールしてください。",
-      "line2":"このイントロダクションの長さはスライド３枚ほどで、iChromeの基本操作の概要を説明します。準備ができたら、右側にある矢印を押してください。"
-    },
-    "slide2":{
-      "title":"ウィジェット",
-      "line1":"ウィジェットはiChromeのコアです。右上にカーソルを合わせたときに表示されるレンチおよびハンドルアイコンを使って設定したり移動したりすることができます。削除するには、ドラッグして表示された赤いバーにドロップします。",
-      "line2":"ページの右上にあるメニュー（次のスライドで表示されます）の中にあるウィジェットアイテムをクリックすることで新しいウィジェットが追加できます。"
-    },
-    "slide3":{
-      "title":"カスタマイズする",
-      "line1":"右上のメニューからほぼ何でもあなたが望む通りに設定を変更できます。ページの見た目やiChromeの動作を変更したり、新しいウィジェットを入手することができます。",
-      "line2":"その他できることの中には、それぞれ別々のテーマやウィジェットを持つ新しいタブを作ったり、カスタムテーマを変更したり、ツールバーに表示させるリンクを設定したりする等詳細な設定が可能です。"
     }
   }
 }

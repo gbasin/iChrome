@@ -29,7 +29,7 @@ define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 			]);
 		}
 
-		navigator.sendBeacon("http://stats.ichro.me/ingest?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language, new Blob([JSON.stringify(sendQueue)], {
+		navigator.sendBeacon("https://stats.ichro.me/ingest?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language, new Blob([JSON.stringify(sendQueue)], {
 			type: "application/json"
 		}));
 
@@ -46,16 +46,16 @@ define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 
 		window.ga.l = new Date().getTime();
 
-		var script = document.createElement("script"),
-			firstScript = document.getElementsByTagName("script")[0];
-
-		script.async = true;
-		script.src = "https://ssl.google-analytics.com/analytics.js";
-
 		// Analytics are not critical, delay insertion
-		requestAnimationFrame(function() {
-			firstScript.parentNode.insertBefore(script,firstScript);
-		});
+		setTimeout(function() {
+			var script = document.createElement("script"),
+				firstScript = document.getElementsByTagName("script")[0];
+
+			script.async = true;
+			script.src = "https://ssl.google-analytics.com/analytics.js";
+
+			firstScript.parentNode.insertBefore(script, firstScript);
+		}, 0);
 
 
 		/* global ga */
@@ -198,7 +198,7 @@ define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 	 *
 	 * @api     public
 	 */
-	track.queue = function(type) {
+	track.queue = function() {
 		// Still need to wait for Chrome 45 to use arrow functions (e => !e)
 		var params = _.dropRightWhile(arguments, function(e) { return !e; });
 
@@ -245,7 +245,7 @@ define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 
 	// Track pageview with GA and internal counter
 	track.pageview();
-	
+
 	Browser.storage.uses = parseInt(Browser.storage.uses || 0) + 1;
 
 	return track;

@@ -46,7 +46,7 @@ define(function() {
 				return "";
 			}
 
-			return "chrome://favicon/size/16@" + devicePixelRatio + "x/origin/" + url;
+			return "chrome://favicon/size/16@" + devicePixelRatio + "x/" + url;
 		}
 	};
 

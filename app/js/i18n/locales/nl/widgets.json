@@ -1,18 +1,5 @@
 {
   "lang_code":"nl-widgets",
-  "analytics":{
-    "name":"Analytics",
-    "desc":"Laat verschillende statistieken zien van een Google Analytics-profiel.",
-    "sessions":"sessies",
-    "pageviews":"Pageviews",
-    "pagesvisit":"Paginabezoeken",
-    "bouncerate":"Bounce Rate",
-    "completions":"Opleveringen",
-    "noprofile":"Zo te zien heeft u nog geen profiel geselecteerd!\n<br \/><br \/>\nSelecteer er een via het steeksleutel icoon rechtsbovenin.",
-    "settings":{
-      "profile":"Profiel"
-    }
-  },
   "apps":{
     "name":"Apps",
     "desc":"Laat uw huidige geïnstalleerde Google Chrome applicaties zien.",
@@ -120,22 +107,6 @@
     "dismiss":"Dismiss",
     "enable_audio":"Enable audio"
   },
-  "currency":{
-    "name":"Munteenheid",
-    "desc":"Laat u converteren tussen elke van de 169 valuta's.",
-    "to_label":"Naar",
-    "recently_used":"Recently Used"
-  },
-  "drive":{
-    "name":"Drive",
-    "desc":"Laat onlangs gewijzigde bestanden zien uit uw Google Drive.",
-    "settings":{
-      "files_shown":"Aantal bestanden weergeven"
-    },
-    "modified_by":"door",
-    "authorize":"U moet iChrome toestemming geven om bestanden van uw Google Drive te lezen voordat hier iets zichtbaar word.",
-    "authorize_btn":"Machtigen"
-  },
   "facebook":{
     "name":"Facebook",
     "desc":"Hiermee sluit u Facebook in in een widget"
@@ -175,52 +146,6 @@
     "author":"door",
     "go_to_feedly":"Ga naar Feedly"
   },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"Geeft uw Gmail inbox weer waar u uw email kunt beheren."
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"Laat een webpagina van uw keuze in een iframe zien.",
-    "settings":{
-      "url":"Frame URL",
-      "url_placeholder":"bijvoorbeeld http:\/\/www.google.com\/",
-      "height":"Framehoogte",
-      "padding":"Opvulling"
-    }
-  },
-  "keep":{
-    "name":"Bewaar",
-    "desc":"Stopt Google Keep in een widget"
-  },
-  "news":{
-    "name":"Nieuws",
-    "desc":"Geeft het huidige top nieuws weer per categorie en editie.",
-    "settings":{
-      "articles":"Weergegeven artikelen",
-      "edition":"Editie",
-      "edition_help":"Als uw uitgave of thema niet in de lijst staat, vul de URL van de Google News-feed in het onderstaande 'aangepaste feed'-veld (bekijk daar de helptekst voor verdere uitleg).",
-      "topic":"Onderwerp",
-      "topic_options":{
-        "top":"Populaire artikelen",
-        "world":"Wereld",
-        "nation":"Nationaal",
-        "business":"Zakelijk",
-        "sports":"Sport",
-        "technology":"Technologie",
-        "entertainment":"Entertainment",
-        "health":"Gezondheid",
-        "science":"Wetenschap",
-        "spotlight":"Schijnwerper"
-      },
-      "feed":"Aangepaste Feed",
-      "feed_help":"Dit is de feed van de URL die aan de onderkant van elke Google Nieuwspagina staat. Zoek een oranje RSS-icoon op en een link dat \"RSS\" aangeeft",
-      "feed_placeholder":"Vul een eigen RSS feed in om nieuws van op te halen",
-      "footer":"Voettekst URL",
-      "footer_placeholder":"Vul een URL in waar de \"Meer\" knop naar moet linken"
-    },
-    "more":"Meer"
-  },
   "notes":{
     "name":"Notities",
     "desc":"Voegt een simpele, aanpasbare notitie toe.",
@@ -254,14 +179,6 @@
     "name":"Google notificaties",
     "desc":"Geef uw Google notificaties van services zoals Google+ weer"
   },
-  "recentlyclosed":{
-    "name":"Onlangs gesloten",
-    "desc":"Toont uw onlangs gesloten tabbladen",
-    "settings":{
-      "tabs":"Weergegeven tabbladen",
-      "open":"Open tabbladen in"
-    }
-  },
   "reddit":{
     "name":"Reddit",
     "desc":"Toont de populairste items op Reddit voor elke opgegeven subreddit.",
@@ -287,76 +204,6 @@
     },
     "more":"Meer"
   },
-  "rss":{
-    "name":"RSS",
-    "desc":"Toont items van een RSS- of Atomfeed met eventuele afbeeldingen.",
-    "settings":{
-      "link":"Titellink",
-      "link_placeholder":"Geef een link voor de titel van de widget",
-      "url":"Feed URL",
-      "url_placeholder":"De URL van de RSS-feed die getoond moet worden",
-      "articles":"Weergegeven artikelen",
-      "view":"Weergave",
-      "view_options":{
-        "images":"Afbeeldingsvriendelijk",
-        "default":"Standaardinstelling"
-      },
-      "images":"Afbeeldingen",
-      "descriptions":"Beschrijvingen"
-    },
-    "feed_error":"Een fout is opgetreden tijdens het ophalen van de feed: %s.\nControleer nogmaals de URL en\/of verander de instellingen van de widget."
-  },
-  "sports":{
-    "name":"Sport",
-    "desc":"Geeft scores en wedstrijdinformatie voor geselecteerde divisies en\/of teams.",
-    "settings":{
-      "league":"Competitie",
-      "games":"Getoonde wedstrijden",
-      "team":"Team",
-      "teams":"Team",
-      "unavailable":"Wanneer teamwedstrijden niet beschikbaar zijn",
-      "unavailable_options":{
-        "other":"Toon andere wedstrijden",
-        "none":"Toon \"geen wedstrijden\""
-      }
-    },
-    "error":"Er lijkt iets verkeerd te zijn gegaan",
-    "unknown_error":"Onbekende fout",
-    "watch_on":"Kijk op: %s",
-    "no_games":"Geen wedstrijden gepland"
-  },
-  "stocks":{
-    "name":"Aandelen",
-    "desc":"Geeft actuele informatie voor elk opgegeven beurssymbool.",
-    "settings":{
-      "symbols":"Beurssymbolen, gescheiden door komma's",
-      "symbols_placeholder":"Bijv. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"Dit zijn de aandelen die u wilt zien in TICKER:EXCHANGE formaat.\n<br \/><br \/>\nVoor indexen, gebruik de tickers en wisselkoersen zoals getoond op <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. Bijvoorbeeld de Dow Jones index is <b>.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
-    },
-    "as_of":"per",
-    "exchange_time":"Wisselkoers tijd",
-    "open":"open",
-    "high":"hoog",
-    "low":"laag",
-    "volume":"volume"
-  },
-  "todo":{
-    "name":"Taken",
-    "desc":"Geeft een interactieve takenlijst weer met belangrijke en voltooide taken.",
-    "title":"Takenlijst",
-    "settings":{
-      "color":"Tekstkleur",
-      "color_options":{
-        "light":"Licht",
-        "dark":"Donker"
-      },
-      "tags":"Labels",
-      "tags_placeholder":"Vul een tagnaam in en druk enter"
-    },
-    "add":"Item toevoegen",
-    "none":"Geen",
-    "important":"Belangrijk"
-  },
   "tasks":{
     "name":"Taken",
     "desc":"Toont een bewerkbare lijst met taken van een van uw Google Task lijsten.",
@@ -375,43 +222,6 @@
     "due_today":"Vervalt vandaag",
     "overdue":"Achterstallige",
     "authorize":"U zult een lijst moeten selecteren van uw Google Tasks via instellingen voordat hier iets getoont kan worden."
-  },
-  "topsites":{
-    "name":"Topsites",
-    "desc":"Geeft uw meest bezochte\/beste websites weer.",
-    "settings":{
-      "show":"Aantal getoonde websites",
-      "open":"Open websites in"
-    }
-  },
-  "traffic":{
-    "name":"Data",
-    "desc":"Toont de actuele reistijd naar huis of werk.",
-    "settings":{
-      "leave":"Ik ga van huis om",
-      "home":"Huisadres",
-      "home_placeholder":"De bestemming waar u na werk naartoe gaat",
-      "work":"Werkadres",
-      "work_placeholder":"De bestemming waar u voor uw werk naartoe gaat",
-      "method":"OV-vervoersmiddel",
-      "method_options":{
-        "driving":"Onderweg",
-        "walking":"Wandelen",
-        "transit":"Openbaar vervoer"
-      }
-    },
-    "to_home":"naar huis",
-    "to_work":"naar werk"
-  },
-  "translate":{
-    "name":"Vertalen",
-    "desc":"Bevat een kleine ingevoegde Google Vertalen-tekstveld.",
-    "placeholder":"Vul de tekst in u die u wilt vertalen, druk daarna op 'vertalen'.",
-    "button":"Vertalen",
-    "untranslate":"Terugvertalen",
-    "auto":"Auto (%s)",
-    "unknown":"Onbekend",
-    "error":"Er ging iets fout toen u dat wou vertalen..."
   },
   "twitter":{
     "name":"Twitter",
@@ -433,40 +243,8 @@
     "retweet":"Retweet",
     "favorite":"Favoriet"
   },
-  "unread":{
-    "name":"Ongelezen",
-    "desc":"Geeft het aantal ongelezen e-mails uit uw Gmail-postvak weer.",
-    "settings":{
-      "open":"Bij klikken open"
-    },
-    "unread_none":"ongelezen e-mails",
-    "unread_one":"ongelezen e-mail",
-    "unread_many":"ongelezen e-mails"
-  },
-  "voice":{
-    "name":"Voice",
-    "desc":"Geeft het actuele aantal gemiste oproepen en sms'jes in je Google Voice-account weer.",
-    "call":"Oproep van",
-    "text":"SMS van",
-    "missed":"gemist in Voice",
-    "texts":"ongelezen sms'jes",
-    "calls":"gemiste oproepen"
-  },
-  "weather":{
-    "name":"Weer",
-    "desc":"Geeft actueel weer en de weersverwachting voor de komende 4 dagen weer.",
-    "settings":{
-      "location":"Locatie(s)",
-      "location_placeholder":"Vul een locatie in en druk enter",
-      "temperature":"Eenheid van temperatuur",
-      "wind":"Eenheid van windsnelheid"
-    },
-    "unknown":"Onbekend",
-    "wind":"Windsnelheid",
-    "chill":"Gevoelstemperatuur",
-    "humidity":"Luchtvochtigheid"
-  },
   "wolfram":{
+    "name":"Wolfram|Alpha",
     "desc":"Voegt een klein Wolfram|Alpha zoekvak toe."
   },
   "youtube":{
@@ -522,7 +300,7 @@
       "color":"Image Background Color",
       "style":"Image Style",
       "style_fill":"Fill",
-      "style_center":"Gecentreerd"
+      "style_center":"Middelpunt"
     }
   },
   "stats":{
@@ -548,15 +326,6 @@
       "param_placeholder":"The parameter where the query goes, i.e. \"q\""
     },
     "default_placeholder":"Search Google"
-  },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
   },
   "pushbullet":{
     "name":"Pushbullet",
@@ -597,5 +366,275 @@
     "no_links":"No links found",
     "grant_access":"Grant access",
     "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
+  },
+  "analytics":{
+    "name":"Analytics",
+    "desc":"Laat verschillende statistieken zien van een Google Analytics-profiel.",
+    "sessions":"sessies",
+    "pageviews":"Pageviews",
+    "pagesvisit":"Paginabezoeken",
+    "bouncerate":"Bounce Rate",
+    "completions":"Opleveringen",
+    "noprofile_title":"No profile selected",
+    "noprofile":"Zo te zien heeft u nog geen profiel geselecteerd!\n<br \/><br \/>\nSelecteer er een via het steeksleutel icoon rechtsbovenin.",
+    "settings":{
+      "profile":"Profiel"
+    }
+  },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
+    }
+  },
+  "currency":{
+    "name":"Munteenheid",
+    "desc":"Laat u converteren tussen elke van de 169 valuta's.",
+    "to_label":"Naar",
+    "recently_used":"Recently Used"
+  },
+  "dictionary":{
+    "name":"Dictionary",
+    "desc":"Quickly look up the definition and synonyms for a word",
+    "search_placeholder":"Enter a word or term here",
+    "more":"Meer",
+    "less":"Less",
+    "synonyms":"Synonyms",
+    "antonyms":"Antonyms",
+    "web_definitions":"Web definitions",
+    "no_definitions":"No definitions found"
+  },
+  "drive":{
+    "name":"Drive",
+    "desc":"Laat onlangs gewijzigde bestanden zien uit uw Google Drive.",
+    "settings":{
+      "files_shown":"Aantal bestanden weergeven"
+    },
+    "modified_by":"door",
+    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Geeft uw Gmail inbox weer waar u uw email kunt beheren."
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Laat een webpagina van uw keuze in een iframe zien.",
+    "settings":{
+      "url":"Frame URL",
+      "url_placeholder":"bijvoorbeeld http:\/\/www.google.com\/",
+      "height":"Framehoogte",
+      "padding":"Opvulling"
+    }
+  },
+  "keep":{
+    "name":"Bewaar",
+    "desc":"Stopt Google Keep in een widget"
+  },
+  "news":{
+    "name":"Nieuws",
+    "desc":"Geeft het huidige top nieuws weer per categorie en editie.",
+    "all_stories":"Alle",
+    "settings":{
+      "page_title":"Instellingen",
+      "save":"Opslaan",
+      "title":"Widget titel",
+      "title_placeholder":"Voer een titel in of laat leeg om hem te verbergen",
+      "articles":"Weergegeven artikelen",
+      "edition":"Editie",
+      "default_topic":"Default Topic"
+    }
+  },
+  "recentlyclosed":{
+    "name":"Onlangs gesloten",
+    "desc":"Toont uw onlangs gesloten tabbladen",
+    "settings":{
+      "tabs":"Weergegeven tabbladen",
+      "open":"Open tabbladen in"
+    },
+    "more":"more"
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"Toont items van een RSS- of Atomfeed met eventuele afbeeldingen.",
+    "settings":{
+      "page_title":"Instellingen",
+      "save":"Opslaan",
+      "title":"Widget titel",
+      "title_placeholder":"Voer een titel in of laat leeg om hem te verbergen",
+      "link":"Titellink",
+      "link_placeholder":"Geef een link voor de titel van de widget",
+      "feeds":"Feeds",
+      "feeds_help":"Click any feed to edit it",
+      "feeds_placeholder":"Enter a feed URL and press Enter to add",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
+      "feed_name_placeholder":"Feed name",
+      "feed_url_placeholder":"Feed URL",
+      "articles":"Weergegeven artikelen"
+    },
+    "by":"Door",
+    "all_articles":"Alle artikelen",
+    "feed_error":"Een fout is opgetreden tijdens het ophalen van de feed: %s.\nControleer nogmaals de URL en\/of verander de instellingen van de widget."
+  },
+  "sports":{
+    "name":"Sport",
+    "desc":"Displays scores, schedules, and news from your favorite teams.",
+    "settings":{
+      "page_title":"Favorites",
+      "save":"Opslaan",
+      "teams_placeholder":"Enter a team name and press Enter to add"
+    },
+    "scores":"Scores",
+    "news":"Nieuws",
+    "last_play":"Last play",
+    "no_games":"No games found",
+    "pro_splash1":"Sports news is a Pro-only feature.",
+    "pro_splash2":"Buy Pro in the settings.",
+    "preview":"Voorbeeld",
+    "tickets":"Tickets",
+    "live":"Live",
+    "recap":"Recap",
+    "box_score":"Box Score"
+  },
+  "stocks":{
+    "name":"Aandelen",
+    "desc":"Geeft actuele informatie voor elk opgegeven beurssymbool.",
+    "settings":{
+      "stocks":"Aandelen",
+      "stocks_placeholder":"Type a company or exchange name and hit Enter"
+    },
+    "as_of":"per",
+    "exchange_time":"Wisselkoers tijd",
+    "overview":"Overview",
+    "news":"Nieuws",
+    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
+    "pro_splash2":"Buy Pro in the settings.",
+    "time_ranges":{
+      "1d":"1d",
+      "5d":"5d",
+      "1m":"1m",
+      "3m":"3m",
+      "1y":"1y",
+      "5y":"5y",
+      "max":"max"
+    },
+    "open":"open",
+    "prev_close":"Previous Close",
+    "high":"hoog",
+    "52high":"52 week high",
+    "low":"laag",
+    "52low":"52 week low",
+    "volume":"volume",
+    "avg_volume":"Avg. Volume",
+    "shares":"Shares",
+    "cap":"Market Cap",
+    "pe":"Price \/ Earnings",
+    "eps":"EPS",
+    "beta":"Beta",
+    "inst_own":"Inst. own"
+  },
+  "todo":{
+    "name":"Taken",
+    "desc":"Geeft een interactieve takenlijst weer met belangrijke en voltooide taken.",
+    "title":"Takenlijst",
+    "settings":{
+      "color":"Tekstkleur",
+      "color_options":{
+        "light":"Licht",
+        "dark":"Donker"
+      },
+      "tags":"Labels",
+      "tags_placeholder":"Vul een tagnaam in en druk enter"
+    },
+    "add":"Item toevoegen",
+    "none":"Geen",
+    "important":"Belangrijk"
+  },
+  "topsites":{
+    "name":"Topsites",
+    "desc":"Geeft uw meest bezochte\/beste websites weer.",
+    "settings":{
+      "show":"Aantal getoonde websites"
+    }
+  },
+  "traffic":{
+    "name":"Data",
+    "desc":"Toont de actuele reistijd naar huis of werk.",
+    "settings":{
+      "leave":"Ik ga van huis om",
+      "home":"Huisadres",
+      "home_placeholder":"De bestemming waar u na werk naartoe gaat",
+      "work":"Werkadres",
+      "work_placeholder":"De bestemming waar u voor uw werk naartoe gaat",
+      "method":"OV-vervoersmiddel",
+      "method_options":{
+        "driving":"Onderweg",
+        "walking":"Wandelen",
+        "transit":"Openbaar vervoer"
+      }
+    },
+    "to_home":"naar huis",
+    "to_work":"naar werk"
+  },
+  "translate":{
+    "name":"Vertalen",
+    "desc":"Lets you quickly translate to and from 90 languages as you type",
+    "from_placeholder":"Start typing here",
+    "to_placeholder":"Translated text will appear here",
+    "detect_lang":"Detect language",
+    "translating":"Translating...",
+    "unknown":"Onbekend"
+  },
+  "unread":{
+    "name":"Ongelezen",
+    "desc":"Geeft het aantal ongelezen e-mails uit uw Gmail-postvak weer.",
+    "settings":{
+      "open":"Bij klikken open"
+    },
+    "unread_none":"ongelezen e-mails",
+    "unread_one":"ongelezen e-mail",
+    "unread_many":"ongelezen e-mails"
+  },
+  "voice":{
+    "name":"Voice",
+    "desc":"Geeft het actuele aantal gemiste oproepen en sms'jes in je Google Voice-account weer.",
+    "call":"Oproep van",
+    "text":"SMS van",
+    "missed":"gemist in Voice",
+    "texts":"ongelezen sms'jes",
+    "calls":"gemiste oproepen"
+  },
+  "weather":{
+    "name":"Weer",
+    "desc":"Geeft actueel weer en de weersverwachting voor de komende 4 dagen weer.",
+    "settings":{
+      "location":"Locatie(s)",
+      "location_placeholder":"Vul een locatie in en druk enter",
+      "units":"Units",
+      "units_imperial":"Imperial (Fahrenheit)",
+      "units_metric":"Metric (Celsius)",
+      "enabled":"Ingeschakeld",
+      "disabled":"Uitgeschakeld",
+      "forecast":"Forecasts",
+      "hourly":"Hourly forecasts"
+    },
+    "more":"Meer",
+    "less":"Less",
+    "wind":"Windsnelheid",
+    "precipitation":"Precip",
+    "uv":"UV index",
+    "feelslike":"Feels like",
+    "barometer":"Barometer",
+    "visibility":"Visibility",
+    "humidity":"Luchtvochtigheid",
+    "dewpoint":"Dew point",
+    "moonphase":"Moon",
+    "sunrise":"Sunrise",
+    "sunset":"Sunset",
+    "moonrise":"Moonrise",
+    "moonset":"Moonset"
   }
 }

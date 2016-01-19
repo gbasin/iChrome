@@ -1,0 +1,26 @@
+<header>
+	<h2 class="page-name">{{i18n.settings.title}} &ndash; {{i18n.settings.nav.accounts}}</h2>
+</header>
+
+<main class="content" tabindex="-1">
+	<section class="status" data-id="status">
+		<h3>{{i18n.settings.accounts.status.title}}</h3>
+
+		{{#signedIn}}
+			<p class="desc">{{{signedInMsg}}}</p>
+
+			<div class="input no-label actions">
+				<button type="button" class="material red reset">{{i18n.settings.accounts.status.reset_account}}</button>
+
+				<button type="button" class="material sign-out">{{i18n.settings.accounts.status.sign_out}}</button>
+			</div>
+		{{/signedIn}}
+		{{^signedIn}}
+			<p class="desc">{{{i18n.settings.accounts.status.signed_out}}}</p>
+
+			<div class="input no-label actions">
+				<button type="button" class="material red sign-in">{{i18n.settings.accounts.status.sign_in}}</button>
+			</div>
+		{{/signedIn}}
+	</section>
+</main>

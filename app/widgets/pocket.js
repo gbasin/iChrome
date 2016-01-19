@@ -4,7 +4,7 @@
 define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], function($, _, moment, Backbone, Browser, OAuth) {
 	var View = Backbone.View.extend({
 		events: {
-			"click .no-key button": function(e) {
+			"click .no-key button": function() {
 				(this.oAuth || this.setOAuth()).startAuthFlow(this.refresh.bind(this));
 			}
 		},
@@ -66,7 +66,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 								that.openWindow = win.id;
 
 								Browser.webRequest.onBeforeRequest.addListener(
-									function(info) {
+									function() {
 										this.exchangeCode(d.code, cb);
 
 										Browser.windows.remove(win.id);
@@ -153,11 +153,11 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 			};
 
 			this.oAuth.ajax = function(config) {
-				this.getToken(function(token, data) {
+				this.getToken(function(token) {
 					if (!config.data) {
 						config.data = {};
 					}
-					
+
 					config.data.consumer_key = this.config.id;
 					config.data.access_token = token;
 
@@ -177,11 +177,13 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 		 * @return  {String}        The parsed, scaled URL
 		 */
 		getImageURL: function(oUrl) {
-			if (!oUrl) return;
+			if (!oUrl) {
+				return;
+			}
 
 			var url = new URL(oUrl);
 
-			var vars = "?f=t&lq=1" + (url.protocol == "https:" ? "&ssl=1" : "");
+			var vars = "?f=t&lq=1" + (url.protocol === "https:" ? "&ssl=1" : "");
 
 			if (url.protocol !== "http:" && url.protocol !== "https:") {
 				return oUrl;
@@ -201,12 +203,16 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 		},
 
 		refresh: function() {
-			if (!this.oAuth) this.setOAuth();
+			if (!this.oAuth) {
+				this.setOAuth();
+			}
 
-			if (!this.oAuth.hasToken()) return this.render();
+			if (!this.oAuth.hasToken()) {
+				return this.render();
+			}
 
 			var getImageURL = this.getImageURL,
-				original = this.config.open == "original";
+				original = this.config.open === "original";
 
 			this.oAuth.ajax({
 				type: "POST",
@@ -216,7 +222,9 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 					detailType: "complete"
 				},
 				success: function(d) {
-					if (!d) return;
+					if (!d) {
+						return;
+					}
 
 					this.data.links = _(d.list).sortBy("sort_id").map(function(e) {
 						var ret = {
@@ -350,12 +358,12 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 		},
 		refresh: function() {
 			this.ensureView();
-			
+
 			this.view.refresh();
 		},
 		render: function(demo) {
 			this.ensureView();
-			
+
 			this.view.render(demo);
 		}
 	};

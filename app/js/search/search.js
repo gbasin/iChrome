@@ -24,15 +24,15 @@ define(["backbone", "storage/storage", "core/render", "core/analytics", "search/
 					e.preventDefault();
 				}
 
-				if (e.which == 13) {
+				if (e.which === 13) {
 					this.submit();
 				}
-				else if (e.which == 38) {
+				else if (e.which === 38) {
 					this.Suggestions.setFocus("prev");
 
 					Track.event("Search", "Suggestions", "Key Prev");
 				}
-				else if (e.which == 40) {
+				else if (e.which === 40) {
 					this.Suggestions.setFocus("next");
 
 					Track.event("Search", "Suggestions", "Key Next");
@@ -48,7 +48,7 @@ define(["backbone", "storage/storage", "core/render", "core/analytics", "search/
 						this.trigger("typing:start");
 					}
 				}
-				else if (!w || (w == "focusout")) { // If either w (which) isn't set or w is focusout; if w is not focusin
+				else if (!w || (w === "focusout")) { // If either w (which) isn't set or w is focusout; if w is not focusin
 					this.Suggestions.hide();
 
 					if (this.model.get("toolbar")) {
@@ -70,12 +70,12 @@ define(["backbone", "storage/storage", "core/render", "core/analytics", "search/
 					});
 				}
 
-				var searchURL = (this.model.get("search-url") || "https://www.google.com/search?q=%s"),
+				var searchURL = this.model.get("searchURL") || "https://www.google.com/search?q=%s",
 					link = document.createElement("a");
 
 				link.setAttribute("href", searchURL.replace("%s", encodeURIComponent(val)));
 
-				link.setAttribute("target", (this.model.get("stab") ? "_blank" : "_self"));
+				link.setAttribute("target", (this.model.get("searchInNewTab") ? "_blank" : "_self"));
 
 				link.click();
 			},

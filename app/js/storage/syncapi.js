@@ -1,204 +1,25 @@
 /**
  * Handles sync interfacing with ichro.me and ID management
  */
-define(["jquery", "lodash", "browser/api", "core/analytics"], function($, _, Browser, Track) {
-	/**
-	 * The domain and port to sync data to/from
-	 */
-	var syncBase = "https://sync.ichro.me";
-
-	/**
-	 * Sync token and client ID management
-	 *
-	 * The sync system is based off of a sync token, which is effectively an OAuth
-	 * token that simultaneously identifies and grants access to a sync profile,
-	 * and a client ID to identify individual clients.
-	 *
-	 * Tokens are stored in Browser.storage for immediate use, Chrome's sync storage
-	 * so clients under the same Chrome account are synced, and as a cookie at ichro.me
-	 * so they survive reinstalls or other local data erasures.
-	 */
-	var clientData = {
-		user: {}
-	};
-
-	try {
-		if (Browser.storage.syncData) {
-			var d = JSON.parse(Browser.storage.syncData);
-
-			_.assign(clientData, d);
-		}
-	}
-	catch (e) {}
+define(["lodash", "browser/api", "i18n/i18n", "modals/alert", "core/analytics", "core/auth"], function(_, Browser, Translate, Alert, Track, Auth) {
+	// The sync API URL
+	var SYNC_URL = "/sync/v1";
 
 
+	var pastDueAlerted = false;
 
-	// NOTE: These two methods are duplicated in background.js.  Changes made here
-	// should be reflected there
-
-	/**
-	 * Loads the sync token and client ID (if available) from the first storage
-	 * location in which they can be found.  This is possibly asynchronous.
-	 *
-	 * @param   {Function}  cb  The callback function
-	 */
-	var loadData = function(cb) {
-		if (clientData.token) {
-			return cb(clientData);
+	var handlePastDue = function() {
+		if (pastDueAlerted) {
+			return;
 		}
 
-		var done = 0;
+		pastDueAlerted = true;
 
-		var next = function() {
-			if (done++) {
-				if (clientData.token) {
-					cb(clientData);
-				}
-				else {
-					cb();
-				}
-
-				saveData();
-			}
-		};
-
-
-		// These are loaded one after the next since they might contain
-		// different levels of information.
-		// 
-		// For example, if iChrome is uninstalled on 3 computers in a sync
-		// group, and cookies are cleared on two, when it's reinstalled
-		// one of the first two might create a new sync token, but not have
-		// the email address from the old profile.  This ensures that the
-		// third computer will load and resave that data.
-		Browser.syncStorage.get("syncData", function(d) {
-			if (d && d.syncData) {
-				_.assign(clientData, d.syncData);
-			}
-
-			next();
-		});
-
-		Browser.cookies.get({
-			name: "sync_data",
-			url: "http://ichro.me"
-		}, function(d) {
-			try {
-				d = d && d.value && JSON.parse(d.value);
-
-				if (d) {
-					// If a token is already set from the sync storage,
-					// keep it, but add the new information
-					if (clientData.token) {
-						_.assign(clientData, _.omit(d, "token", "client"));
-					}
-					else {
-						_.assign(clientData, d);
-					}
-				}
-			}
-			catch (e) {}
-			
-			next();
+		Alert({
+			title: Translate("storage.pastdue"),
+			contents: [Translate("storage.pastdue_desc")]
 		});
 	};
-
-
-	/**
-	 * Saves the sync token and client ID to the various storage locations used
-	 */
-	var saveData = function() {
-		if (clientData.status && clientData.status === "duplicate" && clientData.token) {
-			delete clientData.status;
-		}
-
-		Browser.storage.syncData = JSON.stringify(clientData);
-
-		Browser.syncStorage.set({
-			syncData: _.omit(clientData, "client")
-		});
-
-		Browser.cookies.set({
-			name: "sync_data",
-			domain: ".ichro.me",
-			url: "http://ichro.me",
-			value: JSON.stringify(_.assign({}, clientData, {
-				// If the second extension picks this up we don't want it to think
-				// the user is signed in and hide the button.
-				user: _.omit(clientData.user, "signedIn")
-			})),
-			expirationDate: (new Date().getTime() / 1000) + (10 * 365 * 24 * 60 * 60)
-		});
-	};
-
-
-	if (!(clientData.user.email && clientData.user.fname && clientData.user.lname && clientData.user.image)) {
-		var getUser = function() {
-			var addOrigin = function(info) {
-				var headers = _.filter(info.requestHeaders, function(e) {
-					return e.name.toLowerCase() !== "origin";
-				});
-
-				headers.push({
-					name: "Origin",
-					value: "https://www.google.com"
-				});
-
-				return {
-					requestHeaders: headers
-				};
-			};
-
-			Browser.webRequest.onBeforeSendHeaders.addListener(addOrigin, {
-				urls: ["https://accounts.google.com/ListAccounts?source=ChromiumBrowser&json=standard"]
-			}, ["blocking", "requestHeaders"]);
-
-
-			// Field keys obtained from ParseListAccountsData in google_apis/gaia/gaia_auth_util.cc in the Chromium source
-			$.post("https://accounts.google.com/ListAccounts?source=ChromiumBrowser&json=standard", function(d) {
-				Browser.webRequest.onBeforeRequest.removeListener(addOrigin);
-
-				if (!Array.isArray(d)) {
-					try {
-						d = JSON.parse(d);
-					}
-					catch (e) {
-						return;
-					}
-				}
-
-				if (!d.length || d.length < 2 || !d[1] || !d[1].length) {
-					return;
-				}
-
-				d = d[1][0];
-
-				var name = (d[2] || "").trim().split(" ");
-
-				clientData.user.fname = name.shift().trim() || undefined;
-				clientData.user.lname = name.join(" ").trim() || undefined;
-
-				clientData.user.email = (d[3] || "").trim().toLowerCase() || undefined;
-				clientData.user.image = (d[4] || "").trim().replace(/\/w[0-9]+-h[0-9]+\//, "/").replace(/^\/\//, "https://") || undefined;
-				clientData.user.googleid = d[10];
-
-				saveData();
-			});
-		};
-
-		if (!clientData.token) {
-			loadData(function() {
-				var u = clientData.user;
-
-				if (!(u.email && u.fname && u.lname && u.image)) {
-					getUser();
-				}
-			});
-		}
-		else {
-			getUser();
-		}
-	}
 
 
 	var syncAPI = {
@@ -207,124 +28,68 @@ define(["jquery", "lodash", "browser/api", "core/analytics"], function($, _, Bro
 		 *
 		 * @api     public
 		 * @param   {Number}    [params]  Any URL parameters to append to the request
-		 * @param   {Function}  cb        Has a Node-style signature of (error, data).
-		 *                                Possible errors are "No token", "Network error",
-		 *                                "Server error", or "Corrupt sync profile"
+		 * @param   {Function}  cb        Has a Node-style signature of (err, data). This will be called
+		 *                                with no arguments if the user is not signed in. Possible errors
+		 *                                are "Network error" and "Server error".
+		 * @param   {Boolean}   [retry]   If this request is a retry
 		 */
-		get: function(params, cb) {
+		get: function get(params, cb, retry) {
 			if (typeof params === "function") {
 				cb = params;
 				params = null;
 			}
 
-			var get = function(retry) {
-				$.ajax({
-					url: syncBase + "/" + clientData.token,
-					data: _.assign({
-						extension: Browser.app.id,
-						version: Browser.app.version,
-						client: clientData.client
-					}, params),
-					timeout: 10000,
-					complete: function(xhr, status) {
-						if ((xhr.status === 200 && xhr.responseJSON) || xhr.status === 304) {
-							var d = xhr.responseJSON;
-
-							if (!d) {
-								return cb(null, {
-									modified: false
-								});
-							}
-
-
-							if (d.user) {
-								_.assign(clientData.user, d.user);
-							}
-
-							// Even if we already have a client token, accept any new one the server sends our way
-							if (d.client) {
-								clientData.client = d.client;
-							}
-
-							if (d.id && d.id !== clientData.token) {
-								clientData.token = d.id;
-							}
-
-							if (d.user || d.client || d.id && d.id !== clientData.token) {
-								saveData();
-							}
-
-
-							cb(null, d);
-						}
-						else if (xhr.status === 0 || status === "timeout") {
-							if (retry) {
-								cb("Network error");
-							}
-							else {
-								get(true);
-							}
-						}
-						else {
-							// If a non-network error occurred, something must be wrong with
-							// our token(s), the data on the server, or the server itself.
-							// 
-							// So, we erase our local tokens and reload them from the synced storage.
-							// If the error occurs again, then the issue must be in our sync profile
-							// so we will have to recreate it.
-							if (retry && xhr.status.toString()[0] !== "5") {
-								clientData = {
-									user: {}
-								};
-
-								delete Browser.storage.syncData;
-
-								Browser.syncStorage.remove("syncData");
-
-								Browser.cookies.remove({
-									name: "sync_data",
-									url: "http://ichro.me"
-								});
-
-								cb("Corrupt sync profile");
-							}
-							else if (retry) {
-								cb("Server error");
-							}
-							else {
-								clientData = {
-									user: {}
-								};
-
-								delete Browser.storage.syncData;
-
-								loadData(function() {
-									if (clientData.token) {
-										get(true);
-									}
-									else {
-										cb("No token");
-									}
-								});
-							}
-						}
-					}
-				});
-			};
-
-			if (clientData.token) {
-				get();
+			if (!Auth.isSignedIn) {
+				return cb();
 			}
-			else {
-				loadData(function() {
-					if (clientData.token) {
-						get();
+
+			Auth.ajax({
+				url: SYNC_URL,
+				data: _.assign({
+					version: Browser.app.version
+				}, params),
+				timeout: 10000,
+				complete: function(xhr, status) {
+					if ((xhr.status === 200 && xhr.responseJSON) || xhr.status === 304) {
+						var d = xhr.responseJSON;
+
+						if (d && d.accessToken) {
+							var wasPro = Auth.isPro;
+
+							Auth.set("token", d.accessToken);
+
+							if (Auth.isPro !== wasPro) {
+								location.reload();
+							}
+						}
+
+						if (d && d.subscriptionPastDue) {
+							handlePastDue();
+						}
+
+						if (!d || d.isModified === false) {
+							return cb(null, {
+								modified: false
+							});
+						}
+
+
+						cb(null, d);
+					}
+					else if (retry && (xhr.status === 0 || status === "timeout")) {
+						cb("Network error");
+					}
+					else if (retry) {
+						// If an error occurs, we try again. If the request fails twice, we sign the user out.
+						Auth.signout(true);
+
+						cb("Server error");
 					}
 					else {
-						cb("No token");
+						get(params, cb, true);
 					}
-				});
-			}
+				}
+			});
 		},
 
 
@@ -333,14 +98,13 @@ define(["jquery", "lodash", "browser/api", "core/analytics"], function($, _, Bro
 		 *
 		 * @api     public
 		 * @param   {Object}    data         The data to sync to the server
-		 * @param   {Function}  [cb]         Has a Node-style signature of (error, data).
-		 *                                   Possible errors are "No token", "Network error", "No data",
-		 *                                   "Duplicate", "Server error", or "Corrupt sync profile"
+		 * @param   {Function}  [cb]         Has a Node-style signature of (err, data). This will be called without
+		 *                                   any arguments if the user isn't signed in. Possible errors are
+		 *                                   "Network error", "No data", or "Server error".
 		 * @param   {Boolean}   [useBeacon]  Whether or not to use a beacon to send the request
-		 * @param   {String}    [code]       The code to send with the request.  If this is specified
-		 *                                   the request will be sent to the /authorize endpoint.
+		 * @param   {Boolean}   [retry]      If this request is a retry
 		 */
-		sync: function(data, cb, useBeacon, code) {
+		sync: function sync(data, cb, useBeacon, retry) {
 			if (typeof cb === "boolean") {
 				useBeacon = cb;
 				cb = _.noop;
@@ -349,172 +113,71 @@ define(["jquery", "lodash", "browser/api", "core/analytics"], function($, _, Bro
 				cb = _.noop;
 			}
 
+			if (!Auth.isSignedIn) {
+				return cb();
+			}
+
 			if (!data || typeof data !== "object") {
 				return cb("No data");
 			}
 
-			var post = function(retry) {
-				var url = syncBase + (code ? "/authorize" : "") + (clientData.token ? "/" + clientData.token : "") + (code ? "?code=" + encodeURIComponent(code) : "");
+			var sData = JSON.stringify(_.assign({}, data, {
+				version: Browser.app.version
+			}));
 
-				var sData = JSON.stringify(_.assign({}, data, clientData, {
-					extension: Browser.app.id,
-					version: Browser.app.version
-				}));
-				
-				if (useBeacon) {
-					return cb(navigator.sendBeacon(url, new Blob([sData], { type: "application/json" })));
+			if (useBeacon) {
+				if (Auth.has("token")) {
+					sData.authToken = Auth.get("token");
 				}
 
-				$.ajax({
-					type: clientData.token && !code ? "PUT" : "POST",
-					url: url,
-					data: sData,
-					contentType: "application/json",
-					timeout: 10000,
-					complete: function(xhr, status) {
-						if (xhr.status === 200 && xhr.responseJSON) {
-							var d = xhr.responseJSON;
+				return cb(navigator.sendBeacon(SYNC_URL, new Blob([sData], { type: "application/json" })));
+			}
 
+			Auth.ajax({
+				type: "PUT",
+				url: SYNC_URL,
+				data: sData,
+				contentType: "application/json",
+				timeout: 10000,
+				complete: function(xhr, status) {
+					if (xhr.status === 200 && xhr.responseJSON) {
+						var d = xhr.responseJSON;
 
-							if (d.user) {
-								_.assign(clientData.user, d.user);
-							}
+						if (d.accessToken) {
+							var wasPro = Auth.isPro;
 
-							// Even if we already have a client token, accept any new one the server sends our way
-							if (d.client) {
-								clientData.client = d.client;
-							}
+							Auth.set("token", d.accessToken);
 
-							if (d.id && d.id !== clientData.token) {
-								clientData.token = d.id;
-							}
-
-							if (d.user || d.client || d.id && d.id !== clientData.token) {
-								saveData();
-							}
-
-
-							cb(null, _.omit(d, "success"));
-						}
-						else if (xhr.status === 409) {
-							cb("Duplicate");
-
-							clientData.status = "duplicate";
-
-							saveData();
-						}
-						else if (xhr.status === 0 || status === "timeout") {
-							if (retry) {
-								cb("Network error");
-							}
-							else {
-								post(true);
+							if (Auth.isPro !== wasPro) {
+								location.reload();
 							}
 						}
-						else {
-							// If a non-network error occurred, something must be wrong with
-							// our token(s), the data on the server, or the server itself.
-							// 
-							// So, we erase our local tokens and reload them from the synced storage.
-							// If the error occurs again, then the issue must be in our sync profile
-							// so we will have to recreate it.
-							if (retry && xhr.status.toString()[0] !== "5" && !(code && xhr.status === 401)) {
-								clientData = {
-									user: {}
-								};
 
-								delete Browser.storage.syncData;
-
-								Browser.syncStorage.remove("syncData");
-
-								Browser.cookies.remove({
-									name: "sync_data",
-									url: "http://ichro.me"
-								});
-
-								cb("Corrupt sync profile");
-							}
-							else if (retry) {
-								cb("Server error");
-							}
-							else if (clientData.token) {
-								clientData = {
-									user: {}
-								};
-
-								delete Browser.storage.syncData;
-
-								loadData(function() {
-									if (clientData.token) {
-										post(true);
-									}
-									else {
-										cb("No token");
-									}
-								});
-							}
-							else {
-								post(true);
-							}
+						if (d.subscriptionPastDue) {
+							handlePastDue();
 						}
+
+						cb(null, d);
 					}
-				});
-			};
+					else if (retry && (xhr.status === 0 || status === "timeout")) {
+						cb("Network error");
+					}
+					else if (retry) {
+						// If an error occurs, we try again. If the request fails twice, we sign the user out.
+						Auth.signout(true);
 
-
-			if (!clientData.user.fname && data.settings && data.settings.name) {
-				clientData.user.fname = data.settings.name;
-
-				delete data.settings.name;
-			}
-
-			if (!clientData.user.image && data.settings && data.settings.profile) {
-				clientData.user.image = data.settings.profile;
-
-				delete data.settings.profile;
-			}
-
-
-			if (clientData.token) {
-				post();
-			}
-			else {
-				loadData(function() {
-					post(); // If no tokens can be found, post will create a new profile
-				});
-			}
+						cb("Server error");
+					}
+					else {
+						sync(data, cb, false, true);
+					}
+				}
+			});
 		},
 
 
 		/**
-		 * Returns the sync profile information.
-		 *
-		 * Since this method is synchronous, it will not pull data from secondary sources.
-		 * If it's called immediately on reinstall, for example, it won't return data.
-		 *
-		 * @api     public
-		 * @return  {Object}  The sync profile information
-		 */
-		getInfo: function() {
-			return clientData;
-		},
-
-
-		/**
-		 * Overwrites sync profile information with the provided object
-		 *
-		 * @api     public
-		 * @param   {Object}  data  The complete sync profile information to save
-		 */
-		saveInfo: function(data) {
-			clientData = _.clone(data);
-
-			saveData();
-		},
-
-
-		/**
-		 * Requests access to the user's Google profile to create or connect to a sync profile
+		 * Prompts the user to sign in and then syncs with the server
 		 *
 		 * @api     public
 		 * @param   {Storage}  storage     The iChrome storage interface.  This will be used to
@@ -524,83 +187,46 @@ define(["jquery", "lodash", "browser/api", "core/analytics"], function($, _, Bro
 		 * @param   {Function} [cb]        The callback
 		 */
 		authorize: function(storage, sendData, cb) {
-			Track.event("Sync", "Authorize", "Start");
+			cb = cb || _.noop;
 
-			Browser.windows.create({
-				width: 560,
-				height: 600,
-				type: "popup",
-				focused: true,
-				url: syncBase + "/signin",
-				top: Math.round((screen.availHeight - 600) / 2),
-				left: Math.round((screen.availWidth - 560) / 2)
-			}, function(win) {
-				Browser.webRequest.onBeforeRequest.addListener(
-					function(info) {
-						// Adapted from http://stackoverflow.com/a/3855394/900747
-						var params = {},
-							idx, param;
+			Auth.authorize(function(err, isNewUser) {
+				if (err) {
+					cb(err);
 
-						_.each(new URL(info.url).search.substr(1).split("&"), function(e) {
-							idx = e.indexOf("=");
+					Track.event("Sync", "Authorize", "Error");
 
-							if (idx === -1) {
-								params[e] = "";
-							}
-							else {
-								param = e.substring(0, idx);
+					return;
+				}
 
-								params[param] = decodeURIComponent(e.substr(idx + 1).replace(/\+/g, " "));
+				var data = {};
 
-								if (param == "code") return false;
-							}
-						});
+				if (sendData) {
+					data = {
+						tabs: storage.tabsSync,
+						themes: storage.themes,
+						settings: storage.settings
+					};
+				}
 
-						if (params.code) {
-							var data = {};
+				syncAPI.sync(data, function(err, d) {
+					if (err || !d) {
+						Track.event("Sync", "Authorize", "Error");
 
-							if (sendData) {
-								data = {
-									tabs: storage.tabsSync,
-									themes: storage.themes,
-									settings: storage.settings
-								};
-							}
+						cb(null, isNewUser);
 
-							syncAPI.sync(data, function(err, d) {
-								if (!err && d) {
-									Track.event("Sync", "Authorize", "Success");
+						return;
+					}
 
-									_.assign(storage, _.pick(d, "user", "tabs", "themes", "settings"));
+					Track.event("Sync", "Authorize", "Success");
 
-									// This results in two requests going to the server, but it's the
-									// simplest way to get all the metadata set up properly.
-									storage.sync();
-								}
-								else {
-									Track.event("Sync", "Authorize", "Error");
-								}
+					_.assign(storage, _.pick(d, "user", "tabs", "themes", "settings"));
 
-								if (cb) cb();
-							}, false, params.code);
-						}
-						else if (cb) {
-							cb(true);
-						}
+					// This results in two requests going to the server, but it's the
+					// simplest way to get all the metadata set up properly.
+					storage.sync();
 
-						Browser.windows.remove(win.id);
-
-						return {
-							cancel: true
-						};
-					},
-					{
-						windowId: win.id,
-						types: ["main_frame"],
-						urls: ["https://sync.ichro.me/authorize*"]
-					},
-					["blocking"]
-				);
+					cb(null, isNewUser);
+				});
 			});
 		}
 	};

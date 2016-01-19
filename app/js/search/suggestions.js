@@ -9,7 +9,7 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 				"mousedown .suggestion": function(e) {
 					Track.event("Search", "Suggestions", "Click");
 
-					this.trigger("select", e.currentTarget.innerText);
+					this.trigger("select", e.currentTarget.textContent);
 				}
 			},
 			current: 0,
@@ -30,8 +30,10 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 							var html = '<div class="suggestion active">' + _.escape(val) + '</div>',
 								num = 1;
 
-							d[1].forEach(function(e, i) {
-								if (num > 10) return;
+							d[1].forEach(function(e) {
+								if (num > 10) {
+									return;
+								}
 
 								if (e[0] !== val) {
 									html += '<div class="suggestion">' + _.escape(e[0]) + '</div>';
@@ -44,7 +46,9 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 
 							this.$el.html(html);
 
-							if (this.visible) this.show(); // If hide() has been called since the request has been sent this will be false, therefore the list shouldn't be shown
+							if (this.visible) {
+								this.show(); // If hide() has been called since the request has been sent this will be false, therefore the list shouldn't be shown
+							}
 						}.bind(this)
 					});
 				}
@@ -62,7 +66,7 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 			setFocus: function(which) {
 				var active;
 
-				if (which == "next") {
+				if (which === "next") {
 					this.clearFocus(true);
 
 					this.current++;
@@ -75,14 +79,14 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 						this.current = 0;
 					}
 				}
-				else if (which == "prev") {
+				else if (which === "prev") {
 					this.clearFocus(true);
 
 					this.current--;
 
 					active = this.$("div").eq(this.current).addClass("active");
 				}
-				else if (typeof which == "number") {
+				else if (typeof which === "number") {
 					this.clearFocus();
 
 					active = this.$("div").eq(which).addClass("active");
@@ -95,7 +99,9 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 			clearFocus: function(skipVar) {
 				this.$("div.active").removeClass("active");
 
-				if (!skipVar) this.current = 0; // If we're in the middle of changing the focus, preserve the old current val
+				if (!skipVar) {
+					this.current = 0; // If we're in the middle of changing the focus, preserve the old current val
+				}
 			}
 		});
 

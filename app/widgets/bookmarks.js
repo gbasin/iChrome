@@ -1,7 +1,7 @@
 /*
  * The Bookmarks widget.
  */
-define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Browser, Modal) {
+define(["jquery", "lodash", "browser/api", "modals/modals", "lib/parseurl"], function($, _, Browser, Modal, parseUrl) {
 	return {
 		id: 16,
 		size: 2,
@@ -76,7 +76,7 @@ define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Brow
 		},
 		addItem: function(data) {
 			var html = '<a class="link drag" href="' + data.url + '"><img class="favicon" src="' + Browser.getFavicon(data.url) +
-				'" /><span class="title">' + data.title + '</span><div class="tools"><span class="' + 
+				'" /><span class="title">' + data.title + '</span><div class="tools"><span class="' +
 				'edit">	&#xE606;</span><span class="delete">&#xE678;</span><span class="move">&#xE693;</span></div>';
 
 			this.editItem($(html).appendTo(this.sortable));
@@ -96,9 +96,9 @@ define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Brow
 
 				modal.hide();
 
-				item.attr("href", modal.url.val().trim().parseUrl())
+				item.attr("href", parseUrl(modal.url.val().trim()))
 					.find(".title").text(modal.title.val().trim()).end()
-					.find(".favicon").attr("src", Browser.getFavicon(modal.url.val().trim().parseUrl()));
+					.find(".favicon").attr("src", Browser.getFavicon(parseUrl(modal.url.val().trim())));
 
 				this.save();
 			}.bind(this);
@@ -131,7 +131,7 @@ define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Brow
 				data.two = true;
 			}
 
-			if (this.config.target && this.config.target == "_blank") {
+			if (this.config.target && this.config.target === "_blank") {
 				data.newTab = true;
 			}
 
@@ -180,7 +180,7 @@ define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Brow
 			}.bind(this));
 
 			this.modal.title.add(this.modal.url).on("keydown", function(e) {
-				if (e.which == 13) {
+				if (e.which === 13) {
 					this.modal.save(e);
 				}
 			}.bind(this));
@@ -194,7 +194,7 @@ define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Brow
 					e.preventDefault();
 
 					Browser.tabs.getCurrent(function(d) {
-						if (e.which == 2 || (e.currentTarget.target || $("base").attr("target")) == "_blank") {
+						if (e.which === 2 || (e.currentTarget.target || $("base").attr("target")) === "_blank") {
 							Browser.tabs.create({
 								url: href,
 								index: d.index + 1
@@ -249,7 +249,7 @@ define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Brow
 
 						that.save.call(that);
 					}).on("keydown", function(e) {
-						if (e.which == 13) {
+						if (e.which === 13) {
 							$(this).off("click keydown").focusout();
 						}
 					});
@@ -263,7 +263,7 @@ define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Brow
 
 			}).on("input", ".catch", function(e) {
 				e.preventDefault();
-				
+
 				var link = $(this).find("a").first();
 
 				if (link.length) {
@@ -274,10 +274,10 @@ define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Brow
 				}
 
 				link.end().end().html("").parent().removeClass("active");
-			}).on("click", ".new > a", function(e) {
+			}).on("click", ".new > a", function() {
 				if (!that.adding) {
-					if ($(this).attr("data-type") == "folder") {
-						var html = '<div class="folder drag"><input type="text" class="name" disabled /><div class="tools"><span class="' + 
+					if ($(this).attr("data-type") === "folder") {
+						var html = '<div class="folder drag"><input type="text" class="name" disabled /><div class="tools"><span class="' +
 							'edit">	&#xE606;</span><span class="delete">&#xE678;</span><span class="move">&#xE693;</span><div class="items"></div></div>';
 
 						$(html).appendTo(that.sortable).find(".edit").click();
@@ -300,7 +300,7 @@ define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Brow
 				dynamicDimensions: true,
 				containerSelector: ".folder .items, .list",
 				placeholder: "<a class=\"link holder\"/>",
-				onDragStart: function(item, container, _super) {
+				onDragStart: function(item) {
 					item.css({
 						height: item.outerHeight(),
 						width: item.outerWidth()
@@ -308,7 +308,7 @@ define(["jquery", "lodash", "browser/api", "modals/modals"], function($, _, Brow
 
 					item.addClass("dragged");
 				},
-				onDrag: function(item, position, _super) {
+				onDrag: function(item, position) {
 					var ctx = $(item.context),
 						ctp = ctx.position(),
 						ctpp = ctx.parent().position();

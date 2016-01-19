@@ -5,24 +5,24 @@
 <div class="section storage">
 	<h3 class="title">Storage</h3>
 
-	<button type="button" data-action="clear-sync">Clear Sync</button>
-	<button type="button" data-action="clear-local">Clear Local</button>
-	<button type="button" data-action="clear-localstorage">Clear LocalStorage</button>
-	<button type="button" data-action="clear-fs">Clear FileSystem</button>
+	<button type="button" class="material flat blue" data-action="clear-sync">Clear Sync</button>
+	<button type="button" class="material flat blue" data-action="clear-local">Clear Local</button>
+	<button type="button" class="material flat blue" data-action="clear-localstorage">Clear LocalStorage</button>
+	<button type="button" class="material flat blue" data-action="clear-fs">Clear FileSystem</button>
 </div>
 
 <div class="section oauth">
 	<h3 class="title">OAuth</h3>
 
-	<button type="button" data-action="clear-oauth">Clear Cache</button>
+	<button type="button" class="material flat blue" data-action="clear-oauth">Clear Cache</button>
 </div>
 
 <div class="section extension">
 	<h3 class="title">Extension</h3>
 
-	<button type="button" data-action="get-info">Info</button>
-	<button type="button" data-action="update">Check for updates</button>
-	<button type="button" data-action="reload-extension">Reload</button>
+	<button type="button" class="material flat blue" data-action="get-info">Info</button>
+	<button type="button" class="material flat blue" data-action="update">Check for updates</button>
+	<button type="button" class="material flat blue" data-action="reload-extension">Reload</button>
 </div>
 
 <div class="section console">
@@ -30,5 +30,5 @@
 
 	<textarea placeholder="Enter code here"></textarea>
 
-	<button type="button" data-action="execute">Execute</button>
+	<button type="button" class="material flat green" data-action="execute">Execute</button>
 </div>

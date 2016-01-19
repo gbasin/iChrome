@@ -1,8 +1,8 @@
 {
   "lang_code":"zh-CN",
   "language":"中文简体",
+  "extName":"iChrome",
   "newtabName":"iChrome 新选项卡",
-  "extName":"iChrome - 您的Chrome主页",
   "extDescription":"Chrome最好用的启动页插件，拥有令人惊叹且可以任意定制的主题、小部件，并如闪电般急速！",
   "newtabDescription":"Chrome最好用的新选项卡，拥有令人惊叹且可以任意定制的主题、小部件，并如闪电般急速！",
   "defaults":{
@@ -10,21 +10,69 @@
     "me":"我"
   },
   "remove_widget":"移除",
-  "column_to_grid_warning":"您选择将选项卡的布局方式从基于列的布局改为基于网格的布局。如果您确认继续将会失去您所有的列，然后一切挂件都将被移动到左上角。您确定要这样做吗？",
-  "grid_to_column_warning":"您选择将选项卡的布局方式从基于网格的布局改为基于列的布局。如果您确认继续将会失去您所有的现有小部件位置，然后一切挂件都将被移动到选项卡的第一列。您确定要这样做吗？",
-  "storage_warning":"您已经使用了90%以上的同步储存空间 ，如果同步储存空间满，iChrome将停止同步您的数据并可能停止工作。您通过删除自定义主题、不需要的笔记和待办事项以缩小您的空间使用量。",
   "alert":{
     "default_button":"忽略",
     "confirm_title":"您是否确认要这样做？",
     "confirm_continue":"继续",
     "confirm_cancel":"取消"
   },
+  "onboarding":{
+    "modal":{
+      "tagline":"All the sites and apps you use, in one place",
+      "wrong_extension":"Want iChrome on your new tab page instead?",
+      "wrong_extension_newtab":"Want iChrome on your home page instead?",
+      "wrong_extension_action":"Click here",
+      "about":"iChrome's all about tabs and widgets",
+      "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
+      "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privacy Policy<\/a>",
+      "sign_in":"Sign in with your Google account",
+      "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
+      "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
+      "sign_in_button":"Sign in with Google",
+      "have_account":"It looks like you already have an account!",
+      "have_account_desc":"All your tabs and widgets are ready to use!",
+      "get_started":"Let's get started!",
+      "get_started_desc":"You're good to go! Let's get your page set up."
+    },
+    "widgets":{
+      "configure":"Let's configure a widget.",
+      "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
+      "configure_skip":"Skip",
+      "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
+      "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
+      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
+      "done":"Got it"
+    },
+    "settings":{
+      "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
+      "instructions":"Click the highlighted image to open it.",
+      "skip":"Skip",
+      "tooltips":{
+        "settings":"Change the way iChrome looks and works",
+        "widgets":"Add new widgets - you can have as many as you want",
+        "editing":"Show or hide the editing buttons on widgets",
+        "links":"This is a list of links, add sites you use often in the settings",
+        "tabs":"These are your tabs. You can add more in the settings",
+        "support":"Send us a message or leave a review here"
+      },
+      "finished":"That's it!",
+      "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
+      "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
+    }
+  },
   "storage":{
-    "signin":"登录以同步您的设置",
-    "signin_desc":"iChrome已检测到您的邮箱下的同步档案。",
-    "signin_desc2":"立即登录您的Google帐户以下载和同步您的配置。",
+    "signin":"Sign in with Google now to securely save and sync your configuration",
     "signin_btn":"登录",
-    "signin_dismiss":"忽略"
+    "signin_dismiss":"忽略",
+    "signin_confirm":{
+      "title":"Keep local data?",
+      "desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
+      "keep_account":"Use account",
+      "keep_local":"Keep local"
+    },
+    "signout_confirm":"Signing out will erase your local backups",
+    "pastdue":"Your subscription is past due",
+    "pastdue_desc":"Please update your billing information in the settings"
   },
   "toolbar":{
     "placeholder":"输入并搜索...",
@@ -44,7 +92,6 @@
   "menu":{
     "settings":"设置",
     "widgets":"小部件",
-    "background":"只显示背景",
     "editing":"编辑",
     "editing_enabled":"正在编辑",
     "editing_disabled":"不在编辑",
@@ -54,8 +101,8 @@
       "support":"支持",
       "feedback":"反馈",
       "review":"评分",
-      "twitter":"Twitter",
-      "webstore":"Webstore",
+      "terms":"Terms",
+      "privacy":"Privacy",
       "by":"由Avi Kohn奉献"
     }
   },
@@ -65,132 +112,225 @@
     "missed":"抱歉，没有听清楚。<a>再试一次<\/a>"
   },
   "settings":{
-    "save":"保存并关闭",
-    "new_tab":"新建",
-    "labels":{
-      "general":"通用",
-      "visual":"外观",
-      "specific":"选项卡",
-      "sync":"帐户与同步",
-      "advanced":"高级"
-    },
-    "general":{
-      "search_url":"搜索链接",
-      "search_url_desc":"该链接将会用于提交搜索请求， <b>%s<\/b> 代表您输入的搜索词",
-      "ltab":"点击链接时的行为",
-      "ltab_label":"默认情况下将在新选项卡中打开链接",
-      "search":"搜索相关",
-      "search_label":"在新选项卡中打开搜索结果页",
-      "voice":"语音搜索",
-      "voice_search":"启用语音搜索",
-      "voice_ok":"启用\"OK Google“声音检测",
-      "links":"工具栏链接",
-      "links_desc":"在这里您可以设置哪些链接在工具栏右侧显示：",
-      "links_items":{
-        "plus":"Google+",
-        "gmail":"Gmail",
-        "apps":"App菜单",
-        "link1":"自定义链接 1",
-        "link2":"自定义链接 2",
-        "link3":"自定义链接 3",
-        "text_holder":"链接文本",
-        "link_holder":"链接的地址，例如 http:\/\/www.google.com\/"
+    "title":"设置",
+    "exit":"Exit settings",
+    "saved":"Settings saved",
+    "nav":{
+      "visual":"Visual",
+      "visual_sections":{
+        "background":"Background",
+        "layout":"布局",
+        "theme":"App theme"
       },
-      "guide":"入门指南",
-      "guide_desc":"重新开始入门指南"
+      "toolbar":"Toolbar",
+      "toolbar_sections":{
+        "style":"Style",
+        "search":"搜索",
+        "links":"Links"
+      },
+      "tabs":"标签：",
+      "widgets":"小部件",
+      "pro":"Pro",
+      "accounts":"Account",
+      "misc":"Miscellaneous",
+      "advanced":"Advanced",
+      "advanced_sections":{
+        "backups":"Backup and restore",
+        "css":"Custom CSS",
+        "debug_tools":"Debug tools"
+      },
+      "support":"Help and support",
+      "suggest":"Suggest a feature"
     },
     "visual":{
-      "layout":"布局",
-      "layout_options":{
-        "1_fixed":"一列，固定宽度",
-        "1_fluid":"一列，相对宽度",
-        "2_fixed":"两列， 固定宽度",
-        "2_fluid":"两列，相对宽度",
-        "3_fixed":"三列，固定宽度",
-        "3_fluid":"三列，相对宽度",
-        "4_fixed":"四列，固定宽度",
-        "4_fluid":"四列，相对宽度",
-        "5_fixed":"五列，固定宽度",
-        "5_fluid":"五列，相对宽度",
-        "grid":"网格布局， 自定义宽度"
+      "background":{
+        "title":"Background",
+        "desc":"This is the image or set of images shown as a background to your tabs",
+        "current":"Current background",
+        "custom":"自定义",
+        "unnamed":"Theme %s",
+        "select":"Select a theme",
+        "or":"或",
+        "url_placeholder":"Enter an image URL"
       },
-      "theme":"默认主题",
-      "theme_placeholder":"主题 #%s",
-      "theme_select":"选择一个主题",
-      "align":"排列方式",
-      "align_desc":"这将更改小部件的排列方式",
-      "align_labels":{
-        "left":"左",
-        "center":"中",
-        "right":"右"
+      "layout":{
+        "title":"布局",
+        "desc":"Here you can adjust the type and number of columns in each tab",
+        "columns":"Columns",
+        "grid":"Grid",
+        "columns_number":"Number of columns",
+        "column_width":"Column width",
+        "column_width_fixed":"Fixed",
+        "column_width_fluid":"Fluid",
+        "column_warning":{
+          "column_to_grid":"Changing to a grid-based layout will move all of your widgets to the top left corner.",
+          "grid_to_column":"Changing to a column-based layout will move all of your widgets to the first column."
+        }
       },
-      "logo":"Logo地址",
-      "logo_desc":"在工具栏左边显示的图像。默认值为<b>\/images\/logo.svg<\/b>",
-      "toolbar":"工具栏样式",
-      "toolbar_desc":"此参数控制工具栏的样式，其可以正常或以按钮形式显示。",
-      "toolbar_normal":"正常",
-      "toolbar_button":"按钮",
-      "animation":"滑动动画",
-      "animation_desc":"此选项允许您启用或禁用加载时的页面动画",
-      "animation_label":"启用动画"
+      "theme":{
+        "title":"App theme",
+        "desc":"The app theme controls the style of iChrome itself and all widgets",
+        "preview":"预览",
+        "light":"Light (default)",
+        "dark":"暗色调",
+        "transparent":"Transparent",
+        "transparent_darker":"Transparent (darker)"
+      }
     },
-    "specific":{
-      "name":"选项卡名称",
-      "default_name":"新选项卡",
-      "delete":"删除选项卡",
-      "delete_disallowed":"您不能删除唯一剩余的选项卡。",
-      "delete_confirm":"真的要要删除此选项卡吗？该操作无法恢复，选项卡中的所有数据将永久丢失。",
-      "default":"设为默认"
+    "toolbar":{
+      "style":{
+        "title":"Style",
+        "desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
+        "normal":"Normal",
+        "button":"Button"
+      },
+      "search":{
+        "title":"搜索",
+        "desc":"These settings control how the search box and voice search function",
+        "engine":"Search engine",
+        "engines_google":"Google (Default)",
+        "engines_custom":"自定义",
+        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
+        "voice":"Enable voice search",
+        "ok_google":"Enable \"OK Google\" hotword detection",
+        "search_tab":"Open search results in a new tab"
+      },
+      "links":{
+        "title":"Links",
+        "desc":"These are the items shown at the right of the toolbar",
+        "apps":"Apps menu",
+        "custom":"Custom links",
+        "custom_note1":"Maximum of 3 allowed",
+        "custom_note2":"users get 8",
+        "custom_name_placeholder":"Link text",
+        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+      }
     },
-    "sync":{
-      "status_syncing":"iChrome<b>正在同步<\/b>您的选项卡及设置",
-      "status_notsyncing":"iChrome<b>不在同步<\/b>您的选项卡及设置",
-      "status_notsyncing2":"点击页面底部的同步按钮或登录您的Google账户以创建一个同步档案。",
-      "duplicate_profile":"当前邮箱地址已存在一个同步档案。为了保护您的安全，iChrome在您登陆您的Google账户以确认该邮件地址之前无法使用您的同步配置文件。",
-      "name":"姓名",
-      "fname":"姓氏",
-      "lname":"名称",
-      "name_desc":"我们将会在iChrome中用此名称称呼您。",
-      "email":"邮箱地址",
-      "email_desc":"这将用来标识您的同步档案，我们同时会使用此邮箱地址来与您取得联系。",
-      "signin":"登录",
-      "signin_btn":"使用 Google 帐号登录",
-      "signin_desc":"登陆您的Google账号以简单安全地将新计算机添加到您的同步档案中。",
-      "signed_in":"iChrome<b>已经连接<\/b>到您的Google账户。在任何一个新电脑上登入此账号即可立即同步您的配置。",
-      "keep_data":"是否保留本地数据?",
-      "keep_data_desc":"Would you like to keep your local data, and replace the configuration on other computers you may have in this sync group with it, or replace this computer's configuration with theirs?",
-      "keep_theirs":"Use Theirs",
-      "keep_local":"Keep Local",
-      "sync_now":"Sync Now",
-      "syncing":"Syncing...",
-      "last_synced":"Last synced",
-      "backup":{
-        "title":"Backup & Restore",
-        "desc":"Click the button an any backup to roll iChrome back to the time displayed.  You can also use the button below to create a manual backup.",
-        "btn":"Backup now",
-        "restore":"Restore",
-        "download":"Download",
-        "download_name":"iChrome Backup",
-        "no_backups":"No backups found, click Backup Now to create one."
+    "misc":{
+      "link_tab":"Open links in a new tab by default"
+    },
+    "tabs":{
+      "create_new":"Create new",
+      "make_default":"Make default",
+      "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
+      "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
+      "name_placeholder":"Enter a tab name",
+      "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
+    },
+    "accounts":{
+      "status":{
+        "title":"Status",
+        "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
+        "reset_account":"Reset account",
+        "sign_out":"Sign out",
+        "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
+        "sign_in":"Sign in with Google"
       },
-      "restore":{
-        "file":"Restore from file",
-        "error":"An error occurred while trying to parse the provided data, please try again later.",
-        "confirm_desc":"This will overwrite all local and synced data.",
-        "confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
-      },
-      "reset":"Reset Profile",
-      "resetting":"Resetting...",
       "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
-      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this sync profile."
+      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this account."
     },
     "advanced":{
-      "background":"小部件背景",
-      "background_desc":"单击调色板以选择颜色",
-      "css":"自定义 CSS",
-      "css_desc":"您可以使用此功能自定义CSS （有关指引请见 <a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\"target=\"_blank\"> MDN<\/a>） 以自由改变 iChrome 几乎所有可视的部分。<br\/><br\/> 因为此选项将会同步而同步有空间限制的缘故，您最多只能输入包括空格在内的1000个字符。",
-      "debug":"Debug Tools",
-      "debug_confirm":"WARNING: These tools can erase your configuration in a single click, only use them if your developer instructs you to.\r\nAre you sure you want to continue?"
+      "backups":{
+        "title":"Backup and restore",
+        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
+        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
+        "backup":"Backup now",
+        "upload":"Restore from file",
+        "download":"Download",
+        "restore":"Restore",
+        "download_name":"iChrome Backup",
+        "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
+        "restore_error":"An error occurred while trying to parse the provided data, please try again later."
+      },
+      "css":{
+        "title":"Custom CSS",
+        "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
+        "placeholder":"Enter up to 1000 characters of CSS here"
+      },
+      "debug_tools":{
+        "title":"Debug tools",
+        "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
+        "open":"Open tools"
+      }
+    },
+    "widgets":{
+      "desc1":"Widgets have their own settings and can't be customized here.",
+      "desc2":"To edit a widget's settings, follow these steps:",
+      "steps1":"Move your mouse over any widget",
+      "steps2":"Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
+      "steps3":"Edit any of the settings shown in the dialog that's displayed",
+      "steps4":"Click Save to save your changes, or any part of the background to discard of them"
+    },
+    "pro":{
+      "promo":{
+        "monthly_price":"$2 per month",
+        "yearly_price":"or $20 per year",
+        "upgrade_btn":"Upgrade Now",
+        "business":"Interested in buying Pro for your business or school?",
+        "business_contact":"Contact us",
+        "themes":"主题",
+        "themes_desc":"See more of your backgrounds with dark and transparent themes",
+        "bgs":"Live backgrounds",
+        "bgs_desc":"Bring your page to life with 20 live high-definition backgrounds",
+        "widgets":"Maximizable widgets",
+        "widgets_desc":"Take iChrome to another level with maximizable widgets",
+        "more_header":"And more",
+        "stocks":"Realtime stocks with extended and historical information",
+        "rss":"Support for multiple RSS feeds per widget",
+        "sports":"General and league-specific sports news",
+        "tabbed_widgets":"Tabbed news and RSS widgets",
+        "bg_downloads":"Downloadable backgrounds",
+        "weather":"Hourly weather forecasts up to 10 days out",
+        "toolbar":"More toolbar links",
+        "support":"Prioritized support and suggestions",
+        "buy_pro":"Buy Pro"
+      },
+      "checkout":{
+        "title":"Checkout",
+        "updating_title":"Update plan",
+        "payment_options":"Pay",
+        "pay_monthly":"Monthly ($2)",
+        "pay_yearly":"Yearly ($20)",
+        "cancel":"取消",
+        "update":"Update",
+        "subscribe":"Subscribe",
+        "braintree_notice":"Payments securely processed by Braintree.",
+        "monthly_notice":"By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
+        "yearly_notice":"By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
+        "update_notice":"Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
+        "thank_you":"Thank you for buying iChrome Pro!",
+        "thank_you2":"iChrome will reload in a few seconds and you'll be all set!",
+        "error":"Something went wrong while trying to process your payment.",
+        "error2":"Please try again later or email us at support@ichro.me",
+        "signin":"Sign in",
+        "signin_desc":"You need to sign in before buying Pro so we can make sure it's you",
+        "signin_btn":"Sign in"
+      },
+      "plan":{
+        "title":"Plan",
+        "desc":"You are currently subscribed to iChrome Pro (%s)",
+        "types":{
+          "monthly":"Monthly",
+          "yearly":"Yearly",
+          "business":"Business",
+          "education":"Education",
+          "custom":"自定义"
+        },
+        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
+        "status":"Status",
+        "status_active":"Active",
+        "status_trial":"Trial",
+        "status_pastdue":"Past due",
+        "subscription_date":"Subscription date",
+        "paid_through":"Paid through",
+        "next_bill":"Next bill",
+        "next_bill_value":"$%s on %s",
+        "update_plan":"Update plan",
+        "update_billing":"Update billing",
+        "cancel":"Cancel subscription",
+        "cancel_notice":"Your subscription will be canceled immediately",
+        "cancel_notice2":"If you would like a refund, please contact us at support@ichro.me"
+      }
     }
   },
   "store":{
@@ -212,7 +352,24 @@
       "save":"保存",
       "size":"小部件大小"
     },
+    "minimize":"Minimize",
+    "maximize":"Maximize",
     "delete_confirm":"您真的要删除此小部件吗？此操作不可恢复，该小部件的所有数据都将永久丢失。",
+    "permissions_request":{
+      "title":"Access required",
+      "button":"Grant Access",
+      "desc":"This widget needs extra permissions before it can be used. Grant them using the button below."
+    },
+    "error":{
+      "explanation":"Something went wrong while we were trying to display this widget.",
+      "advice":"Try reinstalling the widget or reloading the page. Contact us if you see this message often.",
+      "support":"支持",
+      "refresh":"Refresh"
+    },
+    "auth":{
+      "message":"You'll need to give this widget access to your account before you can use it.",
+      "button":"Grant Access"
+    },
     "shared":{
       "settings":{
         "title":"小部件标题",
@@ -255,6 +412,8 @@
     "random_daily":"该主题每天重新随机挑选新图片",
     "sunrise_sunset":"该主题基于一天的时间显示图片",
     "feed":"该主题从外部源每天获取新图像",
+    "video":"This theme displays a live video",
+    "pro_only":"This theme is only available to Pro users. Buy Pro in the settings.",
     "delete_confirm":"您真的要删除这个主题吗？\n此操作不可恢复 ；整个主题将永久丢失。",
     "delete_error":"试图删除该主题时出错。请稍后再试。",
     "feed_fetching":"请稍候，源正在获取......",
@@ -262,6 +421,13 @@
     "caching":"请稍候，正在缓存主题...",
     "cache_status":"%s 个图片被缓存，还有 %s 个",
     "cache_error":"试图删除该主题时出错。请稍后再试。",
+    "bginfo":{
+      "view":"View",
+      "source":"来源",
+      "unknown":"未知",
+      "download":"Download",
+      "pro_only":"Only Pro users can download background images and videos"
+    },
     "edit":{
       "title":"编辑主题",
       "create_title":"创建主题",
@@ -304,24 +470,6 @@
       "save":"保存并关闭",
       "cache_error":"在缓存您提供的图像链接时出错，请仔细检查该链接是否正确。",
       "upload_error":"在上传您提供的文件时出错，请确保其大小正确和是否是一张图片。"
-    }
-  },
-  "intro":{
-    "slide1":{
-      "title":"欢迎您使用 iChrome ！",
-      "line1":"如果您想让 iChrome 作为您浏览器的起始页，您需要在您的设置（<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\"target=\"_blank\"> 说明<\/a>） 中设置主页为此页面地址。如果您希望将iChrome作为您的新选项卡，请安装 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\"> iChrome 新选项卡<\/a>。",
-      "newtab_line1":"如果您希望iChrome只在您打开Chrome的时候显示，请安装 <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> iChrome 起始页<\/a>，而非本扩展。",
-      "line2":"介绍仅有短短3个步骤，其将会让您快速知悉如何使用iChrome的基础功能。当您准备好后请点击右侧的下一步箭头。"
-    },
-    "slide2":{
-      "title":"小部件",
-      "line1":"小部件是 iChrome 的核心。您可以使用右上角悬停时显示的手柄和扳手图标以配置或移动它们。若要删除，拖动并将其拖到页面最上方红色的删除区域。",
-      "line2":"您可以通过单击顶部菜单下的小部件按钮添加新部件到标签页中 （如下一步所示）。"
-    },
-    "slide3":{
-      "title":"自定义",
-      "line1":"您可以更改几乎任何你想更改的其他内容，在设置页您可以定制您想要的页面外观，了解 iChrome 是如何运作的并获取新的小部件。",
-      "line2":"其他您可尝试的有意思功能包括创建单独的选项卡，不同的主题所带的小部件，自定义主题，亦可进行更为详细的配置，例如定制显示在工具栏中的链接。"
     }
   }
 }

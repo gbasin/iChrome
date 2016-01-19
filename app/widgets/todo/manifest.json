@@ -1,0 +1,65 @@
+{
+	"id": 17,
+	"name": "todo",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["variable"],
+
+	"views": {
+		"default": "view"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"settings": [{
+		"type": "text",
+		"name": "title",
+		"label": "i18n.settings.title",
+		"placeholder": "i18n.settings.title_placeholder"
+	},
+	{
+		"type": "radio",
+		"name": "font",
+		"label": "i18n.settings.color",
+		"options": {
+			"light": "i18n.settings.color_options.light",
+			"dark": "i18n.settings.color_options.dark"
+		}
+	},
+	{
+		"type": "list",
+		"color": true,
+		"name": "tags",
+		"label": "i18n.settings.tags",
+		"placeholder": "i18n.settings.tags_placeholder"
+	}],
+
+	"strings": {
+		"en": {
+			"name": "To-do",
+			"desc": "Displays an interactive to-do list with important and completed items.",
+
+			"title": "To-do list",
+
+			"settings": {
+				"color": "Font Color",
+				"color_options": {
+					"light": "Light",
+					"dark": "Dark"
+				},
+
+				"tags": "Tags",
+				"tags_placeholder": "Enter a tag name and press Enter"
+			},
+
+			"add": "Add Item",
+
+			"none": "None",
+			"important": "Important"
+		}
+	}
+}

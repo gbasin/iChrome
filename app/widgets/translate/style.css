@@ -1,0 +1,65 @@
+/*---------------------------------------------
+	/ Main Styles
+*/
+.selectbar {
+	font-size: 0;
+	background: rgba(0, 0, 0, .03);
+	box-shadow: rgba(0, 0, 0, .12) 0 1px 3px,
+				rgba(0, 0, 0, .24) 0 1px 2px;
+}
+
+.dark .selectbar {
+	background: rgba(0, 0, 0, .15);
+}
+
+.selectbar select {
+	height: 48px;
+	color: inherit;
+	font-size: 14px;
+	border-radius: 0;
+	margin-right: 15px;
+	border: 0!important;
+	font-family: inherit;
+	width: calc(50% - 27px);
+	padding: 0 15px!important;
+}
+
+.selectbar select.to {
+	margin: 0 0 0 15px;
+}
+
+.selectbar .swap {
+	margin: 6px -6px;
+	vertical-align: top;
+}
+
+.status {
+	top: 58px;
+	right: 12px;
+	color: #666;
+	font-size: 12px;
+	position: absolute;
+	text-transform: uppercase;
+}
+
+.dark .status {
+	color: #BBB;
+}
+
+textarea {
+	width: 100%;
+	resize: none;
+	font-size: 15px;
+	min-height: 80px;
+	border-radius: 0;
+	border: 0!important;
+	padding: 12px 15px!important;
+}
+
+textarea::-webkit-input-placeholder {
+	font-weight: 400;
+}
+
+textarea.to {
+	border-top: 1px solid rgba(0, 0, 0, .15)!important;
+}

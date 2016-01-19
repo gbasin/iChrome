@@ -2,8 +2,8 @@
  * The themes modal
  */
 define(
-	["lodash", "jquery", "backbone", "browser/api", "core/analytics", "modals/modals", "themes/model", "themes/utils", "themes/custom", "themes/cacher", "i18n/i18n", "core/render"],
-	function(_, $, Backbone, Browser, Track, Modal, Model, Utils, Custom, Cacher, Translate, render) {
+	["lodash", "jquery", "backbone", "browser/api", "core/auth", "core/analytics", "modals/modals", "themes/model", "themes/controller", "themes/utils", "themes/custom", "themes/cacher", "i18n/i18n", "core/render"],
+	function(_, $, Backbone, Browser, Auth, Track, Modal, Model, Themes, Utils, Custom, Cacher, Translate, render) {
 		var modal = new (Modal.extend({
 			classes: "themes",
 		}))();
@@ -35,9 +35,8 @@ define(
 			 * Creates a new custom theme
 			 *
 			 * @api    private
-			 * @param  {Event} e The event
 			 */
-			createTheme: function(e) {
+			createTheme: function() {
 				this.createModal = new Custom();
 
 				this.createModal.on("save", function() {
@@ -111,48 +110,41 @@ define(
 
 				if (parent.hasClass("custom")) {
 					Track.event("Themes", "Preview", "custom" + id);
-					
+
 					return this.trigger("preview", custom[id], "custom" + id);
 				}
 
 				var theme = _.clone(themes[index[id]]);
 
-				if (!theme) return;
-
-				// If already cached don't load remote
-				if (cached[theme.id]) {
-					theme.image = Utils.getImage(cached[theme.id]);
+				if (!theme) {
+					return;
 				}
-				else {
-					if (theme.images) {
-						theme.image = "https://themes.ichro.me/images/" + theme.images[Math.floor(Math.random() * theme.images.length)] + ".jpg";
-					}
-					else if (theme.oType == "feed") {
-						var specs = parent.find(".specs:first"),
-							oHtml = specs.html();
 
-						specs.html("<span>" + Translate("themes.feed_fetching") + "</span>");
+				if (!cached[theme.id] && theme.oType === "feed") {
+					var specs = parent.find(".specs:first"),
+						oHtml = specs.html();
 
-						return Cacher.prototype.getFeed(function(theme) {
-							if (theme === false) {
-								specs.html("<span>" + Translate("themes.feed_error") + "</span>");
+					specs.html("<span>" + Translate("themes.feed_fetching") + "</span>");
 
-								setTimeout(function() {
-									specs.html(oHtml);
-								}, 7000);
-							}
-							else {
-								Track.event("Themes", "Preview", theme.id);
+					return Cacher.prototype.getFeed(function(theme) {
+						if (theme === false) {
+							specs.html("<span>" + Translate("themes.feed_error") + "</span>");
 
+							setTimeout(function() {
 								specs.html(oHtml);
+							}, 7000);
+						}
+						else {
+							Track.event("Themes", "Preview", theme.id);
 
-								this.trigger("preview", theme);
-							}
-						}.bind(this), theme);
-					}
-					else {
-						theme.image = "https://themes.ichro.me/images/" + theme.id + ".jpg";
-					}
+							specs.html(oHtml);
+
+							this.trigger("preview", theme);
+						}
+					}.bind(this), theme);
+				}
+				else if (cached[theme.id]) {
+					theme = cached[theme.id];
 				}
 
 				Track.event("Themes", "Preview", theme.id);
@@ -185,8 +177,9 @@ define(
 
 				var theme = _.clone(themes[index[id]]);
 
-				if (!theme) return;
-
+				if (!theme) {
+					return;
+				}
 
 				var specs = parent.find(".specs:first"),
 					oHtml = specs.html(),
@@ -213,7 +206,18 @@ define(
 					};
 
 
-				if (theme.oType == "sunrise_sunset") {
+				if (theme.proOnly && !Auth.isPro) {
+					specs.html("<span>" + Translate("themes.pro_only") + "</span>");
+
+					setTimeout(function() {
+						specs.html(oHtml);
+					}, 3000);
+
+					return;
+				}
+
+
+				if (theme.oType === "sunrise_sunset") {
 					navigator.geolocation.getCurrentPosition(function(pos) {
 						if (pos && pos.coords) {
 							Browser.storage.lat = parseFloat(pos.coords.latitude.toFixed(2));
@@ -242,7 +246,7 @@ define(
 					themes = [];
 
 
-				if (id == "custom") {
+				if (id === "custom") {
 					themes = this.model.get("custom");
 				}
 				else if ((id = parseInt(id)) || id === 0) {
@@ -282,7 +286,9 @@ define(
 				var length = this.images.length;
 
 				// There might not be any images left to lazy-load
-				if (!length) return;
+				if (!length) {
+					return;
+				}
 
 				var coords,
 					innerHeight = window.innerHeight; // Querying innerHeight can get costly in a loop
@@ -315,47 +321,21 @@ define(
 				modal.show();
 
 				Track.pageview("Themes", "/themes");
+
+				return this;
 			},
 
-			initialize: function(options) {
+			initialize: function() {
 				this.model = new Model();
 
-				var previewOverlay = this.previewOverlay = $('<div class="preview-overlay"></div>');
-
-				modal.mo.appendTo(document.body).last().after(this.previewOverlay);
+				modal.mo.appendTo(document.body);
 
 
 				this.on("use", function() {
 					modal.hide();
 				}, this);
 
-				this.on("preview", function(theme) {
-					var css = "",
-						body = $(document.body),
-						image = Utils.getImage(theme);
-					
-					// This is a compressed version of the tabs view getCSS function
-					if (image)					css += "background-image: url(\"" + image + "\");";
-					if (theme.color)			css += "background-color: " + theme.color + ";";
-					if (theme.fixed)			css += "background-attachment: " + theme.fixed + ";";
-					if (theme.repeat)			css += "background-repeat: " + theme.repeat + ";";
-					if (theme.scaling)			css += "background-size: " + theme.scaling + ";";
-					if (theme.position)			css += "background-position: " + theme.position + ";";
-					if (theme["inline-css"])	css += theme["inline-css"];
-
-
-					body.attr("data-style", body.attr("style")).attr("style", css);
-
-					previewOverlay.addClass("visible").one("click", function() {
-						$(".modal.previewHidden, .modal-overlay.previewHidden").removeClass("previewHidden").addClass("visible");
-
-						previewOverlay.removeClass("visible");
-
-						body.attr("style", body.attr("data-style")).attr("data-style", "");
-					});
-
-					$(".modal.visible, .modal-overlay.visible").removeClass("visible").addClass("previewHidden");
-				}, this);
+				this.on("preview", Themes.preview, Themes);
 
 
 				var refresh = function() {
@@ -392,6 +372,8 @@ define(
 			}
 		});
 
-		return View;
+		return _.once(function() {
+			return new View();
+		});
 	}
 );

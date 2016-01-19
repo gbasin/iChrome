@@ -30,7 +30,7 @@ define(["lodash", "jquery", "moment", "browser/api"], function(_, $, moment, Bro
 			Browser.system.cpu.getInfo(function(d) {
 				var val;
 
-				this.cpuUsage.innerText = Math.floor(
+				this.cpuUsage.textContent = Math.floor(
 					_.reduce(
 						_.map(d.processors, function(d, i) {
 							val = ((d.usage.user + d.usage.kernel) - this.cpuCoreInfo[i].usage) / (d.usage.total - this.cpuCoreInfo[i].total) * 100;
@@ -62,13 +62,13 @@ define(["lodash", "jquery", "moment", "browser/api"], function(_, $, moment, Bro
 				battery: function(cb) {
 					navigator.getBattery().then(function(d) {
 						var data = {
-							status: d.charging ? (d.level == 1 ? this.utils.translate("charged") : this.utils.translate("charging")) : (d.level == 1 ? this.utils.translate("idle") : this.utils.translate("discharging")),
+							status: d.charging ? (d.level === 1 ? this.utils.translate("charged") : this.utils.translate("charging")) : (d.level === 1 ? this.utils.translate("idle") : this.utils.translate("discharging")),
 							percent: Math.floor(d.level * 100)
 						};
 
-						var time = d.dischargingTime == Infinity ? d.chargingTime : d.dischargingTime;
+						var time = d.dischargingTime === Infinity ? d.chargingTime : d.dischargingTime;
 
-						if (time != Infinity && time !== 0) {
+						if (time !== Infinity && time !== 0) {
 							data.remaining = moment.duration(time, "seconds").humanize();
 						}
 
@@ -163,8 +163,9 @@ define(["lodash", "jquery", "moment", "browser/api"], function(_, $, moment, Bro
 		},
 
 		render: function(demo) {
-			if (this.cpuInterval) clearInterval(this.cpuInterval);	
-			if (demo) this.refresh();
+			if (demo) {
+				this.refresh();
+			}
 
 			this.utils.render(this.data);
 

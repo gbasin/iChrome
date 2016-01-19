@@ -1,0 +1,49 @@
+{
+	"id": 41,
+	"tabbed": true,
+	"name": "classroom",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["variable"],
+
+	"views": {
+		"default": "view",
+		"maximized": "maximized"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"settings": [{
+		"type": "text",
+		"name": "user",
+		"label": "i18n.settings.account",
+		"help": "i18n.settings.account_help",
+		"placeholder": "i18n.settings.account_placeholder"
+	},
+	{
+		"type": "select",
+		"label": "i18n.settings.mode",
+		"name": "mode",
+		"options": {
+			"teacher": "i18n.settings.mode_teacher",
+			"student": "i18n.settings.mode_student"
+		}
+	}],
+
+	"strings": {
+		"en": {
+			"name": "Classroom",
+			"desc": "Keep up to date with your Google Classroom assignments and classes",
+
+			"settings": {
+				"mode": "Widget Mode",
+				"mode_teacher": "Teacher",
+				"mode_student": "Student"
+			}
+		}
+	}
+}

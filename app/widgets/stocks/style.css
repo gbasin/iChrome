@@ -1,0 +1,475 @@
+/*---------------------------------------------
+	/ Main Styles
+*/
+h2.header {
+	margin: 0;
+	color: #222;
+	padding: 0 15px;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 45px;
+	font-family: inherit;
+}
+
+.dark h2.header {
+	color: #EEE;
+}
+
+.list .stock {
+	color: #777;
+	cursor: pointer;
+	font-size: 13px;
+	padding: 8px 15px;
+	line-height: 20px;
+	border-top: 1px solid rgba(200, 200, 200, .3);
+}
+
+.dark .list .stock {
+	color: #BBB;
+}
+
+.list.single .stock {
+	font-size: 14px;
+	line-height: 22px;
+	padding: 10px 15px;
+}
+
+.list .stock:hover {
+	background: rgba(0, 0, 0, .03);
+}
+
+.list .stock div {
+	display: inline-block;
+}
+
+.list .stock div.name {
+	width: 70%;
+}
+
+.list .stock .price {
+	width: 30%;
+	float: right;
+	text-align: right;
+}
+
+.list .stock .name .name,
+.list .stock .price .current {
+	color: #222;
+	display: block;
+	font-size: 14px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.dark .list .stock .name .name,
+.dark .list .stock .price .current {
+	color: #EEE;
+}
+
+.list.single .stock .name .name,
+.list.single .stock .price .current {
+	font-size: 16px;
+}
+
+.list .stock.up .change {
+	color: #0A9C59;
+}
+
+.list .stock.down .change {
+	color: #F44336;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Tiny styles
+*/
+.tiny .val {
+	font-size: 50px;
+	font-weight: 300;
+	line-height: 50px;
+	text-align: center;
+	padding: 15px 0 10px;
+}
+
+.tiny .header ~ .val {
+	margin-top: -15px;
+}
+
+.tiny .val .change {
+	color: #43A047;
+	display: block;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 30px;
+}
+
+.tiny .val.down .change {
+	color: #E53935;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Detail
+*/
+:root.detail header {
+	z-index: 1;
+	width: 100%;
+	color: #FFF;
+	background: #666;
+	position: relative;
+	transition: background-color .5s ease;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .12),
+				0 1px 2px rgba(0, 0, 0, .24);
+}
+
+:root.detail header.up {
+	background: #4CAF50;
+}
+
+.dark :root.detail header.up {
+	background: #388E3C;
+}
+
+.dark.transparent :root.detail header.up {
+	background: rgba(76, 175, 80, 0.5);
+}
+
+:root.detail header.down {
+	background: #F44336;
+}
+
+.dark :root.detail header.down {
+	background: #D32F2F;
+}
+
+.dark.transparent :root.detail header.down {
+	background: rgba(244,67,54,0.5);
+}
+
+:root.detail header button.back {
+	margin: 12px 8px;
+	margin-right: 5px;
+	color: currentColor;
+	vertical-align: top;
+}
+
+:root.detail header button.back svg {
+	opacity: 1;
+}
+
+:root.detail header .top-row {
+	font-size: 13px;
+	display: inline-block;
+	width: calc(100% - 54px);
+	padding: 12px 16px 12px 0;
+	color: rgba(255, 255, 255, .9);
+}
+
+:root.detail header .top-row div {
+	display: inline-block;
+}
+
+:root.detail header .top-row div.name {
+	width: 70%;
+}
+
+:root.detail header .top-row .price {
+	width: 30%;
+	float: right;
+	text-align: right;
+}
+
+:root.detail header .top-row .name .name,
+:root.detail header .top-row .price .current {
+	color: #FFF;
+	display: block;
+	font-size: 18px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+:root.detail .tabs {
+	padding: 0;
+	display: block;
+	overflow: hidden;
+	margin-bottom: 0;
+	margin-top: -5px;
+	line-height: 32px;
+	white-space: nowrap;
+}
+
+:root.detail .tabs li {
+	opacity: .85;
+	color: inherit;
+	min-width: 50px;
+	cursor: pointer;
+	font-size: 13px;
+	font-weight: 500;
+	padding: 2px 16px;
+	text-align: center;
+	letter-spacing: .2px;
+	display: inline-block;
+	transition: all .2s ease;
+	text-transform: uppercase;
+}
+
+:root.detail .tabs li:hover {
+	opacity: 1;
+}
+
+:root.detail .tabs li:active {
+	background: rgba(0, 0, 0, .05);
+}
+
+:root.detail .tabs li.active {
+	opacity: 1;
+	padding-bottom: 0;
+	border-bottom: 2px solid;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Detail / Pro Splash
+*/
+:root.detail .pro-only {
+	color: #888;
+	text-align: center;
+	background: #F2F2F2;
+	padding: 65px 0 80px;
+}
+
+.dark :root.detail .pro-only {
+	color: #AAA;
+	background: #2A2A2A;
+}
+
+.dark.transparent :root.detail .pro-only {
+	color: #DDD;
+	background: rgba(0, 0, 0, .2);
+}
+
+:root.detail .pro-only .badge {
+	color: #FB8C00;
+	padding: 0 15px;
+	font-size: 75px;
+	font-weight: 300;
+	border-radius: 10px;
+	text-transform: uppercase;
+	border: 4px solid currentColor;
+}
+
+:root.detail .pro-only p {
+	padding: 0 35px;
+	line-height: 22px;
+	margin: 30px 0 15px;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Detail / Chart
+*/
+:root.detail .chart {
+	position: relative;
+	background: rgba(0, 0, 0, .03);
+	border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+
+:root.detail .chart .picker {
+	height: 30px;
+	font-size: 0;
+	display: flex;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 30px;
+	border-bottom: inherit;
+}
+
+:root.detail .chart .picker li {
+	flex: 1;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 26px;
+}
+
+:root.detail .chart .picker li.active {
+	font-weight: 500;
+}
+
+:root.detail .chart .canvas-wrapper {
+	margin: 15px 10px 0;
+}
+
+:root.detail .chart .tooltip {
+	top: 40px;
+	left: 50px;
+	box-shadow: none;
+	padding: 8px 12px;
+	position: absolute;
+	border-radius: 2px;
+	border: 1px solid rgba(0, 0, 0, .15);
+}
+
+:root.detail .chart .tooltip.right {
+	left: auto;
+	right: 10px;
+}
+
+:root.detail .chart .tooltip span {
+	display: block;
+}
+
+:root.detail .chart .tooltip .price {
+	color: #2196F3;
+	font-weight: 500;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Detail / Details
+*/
+:root.detail .details {
+	margin: 0;
+	font-size: 0;
+	display: block;
+	padding: 15px 15px 15px 0;
+}
+
+:root.detail .details div {
+	width: 50%;
+	font-size: 13px;
+	font-weight: 500;
+	text-align: right;
+	line-height: 22px;
+	padding-left: 15px;
+	vertical-align: top;
+	display: inline-block;
+}
+
+.dark :root.detail .details div {
+	color: #EEE;
+}
+
+:root.detail .details div .label {
+	float: left;
+	color: #888;
+	font-size: 11px;
+	font-weight: 400;
+	padding-right: 5px;
+	text-transform: uppercase;
+}
+
+:root.detail .dark .details div .label {
+	color: #CCC;
+}
+
+.dark.transparent :root.detail .details div .label {
+	color: #CCC;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Detail / News Items
+*/
+:root.detail .news-items {
+	overflow: auto;
+	max-height: 500px;
+}
+
+:root.detail .news-items .item {
+	display: block;
+	color: #757575;
+	font-size: 12px;
+	line-height: 18px;
+	padding: 8px 10px;
+	text-decoration: none;
+	transition: background 0.1s ease;
+	border-top: 1px solid rgba(200, 200, 200, .5);
+}
+
+.dark :root.detail .news-items .item {
+	color: #AAA;
+}
+
+.dark.transparent :root.detail .news-items .item {
+	color: #DDD;
+}
+
+:root.detail .news-items .item:hover {
+	background: rgba(0, 0, 0, .03);
+}
+
+:root.detail .news-items .item h3 {
+	color: #333;
+	font-size: 13px;
+	overflow: hidden;
+	font-weight: 500;
+	max-height: 18px;
+	margin-bottom: 5px;
+	white-space: nowrap;
+	line-height: inherit;
+	font-family: inherit;
+	text-overflow: ellipsis;
+	transition: color 0.1s ease;
+}
+
+.dark :root.detail .news-items .item h3 {
+	color: #EEE;
+}
+
+:root.detail .news-items .item .desc {
+	overflow: hidden;
+	max-height: 36px;
+	margin-bottom: 5px;
+}
+
+:root.detail .news-items .item span {
+	color: #444;
+}
+
+.dark :root.detail .news-items .item span {
+	color: #CCC;
+}
+
+:root.detail .news-items .item .date {
+	float: right;
+}
+
+:root.detail .news-items .item .source {
+	color: #388E3C;
+}
+
+.dark :root.detail .news-items .item .source {
+	color: #4CAF50;
+}

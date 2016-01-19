@@ -7,7 +7,9 @@
 				<h2 title="{{name}}">
 					{{#offline}}<span class="cached" title="{{i18n.themes.cached}}">&#xF0E7;</span>{{/offline}}
 
-					{{#type}}<span class="type {{entypo}}" title="{{desc}}">{{{icon}}}</span>{{/type}}
+					{{#type}}<span class="type" title="{{desc}}">{{{icon}}}</span>{{/type}}
+
+					{{#proOnly}}<span class="pro" title="{{i18n.themes.pro_only}}">Pro</span>{{/proOnly}}
 
 					{{name}}
 				</h2>

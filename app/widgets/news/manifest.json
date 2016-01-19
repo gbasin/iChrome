@@ -1,0 +1,44 @@
+{
+	"id": 4,
+	"name": "news",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["variable"],
+
+	"views": {
+		"default": "view",
+		"settings": "settings",
+		"maximized": "maximized"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs",
+		"settings": "templates/settings.hjs",
+		"maximized": "templates/maximized.hjs"
+	},
+
+	"strings": {
+		"en": {
+			"name": "News",
+			"desc": "Displays the current top news by category and edition.",
+
+			"all_stories": "All",
+
+			"settings": {
+				"page_title": "Settings",
+				"save": "Save",
+
+				"title": "Widget Title",
+				"title_placeholder": "Enter a widget title or leave blank to hide",
+
+				"articles": "Articles Shown",
+
+				"edition": "Edition",
+
+				"default_topic": "Default Topic"
+			}
+		}
+	}
+}

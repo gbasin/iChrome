@@ -1,0 +1,21 @@
+{{#screenOne}}
+	<div class="caption bottom-right">
+		<p>{{i18n.onboarding.widgets.configure}}</p>
+
+		<p>{{{i18n.onboarding.widgets.configure_desc}}}</p>
+
+		<button type="button" class="button material flat skip">{{i18n.onboarding.widgets.configure_skip}}</button>
+	</div>
+{{/screenOne}}
+
+{{#screenTwo}}
+	<div class="caption bottom-right">
+		<p>{{{i18n.onboarding.widgets.move}}}</p>
+
+		<p>{{{i18n.onboarding.widgets.remove}}}</p>
+
+		<button type="button" class="button material flat done">{{{i18n.onboarding.widgets.done}}}</button>
+	</div>
+{{/screenTwo}}
+
+<div class="action-mask"></div>

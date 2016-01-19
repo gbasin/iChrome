@@ -1,0 +1,29 @@
+&.visual {
+	.background span.or {
+		margin: 0 8px;
+	}
+
+	.layout {
+		label span {
+			vertical-align: middle;
+		}
+
+		input.columns {
+			width: 30px;
+			line-height: 20px;
+			text-align: center;
+			padding: 0 0!important;
+			background: transparent;
+		}
+
+		select.format {
+			height: auto;
+			padding: 0!important;
+			border-bottom: 1px solid rgba(0, 0, 0, .1)!important;
+		}
+	}
+
+	section.theme button {
+		float: right;
+	}
+}

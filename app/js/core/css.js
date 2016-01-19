@@ -4,16 +4,12 @@
 define(["backbone", "storage/storage", "core/render"], function(Backbone, Storage, render) {
 	var Model = Backbone.Model.extend({
 			defaults: {
-				custom: "",
-				wcolor: "#FFF"/*,
-				hcolor: "#F1F1F1"*/
+				custom: ""
 			},
 			init: function() {
 				Storage.on("done updated", function(storage) {
 					this.set({
-						wcolor: storage.settings.wcolor || "#FFF",
-						// hcolor: storage.settings.hcolor || "#F1F1F1",
-						custom: storage.settings["custom-css"] || ""
+						custom: storage.settings.customCSS || ""
 					});
 				}, this);
 
@@ -30,7 +26,9 @@ define(["backbone", "storage/storage", "core/render"], function(Backbone, Storag
 				this.model.init();
 			},
 			render: function() {
-				this.$el.html(render("css", this.model.toJSON()));
+				var d = this.model.toJSON();
+
+				this.$el.html(render("css", d));
 
 				return this;
 			}

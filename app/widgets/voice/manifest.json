@@ -1,0 +1,43 @@
+{
+	"id": 22,
+	"name": "voice",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"defaultSize": "tiny",
+	"sizes": ["tiny", "small"],
+
+	"views": {
+		"default": "view"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"settings": [{
+		"type": "text",
+		"name": "user",
+		"label": "i18n.settings.account",
+		"help": "i18n.settings.account_help",
+		"placeholder": "i18n.settings.account_placeholder"
+	}, {
+		"type": "size"
+	}],
+
+	"strings": {
+		"en": {
+			"name": "Voice",
+			"desc": "Displays the current number of missed calls and texts in your Google Voice account.",
+
+			"call": "Call from",
+			"text": "Text message from",
+
+			"missed": "missed in Voice",
+
+			"texts": "unread text messages",
+			"calls": "missed calls"
+		}
+	}
+}

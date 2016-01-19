@@ -1,0 +1,82 @@
+{
+	"id": 14,
+	"name": "stocks",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["tiny", "small"],
+
+	"defaultSize": "small",
+
+	"views": {
+		"default": "view",
+		"detail": "detail"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs",
+		"detail": "templates/detail.hjs"
+	},
+
+	"settings": [{
+		"type": "text",
+		"name": "title",
+		"label": "i18n.settings.title",
+		"placeholder": "i18n.settings.title_placeholder"
+	}, {
+		"type": "size"
+	}, {
+		"type": "list",
+		"name": "stocks",
+		"autocomplete": "autocomplete",
+		"label": "i18n.settings.stocks",
+		"placeholder": "i18n.settings.stocks_placeholder"
+	}],
+
+	"strings": {
+		"en": {
+			"name": "Stocks",
+			"desc": "Displays current information for any given stock symbol.",
+
+			"settings": {
+				"stocks": "Stocks",
+				"stocks_placeholder": "Type a company or exchange name and hit Enter"
+			},
+
+			"as_of": "as of",
+			"exchange_time": "Exchange Time",
+
+			"overview": "Overview",
+			"news": "News",
+
+			"pro_splash1": "Realtime data, charts, news, and detailed stock information are Pro-only features.",
+			"pro_splash2": "Buy Pro in the settings.",
+
+			"time_ranges": {
+				"1d": "1d",
+				"5d": "5d",
+				"1m": "1m",
+				"3m": "3m",
+				"1y": "1y",
+				"5y": "5y",
+				"max": "max"
+			},
+
+			"open": "Open",
+			"prev_close": "Previous Close",
+			"high": "High",
+			"52high": "52 week high",
+			"low": "Low",
+			"52low": "52 week low",
+			"volume": "Volume",
+			"avg_volume": "Avg. Volume",
+			"shares": "Shares",
+			"cap": "Market Cap",
+			"pe": "Price / Earnings",
+			"eps": "EPS",
+			"beta": "Beta",
+			"inst_own": "Inst. own"
+		}
+	}
+}

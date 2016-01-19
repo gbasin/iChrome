@@ -1,0 +1,43 @@
+<header>
+	{{#title}}
+		{{#link}}<a href="{{link}}" class="title">{{title}}</a>{{/link}}
+		{{^link}}<span class="title">{{title}}</span>{{/link}}
+	{{/title}}
+
+	{{#tabs.1}}
+		<ul class="tabs">
+			<button type="button" class="material flat scroll-left" data-direction="left">&#xE6CD;</button>
+
+			{{#tabs}}
+				<li data-id="{{id}}"{{#active}} class="active"{{/active}}>{{name}}</li>
+			{{/tabs}}
+
+			<button type="button" class="material flat scroll-right" data-direction="right">&#xE6D0;</button>
+		</ul>
+	{{/tabs.1}}
+</header>
+
+{{#loading}}
+	<div class="loading">
+		<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+			<circle fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+		</svg>
+	</div>
+{{/loading}}
+
+<div class="items {{#images}} images{{/images}}">
+	{{#items}}
+		<a href="{{url}}" class="item">
+			{{#image}}
+				{{#images}}<img src="{{image}}" alt="Loading..." />{{/images}}
+				{{^images}}<div class="image" style="background-image: url('{{image}}');"></div>{{/images}}
+			{{/image}}
+
+			<div class="content{{#desc}} desc{{/desc}}">
+				<h3 class="title">{{title}}</h3>
+
+				{{{desc}}}
+			</div>
+		</a>
+	{{/items}}
+</div>

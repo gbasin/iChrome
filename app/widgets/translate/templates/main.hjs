@@ -1,0 +1,23 @@
+<div class="selectbar">
+	<select class="from">
+		<option value="auto">{{i18n.detect_lang}}</option>
+
+		{{#languages}}<option value="{{0}}">{{1}}</option>{{/languages}}
+	</select>
+
+	<button type="button" class="material toggle swap">
+		<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z" />
+		</svg>
+	</button>
+
+	<select class="to">
+		{{#languages}}<option value="{{0}}">{{1}}</option>{{/languages}}
+	</select>
+</div>
+
+<span class="status"></span>
+
+<textarea class="from" placeholder="{{i18n.from_placeholder}}" maxlength="1000"></textarea>
+
+<textarea class="to" placeholder="{{i18n.to_placeholder}}" readonly></textarea>

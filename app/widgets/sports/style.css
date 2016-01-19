@@ -1,0 +1,856 @@
+/*---------------------------------------------
+	/ Main Styles
+*/
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+header {
+	z-index: 1;
+	width: 100%;
+	padding: 0 25px;
+	font-size: 16px;
+	line-height: 55px;
+	position: relative;
+	letter-spacing: .4px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .12),
+				0 1px 2px rgba(0, 0, 0, .24);
+}
+
+header .select {
+	outline: 0;
+	position: relative;
+	display: inline-block;
+}
+
+header .select span.selected:after {
+	content: "\E6CA";
+	font-family: Entypo;
+	font-size: 15px;
+	vertical-align: middle;
+	line-height: 10px;
+}
+
+header .select ul.options {
+	left: 0;
+	top: 10px;
+	opacity: 0;
+	width: 375px;
+	padding: 8px 0;
+	overflow: auto;
+	max-width: 20px;
+	font-size: 14px;
+	background: #FFF;
+	max-height: 35px;
+	line-height: 35px;
+	position: absolute;
+	visibility: hidden;
+	border-radius: 2px;
+	transform: translateZ(0);
+	transition: visibility 0s .3s linear;
+	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14),
+				0 1px 10px 0 rgba(0, 0, 0, .12),
+				0 2px 4px -1px rgba(0, 0, 0, .2);
+	animation: sports-menu-out .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.dark header .select ul.options {
+	background: #414141;
+}
+
+header .select:focus ul.options {
+	visibility: visible;
+	transition-delay: 0s;
+	animation: sports-menu-in .3s cubic-bezier(.4, 0, .2, 1) forwards;
+}
+
+@keyframes sports-menu-in {
+	30% {
+		max-height: 35px;
+	}
+	40%, 100% {
+		opacity: 1;
+		max-width: 300px;
+	}
+	100% {
+		max-height: 300px;
+	}
+}
+
+@keyframes sports-menu-out {
+	0% {
+		max-height: 300px;
+	}
+	0%, 60% {
+		opacity: 1;
+		max-width: 300px;
+	}
+	70% {
+		max-height: 35px;
+	}
+}
+
+header .options li {
+	opacity: 0;
+	display: block;
+	padding: 0 10px;
+	cursor: pointer;
+	transition: opacity .15s cubic-bezier(.4, 0, .2, 1);
+}
+
+header .select:focus .options li {
+	opacity: 1;
+	transition-delay: .15s;
+}
+
+header .options li:hover {
+	background: rgba(0, 0, 0, .05);
+}
+
+.dark header .options li:hover {
+	background: rgba(0, 0, 0, .15);
+}
+
+header .options li.selected {
+	color: #2196F3;
+}
+
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Tabs
+*/
+.tabs {
+	padding: 0;
+	display: block;
+	margin: 0 -25px;
+	overflow: hidden;
+	margin-top: -10px;
+	line-height: 32px;
+	white-space: nowrap;
+}
+
+.tabs li {
+	color: #888;
+	min-width: 50px;
+	cursor: pointer;
+	font-size: 13px;
+	font-weight: 500;
+	padding: 2px 16px;
+	letter-spacing: 0;
+	text-align: center;
+	display: inline-block;
+	transition: all .2s ease;
+	text-transform: uppercase;
+}
+
+.dark .tabs li {
+	color: #AAA;
+}
+
+.dark.transparent .tabs li:not(:hover):not(:active):not(.active) {
+	color: #CCC;
+}
+
+.tabs li:hover {
+	color: inherit;
+}
+
+.tabs li:active {
+	background: rgba(0, 0, 0, .05);
+}
+
+.tabs li.active {
+	color: #2196F3;
+	padding-bottom: 0;
+	border-bottom: 2px solid;
+}
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Loading screen
+*/
+.loading {
+	height: 350px;
+	position: relative;
+	background: rgba(0, 0, 0, .1);
+}
+
+.loading svg {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+}
+
+.spinner {
+	-webkit-animation: rotator 1.4s linear infinite;
+}
+
+.spinner circle {
+	stroke-dashoffset: 0;
+	stroke-dasharray: 187;
+	transform-origin: center;
+	animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@-webkit-keyframes rotator {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(270deg);
+	}
+}
+
+@-webkit-keyframes colors {
+	0%		{ stroke: #4285F4; }
+	25%		{ stroke: #DE3E35; }
+	50%		{ stroke: #F7C223; }
+	75%		{ stroke: #1B9A59; }
+	100%	{ stroke: #4285F4; }
+}
+
+@-webkit-keyframes dash {
+	0% {
+		stroke-dashoffset: 187;
+	}
+	50% {
+		stroke-dashoffset: 46.75;
+		transform: rotate(135deg);
+	}
+	100% {
+		stroke-dashoffset: 187;
+		transform: rotate(450deg);
+	}
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ No Games Splash
+*/
+.splash.no-games {
+	color: #888;
+	text-align: center;
+	background: #F2F2F2;
+	padding: 65px 0 80px;
+}
+
+.dark .no-games {
+	color: #AAA;
+	background: #2A2A2A;
+}
+
+.dark.transparent .no-games {
+	color: #DDD;
+	background: rgba(0, 0, 0, .2);
+}
+
+.no-games svg {
+	width: 150px;
+	height: 150px;
+	fill: currentColor;
+}
+
+.no-games p {
+	padding: 0 35px;
+	line-height: 22px;
+	margin: 30px 0 15px;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Games list
+*/
+.games {
+	overflow: auto;
+	max-height: 450px;
+}
+
+.games section h3 {
+	font: inherit;
+	font-size: 13px;
+	padding: 0 12px;
+	font-weight: 500;
+	line-height: 30px;
+}
+
+.game .summary {
+	font-size: 0;
+	color: #212121;
+	cursor: pointer;
+	line-height: 25px;
+	font-weight: 500;
+	padding: 8px 15px;
+}
+
+.game .summary,
+.games section h3 {
+	border-top: 1px solid rgba(200, 200, 200, .3);
+}
+
+.dark .game .summary {
+	color: #EEE;
+}
+
+.dark .game .summary,
+.dark .games section h3 {
+	border-top-color: rgba(0, 0, 0, .15);
+}
+
+.games section h3,
+.game .summary:hover {
+	background: rgba(0, 0, 0, 0.03);
+}
+
+.dark .games section h3,
+.dark .game .summary:hover {
+	background: rgba(0, 0, 0, .15);
+}
+
+.game .summary > div {
+	font-size: 13px;
+	vertical-align: top;
+	display: inline-block;
+}
+
+.game .teams {
+	width: 75%;
+	color: #212121;
+	padding-right: 15px;
+}
+
+.dark .game .teams {
+	color: #EEE;
+}
+
+.game.tennis .teams {
+	padding: 0;
+	width: 100%;
+}
+
+.game .teams .loser {
+	color: #666;
+}
+
+.dark .game .teams .loser {
+	color: #AAA;
+}
+
+.game .teams .icon {
+	width: 25px;
+	height: 25px;
+	margin-right: 5px;
+}
+
+.game .teams .score {
+	float: right;
+}
+
+.game .status {
+	width: 25%;
+	text-align: right;
+}
+
+.dark .game .status,
+.dark .game .overview .status {
+	color: #DDD;
+}
+
+.game.tennis .status {
+	display: none;
+}
+
+.game .status span {
+	display: block;
+	max-width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Game details
+*/
+.game .extended {
+	height: 0;
+	padding: 0 15px;
+	font-size: 13px;
+	overflow: hidden;
+	line-height: 1.4;
+	font-weight: 400;
+	background: #F5F5F5;
+	transform: translateZ(0);
+	transition: all .2s ease;
+	box-shadow: rgba(0, 0, 0, 0.24) 0 4px 3px -3px inset;
+
+}
+
+.dark .game .extended {
+	background: rgba(0, 0, 0, .15);
+}
+
+.game .extended.visible {
+	height: auto;
+	padding: 12px 15px;
+}
+
+.game .extended > span {
+	color: #666;
+	display: block;
+	font-size: 12px;
+	line-height: 18px;
+	letter-spacing: .2px;
+}
+
+.game .extended .overview {
+	display: flex;
+	color: #212121;
+	margin-top: 15px;
+}
+
+.dark .game .extended .overview {
+	color: #EEE;
+}
+
+.game.tennis .extended .overview {
+	display: none;
+}
+
+.game .extended .overview .team {
+	flex: 1;
+	font-size: 12px;
+	line-height: 15px;
+	padding-left: 30px;
+	background: left 5px/25px no-repeat;
+}
+
+.game .extended .overview .team.home {
+	text-align: right;
+	padding: 0 30px 0 0;
+	background-position: right 5px;
+}
+
+.game .overview .team .name {
+	display: block;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.game .overview .team .record {
+	color: #878787;
+	line-height: 18px;
+}
+
+.game .overview .status {
+	width: auto;
+	color: #212121;
+	text-align: center;
+	align-self: flex-end;
+}
+
+.game .extended .overview .time,
+.game .extended .overview .score {
+	font-size: 16px;
+	font-weight: 500;
+	text-align: center;
+}
+
+.game .extended .lastplay {
+	margin-top: 20px;
+}
+
+.game .extended .lastplay h4 {
+	margin: 0 0 5px;
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 15px;
+	font-family: inherit;
+	text-transform: uppercase;
+}
+
+.game .extended .lastplay h4 span {
+	float: right;
+	color: inherit;
+	font-size: 13px;
+	font-weight: 400;
+	text-transform: none;
+}
+
+.game .extended .lastplay span {
+	color: #666;
+	font-size: 12px;
+	letter-spacing: .2px;
+}
+
+.game .extended .linescores {
+	width: 100%;
+	margin: 10px 0 5px;
+}
+
+.game .extended .linescores thead {
+	color: #818181;
+}
+
+.game .extended .linescores td {
+	text-align: center;
+}
+
+.game .extended .linescores td.team {
+	width: auto;
+	color: #818181;
+	text-align: left;
+}
+
+.dark .game .extended > span,
+.dark .game .extended .lastplay span,
+.dark .game .extended .linescores thead,
+.dark .game .extended .linescores td.team {
+	color: #AAA;
+}
+
+.game .extended .linescores tbody td {
+	width: 32px;
+	border-top: 1px solid rgba(200, 200, 200, .3);
+}
+
+.game.baseball .extended .linescores tbody td:not(.team) {
+	width: 22px;
+}
+
+.game.baseball .extended .linescores tbody td:last-child {
+	width: 35px;
+}
+
+.game .extended .links {
+	padding-top: 10px;
+}
+
+.game .extended .links a {
+	color: #2196F3;
+	font-size: 11px;
+	font-weight: 500;
+	margin-right: 5px;
+	text-transform: uppercase;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Pro splash
+*/
+.pro-only {
+	color: #888;
+	text-align: center;
+	background: #F2F2F2;
+	padding: 65px 0 80px;
+}
+
+.dark .pro-only {
+	color: #AAA;
+	background: #2A2A2A;
+}
+
+.dark.transparent .pro-only {
+	color: #DDD;
+	background: rgba(0, 0, 0, .2);
+}
+
+.pro-only .badge {
+	color: #FB8C00;
+	padding: 0 15px;
+	font-size: 75px;
+	font-weight: 300;
+	border-radius: 10px;
+	text-transform: uppercase;
+	border: 4px solid currentColor;
+}
+
+.pro-only p {
+	padding: 0 35px;
+	line-height: 22px;
+	margin: 30px 0 15px;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ News
+*/
+.news {
+	overflow: auto;
+	max-height: 450px;
+}
+
+.news .item {
+	font-size: 0;
+	display: block;
+	transition: background .1s ease;
+}
+
+.news .item:hover {
+	background: #FAFAFA;
+}
+
+.dark .news .item:hover {
+	background: #2C2C2C;
+}
+
+.dark.transparent .news .item:hover {
+	background: rgba(0, 0, 0, .15);
+}
+
+.news .item .image {
+	width: 100px;
+	height: 95px;
+	display: inline-block;
+	background: #EAEAEA center/cover no-repeat;
+}
+
+.dark .news .item .image {
+	background-color: #2A2A2A;
+}
+
+.news .item:not(:last-child),
+.news .item:not(:last-child) .image {
+	box-shadow: inset 0 -2px 0 -1px rgba(200, 200, 200, .5);
+}
+
+.dark .news .item:not(:last-child),
+.dark .news .item:not(:last-child) .image {
+	box-shadow: inset 0 -2px 0 -1px rgba(0, 0, 0, .15);
+}
+
+.news .item .desc,
+.news .item .content {
+	color: #757575;
+	font-size: 12px;
+	overflow: hidden;
+	max-height: 76px;
+	line-height: 18px;
+	vertical-align: top;
+	margin: 8px 10px 10px;
+	display: inline-block;
+}
+
+.dark .news .item .desc,
+.dark .news .item .content {
+	color: #AAA;
+}
+
+.dark.transparent .news .item .desc,
+.dark.transparent .news .item .content {
+	color: #DDD;
+}
+
+.news .item .image ~ .content {
+	width: calc(100% - 120px);
+}
+
+.news .item .title {
+	color: #333;
+	font-size: 13px;
+	overflow: hidden;
+	font-weight: 500;
+	max-height: 36px;
+	line-height: inherit;
+	font-family: inherit;
+	transition: color .1s ease;
+}
+
+.dark .news .item .title {
+	color: #EEE;
+}
+
+.news .item .content.desc .title {
+	margin-bottom: 3px;
+}
+
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Settings
+*/
+.settings {
+	z-index: 2;
+	overflow: visible;
+}
+
+.settings header button.save {
+	float: right;
+	min-width: 60px;
+	margin: 12px -12px 12px 0;
+}
+
+.settings form {
+	padding: 0;
+}
+
+.settings .add {
+	outline: 0;
+	position: relative;
+}
+
+.settings .add input {
+	line-height: 20px;
+	background: #FCFCFC;
+	border: 0!important;
+	padding: 12px 16px 8px!important;
+}
+
+.dark :root.settings .add input {
+	background: rgba(0, 0, 0, .15);
+}
+
+.settings ul {
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+	max-height: 400px;
+}
+
+.settings ul li {
+	display: block;
+	padding: 10px 15px;
+	border-top: 1px solid rgba(200, 200, 200, .2);
+}
+
+.dark :root.settings ul li {
+	border-top-color: rgba(0, 0, 0, .1);
+}
+
+.settings ul li:hover {
+	background: rgba(0, 0, 0, .03);
+}
+
+.settings ul li .logo {
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+	display: inline-block;
+}
+
+.settings ul li .name {
+	padding: 5px 0;
+	line-height: 20px;
+	display: inline-block;
+	vertical-align: bottom;
+	width: calc(100% - 100px);
+}
+
+.settings ul li .name h3 {
+	font: inherit;
+	font-weight: 500;
+}
+
+.settings ul li .name .league {
+	color: #666;
+	font-size: 13px;
+}
+
+.dark :root.settings ul li .name .league {
+	color: #AAA;
+}
+
+.settings ul li button.toggle {
+	opacity: 0;
+	float: right;
+	margin: 7px 0;
+}
+
+.settings ul li:hover button.toggle {
+	opacity: 1;
+}
+
+.settings .suggestions {
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	opacity: 0;
+	padding: 0;
+	cursor: pointer;
+	background: #FFF;
+	position: absolute;
+	visibility: hidden;
+	box-shadow: 0 2px 3px -1px rgba(0, 0, 0, .3);
+	transition: opacity .2s ease, visibility 0s .2s;
+}
+
+.dark :root.settings .suggestions {
+	background: #333;
+}
+
+.settings .suggestions.visible {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity .2s ease, visibility 0s 0s;
+}
+
+.settings .suggestions li {
+	padding: 8px 12px;
+	border-left: 4px solid transparent;
+}
+
+.settings .suggestions li:hover,
+.settings .suggestions li.active {
+	background: #F5F5F5;
+	border-left-color: #2196F3;
+}
+
+.dark :root.settings .suggestions li:hover,
+.dark :root.settings .suggestions li.active {
+	background: #2A2A2A;
+}
+
+.settings .suggestions li .logo {
+	width: 40px;
+	height: 40px;
+}
+
+.settings .suggestions li .name {
+	padding: 0;
+	line-height: 20px;
+	width: calc(100% - 55px);
+}

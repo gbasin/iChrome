@@ -1,29 +1,53 @@
-<h2 class="header">{{i18n.settings.labels.advanced}}</h2>
+<header>
+	<h2 class="page-name">{{i18n.settings.title}} &ndash; {{i18n.settings.nav.advanced}}</h2>
+</header>
 
-<div class="content">
-	<form class="form-horizontal">
-		<div class="form-group colors">
-			<label class="control-label col-sm-2">{{i18n.settings.advanced.background}}</label>
+<main class="content" tabindex="-1">
+	<section class="backups" data-id="backups">
+		<h3>{{i18n.settings.advanced.backups.title}}</h3>
 
-			<div class="col-sm-9">
-				<span class="info">{{i18n.settings.advanced.background_desc}}</span>
+		<p class="desc">
+			{{i18n.settings.advanced.backups.desc}}
+			<br /><br />
+			{{i18n.settings.advanced.backups.desc2}}
+		</p>
 
-				<input type="text" class="color" id="wcolor" name="wcolor" value="{{settings.wcolor}}" />
-			</div>
+		<div class="input no-label actions">
+			<input type="file" name="backup-upload" class="upload hide" />
+
+			<button type="button" class="material blue backup">{{i18n.settings.advanced.backups.backup}}</button>
+
+			<button type="button" class="material blue upload">{{i18n.settings.advanced.backups.upload}}</button>
 		</div>
 
-		<div class="form-group css">
-			<label class="control-label col-sm-2" for="custom-css">{{i18n.settings.advanced.css}}</label>
+		{{#backups}}
+			<div class="input backup" data-date="{{date}}">
+				<h4>{{label}}</h4>
 
-			<div class="col-sm-9">
-				<span class="info">{{{i18n.settings.advanced.css_desc}}}</span>
+				<button type="button" class="material flat blue download">{{i18n.settings.advanced.backups.download}}</button>
 
-				<textarea id="custom-css" name="custom-css" maxlength="1000">{{settings.custom-css}}</textarea>
+				<button type="button" class="material flat blue restore">{{i18n.settings.advanced.backups.restore}}</button>
 			</div>
-		</div>
-	</form>
+		{{/backups}}
+	</section>
 
-	<div class="col-sm-11 btns">
-		<a class="debug">{{i18n.settings.advanced.debug}}</a>
-	</div>
-</div>
+	<section class="css" data-id="css">
+		<h3>{{i18n.settings.advanced.css.title}}</h3>
+
+		<p class="desc">{{{i18n.settings.advanced.css.desc}}}</p>
+
+		<div class="input textarea">
+			<textarea name="css" maxlength="1000" placeholder="{{i18n.settings.advanced.css.placeholder}}">{{css}}</textarea>
+		</div>
+	</section>
+
+	<section class="debug-tools" data-id="debug-tools">
+		<h3>{{i18n.settings.advanced.debug_tools.title}}</h3>
+
+		<p class="desc">{{{i18n.settings.advanced.debug_tools.desc}}}</p>
+
+		<div class="input no-label">
+			<button type="button" class="material red">{{i18n.settings.advanced.debug_tools.open}}</button>
+		</div>
+	</section>
+</main>

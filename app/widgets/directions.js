@@ -4,7 +4,7 @@
 define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbone) {
 	var View = Backbone.View.extend({
 		events: {
-			"focusout input.from, input.to": function(e) {
+			"focusout input.from, input.to": function() {
 				if (!this.$(".results .route").length) {
 					this.getDirections();
 				}
@@ -23,7 +23,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 					this.getDirections();
 				}
 			},
-			
+
 			"click .results .route": function(e) {
 				e.currentTarget.classList.toggle("active");
 			},
@@ -174,7 +174,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 					el: this.elm
 				});
 			}
-			
+
 			this.view.render();
 		}
 	};

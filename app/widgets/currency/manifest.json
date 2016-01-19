@@ -1,0 +1,27 @@
+{
+	"id": 21,
+	"name": "currency",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["small"],
+
+	"views": {
+		"default": "view"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"strings": {
+		"en": {
+			"name": "Currency",
+			"desc": "Let's you convert between any two of 169 currencies.",
+
+			"to_label": "to",
+			"recently_used": "Recently Used"
+		}
+	}
+}

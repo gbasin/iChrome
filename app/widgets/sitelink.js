@@ -66,7 +66,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 					e.preventDefault();
 
 					Browser.tabs.getCurrent(function(d) {
-						if (e.which == 2 || (e.currentTarget.target || $("base").attr("target")) == "_blank") {
+						if (e.which === 2 || (e.currentTarget.target || $("base").attr("target")) === "_blank") {
 							Browser.tabs.create({
 								url: href,
 								index: d.index + 1

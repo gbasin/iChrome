@@ -1,18 +1,5 @@
 {
   "lang_code":"tr-widgets",
-  "analytics":{
-    "name":"Analytics",
-    "desc":"Google Analytics profilindeki çeşitli ölçümleri görüntüler.",
-    "sessions":"oturumlar",
-    "pageviews":"Sayfa görüntüleme",
-    "pagesvisit":"Sayfa\/ziyaret",
-    "bouncerate":"Hemen çıkma oranı",
-    "completions":"Tamamlananlar",
-    "noprofile":"Henüz bir profil seçilmiş gibi görünmüyor!\n<br \/><br \/>\nSağ üstteki ingiliz anahtarı simgesi ile seçmeyi deneyin.",
-    "settings":{
-      "profile":"Profil"
-    }
-  },
   "apps":{
     "name":"Uygulamalar",
     "desc":"Şu anda yüklü Google Chrome uygulamalarınızı görüntüler.",
@@ -120,22 +107,6 @@
     "dismiss":"Dismiss",
     "enable_audio":"Enable audio"
   },
-  "currency":{
-    "name":"Currency",
-    "desc":"Let's you convert between any two of 169 currencies.",
-    "to_label":"to",
-    "recently_used":"Recently Used"
-  },
-  "drive":{
-    "name":"Drive",
-    "desc":"Displays recently changed files from your Google Drive.",
-    "settings":{
-      "files_shown":"Number of Files Shown"
-    },
-    "modified_by":"by",
-    "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
-    "authorize_btn":"Yetki ver"
-  },
   "facebook":{
     "name":"Facebook",
     "desc":"Embeds Facebook in a widget"
@@ -175,52 +146,6 @@
     "author":"by",
     "go_to_feedly":"Go To Feedly"
   },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"Displays your Gmail inbox where you can manage your email."
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"Displays a webpage of your choice within an iframe.",
-    "settings":{
-      "url":"Frame URL",
-      "url_placeholder":"örneğin http:\/\/www.google.com\/",
-      "height":"Frame Height",
-      "padding":"Padding"
-    }
-  },
-  "keep":{
-    "name":"Keep",
-    "desc":"Embeds Google Keep in a widget"
-  },
-  "news":{
-    "name":"Haberler",
-    "desc":"Displays the current top news by category and edition.",
-    "settings":{
-      "articles":"Gösterilecek Makale",
-      "edition":"Basın",
-      "edition_help":"Eğer sizin basınınız burada listelenmiyorsa, lütfen Google Haberler besleme adresini aşağıdaki Özel Besleme alanına giriniz (oradaki yardım metnini kontrol edin).",
-      "topic":"Konu Başlığı",
-      "topic_options":{
-        "top":"En çok okunan haberler",
-        "world":"Dünya",
-        "nation":"Ulusal",
-        "business":"İş Hayatı",
-        "sports":"Spor",
-        "technology":"Teknoloji",
-        "entertainment":"Eğlence",
-        "health":"Sağlık",
-        "science":"Bilim",
-        "spotlight":"Sanat"
-      },
-      "feed":"Özel Besleme",
-      "feed_help":"Bu besleme, her Google Haberler sayfasının altında listelenir. Sayfanın altında önünde turuncu bir ikon yer alan \"RSS\" yazısının bağlantısını bu alana yapıştırın",
-      "feed_placeholder":"Haberleri getirmek için özel bir RSS beslemesi girin",
-      "footer":"Altbilgi Bağlantısı",
-      "footer_placeholder":"\"Daha fazla\" yazısına tıklandığında açılacal URL'yi girin"
-    },
-    "more":"Daha fazla"
-  },
   "notes":{
     "name":"Notlar",
     "desc":"Basit, düzenlenebilir, bir not ekler.",
@@ -254,14 +179,6 @@
     "name":"Google Notifications",
     "desc":"Displays your Google Notifications from services such as Google+"
   },
-  "recentlyclosed":{
-    "name":"En Son Kapatılan",
-    "desc":"En son kapatılan sekmeleri gösterir",
-    "settings":{
-      "tabs":"Gösterilecek Sekme",
-      "open":"Sekmeleri şurada aç"
-    }
-  },
   "reddit":{
     "name":"Reddit",
     "desc":"Reddit üzerindeki popüler başlıkları görüntüler.",
@@ -287,76 +204,6 @@
     },
     "more":"Daha fazla"
   },
-  "rss":{
-    "name":"RSS",
-    "desc":"Displays items from a RSS or Atom feed with optional images.",
-    "settings":{
-      "link":"Title Link",
-      "link_placeholder":"Enter a link for the widget title",
-      "url":"Feed URL",
-      "url_placeholder":"The URL of the RSS feed to be displayed",
-      "articles":"Gösterilecek Makale",
-      "view":"View",
-      "view_options":{
-        "images":"Image friendly",
-        "default":"Default"
-      },
-      "images":"Images",
-      "descriptions":"Descriptions"
-    },
-    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
-  },
-  "sports":{
-    "name":"Spor",
-    "desc":"Displays scores and game information for selected leagues and\/or teams.",
-    "settings":{
-      "league":"League",
-      "games":"Games Shown",
-      "team":"Team",
-      "teams":"Team",
-      "unavailable":"When team games are unavailable",
-      "unavailable_options":{
-        "other":"Show other games",
-        "none":"Show \"No Games\""
-      }
-    },
-    "error":"Something seems to have gone wrong",
-    "unknown_error":"Unknown Error",
-    "watch_on":"Watch on: %s",
-    "no_games":"No Games Scheduled"
-  },
-  "stocks":{
-    "name":"Stocks",
-    "desc":"Displays current information for any given stock symbol.",
-    "settings":{
-      "symbols":"Stock Symbol(s), comma separated",
-      "symbols_placeholder":"e.g. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br \/><br \/>\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. For example, the Dow Jones index is <b>.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
-    },
-    "as_of":"as of",
-    "exchange_time":"Exchange Time",
-    "open":"open",
-    "high":"high",
-    "low":"low",
-    "volume":"volume"
-  },
-  "todo":{
-    "name":"Yapılacaklar",
-    "desc":"Yapılacaklar listesi ile tamamlanmış ve önemli öğeleri görüntüler.",
-    "title":"Yapılacaklar listesi",
-    "settings":{
-      "color":"Yazı tipi rengi",
-      "color_options":{
-        "light":"Açık",
-        "dark":"Siyah"
-      },
-      "tags":"Etiketler",
-      "tags_placeholder":"Bir etiket adı girin ve Enter tuşuna basın"
-    },
-    "add":"Öğe Ekle",
-    "none":"Hiçbiri",
-    "important":"Önemli"
-  },
   "tasks":{
     "name":"Tasks",
     "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
@@ -375,43 +222,6 @@
     "due_today":"Due today",
     "overdue":"Overdue",
     "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
-  },
-  "topsites":{
-    "name":"En iyi siteler",
-    "desc":"En çok ziyaret edilen siteleri görüntüler.",
-    "settings":{
-      "show":"Gösterilecek site sayısı",
-      "open":"Siteleri şurada aç"
-    }
-  },
-  "traffic":{
-    "name":"Trafik",
-    "desc":"Ev ve iş yeri arasındaki geçerli trafik zamanını görüntüler.",
-    "settings":{
-      "leave":"Evden çıkış saati",
-      "home":"Ev adresi",
-      "home_placeholder":"İşten sonra kullanılması gereken hedef",
-      "work":"İş adresi",
-      "work_placeholder":"İşe gitmeden önce kullanılması gereken hedef",
-      "method":"Taşıma yöntemi",
-      "method_options":{
-        "driving":"Sürüş",
-        "walking":"Yürüyüş",
-        "transit":"Toplu taşıma"
-      }
-    },
-    "to_home":"ev için",
-    "to_work":"iş için"
-  },
-  "translate":{
-    "name":"Çeviri",
-    "desc":"Contains a small inline Google Translate textbox.",
-    "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
-    "button":"Çeviri",
-    "untranslate":"Untranslate",
-    "auto":"Auto (%s)",
-    "unknown":"Unknown",
-    "error":"Something went wrong while trying to translate that..."
   },
   "twitter":{
     "name":"Twitter",
@@ -433,40 +243,8 @@
     "retweet":"Retweet",
     "favorite":"Favorite"
   },
-  "unread":{
-    "name":"Unread",
-    "desc":"Displays the current number of unread emails in your Gmail inbox.",
-    "settings":{
-      "open":"When clicked open"
-    },
-    "unread_none":"unread emails",
-    "unread_one":"unread email",
-    "unread_many":"unread emails"
-  },
-  "voice":{
-    "name":"Voice",
-    "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
-    "call":"Call from",
-    "text":"Text message from",
-    "missed":"missed in Voice",
-    "texts":"unread text messages",
-    "calls":"missed calls"
-  },
-  "weather":{
-    "name":"Weather",
-    "desc":"Displays the current weather and a forecast for the next 4 days.",
-    "settings":{
-      "location":"Location(s)",
-      "location_placeholder":"Enter a location and press Enter",
-      "temperature":"Temperature Units",
-      "wind":"Wind Speed Units"
-    },
-    "unknown":"Unknown",
-    "wind":"Wind Speed",
-    "chill":"Wind Chill",
-    "humidity":"Humidity"
-  },
   "wolfram":{
+    "name":"Wolfram|Alpha",
     "desc":"Inserts a small Wolfram|Alpha search box."
   },
   "youtube":{
@@ -549,15 +327,6 @@
     },
     "default_placeholder":"Search Google"
   },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
-  },
   "pushbullet":{
     "name":"Pushbullet",
     "desc":"Keep track of notifications from your phone and other devices",
@@ -597,5 +366,275 @@
     "no_links":"No links found",
     "grant_access":"Grant access",
     "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
+  },
+  "analytics":{
+    "name":"Analytics",
+    "desc":"Google Analytics profilindeki çeşitli ölçümleri görüntüler.",
+    "sessions":"oturumlar",
+    "pageviews":"Sayfa görüntüleme",
+    "pagesvisit":"Sayfa\/ziyaret",
+    "bouncerate":"Hemen çıkma oranı",
+    "completions":"Tamamlananlar",
+    "noprofile_title":"No profile selected",
+    "noprofile":"Henüz bir profil seçilmiş gibi görünmüyor!\n<br \/><br \/>\nSağ üstteki ingiliz anahtarı simgesi ile seçmeyi deneyin.",
+    "settings":{
+      "profile":"Profil"
+    }
+  },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
+    }
+  },
+  "currency":{
+    "name":"Currency",
+    "desc":"Let's you convert between any two of 169 currencies.",
+    "to_label":"to",
+    "recently_used":"Recently Used"
+  },
+  "dictionary":{
+    "name":"Dictionary",
+    "desc":"Quickly look up the definition and synonyms for a word",
+    "search_placeholder":"Enter a word or term here",
+    "more":"Daha fazla",
+    "less":"Less",
+    "synonyms":"Synonyms",
+    "antonyms":"Antonyms",
+    "web_definitions":"Web definitions",
+    "no_definitions":"No definitions found"
+  },
+  "drive":{
+    "name":"Drive",
+    "desc":"Displays recently changed files from your Google Drive.",
+    "settings":{
+      "files_shown":"Number of Files Shown"
+    },
+    "modified_by":"by",
+    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Displays your Gmail inbox where you can manage your email."
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Displays a webpage of your choice within an iframe.",
+    "settings":{
+      "url":"Frame URL",
+      "url_placeholder":"örneğin http:\/\/www.google.com\/",
+      "height":"Frame Height",
+      "padding":"Padding"
+    }
+  },
+  "keep":{
+    "name":"Keep",
+    "desc":"Embeds Google Keep in a widget"
+  },
+  "news":{
+    "name":"Haberler",
+    "desc":"Displays the current top news by category and edition.",
+    "all_stories":"Tümü",
+    "settings":{
+      "page_title":"Ayarlar",
+      "save":"Kaydet",
+      "title":"Widget başlığı",
+      "title_placeholder":"Widget için bir başlık girin veya gizlemek için boş bırakın",
+      "articles":"Gösterilecek Makale",
+      "edition":"Basın",
+      "default_topic":"Default Topic"
+    }
+  },
+  "recentlyclosed":{
+    "name":"En Son Kapatılan",
+    "desc":"En son kapatılan sekmeleri gösterir",
+    "settings":{
+      "tabs":"Gösterilecek Sekme",
+      "open":"Sekmeleri şurada aç"
+    },
+    "more":"more"
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"Displays items from a RSS or Atom feed with optional images.",
+    "settings":{
+      "page_title":"Ayarlar",
+      "save":"Kaydet",
+      "title":"Widget başlığı",
+      "title_placeholder":"Widget için bir başlık girin veya gizlemek için boş bırakın",
+      "link":"Title Link",
+      "link_placeholder":"Enter a link for the widget title",
+      "feeds":"Feeds",
+      "feeds_help":"Click any feed to edit it",
+      "feeds_placeholder":"Enter a feed URL and press Enter to add",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
+      "feed_name_placeholder":"Feed name",
+      "feed_url_placeholder":"Feed URL",
+      "articles":"Gösterilecek Makale"
+    },
+    "by":"Yapan",
+    "all_articles":"All articles",
+    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
+  },
+  "sports":{
+    "name":"Spor",
+    "desc":"Displays scores, schedules, and news from your favorite teams.",
+    "settings":{
+      "page_title":"Favorites",
+      "save":"Kaydet",
+      "teams_placeholder":"Enter a team name and press Enter to add"
+    },
+    "scores":"Scores",
+    "news":"Haberler",
+    "last_play":"Last play",
+    "no_games":"No games found",
+    "pro_splash1":"Sports news is a Pro-only feature.",
+    "pro_splash2":"Buy Pro in the settings.",
+    "preview":"Önizleme",
+    "tickets":"Tickets",
+    "live":"Live",
+    "recap":"Recap",
+    "box_score":"Box Score"
+  },
+  "stocks":{
+    "name":"Stocks",
+    "desc":"Displays current information for any given stock symbol.",
+    "settings":{
+      "stocks":"Stocks",
+      "stocks_placeholder":"Type a company or exchange name and hit Enter"
+    },
+    "as_of":"as of",
+    "exchange_time":"Exchange Time",
+    "overview":"Overview",
+    "news":"Haberler",
+    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
+    "pro_splash2":"Buy Pro in the settings.",
+    "time_ranges":{
+      "1d":"1d",
+      "5d":"5d",
+      "1m":"1m",
+      "3m":"3m",
+      "1y":"1y",
+      "5y":"5y",
+      "max":"max"
+    },
+    "open":"Open",
+    "prev_close":"Previous Close",
+    "high":"High",
+    "52high":"52 week high",
+    "low":"Low",
+    "52low":"52 week low",
+    "volume":"Volume",
+    "avg_volume":"Avg. Volume",
+    "shares":"Shares",
+    "cap":"Market Cap",
+    "pe":"Price \/ Earnings",
+    "eps":"EPS",
+    "beta":"Beta",
+    "inst_own":"Inst. own"
+  },
+  "todo":{
+    "name":"Yapılacaklar",
+    "desc":"Yapılacaklar listesi ile tamamlanmış ve önemli öğeleri görüntüler.",
+    "title":"Yapılacaklar listesi",
+    "settings":{
+      "color":"Yazı tipi rengi",
+      "color_options":{
+        "light":"Açık",
+        "dark":"Siyah"
+      },
+      "tags":"Etiketler",
+      "tags_placeholder":"Bir etiket adı girin ve Enter tuşuna basın"
+    },
+    "add":"Öğe Ekle",
+    "none":"Hiçbiri",
+    "important":"Önemli"
+  },
+  "topsites":{
+    "name":"En iyi siteler",
+    "desc":"En çok ziyaret edilen siteleri görüntüler.",
+    "settings":{
+      "show":"Gösterilecek site sayısı"
+    }
+  },
+  "traffic":{
+    "name":"Trafik",
+    "desc":"Ev ve iş yeri arasındaki geçerli trafik zamanını görüntüler.",
+    "settings":{
+      "leave":"Evden çıkış saati",
+      "home":"Ev adresi",
+      "home_placeholder":"İşten sonra kullanılması gereken hedef",
+      "work":"İş adresi",
+      "work_placeholder":"İşe gitmeden önce kullanılması gereken hedef",
+      "method":"Taşıma yöntemi",
+      "method_options":{
+        "driving":"Sürüş",
+        "walking":"Yürüyüş",
+        "transit":"Toplu taşıma"
+      }
+    },
+    "to_home":"ev için",
+    "to_work":"iş için"
+  },
+  "translate":{
+    "name":"Çeviri",
+    "desc":"Lets you quickly translate to and from 90 languages as you type",
+    "from_placeholder":"Start typing here",
+    "to_placeholder":"Translated text will appear here",
+    "detect_lang":"Detect language",
+    "translating":"Translating...",
+    "unknown":"Unknown"
+  },
+  "unread":{
+    "name":"Unread",
+    "desc":"Displays the current number of unread emails in your Gmail inbox.",
+    "settings":{
+      "open":"When clicked open"
+    },
+    "unread_none":"unread emails",
+    "unread_one":"unread email",
+    "unread_many":"unread emails"
+  },
+  "voice":{
+    "name":"Voice",
+    "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
+    "call":"Call from",
+    "text":"Text message from",
+    "missed":"missed in Voice",
+    "texts":"unread text messages",
+    "calls":"missed calls"
+  },
+  "weather":{
+    "name":"Weather",
+    "desc":"Displays the current weather and a forecast for the next 4 days.",
+    "settings":{
+      "location":"Location(s)",
+      "location_placeholder":"Enter a location and press Enter",
+      "units":"Units",
+      "units_imperial":"Imperial (Fahrenheit)",
+      "units_metric":"Metric (Celsius)",
+      "enabled":"Etkin",
+      "disabled":"Etkin Değil",
+      "forecast":"Forecasts",
+      "hourly":"Hourly forecasts"
+    },
+    "more":"Daha fazla",
+    "less":"Less",
+    "wind":"Wind",
+    "precipitation":"Precip",
+    "uv":"UV index",
+    "feelslike":"Feels like",
+    "barometer":"Barometer",
+    "visibility":"Visibility",
+    "humidity":"Humidity",
+    "dewpoint":"Dew point",
+    "moonphase":"Moon",
+    "sunrise":"Sunrise",
+    "sunset":"Sunset",
+    "moonrise":"Moonrise",
+    "moonset":"Moonset"
   }
 }

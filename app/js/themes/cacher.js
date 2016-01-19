@@ -1,7 +1,7 @@
 /**
  * This manages theme downloading and caching
  */
-define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/storage", "core/status"], function(_, $, Hogan, Backbone, FileSystem, Storage, Status) {
+define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/storage", "core/status", "lib/parseurl"], function(_, $, Hogan, Backbone, FileSystem, Storage, Status, parseUrl) {
 	var Model = Backbone.Model.extend({
 		initialize: function() {
 			Storage.on("done updated", function(storage) {
@@ -53,7 +53,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 	 */
 	Cacher.prototype.cache = function(theme) {
 		// If this is an RSS theme, get the image from the feed first
-		if (typeof theme == "undefined" && this.theme.oType == "feed") {
+		if (typeof theme === "undefined" && this.theme.oType === "feed") {
 			return this.getFeed(this.cache.bind(this));
 		}
 
@@ -66,7 +66,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 		else if (!theme) {
 			theme = this.theme;
 		}
-		
+
 
 		var cached = this.model.get("cached"),
 			ids;
@@ -77,6 +77,16 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 			ids = (theme.images || []).filter(function(e) {
 				return !cached[e];
 			});
+
+			// If this is something like a dynamic theme, inherit information
+			// about the current image and the last fetched time
+			if (cached[theme.id].currentImage) {
+				theme.currentImage = cached[theme.id].currentImage;
+			}
+
+			if (cached[theme.id].lastFetched) {
+				theme.lastFetched = cached[theme.id].lastFetched;
+			}
 		}
 		else {
 			if (theme.images) {
@@ -104,23 +114,25 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 			length = ids.length,
 			err = this.error.bind(this);
 
+		var isVideo = this.theme.oType === "video";
+
 		FileSystem.get(function(fs) {
 			fs.root.getDirectory("Themes", { create: true }, function(dir) {
 				var active = 0;
 
 				that.trigger("progress", length, 0);
 
-				ids.forEach(function(id, i) {
+				ids.forEach(function(id) {
 					active++;
 
-					dir.getFile(id + ".jpg", { create: true }, function(fe) {
+					dir.getFile(id + (isVideo ? ".mp4" : ".jpg"), { create: true }, function(fe) {
 						var xhr = new XMLHttpRequest();
 
-						xhr.open("GET", (id == theme.id && theme.oType == "feed" ? theme.image : "https://themes.ichro.me/images/" + id + ".jpg"));
+						xhr.open("GET", (id === theme.id && theme.oType === "feed" ? theme.image : "https://themes.ichro.me/images/" + id + (isVideo ? ".mp4" : ".jpg")));
 
 						xhr.responseType = "blob";
 
-						xhr.onload = function(e) {
+						xhr.onload = function() {
 							if (xhr.status !== 200) {
 								return err();
 							}
@@ -128,18 +140,19 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 							var blob = xhr.response;
 
 							fe.createWriter(function(writer) {
-								writer.onwrite = function(e) {
+								writer.onwrite = function() {
 									active--;
 
 									// This stores the image as a theme
 									cached[id] = {
 										id: id,
-										offline: true,
-										image: fe.toURL()
+										offline: true
 									};
 
+									cached[id][isVideo ? "video" : "image"] = fe.toURL();
+
 									if (active === 0) {
-										that.cleanup(cached[id].image);
+										that.cleanup(cached[id][isVideo ? "video" : "image"]);
 									}
 									else {
 										// length - active might seem to be vulnerable to a race condition at first
@@ -172,7 +185,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 	Cacher.prototype.error = function(e) {
 		// If the FS object has "expired", maybe because of slow
 		// requests, restart the caching
-		if (e && e.name == "InvalidStateError") {
+		if (e && e.name === "InvalidStateError") {
 			return this.cache(this.theme);
 		}
 
@@ -226,8 +239,8 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 		// These are utilities that the URL and image parser are rendered with
 		// They can be used to incorporate things like random numbers
-		Object.getOwnPropertyNames(Math).forEach(function(e, i) {
-			if (typeof Math[e] == "function") {
+		Object.getOwnPropertyNames(Math).forEach(function(e) {
+			if (typeof Math[e] === "function") {
 				utils.Math[e] = function() {
 					return function(args) {
 						return Math[e].apply(window, args.split(", "));
@@ -242,13 +255,17 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 		$.get(Hogan.compile(theme.url).render(utils), function(d) {
 			try {
-				if (theme.selector && theme.attr) {
-					var url = $(d).find(theme.selector);
+				var doc;
 
-					if (theme.attr == "text") {
+				if (theme.selector && theme.attr) {
+					doc = $(d);
+
+					var url = doc.find(theme.selector);
+
+					if (theme.attr === "text") {
 						url = url.text();
 					}
-					else if (theme.attr == "html") {
+					else if (theme.attr === "html") {
 						url = url.html();
 					}
 					else {
@@ -258,13 +275,45 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 					utils.res = url;
 				}
 				else {
-					if (typeof d == "object") {
+					if (typeof d === "object") {
 						utils.res = d;
 					}
 					else {
 						utils.res = JSON.parse(d);
 					}
 				}
+
+				// Special case handling until a better theme system can be implemented with ServiceWorker
+				try {
+					if (theme.id === 0) {
+						theme.currentImage = {
+							name: utils.res.name,
+							url: utils.res.sourceUrl,
+							source: (utils.res.author || "") + (utils.res.author && (utils.res.copyright || utils.res.source) ? " — " : "") + (utils.res.copyright || utils.res.source || "")
+						};
+					}
+					else if ((theme.id === 82 || theme.id === 83) && utils.res.images && utils.res.images[0] && utils.res.images[0].copyright) {
+						theme.currentImage = {
+							source: utils.res.images[0].copyrightsource,
+							name: utils.res.images[0].copyright.replace(utils.res.images[0].copyrightsource, "").replace(/\(\s*?\)/g, "").trim()
+						};
+					}
+					else if (theme.id === 84 && utils.res.free && utils.res.free[0]) {
+						theme.currentImage = {
+							name: utils.res.free[0].title,
+							source: utils.res.free[0].vendor
+						};
+					}
+					else if (theme.id === 86) {
+						theme.currentImage = {
+							name: doc.find("item title").text(),
+							source: doc.find("item source").text(),
+							desc: doc.find("item description").text(),
+							url: doc.find("item guid").text()
+						};
+					}
+				}
+				catch (e) {}
 
 				theme.image = Hogan.compile(theme.format).render(utils);
 
@@ -289,15 +338,18 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 	 *
 	 * @api    private
 	 * @param  {String} [image] The image (if any) to set on the theme if it
-	 * doesn't have an images array
+	 *                          doesn't have an images array
 	 */
 	Cacher.prototype.cleanup = function(image) {
 		var theme = this.theme;
 
+		var isVideo = this.theme.oType === "video";
+
 		if (!theme.images && image) {
-			theme.image = image;
+			theme[isVideo ? "video" : "image"] = image;
 		}
 		else {
+			delete theme.video;
 			delete theme.image;
 		}
 
@@ -312,6 +364,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 		delete theme.size;
 		delete theme.stats;
 		delete theme.thumb;
+		delete theme.original;
 		delete theme.resolution;
 		delete theme.categories;
 		delete theme.filterCategories;
@@ -350,7 +403,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 
 			var err = function(e) {
-				if (e && e.name == "InvalidStateError") {
+				if (e && e.name === "InvalidStateError") {
 					return this.cache(theme, id, cb);
 				}
 
@@ -360,7 +413,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 			}.bind(this);
 
 
-			var url = theme.image.parseUrl(),
+			var url = parseUrl(theme.image),
 				ext = url.match(/\.([0-9a-z]+)(?:[\?#]|$)/i);
 
 			if (ext && ext[1] && !ext[1].match(/^(jpg|png|gif|svg|webp|bmp)$/i)) {
@@ -377,7 +430,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 							xhr.responseType = "blob";
 
-							xhr.onload = function(e) {
+							xhr.onload = function() {
 								if (xhr.status !== 200) {
 									return err();
 								}
@@ -385,7 +438,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 								var blob = xhr.response;
 
 								fe.createWriter(function(writer) {
-									writer.onwrite = function(e) {
+									writer.onwrite = function() {
 										theme.image = fe.toURL() + "#OrigURL:" + url;
 
 										theme.offline = true;
@@ -438,7 +491,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 		 */
 		reEnumerate: function(id, cb) {
 			var err = function(e) {
-					if (e && e.name == "InvalidStateError") {
+					if (e && e.name === "InvalidStateError") {
 						return this.reEnumerate(id, cb);
 					}
 
@@ -454,10 +507,10 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 								var length = entries.length,
 									done = 0;
 
-								entries.forEach(function(e, i) {
+								entries.forEach(function(e) {
 									var nName = parseInt(e.name);
 
-									if (typeof nName !== "undefined" && nName > id && themes[nName] && (nName + "").length == e.name.length) { // The theme name is just a number
+									if (typeof nName !== "undefined" && nName > id && themes[nName] && (nName + "").length === e.name.length) { // The theme name is just a number
 										e.moveTo(dir, nName - 1, function(fe) {
 											var oURL = themes[nName].image.split("#OrigURL:")[1];
 
@@ -465,7 +518,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 
 											done++;
 
-											if (done == length) {
+											if (done === length) {
 												cb();
 											}
 										});
@@ -473,14 +526,14 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 									else {
 										done++;
 
-										if (done == length) {
+										if (done === length) {
 											cb();
 										}
 									}
 								});
 							},
 							reader = dir.createReader();
-						
+
 						(function read() { // Recursive and self executing, necessary as per the specs
 							reader.readEntries(function(results) {
 								if (!results.length) {
@@ -514,7 +567,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 		 */
 		saveUpload: function(theme, file, id, cb) {
 			var err = function(e) {
-				if (e && e.name == "InvalidStateError") {
+				if (e && e.name === "InvalidStateError") {
 					return this.saveUpload(theme, file, id, cb);
 				}
 
@@ -528,7 +581,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 					tDir.getDirectory("Custom", { create: true }, function(dir) {
 						dir.getFile(id, { create: true }, function(fe) {
 							fe.createWriter(function(writer) {
-								writer.onwrite = function(e) {
+								writer.onwrite = function() {
 									theme.image = fe.toURL();
 
 									theme.offline = true;
@@ -556,7 +609,7 @@ define(["lodash", "jquery", "hogan", "backbone", "storage/filesystem", "storage/
 		 */
 		deleteImage: function(id, cb) {
 			var err = function(e) {
-				if (e && e.name == "InvalidStateError") {
+				if (e && e.name === "InvalidStateError") {
 					return this.deleteImage(id, cb);
 				}
 

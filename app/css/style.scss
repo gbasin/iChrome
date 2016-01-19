@@ -1,0 +1,15 @@
+// should be concat as part of the build process
+@import "bootstrap.css";
+
+@import "mixins";
+@import "variables";
+
+@import "material-colors";
+
+// import SASS files
+@import "app";
+@import "onboarding";
+@import "settings/base";
+
+// imports the SASS file, but a CSS version will also be created for compiling widgets.
+@import "widgets.scss";

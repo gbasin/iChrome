@@ -1,22 +1,6 @@
 {
 	"lang_code": "en-widgets",
 
-	"analytics": {
-		"name": "Analytics",
-		"desc": "Displays various metrics from a Google Analytics profile.",
-
-		"sessions": "sessions",
-		"pageviews": "Pageviews",
-		"pagesvisit": "Pages/visit",
-		"bouncerate": "Bounce Rate",
-		"completions": "Completions",
-		"noprofile": "It doesn't look like you selected a profile yet!\n<br /><br />\nTry selecting one via the wrench icon in the top right.",
-
-		"settings": {
-			"profile": "Profile"
-		}
-	},
-
 	"apps": {
 		"name": "Apps",
 		"desc": "Displays your currently installed Google Chrome applications.",
@@ -159,28 +143,6 @@
 		"enable_audio": "Enable audio"
 	},
 
-	"currency": {
-		"name": "Currency",
-		"desc": "Let's you convert between any two of 169 currencies.",
-
-		"to_label": "to",
-		"recently_used": "Recently Used"
-	},
-
-	"drive": {
-		"name": "Drive",
-		"desc": "Displays recently changed files from your Google Drive.",
-
-		"settings": {
-			"files_shown": "Number of Files Shown"
-		},
-
-		"modified_by": "by",
-
-		"authorize": "You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
-		"authorize_btn": "Authorize"
-	},
-
 	"facebook": {
 		"name": "Facebook",
 		"desc": "Embeds Facebook in a widget"
@@ -207,13 +169,13 @@
 				"cards": "Cards",
 				"cards_columns": "Cards (two columns)"
 			},
-			
+
 			"mark": "Mark an article as read when I",
 			"mark_options": {
 				"scroll": "Scroll past it or click it",
 				"click": "Just click it"
 			},
-			
+
 			"sort": "Sort Order",
 			"sort_options": {
 				"newest": "Newest first",
@@ -227,65 +189,6 @@
 
 		"author": "by",
 		"go_to_feedly": "Go To Feedly"
-	},
-
-	"gmail": {
-		"name": "Gmail",
-		"desc": "Displays your Gmail inbox where you can manage your email."
-	},
-
-	"iframe": {
-		"name": "iFrame",
-		"desc": "Displays a webpage of your choice within an iframe.",
-
-		"settings": {
-			"url": "Frame URL",
-			"url_placeholder": "i.e. http://www.google.com/",
-
-			"height": "Frame Height",
-
-			"padding": "Padding"
-		}
-	},
-
-	"keep": {
-		"name": "Keep",
-		"desc": "Embeds Google Keep in a widget"
-	},
-
-	"news": {
-		"name": "News",
-		"desc": "Displays the current top news by category and edition.",
-
-		"settings": {
-			"articles": "Articles Shown",
-
-			"edition": "Edition",
-			"edition_help": "If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
-
-			"topic": "Topic",
-			"topic_options": {
-				"top": "Top Stories",
-				"world": "World",
-				"nation": "Nation",
-				"business": "Business",
-				"sports": "Sports",
-				"technology": "Technology",
-				"entertainment": "Entertainment",
-				"health": "Health",
-				"science": "Science",
-				"spotlight": "Spotlight"
-			},
-
-			"feed": "Custom Feed",
-			"feed_help": "This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
-			"feed_placeholder": "Enter a custom RSS feed to fetch news from",
-
-			"footer": "Footer URL",
-			"footer_placeholder": "Enter the URL that the \"More\" link should point to"
-		},
-
-		"more": "More"
 	},
 
 	"notes": {
@@ -330,16 +233,6 @@
 		"desc": "Displays your Google Notifications from services such as Google+"
 	},
 
-	"recentlyclosed": {
-		"name": "Recently Closed",
-		"desc": "Shows your recently closed tabs",
-
-		"settings": {
-			"tabs": "Tabs Shown",
-			"open": "Open tabs in"
-		}
-	},
-
 	"reddit": {
 		"name": "Reddit",
 		"desc": "Displays the top items on Reddit for any given subreddit.",
@@ -371,98 +264,6 @@
 		"more": "More"
 	},
 
-	"rss": {
-		"name": "RSS",
-		"desc": "Displays items from a RSS or Atom feed with optional images.",
-
-		"settings": {
-			"link": "Title Link",
-			"link_placeholder": "Enter a link for the widget title",
-
-			"url": "Feed URL",
-			"url_placeholder": "The URL of the RSS feed to be displayed",
-
-			"articles": "Articles Shown",
-
-			"view": "View",
-			"view_options": {
-				"images": "Image friendly",
-				"default": "Default"
-			},
-
-			"images": "Images",
-			"descriptions": "Descriptions"
-		},
-
-		"feed_error": "An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and/or modify the widget settings."
-	},
-
-	"sports": {
-		"name": "Sports",
-		"desc": "Displays scores and game information for selected leagues and/or teams.",
-
-		"settings": {
-			"league": "League",
-			"games": "Games Shown",
-			"team": "Team",
-			"teams": "Team",
-
-			"unavailable": "When team games are unavailable",
-			"unavailable_options": {
-				"other": "Show other games",
-				"none": "Show \"No Games\""
-			}
-		},
-
-		"error": "Something seems to have gone wrong",
-		"unknown_error": "Unknown Error",
-
-		"watch_on": "Watch on: %s",
-		"no_games": "No Games Scheduled"
-	},
-
-	"stocks": {
-		"name": "Stocks",
-		"desc": "Displays current information for any given stock symbol.",
-
-		"settings": {
-			"symbols": "Stock Symbol(s), comma separated",
-			"symbols_placeholder": "e.g. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-			"symbols_help": "These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br /><br />\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https://www.google.com/finance\" target=\"_blank\">Google Finance</a>. For example, the Dow Jones index is <b>.DJI</b> and NYSE is <b>INDEXNYSEGIS:NYA</b>."
-		},
-
-		"as_of": "as of",
-		"exchange_time": "Exchange Time",
-
-		"open": "open",
-		"high": "high",
-		"low": "low",
-		"volume": "volume"
-	},
-
-	"todo": {
-		"name": "To-do",
-		"desc": "Displays an interactive to-do list with important and completed items.",
-
-		"title": "To-do list",
-
-		"settings": {
-			"color": "Font Color",
-			"color_options": {
-				"light": "Light",
-				"dark": "Dark"
-			},
-
-			"tags": "Tags",
-			"tags_placeholder": "Enter a tag name and press Enter"
-		},
-
-		"add": "Add Item",
-
-		"none": "None",
-		"important": "Important"
-	},
-
 	"tasks": {
 		"name": "Tasks",
 		"desc": "Displays an editable list of tasks from one of your Google Tasks lists.",
@@ -488,55 +289,6 @@
 		"overdue": "Overdue",
 
 		"authorize": "You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
-	},
-
-	"topsites": {
-		"name": "Top Sites",
-		"desc": "Displays your most visited/top sites.",
-
-		"settings": {
-			"show": "Number of sites shown",
-			"open": "Open sites in"
-		}
-	},
-
-	"traffic": {
-		"name": "Traffic",
-		"desc": "Displays the current time in current traffic to home or work.",
-
-		"settings": {
-			"leave": "I leave home at",
-
-			"home": "Home Address",
-			"home_placeholder": "The destination that should be used after work",
-
-			"work": "Work Address",
-			"work_placeholder": "The destination that should be used before work",
-
-			"method": "Transit Method",
-			"method_options": {
-				"driving": "Driving",
-				"walking": "Walking",
-				"transit": "Public Transit"
-			}
-		},
-
-		"to_home": "to home",
-		"to_work": "to work"
-	},
-
-	"translate": {
-		"name": "Translate",
-		"desc": "Contains a small inline Google Translate textbox.",
-
-		"placeholder": "Enter the text you'd like to translate here, then hit \"Translate\" below.",
-
-		"button": "Translate",
-		"untranslate": "Untranslate",
-		"auto": "Auto (%s)",
-
-		"unknown": "Unknown",
-		"error": "Something went wrong while trying to translate that..."
 	},
 
 	"twitter": {
@@ -566,52 +318,8 @@
 		"favorite": "Favorite"
 	},
 
-	"unread": {
-		"name": "Unread",
-		"desc": "Displays the current number of unread emails in your Gmail inbox.",
-
-		"settings": {
-			"open": "When clicked open"
-		},
-
-		"unread_none": "unread emails",
-		"unread_one": "unread email",
-		"unread_many": "unread emails"
-	},
-
-	"voice": {
-		"name": "Voice",
-		"desc": "Displays the current number of missed calls and texts in your Google Voice account.",
-
-		"call": "Call from",
-		"text": "Text message from",
-
-		"missed": "missed in Voice",
-
-		"texts": "unread text messages",
-		"calls": "missed calls"
-	},
-
-	"weather": {
-		"name": "Weather",
-		"desc": "Displays the current weather and a forecast for the next 4 days.",
-
-		"settings": {
-			"location": "Location(s)",
-			"location_placeholder": "Enter a location and press Enter",
-
-			"temperature": "Temperature Units",
-			"wind": "Wind Speed Units"
-		},
-
-		"unknown": "Unknown",
-
-		"wind": "Wind Speed",
-		"chill": "Wind Chill",
-		"humidity": "Humidity"
-	},
-
 	"wolfram": {
+		"name": "Wolfram|Alpha",
 		"desc": "Inserts a small Wolfram|Alpha search box."
 	},
 
@@ -720,17 +428,6 @@
 		},
 
 		"default_placeholder": "Search Google"
-	},
-
-	"classroom": {
-		"name": "Classroom",
-		"desc": "Keep up to date with your Google Classroom assignments and classes",
-
-		"settings": {
-			"mode": "Widget Mode",
-			"mode_teacher": "Teacher",
-			"mode_student": "Student"
-		}
 	},
 
 	"pushbullet": {

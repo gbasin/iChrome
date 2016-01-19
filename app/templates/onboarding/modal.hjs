@@ -1,0 +1,59 @@
+<div class="nav">
+	<button type="button" class="material fab m-icon prev" data-direction="prev">arrow_back</button>
+	<button type="button" class="material fab m-icon next" data-direction="next"></button>
+</div>
+
+<section class="slide intro active" data-id="1">
+	<img class="logo" src="icon/300.png" />
+
+	<h2 class="appname">iChrome</h2>
+
+	<span class="tagline">{{i18n.onboarding.modal.tagline}}</span>
+
+	{{#newTab}}
+		<span class="footer note">{{i18n.onboarding.modal.wrong_extension_newtab}} <a href="https://chrome.google.com/webstore/detail/ichrome/oghkljobbhapacbahlneolfclkniiami" target="_blank">{{i18n.onboarding.modal.wrong_extension_action}}</a></span>
+	{{/newTab}}
+	{{^newTab}}
+		<span class="footer note">{{i18n.onboarding.modal.wrong_extension}} <a href="https://chrome.google.com/webstore/detail/ichrome-new-tab/iccjgbbjckehppnpajnmplcccjcgbdep" target="_blank">{{i18n.onboarding.modal.wrong_extension_action}}</a></span>
+	{{/newTab}}
+</section>
+
+<section class="slide about" data-id="2">
+	<div class="hero" style="background-image: url(images/onboarding.png)"></div>
+
+	<div class="caption">
+		<h2>{{i18n.onboarding.modal.about}}</h2>
+
+		<p>{{i18n.onboarding.modal.about_desc}}</p>
+	</div>
+
+	<span class="footer note">{{{i18n.onboarding.modal.terms}}}</span>
+</section>
+
+<section class="slide sign-in final" data-id="3">
+	<div class="pending visible">
+		<div class="caption">
+			<h2>{{i18n.onboarding.modal.sign_in}}</h2>
+
+			<p>{{i18n.onboarding.modal.sign_in_desc}}</p>
+
+			<p>{{i18n.onboarding.modal.sign_in_desc2}}</p>
+		</div>
+
+		<div class="btn-container">
+			<button type="button" class="material large red sign-in">{{i18n.onboarding.modal.sign_in_button}}</button>
+		</div>
+	</div>
+
+	<div class="complete existing">
+		<h2>{{i18n.onboarding.modal.have_account}}</h2>
+
+		<p>{{i18n.onboarding.modal.have_account_desc}}</p>
+	</div>
+
+	<div class="complete new">
+		<h2>{{i18n.onboarding.modal.get_started}}</h2>
+
+		<p>{{i18n.onboarding.modal.get_started_desc}}</p>
+	</div>
+</section>

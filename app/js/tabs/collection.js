@@ -7,8 +7,6 @@ define(["lodash", "jquery", "backbone", "backbone.viewcollection", "tabs/model",
 		view: View,
 
 		initialize: function() {
-			this.body = $(document.body);
-
 			this.on("views:change", this.navigate, this);
 
 
@@ -22,22 +20,20 @@ define(["lodash", "jquery", "backbone", "backbone.viewcollection", "tabs/model",
 
 
 		/**
-		 * Sets a tab as active and applies its theme to the body
+		 * Makes a tab active
 		 *
 		 * @api   private
 		 * @param {Backbone.View|Number} tab The tab or tab index to activate
 		 */
 		setActive: function(tab) {
-			if (typeof tab == "number") {
+			if (typeof tab === "number") {
 				tab = this.views[tab];
 			}
 
-			if (this.indexOf(tab.model) == this.active && tab.$el.hasClass("active")) {
+			if (this.indexOf(tab.model) === this.active && tab.$el.hasClass("active")) {
 				return;
 			}
 
-
-			this.body.attr("style", tab.getCSS.call(tab));
 
 			tab.$el.addClass("active");
 
@@ -59,10 +55,10 @@ define(["lodash", "jquery", "backbone", "backbone.viewcollection", "tabs/model",
 		navigate: function(to) {
 			var i = ((this.active + 1) || this.default || 1) - 1;
 
-			if (typeof to == "number") {
+			if (typeof to === "number") {
 				i = to - 1;
 			}
-			else if (typeof to == "string") {
+			else if (typeof to === "string") {
 				switch (to) {
 					case "next":
 						i++;

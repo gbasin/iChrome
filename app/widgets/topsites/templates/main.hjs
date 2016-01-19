@@ -1,0 +1,7 @@
+{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+<div class="items">
+	{{#sites}}
+		<a class="item" href="{{url}}" style="background-image: url('{{favicon}}')">{{title}}</a>
+	{{/sites}}
+</div>

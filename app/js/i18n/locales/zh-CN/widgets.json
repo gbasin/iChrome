@@ -1,18 +1,5 @@
 {
   "lang_code":"zh-CN-widgets",
-  "analytics":{
-    "name":"分析",
-    "desc":"显示您谷歌分析中的各项指标",
-    "sessions":"会话",
-    "pageviews":"页面访问量",
-    "pagesvisit":"页\/访问",
-    "bouncerate":"回访率",
-    "completions":"达成",
-    "noprofile":"看起来您未选择一个项目！\n<br \/><br \/>\n请尝试通过右上角的扳手图标选择一个项目。",
-    "settings":{
-      "profile":"项目档案"
-    }
-  },
   "apps":{
     "name":"应用程序",
     "desc":"显示您当前安装的谷歌 chrome 浏览器应用程序。",
@@ -120,22 +107,6 @@
     "dismiss":"Dismiss",
     "enable_audio":"Enable audio"
   },
-  "currency":{
-    "name":"货币转换",
-    "desc":"让您在169种货币之间进行转换。",
-    "to_label":"转换至",
-    "recently_used":"Recently Used"
-  },
-  "drive":{
-    "name":"网盘",
-    "desc":"显示您Google Drive最近更改的文件。",
-    "settings":{
-      "files_shown":"显示文件个数"
-    },
-    "modified_by":"由",
-    "authorize":"您需要授予 iChrome 权限以查看您Google Drive中的文件。",
-    "authorize_btn":"授权"
-  },
   "facebook":{
     "name":"Facebook",
     "desc":"在小部件中嵌入Facebook"
@@ -175,52 +146,6 @@
     "author":"由 ",
     "go_to_feedly":"打开Feedly"
   },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"显示您的 Gmail 收件箱，在任何地方您都可以查看您的E-Mail"
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"在您选择的位置用 iframe 嵌入网页。",
-    "settings":{
-      "url":"框架链接",
-      "url_placeholder":"例如 http:\/\/www.google.com\/",
-      "height":"框架高度",
-      "padding":"内边距"
-    }
-  },
-  "keep":{
-    "name":"Keep",
-    "desc":"嵌入Google Keep小部件"
-  },
-  "news":{
-    "name":"新闻",
-    "desc":"按类别和国家版本来显示当前的头条新闻。",
-    "settings":{
-      "articles":"显示数量",
-      "edition":"国家版本",
-      "edition_help":"如果此处未列出您的国家版本或主题，请在下面的自定义字段中输入谷歌新闻的Feed URL（查看帮助文本获取更多信息）。",
-      "topic":"主题",
-      "topic_options":{
-        "top":"要闻",
-        "world":"世界要闻",
-        "nation":"国家要闻",
-        "business":"商业与经济",
-        "sports":"体育运动",
-        "technology":"科技电子",
-        "entertainment":"娱乐休闲",
-        "health":"生活健康",
-        "science":"科学技术",
-        "spotlight":"头条消息"
-      },
-      "feed":"自定义消息源",
-      "feed_help":"在Google新闻页找到橘红色的RSS按钮，然后复制写着RSS的链接",
-      "feed_placeholder":"输入一个自定义的RSS订阅源以获取新闻",
-      "footer":"“更多”按钮链接",
-      "footer_placeholder":"输入您想让“更多”字样的链接指向的URL"
-    },
-    "more":"更多"
-  },
   "notes":{
     "name":"便签",
     "desc":"插入简单、 可编辑的便签。",
@@ -254,14 +179,6 @@
     "name":"Google通知",
     "desc":"显示您谷歌服务的通知，例如Google+"
   },
-  "recentlyclosed":{
-    "name":"最近关闭",
-    "desc":"显示您最近关闭的标签页",
-    "settings":{
-      "tabs":"显示选项卡",
-      "open":"打开选项卡方式"
-    }
-  },
   "reddit":{
     "name":"Reddit",
     "desc":"显示Reddit上的热门话题",
@@ -287,76 +204,6 @@
     },
     "more":"更多"
   },
-  "rss":{
-    "name":"RSS 订阅",
-    "desc":"显示RSS或Atom订阅（可带图片）",
-    "settings":{
-      "link":"标题链接",
-      "link_placeholder":"输入小部件标题链接",
-      "url":"Feed链接",
-      "url_placeholder":"显示的RSS订阅链接",
-      "articles":"显示数量",
-      "view":"视图",
-      "view_options":{
-        "images":"图像友好",
-        "default":"默认"
-      },
-      "images":"图像",
-      "descriptions":"描述"
-    },
-    "feed_error":"试图在%s获取信息时出现错误。\n请重复检查此链接然后更改小部件设置"
-  },
-  "sports":{
-    "name":"体育运动",
-    "desc":"显示所选联赛团队的比赛\/分数信息。",
-    "settings":{
-      "league":"联赛",
-      "games":"所示的比赛",
-      "team":"团队",
-      "teams":"团队",
-      "unavailable":"当关注内容无任何动态时",
-      "unavailable_options":{
-        "other":"显示其他比赛",
-        "none":"显示\"没有比赛\""
-      }
-    },
-    "error":"看起来发生了一些错误",
-    "unknown_error":"未知错误",
-    "watch_on":"关注： %s",
-    "no_games":"没有规划中的比赛"
-  },
-  "stocks":{
-    "name":"股票",
-    "desc":"显示您指定的股票信息。",
-    "settings":{
-      "symbols":"股票代号，用逗号（,）分隔",
-      "symbols_placeholder":"例如：NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"这些是你需要使用TICKER:EXCHANGE格式的股票。 \n<br \/><br \/> 因为索引的缘故，请使用 <a href=\"https:\/\/www.google.com\/finance\"target=\"_blank\">谷歌财经<\/a> 所示的TICKER\/EXCHANGE值。例如道琼斯指数是 <b>.DJI<\/b> 和纽约证券交易所是 <b>INDEXNYSEGIS:NYA<\/b>"
-    },
-    "as_of":"在",
-    "exchange_time":"交易时间",
-    "open":"开盘",
-    "high":"涨",
-    "low":"跌",
-    "volume":"卷"
-  },
-  "todo":{
-    "name":"待办事项",
-    "desc":"显示交互式的待办事项列表。",
-    "title":"待办事项列表",
-    "settings":{
-      "color":"字体颜色",
-      "color_options":{
-        "light":"亮色调",
-        "dark":"暗色调"
-      },
-      "tags":"标签",
-      "tags_placeholder":"输入标记的名称并按Enter键确认"
-    },
-    "add":"新建",
-    "none":"普通",
-    "important":"重要"
-  },
   "tasks":{
     "name":"任务栏",
     "desc":"从你的其中一个Google任务列表显示可编辑的任务栏",
@@ -375,43 +222,6 @@
     "due_today":"截止于今天",
     "overdue":"已过期",
     "authorize":"在任何东西显示之前您需要到设置选项卡中在您的Google Tasks里指定一个列表。"
-  },
-  "topsites":{
-    "name":"常用网站",
-    "desc":"显示您经常访问\/常用的的网站。",
-    "settings":{
-      "show":"显示网站数目",
-      "open":"网站打开方式"
-    }
-  },
-  "traffic":{
-    "name":"交通",
-    "desc":"根据交通状况显示当需要多久到家或多久上班。",
-    "settings":{
-      "leave":"离开家的时间",
-      "home":"家庭住址",
-      "home_placeholder":"这将用于下班后的目的地",
-      "work":"工作地址",
-      "work_placeholder":"这将用于上班前的目的地",
-      "method":"交通方式",
-      "method_options":{
-        "driving":"开车",
-        "walking":"步行",
-        "transit":"公共交通"
-      }
-    },
-    "to_home":"到家",
-    "to_work":"上班"
-  },
-  "translate":{
-    "name":"翻译",
-    "desc":"一个小巧的谷歌翻译小部件。",
-    "placeholder":"输入您想翻译的内容，然后点击下方的翻译按钮。",
-    "button":"翻译",
-    "untranslate":"原文",
-    "auto":"自动（%s）",
-    "unknown":"未知",
-    "error":"在您尝试翻译时出现了问题..."
   },
   "twitter":{
     "name":"Twitter",
@@ -433,40 +243,8 @@
     "retweet":"转推",
     "favorite":"收藏"
   },
-  "unread":{
-    "name":"未读",
-    "desc":"显示您Gmail邮箱中的未读邮件数目。",
-    "settings":{
-      "open":"点击时打开"
-    },
-    "unread_none":"封未读邮件",
-    "unread_one":"封未读邮件",
-    "unread_many":"封未读邮件"
-  },
-  "voice":{
-    "name":"Google Voice",
-    "desc":"显示您Google Voice中未查看的来电和短信。",
-    "call":"呼叫人",
-    "text":"发信人",
-    "missed":"未接来电",
-    "texts":"条未读短信",
-    "calls":"个未接来电"
-  },
-  "weather":{
-    "name":"天气",
-    "desc":"显示当前天气和接下来的 4 天的天气预报。",
-    "settings":{
-      "location":"位置",
-      "location_placeholder":"请输入一个位置，然后按 enter 键",
-      "temperature":"温度单位",
-      "wind":"风速单位"
-    },
-    "unknown":"未知",
-    "wind":"风速",
-    "chill":"寒风",
-    "humidity":"湿度"
-  },
   "wolfram":{
+    "name":"Wolfram|Alpha",
     "desc":"插入一个小巧的Wolfram Alpha搜索框。"
   },
   "youtube":{
@@ -549,15 +327,6 @@
     },
     "default_placeholder":"Search Google"
   },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
-  },
   "pushbullet":{
     "name":"Pushbullet",
     "desc":"Keep track of notifications from your phone and other devices",
@@ -597,5 +366,275 @@
     "no_links":"No links found",
     "grant_access":"Grant access",
     "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
+  },
+  "analytics":{
+    "name":"分析",
+    "desc":"显示您谷歌分析中的各项指标",
+    "sessions":"会话",
+    "pageviews":"页面访问量",
+    "pagesvisit":"页\/访问",
+    "bouncerate":"回访率",
+    "completions":"达成",
+    "noprofile_title":"No profile selected",
+    "noprofile":"看起来您未选择一个项目！\n<br \/><br \/>\n请尝试通过右上角的扳手图标选择一个项目。",
+    "settings":{
+      "profile":"项目档案"
+    }
+  },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
+    }
+  },
+  "currency":{
+    "name":"货币转换",
+    "desc":"让您在169种货币之间进行转换。",
+    "to_label":"转换至",
+    "recently_used":"Recently Used"
+  },
+  "dictionary":{
+    "name":"Dictionary",
+    "desc":"Quickly look up the definition and synonyms for a word",
+    "search_placeholder":"Enter a word or term here",
+    "more":"更多",
+    "less":"Less",
+    "synonyms":"Synonyms",
+    "antonyms":"Antonyms",
+    "web_definitions":"Web definitions",
+    "no_definitions":"No definitions found"
+  },
+  "drive":{
+    "name":"网盘",
+    "desc":"显示您Google Drive最近更改的文件。",
+    "settings":{
+      "files_shown":"显示文件个数"
+    },
+    "modified_by":"由",
+    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"显示您的 Gmail 收件箱，在任何地方您都可以查看您的E-Mail"
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"在您选择的位置用 iframe 嵌入网页。",
+    "settings":{
+      "url":"框架链接",
+      "url_placeholder":"例如 http:\/\/www.google.com\/",
+      "height":"框架高度",
+      "padding":"内边距"
+    }
+  },
+  "keep":{
+    "name":"Keep",
+    "desc":"嵌入Google Keep小部件"
+  },
+  "news":{
+    "name":"新闻",
+    "desc":"按类别和国家版本来显示当前的头条新闻。",
+    "all_stories":"全部",
+    "settings":{
+      "page_title":"设置",
+      "save":"保存",
+      "title":"小部件标题",
+      "title_placeholder":"输入小部件窗口标题或留空隐藏",
+      "articles":"显示数量",
+      "edition":"国家版本",
+      "default_topic":"Default Topic"
+    }
+  },
+  "recentlyclosed":{
+    "name":"最近关闭",
+    "desc":"显示您最近关闭的标签页",
+    "settings":{
+      "tabs":"显示选项卡",
+      "open":"打开选项卡方式"
+    },
+    "more":"more"
+  },
+  "rss":{
+    "name":"RSS 订阅",
+    "desc":"显示RSS或Atom订阅（可带图片）",
+    "settings":{
+      "page_title":"设置",
+      "save":"保存",
+      "title":"小部件标题",
+      "title_placeholder":"输入小部件窗口标题或留空隐藏",
+      "link":"标题链接",
+      "link_placeholder":"输入小部件标题链接",
+      "feeds":"订阅源",
+      "feeds_help":"Click any feed to edit it",
+      "feeds_placeholder":"Enter a feed URL and press Enter to add",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
+      "feed_name_placeholder":"Feed name",
+      "feed_url_placeholder":"Feed URL",
+      "articles":"显示数量"
+    },
+    "by":"由",
+    "all_articles":"所有文章",
+    "feed_error":"试图在%s获取信息时出现错误。\n请重复检查此链接然后更改小部件设置"
+  },
+  "sports":{
+    "name":"体育运动",
+    "desc":"Displays scores, schedules, and news from your favorite teams.",
+    "settings":{
+      "page_title":"Favorites",
+      "save":"保存",
+      "teams_placeholder":"Enter a team name and press Enter to add"
+    },
+    "scores":"Scores",
+    "news":"新闻",
+    "last_play":"Last play",
+    "no_games":"No games found",
+    "pro_splash1":"Sports news is a Pro-only feature.",
+    "pro_splash2":"Buy Pro in the settings.",
+    "preview":"预览",
+    "tickets":"Tickets",
+    "live":"Live",
+    "recap":"Recap",
+    "box_score":"Box Score"
+  },
+  "stocks":{
+    "name":"股票",
+    "desc":"显示您指定的股票信息。",
+    "settings":{
+      "stocks":"股票",
+      "stocks_placeholder":"Type a company or exchange name and hit Enter"
+    },
+    "as_of":"在",
+    "exchange_time":"交易时间",
+    "overview":"Overview",
+    "news":"新闻",
+    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
+    "pro_splash2":"Buy Pro in the settings.",
+    "time_ranges":{
+      "1d":"1d",
+      "5d":"5d",
+      "1m":"1m",
+      "3m":"3m",
+      "1y":"1y",
+      "5y":"5y",
+      "max":"max"
+    },
+    "open":"开盘",
+    "prev_close":"Previous Close",
+    "high":"涨",
+    "52high":"52 week high",
+    "low":"跌",
+    "52low":"52 week low",
+    "volume":"卷",
+    "avg_volume":"Avg. Volume",
+    "shares":"Shares",
+    "cap":"Market Cap",
+    "pe":"Price \/ Earnings",
+    "eps":"EPS",
+    "beta":"Beta",
+    "inst_own":"Inst. own"
+  },
+  "todo":{
+    "name":"待办事项",
+    "desc":"显示交互式的待办事项列表。",
+    "title":"待办事项列表",
+    "settings":{
+      "color":"字体颜色",
+      "color_options":{
+        "light":"亮色调",
+        "dark":"暗色调"
+      },
+      "tags":"标签",
+      "tags_placeholder":"输入标记的名称并按Enter键确认"
+    },
+    "add":"新建",
+    "none":"普通",
+    "important":"重要"
+  },
+  "topsites":{
+    "name":"常用网站",
+    "desc":"显示您经常访问\/常用的的网站。",
+    "settings":{
+      "show":"显示网站数目"
+    }
+  },
+  "traffic":{
+    "name":"交通",
+    "desc":"根据交通状况显示当需要多久到家或多久上班。",
+    "settings":{
+      "leave":"离开家的时间",
+      "home":"家庭住址",
+      "home_placeholder":"这将用于下班后的目的地",
+      "work":"工作地址",
+      "work_placeholder":"这将用于上班前的目的地",
+      "method":"交通方式",
+      "method_options":{
+        "driving":"开车",
+        "walking":"步行",
+        "transit":"公共交通"
+      }
+    },
+    "to_home":"到家",
+    "to_work":"上班"
+  },
+  "translate":{
+    "name":"翻译",
+    "desc":"Lets you quickly translate to and from 90 languages as you type",
+    "from_placeholder":"Start typing here",
+    "to_placeholder":"Translated text will appear here",
+    "detect_lang":"Detect language",
+    "translating":"Translating...",
+    "unknown":"未知"
+  },
+  "unread":{
+    "name":"未读",
+    "desc":"显示您Gmail邮箱中的未读邮件数目。",
+    "settings":{
+      "open":"点击时打开"
+    },
+    "unread_none":"封未读邮件",
+    "unread_one":"封未读邮件",
+    "unread_many":"封未读邮件"
+  },
+  "voice":{
+    "name":"Google Voice",
+    "desc":"显示您Google Voice中未查看的来电和短信。",
+    "call":"呼叫人",
+    "text":"发信人",
+    "missed":"未接来电",
+    "texts":"条未读短信",
+    "calls":"个未接来电"
+  },
+  "weather":{
+    "name":"天气",
+    "desc":"显示当前天气和接下来的 4 天的天气预报。",
+    "settings":{
+      "location":"位置",
+      "location_placeholder":"请输入一个位置，然后按 enter 键",
+      "units":"Units",
+      "units_imperial":"Imperial (Fahrenheit)",
+      "units_metric":"Metric (Celsius)",
+      "enabled":"正在编辑",
+      "disabled":"不在编辑",
+      "forecast":"Forecasts",
+      "hourly":"Hourly forecasts"
+    },
+    "more":"更多",
+    "less":"Less",
+    "wind":"风速",
+    "precipitation":"Precip",
+    "uv":"UV index",
+    "feelslike":"Feels like",
+    "barometer":"Barometer",
+    "visibility":"Visibility",
+    "humidity":"湿度",
+    "dewpoint":"Dew point",
+    "moonphase":"Moon",
+    "sunrise":"Sunrise",
+    "sunset":"Sunset",
+    "moonrise":"Moonrise",
+    "moonset":"Moonset"
   }
 }

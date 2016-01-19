@@ -1,9 +1,10 @@
 /**
  * Loads storage and returns a Promise that can be used to listen for updates
  */
-define(
-	["jquery", "lodash", "backbone", "browser/api", "core/status", "modals/alert", "i18n/i18n", "core/analytics", "storage/filesystem", "storage/syncapi", "storage/defaults", "storage/updatethemes", "storage/tojson"],
-	function($, _, Backbone, Browser, Status, Alert, Translate, Track, FileSystem, API, defaults, updateThemes, getJSON) {
+define([
+	"jquery", "lodash", "backbone", "browser/api", "core/status", "core/analytics", "storage/filesystem",
+	"core/auth", "storage/syncapi", "storage/deprecate", "storage/defaults", "storage/updatethemes", "storage/tojson", "lib/unextend"
+], function($, _, Backbone, Browser, Status, Track, FileSystem, Auth, API, Deprecate, defaults, updateThemes, getJSON, unextend) {
 		var deferred = $.Deferred();
 
 		// This lets events get attached and fired on storage itself. It'll primarily be used as storage.on("updated", ...) and storage.trigger("updated")
@@ -46,7 +47,7 @@ define(
 		 */
 		promise.on = function(events, cb, ctx) {
 			// If the promise is resolved and a done event is being attached, trigger it
-			if (promise.state() == "resolved" && events.split(" ").indexOf("done") !== -1) {
+			if (promise.state() === "resolved" && events.split(" ").indexOf("done") !== -1) {
 				if (ctx) {
 					cb.call(ctx, storage, promise);
 				}
@@ -57,7 +58,9 @@ define(
 				// Remove the event so it doesn't get called from the promise.done() function
 				events = events.replace(/(?:^| )done(?:$| )/, "");
 
-				if (!events) return;
+				if (!events) {
+					return;
+				}
 			}
 
 			Backbone.Events.on.call(promise, events, cb, ctx);
@@ -67,8 +70,12 @@ define(
 
 		// When storage is updated it should be synced
 		promise.on("updated", function() {
-			if (!saving) storage.sync();
-			else saving = false;
+			if (!saving) {
+				storage.sync();
+			}
+			else {
+				saving = false;
+			}
 		});
 
 
@@ -83,23 +90,30 @@ define(
 			FileSystem.clear(function() {
 				// A reset shouldn't affect these since we'll still want to sync when this is over
 				var uses = Browser.storage.uses,
-					syncData = Browser.storage.syncData;
+					authData = Browser.storage.authData;
 
 				Browser.storage.clear();
 
-				if (uses) Browser.storage.uses = uses;
-				if (syncData) Browser.storage.syncData = syncData;
+				if (uses) {
+					Browser.storage.uses = uses;
+				}
 
-				Browser.storage.installed = true; // Show the installation guide when the page is reloaded
+				if (authData) {
+					Browser.storage.authData = authData;
+				}
+
+				Browser.storage.firstRun = true; // Show the installation guide when the page is reloaded
 
 				// Overwrite with the default configuration
-				_.assign(storage, _.pick(defaults, "user", "tabs", "settings", "themes", "cached"));
+				_.assign(storage, _.pick(defaults, "tabs", "settings", "themes", "cached"));
 
 				storage.tabsSync = JSON.parse(getJSON(storage.tabs, storage.settings));
 
 				// Force a save and sync
 				save(true, function() {
-					if (cb) cb();
+					if (cb) {
+						cb();
+					}
 				});
 			});
 		};
@@ -112,6 +126,10 @@ define(
 		 * @param   {Boolean}  fromInterval  Whether or not this call is from an interval, used for tracking.
 		 */
 		var loadSync = function(fromInterval) {
+			if (!Auth.isSignedIn) {
+				return;
+			}
+
 			var mark = Track.time();
 
 			API.get({
@@ -144,7 +162,7 @@ define(
 						promise.trigger("updated");
 					});
 				}
-				else if (err && err == "No token") {
+				else if (err && err === "No token") {
 					save(true, _.noop);
 				}
 				else {
@@ -166,17 +184,23 @@ define(
 			dString = JSON.stringify(_.pick(defaults, "user", "tabs", "settings", "themes", "cached"));
 
 		var cacheTheme = function() {
-			var defaultTab = storage.tabs[(storage.settings.def || 1) - 1];
+			// We can't use the theme utils here since they require storage
+			var image;
 
-			var theme = defaultTab.theme || storage.settings.theme;
+			if (storage.settings.theme === "custom") {
+				image = storage.settings.backgroundImage;
+			}
+			else {
+				image = (storage.cached[storage.settings.theme] || storage.themes[storage.settings.theme.replace("custom", "")] || storage.cached[0]).image;
+			}
 
-			theme = storage.cached[theme] || storage.themes[theme.replace("custom", "")] || { image: "images/defaulttheme.jpg" };
+			if (!image || image.slice(-4) === ".mp4") {
+				delete Browser.storage.themeImg;
 
-			if (!theme || !theme.image) {
 				return;
 			}
 
-			Browser.storage.themeImg = theme.image;
+			Browser.storage.themeImg = image;
 		};
 
 
@@ -185,14 +209,12 @@ define(
 		 *
 		 * @api     private
 		 * @param   {Boolean}      sync       Whether or not to sync storage
-		 * @param   {Function}     cb         
+		 * @param   {Function}     cb
 		 * @param   {Boolean}      useBeacon  If a beacon should be used for this sync
 		 * @return  {null|Beacon}             If useBeacon was specified, the beacon is returned
 		 */
 		var save = function(sync, cb, useBeacon) {
 			Status.log("Starting storage save");
-
-			storage.settings = _.pick(storage.settings, Object.keys(defaults.settings));
 
 			timeout = null;
 
@@ -200,10 +222,10 @@ define(
 			var local = _.pick(storage, "user", "cached", "themes", "settings", "modified");
 
 			local.tabs = _.map(storage.tabs, function(tab) {
-				return $.unextend({
-					theme: storage.settings.theme,
-					fixed: storage.settings.columns.split("-")[1] == "fixed"
-				}, $.unextend(defaults.tab, tab));
+				return unextend({
+					isGrid: storage.settings.layout === "grid",
+					fixed: storage.settings.columnWidth === "fixed"
+				}, unextend(defaults.tab, tab));
 			});
 
 			Browser.storage.config = JSON.stringify(local);
@@ -213,7 +235,7 @@ define(
 
 
 			// Sync save
-			if (sync) {
+			if (Auth.isSignedIn && sync) {
 				if (useBeacon) {
 					Status.log("Sending sync beacon");
 
@@ -245,27 +267,6 @@ define(
 						Browser.storage.config = JSON.stringify(local);
 					}
 
-					// If the status wasn't set, this is the first time this error has occurred
-					else if (err && err == "Duplicate" && (API.getInfo().status !== "duplicate" || Browser.storage.alertDuplicate)) {
-						// Set a variable so the dialog will be shown until it's explicitly dismissed
-						Browser.storage.alertDuplicate = "true";
-
-						Alert({
-							title: Translate("storage.signin"),
-							contents: [Translate("storage.signin_desc"), Translate("storage.signin_desc2")],
-							buttons: {
-								negative: Translate("storage.signin_dismiss"),
-								positive: Translate("storage.signin_btn")
-							}
-						}, function(signin) {
-							if (signin) {
-								API.authorize(storage);
-							}
-
-							delete Browser.storage.alertDuplicate;
-						}.bind(this));
-					}
-
 					mark("Sync", "Save");
 
 					cb();
@@ -277,8 +278,6 @@ define(
 		};
 
 		var storage = {
-			Originals: {},
-
 			/**
 			 * Schedules a storage save
 			 *
@@ -293,16 +292,16 @@ define(
 			 *                                   should be forced, regardless of changes since the last sync.
 			 */
 			sync: function(now, cb, data, forceSync) {
-				if (typeof now == "function") {
+				if (typeof now === "function") {
 					cb = now;
 					now = undefined;
 				}
-				else if (typeof now == "object") {
+				else if (typeof now === "object") {
 					data = now;
 					cb = undefined;
 					now = undefined;
 				}
-				else if (typeof cb == "object") {
+				else if (typeof cb === "object") {
 					data = cb;
 					cb = undefined;
 				}
@@ -365,7 +364,7 @@ define(
 		var parseData = function(data) {
 			var d;
 
-			if (typeof data == "string") {
+			if (typeof data === "string") {
 				d = JSON.parse(data || Browser.storage.config || "{}");
 			}
 			else {
@@ -373,14 +372,18 @@ define(
 			}
 
 			storage.user = d.user || defaults.user;
-			storage.tabs = d.tabs || defaults.tabs;
 			storage.themes = d.themes || defaults.themes;
 			storage.cached = d.cached || defaults.cached;
+			storage.tabs = Deprecate.tabs(d.tabs || defaults.tabs);
 
-			storage.modified = d.modified;
+			if (!storage.cached[0]) {
+				storage.cached[0] = defaults.cached[0];
+			}
+
+			storage.modified = d.modified || 0;
 
 			if (d.settings) {
-				storage.settings = _.defaultsDeep(d.settings, defaults.settings);
+				storage.settings = _.defaultsDeep(Deprecate.settings(d.settings), defaults.settings);
 			}
 			else {
 				storage.settings = _.cloneDeep(defaults.settings);
@@ -392,10 +395,6 @@ define(
 			lastSaved = JSON.stringify(_.pick(storage, "user", "tabs", "settings", "themes", "cached"));
 			lastSynced = JSON.stringify(_.pick(storage, "user", "tabsSync", "settings", "themes"));
 
-
-			storage.Originals.tabs = JSON.parse(JSON.stringify(storage.tabs));
-
-
 			// Backup once a day, before any changes are made
 			if (new Date().getTime() - (Browser.storage.lastBackup || "0") > 864E5) {
 				var backups = JSON.parse(Browser.storage.backups || "[]");
@@ -403,8 +402,6 @@ define(
 				backups.unshift({
 					date: new Date().getTime(),
 					data: {
-						syncData: API.getInfo(),
-						user: storage.user,
 						tabs: storage.tabsSync,
 						themes: storage.themes,
 						settings: storage.settings
@@ -429,7 +426,7 @@ define(
 		}
 		else if (Browser.chromeLocal) {
 			Browser.chromeLocal.get(["tabs", "settings", "themes", "cached"], function(d) {
-				if (typeof d.tabs == "string") {
+				if (typeof d.tabs === "string") {
 					try {
 						d.tabs = JSON.parse(d.tabs);
 					}
@@ -442,13 +439,55 @@ define(
 
 				Browser.chromeLocal.remove(["tabs", "settings", "themes", "cached"]);
 				Browser.syncStorage.remove(["tabs", "settings", "themes", "cached"]);
-			
+
 				parseData(d);
 			});
 		}
 		else {
 			parseData();
 		}
+
+
+		// Listen for storage changes from the background and other pages
+		window.addEventListener("storage", function(e) {
+			if (!e || e.key !== "config" || !e.newValue) {
+				return;
+			}
+
+			var changed,
+				oldData = JSON.parse(e.oldValue),
+				newData = JSON.parse(e.newValue);
+
+			_.each(newData, function(e, k) {
+				// Note that this uses oldData.settings in both cases. We don't
+				// want settings changed to be misinterpreted as tab changes.
+				if (k === "tabs" && getJSON(oldData.tabs, oldData.settings) !== getJSON(newData.tabs, oldData.settings)) {
+					changed = true;
+
+					storage.tabs = e;
+				}
+				else if (["user", "themes", "settings", "cached"].indexOf(k) !== -1 && JSON.stringify(e) !== JSON.stringify(oldData[k])) {
+					changed = true;
+
+					storage[k] = e;
+				}
+			});
+
+			if (!changed) {
+				return;
+			}
+
+			console.log("Detected localStorage change, updating");
+
+			storage.modified = new Date(e).getTime();
+
+			storage.tabsSync = JSON.parse(getJSON(storage.tabs, storage.settings));
+
+			lastSaved = JSON.stringify(_.pick(storage, "user", "tabs", "settings", "themes", "cached"));
+			lastSynced = JSON.stringify(_.pick(storage, "user", "tabsSync", "settings", "themes"));
+
+			promise.trigger("updated");
+		});
 
 		return promise;
 	}

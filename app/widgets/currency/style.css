@@ -1,0 +1,59 @@
+/*---------------------------------------------
+	/ Main Styles
+*/
+.inputs,
+.selectbar {
+	font-size: 0;
+	position: relative;
+}
+
+.selectbar {
+	background: rgba(0, 0, 0, .03);
+	border-bottom: 1px solid rgba(0, 0, 0, .03);
+}
+
+input,
+select {
+	height: 48px;
+	font: inherit;
+	color: inherit;
+	font-size: 14px;
+	border-radius: 0;
+	border: 0!important;
+	width: calc(50% - 18px);
+	padding: 0 15px!important;
+}
+
+input {
+	width: 50%;
+	font-size: 15px;
+	font-weight: 500;
+	text-align: center;
+}
+
+input:focus,
+select:focus {
+	background: rgba(0, 0, 0, .03);
+}
+
+.selectbar .swap {
+	margin: 6px 0;
+	vertical-align: top;
+}
+
+.equals {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 20px;
+	height: 20px;
+	margin: auto;
+	font-size: 28px;
+	font-weight: 500;
+	line-height: 20px;
+	position: absolute;
+	text-align: center;
+	pointer-events: none;
+	font-family: Open Sans, sans-serif;
+}

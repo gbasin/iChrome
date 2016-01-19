@@ -1,0 +1,182 @@
+/**
+ * Radio
+ */
+&.radios label {
+	font-size: 0;
+	font-weight: 400;
+	margin: 0 0 0 15px;
+	vertical-align: top;
+
+	span {
+		font-size: 14px;
+		padding-left: 5px;
+		vertical-align: top;
+	}
+}
+
+&.radios.no-label label {
+	margin: 0 15px 0 0;
+}
+
+
+/**
+ * Select with an "other" option
+ */
+&.select.other {
+	padding: 0;
+
+	label {
+		margin: 0;
+		font: inherit;
+		display: block;
+		padding: $input-padding;
+	}
+
+	label.other {
+		border: 0;
+		height: 0;
+		padding: 0 25px;
+		overflow: hidden;
+		transition: all .2s $default-easing;
+
+		&.visible {
+			height: 52px;
+			margin-top: -10px;
+			padding-bottom: 20px;
+		}
+	}
+}
+
+
+/**
+ * Switches
+ */
+&.switch {
+	input[type="checkbox"] {
+		display: none;
+
+		& + .switch {
+			width: 40px;
+			height: 16px;
+			cursor: pointer;
+			position: relative;
+			border-radius: 8px;
+			display: inline-block;
+			vertical-align: middle;
+			background: rgba(0, 0, 0, .26);
+			transition: background .3s $default-easing;
+
+			.dark & {
+				background: rgba(255, 255, 255, .30);
+			}
+
+			&:before {
+				top: -4px;
+				left: -4px;
+				content: "";
+				width: 24px;
+				height: 24px;
+				position: absolute;
+				border-radius: 50%;
+				background: $md-grey-50;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, .28);
+				transition: left .3s $default-easing,
+							background .3s $default-easing,
+							box-shadow .3s $default-easing;
+
+				.dark & {
+					background: $md-grey-400;
+				}
+			}
+
+			&:active:before {
+				box-shadow: 0 2px 8px rgba(0, 0, 0, .28),
+							0 0 0 20px rgba(#808080, .1);
+			}
+		}
+
+		&:checked + .switch {
+			background: rgba($accent-color, .5);
+
+			&:before {
+				left: 20px;
+				background: $accent-color;
+			}
+
+			&:active:before {
+				box-shadow: 0 2px 8px rgba(0, 0, 0, .28),
+							0 0 0 20px rgba($accent-color, .2);
+			}
+		}
+	}
+}
+
+/**
+ * Text
+ */
+&.text {
+	cursor: text;
+	text-align: left;
+	position: relative;
+
+	h4 {
+		z-index: 1;
+		float: none;
+		position: relative;
+	}
+
+	input {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		font-size: 16px;
+		text-align: right;
+		position: absolute;
+		border: 0!important;
+		background: transparent;
+		padding: 20px 25px 20px 40%!important;
+
+		&:focus {
+			background: rgba(0, 0, 0, .05);
+
+			.dark & {
+				background: rgba(0, 0, 0, .15);
+			}
+		}
+	}
+}
+
+/**
+ * Textarea
+ */
+&.textarea {
+	padding: 0;
+	cursor: text;
+	text-align: left;
+
+	h4 {
+		float: none;
+		display: block;
+		padding: $input-padding;
+		padding-bottom: 10px;
+	}
+
+	textarea {
+		width: 100%;
+		font-size: 16px;
+		min-height: 50px;
+		border: 0!important;
+		background: transparent;
+		padding: $input-padding!important;
+
+		&:focus {
+			background: rgba(0, 0, 0, .05);
+
+			.dark & {
+				background: rgba(0, 0, 0, .15);
+			}
+		}
+	}
+}

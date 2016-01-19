@@ -1,0 +1,71 @@
+{
+	"id": 9,
+	"name": "traffic",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["tiny", "small"],
+
+	"views": {
+		"default": "view"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"settings": [{
+		"type": "size"
+	}, {
+		"type": "time",
+		"name": "time",
+		"label": "i18n.settings.leave"
+	}, {
+		"type": "text",
+		"name": "home",
+		"label": "i18n.settings.home",
+		"placeholder": "i18n.settings.home_placeholder"
+	}, {
+		"type": "text",
+		"name": "work",
+		"label": "i18n.settings.work",
+		"placeholder": "i18n.settings.work_placeholder"
+	}, {
+		"type": "select",
+		"name": "mode",
+		"label": "i18n.settings.method",
+		"options": {
+			"D": "i18n.settings.method_options.driving",
+			"W": "i18n.settings.method_options.walking",
+			"T": "i18n.settings.method_options.transit"
+		}
+	}],
+
+	"strings": {
+		"en": {
+			"name": "Traffic",
+			"desc": "Displays the current time in current traffic to home or work.",
+
+			"settings": {
+				"leave": "I leave home at",
+
+				"home": "Home Address",
+				"home_placeholder": "The destination that should be used after work",
+
+				"work": "Work Address",
+				"work_placeholder": "The destination that should be used before work",
+
+				"method": "Transit Method",
+				"method_options": {
+					"driving": "Driving",
+					"walking": "Walking",
+					"transit": "Public Transit"
+				}
+			},
+
+			"to_home": "to home",
+			"to_work": "to work"
+		}
+	}
+}

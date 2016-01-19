@@ -1,6 +1,6 @@
-define(["lodash", "backbone", "themes/utils", "i18n/i18n"], function(_, Backbone, Utils, Translate) {
+define(["lodash", "backbone", "browser/api", "themes/utils", "i18n/i18n"], function(_, Backbone, Browser, Utils, Translate) {
 	var model = Backbone.Model.extend({
-		url: "https://themes.ichro.me/manifest.json",
+		url: "https://api.ichro.me/themes/v1/list?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language,
 
 		defaults: {
 			index: [],
@@ -8,7 +8,7 @@ define(["lodash", "backbone", "themes/utils", "i18n/i18n"], function(_, Backbone
 			custom: [],
 			categories: []
 		},
-		
+
 		initialize: function() {
 			Utils.model.on("change:cached", function() {
 				this.parse(this.manifest);
@@ -59,26 +59,28 @@ define(["lodash", "backbone", "themes/utils", "i18n/i18n"], function(_, Backbone
 				types = {
 					random: {
 						icon: "&#xE69C;",
-						entypo: "entypo",
 						desc: Translate("themes.random")
 					},
 					random_daily: {
-						icon: "&#xF073;",
+						icon: "&#xE63F;",
 						desc: Translate("themes.random_daily")
 					},
 					sunrise_sunset: {
 						icon: "&#xE63D;",
-						entypo: "entypo",
 						desc: Translate("themes.sunrise_sunset")
 					},
 					feed: {
-						icon: "&#xF09E;",
+						icon: "&#xE66A;",
 						desc: Translate("themes.feed")
+					},
+					video: {
+						icon: "&#xE69D;",
+						desc: Translate("themes.video")
 					}
 				};
 
-			
-			d.themes.forEach(function(e, i) {
+
+			d.themes.forEach(function(e) {
 				var theme = _.clone(e);
 
 				theme.filterCategories = e.categories;
@@ -101,6 +103,10 @@ define(["lodash", "backbone", "themes/utils", "i18n/i18n"], function(_, Backbone
 					}
 				}
 
+				if (e.type && e.type === "video") {
+					theme.proOnly = true;
+				}
+
 				if (e.type && types[e.type]) {
 					theme.type = types[e.type];
 
@@ -118,7 +124,7 @@ define(["lodash", "backbone", "themes/utils", "i18n/i18n"], function(_, Backbone
 
 				var categories = [];
 
-				e.categories.forEach(function(e, i) {
+				e.categories.forEach(function(e) {
 					if (d.categories[e]) {
 						categories.push(d.categories[e]);
 					}

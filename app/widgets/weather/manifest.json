@@ -1,0 +1,95 @@
+{
+	"id": 1,
+	"name": "weather",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["tiny", "variable"],
+
+	"defaultSize": "variable",
+
+	"views": {
+		"default": "view"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs",
+		"details": "templates/details.hjs"
+	},
+
+	"settings": [{
+		"type": "size"
+	}, {
+		"type": "list",
+		"name": "location",
+		"label": "i18n.settings.location",
+		"placeholder": "i18n.settings.location_placeholder"
+	}, {
+		"type": "radio",
+		"name": "units",
+		"label": "i18n.settings.units",
+		"options": {
+			"imperial": "i18n.settings.units_imperial",
+			"metric": "i18n.settings.units_metric"
+		}
+	}, {
+		"type": "radio",
+		"name": "forecast",
+		"sizes": ["variable"],
+		"label": "i18n.settings.forecast",
+		"options": {
+			"enabled": "i18n.settings.enabled",
+			"disabled": "i18n.settings.disabled"
+		}
+	}, {
+		"pro": true,
+		"type": "radio",
+		"name": "hourly",
+		"sizes": ["variable"],
+		"label": "i18n.settings.hourly",
+		"options": {
+			"enabled": "i18n.settings.enabled",
+			"disabled": "i18n.settings.disabled"
+		}
+	}],
+
+	"strings": {
+		"en": {
+			"name": "Weather",
+			"desc": "Displays the current weather and a forecast for the next 4 days.",
+
+			"settings": {
+				"location": "Location(s)",
+				"location_placeholder": "Enter a location and press Enter",
+
+				"units": "Units",
+				"units_imperial": "Imperial (Fahrenheit)",
+				"units_metric": "Metric (Celsius)",
+
+				"enabled": "Enabled",
+				"disabled": "Disabled",
+
+				"forecast": "Forecasts",
+				"hourly": "Hourly forecasts"
+			},
+
+			"more": "More",
+			"less": "Less",
+
+			"wind": "Wind",
+			"precipitation": "Precip",
+			"uv": "UV index",
+			"feelslike": "Feels like",
+			"barometer": "Barometer",
+			"visibility": "Visibility",
+			"humidity": "Humidity",
+			"dewpoint": "Dew point",
+			"moonphase": "Moon",
+			"sunrise": "Sunrise",
+			"sunset": "Sunset",
+			"moonrise": "Moonrise",
+			"moonset": "Moonset"
+		}
+	}
+}

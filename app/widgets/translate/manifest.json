@@ -1,0 +1,31 @@
+{
+	"id": 20,
+	"name": "translate",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["small"],
+
+	"views": {
+		"default": "view"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"strings": {
+		"en": {
+			"name": "Translate",
+			"desc": "Lets you quickly translate to and from 90 languages as you type",
+
+			"from_placeholder": "Start typing here",
+			"to_placeholder": "Translated text will appear here",
+
+			"detect_lang": "Detect language",
+			"translating": "Translating...",
+			"unknown": "Unknown"
+		}
+	}
+}

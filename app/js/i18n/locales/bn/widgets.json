@@ -1,18 +1,5 @@
 {
   "lang_code":"bn-widgets",
-  "analytics":{
-    "name":"বিশ্লেষণমূলক",
-    "desc":"গুগল বিশ্লেষণ প্রোফাইল থেকে বিভিন্ন বৈশিষ্ট্যের মান প্রদর্শন করা হয়।",
-    "sessions":"অধিবেশন",
-    "pageviews":"পাতাপরিদর্শন",
-    "pagesvisit":"পাতা\/ভ্রমণ",
-    "bouncerate":"বাউন্স রেট",
-    "completions":"সম্পূর্ণতা",
-    "noprofile":"আপনি এখনো একটি প্রোফাইল নির্বাচন করার মত দেখাচ্ছে না!\n<br \/><br \/>\nউপরে ডানদিকে রেঞ্চ আইকন মাধ্যমে একটি নির্বাচন করার চেষ্টা করুন।",
-    "settings":{
-      "profile":"প্রোফাইল"
-    }
-  },
   "apps":{
     "name":"অ্যাপসমূহ",
     "desc":"আপনার বর্তমানে ইনস্টল করা গুগল ক্রোম অ্যাপ্লিকেশনসমূহ প্রদর্শন করে।",
@@ -120,22 +107,6 @@
     "dismiss":"Dismiss",
     "enable_audio":"Enable audio"
   },
-  "currency":{
-    "name":"মুদ্রা",
-    "desc":"Let's you convert between any two of 169 currencies.",
-    "to_label":"এতে",
-    "recently_used":"Recently Used"
-  },
-  "drive":{
-    "name":"ড্রাইভ",
-    "desc":"Displays recently changed files from your Google Drive.",
-    "settings":{
-      "files_shown":"দেখানো ফাইলের সংখ্যা"
-    },
-    "modified_by":"কর্তৃক",
-    "authorize":"You'll need to give iChrome permission to view files from your Google Drive before anything will show up here.",
-    "authorize_btn":"অনুমোদন"
-  },
   "facebook":{
     "name":"ফেসবুক",
     "desc":"উইজেটে ফেসবুক এম্বেড করুন"
@@ -175,52 +146,6 @@
     "author":"কর্তৃক",
     "go_to_feedly":"Feedly-এ যান"
   },
-  "gmail":{
-    "name":"জিমেইল",
-    "desc":"Displays your Gmail inbox where you can manage your email."
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"Displays a webpage of your choice within an iframe.",
-    "settings":{
-      "url":"ফ্রেম URL",
-      "url_placeholder":"উদা. http:\/\/www.google.com.bd\/",
-      "height":"ফ্রেমের উচ্চতা",
-      "padding":"Padding"
-    }
-  },
-  "keep":{
-    "name":"Keep",
-    "desc":"উইজেটে গুগল কিপ এম্বেড করুন"
-  },
-  "news":{
-    "name":"সংবাদ",
-    "desc":"Displays the current top news by category and edition.",
-    "settings":{
-      "articles":"নিবন্ধ দেখানো",
-      "edition":"সংস্করণ",
-      "edition_help":"If your edition or topic is not listed here, please enter a Google News feed URL in the Custom Feed field below (check the help text there for an explanation).",
-      "topic":"প্রসঙ্গ",
-      "topic_options":{
-        "top":"শীর্ষ গল্প",
-        "world":"বিশ্ব",
-        "nation":"জাতি",
-        "business":"ব্যবসা",
-        "sports":"ক্রীড়া",
-        "technology":"প্রযুক্তি",
-        "entertainment":"বিনোদন",
-        "health":"স্বাস্থ্য",
-        "science":"বিজ্ঞান",
-        "spotlight":"স্পটলাইট"
-      },
-      "feed":"Custom Feed",
-      "feed_help":"This is the feed at the URL listed at the bottom of every Google News page, look for an orange RSS icon and a link that says \"RSS\"",
-      "feed_placeholder":"Enter a custom RSS feed to fetch news from",
-      "footer":"Footer URL",
-      "footer_placeholder":"Enter the URL that the \"More\" link should point to"
-    },
-    "more":"আরও"
-  },
   "notes":{
     "name":"নোট",
     "desc":"Inserts a simple, editable, note.",
@@ -254,14 +179,6 @@
     "name":"Google Notifications",
     "desc":"Displays your Google Notifications from services such as Google+"
   },
-  "recentlyclosed":{
-    "name":"সম্প্রতি বন্ধ হয়েছে",
-    "desc":"আপনার সম্প্রতি বন্ধ হওয়া ট্যাব প্রদর্শন করে।",
-    "settings":{
-      "tabs":"Tabs Shown",
-      "open":"Open tabs in"
-    }
-  },
   "reddit":{
     "name":"Reddit",
     "desc":"Displays the top items on Reddit for any given subreddit.",
@@ -287,76 +204,6 @@
     },
     "more":"আরও"
   },
-  "rss":{
-    "name":"RSS",
-    "desc":"Displays items from a RSS or Atom feed with optional images.",
-    "settings":{
-      "link":"Title Link",
-      "link_placeholder":"Enter a link for the widget title",
-      "url":"Feed URL",
-      "url_placeholder":"The URL of the RSS feed to be displayed",
-      "articles":"নিবন্ধ দেখানো",
-      "view":"দেখুন",
-      "view_options":{
-        "images":"Image friendly",
-        "default":"পূর্ব-নির্ধারিত"
-      },
-      "images":"চিত্র",
-      "descriptions":"বিবরণ"
-    },
-    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
-  },
-  "sports":{
-    "name":"ক্রীড়া",
-    "desc":"Displays scores and game information for selected leagues and\/or teams.",
-    "settings":{
-      "league":"লীগ",
-      "games":"Games Shown",
-      "team":"দল",
-      "teams":"দল",
-      "unavailable":"When team games are unavailable",
-      "unavailable_options":{
-        "other":"Show other games",
-        "none":"Show \"No Games\""
-      }
-    },
-    "error":"Something seems to have gone wrong",
-    "unknown_error":"অজানা ত্রুটি",
-    "watch_on":"%s এ দেখুন",
-    "no_games":"কোনো খেলার সময়সূচী নেই"
-  },
-  "stocks":{
-    "name":"স্টক",
-    "desc":"Displays current information for any given stock symbol.",
-    "settings":{
-      "symbols":"Stock Symbol(s), comma separated",
-      "symbols_placeholder":"e.g. NASDAQ:GOOG, INDEXNYSEGIS:NYA",
-      "symbols_help":"These are the stocks you'd like shown in a TICKER:EXCHANGE format.\n<br \/><br \/>\nFor indexes, please use the tickers and exchanges as shown on <a href=\"https:\/\/www.google.com\/finance\" target=\"_blank\">Google Finance<\/a>. For example, the Dow Jones index is <b>.DJI<\/b> and NYSE is <b>INDEXNYSEGIS:NYA<\/b>."
-    },
-    "as_of":"as of",
-    "exchange_time":"বিনিময়ের সময়",
-    "open":"খুলুন",
-    "high":"উচ্চ",
-    "low":"নিম্ন",
-    "volume":"ভলিউম"
-  },
-  "todo":{
-    "name":"করণীয়",
-    "desc":"গুরুত্বপূর্ণ এবং সম্পন্ন আইটেমসহ একটি মিথস্ক্রিয় করণীয় তালিকা প্রদর্শন করে।",
-    "title":"করণীয় তালিকা",
-    "settings":{
-      "color":"ফন্টের রঙ",
-      "color_options":{
-        "light":"হালকা",
-        "dark":"গাঢ়"
-      },
-      "tags":"ট্যাগ",
-      "tags_placeholder":"ট্যাগ নাম প্রবেশ করান এবং Enter চাপুন"
-    },
-    "add":"আইটেম যোগ করুন",
-    "none":"কোনটি নয়",
-    "important":"গুরুত্বপূর্ণ"
-  },
   "tasks":{
     "name":"কার্যসমূহ",
     "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
@@ -375,43 +222,6 @@
     "due_today":"Due today",
     "overdue":"Overdue",
     "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
-  },
-  "topsites":{
-    "name":"শীর্ষ সাইট",
-    "desc":"Displays your most visited\/top sites.",
-    "settings":{
-      "show":"দেখানো সাইটের সংখ্যা",
-      "open":"এতে সাইট খুলুন"
-    }
-  },
-  "traffic":{
-    "name":"ট্রাফিক",
-    "desc":"Displays the current time in current traffic to home or work.",
-    "settings":{
-      "leave":"I leave home at",
-      "home":"বাড়ির ঠিকানা",
-      "home_placeholder":"The destination that should be used after work",
-      "work":"কর্মস্থানের ঠিকানা",
-      "work_placeholder":"The destination that should be used before work",
-      "method":"Transit Method",
-      "method_options":{
-        "driving":"Driving",
-        "walking":"হাঁটা",
-        "transit":"পাবলিক পরিবহন"
-      }
-    },
-    "to_home":"to home",
-    "to_work":"to work"
-  },
-  "translate":{
-    "name":"অনুবাদ",
-    "desc":"Contains a small inline Google Translate textbox.",
-    "placeholder":"Enter the text you'd like to translate here, then hit \"Translate\" below.",
-    "button":"অনুবাদ",
-    "untranslate":"Untranslate",
-    "auto":"স্বয়ংক্রিয় (%s)",
-    "unknown":"অজানা",
-    "error":"Something went wrong while trying to translate that..."
   },
   "twitter":{
     "name":"টুইটার",
@@ -433,40 +243,8 @@
     "retweet":"পুনঃটুইট",
     "favorite":"পছন্দ"
   },
-  "unread":{
-    "name":"অপঠিত",
-    "desc":"Displays the current number of unread emails in your Gmail inbox.",
-    "settings":{
-      "open":"When clicked open"
-    },
-    "unread_none":"অপঠিত ইমেইল",
-    "unread_one":"অপঠিত ইমেইল",
-    "unread_many":"অপঠিত ইমেইল"
-  },
-  "voice":{
-    "name":"কন্ঠ",
-    "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
-    "call":"Call from",
-    "text":"Text message from",
-    "missed":"missed in Voice",
-    "texts":"unread text messages",
-    "calls":"missed calls"
-  },
-  "weather":{
-    "name":"আবহাওয়া",
-    "desc":"Displays the current weather and a forecast for the next 4 days.",
-    "settings":{
-      "location":"অবস্থান",
-      "location_placeholder":"Enter a location and press Enter",
-      "temperature":"তাপমাত্রার একক",
-      "wind":"বাতাসের গতির একক"
-    },
-    "unknown":"অজানা",
-    "wind":"বাতাসের গতি",
-    "chill":"বাতাস বইছে",
-    "humidity":"আর্দ্রতা"
-  },
   "wolfram":{
+    "name":"Wolfram|Alpha",
     "desc":"Inserts a small Wolfram|Alpha search box."
   },
   "youtube":{
@@ -549,15 +327,6 @@
     },
     "default_placeholder":"Search Google"
   },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
-  },
   "pushbullet":{
     "name":"Pushbullet",
     "desc":"Keep track of notifications from your phone and other devices",
@@ -597,5 +366,275 @@
     "no_links":"No links found",
     "grant_access":"Grant access",
     "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
+  },
+  "analytics":{
+    "name":"বিশ্লেষণমূলক",
+    "desc":"গুগল বিশ্লেষণ প্রোফাইল থেকে বিভিন্ন বৈশিষ্ট্যের মান প্রদর্শন করা হয়।",
+    "sessions":"অধিবেশন",
+    "pageviews":"পাতাপরিদর্শন",
+    "pagesvisit":"পাতা\/ভ্রমণ",
+    "bouncerate":"বাউন্স রেট",
+    "completions":"সম্পূর্ণতা",
+    "noprofile_title":"No profile selected",
+    "noprofile":"আপনি এখনো একটি প্রোফাইল নির্বাচন করার মত দেখাচ্ছে না!\n<br \/><br \/>\nউপরে ডানদিকে রেঞ্চ আইকন মাধ্যমে একটি নির্বাচন করার চেষ্টা করুন।",
+    "settings":{
+      "profile":"প্রোফাইল"
+    }
+  },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
+    }
+  },
+  "currency":{
+    "name":"মুদ্রা",
+    "desc":"Let's you convert between any two of 169 currencies.",
+    "to_label":"এতে",
+    "recently_used":"Recently Used"
+  },
+  "dictionary":{
+    "name":"Dictionary",
+    "desc":"Quickly look up the definition and synonyms for a word",
+    "search_placeholder":"Enter a word or term here",
+    "more":"আরও",
+    "less":"Less",
+    "synonyms":"Synonyms",
+    "antonyms":"Antonyms",
+    "web_definitions":"Web definitions",
+    "no_definitions":"No definitions found"
+  },
+  "drive":{
+    "name":"ড্রাইভ",
+    "desc":"Displays recently changed files from your Google Drive.",
+    "settings":{
+      "files_shown":"দেখানো ফাইলের সংখ্যা"
+    },
+    "modified_by":"কর্তৃক",
+    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "gmail":{
+    "name":"জিমেইল",
+    "desc":"Displays your Gmail inbox where you can manage your email."
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Displays a webpage of your choice within an iframe.",
+    "settings":{
+      "url":"ফ্রেম URL",
+      "url_placeholder":"উদা. http:\/\/www.google.com.bd\/",
+      "height":"ফ্রেমের উচ্চতা",
+      "padding":"Padding"
+    }
+  },
+  "keep":{
+    "name":"Keep",
+    "desc":"উইজেটে গুগল কিপ এম্বেড করুন"
+  },
+  "news":{
+    "name":"সংবাদ",
+    "desc":"Displays the current top news by category and edition.",
+    "all_stories":"সব",
+    "settings":{
+      "page_title":"সেটিংস",
+      "save":"সংরক্ষণ",
+      "title":"উইজেটের শিরোনাম",
+      "title_placeholder":"উইজেটের একটি শিরোনাম লিখুন বা আড়াল করতে ফাঁকা রেখে দিন",
+      "articles":"নিবন্ধ দেখানো",
+      "edition":"সংস্করণ",
+      "default_topic":"Default Topic"
+    }
+  },
+  "recentlyclosed":{
+    "name":"সম্প্রতি বন্ধ হয়েছে",
+    "desc":"আপনার সম্প্রতি বন্ধ হওয়া ট্যাব প্রদর্শন করে।",
+    "settings":{
+      "tabs":"Tabs Shown",
+      "open":"Open tabs in"
+    },
+    "more":"more"
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"Displays items from a RSS or Atom feed with optional images.",
+    "settings":{
+      "page_title":"সেটিংস",
+      "save":"সংরক্ষণ",
+      "title":"উইজেটের শিরোনাম",
+      "title_placeholder":"উইজেটের একটি শিরোনাম লিখুন বা আড়াল করতে ফাঁকা রেখে দিন",
+      "link":"Title Link",
+      "link_placeholder":"Enter a link for the widget title",
+      "feeds":"ফীড",
+      "feeds_help":"Click any feed to edit it",
+      "feeds_placeholder":"Enter a feed URL and press Enter to add",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
+      "feed_name_placeholder":"Feed name",
+      "feed_url_placeholder":"Feed URL",
+      "articles":"নিবন্ধ দেখানো"
+    },
+    "by":"কর্তৃক",
+    "all_articles":"সকল নিবন্ধ",
+    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
+  },
+  "sports":{
+    "name":"ক্রীড়া",
+    "desc":"Displays scores, schedules, and news from your favorite teams.",
+    "settings":{
+      "page_title":"Favorites",
+      "save":"সংরক্ষণ",
+      "teams_placeholder":"Enter a team name and press Enter to add"
+    },
+    "scores":"Scores",
+    "news":"সংবাদ",
+    "last_play":"Last play",
+    "no_games":"No games found",
+    "pro_splash1":"Sports news is a Pro-only feature.",
+    "pro_splash2":"Buy Pro in the settings.",
+    "preview":"প্রাকদর্শন",
+    "tickets":"Tickets",
+    "live":"Live",
+    "recap":"Recap",
+    "box_score":"Box Score"
+  },
+  "stocks":{
+    "name":"স্টক",
+    "desc":"Displays current information for any given stock symbol.",
+    "settings":{
+      "stocks":"স্টক",
+      "stocks_placeholder":"Type a company or exchange name and hit Enter"
+    },
+    "as_of":"as of",
+    "exchange_time":"বিনিময়ের সময়",
+    "overview":"Overview",
+    "news":"সংবাদ",
+    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
+    "pro_splash2":"Buy Pro in the settings.",
+    "time_ranges":{
+      "1d":"1d",
+      "5d":"5d",
+      "1m":"1m",
+      "3m":"3m",
+      "1y":"1y",
+      "5y":"5y",
+      "max":"max"
+    },
+    "open":"খুলুন",
+    "prev_close":"Previous Close",
+    "high":"উচ্চ",
+    "52high":"52 week high",
+    "low":"নিম্ন",
+    "52low":"52 week low",
+    "volume":"ভলিউম",
+    "avg_volume":"Avg. Volume",
+    "shares":"Shares",
+    "cap":"Market Cap",
+    "pe":"Price \/ Earnings",
+    "eps":"EPS",
+    "beta":"Beta",
+    "inst_own":"Inst. own"
+  },
+  "todo":{
+    "name":"করণীয়",
+    "desc":"গুরুত্বপূর্ণ এবং সম্পন্ন আইটেমসহ একটি মিথস্ক্রিয় করণীয় তালিকা প্রদর্শন করে।",
+    "title":"করণীয় তালিকা",
+    "settings":{
+      "color":"ফন্টের রঙ",
+      "color_options":{
+        "light":"হালকা",
+        "dark":"গাঢ়"
+      },
+      "tags":"ট্যাগ",
+      "tags_placeholder":"ট্যাগ নাম প্রবেশ করান এবং Enter চাপুন"
+    },
+    "add":"আইটেম যোগ করুন",
+    "none":"কোনটি নয়",
+    "important":"গুরুত্বপূর্ণ"
+  },
+  "topsites":{
+    "name":"শীর্ষ সাইট",
+    "desc":"Displays your most visited\/top sites.",
+    "settings":{
+      "show":"দেখানো সাইটের সংখ্যা"
+    }
+  },
+  "traffic":{
+    "name":"ট্রাফিক",
+    "desc":"Displays the current time in current traffic to home or work.",
+    "settings":{
+      "leave":"I leave home at",
+      "home":"বাড়ির ঠিকানা",
+      "home_placeholder":"The destination that should be used after work",
+      "work":"কর্মস্থানের ঠিকানা",
+      "work_placeholder":"The destination that should be used before work",
+      "method":"Transit Method",
+      "method_options":{
+        "driving":"Driving",
+        "walking":"হাঁটা",
+        "transit":"পাবলিক পরিবহন"
+      }
+    },
+    "to_home":"to home",
+    "to_work":"to work"
+  },
+  "translate":{
+    "name":"অনুবাদ",
+    "desc":"Lets you quickly translate to and from 90 languages as you type",
+    "from_placeholder":"Start typing here",
+    "to_placeholder":"Translated text will appear here",
+    "detect_lang":"Detect language",
+    "translating":"Translating...",
+    "unknown":"অজানা"
+  },
+  "unread":{
+    "name":"অপঠিত",
+    "desc":"Displays the current number of unread emails in your Gmail inbox.",
+    "settings":{
+      "open":"When clicked open"
+    },
+    "unread_none":"অপঠিত ইমেইল",
+    "unread_one":"অপঠিত ইমেইল",
+    "unread_many":"অপঠিত ইমেইল"
+  },
+  "voice":{
+    "name":"কন্ঠ",
+    "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
+    "call":"Call from",
+    "text":"Text message from",
+    "missed":"missed in Voice",
+    "texts":"unread text messages",
+    "calls":"missed calls"
+  },
+  "weather":{
+    "name":"আবহাওয়া",
+    "desc":"Displays the current weather and a forecast for the next 4 days.",
+    "settings":{
+      "location":"অবস্থান",
+      "location_placeholder":"Enter a location and press Enter",
+      "units":"Units",
+      "units_imperial":"Imperial (Fahrenheit)",
+      "units_metric":"Metric (Celsius)",
+      "enabled":"সক্রিয়",
+      "disabled":"নিষ্ক্রিয়",
+      "forecast":"Forecasts",
+      "hourly":"Hourly forecasts"
+    },
+    "more":"আরও",
+    "less":"Less",
+    "wind":"বাতাসের গতি",
+    "precipitation":"Precip",
+    "uv":"UV index",
+    "feelslike":"Feels like",
+    "barometer":"Barometer",
+    "visibility":"Visibility",
+    "humidity":"আর্দ্রতা",
+    "dewpoint":"Dew point",
+    "moonphase":"Moon",
+    "sunrise":"Sunrise",
+    "sunset":"Sunset",
+    "moonrise":"Moonrise",
+    "moonset":"Moonset"
   }
 }

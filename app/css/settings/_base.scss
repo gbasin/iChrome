@@ -1,0 +1,263 @@
+$primary-color: $md-orange-800;
+$accent-color: $md-blue-500;
+$input-padding: 20px 25px;
+
+@import "debug-tools";
+
+// This has the app class so it doesn't match things like the widget settings icon
+.app.settings {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	outline: 0;
+	opacity: 0;
+	z-index: 9998;
+	position: fixed;
+	color: $text-color;
+	visibility: hidden;
+	background: #F5F5F5;
+	padding-left: 250px;
+	font-family: Roboto, sans-serif;
+
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.dark & {
+		color: #FFF;
+		background: #212121;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0;
+		padding: 0;
+		font: inherit;
+	}
+
+	label {
+		cursor: pointer;
+	}
+
+	.dark & a {
+		color: #03A9F4;
+	}
+
+	.pro-badge:after {
+		padding: 0 3px;
+		content: "Pro";
+		font-size: 11px;
+		font-weight: 500;
+		line-height: 15px;
+		border-radius: 2px;
+		color: $md-orange-600;
+		display: inline-block;
+		text-transform: uppercase;
+		border: 1px solid currentColor;
+		font-family: Roboto, sans-serif;
+	}
+
+	@import "inputs";
+
+	@import "side-nav";
+
+	.page {
+		height: 100%;
+
+		header {
+			color: #FFF;
+			height: 55px;
+			padding: 0 25px;
+			line-height: 55px;
+			position: relative;
+			box-shadow: $md-shadow-2dp;
+			background: $primary-color;
+
+			h2 {
+				font-size: 20px;
+			}
+
+			&.large-header {
+				height: 256px;
+				box-shadow: none;
+				padding-top: 115px;
+
+				h2 {
+					margin: 0 auto;
+					font-size: 55px;
+					line-height: 1.5;
+					max-width: 1200px;
+				}
+
+				& + main.content {
+					height: calc(100% - 256px);
+				}
+
+				@media (max-width: 1550px) {
+					& {
+						padding: 115px 40px 0;
+					}
+				}
+			}
+		}
+
+		main.content {
+			outline: 0;
+			overflow: auto;
+			padding: 20px 0;
+			max-height: calc(100% - 55px);
+		}
+
+		section {
+			width: 800px;
+			background: #FFF;
+			margin: 30px auto;
+			box-shadow: $md-shadow-1dp;
+
+			.dark & {
+				background: $md-dark-bg;
+			}
+
+			@media (max-width: 1100px) {
+				& {
+					width: auto;
+					margin: 30px;
+				}
+			}
+
+			&.pro-only h3:after {
+				@extend .pro-badge:after;
+
+				float: right;
+				font-size: 13px;
+				font-weight: 600;
+				border-width: 2px;
+				line-height: 17px;
+			}
+
+			h3 {
+				font-size: 18px;
+				padding: 25px 25px 15px;
+			}
+
+			p {
+				margin: 0;
+				padding: 0 25px;
+			}
+
+			p + .input,
+			h3 + .input {
+				border-top: 0;
+				margin-top: 15px;
+
+				&.no-label {
+					margin-top: 0;
+					text-align: left;
+				}
+			}
+
+			&.text {
+				width: auto;
+				font-size: 16px;
+				background: none;
+				box-shadow: none;
+				max-width: 1200px;
+				line-height: 20px;
+
+				p {
+					padding: 0;
+					font-size: 20px;
+					line-height: 30px;
+				}
+
+				@media (max-width: 1550px) {
+					& {
+						padding: 0 40px;
+					}
+				}
+			}
+
+			&.list-select {
+				.input {
+					text-align: left;
+
+					&:hover {
+						background: rgba(0, 0, 0, .03);
+					}
+				}
+
+				label {
+					h4 {
+						float: none;
+					}
+
+					input {
+						width: 20px;
+						height: 20px;
+						vertical-align: top;
+						margin: 6px 15px 6px 0;
+					}
+				}
+			}
+		}
+
+		@import "pages/toolbar";
+		@import "pages/visual";
+		@import "pages/tabs";
+		@import "pages/widgets";
+		@import "pages/pro";
+	}
+
+	.item,
+	.input {
+		margin: 0;
+		font: inherit;
+		display: block;
+		text-align: right;
+		line-height: 32px;
+		padding: $input-padding;
+		border-top: 1px solid rgba(0, 0, 0, .12);
+
+		h4 {
+			float: left;
+			font-size: 16px;
+			display: inline-block;
+		}
+
+		.note {
+			color: #757575;
+			font-size: 13px;
+			line-height: 25px;
+
+			.dark & {
+				color: #AAA;
+			}
+		}
+
+		.desc {
+			float: left;
+			font-size: 13px;
+			text-align: left;
+			line-height: 20px;
+			max-width: calc(100% - 300px);
+
+			& + input {
+				width: 285px;
+			}
+		}
+
+		.value {
+			max-width: 60%;
+			font-size: 14px;
+		}
+
+		&.no-label button + button {
+			margin-left: 10px;
+		}
+	}
+
+	.input {
+		@import "controls";
+	}
+}

@@ -1,10 +1,10 @@
 /**
- * The debug dialog.  This contains advanced tools that users can be instructed to use for troubleshooting.
+ * The debug tools. This contains advanced tools that users can be instructed to use for troubleshooting.
  */
-define(["lodash", "jquery", "backbone", "browser/api", "storage/filesystem", "modals/modals", "core/render"], function(_, $, Backbone, Browser, FileSystem, Modal, render) {
+define(["backbone", "browser/api", "storage/filesystem", "modals/modals", "core/render"], function(Backbone, Browser, FileSystem, Modal, render) {
 	var modal = new (Modal.extend({
 		width: 800,
-		classes: "debug"
+		classes: "debug-tools"
 	}))();
 
 	var View = Backbone.View.extend({
@@ -24,7 +24,9 @@ define(["lodash", "jquery", "backbone", "browser/api", "storage/filesystem", "mo
 		execute: function(e) {
 			var action = e.currentTarget.getAttribute("data-action");
 
-			if (!action) return;
+			if (!action) {
+				return;
+			}
 
 			switch (action) {
 				case "clear-localstorage":
@@ -71,10 +73,10 @@ define(["lodash", "jquery", "backbone", "browser/api", "storage/filesystem", "mo
 						" than iChrome is open otherwise Chrome itself will close.\r\nHit cancel to open a new tab and avoid this or OK to continue."
 					)) {
 						Browser.runtime.requestUpdateCheck(function(status, details) {
-							if (status == "throttled") {
+							if (status === "throttled") {
 								this.setStatus("Update check failed due to throttling, try again later");
 							}
-							else if (status == "update_available") {
+							else if (status === "update_available") {
 								this.setStatus((details && details.version) + " available.  Update is pending and should install momentarily.");
 							}
 							else {
@@ -94,10 +96,12 @@ define(["lodash", "jquery", "backbone", "browser/api", "storage/filesystem", "mo
 				break;
 
 				case "execute":
-					var out = eval($(".console textarea").val()); // jshint ignore:line
+					var textarea = this.$(".console textarea");
+
+					var out = eval(textarea.val()); // jshint ignore:line
 
 					if (out) {
-						$(".console textarea").val("Output: " + out.toString());
+						textarea.val("Output: " + out.toString());
 					}
 				break;
 			}

@@ -1,0 +1,74 @@
+<div class="dialog">
+	<header>
+		{{#updating}}
+			<h2>{{i18n.settings.pro.checkout.updating_title}}</h2>
+		{{/updating}}
+		{{^updating}}
+			<h2>{{i18n.settings.pro.checkout.title}}</h2>
+		{{/updating}}
+	</header>
+
+	{{#success}}
+		<div class="content success">
+			<p class="thank-you">{{i18n.settings.pro.checkout.thank_you}}</p>
+
+			{{^updating}}
+				<p>{{i18n.settings.pro.checkout.thank_you2}}</p>
+			{{/updating}}
+		</div>
+	{{/success}}
+
+	{{#error}}
+		<div class="content error">
+			<p>{{i18n.settings.pro.checkout.error}}</p>
+
+			<p>{{i18n.settings.pro.checkout.error2}}</p>
+		</div>
+	{{/error}}
+
+	{{#form}}
+		<form class="content{{#loading}} loading{{/loading}}">
+			{{#loading}}
+				<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+					<circle fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+				</svg>
+			{{/loading}}
+			{{^loading}}
+				<div class="input radios">
+					<h3>{{i18n.settings.pro.checkout.payment_options}}</h3>
+
+					<label>
+						<input type="radio" name="pay" value="monthly" checked />
+
+						<span>{{i18n.settings.pro.checkout.pay_monthly}}</span>
+					</label>
+
+					<label>
+						<input type="radio" name="pay" value="yearly" />
+
+						<span>{{i18n.settings.pro.checkout.pay_yearly}}</span>
+					</label>
+				</div>
+
+				<div class="braintree-dropin"></div>
+			{{/loading}}
+
+			<footer>
+				<button type="button" class="material flat cancel">{{i18n.settings.pro.checkout.cancel}}</button>
+
+				<button type="submit" class="material blue checkout"{{#loading}} disabled{{/loading}}>{{#updating}}{{i18n.settings.pro.checkout.update}}{{/updating}}{{^updating}}{{i18n.settings.pro.checkout.subscribe}}{{/updating}}</button>
+
+				<p class="notice">
+					{{i18n.settings.pro.checkout.braintree_notice}}
+					<br />
+					{{#updating}}
+						<span class="cycle-change"></span>
+					{{/updating}}
+					{{^updating}}
+						<span class="recurring">{{i18n.settings.pro.checkout.monthly_notice}}</span>
+					{{/updating}}
+				</p>
+			</footer>
+		</form>
+	{{/form}}
+</div>

@@ -3,10 +3,10 @@
  */
 define(
 	[
-		"lodash", "jquery", "backbone", "browser/api", "core/analytics", "storage/storage", "storage/defaults", "i18n/i18n",
-		"search/search", "search/speech", "settings/settings", "widgets/store", "core/uservoice", "core/render"
+		"lodash", "jquery", "backbone", "browser/api", "core/auth", "core/analytics", "storage/storage", "storage/defaults", "i18n/i18n",
+		"search/search", "search/speech", "settings/view", "widgets/store", "core/uservoice", "core/render"
 	],
-	function(_, $, Backbone, Browser, Track, Storage, Defaults, Translate, Search, Speech, Settings, Store, UserVoice, render) {
+	function(_, $, Backbone, Browser, Auth, Track, Storage, Defaults, Translate, Search, Speech, Settings, Store, UserVoice, render) {
 		var Model = Backbone.Model.extend({
 				init: function() {
 					Storage.on("done updated", function(storage) {
@@ -14,7 +14,9 @@ define(
 
 						var set = _.clone(storage.settings);
 
-						set.tabs = _.map(storage.tabs, function(e, i) {
+						set.links = _.take(set.links, Auth.isPro ? 8 : 3);
+
+						set.tabs = _.map(storage.tabs, function(e) {
 							return {
 								id: e.id,
 								name: e.name || Defaults.tab.name
@@ -39,11 +41,11 @@ define(
 					"click a.custom-link": function(e) {
 						var href = e.currentTarget.getAttribute("href");
 
-						if (href.indexOf("chrome") === 0 || $("base").attr("target") == "_blank") { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
+						if (href.indexOf("chrome") === 0 || $("base").attr("target") === "_blank") { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
 							e.preventDefault();
 
 							Browser.tabs.getCurrent(function(d) {
-								if (e.which == 2) {
+								if (e.which === 2) {
 									Browser.tabs.create({
 										url: href,
 										index: d.index + 1
@@ -65,6 +67,9 @@ define(
 					"click .tabs .add": function() {
 						if (!this.Settings) {
 							this.Settings = new Settings();
+						}
+						else {
+							this.Settings.show();
 						}
 
 						this.Settings.createTab();
@@ -95,45 +100,21 @@ define(
 
 					switch (elm.attr("data-item")) {
 						case "settings":
-							this.open("settings");
+							if (!this.Settings) {
+								this.Settings = new Settings();
+							}
+							else {
+								this.Settings.show();
+							}
 						break;
 
 						case "widgets":
-							this.open("store");
-						break;
+							if (!this.Store) {
+								this.Store = new Store();
+							}
 
-						case "view":
-							$(document.body).prepend(
-								'<style id="theme-view-style-elm">' +
-									'body > * {' + 
-										'opacity: 0!important;' +
-										'pointer-events: none;' +
-										'transition: opacity .3s ease-in-out!important;' +
-									'}' +
-								'</style>'
-							);
-
-							var startX = e.clientX,
-								startY = e.clientY;
-
-							// This delays the attaching till after the events have finished bubbling, otherwise mousemove will get called immediately
-							requestAnimationFrame(function() {
-								$(document.body).on("mousemove.menu", function(e) {
-									if (Math.abs(e.clientX - startX) >= 30 || Math.abs(e.clientY - startY) >= 30) {
-										$(document.body).off("mousemove.menu");
-
-										var tStyle = $("#theme-view-style-elm").html(
-											"body > * {" +
-												"transition: opacity .3s ease-in-out!important;" +
-											"}"
-										);
-
-										setTimeout(function() { tStyle.remove(); }, 300);
-									}
-								});
-							});
-
-							Track.event("Menu", "View Background");
+							// This delays displaying the modal until after the init JS is done so the animation is smooth
+							requestAnimationFrame(this.Store.show.bind(this.Store));
 						break;
 
 						case "editmode":
@@ -164,7 +145,7 @@ define(
 								e.preventDefault();
 
 								Browser.tabs.getCurrent(function(d) {
-									if (e.which == 2 || $("base").attr("target") == "_blank") {
+									if (e.which === 2 || $("base").attr("target") === "_blank") {
 										Browser.tabs.create({
 											url: elm.attr("href"),
 											index: d.index + 1
@@ -196,29 +177,6 @@ define(
 
 
 				/**
-				 * This method allows other modules to open the store and settings
-				 *
-				 * @api     public
-				 * @param   {String}  [which]  Which modal to open, "store" or "settings", defaults to "settings".
-				 * @return  {Backbone.View}    The view of the modal that was just opened
-				 */
-				open: function(which) {
-					var isStore = which === "store";
-
-					which = isStore ? "Store" : "Settings";
-
-					if (!this[which]) {
-						this[which] = isStore ? new Store() : new Settings();
-					}
-
-					// This delays displaying the modal until after the init JS is done so the animation is smooth
-					requestAnimationFrame(this[which].show.bind(this[which]));
-
-					return this[which];
-				},
-
-
-				/**
 				 * Updates the tabs menu to the freshly navigated tab
 				 *
 				 * @api    public
@@ -227,7 +185,7 @@ define(
 				 * @param  {Backbone.Model}        model  The tab model
 				 */
 				navigate: function(which, view, model) {
-					if (typeof which == "string" || typeof which == "number") {
+					if (typeof which === "string" || typeof which === "number") {
 						this.$(".section.tabs div[data-id=" + ((model && model.get("id")) || (which + 1)) + "]").addClass("active").siblings().removeClass("active");
 					}
 					else {
@@ -266,7 +224,7 @@ define(
 						show = undefined;
 					}
 
-					if (!this.$el.hasClass("visible") && (typeof show == "undefined" || show === true)) {
+					if (!this.$el.hasClass("visible") && (typeof show === "undefined" || show === true)) {
 						// If this doesn't include the toggle switch the event will bubble to the body which will in turn re-hide the menu
 						var elms = this.$el.parent();
 
@@ -274,13 +232,13 @@ define(
 
 						$(document.body).on("click.menu", function(e) {
 							if (!elms.is(e.target)) {
-								this.$el.removeClass("visible");
-
-								$(document.body).off("click.menu");
+								this.toggle(false);
 							}
 						}.bind(this));
 
 						this.$el.addClass("visible");
+
+						this.trigger("show");
 
 						Track.event("Menu", "Show");
 					}
@@ -288,6 +246,8 @@ define(
 						$(document.body).off("click.menu");
 
 						this.$el.removeClass("visible");
+
+						this.trigger("hide");
 
 						Track.event("Menu", "Hide");
 					}

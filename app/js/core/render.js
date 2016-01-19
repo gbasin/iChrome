@@ -7,37 +7,42 @@ define(["lodash", "hogan", "core/status", "i18n/i18n", "core/analytics", "core/t
 		i18n = Translate.getAll();
 
 	var render = function(template, data, partials) {
-		var compiled = cache[template];
+		var compiled = render.getTemplate(template);
 
-		// Partials don't work with precompiled templates
-		if (!compiled || partials) {
-			if (typeof raw[template] !== "undefined") {
-				try {
-					compiled = cache[template] = Hogan.compile(raw[template]);
-				}
-				catch (e) {
-					Status.error("An error occurred while trying to render the " + template + " template!");
+		if (!compiled) {
+			Track.queue("templates", "notfound", template);
 
-					Track.queue("templates", "error", template);
-				}
-			}
-
-			if (!compiled) {
-				Track.queue("templates", "notfound", template);
-
-				return 'Template "' + template + '" not found!';
-			}
+			return 'Template "' + template + '" not found!';
 		}
 
 		data = _.clone(data || {});
 
-		if (!data.i18n) data.i18n = i18n;
-		
+		if (!data.i18n) {
+			data.i18n = i18n;
+		}
+
 		return compiled.render(data, partials);
 	};
 
-	render.getRaw = function(template) {
-		return raw[template];
+
+	/**
+	 * Returns a compiled template
+	 *
+	 * @param   {String}  template  The name of the template to retrieve
+	 */
+	render.getTemplate = function(template) {
+		if (!cache[template] && typeof raw[template] !== "undefined") {
+			try {
+				cache[template] = Hogan.compile(raw[template]);
+			}
+			catch (e) {
+				Status.error("An error occurred while trying to render the " + template + " template!");
+
+				Track.queue("templates", "error", template);
+			}
+		}
+
+		return cache[template];
 	};
 
 	return render;

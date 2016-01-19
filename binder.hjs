@@ -1,10 +1,9 @@
 {{!
-	This is a binder for grunt-hogan. It contains two objects, one of compiled
-	and the other of raw templates for use by the main templates module
+	This is the binder for grunt-hogan
 }}
 define(["hogan"], function(Hogan) {
 	return {
-		raw: { {{{exposeTemplates}}} }, /* Raw templates will be inlined here */
-		compiled: { {{#templates}}"{{name}}": new Hogan.Template({{{template}}}){{comma}}{{/templates}} } /* And precompiled ones here */
+		raw: {},
+		compiled: { {{#templates}}"{{name}}": new Hogan.Template({{{template}}}){{comma}}{{/templates}} }
 	};
 });

@@ -1,0 +1,414 @@
+.onboarding {
+	&.modal-overlay {
+		cursor: default;
+		background: rgba(0, 0, 0, .3);
+	}
+
+	&.modal {
+		width: 800px;
+		height: 600px;
+		max-height: 100%;
+		overflow: visible;
+		border-radius: 6px;
+		font-family: Roboto, sans-serif;
+		box-shadow: 0 4px 32px rgba(0, 0, 0, .4);
+
+		&:lang(de),
+		&:lang(fr),
+		&:lang(es),
+		&:lang(ru),
+		&:lang(sr),
+		&:lang(cs),
+		&:lang(it),
+		&:lang(nl) {
+			height: 620px;
+		}
+
+		.nav {
+			button,
+			button:active {
+				top: 50%;
+				z-index: 1;
+				width: 48px;
+				left: -110px;
+				height: 48px;
+				color: #4285F4;
+				margin-top: -24px;
+				position: absolute;
+				background: #FAFAFA;
+				box-shadow: 0 4px 32px rgba(0, 0, 0, .4);
+			}
+
+			button:hover {
+				background: #F3F3F3;
+			}
+
+			button.next {
+				left: auto;
+				right: -110px;
+
+				&:before {
+					content: "arrow_forward";
+				}
+
+				&.finish:before {
+					content: "done";
+				}
+			}
+		}
+
+		&[data-slide="1"] .nav button.prev {
+			transform: scale(0);
+		}
+
+		.slide {
+			z-index: 0;
+			opacity: 0;
+			width: 100%;
+			height: 100%;
+			color: #757575;
+			background: #FFF;
+			position: absolute;
+			text-align: center;
+			border-radius: 6px;
+			transition: opacity .4s $fast-in;
+
+			&.active {
+				z-index: 1;
+				opacity: 1;
+			}
+
+			&.intro {
+				padding-top: 140px;
+
+				img {
+					height: 150px;
+					margin-bottom: 40px;
+				}
+
+				.appname {
+					font-size: 45px;
+					margin-bottom: 30px;
+				}
+
+				.tagline {
+					font-size: 22px;
+				}
+			}
+
+			&.about {
+				color: #FFF;
+				background: #4285F4;
+
+				a {
+					color: inherit;
+					text-decoration: underline;
+				}
+			}
+
+			&.sign-in {
+				.pending, .complete {
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					opacity: 0;
+					display: flex;
+					flex-flow: column;
+					position: absolute;
+					transition: opacity .4s $fast-in;
+
+					&.visible {
+						z-index: 1;
+						opacity: 1;
+					}
+				}
+
+				.pending {
+					align-items: flex-end;
+
+					.btn-container {
+						flex: 1 0;
+						width: 100%;
+						display: flex;
+						background: #ECECEC;
+						align-items: center;
+						justify-content: center;
+						border-bottom-left-radius: 6px;
+						border-bottom-right-radius: 6px;
+					}
+				}
+
+				.complete {
+					font-size: 18px;
+					justify-content: center;
+
+					h2 {
+						font-size: 30px;
+					}
+				}
+			}
+
+			h2 {
+				font-size: 24px;
+				font-weight: 400;
+				margin-bottom: 20px;
+				font-family: inherit;
+			}
+
+			.hero {
+				height: 390px;
+				background-size: 100%;
+				background-color: #ECECEC;
+				border-top-left-radius: 6px;
+				border-top-right-radius: 6px;
+				background-repeat: no-repeat;
+				background-position: bottom center;
+			}
+
+			.caption {
+				font-size: 15px;
+				line-height: 24px;
+				padding: 32px 80px;
+
+				p {
+					margin-bottom: 25px;
+				}
+
+				p:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.footer.note {
+				left: 0;
+				right: 0;
+				bottom: 20px;
+				position: absolute;
+			}
+		}
+	}
+}
+
+.showcase {
+	width: 80px;
+	z-index: 40;
+	height: 80px;
+	position: fixed;
+	margin-top: -40px;
+	margin-left: -40px;
+	border-radius: 50%;
+	font-family: Roboto, sans-serif;
+
+	&:before {
+		width: 100%;
+		content: "";
+		opacity: .9;
+		height: 100%;
+		display: block;
+		position: absolute;
+		border-radius: 50%;
+		margin-top: -8192px;
+		margin-left: -8192px;
+		box-sizing: content-box;
+		background: transparent;
+		border: solid 8192px #FFF;
+	}
+
+	&.blue:before {
+		border-color: #3367D6;
+	}
+
+	&.orange:before {
+		border-color: #E65100;
+	}
+
+	&.green:before {
+		border-color: #0B8043;
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		border: solid 1px #FFF;
+		box-shadow: inset 0 2px 16px rgba(0, 0, 0, .3);
+	}
+
+	&:after,
+	.action-mask {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		position: absolute;
+		border-radius: 50%;
+	}
+
+	.action-mask {
+		z-index: 1;
+		width: 24px;
+		height: 24px;
+		margin: auto;
+	}
+
+	&.settings .action-mask {
+		width: 50px;
+		height: 50px;
+	}
+
+	.caption {
+		color: #FFF;
+		cursor: default;
+		position: absolute;
+
+		&.top-left {
+			right: 100%;
+			bottom: 100%;
+		}
+
+		&.top-right {
+			left: 100%;
+			bottom: 100%;
+		}
+
+		&.bottom-left {
+			top: 100%;
+			right: 100%;
+		}
+
+		&.bottom-right {
+			top: 100%;
+			left: 100%;
+		}
+
+		p {
+			width: 360px;
+			font-size: 22px;
+			line-height: 1.5;
+		}
+
+		button {
+			color: #FFF;
+			font-size: 16px;
+			line-height: 40px;
+			margin: 16px -16px;
+			pointer-events: auto;
+		}
+	}
+}
+
+.widget-settings.tutorial.modal-overlay {
+	background: rgba(0, 0, 0, .7);
+
+	.caption {
+		top: 50%;
+		color: #FFF;
+		width: 360px;
+		font-size: 22px;
+		line-height: 1.5;
+		text-align: right;
+		position: absolute;
+		right: calc(50% + 240px); // The 240px is half the widget settings dialog width (400px) plus 40px padding
+		transform: translateY(-100%);
+		font-family: Roboto, sans-serif;
+	}
+}
+
+.menu-container.tutorial {
+	overflow: visible;
+
+	.menu {
+		z-index: 1;
+		position: relative;
+	}
+
+	.labels {
+		top: 0;
+		bottom: 0;
+		margin: 0;
+		right: 100%;
+		color: #ECECEC;
+		padding: 5px 0;
+		font-size: 13px;
+		font-weight: 700;
+		text-align: right;
+		position: absolute;
+
+		li {
+			margin: 11px 5px;
+			padding: 2px 6px;
+			position: relative;
+			margin-right: 18px;
+			border-radius: 2px;
+			white-space: nowrap;
+			display: inline-block;
+			background: rgba(70, 70, 70, .9);
+			box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+
+			&:after {
+				top: 50%;
+				width: 0;
+				height: 0;
+				left: 100%;
+				content: "";
+				margin-top: -10px;
+				position: absolute;
+				pointer-events: none;
+				border: 10px solid transparent;
+				border-left-color: rgba(70, 70, 70, .9);
+			}
+		}
+
+		%positioned {
+			right: 0;
+			position: absolute;
+		}
+
+		li.custom-links {
+			top: 151px;
+			@extend %positioned;
+		}
+
+		li.tabs {
+			top: 254px;
+			@extend %positioned;
+		}
+
+		li.support {
+			top: 340px;
+			@extend %positioned;
+		}
+	}
+}
+
+.menu-tutorial-overlay {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+	opacity: .9;
+	position: fixed;
+	background: #E65100;
+
+	.caption {
+		top: 125px;
+		color: #FFF;
+		width: 400px;
+		font-size: 22px;
+		line-height: 1.5;
+		position: absolute;
+		left: calc(50% - 300px);
+		font-family: Roboto, sans-serif;
+	}
+
+	@media (max-width: 1366px) {
+		.caption {
+			left: 40px;
+		}
+	}
+
+	& + header.toolbar {
+		z-index: 3;
+	}
+}

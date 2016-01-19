@@ -1,0 +1,22 @@
+&.tabs {
+	button.create-new {
+		float: right;
+	}
+
+	.input.text {
+		text-align: right;
+
+		input {
+			text-align: left;
+			padding: 20px 40% 20px 25px!important;
+		}
+	}
+
+	h3 {
+		overflow: hidden;
+	}
+
+	.input button.default {
+		position: relative;
+	}
+}

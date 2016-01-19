@@ -1,7 +1,7 @@
 /**
  * This module handles theme changes from incoming sync data
  */
-define(["jquery", "lodash"], function($, _) {
+define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 	// The cacher depends on storage, so we need to load it at run time
 	var Cacher;
 
@@ -18,20 +18,14 @@ define(["jquery", "lodash"], function($, _) {
 
 		var newData = _.pick(d, "user", "tabs", "themes", "settings");
 
-		var themesChanged = (JSON.stringify(oldData.themes) !== JSON.stringify(newData.themes));
+		var themesChanged = newData.themes && (JSON.stringify(oldData.themes) !== JSON.stringify(newData.themes));
 
 		var save = function() {
 			var queue = [];
 
-			if (newData.settings.theme && parseInt(newData.settings.theme) && !storage.cached[newData.settings.theme]) {
+			if (newData.settings && newData.settings.theme && parseInt(newData.settings.theme) && !storage.cached[newData.settings.theme]) {
 				queue.push(newData.settings.theme);
 			}
-
-			newData.tabs.forEach(function(e, i) {
-				if (e.theme && parseInt(e.theme) && !storage.cached[e.theme]) {
-					queue.push(e.theme);
-				}
-			});
 
 			var next = function() {
 				if (queue.length) {
@@ -43,7 +37,7 @@ define(["jquery", "lodash"], function($, _) {
 						}
 					});
 				}
-				
+
 				var save = function() {
 					newData.cached = storage.cached;
 
@@ -52,7 +46,7 @@ define(["jquery", "lodash"], function($, _) {
 
 				if (themesChanged) {
 					// Any combination of changes could've happened, delete and recache everything
-					
+
 					var cacheNew = function() {
 						if (newData.themes.length) {
 							queue = _.map(newData.themes, function(e, i) {
@@ -61,11 +55,11 @@ define(["jquery", "lodash"], function($, _) {
 										if (queue.length) {
 											return queue.pop()();
 										}
-										
+
 										save();
 									};
 								}
-								
+
 								if (e.image.indexOf("#OrigURL:") !== -1) {
 									e.image = e.image.split("#OrigURL:")[1];
 								}
@@ -75,7 +69,7 @@ define(["jquery", "lodash"], function($, _) {
 										if (queue.length) {
 											return queue.pop()();
 										}
-										
+
 										save();
 									});
 								};
@@ -116,7 +110,7 @@ define(["jquery", "lodash"], function($, _) {
 			var mThemes;
 
 			if (queue.length) {
-				$.get("https://themes.ichro.me/manifest.json", function(d) {
+				$.get("https://api.ichro.me/themes?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language, function(d) {
 					if (d && d.themes) {
 						mThemes = _.indexBy(_.map(d.themes, function(e) {
 							e.oType = e.type;

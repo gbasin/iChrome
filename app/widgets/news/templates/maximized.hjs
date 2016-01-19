@@ -1,0 +1,82 @@
+<header>
+	{{#title}}
+		{{#link}}<a href="{{link}}" class="title">{{title}}</a>{{/link}}
+		{{^link}}<span class="title">{{title}}</span>{{/link}}
+	{{/title}}
+
+	<button type="button" class="material flat toggle layout" data-state="{{layout}}{{^layout}}cards{{/layout}}">
+		<svg viewBox="0 0 24 24" class="list">
+			<path d="M4 15h16v-2H4v2zm0 4h16v-2H4v2zm0-8h16V9H4v2zm0-6v2h16V5H4z"></path>
+		</svg>
+
+		<svg viewBox="0 0 24 24" class="cards">
+			<path d="M4 11h5V5H4v6zm0 7h5v-6H4v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5V5h-5v6zm6-6v6h5V5h-5z"></path>
+		</svg>
+	</button>
+
+	{{#tabs.1}}
+		<ul class="tabs">
+			<button type="button" class="material flat scroll-left" data-direction="left">&#xE6CD;</button>
+
+			{{#tabs}}
+				<li data-id="{{id}}"{{#active}} class="active"{{/active}}>{{name}}</li>
+			{{/tabs}}
+
+			<button type="button" class="material flat scroll-right" data-direction="right">&#xE6D0;</button>
+		</ul>
+	{{/tabs.1}}
+</header>
+
+{{#loading}}
+	<div class="loading">
+		<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+			<circle fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+		</svg>
+	</div>
+{{/loading}}
+
+<div class="items {{layout}}{{^layout}}cards{{/layout}}">
+	{{#featured}}
+		<a href="{{url}}" class="item featured" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .5)), url('{{image}}');">
+			<h3 class="title">{{title}}</h3>
+
+			<div class="desc">{{{desc}}}</div>
+
+			<div class="details">
+				{{#source}}<span class="source">{{source}}</span>{{/source}}
+
+				<span class="date">{{date}}</span>
+			</div>
+		</a>
+	{{/featured}}
+
+	{{#items}}
+		<a href="{{url}}" class="item">
+			{{#list}}
+				<span class="source">{{source}}</span>
+
+				<span class="desc">
+					<b class="title">{{title}}</b>
+
+					{{{desc}}}
+				</span>
+
+				<span class="date">{{date}}</span>
+			{{/list}}
+
+			{{^list}}
+				{{#image}}<div class="image" style="background-image: url('{{image}}');"></div>{{/image}}
+
+				<h3 class="title">{{title}}</h3>
+
+				<div class="desc">{{{desc}}}</div>
+
+				<div class="details">
+					{{#source}}<span class="source">{{source}}</span>{{/source}}
+
+					<span class="date">{{date}}</span>
+				</div>
+			{{/list}}
+		</a>
+	{{/items}}
+</div>

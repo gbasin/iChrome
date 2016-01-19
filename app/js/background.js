@@ -10,123 +10,17 @@ var Hogan={};
 /* globals chrome,PERSISTENT */
 
 chrome.runtime.onInstalled.addListener(function(details) {
-	if (details.reason == "install") {
-		// NOTE: These two methods have been copied from storage/syncapi.js and lightly modified
-		// Changes made here should be reflected there.
-		var clientData = {};
+	if (!details || !details.reason || details.reason === "install") {
+		localStorage.firstRun = "true";
 
-		var loadData = function(cb) {
-			if (clientData.token) {
-				return cb(clientData);
-			}
-
-			var done = 0;
-
-			var next = function() {
-				if (done++) {
-					if (clientData.token) {
-						cb(clientData);
-					}
-					else {
-						cb();
-					}
-
-					saveData();
-				}
-			};
-
-			chrome.storage.sync.get("syncData", function(d) {
-				if (d && d.syncData) {
-					for (var key in d.syncData) {
-						clientData[key] = d.syncData[key];
-					}
-				}
-
-				next();
-			});
-
-			chrome.cookies.get({
-				name: "sync_data_main",
-				url: "http://ichro.me"
-			}, function(args, d) {
-				try {
-					d = d && d.value && JSON.parse(d.value);
-
-					var key;
-
-					if (d) {
-						// If a token is already set from the sync storage,
-						// keep it, but add the new information
-						if (clientData.token) {
-							for (key in d) {
-								if (key !== "token" && key !== "client") {
-									clientData[key] = d[key];
-								}
-							}
-						}
-						else {
-							for (key in d) {
-								clientData[key] = d[key];
-							}
-						}
-					}
-				}
-				catch (e) {}
-				
-				next();
-			}.bind(this, arguments));
-		};
-
-		var saveData = function() {
-			var local = JSON.stringify((function(data) {
-				for (var key in clientData) {
-					if (key !== "version" && key !== "extension") {
-						data[key] = clientData[key];
-					}
-				}
-
-				return data;
-			})({}));
-
-			var sync = JSON.stringify((function(data) {
-				for (var key in clientData) {
-					if (key !== "client" && key !== "version" && key !== "extension") {
-						data[key] = clientData[key];
-					}
-				}
-
-				return data;
-			})({}));
-
-			localStorage.syncData = local;
-
-			chrome.storage.sync.set({
-				syncData: sync
-			});
-
-			chrome.cookies.set({
-				name: "sync_data_main",
-				domain: ".ichro.me",
-				url: "http://ichro.me",
-				value: local,
-				expirationDate: (new Date().getTime() / 1000) + (10 * 365 * 24 * 60 * 60)
-			});
-		};
-
-		loadData(function() {
-			if (!clientData.token) {
-				localStorage.installed = "true";
-
-				chrome.tabs.create({
-					url: "index.html"
-				});
-			}
+		chrome.tabs.create({
+			url: "index.html"
 		});
 	}
-	else if (details.reason == "update") {
+	else if (details.reason === "update") {
 		if (!localStorage.config) {
 			chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
-				if (typeof d.tabs == "string") {
+				if (typeof d.tabs === "string") {
 					try {
 						d.tabs = JSON.parse(d.tabs);
 					}
@@ -139,41 +33,30 @@ chrome.runtime.onInstalled.addListener(function(details) {
 
 				chrome.storage.local.remove(["tabs", "settings", "themes", "cached"]);
 				chrome.storage.sync.remove(["tabs", "settings", "themes", "cached"]);
- 
+
 				chrome.tabs.create({
-					url: "chrome-extension://" + chrome.i18n.getMessage("@@extension_id") + "/index.html"
+					url: "index.html"
 				});
 			});
 		}
 
-		if (!details.previousVersion || details.previousVersion.indexOf("2.1.20") == -1) {
-			localStorage.showWhatsNew = "true";
+		if (localStorage.syncData) {
+			// Clear old sync system data
+			chrome.cookies.get({
+				name: "sync_data_main",
+				url: "http://ichro.me"
+			});
+
+			chrome.storage.sync.remove("syncData");
+		}
+
+		if (!details.previousVersion || details.previousVersion.indexOf("3.0.0") !== 0) {
+			//localStorage.showWhatsNew = "true";
+			localStorage.showUpdated = "true";
+			localStorage.showSignInNotice = "true";
 		}
 	}
 });
-
-chrome.webRequest.onAuthRequired.addListener(
-	function(info) {
-		if (info.tabId !== -1 && info.scheme.toLowerCase().trim() === "basic") {
-			var i = -1,
-				views = chrome.extension.getViews(),
-				length = views.length;
-
-			while (++i < length) {
-				if (views[i].tabId == info.tabId) {
-					return {
-						cancel: true
-					};
-				}
-			}
-		}
-	},
-	{
-		urls: [ "https://mail.google.com/mail/u/*/feed/atom/" ],
-		types: [ "xmlhttprequest" ]
-	},
-	["blocking"]
-);
 
 /**
  * Feed refresh manager
@@ -203,8 +86,8 @@ var getFeed = function(theme, cb, next) {
 		};
 
 	// These are utilities that the URL and image parse are rendered with. With them the URL can incorporate things like a random number.
-	Object.getOwnPropertyNames(Math).forEach(function(e, i) {
-		if (typeof Math[e] == "function") {
+	Object.getOwnPropertyNames(Math).forEach(function(e) {
+		if (typeof Math[e] === "function") {
 			utils.Math[e] = function() {
 				return function(args) {
 					return Math[e].apply(window, args.split(", "));
@@ -221,21 +104,24 @@ var getFeed = function(theme, cb, next) {
 	xhr.open("GET", Hogan.compile(theme.url).render(utils), true);
 
 	xhr.onreadystatechange = function() {
-		if (xhr.readyState == 4) {
-			if (xhr.status == 200) {
+		if (xhr.readyState === 4) {
+			if (xhr.status === 200) {
 				var d = xhr.responseText;
 
 				try {
+					var doc;
+
 					if (theme.selector && theme.attr) {
-						var parser = new DOMParser(),
-							doc = parser.parseFromString(d, "text/xml");
+						var parser = new DOMParser();
+
+						doc = parser.parseFromString(d, "text/xml");
 
 						var url = doc.querySelector(theme.selector);
 
-						if (theme.attr == "text") {
-							url = url.innerText;
+						if (theme.attr === "text") {
+							url = url.textContent;
 						}
-						else if (theme.attr == "html") {
+						else if (theme.attr === "html") {
 							url = url.innerHTML;
 						}
 						else {
@@ -245,13 +131,45 @@ var getFeed = function(theme, cb, next) {
 						utils.res = url;
 					}
 					else {
-						if (typeof d == "object") {
+						if (typeof d === "object") {
 							utils.res = d;
 						}
 						else {
 							utils.res = JSON.parse(d);
 						}
 					}
+
+					// Special case handling until a better theme system can be implemented with ServiceWorker
+					try {
+						if (theme.id === 0) {
+							theme.currentImage = {
+								name: utils.res.name,
+								url: utils.res.sourceUrl,
+								source: (utils.res.author || "") + (utils.res.author && (utils.res.copyright || utils.res.source) ? " — " : "") + (utils.res.copyright || utils.res.source || "")
+							};
+						}
+						else if ((theme.id === 82 || theme.id === 83) && utils.res.images && utils.res.images[0] && utils.res.images[0].copyright) {
+							theme.currentImage = {
+								source: utils.res.images[0].copyrightsource,
+								name: utils.res.images[0].copyright.replace(utils.res.images[0].copyrightsource, "").replace(/\(\s*?\)/g, "").trim()
+							};
+						}
+						else if (theme.id === 84 && utils.res.free && utils.res.free[0]) {
+							theme.currentImage = {
+								name: utils.res.free[0].title,
+								source: utils.res.free[0].vendor
+							};
+						}
+						else if (theme.id === 86) {
+							theme.currentImage = {
+								name: doc.querySelector("item title").textContent,
+								source: doc.querySelector("item source").textContent,
+								desc: doc.querySelector("item description").textContent,
+								url: doc.querySelector("item guid").textContent
+							};
+						}
+					}
+					catch (e) {}
 
 					theme.image = Hogan.compile(theme.format).render(utils);
 
@@ -293,7 +211,7 @@ var cache = function(theme, cb) {
 	}
 
 	var err = function(e) {
-			if (e && e.name == "InvalidStateError") {
+			if (e && e.name === "InvalidStateError") {
 				return window.webkitRequestFileSystem(PERSISTENT, 500 * 1024 * 1024, function(fs) {
 					window.fs = fs;
 
@@ -311,23 +229,23 @@ var cache = function(theme, cb) {
 			cache(theme, cb);
 		}, err);
 	}
-	
+
 	var fs = window.fs;
 
 	fs.root.getDirectory("Themes", { create: true }, function(dir) {
 		var active = 0;
 
-		ids.forEach(function(id, i) {
+		ids.forEach(function(id) {
 			active++;
 
 			dir.getFile(id + ".jpg", { create: true }, function(fe) {
 				var xhr = new XMLHttpRequest();
 
-				xhr.open("GET", (id == theme.id && (theme.type == "feed" || (theme.oType && theme.oType == "feed")) ? theme.image : "https://themes.ichro.me/images/" + id + ".jpg"));
+				xhr.open("GET", (id === theme.id && (theme.type === "feed" || (theme.oType && theme.oType === "feed")) ? theme.image : "https://themes.ichro.me/images/" + id + ".jpg"));
 
 				xhr.responseType = "blob";
 
-				xhr.onload = function(e) {
+				xhr.onload = function() {
 					if (xhr.status !== 200) {
 						return err();
 					}
@@ -335,7 +253,7 @@ var cache = function(theme, cb) {
 					var blob = xhr.response;
 
 					fe.createWriter(function(writer) {
-						writer.onwrite = function(e) {
+						writer.onwrite = function() {
 							active--;
 
 							// This stores the image as a theme
@@ -373,17 +291,29 @@ var cache = function(theme, cb) {
 var refreshFeeds = function() {
 	var d = JSON.parse(localStorage.config || "{}");
 
-	if (d.cached) {
-		cached = d.cached;
-		
-		var active = 0,
-			start = new Date().getTime() - 1000 * 60 * 60 * 24,
-			key;
+	cached = d.cached || {};
 
-		for (key in cached) {
+	if (!cached[0]) {
+		cached[0] = {
+			id: 0,
+			type: "feed",
+			offline: true,
+			name: "Default theme",
+			format: "{{res.url}}",
+			image: "images/defaulttheme.jpg",
+			url: "https://api.ichro.me/themes/v1/default/getImage"
+		};
+	}
+
+	var active = 0,
+		start = new Date().getTime() - 60 * 60 * 1000,
+		key;
+
+	for (key in cached) {
+		if (cached.hasOwnProperty(key)) {
 			var theme = cached[key];
 
-			if ((theme.type == "feed" || (theme.oType && theme.oType == "feed")) && ((theme.lastFetched && theme.lastFetched <= start) || !theme.lastFetched)) {
+			if ((theme.type === "feed" || (theme.oType && theme.oType === "feed")) && ((theme.lastFetched && theme.lastFetched <= start) || !theme.lastFetched)) {
 				active++;
 
 				console.log("Updating cached theme " + key + ", last fetched on " + new Date(theme.lastFetched));
@@ -404,6 +334,6 @@ var refreshFeeds = function() {
 	}
 };
 
-setInterval(refreshFeeds, 18E5);
+setInterval(refreshFeeds, 60 * 60 * 1000);
 
 refreshFeeds();

@@ -9,11 +9,11 @@
 				<span class="title">{{title}}&nbsp;&#8203;<span class="nested-link domain" data-href="http://www.reddit.com/domain/{{domain}}">{{domain}}</span></span>
 
 				<div class="specs">
-					<span class="score{{direction}}">{{score}}</span>
-					<span class="posted">{{created}}</span>
-					<span class="comments nested-link" data-href="http://www.reddit.com{{permalink}}">{{comments}}</span>
-					{{#subreddit}}<span class="subreddit nested-link" data-href="http://www.reddit.com/r/{{subreddit}}" title="{{subreddit}}">{{subreddit}}</span>{{/subreddit}}
-					<span class="user nested-link" data-href="http://www.reddit.com/user/{{user}}" title="{{user}}">{{user}}</span>
+					<span class="score{{direction}}" data-m-icon-before="arrow_upward">{{score}}</span>
+					<span class="posted" data-m-icon-before="access_time">{{created}}</span>
+					<span class="comments nested-link" data-href="http://www.reddit.com{{permalink}}" data-m-icon-before="comment">{{comments}}</span>
+					{{#subreddit}}<span class="subreddit nested-link" data-href="http://www.reddit.com/r/{{subreddit}}" title="{{subreddit}}" data-m-icon-before="group_work">{{subreddit}}</span>{{/subreddit}}
+					<span class="user nested-link" data-href="http://www.reddit.com/user/{{user}}" title="{{user}}" data-m-icon-before="person">{{user}}</span>
 
 				</div>
 			</div>
