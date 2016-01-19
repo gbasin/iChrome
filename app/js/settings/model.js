@@ -82,18 +82,18 @@ define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage)
 
 						// First look for any empty columns that can be removed, which is the logical
 						// process a user would follow to remove a column
-						var i = 0;
+						var colIndex = 0;
 
-						while (toRemove && tab.columns[i]) {
-							if (tab.columns[i].length === 0) {
-								tab.columns.splice(i, 1);
+						while (toRemove && tab.columns[colIndex]) {
+							if (tab.columns[colIndex].length === 0) {
+								tab.columns.splice(colIndex, 1);
 
 								toRemove--;
 
 								continue;
 							}
 
-							i++;
+							colIndex++;
 						}
 
 						if (toRemove) {
