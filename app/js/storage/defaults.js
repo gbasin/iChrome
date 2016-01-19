@@ -3,40 +3,47 @@
  */
 define(["i18n/i18n"], function(Translate) {
 	return {
-		tabs: [
-			{
-				columns: [
-					[
-						{
-							id: 9,
-							size: "tiny"
-						}, {
-							id: 14,
-							size: "tiny"
-						}, {
-							id: 1,
-							size: "medium"
+		tabs: [{
+			columns: [
+				[
+					{
+						id: 1,
+						size: "variable"
+					}, {
+						id: 9,
+						size: "tiny"
+					}, {
+						id: 14,
+						size: "tiny",
+						config: {
+							title: "Google, Inc."
 						}
-					], [
-						{
-							id: 35,
-							size: "variable"
-						}, {
-							id: 17,
-							size: "variable"
-						}
-					], [
-						{
-							id: 4,
-							size: "large"
-						}
-					]
-				],
-				id: 1,
-				name: Translate("defaults.tab")
-			}
-		],
-		widgets: [9, 14, 1, 35, 17, 4], // These are the widget IDs from the default tab layout
+					}, {
+						id: 17,
+						size: "variable"
+					}
+				], [
+					{
+						id: 35,
+						size: "variable"
+					}, {
+						id: 15,
+						size: "variable"
+					}
+				], [
+					{
+						id: 4,
+						size: "large"
+					}, {
+						id: 46,
+						size: "medium"
+					}
+				]
+			],
+			id: 1,
+			name: Translate("defaults.tab")
+		}],
+
 		user: {
 			fname: Translate("defaults.me"),
 			image: "images/profile.png"
