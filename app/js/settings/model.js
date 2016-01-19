@@ -78,11 +78,31 @@ define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage)
 						}
 					}
 					else if (tab.columns.length > columns) {
-						// Move all widgets in extra columns to the first
-						tab.columns[0] = tab.columns[0].concat(_.flatten(_.takeRight(tab.columns, tab.columns.length - columns)));
+						var toRemove = tab.columns.length - columns;
 
-						// And delete the extra columns
-						tab.columns.splice(columns);
+						// First look for any empty columns that can be removed, which is the logical
+						// process a user would follow to remove a column
+						var i = 0;
+
+						while (toRemove && tab.columns[i]) {
+							if (tab.columns[i].length === 0) {
+								tab.columns.splice(i, 1);
+
+								toRemove--;
+
+								continue;
+							}
+
+							i++;
+						}
+
+						if (toRemove) {
+							// Move all widgets in extra columns to the first
+							tab.columns[0] = tab.columns[0].concat(_.flatten(_.takeRight(tab.columns, toRemove)));
+
+							// And delete the extra columns
+							tab.columns.splice(columns);
+						}
 					}
 				}
 				else if (tab.columns.length > 1) {
