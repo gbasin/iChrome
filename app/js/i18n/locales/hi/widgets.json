@@ -146,24 +146,6 @@
     "author":"by",
     "go_to_feedly":"Go To Feedly"
   },
-  "gmail":{
-    "name":"जीमेल",
-    "desc":"Displays your Gmail inbox where you can manage your email."
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"Displays a webpage of your choice within an iframe.",
-    "settings":{
-      "url":"Frame URL",
-      "url_placeholder":"i.e. http:\/\/www.google.com\/",
-      "height":"Frame Height",
-      "padding":"Padding"
-    }
-  },
-  "keep":{
-    "name":"Keep",
-    "desc":"Embeds Google Keep in a widget"
-  },
   "notes":{
     "name":"Notes",
     "desc":"Inserts a simple, editable, note.",
@@ -345,15 +327,6 @@
     },
     "default_placeholder":"Search Google"
   },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
-  },
   "pushbullet":{
     "name":"Pushbullet",
     "desc":"Keep track of notifications from your phone and other devices",
@@ -408,6 +381,15 @@
       "profile":"Profile"
     }
   },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
+    }
+  },
   "currency":{
     "name":"Currency",
     "desc":"Let's you convert between any two of 169 currencies.",
@@ -433,6 +415,24 @@
     },
     "modified_by":"by",
     "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "gmail":{
+    "name":"जीमेल",
+    "desc":"Displays your Gmail inbox where you can manage your email."
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Displays a webpage of your choice within an iframe.",
+    "settings":{
+      "url":"Frame URL",
+      "url_placeholder":"i.e. http:\/\/www.google.com\/",
+      "height":"Frame Height",
+      "padding":"Padding"
+    }
+  },
+  "keep":{
+    "name":"Keep",
+    "desc":"Embeds Google Keep in a widget"
   },
   "news":{
     "name":"समाचार",
@@ -470,7 +470,7 @@
       "feeds":"Feeds",
       "feeds_help":"Click any feed to edit it",
       "feeds_placeholder":"Enter a feed URL and press Enter to add",
-      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro from the Accounts and Sync tab in the settings.",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
       "feed_name_placeholder":"Feed name",
       "feed_url_placeholder":"Feed URL",
       "articles":"Articles Shown"
@@ -491,6 +491,8 @@
     "news":"समाचार",
     "last_play":"Last play",
     "no_games":"No games found",
+    "pro_splash1":"Sports news is a Pro-only feature.",
+    "pro_splash2":"Buy Pro in the settings.",
     "preview":"पूर्वावलोकन",
     "tickets":"Tickets",
     "live":"Live",

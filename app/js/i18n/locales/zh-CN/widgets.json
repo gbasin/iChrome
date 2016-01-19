@@ -146,24 +146,6 @@
     "author":"由 ",
     "go_to_feedly":"打开Feedly"
   },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"显示您的 Gmail 收件箱，在任何地方您都可以查看您的E-Mail"
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"在您选择的位置用 iframe 嵌入网页。",
-    "settings":{
-      "url":"框架链接",
-      "url_placeholder":"例如 http:\/\/www.google.com\/",
-      "height":"框架高度",
-      "padding":"内边距"
-    }
-  },
-  "keep":{
-    "name":"Keep",
-    "desc":"嵌入Google Keep小部件"
-  },
   "notes":{
     "name":"便签",
     "desc":"插入简单、 可编辑的便签。",
@@ -345,15 +327,6 @@
     },
     "default_placeholder":"Search Google"
   },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
-  },
   "pushbullet":{
     "name":"Pushbullet",
     "desc":"Keep track of notifications from your phone and other devices",
@@ -408,6 +381,15 @@
       "profile":"项目档案"
     }
   },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
+    }
+  },
   "currency":{
     "name":"货币转换",
     "desc":"让您在169种货币之间进行转换。",
@@ -433,6 +415,24 @@
     },
     "modified_by":"由",
     "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"显示您的 Gmail 收件箱，在任何地方您都可以查看您的E-Mail"
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"在您选择的位置用 iframe 嵌入网页。",
+    "settings":{
+      "url":"框架链接",
+      "url_placeholder":"例如 http:\/\/www.google.com\/",
+      "height":"框架高度",
+      "padding":"内边距"
+    }
+  },
+  "keep":{
+    "name":"Keep",
+    "desc":"嵌入Google Keep小部件"
   },
   "news":{
     "name":"新闻",
@@ -470,7 +470,7 @@
       "feeds":"订阅源",
       "feeds_help":"Click any feed to edit it",
       "feeds_placeholder":"Enter a feed URL and press Enter to add",
-      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro from the Accounts and Sync tab in the settings.",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
       "feed_name_placeholder":"Feed name",
       "feed_url_placeholder":"Feed URL",
       "articles":"显示数量"
@@ -491,6 +491,8 @@
     "news":"新闻",
     "last_play":"Last play",
     "no_games":"No games found",
+    "pro_splash1":"Sports news is a Pro-only feature.",
+    "pro_splash2":"Buy Pro in the settings.",
     "preview":"预览",
     "tickets":"Tickets",
     "live":"Live",

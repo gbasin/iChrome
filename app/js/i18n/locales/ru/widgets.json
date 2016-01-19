@@ -146,24 +146,6 @@
     "author":"автор",
     "go_to_feedly":"Перейти к Feedly"
   },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"Отображает входящие письма из Gmail с возможностью управления ими."
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"Отображает указанную веб-страницу внутри виджета с помощью iframe.",
-    "settings":{
-      "url":"URL-адрес для отображения",
-      "url_placeholder":"напр. http:\/\/www.google.com\/",
-      "height":"Высота фрейма",
-      "padding":"Отступ"
-    }
-  },
-  "keep":{
-    "name":"Keep",
-    "desc":"Встраивает Google Keep в виджет"
-  },
   "notes":{
     "name":"Заметки",
     "desc":"Очень простые заметки.",
@@ -345,15 +327,6 @@
     },
     "default_placeholder":"Поиск в Google"
   },
-  "classroom":{
-    "name":"Класс от Google",
-    "desc":"Будьте в курсе ваших заданий и занятий на Google Classroom",
-    "settings":{
-      "mode":"Режим виджета",
-      "mode_teacher":"Преподаватель",
-      "mode_student":"Студент"
-    }
-  },
   "pushbullet":{
     "name":"Pushbullet",
     "desc":"Отслеживать сообщения от вашего телефона и других устройств",
@@ -408,6 +381,15 @@
       "profile":"Профиль"
     }
   },
+  "classroom":{
+    "name":"Класс от Google",
+    "desc":"Будьте в курсе ваших заданий и занятий на Google Classroom",
+    "settings":{
+      "mode":"Режим виджета",
+      "mode_teacher":"Преподаватель",
+      "mode_student":"Студент"
+    }
+  },
   "currency":{
     "name":"Валюта",
     "desc":"Позволяет конвертировать значения между 169 валютами.",
@@ -433,6 +415,24 @@
     },
     "modified_by":"изменил",
     "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Отображает входящие письма из Gmail с возможностью управления ими."
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Отображает указанную веб-страницу внутри виджета с помощью iframe.",
+    "settings":{
+      "url":"URL-адрес для отображения",
+      "url_placeholder":"напр. http:\/\/www.google.com\/",
+      "height":"Высота фрейма",
+      "padding":"Отступ"
+    }
+  },
+  "keep":{
+    "name":"Keep",
+    "desc":"Встраивает Google Keep в виджет"
   },
   "news":{
     "name":"Новости",
@@ -470,7 +470,7 @@
       "feeds":"Каналы",
       "feeds_help":"Click any feed to edit it",
       "feeds_placeholder":"Enter a feed URL and press Enter to add",
-      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro from the Accounts and Sync tab in the settings.",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
       "feed_name_placeholder":"Feed name",
       "feed_url_placeholder":"Feed URL",
       "articles":"Количество отображаемых статей"
@@ -491,6 +491,8 @@
     "news":"Новости",
     "last_play":"Last play",
     "no_games":"No games found",
+    "pro_splash1":"Sports news is a Pro-only feature.",
+    "pro_splash2":"Buy Pro in the settings.",
     "preview":"Предпросмотр",
     "tickets":"Tickets",
     "live":"Live",

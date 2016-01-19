@@ -146,24 +146,6 @@
     "author":"par",
     "go_to_feedly":"Aller à Feedly"
   },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"Afficher votre compte Gmail, vous pouvez même gérer vos email "
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"Afficher une page web de votre choix dans \"iframe\"",
-    "settings":{
-      "url":"URL de l'image",
-      "url_placeholder":"e.g. http:\/\/www.google.com\/",
-      "height":"Hauteur de l'image",
-      "padding":"Remplissage"
-    }
-  },
-  "keep":{
-    "name":"Garder",
-    "desc":"Intégrer \"Google Keep\" dans le widget"
-  },
   "notes":{
     "name":"Notes",
     "desc":"Insérez une note simple et modifiable.",
@@ -345,15 +327,6 @@
     },
     "default_placeholder":"Search Google"
   },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
-  },
   "pushbullet":{
     "name":"Pushbullet",
     "desc":"Keep track of notifications from your phone and other devices",
@@ -408,6 +381,15 @@
       "profile":"Profil"
     }
   },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
+    }
+  },
   "currency":{
     "name":"Devise ",
     "desc":"Vous permet de convertir entre deux des 169 devises.",
@@ -433,6 +415,24 @@
     },
     "modified_by":"par",
     "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Afficher votre compte Gmail, vous pouvez même gérer vos email "
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Afficher une page web de votre choix dans \"iframe\"",
+    "settings":{
+      "url":"URL de l'image",
+      "url_placeholder":"e.g. http:\/\/www.google.com\/",
+      "height":"Hauteur de l'image",
+      "padding":"Remplissage"
+    }
+  },
+  "keep":{
+    "name":"Garder",
+    "desc":"Intégrer \"Google Keep\" dans le widget"
   },
   "news":{
     "name":"News",
@@ -470,7 +470,7 @@
       "feeds":"Flux",
       "feeds_help":"Click any feed to edit it",
       "feeds_placeholder":"Enter a feed URL and press Enter to add",
-      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro from the Accounts and Sync tab in the settings.",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
       "feed_name_placeholder":"Feed name",
       "feed_url_placeholder":"Feed URL",
       "articles":"Articles affichés"
@@ -491,6 +491,8 @@
     "news":"News",
     "last_play":"Last play",
     "no_games":"No games found",
+    "pro_splash1":"Sports news is a Pro-only feature.",
+    "pro_splash2":"Buy Pro in the settings.",
     "preview":"Aperçu ",
     "tickets":"Tickets",
     "live":"Live",

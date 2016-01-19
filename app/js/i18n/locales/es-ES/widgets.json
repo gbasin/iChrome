@@ -146,24 +146,6 @@
     "author":"por",
     "go_to_feedly":"Ir a Feedly"
   },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"Muestra tu bandeja de entrada Gmail donde usted puede administrar su correo electrónico."
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"Muestra una página web de su elección dentro de un iframe.",
-    "settings":{
-      "url":"Marco URL",
-      "url_placeholder":"es decir, http:\/\/www.google.com\/",
-      "height":"Altura del marco",
-      "padding":"Relleno"
-    }
-  },
-  "keep":{
-    "name":"Mantener",
-    "desc":"Incrusta Google mantenga en un widget"
-  },
   "notes":{
     "name":"Notas",
     "desc":"Inserta una nota simple, editable.",
@@ -345,15 +327,6 @@
     },
     "default_placeholder":"Buscar en Google"
   },
-  "classroom":{
-    "name":"Salón de Clases",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Profesor",
-      "mode_student":"Estudiante"
-    }
-  },
   "pushbullet":{
     "name":"Pushbullet",
     "desc":"Keep track of notifications from your phone and other devices",
@@ -408,6 +381,15 @@
       "profile":"PERFIL"
     }
   },
+  "classroom":{
+    "name":"Salón de Clases",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Profesor",
+      "mode_student":"Estudiante"
+    }
+  },
   "currency":{
     "name":"Monedas",
     "desc":"¡ Convertir entre cualquiera de las dos monedas 169.",
@@ -433,6 +415,24 @@
     },
     "modified_by":"por",
     "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Muestra tu bandeja de entrada Gmail donde usted puede administrar su correo electrónico."
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Muestra una página web de su elección dentro de un iframe.",
+    "settings":{
+      "url":"Marco URL",
+      "url_placeholder":"es decir, http:\/\/www.google.com\/",
+      "height":"Altura del marco",
+      "padding":"Relleno"
+    }
+  },
+  "keep":{
+    "name":"Mantener",
+    "desc":"Incrusta Google mantenga en un widget"
   },
   "news":{
     "name":"News",
@@ -470,7 +470,7 @@
       "feeds":"Entradas",
       "feeds_help":"Click any feed to edit it",
       "feeds_placeholder":"Enter a feed URL and press Enter to add",
-      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro from the Accounts and Sync tab in the settings.",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
       "feed_name_placeholder":"Feed name",
       "feed_url_placeholder":"Feed URL",
       "articles":"Artículos que se muestra"
@@ -491,6 +491,8 @@
     "news":"News",
     "last_play":"Last play",
     "no_games":"No games found",
+    "pro_splash1":"Sports news is a Pro-only feature.",
+    "pro_splash2":"Buy Pro in the settings.",
     "preview":"Avance",
     "tickets":"Tickets",
     "live":"Live",

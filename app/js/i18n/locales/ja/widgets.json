@@ -146,24 +146,6 @@
     "author":"By",
     "go_to_feedly":"Feedly に行く"
   },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"Gmail の受信トレイが表示されます。"
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"iframe 内の web ページが表示されます。",
-    "settings":{
-      "url":"フレームの URL",
-      "url_placeholder":"例: http:\/\/www.google.com\/",
-      "height":"フレームの高さ",
-      "padding":"パディング"
-    }
-  },
-  "keep":{
-    "name":"保持",
-    "desc":"埋め込み型 Google Keep ウィジェット"
-  },
   "notes":{
     "name":"メモ",
     "desc":"シンプルで、編集可能なメモを挿入します。",
@@ -345,15 +327,6 @@
     },
     "default_placeholder":"Search Google"
   },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
-  },
   "pushbullet":{
     "name":"Pushbullet",
     "desc":"Keep track of notifications from your phone and other devices",
@@ -408,6 +381,15 @@
       "profile":"プロフィール"
     }
   },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
+    }
+  },
   "currency":{
     "name":"通貨",
     "desc":"169 通貨の中から、 2 つの通貨を変換してみましょう。",
@@ -433,6 +415,24 @@
     },
     "modified_by":"By",
     "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Gmail の受信トレイが表示されます。"
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"iframe 内の web ページが表示されます。",
+    "settings":{
+      "url":"フレームの URL",
+      "url_placeholder":"例: http:\/\/www.google.com\/",
+      "height":"フレームの高さ",
+      "padding":"パディング"
+    }
+  },
+  "keep":{
+    "name":"保持",
+    "desc":"埋め込み型 Google Keep ウィジェット"
   },
   "news":{
     "name":"ニュース",
@@ -470,7 +470,7 @@
       "feeds":"フィード",
       "feeds_help":"Click any feed to edit it",
       "feeds_placeholder":"Enter a feed URL and press Enter to add",
-      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro from the Accounts and Sync tab in the settings.",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
       "feed_name_placeholder":"Feed name",
       "feed_url_placeholder":"Feed URL",
       "articles":"表示される記事"
@@ -491,6 +491,8 @@
     "news":"ニュース",
     "last_play":"Last play",
     "no_games":"No games found",
+    "pro_splash1":"Sports news is a Pro-only feature.",
+    "pro_splash2":"Buy Pro in the settings.",
     "preview":"プレビュー",
     "tickets":"Tickets",
     "live":"Live",

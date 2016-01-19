@@ -16,12 +16,63 @@
     "confirm_continue":"Continue",
     "confirm_cancel":"Cancel"
   },
+  "onboarding":{
+    "modal":{
+      "tagline":"All the sites and apps you use, in one place",
+      "wrong_extension":"Want iChrome on your new tab page instead?",
+      "wrong_extension_newtab":"Want iChrome on your home page instead?",
+      "wrong_extension_action":"Click here",
+      "about":"iChrome's all about tabs and widgets",
+      "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
+      "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privacy Policy<\/a>",
+      "sign_in":"Sign in with your Google account",
+      "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
+      "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
+      "sign_in_button":"Sign in with Google",
+      "have_account":"It looks like you already have an account!",
+      "have_account_desc":"All your tabs and widgets are ready to use!",
+      "get_started":"Let's get started!",
+      "get_started_desc":"You're good to go! Let's get your page set up."
+    },
+    "widgets":{
+      "configure":"Let's configure a widget.",
+      "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
+      "configure_skip":"Skip",
+      "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
+      "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
+      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
+      "done":"Got it"
+    },
+    "settings":{
+      "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
+      "instructions":"Click the highlighted image to open it.",
+      "skip":"Skip",
+      "tooltips":{
+        "settings":"Change the way iChrome looks and works",
+        "widgets":"Add new widgets - you can have as many as you want",
+        "editing":"Show or hide the editing buttons on widgets",
+        "links":"This is a list of links, add sites you use often in the settings",
+        "tabs":"These are your tabs. You can add more in the settings",
+        "support":"Send us a message or leave a review here"
+      },
+      "finished":"That's it!",
+      "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
+      "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
+    }
+  },
   "storage":{
-    "signin":"Sign in to sync your settings",
-    "signin_desc":"iChrome has detected a sync profile under your email address.",
-    "signin_desc2":"Sign in with your Google account now to download and sync your configuration.",
+    "signin":"Sign in with Google now to securely save and sync your configuration",
     "signin_btn":"Sign in",
-    "signin_dismiss":"Dismiss"
+    "signin_dismiss":"Dismiss",
+    "signin_confirm":{
+      "title":"Keep local data?",
+      "desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
+      "keep_account":"Use account",
+      "keep_local":"Keep local"
+    },
+    "signout_confirm":"Signing out will erase your local backups",
+    "pastdue":"Your subscription is past due",
+    "pastdue_desc":"Please update your billing information in the settings"
   },
   "toolbar":{
     "placeholder":"Digite seus termos",
@@ -50,8 +101,8 @@
       "support":"Ajuda",
       "feedback":"Opiniões",
       "review":"Review",
-      "twitter":"Twitter",
-      "webstore":"Webstore",
+      "terms":"Terms",
+      "privacy":"Privacy",
       "by":"Por Avi Kohn"
     }
   },
@@ -80,7 +131,7 @@
       "tabs":"Separadores",
       "widgets":"Widgets",
       "pro":"Pro",
-      "accounts":"Accounts and sync",
+      "accounts":"Account",
       "misc":"Miscellaneous",
       "advanced":"Advanced",
       "advanced_sections":{
@@ -175,10 +226,6 @@
         "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
         "sign_in":"Sign in with Google"
       },
-      "keep_data":"Keep local data?",
-      "keep_data_desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
-      "keep_account":"Use account",
-      "keep_local":"Keep Local",
       "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
       "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this account."
     },
@@ -213,6 +260,77 @@
       "steps2":"Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
       "steps3":"Edit any of the settings shown in the dialog that's displayed",
       "steps4":"Click Save to save your changes, or any part of the background to discard of them"
+    },
+    "pro":{
+      "promo":{
+        "monthly_price":"$2 per month",
+        "yearly_price":"or $20 per year",
+        "upgrade_btn":"Upgrade Now",
+        "business":"Interested in buying Pro for your business or school?",
+        "business_contact":"Contact us",
+        "themes":"Temas",
+        "themes_desc":"See more of your backgrounds with dark and transparent themes",
+        "bgs":"Live backgrounds",
+        "bgs_desc":"Bring your page to life with 20 live high-definition backgrounds",
+        "widgets":"Maximizable widgets",
+        "widgets_desc":"Take iChrome to another level with maximizable widgets",
+        "more_header":"And more",
+        "stocks":"Realtime stocks with extended and historical information",
+        "rss":"Support for multiple RSS feeds per widget",
+        "sports":"General and league-specific sports news",
+        "tabbed_widgets":"Tabbed news and RSS widgets",
+        "bg_downloads":"Downloadable backgrounds",
+        "weather":"Hourly weather forecasts up to 10 days out",
+        "toolbar":"More toolbar links",
+        "support":"Prioritized support and suggestions",
+        "buy_pro":"Buy Pro"
+      },
+      "checkout":{
+        "title":"Checkout",
+        "updating_title":"Update plan",
+        "payment_options":"Pay",
+        "pay_monthly":"Monthly ($2)",
+        "pay_yearly":"Yearly ($20)",
+        "cancel":"Cancel",
+        "update":"Update",
+        "subscribe":"Subscribe",
+        "braintree_notice":"Payments securely processed by Braintree.",
+        "monthly_notice":"By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
+        "yearly_notice":"By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
+        "update_notice":"Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
+        "thank_you":"Thank you for buying iChrome Pro!",
+        "thank_you2":"iChrome will reload in a few seconds and you'll be all set!",
+        "error":"Something went wrong while trying to process your payment.",
+        "error2":"Please try again later or email us at support@ichro.me",
+        "signin":"Sign in",
+        "signin_desc":"You need to sign in before buying Pro so we can make sure it's you",
+        "signin_btn":"Sign in"
+      },
+      "plan":{
+        "title":"Plan",
+        "desc":"You are currently subscribed to iChrome Pro (%s)",
+        "types":{
+          "monthly":"Monthly",
+          "yearly":"Yearly",
+          "business":"Business",
+          "education":"Education",
+          "custom":"Personalizado"
+        },
+        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
+        "status":"Status",
+        "status_active":"Active",
+        "status_trial":"Trial",
+        "status_pastdue":"Past due",
+        "subscription_date":"Subscription date",
+        "paid_through":"Paid through",
+        "next_bill":"Next bill",
+        "next_bill_value":"$%s on %s",
+        "update_plan":"Update plan",
+        "update_billing":"Update billing",
+        "cancel":"Cancel subscription",
+        "cancel_notice":"Your subscription will be canceled immediately",
+        "cancel_notice2":"If you would like a refund, please contact us at support@ichro.me"
+      }
     }
   },
   "store":{
@@ -352,24 +470,6 @@
       "save":"Salvar & Fechar",
       "cache_error":"Ocorreu um erro ao tentar armazenar em cache a imagem que você forneceu, por favor, verifique novamente a URL.",
       "upload_error":"Ocorreu um erro ao tentar carregar o arquivo que você forneceu, por favor certifique-se que é um tamanho razoável e uma imagem."
-    }
-  },
-  "intro":{
-    "slide1":{
-      "title":"Bem-vindo ao iChrome!",
-      "line1":"Se você quer iChrome como sua página inicial, você precisará definir o URL desta página em suas configurações (<a href=\"https:\/\/support.google.com\/chrome\/answer\/95314\" target=\"_blank\"> instruções<\/a>).  Caso contrário, se você quiser como uma nova aba ou ambas as páginas de guia para casa e novo, por favor instale <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/iccjgbbjckehppnpajnmplcccjcgbdep\"> iChrome nova guia<\/a> em vez disso.",
-      "newtab_line1":"Se você quer iChrome para mostrar apenas quando iniciar o Chrome e não cada vez que você abre uma nova guia, por favor instale <a href=\"https:\/\/chrome.google.com\/webstore\/detail\/oghkljobbhapacbahlneolfclkniiami\"> a extensão principal iChrome<\/a> em vez deste.",
-      "line2":"Esta introdução possui apenas 3 slides, e vai dar uma visão rápida de como fazer coisas básicas em iChrome.  Quando estiver pronto, clique na seta à direita."
-    },
-    "slide2":{
-      "title":"Widgets",
-      "line1":"Widgets são o núcleo da iChrome.  Você pode configurar e movê-los usando os ícones chave e alça mostrados quando pairar no canto superior direito.  Para remover um, comece a arrastar- e largue-a na barra vermelha que aparece.",
-      "line2":"Novos widgets podem ser adicionados clicando no item de Widgets no menu na parte superior direita da página (mostrada no próximo slide)."
-    },
-    "slide3":{
-      "title":"Personalizar",
-      "line1":"Você pode alterar qualquer outra coisa que gostaria de através do menu na parte superior direita.  Lá você pode configurar a aparência da sua página, como o iChrome funciona e obter novos widgets.",
-      "line2":"Outras coisas que você pode incluir criando guias individuais, cada um com temas e widgets do seus próprios, temas personalizados, ou configurando a menor coisa como links que são mostradas na barra de ferramentas."
     }
   }
 }

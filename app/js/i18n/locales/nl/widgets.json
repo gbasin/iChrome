@@ -146,24 +146,6 @@
     "author":"door",
     "go_to_feedly":"Ga naar Feedly"
   },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"Geeft uw Gmail inbox weer waar u uw email kunt beheren."
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"Laat een webpagina van uw keuze in een iframe zien.",
-    "settings":{
-      "url":"Frame URL",
-      "url_placeholder":"bijvoorbeeld http:\/\/www.google.com\/",
-      "height":"Framehoogte",
-      "padding":"Opvulling"
-    }
-  },
-  "keep":{
-    "name":"Bewaar",
-    "desc":"Stopt Google Keep in een widget"
-  },
   "notes":{
     "name":"Notities",
     "desc":"Voegt een simpele, aanpasbare notitie toe.",
@@ -345,15 +327,6 @@
     },
     "default_placeholder":"Search Google"
   },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
-  },
   "pushbullet":{
     "name":"Pushbullet",
     "desc":"Keep track of notifications from your phone and other devices",
@@ -408,6 +381,15 @@
       "profile":"Profiel"
     }
   },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
+    }
+  },
   "currency":{
     "name":"Munteenheid",
     "desc":"Laat u converteren tussen elke van de 169 valuta's.",
@@ -433,6 +415,24 @@
     },
     "modified_by":"door",
     "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Geeft uw Gmail inbox weer waar u uw email kunt beheren."
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Laat een webpagina van uw keuze in een iframe zien.",
+    "settings":{
+      "url":"Frame URL",
+      "url_placeholder":"bijvoorbeeld http:\/\/www.google.com\/",
+      "height":"Framehoogte",
+      "padding":"Opvulling"
+    }
+  },
+  "keep":{
+    "name":"Bewaar",
+    "desc":"Stopt Google Keep in een widget"
   },
   "news":{
     "name":"Nieuws",
@@ -470,7 +470,7 @@
       "feeds":"Feeds",
       "feeds_help":"Click any feed to edit it",
       "feeds_placeholder":"Enter a feed URL and press Enter to add",
-      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro from the Accounts and Sync tab in the settings.",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
       "feed_name_placeholder":"Feed name",
       "feed_url_placeholder":"Feed URL",
       "articles":"Weergegeven artikelen"
@@ -491,6 +491,8 @@
     "news":"Nieuws",
     "last_play":"Last play",
     "no_games":"No games found",
+    "pro_splash1":"Sports news is a Pro-only feature.",
+    "pro_splash2":"Buy Pro in the settings.",
     "preview":"Voorbeeld",
     "tickets":"Tickets",
     "live":"Live",
