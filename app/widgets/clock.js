@@ -374,6 +374,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				clearInterval(this.intervalUpdateStopwatch);
 			}
 
+
 			this.isAnalog = (this.config.format === "analog");
 
 			this.$el.toggleClass("analog", this.isAnalog);
