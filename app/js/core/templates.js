@@ -7,8 +7,8 @@ var templates = [
 		"store",				"store-detail",			"themes",
 		"themes.listing",		"themes.custom",		"widget-settings",
 		"alert",				"menu",					"widget-settings.inputs",
-		"whatsnew",				"bginfo",				"widgets/auth-required",
-		"widgets/error",		"widgets/permissions-request",
+		"whatsnew",				"bginfo",				"updated",
+		"widgets/auth-required","widgets/error",		"widgets/permissions-request",
 
 		"onboarding/modal",		"onboarding/widgets",	"onboarding/settings",
 

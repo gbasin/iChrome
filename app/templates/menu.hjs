@@ -75,8 +75,7 @@
 		<br />
 
 		<a href="https://ichro.me/tos" class="terms">{{i18n.menu.footer.terms}}</a> &nbsp;·&nbsp;
-		<a href="https://ichro.me/privacy" class="privacy">{{i18n.menu.footer.privacy}}</a> &nbsp;·&nbsp;
-		<a href="https://ichro.me/cookies" class="cookies">{{i18n.menu.footer.cookies}}</a>
+		<a href="https://ichro.me/privacy" class="privacy">{{i18n.menu.footer.privacy}}</a>
 
 		<hr class="separator" />
 

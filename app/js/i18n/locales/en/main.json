@@ -33,7 +33,7 @@
 			"about": "iChrome's all about tabs and widgets",
 			"about_desc": "Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
 
-			"terms": "Note: By proceeding, you agree to iChrome's <a href=\"https://ichro.me/tos\" target=\"_blank\">Terms</a>, <a href=\"https://ichro.me/privacy\" target=\"_blank\">Privacy Policy</a>, and <a href=\"https://ichro.me/cookies\" target=\"_blank\">Cookie Use</a>",
+			"terms": "Note: By proceeding, you agree to iChrome's <a href=\"https://ichro.me/tos\" target=\"_blank\">Terms</a> and <a href=\"https://ichro.me/privacy\" target=\"_blank\">Privacy Policy</a>",
 
 			"sign_in": "Sign in with your Google account",
 			"sign_in_desc": "Sign in with your Google account before getting started to securely save your changes online.",
@@ -85,6 +85,13 @@
 		"signin_btn": "Sign in",
 		"signin_dismiss": "Dismiss",
 
+		"signin_confirm": {
+			"title": "Keep local data?",
+			"desc": "Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
+			"keep_account": "Use account",
+			"keep_local": "Keep local"
+		},
+
 		"signout_confirm": "Signing out will erase your local backups",
 
 		"pastdue": "Your subscription is past due",
@@ -123,7 +130,6 @@
 			"review":	"Review",
 			"terms":	"Terms",
 			"privacy":	"Privacy",
-			"cookies":	"Cookie use",
 			"by": 		"By Avi Kohn"
 		}
 	},
@@ -157,7 +163,7 @@
 			"tabs": "Tabs",
 			"widgets": "Widgets",
 			"pro": "Pro",
-			"accounts": "Accounts and sync",
+			"accounts": "Account",
 			"misc": "Miscellaneous",
 
 			"advanced": "Advanced",
@@ -274,11 +280,6 @@
 				"signed_out": "You are <b>not currently signed in</b>. Sign in with your Google account now to securely store and sync your configuration.",
 				"sign_in": "Sign in with Google"
 			},
-
-			"keep_data": "Keep local data?",
-			"keep_data_desc": "Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
-			"keep_account": "Use account",
-			"keep_local": "Keep local",
 
 			"reset_confirm_desc": "This will erase all local and synced data, there is no backup and no way to undo this.",
 			"reset_confirm_desc2": "You will lose your entire current configuration on all computers connected to this account."

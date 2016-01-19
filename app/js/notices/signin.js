@@ -17,11 +17,11 @@ define([
 
 			"click button.signin": function() {
 				Alert({
-					title: Translate("settings.accounts.keep_data"),
-					contents: [Translate("settings.accounts.keep_data_desc")],
+					title: Translate("storage.signin_confirm.title"),
+					contents: [Translate("storage.signin_confirm.desc")],
 					buttons: {
-						negative: Translate("settings.accounts.keep_account"),
-						positive: Translate("settings.accounts.keep_local")
+						negative: Translate("storage.signin_confirm.keep_account"),
+						positive: Translate("storage.signin_confirm.keep_local")
 					}
 				}, function(sendData) {
 					SyncAPI.authorize(this._storage, sendData, function() {

@@ -1084,6 +1084,220 @@ dialog footer button.material.flat:active {
 
 
 /*---------------------------------------------
+	/ Updated modal
+*/
+.updated {
+	&.modal-overlay {
+		cursor: default;
+		background: rgba(0, 0, 0, .3);
+	}
+
+	&.modal {
+		width: 800px;
+		height: 600px;
+		max-height: 100%;
+		overflow: visible;
+		border-radius: 6px;
+		font-family: Roboto, sans-serif;
+		box-shadow: 0 4px 32px rgba(0, 0, 0, .4);
+
+		.nav {
+			button,
+			button:active {
+				top: 50%;
+				z-index: 1;
+				width: 48px;
+				left: -110px;
+				height: 48px;
+				color: #4285F4;
+				margin-top: -24px;
+				position: absolute;
+				background: #FAFAFA;
+				box-shadow: 0 4px 32px rgba(0, 0, 0, .4);
+			}
+
+			button:hover {
+				background: #F3F3F3;
+			}
+
+			button.next {
+				left: auto;
+				right: -110px;
+
+				&:before {
+					content: "arrow_forward";
+				}
+
+				&.finish:before {
+					content: "done";
+				}
+			}
+		}
+
+		&[data-slide="1"] .nav button.prev {
+			transform: scale(0);
+		}
+
+		.slide {
+			z-index: 0;
+			opacity: 0;
+			width: 100%;
+			height: 100%;
+			color: #757575;
+			background: #FFF;
+			position: absolute;
+			text-align: center;
+			border-radius: 6px;
+			transition: opacity .4s $fast-in;
+
+			&.active {
+				z-index: 1;
+				opacity: 1;
+			}
+
+			&.intro {
+				padding-top: 140px;
+
+				img {
+					height: 150px;
+					margin-bottom: 40px;
+				}
+
+				.header {
+					font-size: 45px;
+					margin-bottom: 30px;
+				}
+
+				.subheader {
+					font-size: 22px;
+				}
+			}
+
+			&.pro {
+				color: #FFF;
+				background: #4285F4;
+
+				p {
+					font-size: 18px;
+					margin-top: 30px;
+					line-height: 28px;
+				}
+			}
+
+			&.sign-in {
+				.pending, .complete {
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					opacity: 0;
+					display: flex;
+					flex-flow: column;
+					position: absolute;
+					transition: opacity .4s $fast-in;
+
+					&.visible {
+						z-index: 1;
+						opacity: 1;
+					}
+				}
+
+				.pending {
+					align-items: flex-end;
+
+					.btn-container {
+						flex: 1 0;
+						width: 100%;
+						display: flex;
+						background: #ECECEC;
+						align-items: center;
+						justify-content: center;
+						border-bottom-left-radius: 6px;
+						border-bottom-right-radius: 6px;
+					}
+				}
+
+				.complete {
+					font-size: 18px;
+					justify-content: center;
+
+					h2 {
+						font-size: 30px;
+					}
+				}
+			}
+
+			&.other {
+				display: flex;
+				flex-flow: column;
+				align-items: flex-end;
+
+				.caption p {
+					text-align: left;
+					margin-bottom: 10px;
+				}
+
+				.footer {
+					flex: 1 0;
+					width: 100%;
+					display: flex;
+					font-size: 36px;
+					background: #ECECEC;
+					align-items: center;
+					justify-content: center;
+					border-bottom-left-radius: 6px;
+					border-bottom-right-radius: 6px;
+				}
+			}
+
+			h2 {
+				font-size: 24px;
+				font-weight: 400;
+				margin-bottom: 20px;
+				font-family: inherit;
+			}
+
+			.hero {
+				height: 390px;
+				background-size: 100%;
+				background-color: #ECECEC;
+				border-top-left-radius: 6px;
+				border-top-right-radius: 6px;
+				background-repeat: no-repeat;
+				background-position: bottom center;
+			}
+
+			.caption {
+				font-size: 15px;
+				line-height: 24px;
+				padding: 32px 80px;
+
+				p {
+					margin-bottom: 25px;
+				}
+
+				p:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.footer.note {
+				left: 0;
+				right: 0;
+				bottom: 20px;
+				position: absolute;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
 	/ Tooltip Styles
 */
 .tooltip {
@@ -3330,42 +3544,6 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	transition: visibility 0s 0s, opacity .3s ease-in-out;
 }
 
-
-
-
-
-
-
-
-
-/*---------------------------------------------
-	/ Upgrade guide
-*/
-.updated .desc {
-	overflow: auto;
-	padding: 15px 25px;
-	background: #FCFCFC;
-	height: calc(100% - 70px);
-}
-
-.updated .nav {
-	text-align: right;
-	margin-top: -50px;
-	margin-right: 20px;
-}
-
-.updated ul {
-	margin: 10px 0;
-}
-
-.updated .widgets li {
-	width: 20%;
-	display: inline-block;
-}
-
-.updated .widgets li:nth-child(2n) {
-	width: 60%;
-}
 
 
 

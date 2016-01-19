@@ -43,6 +43,6 @@ require.s.contexts._.nextTick = function(fn) {
 /**
  * Init
  */
-require(["core/init", "onboarding/controller", "notices/signin"], function(app) {
+require(["core/init", "onboarding/controller", "notices/updated", "notices/signin"], function(app) {
 	window.App = app;
 });
