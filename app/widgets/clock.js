@@ -362,9 +362,17 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 		},
 
 		render: function() {
-			if (this.intervalUpdateClock) clearInterval(this.intervalUpdateClock);
-			if (this.intervalUpdate) clearInterval(this.intervalUpdate);
-			if (this.intervalUpdateStopwatch) clearInterval(this.intervalUpdateStopwatch);
+			if (this.intervalUpdateClock) {
+				clearInterval(this.intervalUpdateClock);
+			}
+
+			if (this.intervalUpdate) {
+				clearInterval(this.intervalUpdate);
+			}
+
+			if (this.intervalUpdateStopwatch) {
+				clearInterval(this.intervalUpdateStopwatch);
+			}
 
 			this.isAnalog = (this.config.format === "analog");
 
