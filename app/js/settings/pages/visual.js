@@ -73,7 +73,20 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/auth", "settings/page", "th
 				break;
 
 				case "columns":
-					this.model.set("columns", parseInt(value), {
+					var columns = parseInt(value) || 3;
+
+					if (columns < 1) {
+						columns = 1;
+					}
+					else if (columns > 5) {
+						columns = 5;
+					}
+
+					if (columns.toString() !== value.trim()) {
+						this.$("input[name=columns]").val(columns);
+					}
+
+					this.model.set("columns", columns, {
 						noRender: true
 					});
 				break;

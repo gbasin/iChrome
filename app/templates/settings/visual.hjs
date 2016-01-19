@@ -43,7 +43,7 @@
 		<label class="input text">
 			<h4>{{i18n.settings.visual.layout.columns_number}}</h4>
 
-			<input type="number" name="columns" min="1" max="5" placeholder="3" value="{{columns}}" />
+			<input type="number" name="columns" min="1" max="5" placeholder="1-5" value="{{columns}}" />
 		</label>
 
 		<div class="input radios">
