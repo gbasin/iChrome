@@ -2,8 +2,8 @@
  * Displays a modal after updates
  */
 define([
-	"browser/api", "backbone", "modals/modals", "modals/alert", "i18n/i18n", "storage/storage", "storage/syncapi", "core/render"
-], function(Browser, Backbone, Modal, Alert, Translate, Storage, SyncAPI, render) {
+	"browser/api", "backbone", "core/auth", "modals/modals", "modals/alert", "i18n/i18n", "storage/storage", "storage/syncapi", "core/render"
+], function(Browser, Backbone, Auth, Modal, Alert, Translate, Storage, SyncAPI, render) {
 	var View = Backbone.View.extend({
 		className: "updated",
 
