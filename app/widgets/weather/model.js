@@ -5,6 +5,7 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 		defaults: {
 			config: {
 				size: "variable",
+				units: "imperial",
 				hourly: "enabled",
 				forecast: "enabled",
 				location: ["San Francisco, CA"],
