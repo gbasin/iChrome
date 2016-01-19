@@ -51,7 +51,7 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 					image: this.model.get("backgroundImage")
 				};
 			}
-			else if (theme === "default") {
+			else if (typeof theme !== "string" || theme === "default") {
 				theme = defTheme;
 			}
 			else {
