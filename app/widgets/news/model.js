@@ -1,6 +1,4 @@
 define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
-	var editions = [];
-
 	return WidgetModel.extend({
 		refreshInterval: 300000,
 
@@ -86,7 +84,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 			}
 
 			// Migrate pre-V2 settings to the new format
-			if (editions.indexOf(this.config.edition) === -1) {
+			if (["us", "uk", "ca", "fr_ca", "en_il", "fr", "au", "pt-BR_br"].indexOf(this.config.edition) !== -1) {
 				var conversions = {
 					us: "en-us",
 					uk: "en-gb",
