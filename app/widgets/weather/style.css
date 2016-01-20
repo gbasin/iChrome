@@ -35,13 +35,22 @@ h2.header {
 	margin: -7px -5px 0 0;
 }
 
+.current {
+	display: flex;
+	flex-flow: row wrap;
+}
+
 .cond {
 	width: 128px;
 	height: 128px;
-	margin-left: 6%;
 	vertical-align: top;
 	display: inline-block;
 	background: url(icons/sunny.png) center/auto 110% no-repeat;
+}
+
+.current .cond {
+	flex: 0 0 128px;
+	margin-left: 15px;
 }
 
 .current .cond.rain,
@@ -53,15 +62,19 @@ h2.header {
 .temp {
 	font-size: 95px;
 	font-weight: 300;
-	padding-left: 10%;
 	line-height: 112px;
+	white-space: nowrap;
 	vertical-align: top;
 	display: inline-block;
 	font-family: Open Sans, sans-serif;
 }
 
+.current .temp {
+	flex: 1;
+	text-align: center;
+}
+
 .tiny .temp {
-	padding: 0;
 	font-size: 70px;
 	line-height: 70px;
 }
@@ -76,6 +89,7 @@ h2.header {
 	font-weight: 700;
 	line-height: 20px;
 	padding-left: 5px;
+	white-space: normal;
 	display: inline-block;
 	vertical-align: super;
 	transition: opacity .2s ease;
@@ -130,6 +144,7 @@ h2.header {
 	/ Details
 */
 .details {
+	flex: 1 100%;
 	font-size: 0;
 	display: block;
 	padding: 0 15px;
