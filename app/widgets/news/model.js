@@ -9,8 +9,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 				number: 5,
 				edition: "en-us",
 				topic: "$allStories",
-				custom: "",
-				link: "http://news.google.com"
+				link: "https://news.google.com"
 			},
 
 			data: {
