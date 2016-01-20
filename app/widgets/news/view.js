@@ -110,6 +110,10 @@ define(["lodash", "moment", "widgets/views/main"], function(_, moment, WidgetVie
 				data.title = this.model.config.title;
 			}
 
+			if (this.model.config.link) {
+				data.link = this.model.config.link;
+			}
+
 
 			if (this.Auth.isPro && this.model.data.topics) {
 				var activeTab = this.model.get("activeTab");
