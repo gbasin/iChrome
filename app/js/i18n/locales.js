@@ -14,6 +14,7 @@ define(
 		"json!i18n/locales/en/main.json", "json!i18n/locales/en/widgets.json",
 		"json!i18n/locales/es-ES/main.json", "json!i18n/locales/es-ES/widgets.json",
 		"json!i18n/locales/fr/main.json", "json!i18n/locales/fr/widgets.json",
+		"json!i18n/locales/he/main.json", "json!i18n/locales/he/widgets.json",
 		"json!i18n/locales/hi/main.json", "json!i18n/locales/hi/widgets.json",
 		"json!i18n/locales/hr/main.json", "json!i18n/locales/hr/widgets.json",
 		"json!i18n/locales/id/main.json", "json!i18n/locales/id/widgets.json",
