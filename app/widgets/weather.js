@@ -1,7 +1,7 @@
 /*
  * The Weather widget.
  */
-define(["jquery"], function($) {
+define(["jquery", "lodash"], function($, _) {
 	return {
 		id: 1,
 		size: 3,
@@ -99,30 +99,50 @@ define(["jquery"], function($) {
 		getLocs: function(cb) {
 			var arr = this.config.location.slice();
 
-			arr.forEach(function(e, i, a) { a[i] = e.replace(/"/g, ""); });
+			var locations = [];
 
-			// Switched to placefinder instead of places since it handles punctuation and special characters much better. i.e. Strathmore, Alberta, Canada and Córdoba, Argentina
-			$.get("http://query.yahooapis.com/v1/public/yql?q=select%20city%2C%20statecode%2C%20country%2C%20woeid%20from%20geo.placefinder%20where%20" +
-					encodeURIComponent('woeid in (select woeid from geo.placefinder where text="' + arr.join('" limit 1) or woeid in (select woeid from geo.placefinder where text="') + '" limit 1)') + "&format=json",
-			function(d) {
-				if (d && d.query && d.query.results && d.query.results.Result && (d.query.results.Result.woeid || (d.query.results.Result[0] && d.query.results.Result[0].woeid))) {
-					if (d.query.results.Result.woeid) {
-						d.query.results.Result = [d.query.results.Result];
+			var requests = _.map(arr, function(e, i) {
+				return $.getJSON("https://search.yahoo.com/sugg/gossip/gossip-gl-location/?appid=weather&output=sd1&p2=cn,t,pt,z&command=" + encodeURIComponent(e), function(d) {
+					if (!d || !d.r || !d.r[0] || typeof d.r[0].d !== "string") {
+						return;
 					}
-					
-					var m = d.query.results.Result;
 
+					var params = {},
+						idx;
+
+					_.each(d.r[0].d.slice(d.r[0].d.indexOf(":")).split("&"), function(e) {
+						idx = e.indexOf("=");
+
+						if (idx === -1) {
+							params[e] = "";
+						}
+						else {
+							params[e.substring(0, idx)] = decodeURIComponent(e.substr(idx + 1).replace(/\+/g, " "));
+						}
+					});
+
+					if (!params.woeid || !params.n) {
+						return;
+					}
+
+					locations[i] = {
+						name: params.n,
+						woeid: params.woeid
+					};
+				}.bind(this));
+			}, this);
+
+			$.when.apply($, requests).then(function() {
+				if (locations.length) {
+					this.config.woeid = [];
 					this.config.woeloc = [];
 					this.config.location = [];
-					this.config.woeid = [];
 
-					m.forEach(function(e, i) {
-						var loc = (e.city ? e.city : "") + (e.country || e.statecode ? ", " : "") + (e.statecode || "") + (e.country && e.country !== "United States" ? (e.statecode ? " " : "") + e.country : "");
-
-						this.config.woeloc.push(loc);
-						this.config.location.push(loc);
+					_.each(locations, function(e) {
 						this.config.woeid.push(e.woeid);
-					}.bind(this));
+						this.config.woeloc.push(e.name);
+						this.config.location.push(e.name);
+					}, this);
 				}
 				else {
 					this.config.woeid = ["2487956"];
