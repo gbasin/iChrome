@@ -395,19 +395,19 @@ header .title ~ .tabs {
 .maximized .items.cards .item .image {
 	flex: 0 0;
 	width: 100%;
-	min-width: 0; // crbug.com/546034 fix - flex issues in Chrome 48+
+	min-width: 0; /* crbug.com/546034 fix - flex issues in Chrome 48+ */
 	height: 175px;
 }
 
 .maximized .items.cards .item .title {
 	flex: 0 0;
-	min-width: 0; // crbug.com/546034 fix - flex issues in Chrome 48+
+	min-width: 0; /* crbug.com/546034 fix - flex issues in Chrome 48+ */
 	margin: 10px 10px 0;
 }
 
 .maximized .items.cards .item .desc {
 	flex: 1 1;
-	min-width: 0; // crbug.com/546034 fix - flex issues in Chrome 48+
+	min-width: 0; /* crbug.com/546034 fix - flex issues in Chrome 48+ */
 	margin: 3px 10px 0;
 	max-height: initial;
 	width: initial!important;
@@ -417,7 +417,7 @@ header .title ~ .tabs {
 	flex: 0 0;
 	margin: 0;
 	height: 28px;
-	min-width: 0; // crbug.com/546034 fix - flex issues in Chrome 48+
+	min-width: 0; /* crbug.com/546034 fix - flex issues in Chrome 48+ */
 	color: #757575;
 	display: block;
 	padding: 0 10px;
@@ -470,7 +470,7 @@ header .title ~ .tabs {
 .maximized .items.cards .item.featured:before {
 	flex: 1 0 0;
 	content: "";
-	min-width: 0; // crbug.com/546034 fix - flex issues in Chrome 48+
+	min-width: 0; /* crbug.com/546034 fix - flex issues in Chrome 48+ */
 }
 
 .maximized .items.cards .item.featured span.nested-link[data-href] {
@@ -492,7 +492,7 @@ header .title ~ .tabs {
 	margin: 0;
 	color: #FFF;
 	bottom: 25px;
-	min-width: 0; // crbug.com/546034 fix - flex issues in Chrome 48+
+	min-width: 0; /* crbug.com/546034 fix - flex issues in Chrome 48+ */
 	padding: 0 10px;
 	max-height: 36px;
 	transition: max-height .2s ease;

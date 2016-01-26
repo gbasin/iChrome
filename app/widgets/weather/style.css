@@ -71,7 +71,7 @@ h2.header {
 
 .current .temp {
 	flex: 1;
-	min-width: 0; // crbug.com/546034 fix - flex issues in Chrome 48+
+	min-width: 0; /* crbug.com/546034 fix - flex issues in Chrome 48+ */
 	text-align: center;
 }
 
