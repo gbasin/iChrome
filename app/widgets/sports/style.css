@@ -447,6 +447,7 @@ header .options li.selected {
 
 .game .extended .overview .team {
 	flex: 1;
+	min-width: 0; // crbug.com/546034 fix - flex issues in Chrome 48+
 	font-size: 12px;
 	line-height: 15px;
 	padding-left: 30px;

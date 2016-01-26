@@ -937,6 +937,7 @@ input[type="radio"]:checked {
 
 .snackbar .text {
 	flex: 1;
+	min-width: 0; // crbug.com/546034 fix - flex issues in Chrome 48+
 }
 
 
@@ -1208,6 +1209,7 @@ dialog footer button.material.flat:active {
 					.btn-container {
 						flex: 1 0;
 						width: 100%;
+						min-width: 0; // crbug.com/546034 fix - flex issues in Chrome 48+
 						display: flex;
 						background: #ECECEC;
 						align-items: center;
@@ -1240,6 +1242,7 @@ dialog footer button.material.flat:active {
 				.footer {
 					flex: 1 0;
 					width: 100%;
+					min-width: 0; // crbug.com/546034 fix - flex issues in Chrome 48+
 					display: flex;
 					font-size: 36px;
 					background: #ECECEC;
@@ -2215,6 +2218,7 @@ dialog.announcements li {
 	z-index: 1;
 	outline: 0;
 	width: 100%;
+	min-width: 0; // crbug.com/546034 fix - flex issues in Chrome 48+
 	display: flex;
 	overflow: hidden;
 	position: relative;
@@ -2232,6 +2236,7 @@ dialog.announcements li {
 	height: 0;
 	left: 100%;
 	opacity: 0;
+	min-width: 0; // crbug.com/546034 fix - flex issues in Chrome 48+
 	min-width: 100%;
 	overflow: hidden;
 	position: absolute;
@@ -2382,6 +2387,7 @@ body.dragging .tab-container .tab > .remove {
 
 .widgets-container .column {
 	flex: 1;
+	min-width: 0; // crbug.com/546034 fix - flex issues in Chrome 48+
 	display: flex;
 	flex-flow: row wrap;
 	align-items: flex-start;
