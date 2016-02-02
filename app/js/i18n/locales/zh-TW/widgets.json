@@ -366,5 +366,277 @@
     "no_links":"找不到連結",
     "grant_access":"授予存取權限",
     "no_key":"你需要給 iChrome 存取 Pocket 帳戶權限, 才能載入你的連結。"
+  },
+  "analytics":{
+    "name":"分析報表",
+    "desc":"從您個人的Google報表中顯示各種指標",
+    "sessions":"連線對話",
+    "pageviews":"網頁點閱次數",
+    "pagesvisit":"頁面\/訪問",
+    "bouncerate":"跳出率",
+    "completions":"落成",
+    "noprofile_title":"未選取設定檔",
+    "noprofile":"看起來您仍未選擇一個設定檔!\n<br \/><br \/>\n請試著在右上角的扳手圖示中選擇一個。",
+    "settings":{
+      "profile":"設定檔"
+    }
+  },
+  "classroom":{
+    "name":"教室",
+    "desc":"保持與Google Classroom作業和課程的更新",
+    "settings":{
+      "mode":"小工具模式",
+      "mode_teacher":"老師",
+      "mode_student":"學生"
+    }
+  },
+  "currency":{
+    "name":"貨幣",
+    "desc":"讓妳在169種貨幣中進行任兩種轉換",
+    "to_label":"至",
+    "recently_used":"最近使用"
+  },
+  "dictionary":{
+    "name":"字典",
+    "desc":"快速查找字詞的定義和同義字詞",
+    "search_placeholder":"在這裡輸入單詞或術語",
+    "more":"更多",
+    "less":"收起",
+    "synonyms":"同義字",
+    "antonyms":"反義詞",
+    "web_definitions":"網上定義",
+    "no_definitions":"找不到定義"
+  },
+  "drive":{
+    "name":"Google雲端硬碟",
+    "desc":"顯示您的Google Drive中最近更改的檔案",
+    "settings":{
+      "files_shown":"顯示的檔案個數"
+    },
+    "modified_by":"由",
+    "authMessage":"你必須先給予iChrome存取你的雲端硬碟的權限，這裡才會出現你雲端硬碟中的檔案清單"
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"顯示你的Gmail收件匣以便管理你的電子郵件"
+  },
+  "iframe":{
+    "name":"iFrame框架",
+    "desc":"在 iframe 內顯示一個您選擇的網頁。",
+    "settings":{
+      "url":"框架位址",
+      "url_placeholder":"例如： http:\/\/www.google.com\/",
+      "height":"框架高度",
+      "padding":"留邊距離"
+    }
+  },
+  "keep":{
+    "name":"保留",
+    "desc":"在小工具嵌入 Google Keep"
+  },
+  "news":{
+    "name":"新聞",
+    "desc":"按類別和版本顯示目前的頭條新聞。",
+    "all_stories":"全部",
+    "settings":{
+      "page_title":"設定",
+      "save":"儲存",
+      "title":"小工具標題",
+      "title_placeholder":"輸入小工具標題，保留空白的話標題列就不會顯示",
+      "articles":"文章顯示",
+      "edition":"版本",
+      "default_topic":"預設主題"
+    }
+  },
+  "recentlyclosed":{
+    "name":"最近關閉",
+    "desc":"顯示您最近關閉的標籤頁",
+    "settings":{
+      "tabs":"顯示的標籤頁",
+      "open":"打開標籤頁於"
+    },
+    "more":"更多"
+  },
+  "rss":{
+    "name":"RSS訂閱",
+    "desc":"將項從 RSS 或 Atom 源與可選的圖像顯示。",
+    "settings":{
+      "page_title":"設定",
+      "save":"儲存",
+      "title":"小工具標題",
+      "title_placeholder":"輸入小工具標題，保留空白的話標題列就不會顯示",
+      "link":"標題連結",
+      "link_placeholder":"為小工具輸入一個連結標題",
+      "feeds":"訂閱",
+      "feeds_help":"點選來源以編輯",
+      "feeds_placeholder":"輸入來源連結網址並點選Enter加入",
+      "feeds_pro_only":"只有專業版用戶能在一個widget內設定多個來源。請在設定升級Pro版",
+      "feed_name_placeholder":"來源名稱",
+      "feed_url_placeholder":"來源 URL",
+      "articles":"文章顯示"
+    },
+    "by":"由",
+    "all_articles":"所有文章",
+    "feed_error":"試圖獲取進料時出錯： %s。請仔細檢查該 URL 和\/或修改小部件設置。"
+  },
+  "sports":{
+    "name":"體育",
+    "desc":"顯示你最喜歡球隊的分數、 時程表和新聞。",
+    "settings":{
+      "page_title":"最愛",
+      "save":"儲存",
+      "teams_placeholder":"輸入隊伍的名稱並按 enter 增加"
+    },
+    "favorites":"最愛",
+    "top_games":"熱門遊戲",
+    "scores":"分數",
+    "news":"新聞",
+    "last_play":"最新的賽事",
+    "no_games":"沒有賽事",
+    "pro_splash1":"運動新聞為專業版功能",
+    "pro_splash2":"在設定中購買Pro",
+    "preview":"預覽",
+    "tickets":"運動票券",
+    "live":"直播",
+    "recap":"比賽重點回顧",
+    "box_score":"完整數據"
+  },
+  "stocks":{
+    "name":"股票",
+    "desc":"顯示指定代號股票的目前資訊。",
+    "settings":{
+      "stocks":"股票",
+      "stocks_placeholder":"輸入一個公司或交易的名稱並按下Enter"
+    },
+    "as_of":"作為",
+    "exchange_time":"交換時間",
+    "overview":"概覽",
+    "news":"新聞",
+    "pro_splash1":"即時資料、 圖表、 新聞和股票的詳細資訊是專業版的功能。",
+    "pro_splash2":"在設定中購買Pro",
+    "time_ranges":{
+      "1d":"1天",
+      "5d":"5天",
+      "1m":"1分鍾",
+      "3m":"3分鐘",
+      "1y":"1年",
+      "5y":"5年",
+      "max":"最大"
+    },
+    "open":"開啟",
+    "prev_close":"上一個收盤價",
+    "high":"最高",
+    "52high":"52 周高點",
+    "low":"最低",
+    "52low":"52 周低點",
+    "volume":"交易量",
+    "avg_volume":"平均交易量",
+    "shares":"股票",
+    "cap":"總市值",
+    "pe":"本益比",
+    "eps":"每股盈餘(EPS)",
+    "beta":"Beta係數",
+    "inst_own":"主力持股"
+  },
+  "todo":{
+    "name":"待辦事項",
+    "desc":"顯示包含重要事項及已完成事項的待辦事項清單",
+    "title":"待辦清單",
+    "settings":{
+      "color":"字型顏色",
+      "color_options":{
+        "light":"淺色",
+        "dark":"暗色"
+      },
+      "tags":"標籤",
+      "tags_placeholder":"輸入標記的名稱並按 enter 鍵"
+    },
+    "add":"加入項目",
+    "none":"無",
+    "important":"重要"
+  },
+  "topsites":{
+    "name":"置頂網站",
+    "desc":"顯示您最常去\/熱門網站",
+    "settings":{
+      "show":"顯示的網站的數目"
+    }
+  },
+  "traffic":{
+    "name":"交通",
+    "desc":"顯示當前交通狀況下回家或上班所需時間",
+    "settings":{
+      "leave":"我離開家於",
+      "home":"住家地址",
+      "home_placeholder":"下班後的目的地",
+      "work":"工作地址",
+      "work_placeholder":"上班前的目的地",
+      "method":"交通方式",
+      "method_options":{
+        "driving":"開車",
+        "walking":"步行",
+        "transit":"大眾運輸工具"
+      }
+    },
+    "to_home":"回家",
+    "to_work":"前往工作"
+  },
+  "translate":{
+    "name":"翻譯",
+    "desc":"讓你迅速獲得90種語言的翻譯",
+    "from_placeholder":"在這裡開始打字",
+    "to_placeholder":"翻譯後的文本將在此處顯示",
+    "detect_lang":"偵測語言",
+    "translating":"翻譯中⋯⋯",
+    "unknown":"未知"
+  },
+  "unread":{
+    "name":"未讀取",
+    "desc":"在你的 Gmail 收件匣中顯示當前的未讀郵件數量。",
+    "settings":{
+      "open":"當點下打開時"
+    },
+    "unread_none":"未讀的郵件",
+    "unread_one":"未讀的郵件",
+    "unread_many":"未讀的郵件"
+  },
+  "voice":{
+    "name":"語音",
+    "desc":"在你的 Google Voice 帳戶顯示未接來電和簡訊的數目。",
+    "call":"來電從",
+    "text":"文字訊息從",
+    "missed":"未收聽留言",
+    "texts":"未讀簡訊",
+    "calls":"未接來電"
+  },
+  "weather":{
+    "name":"天氣",
+    "desc":"顯示目前的天氣和接下來的 4 天天氣預報。",
+    "settings":{
+      "location":"位置",
+      "location_placeholder":"請輸入一個位置，然後按 enter 鍵",
+      "units":"單位",
+      "units_imperial":"美制 (華氏度)",
+      "units_metric":"公制 (攝氏度)",
+      "enabled":"開啟",
+      "disabled":"關閉",
+      "forecast":"預測",
+      "hourly":"每小時預測"
+    },
+    "more":"更多",
+    "less":"收起",
+    "wind":"風速",
+    "precipitation":"降雨量",
+    "uv":"紫外線指數",
+    "feelslike":"體感溫度",
+    "barometer":"氣壓",
+    "visibility":"能見度",
+    "humidity":"濕度",
+    "dewpoint":"凝露點",
+    "moonphase":"月亮",
+    "sunrise":"日出",
+    "sunset":"日落",
+    "moonrise":"月升",
+    "moonset":"月落"
   }
 }

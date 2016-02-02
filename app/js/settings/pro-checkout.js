@@ -106,7 +106,7 @@ define(["lodash", "jquery", "browser/api", "modals/alert", "i18n/i18n", "core/au
 
 					if (resp) {
 						return {
-							redirectUrl: "data:application/json;base64," + btoa(JSON.stringify(resp))
+							redirectUrl: "data:application/json;charset=utf8;utf-8," + encodeURIComponent(JSON.stringify(resp))
 						};
 					}
 				}

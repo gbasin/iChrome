@@ -366,5 +366,277 @@
     "no_links":"リンクはありません。",
     "grant_access":"アクセスを許可",
     "no_key":"それはあなたのリンクを読み込むことができます前に、あなたのポケットのアカウントに iChrome アクセスを与える必要があります。"
+  },
+  "analytics":{
+    "name":"解析",
+    "desc":"Googleアナリティクスプロフィールからさまざまな統計情報を表示",
+    "sessions":"セッション",
+    "pageviews":"ページビュー",
+    "pagesvisit":"ページ\/訪問",
+    "bouncerate":"直帰率",
+    "completions":"補完",
+    "noprofile_title":"プロファイルが選択されていません",
+    "noprofile":"まだプロフィールが選択されていないようです！\n<br \/><br \/>\n右上の設定アイコンから１つ選択してみてください。",
+    "settings":{
+      "profile":"プロフィール"
+    }
+  },
+  "classroom":{
+    "name":"教室",
+    "desc":"あなたのグーグル・クラスルーム割り当ておよびクラスで最新にしておきます。",
+    "settings":{
+      "mode":"ウィジェット モード",
+      "mode_teacher":"先生",
+      "mode_student":"生徒"
+    }
+  },
+  "currency":{
+    "name":"通貨",
+    "desc":"169 通貨の中から、 2 つの通貨を変換してみましょう。",
+    "to_label":"から",
+    "recently_used":"最近使用"
+  },
+  "dictionary":{
+    "name":"辞書",
+    "desc":"定義と同義の単語をすばやく検索します。",
+    "search_placeholder":"単語または語句をここに入力します。",
+    "more":"もっと",
+    "less":"ﾒﾆｭｰ縮小",
+    "synonyms":"類義語",
+    "antonyms":"反意語",
+    "web_definitions":"Web の定義",
+    "no_definitions":"定義なし"
+  },
+  "drive":{
+    "name":"ドライブ",
+    "desc":"最近Google ドライブで変更されたファイルを表示します",
+    "settings":{
+      "files_shown":"ファイルの数が表示される"
+    },
+    "modified_by":"By",
+    "authMessage":"何かをここで示すことができる前にあなたのドライブのファイルを表示する iChrome のアクセス許可を与える必要があります。"
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Gmail の受信トレイが表示されます。"
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"iframe 内の web ページが表示されます。",
+    "settings":{
+      "url":"フレームの URL",
+      "url_placeholder":"例: http:\/\/www.google.com\/",
+      "height":"フレームの高さ",
+      "padding":"パディング"
+    }
+  },
+  "keep":{
+    "name":"保持",
+    "desc":"埋め込み型 Google Keep ウィジェット"
+  },
+  "news":{
+    "name":"ニュース",
+    "desc":"カテゴリと版によって現在のトップニュースを表示します。",
+    "all_stories":"すべて",
+    "settings":{
+      "page_title":"設定",
+      "save":"保存",
+      "title":"ウィジェットタイトル",
+      "title_placeholder":"ウィジェットのタイトルを入力するか、空白のままは非表示になります",
+      "articles":"表示される記事",
+      "edition":"版",
+      "default_topic":"既定のトピック"
+    }
+  },
+  "recentlyclosed":{
+    "name":"最近閉じた",
+    "desc":"最近閉じたタブを示します",
+    "settings":{
+      "tabs":"表示されるタブ",
+      "open":"タブの開き方"
+    },
+    "more":"詳細"
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"RSSもしくはAtomフィードからのアイテムをオプション画像とともに表示",
+    "settings":{
+      "page_title":"設定",
+      "save":"保存",
+      "title":"ウィジェットタイトル",
+      "title_placeholder":"ウィジェットのタイトルを入力するか、空白のままは非表示になります",
+      "link":"タイトルのリンク",
+      "link_placeholder":"ウィジェットのタイトルのリンクを入力します。",
+      "feeds":"フィード",
+      "feeds_help":"それを編集する任意のフィードをクリックします。",
+      "feeds_placeholder":"フィード URL とプレスを追加する入力を入力してください。",
+      "feeds_pro_only":"のみプロのユーザーの場合は、それぞれのウィジェットに複数のフィードを使用できます。Pro の設定で。",
+      "feed_name_placeholder":"フィード名",
+      "feed_url_placeholder":"フィードの URL",
+      "articles":"表示される記事"
+    },
+    "by":"By",
+    "all_articles":"すべての記事",
+    "feed_error":"フィードを取得しようとしてエラーが発生しました：%s。\nURLを再度チェックするか、ウィジェットの設定を確かめてください。"
+  },
+  "sports":{
+    "name":"スポーツ",
+    "desc":"スコア、スケジュール、およびあなたの好みのチームからのニュースが表示されます。",
+    "settings":{
+      "page_title":"お気に入り",
+      "save":"保存",
+      "teams_placeholder":"チーム名を入力し、enter キーを押して追加"
+    },
+    "favorites":"お気に入り",
+    "top_games":"おすすめゲーム",
+    "scores":"スコア",
+    "news":"ニュース",
+    "last_play":"最後に再生",
+    "no_games":"ゲームが見つかりません",
+    "pro_splash1":"スポーツ ニュースは Pro 専用の機能です。",
+    "pro_splash2":"「設定」で Pro を購入します。",
+    "preview":"プレビュー",
+    "tickets":"チケット",
+    "live":"現在",
+    "recap":"要約",
+    "box_score":"ボックス スコア"
+  },
+  "stocks":{
+    "name":"株",
+    "desc":"指定した銘柄の現況を表示します。",
+    "settings":{
+      "stocks":"株",
+      "stocks_placeholder":"会社または exchange 名を入力し、enter キーを押します"
+    },
+    "as_of":"時点",
+    "exchange_time":"取引時間",
+    "overview":"概要",
+    "news":"ニュース",
+    "pro_splash1":"リアルタイム データ、チャート、ニュース、および詳細な株価情報は Pro のみの機能です。",
+    "pro_splash2":"「設定」で Pro を購入します。",
+    "time_ranges":{
+      "1d":"1日",
+      "5d":"5日",
+      "1m":"1ヶ月",
+      "3m":"3ヶ月",
+      "1y":"1 年",
+      "5y":"5年",
+      "max":"最大"
+    },
+    "open":"開始値",
+    "prev_close":"前日終値",
+    "high":"高い",
+    "52high":"52 週高",
+    "low":"低い",
+    "52low":"52 週低",
+    "volume":"取引量",
+    "avg_volume":"平均ボリューム",
+    "shares":"株式",
+    "cap":"時価総額",
+    "pe":"価格\/収益",
+    "eps":"EPS",
+    "beta":"ベータ",
+    "inst_own":"独自の研"
+  },
+  "todo":{
+    "name":"To-Do",
+    "desc":"重要なことや完了したアイテムなど、インタラクティブなTo-Doリストを表示します。",
+    "title":"To-Doリスト",
+    "settings":{
+      "color":"フォントの色",
+      "color_options":{
+        "light":"明るい",
+        "dark":"暗い"
+      },
+      "tags":"タグ",
+      "tags_placeholder":"タグを入力してEnterキーを押します"
+    },
+    "add":"項目を追加",
+    "none":"未設定",
+    "important":"重要"
+  },
+  "topsites":{
+    "name":"トップサイト",
+    "desc":"最も訪問したサイト\/トップサイトを表示します。",
+    "settings":{
+      "show":"表示されるサイトの数"
+    }
+  },
+  "traffic":{
+    "name":"トラフィック",
+    "desc":"自宅もしくは職場までの現在の交通状況でかかる時間を表示します。",
+    "settings":{
+      "leave":"自宅を出発する時間",
+      "home":"自宅住所",
+      "home_placeholder":"仕事の後に行く場所",
+      "work":"職場の住所",
+      "work_placeholder":"仕事の前にいる場所",
+      "method":"交通手段",
+      "method_options":{
+        "driving":"車",
+        "walking":"徒歩",
+        "transit":"公共機関"
+      }
+    },
+    "to_home":"自宅へ",
+    "to_work":"職場へ"
+  },
+  "translate":{
+    "name":"翻訳",
+    "desc":"入力するとすぐに 90 の言語からの翻訳することができます。",
+    "from_placeholder":"ここで入力を開始します。",
+    "to_placeholder":"翻訳されたテキストがここに表示されます。",
+    "detect_lang":"言語を検出",
+    "translating":"翻訳しています．．．",
+    "unknown":"不明"
+  },
+  "unread":{
+    "name":"未読",
+    "desc":"Gmailの受信トレイにある未読メールの数を表示",
+    "settings":{
+      "open":"クリックすると開く"
+    },
+    "unread_none":"未読メール",
+    "unread_one":"未読のメール",
+    "unread_many":"未読メール"
+  },
+  "voice":{
+    "name":"Voice",
+    "desc":"Google Voiceアカウントの不在着信した電話やメッセージの数を表示",
+    "call":"発信元",
+    "text":"送信元",
+    "missed":"不在着信ボイス",
+    "texts":"未読メッセージ",
+    "calls":"不在着信"
+  },
+  "weather":{
+    "name":"天気",
+    "desc":"現在の天気とこの先４日間の予報を表示",
+    "settings":{
+      "location":"場所",
+      "location_placeholder":"場所を入力してEnterキーを押してください",
+      "units":"単位",
+      "units_imperial":"インペリアル (華氏)",
+      "units_metric":"メトリック (摂氏)",
+      "enabled":"有効",
+      "disabled":"無効",
+      "forecast":"予想",
+      "hourly":"時間ごとの予測"
+    },
+    "more":"もっと",
+    "less":"ﾒﾆｭｰ縮小",
+    "wind":"風速",
+    "precipitation":"降水",
+    "uv":"紫外線指数",
+    "feelslike":"ようなを感じ",
+    "barometer":"気圧",
+    "visibility":"見え方",
+    "humidity":"湿度",
+    "dewpoint":"露点",
+    "moonphase":"月",
+    "sunrise":"日の出",
+    "sunset":"日の入り",
+    "moonrise":"月の出",
+    "moonset":"月の入り"
   }
 }

@@ -366,5 +366,277 @@
     "no_links":"Nenalezeny žádné odkazy",
     "grant_access":"Udělit přístup",
     "no_key":"Budete muset dát iChrome přístup k vašemu účtu Pocket, aby mohl načíst vaše odkazy."
+  },
+  "analytics":{
+    "name":"Analytics",
+    "desc":"Zobrazit různé metriky z profilu Google Analytics.",
+    "sessions":"zasedání",
+    "pageviews":"Zobrazení stránek",
+    "pagesvisit":"Stránky \/ zobrazení",
+    "bouncerate":"Bounce Rate",
+    "completions":"Dokončené",
+    "noprofile_title":"Není vybrán žádný profil",
+    "noprofile":"Vypadá to, že jste ještě nevybrali profil! <br \/><br \/> Vyberte jeden přes ikonu klíče v pravém horním rohu.",
+    "settings":{
+      "profile":"Profil"
+    }
+  },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Mějte aktuální informace o vašich úkolech a kurzech v Učebna Google",
+    "settings":{
+      "mode":"Režim widgetu",
+      "mode_teacher":"Učitel",
+      "mode_student":"Student"
+    }
+  },
+  "currency":{
+    "name":"Měna",
+    "desc":"Umožní přepočet mezi jakýmikoli dvěma ze 169 měn.",
+    "to_label":"na",
+    "recently_used":"Nedávno použité"
+  },
+  "dictionary":{
+    "name":"Slovník",
+    "desc":"Rychle vyhledejte definici nebo synonyma pro slovo",
+    "search_placeholder":"Vložte slovo nebo větu",
+    "more":"Více",
+    "less":"Méně",
+    "synonyms":"Synonyma",
+    "antonyms":"Antonyma",
+    "web_definitions":"Webová definice",
+    "no_definitions":"Nebyly nalezeny žádné definice"
+  },
+  "drive":{
+    "name":"Drive",
+    "desc":"Zobrazí nedávno změněné soubory z disku Google Drive.",
+    "settings":{
+      "files_shown":"Počet zobrazených souborů"
+    },
+    "modified_by":"od",
+    "authMessage":"Musíte dát iChrome oprávnění k zobrazení souborů ve vašem Disku Google, než tu bude moct být cokoli zobrazeno."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Zobrazí váši Gmail poštovní schránku, kde můžete spravovat váš email."
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Zobrazí webovou stránku dle vašeho výběru v rámci objektu iframe.",
+    "settings":{
+      "url":"URL rámečku",
+      "url_placeholder":"např. http:\/\/www.google.com\/",
+      "height":"Výška rámečku",
+      "padding":"Odsazení"
+    }
+  },
+  "keep":{
+    "name":"Keep",
+    "desc":"Vloží Google Keep jako widget"
+  },
+  "news":{
+    "name":"Zprávy",
+    "desc":"Zobrazí aktuální novinky podle kategorie a vydání.",
+    "all_stories":"Vše",
+    "settings":{
+      "page_title":"Nastavení",
+      "save":"Ulož",
+      "title":"Název widgetu",
+      "title_placeholder":"Zadejte název widgetu a nebo nezadávejte nic. V takovém případě se název nezobrazí.",
+      "articles":"Zobrazené články",
+      "edition":"Edice",
+      "default_topic":"Výchozí téma"
+    }
+  },
+  "recentlyclosed":{
+    "name":"Nedávno zavřené",
+    "desc":"Zobrazuje nedávno zavřené záložky",
+    "settings":{
+      "tabs":"Zobrazené záložky",
+      "open":"Otevřené karty v"
+    },
+    "more":"více"
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"Zobrazí položky z RSS nebo Atom zdroje s volitelnými obrázky.",
+    "settings":{
+      "page_title":"Nastavení",
+      "save":"Ulož",
+      "title":"Název widgetu",
+      "title_placeholder":"Zadejte název widgetu a nebo nezadávejte nic. V takovém případě se název nezobrazí.",
+      "link":"Odkaz titulku",
+      "link_placeholder":"Zadejte odkaz pro název widgetu",
+      "feeds":"Kanály",
+      "feeds_help":"Kliknětě na zdroj pro úpravu",
+      "feeds_placeholder":"Zadejte adresu URL a stiskněte Enter pro přidání",
+      "feeds_pro_only":"Pouze uživatelé Pro verze můžou mít více RSS odběrů v jenom widgetu. Pro získání Pro verze běžte do nastavení.",
+      "feed_name_placeholder":"Jméno zdroje",
+      "feed_url_placeholder":"URL zdroje",
+      "articles":"Zobrazené články"
+    },
+    "by":"Od",
+    "all_articles":"Všechny příspěvky",
+    "feed_error":"Došlo k chybě při pokusu o načtení kanálu %s. Prosím zkontrolujte URL nebo upravte nastavení widgetu."
+  },
+  "sports":{
+    "name":"Sport",
+    "desc":"Zobrazit výsledky, rozpisy a novinky vašeho oblíbeného týmu.",
+    "settings":{
+      "page_title":"Oblíbené",
+      "save":"Ulož",
+      "teams_placeholder":"Vložte jméno týmu a zmáčkněte Enter pro přidání"
+    },
+    "favorites":"Oblíbené",
+    "top_games":"Nejlepší hry",
+    "scores":"Výsledky",
+    "news":"Zprávy",
+    "last_play":"Poslední hra",
+    "no_games":"Nebyly nalezeny žádné hry",
+    "pro_splash1":"Sportovní zpravodajství je jen prémiová funkce.",
+    "pro_splash2":"Pro získání Pro verze běžte do nastavení.",
+    "preview":"Náhled",
+    "tickets":"Vstupenky",
+    "live":"Živě",
+    "recap":"Rekapitulace",
+    "box_score":"Skóre"
+  },
+  "stocks":{
+    "name":"Akcie",
+    "desc":"Zobrazí aktuální informace o jakékoli zadané akcii.",
+    "settings":{
+      "stocks":"Akcie",
+      "stocks_placeholder":"Zadejte název společnosti nebo burzy a stiskněte Enter"
+    },
+    "as_of":"k",
+    "exchange_time":"Čas výměny",
+    "overview":"Přehled",
+    "news":"Zprávy",
+    "pro_splash1":"Aktualizace v reálném čase, grafy, novinky a detaily akcií jsou funkce dostupné pouze v Pro verzi.",
+    "pro_splash2":"Kupte Pro v nastavení.",
+    "time_ranges":{
+      "1d":"1d",
+      "5d":"5d",
+      "1m":"1m",
+      "3m":"3m",
+      "1y":"1r",
+      "5y":"5r",
+      "max":"max"
+    },
+    "open":"otevřeno",
+    "prev_close":"Uzavírací cena",
+    "high":"Vysoká",
+    "52high":"Nejvyšší za 52 týdnů",
+    "low":"Nízká",
+    "52low":"Nejnižší za 52 týdnů",
+    "volume":"Množství",
+    "avg_volume":"Prům. objem",
+    "shares":"Akcie",
+    "cap":"Tržní kapitalizace",
+    "pe":"Cena \/ Zisky",
+    "eps":"EPS",
+    "beta":"Beta",
+    "inst_own":"Inst. vlastnictví"
+  },
+  "todo":{
+    "name":"Seznam úkolů",
+    "desc":"Zobrazí interaktivní seznam úkolů s významnými a dokončenými položkami.",
+    "title":"Seznam úkolů",
+    "settings":{
+      "color":"Barva písma",
+      "color_options":{
+        "light":"Slabé",
+        "dark":"Tmavý"
+      },
+      "tags":"Štítky",
+      "tags_placeholder":"Zadej název štítku a stikni Enter"
+    },
+    "add":"Přidat položku",
+    "none":"Prázdný",
+    "important":"Důležité"
+  },
+  "topsites":{
+    "name":"Oblíbené weby",
+    "desc":"Zobrazí vaše nejnavštěvovanější stránky.",
+    "settings":{
+      "show":"Počet zobrazovaných stránek"
+    }
+  },
+  "traffic":{
+    "name":"Provoz",
+    "desc":"Zobrazí aktuální čas v aktuálním provozu domů nebo do práce.",
+    "settings":{
+      "leave":"Opouším domov v",
+      "home":"Adresa domů",
+      "home_placeholder":"Cíl pro použití po práci",
+      "work":"Adresa do zaměstnání",
+      "work_placeholder":"Cíl pro použití před prací",
+      "method":"Typ dopravy",
+      "method_options":{
+        "driving":"Jízda autem",
+        "walking":"Pěšky",
+        "transit":"Veřejná doprava"
+      }
+    },
+    "to_home":"domů",
+    "to_work":"do práce"
+  },
+  "translate":{
+    "name":"Překladač",
+    "desc":"Rychle přeloží Z a DO 90 jazyků to co napíšte",
+    "from_placeholder":"Začněte psát zde",
+    "to_placeholder":"Přeložený text se objeví zde",
+    "detect_lang":"Rozpoznat jazyk",
+    "translating":"Překládá se...",
+    "unknown":"Neznámý"
+  },
+  "unread":{
+    "name":"Nepřečtené",
+    "desc":"Zobrazí současný počet nepřečtených emailů v doručené poště Gmail.",
+    "settings":{
+      "open":"Po kliknutí otevřít"
+    },
+    "unread_none":"nepřečtené e-maily",
+    "unread_one":"nepřečtený e-mail",
+    "unread_many":"nepřečtené e-maily"
+  },
+  "voice":{
+    "name":"Hlas",
+    "desc":"Zobrazí současný počet zmeškaných hovorů a zpráv na vašem účtu Google Voice.",
+    "call":"Hovor od",
+    "text":"Zpráva od",
+    "missed":"zmeškaný ve Voice",
+    "texts":"nepřečtené zprávy",
+    "calls":"zmeškané hovory"
+  },
+  "weather":{
+    "name":"Počasí",
+    "desc":"Zobrazí aktuální počasí a předpověď pro příští 4 dny.",
+    "settings":{
+      "location":"Umístění",
+      "location_placeholder":"Zadejte umístění a stiskněte klávesu Enter",
+      "units":"Jednotky",
+      "units_imperial":"Imperiální (Fahrenheity)",
+      "units_metric":"Metrická (Celsia)",
+      "enabled":"Zapnuto",
+      "disabled":"Vypnuto",
+      "forecast":"Předpovědi",
+      "hourly":"Hodinové předpovědi"
+    },
+    "more":"Více",
+    "less":"Méně",
+    "wind":"Rychlost větru",
+    "precipitation":"Srážky",
+    "uv":"UV index",
+    "feelslike":"Teplota",
+    "barometer":"Barometr",
+    "visibility":"Viditelnost",
+    "humidity":"Vlhkost",
+    "dewpoint":"Rosný bod",
+    "moonphase":"Měsíc",
+    "sunrise":"Východ slunce",
+    "sunset":"Západ slunce",
+    "moonrise":"Východ měsíce",
+    "moonset":"Západ měsíce"
   }
 }

@@ -366,5 +366,277 @@
     "no_links":"Geen links gevonden",
     "grant_access":"Toegang verlenen",
     "no_key":"U zult iChrome toegang moeten geven tot uw Pocket-account voordat het uw links kan laden."
+  },
+  "analytics":{
+    "name":"Analytics",
+    "desc":"Laat verschillende statistieken zien van een Google Analytics-profiel.",
+    "sessions":"sessies",
+    "pageviews":"Pageviews",
+    "pagesvisit":"Paginabezoeken",
+    "bouncerate":"Bounce Rate",
+    "completions":"Opleveringen",
+    "noprofile_title":"Geen profiel geselecteerd",
+    "noprofile":"Zo te zien heeft u nog geen profiel geselecteerd!\n<br \/><br \/>\nSelecteer er een via het steeksleutel icoon rechtsbovenin.",
+    "settings":{
+      "profile":"Profiel"
+    }
+  },
+  "classroom":{
+    "name":"Klaslokaal",
+    "desc":"Blijf up to date met uw Google Classroom taken en lessen",
+    "settings":{
+      "mode":"Widget-modus",
+      "mode_teacher":"Leraar",
+      "mode_student":"Student"
+    }
+  },
+  "currency":{
+    "name":"Munteenheid",
+    "desc":"Laat u converteren tussen elke van de 169 valuta's.",
+    "to_label":"Naar",
+    "recently_used":"Recent gebruikt"
+  },
+  "dictionary":{
+    "name":"Woordenboek",
+    "desc":"Zoek snel definities of synoniemen op",
+    "search_placeholder":"Typ hier een woord of term",
+    "more":"Meer",
+    "less":"Minder",
+    "synonyms":"Synoniemen",
+    "antonyms":"Antoniemen",
+    "web_definitions":"Definities op het internet",
+    "no_definitions":"Geen definities gevonden"
+  },
+  "drive":{
+    "name":"Drive",
+    "desc":"Laat onlangs gewijzigde bestanden zien uit uw Google Drive.",
+    "settings":{
+      "files_shown":"Aantal bestanden weergeven"
+    },
+    "modified_by":"door",
+    "authMessage":"U zult iChrome toestemming moeten geven om bestanden te bekijken in uw Drive voordat hier iets kan worden getoond."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Geeft uw Gmail inbox weer waar u uw email kunt beheren."
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Laat een webpagina van uw keuze in een iframe zien.",
+    "settings":{
+      "url":"Frame URL",
+      "url_placeholder":"bijvoorbeeld http:\/\/www.google.com\/",
+      "height":"Framehoogte",
+      "padding":"Opvulling"
+    }
+  },
+  "keep":{
+    "name":"Bewaar",
+    "desc":"Stopt Google Keep in een widget"
+  },
+  "news":{
+    "name":"Nieuws",
+    "desc":"Geeft het huidige top nieuws weer per categorie en editie.",
+    "all_stories":"Alle",
+    "settings":{
+      "page_title":"Instellingen",
+      "save":"Opslaan",
+      "title":"Widget titel",
+      "title_placeholder":"Voer een titel in of laat leeg om hem te verbergen",
+      "articles":"Weergegeven artikelen",
+      "edition":"Editie",
+      "default_topic":"Standaardonderwerp"
+    }
+  },
+  "recentlyclosed":{
+    "name":"Onlangs gesloten",
+    "desc":"Toont uw onlangs gesloten tabbladen",
+    "settings":{
+      "tabs":"Weergegeven tabbladen",
+      "open":"Open tabbladen in"
+    },
+    "more":"meer"
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"Toont items van een RSS- of Atomfeed met eventuele afbeeldingen.",
+    "settings":{
+      "page_title":"Instellingen",
+      "save":"Opslaan",
+      "title":"Widget titel",
+      "title_placeholder":"Voer een titel in of laat leeg om hem te verbergen",
+      "link":"Titellink",
+      "link_placeholder":"Geef een link voor de titel van de widget",
+      "feeds":"Feeds",
+      "feeds_help":"Klik op iedere feed om deze te bewerken",
+      "feeds_placeholder":"Geef een feed URL in en druk op Enter om toe te voegen",
+      "feeds_pro_only":"Alleen Pro gebruikers kunnen meerdere feeds hebben in elke widget. Wordt Pro in de instellingen.",
+      "feed_name_placeholder":"Feed naam",
+      "feed_url_placeholder":"Feed URL",
+      "articles":"Weergegeven artikelen"
+    },
+    "by":"Door",
+    "all_articles":"Alle artikelen",
+    "feed_error":"Een fout is opgetreden tijdens het ophalen van de feed: %s.\nControleer nogmaals de URL en\/of verander de instellingen van de widget."
+  },
+  "sports":{
+    "name":"Sport",
+    "desc":"Hiermee geeft u scores, programma's, en nieuws van uw favoriete teams weer.",
+    "settings":{
+      "page_title":"Favorieten",
+      "save":"Opslaan",
+      "teams_placeholder":"Voer een teamnaam in en druk op Enter om toe te voegen"
+    },
+    "favorites":"Favorieten",
+    "top_games":"Top spellen",
+    "scores":"Scores",
+    "news":"Nieuws",
+    "last_play":"Laatste wedstrijd",
+    "no_games":"Geen games gevonden",
+    "pro_splash1":"Sportnieuws is alleen een Pro-functie.",
+    "pro_splash2":"Koop PRO in de instellingen.",
+    "preview":"Voorbeeld",
+    "tickets":"Kaartjes",
+    "live":"Live",
+    "recap":"Samenvatting",
+    "box_score":"Box score"
+  },
+  "stocks":{
+    "name":"Aandelen",
+    "desc":"Geeft actuele informatie voor elk opgegeven beurssymbool.",
+    "settings":{
+      "stocks":"Aandelen",
+      "stocks_placeholder":"Typ de naam van een bedrijf en druk op Enter"
+    },
+    "as_of":"per",
+    "exchange_time":"Wisselkoers tijd",
+    "overview":"Overzicht",
+    "news":"Nieuws",
+    "pro_splash1":"Realtime gegevens, grafieken, nieuws en gedetailleerde koersgegevens zijn Pro-functies.",
+    "pro_splash2":"Koop PRO in de instellingen.",
+    "time_ranges":{
+      "1d":"1 dag",
+      "5d":"5 dagen",
+      "1m":"1 maand",
+      "3m":"3 maanden",
+      "1y":"1 jaar",
+      "5y":"5 jaar",
+      "max":"max."
+    },
+    "open":"open",
+    "prev_close":"Sluit de vorige",
+    "high":"hoog",
+    "52high":"52 weken hoog",
+    "low":"laag",
+    "52low":"52 weken laag",
+    "volume":"volume",
+    "avg_volume":"Gem. Volume",
+    "shares":"Aandelen",
+    "cap":"Beurswaarde",
+    "pe":"Koers \/ Winst",
+    "eps":"WPA",
+    "beta":"Beta",
+    "inst_own":"Inst. own"
+  },
+  "todo":{
+    "name":"Taken",
+    "desc":"Geeft een interactieve takenlijst weer met belangrijke en voltooide taken.",
+    "title":"Takenlijst",
+    "settings":{
+      "color":"Tekstkleur",
+      "color_options":{
+        "light":"Licht",
+        "dark":"Donker"
+      },
+      "tags":"Labels",
+      "tags_placeholder":"Vul een tagnaam in en druk enter"
+    },
+    "add":"Item toevoegen",
+    "none":"Geen",
+    "important":"Belangrijk"
+  },
+  "topsites":{
+    "name":"Topsites",
+    "desc":"Geeft uw meest bezochte\/beste websites weer.",
+    "settings":{
+      "show":"Aantal getoonde websites"
+    }
+  },
+  "traffic":{
+    "name":"Data",
+    "desc":"Toont de actuele reistijd naar huis of werk.",
+    "settings":{
+      "leave":"Ik ga van huis om",
+      "home":"Huisadres",
+      "home_placeholder":"De bestemming waar u na werk naartoe gaat",
+      "work":"Werkadres",
+      "work_placeholder":"De bestemming waar u voor uw werk naartoe gaat",
+      "method":"OV-vervoersmiddel",
+      "method_options":{
+        "driving":"Onderweg",
+        "walking":"Wandelen",
+        "transit":"Openbaar vervoer"
+      }
+    },
+    "to_home":"naar huis",
+    "to_work":"naar werk"
+  },
+  "translate":{
+    "name":"Vertalen",
+    "desc":"U kunt snel vertalen naar 90 talen terwijl u typt",
+    "from_placeholder":"Typ hier...",
+    "to_placeholder":"Vertaalde tekst verschijnt hier",
+    "detect_lang":"Detecteer taal",
+    "translating":"Vertalen...",
+    "unknown":"Onbekend"
+  },
+  "unread":{
+    "name":"Ongelezen",
+    "desc":"Geeft het aantal ongelezen e-mails uit uw Gmail-postvak weer.",
+    "settings":{
+      "open":"Bij klikken open"
+    },
+    "unread_none":"ongelezen e-mails",
+    "unread_one":"ongelezen e-mail",
+    "unread_many":"ongelezen e-mails"
+  },
+  "voice":{
+    "name":"Voice",
+    "desc":"Geeft het actuele aantal gemiste oproepen en sms'jes in je Google Voice-account weer.",
+    "call":"Oproep van",
+    "text":"SMS van",
+    "missed":"gemist in Voice",
+    "texts":"ongelezen sms'jes",
+    "calls":"gemiste oproepen"
+  },
+  "weather":{
+    "name":"Weer",
+    "desc":"Geeft actueel weer en de weersverwachting voor de komende 4 dagen weer.",
+    "settings":{
+      "location":"Locatie(s)",
+      "location_placeholder":"Vul een locatie in en druk enter",
+      "units":"Eenheden",
+      "units_imperial":"Imperiale Eenheden (Fahrenheit)",
+      "units_metric":"Metrisch (Celsius)",
+      "enabled":"Ingeschakeld",
+      "disabled":"Uitgeschakeld",
+      "forecast":"Vooruitzichten",
+      "hourly":"Weervoorspelling per uur"
+    },
+    "more":"Meer",
+    "less":"Minder",
+    "wind":"Windsnelheid",
+    "precipitation":"Neerslag",
+    "uv":"Zonkracht",
+    "feelslike":"Gevoelstemperatuur",
+    "barometer":"Luchtdruk",
+    "visibility":"Zichtbaarheid",
+    "humidity":"Luchtvochtigheid",
+    "dewpoint":"Dauwpunt",
+    "moonphase":"Maan",
+    "sunrise":"Zonsopkomst",
+    "sunset":"Zonsondergang",
+    "moonrise":"Maansopkomst",
+    "moonset":"Maansondergang"
   }
 }

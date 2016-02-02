@@ -8,6 +8,12 @@
 	position: absolute;
 	border-right: 1px solid rgba(0, 0, 0, .075);
 
+	&:lang(fr),
+	&:lang(de),
+	&:lang(ca) {
+		width: 275px;
+	}
+
 	.dark & {
 		background: #303030;
 	}

@@ -366,5 +366,277 @@
     "no_links":"Nema linkova",
     "grant_access":"Odobri pristup",
     "no_key":"Morat ćeš dati iChrome-u pristup svom Pocket računu da bi se ovdje prikazali linkovi."
+  },
+  "analytics":{
+    "name":"Analytics",
+    "desc":"Prikazuje različita mjerenja sa Google Analytics računa.",
+    "sessions":"sesije",
+    "pageviews":"Pregledi stranice",
+    "pagesvisit":"Stranice po sesiji",
+    "bouncerate":"Stopa napuštanja",
+    "completions":"Konverzije",
+    "noprofile_title":"Nije odabran profil",
+    "noprofile":"Izgleda da niste odabrali profil! \n<br \/><br \/>\nPokušajte ga odabrati preko ključ ikonice u gornjem desnom kutu.",
+    "settings":{
+      "profile":"Profil"
+    }
+  },
+  "classroom":{
+    "name":"Učionica",
+    "desc":"Google Učionica još nije dostupna u Hrvatskoj",
+    "settings":{
+      "mode":"Mod widgeta",
+      "mode_teacher":"Učitelj",
+      "mode_student":"Učenik"
+    }
+  },
+  "currency":{
+    "name":"Valuta",
+    "desc":"Pretvori valutu iz valute, dostupno ih je 169.",
+    "to_label":"u",
+    "recently_used":"Nedavno korištene"
+  },
+  "dictionary":{
+    "name":"Rječnik",
+    "desc":"Brzo pronađi definiciju i sinonime riječi",
+    "search_placeholder":"Upiši riječ ili pojam ovdje",
+    "more":"Više",
+    "less":"Manje",
+    "synonyms":"Sinonimi",
+    "antonyms":"Antonimi",
+    "web_definitions":"Web definicije",
+    "no_definitions":"Nema definicije"
+  },
+  "drive":{
+    "name":"Disk",
+    "desc":"Prikazuje nedavno izmijenjene datoteke na Google Drive-u.",
+    "settings":{
+      "files_shown":"Broj prikazanih datoteka"
+    },
+    "modified_by":"od",
+    "authMessage":"Morat ćeš dati iChrome-u dozvolu za pregledavanje datoteka na tvojem Disku da bi se datoteke prikazale."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Prikazuje tvoj Gmail gdje možeš upravljati svojom poštom."
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Prikazuje web-stranicu tvog izbora u pametnom okviru.",
+    "settings":{
+      "url":"URL stranice",
+      "url_placeholder":"npr. http:\/\/www.google.com\/",
+      "height":"Visina okvira",
+      "padding":"Udaljenost od ruba"
+    }
+  },
+  "keep":{
+    "name":"Keep",
+    "desc":"Ugrađuje Google Keep u widget"
+  },
+  "news":{
+    "name":"Vijesti",
+    "desc":"Prikazuje trenutne vijesti po kategoriji i izdanju.",
+    "all_stories":"Sve",
+    "settings":{
+      "page_title":"Postavke",
+      "save":"Spremi",
+      "title":"Naslov widgeta",
+      "title_placeholder":"Unesi naslov widgeta ili ostavi prazno za skrivanje",
+      "articles":"Broj prikazanih članaka",
+      "edition":"Izdanje",
+      "default_topic":"Zadana tema"
+    }
+  },
+  "recentlyclosed":{
+    "name":"Nedavno zatvoreno",
+    "desc":"Prikazuje nedavno zatvorene kartice",
+    "settings":{
+      "tabs":"Broj prikazanih kartica",
+      "open":"Otvori kartice u"
+    },
+    "more":"više"
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"Prikazuje stavke iz RSS-a ili Atom feed-a sa slikama.",
+    "settings":{
+      "page_title":"Postavke",
+      "save":"Spremi",
+      "title":"Naslov widgeta",
+      "title_placeholder":"Unesi naslov widgeta ili ostavi prazno za skrivanje",
+      "link":"Link naslova",
+      "link_placeholder":"Unesi link za naslov widgeta",
+      "feeds":"Feedovi",
+      "feeds_help":"Klinki na feed da bi ga uredio",
+      "feeds_placeholder":"Unesi URL feed-a i pritisni Enter za dodavanje",
+      "feeds_pro_only":"Isključivo Pro korisnici mogu imati više feed-ova u widgetu. Kupi Pro u postavkama.",
+      "feed_name_placeholder":"Naziv feed-a",
+      "feed_url_placeholder":"URL feed-a",
+      "articles":"Broj prikazanih članaka"
+    },
+    "by":"Autor",
+    "all_articles":"Svi članci",
+    "feed_error":"Došlo je do pogreške prilikom dohvaćanja feed-a na: %s.\nMolimo provjeri URL te ga promjeni u postavkama."
+  },
+  "sports":{
+    "name":"Sport",
+    "desc":"Prikazuje rezultate, analize i novosti o tvojoj omiljenoj momčadi.",
+    "settings":{
+      "page_title":"Favoriti",
+      "save":"Spremi",
+      "teams_placeholder":"Unesi naziv momčadi i pritisni tipku Enter za dodavanje"
+    },
+    "favorites":"Favoriti",
+    "top_games":"Top igre",
+    "scores":"Rezultati",
+    "news":"Vijesti",
+    "last_play":"Posljednja igra",
+    "no_games":"Nisu pronađene igre",
+    "pro_splash1":"Sportske novosti su dostupne samo u Pro verziji.",
+    "pro_splash2":"Kupi Pro u postavkama.",
+    "preview":"Pregled",
+    "tickets":"Ulaznice",
+    "live":"Uživo",
+    "recap":"Rekapitulacija",
+    "box_score":"Rezultati"
+  },
+  "stocks":{
+    "name":"Dionice",
+    "desc":"Prikazuje trenutne informacije za bilo koji zadani simbol dionice.",
+    "settings":{
+      "stocks":"Dionice",
+      "stocks_placeholder":"Unesi naziv tvrtke ili razmjene i pritisni Enter"
+    },
+    "as_of":"od",
+    "exchange_time":"Vrijeme razmjene",
+    "overview":"Pregled",
+    "news":"Vijesti",
+    "pro_splash1":"Podaci u stvarnom vremenu, grafovi, vijesti i detaljne informacije dionica su dostupne samo u Pro verziji.",
+    "pro_splash2":"Kupi Pro u postavkama.",
+    "time_ranges":{
+      "1d":"1d",
+      "5d":"5d",
+      "1m":"1m",
+      "3m":"3m",
+      "1y":"1g",
+      "5y":"5g",
+      "max":"maks"
+    },
+    "open":"Otvoreno",
+    "prev_close":"Posljednja vrijednost",
+    "high":"Najviše",
+    "52high":"najviša u 52 tjedna",
+    "low":"Najniže",
+    "52low":"najniža u 52 tjedna",
+    "volume":"Volumen",
+    "avg_volume":"Pros. volumen",
+    "shares":"Dionice",
+    "cap":"Tržišni kapital",
+    "pe":"Cijena \/ Zarada",
+    "eps":"EPS",
+    "beta":"Beta",
+    "inst_own":"Inst. vlasništvo"
+  },
+  "todo":{
+    "name":"Za napraviti",
+    "desc":"Prikazuje interaktivnu listu zadataka sa važnim i dovršenim stavkama.",
+    "title":"Popis obveza",
+    "settings":{
+      "color":"Boja fonta",
+      "color_options":{
+        "light":"Svijetla",
+        "dark":"Tamna"
+      },
+      "tags":"Tagovi",
+      "tags_placeholder":"Unesi naziv taga i pritisni Enter"
+    },
+    "add":"Dodaj stavku",
+    "none":"Ništa",
+    "important":"Važno"
+  },
+  "topsites":{
+    "name":"Najposjećenije stranice",
+    "desc":"Prikazuje tvoje najposjećenije stranice.",
+    "settings":{
+      "show":"Broj prikazanih stranica"
+    }
+  },
+  "traffic":{
+    "name":"Promet",
+    "desc":"Prikazuje trenutno vrijeme u prometu prema kući ili poslu.",
+    "settings":{
+      "leave":"Napuštam kuću u",
+      "home":"Kućna adresa",
+      "home_placeholder":"Destinacija nakon posla",
+      "work":"Poslovna adresa",
+      "work_placeholder":"Destinacija prije posla",
+      "method":"Metoda putovanja",
+      "method_options":{
+        "driving":"Vožnja",
+        "walking":"Pješice",
+        "transit":"Javni prijevoz"
+      }
+    },
+    "to_home":"do kuće",
+    "to_work":"do posla"
+  },
+  "translate":{
+    "name":"Prevoditelj",
+    "desc":"Omogućuje da brzo prevedeš na i sa 90 jezika dok pišeš",
+    "from_placeholder":"Počni pisati ovdje",
+    "to_placeholder":"Prevedeni tekst će se pojaviti ovdje",
+    "detect_lang":"Otkrij jezik",
+    "translating":"Prevođenje...",
+    "unknown":"Nije bilo moguće pronaći prijevod"
+  },
+  "unread":{
+    "name":"Nepročitano",
+    "desc":"Prikazuje trenutni broj nepročitanih poruka na Gmail-u.",
+    "settings":{
+      "open":"Kada je kliknuto otvori"
+    },
+    "unread_none":"nepročitanih mailova",
+    "unread_one":"nepročitan mail",
+    "unread_many":"nepročitanih mailova"
+  },
+  "voice":{
+    "name":"Voice",
+    "desc":"Prikazuje broj propuštenih poziva i poruka sa Google Voice računa.",
+    "call":"Poziv od",
+    "text":"Poruka od",
+    "missed":"propuštenih u Voice-u",
+    "texts":"nepročitanih poruka",
+    "calls":"propuštenih poziva"
+  },
+  "weather":{
+    "name":"Vrijeme",
+    "desc":"Prikazuje trenutno vrijeme i prognozu za sljedeća 4 dana.",
+    "settings":{
+      "location":"Lokacija\/e",
+      "location_placeholder":"Unesi lokaciju i pritisni Enter",
+      "units":"Jedinice",
+      "units_imperial":"Imperialno (Fahrenheit)",
+      "units_metric":"Metrički (Celsius)",
+      "enabled":"Omogućeno",
+      "disabled":"Omogući",
+      "forecast":"Prognoze",
+      "hourly":"Prognoze po satu"
+    },
+    "more":"Više",
+    "less":"Manje",
+    "wind":"Vjetar",
+    "precipitation":"Oborine",
+    "uv":"UV indeks",
+    "feelslike":"Osjećaj",
+    "barometer":"Barometar",
+    "visibility":"Vidljivost",
+    "humidity":"Vlažnost",
+    "dewpoint":"Točka rosišta",
+    "moonphase":"Mjesec",
+    "sunrise":"Izlazak sunca",
+    "sunset":"Zalazak sunca",
+    "moonrise":"Izlazak mjeseca",
+    "moonset":"Zalazak mjeseca"
   }
 }

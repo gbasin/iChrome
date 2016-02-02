@@ -366,5 +366,277 @@
     "no_links":"Brak zapisanych odnośników",
     "grant_access":"Przyznaj uprawnienia",
     "no_key":"Musisz przyznać iChrome uprawnienia do Twojego konta Pocket zanim będzie w stanie załadować listę odnośników."
+  },
+  "analytics":{
+    "name":"Statystyki",
+    "desc":"Wyświetl różne metryki z profilu w usłudze Google Analytics.",
+    "sessions":"sesje",
+    "pageviews":"Odsłon",
+    "pagesvisit":"Strony\/odwiedziny",
+    "bouncerate":"Współczynnik odrzuceń",
+    "completions":"Zakończonych",
+    "noprofile_title":"Nie wybrano profilu",
+    "noprofile":"Wygląda na to że nie wybrano profilu.\n<br \/><br \/>\nProszę wybrać jeden poprzez ikonę klucza w prawym górnym rogu.",
+    "settings":{
+      "profile":"Profil"
+    }
+  },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Bądź na bieżąco z twoimi zadaniami i klasami w Google Classroom",
+    "settings":{
+      "mode":"Tryb widżetu",
+      "mode_teacher":"Nauczyciel",
+      "mode_student":"Uczeń"
+    }
+  },
+  "currency":{
+    "name":"Waluty",
+    "desc":"Wylicza kursy wymiany między dowolnymi dwoma ze 169 dostępnych walut.",
+    "to_label":"do",
+    "recently_used":"Ostatnio używane"
+  },
+  "dictionary":{
+    "name":"Słownik",
+    "desc":"Szybko wyszukaj definicję i synonimy słowa w słowniku",
+    "search_placeholder":"Tu wpisz szukane słowo lub zwrot",
+    "more":"Więcej",
+    "less":"Mniej",
+    "synonyms":"Synonimy",
+    "antonyms":"Antonimy",
+    "web_definitions":"Definicje z sieci",
+    "no_definitions":"Nie znaleziono definicji"
+  },
+  "drive":{
+    "name":"Drive",
+    "desc":"Wyświetla niedawno modyfikowane pliki z Twojego Google Drive.",
+    "settings":{
+      "files_shown":"Liczba Pokazanych Plików"
+    },
+    "modified_by":"przez",
+    "authMessage":"Musisz udzielić iChrome uprawnień do oglądania plików na Twoim Google Drive zanim będzie można tu coś pokazać."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Wyświetla skrzynkę odbiorczą Gmail z której możesz zarządzać swoją pocztą elektroniczną."
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Wyświetla wybraną stronę internetową w iframe.",
+    "settings":{
+      "url":"Adres URL ramki",
+      "url_placeholder":"np. http:\/\/www.google.com\/",
+      "height":"Wysokość ramki",
+      "padding":"Dopełnienie"
+    }
+  },
+  "keep":{
+    "name":"Keep",
+    "desc":"Osadza Google Keep w widżecie"
+  },
+  "news":{
+    "name":"Wiadomości",
+    "desc":"Wyświetla aktualne najpopularniejsze wiadomości, wg kategorii i wydania.",
+    "all_stories":"Wszystie",
+    "settings":{
+      "page_title":"Ustawienia",
+      "save":"Zapisz",
+      "title":"Tytuł widżetu",
+      "title_placeholder":"Wprowadź tytuł widżetu lub pozostaw puste pole aby ukryć",
+      "articles":"Liczba Pokazanych Artykułów",
+      "edition":"Wydanie",
+      "default_topic":"Domyślna Kategoria"
+    }
+  },
+  "recentlyclosed":{
+    "name":"Niedawno zamknięte",
+    "desc":"Pokazuje ostatnio zamknięte zakładki",
+    "settings":{
+      "tabs":"Liczba Pokazanych Zakładek",
+      "open":"Otwieraj zakładki w"
+    },
+    "more":"więcej"
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"Wyświetla pozycje ze strumienia RSS lub Atom, opcjonalnie z obrazami.",
+    "settings":{
+      "page_title":"Ustawienia",
+      "save":"Zapisz",
+      "title":"Tytuł widżetu",
+      "title_placeholder":"Wprowadź tytuł widżetu lub pozostaw puste pole aby ukryć",
+      "link":"Odnośnik Tytułu",
+      "link_placeholder":"Wpisz odnośnik do którego ma prowadzić tytułowy pasek widżetu",
+      "feeds":"Kanały RSS",
+      "feeds_help":"Kliknij na dowolnym strumieniu żeby edytować",
+      "feeds_placeholder":"Wpisz URL strumienia i naciśnij Enter żeby dodać",
+      "feeds_pro_only":"Tylko użytkownicy wersji Pro mogą używać wielu strumieni w widżecie. Wykup wersję Pro w ustawieniach.",
+      "feed_name_placeholder":"Nazwa strumienia",
+      "feed_url_placeholder":"URL strumienia",
+      "articles":"Liczba Pokazanych Artykułów"
+    },
+    "by":"Przez",
+    "all_articles":"Wszystkie artykuły",
+    "feed_error":"Wystąpił błąd podczas ściągania zawartości strumienia: %s.\nSprawdź ponownie URL i\/lub zmień ustawienia widżetu."
+  },
+  "sports":{
+    "name":"Sport",
+    "desc":"Wyświetla wyniki, rozkłady i wiadomości dotyczące Twoich ulubionych zespołów.",
+    "settings":{
+      "page_title":"Ulubione",
+      "save":"Zapisz",
+      "teams_placeholder":"Wpisz nazwę zespołu i naciśnij Enter żeby dodać"
+    },
+    "favorites":"Ulubione",
+    "top_games":"Najpopularniejsze rozgrywki",
+    "scores":"Wyniki",
+    "news":"Wiadomości",
+    "last_play":"Ostatnie rozgrywki",
+    "no_games":"Nie znaleziono rozgrywek",
+    "pro_splash1":"Wiadomości sportowe są funkcją dostępną tylko w wersji Pro.",
+    "pro_splash2":"Wykup wersję Pro w ustawieniach.",
+    "preview":"Podgląd",
+    "tickets":"Bilety",
+    "live":"Na żywo",
+    "recap":"Podsumowania",
+    "box_score":"Wyniki"
+  },
+  "stocks":{
+    "name":"Giełda",
+    "desc":"Wyświetla aktualne informacje dla zadanych akcji.",
+    "settings":{
+      "stocks":"Giełda",
+      "stocks_placeholder":"Wpisz nazwę firmy lub giełdy i wciśnij Enter"
+    },
+    "as_of":"stan z",
+    "exchange_time":"czas giełdy",
+    "overview":"Ogólne",
+    "news":"Wiadomości",
+    "pro_splash1":"Dane, wykresy, wiadomości i szczegółowe informacje o akcjach w czasie rzeczywistym są funkcjami dostępnymi tylko w wersji Pro.",
+    "pro_splash2":"Wykup wersję Pro w ustawieniach.",
+    "time_ranges":{
+      "1d":"1d",
+      "5d":"5d",
+      "1m":"1m",
+      "3m":"3m",
+      "1y":"1r",
+      "5y":"5r",
+      "max":"max"
+    },
+    "open":"Otwarcie",
+    "prev_close":"Poprzednie Zamknięcie",
+    "high":"wysokie",
+    "52high":"Najwyższy z 52 tygodni",
+    "low":"niskie",
+    "52low":"Najniższy z 52 tygodni",
+    "volume":"Obrót",
+    "avg_volume":"Średni Obrót",
+    "shares":"Akcje",
+    "cap":"Wartość Rynku",
+    "pe":"Cena\/Zysk",
+    "eps":"Zysk\/Akcja",
+    "beta":"Beta",
+    "inst_own":"Wł. Inst."
+  },
+  "todo":{
+    "name":"Zadania do wykonania",
+    "desc":"Wyświetla interaktywną listę zadań do wykonania z zaznaczeniem ważnych lub wykonanych pozycji.",
+    "title":"Lista zadań do wykonania",
+    "settings":{
+      "color":"Kolor czcionki",
+      "color_options":{
+        "light":"Jasny",
+        "dark":"Ciemny"
+      },
+      "tags":"Etykiety",
+      "tags_placeholder":"Wpisz nazwę etykiety i wciśnij Enter"
+    },
+    "add":"Dodaj",
+    "none":"Brak",
+    "important":"Ważne"
+  },
+  "topsites":{
+    "name":"Najlepsze strony",
+    "desc":"Wyświetla najczęściej odwiedzone bądź najlepsze strony.",
+    "settings":{
+      "show":"Ilość wyświetlanych stron"
+    }
+  },
+  "traffic":{
+    "name":"Ruch uliczny",
+    "desc":"Wyświetla czas podróży do domu lub pracy wg aktualnych warunków na drogach.",
+    "settings":{
+      "leave":"Wychodzę z domu o",
+      "home":"Adres domowy",
+      "home_placeholder":"Miejsce docelowe po wyjścu z pracy",
+      "work":"Adres pracy",
+      "work_placeholder":"Miejsce docelowe przed pracą",
+      "method":"Środek transportu",
+      "method_options":{
+        "driving":"Samochód",
+        "walking":"Pieszo",
+        "transit":"Transport publiczny"
+      }
+    },
+    "to_home":"do domu",
+    "to_work":"do pracy"
+  },
+  "translate":{
+    "name":"Tłumacz",
+    "desc":"Pozwala szybko tłumaczyć z\/na 90 języków w miarę pisania",
+    "from_placeholder":"Tu zacznij pisać",
+    "to_placeholder":"Tu pojawi się przetłumaczony tekst",
+    "detect_lang":"Wykruj język",
+    "translating":"Tłumaczę...",
+    "unknown":"Brak tłumaczenia"
+  },
+  "unread":{
+    "name":"Nieprzeczytane",
+    "desc":"Wyświetla liczbę nieprzeczytanych emaili ze skrzynki Gmail.",
+    "settings":{
+      "open":"Przy kliknięciu otwórz"
+    },
+    "unread_none":"nieprzeczytanych emaili",
+    "unread_one":"nieprzeczytany email",
+    "unread_many":"nieprzeczytanych emaili"
+  },
+  "voice":{
+    "name":"Głos",
+    "desc":"Wyświetla liczbę nieodebranych połączeń i nieprzeczytanych wiadomości z konta Google Voice.",
+    "call":"Zadzwoń z",
+    "text":"Wiadomość od",
+    "missed":"nieodebranych w Voice",
+    "texts":"nieprzeczytanych wiadomości",
+    "calls":"nieodebranych połączeń"
+  },
+  "weather":{
+    "name":"Pogoda",
+    "desc":"Wyświetla aktualną pogodę i prognozę na najbliższe 4 dni.",
+    "settings":{
+      "location":"Lokalizacja(e)",
+      "location_placeholder":"Wprowadź lokalizację i naciśnij klawisz Enter",
+      "units":"Jednostka",
+      "units_imperial":"Cesarski (Celsjusza)",
+      "units_metric":"Metryka (Celsjusza)",
+      "enabled":"Aktywne",
+      "disabled":"Nieaktywne",
+      "forecast":"Prognoza",
+      "hourly":"Prognozy godzinowe"
+    },
+    "more":"Więcej",
+    "less":"Mniej",
+    "wind":"Wiatr",
+    "precipitation":"Opady",
+    "uv":"Indeks UV",
+    "feelslike":"Odczuwalna",
+    "barometer":"Ciśnienie",
+    "visibility":"Widoczność",
+    "humidity":"Wilgotność",
+    "dewpoint":"Punkt rosy",
+    "moonphase":"Księżyc",
+    "sunrise":"Wschód słońca",
+    "sunset":"Zachód słońca",
+    "moonrise":"Wschód księżyca",
+    "moonset":"Zachód Księżyca"
   }
 }

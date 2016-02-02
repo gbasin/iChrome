@@ -366,5 +366,277 @@
     "no_links":"Aucun lien trouvé",
     "grant_access":"Accorder l'accès",
     "no_key":"Vous devrez donner à iChrome un accès à votre compte Pocket avant de charger vos liens."
+  },
+  "analytics":{
+    "name":"Analytics",
+    "desc":"Affiche plusieurs statistiques depuis un compte Google Analytics.",
+    "sessions":"session",
+    "pageviews":"Vues",
+    "pagesvisit":"Vues par visites",
+    "bouncerate":"Taux de rebonds",
+    "completions":"Accomplissements",
+    "noprofile_title":"Aucun profil sélectionné",
+    "noprofile":"Il semblerait que vous n'ayez pas encore choisi de profil !\n<br \/>\nEssayez d'en choisir un depuis l'icône de clé a molette en haut à droite.",
+    "settings":{
+      "profile":"Profil"
+    }
+  },
+  "classroom":{
+    "name":"Salle de classe",
+    "desc":"Rester à jour avec vos cours Google",
+    "settings":{
+      "mode":"Mode widget",
+      "mode_teacher":"Professeur",
+      "mode_student":"Etudiant"
+    }
+  },
+  "currency":{
+    "name":"Devise ",
+    "desc":"Vous permet de convertir entre deux des 169 devises.",
+    "to_label":"à",
+    "recently_used":"Utilisé récemment"
+  },
+  "dictionary":{
+    "name":"Dictionnaire",
+    "desc":"Rechercher rapidement la définition et les synonymes d'un mot",
+    "search_placeholder":"Entrez un mot ou une expression ici",
+    "more":"Plus",
+    "less":"Moins",
+    "synonyms":"Synonymes",
+    "antonyms":"Antonymes",
+    "web_definitions":"Définitions Web",
+    "no_definitions":"Pas de définition trouvée"
+  },
+  "drive":{
+    "name":"Drive",
+    "desc":"Affiche les fichiers modifiés récemment dans Google Drive.",
+    "settings":{
+      "files_shown":"Nombre de fichiers affichés"
+    },
+    "modified_by":"par",
+    "authMessage":"Vous devez donner à iChrome la permission d'accéder aux fichiers de votre Drive pour qu'ils apparaissent ici."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Afficher votre compte Gmail, vous pouvez même gérer vos email "
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Afficher une page web de votre choix dans \"iframe\"",
+    "settings":{
+      "url":"URL de l'image",
+      "url_placeholder":"e.g. http:\/\/www.google.com\/",
+      "height":"Hauteur de l'image",
+      "padding":"Remplissage"
+    }
+  },
+  "keep":{
+    "name":"Keep",
+    "desc":"Intègre Google Keep dans un widget"
+  },
+  "news":{
+    "name":"News",
+    "desc":"Afficher les top news récente par catégorie et édition ",
+    "all_stories":"Tous",
+    "settings":{
+      "page_title":"Paramètres",
+      "save":"Enregistrer",
+      "title":"Nom du widget",
+      "title_placeholder":"Donnez un nom au widget ou laissez-le blanc pour le cacher",
+      "articles":"Affiché les articles",
+      "edition":"Édition",
+      "default_topic":"Sujet par défaut"
+    }
+  },
+  "recentlyclosed":{
+    "name":"Récemment fermés",
+    "desc":"Afficher vos onglets récemment fermés.",
+    "settings":{
+      "tabs":"Onglets affichés",
+      "open":"Ouvrir onglets dans"
+    },
+    "more":"plus"
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"Affiche le flux RSS ou Atom avec des images optionnels.",
+    "settings":{
+      "page_title":"Paramètres",
+      "save":"Enregistrer",
+      "title":"Nom du widget",
+      "title_placeholder":"Donnez un nom au widget ou laissez-le blanc pour le cacher",
+      "link":"Nom du lien",
+      "link_placeholder":"Entrez un lien pour le nom du widget",
+      "feeds":"Flux",
+      "feeds_help":"Cliquez sur n'importe quel flux pour le modifier",
+      "feeds_placeholder":"Entrez l'URL d'un flux et appuyez sur Entrée pour ajouter",
+      "feeds_pro_only":"Seulement les utilisateurs Pro peuvent avoir plusieurs flux dans chaque widget. Obtenez Pro dans les paramètres.",
+      "feed_name_placeholder":"Nom du flux",
+      "feed_url_placeholder":"URL du flux",
+      "articles":"Articles affichés"
+    },
+    "by":"par",
+    "all_articles":"Tous les articles",
+    "feed_error":"Une erreur s'est produite en essayant d'aller chercher de le flux à: %s. S'il vous plaît vérifier l'URL et\/ou modifier les paramètres du widget."
+  },
+  "sports":{
+    "name":"Sports",
+    "desc":"Affiche les résultats, les calendriers et les nouvelles de vos équipes favorites.",
+    "settings":{
+      "page_title":"Favoris",
+      "save":"Enregistrer",
+      "teams_placeholder":"Entrez un nom d'équipe, puis appuyez sur Entrée pour ajouter"
+    },
+    "favorites":"Favoris",
+    "top_games":"Meilleur jeux ",
+    "scores":"Résultats",
+    "news":"News",
+    "last_play":"Dernier match",
+    "no_games":"Pas de jeux trouvés",
+    "pro_splash1":"L'actualité sportive est une fonctionnalité Pro uniquement.",
+    "pro_splash2":"Achetez Pro dans les paramètres.",
+    "preview":"Aperçu ",
+    "tickets":"Billets",
+    "live":"En direct",
+    "recap":"Récap",
+    "box_score":"Score de la boîte"
+  },
+  "stocks":{
+    "name":"Bourse",
+    "desc":"Affiche les informations pour n'importe quel symbole boursier donné.",
+    "settings":{
+      "stocks":"Bourse",
+      "stocks_placeholder":"Tapez un nom de société ou modifiez-les et tapez ENTREE"
+    },
+    "as_of":"à compter de",
+    "exchange_time":"Temps d'échange",
+    "overview":"Apercu",
+    "news":"News",
+    "pro_splash1":"Les données en temps réel, les graphiques, nouvelles et informations boursières détaillées sont uniquement disponibles en mode Pro.",
+    "pro_splash2":"Achetez Pro dans les paramètres.",
+    "time_ranges":{
+      "1d":"1j",
+      "5d":"5j",
+      "1m":"1m",
+      "3m":"3m",
+      "1y":"1a",
+      "5y":"5a",
+      "max":"max"
+    },
+    "open":"Ouvrir",
+    "prev_close":"Clôture précédente",
+    "high":"Haute",
+    "52high":"52 semaines haut",
+    "low":"Bas",
+    "52low":"52 semaines bas",
+    "volume":"Volume",
+    "avg_volume":"Volume moyen",
+    "shares":"Actions",
+    "cap":"Capitalisation boursière",
+    "pe":"Prix \/ bénéfice",
+    "eps":"BPA",
+    "beta":"Bêta",
+    "inst_own":"Instant propre"
+  },
+  "todo":{
+    "name":"À faire",
+    "desc":"Affiche une liste  interactive de tâches à effectuer avec des marqueurs \"important\" et \"réalisé\".",
+    "title":"Liste de tâches",
+    "settings":{
+      "color":"Couleur de police",
+      "color_options":{
+        "light":"Luminosité",
+        "dark":"sombre"
+      },
+      "tags":"Tags",
+      "tags_placeholder":"Entrez un nom de balise et appuyez sur entrée"
+    },
+    "add":"Ajouter une note",
+    "none":"Aucun",
+    "important":"Important"
+  },
+  "topsites":{
+    "name":"Sites favoris",
+    "desc":"Affiche vos sites préférés\/les plus visités.",
+    "settings":{
+      "show":"Nombre de sites affichés"
+    }
+  },
+  "traffic":{
+    "name":"Traffic",
+    "desc":"Affiche le temps qu'il faudra vous faudra pour allez travailler ou rentrer chez vous.",
+    "settings":{
+      "leave":"Je quittes la maison à",
+      "home":"Adresse du domicile",
+      "home_placeholder":"La destination qui doit être utilisé après le travail",
+      "work":"Adresse professionnelle",
+      "work_placeholder":"La destination qui doit utilisé avant d'aller travailler",
+      "method":"Méthode de déplacement",
+      "method_options":{
+        "driving":"En voiture",
+        "walking":"À pied",
+        "transit":"Transports en commun"
+      }
+    },
+    "to_home":"Pour aller à la maison",
+    "to_work":"pour aller au travail"
+  },
+  "translate":{
+    "name":"Traduire",
+    "desc":"Vous permet de traduire rapidement dans 90 langues pendant que vous tapez",
+    "from_placeholder":"Commencez à taper ici",
+    "to_placeholder":"Le texte traduit apparaîtra ici",
+    "detect_lang":"Détecter la langue",
+    "translating":"Traduction en cours...",
+    "unknown":"Inconnu"
+  },
+  "unread":{
+    "name":"Non lus",
+    "desc":"Affiche le nombre de courriels non lus dans votre boîte de réception Gmail.",
+    "settings":{
+      "open":"Lorsque vous cliquez sur Ouvrir"
+    },
+    "unread_none":"courriels non lus",
+    "unread_one":"courriel non lu",
+    "unread_many":"courriels non lus"
+  },
+  "voice":{
+    "name":"Voice",
+    "desc":"Affiche le nombre actuel d'appels et de messages manqués dans Google Voice.",
+    "call":"Appelez à partir de",
+    "text":"Message texte de la part de",
+    "missed":"Appel manqué",
+    "texts":"messages non lus",
+    "calls":"appels manqués"
+  },
+  "weather":{
+    "name":"Météo",
+    "desc":"Affiche la météo actuelle et les prévisions pour les 4 prochains jours.",
+    "settings":{
+      "location":"Location(s)",
+      "location_placeholder":"Spécifiez l'emplacement, puis appuyez sur entrée",
+      "units":"Unités",
+      "units_imperial":"Imperial (Fahrenheit)",
+      "units_metric":"Métrique (Celsius)",
+      "enabled":"Activé",
+      "disabled":"Desactivé",
+      "forecast":"Prévisions",
+      "hourly":"Prévisions horaires"
+    },
+    "more":"Plus",
+    "less":"Moins",
+    "wind":"Vitesse du vent",
+    "precipitation":"Précip",
+    "uv":"Indice UV",
+    "feelslike":"Temp. ress",
+    "barometer":"Baromètre",
+    "visibility":"Visibilité",
+    "humidity":"Humidité",
+    "dewpoint":"Point de rosée",
+    "moonphase":"Lune",
+    "sunrise":"Lever du soleil",
+    "sunset":"Coucher de soleil",
+    "moonrise":"Lever de lune",
+    "moonset":"Coucher de lune"
   }
 }
