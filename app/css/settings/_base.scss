@@ -20,6 +20,12 @@ $input-padding: 20px 25px;
 	padding-left: 250px;
 	font-family: Roboto, sans-serif;
 
+	&:lang(fr),
+	&:lang(de),
+	&:lang(ca) {
+		padding-left: 275px;
+	}
+
 	&.visible {
 		opacity: 1;
 		visibility: visible;
