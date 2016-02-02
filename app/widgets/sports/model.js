@@ -252,7 +252,7 @@ define(["jquery", "lodash", "widgets/model"], function($, _, WidgetModel) {
 				requestedView = this._activeView;
 
 			if (!this._activeView || this._activeView === "favorites") {
-				if (this.config.teams.length) {
+				if (this.config.teams && this.config.teams.length) {
 					url += "favorites/" + _.pluck(this.config.teams, "id").join(",");
 				}
 				else {

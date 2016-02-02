@@ -43,7 +43,7 @@ define(["lodash", "jquery", "moment", "widgets/views/main"], function(_, $, mome
 		},
 
 		onBeforeRender: function(data) {
-			var activeView = this.model._activeView || (this.model.config.teams.length ? "favorites" : "top");
+			var activeView = this.model._activeView || (this.model.config.teams && this.model.config.teams.length ? "favorites" : "top");
 
 			data.news = this.model._state === "news";
 
