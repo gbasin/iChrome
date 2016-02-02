@@ -77,7 +77,7 @@ define(["lodash", "jquery", "browser/api", "modals/alert", "i18n/i18n", "core/au
 						data.top = Math.round((screen.availHeight - params.height) / 2);
 					}
 
-					chrome.windows.update(this._windowId, data);
+					Browser.windows.update(this._windowId, data);
 
 					return {
 						success: true

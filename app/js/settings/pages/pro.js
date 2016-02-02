@@ -11,8 +11,6 @@ define([
 
 			events: {
 				"click button.upgrade": function() {
-					var container = this.$el;
-
 					if (!Auth.isSignedIn) {
 						Alert({
 							confirm: true,
