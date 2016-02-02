@@ -1,10 +1,10 @@
 {
   "lang_code":"en",
-  "language":"English",
-  "extName":"iChrome",
-  "newtabName":"iChrome New Tab",
-  "extDescription":"The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
-  "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
+  "language":"עִבְרִית",
+  "extName":"iChrome - A Fast, Productive Home Page",
+  "newtabName":"iChrome New Tab - A Fast, Productive New Tab",
+  "extDescription":"A lightning fast home\/start page dashboard with stunning backgrounds, news, weather, sports, RSS, todo, and more!",
+  "newtabDescription":"A lightning fast new tab page dashboard with stunning backgrounds, news, weather, sports, RSS, todo, and more!",
   "defaults":{
     "tab":"Home",
     "me":"Me"

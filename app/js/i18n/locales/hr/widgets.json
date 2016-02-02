@@ -2,639 +2,369 @@
   "lang_code":"hr-widgets",
   "apps":{
     "name":"Aplikacije",
-    "desc":"Displays your currently installed Google Chrome applications.",
+    "desc":"Prikazuje trenutno instalirane Google Chrome aplikacije.",
     "settings":{
-      "format":"Widget Format",
+      "format":"Format widgeta",
       "format_options":{
-        "tiles":"Tiles",
-        "list":"List"
+        "tiles":"Pločice",
+        "list":"Lista"
       },
       "display":"Prikaži",
       "display_options":{
         "all":"Sve aplikacije",
         "enabled":"Samo omogućene aplikacije"
       },
-      "sort":"Sort",
+      "sort":"Sortiranje",
       "sort_options":{
         "id":"ID",
         "alphabetically":"Abecednim redom",
-        "offline":"Omogućeno Van Mreže",
-        "available":"Raspoloživost"
+        "offline":"Dostupno izvanmrežno",
+        "available":"Dostupnost"
       },
-      "open":"Otvorene aplikacije u"
+      "open":"Otvori aplikacije u"
     },
     "store_app":"Trgovina"
   },
   "bookmarks":{
     "name":"Oznake",
-    "desc":"Displays selected and customized bookmarks, and other links.",
+    "desc":"Prikazuje odabrane i prilagođene oznake te ostale linkove.",
     "settings":{
-      "title_placeholder":"Enter a widget title",
-      "layout":"Layout",
+      "title_placeholder":"Upiši naziv widgeta",
+      "layout":"Raspored",
       "layout_options":{
-        "single":"Single column",
-        "double":"Double column"
+        "single":"Jedan stupac",
+        "double":"Dva stupca"
       },
-      "open":"Open bookmarks in"
+      "open":"Otvori oznake u"
     },
     "edit":{
-      "dialog_title":"Edit Bookmark",
-      "title":"Bookmark Title",
+      "dialog_title":"Uredi oznaku",
+      "title":"Naslov oznake",
       "title_placeholder":"Google",
-      "url":"Bookmark URL",
+      "url":"URL oznake",
       "url_placeholder":"http:\/\/www.google.com\/",
-      "save":"Save"
+      "save":"Spremi"
     },
     "new_caption":"Novi",
-    "new_bookmark":"Bookmark",
-    "new_folder":"Folder",
-    "drop_link":"Drop link here"
+    "new_bookmark":"Oznaka",
+    "new_folder":"Mapa",
+    "drop_link":"Ovdje ispusti link"
   },
   "chrome_bookmarks":{
     "name":"Oznake",
-    "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
+    "desc":"Prikazuje Chrome oznake s mogučnošću prikazivanja posebne mape.",
     "settings":{
-      "title_placeholder":"Enter a widget title",
-      "from":"Show bookmarks from",
-      "open":"Open bookmarks in"
+      "title_placeholder":"Upiši naziv widgeta",
+      "from":"Prikaži oznake iz",
+      "open":"Otvori oznake u"
     }
   },
   "calc":{
     "name":"Računalo",
-    "desc":"Prikazuje Kalkulator sa podrškom za osnovne operatore.",
+    "desc":"Prikazuje kalkulator sa podrškom za osnovne operatore.",
     "error":"Pogreška!",
-    "infinity":"Infinity",
-    "mismatch":"Mismatched parentheses"
+    "infinity":"Bez kraja",
+    "mismatch":"Problem sa zagradama"
   },
   "calendar":{
-    "name":"Calendar",
-    "desc":"Displays upcoming events from one or more of your Google calendars.",
+    "name":"Kalendar",
+    "desc":"Prikazuje nadolazeće događaje iz Google Kalendara.",
     "settings":{
-      "calendar":"Calendar",
-      "show":"Show events from",
+      "calendar":"Kalendar",
+      "show":"Prikaži događaje od",
       "show_options":{
-        "all":"All time",
-        "today":"Today only"
+        "all":"Svo vrijeme",
+        "today":"Samo danas"
       }
     },
     "title":"Agenda",
-    "calendar":"Calendar",
-    "noevents":"No events found in the near future, it looks like your schedule's clear!"
+    "calendar":"Kalendar",
+    "noevents":"Nema događaja u bližoj budućnosti, izgleda da je tvoj raspored prazan!"
   },
   "clock":{
-    "name":"Clock",
-    "desc":"Offers alarm, time, timer, and stopwatch functionality.",
+    "name":"Sat",
+    "desc":"Nudi alarm, trenutno vrijeme, brojač i štopericu.",
     "settings":{
-      "timezone":"Time Zone",
-      "timezone_local":"Local",
-      "format":"Clock Format",
+      "timezone":"Vremenska zona",
+      "timezone_local":"Lokalna",
+      "format":"Format sata",
       "format_options":{
-        "ampm":"AM\/PM - Digital",
-        "24hour":"24 Hour - Digital",
-        "analog":"12 Hour - Analog",
-        "ampmseconds":"AM\/PM - Digital, No Seconds",
-        "24hourseconds":"24 Hour - Digital, No Seconds"
+        "ampm":"AM\/PM - Digitalni",
+        "24hour":"24 sata - Digitalni",
+        "analog":"12 sati - Analogni",
+        "ampmseconds":"AM\/PM - Digitalni, bez sekunda",
+        "24hourseconds":"24 sata - Digitalni, bez sekunda"
       },
-      "sound":"Alert Sound"
+      "sound":"Zvuk upozorenja"
     },
-    "title":"Clock",
+    "title":"Sat",
     "alarm":"Alarm",
-    "clock":"Clock",
-    "timer":"Timer",
-    "stopwatch":"Stopwatch",
-    "set":"Set",
-    "unset":"Unset",
-    "dismiss":"Dismiss",
-    "enable_audio":"Enable audio"
+    "clock":"Sat",
+    "timer":"Vremenski brojač",
+    "stopwatch":"Štoperica",
+    "set":"Postavi",
+    "unset":"Odustani",
+    "dismiss":"Odbaci",
+    "enable_audio":"Omogući zvuk"
   },
   "facebook":{
     "name":"Facebook",
-    "desc":"Embeds Facebook in a widget"
+    "desc":"Ugrađuje Facebook u widgetu"
   },
   "feedly":{
     "name":"Feedly",
-    "desc":"Displays articles from your Feedly account in a configurable format.",
+    "desc":"Prikazuje članke sa tvog Feedly računa u obliku koji se može konfigurirati.",
     "settings":{
-      "source":"Show articles from",
-      "source_feeds":"Feeds",
+      "source":"Prikazuj članke od",
+      "source_feeds":"Feedovi",
       "show":"Prikaži",
       "show_options":{
-        "all":"All articles",
-        "unread":"Only unread articles"
+        "all":"Svi članci",
+        "unread":"Samo nepročitani članci"
       },
-      "layout":"Layout",
+      "layout":"Raspored",
       "layout_options":{
-        "titles":"Titles only",
-        "magazine":"Magazine",
-        "cards":"Cards",
-        "cards_columns":"Cards (two columns)"
+        "titles":"Samo naslovi",
+        "magazine":"Magazin",
+        "cards":"Kartice",
+        "cards_columns":"Kartice (dva stupca)"
       },
-      "mark":"Mark an article as read when I",
+      "mark":"Označi članak kao pročitan kada",
       "mark_options":{
-        "scroll":"Scroll past it or click it",
-        "click":"Just click it"
+        "scroll":"Prođi to ili klikni to",
+        "click":"Samo klikni"
       },
-      "sort":"Sort Order",
+      "sort":"Redoslijed sortiranja",
       "sort_options":{
-        "newest":"Newest first",
-        "oldest":"Oldest first"
+        "newest":"Prvo najnovije",
+        "oldest":"Prvo najstarije"
       }
     },
-    "all":"All",
-    "saved":"Saved for later",
-    "uncategorized":"Uncategorized",
-    "author":"by",
-    "go_to_feedly":"Go To Feedly"
+    "all":"Sve",
+    "saved":"Spremljeno za kasnije",
+    "uncategorized":"Nekategorizirano",
+    "author":"napisao",
+    "go_to_feedly":"Idi na Feedly"
   },
   "notes":{
-    "name":"Notes",
-    "desc":"Inserts a simple, editable, note.",
+    "name":"Bilješke",
+    "desc":"Umeće jednostavnu bilješku koja se može uređivati.",
     "settings":{
-      "color":"Note Color",
+      "color":"Boja bilješke",
       "color_options":{
-        "yellow":"Yellow",
-        "orange":"Orange",
-        "red":"Red",
-        "blue":"Blue",
-        "green":"Green",
-        "white":"White"
+        "yellow":"Žuto",
+        "orange":"Narančasto",
+        "red":"Crveno",
+        "blue":"Plavo",
+        "green":"Zeleno",
+        "white":"Bijelo"
       },
-      "font":"Font Face",
-      "fontsize":"Font Size"
+      "font":"Font",
+      "fontsize":"Veličina fonta"
     }
   },
   "now":{
     "name":"Google Now",
-    "desc":"Displays cards from Google Now including flight status and package tracking.",
-    "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
-    "authorize_btn":"Authorize",
-    "caught_up":"All caught up, nothing here.",
-    "no_title":"No Title"
+    "desc":"Prikazuje kartice sa Google Now-a, uključujući stanje letova i praćenje paketa.",
+    "authorize":"iChrome-u morate dati dozvolu za prikaz Google Now kartica da bi se ovdje nešto prikazivalo.",
+    "authorize_btn":"Autoriziraj",
+    "caught_up":"Sada sve znate.",
+    "no_title":"Bez naslova"
   },
   "plus":{
     "name":"Google+",
-    "desc":"Embeds Google Plus in a widget"
+    "desc":"Ugrađuje Google Plus u widgetu"
   },
   "notifications":{
-    "name":"Google Notifications",
-    "desc":"Displays your Google Notifications from services such as Google+"
+    "name":"Google obavijesti",
+    "desc":"Prikazuje Google obavijesti od usluga kao što je Google+"
   },
   "reddit":{
     "name":"Reddit",
-    "desc":"Displays the top items on Reddit for any given subreddit.",
+    "desc":"Prikazuje najpopularnije stavke na Reddit-u za bilo koji zadani subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
-      "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
-      "sort":"Sort Order",
+      "subreddit_help":"Unesi subreddit kao dio nakon <b>\/r\/<\/b>.\n<br \/><br \/>\nNa primjer, \"Technology\" je: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, dakle, unio bi <b>technology<\/b>",
+      "subreddit_placeholder":"Unesi subreddit (npr. technology)",
+      "sort":"Redoslijed sortiranja",
       "sort_options":{
-        "hot":"Hot",
-        "top":"Top",
+        "hot":"U trendu",
+        "top":"Popularno",
         "new":"Novi",
-        "gilded":"Gilded",
-        "rising":"Rising",
-        "controversial":"Controversial"
+        "gilded":"Pozlaćeni",
+        "rising":"Rastuće",
+        "controversial":"Kontroverzno"
       },
-      "links":"Links Shown",
-      "click":"When I click a link show me",
+      "links":"Prikazani linkovi",
+      "click":"Kada kliknem link pokaži",
       "click_options":{
-        "link":"The link",
-        "comments":"The comments"
+        "link":"Link",
+        "comments":"Komentari"
       }
     },
-    "more":"More"
+    "more":"Više"
   },
   "tasks":{
-    "name":"Tasks",
-    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
-    "title":"Tasks",
+    "name":"Zadaci",
+    "desc":"Prikazuje listu zadataka sa Google Zadataka.",
+    "title":"Zadaci",
     "settings":{
-      "list":"List"
+      "list":"Lista"
     },
-    "task_title":"Title",
-    "due_date":"Due date",
-    "notes":"Notes",
-    "add":"Add Item",
-    "delete_task":"Delete Task",
-    "move_up":"Move Up",
-    "move_down":"Move Down",
-    "done":"Done",
-    "due_today":"Due today",
-    "overdue":"Overdue",
-    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
+    "task_title":"Naslov",
+    "due_date":"Krajnji dan",
+    "notes":"Bilješke",
+    "add":"Dodaj stavku",
+    "delete_task":"Izbriši zadatak",
+    "move_up":"Pomakni gore",
+    "move_down":"Pomakni dolje",
+    "done":"Završeno",
+    "due_today":"Do danas",
+    "overdue":"Prekoračen rok",
+    "authorize":"Morat ćeš odabrati listu iz Google Zadataka putem postavka prije nego što išta može biti prikazano ovdje."
   },
   "twitter":{
     "name":"Twitter",
-    "desc":"Displays tweets from your home stream or a specified list.",
+    "desc":"Prikazuje tweetove sa tvog streama ili posebne liste.",
     "settings":{
-      "source":"Show Tweets from",
-      "show":"Tweets Shown"
+      "source":"Pokaži tweetove od",
+      "show":"Tweetovi prikazani"
     },
-    "authorize":"You'll need to authorize iChrome first",
-    "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
-    "authorize_btn":"Authorize",
-    "no_tweets":"There don't seem to be any tweets here...",
-    "home":"Home",
-    "mentions":"Mentions",
-    "retweets":"Retweets of me",
-    "lists":"Lists",
-    "more":"More",
-    "reply":"Reply",
+    "authorize":"Prvo ćete morati autorizirati iChrome",
+    "authorize_msg":"Morat ćeš dati iChrome-u dozvolu za prikaz tweetova sa tvog računa da bi se prikazali ovdje.",
+    "authorize_btn":"Autoriziraj",
+    "no_tweets":"Izgleda da ovdje nema tweetova...",
+    "home":"Početna",
+    "mentions":"Spominjanja",
+    "retweets":"Retweetovi mene",
+    "lists":"Liste",
+    "more":"Više",
+    "reply":"Odgovori",
     "retweet":"Retweet",
-    "favorite":"Favorite"
+    "favorite":"Favoriti"
   },
   "wolfram":{
     "name":"Wolfram|Alpha",
-    "desc":"Inserts a small Wolfram|Alpha search box."
+    "desc":"Umeće malo Wolfram|Alpha pretraživanje."
   },
   "youtube":{
     "name":"YouTube",
-    "desc":"Displays either popular videos or videos from a specified user.",
+    "desc":"Prikazuje ili popularne videozapise ili videozapise od određenog korisnika.",
     "settings":{
       "format":"Format",
       "format_options":{
-        "large":"One large",
-        "large_2":"One large, two small",
-        "large_4":"One large, four small",
-        "four":"Four small",
-        "six":"Six small"
+        "large":"Jedna velika",
+        "large_2":"Jedna velika, dvije male",
+        "large_4":"Jedna velika, četiri male",
+        "four":"Četiri male",
+        "six":"Šest malih"
       },
-      "from":"Show Videos From",
-      "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
-      "from_placeholder":"Leave blank to show Top Videos",
-      "open":"Open search results in"
+      "from":"Pokaži videozapise od",
+      "from_help":"Ovo mora biti <b>točno<\/b> korisničko ime koje je prikazano u URL-u stranice kada je prikazan taj račun.\n<br \/><br \/>\nNikad ne uključuje razmake.",
+      "from_placeholder":"Ostavite prazno za prikaz najpopularnijih videozapisa",
+      "open":"Otvori rezultate pretraživanja u"
     },
-    "search":"Search YouTube",
-    "num_views":"views"
+    "search":"Pretraži YouTube",
+    "num_views":"pregleda"
   },
   "quotes":{
-    "name":"Quotes",
-    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "name":"Citati",
+    "desc":"Prikazuje novi citat jedanput dnevno ili prilikom svakog učitavanja stranice.",
     "settings":{
-      "source":"Source",
-      "method":"Load new quotes",
+      "source":"Izvor",
+      "method":"Učitaj nove citate",
       "method_options":{
-        "daily":"Once daily",
-        "random":"Every time I load the page"
+        "daily":"Jedanput dnevno",
+        "random":"Svaki put kad učitam stranicu"
       }
     },
-    "unknown_author":"Unknown"
+    "unknown_author":"Nepoznato"
   },
   "html":{
     "name":"HTML",
-    "desc":"Displays completely custom HTML in an iframe.",
+    "desc":"Prikazuje potpuno prilagođeni HTML u pametnom okviru.",
     "settings":{
       "html":"HTML",
       "js":"JavaScript",
-      "height":"Widget Height"
+      "height":"Visina widgeta"
     }
   },
   "sitelink":{
-    "name":"Site Link",
-    "desc":"Displays a link, optionally with a title and thumbnail",
+    "name":"Link stranice",
+    "desc":"Prikazuje link, po želji s nazivom i sličicom",
     "settings":{
-      "link":"Link URL",
+      "link":"URL linka",
       "link_placeholder":"http:\/\/www.google.com\/",
-      "image":"Image URL",
+      "image":"URL slike",
       "image_placeholder":"http:\/\/www.example.com\/image.png",
-      "color":"Image Background Color",
-      "style":"Image Style",
-      "style_fill":"Fill",
-      "style_center":"Center"
+      "color":"Boja pozadinske slike",
+      "style":"Stil slike",
+      "style_fill":"Popuni",
+      "style_center":"Sredina"
     }
   },
   "stats":{
-    "name":"System Statistics",
-    "desc":"Keep an eye on your system with realtime statistics",
-    "memory":"Memory",
-    "battery":"Battery",
-    "usage":"usage",
-    "in_use":"in use",
-    "remaining":"remaining",
-    "charged":"Fully Charged",
-    "idle":"Idle",
-    "charging":"Charging",
-    "discharging":"Discharging"
+    "name":"Statistike sustava",
+    "desc":"Prati svoj sustav sa statistikama u stvarnom vremenu",
+    "memory":"RAM",
+    "battery":"Baterija",
+    "usage":"korištenje",
+    "in_use":"u uporabi",
+    "remaining":"preostaje",
+    "charged":"Napunjeno",
+    "idle":"Mirovanje",
+    "charging":"Punjenje",
+    "discharging":"Pražnjenje"
   },
   "search":{
-    "name":"Search",
-    "desc":"Embed a search box in your page for easy access",
+    "name":"Pretraživaje",
+    "desc":"Ugrađuje pretraživanje za laki pristup",
     "settings":{
-      "placeholder":"Search Field Placeholder",
-      "search_url":"Search URL",
-      "param":"Query Parameter",
-      "param_placeholder":"The parameter where the query goes, i.e. \"q\""
+      "placeholder":"Naziv polja za pretraživanje",
+      "search_url":"URL za pretraživanje",
+      "param":"Parametar upita",
+      "param_placeholder":"Parametar gdje upit odlazi, npr. \"q\""
     },
-    "default_placeholder":"Search Google"
+    "default_placeholder":"Pretraži Google"
   },
   "pushbullet":{
     "name":"Pushbullet",
-    "desc":"Keep track of notifications from your phone and other devices",
-    "no_pushes":"No pushes found",
-    "sign_in":"Sign in",
-    "no_key":"It doesn't look like you're signed in to Pushbullet.  Sign in now to connect this widget."
+    "desc":"Prati obavijesti sa mobitela i drugih uređaja",
+    "no_pushes":"Nema pusheva",
+    "sign_in":"Prijavi se",
+    "no_key":"Izgleda da nisi prijavljen u Pushbullet.  Prijavi se sada."
   },
   "linkedin":{
     "name":"LinkedIn",
-    "desc":"Displays your LinkedIn home stream"
+    "desc":"Prikazuje tvoj LinkedIn stream"
   },
   "directions":{
-    "name":"Directions",
-    "desc":"Get directions to and from nearly anywhere right from your homepage",
-    "driving":"Driving",
-    "transit":"Public Transit",
-    "walking":"Walking",
-    "cycling":"Cycling",
-    "from":"Enter a starting point",
-    "to":"Enter a destination",
-    "loading":"Loading directions, please wait...",
-    "error":"Something went wrong while trying to load the directions you requested.",
-    "error2":"Please check the start and destination addresses you entered.",
-    "open_in_maps":"Open in Google Maps",
-    "via":"via"
+    "name":"Upute",
+    "desc":"Upute od i do gotovo svakog mjesta na svijetu",
+    "driving":"Vožnja",
+    "transit":"Javni prijevoz",
+    "walking":"Pješice",
+    "cycling":"Biciklom",
+    "from":"Početna točka",
+    "to":"Krajnja točka",
+    "loading":"Učitavanje uputa, molimo pričekajte...",
+    "error":"Nešto je pošlo po zlu prilikom učitavanja uputa koje si tražio.",
+    "error2":"Molimo provjeri ispravnost početne i krajnje točke.",
+    "open_in_maps":"Otvori u Google Kartama",
+    "via":"putem"
   },
   "pocket":{
     "name":"Pocket",
-    "desc":"Display a list of your saved articles, videos, and web pages from Pocket",
+    "desc":"Prikazuje listu spremljenih članaka, videozapisa i web-stranica sa Pocket-a",
     "settings":{
-      "links_shown":"Number of links shown",
-      "open":"Open links",
-      "open_pocket":"In Pocket",
-      "open_original":"At their original URL"
+      "links_shown":"Broj prikazanih linkova",
+      "open":"Otvori linkove",
+      "open_pocket":"U Pocket-u",
+      "open_original":"Na originalnom URL-u"
     },
-    "by":"By",
-    "no_links":"No links found",
-    "grant_access":"Grant access",
-    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
-  },
-  "analytics":{
-    "name":"Google Analytics",
-    "desc":"Prikazuje različite metrike iz Google Analytics profila.",
-    "sessions":"sessions",
-    "pageviews":"Pageviews",
-    "pagesvisit":"Pages\/visit",
-    "bouncerate":"Bounce Rate",
-    "completions":"Completions",
-    "noprofile_title":"No profile selected",
-    "noprofile":"Izgleda da niste odabrali profil! \n<br \/><br \/>\nPokušajte ga odabrati preko ključ ikonice u gornjem desnom kutu.",
-    "settings":{
-      "profile":"Profil"
-    }
-  },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
-  },
-  "currency":{
-    "name":"Currency",
-    "desc":"Let's you convert between any two of 169 currencies.",
-    "to_label":"to",
-    "recently_used":"Recently Used"
-  },
-  "dictionary":{
-    "name":"Dictionary",
-    "desc":"Quickly look up the definition and synonyms for a word",
-    "search_placeholder":"Enter a word or term here",
-    "more":"More",
-    "less":"Less",
-    "synonyms":"Synonyms",
-    "antonyms":"Antonyms",
-    "web_definitions":"Web definitions",
-    "no_definitions":"No definitions found"
-  },
-  "drive":{
-    "name":"Drive",
-    "desc":"Displays recently changed files from your Google Drive.",
-    "settings":{
-      "files_shown":"Number of Files Shown"
-    },
-    "modified_by":"by",
-    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
-  },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"Displays your Gmail inbox where you can manage your email."
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"Displays a webpage of your choice within an iframe.",
-    "settings":{
-      "url":"Frame URL",
-      "url_placeholder":"i.e. http:\/\/www.google.com\/",
-      "height":"Frame Height",
-      "padding":"Padding"
-    }
-  },
-  "keep":{
-    "name":"Keep",
-    "desc":"Embeds Google Keep in a widget"
-  },
-  "news":{
-    "name":"News",
-    "desc":"Displays the current top news by category and edition.",
-    "all_stories":"All",
-    "settings":{
-      "page_title":"Settings",
-      "save":"Save",
-      "title":"Widget Title",
-      "title_placeholder":"Enter a widget title or leave blank to hide",
-      "articles":"Articles Shown",
-      "edition":"Edition",
-      "default_topic":"Default Topic"
-    }
-  },
-  "recentlyclosed":{
-    "name":"Recently Closed",
-    "desc":"Shows your recently closed tabs",
-    "settings":{
-      "tabs":"Tabs Shown",
-      "open":"Open tabs in"
-    },
-    "more":"more"
-  },
-  "rss":{
-    "name":"RSS",
-    "desc":"Displays items from a RSS or Atom feed with optional images.",
-    "settings":{
-      "page_title":"Settings",
-      "save":"Save",
-      "title":"Widget Title",
-      "title_placeholder":"Enter a widget title or leave blank to hide",
-      "link":"Title Link",
-      "link_placeholder":"Enter a link for the widget title",
-      "feeds":"Feeds",
-      "feeds_help":"Click any feed to edit it",
-      "feeds_placeholder":"Enter a feed URL and press Enter to add",
-      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
-      "feed_name_placeholder":"Feed name",
-      "feed_url_placeholder":"Feed URL",
-      "articles":"Articles Shown"
-    },
-    "by":"By",
-    "all_articles":"All articles",
-    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
-  },
-  "sports":{
-    "name":"Sports",
-    "desc":"Displays scores, schedules, and news from your favorite teams.",
-    "settings":{
-      "page_title":"Favorites",
-      "save":"Save",
-      "teams_placeholder":"Enter a team name and press Enter to add"
-    },
-    "scores":"Scores",
-    "news":"News",
-    "last_play":"Last play",
-    "no_games":"No games found",
-    "pro_splash1":"Sports news is a Pro-only feature.",
-    "pro_splash2":"Buy Pro in the settings.",
-    "preview":"Preview",
-    "tickets":"Tickets",
-    "live":"Live",
-    "recap":"Recap",
-    "box_score":"Box Score"
-  },
-  "stocks":{
-    "name":"Stocks",
-    "desc":"Displays current information for any given stock symbol.",
-    "settings":{
-      "stocks":"Stocks",
-      "stocks_placeholder":"Type a company or exchange name and hit Enter"
-    },
-    "as_of":"as of",
-    "exchange_time":"Exchange Time",
-    "overview":"Overview",
-    "news":"News",
-    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
-    "pro_splash2":"Buy Pro in the settings.",
-    "time_ranges":{
-      "1d":"1d",
-      "5d":"5d",
-      "1m":"1m",
-      "3m":"3m",
-      "1y":"1y",
-      "5y":"5y",
-      "max":"max"
-    },
-    "open":"Open",
-    "prev_close":"Previous Close",
-    "high":"High",
-    "52high":"52 week high",
-    "low":"Low",
-    "52low":"52 week low",
-    "volume":"Volume",
-    "avg_volume":"Avg. Volume",
-    "shares":"Shares",
-    "cap":"Market Cap",
-    "pe":"Price \/ Earnings",
-    "eps":"EPS",
-    "beta":"Beta",
-    "inst_own":"Inst. own"
-  },
-  "todo":{
-    "name":"To-do",
-    "desc":"Displays an interactive to-do list with important and completed items.",
-    "title":"To-do list",
-    "settings":{
-      "color":"Font Color",
-      "color_options":{
-        "light":"Light",
-        "dark":"Dark"
-      },
-      "tags":"Tags",
-      "tags_placeholder":"Enter a tag name and press Enter"
-    },
-    "add":"Add Item",
-    "none":"None",
-    "important":"Important"
-  },
-  "topsites":{
-    "name":"Top Sites",
-    "desc":"Displays your most visited\/top sites.",
-    "settings":{
-      "show":"Number of sites shown"
-    }
-  },
-  "traffic":{
-    "name":"Traffic",
-    "desc":"Displays the current time in current traffic to home or work.",
-    "settings":{
-      "leave":"I leave home at",
-      "home":"Home Address",
-      "home_placeholder":"The destination that should be used after work",
-      "work":"Work Address",
-      "work_placeholder":"The destination that should be used before work",
-      "method":"Transit Method",
-      "method_options":{
-        "driving":"Driving",
-        "walking":"Walking",
-        "transit":"Public Transit"
-      }
-    },
-    "to_home":"to home",
-    "to_work":"to work"
-  },
-  "translate":{
-    "name":"Translate",
-    "desc":"Lets you quickly translate to and from 90 languages as you type",
-    "from_placeholder":"Start typing here",
-    "to_placeholder":"Translated text will appear here",
-    "detect_lang":"Detect language",
-    "translating":"Translating...",
-    "unknown":"Unknown"
-  },
-  "unread":{
-    "name":"Unread",
-    "desc":"Displays the current number of unread emails in your Gmail inbox.",
-    "settings":{
-      "open":"When clicked open"
-    },
-    "unread_none":"unread emails",
-    "unread_one":"unread email",
-    "unread_many":"unread emails"
-  },
-  "voice":{
-    "name":"Voice",
-    "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
-    "call":"Call from",
-    "text":"Text message from",
-    "missed":"missed in Voice",
-    "texts":"unread text messages",
-    "calls":"missed calls"
-  },
-  "weather":{
-    "name":"Weather",
-    "desc":"Displays the current weather and a forecast for the next 4 days.",
-    "settings":{
-      "location":"Location(s)",
-      "location_placeholder":"Enter a location and press Enter",
-      "units":"Units",
-      "units_imperial":"Imperial (Fahrenheit)",
-      "units_metric":"Metric (Celsius)",
-      "enabled":"Enabled",
-      "disabled":"Disabled",
-      "forecast":"Forecasts",
-      "hourly":"Hourly forecasts"
-    },
-    "more":"More",
-    "less":"Less",
-    "wind":"Wind",
-    "precipitation":"Precip",
-    "uv":"UV index",
-    "feelslike":"Feels like",
-    "barometer":"Barometer",
-    "visibility":"Visibility",
-    "humidity":"Humidity",
-    "dewpoint":"Dew point",
-    "moonphase":"Moon",
-    "sunrise":"Sunrise",
-    "sunset":"Sunset",
-    "moonrise":"Moonrise",
-    "moonset":"Moonset"
+    "by":"Autor",
+    "no_links":"Nema linkova",
+    "grant_access":"Odobri pristup",
+    "no_key":"Morat ćeš dati iChrome-u pristup svom Pocket računu da bi se ovdje prikazali linkovi."
   }
 }

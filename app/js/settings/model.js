@@ -70,6 +70,10 @@ define(["lodash", "backbone", "storage/storage"], function(_, Backbone, Storage)
 
 				// Increase or decrease the number of columns as appropriate
 				if (prop === "columns" || wasGrid) {
+					// Make a shallow clone of the columns to ensure all listeners down the line
+					// register the change
+					tab.columns = tab.columns.slice();
+
 					var columns = wasGrid ? this.get("columns") : value;
 
 					if (tab.columns.length < columns) {

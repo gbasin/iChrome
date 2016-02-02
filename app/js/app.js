@@ -16,8 +16,7 @@ require.config({
 		"oauth2": "../oauth2/oauth2",
 		"widgetTemplate": "widgets/registry/template",
 		"jquery.serializejson": "lib/jquery.serializejson",
-		"backbone.viewcollection": "lib/backbone.viewcollection",
-		"braintree": "https://js.braintreegateway.com/v2/braintree"
+		"backbone.viewcollection": "lib/backbone.viewcollection"
 	},
 	map: {
 		"*": {

@@ -32,6 +32,8 @@ define([
 					}.bind(this));
 				}.bind(this));
 
+				delete Browser.storage.showSignInNotice;
+
 				this.remove();
 			}
 		},

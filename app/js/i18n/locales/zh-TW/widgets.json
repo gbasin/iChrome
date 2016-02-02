@@ -2,7 +2,7 @@
   "lang_code":"zh-TW-widgets",
   "apps":{
     "name":"應用程式",
-    "desc":"顯示當前安裝的Chrome瀏覽器的應用程序。",
+    "desc":"顯示當前安裝的Chrome瀏覽器的應用程式。",
     "settings":{
       "format":"小工具格式",
       "format_options":{
@@ -52,10 +52,10 @@
   },
   "chrome_bookmarks":{
     "name":"書籤",
-    "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
+    "desc":"顯示您的 Chrome 書簽，也可以設定特定的資料夾。",
     "settings":{
       "title_placeholder":"輸入小工具標題",
-      "from":"Show bookmarks from",
+      "from":"顯示書籤來源",
       "open":"打開書籤於..."
     }
   },
@@ -71,19 +71,19 @@
     "desc":"顯示接下來一或多個來自Google日曆的事件",
     "settings":{
       "calendar":"行事曆",
-      "show":"Show events from",
+      "show":"顯示事件來源",
       "show_options":{
-        "all":"All time",
-        "today":"Today only"
+        "all":"全時間",
+        "today":"僅有今天"
       }
     },
-    "title":"Agenda",
-    "calendar":"日曆",
-    "noevents":"No events found in the near future, it looks like your schedule's clear!"
+    "title":"行程",
+    "calendar":"行事曆",
+    "noevents":"沒有近期活動，看起來你的行程都搞定了！"
   },
   "clock":{
     "name":"時鐘",
-    "desc":"Offers alarm, time, timer, and stopwatch functionality.",
+    "desc":"提供提醒、時間、計時器還有碼錶功能。",
     "settings":{
       "timezone":"時區",
       "timezone_local":"本地",
@@ -95,17 +95,17 @@
         "ampmseconds":"上午\/下午 - 數位時鐘，沒有「秒」",
         "24hourseconds":"24 小時 - 數位時鐘，沒有「秒」"
       },
-      "sound":"Alert Sound"
+      "sound":"提示音效"
     },
     "title":"時鐘",
-    "alarm":"Alarm",
+    "alarm":"提醒",
     "clock":"時鐘",
-    "timer":"Timer",
-    "stopwatch":"Stopwatch",
-    "set":"Set",
-    "unset":"Unset",
-    "dismiss":"Dismiss",
-    "enable_audio":"Enable audio"
+    "timer":"計時器",
+    "stopwatch":"碼錶",
+    "set":"設定",
+    "unset":"取消設定",
+    "dismiss":"不理會",
+    "enable_audio":"啟動音效"
   },
   "facebook":{
     "name":"FACEBOOK",
@@ -176,8 +176,8 @@
     "desc":"在小工具嵌入 Google Plus"
   },
   "notifications":{
-    "name":"Google Notifications",
-    "desc":"Displays your Google Notifications from services such as Google+"
+    "name":"Google即時提醒",
+    "desc":"顯示您的Google相關服務即時提醒，如：Google+"
   },
   "reddit":{
     "name":"熱迪特",
@@ -206,12 +206,12 @@
   },
   "tasks":{
     "name":"任務",
-    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
+    "desc":"從你的 Google Task 顯示一組可以編輯的工作清單。",
     "title":"任務",
     "settings":{
       "list":"清單檢視"
     },
-    "task_title":"Title",
+    "task_title":"標題",
     "due_date":"最後期限",
     "notes":"備註",
     "add":"加入項目",
@@ -221,7 +221,7 @@
     "done":" 完成",
     "due_today":"今天到期",
     "overdue":"逾期",
-    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
+    "authorize":"你需要先通過設置從你的谷歌任務(Google Tasks) 中挑選清單(list), 否則什麼都無法在這裡顯示。"
   },
   "twitter":{
     "name":"Twitter",
@@ -244,7 +244,7 @@
     "favorite":"我的最愛"
   },
   "wolfram":{
-    "name":"Wolfram|Alpha",
+    "name":"WolframAlpha網站",
     "desc":"插入一個小的 Wolfram|Alpha 搜尋框。"
   },
   "youtube":{
@@ -268,21 +268,21 @@
     "num_views":"觀賞"
   },
   "quotes":{
-    "name":"Quotes",
-    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "name":"名句",
+    "desc":"每天一次或在你每次讀取頁面顯示一則名句",
     "settings":{
-      "source":"Source",
-      "method":"Load new quotes",
+      "source":"來源",
+      "method":"載入新的報價",
       "method_options":{
-        "daily":"Once daily",
-        "random":"Every time I load the page"
+        "daily":"每天一次",
+        "random":"每次載入頁面"
       }
     },
     "unknown_author":"未知"
   },
   "html":{
     "name":"HTML",
-    "desc":"Displays completely custom HTML in an iframe.",
+    "desc":"在 iframe 中顯示完全自訂的 HTML。",
     "settings":{
       "html":"HTML",
       "js":"JavaScript",
@@ -290,351 +290,81 @@
     }
   },
   "sitelink":{
-    "name":"Site Link",
-    "desc":"Displays a link, optionally with a title and thumbnail",
+    "name":"網站連結",
+    "desc":"在頁面上顯示一個包含網站名稱與縮圖的連結",
     "settings":{
-      "link":"Link URL",
+      "link":"連結網址：",
       "link_placeholder":"http:\/\/www.google.com\/",
       "image":"圖像 URL",
       "image_placeholder":"http:\/\/www.example.com\/image.png",
-      "color":"Image Background Color",
-      "style":"Image Style",
-      "style_fill":"Fill",
+      "color":"圖片背景顏色",
+      "style":"圖片樣式",
+      "style_fill":"填滿",
       "style_center":"置中"
     }
   },
   "stats":{
-    "name":"System Statistics",
-    "desc":"Keep an eye on your system with realtime statistics",
-    "memory":"Memory",
-    "battery":"Battery",
-    "usage":"usage",
-    "in_use":"in use",
-    "remaining":"remaining",
-    "charged":"Fully Charged",
-    "idle":"Idle",
-    "charging":"Charging",
-    "discharging":"Discharging"
+    "name":"系統狀態",
+    "desc":"監視您的系統與即時統計",
+    "memory":"記憶體：",
+    "battery":"電池",
+    "usage":"使用率",
+    "in_use":"可用",
+    "remaining":"剩餘",
+    "charged":"完成充電",
+    "idle":"閒置",
+    "charging":"充電中",
+    "discharging":"電池使用中"
   },
   "search":{
     "name":"搜尋",
-    "desc":"Embed a search box in your page for easy access",
+    "desc":"在頁面上插入一個搜尋框，方便您連結",
     "settings":{
-      "placeholder":"Search Field Placeholder",
+      "placeholder":"搜尋框顯示文字",
       "search_url":"搜尋網址",
-      "param":"Query Parameter",
-      "param_placeholder":"The parameter where the query goes, i.e. \"q\""
+      "param":"查詢參數",
+      "param_placeholder":"搜尋參數設定，例如＂q＂"
     },
-    "default_placeholder":"Search Google"
+    "default_placeholder":"以 Google 搜尋"
   },
   "pushbullet":{
     "name":"Pushbullet",
-    "desc":"Keep track of notifications from your phone and other devices",
-    "no_pushes":"No pushes found",
-    "sign_in":"Sign in",
-    "no_key":"It doesn't look like you're signed in to Pushbullet.  Sign in now to connect this widget."
+    "desc":"從你的手機或是其他裝置持續關注通知",
+    "no_pushes":"未發現新訊息",
+    "sign_in":"登入",
+    "no_key":"看來你還沒註冊Pushullet，現在就註冊以啟用這項小工具"
   },
   "linkedin":{
     "name":"LinkedIn",
-    "desc":"Displays your LinkedIn home stream"
+    "desc":"顯示你的 LinkedIn 首頁流"
   },
   "directions":{
-    "name":"Directions",
-    "desc":"Get directions to and from nearly anywhere right from your homepage",
-    "driving":"駕駛",
-    "transit":"公共交通",
+    "name":"方向",
+    "desc":"在您的首頁規劃任意地點間的路線",
+    "driving":"開車",
+    "transit":"大眾運輸工具",
     "walking":"步行",
-    "cycling":"Cycling",
-    "from":"Enter a starting point",
-    "to":"Enter a destination",
-    "loading":"Loading directions, please wait...",
-    "error":"Something went wrong while trying to load the directions you requested.",
-    "error2":"Please check the start and destination addresses you entered.",
-    "open_in_maps":"Open in Google Maps",
-    "via":"via"
+    "cycling":"騎自行車",
+    "from":"輸入一個起始點",
+    "to":"輸入目的地",
+    "loading":"跳轉頁面中，請稍後",
+    "error":"在試圖載入您所要求的方向時發生了錯誤",
+    "error2":"請檢查您輸入的起點和目的地位址。",
+    "open_in_maps":"在谷歌地圖中打開",
+    "via":"透過"
   },
   "pocket":{
     "name":"Pocket",
-    "desc":"Display a list of your saved articles, videos, and web pages from Pocket",
+    "desc":"從 Pocket 裡的清單顯示您已保存的文章、視頻和網頁",
     "settings":{
-      "links_shown":"Number of links shown",
-      "open":"Open links",
-      "open_pocket":"In Pocket",
-      "open_original":"At their original URL"
+      "links_shown":"顯示的連結數目",
+      "open":"打開連結",
+      "open_pocket":"在 Pocket 裡",
+      "open_original":"在其原始 URL"
     },
     "by":"由",
-    "no_links":"No links found",
-    "grant_access":"Grant access",
-    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
-  },
-  "analytics":{
-    "name":"分析報表",
-    "desc":"從您個人的Google報表中顯示各種指標",
-    "sessions":"連線對話",
-    "pageviews":"網頁點閱次數",
-    "pagesvisit":"頁面\/訪問",
-    "bouncerate":"跳出率",
-    "completions":"落成",
-    "noprofile_title":"No profile selected",
-    "noprofile":"看起來您仍未選擇一個設定檔!\n<br \/><br \/>\n請試著在右上角的扳手圖示中選擇一個。",
-    "settings":{
-      "profile":"設定檔"
-    }
-  },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
-  },
-  "currency":{
-    "name":"貨幣",
-    "desc":"讓妳在169種貨幣中進行任兩種轉換",
-    "to_label":"至",
-    "recently_used":"Recently Used"
-  },
-  "dictionary":{
-    "name":"Dictionary",
-    "desc":"Quickly look up the definition and synonyms for a word",
-    "search_placeholder":"Enter a word or term here",
-    "more":"更多",
-    "less":"Less",
-    "synonyms":"Synonyms",
-    "antonyms":"Antonyms",
-    "web_definitions":"Web definitions",
-    "no_definitions":"No definitions found"
-  },
-  "drive":{
-    "name":"Drive",
-    "desc":"顯示您的Google Drive中最近更改的檔案",
-    "settings":{
-      "files_shown":"顯示的檔案個數"
-    },
-    "modified_by":"由",
-    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
-  },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"顯示你的Gmail收件匣以便管理你的電子郵件"
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"在 iframe 內顯示一個您選擇的網頁。",
-    "settings":{
-      "url":"框架位址",
-      "url_placeholder":"即是 http:\/\/www.google.com\/",
-      "height":"框架高度",
-      "padding":"填補空間"
-    }
-  },
-  "keep":{
-    "name":"保留",
-    "desc":"在小工具嵌入 Google Keep"
-  },
-  "news":{
-    "name":"新聞",
-    "desc":"按類別和版本顯示目前的頭條新聞。",
-    "all_stories":"全部",
-    "settings":{
-      "page_title":"設定",
-      "save":"儲存",
-      "title":"小工具標題",
-      "title_placeholder":"輸入小工具標題，保留空白的話標題列就不會顯示",
-      "articles":"文章顯示",
-      "edition":"版本",
-      "default_topic":"Default Topic"
-    }
-  },
-  "recentlyclosed":{
-    "name":"最近關閉",
-    "desc":"顯示您最近關閉的標籤頁",
-    "settings":{
-      "tabs":"顯示的標籤頁",
-      "open":"打開標籤頁於"
-    },
-    "more":"more"
-  },
-  "rss":{
-    "name":"RSS",
-    "desc":"將項從 RSS 或 Atom 源與可選的圖像顯示。",
-    "settings":{
-      "page_title":"設定",
-      "save":"儲存",
-      "title":"小工具標題",
-      "title_placeholder":"輸入小工具標題，保留空白的話標題列就不會顯示",
-      "link":"標題連結",
-      "link_placeholder":"為小部件標題輸入一個連結",
-      "feeds":"訂閱",
-      "feeds_help":"Click any feed to edit it",
-      "feeds_placeholder":"Enter a feed URL and press Enter to add",
-      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
-      "feed_name_placeholder":"Feed name",
-      "feed_url_placeholder":"Feed URL",
-      "articles":"文章顯示"
-    },
-    "by":"由",
-    "all_articles":"所有文章",
-    "feed_error":"試圖獲取進料時出錯： %s。請仔細檢查該 URL 和\/或修改小部件設置。"
-  },
-  "sports":{
-    "name":"體育",
-    "desc":"Displays scores, schedules, and news from your favorite teams.",
-    "settings":{
-      "page_title":"Favorites",
-      "save":"儲存",
-      "teams_placeholder":"Enter a team name and press Enter to add"
-    },
-    "scores":"Scores",
-    "news":"新聞",
-    "last_play":"Last play",
-    "no_games":"No games found",
-    "pro_splash1":"Sports news is a Pro-only feature.",
-    "pro_splash2":"Buy Pro in the settings.",
-    "preview":"預覽",
-    "tickets":"Tickets",
-    "live":"Live",
-    "recap":"Recap",
-    "box_score":"Box Score"
-  },
-  "stocks":{
-    "name":"股票",
-    "desc":"任何給定的股票符號的的顯示當前資訊。",
-    "settings":{
-      "stocks":"股票",
-      "stocks_placeholder":"Type a company or exchange name and hit Enter"
-    },
-    "as_of":"作為",
-    "exchange_time":"交換時間",
-    "overview":"Overview",
-    "news":"新聞",
-    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
-    "pro_splash2":"Buy Pro in the settings.",
-    "time_ranges":{
-      "1d":"1d",
-      "5d":"5d",
-      "1m":"1m",
-      "3m":"3m",
-      "1y":"1y",
-      "5y":"5y",
-      "max":"max"
-    },
-    "open":"開啟",
-    "prev_close":"Previous Close",
-    "high":"高",
-    "52high":"52 week high",
-    "low":"低",
-    "52low":"52 week low",
-    "volume":"交易量",
-    "avg_volume":"Avg. Volume",
-    "shares":"Shares",
-    "cap":"Market Cap",
-    "pe":"Price \/ Earnings",
-    "eps":"EPS",
-    "beta":"Beta",
-    "inst_own":"Inst. own"
-  },
-  "todo":{
-    "name":"待辦事項",
-    "desc":"顯示包含重要事項及已完成事項的待辦事項清單",
-    "title":"待辦清單",
-    "settings":{
-      "color":"字型顏色",
-      "color_options":{
-        "light":"淺色",
-        "dark":"暗色"
-      },
-      "tags":"標籤",
-      "tags_placeholder":"輸入標記的名稱並按 enter 鍵"
-    },
-    "add":"加入項目",
-    "none":"無",
-    "important":"重要"
-  },
-  "topsites":{
-    "name":"置頂網站",
-    "desc":"顥示您最常去\/熱門網站",
-    "settings":{
-      "show":"顯示的網站的數目"
-    }
-  },
-  "traffic":{
-    "name":"交通",
-    "desc":"顥示當前交通狀況下回家或上班所需時間",
-    "settings":{
-      "leave":"我離開家於",
-      "home":"住家地址",
-      "home_placeholder":"下班後的目的地",
-      "work":"工作地址",
-      "work_placeholder":"上班前的目的地",
-      "method":"交通方式",
-      "method_options":{
-        "driving":"駕駛",
-        "walking":"步行",
-        "transit":"公共交通"
-      }
-    },
-    "to_home":"回家",
-    "to_work":"前往工作"
-  },
-  "translate":{
-    "name":"翻譯",
-    "desc":"Lets you quickly translate to and from 90 languages as you type",
-    "from_placeholder":"Start typing here",
-    "to_placeholder":"Translated text will appear here",
-    "detect_lang":"Detect language",
-    "translating":"Translating...",
-    "unknown":"未知"
-  },
-  "unread":{
-    "name":"未讀取",
-    "desc":"在你的 Gmail 收件匣中顯示當前的未讀郵件數量。",
-    "settings":{
-      "open":"當點下打開時"
-    },
-    "unread_none":"未讀的郵件",
-    "unread_one":"未讀的郵件",
-    "unread_many":"未讀的郵件"
-  },
-  "voice":{
-    "name":"語音",
-    "desc":"在你的 Google Voice 帳戶顯示未接來電和簡訊的數目。",
-    "call":"來電從",
-    "text":"文字訊息從",
-    "missed":"未收聽留言",
-    "texts":"未讀簡訊",
-    "calls":"未接來電"
-  },
-  "weather":{
-    "name":"天氣",
-    "desc":"顯示目前的天氣和接下來的 4 天天氣預報。",
-    "settings":{
-      "location":"位置",
-      "location_placeholder":"請輸入一個位置，然後按 enter 鍵",
-      "units":"Units",
-      "units_imperial":"Imperial (Fahrenheit)",
-      "units_metric":"Metric (Celsius)",
-      "enabled":"開啟",
-      "disabled":"關閉",
-      "forecast":"Forecasts",
-      "hourly":"Hourly forecasts"
-    },
-    "more":"更多",
-    "less":"Less",
-    "wind":"風速",
-    "precipitation":"Precip",
-    "uv":"UV index",
-    "feelslike":"Feels like",
-    "barometer":"Barometer",
-    "visibility":"Visibility",
-    "humidity":"濕度",
-    "dewpoint":"Dew point",
-    "moonphase":"Moon",
-    "sunrise":"Sunrise",
-    "sunset":"Sunset",
-    "moonrise":"Moonrise",
-    "moonset":"Moonset"
+    "no_links":"找不到連結",
+    "grant_access":"授予存取權限",
+    "no_key":"你需要給 iChrome 存取 Pocket 帳戶權限, 才能載入你的連結。"
   }
 }

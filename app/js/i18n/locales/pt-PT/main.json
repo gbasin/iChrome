@@ -1,7 +1,7 @@
 {
   "lang_code":"pt-PT",
   "language":"Português",
-  "extName":"iChrome",
+  "extName":"iChrome - A Fast, Productive Home Page",
   "newtabName":"iChrome novo separador",
   "extDescription":"A MELHOR homepage para o Chrome. Temas incríveis, dezenas de widgets, super rápido, e super costumizavel!",
   "newtabDescription":"A MELHOR homepage para o Chrome, também para novo separador. Lindos temas, vários widgets, ultra rápido e loucamente personalizável!",
@@ -11,42 +11,42 @@
   },
   "remove_widget":"Remover",
   "alert":{
-    "default_button":"Dismiss",
-    "confirm_title":"Are you sure you want to do this?",
-    "confirm_continue":"Continue",
-    "confirm_cancel":"Cancel"
+    "default_button":"dispensar",
+    "confirm_title":"Tem a certeza que quer fazer isto?",
+    "confirm_continue":"Continuar",
+    "confirm_cancel":"Cancelar"
   },
   "onboarding":{
     "modal":{
-      "tagline":"All the sites and apps you use, in one place",
-      "wrong_extension":"Want iChrome on your new tab page instead?",
-      "wrong_extension_newtab":"Want iChrome on your home page instead?",
-      "wrong_extension_action":"Click here",
-      "about":"iChrome's all about tabs and widgets",
-      "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
-      "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privacy Policy<\/a>",
-      "sign_in":"Sign in with your Google account",
+      "tagline":"Todos os seus sites e aplicações em um só lugar",
+      "wrong_extension":"Gostaria de utilizar iChrome como sua nova aba?",
+      "wrong_extension_newtab":"Gostaria que iChrome fosse a sua página inicial?",
+      "wrong_extension_action":"Clique aqui",
+      "about":"iChrome é construido á base de abas e mini aplicações.",
+      "about_desc":"Abas são preenchidas com mini aplicações em blocos. Por exemplo, a mini aplicação de Meteorologia fica num bloco e em um outro noticias do dia, seus emails etc. Os blocos com as mini aplicações podem ser personalizados da forma que desejar.",
+      "terms":"Nota: Ao prosseguir, aceita que está de acordo com os <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Termos<\/a>e com a<a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Politica de privacidade\"<\/a> do iChrome",
+      "sign_in":"Inscreva-se com a sua conta do Google",
       "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
       "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
-      "sign_in_button":"Sign in with Google",
-      "have_account":"It looks like you already have an account!",
-      "have_account_desc":"All your tabs and widgets are ready to use!",
-      "get_started":"Let's get started!",
-      "get_started_desc":"You're good to go! Let's get your page set up."
+      "sign_in_button":"Inicie sessão com o Google",
+      "have_account":"Parece que você já tem uma conta!",
+      "have_account_desc":"Todos os seus separadores e widgets estão prontos a usar!",
+      "get_started":"Vamos começar!",
+      "get_started_desc":"Está pronto a começar! Vamos preparar a sua página."
     },
     "widgets":{
-      "configure":"Let's configure a widget.",
-      "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
-      "configure_skip":"Skip",
+      "configure":"Vamos configurar um widget.",
+      "configure_desc":"clica na chave de fendas para abrir o widget da meteorologia <b>settings<\/b>.",
+      "configure_skip":"Saltar",
       "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
       "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
       "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
-      "done":"Got it"
+      "done":"Compreendi"
     },
     "settings":{
       "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
       "instructions":"Click the highlighted image to open it.",
-      "skip":"Skip",
+      "skip":"Saltar",
       "tooltips":{
         "settings":"Change the way iChrome looks and works",
         "widgets":"Add new widgets - you can have as many as you want",
@@ -55,24 +55,24 @@
         "tabs":"These are your tabs. You can add more in the settings",
         "support":"Send us a message or leave a review here"
       },
-      "finished":"That's it!",
+      "finished":"Está pronto!",
       "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
       "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
     }
   },
   "storage":{
     "signin":"Sign in with Google now to securely save and sync your configuration",
-    "signin_btn":"Sign in",
+    "signin_btn":"Inicie sessão",
     "signin_dismiss":"Dismiss",
     "signin_confirm":{
-      "title":"Keep local data?",
+      "title":"Manter dados locais?",
       "desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
-      "keep_account":"Use account",
+      "keep_account":"Usar a conta",
       "keep_local":"Keep local"
     },
-    "signout_confirm":"Signing out will erase your local backups",
-    "pastdue":"Your subscription is past due",
-    "pastdue_desc":"Please update your billing information in the settings"
+    "signout_confirm":"Terminar sessão irá apagar os seus backups locais",
+    "pastdue":"A sua subscrição expirou",
+    "pastdue_desc":"Por favor, atualize a sua informação de faturação nas configurações"
   },
   "toolbar":{
     "placeholder":"Digite seus termos",
@@ -101,8 +101,8 @@
       "support":"Ajuda",
       "feedback":"Opiniões",
       "review":"Review",
-      "terms":"Terms",
-      "privacy":"Privacy",
+      "terms":"Condições",
+      "privacy":"Privacidade",
       "by":"Por Avi Kohn"
     }
   },
@@ -113,16 +113,16 @@
   },
   "settings":{
     "title":"Opções",
-    "exit":"Exit settings",
-    "saved":"Settings saved",
+    "exit":"Sair das configurações",
+    "saved":"Definições guardadas",
     "nav":{
-      "visual":"Visual",
+      "visual":"Visualização",
       "visual_sections":{
-        "background":"Background",
+        "background":"Imagem de fundo",
         "layout":"Estrutura",
-        "theme":"App theme"
+        "theme":"Tema da aplicação"
       },
-      "toolbar":"Toolbar",
+      "toolbar":"Barra de Ferramentas",
       "toolbar_sections":{
         "style":"Style",
         "search":"Pesquisar",
@@ -144,7 +144,7 @@
     },
     "visual":{
       "background":{
-        "title":"Background",
+        "title":"Imagem de fundo",
         "desc":"This is the image or set of images shown as a background to your tabs",
         "current":"Current background",
         "custom":"Personalizado",
@@ -168,87 +168,87 @@
         }
       },
       "theme":{
-        "title":"App theme",
+        "title":"Tema da aplicação",
         "desc":"The app theme controls the style of iChrome itself and all widgets",
         "preview":"Pré visualização",
         "light":"Light (default)",
         "dark":"Escuro",
         "transparent":"Transparent",
-        "transparent_darker":"Transparent (darker)"
+        "transparent_darker":"Transparente (mais escuro)"
       }
     },
     "toolbar":{
       "style":{
-        "title":"Style",
-        "desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
+        "title":"Estilo",
+        "desc":"Isto controla o estilo da barra de ferramentas.  Ela pode aparecer normalmente ou como um botão oculto",
         "normal":"Normal",
-        "button":"Button"
+        "button":"Botão"
       },
       "search":{
         "title":"Pesquisar",
-        "desc":"These settings control how the search box and voice search function",
-        "engine":"Search engine",
-        "engines_google":"Google (Default)",
+        "desc":"Estas configurações controlam o funcionamento da caixa de pesquisa e função de busca por voz",
+        "engine":"Motor de busca",
+        "engines_google":"Google (padrão)",
         "engines_custom":"Personalizado",
         "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
-        "voice":"Enable voice search",
-        "ok_google":"Enable \"OK Google\" hotword detection",
-        "search_tab":"Open search results in a new tab"
+        "voice":"Ativar a pesquisa por voz",
+        "ok_google":"Ativar a detecção do hotword \"Ok, Google\"",
+        "search_tab":"Abrir resultados de busca em novo separador"
       },
       "links":{
-        "title":"Links",
-        "desc":"These are the items shown at the right of the toolbar",
-        "apps":"Apps menu",
-        "custom":"Custom links",
-        "custom_note1":"Maximum of 3 allowed",
+        "title":"Ligações",
+        "desc":"Estes são os itens mostrados na parte direita da barra de ferramentas",
+        "apps":"Menu de aplicações",
+        "custom":"Ligações personalizadas",
+        "custom_note1":"Máximo de 3 permitidos",
         "custom_note2":"users get 8",
-        "custom_name_placeholder":"Link text",
-        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+        "custom_name_placeholder":"Texto da ligação",
+        "custom_url_placeholder":"URL da ligação, por ex: https:\/\/www.google.com\/"
       }
     },
     "misc":{
-      "link_tab":"Open links in a new tab by default"
+      "link_tab":"Abrir ligações num novo separador por defeito"
     },
     "tabs":{
-      "create_new":"Create new",
-      "make_default":"Make default",
+      "create_new":"Criar Novo",
+      "make_default":"Predefinir",
       "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
       "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
-      "name_placeholder":"Enter a tab name",
+      "name_placeholder":"Digite um nome de separador",
       "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
     },
     "accounts":{
       "status":{
-        "title":"Status",
+        "title":"Estado",
         "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
         "reset_account":"Reset account",
-        "sign_out":"Sign out",
+        "sign_out":"Terminar Sessão",
         "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
-        "sign_in":"Sign in with Google"
+        "sign_in":"Iniciar sessão com o Google"
       },
       "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
       "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this account."
     },
     "advanced":{
       "backups":{
-        "title":"Backup and restore",
-        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
-        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
-        "backup":"Backup now",
-        "upload":"Restore from file",
-        "download":"Download",
-        "restore":"Restore",
-        "download_name":"iChrome Backup",
-        "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
-        "restore_error":"An error occurred while trying to parse the provided data, please try again later."
+        "title":"Cópia de segurança e restauro",
+        "desc":"Cópias de segurança são cópias completas de todos os seus separadores, configurações e widgets. São criadas automaticamente quando você abre o iChrome pela primeira vez em cada dia.",
+        "desc2":"Use os botões abaixo para restaurar o iChrome para uma data específica ou transfira uma das suas cópias de segurança.",
+        "backup":"Criar Cópia de Segurança agora",
+        "upload":"Restaurar a partir de ficheiro",
+        "download":"Transferir",
+        "restore":"Restaurar",
+        "download_name":"Cópia de Segurança do iChrome",
+        "restore_confirm":"Isto irá escrever por cima de todos os dados sincronizados e locais. Você vai perder toda a sua configuração atual em todos os computadores nesta conta.",
+        "restore_error":"Ocorreu um erro ao tentar analisar os dados fornecidos. Por favor, tente novamente mais tarde."
       },
       "css":{
-        "title":"Custom CSS",
+        "title":"CSS Personalizado",
         "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
-        "placeholder":"Enter up to 1000 characters of CSS here"
+        "placeholder":"Digite até 1000 caracteres da CSS aqui"
       },
       "debug_tools":{
-        "title":"Debug tools",
+        "title":"Ferramentas de depuração",
         "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
         "open":"Open tools"
       }
@@ -291,7 +291,7 @@
         "payment_options":"Pay",
         "pay_monthly":"Monthly ($2)",
         "pay_yearly":"Yearly ($20)",
-        "cancel":"Cancel",
+        "cancel":"Cancelar",
         "update":"Update",
         "subscribe":"Subscribe",
         "braintree_notice":"Payments securely processed by Braintree.",
@@ -317,7 +317,7 @@
           "custom":"Personalizado"
         },
         "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
-        "status":"Status",
+        "status":"Estado",
         "status_active":"Active",
         "status_trial":"Trial",
         "status_pastdue":"Past due",
@@ -425,7 +425,7 @@
       "view":"View",
       "source":"Source",
       "unknown":"Desconhecido",
-      "download":"Download",
+      "download":"Transferir",
       "pro_only":"Only Pro users can download background images and videos"
     },
     "edit":{

@@ -308,6 +308,7 @@ h2.header {
 
 :root.detail .chart .picker li {
 	flex: 1;
+	min-width: 0; /* crbug.com/546034 fix - flex issues in Chrome 48+ */
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 26px;

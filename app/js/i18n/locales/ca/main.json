@@ -1,334 +1,334 @@
 {
   "lang_code":"ca",
-  "language":"English",
-  "extName":"iChrome",
-  "newtabName":"iChrome New Tab",
-  "extDescription":"The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
-  "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
+  "language":"Català",
+  "extName":"iChrome - Inici ràpid i productiu",
+  "newtabName":"Nova pestanya iChrome",
+  "extDescription":"La millor pàgina d'inici per Chrome. Temes impressionants, dotzenes de widgets, ràpida com un llamp, exageradament personalitzable!",
+  "newtabDescription":"La MILLOR \"pestanya nova\" per Chrome. Temes impressionants, dotzenes de widgets, ràpida com un llamp, exageradament personalitzable!",
   "defaults":{
-    "tab":"Home",
-    "me":"Me"
+    "tab":"Inici",
+    "me":"Jo"
   },
-  "remove_widget":"Remove",
+  "remove_widget":"Treure",
   "alert":{
-    "default_button":"Dismiss",
-    "confirm_title":"Are you sure you want to do this?",
-    "confirm_continue":"Continue",
-    "confirm_cancel":"Cancel"
+    "default_button":"Ignorar",
+    "confirm_title":"Segur que ho vols fer?",
+    "confirm_continue":"Continuar",
+    "confirm_cancel":"Cancelar"
   },
   "onboarding":{
     "modal":{
-      "tagline":"All the sites and apps you use, in one place",
-      "wrong_extension":"Want iChrome on your new tab page instead?",
-      "wrong_extension_newtab":"Want iChrome on your home page instead?",
-      "wrong_extension_action":"Click here",
-      "about":"iChrome's all about tabs and widgets",
-      "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
-      "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privacy Policy<\/a>",
-      "sign_in":"Sign in with your Google account",
-      "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
-      "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
-      "sign_in_button":"Sign in with Google",
-      "have_account":"It looks like you already have an account!",
-      "have_account_desc":"All your tabs and widgets are ready to use!",
-      "get_started":"Let's get started!",
-      "get_started_desc":"You're good to go! Let's get your page set up."
+      "tagline":"Tots els llocs webs i les apps que utilitzes, en un mateix lloc",
+      "wrong_extension":"Hi vols iChrome a la pestanya nova?",
+      "wrong_extension_newtab":"Hi vols iChrome a la pestanya nova?",
+      "wrong_extension_action":"Fes clic aquí",
+      "about":"Tot sobre pestanyes i widgets d'iChrome",
+      "about_desc":"Les pestanyes són pàgines amb widgets - blocs que mostren coses com ara el temps, notícies i l'email. Es pot personalitzar la majoria dels widgets i afegir-ne tants com es vulgui.",
+      "terms":"Nota: Continuant, acceptes els <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Termes<\/a> d' iChrome i la <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Política de privacitat<\/a>",
+      "sign_in":"Inicia sessió amb el teu compte de Google",
+      "sign_in_desc":"Inicia sessió amb el compte de Google abans de començar per guardar els canvis online.",
+      "sign_in_desc2":"Si vols pots continuar sense registrar-te, però la teva pàgina web no es desarà online i per tant no serà accessible des d'altres ordinadors.",
+      "sign_in_button":"Inicia la sessió amb Google",
+      "have_account":"Sembla que ja tens un compte!",
+      "have_account_desc":"Totes les teves pestanyes i widgets estan a punt per ser utilitzats!",
+      "get_started":"Comencem!",
+      "get_started_desc":"Estàs preparat per començar! Anem a configurar la pàgina."
     },
     "widgets":{
-      "configure":"Let's configure a widget.",
-      "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
-      "configure_skip":"Skip",
-      "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
-      "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
-      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
-      "done":"Got it"
+      "configure":"Anem a configurar un widget.",
+      "configure_desc":"Fes clic a la clau anglesa per obrir la <b>configuració<\/b> del widget del temps.",
+      "configure_skip":"Ometre",
+      "settings":"Substitueix <b>San Francisco, CA<\/b> amb la teva ubicació, a continuació, prem <b>Desar<\/b>.",
+      "move":"Pots <b>arrossegar<\/b> widgets utilitzant la maneta ressaltada per moure'ls.",
+      "remove":"En arrossegar un widget, deixa'l anar a sobre de la barra vermella (no es mostra) per <b>eliminar-lo<\/b>.",
+      "done":"Ho tinc"
     },
     "settings":{
-      "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
-      "instructions":"Click the highlighted image to open it.",
-      "skip":"Skip",
+      "intro":"Ara fem una ullada al <b>menú<\/b> i veiem què més es pot fer.",
+      "instructions":"Clica la imatge ressaltada per obrir-la.",
+      "skip":"Ometre",
       "tooltips":{
-        "settings":"Change the way iChrome looks and works",
-        "widgets":"Add new widgets - you can have as many as you want",
-        "editing":"Show or hide the editing buttons on widgets",
-        "links":"This is a list of links, add sites you use often in the settings",
-        "tabs":"These are your tabs. You can add more in the settings",
-        "support":"Send us a message or leave a review here"
+        "settings":"Canvia l'aspecte de l' iChrome i com funciona",
+        "widgets":"Afegir widgets nous - en pots tenir tants com vulguis",
+        "editing":"Mostra o amaga els botons d'edició en els widgets",
+        "links":"Això és una llista d'enllaços, afegeix-hi llocs web que utilitzes sovint en la configuració",
+        "tabs":"Aquestes són les teves pestanyes. En pots afegir més en la configuració",
+        "support":"Envia'ns un missatge o deixa un comentari aquí"
       },
-      "finished":"That's it!",
-      "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
-      "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
+      "finished":"Això es tot!",
+      "finished_next":"Selecciona una opció del menú (prova començant amb <b>Widgets<\/b>) i configura la teva pàgina!",
+      "finished_contact":"Utilitza l'enllaç de suport si necessites ajuda i ens posarem en contacte amb tu el més aviat possible."
     }
   },
   "storage":{
-    "signin":"Sign in with Google now to securely save and sync your configuration",
-    "signin_btn":"Sign in",
-    "signin_dismiss":"Dismiss",
+    "signin":"Inicia sessió amb Google per desar de forma segura i sincronitzar la configuració",
+    "signin_btn":"Iniciar sessió",
+    "signin_dismiss":"Ignorar",
     "signin_confirm":{
-      "title":"Keep local data?",
-      "desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
-      "keep_account":"Use account",
-      "keep_local":"Keep local"
+      "title":"Mantenir les dades locals?",
+      "desc":"Vols mantenir les dades locals i substituir la configuració que hi ha al teu compte amb elles, o substituir la configuració d'aquest ordinador amb les dades que ja tens al compte?",
+      "keep_account":"Utilitzar compte",
+      "keep_local":"Mantenir dades locals"
     },
-    "signout_confirm":"Signing out will erase your local backups",
-    "pastdue":"Your subscription is past due",
-    "pastdue_desc":"Please update your billing information in the settings"
+    "signout_confirm":"Si tanques la sessió s'esborraran les les còpies de seguretat locals",
+    "pastdue":"La subscripció ha vençut",
+    "pastdue_desc":"Si us plau actualitza la informació de facturació en la configuració"
   },
   "toolbar":{
-    "placeholder":"Enter your terms",
-    "placeholder_ok":"Enter your terms or say \"OK, Google\"",
+    "placeholder":"Introdueix els termes a cercar",
+    "placeholder_ok":"Introdueix els termes a cercar o digues \"OK, Google\"",
     "apps":{
-      "search":"Search",
+      "search":"Cerca",
       "youtube":"YouTube",
-      "maps":"Maps",
+      "maps":"Mapes",
       "play":"Play",
       "news":"News",
       "gmail":"Gmail",
       "drive":"Drive",
-      "calendar":"Calendar",
-      "more":"More"
+      "calendar":"Calendari",
+      "more":"Més"
     }
   },
   "menu":{
-    "settings":"Settings",
+    "settings":"Configuració",
     "widgets":"Widgets",
-    "editing":"Editing",
-    "editing_enabled":"Enabled",
-    "editing_disabled":"Disabled",
+    "editing":"Editant",
+    "editing_enabled":"Activat",
+    "editing_disabled":"Desactivat",
     "plus":"Google Plus",
-    "tabs":"Tabs",
+    "tabs":"Pestanyes",
     "footer":{
-      "support":"Support",
-      "feedback":"Feedback",
-      "review":"Review",
-      "terms":"Terms",
-      "privacy":"Privacy",
-      "by":"By Avi Kohn"
+      "support":"Suport",
+      "feedback":"Comentaris",
+      "review":"Ressenya",
+      "terms":"Termes",
+      "privacy":"Privacitat",
+      "by":"Per Avi Kohn"
     }
   },
   "voice":{
-    "listening":"Listening...",
-    "searching":"Searching for: %s",
-    "missed":"Didn't get that. <a>Try Again<\/a>"
+    "listening":"Escoltant...",
+    "searching":"Cercant: %s",
+    "missed":"No s'ha aconseguit. <a>Torna-ho a provar<\/a>"
   },
   "settings":{
-    "title":"Settings",
-    "exit":"Exit settings",
-    "saved":"Settings saved",
+    "title":"Configuració",
+    "exit":"Sortir de la configuració",
+    "saved":"Configuració desada",
     "nav":{
       "visual":"Visual",
       "visual_sections":{
-        "background":"Background",
-        "layout":"Layout",
-        "theme":"App theme"
+        "background":"Fons de pantalla",
+        "layout":"Disseny",
+        "theme":"Tema de l'app"
       },
-      "toolbar":"Toolbar",
+      "toolbar":"Barra d'eines",
       "toolbar_sections":{
-        "style":"Style",
-        "search":"Search",
-        "links":"Links"
+        "style":"Estil",
+        "search":"Cerca",
+        "links":"Enllaços"
       },
-      "tabs":"Tabs",
+      "tabs":"Pestanyes",
       "widgets":"Widgets",
       "pro":"Pro",
-      "accounts":"Account",
-      "misc":"Miscellaneous",
-      "advanced":"Advanced",
+      "accounts":"Compte",
+      "misc":"Misceŀlània",
+      "advanced":"Avançat",
       "advanced_sections":{
-        "backups":"Backup and restore",
-        "css":"Custom CSS",
-        "debug_tools":"Debug tools"
+        "backups":"Còpia de seguretat i recuperació",
+        "css":"CSS personalizat",
+        "debug_tools":"Eines de depuració"
       },
-      "support":"Help and support",
-      "suggest":"Suggest a feature"
+      "support":"Ajuda i suport tècnic",
+      "suggest":"Suggereix una nova característica"
     },
     "visual":{
       "background":{
-        "title":"Background",
-        "desc":"This is the image or set of images shown as a background to your tabs",
-        "current":"Current background",
-        "custom":"Custom",
-        "unnamed":"Theme %s",
-        "select":"Select a theme",
-        "or":"or",
-        "url_placeholder":"Enter an image URL"
+        "title":"Fons de pantalla",
+        "desc":"Aquesta es la imatge o grup de imatges mostrades com a fons de les pastanyes",
+        "current":"Fons actual",
+        "custom":"Personalitzat",
+        "unnamed":"Tema %s",
+        "select":"Selecciona un tema",
+        "or":"o",
+        "url_placeholder":"Introduïu un URL d'imatge"
       },
       "layout":{
-        "title":"Layout",
-        "desc":"Here you can adjust the type and number of columns in each tab",
-        "columns":"Columns",
-        "grid":"Grid",
-        "columns_number":"Number of columns",
-        "column_width":"Column width",
-        "column_width_fixed":"Fixed",
+        "title":"Disseny",
+        "desc":"Aquí pots ajustar el tipus i nombre de columnes en cada pestanya",
+        "columns":"Columnes",
+        "grid":"Quadrícula",
+        "columns_number":"Nombre de columnes",
+        "column_width":"Amplada de la columna",
+        "column_width_fixed":"Fixat",
         "column_width_fluid":"Fluid",
         "column_warning":{
-          "column_to_grid":"Changing to a grid-based layout will move all of your widgets to the top left corner.",
-          "grid_to_column":"Changing to a column-based layout will move all of your widgets to the first column."
+          "column_to_grid":"Canviar a un disseny basat en quadrícula mourà tots els widgets a la cantonada superior esquerra.",
+          "grid_to_column":"Canviar a un disseny basat en columnes mourà tots els widgets a la primera columna."
         }
       },
       "theme":{
-        "title":"App theme",
-        "desc":"The app theme controls the style of iChrome itself and all widgets",
-        "preview":"Preview",
-        "light":"Light (default)",
-        "dark":"Dark",
+        "title":"Tema de l'app",
+        "desc":"El tema de la app controla per si mateix l'estil de iChrome i tots els widgets",
+        "preview":"Vista prèvia",
+        "light":"Clar (predetermitat)",
+        "dark":"Fosc",
         "transparent":"Transparent",
-        "transparent_darker":"Transparent (darker)"
+        "transparent_darker":"Transparent (fosc)"
       }
     },
     "toolbar":{
       "style":{
-        "title":"Style",
-        "desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
+        "title":"Estil",
+        "desc":"Aquí es controla l'estil de la barra d'eines.  Pot aparèixer normalment o com un botó a part",
         "normal":"Normal",
-        "button":"Button"
+        "button":"Botó"
       },
       "search":{
-        "title":"Search",
-        "desc":"These settings control how the search box and voice search function",
-        "engine":"Search engine",
-        "engines_google":"Google (Default)",
-        "engines_custom":"Custom",
-        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
-        "voice":"Enable voice search",
-        "ok_google":"Enable \"OK Google\" hotword detection",
-        "search_tab":"Open search results in a new tab"
+        "title":"Cerca",
+        "desc":"Aquesta configuració controla com funcionen el quadre de cerca i la cerca per veu",
+        "engine":"Motor de cerca",
+        "engines_google":"Google (per defecte)",
+        "engines_custom":"Personalitzat",
+        "engines_custom_desc":"Introduïu la URL a la que s'enviaran les consultes, amb <b>%s<\/b> on hauria d'anar la consulta.",
+        "voice":"Habilita la cerca per veu",
+        "ok_google":"Activar la detecció de la paraula clau \"OK Google\"",
+        "search_tab":"Obre els Resultats de la cerca en una pestanya nova"
       },
       "links":{
-        "title":"Links",
-        "desc":"These are the items shown at the right of the toolbar",
-        "apps":"Apps menu",
-        "custom":"Custom links",
-        "custom_note1":"Maximum of 3 allowed",
-        "custom_note2":"users get 8",
-        "custom_name_placeholder":"Link text",
-        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+        "title":"Enllaços",
+        "desc":"Aquests són els elements mostrats a la dreta de la barra d'eines",
+        "apps":"Menú d'aplicacions",
+        "custom":"Enllaços personalitzats",
+        "custom_note1":"3 com a màxim",
+        "custom_note2":"8 per als usuaris",
+        "custom_name_placeholder":"Text de l'enllaç",
+        "custom_url_placeholder":"URL de l'enllaç, p. ex. https:\/\/www.google.com\/"
       }
     },
     "misc":{
-      "link_tab":"Open links in a new tab by default"
+      "link_tab":"Obrir enllaços en una pestanya nova per defecte"
     },
     "tabs":{
-      "create_new":"Create new",
-      "make_default":"Make default",
-      "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
-      "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
-      "name_placeholder":"Enter a tab name",
-      "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
+      "create_new":"Crear nova",
+      "make_default":"Posar per defecte",
+      "desc1":"Les pestanyes són pàgines dins iChrome. Cada pestanya té el seu propi conjunt de widgets que està completament separat de totes les altres pestanyes.",
+      "desc2":"Es pot canviar entre pestanyes clicant els botons que apareixen a l'esquerra i a la dreta de la pantalla quan es mou el ratolí sobre una pestanya o utilitzant les tecles de fletxa del teclat.",
+      "name_placeholder":"Introduir un nom de pestanya",
+      "delete_confirm":"Aquesta acció és irreversible. Totes les dades de tots els widgets de la pestanya es perdran definitivament."
     },
     "accounts":{
       "status":{
-        "title":"Status",
-        "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
-        "reset_account":"Reset account",
-        "sign_out":"Sign out",
-        "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
-        "sign_in":"Sign in with Google"
+        "title":"Estat",
+        "signed_in":"Actualment has <b>iniciat sessió<\/b> com %s (%s).",
+        "reset_account":"Restablir el compte",
+        "sign_out":"Tancar sessió",
+        "signed_out":"<b>Sessió no iniciada<\/b>. Inicia sessió amb el teu compte de Google ara per emmagatzemar i sincronitzar la teva configuració de forma segura.",
+        "sign_in":"Inicia sessió amb Google"
       },
-      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
-      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this account."
+      "reset_confirm_desc":"Això esborrarà totes les dades locals i sincronitzades, no hi ha cap còpia de seguretat i no hi ha manera de desfer-ho.",
+      "reset_confirm_desc2":"Es perdrà la configuració actual en tots els ordinadors connectats a aquest compte."
     },
     "advanced":{
       "backups":{
-        "title":"Backup and restore",
-        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
-        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
-        "backup":"Backup now",
-        "upload":"Restore from file",
-        "download":"Download",
-        "restore":"Restore",
-        "download_name":"iChrome Backup",
-        "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
-        "restore_error":"An error occurred while trying to parse the provided data, please try again later."
+        "title":"Còpia de seguretat i recuperació",
+        "desc":"Les còpies de seguretat són còpies complertes de totes les teves pestanyes, configuració i widgets. Que són creades automàticament en obrir l'iChrome cada dia.",
+        "desc2":"Utilitza els botons de sota per retornar l'iChrome a una data determinada o descarregar una de les còpies de seguretat.",
+        "backup":"Fer còpia de seguretat ara",
+        "upload":"Restaurar des d'un arxiu",
+        "download":"Descarregar",
+        "restore":"Restaura",
+        "download_name":"Copia de seguretat d'iChrome",
+        "restore_confirm":"Se sobreescriuran totes les dades locals i sincronitzades. Perdràs la configuració actual a tots els ordinadors amb aquest compte.",
+        "restore_error":"S'ha produït un error en intentar analitzar les dades facilitades, si us plau torna-ho a provar més tard."
       },
       "css":{
-        "title":"Custom CSS",
-        "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
-        "placeholder":"Enter up to 1000 characters of CSS here"
+        "title":"CSS personalizat",
+        "desc":"Es pot utilitzar CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\"> definició<\/a>) per personalitzar gairebé qualsevol part de l'iChrome.",
+        "placeholder":"Introduir fins a 1000 caràcters de CSS aquí"
       },
       "debug_tools":{
-        "title":"Debug tools",
-        "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
-        "open":"Open tools"
+        "title":"Eines de depuració",
+        "desc":"<b>Avís:<\/b> Aquestes eines poden esborrar la configuració sencera en un sol clic. Útilitza-les només si el teu desenvolupador t'ho indica.",
+        "open":"Obrir eines"
       }
     },
     "widgets":{
-      "desc1":"Widgets have their own settings and can't be customized here.",
-      "desc2":"To edit a widget's settings, follow these steps:",
-      "steps1":"Move your mouse over any widget",
-      "steps2":"Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
-      "steps3":"Edit any of the settings shown in the dialog that's displayed",
-      "steps4":"Click Save to save your changes, or any part of the background to discard of them"
+      "desc1":"Els widgets tenen la seva pròpia configuració i no es poden personalitzar aquí.",
+      "desc2":"Per editar la configuració d'un widget, segueix aquests passos:",
+      "steps1":"Mou el ratolí sobre qualsevol widget",
+      "steps2":"Fes clic a la icona de la clau anglesa que apareix a la part superior dreta del widget. Si no apareix llavors el widget no té configuracions que es puguin personalitzar.",
+      "steps3":"Edita alguna configuració de les que es mostren al diàleg",
+      "steps4":"Fes clic a Desar per desar els canvis, o a qualsevol part del fons per descartar-los"
     },
     "pro":{
       "promo":{
-        "monthly_price":"$2 per month",
-        "yearly_price":"or $20 per year",
-        "upgrade_btn":"Upgrade Now",
-        "business":"Interested in buying Pro for your business or school?",
-        "business_contact":"Contact us",
-        "themes":"Themes",
-        "themes_desc":"See more of your backgrounds with dark and transparent themes",
-        "bgs":"Live backgrounds",
-        "bgs_desc":"Bring your page to life with 20 live high-definition backgrounds",
-        "widgets":"Maximizable widgets",
-        "widgets_desc":"Take iChrome to another level with maximizable widgets",
-        "more_header":"And more",
-        "stocks":"Realtime stocks with extended and historical information",
-        "rss":"Support for multiple RSS feeds per widget",
-        "sports":"General and league-specific sports news",
-        "tabbed_widgets":"Tabbed news and RSS widgets",
-        "bg_downloads":"Downloadable backgrounds",
-        "weather":"Hourly weather forecasts up to 10 days out",
-        "toolbar":"More toolbar links",
-        "support":"Prioritized support and suggestions",
-        "buy_pro":"Buy Pro"
+        "monthly_price":"2$ al mes",
+        "yearly_price":"o 20$ per any",
+        "upgrade_btn":"Actualitza ara",
+        "business":"T' Interessa comprar la versió Pro per al teu negoci o per l'escola?",
+        "business_contact":"Contacta amb nosaltres",
+        "themes":"Temes",
+        "themes_desc":"Veure més fons de pantalla amb temes foscos i transparents",
+        "bgs":"Fons interactius",
+        "bgs_desc":"Dona vida a la teva pàgina amb 20 fons d'alta definició",
+        "widgets":"Widgets maximizables",
+        "widgets_desc":"Porta l'iChrome a un altre nivell amb widgets maximizables",
+        "more_header":"I més",
+        "stocks":"La borsa en temps real amb informació ampliada i històrica",
+        "rss":"Suport per a RSS múltiples per widget",
+        "sports":"Notícies d'esport generals i de lligues específiques",
+        "tabbed_widgets":"Widgets de noticies i RSS amb pestanyes",
+        "bg_downloads":"Fons descarregables",
+        "weather":"Previsions meteorològiques horàries fins a 10 dies vista",
+        "toolbar":"Més enllaços a la barra d'eines",
+        "support":"Assistència prioritària i suggeriments",
+        "buy_pro":"Comprar la versió Pro"
       },
       "checkout":{
-        "title":"Checkout",
-        "updating_title":"Update plan",
-        "payment_options":"Pay",
-        "pay_monthly":"Monthly ($2)",
-        "pay_yearly":"Yearly ($20)",
-        "cancel":"Cancel",
-        "update":"Update",
-        "subscribe":"Subscribe",
-        "braintree_notice":"Payments securely processed by Braintree.",
-        "monthly_notice":"By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
-        "yearly_notice":"By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
-        "update_notice":"Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
-        "thank_you":"Thank you for buying iChrome Pro!",
-        "thank_you2":"iChrome will reload in a few seconds and you'll be all set!",
-        "error":"Something went wrong while trying to process your payment.",
-        "error2":"Please try again later or email us at support@ichro.me",
-        "signin":"Sign in",
-        "signin_desc":"You need to sign in before buying Pro so we can make sure it's you",
-        "signin_btn":"Sign in"
+        "title":"Verificar",
+        "updating_title":"Pla d'actualització",
+        "payment_options":"Pagar",
+        "pay_monthly":"Mensual (2$)",
+        "pay_yearly":"Anual (20$)",
+        "cancel":"Cancelar",
+        "update":"Actualitzar",
+        "subscribe":"Subscriure’s",
+        "braintree_notice":"Pagaments processats de manera segura per Braintree.",
+        "monthly_notice":"Subscrivint-te, autoritzes l' iChrome a cobrar 2$ cada mes fins que es cancel·li la subscripció.",
+        "yearly_notice":"Subscrivint-te, autoritzes l' iChrome a cobrar 20$ cada any fins que es cancel·li la subscripció.",
+        "update_notice":"Encara que els canvis als cicles de facturació tenen efecte immediat, no se't cobrarà fins que acabi el cicle actuals.",
+        "thank_you":"Gràcies per comprar l'iChrome Pro!",
+        "thank_you2":"iChrome es recarregarà d'aquí a pocs segons i estarà tot a punt!",
+        "error":"Alguna cosa ha sortit malament mentre s'intentava processar el pagament.",
+        "error2":"Si us plau torna-ho a provar una altra vegada d'aquí a una estona o envia un email a support@ichro.me",
+        "signin":"Iniciar sessió",
+        "signin_desc":"Cal que inicïis la sessió abans de comprar la versió Pro per què ens puguem assegurar de que ets tú",
+        "signin_btn":"Iniciar sessió"
       },
       "plan":{
-        "title":"Plan",
-        "desc":"You are currently subscribed to iChrome Pro (%s)",
+        "title":"Pla",
+        "desc":"Actualment estàs subscrit a iChrome Pro (%s)",
         "types":{
-          "monthly":"Monthly",
-          "yearly":"Yearly",
-          "business":"Business",
-          "education":"Education",
-          "custom":"Custom"
+          "monthly":"Mensualment",
+          "yearly":"Anualment",
+          "business":"Negocis",
+          "education":"Educació",
+          "custom":"Personalitzat"
         },
-        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
-        "status":"Status",
-        "status_active":"Active",
-        "status_trial":"Trial",
-        "status_pastdue":"Past due",
-        "subscription_date":"Subscription date",
-        "paid_through":"Paid through",
-        "next_bill":"Next bill",
-        "next_bill_value":"$%s on %s",
-        "update_plan":"Update plan",
-        "update_billing":"Update billing",
-        "cancel":"Cancel subscription",
-        "cancel_notice":"Your subscription will be canceled immediately",
+        "uneditable_desc":"Els plans de negocis, educació i personalitzats no es poden actualitzar des de dins de l'iChrome. Si us plau <a href=\"mailto:support@ichro.me\"> Contacti amb nosaltres<\/a> per actualitzar o anul·lar la seva subscripció.",
+        "status":"Estat",
+        "status_active":"Actiu",
+        "status_trial":"Prova",
+        "status_pastdue":"Vençut",
+        "subscription_date":"Data de subscripció",
+        "paid_through":"Pagat a través de",
+        "next_bill":"Propera factura",
+        "next_bill_value":"$%s en %s",
+        "update_plan":"Pla d'actualització",
+        "update_billing":"Actualitzar la facturació",
+        "cancel":"Cancel·lar la subscripció",
+        "cancel_notice":"La subscripció es cancel·larà immediatament",
         "cancel_notice2":"If you would like a refund, please contact us at support@ichro.me"
       }
     }
@@ -363,7 +363,7 @@
     "error":{
       "explanation":"Something went wrong while we were trying to display this widget.",
       "advice":"Try reinstalling the widget or reloading the page. Contact us if you see this message often.",
-      "support":"Support",
+      "support":"Suport",
       "refresh":"Refresh"
     },
     "auth":{
@@ -425,7 +425,7 @@
       "view":"View",
       "source":"Source",
       "unknown":"Unknown",
-      "download":"Download",
+      "download":"Descarregar",
       "pro_only":"Only Pro users can download background images and videos"
     },
     "edit":{

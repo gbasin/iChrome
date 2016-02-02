@@ -130,8 +130,8 @@ define(["lodash", "jquery", "moment", "widgets/views/main"], function(_, $, mome
 			}
 
 			data.views = _.map({
-				"favorites": "Favorites",
-				"top": "Top Games",
+				"favorites": this.translate("favorites"),
+				"top": this.translate("top_games"),
 				"football/nfl": "NFL",
 				"football/college-football": "NCAA Football",
 				"baseball/mlb": "MLB",

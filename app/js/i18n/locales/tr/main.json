@@ -1,7 +1,7 @@
 {
   "lang_code":"tr",
   "language":"Türkçe",
-  "extName":"iChrome",
+  "extName":"iChrome - A Fast, Productive Home Page",
   "newtabName":"Yeni iChrome Sekmesi",
   "extDescription":"Chrome için EN İYİ ana sayfa. Çarpıcı temalar, onlarca eklenti, inanılmaz hız, çılgınca özelleştirilebilir!",
   "newtabDescription":"Chrome için EN İYİ ana sayfa. Artık yeni sekme için. Çarpıcı temalar, onlarca eklenti, inanılmaz hız, çılgınca özelleştirilebilir!",
@@ -21,7 +21,7 @@
       "tagline":"All the sites and apps you use, in one place",
       "wrong_extension":"Want iChrome on your new tab page instead?",
       "wrong_extension_newtab":"Want iChrome on your home page instead?",
-      "wrong_extension_action":"Click here",
+      "wrong_extension_action":"Buraya tıkla",
       "about":"iChrome's all about tabs and widgets",
       "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
       "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privacy Policy<\/a>",
@@ -37,16 +37,16 @@
     "widgets":{
       "configure":"Let's configure a widget.",
       "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
-      "configure_skip":"Skip",
+      "configure_skip":"Geç",
       "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
       "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
       "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
-      "done":"Got it"
+      "done":"Anladım"
     },
     "settings":{
       "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
-      "instructions":"Click the highlighted image to open it.",
-      "skip":"Skip",
+      "instructions":"Vurgulanan resmi açmak için tıklayın.",
+      "skip":"Geç",
       "tooltips":{
         "settings":"Change the way iChrome looks and works",
         "widgets":"Add new widgets - you can have as many as you want",
@@ -55,7 +55,7 @@
         "tabs":"These are your tabs. You can add more in the settings",
         "support":"Send us a message or leave a review here"
       },
-      "finished":"That's it!",
+      "finished":"Hepsi bu kadar!",
       "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
       "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
     }
@@ -116,7 +116,7 @@
     "exit":"Exit settings",
     "saved":"Settings saved",
     "nav":{
-      "visual":"Visual",
+      "visual":"Görsel",
       "visual_sections":{
         "background":"Background",
         "layout":"Düzen",

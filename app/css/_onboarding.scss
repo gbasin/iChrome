@@ -130,6 +130,7 @@
 					.btn-container {
 						flex: 1 0;
 						width: 100%;
+						min-width: 0; // crbug.com/546034 fix - flex issues in Chrome 48+
 						display: flex;
 						background: #ECECEC;
 						align-items: center;

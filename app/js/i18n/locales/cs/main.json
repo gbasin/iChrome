@@ -3,7 +3,7 @@
   "language":"Česky",
   "extName":"iChrome",
   "newtabName":"Nová karta iChrome",
-  "extDescription":"NEJLEPŠÍ domovská stránka pro Chrome. Nádherné motivy, desítky widgetů, bleskově rychlý, šíleně přizpůsobitelný!",
+  "extDescription":"NEJLEPŠÍ domovská stránka pro Chrome. Nádherné motivy, desítky widgetů, úžasná rychlost a upravíte si ji dle vlastních představ!",
   "newtabDescription":"Nejlepší výchozí stránka pro Chrome. Nyní i pro nově otevřený panel. Krásná témata, hromada widgetů, rychlý a konfigurovatelný!",
   "defaults":{
     "tab":"Domovská stránka",
@@ -11,68 +11,68 @@
   },
   "remove_widget":"Odstranit",
   "alert":{
-    "default_button":"Dismiss",
-    "confirm_title":"Are you sure you want to do this?",
-    "confirm_continue":"Continue",
-    "confirm_cancel":"Cancel"
+    "default_button":"Odmítnout",
+    "confirm_title":"Opravdu to chcete provést?",
+    "confirm_continue":"Pokračovat",
+    "confirm_cancel":"Zrušit"
   },
   "onboarding":{
     "modal":{
-      "tagline":"All the sites and apps you use, in one place",
-      "wrong_extension":"Want iChrome on your new tab page instead?",
-      "wrong_extension_newtab":"Want iChrome on your home page instead?",
-      "wrong_extension_action":"Click here",
-      "about":"iChrome's all about tabs and widgets",
-      "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
-      "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privacy Policy<\/a>",
-      "sign_in":"Sign in with your Google account",
-      "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
-      "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
-      "sign_in_button":"Sign in with Google",
-      "have_account":"It looks like you already have an account!",
-      "have_account_desc":"All your tabs and widgets are ready to use!",
-      "get_started":"Let's get started!",
-      "get_started_desc":"You're good to go! Let's get your page set up."
+      "tagline":"Všechny weby a aplikace, které používáte, na jednom místě",
+      "wrong_extension":"Chcete mít iChrome na vaší nové kartě?",
+      "wrong_extension_newtab":"Chcete mít iChrome jako domovskou stránku?",
+      "wrong_extension_action":"Klikněte zde",
+      "about":"iChrome je celý o kartách a widgetech",
+      "about_desc":"Karty jsou stránky s widgety - bloky, které ukazují věci, jako je například počasí, zpravodajství a nebo váš email. Většinu widgetů si můžete upravit jakkoliv chcete a mít jich kolik jen chcete.",
+      "terms":"Upozornění: Pokračováním souhlasíte s <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Podmínkami<\/a> a <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Ochranou soukromí<\/a> dle iChrome",
+      "sign_in":"Přihlásit se pomocí účtu Google",
+      "sign_in_desc":"Pro bezpečné online ukládání Vašich změn se nejprve přihlaste pomocí Vašeho účtu Google.",
+      "sign_in_desc2":"Pokud chcete, můžete zůstat odhlášeni, ale vaše stránka nebude ukládána online a nebudete k ní mít přístup z jiných počítačů.",
+      "sign_in_button":"Přihlásit se přes Google+",
+      "have_account":"Vypadá to, že už jeden účet máte!",
+      "have_account_desc":"Vaše karty a widgety jsou připraveny k použití!",
+      "get_started":"Pojďme na to!",
+      "get_started_desc":"Jste připraveni začít! Pojďme nastavit Vaše stránky."
     },
     "widgets":{
-      "configure":"Let's configure a widget.",
-      "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
-      "configure_skip":"Skip",
-      "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
-      "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
-      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
-      "done":"Got it"
+      "configure":"Pojďme si nastavit widget.",
+      "configure_desc":"Pro <b>nastavení<\/b> widgetu počasí klikněte na symbol klíče.",
+      "configure_skip":"Přeskočit",
+      "settings":"Nahraďte <b>San Francisco, CA<\/b> Vaší lokací a stiskněte tlačítko <b>Uložit<\/b>.",
+      "move":"Widgety můžete <b>přetahovat<\/b> tažením za zvýrazněný symbol.",
+      "remove":"Widget můžete <b>odstranit<\/b> přetažením na červený pruh (ten se při přesouvání objeví v horní části obrazovky).",
+      "done":"Rozumím"
     },
     "settings":{
-      "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
-      "instructions":"Click the highlighted image to open it.",
-      "skip":"Skip",
+      "intro":"Teď se pojďme podívat na <b>menu<\/b> a uvidíme, co dalšího můžete dělat.",
+      "instructions":"Klikněte na zvýrazněný obrázek pro jeho otevření.",
+      "skip":"Přeskočit",
       "tooltips":{
-        "settings":"Change the way iChrome looks and works",
-        "widgets":"Add new widgets - you can have as many as you want",
-        "editing":"Show or hide the editing buttons on widgets",
-        "links":"This is a list of links, add sites you use often in the settings",
-        "tabs":"These are your tabs. You can add more in the settings",
-        "support":"Send us a message or leave a review here"
+        "settings":"Změňte vzhled i fungování iChrome",
+        "widgets":"Přidat nový widget - můžete jich mít kolik jen budete chtít",
+        "editing":"Zobrazit nebo skrýt tlačítka pro úpravu widgetů",
+        "links":"Toto je seznam odkazů, přidejte si odkazy na webové stránky, které často navštěvujete. Změnu provedete v nastavení",
+        "tabs":"Toto jsou vaše karty. Další si můžete přidat v nastavení",
+        "support":"Pošlete nám zprávu nebo nám nechte recenzi zde"
       },
-      "finished":"That's it!",
-      "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
-      "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
+      "finished":"A je to!",
+      "finished_next":"Vyberte volbu z menu (zkuste začít s volbou <b>Widgety<\/b>) a nastavte si Vaši stránku!",
+      "finished_contact":"Použijte odkaz na podporu pokud potřebujete jakoukoli pomoc a my Vám odpovíme co nejrychleji to půjde."
     }
   },
   "storage":{
-    "signin":"Sign in with Google now to securely save and sync your configuration",
-    "signin_btn":"Sign in",
-    "signin_dismiss":"Dismiss",
+    "signin":"Přihlaste se nyní pomocí Google pro bezpečné ukládání a synchronizaci Vaší konfigurace",
+    "signin_btn":"Přihlásit se",
+    "signin_dismiss":"Odmítnout",
     "signin_confirm":{
-      "title":"Keep local data?",
-      "desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
-      "keep_account":"Use account",
-      "keep_local":"Keep local"
+      "title":"Ponechat místní data?",
+      "desc":"Chcete uchovat svou lokální konfiguraci a přepsat podle ní konfiguraci uloženou ve vašem účtu nebo přepsat lokální konfiguraci konfigurací z účtu?",
+      "keep_account":"Použít účet",
+      "keep_local":"Ponechat místní"
     },
-    "signout_confirm":"Signing out will erase your local backups",
-    "pastdue":"Your subscription is past due",
-    "pastdue_desc":"Please update your billing information in the settings"
+    "signout_confirm":"Odhlášení vymaže místní zálohy",
+    "pastdue":"Vaše předplatné je po splatnosti",
+    "pastdue_desc":"Prosím aktualizujte Vaše platební informace v nastavení"
   },
   "toolbar":{
     "placeholder":"Co hledáte?\n",
@@ -101,8 +101,8 @@
       "support":"Podpora",
       "feedback":"Zpětná vazba",
       "review":"Recenze",
-      "terms":"Terms",
-      "privacy":"Privacy",
+      "terms":"Podmínky",
+      "privacy":"Ochrana soukromí",
       "by":"Avi Kohn"
     }
   },
@@ -113,223 +113,223 @@
   },
   "settings":{
     "title":"Nastavení",
-    "exit":"Exit settings",
-    "saved":"Settings saved",
+    "exit":"Opustit nastavení",
+    "saved":"Nastavení bylo uloženo",
     "nav":{
-      "visual":"Visual",
+      "visual":"Vzhled",
       "visual_sections":{
-        "background":"Background",
-        "layout":"Uspořádání",
-        "theme":"App theme"
+        "background":"Pozadí",
+        "layout":"Rozložení",
+        "theme":"Motiv aplikace"
       },
-      "toolbar":"Toolbar",
+      "toolbar":"Panel nástrojů",
       "toolbar_sections":{
-        "style":"Style",
+        "style":"Styl",
         "search":"Hledat",
-        "links":"Links"
+        "links":"Odkazy"
       },
       "tabs":"Záložky",
       "widgets":"Widgety",
       "pro":"Pro",
-      "accounts":"Account",
-      "misc":"Miscellaneous",
-      "advanced":"Advanced",
+      "accounts":"Účet",
+      "misc":"Ostatní",
+      "advanced":"Pokročilé nastavení",
       "advanced_sections":{
-        "backups":"Backup and restore",
-        "css":"Custom CSS",
-        "debug_tools":"Debug tools"
+        "backups":"Záloha a obnova",
+        "css":"Vlastní CSS",
+        "debug_tools":"Debugovací nástroje"
       },
-      "support":"Help and support",
-      "suggest":"Suggest a feature"
+      "support":"Pomoc a podpora",
+      "suggest":"Navrhnout funkcionalitu"
     },
     "visual":{
       "background":{
-        "title":"Background",
-        "desc":"This is the image or set of images shown as a background to your tabs",
-        "current":"Current background",
+        "title":"Pozadí",
+        "desc":"Toto je obrázek nebo sada obrázků zobrazovaná jako pozadí do Vašich karet",
+        "current":"Aktuální pozadí",
         "custom":"Vlastní",
-        "unnamed":"Theme %s",
-        "select":"Select a theme",
+        "unnamed":"Motiv %s",
+        "select":"Vybrat motiv",
         "or":"nebo",
-        "url_placeholder":"Enter an image URL"
+        "url_placeholder":"Vložte URL obrázku"
       },
       "layout":{
-        "title":"Uspořádání",
-        "desc":"Here you can adjust the type and number of columns in each tab",
-        "columns":"Columns",
-        "grid":"Grid",
-        "columns_number":"Number of columns",
-        "column_width":"Column width",
-        "column_width_fixed":"Fixed",
-        "column_width_fluid":"Fluid",
+        "title":"Rozložení",
+        "desc":"Zde můžete nastavit typ a počet sloupců pro každou záložku",
+        "columns":"Sloupce",
+        "grid":"Mřížka",
+        "columns_number":"Počet sloupců",
+        "column_width":"Šířka sloupce",
+        "column_width_fixed":"Pevná",
+        "column_width_fluid":"Pružná",
         "column_warning":{
-          "column_to_grid":"Changing to a grid-based layout will move all of your widgets to the top left corner.",
-          "grid_to_column":"Changing to a column-based layout will move all of your widgets to the first column."
+          "column_to_grid":"Změna na dlaždicové rozložení přesune všechny Vaše aktuální widgety do levého horního rohu.",
+          "grid_to_column":"Změna na sloupcové rozložení přesune všechny Vaše aktuální widgety do prvního sloupce."
         }
       },
       "theme":{
-        "title":"App theme",
-        "desc":"The app theme controls the style of iChrome itself and all widgets",
+        "title":"Motiv aplikace",
+        "desc":"Motiv aplikace ovlivňuje styl samotného iChrome a všech widgetů",
         "preview":"Náhled",
-        "light":"Light (default)",
+        "light":"Světlý (výchozí)",
         "dark":"Tmavý",
-        "transparent":"Transparent",
-        "transparent_darker":"Transparent (darker)"
+        "transparent":"Průhledný",
+        "transparent_darker":"Průhledný (tmavší)"
       }
     },
     "toolbar":{
       "style":{
-        "title":"Style",
-        "desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
-        "normal":"Normal",
-        "button":"Button"
+        "title":"Styl",
+        "desc":"Zde se nastavuje styl zobrazení panelu nástrojů. Může být zobrazen normálně nebo jako menu při stisknutí tlačítka v rohu",
+        "normal":"Normální",
+        "button":"Tlačítko"
       },
       "search":{
         "title":"Hledat",
-        "desc":"These settings control how the search box and voice search function",
-        "engine":"Search engine",
-        "engines_google":"Google (Default)",
+        "desc":"Toto nastavení mění fungování vyhledávacího pole a hlasového vyhledávání",
+        "engine":"Vyhledávač",
+        "engines_google":"Google (výchozí)",
         "engines_custom":"Vlastní",
-        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
-        "voice":"Enable voice search",
-        "ok_google":"Enable \"OK Google\" hotword detection",
-        "search_tab":"Open search results in a new tab"
+        "engines_custom_desc":"Toto je adresa, na kterou se budou odesílat dotazy vyhledávání. V adrese se <b>%s<\/b> nahradí vyhledávaným textem.",
+        "voice":"Povolit vyhledávání pomocí hlasu",
+        "ok_google":"Zapnout detekci klíčového slova \"OK Google\"",
+        "search_tab":"Otevřít výsledky hledání v nové záložce"
       },
       "links":{
-        "title":"Links",
-        "desc":"These are the items shown at the right of the toolbar",
-        "apps":"Apps menu",
-        "custom":"Custom links",
-        "custom_note1":"Maximum of 3 allowed",
-        "custom_note2":"users get 8",
-        "custom_name_placeholder":"Link text",
-        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+        "title":"Odkazy",
+        "desc":"Toto jsou položky zobrazené v pravé části panelu nástrojů",
+        "apps":"Menu aplikací",
+        "custom":"Vlastní odkazy",
+        "custom_note1":"Jsou povoleny maximálně 3",
+        "custom_note2":"uživatelé dostanou 8",
+        "custom_name_placeholder":"Text odkazu",
+        "custom_url_placeholder":"Adresa odkazu, např. https:\/\/www.google.com\/"
       }
     },
     "misc":{
-      "link_tab":"Open links in a new tab by default"
+      "link_tab":"Otevírat odkazy v nové kartě jako výchozí chování"
     },
     "tabs":{
-      "create_new":"Create new",
-      "make_default":"Make default",
-      "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
-      "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
-      "name_placeholder":"Enter a tab name",
-      "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
+      "create_new":"Vytvořit novou",
+      "make_default":"Nastavit jako výchozí",
+      "desc1":"Karty jsou stránky uvnitř iChrome. Každá karta má vlastní sadu widgetů, zcela nezávisle na ostatních kartách.",
+      "desc2":"Můžete přepínat mezi kartami kliknutím na tlačítka, která se zobrazí na levé a pravé straně obrazovky, když přejedete myší přes kartu nebo pomocí kláves se šipkami na Vaší klávesnici.",
+      "name_placeholder":"Zadejte název karty",
+      "delete_confirm":"Tato akce je nezvratná. Všechna data widgetů na kartě budou navždy ztracena."
     },
     "accounts":{
       "status":{
-        "title":"Status",
-        "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
-        "reset_account":"Reset account",
-        "sign_out":"Sign out",
-        "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
-        "sign_in":"Sign in with Google"
+        "title":"Stav",
+        "signed_in":"Jste <b>přihlášeni<\/b> jako %s (%s).",
+        "reset_account":"Resetovat účet",
+        "sign_out":"Odhlásit",
+        "signed_out":"Nyní <b>nejste přihlášeni<\/b>. Přihlaste se nyní pomocí Vašeho Google účtu aby mohla být vaše konfigurace bezpečně ukládána a synchronizována.",
+        "sign_in":"Přihlásit se přes Google"
       },
-      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
-      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this account."
+      "reset_confirm_desc":"Tato akce vymaže Vaše lokální i synchronizovaná data. Neexistuje žádná záloha ani způsob jak tuto akci vrátit zpět.",
+      "reset_confirm_desc2":"Stratíte věškerou aktuální konfiguraci na všech počítačích připojených k tomuto účtu."
     },
     "advanced":{
       "backups":{
-        "title":"Backup and restore",
-        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
-        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
-        "backup":"Backup now",
-        "upload":"Restore from file",
-        "download":"Download",
-        "restore":"Restore",
-        "download_name":"iChrome Backup",
-        "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
-        "restore_error":"An error occurred while trying to parse the provided data, please try again later."
+        "title":"Záloha a obnova",
+        "desc":"Zálohy jsou plné kopie všech vašich záložek, nastavení a widgetů. Jsou generovány automaticky, když poprvé otevřete iChrome každý den.",
+        "desc2":"Použijte tlačítka níže pro vrácení iChrome do stavu k určitému datu nebo stáhněte některou ze svých záloh.",
+        "backup":"Zálohovat nyní",
+        "upload":"Obnovit ze souboru",
+        "download":"Stáhnout",
+        "restore":"Obnovit",
+        "download_name":"iChrome zálohování",
+        "restore_confirm":"Toto přepíše všechna lokální i synchronizovaná data. Ztratíte celou svoji aktuální konfiguraci na všech počítačích s tímto účtem.",
+        "restore_error":"Nastala chyba při pokusu o čtení poskytnutých dat, zkuste to prosím později."
       },
       "css":{
-        "title":"Custom CSS",
-        "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
-        "placeholder":"Enter up to 1000 characters of CSS here"
+        "title":"Vlastní CSS",
+        "desc":"Můžete použít CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definice<\/a>) a nastavit si téměř každou část iChrome.",
+        "placeholder":"Zde vložte až 1000 znaků CSS"
       },
       "debug_tools":{
-        "title":"Debug tools",
-        "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
-        "open":"Open tools"
+        "title":"Debugovací nástroje",
+        "desc":"<b>POZOR:<\/b> Tyto nástroje mohou smazat veškeré vaše nastavení jedním klikem. Použijte je pouze pokud vás navede váš developer.",
+        "open":"Otevřít nástroje"
       }
     },
     "widgets":{
-      "desc1":"Widgets have their own settings and can't be customized here.",
-      "desc2":"To edit a widget's settings, follow these steps:",
-      "steps1":"Move your mouse over any widget",
-      "steps2":"Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
-      "steps3":"Edit any of the settings shown in the dialog that's displayed",
-      "steps4":"Click Save to save your changes, or any part of the background to discard of them"
+      "desc1":"Widgety mají vlastní nastavení a nemůžete je upravovat zde.",
+      "desc2":"Pro úpravu nastavení widgetu postupujte následovně:",
+      "steps1":"Najeďte kurzorem na jakýkoli widget",
+      "steps2":"Klikněte na ikonu klíče, která se objevý v pravé horní části widgetu. Pokud se ikona neobjeví, widget nemá možnost úpravy žádného nastavení.",
+      "steps3":"Upravte kterékoliv nastavení zobrazené v zobrazeném dialogu",
+      "steps4":"Pro uložení vašich změn klikněte na Uložit, pro jejich zrušení klikněte kdekoli na pozadí"
     },
     "pro":{
       "promo":{
-        "monthly_price":"$2 per month",
-        "yearly_price":"or $20 per year",
-        "upgrade_btn":"Upgrade Now",
-        "business":"Interested in buying Pro for your business or school?",
-        "business_contact":"Contact us",
-        "themes":"Témata",
-        "themes_desc":"See more of your backgrounds with dark and transparent themes",
-        "bgs":"Live backgrounds",
-        "bgs_desc":"Bring your page to life with 20 live high-definition backgrounds",
-        "widgets":"Maximizable widgets",
-        "widgets_desc":"Take iChrome to another level with maximizable widgets",
-        "more_header":"And more",
-        "stocks":"Realtime stocks with extended and historical information",
-        "rss":"Support for multiple RSS feeds per widget",
-        "sports":"General and league-specific sports news",
-        "tabbed_widgets":"Tabbed news and RSS widgets",
-        "bg_downloads":"Downloadable backgrounds",
-        "weather":"Hourly weather forecasts up to 10 days out",
-        "toolbar":"More toolbar links",
-        "support":"Prioritized support and suggestions",
-        "buy_pro":"Buy Pro"
+        "monthly_price":"$2 za měsíc",
+        "yearly_price":"nebo $20 za rok",
+        "upgrade_btn":"Vylepšit teď",
+        "business":"Máte zájem koupit Pro verzi pro vaši firmu nebo školu?",
+        "business_contact":"Kontaktujte nás",
+        "themes":"Motivy",
+        "themes_desc":"Poznejte více z Vašich pozadí s tmavými a průhlednými motivy",
+        "bgs":"Živé pozadí",
+        "bgs_desc":"Oživte svoji stránku jedním z 20ti živých pozadí ve vysokém rozlišení",
+        "widgets":"Maximalizovatelné widgety",
+        "widgets_desc":"Poznejte novou úroveň iChrome použitím maximalizovatelných widgetů",
+        "more_header":"A další",
+        "stocks":"Akcie v reálném čase s jejich detaily a historií",
+        "rss":"Podpora více RSS feedů v jednom widgetu",
+        "sports":"Obecné i ligové sportovní novinky",
+        "tabbed_widgets":"Widgety pro karty novinek a RSS kanály",
+        "bg_downloads":"Stahovatelné pozadí",
+        "weather":"Hodinové předpovědi počasí až na 10 dní dopředu",
+        "toolbar":"Více odkazů v panelu nástrojů",
+        "support":"Rychlejší podpora a nápověda",
+        "buy_pro":"Koupit Pro"
       },
       "checkout":{
-        "title":"Checkout",
-        "updating_title":"Update plan",
-        "payment_options":"Pay",
-        "pay_monthly":"Monthly ($2)",
-        "pay_yearly":"Yearly ($20)",
-        "cancel":"Cancel",
-        "update":"Update",
-        "subscribe":"Subscribe",
-        "braintree_notice":"Payments securely processed by Braintree.",
-        "monthly_notice":"By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
-        "yearly_notice":"By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
-        "update_notice":"Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
-        "thank_you":"Thank you for buying iChrome Pro!",
-        "thank_you2":"iChrome will reload in a few seconds and you'll be all set!",
-        "error":"Something went wrong while trying to process your payment.",
-        "error2":"Please try again later or email us at support@ichro.me",
-        "signin":"Sign in",
-        "signin_desc":"You need to sign in before buying Pro so we can make sure it's you",
-        "signin_btn":"Sign in"
+        "title":"Platba",
+        "updating_title":"Aktualizovat plán",
+        "payment_options":"Zaplatit",
+        "pay_monthly":"Měsíčně($2)",
+        "pay_yearly":"Ročně ($20)",
+        "cancel":"Zrušit",
+        "update":"Aktualizovat",
+        "subscribe":"Předplatit",
+        "braintree_notice":"Platby jsou bezpečně zpracovávány přes Braintree.",
+        "monthly_notice":"Předplacením povolujete iChrome aby Vám účtoval $2 každý měsíc, dokud nezrušíte své předplatné.",
+        "yearly_notice":"Předplacením povolujete iChrome aby Vám účtoval $20 každý měsíc, dokud nezrušíte své předplatné.",
+        "update_notice":"Ačkoliv změny účtovacího cyklu se projeví okamžitě, částka Vám nebude účtována dokud neskončí aktuální cyklus.",
+        "thank_you":"Děkujeme za zakoupení iChrome Pro!",
+        "thank_you2":"iChrome se znovu načte za pár sekund a poté budete připraveni!",
+        "error":"Něco se nepodařilo během zpracování Vaší platby.",
+        "error2":"Prosím zkuste to později nebo nás kontaktujte na support@ichro.me",
+        "signin":"Přihlásit se",
+        "signin_desc":"Pro koupení Pro verze se nejprve přihlaste, abychom věděli, že jste to Vy",
+        "signin_btn":"Přihlásit se"
       },
       "plan":{
-        "title":"Plan",
-        "desc":"You are currently subscribed to iChrome Pro (%s)",
+        "title":"Plán",
+        "desc":"Právě jste přihlášeni k předplatnému iChrome Pro (%s)",
         "types":{
-          "monthly":"Monthly",
-          "yearly":"Yearly",
-          "business":"Business",
-          "education":"Education",
+          "monthly":"Měsíčně",
+          "yearly":"Ročně",
+          "business":"Pro firmy",
+          "education":"Pro školy",
           "custom":"Vlastní"
         },
-        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
-        "status":"Status",
-        "status_active":"Active",
-        "status_trial":"Trial",
-        "status_pastdue":"Past due",
-        "subscription_date":"Subscription date",
-        "paid_through":"Paid through",
-        "next_bill":"Next bill",
-        "next_bill_value":"$%s on %s",
-        "update_plan":"Update plan",
-        "update_billing":"Update billing",
-        "cancel":"Cancel subscription",
-        "cancel_notice":"Your subscription will be canceled immediately",
-        "cancel_notice2":"If you would like a refund, please contact us at support@ichro.me"
+        "uneditable_desc":"Plány pro firmy, školy a speciální plány nelze aktualizovat přes iChrome. Prosím <a href=\"mailto:support@ichro.me\">kontaktujte nás<\/a> pro aktualizaci nebo zrušení Vašeho předplatného.",
+        "status":"Stav",
+        "status_active":"Aktivní",
+        "status_trial":"Zkušební verze",
+        "status_pastdue":"Po splatnosti",
+        "subscription_date":"Datum předplatného",
+        "paid_through":"Zaplaceno do",
+        "next_bill":"Další platba",
+        "next_bill_value":"$%s k %s",
+        "update_plan":"Aktualizovat plán",
+        "update_billing":"Aktualizovat účtování",
+        "cancel":"Zrušit předplatné",
+        "cancel_notice":"Vaše předplatné bude zrušeno okamžitě",
+        "cancel_notice2":"Pokud si přejete vrátit peníze, kontaktujte nás prosím na support@ichro.me"
       }
     }
   },
@@ -352,23 +352,23 @@
       "save":"Ulož",
       "size":"Velikost widgetu"
     },
-    "minimize":"Minimize",
-    "maximize":"Maximize",
+    "minimize":"Minimalizovat",
+    "maximize":"Maximalizovat",
     "delete_confirm":"Opravdu chcete odstranit tento widget?\nTato akce nemůže být vrácena zpět a všechna data z tohoto widgetu budou ztracena.",
     "permissions_request":{
-      "title":"Access required",
-      "button":"Grant Access",
-      "desc":"This widget needs extra permissions before it can be used. Grant them using the button below."
+      "title":"Povolení k přístupu vyžadováno",
+      "button":"Povolit přístup",
+      "desc":"Tento widget vyžaduje před použitím speciální pověření. Povolte jej pomocí tlačítka níže."
     },
     "error":{
-      "explanation":"Something went wrong while we were trying to display this widget.",
-      "advice":"Try reinstalling the widget or reloading the page. Contact us if you see this message often.",
+      "explanation":"Při zobrazení widgetu došlo k potížím.",
+      "advice":"Pokuste se widget přeinstalovat nebo obnovit stránku. Pokud se vám tato zpráva zobrazuje často, kontaktujte nás.",
       "support":"Podpora",
-      "refresh":"Refresh"
+      "refresh":"Obnovit"
     },
     "auth":{
-      "message":"You'll need to give this widget access to your account before you can use it.",
-      "button":"Grant Access"
+      "message":"Pokud chcete používat tento widget, musíte mu povolit přístup k vašemu účtu.",
+      "button":"Povolit přístup"
     },
     "shared":{
       "settings":{
@@ -393,17 +393,17 @@
     }
   },
   "themes":{
-    "title":"Témata",
+    "title":"Motivy",
     "all":"Vše",
     "custom":"Vlastní",
     "create":"Vytvoření motivu",
     "url_or_upload":"nebo",
     "upload_image":"Nahrát obrázek",
-    "edit_btn":"Editovat",
+    "edit_btn":"Upravit",
     "delete":"Smazat",
     "use":"Použít",
     "preview":"Náhled",
-    "author":"od",
+    "author":"Od",
     "images":"%s obrázků",
     "resolution":"Rozlišení",
     "categories":"Kategorie",
@@ -412,9 +412,9 @@
     "random_daily":"Motiv zobrazuje každý den náhodný obrázek",
     "sunrise_sunset":"Tento motiv zobrazuje náhodný obrázek dle aktuálního času",
     "feed":"Tento motiv zobrazí obrázek z externího kanálu dle denního výběru",
-    "video":"This theme displays a live video",
-    "pro_only":"This theme is only available to Pro users. Buy Pro in the settings.",
-    "delete_confirm":"Jste si opravdu jisti, že chcete vymazat toto téma?\nTato akce je nevratná; celé téma bude navždy ztraceno.",
+    "video":"Tento motiv zobrazuje živé video",
+    "pro_only":"Tento motiv je k dispozici pouze pro uživatele Pro. Koupit Pro v nastavení.",
+    "delete_confirm":"Jste si opravdu jisti, že chcete vymazat tento motiv?\nTato akce je nevratná; celý motiv bude navždy ztracen.",
     "delete_error":"Došlo k chybě při pokusu odstranit motiv.  Prosím opakujte akci později.",
     "feed_fetching":"Počkejte prosím, stahuji kanál...",
     "feed_error":"Při pokusu o načtení informačního kanálu došlo k chybě.  Opakujte prosím akci později.",
@@ -422,11 +422,11 @@
     "cache_status":"%s z %s obrázků uložených v mezipaměti",
     "cache_error":"Došlo k chybě při pokusu načíst motiv do mezipaměti.  Prosím opakujte akci později",
     "bginfo":{
-      "view":"View",
+      "view":"Zobrazit",
       "source":"Zdroj",
       "unknown":"Neznámý",
-      "download":"Download",
-      "pro_only":"Only Pro users can download background images and videos"
+      "download":"Stáhnout",
+      "pro_only":"Pouze uživatelé Pro mohou stahovat obrázky pozadí a videa"
     },
     "edit":{
       "title":"Upravit motiv",

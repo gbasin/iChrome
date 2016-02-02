@@ -29,6 +29,9 @@
 				"teams_placeholder": "Enter a team name and press Enter to add"
 			},
 
+			"favorites": "Favorites",
+			"top_games": "Top Games",
+
 			"scores": "Scores",
 			"news": "News",
 

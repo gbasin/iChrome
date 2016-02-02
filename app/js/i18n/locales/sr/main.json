@@ -1,7 +1,7 @@
 {
   "lang_code":"sr",
   "language":"Енглески",
-  "extName":"iChrome",
+  "extName":"iChrome - Брза, продуктивна матична страница",
   "newtabName":"iChrome нови прозор",
   "extDescription":"Најбоља основна страна за Chrome. Заносне теме, десетине додатака, ултра брз, невероватно прилагодљив!",
   "newtabDescription":"Најбоља основна страна за Chrome. Сада за нови прозор. Заносне теме, десетине додатака, ултра брз, невероватно прилагодљив!",
@@ -11,34 +11,34 @@
   },
   "remove_widget":"Ukloni",
   "alert":{
-    "default_button":"Dismiss",
-    "confirm_title":"Are you sure you want to do this?",
-    "confirm_continue":"Continue",
-    "confirm_cancel":"Cancel"
+    "default_button":"Одбаци",
+    "confirm_title":"Да ли сте сигурни да желите то урадити?",
+    "confirm_continue":"Настави",
+    "confirm_cancel":"Поништи"
   },
   "onboarding":{
     "modal":{
-      "tagline":"All the sites and apps you use, in one place",
-      "wrong_extension":"Want iChrome on your new tab page instead?",
-      "wrong_extension_newtab":"Want iChrome on your home page instead?",
-      "wrong_extension_action":"Click here",
+      "tagline":"Све локације и апликације које користите, на једном месту",
+      "wrong_extension":"Желите ли, уместо тога, iChrome на новој картици?",
+      "wrong_extension_newtab":"Желите ли, уместо тога, iChrome на матичној страници?",
+      "wrong_extension_action":"Кликните овде",
       "about":"iChrome's all about tabs and widgets",
       "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
-      "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privacy Policy<\/a>",
-      "sign_in":"Sign in with your Google account",
-      "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
-      "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
-      "sign_in_button":"Sign in with Google",
-      "have_account":"It looks like you already have an account!",
+      "terms":"Напомена: Уколико наставите, прихватате  iChrome-ове <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\"> услове <\/a> и <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">политику приватности<\/a>",
+      "sign_in":"Пријавите се са Google налогом",
+      "sign_in_desc":"Пријавите се са својим Google налогом пре почетка како би безбедно сачували своје измене на мрежи (online).",
+      "sign_in_desc2":"Ако желите, можете остати одјављени, али Ваша страница неће бити сачувана на мрежи и нећете моћи да јој приступите са других рачунара.",
+      "sign_in_button":"Пријавите се са Google-ом",
+      "have_account":"Изгледа да већ имате налог!",
       "have_account_desc":"All your tabs and widgets are ready to use!",
-      "get_started":"Let's get started!",
-      "get_started_desc":"You're good to go! Let's get your page set up."
+      "get_started":"Хајде да почнемо!",
+      "get_started_desc":"Спремни сте да кренете! Хајде да подесимо Вашу страницу."
     },
     "widgets":{
       "configure":"Let's configure a widget.",
-      "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
-      "configure_skip":"Skip",
-      "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
+      "configure_desc":"Кликните на кључ (дугме са иконицом француског кључа) да бисте отворили мрежну алатку (widget) за време <b>settings<\/b>.",
+      "configure_skip":"Прескочи",
+      "settings":"Замените <b>San Francisco, CA<\/b> својом локацијом, а затим притисните <b>Save<\/b>.",
       "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
       "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
       "done":"Got it"
@@ -46,7 +46,7 @@
     "settings":{
       "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
       "instructions":"Click the highlighted image to open it.",
-      "skip":"Skip",
+      "skip":"Прескочи",
       "tooltips":{
         "settings":"Change the way iChrome looks and works",
         "widgets":"Add new widgets - you can have as many as you want",
@@ -291,7 +291,7 @@
         "payment_options":"Pay",
         "pay_monthly":"Monthly ($2)",
         "pay_yearly":"Yearly ($20)",
-        "cancel":"Cancel",
+        "cancel":"Поништи",
         "update":"Update",
         "subscribe":"Subscribe",
         "braintree_notice":"Payments securely processed by Braintree.",

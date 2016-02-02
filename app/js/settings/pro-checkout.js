@@ -1,91 +1,140 @@
 /**
- * The checkout dialog. An actual <dialog> can't be used here since the drop in UI might need to show an overlay.
+ * The checkout handler
  */
-define(["lodash", "jquery", "i18n/i18n", "backbone", "core/auth", "core/render"], function(_, $, Translate, Backbone, Auth, render) {
-	var View = Backbone.View.extend({
-		tagName: "div",
-		className: "checkout-container",
+define(["lodash", "jquery", "browser/api", "modals/alert", "i18n/i18n", "core/auth"], function(_, $, Browser, Alert, Translate, Auth) {
+	var POPUP_WIDTH = 400,
+		POPUP_HEIGHT = 500,
+		CHECKOUT_URL = "https://api.ichro.me/billing/v1/checkout";
 
-		events: {
-			"click button.cancel": function() {
-				this.el.animate([
-					{ opacity: 1 },
-					{ opacity: 0 }
-				], {
-					duration: 300,
-					easing: "cubic-bezier(.4, 0, .2, 1)"
+	var Checkout = function(isUpdating) {
+		this.isUpdating = !!isUpdating;
+
+		var url = CHECKOUT_URL + "?" + $.param({
+			plan: Auth.get("plan"),
+			updating: this.isUpdating,
+			auth_token: Auth.get("token"),
+			appVersion: Browser.app.version
+		});
+
+		Browser.windows.create({
+			url: url,
+			type: "popup",
+			focused: true,
+			width: POPUP_WIDTH,
+			height: POPUP_HEIGHT,
+			top: Math.round((screen.availHeight - POPUP_HEIGHT) / 2),
+			left: Math.round((screen.availWidth - POPUP_WIDTH) / 2)
+		}, function(win) {
+			this._windowId = win.id;
+
+			this.removeListener = function(id) {
+				if (id === win.id) {
+					this.destroy(true);
+				}
+			}.bind(this);
+
+			Browser.windows.onRemoved.addListener(this.removeListener);
+
+			this.initAPI();
+		}.bind(this));
+
+		this.unloadListener = this.destroy.bind(this);
+
+		window.addEventListener("beforeunload", this.unloadListener);
+	};
+
+	Checkout.prototype = {
+		/**
+		 * Starts listening for requests to the internal intercepted extension API.
+		 *
+		 * We use this method instead of something like externally-connectable since
+		 * it doesn't require an extra permission.
+		 */
+		initAPI: function() {
+			var handlers = {
+				cancel: function() {
+					this.destroy();
+				}.bind(this),
+
+				subscribe: function(params) {
+					this.subscribe(params.plan, params.paymentNonce);
+				}.bind(this),
+
+				checkoutStrings: function() {
+					return Translate.getAll().settings.pro.checkout;
+				},
+
+				resize: function(params) {
+					var data = {};
+
+					if (params.width) {
+						data.width = parseInt(params.width);
+						data.left = Math.round((screen.availWidth - params.width) / 2);
+					}
+
+					if (params.height) {
+						data.height = parseInt(params.height);
+						data.top = Math.round((screen.availHeight - params.height) / 2);
+					}
+
+					Browser.windows.update(this._windowId, data);
+
+					return {
+						success: true
+					};
+				}.bind(this)
+			};
+
+			this.webRequestListener = function(info) {
+				// Adapted from http://stackoverflow.com/a/3855394/900747
+				var params = {},
+					idx;
+
+				_.each(new URL(info.url).search.substr(1).split("&"), function(e) {
+					idx = e.indexOf("=");
+
+					if (idx === -1) {
+						params[e] = "";
+					}
+					else {
+						params[e.substring(0, idx)] = decodeURIComponent(e.substr(idx + 1).replace(/\+/g, " "));
+					}
 				});
 
-				this.$(".dialog")[0].animate([
-					{ transform: "scale(1)" },
-					{ transform: "scale(.9)" }
-				], {
-					duration: 300,
-					easing: "cubic-bezier(.4, 0, .2, 1)"
-				}).onfinish = function() {
-					this.remove();
-				}.bind(this);
+				if (params.method && handlers[params.method]) {
+					var resp = handlers[params.method](params);
 
-				return this;
-			},
-
-			"change input[name=pay]": function(e) {
-				var msg = "";
-
-				if (!this.isUpdating) {
-					msg = Translate("settings.pro.checkout." + (e.currentTarget.value === "monthly" ? "monthly" : "yearly") + "_notice");
+					if (resp) {
+						return {
+							redirectUrl: "data:application/json;base64," + btoa(JSON.stringify(resp))
+						};
+					}
 				}
-				else if (Auth.get("plan") !== ("pro_" + e.currentTarget.value)) {
-					msg = Translate("settings.pro.checkout.update_notice");
-				}
+			};
 
-				this.$("footer .notice span").text(msg);
+			Browser.webRequest.onBeforeRequest.addListener(this.webRequestListener, {
+				windowId: this._windowId,
+				types: ["xmlhttprequest"],
+				urls: ["https://api.ichro.me/app-intercept/v1*"]
+			}, ["blocking"]);
+		},
+
+		destroy: function(fromRemove) {
+			Browser.webRequest.onBeforeRequest.removeListener(this.webRequestListener);
+
+			Browser.windows.onRemoved.removeListener(this.removeListener);
+
+			window.removeEventListener("beforeunload", this.unloadListener);
+
+			if (!fromRemove) {
+				Browser.windows.remove(this._windowId);
 			}
 		},
 
-		initialize: function(options) {
-			if (!options || !options.container) {
-				return this.remove();
-			}
+		subscribe: function(plan, paymentNonce) {
+			var isUpdating = this.isUpdating;
 
-			this.isUpdating = !!options.update;
-
-			this.$overlay = $('<div class="checkout-dialog-overlay></div>').appendTo(options.container);
-
-			this.$el.html(render("settings/pro-checkout", {
-				form: true,
-				loading: true,
-				updating: this.isUpdating
-			})).appendTo(options.container);
-
-			this.getClientToken();
-
-
-			this.el.animate([
-				{ opacity: 0 },
-				{ opacity: 1 }
-			], {
-				duration: 300,
-				easing: "cubic-bezier(.4, 0, .2, 1)"
-			});
-
-			this.$(".dialog")[0].animate([
-				{ transform: "scale(.9)" },
-				{ transform: "scale(1)" }
-			], {
-				duration: 300,
-				easing: "cubic-bezier(.4, 0, .2, 1)"
-			});
-		},
-
-		subscribe: function(paymentNonce) {
-			var plan = "pro_" + this.$("input[name=pay]:checked").val();
-
-			this.$el.html(render("settings/pro-checkout", {
-				form: true,
-				loading: true,
-				updating: this.isUpdating
-			}));
+			this.destroy();
 
 			Auth.ajax({
 				method: "PUT",
@@ -100,65 +149,27 @@ define(["lodash", "jquery", "i18n/i18n", "backbone", "core/auth", "core/render"]
 							Auth.set("token", d.authToken);
 						}
 
-						this.$el.html(render("settings/pro-checkout", {
-							success: true,
-							updating: this.isUpdating
-						}));
+						Alert({
+							title: Translate("settings.pro.checkout.thank_you"),
+							contents: isUpdating ? null : [Translate("settings.pro.checkout.thank_you2")]
+						});
 
 						// Changes to the Pro state require a reload since it's used during initialization
-						if (!this.isUpdating) {
+						if (!isUpdating) {
 							setTimeout(function() {
 								location.reload();
 							}, 4000);
 						}
 					}
 					else {
-						this.$el.html(render("settings/pro-checkout", {
-							error: true,
-							updating: this.isUpdating
-						}));
+						Alert([Translate("settings.pro.checkout.error"), Translate("settings.pro.checkout.error2")]);
 					}
-				}.bind(this)
+				}
 			}).fail(function() {
-				this.$el.html(render("settings/pro-checkout", {
-					error: true,
-					updating: this.isUpdating
-				}));
-			}.bind(this));
-		},
-
-		getClientToken: function() {
-			// The Braintree library is loaded remotely
-			require(["braintree"], function(braintree) {
-				Auth.ajax({
-					type: "GET",
-					url: "/billing/v1/clientToken",
-					success: function(d) {
-						if (!d || !d.token) {
-							return;
-						}
-
-						this.$el.html(render("settings/pro-checkout", {
-							form: true,
-							updating: this.isUpdating
-						}));
-
-						if (Auth.get("plan") === "pro_yearly") {
-							this.$("input[name=pay][value=yearly]").prop("checked", true);
-						}
-
-						braintree.setup(d.token, "dropin", {
-							enableCORS: true,
-							container: this.$(".braintree-dropin"),
-							onPaymentMethodReceived: function(obj) {
-								this.subscribe(obj.nonce);
-							}.bind(this)
-						});
-					}.bind(this)
-				});
-			}.bind(this));
+				Alert([Translate("settings.pro.checkout.error"), Translate("settings.pro.checkout.error2")]);
+			});
 		}
-	});
+	};
 
-	return View;
+	return Checkout;
 });

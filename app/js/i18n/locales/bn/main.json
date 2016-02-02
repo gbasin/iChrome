@@ -1,35 +1,35 @@
 {
   "lang_code":"bn",
   "language":"বাংলা",
-  "extName":"iChrome",
-  "newtabName":"iChrome নতুন ট্যাব",
-  "extDescription":"The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
-  "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
+  "extName":"iChrome - একটি দ্রুত, উত্পাদনশীল মূল পাতা",
+  "newtabName":"iChrome নতুন ট্যাব - দ্রুত, সহজ নতুন ট্যাব",
+  "extDescription":"A lightning fast home\/start page dashboard with stunning backgrounds, news, weather, sports, RSS, todo, and more!",
+  "newtabDescription":"A lightning fast new tab page dashboard with stunning backgrounds, news, weather, sports, RSS, todo, and more!",
   "defaults":{
     "tab":"মূল পাতা",
     "me":"আমি"
   },
   "remove_widget":"বাতিল",
   "alert":{
-    "default_button":"Dismiss",
-    "confirm_title":"Are you sure you want to do this?",
-    "confirm_continue":"Continue",
-    "confirm_cancel":"Cancel"
+    "default_button":"বাদ দিন",
+    "confirm_title":"আপনি কি নিশ্চিত যে আপনি এটি করতে চান?",
+    "confirm_continue":"চালিয়ে যান",
+    "confirm_cancel":"বাতিল"
   },
   "onboarding":{
     "modal":{
       "tagline":"All the sites and apps you use, in one place",
       "wrong_extension":"Want iChrome on your new tab page instead?",
       "wrong_extension_newtab":"Want iChrome on your home page instead?",
-      "wrong_extension_action":"Click here",
+      "wrong_extension_action":"এখানে ক্লিক করুন",
       "about":"iChrome's all about tabs and widgets",
       "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
       "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privacy Policy<\/a>",
       "sign_in":"Sign in with your Google account",
       "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
       "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
-      "sign_in_button":"Sign in with Google",
-      "have_account":"It looks like you already have an account!",
+      "sign_in_button":"গুগল দিয়ে সাইন ইন করুন",
+      "have_account":"দেখে মনে হচ্ছে আপনার ইতিমধ্যে একটি অ্যাকাউন্ট আছে!",
       "have_account_desc":"All your tabs and widgets are ready to use!",
       "get_started":"Let's get started!",
       "get_started_desc":"You're good to go! Let's get your page set up."
@@ -37,38 +37,38 @@
     "widgets":{
       "configure":"Let's configure a widget.",
       "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
-      "configure_skip":"Skip",
-      "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
+      "configure_skip":"এড়ান",
+      "settings":"<b>San Francisco, CA<\/b> কে আপনার অবস্থান দিয়ে পরিবর্তন করুন, এরপর <b>সংরক্ষণ<\/b> টিপুন।",
       "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
       "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
-      "done":"Got it"
+      "done":"বুঝেছি"
     },
     "settings":{
       "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
       "instructions":"Click the highlighted image to open it.",
-      "skip":"Skip",
+      "skip":"এড়ান",
       "tooltips":{
         "settings":"Change the way iChrome looks and works",
         "widgets":"Add new widgets - you can have as many as you want",
         "editing":"Show or hide the editing buttons on widgets",
         "links":"This is a list of links, add sites you use often in the settings",
-        "tabs":"These are your tabs. You can add more in the settings",
-        "support":"Send us a message or leave a review here"
+        "tabs":"এইগুলি হল আপনার ট্যাব। আপনি সেটিংসে আরো যোগ করতে পারেন",
+        "support":"এখানে আমাদের বার্তা দিন বা পর্যালোচনা লিখুন"
       },
-      "finished":"That's it!",
+      "finished":"এটাই!",
       "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
       "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
     }
   },
   "storage":{
     "signin":"Sign in with Google now to securely save and sync your configuration",
-    "signin_btn":"Sign in",
-    "signin_dismiss":"Dismiss",
+    "signin_btn":"সাইন ইন করুন",
+    "signin_dismiss":"বাদ দিন",
     "signin_confirm":{
-      "title":"Keep local data?",
+      "title":"স্থানীয় উপাত্ত রাখবেন?",
       "desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
-      "keep_account":"Use account",
-      "keep_local":"Keep local"
+      "keep_account":"একাউন্ট ব্যবহার করুন",
+      "keep_local":"স্থানীয় রাখুন"
     },
     "signout_confirm":"Signing out will erase your local backups",
     "pastdue":"Your subscription is past due",
@@ -144,24 +144,24 @@
     },
     "visual":{
       "background":{
-        "title":"Background",
+        "title":"পটভূমি",
         "desc":"This is the image or set of images shown as a background to your tabs",
-        "current":"Current background",
+        "current":"বর্তমান পটভূমি",
         "custom":"স্বনির্ধারিত",
-        "unnamed":"Theme %s",
-        "select":"Select a theme",
+        "unnamed":"থিম %s",
+        "select":"থিম নির্বাচন করুন",
         "or":"অথবা",
-        "url_placeholder":"Enter an image URL"
+        "url_placeholder":"চিত্রের URL লিখুন"
       },
       "layout":{
         "title":"লেআউট",
         "desc":"Here you can adjust the type and number of columns in each tab",
-        "columns":"Columns",
-        "grid":"Grid",
-        "columns_number":"Number of columns",
-        "column_width":"Column width",
-        "column_width_fixed":"Fixed",
-        "column_width_fluid":"Fluid",
+        "columns":"কলাম",
+        "grid":"বর্গজালি",
+        "columns_number":"কলামের সংখ্যা",
+        "column_width":"কলামের প্রস্থ",
+        "column_width_fixed":"নির্ধারিত",
+        "column_width_fluid":"তরল",
         "column_warning":{
           "column_to_grid":"Changing to a grid-based layout will move all of your widgets to the top left corner.",
           "grid_to_column":"Changing to a column-based layout will move all of your widgets to the first column."
@@ -173,34 +173,34 @@
         "preview":"প্রাকদর্শন",
         "light":"Light (default)",
         "dark":"গাঢ়",
-        "transparent":"Transparent",
-        "transparent_darker":"Transparent (darker)"
+        "transparent":"স্বচ্ছ",
+        "transparent_darker":"স্বচ্ছ (কালো)"
       }
     },
     "toolbar":{
       "style":{
         "title":"Style",
         "desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
-        "normal":"Normal",
-        "button":"Button"
+        "normal":"স্বাভাবিক",
+        "button":"বোতাম"
       },
       "search":{
         "title":"অনুসন্ধান",
         "desc":"These settings control how the search box and voice search function",
-        "engine":"Search engine",
-        "engines_google":"Google (Default)",
+        "engine":"অনুসন্ধান ইঞ্জিন",
+        "engines_google":"গুগল (পূর্বনির্ধারিত)",
         "engines_custom":"স্বনির্ধারিত",
         "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
-        "voice":"Enable voice search",
+        "voice":"কন্ঠস্বর অনুসন্ধান সক্ষম করুন",
         "ok_google":"Enable \"OK Google\" hotword detection",
         "search_tab":"Open search results in a new tab"
       },
       "links":{
         "title":"Links",
         "desc":"These are the items shown at the right of the toolbar",
-        "apps":"Apps menu",
+        "apps":"অ্যাপ মেনু",
         "custom":"Custom links",
-        "custom_note1":"Maximum of 3 allowed",
+        "custom_note1":"সর্বোচ্চ ৩টি মঞ্জুরিপ্রাপ্ত",
         "custom_note2":"users get 8",
         "custom_name_placeholder":"Link text",
         "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
@@ -210,19 +210,19 @@
       "link_tab":"Open links in a new tab by default"
     },
     "tabs":{
-      "create_new":"Create new",
+      "create_new":"নতুন তৈরি করুন",
       "make_default":"Make default",
       "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
       "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
-      "name_placeholder":"Enter a tab name",
+      "name_placeholder":"ট্যাবের নাম লিখুন",
       "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
     },
     "accounts":{
       "status":{
-        "title":"Status",
+        "title":"অবস্থা",
         "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
         "reset_account":"Reset account",
-        "sign_out":"Sign out",
+        "sign_out":"সাইন আউট",
         "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
         "sign_in":"Sign in with Google"
       },
@@ -263,11 +263,11 @@
     },
     "pro":{
       "promo":{
-        "monthly_price":"$2 per month",
-        "yearly_price":"or $20 per year",
+        "monthly_price":"মাস প্রতি $২",
+        "yearly_price":"বা বছর প্রতি $২০",
         "upgrade_btn":"Upgrade Now",
         "business":"Interested in buying Pro for your business or school?",
-        "business_contact":"Contact us",
+        "business_contact":"আমাদের সাথে যোগাযোগ",
         "themes":"থিমসমূহ",
         "themes_desc":"See more of your backgrounds with dark and transparent themes",
         "bgs":"Live backgrounds",
@@ -283,17 +283,17 @@
         "weather":"Hourly weather forecasts up to 10 days out",
         "toolbar":"More toolbar links",
         "support":"Prioritized support and suggestions",
-        "buy_pro":"Buy Pro"
+        "buy_pro":"Pro কিনুন"
       },
       "checkout":{
         "title":"Checkout",
-        "updating_title":"Update plan",
+        "updating_title":"হালনাগাদ পরিকল্পনা",
         "payment_options":"Pay",
         "pay_monthly":"Monthly ($2)",
         "pay_yearly":"Yearly ($20)",
-        "cancel":"Cancel",
-        "update":"Update",
-        "subscribe":"Subscribe",
+        "cancel":"বাতিল",
+        "update":"হালনাগাদ",
+        "subscribe":"সদস্যতা",
         "braintree_notice":"Payments securely processed by Braintree.",
         "monthly_notice":"By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
         "yearly_notice":"By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
@@ -310,22 +310,22 @@
         "title":"Plan",
         "desc":"You are currently subscribed to iChrome Pro (%s)",
         "types":{
-          "monthly":"Monthly",
-          "yearly":"Yearly",
-          "business":"Business",
-          "education":"Education",
+          "monthly":"মাসিক",
+          "yearly":"বাত্সরিক",
+          "business":"ব্যবসা",
+          "education":"শিক্ষা",
           "custom":"স্বনির্ধারিত"
         },
         "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
-        "status":"Status",
-        "status_active":"Active",
+        "status":"অবস্থা",
+        "status_active":"সক্রিয়",
         "status_trial":"Trial",
         "status_pastdue":"Past due",
         "subscription_date":"Subscription date",
         "paid_through":"Paid through",
         "next_bill":"Next bill",
         "next_bill_value":"$%s on %s",
-        "update_plan":"Update plan",
+        "update_plan":"হালনাগাদ পরিকল্পনা",
         "update_billing":"Update billing",
         "cancel":"Cancel subscription",
         "cancel_notice":"Your subscription will be canceled immediately",
@@ -364,7 +364,7 @@
       "explanation":"Something went wrong while we were trying to display this widget.",
       "advice":"Try reinstalling the widget or reloading the page. Contact us if you see this message often.",
       "support":"সমর্থন",
-      "refresh":"Refresh"
+      "refresh":"পুনঃসতেজ"
     },
     "auth":{
       "message":"You'll need to give this widget access to your account before you can use it.",
@@ -422,10 +422,10 @@
     "cache_status":"%s of %s images cached",
     "cache_error":"An error occurred while trying to cache the theme.  Please try again later",
     "bginfo":{
-      "view":"View",
+      "view":"দেখুন",
       "source":"উৎস",
       "unknown":"অজানা",
-      "download":"Download",
+      "download":"ডাউনলোড",
       "pro_only":"Only Pro users can download background images and videos"
     },
     "edit":{
@@ -435,7 +435,7 @@
       "default_name":"নতুন থিম",
       "name_placeholder":"থিম নাম প্রবেশ করাএ",
       "image":"চিত্রের URL",
-      "image_placeholder":"Enter a background image URL",
+      "image_placeholder":"পটভূমি চিত্রের URL লিখুন",
       "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy and paste the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
       "color":"Fallback Color",
       "color_placeholder":"যে কোন রঙের নাম লিখুন",

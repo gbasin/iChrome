@@ -416,7 +416,7 @@
 
 	"search": {
 		"name": "Search",
-		"desc": "Embed a search box in your page for easy access",
+		"desc": "Embeds a search box in your page for easy access",
 
 		"settings": {
 			"placeholder": "Search Field Placeholder",

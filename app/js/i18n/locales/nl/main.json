@@ -2,7 +2,7 @@
   "lang_code":"nl",
   "language":"Nederlands",
   "extName":"iChrome",
-  "newtabName":"iChrome New Tab",
+  "newtabName":"iChrome Nieuw Tabblad",
   "extDescription":"De BESTE startpagina voor Chrome. Adembenemende thema's, tientallen widgets, bliksemsnel en ongelooflijk aanpasbaar!",
   "newtabDescription":"De BESTE homepage voor Chrome. Nu voor nieuwe tabs. Adembenemende thema's, tientallen widgets, bliksemsnel, ongelooflijk aanpasbaar!",
   "defaults":{
@@ -11,68 +11,68 @@
   },
   "remove_widget":"Verwijder",
   "alert":{
-    "default_button":"Dismiss",
+    "default_button":"Negeren",
     "confirm_title":"Weet u zeker dat u dit wilt doen?",
-    "confirm_continue":"Ga verder",
+    "confirm_continue":"Doorgaan",
     "confirm_cancel":"Annuleren"
   },
   "onboarding":{
     "modal":{
-      "tagline":"All the sites and apps you use, in one place",
-      "wrong_extension":"Want iChrome on your new tab page instead?",
-      "wrong_extension_newtab":"Want iChrome on your home page instead?",
-      "wrong_extension_action":"Click here",
-      "about":"iChrome's all about tabs and widgets",
-      "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
-      "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privacy Policy<\/a>",
-      "sign_in":"Sign in with your Google account",
-      "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
-      "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
-      "sign_in_button":"Sign in with Google",
-      "have_account":"It looks like you already have an account!",
-      "have_account_desc":"All your tabs and widgets are ready to use!",
-      "get_started":"Let's get started!",
-      "get_started_desc":"You're good to go! Let's get your page set up."
+      "tagline":"Alle sites en apps die je gebruikt op één plek",
+      "wrong_extension":"Wilt u iChrome gebruiken als uw nieuw tabblad-pagina?",
+      "wrong_extension_newtab":"Wilt u iChrome instellen als uw startpagina?",
+      "wrong_extension_action":"Klik hier",
+      "about":"Bij iChrome draait alles om tabbladen en widgets",
+      "about_desc":"Tabbladen zijn pagina's gevuld met widgets - blokken die zaken zoals het weer, nieuws en uw e-mail tonen. De meeste widgets kunt u aanpassen en u kunt zoveel widgets toevoegen als u wilt.",
+      "terms":"Opmerking: Door verder te gaan, gaat u akkoord met de <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">voorwaarden<\/a> en het <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">privacybeleid<\/a> van iChrome",
+      "sign_in":"Log in met Google account",
+      "sign_in_desc":"Meld u aan met uw Google-account voordat u begint, om uw aanpassingen veilig online op te kunnen slaan.",
+      "sign_in_desc2":"U kunt uitgelogd blijven als u wilt, maar uw pagina zal dan niet online opgeslagen worden en zal niet beschikbaar zijn op andere computers.",
+      "sign_in_button":"Log in met Google",
+      "have_account":"Het lijkt erop dat je al een account hebt!",
+      "have_account_desc":"Al uw tabbladen en widgets zijn klaar voor gebruik!",
+      "get_started":"Laten we beginnen!",
+      "get_started_desc":"Alles is gereed! Laten we uw pagina instellen."
     },
     "widgets":{
-      "configure":"Let's configure a widget.",
-      "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
-      "configure_skip":"Skip",
-      "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
-      "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
-      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
-      "done":"Got it"
+      "configure":"Laten we een widget instellen.",
+      "configure_desc":"Klik op de moersleutel om de <b>instellingen<\/b> van de weerwidget te openen.",
+      "configure_skip":"Overslaan",
+      "settings":"Vervang <b>San Francisco, CA<\/b> door uw locatie en druk daarna op <b>Opslaan<\/b>.",
+      "move":"U kunt widgets <b>verslepen<\/b> door ze met het gemarkeerde handvat te verplaatsen.",
+      "remove":"Sleep de widget naar de rode balk (niet weergegeven) om deze te <b>verwijderen<\/b>.",
+      "done":"Oké, ik snap het"
     },
     "settings":{
-      "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
-      "instructions":"Click the highlighted image to open it.",
-      "skip":"Skip",
+      "intro":"Laten we nu een kijkje nemen naar <b>het menu<\/b> om te zien wat u nog meer kunt doen.",
+      "instructions":"Klik op de gemarkeerde afbeelding om deze te openen.",
+      "skip":"Overslaan",
       "tooltips":{
-        "settings":"Change the way iChrome looks and works",
-        "widgets":"Add new widgets - you can have as many as you want",
-        "editing":"Show or hide the editing buttons on widgets",
-        "links":"This is a list of links, add sites you use often in the settings",
-        "tabs":"These are your tabs. You can add more in the settings",
-        "support":"Send us a message or leave a review here"
+        "settings":"Het uiterlijk en de functionaliteit van iChrome aanpassen",
+        "widgets":"Nieuwe widgets toevoegen - u kunt er zoveel toevoegen als u wilt",
+        "editing":"De bewerkingsknoppen op widgets tonen of verbergen",
+        "links":"Dit is een lijst met links, voeg in de instellingen sites toe die u regelmatig gebruikt",
+        "tabs":"Dit zijn uw tabbladen. U kunt er meer toevoegen bij instellingen",
+        "support":"Stuur ons een bericht of laat hier een review achter"
       },
-      "finished":"That's it!",
-      "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
-      "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
+      "finished":"Klaar!",
+      "finished_next":"Kies een optie uit het menu (probeer bijvoorbeeld <b>Widgets<\/b>) en stel uw pagina samen!",
+      "finished_contact":"Gebruik de supportlink als u hulp nodig heeft. Wij zullen dan zo spoedig mogelijk contact met u opnemen."
     }
   },
   "storage":{
-    "signin":"Sign in with Google now to securely save and sync your configuration",
+    "signin":"Log nu in met uw Google-account om uw configuratie veilig op te slaan en te synchroniseren",
     "signin_btn":"Inloggen",
-    "signin_dismiss":"Dismiss",
+    "signin_dismiss":"Negeer",
     "signin_confirm":{
-      "title":"Keep local data?",
-      "desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
-      "keep_account":"Use account",
-      "keep_local":"Keep local"
+      "title":"Lokale gegevens bewaren?",
+      "desc":"Wilt u uw lokale gegevens behouden en de configuratie in uw account overschrijven, of wilt u de configuratie van de computer vervangen door de configuratie uit uw account?",
+      "keep_account":"Account gebruiken",
+      "keep_local":"Lokale gegevens behouden"
     },
-    "signout_confirm":"Signing out will erase your local backups",
-    "pastdue":"Your subscription is past due",
-    "pastdue_desc":"Please update your billing information in the settings"
+    "signout_confirm":"Als u zich afmeldt zullen uw lokale back-ups verwijderd worden",
+    "pastdue":"Uw abonnement is verlopen",
+    "pastdue_desc":"Bewerk uw factuurgegevens in de instellingen"
   },
   "toolbar":{
     "placeholder":"Vul uw zoekopdracht in",
@@ -100,8 +100,8 @@
     "footer":{
       "support":"Help",
       "feedback":"Feedback",
-      "review":"Beoordelen",
-      "terms":"Terms",
+      "review":"Review",
+      "terms":"Voorwaarden",
       "privacy":"Privacy",
       "by":"Door Avi Kohn"
     }
@@ -113,223 +113,223 @@
   },
   "settings":{
     "title":"Instellingen",
-    "exit":"Exit settings",
-    "saved":"Settings saved",
+    "exit":"Instellingen verlaten",
+    "saved":"Instellingen oopgeslagen",
     "nav":{
-      "visual":"Visual",
+      "visual":"Weergave",
       "visual_sections":{
-        "background":"Background",
+        "background":"Achtergrond",
         "layout":"Layout",
-        "theme":"App theme"
+        "theme":"Thema's"
       },
-      "toolbar":"Toolbar",
+      "toolbar":"Menubalk",
       "toolbar_sections":{
-        "style":"Style",
+        "style":"Stijl",
         "search":"Zoeken",
-        "links":"Links"
+        "links":"Koppelingen"
       },
       "tabs":"Tabbladen",
       "widgets":"Widgets",
-      "pro":"Pro",
+      "pro":"PRO",
       "accounts":"Account",
-      "misc":"Miscellaneous",
-      "advanced":"Advanced",
+      "misc":"Diversen",
+      "advanced":"Geavanceerd",
       "advanced_sections":{
-        "backups":"Backup and restore",
-        "css":"Custom CSS",
-        "debug_tools":"Debug tools"
+        "backups":"Back-up en herstel",
+        "css":"Aangepaste CSS",
+        "debug_tools":"Debughulpmiddelen"
       },
-      "support":"Help and support",
-      "suggest":"Suggest a feature"
+      "support":"Hulp en ondersteuning",
+      "suggest":"Een nieuwe functie voorstellen"
     },
     "visual":{
       "background":{
-        "title":"Background",
-        "desc":"This is the image or set of images shown as a background to your tabs",
-        "current":"Current background",
-        "custom":"Custom",
-        "unnamed":"Theme %s",
-        "select":"Select a theme",
+        "title":"Achtergrond",
+        "desc":"Dit is de afbeelding of set van afbeeldingen die als achtergrond worden weergegeven in uw tabbladen",
+        "current":"Huidige achtergrond",
+        "custom":"Aangepast",
+        "unnamed":"Thema %s",
+        "select":"Selecteer een thema",
         "or":"of",
-        "url_placeholder":"Enter an image URL"
+        "url_placeholder":"Voer de URL van een afbeelding in"
       },
       "layout":{
         "title":"Layout",
-        "desc":"Here you can adjust the type and number of columns in each tab",
-        "columns":"Columns",
-        "grid":"Grid",
-        "columns_number":"Number of columns",
-        "column_width":"Column width",
-        "column_width_fixed":"Fixed",
-        "column_width_fluid":"Fluid",
+        "desc":"Hier kunt u het aantal kolommen in elk tabblad aanpassen",
+        "columns":"Kolommen",
+        "grid":"Raster",
+        "columns_number":"Aantal kolommen",
+        "column_width":"Kolombreedte",
+        "column_width_fixed":"Vast",
+        "column_width_fluid":"Flexibel",
         "column_warning":{
-          "column_to_grid":"Changing to a grid-based layout will move all of your widgets to the top left corner.",
-          "grid_to_column":"Changing to a column-based layout will move all of your widgets to the first column."
+          "column_to_grid":"Overgaan op een raster-gebaseerde lay-out zal al uw widgets verplaatsen naar de linkerbovenhoek.",
+          "grid_to_column":"Overgaan op een kolom-gebaseerde lay-out zal al uw widgets verplaatsen naar de eerste kolom."
         }
       },
       "theme":{
-        "title":"App theme",
-        "desc":"The app theme controls the style of iChrome itself and all widgets",
+        "title":"App-thema",
+        "desc":"Het app-thema bepaalt de stijl van iChrome zelf en alle widgets",
         "preview":"Voorbeeld",
-        "light":"Light (default)",
+        "light":"Licht (standaard)",
         "dark":"Donker",
-        "transparent":"Transparent",
-        "transparent_darker":"Transparent (darker)"
+        "transparent":"Transparantie",
+        "transparent_darker":"Transparant (donkerder)"
       }
     },
     "toolbar":{
       "style":{
-        "title":"Style",
-        "desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
-        "normal":"Normal",
-        "button":"Button"
+        "title":"Stijl",
+        "desc":"Hiermee wordt de stijl van de werkbalk bepaald. Het kan er normaal uitzien of als een knop die niet in de weg zit",
+        "normal":"Standaard",
+        "button":"Knop"
       },
       "search":{
         "title":"Zoeken",
-        "desc":"These settings control how the search box and voice search function",
-        "engine":"Search engine",
-        "engines_google":"Google (Default)",
+        "desc":"Deze instellingen bepalen hoe het zoekvak en de stemzoekfunctie functioneren",
+        "engine":"Zoekmachine",
+        "engines_google":"Google (standaard)",
         "engines_custom":"Custom",
-        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
-        "voice":"Enable voice search",
-        "ok_google":"Enable \"OK Google\" hotword detection",
-        "search_tab":"Open search results in a new tab"
+        "engines_custom_desc":"Voer een URL in waar de query's naar verzonden moeten worden, met <b>%s<\/b> waar de query naar moet gaan.",
+        "voice":"Stembediening inschakelen",
+        "ok_google":"Schakel \"OK Google\" herkenning in",
+        "search_tab":"Open de zoekresultaten in een nieuw tabblad"
       },
       "links":{
-        "title":"Links",
-        "desc":"These are the items shown at the right of the toolbar",
+        "title":"Koppelingen",
+        "desc":"Dit zijn de items aan de rechterkant van de werkbalk",
         "apps":"Apps menu",
-        "custom":"Custom links",
-        "custom_note1":"Maximum of 3 allowed",
-        "custom_note2":"users get 8",
-        "custom_name_placeholder":"Link text",
-        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+        "custom":"Aangepaste links",
+        "custom_note1":"Maximaal 3 toegestaan",
+        "custom_note2":"gebruikers krijgen 8",
+        "custom_name_placeholder":"Koppelingstekst",
+        "custom_url_placeholder":"Link URL, bijvoorbeeld: https:\/\/www.google.com\/"
       }
     },
     "misc":{
-      "link_tab":"Open links in a new tab by default"
+      "link_tab":"Links standaard openen in een nieuw tabblad"
     },
     "tabs":{
-      "create_new":"Create new",
-      "make_default":"Make default",
-      "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
-      "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
-      "name_placeholder":"Enter a tab name",
-      "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
+      "create_new":"Nieuwe aanmaken",
+      "make_default":"Standaard maken",
+      "desc1":"Tabbladen zijn pagina's binnen iChrome. Elk tabblad heeft zijn eigen set van widgets die volledig los staat van elke andere tabblad.",
+      "desc2":"U kunt schakelen tussen tabbladen door te klikken op de knoppen die aan de linker- en rechterkant van het scherm worden weergegeven wanneer u uw muis over een tabblad beweegt of met behulp van de pijltoetsen op uw toetsenbord.",
+      "name_placeholder":"Voer een naam in voor het tabblad",
+      "delete_confirm":"Deze actie is onomkeerbaar. Alle gegevens van alle widgets in het tabblad zullen permanent verloren gaan."
     },
     "accounts":{
       "status":{
         "title":"Status",
-        "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
-        "reset_account":"Reset account",
-        "sign_out":"Sign out",
-        "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
-        "sign_in":"Sign in with Google"
+        "signed_in":"U bent momenteel <b>ingelogd<\/b> als %s (%s).",
+        "reset_account":"Account resetten",
+        "sign_out":"Uitloggen",
+        "signed_out":"U bent <b>momenteel niet ingelogd<\/b>. Meld u nu aan met uw Google-account voor het veilig opslaan en synchroniseren van uw configuratie.",
+        "sign_in":"Log in met Google"
       },
-      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
-      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this account."
+      "reset_confirm_desc":"Dit zal alle lokale en gesynchroniseerde gegevens verwijderen, er is geen back-up en geen manier om dit ongedaan te maken.",
+      "reset_confirm_desc2":"U zult uw gehele huidige configuratie verliezen op alle computers die gekoppeld zijn aan dit account."
     },
     "advanced":{
       "backups":{
-        "title":"Backup and restore",
-        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
-        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
-        "backup":"Backup now",
-        "upload":"Restore from file",
-        "download":"Download",
-        "restore":"Restore",
-        "download_name":"iChrome Backup",
-        "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
-        "restore_error":"An error occurred while trying to parse the provided data, please try again later."
+        "title":"Backup maken en terugzetten",
+        "desc":"Back-ups zijn volledige kopieën van al uw tabbladen, instellingen en widgets. Ze worden automatisch elke dag gemaakt wanneer u voor het eerst iChrome opent.",
+        "desc2":"Gebruik de onderstaande knoppen om iChrome terug te zetten naar een bepaalde datum of om één van uw back-ups te downloaden.",
+        "backup":"Nu een back-up maken",
+        "upload":"Vanuit bestand terugzetten",
+        "download":"Downloaden",
+        "restore":"Terugzetten",
+        "download_name":"iChrome back-up",
+        "restore_confirm":"Dit overschrijft alle lokale en gesynchroniseerde gegevens. U verliest uw gehele huidige configuratie op alle computers die gekoppeld zijn aan dit account.",
+        "restore_error":"Er is een fout opgetreden tijdens het verwerken van de verstrekte gegevens, probeer het later opnieuw."
       },
       "css":{
-        "title":"Custom CSS",
-        "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
-        "placeholder":"Enter up to 1000 characters of CSS here"
+        "title":"Aangepaste CSS",
+        "desc":"U kunt CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\"> definitie<\/a>) gebruiken om bijna elk onderdeel van iChrome aan te passen.",
+        "placeholder":"Voer hier CSS van maximaal 1000 regels in"
       },
       "debug_tools":{
-        "title":"Debug tools",
-        "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
-        "open":"Open tools"
+        "title":"Debughulpmiddelen",
+        "desc":"<b>WAARSCHUWING:<\/b> Deze hulpmiddelen kunnen uw gehele configuratie in een enkele klik wissen. Gebruik ze alleen als uw ontwikkelaar u verzoekt dit te doen.",
+        "open":"Open hulpmiddelen"
       }
     },
     "widgets":{
-      "desc1":"Widgets have their own settings and can't be customized here.",
-      "desc2":"To edit a widget's settings, follow these steps:",
-      "steps1":"Move your mouse over any widget",
-      "steps2":"Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
-      "steps3":"Edit any of the settings shown in the dialog that's displayed",
-      "steps4":"Click Save to save your changes, or any part of the background to discard of them"
+      "desc1":"Widgets hebben hun eigen instellingen en deze kunnen niet hier aangepast worden.",
+      "desc2":"Volg de volgende stappen als u de instellingen van een widget wilt veranderen:",
+      "steps1":"Beweeg uw muis over een element",
+      "steps2":"Klik op de moersleutelpictogram dat wordt weergegeven aan de bovenkant van de widget. Als er geen pictogram verschijnt heeft de widget geen instellingen die bewerkt kunnen worden.",
+      "steps3":"Bewerk één van de instellingen die worden weergegeven in het dialoogvenster dat wordt weergegeven",
+      "steps4":"Klik op Opslaan om uw wijzigingen op te slaan, of op elk deel van de achtergrond om ze weg te gooien"
     },
     "pro":{
       "promo":{
-        "monthly_price":"$2 per month",
-        "yearly_price":"or $20 per year",
-        "upgrade_btn":"Upgrade Now",
-        "business":"Interested in buying Pro for your business or school?",
-        "business_contact":"Contact us",
+        "monthly_price":"$2 per maand",
+        "yearly_price":"of $20 per jaar",
+        "upgrade_btn":"Upgrade nu",
+        "business":"Geïnteresseerd in het kopen van Pro voor uw bedrijf of school?",
+        "business_contact":"Neem contact met ons op",
         "themes":"Thema's",
-        "themes_desc":"See more of your backgrounds with dark and transparent themes",
-        "bgs":"Live backgrounds",
-        "bgs_desc":"Bring your page to life with 20 live high-definition backgrounds",
-        "widgets":"Maximizable widgets",
-        "widgets_desc":"Take iChrome to another level with maximizable widgets",
-        "more_header":"And more",
-        "stocks":"Realtime stocks with extended and historical information",
-        "rss":"Support for multiple RSS feeds per widget",
-        "sports":"General and league-specific sports news",
-        "tabbed_widgets":"Tabbed news and RSS widgets",
-        "bg_downloads":"Downloadable backgrounds",
-        "weather":"Hourly weather forecasts up to 10 days out",
-        "toolbar":"More toolbar links",
-        "support":"Prioritized support and suggestions",
-        "buy_pro":"Buy Pro"
+        "themes_desc":"Zie meer van uw achtergrond met donkere en transparante thema's",
+        "bgs":"Bewegende achtergronden",
+        "bgs_desc":"Breng uw pagina tot leven met 20 live HD-achtergronden",
+        "widgets":"Maximaliseer widgets",
+        "widgets_desc":"Neem iChrome naar een hoger niveau met maximaliseerbare widgets",
+        "more_header":"En meer",
+        "stocks":"Realtime beursinformatie met uitgebreide en historische informatie",
+        "rss":"Ondersteuning voor meerdere RSS-feeds per widget",
+        "sports":"Algemeen en kampioenschap-specifiek sportnieuws",
+        "tabbed_widgets":"Tabbladen met nieuws en RSS widgets",
+        "bg_downloads":"Downloadbare achtergronden",
+        "weather":"Weersverwachting per uur tot 10 dagen vooruit",
+        "toolbar":"Meer werkbalk links",
+        "support":"Prioriteeer steun en suggesties",
+        "buy_pro":"Koop de volledige versie"
       },
       "checkout":{
-        "title":"Checkout",
-        "updating_title":"Update plan",
-        "payment_options":"Pay",
-        "pay_monthly":"Monthly ($2)",
-        "pay_yearly":"Yearly ($20)",
+        "title":"Uitchecken",
+        "updating_title":"Abonnement bijwerken",
+        "payment_options":"Betalen",
+        "pay_monthly":"Maandelijks ($2)",
+        "pay_yearly":"Jaarlijks ($20)",
         "cancel":"Annuleren",
         "update":"Update",
-        "subscribe":"Subscribe",
-        "braintree_notice":"Payments securely processed by Braintree.",
-        "monthly_notice":"By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
-        "yearly_notice":"By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
-        "update_notice":"Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
-        "thank_you":"Thank you for buying iChrome Pro!",
-        "thank_you2":"iChrome will reload in a few seconds and you'll be all set!",
-        "error":"Something went wrong while trying to process your payment.",
-        "error2":"Please try again later or email us at support@ichro.me",
-        "signin":"Sign in",
-        "signin_desc":"You need to sign in before buying Pro so we can make sure it's you",
-        "signin_btn":"Sign in"
+        "subscribe":"Abonneer",
+        "braintree_notice":"Betalingen veilig verwerkt door Braintree.",
+        "monthly_notice":"Door u te abonneren, machtigt u iChrome om $2 per maand in rekening te brengen totdat u uw abonnement opzegt.",
+        "yearly_notice":"Door u te abonneren, machtigt u iChrome om $20 per jaar in rekening te brengen totdat u uw abonnement opzegt.",
+        "update_notice":"Hoewel de facturering cyclus onmiddellijk gewijzigd wordt, wordt er niets afgeschreven tot de huidige cyclus eindigt.",
+        "thank_you":"Dank u voor de aankoop van iChrome Pro!",
+        "thank_you2":"iChrome zal binnen enkele seconden opnieuw worden geladen. Daarna bent u klaar!",
+        "error":"Er ging iets fout bij het verwerken van uw betaling.",
+        "error2":"Probeer het later opnieuw of email ons op support@ichro.me",
+        "signin":"Aanmelden",
+        "signin_desc":"U moet zich aanmelden voordat u Pro koopt, zodat we zeker zijn dat u het bent",
+        "signin_btn":"Aanmelden"
       },
       "plan":{
-        "title":"Plan",
-        "desc":"You are currently subscribed to iChrome Pro (%s)",
+        "title":"Abonnement",
+        "desc":"U bent momenteel geabonneerd op iChrome Pro (%s)",
         "types":{
-          "monthly":"Monthly",
-          "yearly":"Yearly",
-          "business":"Business",
-          "education":"Education",
+          "monthly":"Maandelijks",
+          "yearly":"Jaarlijks",
+          "business":"Zakelijk",
+          "education":"Onderwijs",
           "custom":"Custom"
         },
-        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
+        "uneditable_desc":"Bedrijfsleven, onderwijs, en aangepaste abonnementen kunnen niet worden bijgewerkt binnen iChrome. Gelieve <a href=\"mailto:support@ichro.me\">Neem contact met ons op<\/a> om uw abonnement bij te werken of te annuleren.",
         "status":"Status",
-        "status_active":"Active",
-        "status_trial":"Trial",
-        "status_pastdue":"Past due",
-        "subscription_date":"Subscription date",
-        "paid_through":"Paid through",
-        "next_bill":"Next bill",
-        "next_bill_value":"$%s on %s",
-        "update_plan":"Update plan",
-        "update_billing":"Update billing",
-        "cancel":"Cancel subscription",
-        "cancel_notice":"Your subscription will be canceled immediately",
-        "cancel_notice2":"If you would like a refund, please contact us at support@ichro.me"
+        "status_active":"Actief",
+        "status_trial":"Proefperiode",
+        "status_pastdue":"Verlopen",
+        "subscription_date":"Abonnementsdatum",
+        "paid_through":"Betaald via",
+        "next_bill":"Volgende rekening",
+        "next_bill_value":"$%s op %s",
+        "update_plan":"Plan bijwerken",
+        "update_billing":"Facturering bijwerken",
+        "cancel":"Abonnement annuleren",
+        "cancel_notice":"Uw abonnement zal onmiddellijk worden geannuleerd",
+        "cancel_notice2":"Als u graag een restitutie wilt, neem dan gelieve contact met ons op via support@ichro.me"
       }
     }
   },
@@ -352,23 +352,23 @@
       "save":"Opslaan",
       "size":"Widget afmeting"
     },
-    "minimize":"Minimize",
-    "maximize":"Maximize",
+    "minimize":"Minimaliseren",
+    "maximize":"Maximaliseren",
     "delete_confirm":"Ben je echt zeker dat je deze widget wilt verwijderen? Deze actie is onherroepelijk; alle gegevens van deze widget zullen permanent verloren gaan.",
     "permissions_request":{
-      "title":"Access required",
-      "button":"Grant Access",
-      "desc":"This widget needs extra permissions before it can be used. Grant them using the button below."
+      "title":"Toegang vereist",
+      "button":"Toegang verlenen",
+      "desc":"Deze widget heeft extra machtigingen nodig voordat deze kan worden gebruikt. Verleen toestemming met de knop hieronder."
     },
     "error":{
-      "explanation":"Something went wrong while we were trying to display this widget.",
-      "advice":"Try reinstalling the widget or reloading the page. Contact us if you see this message often.",
+      "explanation":"Iets ging mis terwijl wij probeerden de widget weer te geven.",
+      "advice":"Probeer de widget opnieuw te installeren of de pagina opnieuw te laden. Neem contact op met ons als u dit bericht vaak ziet.",
       "support":"Help",
-      "refresh":"Refresh"
+      "refresh":"Vernieuwen"
     },
     "auth":{
-      "message":"You'll need to give this widget access to your account before you can use it.",
-      "button":"Grant Access"
+      "message":"U moet deze widget toestemming verlenen tot uw account voordat deze gebruikt kan worden.",
+      "button":"Toegang verlenen"
     },
     "shared":{
       "settings":{
@@ -412,8 +412,8 @@
     "random_daily":"Dit thema toont elke dag een willekeurige afbeelding",
     "sunrise_sunset":"Dit thema toont op basis van de tijd van de dag een afbeelding",
     "feed":"Dit thema toont dagelijks een willekeurige afbeelding uit een externe bron",
-    "video":"This theme displays a live video",
-    "pro_only":"This theme is only available to Pro users. Buy Pro in the settings.",
+    "video":"Dit thema geeft een live video weer",
+    "pro_only":"Dit thema is alleen beschikbaar voor Pro-gebruikers. Koop Pro in de instellingen.",
     "delete_confirm":"Weet u zeker dat u dit thema wilt verwijderen? Deze actie is onherroepelijk; het hele thema zal permanent verloren gaan.",
     "delete_error":"Er is een fout opgetreden terwijl u probeerde om het thema te verwijderen.  Probeer het later nog eens.",
     "feed_fetching":"Een moment geduld a.u.b., ophalen van de feed...",
@@ -422,11 +422,11 @@
     "cache_status":"%s van %s beelden in de cache opgeslagen",
     "cache_error":"Er is een fout opgetreden terwijl u probeerde om het thema te verwijderen.  Probeer het later nog eens",
     "bginfo":{
-      "view":"View",
+      "view":"Weergave",
       "source":"Bron",
       "unknown":"Onbekend",
-      "download":"Download",
-      "pro_only":"Only Pro users can download background images and videos"
+      "download":"Downloaden",
+      "pro_only":"Alleen Pro-gebruikers kunnen achtergrondafbeelden en -video's downloaden"
     },
     "edit":{
       "title":"Thema bewerken",
