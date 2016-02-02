@@ -61,7 +61,7 @@
     }
   },
   "storage":{
-    "signin":"Google nowにサインインすれば、状態を安全に保存し、同期することができます。",
+    "signin":"Google にログインすると、設定を安全に保存および同期できます。",
     "signin_btn":"ログイン",
     "signin_dismiss":"閉じる",
     "signin_confirm":{
@@ -192,7 +192,7 @@
         "engines_custom":"カスタム",
         "engines_custom_desc":"質問が行くべきところで、<b>%s<\/b>と共に、質問が送られるべきURLを入力してください。",
         "voice":"音声検索を有効にする",
-        "ok_google":"「OK Google」ホットワードの検出を有効にする",
+        "ok_google":"ホットワード ”OK Google\" の検出を有効にする",
         "search_tab":"検索結果を新しいタブで開く"
       },
       "links":{
@@ -350,7 +350,7 @@
     "settings":{
       "title":"ウィジェットの設定",
       "save":"保存",
-      "size":"ウィジェットサイズ"
+      "size":"ウィジェットのサイズ"
     },
     "minimize":"最小化",
     "maximize":"最大化",
@@ -364,7 +364,7 @@
       "explanation":"ウィジェットの表示中に問題が発生しました。",
       "advice":"ウィジェットを再インストールするかページをリロードしてください。このメッセージが頻繁に表示される場合、サポートへご連絡ください。",
       "support":"サポート",
-      "refresh":"更新"
+      "refresh":"再読み込み"
     },
     "auth":{
       "message":"このウィジェットにあなたのアカウントへのアクセス許可を与える必要があります。",
@@ -384,7 +384,7 @@
           "show":"表示",
           "hide":"隠す"
         },
-        "account":"アカウントID",
+        "account":"アカウント ID",
         "account_help":"複数のアカウントにサインインしている場合、こちらが\"authuser=\" 値になります。\n<br \/><br \/>\n例えば、jsmith1@gmail.com と jsmith2@gmail.com という２つのアカウントにサインインしている場合、jsmith2@gmail.com は２つめのアカウントになるため \"authuser\" の値は1 になります（ゼロから数えるため）。",
         "account_placeholder":"Your \"authuser=\" value",
         "on":"ON",

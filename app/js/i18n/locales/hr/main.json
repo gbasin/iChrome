@@ -94,7 +94,7 @@
     "widgets":"Widgeti",
     "editing":"Uređivanje",
     "editing_enabled":"Omogućeno",
-    "editing_disabled":"Onemogućeno",
+    "editing_disabled":"Omogući",
     "plus":"Google Plus",
     "tabs":"Kartice",
     "footer":{
@@ -163,8 +163,8 @@
         "column_width_fixed":"Fiksna",
         "column_width_fluid":"Promjenjiva",
         "column_warning":{
-          "column_to_grid":"Changing to a grid-based layout will move all of your widgets to the top left corner.",
-          "grid_to_column":"Changing to a column-based layout will move all of your widgets to the first column."
+          "column_to_grid":"Promjena na rešetku će sve tvoje widgete pomaknuti u gornji lijevi kut.",
+          "grid_to_column":"Promjena na stupce će sve tvoje widgete pomaknuti u prvi supac."
         }
       },
       "theme":{
@@ -193,11 +193,11 @@
         "engines_custom_desc":"Unesi URL koji ima <b>%s<\/b> tamo gdje treba ići pojam pretraživanja.",
         "voice":"Omogući glasovno pretraživanje",
         "ok_google":"Omogući \"OK Google\" detekciju",
-        "search_tab":"Otvori rezultata pretraživanja u novoj kartici"
+        "search_tab":"Otvori rezultate pretraživanja u novoj kartici"
       },
       "links":{
         "title":"Linkovi",
-        "desc":"These are the items shown at the right of the toolbar",
+        "desc":"Ovo su stavke na desnoj strani trake",
         "apps":"Aplikacije",
         "custom":"Prilagođeni linkovi",
         "custom_note1":"Najviše 3",
@@ -207,7 +207,7 @@
       }
     },
     "misc":{
-      "link_tab":"Otvara linkove u novoj kartici po zadanom"
+      "link_tab":"Otvaraj linkove u novoj kartici po zadanom"
     },
     "tabs":{
       "create_new":"Napravi novu",
@@ -255,10 +255,10 @@
     },
     "widgets":{
       "desc1":"Widgeti ima svoje vlastite postavke koje se ne mogu podešavati odavde.",
-      "desc2":"To edit a widget's settings, follow these steps:",
+      "desc2":"Da bi promijenio postavke widgeta, slijedi ove korake:",
       "steps1":"Pomakni miš na bilo koji widget",
-      "steps2":"Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
-      "steps3":"Edit any of the settings shown in the dialog that's displayed",
+      "steps2":"Klikni na alatni ključ koji se pojavljuje gore desno u widgetu. Ako se ne prikazuje to znači da widget nema postavka.",
+      "steps3":"Promijeni bilo koju postavku u okviru koji je prikazan",
       "steps4":"Klikni Spremi za spremanje promjena ili klikni na pozadinu za otkazivanje"
     },
     "pro":{
@@ -267,9 +267,9 @@
         "yearly_price":"ili $20 godišnje",
         "upgrade_btn":"Nadogradi sada",
         "business":"Zainteresirani ste za kupnju Pro verzije za posao ili školu?",
-        "business_contact":"Kontaktiraj nas",
+        "business_contact":"Kontaktirajte nas",
         "themes":"Teme",
-        "themes_desc":"See more of your backgrounds with dark and transparent themes",
+        "themes_desc":"Bolje vidi svoju pozadinu uz tamne i prozirne teme",
         "bgs":"Aktivne pozadine",
         "bgs_desc":"Oživi svoju stranicu sa 20 aktivnih HD pozadina",
         "widgets":"Proširi widgete",
@@ -354,7 +354,7 @@
     },
     "minimize":"Minimiziraj",
     "maximize":"Maksimiziraj",
-    "delete_confirm":"Are you really sure you want to delete this widget?\r\nThis action is irreversible; all data from this widget will be permanently lost.",
+    "delete_confirm":"Jesi li siguran da želiš izbrisati taj widget?\nOva odluka je nepovratna; svi podaci widgeta bit će trajno izgubljeni.",
     "permissions_request":{
       "title":"Pristup potreban",
       "button":"Odobri pristup",
@@ -411,7 +411,7 @@
     "random":"Ova tema prikazuje nasumičnu sliku prilikom svakog osvježenja stranice",
     "random_daily":"Ova tema prikazuje nasumičnu sliku svaki dan",
     "sunrise_sunset":"Ova tema prikazuje različitu sliku prema dobu dana",
-    "feed":"This theme displays an image selected daily from an external feed",
+    "feed":"Ova tema prikazuje novu sliku svaki dan iz vanjskih izvora",
     "video":"Ova tema prikazuje videozapis uživo",
     "pro_only":"Ova tema je dostupna isključivo Pro korisnicima. Kupi Pro u postavkama.",
     "delete_confirm":"Are you really sure you would like to delete this theme?\r\nThis action is irreversible; the entire theme will be permanently lost.",

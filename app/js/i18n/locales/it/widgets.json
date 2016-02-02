@@ -366,5 +366,277 @@
     "no_links":"Nessun link trovato",
     "grant_access":"Concedi accesso",
     "no_key":"Dovete dare l'accesso ad iChrome al vostro account Pocket prima di poter caricare il vostro link."
+  },
+  "analytics":{
+    "name":"Analytics",
+    "desc":"Consente di visualizzare i vari parametri di un profilo Google Analytics.",
+    "sessions":"sessioni",
+    "pageviews":"Visualizzazioni",
+    "pagesvisit":"Pagine\/visita",
+    "bouncerate":"Tasso di rimbalzo",
+    "completions":"Completamenti",
+    "noprofile_title":"Nessun profilo selezionato",
+    "noprofile":"Non sembra ancora selezionato un profilo!\n <br \/><br \/>\nProvare a selezionarne uno tramite l'icona della chiave inglese in alto a destra.",
+    "settings":{
+      "profile":"Profilo"
+    }
+  },
+  "classroom":{
+    "name":"Classe",
+    "desc":"Tenersi aggiornati con le classi e assegnazioni dell'aula Google",
+    "settings":{
+      "mode":"Modalità Widget",
+      "mode_teacher":"Insegnante",
+      "mode_student":"Studente"
+    }
+  },
+  "currency":{
+    "name":"Valuta",
+    "desc":"Ti permette di convertire tra due di 169 valute.",
+    "to_label":"in",
+    "recently_used":"Usati recentemente"
+  },
+  "dictionary":{
+    "name":"Dizionario",
+    "desc":"Cerca rapidamente definizione e sinonimi di una parola",
+    "search_placeholder":"Inserisci una parola o un termine qui",
+    "more":"Altro",
+    "less":"Di meno",
+    "synonyms":"Sinonimi",
+    "antonyms":"Contrari",
+    "web_definitions":"Definizioni del Web",
+    "no_definitions":"Nessuna definizione trovata"
+  },
+  "drive":{
+    "name":"Drive",
+    "desc":"Visualizza i file recentemente modificati dal tuo Google Drive.",
+    "settings":{
+      "files_shown":"Numero di file mostrati"
+    },
+    "modified_by":"di",
+    "authMessage":"Per visualizzare i file in Drive devi prima dare l'autorizzazione ad iChrome."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Visualizza la tua casella di posta Gmail in cui è possibile gestire la posta elettronica."
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Consente di visualizzare una pagina web a vostra scelta all'interno di un iframe.",
+    "settings":{
+      "url":"Frame URL",
+      "url_placeholder":"i.e. http:\/\/www.google.com\/",
+      "height":"Altezza frame",
+      "padding":"Rientro"
+    }
+  },
+  "keep":{
+    "name":"Keep",
+    "desc":"Incorpora Google Keep in un widget"
+  },
+  "news":{
+    "name":"Notizie",
+    "desc":"Visualizza le attuali top news per categoria ed edizione.",
+    "all_stories":"Tutti",
+    "settings":{
+      "page_title":"Impostazioni",
+      "save":"Salva",
+      "title":"Titolo del Widget",
+      "title_placeholder":"Immetti un nome per il widget o lascialo bianco per nascondere",
+      "articles":"Articoli mostrati",
+      "edition":"Edizione",
+      "default_topic":"Tema standard"
+    }
+  },
+  "recentlyclosed":{
+    "name":"Chiuso di recente",
+    "desc":"Mostra i tabs chiusi di recente",
+    "settings":{
+      "tabs":"Schede mostrate",
+      "open":"Apri tabs in"
+    },
+    "more":"altro"
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"Visualizza gli elementi da un feed RSS o Atom, con immagini opzionali.",
+    "settings":{
+      "page_title":"Impostazioni",
+      "save":"Salva",
+      "title":"Titolo del Widget",
+      "title_placeholder":"Immetti un nome per il widget o lascialo bianco per nascondere",
+      "link":"Titolo Link",
+      "link_placeholder":"Inserisci un collegamento per il titolo del widget",
+      "feeds":"Feeds",
+      "feeds_help":"Fare click su qualsiasi fee per modificarlo",
+      "feeds_placeholder":"Inserisci un URL di ricerca e premi invio per aggiungerlo",
+      "feeds_pro_only":"Solo gli utenti pro possono godere di più feeds in ciascun widget. Vai nelle impostazioni e attiva la funzione Pro.",
+      "feed_name_placeholder":"Nome del feed",
+      "feed_url_placeholder":"URL del feed",
+      "articles":"Articoli mostrati"
+    },
+    "by":"di",
+    "all_articles":"Tutti gli articoli",
+    "feed_error":"Si è verificato un errore durante il recupero dei feed a: %s.\nSi prega di ricontrollare l'URL e\/o modificare le impostazioni del widget."
+  },
+  "sports":{
+    "name":"Sport",
+    "desc":"Visualizza punteggi, orari e notizie delle tue squadre preferite.",
+    "settings":{
+      "page_title":"Preferiti",
+      "save":"Salva",
+      "teams_placeholder":"Immettere un nome di squadra e premere Invio per aggiungere"
+    },
+    "favorites":"Preferiti",
+    "top_games":"Giochi migliori",
+    "scores":"Punteggio",
+    "news":"Notizie",
+    "last_play":"Ultimi giocati",
+    "no_games":"Nessun gioco trovato",
+    "pro_splash1":"Le notizie sportive sono una caratteristica Pro.",
+    "pro_splash2":"Acquista Pro nelle impostazioni.",
+    "preview":"Anteprima",
+    "tickets":"Biglietti",
+    "live":"Live",
+    "recap":"Riepilogo",
+    "box_score":"Box Punteggio"
+  },
+  "stocks":{
+    "name":"Azioni",
+    "desc":"Visualizza le informazioni correnti per qualsiasi azione.",
+    "settings":{
+      "stocks":"Azioni",
+      "stocks_placeholder":"Digitare un nome di società o cambio e premi invio"
+    },
+    "as_of":"A partire da",
+    "exchange_time":"Tempo di scambio",
+    "overview":"Sommario",
+    "news":"Notizie",
+    "pro_splash1":"Dati in tempo reale, grafici, notizie e informazioni dettagliate di borsa sono solo caratteristiche Pro.",
+    "pro_splash2":"Acquista Pro nelle impostazioni.",
+    "time_ranges":{
+      "1d":"1 giorno",
+      "5d":"5 giorni",
+      "1m":"1 mese",
+      "3m":"3 mesi",
+      "1y":"1 anno",
+      "5y":"5 anni",
+      "max":"max"
+    },
+    "open":"Aperto",
+    "prev_close":"Chiusura precedente",
+    "high":"Alto",
+    "52high":"52 settimane alte",
+    "low":"Basso",
+    "52low":"52 settimane basse",
+    "volume":"volume",
+    "avg_volume":"Media Volume",
+    "shares":"Azioni",
+    "cap":"Capitalizzazione di mercato",
+    "pe":"Prezzo \/ utili",
+    "eps":"EPS",
+    "beta":"Beta",
+    "inst_own":"Proprietà istituzionale"
+  },
+  "todo":{
+    "name":"Da fare",
+    "desc":"Mostra una lista interattiva di promemoria con elementi importati e completati.",
+    "title":"Promemoria",
+    "settings":{
+      "color":"Colore carattere",
+      "color_options":{
+        "light":"Chiaro",
+        "dark":"Scuro"
+      },
+      "tags":"Etichette",
+      "tags_placeholder":"Inserisci il nome di un etichetta e premi invio"
+    },
+    "add":"Aggiungi elemento",
+    "none":"Niente",
+    "important":"Importante"
+  },
+  "topsites":{
+    "name":"Siti più visitati",
+    "desc":"Visualizza i siti che visiti maggiormente.",
+    "settings":{
+      "show":"Numero di siti visualizzati"
+    }
+  },
+  "traffic":{
+    "name":"Traffico",
+    "desc":"Visualizza l'ora ed il traffico tra casa e luogo di lavoro.",
+    "settings":{
+      "leave":"Vado via di casa alle",
+      "home":"Indirizzo di casa",
+      "home_placeholder":"La destinazione che deve essere utilizzata dopo il lavoro",
+      "work":"Indirizzo di lavoro",
+      "work_placeholder":"La destinazione che deve essere utilizzata prima di lavoro",
+      "method":"Metodo di trasporto",
+      "method_options":{
+        "driving":"In auto",
+        "walking":"A piedi",
+        "transit":"Transito pubblico"
+      }
+    },
+    "to_home":"Verso casa",
+    "to_work":"Verso il luogo di lavoro"
+  },
+  "translate":{
+    "name":"traduci",
+    "desc":"Permette di tradurre rapidamente in 90 lingue durante la digitazione",
+    "from_placeholder":"Scrivi qui",
+    "to_placeholder":"Il testo tradotto apparirà qui",
+    "detect_lang":"Rileva lingua",
+    "translating":"Traduzione in corso...",
+    "unknown":"Sconosciuto"
+  },
+  "unread":{
+    "name":"Da leggere",
+    "desc":"Mostra il numero corrente di email non lette nella tua casella Gmail.",
+    "settings":{
+      "open":"Quando cliccato apri"
+    },
+    "unread_none":"Email non lette",
+    "unread_one":"Email non lette",
+    "unread_many":"Email non lette"
+  },
+  "voice":{
+    "name":"Voice",
+    "desc":"Mostra il numero di chiamate e messaggi persi del tuo account Google Voice.",
+    "call":"Chiamata da",
+    "text":"Messaggio da parte di",
+    "missed":"Chiamate perse",
+    "texts":"Messaggi non letti",
+    "calls":"Chiamate perse"
+  },
+  "weather":{
+    "name":"Meteo",
+    "desc":"Mostra il meteo per i prossimi 4 giorni.",
+    "settings":{
+      "location":"Luogo\/i",
+      "location_placeholder":"Inserisci un luogo e premi invio",
+      "units":"Unità di misura",
+      "units_imperial":"Fahrenheit",
+      "units_metric":"Metrica (Celsius)",
+      "enabled":"Attive",
+      "disabled":"Disattivate",
+      "forecast":"Previsioni meteo",
+      "hourly":"Previsioni meteo orarie"
+    },
+    "more":"Altro",
+    "less":"Di meno",
+    "wind":"Velocità del vento",
+    "precipitation":"Precip.",
+    "uv":"Indice UV",
+    "feelslike":"°T percepita",
+    "barometer":"Barometro",
+    "visibility":"Visibilità",
+    "humidity":"Umidità",
+    "dewpoint":"Punto di rugiada",
+    "moonphase":"Luna",
+    "sunrise":"Alba",
+    "sunset":"Tramonto",
+    "moonrise":"Sorgere della luna",
+    "moonset":"Luna calante"
   }
 }

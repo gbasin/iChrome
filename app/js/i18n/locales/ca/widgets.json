@@ -366,5 +366,277 @@
     "no_links":"No links found",
     "grant_access":"Grant access",
     "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
+  },
+  "analytics":{
+    "name":"Analytics",
+    "desc":"Displays various metrics from a Google Analytics profile.",
+    "sessions":"sessions",
+    "pageviews":"Pageviews",
+    "pagesvisit":"Pages\/visit",
+    "bouncerate":"Bounce Rate",
+    "completions":"Completions",
+    "noprofile_title":"No profile selected",
+    "noprofile":"It doesn't look like you've selected a profile yet!\n<br \/>\nTry selecting one via the wrench icon at the top right.",
+    "settings":{
+      "profile":"Profile"
+    }
+  },
+  "classroom":{
+    "name":"Classroom",
+    "desc":"Keep up to date with your Google Classroom assignments and classes",
+    "settings":{
+      "mode":"Widget Mode",
+      "mode_teacher":"Teacher",
+      "mode_student":"Student"
+    }
+  },
+  "currency":{
+    "name":"Currency",
+    "desc":"Let's you convert between any two of 169 currencies.",
+    "to_label":"to",
+    "recently_used":"Recently Used"
+  },
+  "dictionary":{
+    "name":"Dictionary",
+    "desc":"Quickly look up the definition and synonyms for a word",
+    "search_placeholder":"Enter a word or term here",
+    "more":"Més",
+    "less":"Less",
+    "synonyms":"Synonyms",
+    "antonyms":"Antonyms",
+    "web_definitions":"Web definitions",
+    "no_definitions":"No definitions found"
+  },
+  "drive":{
+    "name":"Drive",
+    "desc":"Displays recently changed files from your Google Drive.",
+    "settings":{
+      "files_shown":"Number of Files Shown"
+    },
+    "modified_by":"by",
+    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+  },
+  "gmail":{
+    "name":"Gmail",
+    "desc":"Displays your Gmail inbox where you can manage your email."
+  },
+  "iframe":{
+    "name":"iFrame",
+    "desc":"Displays a webpage of your choice within an iframe.",
+    "settings":{
+      "url":"Frame URL",
+      "url_placeholder":"i.e. http:\/\/www.google.com\/",
+      "height":"Frame Height",
+      "padding":"Padding"
+    }
+  },
+  "keep":{
+    "name":"Keep",
+    "desc":"Embeds Google Keep in a widget"
+  },
+  "news":{
+    "name":"News",
+    "desc":"Displays the current top news by category and edition.",
+    "all_stories":"All",
+    "settings":{
+      "page_title":"Configuració",
+      "save":"Save",
+      "title":"Widget Title",
+      "title_placeholder":"Enter a widget title or leave blank to hide",
+      "articles":"Articles Shown",
+      "edition":"Edition",
+      "default_topic":"Default Topic"
+    }
+  },
+  "recentlyclosed":{
+    "name":"Recently Closed",
+    "desc":"Shows your recently closed tabs",
+    "settings":{
+      "tabs":"Tabs Shown",
+      "open":"Open tabs in"
+    },
+    "more":"more"
+  },
+  "rss":{
+    "name":"RSS",
+    "desc":"Displays items from a RSS or Atom feed with optional images.",
+    "settings":{
+      "page_title":"Configuració",
+      "save":"Save",
+      "title":"Widget Title",
+      "title_placeholder":"Enter a widget title or leave blank to hide",
+      "link":"Title Link",
+      "link_placeholder":"Enter a link for the widget title",
+      "feeds":"Feeds",
+      "feeds_help":"Click any feed to edit it",
+      "feeds_placeholder":"Enter a feed URL and press Enter to add",
+      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
+      "feed_name_placeholder":"Feed name",
+      "feed_url_placeholder":"Feed URL",
+      "articles":"Articles Shown"
+    },
+    "by":"By",
+    "all_articles":"All articles",
+    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
+  },
+  "sports":{
+    "name":"Sports",
+    "desc":"Displays scores, schedules, and news from your favorite teams.",
+    "settings":{
+      "page_title":"Favorites",
+      "save":"Save",
+      "teams_placeholder":"Enter a team name and press Enter to add"
+    },
+    "favorites":"Favorites",
+    "top_games":"Top Games",
+    "scores":"Scores",
+    "news":"News",
+    "last_play":"Last play",
+    "no_games":"No games found",
+    "pro_splash1":"Sports news is a Pro-only feature.",
+    "pro_splash2":"Buy Pro in the settings.",
+    "preview":"Preview",
+    "tickets":"Tickets",
+    "live":"Live",
+    "recap":"Recap",
+    "box_score":"Box Score"
+  },
+  "stocks":{
+    "name":"Stocks",
+    "desc":"Displays current information for any given stock symbol.",
+    "settings":{
+      "stocks":"Stocks",
+      "stocks_placeholder":"Type a company or exchange name and hit Enter"
+    },
+    "as_of":"as of",
+    "exchange_time":"Exchange Time",
+    "overview":"Overview",
+    "news":"News",
+    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
+    "pro_splash2":"Buy Pro in the settings.",
+    "time_ranges":{
+      "1d":"1d",
+      "5d":"5d",
+      "1m":"1m",
+      "3m":"3m",
+      "1y":"1y",
+      "5y":"5y",
+      "max":"max"
+    },
+    "open":"Open",
+    "prev_close":"Previous Close",
+    "high":"High",
+    "52high":"52 week high",
+    "low":"Low",
+    "52low":"52 week low",
+    "volume":"Volume",
+    "avg_volume":"Avg. Volume",
+    "shares":"Shares",
+    "cap":"Market Cap",
+    "pe":"Price \/ Earnings",
+    "eps":"EPS",
+    "beta":"Beta",
+    "inst_own":"Inst. own"
+  },
+  "todo":{
+    "name":"To-do",
+    "desc":"Displays an interactive to-do list with important and completed items.",
+    "title":"To-do list",
+    "settings":{
+      "color":"Font Color",
+      "color_options":{
+        "light":"Light",
+        "dark":"Dark"
+      },
+      "tags":"Tags",
+      "tags_placeholder":"Enter a tag name and press Enter"
+    },
+    "add":"Add Item",
+    "none":"None",
+    "important":"Important"
+  },
+  "topsites":{
+    "name":"Top Sites",
+    "desc":"Displays your most visited\/top sites.",
+    "settings":{
+      "show":"Number of sites shown"
+    }
+  },
+  "traffic":{
+    "name":"Traffic",
+    "desc":"Displays the current time in current traffic to home or work.",
+    "settings":{
+      "leave":"I leave home at",
+      "home":"Home Address",
+      "home_placeholder":"The destination that should be used after work",
+      "work":"Work Address",
+      "work_placeholder":"The destination that should be used before work",
+      "method":"Transit Method",
+      "method_options":{
+        "driving":"Driving",
+        "walking":"Walking",
+        "transit":"Public Transit"
+      }
+    },
+    "to_home":"to home",
+    "to_work":"to work"
+  },
+  "translate":{
+    "name":"Translate",
+    "desc":"Lets you quickly translate to and from 90 languages as you type",
+    "from_placeholder":"Start typing here",
+    "to_placeholder":"Translated text will appear here",
+    "detect_lang":"Detect language",
+    "translating":"Translating...",
+    "unknown":"Unknown"
+  },
+  "unread":{
+    "name":"Unread",
+    "desc":"Displays the current number of unread emails in your Gmail inbox.",
+    "settings":{
+      "open":"When clicked open"
+    },
+    "unread_none":"unread emails",
+    "unread_one":"unread email",
+    "unread_many":"unread emails"
+  },
+  "voice":{
+    "name":"Voice",
+    "desc":"Displays the current number of missed calls and texts in your Google Voice account.",
+    "call":"Call from",
+    "text":"Text message from",
+    "missed":"missed in Voice",
+    "texts":"unread text messages",
+    "calls":"missed calls"
+  },
+  "weather":{
+    "name":"Weather",
+    "desc":"Displays the current weather and a forecast for the next 4 days.",
+    "settings":{
+      "location":"Location(s)",
+      "location_placeholder":"Enter a location and press Enter",
+      "units":"Units",
+      "units_imperial":"Imperial (Fahrenheit)",
+      "units_metric":"Metric (Celsius)",
+      "enabled":"Activat",
+      "disabled":"Desactivat",
+      "forecast":"Forecasts",
+      "hourly":"Hourly forecasts"
+    },
+    "more":"Més",
+    "less":"Less",
+    "wind":"Wind",
+    "precipitation":"Precip",
+    "uv":"UV index",
+    "feelslike":"Feels like",
+    "barometer":"Barometer",
+    "visibility":"Visibility",
+    "humidity":"Humidity",
+    "dewpoint":"Dew point",
+    "moonphase":"Moon",
+    "sunrise":"Sunrise",
+    "sunset":"Sunset",
+    "moonrise":"Moonrise",
+    "moonset":"Moonset"
   }
 }
