@@ -43,7 +43,7 @@ else if (!localStorage.version || localStorage.version !== chrome.runtime.getMan
 	if (localStorage.syncData) {
 		// Clear old sync system data
 		chrome.cookies.remove({
-			name: "sync_data_main",
+			name: "sync_data",
 			url: "http://ichro.me"
 		});
 
