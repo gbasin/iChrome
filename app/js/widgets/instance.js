@@ -166,7 +166,12 @@ define([
 					clearInterval(this._refreshInterval);
 				}
 				else {
-					this.widgetModel.refresh();
+					try {
+						this.widgetModel.refresh();
+					}
+					catch (e) {
+						return this.error();
+					}
 				}
 
 				if (this.widgetModel.refreshInterval) {
