@@ -1853,9 +1853,7 @@ header.toolbar .search .suggestions {
 	visibility: hidden;
 	transform: translateY(-10px);
 	box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.3);
-	transition: opacity .3s ease-in-out,
- transform .3s ease-in-out,
- visibility 0s .3s;
+	transition: opacity .3s ease-in-out, transform .3s ease-in-out, visibility 0s .3s;
 }
 
 /* line 1630, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
@@ -1869,9 +1867,7 @@ header.toolbar .search .suggestions.visible {
 	opacity: 1;
 	visibility: visible;
 	transform: translateY(0px);
-	transition: opacity .3s ease-in-out,
- transform .3s ease-in-out,
- visibility 0s 0s;
+	transition: opacity .3s ease-in-out, transform .3s ease-in-out, visibility 0s 0s;
 }
 
 /* line 1644, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
@@ -5653,8 +5649,7 @@ input.sp-input[type="text"] {
 	background: #757575;
 	color: rgba(0, 0, 0, 0.12);
 	border: 2px solid #757575;
-	box-shadow: inset 0 0 0 9px #FFF,
- 0 0 0 0 currentColor;
+	box-shadow: inset 0 0 0 9px #FFF, 0 0 0 0 currentColor;
 }
 
 /* line 12, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/inputs/_radio.scss */
@@ -5681,9 +5676,7 @@ input.sp-input[type="text"] {
 	background: #2196F3;
 	border-color: #2196F3;
 	color: rgba(33, 150, 243, 0.12);
-	box-shadow: inset 0 0 0 3px #FFF,
- inset 0 0 0 3px #FFF,
- 0 0 0 0 currentColor;
+	box-shadow: inset 0 0 0 3px #FFF, inset 0 0 0 3px #FFF, 0 0 0 0 currentColor;
 }
 
 /* line 40, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/inputs/_radio.scss */
@@ -5703,12 +5696,10 @@ input.sp-input[type="text"] {
 
 @keyframes radioFocus {
 	37.5% {
-		box-shadow: inset 0 0 0 0 #FFF,
- 0 0 0 0 currentColor;
+		box-shadow: inset 0 0 0 0 #FFF, 0 0 0 0 currentColor;
 	}
 	100% {
-		box-shadow: inset 0 0 0 0 #FFF,
- 0 0 0 12px currentColor;
+		box-shadow: inset 0 0 0 0 #FFF, 0 0 0 12px currentColor;
 	}
 }
 
@@ -5723,14 +5714,10 @@ input.sp-input[type="text"] {
 
 @keyframes radioFocusChecked {
 	37.5% {
-		box-shadow: inset 0 0 0 3px currentColor,
- inset 0 0 0 3px #FFF,
- 0 0 0 0 currentColor;
+		box-shadow: inset 0 0 0 3px currentColor, inset 0 0 0 3px #FFF, 0 0 0 0 currentColor;
 	}
 	100% {
-		box-shadow: inset 0 0 0 3px currentColor,
- inset 0 0 0 3px #FFF,
- 0 0 0 12px currentColor;
+		box-shadow: inset 0 0 0 3px currentColor, inset 0 0 0 3px #FFF, 0 0 0 12px currentColor;
 	}
 }
 
@@ -6339,198 +6326,6 @@ input.sp-input[type="text"] {
 .app.settings .page.pro section.plan .actions {
 	border: 0;
 	text-align: left;
-}
-
-/* line 29, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container {
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	display: flex;
-	z-index: 9999;
-	position: fixed;
-	align-items: center;
-	justify-content: center;
-	background: rgba(0, 0, 0, 0.2);
-}
-
-/* line 41, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog {
-	width: 370px;
-	background: #FFF;
-	overflow: hidden;
-	border-radius: 3px;
-	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
-}
-
-/* line 48, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog header {
-	color: #FFF;
-	height: auto;
-	text-align: left;
-	padding: 20px 24px;
-	background: #2196F3;
-	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
-}
-
-/* line 56, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog header h2 {
-	padding: 0;
-	font-size: 20px;
-	font-weight: 400;
-	line-height: 20px;
-}
-
-/* line 64, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog .content {
-	padding: 0;
-	color: #212121;
-}
-
-/* line 68, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog .content.success, .app.settings .page.pro .checkout-container .dialog .content.error {
-	height: 350px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-/* line 74, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog .content.success p, .app.settings .page.pro .checkout-container .dialog .content.error p {
-	font-size: 16px;
-	text-align: center;
-	margin: 0 10% 20px;
-}
-
-/* line 79, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog .content.success p.thank-you, .app.settings .page.pro .checkout-container .dialog .content.error p.thank-you {
-	font-size: 18px;
-}
-
-/* line 86, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog .input {
-	border-top: 0;
-	text-align: left;
-	padding: 12px 24px;
-}
-
-/* line 92, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog .input h3 {
-	font-size: 14px;
-	font-weight: 700;
-}
-
-/* line 97, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog .braintree-dropin {
-	padding: 12px 24px;
-}
-
-/* line 101, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog button,
-.app.settings .page.pro .checkout-container .dialog button.material {
-	margin: 0 8px;
-	min-width: 64px;
-}
-
-/* line 107, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog footer {
-	text-align: right;
-	padding: 8px 8px 16px;
-}
-
-/* line 111, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog footer .notice {
-	margin: 0;
-	font-size: 12px;
-	line-height: 20px;
-	text-align: center;
-	color: #757575;
-	padding: 12px 12px 0;
-}
-
-/* line 121, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog .loading {
-	height: 350px;
-	position: relative;
-	background: rgba(0, 0, 0, 0.1);
-}
-
-/* line 126, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog .loading svg {
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-	position: absolute;
-}
-
-/* line 135, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog .loading .spinner {
-	-webkit-animation: rotator 1.4s linear infinite;
-}
-
-/* line 138, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog .loading .spinner circle {
-	stroke-dashoffset: 0;
-	stroke-dasharray: 187;
-	transform-origin: center;
-	-webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
-}
-
-/* line 146, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog .loading footer {
-	left: 0;
-	right: 0;
-	bottom: 0;
-	position: absolute;
-}
-
-/* line 152, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_pro.scss */
-.app.settings .page.pro .checkout-container .dialog .loading footer .notice {
-	display: none;
-}
-
-@-webkit-keyframes rotator {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(270deg);
-	}
-}
-
-@-webkit-keyframes colors {
-	0% {
-		stroke: #4285F4;
-	}
-	25% {
-		stroke: #DE3E35;
-	}
-	50% {
-		stroke: #F7C223;
-	}
-	75% {
-		stroke: #1B9A59;
-	}
-	100% {
-		stroke: #4285F4;
-	}
-}
-
-@-webkit-keyframes dash {
-	0% {
-		stroke-dashoffset: 187;
-	}
-	50% {
-		stroke-dashoffset: 46.75;
-		transform: rotate(135deg);
-	}
-	100% {
-		stroke-dashoffset: 187;
-		transform: rotate(450deg);
-	}
 }
 
 /* line 212, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
@@ -7868,22 +7663,7 @@ input.sp-input[type="text"] {
 	position: absolute;
 	border-radius: 50%;
 	/* The minute ticks */
-	box-shadow: 65.63844px	6.89888px	#333,	64.55774px	13.72218px	#333,	62.76973px	20.39513px	#333,
- 60.294px	26.84463px	#333,	53.39511px	38.79384px	#333,	49.04754px	44.16264px	#333,
- 44.1626px	49.04757px	#333,	38.79381px	53.39514px	#333,	26.84459px	60.29401px	#333,
- 20.39509px	62.76974px	#333,	13.72213px	64.55775px	#333,	6.89884px	65.63845px	#333,
- -6.89893px	65.63844px	#333,	-13.72222px	64.55773px	#333,	-20.39517px	62.76971px	#333,
- -26.84467px	60.29398px	#333,	-38.79388px	53.39509px	#333,	-44.16267px	49.04751px	#333,
- -49.0476px	44.16257px	#333,	-53.39516px	38.79377px	#333,	-60.29403px	26.84455px	#333,
- -62.76975px	20.39505px	#333,	-64.55776px	13.72209px	#333,	-65.63845px	6.89879px	#333,
- -65.63844px	-6.89897px	#333,	-64.55772px	-13.72226px	#333,	-62.7697px	-20.39521px	#333,
- -60.29396px	-26.84471px	#333,	-53.39506px	-38.79391px	#333,	-49.04749px	-44.1627px	#333,
- -44.16254px	-49.04763px	#333,	-38.79373px	-53.39519px	#333,	-26.84451px	-60.29405px	#333,
- -20.395px	-62.76977px	#333,	-13.72205px	-64.55777px	#333,	-6.89875px	-65.63846px	#333,
- 6.89901px	-65.63843px	#333,	13.72231px	-64.55771px	#333,	20.39526px	-62.76969px	#333,
- 26.84475px	-60.29394px	#333,	38.79395px	-53.39503px	#333,	44.16273px	-49.04746px	#333,
- 49.04766px	-44.1625px	#333,	53.39522px	-38.7937px	#333,	60.29407px	-26.84447px	#333,
- 62.76978px	-20.39496px	#333,	64.55778px	-13.722px	#333,	65.63846px	-6.8987px	#333;
+	box-shadow: 65.63844px	6.89888px	#333,	64.55774px	13.72218px	#333,	62.76973px	20.39513px	#333, 60.294px	26.84463px	#333,	53.39511px	38.79384px	#333,	49.04754px	44.16264px	#333, 44.1626px	49.04757px	#333,	38.79381px	53.39514px	#333,	26.84459px	60.29401px	#333, 20.39509px	62.76974px	#333,	13.72213px	64.55775px	#333,	6.89884px	65.63845px	#333, -6.89893px	65.63844px	#333,	-13.72222px	64.55773px	#333,	-20.39517px	62.76971px	#333, -26.84467px	60.29398px	#333,	-38.79388px	53.39509px	#333,	-44.16267px	49.04751px	#333, -49.0476px	44.16257px	#333,	-53.39516px	38.79377px	#333,	-60.29403px	26.84455px	#333, -62.76975px	20.39505px	#333,	-64.55776px	13.72209px	#333,	-65.63845px	6.89879px	#333, -65.63844px	-6.89897px	#333,	-64.55772px	-13.72226px	#333,	-62.7697px	-20.39521px	#333, -60.29396px	-26.84471px	#333,	-53.39506px	-38.79391px	#333,	-49.04749px	-44.1627px	#333, -44.16254px	-49.04763px	#333,	-38.79373px	-53.39519px	#333,	-26.84451px	-60.29405px	#333, -20.395px	-62.76977px	#333,	-13.72205px	-64.55777px	#333,	-6.89875px	-65.63846px	#333, 6.89901px	-65.63843px	#333,	13.72231px	-64.55771px	#333,	20.39526px	-62.76969px	#333, 26.84475px	-60.29394px	#333,	38.79395px	-53.39503px	#333,	44.16273px	-49.04746px	#333, 49.04766px	-44.1625px	#333,	53.39522px	-38.7937px	#333,	60.29407px	-26.84447px	#333, 62.76978px	-20.39496px	#333,	64.55778px	-13.722px	#333,	65.63846px	-6.8987px	#333;
 }
 
 /* line 970, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
