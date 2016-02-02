@@ -36,9 +36,7 @@ define([
 											location.reload();
 										}
 										else {
-											new Checkout({
-												container: container
-											});
+											new Checkout();
 										}
 									});
 								});
@@ -48,9 +46,7 @@ define([
 						return;
 					}
 
-					new Checkout({
-						container: container
-					});
+					new Checkout();
 				},
 
 				"click header .business a": function(e) {
@@ -81,10 +77,7 @@ define([
 
 		events: {
 			"click section.plan button.update-plan, section.plan button.update-billing": function() {
-				new Checkout({
-					update: true,
-					container: this.$el
-				});
+				new Checkout(true);
 			},
 
 			"click section.plan button.cancel": function() {
