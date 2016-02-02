@@ -9,54 +9,55 @@ var Hogan={};
 
 /* globals chrome,PERSISTENT */
 
-chrome.runtime.onInstalled.addListener(function(details) {
-	if (!details || !details.reason || details.reason === "install") {
-		localStorage.firstRun = "true";
 
-		chrome.tabs.create({
-			url: "index.html"
+if (!localStorage.length) {
+	localStorage.firstRun = "true";
+
+	chrome.tabs.create({
+		url: "index.html"
+	});
+}
+else if (!localStorage.version || localStorage.version !== chrome.runtime.getManifest().version) {
+	if (!localStorage.config) {
+		chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
+			if (typeof d.tabs === "string") {
+				try {
+					d.tabs = JSON.parse(d.tabs);
+				}
+				catch(e) {
+					return;
+				}
+			}
+
+			localStorage.config = JSON.stringify(d);
+
+			chrome.storage.local.remove(["tabs", "settings", "themes", "cached"]);
+			chrome.storage.sync.remove(["tabs", "settings", "themes", "cached"]);
+
+			chrome.tabs.create({
+				url: "index.html"
+			});
 		});
 	}
-	else if (details.reason === "update") {
-		if (!localStorage.config) {
-			chrome.storage.local.get(["tabs", "settings", "themes", "cached"], function(d) {
-				if (typeof d.tabs === "string") {
-					try {
-						d.tabs = JSON.parse(d.tabs);
-					}
-					catch(e) {
-						return;
-					}
-				}
 
-				localStorage.config = JSON.stringify(d);
+	if (localStorage.syncData) {
+		// Clear old sync system data
+		chrome.cookies.remove({
+			name: "sync_data_main",
+			url: "http://ichro.me"
+		});
 
-				chrome.storage.local.remove(["tabs", "settings", "themes", "cached"]);
-				chrome.storage.sync.remove(["tabs", "settings", "themes", "cached"]);
-
-				chrome.tabs.create({
-					url: "index.html"
-				});
-			});
-		}
-
-		if (localStorage.syncData) {
-			// Clear old sync system data
-			chrome.cookies.get({
-				name: "sync_data_main",
-				url: "http://ichro.me"
-			});
-
-			chrome.storage.sync.remove("syncData");
-		}
-
-		if (!details.previousVersion || details.previousVersion.indexOf("3.0.0") !== 0) {
-			//localStorage.showWhatsNew = "true";
-			localStorage.showUpdated = "true";
-			localStorage.showSignInNotice = "true";
-		}
+		chrome.storage.sync.remove("syncData");
 	}
-});
+}
+
+if (!localStorage.version || localStorage.version.indexOf("3.0.0") !== 0) {
+	localStorage.showUpdated = "true";
+	localStorage.showSignInNotice = "true";
+}
+
+localStorage.version = chrome.runtime.getManifest().version;
+
 
 /**
  * Feed refresh manager
