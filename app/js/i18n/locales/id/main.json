@@ -1,24 +1,24 @@
 {
   "lang_code":"id",
   "language":"Bahasa Indonesia",
-  "extName":"iChrome",
-  "newtabName":"iChrome New Tab",
-  "extDescription":"The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
-  "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
+  "extName":"iChrome - A Fast, Productive Home Page",
+  "newtabName":"tab baru iChrome",
+  "extDescription":"Beranda TERBAIK untuk Chrome. Tema-tema yang memukau, belasan widget, secepat kilat, dapat dikustomisasi sesukamu!",
+  "newtabDescription":"Beranda TERBAIK untuk Chrome. Sekarang untuk tab baru. Tema yang memukau, belasan widget, secepat kilat, kustomisasi sesukamu!",
   "defaults":{
-    "tab":"Home",
-    "me":"Me"
+    "tab":"Beranda",
+    "me":"Saya"
   },
-  "remove_widget":"Remove",
+  "remove_widget":"Hapus",
   "alert":{
-    "default_button":"Dismiss",
-    "confirm_title":"Are you sure you want to do this?",
-    "confirm_continue":"Continue",
-    "confirm_cancel":"Cancel"
+    "default_button":"Hentikan",
+    "confirm_title":"Apakah Anda yakin akan melakukan ini?",
+    "confirm_continue":"Teruskan",
+    "confirm_cancel":"Batalkan"
   },
   "onboarding":{
     "modal":{
-      "tagline":"All the sites and apps you use, in one place",
+      "tagline":"Semua situs dan aplikasi yang Anda gunakan, dalam satu tempat",
       "wrong_extension":"Want iChrome on your new tab page instead?",
       "wrong_extension_newtab":"Want iChrome on your home page instead?",
       "wrong_extension_action":"Click here",
@@ -291,7 +291,7 @@
         "payment_options":"Pay",
         "pay_monthly":"Monthly ($2)",
         "pay_yearly":"Yearly ($20)",
-        "cancel":"Cancel",
+        "cancel":"Batalkan",
         "update":"Update",
         "subscribe":"Subscribe",
         "braintree_notice":"Payments securely processed by Braintree.",

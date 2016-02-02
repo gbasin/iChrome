@@ -1,7 +1,7 @@
 {
   "lang_code":"ja",
   "language":"日本語",
-  "extName":"iChrome",
+  "extName":"iChrome - 高速・生産的なホームページ",
   "newtabName":"iChrome 新しいタブ",
   "extDescription":"Chromeのための最高のホームページ。最高のテーマ、たくさんのウィジェット、超高速、カスタマイズが自由自在！",
   "newtabDescription":"Chromeのための最高のホームページ。新しいタブにしましょう。見事なテーマ、多数のウィジェット、さらに超高速。めちゃくちゃにカスタマイズ できます！",
@@ -11,82 +11,82 @@
   },
   "remove_widget":"削除",
   "alert":{
-    "default_button":"破棄",
-    "confirm_title":"実行してもいいですか？",
-    "confirm_continue":"次へ",
+    "default_button":"閉じる",
+    "confirm_title":"これを行ってもよろしいですか？",
+    "confirm_continue":"続ける",
     "confirm_cancel":"キャンセル"
   },
   "onboarding":{
     "modal":{
-      "tagline":"All the sites and apps you use, in one place",
-      "wrong_extension":"Want iChrome on your new tab page instead?",
-      "wrong_extension_newtab":"Want iChrome on your home page instead?",
-      "wrong_extension_action":"Click here",
-      "about":"iChrome's all about tabs and widgets",
-      "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
-      "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privacy Policy<\/a>",
-      "sign_in":"Sign in with your Google account",
-      "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
-      "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
-      "sign_in_button":"Sign in with Google",
-      "have_account":"It looks like you already have an account!",
-      "have_account_desc":"All your tabs and widgets are ready to use!",
-      "get_started":"Let's get started!",
-      "get_started_desc":"You're good to go! Let's get your page set up."
+      "tagline":"あなたが使うサイトとアプリをおまとめ",
+      "wrong_extension":"新しいタブに iChrome を表示させたいですか？",
+      "wrong_extension_newtab":"ホームページを iChrome に設定しますか？",
+      "wrong_extension_action":"ここをクリック",
+      "about":"iChromeのタブとウィジェットについて",
+      "about_desc":"タブは、ウィジェット（あなたの電子メールやニュース、天気予報などを表示するブロック）で埋められたページです。ほとんどすべてのウィジェットをカスタマイズし、必要なだけ追加できます。",
+      "terms":"次に進むと，iChromeの <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">利用規約<\/a> と <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\"> プライバシーポリシー <\/a>に同意したこととなります。",
+      "sign_in":"Google アカウントでログイン",
+      "sign_in_desc":"オンラインでの変更を安全に保存するために、Google アカウントでログインしてください。",
+      "sign_in_desc2":"サインインせずに使用することも可能ですが、その場合、画面の配置はオンラインで保存されず、別のコンピューターと共有することができません。",
+      "sign_in_button":"Google でログイン",
+      "have_account":"すでにアカウントをお持ちです。",
+      "have_account_desc":"タブとウィジェットを使用する準備ができました！",
+      "get_started":"さあ、はじめましょう。",
+      "get_started_desc":"次に、あなたのページの設定を行いましょう。"
     },
     "widgets":{
-      "configure":"Let's configure a widget.",
-      "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
-      "configure_skip":"Skip",
-      "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
-      "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
-      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
-      "done":"Got it"
+      "configure":"ウィジェットを設定してみましょう。",
+      "configure_desc":"天気ウィジェットのレンチアイコンをクリックし、<b>設定<\/b>を開きましょう。",
+      "configure_skip":"スキップ",
+      "settings":"<b>San Francisco, CA<\/b>をあなたの住所に置き換え、 <b>保存<\/b>を押しましょう。",
+      "move":"ハイライトされている<b>drag<\/b>ハンドルを使うことにより、ウィジェットを移動できます。",
+      "remove":"ウィジェットを<b>削除するには<\/b>、ウィジェットをドラッグすると表示される赤いバーへドロップしてください。",
+      "done":"OK"
     },
     "settings":{
-      "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
-      "instructions":"Click the highlighted image to open it.",
-      "skip":"Skip",
+      "intro":"では、 <b>メニュー<\/b>をみて、他に何ができるかを確認してみましょう。",
+      "instructions":"ハイライト表示された画像をクリックすると開くことができます。",
+      "skip":"スキップ",
       "tooltips":{
-        "settings":"Change the way iChrome looks and works",
-        "widgets":"Add new widgets - you can have as many as you want",
-        "editing":"Show or hide the editing buttons on widgets",
-        "links":"This is a list of links, add sites you use often in the settings",
-        "tabs":"These are your tabs. You can add more in the settings",
-        "support":"Send us a message or leave a review here"
+        "settings":"iChromeの見た目と動作を変更する",
+        "widgets":"新しいウィジェットを追加する - 必要な分だけ追加することができます",
+        "editing":"ウィジェット上の編集ボタンを表示\/非表示にする",
+        "links":"これはリンクの一覧です。設定であなたがよく利用するサイトを追加してください。",
+        "tabs":"これらはあなたのタブです。設定で追加できます。",
+        "support":"私達にメッセージを送信するか、ここにレビューを残してください。"
       },
-      "finished":"That's it!",
-      "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
-      "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
+      "finished":"以上です！",
+      "finished_next":"メニューからオプションを選択して、あなたのページを作りましょう(<b>ウィジェット<\/b>から始めましょう)。",
+      "finished_contact":"わからないことがあったら、サポートリンクを利用してください。できるだけ早く対応します。"
     }
   },
   "storage":{
-    "signin":"Sign in with Google now to securely save and sync your configuration",
-    "signin_btn":"サインイン",
-    "signin_dismiss":"破棄",
+    "signin":"Google nowにサインインすれば、状態を安全に保存し、同期することができます。",
+    "signin_btn":"ログイン",
+    "signin_dismiss":"閉じる",
     "signin_confirm":{
-      "title":"Keep local data?",
-      "desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
-      "keep_account":"Use account",
-      "keep_local":"Keep local"
+      "title":"ローカルデータを保存しますか？",
+      "desc":"アカウント中の構成情報をローカルデータで置き換えますか？若しくはローカルデータをアカウント中の構成情報で置き換えますか？",
+      "keep_account":"アカウントを使用",
+      "keep_local":"ローカルに保持"
     },
-    "signout_confirm":"Signing out will erase your local backups",
-    "pastdue":"Your subscription is past due",
-    "pastdue_desc":"Please update your billing information in the settings"
+    "signout_confirm":"サインアウトするとローカルのバックアップが消去されます。",
+    "pastdue":"購読期限が過ぎています。",
+    "pastdue_desc":"設定の支払情報を更新して下さい。"
   },
   "toolbar":{
-    "placeholder":"検索条件を入力してください",
-    "placeholder_ok":"検索条件を入力するか、”OK,Google\"と言ってください。",
+    "placeholder":"キーワードを入力",
+    "placeholder_ok":"キーワードを入力するか、\"OK, Google\" と言ってください",
     "apps":{
       "search":"検索",
       "youtube":"YouTube",
-      "maps":"地図",
-      "play":"Play",
+      "maps":"マップ",
+      "play":"プレイ",
       "news":"ニュース",
       "gmail":"Gmail",
       "drive":"ドライブ",
       "calendar":"カレンダー",
-      "more":"もっと"
+      "more":"もっと表示"
     }
   },
   "menu":{
@@ -101,240 +101,240 @@
       "support":"サポート",
       "feedback":"フィードバック",
       "review":"レビュー",
-      "terms":"Terms",
-      "privacy":"Privacy",
+      "terms":"利用規約",
+      "privacy":"プライバシー",
       "by":"By Avi Kohn"
     }
   },
   "voice":{
     "listening":"聞き取り中...",
     "searching":"検索: %s",
-    "missed":"取得できませんでした。<a>もう一度やり直してください<\/a>。"
+    "missed":"聞き取れませんでした。<a>もう一度やり直してください<\/a>。"
   },
   "settings":{
     "title":"設定",
-    "exit":"Exit settings",
-    "saved":"Settings saved",
+    "exit":"設定を終了",
+    "saved":"設定が保存されました",
     "nav":{
-      "visual":"Visual",
+      "visual":"見た目",
       "visual_sections":{
-        "background":"Background",
+        "background":"背景",
         "layout":"レイアウト",
-        "theme":"App theme"
+        "theme":"アプリのテーマ"
       },
-      "toolbar":"Toolbar",
+      "toolbar":"ツールバー",
       "toolbar_sections":{
-        "style":"Style",
+        "style":"スタイル",
         "search":"検索",
-        "links":"Links"
+        "links":"リンク"
       },
       "tabs":"タブ",
       "widgets":"ウィジェット",
       "pro":"Pro",
-      "accounts":"Account",
-      "misc":"Miscellaneous",
-      "advanced":"Advanced",
+      "accounts":"アカウント",
+      "misc":"その他",
+      "advanced":"高度な設定",
       "advanced_sections":{
-        "backups":"Backup and restore",
-        "css":"Custom CSS",
-        "debug_tools":"Debug tools"
+        "backups":"バックアップと復元",
+        "css":"カスタム CSS",
+        "debug_tools":"デバッグツール"
       },
-      "support":"Help and support",
-      "suggest":"Suggest a feature"
+      "support":"ヘルプとサポート",
+      "suggest":"機能を提案"
     },
     "visual":{
       "background":{
-        "title":"Background",
-        "desc":"This is the image or set of images shown as a background to your tabs",
-        "current":"Current background",
+        "title":"背景",
+        "desc":"タブの背景画像",
+        "current":"現在の背景画像",
         "custom":"カスタム",
-        "unnamed":"Theme %s",
-        "select":"Select a theme",
+        "unnamed":"テーマ %s",
+        "select":"テーマを選択",
         "or":"または",
-        "url_placeholder":"Enter an image URL"
+        "url_placeholder":"画像の URL を入力"
       },
       "layout":{
         "title":"レイアウト",
-        "desc":"Here you can adjust the type and number of columns in each tab",
-        "columns":"Columns",
-        "grid":"Grid",
-        "columns_number":"Number of columns",
-        "column_width":"Column width",
-        "column_width_fixed":"Fixed",
-        "column_width_fluid":"Fluid",
+        "desc":"ここで各タブ中の種類と列の数を調整できます。",
+        "columns":"列表示",
+        "grid":"グリッド表示",
+        "columns_number":"列の数",
+        "column_width":"列の幅",
+        "column_width_fixed":"固定",
+        "column_width_fluid":"可変",
         "column_warning":{
-          "column_to_grid":"Changing to a grid-based layout will move all of your widgets to the top left corner.",
-          "grid_to_column":"Changing to a column-based layout will move all of your widgets to the first column."
+          "column_to_grid":"グリッド ベースのレイアウトに変更すると全てのウィジェットは左上隅に移動されます。",
+          "grid_to_column":"列ベースのレイアウトに変更すると全てのウィジェットは最初の列に移動されます。"
         }
       },
       "theme":{
-        "title":"App theme",
-        "desc":"The app theme controls the style of iChrome itself and all widgets",
+        "title":"アプリのテーマ",
+        "desc":"アプリケーションのテーマはiChrome自身とすべてのウィジェットのスタイルを制御します。",
         "preview":"プレビュー",
-        "light":"Light (default)",
+        "light":"Light (規定値)",
         "dark":"暗い",
-        "transparent":"Transparent",
-        "transparent_darker":"Transparent (darker)"
+        "transparent":"透明",
+        "transparent_darker":"透明 (暗い)"
       }
     },
     "toolbar":{
       "style":{
-        "title":"Style",
-        "desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
-        "normal":"Normal",
-        "button":"Button"
+        "title":"スタイル",
+        "desc":"ツールバーのスタイルを設定します。通常表示もしくは小さなボタン表示を選択できます。",
+        "normal":"標準",
+        "button":"ボタン"
       },
       "search":{
         "title":"検索",
-        "desc":"These settings control how the search box and voice search function",
-        "engine":"Search engine",
-        "engines_google":"Google (Default)",
+        "desc":"これら設定は検索ボックスと音声検索機能を制御します。",
+        "engine":"検索エンジン",
+        "engines_google":"Google (デフォルト)",
         "engines_custom":"カスタム",
-        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
-        "voice":"Enable voice search",
-        "ok_google":"Enable \"OK Google\" hotword detection",
-        "search_tab":"Open search results in a new tab"
+        "engines_custom_desc":"質問が行くべきところで、<b>%s<\/b>と共に、質問が送られるべきURLを入力してください。",
+        "voice":"音声検索を有効にする",
+        "ok_google":"「OK Google」ホットワードの検出を有効にする",
+        "search_tab":"検索結果を新しいタブで開く"
       },
       "links":{
-        "title":"Links",
-        "desc":"These are the items shown at the right of the toolbar",
-        "apps":"Apps menu",
-        "custom":"Custom links",
-        "custom_note1":"Maximum of 3 allowed",
-        "custom_note2":"users get 8",
-        "custom_name_placeholder":"Link text",
-        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+        "title":"リンク",
+        "desc":"ツールバーの右側に表示されている項目です。",
+        "apps":"アプリのメニュー",
+        "custom":"カスタムリンク",
+        "custom_note1":"最大3件",
+        "custom_note2":"ユーザーは8件まで",
+        "custom_name_placeholder":"リンクテキスト",
+        "custom_url_placeholder":"リンクURL, 例: https:\/\/www.google.co.jp\/"
       }
     },
     "misc":{
-      "link_tab":"Open links in a new tab by default"
+      "link_tab":"デフォルトで新しいタブを開く"
     },
     "tabs":{
-      "create_new":"Create new",
-      "make_default":"Make default",
-      "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
-      "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
-      "name_placeholder":"Enter a tab name",
-      "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
+      "create_new":"新規作成",
+      "make_default":"デフォルトに設定",
+      "desc1":"タブは、iChrome 内のページです。各タブには他のタブと全く別のウィジェットを配置することができます。",
+      "desc2":"タブを切り替えるには、タブの上にマウスを移動し、画面の左右に表示されるボタンをクリックするか、キーボードの矢印キーを使用します。",
+      "name_placeholder":"タブ名を入力します。",
+      "delete_confirm":"タブ内の全てのウィジェット及びデータ、設定は完全に消去されます。この操作は元に戻せません。\nタブを削除してよろしいですか？"
     },
     "accounts":{
       "status":{
-        "title":"Status",
-        "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
-        "reset_account":"Reset account",
-        "sign_out":"Sign out",
-        "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
-        "sign_in":"Sign in with Google"
+        "title":"状態",
+        "signed_in":"あなたは、現在 <b>サインイン中<\/b> %s (%s) です。",
+        "reset_account":"アカウントをリセット",
+        "sign_out":"ログアウト",
+        "signed_out":"<b>現在サインインしていません<\/b> 。今すぐGoogle アカウントでサインインし、安全に設定を同期してください。",
+        "sign_in":"Google でログイン"
       },
-      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
-      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this account."
+      "reset_confirm_desc":"アカウントをリセットすると、ローカル及び同期データが全て消去されます。バックアップをとる、または元に戻す操作は行えません。",
+      "reset_confirm_desc2":"このアカウントに関連づけられた全てのコンピューターからも、全ての設定とデータが消去されます。"
     },
     "advanced":{
       "backups":{
-        "title":"Backup and restore",
-        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
-        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
-        "backup":"Backup now",
-        "upload":"Restore from file",
-        "download":"Download",
-        "restore":"Restore",
-        "download_name":"iChrome Backup",
-        "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
-        "restore_error":"An error occurred while trying to parse the provided data, please try again later."
+        "title":"バックアップと復元",
+        "desc":"全てのタブ、設定、ウィジェットのデータをバックアップします。これは毎日1回、iChrome ページを開いた時に自動的に実行されます。",
+        "desc2":"下のボタンを使用して、バックアップをした特定の日付に戻ることやバックアップデータをダウンロード出来ます。",
+        "backup":"今すぐバックアップ",
+        "upload":"ファイルから復元",
+        "download":"ダウンロード",
+        "restore":"復元",
+        "download_name":"iChrome バックアップ",
+        "restore_confirm":"これは、すべてのローカルおよび同期されているデータが上書きされます。このアカウント使用しているすべてのコンピューターであなたの現在の設定が失われます。",
+        "restore_error":"データの解析中にエラーが発生しました。時間をおいてもう一度やり直してください。"
       },
       "css":{
-        "title":"Custom CSS",
-        "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
-        "placeholder":"Enter up to 1000 characters of CSS here"
+        "title":"カスタム CSS",
+        "desc":"CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\"target=\"blank\"> 定義<\/a>) を使用すると、iChrome のほぼすべての部分をカスタマイズできます。",
+        "placeholder":"CSS をここに入力（最大1000文字）"
       },
       "debug_tools":{
-        "title":"Debug tools",
-        "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
-        "open":"Open tools"
+        "title":"デバッグツール",
+        "desc":"<b>警告:<\/b>これらのツールは、全ての設定を 1 回のクリックで消去できます。管理者が指示する場合のみ使用してください。",
+        "open":"ツールを開く"
       }
     },
     "widgets":{
-      "desc1":"Widgets have their own settings and can't be customized here.",
-      "desc2":"To edit a widget's settings, follow these steps:",
-      "steps1":"Move your mouse over any widget",
-      "steps2":"Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
-      "steps3":"Edit any of the settings shown in the dialog that's displayed",
-      "steps4":"Click Save to save your changes, or any part of the background to discard of them"
+      "desc1":"ウィジェットの設定はここからは変更できません。",
+      "desc2":"ウィジェットの設定を変更するには以下の手順に従ってください。",
+      "steps1":"任意のウィジェットの上にマウスを移動します。",
+      "steps2":"ウィジェットの右上に表示されるレンチのアイコンをクリックします。アイコンが表示されない場合、そのウィジェットには設定項目がありません。",
+      "steps3":"表示されたダイアログボックスでウィジェットの設定を変更します。",
+      "steps4":"「保存」ボタンをクリックして設定を保存します。設定をキャンセルするには、背景の任意の場所をクリックします。"
     },
     "pro":{
       "promo":{
-        "monthly_price":"$2 per month",
-        "yearly_price":"or $20 per year",
-        "upgrade_btn":"Upgrade Now",
-        "business":"Interested in buying Pro for your business or school?",
-        "business_contact":"Contact us",
+        "monthly_price":"月額 $2",
+        "yearly_price":"または年額 $20",
+        "upgrade_btn":"今すぐアップグレード",
+        "business":"仕事や教育目的でPro版を購入することに興味をお持ちですか？",
+        "business_contact":"お問い合わせ",
         "themes":"テーマ",
-        "themes_desc":"See more of your backgrounds with dark and transparent themes",
-        "bgs":"Live backgrounds",
-        "bgs_desc":"Bring your page to life with 20 live high-definition backgrounds",
-        "widgets":"Maximizable widgets",
-        "widgets_desc":"Take iChrome to another level with maximizable widgets",
-        "more_header":"And more",
-        "stocks":"Realtime stocks with extended and historical information",
-        "rss":"Support for multiple RSS feeds per widget",
-        "sports":"General and league-specific sports news",
-        "tabbed_widgets":"Tabbed news and RSS widgets",
-        "bg_downloads":"Downloadable backgrounds",
-        "weather":"Hourly weather forecasts up to 10 days out",
-        "toolbar":"More toolbar links",
-        "support":"Prioritized support and suggestions",
-        "buy_pro":"Buy Pro"
+        "themes_desc":"暗く透明なテーマを備えたあなたの背景をもっとよく見ります。",
+        "bgs":"ライブバックグラウンド",
+        "bgs_desc":"あなたのページを20の実際の高解像度背景を備えた生命にもたらします。",
+        "widgets":"最大化できるウィジェット",
+        "widgets_desc":"最大限にすることができる小型装置を備えた別のレベルにiChromeを持っていきます。",
+        "more_header":"詳細",
+        "stocks":"拡張で・歴史上の情報を備えたリアル・タイム・ストック",
+        "rss":"1つの小型装置当たりの多数のRSSフィードの支援",
+        "sports":"一般的・リーグに特有のスポーツ・ニュース",
+        "tabbed_widgets":"タブ付きのニュースや RSS ウィジェット",
+        "bg_downloads":"ダウンロード可能な背景画像",
+        "weather":"1時間ごとの天気予報を10日後まで表示",
+        "toolbar":"より多くのツールバー・リンク",
+        "support":"優先サポートおよびご提案",
+        "buy_pro":"Pro 版を購入"
       },
       "checkout":{
-        "title":"Checkout",
-        "updating_title":"Update plan",
-        "payment_options":"Pay",
-        "pay_monthly":"Monthly ($2)",
-        "pay_yearly":"Yearly ($20)",
+        "title":"注文に進む",
+        "updating_title":"プランを更新",
+        "payment_options":"お支払い",
+        "pay_monthly":"毎月 ($2)",
+        "pay_yearly":"毎年 ($20)",
         "cancel":"キャンセル",
-        "update":"Update",
-        "subscribe":"Subscribe",
-        "braintree_notice":"Payments securely processed by Braintree.",
-        "monthly_notice":"By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
-        "yearly_notice":"By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
-        "update_notice":"Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
-        "thank_you":"Thank you for buying iChrome Pro!",
-        "thank_you2":"iChrome will reload in a few seconds and you'll be all set!",
-        "error":"Something went wrong while trying to process your payment.",
-        "error2":"Please try again later or email us at support@ichro.me",
-        "signin":"Sign in",
-        "signin_desc":"You need to sign in before buying Pro so we can make sure it's you",
-        "signin_btn":"Sign in"
+        "update":"アップデート",
+        "subscribe":"定期購入",
+        "braintree_notice":"お支払いは Braintree によって安全に処理されます。",
+        "monthly_notice":"予約を取り消すまで、毎月あなたに2ドル請求するためにiChromeを認可します。",
+        "yearly_notice":"予約を取り消すまで、毎年あなたに20ドル請求するためにiChromeを認可します。",
+        "update_notice":"定期支払いの変更の反映はすぐに行われますが、現在の支払い期間終了まで請求されません。",
+        "thank_you":"iChrome Pro をご購入いただきありがとうございます！",
+        "thank_you2":"iChromeはすぐに使うことができるようになります！",
+        "error":"お支払いの処理中に問題が発生しました。",
+        "error2":"あとでもう一度試すか、support@ichro.meへメールでお問い合わせください。",
+        "signin":"ログイン",
+        "signin_desc":"プロ版を購入する前にサインアップする必要があります。",
+        "signin_btn":"ログイン"
       },
       "plan":{
-        "title":"Plan",
-        "desc":"You are currently subscribed to iChrome Pro (%s)",
+        "title":"プラン",
+        "desc":"iChrome Pro(%s) へは購読契約済みです。",
         "types":{
-          "monthly":"Monthly",
-          "yearly":"Yearly",
-          "business":"Business",
-          "education":"Education",
+          "monthly":"毎月",
+          "yearly":"毎年",
+          "business":"ビジネス",
+          "education":"教育",
           "custom":"カスタム"
         },
-        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
-        "status":"Status",
-        "status_active":"Active",
-        "status_trial":"Trial",
-        "status_pastdue":"Past due",
-        "subscription_date":"Subscription date",
-        "paid_through":"Paid through",
-        "next_bill":"Next bill",
-        "next_bill_value":"$%s on %s",
-        "update_plan":"Update plan",
-        "update_billing":"Update billing",
-        "cancel":"Cancel subscription",
-        "cancel_notice":"Your subscription will be canceled immediately",
-        "cancel_notice2":"If you would like a refund, please contact us at support@ichro.me"
+        "uneditable_desc":"ビジネス、教育、およびカスタムのプランは、iChrome 内からは更新できません。更新または解約するには、 <a href=\"mailto:support@ichro.me\"> サポートへ<\/a>お問い合わせください。",
+        "status":"状態",
+        "status_active":"有効",
+        "status_trial":"試用版",
+        "status_pastdue":"期限切れ",
+        "subscription_date":"購読開始日",
+        "paid_through":"支払い有効日",
+        "next_bill":"次回支払日",
+        "next_bill_value":"$%s を %s に支払い",
+        "update_plan":"プランを更新",
+        "update_billing":"支払いの更新",
+        "cancel":"購読をキャンセル",
+        "cancel_notice":"購読はすぐにキャンセルされます",
+        "cancel_notice2":"返金が必要であれば、support@ichro.meへお問い合わせください。"
       }
     }
   },
   "store":{
-    "installation":"インストール",
+    "installation":"配置",
     "description":"説明",
     "preview":"プレビュー",
     "instructions":"ドラッグ アンド ドロップで任意のサイズであなたのホームページへ貼り付け"
@@ -348,40 +348,40 @@
       "variable":"可変"
     },
     "settings":{
-      "title":"ウィジェット設定",
+      "title":"ウィジェットの設定",
       "save":"保存",
       "size":"ウィジェットサイズ"
     },
-    "minimize":"Minimize",
-    "maximize":"Maximize",
-    "delete_confirm":"このウィジェットを削除するとこのウィジェットのデータは永久に失われます。\n削除しても本当によろしいですか？",
+    "minimize":"最小化",
+    "maximize":"最大化",
+    "delete_confirm":"本当にこのウィジェットを削除してもよろしいですか？\nこの操作は元に戻すことはできません。このウィジェットのデータは永久に失われます。",
     "permissions_request":{
-      "title":"Access required",
-      "button":"Grant Access",
-      "desc":"This widget needs extra permissions before it can be used. Grant them using the button below."
+      "title":"アクセスが必要です",
+      "button":"アクセスを許可",
+      "desc":"このウィジェットは追加のアクセス許可が必要です。下のボタンを押すことで許可されます。"
     },
     "error":{
-      "explanation":"Something went wrong while we were trying to display this widget.",
-      "advice":"Try reinstalling the widget or reloading the page. Contact us if you see this message often.",
+      "explanation":"ウィジェットの表示中に問題が発生しました。",
+      "advice":"ウィジェットを再インストールするかページをリロードしてください。このメッセージが頻繁に表示される場合、サポートへご連絡ください。",
       "support":"サポート",
-      "refresh":"Refresh"
+      "refresh":"更新"
     },
     "auth":{
-      "message":"You'll need to give this widget access to your account before you can use it.",
-      "button":"Grant Access"
+      "message":"このウィジェットにあなたのアカウントへのアクセス許可を与える必要があります。",
+      "button":"アクセスを許可"
     },
     "shared":{
       "settings":{
-        "title":"ウィジェットタイトル",
-        "title_placeholder":"ウィジェットのタイトルを入力するか、空白のままは非表示になります",
+        "title":"ウィジェットのタイトル",
+        "title_placeholder":"ウィジェットのタイトルを入力します（空白のままで非表示になります）",
         "height":"ウィジェットの高さ",
         "open_options":{
           "current":"現在のタブ",
           "blank":"新しいタブ"
         },
-        "footer_link":"フッターリンク",
+        "footer_link":"フッターのリンク",
         "footer_link_options":{
-          "show":"見せる",
+          "show":"表示",
           "hide":"隠す"
         },
         "account":"アカウントID",
@@ -398,7 +398,7 @@
     "custom":"カスタム",
     "create":"テーマを作成",
     "url_or_upload":"または",
-    "upload_image":"画像のアップロード",
+    "upload_image":"画像をアップロード",
     "edit_btn":"編集",
     "delete":"削除",
     "use":"使用",
@@ -407,38 +407,38 @@
     "images":"%s images",
     "resolution":"解像度",
     "categories":"カテゴリ",
-    "cached":"このテーマがキャッシュされ、オフラインで使用可能。",
+    "cached":"このテーマはキャッシュされ、オフラインで使用可能です。",
     "random":"このテーマはページを読み込むたびにランダムなイメージを表示します。",
     "random_daily":"このテーマは毎日ランダムに選ばれたイメージを表示します。",
     "sunrise_sunset":"このテーマはその日の時間によってイメージを表示します。",
     "feed":"このテーマは毎日外部フィードから選ばれたイメージを表示します。",
-    "video":"This theme displays a live video",
-    "pro_only":"This theme is only available to Pro users. Buy Pro in the settings.",
-    "delete_confirm":"このテーマを削除しますか？\nこのアクションは取り消せません。すべてのテーマが完全に消えます。",
+    "video":"このテーマはライブビデオが表示されます。",
+    "pro_only":"このテーマは、Pro版ユーザーのみ利用できます。設定でPro版を購入してください。",
+    "delete_confirm":"このテーマを削除しますか？\nこのアクションは取り消せません。すべてのテーマが完全に削除されます。",
     "delete_error":"テーマを削除しようとしてエラーが発生しました。もう一度やり直してください。",
     "feed_fetching":"フィードを取得しています。しばらくお待ちください。",
     "feed_error":"フィードの取得に失敗しました。もう一度やり直してください。",
-    "caching":"読み込み中です。しばらくお待ちください。",
+    "caching":"テーマをキャッシュ中です。しばらくお待ちください。",
     "cache_status":"%s 中 %s の画像がキャッシュされました",
-    "cache_error":"テーマをキャッシュしようとしたときにエラーが発生しました。後でもう一度お試しください",
+    "cache_error":"テーマをキャッシュ中にエラーが発生しました。もう一度やり直してください。",
     "bginfo":{
-      "view":"View",
-      "source":"Source",
+      "view":"表示",
+      "source":"引用元",
       "unknown":"不明",
-      "download":"Download",
-      "pro_only":"Only Pro users can download background images and videos"
+      "download":"ダウンロード",
+      "pro_only":"Pro版登録者のみ背景画像や動画をダウンロードすることができます。"
     },
     "edit":{
-      "title":"テーマ編集",
-      "create_title":"テーマ作成",
+      "title":"テーマを編集",
+      "create_title":"テーマを作成",
       "name":"テーマ名",
       "default_name":"新しいテーマ",
       "name_placeholder":"テーマ名を入力",
-      "image":"画像 URL",
-      "image_placeholder":"背景画像URLを入力してください",
+      "image":"画像の URL",
+      "image_placeholder":"背景画像の URL を入力",
       "image_help":"アップロードされた画像がコンピュータ間で <b>同期できません<\/b> でした。<br \/><br \/>もしあなたにとってこれが重要な場合は、<a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a> などのサービスへ画像をアップロードしてください。その後、左のフィールドに拡張子（.jpg 等）で終わるURLをコピー＆ペーストしてください。",
       "color":"背景色",
-      "color_placeholder":"色を入力してください。",
+      "color_placeholder":"色の名前を入力",
       "position":"位置",
       "position_options":{
         "center":"中央揃え",
@@ -449,27 +449,27 @@
         "bottom_center":"中央下",
         "bottom_right":"右下"
       },
-      "scaling":"拡大縮小",
+      "scaling":"拡大\/縮小",
       "scaling_options":{
         "auto":"自動",
         "width":"最大幅",
         "height":"最大高",
         "none":"拡大縮小しない(プレビューが不正確になることがあります)"
       },
-      "repeat":"背景画像を繰り返す",
+      "repeat":"背景画像をタイル表示",
       "repeat_options":{
         "none":"繰り返さない",
-        "horizontal":"横方向に繰り返し",
-        "vertical":"縦方向に繰り返し",
+        "horizontal":"水平方向に繰り返し",
+        "vertical":"垂直方向に繰り返し",
         "both":"縦横両方向を繰り返し"
       },
       "attach":"画像の表示先",
-      "attach_tab":"このタブ",
+      "attach_tab":"タブ",
       "attach_window":"ウィンドウ",
       "preview":"プレビュー",
       "save":"保存して閉じる",
-      "cache_error":"画像の読み込み中にエラーが発生しました。このURLをダブルクリックしてください。",
-      "upload_error":"ファイルのアップロード中にエラーが発生しました。ファイルのサイズが適切であることを確認してください。"
+      "cache_error":"画像の読み込み中にエラーが発生しました。URL が正しいことをご確認ください。",
+      "upload_error":"ファイルのアップロード中にエラーが発生しました。ファイルが画像であることと、サイズが適切であることを確認してください。"
     }
   }
 }

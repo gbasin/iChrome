@@ -1,21 +1,21 @@
 {
   "lang_code":"de",
-  "line_1":"Make your home \/ start page the way it should be: Fast, customizable, beautiful and productive!",
-  "link":"Want iChrome on your new tab page? Try iChrome New Tab: https:\/\/ichro.me\/n",
-  "newtab_line_1":"Make your new tab \/ start page the way it should be: Fast, customizable, beautiful and productive!",
-  "newtab_link":"Only want iChrome to show when you start Google Chrome? Try the main extension: https:\/\/ichro.me\/w",
-  "line_2":"iChrome includes nearly 50 widgets, thousands of stunning backgrounds, and powerful features including:",
+  "line_1":"Gestalten Sie Ihre Startseite wie sie sein sollte: Schnell, anpassbar, schön und produktiv!",
+  "link":"Wollen Sie iChrome auf Ihrer Neuen Tab Seite? Versuchen Sie iChrome New Tab: https:\/\/ichro.me\/n",
+  "newtab_line_1":"Gestalten Sie Ihre Neuer-Tab-Seite wie sie sein sollte: Schnell, anpassbar, schön und produktiv!",
+  "newtab_link":"Wollen Sie iChrome nur dann anzeigen, wenn Sie Ihren Google Chrome Browser starten? Testen Sie die Haupterweiterung: https:\/\/ichro.me\/w",
+  "line_2":"iChrome enthält fast 50 Widgets, tausende atemberaubende Hintergründe und leistungsstarke Funktionen, wie:",
   "features":[
-    "Completely ad and malware free. Really.",
-    "Dozens of widgets including: Weather, Sports, News, Stocks, RSS, Bookmarks, Gmail, Recently Closed Tabs, and more!",
-    "Drag and drop customization on 1-5 columns or a grid!",
-    "Fully featured voice search and \"OK Google\" hotword detection",
-    "Buy Pro and get dark and transparent themes, live backgrounds, maximizable widgets, hourly weather forecasts, and more",
-    "Navigate between an unlimited number of customizable tabs, each with their own widgets",
-    "Work completely offline anytime, everything (even the backgrounds) is ready whenever you are!",
-    "And hundreds more features! Install iChrome now and check them out!"
+    "Komplett ohne Werbung und ohne Malware. Versprochen.",
+    "Dutzende von Widgets einschließlich: Wetter, Sport, News, Aktien, RSS, Lesezeichen, Google Mail, vor kurzem geschlossene Tabs und mehr!",
+    "Drag und Drop Anpassung in 1-5 Spalten oder als Raster!",
+    "Voll funktionsfähige Sprachsuche und \"OK, Google\" Hotword-Erkennung",
+    "Kaufen Sie Pro und bekommen Sie dunkle und transparente Designs, live Hintergründe, maximierbare Widgets, stündliche Wettervorhersagen und mehr",
+    "Navigieren Sie zwischen einer unbegrenzten Anzahl von anpassbaren Tabs, jede mit ihren eigenen Widgets.",
+    "Arbeiten Sie jederzeit komplett offline, alles (sogar die Hintergründe) sind bereit, wann immer Sie es sind!",
+    "Über hundert weitere Funktionen! Installieren Sie iChrome jetzt und probieren Sie es aus!"
   ],
-  "line_3":"iChrome ist ein Open Source Projekt, betrachte es auf Github: https:\/\/github.com\/AMKohn\/iChrome",
+  "line_3":"iChrome ist ein Open Source Projekt, besuchen Sie es auf Github: https:\/\/github.com\/AMKohn\/iChrome",
   "line_4":"Feedback und Anregungen sind jederzeit willkommen: http:\/\/ichrome.uservoice.com",
-  "line_5":"Bist du Homepage-Erweiterungen Leid, die nicht einengen und nicht anpassbar sind? Überflutet mit Werbung?  Noch auf der Suche nach \"dem\" iGoogle-Ersatz? Auf der Suche nach einer schönen Start-Seite die sich immer weiter verbessert? iChrome ist für Dich!"
+  "line_5":"Bist du Homepage-Erweiterungen Leid, die einengen und nicht anpassbar sind? Wirst Du überflutet mit Werbung?  Noch auf der Suche nach \"dem\" iGoogle-Ersatz? Auf der Suche nach einer schönen Start-Seite die sich immer weiter verbessert? iChrome ist für Dich!"
 }

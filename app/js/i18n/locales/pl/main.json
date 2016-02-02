@@ -18,61 +18,61 @@
   },
   "onboarding":{
     "modal":{
-      "tagline":"All the sites and apps you use, in one place",
-      "wrong_extension":"Want iChrome on your new tab page instead?",
-      "wrong_extension_newtab":"Want iChrome on your home page instead?",
-      "wrong_extension_action":"Click here",
-      "about":"iChrome's all about tabs and widgets",
-      "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
-      "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privacy Policy<\/a>",
-      "sign_in":"Sign in with your Google account",
-      "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
-      "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
-      "sign_in_button":"Sign in with Google",
-      "have_account":"It looks like you already have an account!",
-      "have_account_desc":"All your tabs and widgets are ready to use!",
-      "get_started":"Let's get started!",
-      "get_started_desc":"You're good to go! Let's get your page set up."
+      "tagline":"Wszystkie strony i aplikacje których używasz w jednym miejscu",
+      "wrong_extension":"Chesz iChrome jako stronę nowej karty?",
+      "wrong_extension_newtab":"Chcesz iChrome jako stronę domową?",
+      "wrong_extension_action":"Kliknij tutaj",
+      "about":"W iChrome'ie wszystko opiera się na kartach i widgetach",
+      "about_desc":"Karty to strony wypełnione widgetami - blokami, które pokazuję rzeczy takie jak pogoda, wiadomości i twój e-mail. Możesz skonfigurować większość widgetów i dodać tak dużo jak tylko chcesz.",
+      "terms":"Uwaga: Kontynuując zgadzasz się na <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Warunki korzystania z serwisu<\/a> iChrome. <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\"> Polityka prywatności<\/a>",
+      "sign_in":"Zaloguj się przy pomocy konta Google",
+      "sign_in_desc":"Zaloguj się używając konta Google zanim zaczniesz aby bezpiecznie przechowywać Twoje zmiany online.",
+      "sign_in_desc2":"Jeżeli nie chcesz, nie musisz się logować, ale twoja strona nie będzie zapisana online i nie będziesz mieć do niej dostępu z innego komputera.",
+      "sign_in_button":"Zaloguj się z Google",
+      "have_account":"Wygląda na to, że już masz konto!",
+      "have_account_desc":"Wszystkie twoje karty i widgety są gotowe do użycia!",
+      "get_started":"Zaczynajmy!",
+      "get_started_desc":"Możemy ruszać! Skonfigurujmy twoją stronę."
     },
     "widgets":{
-      "configure":"Let's configure a widget.",
-      "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
-      "configure_skip":"Skip",
-      "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
-      "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
-      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
-      "done":"Got it"
+      "configure":"Skonfiguruj swój wigdet.",
+      "configure_desc":"Kliknij ikonkę klucza aby otworzyć <b>ustawienia<\/b> widgetu pogody.",
+      "configure_skip":"Pomiń",
+      "settings":"Zastąp <b>San Francisco, CA<\/b> twoją lokalizacją i wciśnij <b>Zapisz<\/b>.",
+      "move":"Możesz <b>przeciągać<\/b> widgety korzystając z podświetlonego uchwytu.",
+      "remove":"Kiedy przeciągasz widget, upuść go na czerwony pasek (nie pokazany) aby go <b>usunąć<\/b>.",
+      "done":"OK"
     },
     "settings":{
-      "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
-      "instructions":"Click the highlighted image to open it.",
-      "skip":"Skip",
+      "intro":"Teraz spójrzmy na <b>menu<\/b> i zobaczmy co jeszcze możesz zrobić.",
+      "instructions":"Kliknij podświetlony obraz, aby go otworzyć.",
+      "skip":"Pomiń",
       "tooltips":{
-        "settings":"Change the way iChrome looks and works",
-        "widgets":"Add new widgets - you can have as many as you want",
-        "editing":"Show or hide the editing buttons on widgets",
-        "links":"This is a list of links, add sites you use often in the settings",
-        "tabs":"These are your tabs. You can add more in the settings",
-        "support":"Send us a message or leave a review here"
+        "settings":"Zmień wygląd oraz sposób w jaki działa iChrome",
+        "widgets":"Dodaj nowe wigdety - możesz mieć tak dużo jak tylko chcesz",
+        "editing":"Pokaż albo ukryj przyciski edycji na widgetach",
+        "links":"To jest lista odnośników. dodaj strony których często używasz w ustawieniach",
+        "tabs":"To są Twoje karty. Możesz dodać ich więcej w ustawieniach",
+        "support":"Wyślij nam wiadomość albo zostaw tutaj swoją recenzję"
       },
-      "finished":"That's it!",
-      "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
-      "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
+      "finished":"I już!",
+      "finished_next":"Wybierz opcję z menu (spróbuj zacząć od <b>Widgety<\/b>) i stwórz swój układ strony!",
+      "finished_contact":"Użyj odnośnika wsparcia jeśli potrzebujesz pomocy a odpiszemy Ci najszybciej jak to możliwe."
     }
   },
   "storage":{
-    "signin":"Sign in with Google now to securely save and sync your configuration",
+    "signin":"Zaloguj się teraz za pomocą konta Google aby bezpiecznie zachowywać i synchronizować swoje ustawienia",
     "signin_btn":"Zaloguj się",
     "signin_dismiss":"Odrzuć",
     "signin_confirm":{
-      "title":"Keep local data?",
-      "desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
-      "keep_account":"Use account",
-      "keep_local":"Keep local"
+      "title":"Zachować dane lokalne?",
+      "desc":"Czy chcesz zachować swoje dane lokalne i zastąpić ustawienia na swoim koncie, czy zastąpić ustawienia tego komputera tymi które już są na koncie?",
+      "keep_account":"Użyj konta",
+      "keep_local":"Zachowaj lokalnie"
     },
-    "signout_confirm":"Signing out will erase your local backups",
-    "pastdue":"Your subscription is past due",
-    "pastdue_desc":"Please update your billing information in the settings"
+    "signout_confirm":"Wylogowanie spowoduje usunięcie danych lokalnych",
+    "pastdue":"Twoja subskrypcja jest nieaktualna",
+    "pastdue_desc":"Proszę zaktualizować swoje dane rozliczeniowe w ustawieniach"
   },
   "toolbar":{
     "placeholder":"Wpisz słowa kluczowe",
@@ -101,8 +101,8 @@
       "support":"Pomoc",
       "feedback":"Oceń",
       "review":"Opinia",
-      "terms":"Terms",
-      "privacy":"Privacy",
+      "terms":"Warunki",
+      "privacy":"Prywatność",
       "by":"Przez Avi Kohn"
     }
   },
@@ -113,223 +113,223 @@
   },
   "settings":{
     "title":"Ustawienia",
-    "exit":"Exit settings",
-    "saved":"Settings saved",
+    "exit":"Wyjdź z ustawień",
+    "saved":"Ustawienia zapisane",
     "nav":{
-      "visual":"Visual",
+      "visual":"Wygląd",
       "visual_sections":{
-        "background":"Background",
+        "background":"Tło",
         "layout":"Układ",
-        "theme":"App theme"
+        "theme":"Motyw aplikacji"
       },
-      "toolbar":"Toolbar",
+      "toolbar":"Pasek narzędzi",
       "toolbar_sections":{
-        "style":"Style",
+        "style":"Styl",
         "search":"Szukaj",
-        "links":"Links"
+        "links":"Odnośniki"
       },
       "tabs":"Karty",
       "widgets":"Widżety",
       "pro":"Pro",
-      "accounts":"Account",
-      "misc":"Miscellaneous",
-      "advanced":"Advanced",
+      "accounts":"Konto",
+      "misc":"Inne",
+      "advanced":"Zaawansowane",
       "advanced_sections":{
-        "backups":"Backup and restore",
-        "css":"Custom CSS",
-        "debug_tools":"Debug tools"
+        "backups":"Kopia i przywracanie",
+        "css":"Niestandardowy CSS",
+        "debug_tools":"Narzędzia debugowania"
       },
-      "support":"Help and support",
-      "suggest":"Suggest a feature"
+      "support":"Pomoc i wsparcie",
+      "suggest":"Zasugeruj funkcjonalność"
     },
     "visual":{
       "background":{
-        "title":"Background",
-        "desc":"This is the image or set of images shown as a background to your tabs",
-        "current":"Current background",
+        "title":"Tło",
+        "desc":"To jest obraz lub zbiór obrazów które posłużą jako tło do Twoich kart",
+        "current":"Bieżące tło",
         "custom":"Niestandardowy",
-        "unnamed":"Theme %s",
-        "select":"Select a theme",
+        "unnamed":"Motyw %s",
+        "select":"Wybierz motyw",
         "or":"lub",
-        "url_placeholder":"Enter an image URL"
+        "url_placeholder":"Wprowadź adres URL obrazu"
       },
       "layout":{
         "title":"Układ",
-        "desc":"Here you can adjust the type and number of columns in each tab",
-        "columns":"Columns",
-        "grid":"Grid",
-        "columns_number":"Number of columns",
-        "column_width":"Column width",
-        "column_width_fixed":"Fixed",
-        "column_width_fluid":"Fluid",
+        "desc":"Tutaj można dostosować typ i liczbę kolumn w każdej karcie",
+        "columns":"Kolumny",
+        "grid":"Siatka",
+        "columns_number":"Liczba kolumn",
+        "column_width":"Szerokość kolumny",
+        "column_width_fixed":"Stała",
+        "column_width_fluid":"Płynna",
         "column_warning":{
-          "column_to_grid":"Changing to a grid-based layout will move all of your widgets to the top left corner.",
-          "grid_to_column":"Changing to a column-based layout will move all of your widgets to the first column."
+          "column_to_grid":"Zmiana na układ oparty na siatce spowoduje przeniesienie wszystkich twoich widżetów do lewego górnego rogu.",
+          "grid_to_column":"Zmiana na układ kolumnowy spowoduje przeniesienie wszystkich twoich widżetów do pierwszej kolumny."
         }
       },
       "theme":{
-        "title":"App theme",
-        "desc":"The app theme controls the style of iChrome itself and all widgets",
+        "title":"Motyw aplikacji",
+        "desc":"Motyw aplikacji kontroluje styl iChrome i wszystkich widżetów",
         "preview":"Podgląd",
-        "light":"Light (default)",
-        "dark":"Dark",
-        "transparent":"Transparent",
-        "transparent_darker":"Transparent (darker)"
+        "light":"Jasny (domyślnie)",
+        "dark":"Ciemny",
+        "transparent":"Przezroczysty",
+        "transparent_darker":"Przezroczysty (ciemniejszy)"
       }
     },
     "toolbar":{
       "style":{
-        "title":"Style",
-        "desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
-        "normal":"Normal",
-        "button":"Button"
+        "title":"Styl",
+        "desc":"Ta opcja kontroluje styl paska narzędzi. Może pojawiać się normalnie lub jako przycisk",
+        "normal":"Domyślny",
+        "button":"Przycisk"
       },
       "search":{
         "title":"Szukaj",
-        "desc":"These settings control how the search box and voice search function",
-        "engine":"Search engine",
-        "engines_google":"Google (Default)",
+        "desc":"Ustawienia te kontrolują, w jaki sposób wyszukiwanie tekstowe i głosowe działają",
+        "engine":"Wyszukiwarka",
+        "engines_google":"Google (domyślne)",
         "engines_custom":"Niestandardowy",
-        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
-        "voice":"Enable voice search",
-        "ok_google":"Enable \"OK Google\" hotword detection",
-        "search_tab":"Open search results in a new tab"
+        "engines_custom_desc":"Jest to adres URL wyszukiwarki który użyje tekstu z pola wyszukiwarki. Umieść <b>%s<\/b> w miejsce gdzie parametry wyszukiwania mają się znaleźć.",
+        "voice":"Włącz wyszukiwanie głosowe",
+        "ok_google":"Włącz detekcje słów \"OK Google\"",
+        "search_tab":"Otwórz wyniki wyszukiwania w nowej karcie"
       },
       "links":{
-        "title":"Links",
-        "desc":"These are the items shown at the right of the toolbar",
-        "apps":"Apps menu",
-        "custom":"Custom links",
-        "custom_note1":"Maximum of 3 allowed",
-        "custom_note2":"users get 8",
-        "custom_name_placeholder":"Link text",
-        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+        "title":"Odnośniki",
+        "desc":"Są to elementy widoczne po prawej stronie paska narzędzi",
+        "apps":"Menu aplikacji",
+        "custom":"Linki niestandardowe",
+        "custom_note1":"Dozwolone maksymalnie 3",
+        "custom_note2":"użytkownicy otrzymują 8",
+        "custom_name_placeholder":"Tytuł linku",
+        "custom_url_placeholder":"Adres URL linku, przykładowo http:\/\/www.google.com\/"
       }
     },
     "misc":{
-      "link_tab":"Open links in a new tab by default"
+      "link_tab":"Domyślnie otwieraj linki w nowej karcie"
     },
     "tabs":{
-      "create_new":"Create new",
-      "make_default":"Make default",
-      "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
-      "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
-      "name_placeholder":"Enter a tab name",
-      "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
+      "create_new":"Stwórz nową",
+      "make_default":"Ustaw jako domyślne",
+      "desc1":"Karty są stronami wewnątrz iChrome. Każda karta ma swój własny zestaw widżetów, który jest całkowicie oddzielny od pozostałych stron.",
+      "desc2":"Możesz przełączać się między kartami poprzez kliknięcie przycisków pojawiających się po prawej i lewej stronie ekranu w czasie ruszania myszką nad karta lub poprzez użycie strzałek na klawiaturze.",
+      "name_placeholder":"Podaj nazwę karty",
+      "delete_confirm":"Ta akcja jest nieodwracalna. Wszystkie dane z wszystkich widżetów na tej karcie zostaną trwale utracone."
     },
     "accounts":{
       "status":{
         "title":"Status",
-        "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
-        "reset_account":"Reset account",
-        "sign_out":"Sign out",
-        "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
-        "sign_in":"Sign in with Google"
+        "signed_in":"Jesteś aktualnie <b>zalogowany\/a<\/b> jako %s (%s).",
+        "reset_account":"Zresetuj konto",
+        "sign_out":"Wyloguj się",
+        "signed_out":"<b>Nie jesteś aktualnie zalogowany<\/b>. Zaloguj się na swoje konto Google teraz by bezpiecznie przechowywać i synchronizować konfigurację.",
+        "sign_in":"Zaloguj się z Google"
       },
-      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
-      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this account."
+      "reset_confirm_desc":"Ta akcja usunie wszystkie twoje lokalne i zsynchronizowane dane. Nie istnieje kopia zapasowa i nie ma możliwości cofnięcia tej akcji.",
+      "reset_confirm_desc2":"Stracisz swoje wszystkie obecne ustawienia na wszystkich komputerach podłączonych do tego konta."
     },
     "advanced":{
       "backups":{
-        "title":"Backup and restore",
-        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
-        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
-        "backup":"Backup now",
-        "upload":"Restore from file",
-        "download":"Download",
-        "restore":"Restore",
-        "download_name":"iChrome Backup",
-        "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
-        "restore_error":"An error occurred while trying to parse the provided data, please try again later."
+        "title":"Kopia i przywracanie",
+        "desc":"Kopie zapasowe są kopiami wszystkich twoich kart, ustawień i widgetów. Są one automatycznie tworzone kiedy otwierasz iChrome po raz pierwszy każdego dnia.",
+        "desc2":"Użyj przycisków poniżej aby przywrócić iChrome do konkretnej daty lub użyć jednej z twoich kopii zapasowych.",
+        "backup":"Utwórz kopię zapasową teraz",
+        "upload":"Przywróć z pliku",
+        "download":"Pobierz",
+        "restore":"Przywróć",
+        "download_name":"Kopia zapasowa iChrome",
+        "restore_confirm":"Ta akcja spowoduje nadpisanie wszystkich twoich lokalnych i zsynchronizowanych danych. Stracisz wszystkie twoje obecne ustawienia na wszystkich komputerach podłączonych do tego konta.",
+        "restore_error":"Wystąpił błąd podczas przetwarzania dostarczonych informacji, prosimy spróbować ponownie później."
       },
       "css":{
-        "title":"Custom CSS",
-        "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
-        "placeholder":"Enter up to 1000 characters of CSS here"
+        "title":"Niestandardowy CSS",
+        "desc":"Możesz użyć kodu CSS (<a href=\"https:\/\/developer.mozilla.org\/pl\/docs\/Web\/CSS\" target=\"blank\">definicja<\/a>) do dostosowania prawie każdej części iChrome.",
+        "placeholder":"Wprowadź maksymalnie 1000 znaków kodu CSS"
       },
       "debug_tools":{
-        "title":"Debug tools",
-        "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
-        "open":"Open tools"
+        "title":"Narzędzia debugowania",
+        "desc":"<b>Ostrzeżenie:<\/b> Narzędzia te mogą usunąć całą konfigurację jednym kliknięciem. Użyj ich tylko jeśli Twój developer tak cię poinstruuje.",
+        "open":"Otwórz narzędzia"
       }
     },
     "widgets":{
-      "desc1":"Widgets have their own settings and can't be customized here.",
-      "desc2":"To edit a widget's settings, follow these steps:",
-      "steps1":"Move your mouse over any widget",
-      "steps2":"Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
-      "steps3":"Edit any of the settings shown in the dialog that's displayed",
-      "steps4":"Click Save to save your changes, or any part of the background to discard of them"
+      "desc1":"Widgety posiadaj swoje własne ustawienia i nie mogą być tutaj skonfigurowane.",
+      "desc2":"Aby edytować ustawienia widgetu, wykonaj następujące kroki:",
+      "steps1":"Przesuń kursor myszy nad jakikolwiek widget",
+      "steps2":"Kliknij ikonę klucza, który pojawia się w prawym górnym rogu widgetu. Jeśli nie pojawi się ona oznacza to że widget nie ma żadnych ustawień które można dostosowywać.",
+      "steps3":"Edytuj ustawienia w oknie które jest wyświetlone",
+      "steps4":"Kliknij przycisk Zapisz aby zapisać zmiany lub gdziekolwiek w tło aby je odrzucić"
     },
     "pro":{
       "promo":{
-        "monthly_price":"$2 per month",
-        "yearly_price":"or $20 per year",
-        "upgrade_btn":"Upgrade Now",
-        "business":"Interested in buying Pro for your business or school?",
-        "business_contact":"Contact us",
+        "monthly_price":"2$ miesięcznie",
+        "yearly_price":"lub 20$ rocznie",
+        "upgrade_btn":"Ulepsz teraz",
+        "business":"Zainteresowany kupnem wersji Pro dla Twojej firmy lub szkoły?",
+        "business_contact":"Skontaktuj się z nami",
         "themes":"Motywy",
-        "themes_desc":"See more of your backgrounds with dark and transparent themes",
-        "bgs":"Live backgrounds",
-        "bgs_desc":"Bring your page to life with 20 live high-definition backgrounds",
-        "widgets":"Maximizable widgets",
-        "widgets_desc":"Take iChrome to another level with maximizable widgets",
-        "more_header":"And more",
-        "stocks":"Realtime stocks with extended and historical information",
-        "rss":"Support for multiple RSS feeds per widget",
-        "sports":"General and league-specific sports news",
-        "tabbed_widgets":"Tabbed news and RSS widgets",
-        "bg_downloads":"Downloadable backgrounds",
-        "weather":"Hourly weather forecasts up to 10 days out",
-        "toolbar":"More toolbar links",
-        "support":"Prioritized support and suggestions",
-        "buy_pro":"Buy Pro"
+        "themes_desc":"Zobacz więcej teł z ciemnymi lub przezroczystymi motywami",
+        "bgs":"Aktywne tła",
+        "bgs_desc":"Ożyw swoje strony za pomocą 20 aktywnych teł wysokiej rozdzielczości",
+        "widgets":"Zmaksymalizuj widgety",
+        "widgets_desc":"Wznieś iChrome na nowy poziom z widgetami z możliwością maksymilizacji",
+        "more_header":"I więcej",
+        "stocks":"Akcje w czasie rzeczywistym i dane historyczne",
+        "rss":"Obsługa wielu kanałów RSS na widżet",
+        "sports":"Wiadomości ogólne i specyficzne dla danej ligi sportowej",
+        "tabbed_widgets":"Aktualności i kanały RSS w zakładkach",
+        "bg_downloads":"Tła do pobrania",
+        "weather":"Godzinowa prognoza pogody do 10 dni",
+        "toolbar":"Więcej linków w pasku narzędzi",
+        "support":"Priorytetowa pomoc i sugestie",
+        "buy_pro":"Kup wersję Pro"
       },
       "checkout":{
-        "title":"Checkout",
-        "updating_title":"Update plan",
-        "payment_options":"Pay",
-        "pay_monthly":"Monthly ($2)",
-        "pay_yearly":"Yearly ($20)",
+        "title":"Realizuj zamówienie",
+        "updating_title":"Aktualizuj plan",
+        "payment_options":"Zapłać",
+        "pay_monthly":"Miesięcznie ($2)",
+        "pay_yearly":"Rocznie ($20)",
         "cancel":"Anuluj",
-        "update":"Update",
-        "subscribe":"Subscribe",
-        "braintree_notice":"Payments securely processed by Braintree.",
-        "monthly_notice":"By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
-        "yearly_notice":"By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
-        "update_notice":"Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
-        "thank_you":"Thank you for buying iChrome Pro!",
-        "thank_you2":"iChrome will reload in a few seconds and you'll be all set!",
-        "error":"Something went wrong while trying to process your payment.",
-        "error2":"Please try again later or email us at support@ichro.me",
-        "signin":"Sign in",
-        "signin_desc":"You need to sign in before buying Pro so we can make sure it's you",
-        "signin_btn":"Sign in"
+        "update":"Uaktualnij",
+        "subscribe":"Subskrybuj",
+        "braintree_notice":"Płatności bezpiecznie przetwarzane przez Braintree.",
+        "monthly_notice":"Zapisując się, zezwalasz by iChrome naliczał $2 każdego miesiąca dopóki nie zrezygnujesz z subskrypcji.",
+        "yearly_notice":"Zapisując się, zezwalasz by iChrome naliczał $20 każdego roku dopóki nie zrezygnujesz z subskrypcji.",
+        "update_notice":"Mimo, że zmiany cyklu rozliczeniowego wchodzą w życie natychmiast, nie będziesz obciążony dopóki nie zakończy się aktualny cykl.",
+        "thank_you":"Dziękujemy za zakup iChrome Pro!",
+        "thank_you2":"iChrome odświeży się w kilka sekund i wszystko będzie gotowe!",
+        "error":"Coś poszło nie tak podczas przetwarzania płatności.",
+        "error2":"Spróbuj ponownie później lub napisz do nas na support@ichro.me",
+        "signin":"Zaloguj się",
+        "signin_desc":"Musisz się zalogować przed kupnem planu Pro, dzięki czemu możemy mieć pewność, że to Ty",
+        "signin_btn":"Zaloguj się"
       },
       "plan":{
-        "title":"Plan",
-        "desc":"You are currently subscribed to iChrome Pro (%s)",
+        "title":"Subskrypcja",
+        "desc":"Aktualnie subskrybujesz iChrome Pro (%s)",
         "types":{
-          "monthly":"Monthly",
-          "yearly":"Yearly",
-          "business":"Business",
-          "education":"Education",
+          "monthly":"Miesięcznie",
+          "yearly":"Rocznie",
+          "business":"Biznes",
+          "education":"Edukacja",
           "custom":"Niestandardowy"
         },
-        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
+        "uneditable_desc":"Plan Biznes, Edukacja i Niestandardowy nie można zaktualizować z poziomu iChrome. Proszę <a href=\"mailto:support@ichro.me\"> skontaktuj się z nami<\/a> by dokonać aktualizacji lub rezygnacji z subskrypcji.",
         "status":"Status",
-        "status_active":"Active",
-        "status_trial":"Trial",
-        "status_pastdue":"Past due",
-        "subscription_date":"Subscription date",
-        "paid_through":"Paid through",
-        "next_bill":"Next bill",
-        "next_bill_value":"$%s on %s",
-        "update_plan":"Update plan",
-        "update_billing":"Update billing",
-        "cancel":"Cancel subscription",
-        "cancel_notice":"Your subscription will be canceled immediately",
-        "cancel_notice2":"If you would like a refund, please contact us at support@ichro.me"
+        "status_active":"Aktywny",
+        "status_trial":"Wersja próbna",
+        "status_pastdue":"Nieaktywne",
+        "subscription_date":"Konto aktywne do",
+        "paid_through":"Termin płatności",
+        "next_bill":"Następna płatność",
+        "next_bill_value":"$%s dnia %s",
+        "update_plan":"Aktualizuj plan",
+        "update_billing":"Aktualizuj dane rozliczeniowe",
+        "cancel":"Anuluj subskrypcję",
+        "cancel_notice":"Twoja subskrypcja zostanie anulowana natychmiast",
+        "cancel_notice2":"Jeśli chcesz zwrotu pieniędzy, napisz do nas na support@ichro.me"
       }
     }
   },
@@ -352,23 +352,23 @@
       "save":"Zapisz",
       "size":"Rozmiar widżetu"
     },
-    "minimize":"Minimize",
-    "maximize":"Maximize",
+    "minimize":"Minimalizuj",
+    "maximize":"Maksymalizuj",
     "delete_confirm":"Czy naprawdę chcesz usunąć ten widżet? Spowoduje to usunięcie wszystkich danych z tego widżetu. Ta akcja jest nieodwracalna.",
     "permissions_request":{
-      "title":"Access required",
-      "button":"Grant Access",
-      "desc":"This widget needs extra permissions before it can be used. Grant them using the button below."
+      "title":"Wymagany dostęp",
+      "button":"Przyznaj dostęp",
+      "desc":"Ten widget potrzebuje dodatkowych uprawnień, zanim będzie można go używać. Przyznaj je za pomocą przycisku poniżej."
     },
     "error":{
-      "explanation":"Something went wrong while we were trying to display this widget.",
-      "advice":"Try reinstalling the widget or reloading the page. Contact us if you see this message often.",
+      "explanation":"Coś poszło nie tak gdy chcieliśmy wyświetlić widżet.",
+      "advice":"Spróbuj ponownie zainstalować widżet lub odśwież stronę. Skontaktuj się z nami jeśli problem nie ustępuje.",
       "support":"Pomoc",
-      "refresh":"Refresh"
+      "refresh":"Odśwież"
     },
     "auth":{
-      "message":"You'll need to give this widget access to your account before you can use it.",
-      "button":"Grant Access"
+      "message":"Musisz przyznać uprawnienia temu widżetowi do swojego konta przed skorzystaniem z niego.",
+      "button":"Przyznaj dostęp"
     },
     "shared":{
       "settings":{
@@ -412,8 +412,8 @@
     "random_daily":"Ten motyw wyświetla losowy obraz każdego dnia",
     "sunrise_sunset":"Ten motyw wyświetla obraz w oparciu o porę dnia",
     "feed":"Ten motyw wyświetla na ten dzień obraz z zewnętrznego źródła",
-    "video":"This theme displays a live video",
-    "pro_only":"This theme is only available to Pro users. Buy Pro in the settings.",
+    "video":"Temat ten wyświetla obraz wideo na żywo",
+    "pro_only":"Ten temat dostępny jest tylko dla Pro użytkownika. Zakup plan Pro w ustawieniach.",
     "delete_confirm":"Czy na pewno chcesz usunąć ten motyw? Spowoduje to całkowite usunięcie tego motywu. Ta akcja jest nieodwracalna, cały motyw zostanie trwale utracony.",
     "delete_error":"Wystąpił błąd podczas usuwania motyw. Spróbuj ponownie później.",
     "feed_fetching":"Proszę czekać, pobieranie z źródła obrazów...",
@@ -422,11 +422,11 @@
     "cache_status":"%s z %s obrazów zbuforowanych",
     "cache_error":"Wystąpił błąd podczas buforowania tematu. Spróbuj ponownie później",
     "bginfo":{
-      "view":"View",
-      "source":"Source",
-      "unknown":"Unknown",
-      "download":"Download",
-      "pro_only":"Only Pro users can download background images and videos"
+      "view":"Podgląd",
+      "source":"Źródło",
+      "unknown":"Nieznane",
+      "download":"Pobierz",
+      "pro_only":"Tylko Pro użytkownicy mogą pobrać obrazy tła i video"
     },
     "edit":{
       "title":"Edytuj motyw",

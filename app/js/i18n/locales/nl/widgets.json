@@ -79,11 +79,11 @@
     },
     "title":"Agenda",
     "calendar":"Kalender",
-    "noevents":"No events found in the near future, it looks like your schedule's clear!"
+    "noevents":"Geen evenementen gevonden, je zit op schema!"
   },
   "clock":{
     "name":"Klok",
-    "desc":"Offers alarm, time, timer, and stopwatch functionality.",
+    "desc":"Bied alarm, tijd, timer en stopwatch functionaliteit.",
     "settings":{
       "timezone":"Tijdzone",
       "timezone_local":"Lokaal",
@@ -95,17 +95,17 @@
         "ampmseconds":"AM\/PM - Digitaal, geen Seconden",
         "24hourseconds":"24-uurs - Digitaal, geen Seconden"
       },
-      "sound":"Alert Sound"
+      "sound":"Geluid"
     },
     "title":"Klok",
-    "alarm":"Alarm",
+    "alarm":"Wekker",
     "clock":"Klok",
     "timer":"Timer",
     "stopwatch":"Stopwatch",
-    "set":"Set",
-    "unset":"Unset",
-    "dismiss":"Dismiss",
-    "enable_audio":"Enable audio"
+    "set":"Stel in",
+    "unset":"Instelling verwijderen",
+    "dismiss":"Negeer",
+    "enable_audio":"Schakel geluid in"
   },
   "facebook":{
     "name":"Facebook",
@@ -290,351 +290,81 @@
     }
   },
   "sitelink":{
-    "name":"Site Link",
-    "desc":"Displays a link, optionally with a title and thumbnail",
+    "name":"Koppeling",
+    "desc":"Geeft een link weer, optioneel met een titel en een miniatuurweergave",
     "settings":{
-      "link":"Link URL",
+      "link":"URL",
       "link_placeholder":"http:\/\/www.google.com\/",
       "image":"Afbeelding-URL",
       "image_placeholder":"http:\/\/www.example.com\/image.png",
-      "color":"Image Background Color",
-      "style":"Image Style",
-      "style_fill":"Fill",
+      "color":"Achtergrondkleur",
+      "style":"Afbeelding stijl",
+      "style_fill":"Vul in",
       "style_center":"Middelpunt"
     }
   },
   "stats":{
-    "name":"System Statistics",
-    "desc":"Keep an eye on your system with realtime statistics",
-    "memory":"Memory",
-    "battery":"Battery",
-    "usage":"usage",
-    "in_use":"in use",
-    "remaining":"remaining",
-    "charged":"Fully Charged",
-    "idle":"Idle",
-    "charging":"Charging",
-    "discharging":"Discharging"
+    "name":"Systeem statistieken",
+    "desc":"Houd uw systeem in de gaten met realtime statistieken",
+    "memory":"Geheugen",
+    "battery":"Batterijpercentage",
+    "usage":"gebruik",
+    "in_use":"in gebruik",
+    "remaining":"resterende",
+    "charged":"100% opgeladen",
+    "idle":"Inactief",
+    "charging":"Opladen",
+    "discharging":"Ontladen"
   },
   "search":{
     "name":"Zoeken",
-    "desc":"Embed a search box in your page for easy access",
+    "desc":"Voeg een zoekvak in op uw pagina voor gemakkelijke toegang",
     "settings":{
-      "placeholder":"Search Field Placeholder",
+      "placeholder":"Plaatsaanduiding voor zoekveld",
       "search_url":"Zoek-URL",
       "param":"Query Parameter",
-      "param_placeholder":"The parameter where the query goes, i.e. \"q\""
+      "param_placeholder":"De parameter waar de query gaat, dat wil zeggen \"q\""
     },
-    "default_placeholder":"Search Google"
+    "default_placeholder":"Zoek met Google"
   },
   "pushbullet":{
     "name":"Pushbullet",
-    "desc":"Keep track of notifications from your phone and other devices",
-    "no_pushes":"No pushes found",
-    "sign_in":"Sign in",
-    "no_key":"It doesn't look like you're signed in to Pushbullet.  Sign in now to connect this widget."
+    "desc":"Blijf op de hoogte van notificaties van uw gsm en andere apparaten",
+    "no_pushes":"Geen pushberichten gevonden",
+    "sign_in":"Aanmelden",
+    "no_key":"Het lijkt erop dat u niet bent aangemeld bij Pushbullet.  Log nu in om verbinding te maken met deze widget."
   },
   "linkedin":{
     "name":"LinkedIn",
-    "desc":"Displays your LinkedIn home stream"
+    "desc":"Geeft uw LinkedIn home stream weer"
   },
   "directions":{
-    "name":"Directions",
-    "desc":"Get directions to and from nearly anywhere right from your homepage",
+    "name":"Routebeschrijving",
+    "desc":"Routebeschrijving naar bijna overal rechtstreeks vanaf uw starpagina",
     "driving":"Onderweg",
     "transit":"Openbaar vervoer",
     "walking":"Wandelen",
-    "cycling":"Cycling",
-    "from":"Enter a starting point",
-    "to":"Enter a destination",
-    "loading":"Loading directions, please wait...",
-    "error":"Something went wrong while trying to load the directions you requested.",
-    "error2":"Please check the start and destination addresses you entered.",
+    "cycling":"Fietsen",
+    "from":"Voer een vertrekpunt in",
+    "to":"Voer een bestemming in",
+    "loading":"Routebeschrijving laden, moment geduld a.u.b....",
+    "error":"Er ging iets fout tijdens het laden van de aanwijzingen die u hebt aangevraagd.",
+    "error2":"Controleer het start- en eindpunt en de adressen die u heeft ingevoerd.",
     "open_in_maps":"Open in Google Maps",
     "via":"via"
   },
   "pocket":{
     "name":"Pocket",
-    "desc":"Display a list of your saved articles, videos, and web pages from Pocket",
+    "desc":"Geeft een lijst van uw opgeslagen artikelen, video's en webpagina's van Pocket weer",
     "settings":{
-      "links_shown":"Number of links shown",
-      "open":"Open links",
+      "links_shown":"Aantal links weergegeven",
+      "open":"Koppelingen openen",
       "open_pocket":"In Pocket",
-      "open_original":"At their original URL"
+      "open_original":"Via hun oorspronkelijke URL"
     },
     "by":"Door",
-    "no_links":"No links found",
-    "grant_access":"Grant access",
-    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
-  },
-  "analytics":{
-    "name":"Analytics",
-    "desc":"Laat verschillende statistieken zien van een Google Analytics-profiel.",
-    "sessions":"sessies",
-    "pageviews":"Pageviews",
-    "pagesvisit":"Paginabezoeken",
-    "bouncerate":"Bounce Rate",
-    "completions":"Opleveringen",
-    "noprofile_title":"No profile selected",
-    "noprofile":"Zo te zien heeft u nog geen profiel geselecteerd!\n<br \/><br \/>\nSelecteer er een via het steeksleutel icoon rechtsbovenin.",
-    "settings":{
-      "profile":"Profiel"
-    }
-  },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
-  },
-  "currency":{
-    "name":"Munteenheid",
-    "desc":"Laat u converteren tussen elke van de 169 valuta's.",
-    "to_label":"Naar",
-    "recently_used":"Recently Used"
-  },
-  "dictionary":{
-    "name":"Dictionary",
-    "desc":"Quickly look up the definition and synonyms for a word",
-    "search_placeholder":"Enter a word or term here",
-    "more":"Meer",
-    "less":"Less",
-    "synonyms":"Synonyms",
-    "antonyms":"Antonyms",
-    "web_definitions":"Web definitions",
-    "no_definitions":"No definitions found"
-  },
-  "drive":{
-    "name":"Drive",
-    "desc":"Laat onlangs gewijzigde bestanden zien uit uw Google Drive.",
-    "settings":{
-      "files_shown":"Aantal bestanden weergeven"
-    },
-    "modified_by":"door",
-    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
-  },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"Geeft uw Gmail inbox weer waar u uw email kunt beheren."
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"Laat een webpagina van uw keuze in een iframe zien.",
-    "settings":{
-      "url":"Frame URL",
-      "url_placeholder":"bijvoorbeeld http:\/\/www.google.com\/",
-      "height":"Framehoogte",
-      "padding":"Opvulling"
-    }
-  },
-  "keep":{
-    "name":"Bewaar",
-    "desc":"Stopt Google Keep in een widget"
-  },
-  "news":{
-    "name":"Nieuws",
-    "desc":"Geeft het huidige top nieuws weer per categorie en editie.",
-    "all_stories":"Alle",
-    "settings":{
-      "page_title":"Instellingen",
-      "save":"Opslaan",
-      "title":"Widget titel",
-      "title_placeholder":"Voer een titel in of laat leeg om hem te verbergen",
-      "articles":"Weergegeven artikelen",
-      "edition":"Editie",
-      "default_topic":"Default Topic"
-    }
-  },
-  "recentlyclosed":{
-    "name":"Onlangs gesloten",
-    "desc":"Toont uw onlangs gesloten tabbladen",
-    "settings":{
-      "tabs":"Weergegeven tabbladen",
-      "open":"Open tabbladen in"
-    },
-    "more":"more"
-  },
-  "rss":{
-    "name":"RSS",
-    "desc":"Toont items van een RSS- of Atomfeed met eventuele afbeeldingen.",
-    "settings":{
-      "page_title":"Instellingen",
-      "save":"Opslaan",
-      "title":"Widget titel",
-      "title_placeholder":"Voer een titel in of laat leeg om hem te verbergen",
-      "link":"Titellink",
-      "link_placeholder":"Geef een link voor de titel van de widget",
-      "feeds":"Feeds",
-      "feeds_help":"Click any feed to edit it",
-      "feeds_placeholder":"Enter a feed URL and press Enter to add",
-      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
-      "feed_name_placeholder":"Feed name",
-      "feed_url_placeholder":"Feed URL",
-      "articles":"Weergegeven artikelen"
-    },
-    "by":"Door",
-    "all_articles":"Alle artikelen",
-    "feed_error":"Een fout is opgetreden tijdens het ophalen van de feed: %s.\nControleer nogmaals de URL en\/of verander de instellingen van de widget."
-  },
-  "sports":{
-    "name":"Sport",
-    "desc":"Displays scores, schedules, and news from your favorite teams.",
-    "settings":{
-      "page_title":"Favorites",
-      "save":"Opslaan",
-      "teams_placeholder":"Enter a team name and press Enter to add"
-    },
-    "scores":"Scores",
-    "news":"Nieuws",
-    "last_play":"Last play",
-    "no_games":"No games found",
-    "pro_splash1":"Sports news is a Pro-only feature.",
-    "pro_splash2":"Buy Pro in the settings.",
-    "preview":"Voorbeeld",
-    "tickets":"Tickets",
-    "live":"Live",
-    "recap":"Recap",
-    "box_score":"Box Score"
-  },
-  "stocks":{
-    "name":"Aandelen",
-    "desc":"Geeft actuele informatie voor elk opgegeven beurssymbool.",
-    "settings":{
-      "stocks":"Aandelen",
-      "stocks_placeholder":"Type a company or exchange name and hit Enter"
-    },
-    "as_of":"per",
-    "exchange_time":"Wisselkoers tijd",
-    "overview":"Overview",
-    "news":"Nieuws",
-    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
-    "pro_splash2":"Buy Pro in the settings.",
-    "time_ranges":{
-      "1d":"1d",
-      "5d":"5d",
-      "1m":"1m",
-      "3m":"3m",
-      "1y":"1y",
-      "5y":"5y",
-      "max":"max"
-    },
-    "open":"open",
-    "prev_close":"Previous Close",
-    "high":"hoog",
-    "52high":"52 week high",
-    "low":"laag",
-    "52low":"52 week low",
-    "volume":"volume",
-    "avg_volume":"Avg. Volume",
-    "shares":"Shares",
-    "cap":"Market Cap",
-    "pe":"Price \/ Earnings",
-    "eps":"EPS",
-    "beta":"Beta",
-    "inst_own":"Inst. own"
-  },
-  "todo":{
-    "name":"Taken",
-    "desc":"Geeft een interactieve takenlijst weer met belangrijke en voltooide taken.",
-    "title":"Takenlijst",
-    "settings":{
-      "color":"Tekstkleur",
-      "color_options":{
-        "light":"Licht",
-        "dark":"Donker"
-      },
-      "tags":"Labels",
-      "tags_placeholder":"Vul een tagnaam in en druk enter"
-    },
-    "add":"Item toevoegen",
-    "none":"Geen",
-    "important":"Belangrijk"
-  },
-  "topsites":{
-    "name":"Topsites",
-    "desc":"Geeft uw meest bezochte\/beste websites weer.",
-    "settings":{
-      "show":"Aantal getoonde websites"
-    }
-  },
-  "traffic":{
-    "name":"Data",
-    "desc":"Toont de actuele reistijd naar huis of werk.",
-    "settings":{
-      "leave":"Ik ga van huis om",
-      "home":"Huisadres",
-      "home_placeholder":"De bestemming waar u na werk naartoe gaat",
-      "work":"Werkadres",
-      "work_placeholder":"De bestemming waar u voor uw werk naartoe gaat",
-      "method":"OV-vervoersmiddel",
-      "method_options":{
-        "driving":"Onderweg",
-        "walking":"Wandelen",
-        "transit":"Openbaar vervoer"
-      }
-    },
-    "to_home":"naar huis",
-    "to_work":"naar werk"
-  },
-  "translate":{
-    "name":"Vertalen",
-    "desc":"Lets you quickly translate to and from 90 languages as you type",
-    "from_placeholder":"Start typing here",
-    "to_placeholder":"Translated text will appear here",
-    "detect_lang":"Detect language",
-    "translating":"Translating...",
-    "unknown":"Onbekend"
-  },
-  "unread":{
-    "name":"Ongelezen",
-    "desc":"Geeft het aantal ongelezen e-mails uit uw Gmail-postvak weer.",
-    "settings":{
-      "open":"Bij klikken open"
-    },
-    "unread_none":"ongelezen e-mails",
-    "unread_one":"ongelezen e-mail",
-    "unread_many":"ongelezen e-mails"
-  },
-  "voice":{
-    "name":"Voice",
-    "desc":"Geeft het actuele aantal gemiste oproepen en sms'jes in je Google Voice-account weer.",
-    "call":"Oproep van",
-    "text":"SMS van",
-    "missed":"gemist in Voice",
-    "texts":"ongelezen sms'jes",
-    "calls":"gemiste oproepen"
-  },
-  "weather":{
-    "name":"Weer",
-    "desc":"Geeft actueel weer en de weersverwachting voor de komende 4 dagen weer.",
-    "settings":{
-      "location":"Locatie(s)",
-      "location_placeholder":"Vul een locatie in en druk enter",
-      "units":"Units",
-      "units_imperial":"Imperial (Fahrenheit)",
-      "units_metric":"Metric (Celsius)",
-      "enabled":"Ingeschakeld",
-      "disabled":"Uitgeschakeld",
-      "forecast":"Forecasts",
-      "hourly":"Hourly forecasts"
-    },
-    "more":"Meer",
-    "less":"Less",
-    "wind":"Windsnelheid",
-    "precipitation":"Precip",
-    "uv":"UV index",
-    "feelslike":"Feels like",
-    "barometer":"Barometer",
-    "visibility":"Visibility",
-    "humidity":"Luchtvochtigheid",
-    "dewpoint":"Dew point",
-    "moonphase":"Moon",
-    "sunrise":"Sunrise",
-    "sunset":"Sunset",
-    "moonrise":"Moonrise",
-    "moonset":"Moonset"
+    "no_links":"Geen links gevonden",
+    "grant_access":"Toegang verlenen",
+    "no_key":"U zult iChrome toegang moeten geven tot uw Pocket-account voordat het uw links kan laden."
   }
 }

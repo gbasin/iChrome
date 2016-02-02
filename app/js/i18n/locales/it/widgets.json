@@ -67,10 +67,10 @@
     "mismatch":"Parentesi non corrispondenti"
   },
   "calendar":{
-    "name":"Calendario",
+    "name":"Calendar",
     "desc":"Visualizza gli eventi imminenti da uno o più dei vostri calendari di Google.",
     "settings":{
-      "calendar":"Calendario",
+      "calendar":"Calendar",
       "show":"Mostra gli eventi da",
       "show_options":{
         "all":"Tutto il tempo",
@@ -78,12 +78,12 @@
       }
     },
     "title":"Agenda",
-    "calendar":"Calendar",
-    "noevents":"No events found in the near future, it looks like your schedule's clear!"
+    "calendar":"Calendario",
+    "noevents":"Nessun appuntamento in programma, sembra che tu sia libero!"
   },
   "clock":{
     "name":"Orologio",
-    "desc":"Offers alarm, time, timer, and stopwatch functionality.",
+    "desc":"Offre funzionalità come sveglia, orologio, timer e cronometro.",
     "settings":{
       "timezone":"Fuso orario",
       "timezone_local":"Locale",
@@ -95,17 +95,17 @@
         "ampmseconds":"AM\/PM - digitale, senza secondi",
         "24hourseconds":"24 ore - digitale, senza secondi"
       },
-      "sound":"Alert Sound"
+      "sound":"Suono di avviso"
     },
     "title":"Orologio",
-    "alarm":"Alarm",
+    "alarm":"Avviso",
     "clock":"Orologio",
     "timer":"Timer",
-    "stopwatch":"Stopwatch",
+    "stopwatch":"Cronometro",
     "set":"Set",
-    "unset":"Unset",
-    "dismiss":"Dismiss",
-    "enable_audio":"Enable audio"
+    "unset":"Non impostato",
+    "dismiss":"Togli",
+    "enable_audio":"Attiva audio"
   },
   "facebook":{
     "name":"Facebook",
@@ -290,351 +290,81 @@
     }
   },
   "sitelink":{
-    "name":"Site Link",
-    "desc":"Displays a link, optionally with a title and thumbnail",
+    "name":"Collegamento al sito",
+    "desc":"Mostra un link, facoltativamente con un titolo e una miniatura",
     "settings":{
-      "link":"Link URL",
+      "link":"URL Link",
       "link_placeholder":"http:\/\/www.google.com\/",
       "image":"URL dell'immagine",
       "image_placeholder":"http:\/\/www.example.com\/image.png",
-      "color":"Image Background Color",
-      "style":"Image Style",
-      "style_fill":"Fill",
+      "color":"Colore di sfondo dell'immagine",
+      "style":"Stile dell'immagine",
+      "style_fill":"Riempi",
       "style_center":"Al centro"
     }
   },
   "stats":{
-    "name":"System Statistics",
-    "desc":"Keep an eye on your system with realtime statistics",
-    "memory":"Memory",
-    "battery":"Battery",
-    "usage":"usage",
-    "in_use":"in use",
-    "remaining":"remaining",
-    "charged":"Fully Charged",
-    "idle":"Idle",
-    "charging":"Charging",
-    "discharging":"Discharging"
+    "name":"Statistiche del sistema",
+    "desc":"Tenete d'occhio il vostro sistema con statistiche in tempo reale",
+    "memory":"Memoria",
+    "battery":"Batteria",
+    "usage":"utilizzo",
+    "in_use":"in uso",
+    "remaining":"rimanenti",
+    "charged":"Ricarica completa",
+    "idle":"Inattivo",
+    "charging":"In Carica",
+    "discharging":"In scarica"
   },
   "search":{
     "name":"Cerca",
-    "desc":"Embed a search box in your page for easy access",
+    "desc":"Incorporate una casella di ricerca nella pagina per un accesso facile",
     "settings":{
-      "placeholder":"Search Field Placeholder",
+      "placeholder":"Campo di ricerca",
       "search_url":"URL di ricerca",
-      "param":"Query Parameter",
-      "param_placeholder":"The parameter where the query goes, i.e. \"q\""
+      "param":"Parametro della query",
+      "param_placeholder":"Il parametro dove va inserita la Query, cioè \"q\""
     },
-    "default_placeholder":"Search Google"
+    "default_placeholder":"Cerca su Google"
   },
   "pushbullet":{
     "name":"Pushbullet",
-    "desc":"Keep track of notifications from your phone and other devices",
-    "no_pushes":"No pushes found",
-    "sign_in":"Sign in",
-    "no_key":"It doesn't look like you're signed in to Pushbullet.  Sign in now to connect this widget."
+    "desc":"Tenete traccia delle notifiche dal vostro cellulare e altri dispositivi",
+    "no_pushes":"Nessuna notifica trovata",
+    "sign_in":"Registrati",
+    "no_key":"Non sembra che tu sia iscritto a Pushbullet.  Accedi ora per collegare questo widget."
   },
   "linkedin":{
     "name":"LinkedIn",
-    "desc":"Displays your LinkedIn home stream"
+    "desc":"Visualizza la tua bacheca di Linkedin"
   },
   "directions":{
-    "name":"Directions",
-    "desc":"Get directions to and from nearly anywhere right from your homepage",
+    "name":"Indicazioni",
+    "desc":"Ricevi indicazioni stradali per andare in qualunque posto da praticamente ovunque\n direttamente nella homepage",
     "driving":"In auto",
     "transit":"Transito pubblico",
     "walking":"A piedi",
-    "cycling":"Cycling",
-    "from":"Enter a starting point",
-    "to":"Enter a destination",
-    "loading":"Loading directions, please wait...",
-    "error":"Something went wrong while trying to load the directions you requested.",
-    "error2":"Please check the start and destination addresses you entered.",
-    "open_in_maps":"Open in Google Maps",
+    "cycling":"Bicicletta",
+    "from":"Inserire un punto di partenza",
+    "to":"Inserisci una destinazione",
+    "loading":"Caricando le indicazioni, attendere prego...",
+    "error":"Qualcosa è andato storto durante il tentativo di caricare le indicazioni che avete richiesto.",
+    "error2":"Per favore controlla gli indirizzi di partenza e destinazione che hai inserito.",
+    "open_in_maps":"Apri in Google Maps",
     "via":"via"
   },
   "pocket":{
-    "name":"Pocket",
-    "desc":"Display a list of your saved articles, videos, and web pages from Pocket",
+    "name":"Tasca",
+    "desc":"Mostra una lista dei tuoi video, articoli e pagine web salvati",
     "settings":{
-      "links_shown":"Number of links shown",
-      "open":"Open links",
-      "open_pocket":"In Pocket",
-      "open_original":"At their original URL"
+      "links_shown":"Numero di link visualizzati",
+      "open":"Apri links",
+      "open_pocket":"Nella tasca",
+      "open_original":"Al loro URL originale"
     },
-    "by":"Di",
-    "no_links":"No links found",
-    "grant_access":"Grant access",
-    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
-  },
-  "analytics":{
-    "name":"Analytics",
-    "desc":"Consente di visualizzare i vari parametri di un profilo Google Analytics.",
-    "sessions":"sessioni",
-    "pageviews":"Visualizzazioni",
-    "pagesvisit":"Pagine\/visita",
-    "bouncerate":"Tasso di rimbalzo",
-    "completions":"Completamenti",
-    "noprofile_title":"No profile selected",
-    "noprofile":"Non sembra ancora selezionato un profilo!\n <br \/><br \/>\nProvare a selezionarne uno tramite l'icona della chiave inglese in alto a destra.",
-    "settings":{
-      "profile":"Profilo"
-    }
-  },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
-  },
-  "currency":{
-    "name":"Valuta",
-    "desc":"Ti permette di convertire tra due di 169 valute.",
-    "to_label":"in",
-    "recently_used":"Recently Used"
-  },
-  "dictionary":{
-    "name":"Dictionary",
-    "desc":"Quickly look up the definition and synonyms for a word",
-    "search_placeholder":"Enter a word or term here",
-    "more":"Altro",
-    "less":"Less",
-    "synonyms":"Synonyms",
-    "antonyms":"Antonyms",
-    "web_definitions":"Web definitions",
-    "no_definitions":"No definitions found"
-  },
-  "drive":{
-    "name":"Drive",
-    "desc":"Visualizza i file recentemente modificati dal tuo Google Drive.",
-    "settings":{
-      "files_shown":"Numero di file mostrati"
-    },
-    "modified_by":"di",
-    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
-  },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"Visualizza la tua casella di posta Gmail in cui è possibile gestire la posta elettronica."
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"Consente di visualizzare una pagina web a vostra scelta all'interno di un iframe.",
-    "settings":{
-      "url":"Frame URL",
-      "url_placeholder":"i.e. http:\/\/www.google.com\/",
-      "height":"Altezza frame",
-      "padding":"Rientro"
-    }
-  },
-  "keep":{
-    "name":"Keep",
-    "desc":"Incorpora Google Keep in un widget"
-  },
-  "news":{
-    "name":"Notizie",
-    "desc":"Visualizza le attuali top news per categoria ed edizione.",
-    "all_stories":"Tutti",
-    "settings":{
-      "page_title":"Impostazioni",
-      "save":"Salva",
-      "title":"Titolo del Widget",
-      "title_placeholder":"Immetti un nome per il widget o lascialo bianco per nascondere",
-      "articles":"Articoli mostrati",
-      "edition":"Edizione",
-      "default_topic":"Default Topic"
-    }
-  },
-  "recentlyclosed":{
-    "name":"Chiuso di recente",
-    "desc":"Mostra i tabs chiusi di recente",
-    "settings":{
-      "tabs":"Schede mostrate",
-      "open":"Apri tabs in"
-    },
-    "more":"more"
-  },
-  "rss":{
-    "name":"RSS",
-    "desc":"Visualizza gli elementi da un feed RSS o Atom, con immagini opzionali.",
-    "settings":{
-      "page_title":"Impostazioni",
-      "save":"Salva",
-      "title":"Titolo del Widget",
-      "title_placeholder":"Immetti un nome per il widget o lascialo bianco per nascondere",
-      "link":"Titolo Link",
-      "link_placeholder":"Inserisci un collegamento per il titolo del widget",
-      "feeds":"Feeds",
-      "feeds_help":"Click any feed to edit it",
-      "feeds_placeholder":"Enter a feed URL and press Enter to add",
-      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
-      "feed_name_placeholder":"Feed name",
-      "feed_url_placeholder":"Feed URL",
-      "articles":"Articoli mostrati"
-    },
-    "by":"Di",
-    "all_articles":"Tutti gli articoli",
-    "feed_error":"Si è verificato un errore durante il recupero dei feed a: %s.\nSi prega di ricontrollare l'URL e\/o modificare le impostazioni del widget."
-  },
-  "sports":{
-    "name":"Sport",
-    "desc":"Displays scores, schedules, and news from your favorite teams.",
-    "settings":{
-      "page_title":"Favorites",
-      "save":"Salva",
-      "teams_placeholder":"Enter a team name and press Enter to add"
-    },
-    "scores":"Scores",
-    "news":"Notizie",
-    "last_play":"Last play",
-    "no_games":"No games found",
-    "pro_splash1":"Sports news is a Pro-only feature.",
-    "pro_splash2":"Buy Pro in the settings.",
-    "preview":"Anteprima",
-    "tickets":"Tickets",
-    "live":"Live",
-    "recap":"Recap",
-    "box_score":"Box Score"
-  },
-  "stocks":{
-    "name":"Azioni",
-    "desc":"Visualizza le informazioni correnti per qualsiasi azione.",
-    "settings":{
-      "stocks":"Azioni",
-      "stocks_placeholder":"Type a company or exchange name and hit Enter"
-    },
-    "as_of":"A partire da",
-    "exchange_time":"Tempo di scambio",
-    "overview":"Overview",
-    "news":"Notizie",
-    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
-    "pro_splash2":"Buy Pro in the settings.",
-    "time_ranges":{
-      "1d":"1d",
-      "5d":"5d",
-      "1m":"1m",
-      "3m":"3m",
-      "1y":"1y",
-      "5y":"5y",
-      "max":"max"
-    },
-    "open":"Aperto",
-    "prev_close":"Previous Close",
-    "high":"Alto",
-    "52high":"52 week high",
-    "low":"Basso",
-    "52low":"52 week low",
-    "volume":"volume",
-    "avg_volume":"Avg. Volume",
-    "shares":"Shares",
-    "cap":"Market Cap",
-    "pe":"Price \/ Earnings",
-    "eps":"EPS",
-    "beta":"Beta",
-    "inst_own":"Inst. own"
-  },
-  "todo":{
-    "name":"Da fare",
-    "desc":"Mostra una lista interattiva di promemoria con elementi importati e completati.",
-    "title":"Promemoria",
-    "settings":{
-      "color":"Colore carattere",
-      "color_options":{
-        "light":"Chiaro",
-        "dark":"Scuro"
-      },
-      "tags":"Etichette",
-      "tags_placeholder":"Inserisci il nome di un etichetta e premi invio"
-    },
-    "add":"Aggiungi elemento",
-    "none":"Niente",
-    "important":"Importante"
-  },
-  "topsites":{
-    "name":"Siti più visitati",
-    "desc":"Visualizza i siti che visiti maggiormente.",
-    "settings":{
-      "show":"Numero di siti visualizzati"
-    }
-  },
-  "traffic":{
-    "name":"Traffico",
-    "desc":"Visualizza l'ora ed il traffico tra casa e luogo di lavoro.",
-    "settings":{
-      "leave":"Vado via di casa alle",
-      "home":"Indirizzo di casa",
-      "home_placeholder":"La destinazione che deve essere utilizzata dopo il lavoro",
-      "work":"Indirizzo di lavoro",
-      "work_placeholder":"La destinazione che deve essere utilizzata prima di lavoro",
-      "method":"Metodo di trasporto",
-      "method_options":{
-        "driving":"In auto",
-        "walking":"A piedi",
-        "transit":"Transito pubblico"
-      }
-    },
-    "to_home":"Verso casa",
-    "to_work":"Verso il luogo di lavoro"
-  },
-  "translate":{
-    "name":"traduci",
-    "desc":"Lets you quickly translate to and from 90 languages as you type",
-    "from_placeholder":"Start typing here",
-    "to_placeholder":"Translated text will appear here",
-    "detect_lang":"Detect language",
-    "translating":"Translating...",
-    "unknown":"Sconosciuto"
-  },
-  "unread":{
-    "name":"Da leggere",
-    "desc":"Mostra il numero corrente di email non lette nella tua casella Gmail.",
-    "settings":{
-      "open":"Quando cliccato apri"
-    },
-    "unread_none":"Email non lette",
-    "unread_one":"Email non lette",
-    "unread_many":"Email non lette"
-  },
-  "voice":{
-    "name":"Voice",
-    "desc":"Mostra il numero di chiamate e messaggi persi del tuo account Google Voice.",
-    "call":"Chiamata da",
-    "text":"Messaggio da parte di",
-    "missed":"Chiamate perse",
-    "texts":"Messaggi non letti",
-    "calls":"Chiamate perse"
-  },
-  "weather":{
-    "name":"Meteo",
-    "desc":"Mostra il meteo per i prossimi 4 giorni.",
-    "settings":{
-      "location":"Luogo\/i",
-      "location_placeholder":"Inserisci un luogo e premi invio",
-      "units":"Units",
-      "units_imperial":"Imperial (Fahrenheit)",
-      "units_metric":"Metric (Celsius)",
-      "enabled":"Attive",
-      "disabled":"Disattivate",
-      "forecast":"Forecasts",
-      "hourly":"Hourly forecasts"
-    },
-    "more":"Altro",
-    "less":"Less",
-    "wind":"Velocità del vento",
-    "precipitation":"Precip",
-    "uv":"UV index",
-    "feelslike":"Feels like",
-    "barometer":"Barometer",
-    "visibility":"Visibility",
-    "humidity":"Umidità",
-    "dewpoint":"Dew point",
-    "moonphase":"Moon",
-    "sunrise":"Sunrise",
-    "sunset":"Sunset",
-    "moonrise":"Moonrise",
-    "moonset":"Moonset"
+    "by":"di",
+    "no_links":"Nessun link trovato",
+    "grant_access":"Concedi accesso",
+    "no_key":"Dovete dare l'accesso ad iChrome al vostro account Pocket prima di poter caricare il vostro link."
   }
 }

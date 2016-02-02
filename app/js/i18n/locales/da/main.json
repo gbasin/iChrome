@@ -1,421 +1,421 @@
 {
   "lang_code":"da",
-  "language":"English",
-  "extName":"iChrome",
-  "newtabName":"iChrome New Tab",
-  "extDescription":"The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
-  "newtabDescription":"The BEST homepage for Chrome. Now for new tab. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
+  "language":"Dansk",
+  "extName":"iChrome - En Hurtig og Effektiv Startside",
+  "newtabName":"iChrome ny fane",
+  "extDescription":"Den bedste hjemmeside for Chrome. Fantastiske temaer, snesevis af widgets, lynhurtigt, nemt at tilpasse!",
+  "newtabDescription":"Den bedste hjemmeside for Chrome. Nu til nyt faneblad. Flotte temaer, snesevis af widgets, lynhurtigt, nemt at tilpasse!",
   "defaults":{
-    "tab":"Home",
-    "me":"Me"
+    "tab":"Hjem",
+    "me":"Mig"
   },
-  "remove_widget":"Remove",
+  "remove_widget":"Fjern",
   "alert":{
-    "default_button":"Dismiss",
-    "confirm_title":"Are you sure you want to do this?",
-    "confirm_continue":"Continue",
-    "confirm_cancel":"Cancel"
+    "default_button":"Slet",
+    "confirm_title":"Er du sikker på du vil gøre dette?",
+    "confirm_continue":"Fortsæt",
+    "confirm_cancel":"Anuller"
   },
   "onboarding":{
     "modal":{
-      "tagline":"All the sites and apps you use, in one place",
-      "wrong_extension":"Want iChrome on your new tab page instead?",
-      "wrong_extension_newtab":"Want iChrome on your home page instead?",
-      "wrong_extension_action":"Click here",
-      "about":"iChrome's all about tabs and widgets",
-      "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
-      "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privacy Policy<\/a>",
-      "sign_in":"Sign in with your Google account",
-      "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
-      "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
-      "sign_in_button":"Sign in with Google",
-      "have_account":"It looks like you already have an account!",
-      "have_account_desc":"All your tabs and widgets are ready to use!",
-      "get_started":"Let's get started!",
-      "get_started_desc":"You're good to go! Let's get your page set up."
+      "tagline":"Alle de websteder og programmer, du bruger, på ét sted",
+      "wrong_extension":"Vil du have iChrome på dit ny faneblad i stedet?",
+      "wrong_extension_newtab":"Vil du have iChrome på startside i stedet?",
+      "wrong_extension_action":"Klik her",
+      "about":"iChrome er lutter faner og widgets",
+      "about_desc":"Faner er sider fyldt med widgets - blokke, der viser ting som vejret, nyheder og din e-mail. Du kan tilpasse de fleste widgets og tilføje så mange som du ønsker.",
+      "terms":"Bemærk: Hvis du fortsætter, accepterer du iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privat Politik<\/a>",
+      "sign_in":"Log ind med din Google-konto",
+      "sign_in_desc":"Log ind med din Google konto før du starter, så du kan gemme dine ændringer online.",
+      "sign_in_desc2":"Du kan forblive logget ud, hvis du ønsker det, men din side vil ikke blive gemt online og du vil ikke kunne tilgå din side fra andre computere.",
+      "sign_in_button":"Log på med Google",
+      "have_account":"Det ser ud til, at du allerede har en konto!",
+      "have_account_desc":"Alle dine faner og widgets er klar til brug!",
+      "get_started":"Lad os komme i gang!",
+      "get_started_desc":"Du er klar! Lad os få din side er oprettet."
     },
     "widgets":{
-      "configure":"Let's configure a widget.",
-      "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
-      "configure_skip":"Skip",
-      "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
-      "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
-      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
-      "done":"Got it"
+      "configure":"Lad os konfigurere en widget.",
+      "configure_desc":"Klik på skruenøglen for at åbne vejr-widgets <b>Indstillinger<\/b>.",
+      "configure_skip":"Spring over",
+      "settings":"Erstat <b>San Francisco, CA<\/b> med din placering, tryk derefter på <b>Gem<\/b>.",
+      "move":"Du kan <b>trække<\/b> widgets ved at bruge det fremhævede håndtag til at flytte dem.",
+      "remove":"Når du trækker en widget, slip den på den røde bjælke (ikke vist) for at <b>fjerne<\/b> den.",
+      "done":"Forstået"
     },
     "settings":{
-      "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
-      "instructions":"Click the highlighted image to open it.",
-      "skip":"Skip",
+      "intro":"Lad os tage et kig på <b>menu'en<\/b> og se, hvad du ellers kan gøre.",
+      "instructions":"Klik på det markerede billede for at åbne det.",
+      "skip":"Spring over",
       "tooltips":{
-        "settings":"Change the way iChrome looks and works",
-        "widgets":"Add new widgets - you can have as many as you want",
-        "editing":"Show or hide the editing buttons on widgets",
-        "links":"This is a list of links, add sites you use often in the settings",
-        "tabs":"These are your tabs. You can add more in the settings",
-        "support":"Send us a message or leave a review here"
+        "settings":"Skift iChromes udseende og funktion",
+        "widgets":"Tilføje nye widgets - du kan have så mange som du ønsker",
+        "editing":"Vis eller skjul redigeringsknapperne på widgets",
+        "links":"Dette er en liste over links, tilføj websteder, du bruger ofte i indstillingerne",
+        "tabs":"Her er dine faner. Du kan tilføje flere i indstillingerne",
+        "support":"Send os en besked eller skriv en anmeldelse her"
       },
-      "finished":"That's it!",
-      "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
-      "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
+      "finished":"Sådan!",
+      "finished_next":"Vælg en indstilling i menuen (Begynd med <b>Widgets<\/b>) og opret din side!",
+      "finished_contact":"Brug linket support, hvis du har brug for hjælp, og vi vil vende tilbage til dig hurtigst."
     }
   },
   "storage":{
-    "signin":"Sign in with Google now to securely save and sync your configuration",
-    "signin_btn":"Sign in",
-    "signin_dismiss":"Dismiss",
+    "signin":"Log på med Google for sikkert at gemme og synkronisere din konfiguration",
+    "signin_btn":"Log på",
+    "signin_dismiss":"Afvis",
     "signin_confirm":{
-      "title":"Keep local data?",
-      "desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
-      "keep_account":"Use account",
-      "keep_local":"Keep local"
+      "title":"Beholde lokale data?",
+      "desc":"Vil du beholde dine lokale data og erstatte kontoindstillingerne med disse, eller vil du erstatte denne computers indstillinger med dine eksisterende kontoindstillinger?",
+      "keep_account":"Brug konto",
+      "keep_local":"Forbliv lokal"
     },
-    "signout_confirm":"Signing out will erase your local backups",
-    "pastdue":"Your subscription is past due",
-    "pastdue_desc":"Please update your billing information in the settings"
+    "signout_confirm":"Log ud vil slette dine lokale backups",
+    "pastdue":"Dit abonnement er udløbet",
+    "pastdue_desc":"Opdater venligst dine faktureringsoplysninger i indstillingerne"
   },
   "toolbar":{
-    "placeholder":"Enter your terms",
-    "placeholder_ok":"Enter your terms or say \"OK, Google\"",
+    "placeholder":"Indtast dine betingelser",
+    "placeholder_ok":"Indtast dine betingelser eller sig \"OK, Google\"",
     "apps":{
-      "search":"Search",
-      "youtube":"YouTube",
-      "maps":"Maps",
-      "play":"Play",
-      "news":"News",
+      "search":"Søg",
+      "youtube":"Youtube",
+      "maps":"Kort",
+      "play":"Afspil",
+      "news":"Nyheder",
       "gmail":"Gmail",
-      "drive":"Drive",
-      "calendar":"Calendar",
-      "more":"More"
+      "drive":"Drev",
+      "calendar":"Kalender",
+      "more":"Mere"
     }
   },
   "menu":{
-    "settings":"Settings",
+    "settings":"Indstillinger",
     "widgets":"Widgets",
-    "editing":"Editing",
-    "editing_enabled":"Enabled",
-    "editing_disabled":"Disabled",
+    "editing":"Redigering",
+    "editing_enabled":"Aktiveret",
+    "editing_disabled":"Deaktiveret",
     "plus":"Google Plus",
-    "tabs":"Tabs",
+    "tabs":"Faner",
     "footer":{
-      "support":"Support",
+      "support":"Hjælp",
       "feedback":"Feedback",
-      "review":"Review",
-      "terms":"Terms",
-      "privacy":"Privacy",
-      "by":"By Avi Kohn"
+      "review":"Gennemse",
+      "terms":"Vilkår",
+      "privacy":"Beskyttelse af personlige oplysninger",
+      "by":"Af Avi Kohn"
     }
   },
   "voice":{
-    "listening":"Listening...",
-    "searching":"Searching for: %s",
-    "missed":"Didn't get that. <a>Try Again<\/a>"
+    "listening":"Lytter...",
+    "searching":"Søger: %s",
+    "missed":"Dette blev ikke forstået. <a>Prøv igen<\/a>"
   },
   "settings":{
-    "title":"Settings",
-    "exit":"Exit settings",
-    "saved":"Settings saved",
+    "title":"Indstillinger",
+    "exit":"Afslut indstillinger",
+    "saved":"Indstillinger gemt",
     "nav":{
-      "visual":"Visual",
+      "visual":"Visuel",
       "visual_sections":{
-        "background":"Background",
+        "background":"Baggrund",
         "layout":"Opsætning",
-        "theme":"App theme"
+        "theme":"App tema"
       },
-      "toolbar":"Toolbar",
+      "toolbar":"Værktøjsbjælke",
       "toolbar_sections":{
-        "style":"Style",
-        "search":"Search",
+        "style":"Udseende",
+        "search":"Søg",
         "links":"Links"
       },
-      "tabs":"Tabs",
+      "tabs":"Faner",
       "widgets":"Widgets",
       "pro":"Pro",
-      "accounts":"Account",
-      "misc":"Miscellaneous",
-      "advanced":"Advanced",
+      "accounts":"Konto",
+      "misc":"Diverse",
+      "advanced":"Avanceret",
       "advanced_sections":{
-        "backups":"Backup and restore",
+        "backups":"Backup og gendan",
         "css":"Custom CSS",
-        "debug_tools":"Debug tools"
+        "debug_tools":"Fejlfindingsværktøj"
       },
-      "support":"Help and support",
-      "suggest":"Suggest a feature"
+      "support":"Hjælp og support",
+      "suggest":"Foreslå en funktion"
     },
     "visual":{
       "background":{
-        "title":"Background",
-        "desc":"This is the image or set of images shown as a background to your tabs",
-        "current":"Current background",
-        "custom":"Custom",
-        "unnamed":"Theme %s",
-        "select":"Select a theme",
-        "or":"or",
-        "url_placeholder":"Enter an image URL"
+        "title":"Baggrund",
+        "desc":"Dette\/disse billeder vises som baggrund for din faneblade",
+        "current":"Aktuelle baggrund",
+        "custom":"Egen",
+        "unnamed":"Tema %s",
+        "select":"Vælg et tema",
+        "or":"eller",
+        "url_placeholder":"Angiv et billede URL"
       },
       "layout":{
         "title":"Opsætning",
-        "desc":"Here you can adjust the type and number of columns in each tab",
-        "columns":"Columns",
-        "grid":"Grid",
-        "columns_number":"Number of columns",
-        "column_width":"Column width",
-        "column_width_fixed":"Fixed",
-        "column_width_fluid":"Fluid",
+        "desc":"Her kan du justere type og antal kolonner i hvert faneblad",
+        "columns":"Kolonner",
+        "grid":"Oversigt",
+        "columns_number":"Antal kolonner",
+        "column_width":"Kolonnebredde",
+        "column_width_fixed":"Fast",
+        "column_width_fluid":"Flydende",
         "column_warning":{
-          "column_to_grid":"Changing to a grid-based layout will move all of your widgets to the top left corner.",
-          "grid_to_column":"Changing to a column-based layout will move all of your widgets to the first column."
+          "column_to_grid":"Ændring til et oversigt-layout vil flytte alle dine widgets til øverste venstre hjørne.",
+          "grid_to_column":"Skifter du til en søjle baseret visning, vil det flytte alle dine widgets til den første kolonne."
         }
       },
       "theme":{
-        "title":"App theme",
-        "desc":"The app theme controls the style of iChrome itself and all widgets",
-        "preview":"Preview",
-        "light":"Light (default)",
-        "dark":"Dark",
-        "transparent":"Transparent",
-        "transparent_darker":"Transparent (darker)"
+        "title":"App tema",
+        "desc":"App temaet styrer udseendet af iChrome og alle widgets",
+        "preview":"Forhåndsvisning",
+        "light":"Lys (standard)",
+        "dark":"Mørk",
+        "transparent":"Gennemsigtig",
+        "transparent_darker":"Gennemsigtig (mørkere)"
       }
     },
     "toolbar":{
       "style":{
-        "title":"Style",
-        "desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
+        "title":"Udseende",
+        "desc":"Dette bestemmer udseendet på din værktøjslinje. Den kan enten vises normalt eller vises som trykknapper",
         "normal":"Normal",
-        "button":"Button"
+        "button":"Knap"
       },
       "search":{
-        "title":"Search",
-        "desc":"These settings control how the search box and voice search function",
-        "engine":"Search engine",
-        "engines_google":"Google (Default)",
-        "engines_custom":"Custom",
+        "title":"Søg",
+        "desc":"Disse indstillinger kontrollerer hvordan søgeboks og stemmesøgning fungerer",
+        "engine":"Søgemaskine",
+        "engines_google":"Google (standard)",
+        "engines_custom":"Brugerdefineret",
         "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
-        "voice":"Enable voice search",
-        "ok_google":"Enable \"OK Google\" hotword detection",
-        "search_tab":"Open search results in a new tab"
+        "voice":"Aktiver stemmesøgning",
+        "ok_google":"Aktiver \"OK Google\" nøgleord detektion",
+        "search_tab":"Åben søgeresultater i en ny fane"
       },
       "links":{
         "title":"Links",
-        "desc":"These are the items shown at the right of the toolbar",
+        "desc":"Dette er de elementer, der vises til højre for værktøjslinjen",
         "apps":"Apps menu",
-        "custom":"Custom links",
-        "custom_note1":"Maximum of 3 allowed",
-        "custom_note2":"users get 8",
-        "custom_name_placeholder":"Link text",
-        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+        "custom":"Brugerdefinerede links",
+        "custom_note1":"Maksimum 3 er tilladt",
+        "custom_note2":"brugere får 8",
+        "custom_name_placeholder":"Link tekst",
+        "custom_url_placeholder":"Link webadresse, for eksempel https:\/\/www.google.com"
       }
     },
     "misc":{
-      "link_tab":"Open links in a new tab by default"
+      "link_tab":"Åben link i en ny fane som standard"
     },
     "tabs":{
-      "create_new":"Create new",
-      "make_default":"Make default",
-      "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
-      "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
-      "name_placeholder":"Enter a tab name",
-      "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
+      "create_new":"Opret ny",
+      "make_default":"Vælg som standard",
+      "desc1":"Faner er sider indeni iChrome. Hver fane har sit eget sæt af widgets, der er helt uafhængig fra alle andre faner.",
+      "desc2":"Du kan skifte mellem faner ved at klikke på knapperne, der vises til venstre og højre side af skærmen, når du flytter musen hen over en fane eller ved at bruge piletasterne på dit tastatur.",
+      "name_placeholder":"Angiv et fanenavn",
+      "delete_confirm":"Denne aktion er uigenkaldelig. Alle data fra alle widgets i fanebladet mistes."
     },
     "accounts":{
       "status":{
         "title":"Status",
-        "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
-        "reset_account":"Reset account",
-        "sign_out":"Sign out",
-        "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
-        "sign_in":"Sign in with Google"
+        "signed_in":"Du er i øjeblikket <b>logget ind<\/b> som %s (%s).",
+        "reset_account":"Nulstil konto",
+        "sign_out":"Log ud",
+        "signed_out":"Du er <b>ikke i øjeblikket logget ind<\/b>. Log ind med din Google konto nu, for sikkert at gemme og synkronisere dine indstillinger.",
+        "sign_in":"Log ind med Google"
       },
-      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
-      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this account."
+      "reset_confirm_desc":"Dette vil slette alle lokale indstillinger og synkroniserede data. Der laves ikke backup og du kan ikke fortryde handlingen.",
+      "reset_confirm_desc2":"Du vil miste hele din nuværende konfiguration på alle computere, der er forbundet med denne konto."
     },
     "advanced":{
       "backups":{
-        "title":"Backup and restore",
-        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
-        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
-        "backup":"Backup now",
-        "upload":"Restore from file",
+        "title":"Backup og gendan",
+        "desc":"Backups er komplette kopier af alle dine tabs, indstillinger og widgets. De bliver automatisk genereret hver dag når du starter iChrome første gang.",
+        "desc2":"Brug nedenstående knapper for at vælge en specifik iChrome genskabelses dato, eller download en af dine backups.",
+        "backup":"Sikkerhedskopi nu",
+        "upload":"Gendan fra fil",
         "download":"Download",
-        "restore":"Restore",
-        "download_name":"iChrome Backup",
-        "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
+        "restore":"Gendan",
+        "download_name":"iChrome sikkerhedskopi",
+        "restore_confirm":"Dette vil overskrive alle lokale og synkroniserede data. Du vil miste din hele aktuelle konfiguration på alle computere under denne konto.",
         "restore_error":"An error occurred while trying to parse the provided data, please try again later."
       },
       "css":{
         "title":"Custom CSS",
         "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
-        "placeholder":"Enter up to 1000 characters of CSS here"
+        "placeholder":"Indtast op til 1000 tegn i CSS her"
       },
       "debug_tools":{
-        "title":"Debug tools",
+        "title":"Fejlfindingsværktøj",
         "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
-        "open":"Open tools"
+        "open":"Åben værktøjer"
       }
     },
     "widgets":{
-      "desc1":"Widgets have their own settings and can't be customized here.",
-      "desc2":"To edit a widget's settings, follow these steps:",
-      "steps1":"Move your mouse over any widget",
-      "steps2":"Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
-      "steps3":"Edit any of the settings shown in the dialog that's displayed",
-      "steps4":"Click Save to save your changes, or any part of the background to discard of them"
+      "desc1":"Widgets har deres egne indstillinger og kan ikke tilpasses her.",
+      "desc2":"Følg disse trin for at redigere indstillingerne for en widget:",
+      "steps1":"Bevæg musen hen over en widget",
+      "steps2":"Klik på skruenøgle ikonet oppe i højre hjørne af en widget. Hvis der ikke findes et skruenøgle ikon betyder dette at denne widget ikke har indstillinger der kan tilpasses.",
+      "steps3":"Rediger tilgængelige indstillinger i den viste dialogboks",
+      "steps4":"Klik på Gem for at gemme dine ændringer, eller en del af baggrunden for at skille sig af med dem"
     },
     "pro":{
       "promo":{
-        "monthly_price":"$2 per month",
-        "yearly_price":"or $20 per year",
-        "upgrade_btn":"Upgrade Now",
-        "business":"Interested in buying Pro for your business or school?",
-        "business_contact":"Contact us",
-        "themes":"Themes",
-        "themes_desc":"See more of your backgrounds with dark and transparent themes",
-        "bgs":"Live backgrounds",
-        "bgs_desc":"Bring your page to life with 20 live high-definition backgrounds",
-        "widgets":"Maximizable widgets",
-        "widgets_desc":"Take iChrome to another level with maximizable widgets",
-        "more_header":"And more",
-        "stocks":"Realtime stocks with extended and historical information",
-        "rss":"Support for multiple RSS feeds per widget",
-        "sports":"General and league-specific sports news",
-        "tabbed_widgets":"Tabbed news and RSS widgets",
-        "bg_downloads":"Downloadable backgrounds",
-        "weather":"Hourly weather forecasts up to 10 days out",
-        "toolbar":"More toolbar links",
-        "support":"Prioritized support and suggestions",
-        "buy_pro":"Buy Pro"
+        "monthly_price":"$2 per måned",
+        "yearly_price":"eller $20 per år",
+        "upgrade_btn":"Opdater nu",
+        "business":"Interesseret i at købe Pro version til din virksomhed eller uddannelsesinstitution?",
+        "business_contact":"Kontakt os",
+        "themes":"Temaer",
+        "themes_desc":"Se flere af dine baggrunde med mørke og gennemsigtige temaer",
+        "bgs":"Levende baggrunde",
+        "bgs_desc":"Giv din side liv med 20 live HD baggrunde",
+        "widgets":"Widget kan maksimeres",
+        "widgets_desc":"Få mere ud af iChrome med widgets der kan maksimeres",
+        "more_header":"Og meget mere",
+        "stocks":"Aktier i realtid, med udvidet og historisk information",
+        "rss":"Understøttelse af simultane RSS feeds per widget",
+        "sports":"General og liga specifikke sportsnyheder",
+        "tabbed_widgets":"Nyheder vist i tabs og via RSS widgets",
+        "bg_downloads":"Baggrunde kan downloades",
+        "weather":"Time for time vejrudsigter op til 10 dage frem",
+        "toolbar":"Flere værktøjslinje-links",
+        "support":"Prioriteret hjælp og forslag",
+        "buy_pro":"Køb Pro"
       },
       "checkout":{
-        "title":"Checkout",
-        "updating_title":"Update plan",
-        "payment_options":"Pay",
-        "pay_monthly":"Monthly ($2)",
-        "pay_yearly":"Yearly ($20)",
-        "cancel":"Cancel",
-        "update":"Update",
-        "subscribe":"Subscribe",
-        "braintree_notice":"Payments securely processed by Braintree.",
-        "monthly_notice":"By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
-        "yearly_notice":"By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
-        "update_notice":"Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
-        "thank_you":"Thank you for buying iChrome Pro!",
-        "thank_you2":"iChrome will reload in a few seconds and you'll be all set!",
-        "error":"Something went wrong while trying to process your payment.",
-        "error2":"Please try again later or email us at support@ichro.me",
-        "signin":"Sign in",
-        "signin_desc":"You need to sign in before buying Pro so we can make sure it's you",
-        "signin_btn":"Sign in"
+        "title":"CheckUd",
+        "updating_title":"Opdaterings plan",
+        "payment_options":"Betal",
+        "pay_monthly":"Månedlig ($2)",
+        "pay_yearly":"Årlig ($20)",
+        "cancel":"Anuller",
+        "update":"Opdater",
+        "subscribe":"Abonnér",
+        "braintree_notice":"Betaling håndteres sikkert via Braintree.",
+        "monthly_notice":"Ved at abonnere giver du iChrome ret til at trække 2$ hver måned indtil du opsiger dit abonnement.",
+        "yearly_notice":"Ved at abonnere giver to iChrome ret til at trække 20$ hvert år indtil du opsiger dit abonnement.",
+        "update_notice":"Ændringer i betalings cyklus sker med det samme, men der trækkes ikke penge før den nuværende cyklus er afsluttet.",
+        "thank_you":"Tak for at du købte iChrome Pro!",
+        "thank_you2":"iChrome genstarter om få sekunder, herefter vil alt være klart!",
+        "error":"Noget gik galt under behandlingen af din betaling.",
+        "error2":"Prøv venligst igen senere, eller send os en mail på support@ichro.me",
+        "signin":"Log ind",
+        "signin_desc":"Log ind før du køber Pro, så er vi sikre på at det er dig",
+        "signin_btn":"Log ind"
       },
       "plan":{
-        "title":"Plan",
-        "desc":"You are currently subscribed to iChrome Pro (%s)",
+        "title":"Planlæg",
+        "desc":"Du abonnerer på iChrome Pro (%s)",
         "types":{
-          "monthly":"Monthly",
-          "yearly":"Yearly",
-          "business":"Business",
-          "education":"Education",
-          "custom":"Custom"
+          "monthly":"Månedlig",
+          "yearly":"Årlig",
+          "business":"Erhverv",
+          "education":"Uddannelse",
+          "custom":"Brugerdefineret"
         },
-        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
+        "uneditable_desc":"Erhverv, uddannelse og brugerdefinerede planer kan ikke opdateres indefra iChrome. Venligst <a href=\"mailto:support@ichro.me\">kontakt os<\/a> for at opdatere eller annullere dit abonnement.",
         "status":"Status",
-        "status_active":"Active",
-        "status_trial":"Trial",
-        "status_pastdue":"Past due",
-        "subscription_date":"Subscription date",
-        "paid_through":"Paid through",
-        "next_bill":"Next bill",
-        "next_bill_value":"$%s on %s",
-        "update_plan":"Update plan",
-        "update_billing":"Update billing",
-        "cancel":"Cancel subscription",
-        "cancel_notice":"Your subscription will be canceled immediately",
-        "cancel_notice2":"If you would like a refund, please contact us at support@ichro.me"
+        "status_active":"Aktiv",
+        "status_trial":"Prøveversion",
+        "status_pastdue":"Udløbet",
+        "subscription_date":"Abonnements dato",
+        "paid_through":"Betalt via",
+        "next_bill":"Næste regning",
+        "next_bill_value":"$%s på %s",
+        "update_plan":"Opdater abonnement",
+        "update_billing":"Opdater regning",
+        "cancel":"Afmeld abonnement",
+        "cancel_notice":"Dit abonnement vil blive annulleret øjeblikkeligt",
+        "cancel_notice2":"Ønsker du refusion, venligst kontakt os på support@ichro.me"
       }
     }
   },
   "store":{
     "installation":"Installation",
-    "description":"Description",
-    "preview":"Preview",
-    "instructions":"Drag and drop any size onto your homepage"
+    "description":"Beskrivelse",
+    "preview":"Forhåndsvisning",
+    "instructions":"Træk og slip alle størrelser ind på din hjemmeside"
   },
   "widgets":{
     "sizes":{
-      "tiny":"Tiny",
-      "small":"Small",
+      "tiny":"Meget lille",
+      "small":"Lille",
       "medium":"Medium",
-      "large":"Large",
-      "variable":"Variable"
+      "large":"Stor",
+      "variable":"Variabel"
     },
     "settings":{
-      "title":"Widget Settings",
-      "save":"Save",
-      "size":"Widget Size"
+      "title":"Widget indstilling",
+      "save":"Gem",
+      "size":"Widget størrelse"
     },
-    "minimize":"Minimize",
-    "maximize":"Maximize",
-    "delete_confirm":"Are you really sure you want to delete this widget?\r\nThis action is irreversible; all data from this widget will be permanently lost.",
+    "minimize":"Minimer",
+    "maximize":"Maksimer",
+    "delete_confirm":"Er du sikker på, at du ønsker at slette denne widget?\nDenne handling kan ikke fortrydes; alle data fra denne widget vil blive permanent tabt.",
     "permissions_request":{
-      "title":"Access required",
-      "button":"Grant Access",
-      "desc":"This widget needs extra permissions before it can be used. Grant them using the button below."
+      "title":"Adgang kræves",
+      "button":"Tildel adgang",
+      "desc":"Denne widget skal bruge yderligere tilladelser før den kan bruges. Giv tilladelserne ved hjælp af knappen nedenunder."
     },
     "error":{
-      "explanation":"Something went wrong while we were trying to display this widget.",
-      "advice":"Try reinstalling the widget or reloading the page. Contact us if you see this message often.",
-      "support":"Support",
-      "refresh":"Refresh"
+      "explanation":"Noget gik galt da vi prøvede at vise denne widget.",
+      "advice":"Prøv at geninstallere widget eller genindlæs siden. Kontakt os hvis denne besked vises ofte.",
+      "support":"Hjælp",
+      "refresh":"Opdater"
     },
     "auth":{
-      "message":"You'll need to give this widget access to your account before you can use it.",
-      "button":"Grant Access"
+      "message":"Denne widget kræver adgang til din konto, før du kan anvende den.",
+      "button":"Tildel adgang"
     },
     "shared":{
       "settings":{
-        "title":"Widget Title",
-        "title_placeholder":"Enter a widget title or leave blank to hide",
-        "height":"Widget Height",
+        "title":"Widget titel",
+        "title_placeholder":"Indtast en widget titel. Indtastes ingen titel, skjules titlen",
+        "height":"Widget højde",
         "open_options":{
-          "current":"The current tab",
-          "blank":"A new tab"
+          "current":"Nuværende fane",
+          "blank":"Ny fane"
         },
-        "footer_link":"Footer Link",
+        "footer_link":"Link til sidefod",
         "footer_link_options":{
           "show":"Vis",
-          "hide":"Hide"
+          "hide":"Skjul"
         },
-        "account":"Account ID",
+        "account":"Konto ID",
         "account_help":"If you're signed into multiple accounts, this is the \"authuser=\" value.\n<br \/><br \/>\nFor example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"authuser\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
         "account_placeholder":"Your \"authuser=\" value",
-        "on":"On",
-        "off":"Off"
+        "on":"Aktiv",
+        "off":"Slået fra"
       }
     }
   },
   "themes":{
-    "title":"Themes",
-    "all":"All",
-    "custom":"Custom",
-    "create":"Create a theme",
-    "url_or_upload":"or",
-    "upload_image":"Upload an image",
-    "edit_btn":"Edit",
-    "delete":"Delete",
-    "use":"Use",
-    "preview":"Preview",
-    "author":"By",
-    "images":"%s images",
-    "resolution":"Resolution",
-    "categories":"Categories",
-    "cached":"This theme has been cached and is available offline",
-    "random":"This theme displays a random image every time you load the page",
-    "random_daily":"This theme displays an image picked randomly every day",
-    "sunrise_sunset":"This theme displays an image based on the time of day",
-    "feed":"This theme displays an image selected daily from an external feed",
-    "video":"This theme displays a live video",
-    "pro_only":"This theme is only available to Pro users. Buy Pro in the settings.",
-    "delete_confirm":"Are you really sure you would like to delete this theme?\r\nThis action is irreversible; the entire theme will be permanently lost.",
-    "delete_error":"An error occurred while trying to delete the theme.  Please try again later.",
+    "title":"Temaer",
+    "all":"Alle",
+    "custom":"Brugerdefineret",
+    "create":"Lav et tema",
+    "url_or_upload":"eller",
+    "upload_image":"Upload et billede",
+    "edit_btn":"Rediger",
+    "delete":"Slet",
+    "use":"Brug",
+    "preview":"Forhåndsvisning",
+    "author":"Af",
+    "images":"%s billeder",
+    "resolution":"Opløsning",
+    "categories":"Kategorier",
+    "cached":"Dette tema er blevet cachet og er tilgængeligt offline",
+    "random":"Dette tema viser et tilfældigt billede hver gang du indlæser siden",
+    "random_daily":"Dette tema viser et tilfældigt valgt billede hver dag",
+    "sunrise_sunset":"Dette tema viser et billede svarende til tid på dagen",
+    "feed":"Dette tema viser et billede valgt dagligt fra en ekstern feed",
+    "video":"Dette tema viser en video",
+    "pro_only":"Dette tema er kun tilgængeligt for Pro brugere. Køb Pro i indstillingerne.",
+    "delete_confirm":"Er du virkelig sikker på, du gerne vil slette dette tema? Denne handling er uigenkaldelig; hele temaet mistes permanent.",
+    "delete_error":"Der opstod en fejl under forsøg på at slette tema.  Prøv igen senere.",
     "feed_fetching":"Please wait, fetching feed...",
     "feed_error":"Something went wrong while trying to fetch the feed.  Please try again later.",
     "caching":"Please wait, caching theme...",
@@ -454,20 +454,20 @@
         "auto":"Auto",
         "width":"Full Width",
         "height":"Full Height",
-        "none":"No Scaling (preview may be inaccurate)"
+        "none":"Ingen skalering (preview kan unøjagtig)"
       },
-      "repeat":"Image Repeat",
+      "repeat":"Billedgentagelse",
       "repeat_options":{
-        "none":"No Repeat",
-        "horizontal":"Repeat Horizontally",
-        "vertical":"Repeat Vertically",
-        "both":"Repeat Both"
+        "none":"Ingen gentagelse",
+        "horizontal":"Gentag horisontalt",
+        "vertical":"Gentag vertikalt",
+        "both":"Gentag begge"
       },
-      "attach":"Attach Image To",
+      "attach":"Vedhæft billede til",
       "attach_tab":"The tab",
-      "attach_window":"The window",
-      "preview":"Preview",
-      "save":"Save & Close",
+      "attach_window":"Vinduet",
+      "preview":"Forhåndsvisning",
+      "save":"Gem & luk",
       "cache_error":"An error occurred while trying to cache the image you provided, please double-check the URL.",
       "upload_error":"An error occurred while trying to upload the file you provided, please make sure that it's a reasonable size and an image."
     }

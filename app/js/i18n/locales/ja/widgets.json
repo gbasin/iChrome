@@ -1,20 +1,20 @@
 {
   "lang_code":"ja-widgets",
   "apps":{
-    "name":"Apps",
-    "desc":"現在インストールされているGoogle Chromeのアプリケーションが表示されます。",
+    "name":"アプリ",
+    "desc":"現在インストールされている Google Chrome のアプリケーションを表示します。",
     "settings":{
-      "format":"ウィジェット形式",
+      "format":"ウィジェットの形式",
       "format_options":{
         "tiles":"タイル",
         "list":"一覧"
       },
-      "display":"見せる",
+      "display":"表示",
       "display_options":{
-        "all":"すべてのApps",
-        "enabled":"有効なAppsのみ表示"
+        "all":"すべてのアプリ",
+        "enabled":"有効なアプリのみ"
       },
-      "sort":"ソート",
+      "sort":"並べ替え",
       "sort_options":{
         "id":"ID",
         "alphabetically":"アルファベット順",
@@ -29,11 +29,11 @@
     "name":"ブックマーク",
     "desc":"選択もしくはカスタマイズされたブックマークやその他のリンクを表示",
     "settings":{
-      "title_placeholder":"ウィジェットのタイトルを入力します",
+      "title_placeholder":"ウィジェットのタイトルを入力",
       "layout":"レイアウト",
       "layout_options":{
-        "single":"1 つの列",
-        "double":"2つの列"
+        "single":"1列",
+        "double":"2列"
       },
       "open":"ブックマークを開く"
     },
@@ -41,8 +41,8 @@
       "dialog_title":"ブックマークを編集",
       "title":"ブックマークのタイトル",
       "title_placeholder":"Google",
-      "url":"ブックマークURL",
-      "url_placeholder":"http:\/\/www.google.com\/",
+      "url":"ブックマークの URL",
+      "url_placeholder":"https:\/\/www.google.co.jp\/",
       "save":"保存"
     },
     "new_caption":"新しい",
@@ -52,9 +52,9 @@
   },
   "chrome_bookmarks":{
     "name":"ブックマーク",
-    "desc":"Displays your Chrome bookmarks, optionally from a specific folder.",
+    "desc":"Chromeのブックマークおよび指定フォルダ内のブックマークを表示します。",
     "settings":{
-      "title_placeholder":"ウィジェットのタイトルを入力します",
+      "title_placeholder":"ウィジェットのタイトルを入力",
       "from":"ブックマークを表示します。",
       "open":"ブックマークを開く"
     }
@@ -68,44 +68,44 @@
   },
   "calendar":{
     "name":"カレンダー",
-    "desc":"Google カレンダーから今後のイベントが表示されます。",
+    "desc":"Google カレンダーから今後の予定を表示します。",
     "settings":{
       "calendar":"カレンダー",
-      "show":"Show events from",
+      "show":"表示する予定の期間",
       "show_options":{
-        "all":"All time",
-        "today":"Today only"
+        "all":"すべて",
+        "today":"今日のみ"
       }
     },
-    "title":"Agenda",
+    "title":"予定",
     "calendar":"カレンダー",
-    "noevents":"No events found in the near future, it looks like your schedule's clear!"
+    "noevents":"近日中の予定はなく、スケジュールは空いています。"
   },
   "clock":{
     "name":"時計",
-    "desc":"Offers alarm, time, timer, and stopwatch functionality.",
+    "desc":"アラーム、時計、タイマー、ストップウォッチ機能を提供します。",
     "settings":{
       "timezone":"タイムゾーン",
       "timezone_local":"ローカル",
-      "format":"時刻フォーマット",
+      "format":"時刻形式",
       "format_options":{
         "ampm":"AM\/PM - デジタル",
-        "24hour":"24時間表記 - デジタル",
-        "analog":"12時間 - アナログ",
-        "ampmseconds":"AM\/PM - デジタル (秒表示なし)",
-        "24hourseconds":"24 時間表示 - デジタル(秒表示なし)"
+        "24hour":"24時間表示 - デジタル",
+        "analog":"12時間表示 - アナログ",
+        "ampmseconds":"AM\/PM - デジタル, 秒表示なし",
+        "24hourseconds":"24時間表示 - デジタル, 秒表示なし"
       },
-      "sound":"Alert Sound"
+      "sound":"アラーム音"
     },
     "title":"時計",
-    "alarm":"Alarm",
+    "alarm":"アラーム",
     "clock":"時計",
-    "timer":"Timer",
-    "stopwatch":"Stopwatch",
-    "set":"Set",
-    "unset":"Unset",
-    "dismiss":"Dismiss",
-    "enable_audio":"Enable audio"
+    "timer":"タイマー",
+    "stopwatch":"ストップウォッチ",
+    "set":"セット",
+    "unset":"解除",
+    "dismiss":"閉じる",
+    "enable_audio":"通知音を有効にする"
   },
   "facebook":{
     "name":"Facebook",
@@ -113,26 +113,26 @@
   },
   "feedly":{
     "name":"Feedly",
-    "desc":"Feedlyアカウントから設定可能な形式で記事を表示。",
+    "desc":"Feedly アカウントからの記事を設定した形式で表示します。",
     "settings":{
       "source":"記事の表示",
       "source_feeds":"フィード",
-      "show":"見せる",
+      "show":"表示",
       "show_options":{
         "all":"すべての記事",
-        "unread":"未読記事のみ"
+        "unread":"未読の記事のみ"
       },
       "layout":"レイアウト",
       "layout_options":{
         "titles":"タイトルのみ",
         "magazine":"マガジン",
         "cards":"カード",
-        "cards_columns":"カード （2 列）"
+        "cards_columns":"カード (2列)"
       },
       "mark":"既読にするタイミング",
       "mark_options":{
         "scroll":"クリックしたときとスクロースして通り過ぎたとき",
-        "click":"クリックしたとき"
+        "click":"クリックしたときのみ"
       },
       "sort":"並べ替え順序",
       "sort_options":{
@@ -144,13 +144,13 @@
     "saved":"あとで読む",
     "uncategorized":"未分類",
     "author":"By",
-    "go_to_feedly":"Feedly に行く"
+    "go_to_feedly":"Feedly に移動"
   },
   "notes":{
     "name":"メモ",
     "desc":"シンプルで、編集可能なメモを挿入します。",
     "settings":{
-      "color":"ノートの色",
+      "color":"メモの色",
       "color_options":{
         "yellow":"イエロー",
         "orange":"オレンジ",
@@ -176,8 +176,8 @@
     "desc":"Google+のウィジェットを埋め込みます"
   },
   "notifications":{
-    "name":"Google Notifications",
-    "desc":"Displays your Google Notifications from services such as Google+"
+    "name":"Google からの通知",
+    "desc":"Google+ などの Google サービスからの通知を表示します。"
   },
   "reddit":{
     "name":"Reddit",
@@ -190,7 +190,7 @@
       "sort_options":{
         "hot":"ホット",
         "top":"トップ",
-        "new":"新しい",
+        "new":"新着",
         "gilded":"ゴールド順",
         "rising":"上昇中",
         "controversial":"論争中"
@@ -202,26 +202,26 @@
         "comments":"コメント"
       }
     },
-    "more":"もっと"
+    "more":"もっと表示"
   },
   "tasks":{
-    "name":"Tasks",
-    "desc":"Displays an editable list of tasks from one of your Google Tasks lists.",
-    "title":"Tasks",
+    "name":"タスク",
+    "desc":"Google Tasksのタスクリストを表示します\n（項目の編集も可能です）",
+    "title":"タスク",
     "settings":{
       "list":"一覧"
     },
-    "task_title":"Title",
-    "due_date":"Due date",
+    "task_title":"タイトル",
+    "due_date":"期限",
     "notes":"メモ",
     "add":"項目を追加",
-    "delete_task":"Delete Task",
-    "move_up":"Move Up",
-    "move_down":"Move Down",
-    "done":"Done",
-    "due_today":"Due today",
-    "overdue":"Overdue",
-    "authorize":"You'll need to select a list from your Google Tasks via the settings before anything can be displayed here."
+    "delete_task":"タスクを削除",
+    "move_up":"上へ移動",
+    "move_down":"下へ移動",
+    "done":"完了",
+    "due_today":"今日中",
+    "overdue":"期限切れ",
+    "authorize":"ここに何かを表示するには設定からGoogleタスクのリストを選択する必要があります。"
   },
   "twitter":{
     "name":"Twitter",
@@ -231,14 +231,14 @@
       "show":"表示されているツイート"
     },
     "authorize":"まずiChromeを承認してください。",
-    "authorize_msg":"あなたのツイッターアカウントからツイートを表示するためには、iChromeに許可を与える必要があります。",
-    "authorize_btn":"承認",
+    "authorize_msg":"あなたの Twitter アカウントからツイートを表示するためには、iChrome に許可を与える必要があります。",
+    "authorize_btn":"許可",
     "no_tweets":"ツイートがありません…",
     "home":"ホーム",
     "mentions":"メンション",
     "retweets":"自分のリツイート",
     "lists":"リスト",
-    "more":"もっと",
+    "more":"もっと表示",
     "reply":"返信",
     "retweet":"リツイート",
     "favorite":"お気に入り"
@@ -253,36 +253,36 @@
     "settings":{
       "format":"表示方法",
       "format_options":{
-        "large":"１つだけ大きく表示",
-        "large_2":"１つ大きく、２つ小さく表示",
-        "large_4":"１つ大きく、４つ小さく表示",
-        "four":"４つ小さく表示",
-        "six":"６つ小さく表示"
+        "large":"1個のみ大きく表示",
+        "large_2":"1個大きく、2個小さく表示",
+        "large_4":"1個大きく、4個小さく表示",
+        "four":"4個小さく表示",
+        "six":"6個小さく表示"
       },
       "from":"表示するビデオを指定",
       "from_help":"プロフィール画面のURLにあるユーザー名と <b>全く同じ<\/b> ように指定する必要があります。\n<br \/><br \/>\nユーザー名にスペースは入りません。",
       "from_placeholder":"トップビデオを表示する場合は空白のままにしてください。",
       "open":"検索結果の表示方法"
     },
-    "search":"YouTubeを検索",
+    "search":"YouTube で検索",
     "num_views":"閲覧数"
   },
   "quotes":{
-    "name":"Quotes",
-    "desc":"Displays a quote picked either every time you load the page or once daily.",
+    "name":"格言",
+    "desc":"1日1回もしくはページを読み込むたびに選りすぐりの名言を表示します。",
     "settings":{
-      "source":"Source",
-      "method":"Load new quotes",
+      "source":"引用元",
+      "method":"新しい名言の更新頻度",
       "method_options":{
-        "daily":"Once daily",
-        "random":"Every time I load the page"
+        "daily":"1日1回",
+        "random":"ページの読み込みごと"
       }
     },
     "unknown_author":"不明"
   },
   "html":{
     "name":"HTML",
-    "desc":"Displays completely custom HTML in an iframe.",
+    "desc":"完全にカスタム HTML を iframe で表示します。",
     "settings":{
       "html":"HTML",
       "js":"JavaScript",
@@ -290,351 +290,81 @@
     }
   },
   "sitelink":{
-    "name":"Site Link",
-    "desc":"Displays a link, optionally with a title and thumbnail",
+    "name":"サイトリンク",
+    "desc":"オプションで、タイトルとサムネイル リンクを表示します。",
     "settings":{
-      "link":"Link URL",
-      "link_placeholder":"http:\/\/www.google.com\/",
+      "link":"リンク先の URL",
+      "link_placeholder":"https:\/\/www.google.co.jp\/",
       "image":"画像 URL",
       "image_placeholder":"http:\/\/www.example.com\/image.png",
-      "color":"Image Background Color",
-      "style":"Image Style",
-      "style_fill":"Fill",
+      "color":"画像の背景色",
+      "style":"画像のスタイル",
+      "style_fill":"塗りつぶし",
       "style_center":"中央揃え"
     }
   },
   "stats":{
-    "name":"System Statistics",
-    "desc":"Keep an eye on your system with realtime statistics",
-    "memory":"Memory",
-    "battery":"Battery",
-    "usage":"usage",
-    "in_use":"in use",
-    "remaining":"remaining",
-    "charged":"Fully Charged",
-    "idle":"Idle",
-    "charging":"Charging",
-    "discharging":"Discharging"
+    "name":"システムの統計情報",
+    "desc":"リアルタイムのシステム統計情報をいつでも確認できます",
+    "memory":"メモリ",
+    "battery":"バッテリー",
+    "usage":"使用中",
+    "in_use":"使用中",
+    "remaining":"残り",
+    "charged":"充電完了",
+    "idle":"待機中",
+    "charging":"充電中",
+    "discharging":"放電中"
   },
   "search":{
     "name":"検索",
-    "desc":"Embed a search box in your page for easy access",
+    "desc":"ページ内に簡単な検索ボックスを埋め込みます。",
     "settings":{
-      "placeholder":"Search Field Placeholder",
-      "search_url":"検索エンジンURL",
-      "param":"Query Parameter",
-      "param_placeholder":"The parameter where the query goes, i.e. \"q\""
+      "placeholder":"検索フィールドの初期値",
+      "search_url":"検索エンジンの URL",
+      "param":"クエリのパラメータ",
+      "param_placeholder":"パラメーター クエリがどこ、すなわち\"q\""
     },
-    "default_placeholder":"Search Google"
+    "default_placeholder":"Google で検索"
   },
   "pushbullet":{
     "name":"Pushbullet",
-    "desc":"Keep track of notifications from your phone and other devices",
-    "no_pushes":"No pushes found",
-    "sign_in":"Sign in",
-    "no_key":"It doesn't look like you're signed in to Pushbullet.  Sign in now to connect this widget."
+    "desc":"あなたの携帯電話や他のデバイスからの通知メッセージの追跡",
+    "no_pushes":"プッシュを発見できません",
+    "sign_in":"ログイン",
+    "no_key":"Pushbullet にサインインしていないようです。このウィジェットに接続するため、いますぐサインインしてください。"
   },
   "linkedin":{
     "name":"LinkedIn",
-    "desc":"Displays your LinkedIn home stream"
+    "desc":"あなたの LinkedIn のホーム ストリームを表示します。"
   },
   "directions":{
-    "name":"Directions",
-    "desc":"Get directions to and from nearly anywhere right from your homepage",
+    "name":"経路",
+    "desc":"あなたのホームページからほぼどこでも右からの方向を取得します。",
     "driving":"車",
     "transit":"公共機関",
     "walking":"徒歩",
-    "cycling":"Cycling",
-    "from":"Enter a starting point",
-    "to":"Enter a destination",
-    "loading":"Loading directions, please wait...",
-    "error":"Something went wrong while trying to load the directions you requested.",
-    "error2":"Please check the start and destination addresses you entered.",
-    "open_in_maps":"Open in Google Maps",
-    "via":"via"
+    "cycling":"自転車",
+    "from":"出発地を入力",
+    "to":"目的地を入力",
+    "loading":"経路を読み込み中です...",
+    "error":"要求した方向を読み込むときに問題が発生しました。",
+    "error2":"入力した開始および宛先アドレスを確認してください。",
+    "open_in_maps":"Google マップで開く",
+    "via":"経由"
   },
   "pocket":{
     "name":"Pocket",
-    "desc":"Display a list of your saved articles, videos, and web pages from Pocket",
+    "desc":"Pocket に保存した記事、ビデオ、および Web ページの一覧を表示します。",
     "settings":{
-      "links_shown":"Number of links shown",
-      "open":"Open links",
-      "open_pocket":"In Pocket",
-      "open_original":"At their original URL"
+      "links_shown":"表示されるリンクの数",
+      "open":"リンクを開く",
+      "open_pocket":"ポケットの中",
+      "open_original":"彼らの元の URL で"
     },
     "by":"By",
-    "no_links":"No links found",
-    "grant_access":"Grant access",
-    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
-  },
-  "analytics":{
-    "name":"解析",
-    "desc":"Googleアナリティクスプロフィールからさまざまな統計情報を表示",
-    "sessions":"セッション",
-    "pageviews":"ページビュー",
-    "pagesvisit":"ページ\/訪問",
-    "bouncerate":"直帰率",
-    "completions":"補完",
-    "noprofile_title":"No profile selected",
-    "noprofile":"まだプロフィールが選択されていないようです！\n<br \/><br \/>\n右上の設定アイコンから１つ選択してみてください。",
-    "settings":{
-      "profile":"プロフィール"
-    }
-  },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
-  },
-  "currency":{
-    "name":"通貨",
-    "desc":"169 通貨の中から、 2 つの通貨を変換してみましょう。",
-    "to_label":"から",
-    "recently_used":"Recently Used"
-  },
-  "dictionary":{
-    "name":"Dictionary",
-    "desc":"Quickly look up the definition and synonyms for a word",
-    "search_placeholder":"Enter a word or term here",
-    "more":"もっと",
-    "less":"Less",
-    "synonyms":"Synonyms",
-    "antonyms":"Antonyms",
-    "web_definitions":"Web definitions",
-    "no_definitions":"No definitions found"
-  },
-  "drive":{
-    "name":"ドライブ",
-    "desc":"最近Google ドライブで変更されたファイルを表示します",
-    "settings":{
-      "files_shown":"ファイルの数が表示される"
-    },
-    "modified_by":"By",
-    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
-  },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"Gmail の受信トレイが表示されます。"
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"iframe 内の web ページが表示されます。",
-    "settings":{
-      "url":"フレームの URL",
-      "url_placeholder":"例: http:\/\/www.google.com\/",
-      "height":"フレームの高さ",
-      "padding":"パディング"
-    }
-  },
-  "keep":{
-    "name":"保持",
-    "desc":"埋め込み型 Google Keep ウィジェット"
-  },
-  "news":{
-    "name":"ニュース",
-    "desc":"カテゴリと版によって現在のトップニュースを表示します。",
-    "all_stories":"すべて",
-    "settings":{
-      "page_title":"設定",
-      "save":"保存",
-      "title":"ウィジェットタイトル",
-      "title_placeholder":"ウィジェットのタイトルを入力するか、空白のままは非表示になります",
-      "articles":"表示される記事",
-      "edition":"版",
-      "default_topic":"Default Topic"
-    }
-  },
-  "recentlyclosed":{
-    "name":"最近閉じた",
-    "desc":"最近閉じたタブを示します",
-    "settings":{
-      "tabs":"表示されるタブ",
-      "open":"タブの開き方"
-    },
-    "more":"more"
-  },
-  "rss":{
-    "name":"RSS",
-    "desc":"RSSもしくはAtomフィードからのアイテムをオプション画像とともに表示",
-    "settings":{
-      "page_title":"設定",
-      "save":"保存",
-      "title":"ウィジェットタイトル",
-      "title_placeholder":"ウィジェットのタイトルを入力するか、空白のままは非表示になります",
-      "link":"タイトルのリンク",
-      "link_placeholder":"ウィジェットのタイトルのリンクを入力します。",
-      "feeds":"フィード",
-      "feeds_help":"Click any feed to edit it",
-      "feeds_placeholder":"Enter a feed URL and press Enter to add",
-      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
-      "feed_name_placeholder":"Feed name",
-      "feed_url_placeholder":"Feed URL",
-      "articles":"表示される記事"
-    },
-    "by":"By",
-    "all_articles":"すべての記事",
-    "feed_error":"フィードを取得しようとしてエラーが発生しました：%s。\nURLを再度チェックするか、ウィジェットの設定を確かめてください。"
-  },
-  "sports":{
-    "name":"スポーツ",
-    "desc":"Displays scores, schedules, and news from your favorite teams.",
-    "settings":{
-      "page_title":"Favorites",
-      "save":"保存",
-      "teams_placeholder":"Enter a team name and press Enter to add"
-    },
-    "scores":"Scores",
-    "news":"ニュース",
-    "last_play":"Last play",
-    "no_games":"No games found",
-    "pro_splash1":"Sports news is a Pro-only feature.",
-    "pro_splash2":"Buy Pro in the settings.",
-    "preview":"プレビュー",
-    "tickets":"Tickets",
-    "live":"Live",
-    "recap":"Recap",
-    "box_score":"Box Score"
-  },
-  "stocks":{
-    "name":"株",
-    "desc":"指定した銘柄の現況を表示します。",
-    "settings":{
-      "stocks":"株",
-      "stocks_placeholder":"Type a company or exchange name and hit Enter"
-    },
-    "as_of":"時点",
-    "exchange_time":"取引時間",
-    "overview":"Overview",
-    "news":"ニュース",
-    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
-    "pro_splash2":"Buy Pro in the settings.",
-    "time_ranges":{
-      "1d":"1d",
-      "5d":"5d",
-      "1m":"1m",
-      "3m":"3m",
-      "1y":"1y",
-      "5y":"5y",
-      "max":"max"
-    },
-    "open":"開始値",
-    "prev_close":"Previous Close",
-    "high":"高い",
-    "52high":"52 week high",
-    "low":"低い",
-    "52low":"52 week low",
-    "volume":"取引量",
-    "avg_volume":"Avg. Volume",
-    "shares":"Shares",
-    "cap":"Market Cap",
-    "pe":"Price \/ Earnings",
-    "eps":"EPS",
-    "beta":"Beta",
-    "inst_own":"Inst. own"
-  },
-  "todo":{
-    "name":"To-Do",
-    "desc":"重要なことや完了したアイテムなど、インタラクティブなTo-Doリストを表示します。",
-    "title":"To-Doリスト",
-    "settings":{
-      "color":"フォントの色",
-      "color_options":{
-        "light":"明るい",
-        "dark":"暗い"
-      },
-      "tags":"タグ",
-      "tags_placeholder":"タグを入力してEnterキーを押します"
-    },
-    "add":"項目を追加",
-    "none":"未設定",
-    "important":"重要"
-  },
-  "topsites":{
-    "name":"トップサイト",
-    "desc":"最も訪問したサイト\/トップサイトを表示します。",
-    "settings":{
-      "show":"表示されるサイトの数"
-    }
-  },
-  "traffic":{
-    "name":"トラフィック",
-    "desc":"自宅もしくは職場までの現在の交通状況でかかる時間を表示します。",
-    "settings":{
-      "leave":"自宅を出発する時間",
-      "home":"自宅住所",
-      "home_placeholder":"仕事の後に行く場所",
-      "work":"職場の住所",
-      "work_placeholder":"仕事の前にいる場所",
-      "method":"交通手段",
-      "method_options":{
-        "driving":"車",
-        "walking":"徒歩",
-        "transit":"公共機関"
-      }
-    },
-    "to_home":"自宅へ",
-    "to_work":"職場へ"
-  },
-  "translate":{
-    "name":"翻訳",
-    "desc":"Lets you quickly translate to and from 90 languages as you type",
-    "from_placeholder":"Start typing here",
-    "to_placeholder":"Translated text will appear here",
-    "detect_lang":"Detect language",
-    "translating":"Translating...",
-    "unknown":"不明"
-  },
-  "unread":{
-    "name":"未読",
-    "desc":"Gmailの受信トレイにある未読メールの数を表示",
-    "settings":{
-      "open":"クリックすると開く"
-    },
-    "unread_none":"未読メール",
-    "unread_one":"未読のメール",
-    "unread_many":"未読メール"
-  },
-  "voice":{
-    "name":"Voice",
-    "desc":"Google Voiceアカウントの不在着信した電話やメッセージの数を表示",
-    "call":"発信元",
-    "text":"送信元",
-    "missed":"不在着信ボイス",
-    "texts":"未読メッセージ",
-    "calls":"不在着信"
-  },
-  "weather":{
-    "name":"天気",
-    "desc":"現在の天気とこの先４日間の予報を表示",
-    "settings":{
-      "location":"場所",
-      "location_placeholder":"場所を入力してEnterキーを押してください",
-      "units":"Units",
-      "units_imperial":"Imperial (Fahrenheit)",
-      "units_metric":"Metric (Celsius)",
-      "enabled":"有効",
-      "disabled":"無効",
-      "forecast":"Forecasts",
-      "hourly":"Hourly forecasts"
-    },
-    "more":"もっと",
-    "less":"Less",
-    "wind":"風速",
-    "precipitation":"Precip",
-    "uv":"UV index",
-    "feelslike":"Feels like",
-    "barometer":"Barometer",
-    "visibility":"Visibility",
-    "humidity":"湿度",
-    "dewpoint":"Dew point",
-    "moonphase":"Moon",
-    "sunrise":"Sunrise",
-    "sunset":"Sunset",
-    "moonrise":"Moonrise",
-    "moonset":"Moonset"
+    "no_links":"リンクはありません。",
+    "grant_access":"アクセスを許可",
+    "no_key":"それはあなたのリンクを読み込むことができます前に、あなたのポケットのアカウントに iChrome アクセスを与える必要があります。"
   }
 }

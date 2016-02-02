@@ -11,68 +11,68 @@
   },
   "remove_widget":"刪除",
   "alert":{
-    "default_button":"Dismiss",
-    "confirm_title":"Are you sure you want to do this?",
+    "default_button":"取消",
+    "confirm_title":"你確定要這樣做嗎？",
     "confirm_continue":"繼續。",
     "confirm_cancel":"取消"
   },
   "onboarding":{
     "modal":{
-      "tagline":"All the sites and apps you use, in one place",
-      "wrong_extension":"Want iChrome on your new tab page instead?",
-      "wrong_extension_newtab":"Want iChrome on your home page instead?",
-      "wrong_extension_action":"Click here",
-      "about":"iChrome's all about tabs and widgets",
-      "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
-      "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privacy Policy<\/a>",
-      "sign_in":"Sign in with your Google account",
-      "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
-      "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
-      "sign_in_button":"Sign in with Google",
-      "have_account":"It looks like you already have an account!",
-      "have_account_desc":"All your tabs and widgets are ready to use!",
-      "get_started":"Let's get started!",
-      "get_started_desc":"You're good to go! Let's get your page set up."
+      "tagline":"您所有的網站與應用程式都放在同一個地方。",
+      "wrong_extension":"你希望iChrome取代在你的新分頁上嗎？",
+      "wrong_extension_newtab":"你希望使用iChrome來作為首頁嗎？",
+      "wrong_extension_action":"點擊此處",
+      "about":"iChrome是關於分頁與小工具",
+      "about_desc":"分頁是由小工具構成，顯示像是天氣、新聞和您的電子郵件。你可以客製化大部分的小工具，並且如果您想要，你可以添加更多。",
+      "terms":"注意：若繼續，您將同意 iChrome 的 <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">使用條款<\/a> 和 <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">隱私權政策<\/a>",
+      "sign_in":"以Google帳號登入",
+      "sign_in_desc":"在開始之前請登入你的 Google 帳號以便安全地將你的更懂保存在線上",
+      "sign_in_desc2":"你可以保持不登入，但你的頁面將不會被儲存在線上而且你也不能從別臺電腦上存取。",
+      "sign_in_button":"使用Google登入",
+      "have_account":"看起來你已經有個帳號了！",
+      "have_account_desc":"您所有的分頁及小工具都已經準備就緒！",
+      "get_started":"讓我們開始吧！",
+      "get_started_desc":"你已經準備好了！讓我們開始設定你的頁面吧！"
     },
     "widgets":{
-      "configure":"Let's configure a widget.",
-      "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
-      "configure_skip":"Skip",
-      "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
-      "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
-      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
-      "done":"Got it"
+      "configure":"點此設定小部件",
+      "configure_desc":"點擊扳手打開天氣 Widget 的<b>設定<\/b>",
+      "configure_skip":"跳過",
+      "settings":"把<b>San Fancisco, CA<\/b>替換成你所在的位置，然後按一下<b>保存<\/b>",
+      "move":"你可以按著標註的位置 <b>拖動<\/b> 小部件視窗來移動它們。",
+      "remove":"當拖動一個小部件時，可把它拖放在的紅色欄 (目前未顯示)來 <b>刪除<\/b> 它。",
+      "done":"我知道了"
     },
     "settings":{
-      "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
-      "instructions":"Click the highlighted image to open it.",
-      "skip":"Skip",
+      "intro":"接著讓我們看看 <b>功能表<\/b>，並且了解它能為你做什麼。",
+      "instructions":"點擊被標註的圖片以開啟它",
+      "skip":"跳過",
       "tooltips":{
-        "settings":"Change the way iChrome looks and works",
-        "widgets":"Add new widgets - you can have as many as you want",
-        "editing":"Show or hide the editing buttons on widgets",
-        "links":"This is a list of links, add sites you use often in the settings",
-        "tabs":"These are your tabs. You can add more in the settings",
-        "support":"Send us a message or leave a review here"
+        "settings":"設置iChrome的外觀與內容",
+        "widgets":"新增新的小部件 — 你想有幾個都行",
+        "editing":"顯示或隱藏在小部件上的編輯按鈕",
+        "links":"這是連結的列表，可在設定中將常用的網站設定上去",
+        "tabs":"這是你的Tab，你可以在設定中增加更多",
+        "support":"發送給我們訊息或是在這裡留下回覆"
       },
-      "finished":"That's it!",
-      "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
-      "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
+      "finished":"輕鬆、簡單！",
+      "finished_next":"選擇功能表中的一個功能 (可試著從 <b>小部件<\/b> 開始) 並開始設置您的頁面！",
+      "finished_contact":"若您需要任何説明可以使用支援連結，我們會儘快給你回覆。"
     }
   },
   "storage":{
-    "signin":"Sign in with Google now to securely save and sync your configuration",
+    "signin":"使用Google 登入來安全的同步資料與儲存您的配置",
     "signin_btn":"登入",
-    "signin_dismiss":"Dismiss",
+    "signin_dismiss":"不理會",
     "signin_confirm":{
-      "title":"Keep local data?",
-      "desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
-      "keep_account":"Use account",
-      "keep_local":"Keep local"
+      "title":"保留線下資料？",
+      "desc":"你想要使用本機資料來取代你帳戶中的設定嗎？ 還是保持您帳戶的配置，並替換掉本機端的資料？",
+      "keep_account":"使用帳號",
+      "keep_local":"儲存在本機中"
     },
-    "signout_confirm":"Signing out will erase your local backups",
-    "pastdue":"Your subscription is past due",
-    "pastdue_desc":"Please update your billing information in the settings"
+    "signout_confirm":"登出將會清楚你的本地備份",
+    "pastdue":"您的訂閱已經過期",
+    "pastdue_desc":"請更新您在設定中的付款資訊"
   },
   "toolbar":{
     "placeholder":"輸入並搜尋",
@@ -85,7 +85,7 @@
       "news":"新聞",
       "gmail":"Gmail",
       "drive":"Drive",
-      "calendar":"日曆",
+      "calendar":"行事曆",
       "more":"更多"
     }
   },
@@ -101,8 +101,8 @@
       "support":"支援",
       "feedback":"意見回報",
       "review":"評論",
-      "terms":"Terms",
-      "privacy":"Privacy",
+      "terms":"條款",
+      "privacy":"隱私政策",
       "by":"由 Avi Kohn 製作"
     }
   },
@@ -113,223 +113,223 @@
   },
   "settings":{
     "title":"設定",
-    "exit":"Exit settings",
-    "saved":"Settings saved",
+    "exit":"退出設定",
+    "saved":"已儲存設定",
     "nav":{
-      "visual":"Visual",
+      "visual":"外觀",
       "visual_sections":{
-        "background":"Background",
+        "background":"背景",
         "layout":"配罝",
-        "theme":"App theme"
+        "theme":"App主題"
       },
-      "toolbar":"Toolbar",
+      "toolbar":"工具列",
       "toolbar_sections":{
-        "style":"Style",
+        "style":"樣式",
         "search":"搜尋",
-        "links":"Links"
+        "links":"連結"
       },
       "tabs":"分頁",
       "widgets":"小工具",
       "pro":"Pro",
-      "accounts":"Account",
-      "misc":"Miscellaneous",
-      "advanced":"Advanced",
+      "accounts":"賬號",
+      "misc":"雜項",
+      "advanced":"進階",
       "advanced_sections":{
-        "backups":"Backup and restore",
-        "css":"Custom CSS",
-        "debug_tools":"Debug tools"
+        "backups":"備份與還原",
+        "css":"自訂 CSS",
+        "debug_tools":"除錯工具"
       },
-      "support":"Help and support",
-      "suggest":"Suggest a feature"
+      "support":"説明和支援",
+      "suggest":"提供意見"
     },
     "visual":{
       "background":{
-        "title":"Background",
-        "desc":"This is the image or set of images shown as a background to your tabs",
-        "current":"Current background",
+        "title":"背景",
+        "desc":"這裡會是一張圖或是整個圖片集來作為您Tab的背景",
+        "current":"目前的背景",
         "custom":"自訂",
-        "unnamed":"Theme %s",
-        "select":"Select a theme",
+        "unnamed":"主題 %s",
+        "select":"選擇一個主題",
         "or":"or",
-        "url_placeholder":"Enter an image URL"
+        "url_placeholder":"輸入圖片網址"
       },
       "layout":{
         "title":"配罝",
-        "desc":"Here you can adjust the type and number of columns in each tab",
-        "columns":"Columns",
-        "grid":"Grid",
-        "columns_number":"Number of columns",
-        "column_width":"Column width",
-        "column_width_fixed":"Fixed",
-        "column_width_fluid":"Fluid",
+        "desc":"在這裡你可以調整每個tab中的排列方式和欄數",
+        "columns":"直欄",
+        "grid":"格狀",
+        "columns_number":"欄數",
+        "column_width":"欄寬",
+        "column_width_fixed":"固定",
+        "column_width_fluid":"動態",
         "column_warning":{
-          "column_to_grid":"Changing to a grid-based layout will move all of your widgets to the top left corner.",
-          "grid_to_column":"Changing to a column-based layout will move all of your widgets to the first column."
+          "column_to_grid":"更改為格網佈局將會把你所有的 widget 移動到左上角",
+          "grid_to_column":"切換到以欄為檢視的方式將會移動您所有的小部件到第一個欄位中。"
         }
       },
       "theme":{
-        "title":"App theme",
-        "desc":"The app theme controls the style of iChrome itself and all widgets",
+        "title":"App主題",
+        "desc":"App主題將會套用在iChrome與其他所有小部件的樣式上。",
         "preview":"預覽",
-        "light":"Light (default)",
+        "light":"明亮（預設）",
         "dark":"暗色",
-        "transparent":"Transparent",
-        "transparent_darker":"Transparent (darker)"
+        "transparent":"透明",
+        "transparent_darker":"透明（黑調）"
       }
     },
     "toolbar":{
       "style":{
-        "title":"Style",
-        "desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
-        "normal":"Normal",
-        "button":"Button"
+        "title":"樣式",
+        "desc":"設定工具列樣式。可以一般方式顯示，或僅顯示開啟工具列的按鈕。",
+        "normal":"一般",
+        "button":"按鈕"
       },
       "search":{
         "title":"搜尋",
-        "desc":"These settings control how the search box and voice search function",
-        "engine":"Search engine",
-        "engines_google":"Google (Default)",
+        "desc":"這些設定控制著搜尋框與語音搜尋將如何運作",
+        "engine":"搜尋引擎",
+        "engines_google":"Google (預設)",
         "engines_custom":"自訂",
-        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
-        "voice":"Enable voice search",
-        "ok_google":"Enable \"OK Google\" hotword detection",
-        "search_tab":"Open search results in a new tab"
+        "engines_custom_desc":"輸入一個搜尋網址可用來接收查詢，替換<b>%s<\/b> 以自製查詢要求",
+        "voice":"啟用語音搜尋",
+        "ok_google":"啟用 \"OK Google\" 指令偵測",
+        "search_tab":"在新分頁中顯示搜尋結果"
       },
       "links":{
-        "title":"Links",
-        "desc":"These are the items shown at the right of the toolbar",
-        "apps":"Apps menu",
-        "custom":"Custom links",
-        "custom_note1":"Maximum of 3 allowed",
-        "custom_note2":"users get 8",
-        "custom_name_placeholder":"Link text",
-        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+        "title":"連結",
+        "desc":"這些項目顯示在工具列的右側中",
+        "apps":"App選單",
+        "custom":"自訂連結",
+        "custom_note1":"最多允許3個",
+        "custom_note2":"使用者取得'8'",
+        "custom_name_placeholder":"連結文字",
+        "custom_url_placeholder":"連結網址，例如：https:\/\/www.google.com\/"
       }
     },
     "misc":{
-      "link_tab":"Open links in a new tab by default"
+      "link_tab":"設定在新的Tab中開啟連結"
     },
     "tabs":{
-      "create_new":"Create new",
-      "make_default":"Make default",
-      "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
-      "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
-      "name_placeholder":"Enter a tab name",
-      "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
+      "create_new":"創建新項目",
+      "make_default":"設為預設值",
+      "desc1":"Tab是在iChrome中的一個一個頁面，每個Tab皆有它自己的完全獨立於其他Tab的小部件集。",
+      "desc2":"您可以透過點擊iChrome首頁左右兩側的箭頭圖示按鈕，或是使用鍵盤上的左右方向鍵來切換不同的iChrome分頁。",
+      "name_placeholder":"輸入一個Tab名稱",
+      "delete_confirm":"此操作將會是是不可逆的。在這個tab中的所有資料與部件將會永久遺失。"
     },
     "accounts":{
       "status":{
-        "title":"Status",
-        "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
-        "reset_account":"Reset account",
-        "sign_out":"Sign out",
-        "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
-        "sign_in":"Sign in with Google"
+        "title":"狀態",
+        "signed_in":"您目前 <b>登入<\/b> 為 %s (%s)。",
+        "reset_account":"重設帳號",
+        "sign_out":"登出",
+        "signed_out":"您目前<b>尚未登入<\/b>。請登入您的 Google 帳戶來安全的存儲並同步您的設定。",
+        "sign_in":"使用Google登入"
       },
-      "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
-      "reset_confirm_desc2":"You will lose your entire current configuration on all computers connected to this account."
+      "reset_confirm_desc":"此行為將清除所有線下與同步資料，此行為將不留任何備份並且無法撤消。",
+      "reset_confirm_desc2":"你將失去當前的配置在所有連接到此帳戶的電腦上。"
     },
     "advanced":{
       "backups":{
-        "title":"Backup and restore",
-        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
-        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
-        "backup":"Backup now",
-        "upload":"Restore from file",
-        "download":"Download",
-        "restore":"Restore",
-        "download_name":"iChrome Backup",
-        "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
-        "restore_error":"An error occurred while trying to parse the provided data, please try again later."
+        "title":"備份與還原",
+        "desc":"備份功能將完全複製您所有的分頁及小工具的設置。此功能會在您每一天初次開啟iChrome時自動執行。",
+        "desc2":"使用這個按鈕來還原iChrome至特定日期或下載您其中的一個備份。",
+        "backup":"立即備份",
+        "upload":"從檔案還原",
+        "download":"下載",
+        "restore":"還原",
+        "download_name":"備份iChrome",
+        "restore_confirm":"這將覆蓋所有的本機與同步資料。你將失去當前所有連結於此帳戶電腦中的全部配置，",
+        "restore_error":"在解析您所提供的資料時發生錯誤，請稍後再嘗試。"
       },
       "css":{
-        "title":"Custom CSS",
-        "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
-        "placeholder":"Enter up to 1000 characters of CSS here"
+        "title":"自訂 CSS",
+        "desc":"您可以使用 CSS語法 (<a href=\"HTTPs:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\"target=\"blank\"> 定義<\/a>) 來自訂幾乎任何部分的 iChrome。",
+        "placeholder":"在此可輸入最高1000字元的CSS語法"
       },
       "debug_tools":{
-        "title":"Debug tools",
-        "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
-        "open":"Open tools"
+        "title":"檢錯工具",
+        "desc":"<b>警告:<\/b>這些工具能夠在一個點下就移除整個配置。請在有開發人員指示下才只使用它們。",
+        "open":"打開測試工具"
       }
     },
     "widgets":{
-      "desc1":"Widgets have their own settings and can't be customized here.",
-      "desc2":"To edit a widget's settings, follow these steps:",
-      "steps1":"Move your mouse over any widget",
-      "steps2":"Click the wrench icon that appears at the top right of the widget. If none appears then the widget doesn't have any settings that can be customized.",
-      "steps3":"Edit any of the settings shown in the dialog that's displayed",
-      "steps4":"Click Save to save your changes, or any part of the background to discard of them"
+      "desc1":"每個小部件都有它自己的設定，並且無法在此處自訂。",
+      "desc2":"若要編輯一個部件的設置，請遵照以下步驟：",
+      "steps1":"將滑鼠移動到任一個部件上",
+      "steps2":"點選在小部件右上角的板手圖示。如果沒有顯示代表小部件沒有任何可以自定化的設定。",
+      "steps3":"編輯任何顯示在對話方塊中的設置",
+      "steps4":"點擊保存來儲存您的設定，或者點擊背景的任意地方來放棄設定。"
     },
     "pro":{
       "promo":{
-        "monthly_price":"$2 per month",
-        "yearly_price":"or $20 per year",
-        "upgrade_btn":"Upgrade Now",
-        "business":"Interested in buying Pro for your business or school?",
-        "business_contact":"Contact us",
+        "monthly_price":"每月 2 美元",
+        "yearly_price":"或是每一年20美元",
+        "upgrade_btn":"立即升級！",
+        "business":"對於企業或校園方的Pro方案有興趣嗎？",
+        "business_contact":"聯絡我們",
         "themes":"主題",
-        "themes_desc":"See more of your backgrounds with dark and transparent themes",
-        "bgs":"Live backgrounds",
-        "bgs_desc":"Bring your page to life with 20 live high-definition backgrounds",
-        "widgets":"Maximizable widgets",
-        "widgets_desc":"Take iChrome to another level with maximizable widgets",
-        "more_header":"And more",
-        "stocks":"Realtime stocks with extended and historical information",
-        "rss":"Support for multiple RSS feeds per widget",
-        "sports":"General and league-specific sports news",
-        "tabbed_widgets":"Tabbed news and RSS widgets",
-        "bg_downloads":"Downloadable backgrounds",
-        "weather":"Hourly weather forecasts up to 10 days out",
-        "toolbar":"More toolbar links",
-        "support":"Prioritized support and suggestions",
-        "buy_pro":"Buy Pro"
+        "themes_desc":"讓小部件有更多像雅典黑或透明的主題背景",
+        "bgs":"動態背景",
+        "bgs_desc":"多達20 種高解析背景將使你的頁面活躍起來",
+        "widgets":"更大可能化的部件",
+        "widgets_desc":"透過更多可能化的小工具，將iChrome帶往另外一個境界",
+        "more_header":"以及更多功能",
+        "stocks":"即時股票資訊加上過往或相關延伸消息",
+        "rss":"支援一次多個RSS來源的小部件",
+        "sports":"一般與特定聯賽的體育新聞",
+        "tabbed_widgets":"更多部件化的新聞與RSS",
+        "bg_downloads":"可下載的背景",
+        "weather":"每小時的天氣預測將可達 10 天以上",
+        "toolbar":"更多工具列連結",
+        "support":"優先的需求或建議",
+        "buy_pro":"購買Pro"
       },
       "checkout":{
-        "title":"Checkout",
-        "updating_title":"Update plan",
-        "payment_options":"Pay",
-        "pay_monthly":"Monthly ($2)",
-        "pay_yearly":"Yearly ($20)",
+        "title":"結帳",
+        "updating_title":"升級方案",
+        "payment_options":"支付",
+        "pay_monthly":"每月（約2美元）",
+        "pay_yearly":"每年（約20美元）",
         "cancel":"取消",
-        "update":"Update",
-        "subscribe":"Subscribe",
-        "braintree_notice":"Payments securely processed by Braintree.",
-        "monthly_notice":"By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
-        "yearly_notice":"By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
-        "update_notice":"Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
-        "thank_you":"Thank you for buying iChrome Pro!",
-        "thank_you2":"iChrome will reload in a few seconds and you'll be all set!",
-        "error":"Something went wrong while trying to process your payment.",
-        "error2":"Please try again later or email us at support@ichro.me",
-        "signin":"Sign in",
-        "signin_desc":"You need to sign in before buying Pro so we can make sure it's you",
-        "signin_btn":"Sign in"
+        "update":"更新",
+        "subscribe":"訂閱",
+        "braintree_notice":"訂單將交由Braintree安全的處理。",
+        "monthly_notice":"藉由訂閱，您將授權iChrome每個月收取2美金直到您取消訂閱為止。",
+        "yearly_notice":"藉由訂閱，您將授權iChrome每年收取20美金直到您取消訂閱為止。",
+        "update_notice":"儘管購買週期的變更已經立即生效了，但你將不會有費用的收取直到下次週期結束為止。",
+        "thank_you":"感謝您購買 iChrome Pro!",
+        "thank_you2":"iChrome將需要幾秒來重新載入，並且為您準備好一切！",
+        "error":"我們在處理您的訂單時出了點問題。",
+        "error2":"請稍後在做嘗試，或使用E-mail聯繫我們： support@ichro.me",
+        "signin":"登入",
+        "signin_desc":"在購買Pro方案前，您必須先行登入來辨識身份",
+        "signin_btn":"登入"
       },
       "plan":{
-        "title":"Plan",
-        "desc":"You are currently subscribed to iChrome Pro (%s)",
+        "title":"方案",
+        "desc":"您目前正訂閱著 iChrome Pro (%s)",
         "types":{
-          "monthly":"Monthly",
-          "yearly":"Yearly",
-          "business":"Business",
-          "education":"Education",
+          "monthly":"每月",
+          "yearly":"每年",
+          "business":"商業",
+          "education":"教育",
           "custom":"自訂"
         },
-        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
-        "status":"Status",
-        "status_active":"Active",
-        "status_trial":"Trial",
-        "status_pastdue":"Past due",
-        "subscription_date":"Subscription date",
-        "paid_through":"Paid through",
-        "next_bill":"Next bill",
-        "next_bill_value":"$%s on %s",
-        "update_plan":"Update plan",
-        "update_billing":"Update billing",
-        "cancel":"Cancel subscription",
-        "cancel_notice":"Your subscription will be canceled immediately",
-        "cancel_notice2":"If you would like a refund, please contact us at support@ichro.me"
+        "uneditable_desc":"商業，教育和自訂的方案無法從 iChrome內部更新。請 <a href=\"mailto:support@ichro.me\"> 聯繫我們<\/a> 來更新或取消您的訂閱。",
+        "status":"狀態",
+        "status_active":"啟動",
+        "status_trial":"試用",
+        "status_pastdue":"逾期",
+        "subscription_date":"訂閱日期",
+        "paid_through":"支付方式",
+        "next_bill":"下一個訂單",
+        "next_bill_value":"$%s 於 %s",
+        "update_plan":"升級方案",
+        "update_billing":"升級帳單",
+        "cancel":"取消訂閱",
+        "cancel_notice":"您的訂閱將會立刻取消",
+        "cancel_notice2":"若您想要退款，請寄信到support@ichro.me來聯絡我們"
       }
     }
   },
@@ -352,23 +352,23 @@
       "save":"儲存",
       "size":"小工具的大小"
     },
-    "minimize":"Minimize",
-    "maximize":"Maximize",
+    "minimize":"最小化",
+    "maximize":"最大化",
     "delete_confirm":"您確定要刪除這個小工具嗎？\n此操作無法復原；這個小工具的所有資料都將永遠移除。",
     "permissions_request":{
-      "title":"Access required",
-      "button":"Grant Access",
-      "desc":"This widget needs extra permissions before it can be used. Grant them using the button below."
+      "title":"需要權限",
+      "button":"給予權限",
+      "desc":"這個小部件需要額外的許可權才可以使用。使用下方的按鈕來授予他們權限。"
     },
     "error":{
-      "explanation":"Something went wrong while we were trying to display this widget.",
-      "advice":"Try reinstalling the widget or reloading the page. Contact us if you see this message often.",
+      "explanation":"當我們嘗試顯示這個小部件的時候出了點狀況",
+      "advice":"請嘗試重新安裝這個小部件或重新載入頁面。如果你經常看到此訊息，請與我們聯繫。",
       "support":"支援",
-      "refresh":"Refresh"
+      "refresh":"重新整理"
     },
     "auth":{
-      "message":"You'll need to give this widget access to your account before you can use it.",
-      "button":"Grant Access"
+      "message":"在您的帳號使用這個小部件前，您需要先授與相關權限。",
+      "button":"給予權限"
     },
     "shared":{
       "settings":{
@@ -412,8 +412,8 @@
     "random_daily":"此主題每一天隨機顯示圖像",
     "sunrise_sunset":"這個主題基於一天的時間顯示圖像",
     "feed":"該主題每天從外部源獲取新圖像",
-    "video":"This theme displays a live video",
-    "pro_only":"This theme is only available to Pro users. Buy Pro in the settings.",
+    "video":"這個主題展示一個動態影片",
+    "pro_only":"這個主題僅提供給Pro用戶。您可以考慮在設定中購買Pro。",
     "delete_confirm":"你真的確定你想要刪除這個主題嗎？\n此操作是不可逆的；整個主題將永久消失。",
     "delete_error":"試圖刪除該主題時出錯。請稍後再試。",
     "feed_fetching":"我們正在讀取摘要，請耐心等候。",
@@ -422,11 +422,11 @@
     "cache_status":"緩存了 %s \/ %s 張圖像",
     "cache_error":"快取主題內容時出錯。請稍後再試。",
     "bginfo":{
-      "view":"View",
-      "source":"Source",
+      "view":"檢視",
+      "source":"來源",
       "unknown":"未知",
-      "download":"Download",
-      "pro_only":"Only Pro users can download background images and videos"
+      "download":"下載",
+      "pro_only":"僅有Pro使用者能夠下載背景圖片或影片。"
     },
     "edit":{
       "title":"編輯主題",

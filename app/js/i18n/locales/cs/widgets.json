@@ -30,7 +30,7 @@
     "desc":"Zobrazí vybrané a upravené záložky a další odkazy.",
     "settings":{
       "title_placeholder":"Zadejte název widgetu",
-      "layout":"Uspořádání",
+      "layout":"Rozložení",
       "layout_options":{
         "single":"Jeden sloupec",
         "double":"Dva sloupce"
@@ -79,11 +79,11 @@
     },
     "title":"Agenda",
     "calendar":"Kalendář",
-    "noevents":"No events found in the near future, it looks like your schedule's clear!"
+    "noevents":"Nenalezeny žádné události v blízké době, vypadá to, že váš kalendář je prázdný!"
   },
   "clock":{
     "name":"Hodiny",
-    "desc":"Offers alarm, time, timer, and stopwatch functionality.",
+    "desc":"Nabízí budík, čas, odpočet a stopky.",
     "settings":{
       "timezone":"Časové pásmo",
       "timezone_local":"Místní",
@@ -95,17 +95,17 @@
         "ampmseconds":"DOP\/ODP - Digitální, bez sekund",
         "24hourseconds":"24 hodin -  - Digitální, bez sekund"
       },
-      "sound":"Alert Sound"
+      "sound":"Zvuk upozornění"
     },
     "title":"Hodiny",
     "alarm":"Alarm",
     "clock":"Hodiny",
-    "timer":"Timer",
-    "stopwatch":"Stopwatch",
-    "set":"Set",
-    "unset":"Unset",
-    "dismiss":"Dismiss",
-    "enable_audio":"Enable audio"
+    "timer":"Odpočet",
+    "stopwatch":"Stopky",
+    "set":"Nastavit",
+    "unset":"Zrušit nastavení",
+    "dismiss":"Odmítnout",
+    "enable_audio":"Povolit zvuk"
   },
   "facebook":{
     "name":"Facebook",
@@ -290,351 +290,81 @@
     }
   },
   "sitelink":{
-    "name":"Site Link",
-    "desc":"Displays a link, optionally with a title and thumbnail",
+    "name":"Odkaz na stránku",
+    "desc":"Vytvoří odkaz - volitelně s názvem a náhledem",
     "settings":{
-      "link":"Link URL",
+      "link":"URL odkazu",
       "link_placeholder":"http:\/\/www.google.com\/",
       "image":"URL adresa obrázku",
       "image_placeholder":"http:\/\/www.example.com\/image.png",
-      "color":"Image Background Color",
-      "style":"Image Style",
-      "style_fill":"Fill",
+      "color":"Barva pozadí obrázku",
+      "style":"Styl obrázku",
+      "style_fill":"Vyplnit",
       "style_center":"Uprostřed"
     }
   },
   "stats":{
-    "name":"System Statistics",
-    "desc":"Keep an eye on your system with realtime statistics",
-    "memory":"Memory",
-    "battery":"Battery",
-    "usage":"usage",
-    "in_use":"in use",
-    "remaining":"remaining",
-    "charged":"Fully Charged",
-    "idle":"Idle",
-    "charging":"Charging",
-    "discharging":"Discharging"
+    "name":"Systémové statistiky",
+    "desc":"Sledujte aktualizované statistiky vašeho systému",
+    "memory":"Paměť",
+    "battery":"Baterie",
+    "usage":"využito",
+    "in_use":"používáno",
+    "remaining":"zbývající",
+    "charged":"Plně nabito",
+    "idle":"Nečinný",
+    "charging":"Nabíjení",
+    "discharging":"Vybíjení"
   },
   "search":{
     "name":"Hledat",
-    "desc":"Embed a search box in your page for easy access",
+    "desc":"Vložte vyhledávací pole na svoji stránku pro snadný přístup",
     "settings":{
-      "placeholder":"Search Field Placeholder",
+      "placeholder":"Zástupný symbol vyhledávacího pole",
       "search_url":"Hledat URL",
-      "param":"Query Parameter",
-      "param_placeholder":"The parameter where the query goes, i.e. \"q\""
+      "param":"Parametr pro dotaz",
+      "param_placeholder":"Parametr ve které je hledaný výraz předáván, například \"q\""
     },
-    "default_placeholder":"Search Google"
+    "default_placeholder":"Prohledat Google"
   },
   "pushbullet":{
     "name":"Pushbullet",
-    "desc":"Keep track of notifications from your phone and other devices",
-    "no_pushes":"No pushes found",
-    "sign_in":"Sign in",
-    "no_key":"It doesn't look like you're signed in to Pushbullet.  Sign in now to connect this widget."
+    "desc":"Udržovat přehled o oznámení z vašeho telefonu a jiných zařízení",
+    "no_pushes":"Nenalezeny žádné pushe",
+    "sign_in":"Přihlásit se",
+    "no_key":"Nevypadá to, že jste přihlášeni do Pushbullet.  Přihlaste se nyní pro připojení tohoto widgetu."
   },
   "linkedin":{
     "name":"LinkedIn",
-    "desc":"Displays your LinkedIn home stream"
+    "desc":"Zobrazí váš LinkedIn domácí stream"
   },
   "directions":{
-    "name":"Directions",
-    "desc":"Get directions to and from nearly anywhere right from your homepage",
+    "name":"Směry",
+    "desc":"Najděte instrukce odkud a kam téměř kdekoliv, přímo z Vaší domovské stránky",
     "driving":"Jízda autem",
     "transit":"Veřejná doprava",
     "walking":"Pěšky",
-    "cycling":"Cycling",
-    "from":"Enter a starting point",
-    "to":"Enter a destination",
-    "loading":"Loading directions, please wait...",
-    "error":"Something went wrong while trying to load the directions you requested.",
-    "error2":"Please check the start and destination addresses you entered.",
-    "open_in_maps":"Open in Google Maps",
-    "via":"via"
+    "cycling":"Cyklistika",
+    "from":"Zadejte počáteční bod",
+    "to":"Zadejte cíl",
+    "loading":"Načítám instrukce, prosím čekejte...",
+    "error":"Při načítání požadovaných instrukcí došlo k nečekané chybě.",
+    "error2":"Zkontrolujte, prosím, počáteční a cílovou adresu, kterou jste zadali.",
+    "open_in_maps":"Otevřít v Mapách Google",
+    "via":"přes"
   },
   "pocket":{
     "name":"Pocket",
-    "desc":"Display a list of your saved articles, videos, and web pages from Pocket",
+    "desc":"Zobrazuje seznam vašich uložených článků, videí a stránek z Pocket",
     "settings":{
-      "links_shown":"Number of links shown",
-      "open":"Open links",
-      "open_pocket":"In Pocket",
-      "open_original":"At their original URL"
+      "links_shown":"Počet zobrazených odkazů",
+      "open":"Otevřené odkazy",
+      "open_pocket":"V Pocket",
+      "open_original":"Na jejich původní URL"
     },
-    "by":"od",
-    "no_links":"No links found",
-    "grant_access":"Grant access",
-    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
-  },
-  "analytics":{
-    "name":"Analytics",
-    "desc":"Zobrazit různé metriky z profilu Google Analytics.",
-    "sessions":"zasedání",
-    "pageviews":"Zobrazení stránek",
-    "pagesvisit":"Stránky \/ zobrazení",
-    "bouncerate":"Bounce Rate",
-    "completions":"Dokončené",
-    "noprofile_title":"No profile selected",
-    "noprofile":"Vypadá to, že jste ještě nevybrali profil! <br \/><br \/> Vyberte jeden přes ikonu klíče v pravém horním rohu.",
-    "settings":{
-      "profile":"Profil"
-    }
-  },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
-  },
-  "currency":{
-    "name":"Měna",
-    "desc":"Umožní přepočet mezi jakýmikoli dvěma ze 169 měn.",
-    "to_label":"na",
-    "recently_used":"Recently Used"
-  },
-  "dictionary":{
-    "name":"Dictionary",
-    "desc":"Quickly look up the definition and synonyms for a word",
-    "search_placeholder":"Enter a word or term here",
-    "more":"Více",
-    "less":"Less",
-    "synonyms":"Synonyms",
-    "antonyms":"Antonyms",
-    "web_definitions":"Web definitions",
-    "no_definitions":"No definitions found"
-  },
-  "drive":{
-    "name":"Drive",
-    "desc":"Zobrazí nedávno změněné soubory z disku Google Drive.",
-    "settings":{
-      "files_shown":"Počet zobrazených souborů"
-    },
-    "modified_by":"od",
-    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
-  },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"Zobrazí váši Gmail poštovní schránku, kde můžete spravovat váš email."
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"Zobrazí webovou stránku dle vašeho výběru v rámci objektu iframe.",
-    "settings":{
-      "url":"URL rámečku",
-      "url_placeholder":"např. http:\/\/www.google.com\/",
-      "height":"Výška rámečku",
-      "padding":"Odsazení"
-    }
-  },
-  "keep":{
-    "name":"Keep",
-    "desc":"Vloží Google Keep jako widget"
-  },
-  "news":{
-    "name":"Zprávy",
-    "desc":"Zobrazí aktuální novinky podle kategorie a vydání.",
-    "all_stories":"Vše",
-    "settings":{
-      "page_title":"Nastavení",
-      "save":"Ulož",
-      "title":"Název widgetu",
-      "title_placeholder":"Zadejte název widgetu a nebo nezadávejte nic. V takovém případě se název nezobrazí.",
-      "articles":"Zobrazené články",
-      "edition":"Edice",
-      "default_topic":"Default Topic"
-    }
-  },
-  "recentlyclosed":{
-    "name":"Nedávno zavřené",
-    "desc":"Zobrazuje nedávno zavřené záložky",
-    "settings":{
-      "tabs":"Zobrazené záložky",
-      "open":"Otevřené karty v"
-    },
-    "more":"more"
-  },
-  "rss":{
-    "name":"RSS",
-    "desc":"Zobrazí položky z RSS nebo Atom zdroje s volitelnými obrázky.",
-    "settings":{
-      "page_title":"Nastavení",
-      "save":"Ulož",
-      "title":"Název widgetu",
-      "title_placeholder":"Zadejte název widgetu a nebo nezadávejte nic. V takovém případě se název nezobrazí.",
-      "link":"Odkaz titulku",
-      "link_placeholder":"Zadejte odkaz pro název widgetu",
-      "feeds":"Kanály",
-      "feeds_help":"Click any feed to edit it",
-      "feeds_placeholder":"Enter a feed URL and press Enter to add",
-      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
-      "feed_name_placeholder":"Feed name",
-      "feed_url_placeholder":"Feed URL",
-      "articles":"Zobrazené články"
-    },
-    "by":"od",
-    "all_articles":"Všechny příspěvky",
-    "feed_error":"Došlo k chybě při pokusu o načtení kanálu %s. Prosím zkontrolujte URL nebo upravte nastavení widgetu."
-  },
-  "sports":{
-    "name":"Sport",
-    "desc":"Displays scores, schedules, and news from your favorite teams.",
-    "settings":{
-      "page_title":"Favorites",
-      "save":"Ulož",
-      "teams_placeholder":"Enter a team name and press Enter to add"
-    },
-    "scores":"Scores",
-    "news":"Zprávy",
-    "last_play":"Last play",
-    "no_games":"No games found",
-    "pro_splash1":"Sports news is a Pro-only feature.",
-    "pro_splash2":"Buy Pro in the settings.",
-    "preview":"Náhled",
-    "tickets":"Tickets",
-    "live":"Live",
-    "recap":"Recap",
-    "box_score":"Box Score"
-  },
-  "stocks":{
-    "name":"Akcie",
-    "desc":"Zobrazí aktuální informace o jakékoli zadané akcii.",
-    "settings":{
-      "stocks":"Akcie",
-      "stocks_placeholder":"Type a company or exchange name and hit Enter"
-    },
-    "as_of":"k",
-    "exchange_time":"Čas výměny",
-    "overview":"Overview",
-    "news":"Zprávy",
-    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
-    "pro_splash2":"Buy Pro in the settings.",
-    "time_ranges":{
-      "1d":"1d",
-      "5d":"5d",
-      "1m":"1m",
-      "3m":"3m",
-      "1y":"1y",
-      "5y":"5y",
-      "max":"max"
-    },
-    "open":"otevřeno",
-    "prev_close":"Previous Close",
-    "high":"Vysoká",
-    "52high":"52 week high",
-    "low":"Nízká",
-    "52low":"52 week low",
-    "volume":"Množství",
-    "avg_volume":"Avg. Volume",
-    "shares":"Shares",
-    "cap":"Market Cap",
-    "pe":"Price \/ Earnings",
-    "eps":"EPS",
-    "beta":"Beta",
-    "inst_own":"Inst. own"
-  },
-  "todo":{
-    "name":"Seznam úkolů",
-    "desc":"Zobrazí interaktivní seznam úkolů s významnými a dokončenými položkami.",
-    "title":"Seznam úkolů",
-    "settings":{
-      "color":"Barva písma",
-      "color_options":{
-        "light":"Slabé",
-        "dark":"Tmavý"
-      },
-      "tags":"Štítky",
-      "tags_placeholder":"Zadej název štítku a stikni Enter"
-    },
-    "add":"Přidat položku",
-    "none":"Prázdný",
-    "important":"Důležité"
-  },
-  "topsites":{
-    "name":"Oblíbené weby",
-    "desc":"Zobrazí vaše nejnavštěvovanější stránky.",
-    "settings":{
-      "show":"Počet zobrazovaných stránek"
-    }
-  },
-  "traffic":{
-    "name":"Provoz",
-    "desc":"Zobrazí aktuální čas v aktuálním provozu domů nebo do práce.",
-    "settings":{
-      "leave":"Opouším domov v",
-      "home":"Adresa domů",
-      "home_placeholder":"Cíl pro použití po práci",
-      "work":"Adresa do zaměstnání",
-      "work_placeholder":"Cíl pro použití před prací",
-      "method":"Typ dopravy",
-      "method_options":{
-        "driving":"Jízda autem",
-        "walking":"Pěšky",
-        "transit":"Veřejná doprava"
-      }
-    },
-    "to_home":"domů",
-    "to_work":"do práce"
-  },
-  "translate":{
-    "name":"Přeložit",
-    "desc":"Lets you quickly translate to and from 90 languages as you type",
-    "from_placeholder":"Start typing here",
-    "to_placeholder":"Translated text will appear here",
-    "detect_lang":"Detect language",
-    "translating":"Translating...",
-    "unknown":"Neznámý"
-  },
-  "unread":{
-    "name":"Nepřečtené",
-    "desc":"Zobrazí současný počet nepřečtených emailů v doručené poště Gmail.",
-    "settings":{
-      "open":"Po kliknutí otevřít"
-    },
-    "unread_none":"nepřečtené e-maily",
-    "unread_one":"nepřečtený e-mail",
-    "unread_many":"nepřečtené e-maily"
-  },
-  "voice":{
-    "name":"Hlas",
-    "desc":"Zobrazí současný počet zmeškaných hovorů a zpráv na vašem účtu Google Voice.",
-    "call":"Hovor od",
-    "text":"Zpráva od",
-    "missed":"zmeškaný ve Voice",
-    "texts":"nepřečtené zprávy",
-    "calls":"zmeškané hovory"
-  },
-  "weather":{
-    "name":"Počasí",
-    "desc":"Zobrazí aktuální počasí a předpověď pro příští 4 dny.",
-    "settings":{
-      "location":"Umístění",
-      "location_placeholder":"Zadejte umístění a stiskněte klávesu Enter",
-      "units":"Units",
-      "units_imperial":"Imperial (Fahrenheit)",
-      "units_metric":"Metric (Celsius)",
-      "enabled":"Zapnuto",
-      "disabled":"Vypnuto",
-      "forecast":"Forecasts",
-      "hourly":"Hourly forecasts"
-    },
-    "more":"Více",
-    "less":"Less",
-    "wind":"Rychlost větru",
-    "precipitation":"Precip",
-    "uv":"UV index",
-    "feelslike":"Feels like",
-    "barometer":"Barometer",
-    "visibility":"Visibility",
-    "humidity":"Vlhkost",
-    "dewpoint":"Dew point",
-    "moonphase":"Moon",
-    "sunrise":"Sunrise",
-    "sunset":"Sunset",
-    "moonrise":"Moonrise",
-    "moonset":"Moonset"
+    "by":"Od",
+    "no_links":"Nenalezeny žádné odkazy",
+    "grant_access":"Udělit přístup",
+    "no_key":"Budete muset dát iChrome přístup k vašemu účtu Pocket, aby mohl načíst vaše odkazy."
   }
 }

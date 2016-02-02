@@ -21,7 +21,7 @@
         "offline":"脱机启用",
         "available":"可用性"
       },
-      "open":"在...中打开应用"
+      "open":"应用打开方式"
     },
     "store_app":"Store"
   },
@@ -77,13 +77,13 @@
         "today":"仅显示今天"
       }
     },
-    "title":"Agenda",
+    "title":"日程",
     "calendar":"日历",
-    "noevents":"No events found in the near future, it looks like your schedule's clear!"
+    "noevents":"没有新的日程安排"
   },
   "clock":{
     "name":"时钟",
-    "desc":"Offers alarm, time, timer, and stopwatch functionality.",
+    "desc":"提供闹钟、 时间、 计时器和秒表功能。",
     "settings":{
       "timezone":"时区",
       "timezone_local":"本地",
@@ -95,17 +95,17 @@
         "ampmseconds":"AM\/PM-数字（无“秒”）",
         "24hourseconds":"24 小时-数字（无“秒”）"
       },
-      "sound":"Alert Sound"
+      "sound":"提醒声音"
     },
     "title":"时钟",
-    "alarm":"Alarm",
+    "alarm":"闹钟",
     "clock":"时钟",
-    "timer":"Timer",
-    "stopwatch":"Stopwatch",
-    "set":"Set",
-    "unset":"Unset",
-    "dismiss":"Dismiss",
-    "enable_audio":"Enable audio"
+    "timer":"计时器",
+    "stopwatch":"秒表",
+    "set":"设定",
+    "unset":"取消设置",
+    "dismiss":"忽略",
+    "enable_audio":"启用音效"
   },
   "facebook":{
     "name":"Facebook",
@@ -143,7 +143,7 @@
     "all":"全部",
     "saved":"为将来阅读保存",
     "uncategorized":"未分类",
-    "author":"由 ",
+    "author":"作者",
     "go_to_feedly":"打开Feedly"
   },
   "notes":{
@@ -206,7 +206,7 @@
   },
   "tasks":{
     "name":"任务栏",
-    "desc":"从你的其中一个Google任务列表显示可编辑的任务栏",
+    "desc":"显示并可编辑您Google任务列表中的任务",
     "title":"任务栏",
     "settings":{
       "list":"列表"
@@ -290,351 +290,81 @@
     }
   },
   "sitelink":{
-    "name":"Site Link",
-    "desc":"Displays a link, optionally with a title and thumbnail",
+    "name":"站点链接",
+    "desc":"显示一个带有标题和缩略图（可选）的链接",
     "settings":{
-      "link":"Link URL",
+      "link":"链接 URL：",
       "link_placeholder":"http:\/\/www.google.com\/",
       "image":"图像地址",
       "image_placeholder":"http:\/\/www.example.com\/image.png",
-      "color":"Image Background Color",
-      "style":"Image Style",
-      "style_fill":"Fill",
-      "style_center":"中"
+      "color":"图像背景色",
+      "style":"图像样式",
+      "style_fill":"填充",
+      "style_center":"居中"
     }
   },
   "stats":{
-    "name":"System Statistics",
-    "desc":"Keep an eye on your system with realtime statistics",
-    "memory":"Memory",
-    "battery":"Battery",
-    "usage":"usage",
-    "in_use":"in use",
-    "remaining":"remaining",
-    "charged":"Fully Charged",
-    "idle":"Idle",
-    "charging":"Charging",
-    "discharging":"Discharging"
+    "name":"系统状态",
+    "desc":"用实时统计监控您的系统",
+    "memory":"内存",
+    "battery":"电量",
+    "usage":"已使用",
+    "in_use":"已使用",
+    "remaining":"剩余",
+    "charged":"已充满",
+    "idle":"电量剩余",
+    "charging":"充电中",
+    "discharging":"外部电源未连接"
   },
   "search":{
     "name":"搜索",
-    "desc":"Embed a search box in your page for easy access",
+    "desc":"在您的页面中插入一个搜索框来实现快速访问",
     "settings":{
-      "placeholder":"Search Field Placeholder",
+      "placeholder":"搜索字段占位符",
       "search_url":"搜索链接",
-      "param":"Query Parameter",
-      "param_placeholder":"The parameter where the query goes, i.e. \"q\""
+      "param":"查询参数",
+      "param_placeholder":"参数查询的指向，即为“q”"
     },
-    "default_placeholder":"Search Google"
+    "default_placeholder":"用谷歌（Google）搜索"
   },
   "pushbullet":{
     "name":"Pushbullet",
-    "desc":"Keep track of notifications from your phone and other devices",
-    "no_pushes":"No pushes found",
-    "sign_in":"Sign in",
-    "no_key":"It doesn't look like you're signed in to Pushbullet.  Sign in now to connect this widget."
+    "desc":"追踪您的手机及其他设备的通知",
+    "no_pushes":"没有新推送",
+    "sign_in":"登入",
+    "no_key":"您似乎并没有登录到 Pushbullet。请登录以连接此部件。"
   },
   "linkedin":{
-    "name":"LinkedIn",
-    "desc":"Displays your LinkedIn home stream"
+    "name":"领英（LinkedIn）",
+    "desc":"显示你的 LinkedIn 首页信息流"
   },
   "directions":{
-    "name":"Directions",
-    "desc":"Get directions to and from nearly anywhere right from your homepage",
+    "name":"路线",
+    "desc":"从您的主页获得从任意地点到达另一任意地点的路线",
     "driving":"开车",
     "transit":"公共交通",
     "walking":"步行",
-    "cycling":"Cycling",
-    "from":"Enter a starting point",
-    "to":"Enter a destination",
-    "loading":"Loading directions, please wait...",
-    "error":"Something went wrong while trying to load the directions you requested.",
-    "error2":"Please check the start and destination addresses you entered.",
-    "open_in_maps":"Open in Google Maps",
-    "via":"via"
+    "cycling":"自行车",
+    "from":"输入一个起点",
+    "to":"输入目的地",
+    "loading":"载入路线中，请稍后...",
+    "error":"在尝试加载您输入的路线时出错了。",
+    "error2":"请检查您输入的起点与终点地址。",
+    "open_in_maps":"在谷歌地图中打开",
+    "via":"通过"
   },
   "pocket":{
     "name":"Pocket",
-    "desc":"Display a list of your saved articles, videos, and web pages from Pocket",
+    "desc":"在口袋中显示您保存的文章，视频及网页的列表",
     "settings":{
-      "links_shown":"Number of links shown",
-      "open":"Open links",
-      "open_pocket":"In Pocket",
-      "open_original":"At their original URL"
+      "links_shown":"显示链接数",
+      "open":"打开链接",
+      "open_pocket":"在Pocket中",
+      "open_original":"在其原始地址"
     },
-    "by":"由",
-    "no_links":"No links found",
-    "grant_access":"Grant access",
-    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
-  },
-  "analytics":{
-    "name":"分析",
-    "desc":"显示您谷歌分析中的各项指标",
-    "sessions":"会话",
-    "pageviews":"页面访问量",
-    "pagesvisit":"页\/访问",
-    "bouncerate":"回访率",
-    "completions":"达成",
-    "noprofile_title":"No profile selected",
-    "noprofile":"看起来您未选择一个项目！\n<br \/><br \/>\n请尝试通过右上角的扳手图标选择一个项目。",
-    "settings":{
-      "profile":"项目档案"
-    }
-  },
-  "classroom":{
-    "name":"Classroom",
-    "desc":"Keep up to date with your Google Classroom assignments and classes",
-    "settings":{
-      "mode":"Widget Mode",
-      "mode_teacher":"Teacher",
-      "mode_student":"Student"
-    }
-  },
-  "currency":{
-    "name":"货币转换",
-    "desc":"让您在169种货币之间进行转换。",
-    "to_label":"转换至",
-    "recently_used":"Recently Used"
-  },
-  "dictionary":{
-    "name":"Dictionary",
-    "desc":"Quickly look up the definition and synonyms for a word",
-    "search_placeholder":"Enter a word or term here",
-    "more":"更多",
-    "less":"Less",
-    "synonyms":"Synonyms",
-    "antonyms":"Antonyms",
-    "web_definitions":"Web definitions",
-    "no_definitions":"No definitions found"
-  },
-  "drive":{
-    "name":"网盘",
-    "desc":"显示您Google Drive最近更改的文件。",
-    "settings":{
-      "files_shown":"显示文件个数"
-    },
-    "modified_by":"由",
-    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
-  },
-  "gmail":{
-    "name":"Gmail",
-    "desc":"显示您的 Gmail 收件箱，在任何地方您都可以查看您的E-Mail"
-  },
-  "iframe":{
-    "name":"iFrame",
-    "desc":"在您选择的位置用 iframe 嵌入网页。",
-    "settings":{
-      "url":"框架链接",
-      "url_placeholder":"例如 http:\/\/www.google.com\/",
-      "height":"框架高度",
-      "padding":"内边距"
-    }
-  },
-  "keep":{
-    "name":"Keep",
-    "desc":"嵌入Google Keep小部件"
-  },
-  "news":{
-    "name":"新闻",
-    "desc":"按类别和国家版本来显示当前的头条新闻。",
-    "all_stories":"全部",
-    "settings":{
-      "page_title":"设置",
-      "save":"保存",
-      "title":"小部件标题",
-      "title_placeholder":"输入小部件窗口标题或留空隐藏",
-      "articles":"显示数量",
-      "edition":"国家版本",
-      "default_topic":"Default Topic"
-    }
-  },
-  "recentlyclosed":{
-    "name":"最近关闭",
-    "desc":"显示您最近关闭的标签页",
-    "settings":{
-      "tabs":"显示选项卡",
-      "open":"打开选项卡方式"
-    },
-    "more":"more"
-  },
-  "rss":{
-    "name":"RSS 订阅",
-    "desc":"显示RSS或Atom订阅（可带图片）",
-    "settings":{
-      "page_title":"设置",
-      "save":"保存",
-      "title":"小部件标题",
-      "title_placeholder":"输入小部件窗口标题或留空隐藏",
-      "link":"标题链接",
-      "link_placeholder":"输入小部件标题链接",
-      "feeds":"订阅源",
-      "feeds_help":"Click any feed to edit it",
-      "feeds_placeholder":"Enter a feed URL and press Enter to add",
-      "feeds_pro_only":"Only Pro users can have multiple feeds in each widget. Get Pro in the settings.",
-      "feed_name_placeholder":"Feed name",
-      "feed_url_placeholder":"Feed URL",
-      "articles":"显示数量"
-    },
-    "by":"由",
-    "all_articles":"所有文章",
-    "feed_error":"试图在%s获取信息时出现错误。\n请重复检查此链接然后更改小部件设置"
-  },
-  "sports":{
-    "name":"体育运动",
-    "desc":"Displays scores, schedules, and news from your favorite teams.",
-    "settings":{
-      "page_title":"Favorites",
-      "save":"保存",
-      "teams_placeholder":"Enter a team name and press Enter to add"
-    },
-    "scores":"Scores",
-    "news":"新闻",
-    "last_play":"Last play",
-    "no_games":"No games found",
-    "pro_splash1":"Sports news is a Pro-only feature.",
-    "pro_splash2":"Buy Pro in the settings.",
-    "preview":"预览",
-    "tickets":"Tickets",
-    "live":"Live",
-    "recap":"Recap",
-    "box_score":"Box Score"
-  },
-  "stocks":{
-    "name":"股票",
-    "desc":"显示您指定的股票信息。",
-    "settings":{
-      "stocks":"股票",
-      "stocks_placeholder":"Type a company or exchange name and hit Enter"
-    },
-    "as_of":"在",
-    "exchange_time":"交易时间",
-    "overview":"Overview",
-    "news":"新闻",
-    "pro_splash1":"Realtime data, charts, news, and detailed stock information are Pro-only features.",
-    "pro_splash2":"Buy Pro in the settings.",
-    "time_ranges":{
-      "1d":"1d",
-      "5d":"5d",
-      "1m":"1m",
-      "3m":"3m",
-      "1y":"1y",
-      "5y":"5y",
-      "max":"max"
-    },
-    "open":"开盘",
-    "prev_close":"Previous Close",
-    "high":"涨",
-    "52high":"52 week high",
-    "low":"跌",
-    "52low":"52 week low",
-    "volume":"卷",
-    "avg_volume":"Avg. Volume",
-    "shares":"Shares",
-    "cap":"Market Cap",
-    "pe":"Price \/ Earnings",
-    "eps":"EPS",
-    "beta":"Beta",
-    "inst_own":"Inst. own"
-  },
-  "todo":{
-    "name":"待办事项",
-    "desc":"显示交互式的待办事项列表。",
-    "title":"待办事项列表",
-    "settings":{
-      "color":"字体颜色",
-      "color_options":{
-        "light":"亮色调",
-        "dark":"暗色调"
-      },
-      "tags":"标签",
-      "tags_placeholder":"输入标记的名称并按Enter键确认"
-    },
-    "add":"新建",
-    "none":"普通",
-    "important":"重要"
-  },
-  "topsites":{
-    "name":"常用网站",
-    "desc":"显示您经常访问\/常用的的网站。",
-    "settings":{
-      "show":"显示网站数目"
-    }
-  },
-  "traffic":{
-    "name":"交通",
-    "desc":"根据交通状况显示当需要多久到家或多久上班。",
-    "settings":{
-      "leave":"离开家的时间",
-      "home":"家庭住址",
-      "home_placeholder":"这将用于下班后的目的地",
-      "work":"工作地址",
-      "work_placeholder":"这将用于上班前的目的地",
-      "method":"交通方式",
-      "method_options":{
-        "driving":"开车",
-        "walking":"步行",
-        "transit":"公共交通"
-      }
-    },
-    "to_home":"到家",
-    "to_work":"上班"
-  },
-  "translate":{
-    "name":"翻译",
-    "desc":"Lets you quickly translate to and from 90 languages as you type",
-    "from_placeholder":"Start typing here",
-    "to_placeholder":"Translated text will appear here",
-    "detect_lang":"Detect language",
-    "translating":"Translating...",
-    "unknown":"未知"
-  },
-  "unread":{
-    "name":"未读",
-    "desc":"显示您Gmail邮箱中的未读邮件数目。",
-    "settings":{
-      "open":"点击时打开"
-    },
-    "unread_none":"封未读邮件",
-    "unread_one":"封未读邮件",
-    "unread_many":"封未读邮件"
-  },
-  "voice":{
-    "name":"Google Voice",
-    "desc":"显示您Google Voice中未查看的来电和短信。",
-    "call":"呼叫人",
-    "text":"发信人",
-    "missed":"未接来电",
-    "texts":"条未读短信",
-    "calls":"个未接来电"
-  },
-  "weather":{
-    "name":"天气",
-    "desc":"显示当前天气和接下来的 4 天的天气预报。",
-    "settings":{
-      "location":"位置",
-      "location_placeholder":"请输入一个位置，然后按 enter 键",
-      "units":"Units",
-      "units_imperial":"Imperial (Fahrenheit)",
-      "units_metric":"Metric (Celsius)",
-      "enabled":"正在编辑",
-      "disabled":"不在编辑",
-      "forecast":"Forecasts",
-      "hourly":"Hourly forecasts"
-    },
-    "more":"更多",
-    "less":"Less",
-    "wind":"风速",
-    "precipitation":"Precip",
-    "uv":"UV index",
-    "feelslike":"Feels like",
-    "barometer":"Barometer",
-    "visibility":"Visibility",
-    "humidity":"湿度",
-    "dewpoint":"Dew point",
-    "moonphase":"Moon",
-    "sunrise":"Sunrise",
-    "sunset":"Sunset",
-    "moonrise":"Moonrise",
-    "moonset":"Moonset"
+    "by":"作者",
+    "no_links":"找不到链接",
+    "grant_access":"授予访问权限",
+    "no_key":"要加载您的Pocket中的链接，请先授权iChrome访问您的Pocket账号。"
   }
 }
