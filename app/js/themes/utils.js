@@ -43,7 +43,7 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 			var defTheme = this.model.get("cached")[0];
 
 			if (typeof theme === "object") {
-				theme = (this.model.get("cached")[theme.id] || this.model.get("custom")[theme.id.replace("custom", "")] || theme);
+				theme = (this.model.get("cached")[theme.id] || this.model.get("custom")[(theme.id + "").replace("custom", "")] || theme);
 			}
 			else if (theme === "custom") {
 				theme = {
@@ -51,11 +51,11 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 					image: this.model.get("backgroundImage")
 				};
 			}
-			else if (typeof theme !== "string" || theme === "default") {
+			else if (theme === "default") {
 				theme = defTheme;
 			}
 			else {
-				theme = (this.model.get("cached")[theme] || this.model.get("custom")[theme.replace("custom", "")] || defTheme);
+				theme = (this.model.get("cached")[theme] || this.model.get("custom")[(theme + "").replace("custom", "")] || defTheme);
 			}
 
 			return theme;
