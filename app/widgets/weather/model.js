@@ -275,6 +275,7 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 						var ret = {
 							index: i,
 							name: this.config.resolvedNames[i],
+							nameEnc: encodeURIComponent(this.config.resolvedNames[i]),
 							current: d.current
 						};
 
