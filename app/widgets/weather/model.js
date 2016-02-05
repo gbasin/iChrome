@@ -331,7 +331,7 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 				this.config.location = [this.config.location];
 			}
 
-			if (this.config.resolvedLocs && this.config.resolvedLocs.join("|") === this.config.location.join("|")) {
+			if (this.config.resolvedNames && this.config.resolvedNames.join("|") === this.config.location.join("|")) {
 				get.call(this);
 			}
 			else {
