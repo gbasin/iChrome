@@ -2,8 +2,8 @@
  * The advanced settings page
  */
 define([
-	"lodash", "moment", "browser/api", "i18n/i18n", "modals/alert", "settings/page", "settings/debug"
-], function(_, moment, Browser, Translate, Alert, Page, DebugTools) {
+	"lodash", "moment", "browser/api", "i18n/i18n", "modals/alert", "settings/page", "settings/debug", "storage/deprecate"
+], function(_, moment, Browser, Translate, Alert, Page, DebugTools, Deprecate) {
 	var View = Page.extend({
 		id: "advanced",
 
@@ -92,10 +92,9 @@ define([
 					// Create a new backup now, before restoring
 					this.backup(backups);
 
-					// Make sure that the restored data won't get overwritten with incoming sync data
-					backup.modified = new Date().getTime();
-
-					_.assign(this.model.storage, _.pick(backup, "tabs", "themes", "settings"));
+					this.model.storage.themes = backup.themes;
+					this.model.storage.tabs = Deprecate.tabs(backup.tabs);
+					this.model.storage.settings = Deprecate.settings(backup.settings);
 
 					this.model.storage.sync(true, function() {
 						this.trigger("restore");
