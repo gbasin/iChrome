@@ -74,7 +74,13 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 				this.clear();
 
 				FileSystem.clear(function() {
+					var version = Browser.storage.version;
+
 					Browser.storage.clear();
+
+					if (version) {
+						Browser.storage.version = version;
+					}
 
 					window.onbeforeunload = null;
 
