@@ -69,7 +69,7 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 						else {
 							return null;
 						}
-					}))
+					}, this))
 				});
 			}.bind(this));
 		}
