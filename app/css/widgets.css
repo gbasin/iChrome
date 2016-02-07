@@ -3726,6 +3726,11 @@ body.no-edit .bookmarks .tools {
 }
 
 /* line 3363, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+.grid .directions {
+	overflow-y: auto;
+}
+
+/* line 3367, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .methods {
 	height: 46px;
 	display: flex;
@@ -3733,17 +3738,17 @@ body.no-edit .bookmarks .tools {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-/* line 3370, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3374, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark .directions .methods {
 	background: #484848;
 }
 
-/* line 3374, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3378, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark.transparent .directions .methods {
 	background: rgba(0, 0, 0, 0.3);
 }
 
-/* line 3378, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3382, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .methods button {
 	flex: 1;
 	margin: 0;
@@ -3754,17 +3759,17 @@ body.no-edit .bookmarks .tools {
 	border-bottom: 2px solid transparent;
 }
 
-/* line 3388, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3392, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark .directions .methods button {
 	color: #BBB;
 }
 
-/* line 3392, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3396, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .methods button:hover {
 	border-bottom-color: rgba(33, 150, 243, 0.5);
 }
 
-/* line 3396, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3400, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .methods button:hover,
 .directions .methods button:focus,
 .directions .methods button:active {
@@ -3772,25 +3777,25 @@ body.no-edit .bookmarks .tools {
 	background: initial;
 }
 
-/* line 3403, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3407, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark .directions .methods button:hover,
 .dark .directions .methods button:focus,
 .dark .directions .methods button:active {
 	color: #EEE;
 }
 
-/* line 3409, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3413, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .methods button.active {
 	color: #2196F3;
 	border-bottom-color: currentColor;
 }
 
-/* line 3414, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3418, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark .directions .methods button.active {
 	color: #42A5F5;
 }
 
-/* line 3418, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3422, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions input {
 	width: 100%;
 	font-size: 14px;
@@ -3799,32 +3804,32 @@ body.no-edit .bookmarks .tools {
 	padding: 15px 20px !important;
 }
 
-/* line 3426, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3430, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions input.to,
 .directions input.to:hover,
 .directions input.to:focus {
 	border-top: 1px solid #E2E2E2 !important;
 }
 
-/* line 3432, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3436, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark .directions input.to,
 .dark .directions input.to:hover,
 .dark .directions input.to:focus {
 	border-top-color: rgba(0, 0, 0, 0.2) !important;
 }
 
-/* line 3438, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3442, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .map {
 	width: 100%;
 }
 
-/* line 3442, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3446, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .map-wrapper {
 	display: block;
 	overflow: hidden;
 }
 
-/* line 3447, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3451, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .notice {
 	height: 0;
 	color: #888;
@@ -3835,35 +3840,35 @@ body.no-edit .bookmarks .tools {
 	background-color: #F5F5F5;
 }
 
-/* line 3457, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3461, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark .directions .notice {
 	background-color: #2A2A2A;
 }
 
-/* line 3461, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3465, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark.transparent .directions .notice {
 	color: #DDD;
 	background: rgba(0, 0, 0, 0.3);
 }
 
-/* line 3466, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3470, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .notice.visible {
 	height: auto;
 	padding: 30px 10% 20px;
 	border-top: 1px solid #E2E2E2;
 }
 
-/* line 3472, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3476, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark .directions .notice.visible {
 	border-top-color: #222;
 }
 
-/* line 3476, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3480, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark.transparent .directions .notice.visible {
 	border-top-color: rgba(0, 0, 0, 0.15);
 }
 
-/* line 3480, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3484, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .notice p {
 	line-height: 22px;
 	margin: 5px 0 15px;
@@ -3872,22 +3877,22 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Directions / Routes
 */
-/* line 3494, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3498, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .route {
 	overflow: hidden;
 }
 
-/* line 3498, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3502, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .results .route:not(:last-child) {
 	border-bottom: 1px solid #E2E2E2;
 }
 
-/* line 3502, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3506, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark .directions .results .route:not(:last-child) {
 	border-bottom-color: #2A2A2A;
 }
 
-/* line 3506, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3510, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .route .summary {
 	cursor: pointer;
 	font-size: 14px;
@@ -3898,7 +3903,7 @@ body.no-edit .bookmarks .tools {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-/* line 3516, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3520, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .route .summary a {
 	top: 18px;
 	opacity: 0;
@@ -3908,30 +3913,30 @@ body.no-edit .bookmarks .tools {
 	transition: opacity .15s ease;
 }
 
-/* line 3525, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3529, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .route .summary:hover a {
 	opacity: 1;
 }
 
-/* line 3529, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3533, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .route .summary a:hover {
 	color: #444;
 }
 
-/* line 3533, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3537, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .route .summary svg {
 	width: 24px;
 	height: 24px;
 	fill: currentColor;
 }
 
-/* line 3539, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3543, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .route .time {
 	color: #4CAF50;
 	font-weight: 500;
 }
 
-/* line 3544, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3548, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .steps {
 	padding: 0;
 	max-height: 0;
@@ -3941,17 +3946,17 @@ body.no-edit .bookmarks .tools {
 	transition: all .2s ease;
 }
 
-/* line 3553, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3557, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark .directions .steps {
 	background: #2A2A2A;
 }
 
-/* line 3557, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3561, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark.transparent .directions .steps {
 	background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* line 3561, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3565, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .route.active .steps,
 .directions .route:focus .steps {
 	overflow: auto;
@@ -3959,38 +3964,38 @@ body.no-edit .bookmarks .tools {
 	max-height: 350px;
 }
 
-/* line 3568, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3572, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .steps li {
 	display: flex;
 	font-size: 13px;
 	padding: 5px 18px;
 }
 
-/* line 3574, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3578, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .steps li b {
 	font-weight: 500;
 }
 
-/* line 3578, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3582, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .steps .description {
 	flex: 1;
 	min-width: 0;
 }
 
-/* line 3583, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3587, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .steps .description div {
 	text-indent: 10px;
 	font-size: 12px !important;
 }
 
-/* line 3588, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3592, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .steps li .distance {
 	flex-shrink: 0;
 	font-weight: 500;
 	margin-left: 10px;
 }
 
-/* line 3594, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3598, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .directions .steps li.copyrights {
 	display: block;
 	font-size: 11px;
@@ -4000,13 +4005,13 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Pocket
 */
-/* line 3609, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3613, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .widget.pocket {
 	padding: 0 !important;
 	font-family: Roboto, sans-serif !important;
 }
 
-/* line 3614, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3618, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket header {
 	width: 100%;
 	padding: 0 25px;
@@ -4017,7 +4022,7 @@ body.no-edit .bookmarks .tools {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-/* line 3624, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3628, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket header:after {
 	height: 4px;
 	content: "";
@@ -4026,35 +4031,35 @@ body.no-edit .bookmarks .tools {
 	background: linear-gradient(to right, #83EDB8 0%, #83EDB8 25%, #32BCB6 25%, #32BCB6 50%, #EF4056 50%, #EF4056 75%, #FCB64B 75%, #FCB64B 100%);
 }
 
-/* line 3632, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3636, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket a {
 	color: inherit;
 	text-decoration: none;
 }
 
-/* line 3637, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3641, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket .link {
 	font-size: 0;
 	display: block;
 	transition: background .1s ease;
 }
 
-/* line 3643, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3647, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket .link:hover {
 	background: #FAFAFA;
 }
 
-/* line 3647, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3651, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark .pocket .link:hover {
 	background: #2C2C2C;
 }
 
-/* line 3651, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3655, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark.transparent .pocket .link:hover {
 	background: rgba(0, 0, 0, 0.15);
 }
 
-/* line 3655, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3659, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket .link .image {
 	width: 100px;
 	height: 95px;
@@ -4062,17 +4067,17 @@ body.no-edit .bookmarks .tools {
 	background: #EAEAEA center/cover no-repeat;
 }
 
-/* line 3662, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3666, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark .pocket .link .image {
 	background-color: #2A2A2A;
 }
 
-/* line 3666, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3670, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark.transparent .pocket .link .image {
 	background-color: rgba(0, 0, 0, 0.15);
 }
 
-/* line 3670, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3674, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket .link .info {
 	padding: 15px 15px;
 	vertical-align: top;
@@ -4080,23 +4085,23 @@ body.no-edit .bookmarks .tools {
 	width: calc(100% - 100px);
 }
 
-/* line 3677, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3681, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket .link:not(:last-child) .info {
 	padding-bottom: 14px;
 	border-bottom: 1px solid #EEE;
 }
 
-/* line 3682, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3686, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark .pocket .link:not(:last-child) .info {
 	border-bottom-color: #2A2A2A;
 }
 
-/* line 3686, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3690, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark.transparent .pocket .link:not(:last-child) .info {
 	border-bottom-color: rgba(0, 0, 0, 0.2);
 }
 
-/* line 3690, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3694, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket .link .title {
 	height: 40px;
 	font-size: 14px;
@@ -4108,12 +4113,12 @@ body.no-edit .bookmarks .tools {
 	transition: color .1s ease;
 }
 
-/* line 3701, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3705, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket .link:hover .title {
 	color: #26A69A;
 }
 
-/* line 3705, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3709, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket .link .details {
 	margin: 0;
 	color: #757575;
@@ -4122,12 +4127,12 @@ body.no-edit .bookmarks .tools {
 	line-height: 15px;
 }
 
-/* line 3713, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3717, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark.transparent .pocket .link .details {
 	color: #DDD;
 }
 
-/* line 3717, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3721, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket .link .details .date {
 	float: right;
 }
@@ -4135,7 +4140,7 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Pocket / Notice pages
 */
-/* line 3730, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3734, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket .notice {
 	color: #888;
 	height: 400px;
@@ -4144,37 +4149,37 @@ body.no-edit .bookmarks .tools {
 	padding: 85px 10% 20px;
 }
 
-/* line 3738, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3742, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark .pocket .notice {
 	color: #BBB;
 	background: #282828;
 }
 
-/* line 3743, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3747, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .dark.transparent .pocket .notice {
 	color: #DDD;
 	background: rgba(0, 0, 0, 0.2);
 }
 
-/* line 3748, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3752, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket .notice.no-key {
 	padding-top: 55px;
 }
 
-/* line 3752, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3756, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket .notice svg {
 	width: 150px;
 	height: 150px;
 	fill: currentColor;
 }
 
-/* line 3758, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3762, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket .notice p {
 	line-height: 22px;
 	margin: 5px 0 15px;
 }
 
-/* line 3763, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3767, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket .notice button {
 	color: #FFF;
 	min-width: 90px;
@@ -4182,7 +4187,7 @@ body.no-edit .bookmarks .tools {
 	background: #EE4056;
 }
 
-/* line 3770, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
+/* line 3774, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .pocket .notice button:active {
 	background: #E02C43;
 }

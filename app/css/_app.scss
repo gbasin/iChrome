@@ -2913,6 +2913,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	padding: 0!important;
 }
 
+.grid .widget.splash {
+	height: auto!important;
+}
+
 .widget.splash .splash {
 	color: #FFF;
 	padding: 50px 0;
@@ -3072,7 +3076,11 @@ body.no-edit .widgets-container .widget.tabbed:before {
 */
 .widget.auth-required,
 .widget.legacy.auth-required {
-	padding: 0;
+	padding: 0!important;
+}
+
+.grid .widget.auth-required {
+	height: auto!important;
 }
 
 .widget.auth-required .notice {

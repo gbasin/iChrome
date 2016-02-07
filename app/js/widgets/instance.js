@@ -203,7 +203,7 @@ define([
 
 				this.$el.addClass("splash permissions-request");
 
-				this.el.innerHTML = '<div class="handle"></div>' + render("widgets/permissions-request") + '<div class="resize"></div>';
+				this.el.innerHTML = '<div class="handle"></div>' + render("widgets/permissions-request");
 
 				this.$el.on("click", ".notice button", function() {
 					Browser.permissions.request({
@@ -541,7 +541,7 @@ define([
 				delete data.message;
 			}
 
-			this.el.innerHTML = '<div class="handle"></div>' + render("widgets/auth-required", data) + '<div class="resize"></div>';
+			this.el.innerHTML = '<div class="handle"></div>' + render("widgets/auth-required", data);
 
 
 			this.$el.on("click.auth-required", ".notice button", function() {
