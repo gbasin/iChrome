@@ -186,6 +186,10 @@ header .options li.selected {
 	background: rgba(0, 0, 0, .1);
 }
 
+.grid :root .loading {
+	height: calc(100% - 81px); /* 55px header + 36px tabs that are offset - 10px = 81px */
+}
+
 .loading svg {
 	top: 0;
 	left: 0;
@@ -253,6 +257,10 @@ header .options li.selected {
 	padding: 65px 0 80px;
 }
 
+.grid :root .no-games {
+	height: calc(100% - 81px);
+}
+
 .dark .no-games {
 	color: #AAA;
 	background: #2A2A2A;
@@ -287,6 +295,11 @@ header .options li.selected {
 .games {
 	overflow: auto;
 	max-height: 450px;
+}
+
+.grid :root .games {
+	max-height: 100%;
+	height: calc(100% - 81px);
 }
 
 .games section h3 {
@@ -619,6 +632,11 @@ header .options li.selected {
 	max-height: 450px;
 }
 
+.grid :root .news {
+	max-height: 100%;
+	height: calc(100% - 81px);
+}
+
 .news .item {
 	font-size: 0;
 	display: block;
@@ -728,6 +746,10 @@ header .options li.selected {
 	padding: 0;
 }
 
+.grid :root.settings form {
+	height: calc(100% - 55px);
+}
+
 .settings .add {
 	outline: 0;
 	position: relative;
@@ -749,6 +771,11 @@ header .options li.selected {
 	padding: 0;
 	overflow: auto;
 	max-height: 400px;
+}
+
+.grid :root.settings ul.list {
+	max-height: 100%;
+	height: calc(100% - 41px);
 }
 
 .settings ul li {
