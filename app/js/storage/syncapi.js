@@ -80,9 +80,6 @@ define(["lodash", "browser/api", "i18n/i18n", "modals/alert", "core/analytics", 
 						cb("Network error");
 					}
 					else if (retry) {
-						// If an error occurs, we try again. If the request fails twice, we sign the user out.
-						Auth.signout(true);
-
 						cb("Server error");
 					}
 					else {
@@ -163,9 +160,6 @@ define(["lodash", "browser/api", "i18n/i18n", "modals/alert", "core/analytics", 
 						cb("Network error");
 					}
 					else if (retry) {
-						// If an error occurs, we try again. If the request fails twice, we sign the user out.
-						Auth.signout(true);
-
 						cb("Server error");
 					}
 					else {
