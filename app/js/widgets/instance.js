@@ -235,6 +235,11 @@ define([
 		 *                                 i.e. "Try reloading your page or clicking the button below for help."
 		 */
 		error: function(explanation, advice) {
+			// If we're already in an error state (maybe from an async callback), don't do anything
+			if (this._errored) {
+				return;
+			}
+
 			this._errored = true;
 
 			this.$el.addClass("splash error");
