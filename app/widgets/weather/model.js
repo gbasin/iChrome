@@ -223,10 +223,17 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 			var get = function() {
 				var done = 0,
 					units,
+					erred = false,
 					locs = this.config.resolvedLocs.length,
 					weather = new Array(this.config.resolvedLocs.length);
 
-				var next = function() {
+				var next = function(err) {
+					if (err || erred) {
+						erred = true;
+
+						return;
+					}
+
 					done++;
 
 					if (done !== locs) {
@@ -256,7 +263,7 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 						}
 					}).done(function(d) {
 						if (!d) {
-							return;
+							return next(true);
 						}
 
 						if (typeof d !== "object") {
@@ -264,7 +271,7 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 								d = JSON.parse(d);
 							}
 							catch (e) {
-								return;
+								return next(true);
 							}
 						}
 
@@ -324,7 +331,11 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 						}
 
 						weather[i] = ret;
-					}.bind(this)).always(next);
+
+						next();
+					}.bind(this)).fail(function() {
+						next(true);
+					});
 				}, this);
 			};
 
