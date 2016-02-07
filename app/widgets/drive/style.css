@@ -11,11 +11,11 @@
 	overflow-x: hidden;
 }
 
-.grid .files {
+.grid :root .files {
 	max-height: 100%;
 }
 
-.grid .header ~ .files {
+.grid :root .header ~ .files {
 	max-height: calc(100% - 45px);
 }
 
