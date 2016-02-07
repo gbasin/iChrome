@@ -246,8 +246,6 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 		 */
 		ajax: function(config) {
 			if (config.url && config.url[0] === "/") {
-				config.url = API_HOST + config.url;
-
 				if (this.has("expiry") && new Date().getTime() > this.get("expiry")) {
 					this.refreshToken();
 				}
@@ -256,6 +254,8 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 				if (this._refreshPromise) {
 					return this._refreshPromise.then(this.ajax.bind(this, config));
 				}
+
+				config.url = API_HOST + config.url;
 
 				if (this.has("token")) {
 					config.headers = config.headers || {};
