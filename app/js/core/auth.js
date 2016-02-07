@@ -192,6 +192,11 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 
 
 		refreshToken: function() {
+			// If we're already refreshing, return
+			if (this._refreshPromise) {
+				return;
+			}
+
 			this._refreshPromise = $.post(API_HOST + "/oauth/v1/token/refresh", "refresh_token=" + encodeURIComponent(this.get("refreshToken")), function(d) {
 				if (typeof d !== "object") {
 					d = JSON.parse(d);
