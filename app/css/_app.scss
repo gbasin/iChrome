@@ -2503,6 +2503,11 @@ body.resizing .grid {
 	-webkit-animation: widget-box-shadow 0s 2s forwards;
 }
 
+.widgets-container .widget > .content,
+.store-detail .preview .widget > .content {
+	height: 100%;
+}
+
 .widgets-container .widget.legacy,
 .store-detail .preview .widget.legacy {
 	color: #333;
@@ -2905,7 +2910,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 */
 .widget.splash,
 .widget.legacy.splash {
-	padding: 0;
+	padding: 0!important;
 }
 
 .widget.splash .splash {

@@ -1,6 +1,6 @@
 {{#weather}}
 	<div class="location" data-index="{{index}}">
-		<h2 class="header">{{name}}</h2>
+		<h2 class="header"><a href="https://www.google.com/search?q=weather%20{{nameEnc}}">{{name}}</a></h2>
 
 		{{#tiny}}
 			<span class="temp">

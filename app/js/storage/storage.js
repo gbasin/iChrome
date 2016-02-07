@@ -90,12 +90,17 @@ define([
 			FileSystem.clear(function() {
 				// A reset shouldn't affect these since we'll still want to sync when this is over
 				var uses = Browser.storage.uses,
+					version = Browser.storage.version,
 					authData = Browser.storage.authData;
 
 				Browser.storage.clear();
 
 				if (uses) {
 					Browser.storage.uses = uses;
+				}
+
+				if (version) {
+					Browser.storage.version = version;
 				}
 
 				if (authData) {

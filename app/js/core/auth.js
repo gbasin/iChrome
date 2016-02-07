@@ -74,7 +74,13 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 				this.clear();
 
 				FileSystem.clear(function() {
+					var version = Browser.storage.version;
+
 					Browser.storage.clear();
+
+					if (version) {
+						Browser.storage.version = version;
+					}
 
 					window.onbeforeunload = null;
 
@@ -186,6 +192,11 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 
 
 		refreshToken: function() {
+			// If we're already refreshing, return
+			if (this._refreshPromise) {
+				return;
+			}
+
 			this._refreshPromise = $.post(API_HOST + "/oauth/v1/token/refresh", "refresh_token=" + encodeURIComponent(this.get("refreshToken")), function(d) {
 				if (typeof d !== "object") {
 					d = JSON.parse(d);
@@ -235,8 +246,6 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 		 */
 		ajax: function(config) {
 			if (config.url && config.url[0] === "/") {
-				config.url = API_HOST + config.url;
-
 				if (this.has("expiry") && new Date().getTime() > this.get("expiry")) {
 					this.refreshToken();
 				}
@@ -245,6 +254,8 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 				if (this._refreshPromise) {
 					return this._refreshPromise.then(this.ajax.bind(this, config));
 				}
+
+				config.url = API_HOST + config.url;
 
 				if (this.has("token")) {
 					config.headers = config.headers || {};

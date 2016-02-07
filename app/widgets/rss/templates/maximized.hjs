@@ -32,39 +32,10 @@
 		</svg>
 	</div>
 {{/loading}}
-
-<div class="items {{layout}}{{^layout}}cards{{/layout}}">
-	{{#featured}}
-		<a href="{{url}}" class="item featured" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .5)), url('{{image}}');">
-			<h3 class="title">{{title}}</h3>
-
-			<div class="desc">{{{desc}}}</div>
-
-			<div class="details">
-				{{#author}}{{i18n.by}} <span class="author">{{author}}</span>, {{/author}}<span class="source">{{source}}</span>
-
-				<span class="date">{{date}}</span>
-			</div>
-		</a>
-	{{/featured}}
-
-	{{#items}}
-		<a href="{{url}}" class="item">
-			{{#list}}
-				{{#source}}<span class="source">{{source}}</span>{{/source}}
-
-				<span class="desc">
-					<b class="title">{{title}}</b>
-
-					{{{desc}}}
-				</span>
-
-				<span class="date">{{date}}</span>
-			{{/list}}
-
-			{{^list}}
-				{{#image}}<div class="image" style="background-image: url('{{image}}');"></div>{{/image}}
-
+{{^loading}}
+	<div class="items {{layout}}{{^layout}}cards{{/layout}}">
+		{{#featured}}
+			<a href="{{url}}" class="item featured" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .5)), url('{{image}}');">
 				<h3 class="title">{{title}}</h3>
 
 				<div class="desc">{{{desc}}}</div>
@@ -74,7 +45,37 @@
 
 					<span class="date">{{date}}</span>
 				</div>
-			{{/list}}
-		</a>
-	{{/items}}
-</div>
+			</a>
+		{{/featured}}
+
+		{{#items}}
+			<a href="{{url}}" class="item">
+				{{#list}}
+					{{#source}}<span class="source">{{source}}</span>{{/source}}
+
+					<span class="desc">
+						<b class="title">{{title}}</b>
+
+						{{{desc}}}
+					</span>
+
+					<span class="date">{{date}}</span>
+				{{/list}}
+
+				{{^list}}
+					{{#image}}<div class="image" style="background-image: url('{{image}}');"></div>{{/image}}
+
+					<h3 class="title">{{title}}</h3>
+
+					<div class="desc">{{{desc}}}</div>
+
+					<div class="details">
+						{{#author}}{{i18n.by}} <span class="author">{{author}}</span>, {{/author}}<span class="source">{{source}}</span>
+
+						<span class="date">{{date}}</span>
+					</div>
+				{{/list}}
+			</a>
+		{{/items}}
+	</div>
+{{/loading}}

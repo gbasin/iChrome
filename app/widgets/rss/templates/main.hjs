@@ -24,20 +24,21 @@
 		</svg>
 	</div>
 {{/loading}}
+{{^loading}}
+	<div class="items {{#images}} images{{/images}}">
+		{{#items}}
+			<a href="{{url}}" class="item">
+				{{#image}}
+					{{#images}}<img src="{{image}}" alt="Loading..." />{{/images}}
+					{{^images}}<div class="image" style="background-image: url('{{image}}');"></div>{{/images}}
+				{{/image}}
 
-<div class="items {{#images}} images{{/images}}">
-	{{#items}}
-		<a href="{{url}}" class="item">
-			{{#image}}
-				{{#images}}<img src="{{image}}" alt="Loading..." />{{/images}}
-				{{^images}}<div class="image" style="background-image: url('{{image}}');"></div>{{/images}}
-			{{/image}}
+				<div class="content{{#desc}} desc{{/desc}}">
+					<h3 class="title">{{title}}</h3>
 
-			<div class="content{{#desc}} desc{{/desc}}">
-				<h3 class="title">{{title}}</h3>
-
-				{{{desc}}}
-			</div>
-		</a>
-	{{/items}}
-</div>
+					{{{desc}}}
+				</div>
+			</a>
+		{{/items}}
+	</div>
+{{/loading}}

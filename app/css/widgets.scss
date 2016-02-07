@@ -3360,6 +3360,10 @@ body.no-edit .bookmarks .tools {
 	font-family: Roboto, sans-serif!important;
 }
 
+.grid .directions {
+	overflow-y: auto;
+}
+
 .directions .methods {
 	height: 46px;
 	display: flex;

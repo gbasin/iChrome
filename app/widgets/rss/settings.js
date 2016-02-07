@@ -1,4 +1,4 @@
-define(["lodash", "jquery", "widgets/views/settings", "jquery.serializejson", "lib/parseurl"], function(_, $, WidgetView, parseUrl) {
+define(["lodash", "jquery", "widgets/views/settings", "lib/parseurl", "jquery.serializejson"], function(_, $, WidgetView, parseUrl) {
 	return WidgetView.extend({
 		events: {
 			"click header button.save": "serialize",
