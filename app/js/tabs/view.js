@@ -285,7 +285,7 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 				var max = this.el.offsetHeight - 50;
 
 				// This is the number of pixels the bottom of the furthest widget is from the top
-				var btm = _.max(_.each(_.flatten(models), function(e) {
+				var btm = _.max(_.map(_.flatten(models), function(e) {
 					var loc = e.get("loc");
 
 					if (loc) {
