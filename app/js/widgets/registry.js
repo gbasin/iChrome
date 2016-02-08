@@ -64,7 +64,21 @@ define([
 				isPreview: isPreview,
 				widget: widget
 			});
-		}
+		},
+
+
+		/**
+		 * The model used by widget instances
+		 *
+		 * @type {Backbone.Model}
+		 */
+		InstanceModel: Backbone.Model.extend({
+			idAttribute: "cid",
+
+			validate: function(attrs) {
+				return !attrs.id || !registry.get(attrs.id);
+			}
+		})
 	});
 
 
