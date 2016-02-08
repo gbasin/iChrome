@@ -31,37 +31,37 @@
 						<img data-src="images/icons/search.png" />
 						<span>{{i18n.toolbar.apps.search}}</span>
 					</a>
-					
+
 					<a href="https://maps.google.com/">
 						<img data-src="images/icons/maps.png" />
 						<span>{{i18n.toolbar.apps.maps}}</span>
 					</a>
-					
+
 					<a href="https://www.youtube.com/">
 						<img data-src="images/icons/youtube.png" />
 						<span>{{i18n.toolbar.apps.youtube}}</span>
 					</a>
-					
+
 					<a href="https://play.google.com/">
 						<img data-src="images/icons/play.png" />
 						<span>{{i18n.toolbar.apps.play}}</span>
 					</a>
-					
+
 					<a href="https://news.google.com/">
 						<img data-src="images/icons/news.png" />
 						<span>{{i18n.toolbar.apps.news}}</span>
 					</a>
-					
+
 					<a href="https://mail.google.com/">
 						<img data-src="images/icons/gmail.png" />
 						<span>{{i18n.toolbar.apps.gmail}}</span>
 					</a>
-					
+
 					<a href="https://drive.google.com/">
 						<img data-src="images/icons/drive.png" />
 						<span>{{i18n.toolbar.apps.drive}}</span>
 					</a>
-					
+
 					<a href="https://www.google.com/calendar">
 						<img data-src="images/icons/calendar.png" />
 						<span>{{i18n.toolbar.apps.calendar}}</span>
@@ -73,7 +73,7 @@
 					</a>
 				</div>
 
-				<a href="http://www.google.com/intl/en/options/" class="more">{{i18n.toolbar.apps.more}}</a>
+				<a href="http://www.google.com/about/products/" class="more">{{i18n.toolbar.apps.more}}</a>
 			</nav>
 		</div>
 	</div>
