@@ -35,7 +35,9 @@ header input {
 
 div.definition {
 	overflow: auto;
+	cursor: initial;
 	padding: 15px 20px 20px;
+	-webkit-user-select: initial;
 	max-height: calc(100% - 51px); /* Header height (50px) + 1px bottom border */
 }
 
