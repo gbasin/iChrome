@@ -1717,9 +1717,9 @@ header.toolbar {
 		/ Toolbar / Announcements
 	*/
 	.announcements {
+		flex: 0 0 45px;
 		cursor: pointer;
-		padding: 14px 10px;
-		padding-right: 15px;
+		padding: 14px 12px;
 	}
 
 	.announcements:after {
@@ -1747,12 +1747,6 @@ header.toolbar {
 
 		These let it be responsive down to 320px with very little work, why not?
 	*/
-	@media (max-width: 1150px) {
-		.search {
-			width: 50%;
-		}
-	}
-
 	@media (max-width: 800px) {
 		// These are duplicated in the menu so they can be hidden
 		.links {
@@ -1763,10 +1757,6 @@ header.toolbar {
 	@media (max-width: 500px) {
 		.logo {
 			display: none;
-		}
-
-		.search {
-			width: calc(100% - 105px);
 		}
 	}
 }
