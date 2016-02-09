@@ -355,6 +355,9 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 					el: this.elm
 				});
 			}
+
+			this.view.config = this.config;
+			this.view.data = this.data || {};
 		},
 		refresh: function() {
 			this.ensureView();

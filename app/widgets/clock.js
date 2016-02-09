@@ -596,6 +596,9 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				});
 			}
 
+			this.view.config = this.config;
+			this.view.data = this.data || {};
+
 			this.view.render();
 		}
 	};

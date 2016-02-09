@@ -295,6 +295,9 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 				});
 			}
 
+			this.view.config = this.config;
+			this.view.data = this.data || {};
+
 			this.view.render();
 		}
 	};
