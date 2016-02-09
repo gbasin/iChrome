@@ -22,31 +22,17 @@ define(["moment", "widgets/views/main"], function(moment, WidgetView) {
 				minutes = Math.round(time.asMinutes() % 60);
 
 			if (this.model.get("size") === "tiny") {
-				data.time = (hours ? hours + "h " + minutes + "m" : minutes + " min" + (minutes !== 1 ? "s" : ""));
+				data.time = hours ? (this.translate("hours_letter", hours) + " " + this.translate("minutes_letter", minutes)) : this.translate("minute" + (minutes !== 1 ? "s" : "") + "_short", minutes);
 			}
 			else {
-				data.time = (hours > 0 ? hours : "");
+				data.time = "";
 
-				if (hours > 0 && hours !== 1) {
-					data.time += "hours ";
-				}
-				else if (hours === 1) {
-					data.time += "hour ";
+				if (hours > 0) {
+					data.time += this.translate("hour" + (hours !== 1 ? "s" : ""), hours);
 				}
 
 				if (minutes > 0) {
-					data.time += minutes;
-				}
-
-				if (hours > 0) {
-					data.time += " min";
-				}
-				else {
-					data.time += " minute";
-				}
-
-				if (minutes !== 1) {
-					data.time += "s";
+					data.time += " " + this.translate("minute" + (minutes !== 1 ? "s" : "") + (hours > 0 ? "_short" : ""), minutes);
 				}
 			}
 
