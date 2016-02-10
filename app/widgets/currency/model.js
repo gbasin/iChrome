@@ -12,7 +12,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 		_cache: {},
 
 		initialize: function() {
-			if (this.data) {
+			if (typeof this.data === "object" && this.data.from) {
 				this.set("syncData", this.data);
 
 				this.unset("data");
