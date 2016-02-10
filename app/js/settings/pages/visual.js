@@ -40,9 +40,21 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/auth", "settings/page", "th
 		onInputChange: function(elm, name, value) {
 			switch (name) {
 				case "background-url":
-					this.model.set("theme", "custom");
+					if (value && value.trim()) {
+						this.model.set("theme", "custom");
 
-					this.model.set("backgroundImage", value);
+						this.model.set("backgroundImage", value);
+					}
+					else {
+						this.model.unset("backgroundImage", {
+							noRender: true
+						});
+
+						// If the theme was a custom one and there now isn't an image, set it to the default
+						if (this.model.get("theme") === "custom") {
+							this.model.set("theme", "default");
+						}
+					}
 				break;
 
 				case "layout":
