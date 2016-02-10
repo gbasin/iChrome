@@ -220,7 +220,7 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, Wid
 			var numPerFeed = Math.round((45 / feeds.length) * 2);
 
 			_.spread($.when).call($, _.map(feeds, function(e) {
-				return $.getJSON("http://cloud.feedly.com/v3/streams/contents?count=" + numPerFeed + "&streamId=feed%2F" + encodeURIComponent(e));
+				return $.getJSON("https://cloud.feedly.com/v3/streams/contents?count=" + numPerFeed + "&streamId=feed%2F" + encodeURIComponent(e));
 			})).done(function() {
 				if (this.get("activeTab") !== "all") {
 					return;
@@ -260,7 +260,7 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, Wid
 			var maximized = this.get("state") === "maximized";
 
 			// Switch to /v3/mixes/contents to get the most popular entries instead of the newest
-			$.getJSON("http://cloud.feedly.com/v3/streams/contents?count=" + (maximized ? 45 : this.config.number) + "&streamId=feed%2F" + encodeURIComponent(parseUrl(feedURL)), function(d) {
+			$.getJSON("https://cloud.feedly.com/v3/streams/contents?count=" + (maximized ? 45 : this.config.number) + "&streamId=feed%2F" + encodeURIComponent(parseUrl(feedURL)), function(d) {
 				// If the active feed has changed (i.e. the user has switched tabs
 				// twice before the request finished), we don't want to emit any entries
 				if (d && d.items && this.get("activeTab") === activeTab) {
