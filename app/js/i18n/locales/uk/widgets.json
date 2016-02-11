@@ -393,7 +393,6 @@
   "currency":{
     "name":"Валюта",
     "desc":"Let's you convert between any two of 169 currencies.",
-    "to_label":"to",
     "recently_used":"Recently Used"
   },
   "dictionary":{
@@ -579,7 +578,15 @@
       }
     },
     "to_home":"to home",
-    "to_work":"to work"
+    "to_work":"to work",
+    "hour":"%s hour",
+    "hours":"%s hours",
+    "hours_letter":"%sh",
+    "minute":"%s minute",
+    "minutes":"%s minutes",
+    "minute_short":"%s min",
+    "minutes_short":"%s mins",
+    "minutes_letter":"%sm"
   },
   "translate":{
     "name":"Translate",

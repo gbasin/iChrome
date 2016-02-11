@@ -393,7 +393,6 @@
   "currency":{
     "name":"Валюта",
     "desc":"Позволяет конвертировать значения между 169 валютами.",
-    "to_label":"в",
     "recently_used":"Недавно использованные"
   },
   "dictionary":{
@@ -579,7 +578,15 @@
       }
     },
     "to_home":"до дома",
-    "to_work":"до работы"
+    "to_work":"до работы",
+    "hour":"%s hour",
+    "hours":"%s hours",
+    "hours_letter":"%sh",
+    "minute":"%s minute",
+    "minutes":"%s minutes",
+    "minute_short":"%s min",
+    "minutes_short":"%s mins",
+    "minutes_letter":"%sm"
   },
   "translate":{
     "name":"Переводчик",

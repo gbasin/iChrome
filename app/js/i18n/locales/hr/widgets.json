@@ -393,7 +393,6 @@
   "currency":{
     "name":"Valuta",
     "desc":"Pretvori valutu iz valute, dostupno ih je 169.",
-    "to_label":"u",
     "recently_used":"Nedavno korištene"
   },
   "dictionary":{
@@ -579,7 +578,15 @@
       }
     },
     "to_home":"do kuće",
-    "to_work":"do posla"
+    "to_work":"do posla",
+    "hour":"%s hour",
+    "hours":"%s hours",
+    "hours_letter":"%sh",
+    "minute":"%s minute",
+    "minutes":"%s minutes",
+    "minute_short":"%s min",
+    "minutes_short":"%s mins",
+    "minutes_letter":"%sm"
   },
   "translate":{
     "name":"Prevoditelj",

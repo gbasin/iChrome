@@ -393,7 +393,6 @@
   "currency":{
     "name":"Moeda",
     "desc":"Vamos converter entre quaisquer dois de 169 moedas.",
-    "to_label":"a",
     "recently_used":"Recently Used"
   },
   "dictionary":{
@@ -579,7 +578,15 @@
       }
     },
     "to_home":"para casa",
-    "to_work":"ao trabalho"
+    "to_work":"ao trabalho",
+    "hour":"%s hour",
+    "hours":"%s hours",
+    "hours_letter":"%sh",
+    "minute":"%s minute",
+    "minutes":"%s minutes",
+    "minute_short":"%s min",
+    "minutes_short":"%s mins",
+    "minutes_letter":"%sm"
   },
   "translate":{
     "name":"Traduzir",

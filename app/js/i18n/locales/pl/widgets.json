@@ -393,7 +393,6 @@
   "currency":{
     "name":"Waluty",
     "desc":"Wylicza kursy wymiany między dowolnymi dwoma ze 169 dostępnych walut.",
-    "to_label":"do",
     "recently_used":"Ostatnio używane"
   },
   "dictionary":{
@@ -579,7 +578,15 @@
       }
     },
     "to_home":"do domu",
-    "to_work":"do pracy"
+    "to_work":"do pracy",
+    "hour":"%s hour",
+    "hours":"%s hours",
+    "hours_letter":"%sh",
+    "minute":"%s minute",
+    "minutes":"%s minutes",
+    "minute_short":"%s min",
+    "minutes_short":"%s mins",
+    "minutes_letter":"%sm"
   },
   "translate":{
     "name":"Tłumacz",

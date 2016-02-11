@@ -66,9 +66,9 @@
     "signin_dismiss":"Verwerfen",
     "signin_confirm":{
       "title":"Lokal gespeicherte Daten behalten?",
-      "desc":"Möchten Sie Ihre lokalen Einstellungen behalten, und mit diesen die Einstellungen in Ihrem Account ersetzen, oder wollen Sie mit den Einstellungen Ihres Accounts die lokalen Daten überschreiben?",
+      "desc":"Möchten Sie Ihre lokalen Einstellungen behalten und mit diesen die Einstellungen in Ihrem Account ersetzen, oder sollen die in Ihrem Benutzerkonto vorhandenen Einstellungen die lokalen Daten überschreiben?",
       "keep_account":"Benutzerkonto verwenden",
-      "keep_local":"Lokal speichern"
+      "keep_local":"Lokale Einstellungen behalten"
     },
     "signout_confirm":"Wenn Sie sich ausloggen, wird das lokales Backup gelöscht",
     "pastdue":"Ihr Abonnement ist überfällig",

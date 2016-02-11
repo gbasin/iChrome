@@ -393,7 +393,6 @@
   "currency":{
     "name":"Munteenheid",
     "desc":"Laat u converteren tussen elke van de 169 valuta's.",
-    "to_label":"Naar",
     "recently_used":"Recent gebruikt"
   },
   "dictionary":{
@@ -579,7 +578,15 @@
       }
     },
     "to_home":"naar huis",
-    "to_work":"naar werk"
+    "to_work":"naar werk",
+    "hour":"%s hour",
+    "hours":"%s hours",
+    "hours_letter":"%sh",
+    "minute":"%s minute",
+    "minutes":"%s minutes",
+    "minute_short":"%s min",
+    "minutes_short":"%s mins",
+    "minutes_letter":"%sm"
   },
   "translate":{
     "name":"Vertalen",

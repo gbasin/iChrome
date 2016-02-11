@@ -2,12 +2,12 @@
   "lang_code":"zh-CN-widgets",
   "apps":{
     "name":"应用程序",
-    "desc":"显示您当前安装的谷歌 chrome 浏览器应用程序。",
+    "desc":"显示您当前安装的谷歌Chrome浏览器应用程序。",
     "settings":{
       "format":"小部件格式",
       "format_options":{
-        "tiles":"方块式",
-        "list":"列表"
+        "tiles":"磁贴式",
+        "list":"列表式"
       },
       "display":"显示",
       "display_options":{
@@ -21,13 +21,13 @@
         "offline":"脱机启用",
         "available":"可用性"
       },
-      "open":"应用打开方式"
+      "open":"在...中打开应用"
     },
     "store_app":"Store"
   },
   "bookmarks":{
-    "name":"书签",
-    "desc":"显示并定制您的收藏夹和其他链接。",
+    "name":"收藏夹",
+    "desc":"显示您可随意定制的收藏夹和其他链接。",
     "settings":{
       "title_placeholder":"输入小部件标题",
       "layout":"布局",
@@ -55,7 +55,7 @@
     "desc":"显示您的Chrome标签页，并可指定只显示某个文件夹。",
     "settings":{
       "title_placeholder":"输入小部件标题",
-      "from":"从...显示书签",
+      "from":"收藏夹位置",
       "open":"在...中打开书签"
     }
   },
@@ -89,13 +89,13 @@
       "timezone_local":"本地",
       "format":"时钟格式",
       "format_options":{
-        "ampm":"AM\/PM - 数字",
+        "ampm":"AM\/PM-数字",
         "24hour":"24 小时-数字",
         "analog":"12 小时-模拟",
         "ampmseconds":"AM\/PM-数字（无“秒”）",
         "24hourseconds":"24 小时-数字（无“秒”）"
       },
-      "sound":"提醒声音"
+      "sound":"提示声"
     },
     "title":"时钟",
     "alarm":"闹钟",
@@ -105,7 +105,7 @@
     "set":"设定",
     "unset":"取消设置",
     "dismiss":"忽略",
-    "enable_audio":"启用音效"
+    "enable_audio":"提示音"
   },
   "facebook":{
     "name":"Facebook",
@@ -205,9 +205,9 @@
     "more":"更多"
   },
   "tasks":{
-    "name":"任务栏",
-    "desc":"显示并可编辑您Google任务列表中的任务",
-    "title":"任务栏",
+    "name":"Google Tasks",
+    "desc":"显示并可编辑您Google任务列表中的待办事项",
+    "title":"Google Tasks",
     "settings":{
       "list":"列表"
     },
@@ -268,17 +268,17 @@
     "num_views":"浏览次数"
   },
   "quotes":{
-    "name":"报价",
-    "desc":"在您加载加载页面时更新报价或每天只更新一次。",
+    "name":"语录",
+    "desc":"显示名人名言和经典语录，每天或每次加载页面时更新。",
     "settings":{
       "source":"来源",
-      "method":"加载新报价",
+      "method":"加载新语录",
       "method_options":{
         "daily":"每天一次",
         "random":"每次加载页面时"
       }
     },
-    "unknown_author":"未知"
+    "unknown_author":"无名"
   },
   "html":{
     "name":"HTML",
@@ -355,17 +355,17 @@
   },
   "pocket":{
     "name":"Pocket",
-    "desc":"在口袋中显示您保存的文章，视频及网页的列表",
+    "desc":"显示您在Pocket中保存的文章，视频及网页列表",
     "settings":{
       "links_shown":"显示链接数",
       "open":"打开链接",
-      "open_pocket":"在Pocket中",
-      "open_original":"在其原始地址"
+      "open_pocket":"打开Pocket",
+      "open_original":"打开原始地址"
     },
     "by":"作者",
     "no_links":"找不到链接",
     "grant_access":"授予访问权限",
-    "no_key":"要加载您的Pocket中的链接，请先授权iChrome访问您的Pocket账号。"
+    "no_key":"在加载您保存在Pocket中的链接前，请先授权iChrome访问您的Pocket账号。"
   },
   "analytics":{
     "name":"分析",
@@ -382,8 +382,8 @@
     }
   },
   "classroom":{
-    "name":"教室",
-    "desc":"更新您的谷歌教室的课程安排与课堂",
+    "name":"Google课堂",
+    "desc":"获取您Google课堂的课程安排和作业信息",
     "settings":{
       "mode":"小部件模式",
       "mode_teacher":"教师",
@@ -393,7 +393,6 @@
   "currency":{
     "name":"货币转换",
     "desc":"让您在169种货币之间进行转换。",
-    "to_label":"转换至",
     "recently_used":"最近使用"
   },
   "dictionary":{
@@ -427,7 +426,7 @@
       "url":"框架链接",
       "url_placeholder":"例如 http:\/\/www.google.com\/",
       "height":"框架高度",
-      "padding":"内边距"
+      "padding":"内边框"
     }
   },
   "keep":{
@@ -445,7 +444,7 @@
       "title_placeholder":"输入小部件窗口标题或留空隐藏",
       "articles":"显示数量",
       "edition":"国家版本",
-      "default_topic":"默认主题"
+      "default_topic":"默认栏目"
     }
   },
   "recentlyclosed":{
@@ -469,7 +468,7 @@
       "link_placeholder":"输入小部件标题链接",
       "feeds":"订阅源",
       "feeds_help":"单击任意feed以编辑",
-      "feeds_placeholder":"输入一个feed地址并按回车以添加feed",
+      "feeds_placeholder":"输入一个Feed地址并按回车键以添加",
       "feeds_pro_only":"只有专业版用户可在不同的小部件中使用多个源，您可以在设置中购买专业版。",
       "feed_name_placeholder":"源名称",
       "feed_url_placeholder":"源地址",
@@ -485,7 +484,7 @@
     "settings":{
       "page_title":"收藏夹",
       "save":"保存",
-      "teams_placeholder":"输入队伍的名称并按回车确认添加"
+      "teams_placeholder":"输入队伍的名称后按回车添加"
     },
     "favorites":"收藏夹",
     "top_games":"顶级联赛",
@@ -506,7 +505,7 @@
     "desc":"显示您指定的股票信息。",
     "settings":{
       "stocks":"股票",
-      "stocks_placeholder":"输入公司或股票名称并按回车添加"
+      "stocks_placeholder":"输入公司或股票名称后按回车添加"
     },
     "as_of":"在",
     "exchange_time":"交易时间",
@@ -541,7 +540,7 @@
   "todo":{
     "name":"待办事项",
     "desc":"显示交互式的待办事项列表。",
-    "title":"待办事项列表",
+    "title":"待办事项",
     "settings":{
       "color":"字体颜色",
       "color_options":{
@@ -549,9 +548,9 @@
         "dark":"暗色调"
       },
       "tags":"标签",
-      "tags_placeholder":"输入标记的名称并按Enter键确认"
+      "tags_placeholder":"输入标签名称后按回车键确认"
     },
-    "add":"添加项",
+    "add":"添加",
     "none":"普通",
     "important":"重要"
   },
@@ -579,19 +578,27 @@
       }
     },
     "to_home":"到家",
-    "to_work":"上班"
+    "to_work":"上班",
+    "hour":"%s hour",
+    "hours":"%s hours",
+    "hours_letter":"%sh",
+    "minute":"%s minute",
+    "minutes":"%s minutes",
+    "minute_short":"%s min",
+    "minutes_short":"%s mins",
+    "minutes_letter":"%sm"
   },
   "translate":{
     "name":"翻译",
     "desc":"快速翻译您所键入的内容（在90种语言中）",
-    "from_placeholder":"从这里开始输入",
+    "from_placeholder":"输入您要翻译的内容",
     "to_placeholder":"译文将显示在此处",
     "detect_lang":"检测语言",
     "translating":"正在翻译。。。",
     "unknown":"未知"
   },
   "unread":{
-    "name":"未读",
+    "name":"未读邮件",
     "desc":"显示您Gmail邮箱中的未读邮件数目。",
     "settings":{
       "open":"点击时打开"
@@ -614,19 +621,19 @@
     "desc":"显示当前天气和接下来的 4 天的天气预报。",
     "settings":{
       "location":"位置",
-      "location_placeholder":"请输入一个位置，然后按 enter 键",
+      "location_placeholder":"请输入您的位置，然后按回车键",
       "units":"单位",
-      "units_imperial":"公制（华氏度）",
-      "units_metric":"公制 (摄氏度)",
-      "enabled":"正在编辑",
-      "disabled":"不在编辑",
-      "forecast":"预测",
-      "hourly":"每小时预测"
+      "units_imperial":"英制（华氏度）",
+      "units_metric":"公制（摄氏度）",
+      "enabled":"开启",
+      "disabled":"关闭",
+      "forecast":"天气预报",
+      "hourly":"小时天气预报"
     },
     "more":"更多",
     "less":"收起",
-    "wind":"风速",
-    "precipitation":"降雨",
+    "wind":"风向",
+    "precipitation":"降雨量",
     "uv":"紫外线指数",
     "feelslike":"体感",
     "barometer":"晴雨表",

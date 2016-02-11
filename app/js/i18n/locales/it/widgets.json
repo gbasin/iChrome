@@ -393,7 +393,6 @@
   "currency":{
     "name":"Valuta",
     "desc":"Ti permette di convertire tra due di 169 valute.",
-    "to_label":"in",
     "recently_used":"Usati recentemente"
   },
   "dictionary":{
@@ -579,7 +578,15 @@
       }
     },
     "to_home":"Verso casa",
-    "to_work":"Verso il luogo di lavoro"
+    "to_work":"Verso il luogo di lavoro",
+    "hour":"%s hour",
+    "hours":"%s hours",
+    "hours_letter":"%sh",
+    "minute":"%s minute",
+    "minutes":"%s minutes",
+    "minute_short":"%s min",
+    "minutes_short":"%s mins",
+    "minutes_letter":"%sm"
   },
   "translate":{
     "name":"traduci",

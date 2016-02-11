@@ -4,7 +4,7 @@
     "name":"アプリ",
     "desc":"現在インストールされている Google Chrome のアプリケーションを表示します。",
     "settings":{
-      "format":"ウィジェットの形式",
+      "format":"ウィジェットの表示方法",
       "format_options":{
         "tiles":"タイル",
         "list":"一覧"
@@ -18,10 +18,10 @@
       "sort_options":{
         "id":"ID",
         "alphabetically":"アルファベット順",
-        "offline":"オフライン有効",
-        "available":"可用性"
+        "offline":"オフラインで利用可能",
+        "available":"利用可能"
       },
-      "open":"アプリを開く…"
+      "open":"アプリの開き方"
     },
     "store_app":"ストア"
   },
@@ -35,7 +35,7 @@
         "single":"1列",
         "double":"2列"
       },
-      "open":"ブックマークを開く"
+      "open":"ブックマークの開き方"
     },
     "edit":{
       "dialog_title":"ブックマークを編集",
@@ -45,23 +45,23 @@
       "url_placeholder":"https:\/\/www.google.co.jp\/",
       "save":"保存"
     },
-    "new_caption":"新しい",
+    "new_caption":"新着",
     "new_bookmark":"ブックマーク",
     "new_folder":"フォルダ",
-    "drop_link":"リンクをここにドロップ"
+    "drop_link":"ここにリンクをドロップ"
   },
   "chrome_bookmarks":{
     "name":"ブックマーク",
-    "desc":"Chromeのブックマークおよび指定フォルダ内のブックマークを表示します。",
+    "desc":"Chrome のブックマークおよび指定フォルダ内のブックマークを表示します。",
     "settings":{
       "title_placeholder":"ウィジェットのタイトルを入力",
-      "from":"ブックマークを表示します。",
-      "open":"ブックマークを開く"
+      "from":"表示するブックマーク",
+      "open":"ブックマークの開き方"
     }
   },
   "calc":{
     "name":"電卓",
-    "desc":"基本的な演算子が使える電卓を表示",
+    "desc":"基本的な計算をすることのできる電卓を表示します。",
     "error":"エラーが発生しました",
     "infinity":"無限",
     "mismatch":"かっこが一致しません"
@@ -83,17 +83,17 @@
   },
   "clock":{
     "name":"時計",
-    "desc":"アラーム、時計、タイマー、ストップウォッチ機能を提供します。",
+    "desc":"アラーム、時計、タイマー、ストップウォッチ機能を使うことができます。",
     "settings":{
       "timezone":"タイムゾーン",
       "timezone_local":"ローカル",
-      "format":"時刻形式",
+      "format":"時刻の表示方法",
       "format_options":{
         "ampm":"AM\/PM - デジタル",
-        "24hour":"24時間表示 - デジタル",
-        "analog":"12時間表示 - アナログ",
+        "24hour":"24時間制 - デジタル",
+        "analog":"12時間制 - アナログ",
         "ampmseconds":"AM\/PM - デジタル, 秒表示なし",
-        "24hourseconds":"24時間表示 - デジタル, 秒表示なし"
+        "24hourseconds":"24時間制 - デジタル, 秒表示なし"
       },
       "sound":"アラーム音"
     },
@@ -103,19 +103,19 @@
     "timer":"タイマー",
     "stopwatch":"ストップウォッチ",
     "set":"セット",
-    "unset":"解除",
+    "unset":"キャンセル",
     "dismiss":"閉じる",
     "enable_audio":"通知音を有効にする"
   },
   "facebook":{
     "name":"Facebook",
-    "desc":"ウィジェットに Facebook を埋め込みます"
+    "desc":"Facebook をウィジェットに埋め込みます。"
   },
   "feedly":{
     "name":"Feedly",
     "desc":"Feedly アカウントからの記事を設定した形式で表示します。",
     "settings":{
-      "source":"記事の表示",
+      "source":"表示する記事",
       "source_feeds":"フィード",
       "show":"表示",
       "show_options":{
@@ -143,7 +143,7 @@
     "all":"すべて",
     "saved":"あとで読む",
     "uncategorized":"未分類",
-    "author":"By",
+    "author":"著者:",
     "go_to_feedly":"Feedly に移動"
   },
   "notes":{
@@ -167,13 +167,13 @@
     "name":"Google Now",
     "desc":"フライト情報と荷物の追跡を含めたGoogle Now のカードを表示します。",
     "authorize":"何かを表示するには、まず iChrome にあなたのGoogle Nowカードを閲覧する許可を与える必要があります。",
-    "authorize_btn":"承認",
+    "authorize_btn":"許可",
     "caught_up":"すべて済んでいます、何もありません。",
     "no_title":"タイトルなし"
   },
   "plus":{
     "name":"Google+",
-    "desc":"Google+のウィジェットを埋め込みます"
+    "desc":"Google+ のウィジェットを埋め込みます。"
   },
   "notifications":{
     "name":"Google からの通知",
@@ -188,14 +188,14 @@
       "subreddit_placeholder":"取得したリンクを表示するsubredditを入力します。(例： technology)",
       "sort":"並べ替え順序",
       "sort_options":{
-        "hot":"ホット",
+        "hot":"注目",
         "top":"トップ",
         "new":"新着",
-        "gilded":"ゴールド順",
+        "gilded":"ゴールド",
         "rising":"上昇中",
         "controversial":"論争中"
       },
-      "links":"表示されるリンク",
+      "links":"表示するリンクの数",
       "click":"クリックで表示",
       "click_options":{
         "link":"リンク",
@@ -227,15 +227,15 @@
     "name":"Twitter",
     "desc":"ホーム画面のストリームもしくは特定のリストからのツイートを表示",
     "settings":{
-      "source":"表示するツイートの設定",
-      "show":"表示されているツイート"
+      "source":"表示するツイート",
+      "show":"表示するツイートの数"
     },
-    "authorize":"まずiChromeを承認してください。",
+    "authorize":"まず iChrome を許可する必要があります",
     "authorize_msg":"あなたの Twitter アカウントからツイートを表示するためには、iChrome に許可を与える必要があります。",
     "authorize_btn":"許可",
-    "no_tweets":"ツイートがありません…",
+    "no_tweets":"ツイートがありません",
     "home":"ホーム",
-    "mentions":"メンション",
+    "mentions":"@ツイート",
     "retweets":"自分のリツイート",
     "lists":"リスト",
     "more":"もっと表示",
@@ -249,7 +249,7 @@
   },
   "youtube":{
     "name":"YouTube",
-    "desc":"人気のビデオや特定ユーザーのビデオを表示します。",
+    "desc":"人気のある動画や指定したユーザーの動画を表示します。",
     "settings":{
       "format":"表示方法",
       "format_options":{
@@ -259,10 +259,10 @@
         "four":"4個小さく表示",
         "six":"6個小さく表示"
       },
-      "from":"表示するビデオを指定",
+      "from":"表示する動画",
       "from_help":"プロフィール画面のURLにあるユーザー名と <b>全く同じ<\/b> ように指定する必要があります。\n<br \/><br \/>\nユーザー名にスペースは入りません。",
       "from_placeholder":"トップビデオを表示する場合は空白のままにしてください。",
-      "open":"検索結果の表示方法"
+      "open":"検索結果の表示"
     },
     "search":"YouTube で検索",
     "num_views":"閲覧数"
@@ -282,7 +282,7 @@
   },
   "html":{
     "name":"HTML",
-    "desc":"完全にカスタム HTML を iframe で表示します。",
+    "desc":"iframe 内にカスタム HTML を表示します。",
     "settings":{
       "html":"HTML",
       "js":"JavaScript",
@@ -290,7 +290,7 @@
     }
   },
   "sitelink":{
-    "name":"サイトリンク",
+    "name":"サイトのリンク",
     "desc":"オプションで、タイトルとサムネイル リンクを表示します。",
     "settings":{
       "link":"リンク先の URL",
@@ -299,18 +299,18 @@
       "image_placeholder":"http:\/\/www.example.com\/image.png",
       "color":"画像の背景色",
       "style":"画像のスタイル",
-      "style_fill":"塗りつぶし",
+      "style_fill":"埋める",
       "style_center":"中央揃え"
     }
   },
   "stats":{
     "name":"システムの統計情報",
-    "desc":"リアルタイムのシステム統計情報をいつでも確認できます",
+    "desc":"リアルタイムのシステム統計情報をいつでも確認することができます。",
     "memory":"メモリ",
     "battery":"バッテリー",
     "usage":"使用中",
     "in_use":"使用中",
-    "remaining":"残り",
+    "remaining":" ",
     "charged":"充電完了",
     "idle":"待機中",
     "charging":"充電中",
@@ -320,7 +320,7 @@
     "name":"検索",
     "desc":"ページ内に簡単な検索ボックスを埋め込みます。",
     "settings":{
-      "placeholder":"検索フィールドの初期値",
+      "placeholder":"検索フィールドのプレースホルダー",
       "search_url":"検索エンジンの URL",
       "param":"クエリのパラメータ",
       "param_placeholder":"パラメーター クエリがどこ、すなわち\"q\""
@@ -348,8 +348,8 @@
     "from":"出発地を入力",
     "to":"目的地を入力",
     "loading":"経路を読み込み中です...",
-    "error":"要求した方向を読み込むときに問題が発生しました。",
-    "error2":"入力した開始および宛先アドレスを確認してください。",
+    "error":"経路の読み込みに失敗しました。",
+    "error2":"出発地および目的地の住所を確認してください。",
     "open_in_maps":"Google マップで開く",
     "via":"経由"
   },
@@ -368,11 +368,11 @@
     "no_key":"それはあなたのリンクを読み込むことができます前に、あなたのポケットのアカウントに iChrome アクセスを与える必要があります。"
   },
   "analytics":{
-    "name":"解析",
+    "name":"アナリティクス",
     "desc":"Googleアナリティクスプロフィールからさまざまな統計情報を表示",
     "sessions":"セッション",
-    "pageviews":"ページビュー",
-    "pagesvisit":"ページ\/訪問",
+    "pageviews":"ページビュー数",
+    "pagesvisit":"訪問別ページ数",
     "bouncerate":"直帰率",
     "completions":"補完",
     "noprofile_title":"プロファイルが選択されていません",
@@ -382,38 +382,37 @@
     }
   },
   "classroom":{
-    "name":"教室",
+    "name":"Classroom",
     "desc":"あなたのグーグル・クラスルーム割り当ておよびクラスで最新にしておきます。",
     "settings":{
-      "mode":"ウィジェット モード",
-      "mode_teacher":"先生",
+      "mode":"ウィジェットモード",
+      "mode_teacher":"教師",
       "mode_student":"生徒"
     }
   },
   "currency":{
     "name":"通貨",
-    "desc":"169 通貨の中から、 2 つの通貨を変換してみましょう。",
-    "to_label":"から",
-    "recently_used":"最近使用"
+    "desc":"169 の通貨の中から換算することができます。",
+    "recently_used":"最近使用した通貨"
   },
   "dictionary":{
     "name":"辞書",
-    "desc":"定義と同義の単語をすばやく検索します。",
-    "search_placeholder":"単語または語句をここに入力します。",
-    "more":"もっと",
-    "less":"ﾒﾆｭｰ縮小",
+    "desc":"意味や同義語をすばやく検索することができます。",
+    "search_placeholder":"単語をここに入力",
+    "more":"もっと見る",
+    "less":"閉じる",
     "synonyms":"類義語",
-    "antonyms":"反意語",
+    "antonyms":"対義語",
     "web_definitions":"Web の定義",
-    "no_definitions":"定義なし"
+    "no_definitions":"意味が見つかりませんでした"
   },
   "drive":{
     "name":"ドライブ",
-    "desc":"最近Google ドライブで変更されたファイルを表示します",
+    "desc":"Google ドライブで最近変更されたファイルを表示します。",
     "settings":{
-      "files_shown":"ファイルの数が表示される"
+      "files_shown":"表示されるファイルの数"
     },
-    "modified_by":"By",
+    "modified_by":"by",
     "authMessage":"何かをここで示すことができる前にあなたのドライブのファイルを表示する iChrome のアクセス許可を与える必要があります。"
   },
   "gmail":{
@@ -422,17 +421,17 @@
   },
   "iframe":{
     "name":"iFrame",
-    "desc":"iframe 内の web ページが表示されます。",
+    "desc":"iframe 内で指定した Web ページを表示します。",
     "settings":{
       "url":"フレームの URL",
-      "url_placeholder":"例: http:\/\/www.google.com\/",
+      "url_placeholder":"例: https:\/\/www.google.co.jp\/",
       "height":"フレームの高さ",
-      "padding":"パディング"
+      "padding":"余白"
     }
   },
   "keep":{
-    "name":"保持",
-    "desc":"埋め込み型 Google Keep ウィジェット"
+    "name":"Keep",
+    "desc":"Google Keep をウィジェットに埋め込みます。"
   },
   "news":{
     "name":"ニュース",
@@ -441,21 +440,21 @@
     "settings":{
       "page_title":"設定",
       "save":"保存",
-      "title":"ウィジェットタイトル",
-      "title_placeholder":"ウィジェットのタイトルを入力するか、空白のままは非表示になります",
-      "articles":"表示される記事",
-      "edition":"版",
-      "default_topic":"既定のトピック"
+      "title":"ウィジェットのタイトル",
+      "title_placeholder":"ウィジェットのタイトルを入力、または空欄にして非表示",
+      "articles":"表示する記事数",
+      "edition":"言語",
+      "default_topic":"デフォルトのトピック"
     }
   },
   "recentlyclosed":{
-    "name":"最近閉じた",
-    "desc":"最近閉じたタブを示します",
+    "name":"最近閉じたタブ",
+    "desc":"最近閉じたタブを表示します。",
     "settings":{
-      "tabs":"表示されるタブ",
+      "tabs":"表示するタブの数",
       "open":"タブの開き方"
     },
-    "more":"詳細"
+    "more":"個のタブ"
   },
   "rss":{
     "name":"RSS",
@@ -463,17 +462,17 @@
     "settings":{
       "page_title":"設定",
       "save":"保存",
-      "title":"ウィジェットタイトル",
-      "title_placeholder":"ウィジェットのタイトルを入力するか、空白のままは非表示になります",
+      "title":"ウィジェットのタイトル",
+      "title_placeholder":"ウィジェットのタイトルを入力、または空欄にして非表示",
       "link":"タイトルのリンク",
-      "link_placeholder":"ウィジェットのタイトルのリンクを入力します。",
+      "link_placeholder":"ウィジェットのタイトルのリンクを入力",
       "feeds":"フィード",
-      "feeds_help":"それを編集する任意のフィードをクリックします。",
+      "feeds_help":"フィードをクリックして編集",
       "feeds_placeholder":"フィード URL とプレスを追加する入力を入力してください。",
       "feeds_pro_only":"のみプロのユーザーの場合は、それぞれのウィジェットに複数のフィードを使用できます。Pro の設定で。",
       "feed_name_placeholder":"フィード名",
       "feed_url_placeholder":"フィードの URL",
-      "articles":"表示される記事"
+      "articles":"表示する記事数"
     },
     "by":"By",
     "all_articles":"すべての記事",
@@ -488,25 +487,25 @@
       "teams_placeholder":"チーム名を入力し、enter キーを押して追加"
     },
     "favorites":"お気に入り",
-    "top_games":"おすすめゲーム",
+    "top_games":"人気の試合",
     "scores":"スコア",
     "news":"ニュース",
     "last_play":"最後に再生",
     "no_games":"ゲームが見つかりません",
-    "pro_splash1":"スポーツ ニュースは Pro 専用の機能です。",
-    "pro_splash2":"「設定」で Pro を購入します。",
+    "pro_splash1":"スポーツニュースは Pro 専用の機能です。",
+    "pro_splash2":"設定から Pro を購入してください。",
     "preview":"プレビュー",
     "tickets":"チケット",
     "live":"現在",
     "recap":"要約",
-    "box_score":"ボックス スコア"
+    "box_score":"ボックススコア"
   },
   "stocks":{
-    "name":"株",
+    "name":"株価",
     "desc":"指定した銘柄の現況を表示します。",
     "settings":{
-      "stocks":"株",
-      "stocks_placeholder":"会社または exchange 名を入力し、enter キーを押します"
+      "stocks":"株価",
+      "stocks_placeholder":"会社名またはコードを入力"
     },
     "as_of":"時点",
     "exchange_time":"取引時間",
@@ -517,31 +516,31 @@
     "time_ranges":{
       "1d":"1日",
       "5d":"5日",
-      "1m":"1ヶ月",
-      "3m":"3ヶ月",
-      "1y":"1 年",
+      "1m":"1分",
+      "3m":"3分",
+      "1y":"1年",
       "5y":"5年",
       "max":"最大"
     },
     "open":"開始値",
     "prev_close":"前日終値",
-    "high":"高い",
-    "52high":"52 週高",
-    "low":"低い",
-    "52low":"52 週低",
-    "volume":"取引量",
+    "high":"高値",
+    "52high":"52週高値",
+    "low":"安値",
+    "52low":"52週安値",
+    "volume":"出来高",
     "avg_volume":"平均ボリューム",
-    "shares":"株式",
+    "shares":"株価",
     "cap":"時価総額",
     "pe":"価格\/収益",
     "eps":"EPS",
-    "beta":"ベータ",
+    "beta":"ベータ値",
     "inst_own":"独自の研"
   },
   "todo":{
     "name":"To-Do",
     "desc":"重要なことや完了したアイテムなど、インタラクティブなTo-Doリストを表示します。",
-    "title":"To-Doリスト",
+    "title":"To-Do リスト",
     "settings":{
       "color":"フォントの色",
       "color_options":{
@@ -549,7 +548,7 @@
         "dark":"暗い"
       },
       "tags":"タグ",
-      "tags_placeholder":"タグを入力してEnterキーを押します"
+      "tags_placeholder":"タグを入力して Enter"
     },
     "add":"項目を追加",
     "none":"未設定",
@@ -563,13 +562,13 @@
     }
   },
   "traffic":{
-    "name":"トラフィック",
-    "desc":"自宅もしくは職場までの現在の交通状況でかかる時間を表示します。",
+    "name":"交通状況",
+    "desc":"自宅または勤務先までの現在の交通状況でかかる時間を表示します。",
     "settings":{
       "leave":"自宅を出発する時間",
-      "home":"自宅住所",
+      "home":"自宅の住所",
       "home_placeholder":"仕事の後に行く場所",
-      "work":"職場の住所",
+      "work":"勤務先の住所",
       "work_placeholder":"仕事の前にいる場所",
       "method":"交通手段",
       "method_options":{
@@ -579,25 +578,33 @@
       }
     },
     "to_home":"自宅へ",
-    "to_work":"職場へ"
+    "to_work":"勤務先へ",
+    "hour":"%s 時間",
+    "hours":"%s 時間",
+    "hours_letter":"%s時間",
+    "minute":"%s 分",
+    "minutes":"%s 分",
+    "minute_short":"%s 分",
+    "minutes_short":"%s 分",
+    "minutes_letter":"%s分"
   },
   "translate":{
     "name":"翻訳",
     "desc":"入力するとすぐに 90 の言語からの翻訳することができます。",
-    "from_placeholder":"ここで入力を開始します。",
-    "to_placeholder":"翻訳されたテキストがここに表示されます。",
+    "from_placeholder":"翻訳するテキストを入力",
+    "to_placeholder":"翻訳されたテキストが表示されます",
     "detect_lang":"言語を検出",
-    "translating":"翻訳しています．．．",
+    "translating":"翻訳中...",
     "unknown":"不明"
   },
   "unread":{
-    "name":"未読",
-    "desc":"Gmailの受信トレイにある未読メールの数を表示",
+    "name":"Gmail の未読メール",
+    "desc":"Gmail の受信トレイにある未読メールの数を表示します。",
     "settings":{
       "open":"クリックすると開く"
     },
     "unread_none":"未読メール",
-    "unread_one":"未読のメール",
+    "unread_one":"未読メール",
     "unread_many":"未読メール"
   },
   "voice":{
@@ -611,26 +618,26 @@
   },
   "weather":{
     "name":"天気",
-    "desc":"現在の天気とこの先４日間の予報を表示",
+    "desc":"現在の天気と今後4日間の天気予報を表示します。",
     "settings":{
       "location":"場所",
-      "location_placeholder":"場所を入力してEnterキーを押してください",
+      "location_placeholder":"場所を入力して Enter",
       "units":"単位",
-      "units_imperial":"インペリアル (華氏)",
-      "units_metric":"メトリック (摂氏)",
+      "units_imperial":"°F",
+      "units_metric":"℃",
       "enabled":"有効",
       "disabled":"無効",
-      "forecast":"予想",
-      "hourly":"時間ごとの予測"
+      "forecast":"予測",
+      "hourly":"1時間ごとの予測"
     },
-    "more":"もっと",
-    "less":"ﾒﾆｭｰ縮小",
-    "wind":"風速",
-    "precipitation":"降水",
+    "more":"もっと見る",
+    "less":"閉じる",
+    "wind":"風",
+    "precipitation":"降水確率",
     "uv":"紫外線指数",
-    "feelslike":"ようなを感じ",
+    "feelslike":"体感温度",
     "barometer":"気圧",
-    "visibility":"見え方",
+    "visibility":"視界",
     "humidity":"湿度",
     "dewpoint":"露点",
     "moonphase":"月",

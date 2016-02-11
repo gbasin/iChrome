@@ -393,7 +393,6 @@
   "currency":{
     "name":"Devise ",
     "desc":"Vous permet de convertir entre deux des 169 devises.",
-    "to_label":"à",
     "recently_used":"Utilisé récemment"
   },
   "dictionary":{
@@ -579,7 +578,15 @@
       }
     },
     "to_home":"Pour aller à la maison",
-    "to_work":"pour aller au travail"
+    "to_work":"pour aller au travail",
+    "hour":"%s hour",
+    "hours":"%s hours",
+    "hours_letter":"%sh",
+    "minute":"%s minute",
+    "minutes":"%s minutes",
+    "minute_short":"%s min",
+    "minutes_short":"%s mins",
+    "minutes_letter":"%sm"
   },
   "translate":{
     "name":"Traduire",
