@@ -1,10 +1,10 @@
 {
   "lang_code":"zh-CN",
-  "language":"中文简体",
-  "extName":"iChrome - 快速并兼具生产力的主页",
-  "newtabName":"iChrome 新选项卡 - 快速并兼具生产力的新选项卡",
-  "extDescription":"Chrome最好用的启动页插件，拥有令人惊叹且可以任意定制的主题、小部件，并如闪电般急速！",
-  "newtabDescription":"Chrome最好用的新选项卡，拥有令人惊叹且可以任意定制的主题、小部件，并如闪电般急速！",
+  "language":"简体中文",
+  "extName":"iChrome - 快速，高效的主页",
+  "newtabName":"iChrome 新选项卡 - 快速，高效的新选项卡",
+  "extDescription":"Chrome最好用的主页，拥有令人惊叹且可以任意定制的主题和小部件，并如闪电般急速！",
+  "newtabDescription":"Chrome最好用的新选项卡，拥有令人惊叹且可以任意定制的主题和小部件，并如闪电般急速！",
   "defaults":{
     "tab":"首页",
     "me":"我"
@@ -12,27 +12,27 @@
   "remove_widget":"移除",
   "alert":{
     "default_button":"忽略",
-    "confirm_title":"您是否确认要这样做？",
+    "confirm_title":"您确定要这样做？",
     "confirm_continue":"继续",
     "confirm_cancel":"取消"
   },
   "onboarding":{
     "modal":{
-      "tagline":"在一个页面中访问您所有的站点和应用",
-      "wrong_extension":"想用iChrome作为你的新标签页？",
-      "wrong_extension_newtab":"想用iChrome作为你的主页？",
-      "wrong_extension_action":"单击此处",
-      "about":"iChrome基于选项卡和小工具",
-      "about_desc":"选项卡是布满小部件-模块的页面，这些模块有显示诸如天气，新闻以及您的邮件之类的模块。您可以自定义大部分的小部件而且随心所欲地增加它们的数量。",
-      "terms":"注：开始使用ichrome，您的行为将被视为对ichrome的<a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">条款<\/a>及<a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">隐私政策<\/a>的认可",
+      "tagline":"您所有的站点及应用，全在这里",
+      "wrong_extension":"想将iChrome设为您的新标签页？",
+      "wrong_extension_newtab":"想将iChrome设为您的主页？",
+      "wrong_extension_action":"请点击此处",
+      "about":"iChrome中的一切都基于选项卡和小工具",
+      "about_desc":"标签页由小部件组成。小部件可以显示各种各样的信息，例如天气预报，最新新闻以及您的邮件。您可以随心所欲的自定义绝大多数小部件，最妙的是您想添加多少就可以添加多少。",
+      "terms":"请注意：开始使用iChrome代表您同意iChrome的<a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">使用条款<\/a>及<a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">隐私政策<\/a>",
       "sign_in":"使用您的 Google 帐户登录",
-      "sign_in_desc":"在安全地在线保存您的更改之前，请登录您的Google账户。",
-      "sign_in_desc2":"您可以保持未登录状态，但是您的页面将不会在线保存，而且不能够从其他计算机访问此页面。",
+      "sign_in_desc":"在可在线安全的保存您所做更改前，请登录您的Google账户。",
+      "sign_in_desc2":"您可以保持未登录状态，但您的iChrome页面将不会被在线保存，而且您将无法在其他计算机上访问此页面。",
       "sign_in_button":"使用 Google 帐号登录",
       "have_account":"看起来您已经有了一个账户！",
-      "have_account_desc":"您已经可以使用所有分页和小部件了！",
+      "have_account_desc":"您现在可以使用所有的标签页和小部件了！",
       "get_started":"让我们开始吧！",
-      "get_started_desc":"很好！让我们开始一起设置您的页面。"
+      "get_started_desc":"一切就绪！让我们一起开始设置您的页面。"
     },
     "widgets":{
       "configure":"让我们来配置一个小部件。",
@@ -40,23 +40,23 @@
       "configure_skip":"跳过",
       "settings":"将<b>San Francisco, CA<\/b>替换为您的所在位置，然后单击<b>保存<\/b>。",
       "move":"您可以<b>拖动<\/b>这个标记来移动小部件的位置。",
-      "remove":"将小部件拖动到红色的边栏 (当前未显示)，就可以<b>删除<\/b>它。",
+      "remove":"在拖动小部件时将小部件拖到红色的边栏(当前未显示)，就可将其<b>删除<\/b>。",
       "done":"好"
     },
     "settings":{
       "intro":"现在让我们看看 <b>菜单<\/b>，看看你能做什么。",
-      "instructions":"单击高亮的图片来打开它。",
+      "instructions":"点击高亮的位置以来打开它。",
       "skip":"跳过",
       "tooltips":{
         "settings":"改变 iChrome 的外观和功能",
         "widgets":"添加新小部件 - 您可以添加任意数量的小部件",
         "editing":"显示或隐藏小部件上的编辑按钮",
         "links":"这是常用链接列表，您可以在在设置中添加您经常访问的站点",
-        "tabs":"这是您的标签页，您可以在设置中添加更多。",
+        "tabs":"这是您的标签页列表，您可随时在设置中添加更多标签页。",
         "support":"给我们发送消息或在此留下您对iChrome的评价。"
       },
       "finished":"就是这样！",
-      "finished_next":"从菜单中选择一个选项(试着从 <b>小部件<\/b> 开始) ，然后自定义您的页面!",
+      "finished_next":"您可以从菜单中选择一个选项(试着从<b>小部件<\/b>开始) ，然后开始自定义您的页面!",
       "finished_contact":"如果您需要任何帮助，请点击“支持”。我们会尽快给您回复。"
     }
   },
@@ -66,16 +66,16 @@
     "signin_dismiss":"忽略",
     "signin_confirm":{
       "title":"是否保留本地数据?",
-      "desc":"您确定要保留本地数据，并替换您的帐户配置，或使用您账户中的配置替换此计算机的配置吗?",
+      "desc":"您想保留本地配置并替换您账户中的配置，还是使用您账户中的配置替换本地配置？",
       "keep_account":"使用账户",
-      "keep_local":"离线使用"
+      "keep_local":"保留本机设置"
     },
     "signout_confirm":"登出将删除你的本地备份",
     "pastdue":"您的订阅已过期",
-    "pastdue_desc":"请更新您设置中的付费信息"
+    "pastdue_desc":"请更新您设置的付费信息"
   },
   "toolbar":{
-    "placeholder":"搜索...",
+    "placeholder":"输入并搜索...",
     "placeholder_ok":"请输入或说“OK, Google\"启动语音搜索...",
     "apps":{
       "search":"搜索",
@@ -93,16 +93,16 @@
     "settings":"设置",
     "widgets":"小部件",
     "editing":"编辑",
-    "editing_enabled":"正在编辑",
-    "editing_disabled":"不在编辑",
+    "editing_enabled":"开启",
+    "editing_disabled":"关闭",
     "plus":"Google+",
-    "tabs":"标签：",
+    "tabs":"标签页",
     "footer":{
       "support":"支持",
       "feedback":"反馈",
       "review":"评分",
-      "terms":"服务条款",
-      "privacy":"隐私政策",
+      "terms":"条款",
+      "privacy":"隐私",
       "by":"由Avi Kohn奉献"
     }
   },
@@ -128,7 +128,7 @@
         "search":"搜索",
         "links":"链接"
       },
-      "tabs":"标签：",
+      "tabs":"标签页",
       "widgets":"小部件",
       "pro":"专业版",
       "accounts":"帐户",
@@ -140,12 +140,12 @@
         "debug_tools":"调试工具"
       },
       "support":"帮助和支持",
-      "suggest":"推荐一项功能"
+      "suggest":"向我们提议新功能"
     },
     "visual":{
       "background":{
         "title":"背景",
-        "desc":"这是作为背景图放在您标签页的图片和图片组",
+        "desc":"此设置改变您的背景图片或图片组",
         "current":"当前背景",
         "custom":"自定义",
         "unnamed":"主题 %s",
@@ -155,13 +155,13 @@
       },
       "layout":{
         "title":"布局",
-        "desc":"在这里你可以调整每个选项卡中的类型和列数",
-        "columns":"列",
+        "desc":"此设置可调整每个选项卡的排列和类型",
+        "columns":"列表",
         "grid":"网格",
         "columns_number":"列数",
         "column_width":"列宽：",
-        "column_width_fixed":"固定的",
-        "column_width_fluid":"随内容变化的",
+        "column_width_fixed":"固定列宽",
+        "column_width_fluid":"弹性页宽",
         "column_warning":{
           "column_to_grid":"如果将布局改变成为基于网格的布局会使你的所有的小部件都移动至左上角。",
           "grid_to_column":"如果将布局改变成为基于列的布局会使你的所有的小部件都移动至第一列。"
@@ -169,38 +169,38 @@
       },
       "theme":{
         "title":"应用主题",
-        "desc":"iChrome及其所有小部件的应用界面设置",
+        "desc":"iChrome及所有小部件的界面设置",
         "preview":"预览",
         "light":"浅色(默认)",
         "dark":"暗色调",
-        "transparent":"半透明样式",
-        "transparent_darker":"半透明样式(较暗)"
+        "transparent":"半透明",
+        "transparent_darker":"半透明（暗色）"
       }
     },
     "toolbar":{
       "style":{
-        "title":"风格",
-        "desc":"此参数控制工具栏的样式，其可以正常或以按钮形式显示。",
+        "title":"样式",
+        "desc":"此设置控制工具栏的样式，其可以以正常或按钮形式显示。",
         "normal":"普通",
         "button":"按钮"
       },
       "search":{
         "title":"搜索",
-        "desc":"这些设置对应搜索框和语音搜索功能",
+        "desc":"此设置控制搜索框及语音搜索功能",
         "engine":"搜索引擎",
-        "engines_google":"谷歌 (默认值)",
+        "engines_google":"Google (默认)",
         "engines_custom":"自定义",
-        "engines_custom_desc":"输入搜索请求将要发送至的URL，将查询内容置于 <b>%s<\/b> 之间。",
+        "engines_custom_desc":"请输入搜索请求所使用的的URL地址，您输入的关键词在此由<b>%s<\/b>代替。",
         "voice":"启用语音搜索",
         "ok_google":"启用\"OK Google“声音检测",
         "search_tab":"在新选项卡中打开搜索结果页"
       },
       "links":{
         "title":"链接：",
-        "desc":"这是工具栏右边所显示的项目",
+        "desc":"此设置改变您工具栏右侧显示的链接",
         "apps":"应用菜单",
         "custom":"自定义链接",
-        "custom_note1":"普通用户可设置3个链接",
+        "custom_note1":"普通用户最多可设置3个链接",
         "custom_note2":"用户可以设置高达8条链接",
         "custom_name_placeholder":"链接文本",
         "custom_url_placeholder":"链接地址，例如 http:\/\/www.google.com\/"
@@ -212,27 +212,27 @@
     "tabs":{
       "create_new":"新建",
       "make_default":"设为默认",
-      "desc1":"标签是 iChrome 里的页面。每个标签都有其自己的小部件，彼此之间完全独立。",
-      "desc2":"移动鼠标或使用键盘上的箭头键，单击左右屏幕上选项卡中的按钮，即可进行选项的切换。",
-      "name_placeholder":"输入标签名称",
-      "delete_confirm":"警告，此操作并不可逆。此标签中所有小部件的数据都将会永久丢失。"
+      "desc1":"标签页是iChrome里的页面。每个标签页都有其自己的小部件，彼此之间完全独立。",
+      "desc2":"您可以移动鼠标以点击屏幕左右边的按钮，或使用键盘上的方向键来切换标签页。",
+      "name_placeholder":"输入标签页名称",
+      "delete_confirm":"警告，此操作并不可逆。此标签页中所有小部件的数据将会永久丢失。"
     },
     "accounts":{
       "status":{
-        "title":"状态",
-        "signed_in":"您当前正以 %s (%s) 身份 <b>登录<\/b>。",
+        "title":"账户状态",
+        "signed_in":"您当前正以 %s (%s) 的身份 <b>登录<\/b>。",
         "reset_account":"重置帐户",
         "sign_out":"登出",
         "signed_out":"您当前并未<b>登录<\/b>。登录您的谷歌帐户以便安全地存储和同步您的配置。",
         "sign_in":"使用 Google 帐号登录"
       },
       "reset_confirm_desc":"该操作将清除所有本地和同步数据，请注意该操作没有备份并且无法撤消。",
-      "reset_confirm_desc2":"您将失去所有当前连接到此账号的电脑上的配置。"
+      "reset_confirm_desc2":"您将失去所有连接到该账号的电脑上的配置。"
     },
     "advanced":{
       "backups":{
         "title":"备份与恢复",
-        "desc":"备份是指您所有选项卡，设置和小部件的完整备份。备份在您每天第一次打开iChrome时自动建立。",
+        "desc":"备份是指您所有选项卡，设置和小部件的完整备份。在您每天第一次打开iChrome时备份将会自动建立。",
         "desc2":"使用下面的按钮将iChrome回滚至过去的设置，您也可以下载您的备份。",
         "backup":"立即备份",
         "upload":"从文件还原",
@@ -244,7 +244,7 @@
       },
       "css":{
         "title":"自定义 CSS",
-        "desc":"您可以使用 CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\"target=\"blank\"> 定义<\/a>) 来自定义几乎任何部分的 iChrome。",
+        "desc":"您可以使用 CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\"target=\"blank\"> 介绍<\/a>) 来自定义iChrome的几乎任何部分。",
         "placeholder":"您最多可输入1000个字符"
       },
       "debug_tools":{
@@ -254,69 +254,69 @@
       }
     },
     "widgets":{
-      "desc1":"小部件有自己的设置，不能在这里自定义。",
-      "desc2":"若您要改变小部件的设置，请看以下步骤：",
-      "steps1":"将鼠标移动到任一个小部件上",
-      "steps2":"单击小部件右上角处显示的扳手图标。如果没有显示，那么该小部件没有可自定义的设置。",
-      "steps3":"编辑任何显示在对话框中的设置",
-      "steps4":"单击保存以保存您的更改，或单击背景中的任意位置以放弃您的更改"
+      "desc1":"每个小部件都有自己独立的设置，您无法在此修改。",
+      "desc2":"若您要改变小部件的设置，请参考以下步骤：",
+      "steps1":"将鼠标移动到您想更改设置的小部件上",
+      "steps2":"单击小部件右上角处显示的扳手图标。如果图标没有显示，代表该小部件没有可自定义的设置。",
+      "steps3":"此时您即可编辑显示在对话框中的任意一项设置了",
+      "steps4":"单击保存按钮以保存您所作的更改，或单击对话框背景中的任意位置以放弃您的更改"
     },
     "pro":{
       "promo":{
         "monthly_price":"每月仅需2美元",
-        "yearly_price":"或每年20美元",
+        "yearly_price":"或年付20美元",
         "upgrade_btn":"立即升级",
-        "business":"有兴趣为您的企业或学校购买专业版吗 ?",
+        "business":"有兴趣为您的企业或学校购买专业版 ?",
         "business_contact":"联系我们",
         "themes":"主题",
-        "themes_desc":"全新的典雅黑及透明小部件主题，令您更加愉悦地欣赏您独一无二的背景图片。",
+        "themes_desc":"全新的典雅黑小部件主题，令您更加愉悦地欣赏您独一无二的背景图片。",
         "bgs":"动态背景",
         "bgs_desc":"二十种高清动态背景令您的标签页富有趣味",
         "widgets":"可最大化的窗口小部件",
         "widgets_desc":"有了可最大化的小部件，iChrome将大有不同",
         "more_header":"以及更多功能",
-        "stocks":"带有延伸资料和历史记录信息的实时股票",
-        "rss":"支持多RSS源订阅的小部件",
-        "sports":"可显示普通和特定联赛的体育新闻",
+        "stocks":"带有延伸资料和历史记录的实时股票信息",
+        "rss":"支持订阅多RSS源的小部件",
+        "sports":"可显示普通和特定联赛的体育快讯",
         "tabbed_widgets":"选项卡式排列的新闻和RSS小部件",
-        "bg_downloads":"可下载的背景图片",
-        "weather":"提供多达未来10天的每小时天气预报",
-        "toolbar":"更多工具栏链接",
-        "support":"优先的技术支持和建议",
-        "buy_pro":"购买专业版"
+        "bg_downloads":"背景图片可任意下载",
+        "weather":"提供长达未来10天每小时的天气预报",
+        "toolbar":"可设置更多工具栏链接",
+        "support":"技术支持及建议优先处理",
+        "buy_pro":"立即购买专业版"
       },
       "checkout":{
-        "title":"结帐",
+        "title":"付款",
         "updating_title":"升级套餐",
         "payment_options":"支付",
-        "pay_monthly":"每月 (约合 2 美元)",
-        "pay_yearly":"每年 (20 美元)",
+        "pay_monthly":"每月 (约合2美元)",
+        "pay_yearly":"每年 (20美元)",
         "cancel":"取消",
         "update":"更新",
         "subscribe":"订阅",
-        "braintree_notice":"付款将交给 Braintree 安全的处理。",
-        "monthly_notice":"通过订阅，您授权 iChrome 每个月收取您 2 美元，直到您取消您的订阅。",
-        "yearly_notice":"通过订阅，您授权 iChrome 每年收取您 20 美元 ，直到您取消您的订阅。",
-        "update_notice":"虽然计费周期更改将立即生效，直到当前周期结束你将不会被收取费用。",
+        "braintree_notice":"您的付款信息将安全地交由Braintree处理。",
+        "monthly_notice":"您如订阅，代表您授权iChrome每个月收取您 2 美元，直到您取消订阅。",
+        "yearly_notice":"您如订阅，代表您授权iChrome每年收取您 20 美元，直到您取消订阅。",
+        "update_notice":"虽然计费周期更改将立即生效，直到当前付款周期结束前您将不会被收取任何费用。",
         "thank_you":"感谢您购买 iChrome 专业版!",
-        "thank_you2":"iChrome 将会在几秒钟内重新加载，并为您设置好一切!",
-        "error":"在尝试处理您的付款时，出错了。",
-        "error2":"请稍后再试或发电子邮件给我们 support@ichro.me",
+        "thank_you2":"一切即将就绪，iChrome将在几秒钟内重新加载。",
+        "error":"在尝试处理您的付款时出错了。",
+        "error2":"请稍后再试或发给我们发送电子邮件 support@ichro.me",
         "signin":"登录",
-        "signin_desc":"您需要先登录，然后购买专业版，这样我们可以确保当前用户是您。",
+        "signin_desc":"您需要先登录才可购买专业版，因为这样我们才能确定是您。",
         "signin_btn":"登录"
       },
       "plan":{
         "title":"套餐",
         "desc":"您目前已订阅 iChrome 专业版 (%s)",
         "types":{
-          "monthly":"每月",
-          "yearly":"每年",
+          "monthly":"月付",
+          "yearly":"年付",
           "business":"企业版",
           "education":"教育版",
           "custom":"自定义"
         },
-        "uneditable_desc":"商业，教育及自定义套餐不能从iChrome内设置。请 <a href=\"mailto:support@ichro.me\"> 联系我们<\/a>以更新或取消您的订阅。",
+        "uneditable_desc":"商业，教育及自定义套餐不能在iChrome内设置。请 <a href=\"mailto:support@ichro.me\"> 联系我们<\/a>以更新或取消您的订阅。",
         "status":"订阅状态",
         "status_active":"已激活",
         "status_trial":"试用",
@@ -343,7 +343,7 @@
     "sizes":{
       "tiny":"迷你",
       "small":"小",
-      "medium":"中等",
+      "medium":"中",
       "large":"大",
       "variable":"特大"
     },

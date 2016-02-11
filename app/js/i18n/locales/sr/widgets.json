@@ -393,7 +393,6 @@
   "currency":{
     "name":"Валута",
     "desc":"Дозвољава ти конверзију изеђу било које две валуте од 169 понуђених.",
-    "to_label":"на",
     "recently_used":"Recently Used"
   },
   "dictionary":{
@@ -579,7 +578,15 @@
       }
     },
     "to_home":"ка кући",
-    "to_work":"ка послу"
+    "to_work":"ка послу",
+    "hour":"%s hour",
+    "hours":"%s hours",
+    "hours_letter":"%sh",
+    "minute":"%s minute",
+    "minutes":"%s minutes",
+    "minute_short":"%s min",
+    "minutes_short":"%s mins",
+    "minutes_letter":"%sm"
   },
   "translate":{
     "name":"Преведи",

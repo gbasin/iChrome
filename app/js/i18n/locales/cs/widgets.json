@@ -393,7 +393,6 @@
   "currency":{
     "name":"Měna",
     "desc":"Umožní přepočet mezi jakýmikoli dvěma ze 169 měn.",
-    "to_label":"na",
     "recently_used":"Nedávno použité"
   },
   "dictionary":{
@@ -579,7 +578,15 @@
       }
     },
     "to_home":"domů",
-    "to_work":"do práce"
+    "to_work":"do práce",
+    "hour":"%s hour",
+    "hours":"%s hours",
+    "hours_letter":"%sh",
+    "minute":"%s minute",
+    "minutes":"%s minutes",
+    "minute_short":"%s min",
+    "minutes_short":"%s mins",
+    "minutes_letter":"%sm"
   },
   "translate":{
     "name":"Překladač",

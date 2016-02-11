@@ -393,7 +393,6 @@
   "currency":{
     "name":"貨幣",
     "desc":"讓妳在169種貨幣中進行任兩種轉換",
-    "to_label":"至",
     "recently_used":"最近使用"
   },
   "dictionary":{
@@ -579,7 +578,15 @@
       }
     },
     "to_home":"回家",
-    "to_work":"前往工作"
+    "to_work":"前往工作",
+    "hour":"%s hour",
+    "hours":"%s hours",
+    "hours_letter":"%sh",
+    "minute":"%s minute",
+    "minutes":"%s minutes",
+    "minute_short":"%s min",
+    "minutes_short":"%s mins",
+    "minutes_letter":"%sm"
   },
   "translate":{
     "name":"翻譯",

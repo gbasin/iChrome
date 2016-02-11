@@ -116,7 +116,7 @@
     "exit":"Napusti postavke",
     "saved":"Postavke spremljene",
     "nav":{
-      "visual":"Vizualne",
+      "visual":"Vizualni ugođaj",
       "visual_sections":{
         "background":"Pozadina",
         "layout":"Raspored",
@@ -151,7 +151,7 @@
         "unnamed":"Tema %s",
         "select":"Odaberi temu",
         "or":"ili",
-        "url_placeholder":"Unesite URL slike"
+        "url_placeholder":"Unesi URL slike"
       },
       "layout":{
         "title":"Raspored",
@@ -254,7 +254,7 @@
       }
     },
     "widgets":{
-      "desc1":"Widgeti ima svoje vlastite postavke koje se ne mogu podešavati odavde.",
+      "desc1":"Widgeti imaju svoje vlastite postavke koje se ne mogu podešavati odavde.",
       "desc2":"Da bi promijenio postavke widgeta, slijedi ove korake:",
       "steps1":"Pomakni miš na bilo koji widget",
       "steps2":"Klikni na alatni ključ koji se pojavljuje gore desno u widgetu. Ako se ne prikazuje to znači da widget nema postavka.",
@@ -412,10 +412,10 @@
     "random_daily":"Ova tema prikazuje nasumičnu sliku svaki dan",
     "sunrise_sunset":"Ova tema prikazuje različitu sliku prema dobu dana",
     "feed":"Ova tema prikazuje novu sliku svaki dan iz vanjskih izvora",
-    "video":"Ova tema prikazuje videozapis uživo",
+    "video":"Ova tema prikazuje aktivan videozapis",
     "pro_only":"Ova tema je dostupna isključivo Pro korisnicima. Kupi Pro u postavkama.",
     "delete_confirm":"Are you really sure you would like to delete this theme?\r\nThis action is irreversible; the entire theme will be permanently lost.",
-    "delete_error":"An error occurred while trying to delete the theme.  Please try again later.",
+    "delete_error":"Dogodila se pogreška prilikom brisanja teme. Pokušaj ponovo kasnije.",
     "feed_fetching":"Molimo pričekajte, prikupljanje feed-a...",
     "feed_error":"Nešto je pošlo po zlu prilikom skupljanja feed-a. Pokušaj ponovo kasnije.",
     "caching":"Molimo pričekajte, pohranjivanje teme...",

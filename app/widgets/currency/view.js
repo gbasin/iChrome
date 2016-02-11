@@ -227,12 +227,12 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 			var to = this.$("select.to").val(),
 				from = this.$("select.from").val();
 
-			this.model.saveData({
+			this.model.saveSyncData({
 				to: to,
 				from: from,
 
-				recentTo: _(this.model.data.recentTo || []).unshift(to).uniq().take(15).value(),
-				recentFrom: _(this.model.data.recentFrom || []).unshift(from).uniq().take(15).value()
+				recentTo: _(this.model.syncData.recentTo || []).unshift(to).uniq().take(15).value(),
+				recentFrom: _(this.model.syncData.recentFrom || []).unshift(from).uniq().take(15).value()
 			});
 
 
@@ -251,9 +251,13 @@ define(["lodash", "widgets/views/main"], function(_, WidgetView) {
 		initialize: function() {
 			this.render();
 
-			this.model.getConversion(1, this.model.data.from, this.model.data.to, function(converted) {
+			this.model.getConversion(1, this.model.syncData.from, this.model.syncData.to, function(converted) {
 				this.$("input.toval").val(converted);
 			}, this);
+		},
+
+		render: function(data, partials) {
+			return WidgetView.prototype.render.call(this, data || this.model.syncData, partials);
 		},
 
 		onBeforeRender: function(data) {

@@ -393,7 +393,6 @@
   "currency":{
     "name":"Währung",
     "desc":"Konvertierung zwischen zwei aus 169 Währungen möglich.",
-    "to_label":"an",
     "recently_used":"Zuletzt benutzt"
   },
   "dictionary":{
@@ -579,7 +578,15 @@
       }
     },
     "to_home":"nach Hause",
-    "to_work":"zur Arbeit"
+    "to_work":"zur Arbeit",
+    "hour":"%s Stunde",
+    "hours":"%s Stunden",
+    "hours_letter":"%sh",
+    "minute":"%s Minute",
+    "minutes":"%s Minuten",
+    "minute_short":"%s Min",
+    "minutes_short":"%s Min",
+    "minutes_letter":"%sm"
   },
   "translate":{
     "name":"Übersetzen",

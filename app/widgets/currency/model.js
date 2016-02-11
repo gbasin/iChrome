@@ -1,7 +1,7 @@
 define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 	return WidgetModel.extend({
 		defaults: {
-			data: {
+			syncData: {
 				from: "USD",
 				to: "EUR",
 				recentFrom: ["USD"],
@@ -10,6 +10,14 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 		},
 
 		_cache: {},
+
+		initialize: function() {
+			if (typeof this.data === "object" && this.data.from) {
+				this.set("syncData", this.data);
+
+				this.unset("data");
+			}
+		},
 
 		getConversion: function(value, from, to, cb, ctx) {
 			ctx = ctx || this;

@@ -42,17 +42,17 @@ define(["lodash", "backbone", "browser/api", "storage/storage", "i18n/i18n"], fu
 		get: function(theme) {
 			var defTheme = this.model.get("cached")[0];
 
-			if (typeof theme === "object") {
-				theme = (this.model.get("cached")[theme.id] || this.model.get("custom")[(theme.id + "").replace("custom", "")] || theme);
-			}
-			else if (theme === "custom") {
+			if (((typeof theme === "object" && theme.id) || theme) === "custom") {
 				theme = {
 					id: "custom",
 					image: this.model.get("backgroundImage")
 				};
 			}
-			else if (theme === "default") {
+			else if (((typeof theme === "object" && theme.id) || theme) === "default") {
 				theme = defTheme;
+			}
+			else if (typeof theme === "object") {
+				theme = (this.model.get("cached")[theme.id] || this.model.get("custom")[(theme.id + "").replace("custom", "")] || theme);
 			}
 			else {
 				theme = (this.model.get("cached")[theme] || this.model.get("custom")[(theme + "").replace("custom", "")] || defTheme);

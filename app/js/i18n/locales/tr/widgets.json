@@ -393,7 +393,6 @@
   "currency":{
     "name":"Currency",
     "desc":"Let's you convert between any two of 169 currencies.",
-    "to_label":"to",
     "recently_used":"Recently Used"
   },
   "dictionary":{
@@ -579,7 +578,15 @@
       }
     },
     "to_home":"ev için",
-    "to_work":"iş için"
+    "to_work":"iş için",
+    "hour":"%s hour",
+    "hours":"%s hours",
+    "hours_letter":"%sh",
+    "minute":"%s minute",
+    "minutes":"%s minutes",
+    "minute_short":"%s min",
+    "minutes_short":"%s mins",
+    "minutes_letter":"%sm"
   },
   "translate":{
     "name":"Çeviri",

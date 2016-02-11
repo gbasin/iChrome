@@ -7,7 +7,7 @@ define(["lodash", "jquery", "backbone", "core/auth", "themes/utils"], function(_
 
 
 		initialize: function() {
-			this.listenTo(Utils.model, "change:cached", function() {
+			this.listenTo(Utils.model, "change:cached change:backgroundImage", function() {
 				var newTheme = Utils.get(this.theme);
 
 				// If the theme itself hasn't changed and it's a random one, we

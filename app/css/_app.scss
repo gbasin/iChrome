@@ -1352,8 +1352,8 @@ header.toolbar {
 	width: 100%;
 	height: 50px;
 	font-size: 0;
+	display: flex;
 	background: #FFF;
-	text-align: right;
 	position: relative;
 
 	.dark & {
@@ -1369,7 +1369,6 @@ header.toolbar {
 	}
 
 	> div {
-		text-align: left;
 		vertical-align: top;
 		display: inline-block;
 	}
@@ -1385,9 +1384,8 @@ header.toolbar {
 	}
 
 	.logo {
-		float: left;
-		width: 140px;
 		height: 100%;
+		flex: 0 0 140px;
 		background: url(/images/logo.svg) center/100px no-repeat;
 	}
 
@@ -1397,6 +1395,8 @@ header.toolbar {
 
 	.links {
 		height: 100%;
+		flex: 1 0 auto;
+		text-align: right;
 		padding: 18px 10px;
 	}
 
@@ -1422,9 +1422,9 @@ header.toolbar {
 	}
 
 	.menu-toggle {
-		padding: 7px;
+		flex: 0 0 56px;
 		cursor: pointer;
-		padding-right: 10px;
+		padding: 7px 10px;
 	}
 
 	.menu-toggle .img {
@@ -1444,13 +1444,19 @@ header.toolbar {
 					inset 0 2px 0 rgba(0, 0, 0, 0.15);
 	}
 
+
+
+
+
+
+
 	/*---------------------------------------------
 		/ Toolbar / Apps Menu
 	*/
 	.apps-toggle {
+		flex: 0 0 45px;
 		cursor: pointer;
-		padding: 14px 10px;
-		padding-right: 15px;
+		padding: 14px 12px;
 	}
 
 	.apps-toggle svg {
@@ -1571,9 +1577,8 @@ header.toolbar {
 		/ Toolbar / Search
 	*/
 	.search {
-		float: left;
-		width: 700px;
 		height: 100%;
+		flex: 0 1 700px;
 		position: relative;
 	}
 
@@ -1712,9 +1717,9 @@ header.toolbar {
 		/ Toolbar / Announcements
 	*/
 	.announcements {
+		flex: 0 0 45px;
 		cursor: pointer;
-		padding: 14px 10px;
-		padding-right: 15px;
+		padding: 14px 12px;
 	}
 
 	.announcements:after {
@@ -1742,12 +1747,6 @@ header.toolbar {
 
 		These let it be responsive down to 320px with very little work, why not?
 	*/
-	@media (max-width: 1150px) {
-		.search {
-			width: 50%;
-		}
-	}
-
 	@media (max-width: 800px) {
 		// These are duplicated in the menu so they can be hidden
 		.links {
@@ -1758,10 +1757,6 @@ header.toolbar {
 	@media (max-width: 500px) {
 		.logo {
 			display: none;
-		}
-
-		.search {
-			width: calc(100% - 105px);
 		}
 	}
 }
@@ -2440,7 +2435,7 @@ body > .widgets-container {
 	}
 }
 
-.grid .widgets-container > .widget:hover {
+.grid .widgets-container > .widget:not(.maximized):hover {
 	z-index: 2;
 }
 
@@ -2469,6 +2464,7 @@ body > .widgets-container {
 }
 
 .grid .widgets-container .placeholder {
+	margin: 0;
 	visibility: hidden;
 }
 
@@ -2913,6 +2909,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	padding: 0!important;
 }
 
+.grid .widget.splash {
+	height: auto!important;
+}
+
 .widget.splash .splash {
 	color: #FFF;
 	padding: 50px 0;
@@ -3072,7 +3072,11 @@ body.no-edit .widgets-container .widget.tabbed:before {
 */
 .widget.auth-required,
 .widget.legacy.auth-required {
-	padding: 0;
+	padding: 0!important;
+}
+
+.grid .widget.auth-required {
+	height: auto!important;
 }
 
 .widget.auth-required .notice {

@@ -50,7 +50,7 @@ define(
 
 						var id = parseInt($(e.currentTarget).attr("data-id")),
 							widget = Registry.get(id),
-							view = Registry.createInstance(new Backbone.Model({ id: id }), true);
+							view = Registry.createInstance(new Registry.InstanceModel({ id: id }), true);
 
 						// The getDesc method might need to load the template remotely,
 						// so it needs to be async. But, in a compiled version this
@@ -72,7 +72,7 @@ define(
 								group: "columns",
 								drop: false
 							}).find("section.handle").on("sortabledragstart", function(e, item) {
-								var newView = Registry.createInstance(new Backbone.Model({
+								var newView = Registry.createInstance(new Registry.InstanceModel({
 									id: id,
 									size: item.attr("data-size")
 								}));

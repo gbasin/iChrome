@@ -12,7 +12,7 @@ a {
 .value {
 	color: #E53935;
 	display: block;
-	font-size: 50px;
+	font-size: 45px;
 	font-weight: 300;
 	line-height: 80px;
 }
@@ -22,7 +22,7 @@ a {
 }
 
 .tiny .value {
-	font-size: 45px;
+	font-size: 40px;
 	line-height: 60px;
 	font-family: inherit;
 }

@@ -8,13 +8,7 @@ define(["lodash", "backbone", "backbone.viewcollection", "widgets/registry"], fu
 				return Registry.createInstance(options.model);
 			}
 		},
-		model: Backbone.Model.extend({
-			idAttribute: "cid",
-
-			validate: function(attrs) {
-				return !attrs.id || !Registry.get(attrs.id);
-			}
-		})
+		model: Registry.InstanceModel
 	});
 
 	var Tab = Backbone.Model.extend({
