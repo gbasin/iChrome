@@ -241,6 +241,13 @@ define([
 					return config;
 				}
 				else {
+					// We remove the value so all change events get triggered properly.
+					//
+					// Otherwise, legacy widgets access a referenced object and no change will be properly detected.
+					this.model.unset(key, {
+						silent: true
+					});
+
 					return e;
 				}
 			}, this).value();
