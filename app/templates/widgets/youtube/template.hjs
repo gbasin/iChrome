@@ -13,7 +13,7 @@
 		<h2 title="{{title}}">{{title}}</h2>
 
 		<span class="author">{{uploader}}</span>
-		<span class="views">{{views}} {{i18n.views}}</span>
+		<span class="views">{{views}} {{i18n.num_views}}</span>
 	</a>
 {{/featured}}
 
@@ -26,7 +26,7 @@
 
 			<span class="author">{{uploader}}</span>
 
-			<span class="views">{{views}} {{i18n.views}}</span>
+			<span class="views">{{views}} {{i18n.num_views}}</span>
 		</a>
 	{{/videos}}
 </div>
