@@ -2435,7 +2435,7 @@ body > .widgets-container {
 	}
 }
 
-.grid .widgets-container > .widget:hover {
+.grid .widgets-container > .widget:not(.maximized):hover {
 	z-index: 2;
 }
 
