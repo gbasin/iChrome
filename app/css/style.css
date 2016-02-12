@@ -2682,7 +2682,7 @@ body > .widgets-container {
 }
 
 /* line 2438, C:/Users/Avi/Documents/GitHub/iChrome/app/css/_app.scss */
-.grid .widgets-container > .widget:hover {
+.grid .widgets-container > .widget:not(.maximized):hover {
 	z-index: 2;
 }
 
