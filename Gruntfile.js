@@ -211,6 +211,16 @@ module.exports = function (grunt) {
 					}]
 				}
 			},
+			cachebust: {
+				src: "build/index.html",
+				dest: "build/index.html",
+				options: {
+					replacements: [{
+						pattern: /__NO_CACHE__/ig,
+						replacement: "nocache=" + new Date().getTime()
+					}]
+				}
+			},
 			htmlmin: {
 				src: "build/**/*.hjs",
 				dest: "./",
@@ -276,6 +286,7 @@ module.exports = function (grunt) {
 		"requirejs:build",
 		"string-replace:analytics",
 		"string-replace:apikeys",
+		"string-replace:cachebust",
 		"clean:all"
 	]);
 
@@ -294,6 +305,7 @@ module.exports = function (grunt) {
 		"requirejs:webstore",
 		"string-replace:analytics",
 		"string-replace:apikeys",
+		"string-replace:cachebust",
 		"clean:all",
 		"compress",
 		"clean:webstore"
@@ -313,6 +325,7 @@ module.exports = function (grunt) {
 		"removekey",
 		"requirejs:build",
 		"string-replace:analytics",
+		"string-replace:cachebust",
 		"clean:all",
 		"compress",
 		"clean:travis"
@@ -347,6 +360,7 @@ module.exports = function (grunt) {
 		"requirejs:webstore",
 		"string-replace:analytics",
 		"string-replace:apikeys",
+		"string-replace:cachebust",
 		"copy:testrun",
 		"clean:all",
 		"clean:webstore",
