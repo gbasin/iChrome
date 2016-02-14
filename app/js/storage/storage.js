@@ -196,7 +196,7 @@ define([
 				image = storage.settings.backgroundImage;
 			}
 			else {
-				image = (storage.cached[storage.settings.theme] || storage.themes[storage.settings.theme.replace("custom", "")] || storage.cached[0]).image;
+				image = (storage.cached[storage.settings.theme] || storage.themes[(storage.settings.theme + "").replace("custom", "")] || storage.cached[0]).image;
 			}
 
 			if (!image || image.slice(-4) === ".mp4") {
