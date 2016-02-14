@@ -250,8 +250,8 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 
 			var isGrid = this.model.get("isGrid");
 
-			// Set the className again in case we just switched from a grid to columns or vice-versa
-			this.el.className = this.className();
+			// Set the grid class
+			this.el.classList.toggle("grid", isGrid);
 
 			// We use native methods here for speed
 			this.el.innerHTML = '<div class="remove">' + Translate("remove_widget") + '</div>';
