@@ -255,8 +255,10 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 				hasPushes: pushes && pushes.length
 			};
 
-			var momentSecondsFuture = moment._locale._relativeTime.future.replace("%s", moment._locale._relativeTime.s),
-				momentSecondsPast = moment._locale._relativeTime.past.replace("%s", moment._locale._relativeTime.s);
+			var lData = moment.localeData();
+
+			var momentSecondsFuture = lData._relativeTime.future.replace("%s", lData._relativeTime.s),
+				momentSecondsPast = lData._relativeTime.past.replace("%s", lData._relativeTime.s);
 
 			if (data.hasPushes) {
 				data.pushes = pushes.map(function(e) {
