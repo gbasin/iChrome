@@ -265,7 +265,7 @@
       "open":"Otvori rezultate pretraživanja u"
     },
     "search":"Pretraži YouTube",
-    "num_views":"pregleda"
+    "num_views":"pog."
   },
   "quotes":{
     "name":"Citati",
@@ -278,7 +278,7 @@
         "random":"Svaki put kad učitam stranicu"
       }
     },
-    "unknown_author":"Nepoznato"
+    "unknown_author":"Nepoznati autor"
   },
   "html":{
     "name":"HTML",
@@ -393,7 +393,7 @@
   "currency":{
     "name":"Valuta",
     "desc":"Pretvori valutu iz valute, dostupno ih je 169.",
-    "recently_used":"Nedavno korištene"
+    "recently_used":"Nedavno korištene valute"
   },
   "dictionary":{
     "name":"Rječnik",
@@ -579,13 +579,13 @@
     },
     "to_home":"do kuće",
     "to_work":"do posla",
-    "hour":"%s hour",
-    "hours":"%s hours",
+    "hour":"%s sat",
+    "hours":"%s sata",
     "hours_letter":"%sh",
-    "minute":"%s minute",
-    "minutes":"%s minutes",
+    "minute":"%s minuta",
+    "minutes":"%s minuta",
     "minute_short":"%s min",
-    "minutes_short":"%s mins",
+    "minutes_short":"%s min",
     "minutes_letter":"%sm"
   },
   "translate":{

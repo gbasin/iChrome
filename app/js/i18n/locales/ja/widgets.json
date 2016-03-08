@@ -27,7 +27,7 @@
   },
   "bookmarks":{
     "name":"ブックマーク",
-    "desc":"選択もしくはカスタマイズされたブックマークやその他のリンクを表示",
+    "desc":"選択したブックマークやカスタムリンクを表示します。",
     "settings":{
       "title_placeholder":"ウィジェットのタイトルを入力",
       "layout":"レイアウト",
@@ -131,7 +131,7 @@
       },
       "mark":"既読にするタイミング",
       "mark_options":{
-        "scroll":"クリックしたときとスクロースして通り過ぎたとき",
+        "scroll":"クリックまたはスクロールして通り過ぎたとき",
         "click":"クリックしたときのみ"
       },
       "sort":"並べ替え順序",
@@ -165,10 +165,10 @@
   },
   "now":{
     "name":"Google Now",
-    "desc":"フライト情報と荷物の追跡を含めたGoogle Now のカードを表示します。",
-    "authorize":"何かを表示するには、まず iChrome にあなたのGoogle Nowカードを閲覧する許可を与える必要があります。",
+    "desc":"フライト情報や荷物の追跡などの Google Now カードを表示します。",
+    "authorize":"Google Now のカードを表示するためには、iChrome に許可を与える必要があります。",
     "authorize_btn":"許可",
-    "caught_up":"すべて済んでいます、何もありません。",
+    "caught_up":"カードはありません",
     "no_title":"タイトルなし"
   },
   "plus":{
@@ -181,11 +181,11 @@
   },
   "reddit":{
     "name":"Reddit",
-    "desc":"指定されたsubredditに対するReddit のトップアイテムを表示します。",
+    "desc":"Reddit 上の指定した subreddit の投稿を表示します。",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Redditの<b>\/r\/<\/b>以降の部分にあるsubredditを入力してください。\n<br \/><br \/>\n例えば、Technology の場合: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>　ですので、<b>technology<\/b>を入力します。",
-      "subreddit_placeholder":"取得したリンクを表示するsubredditを入力します。(例： technology)",
+      "subreddit_help":"Reddit の URL の <b>\/r\/<\/b> の後にある subreddit を入力してください。\n<br \/><br \/>\n例えば Technology の場合、<a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a> の<b>technology<\/b> を入力します。",
+      "subreddit_placeholder":"表示させたい subreddit を入力 (例: technology)",
       "sort":"並べ替え順序",
       "sort_options":{
         "hot":"注目",
@@ -196,7 +196,7 @@
         "controversial":"論争中"
       },
       "links":"表示するリンクの数",
-      "click":"クリックで表示",
+      "click":"リンクをクリックしたときに開く",
       "click_options":{
         "link":"リンク",
         "comments":"コメント"
@@ -206,7 +206,7 @@
   },
   "tasks":{
     "name":"タスク",
-    "desc":"Google Tasksのタスクリストを表示します\n（項目の編集も可能です）",
+    "desc":"編集可能な Google タスクのリストを表示します。",
     "title":"タスク",
     "settings":{
       "list":"一覧"
@@ -221,11 +221,11 @@
     "done":"完了",
     "due_today":"今日中",
     "overdue":"期限切れ",
-    "authorize":"ここに何かを表示するには設定からGoogleタスクのリストを選択する必要があります。"
+    "authorize":"タスクを表示するには、設定で Google タスクのリストを選択する必要があります。"
   },
   "twitter":{
     "name":"Twitter",
-    "desc":"ホーム画面のストリームもしくは特定のリストからのツイートを表示",
+    "desc":"Twitter のホームや指定したリストからのツイートを表示します。",
     "settings":{
       "source":"表示するツイート",
       "show":"表示するツイートの数"
@@ -236,7 +236,7 @@
     "no_tweets":"ツイートがありません",
     "home":"ホーム",
     "mentions":"@ツイート",
-    "retweets":"自分のリツイート",
+    "retweets":"リツイート",
     "lists":"リスト",
     "more":"もっと表示",
     "reply":"返信",
@@ -260,22 +260,22 @@
         "six":"6個小さく表示"
       },
       "from":"表示する動画",
-      "from_help":"プロフィール画面のURLにあるユーザー名と <b>全く同じ<\/b> ように指定する必要があります。\n<br \/><br \/>\nユーザー名にスペースは入りません。",
-      "from_placeholder":"トップビデオを表示する場合は空白のままにしてください。",
+      "from_help":"ユーザーの URL にあるユーザー名を <b>正確に<\/b> 設定する必要があります。\n<br \/><br \/>\nこの値にスペースが含まれることはありません。",
+      "from_placeholder":"空白のままでトップの動画を表示",
       "open":"検索結果の表示"
     },
     "search":"YouTube で検索",
-    "num_views":"閲覧数"
+    "num_views":"回再生"
   },
   "quotes":{
     "name":"格言",
-    "desc":"1日1回もしくはページを読み込むたびに選りすぐりの名言を表示します。",
+    "desc":"選りすぐりの格言を1日1回またはページを読み込むたびに表示します。",
     "settings":{
       "source":"引用元",
-      "method":"新しい名言の更新頻度",
+      "method":"格言の更新頻度",
       "method_options":{
         "daily":"1日1回",
-        "random":"ページの読み込みごと"
+        "random":"ページを読み込むごと"
       }
     },
     "unknown_author":"不明"
@@ -291,7 +291,7 @@
   },
   "sitelink":{
     "name":"サイトのリンク",
-    "desc":"オプションで、タイトルとサムネイル リンクを表示します。",
+    "desc":"リンクをタイトルやサムネイルとともに表示します。",
     "settings":{
       "link":"リンク先の URL",
       "link_placeholder":"https:\/\/www.google.co.jp\/",
@@ -318,29 +318,29 @@
   },
   "search":{
     "name":"検索",
-    "desc":"ページ内に簡単な検索ボックスを埋め込みます。",
+    "desc":"シンプルな検索ボックスを埋め込みます。",
     "settings":{
       "placeholder":"検索フィールドのプレースホルダー",
       "search_url":"検索エンジンの URL",
       "param":"クエリのパラメータ",
-      "param_placeholder":"パラメーター クエリがどこ、すなわち\"q\""
+      "param_placeholder":"クエリを送信するパラメータを入力（例：\"q\"）"
     },
     "default_placeholder":"Google で検索"
   },
   "pushbullet":{
     "name":"Pushbullet",
-    "desc":"あなたの携帯電話や他のデバイスからの通知メッセージの追跡",
-    "no_pushes":"プッシュを発見できません",
+    "desc":"携帯電話など他のデバイスからの通知を表示します。",
+    "no_pushes":"プッシュがありません",
     "sign_in":"ログイン",
-    "no_key":"Pushbullet にサインインしていないようです。このウィジェットに接続するため、いますぐサインインしてください。"
+    "no_key":"Pushbullet にログインしていません。通知を受け取るためにログインしてください。"
   },
   "linkedin":{
     "name":"LinkedIn",
-    "desc":"あなたの LinkedIn のホーム ストリームを表示します。"
+    "desc":"LinkedIn のホームを表示します。"
   },
   "directions":{
     "name":"経路",
-    "desc":"あなたのホームページからほぼどこでも右からの方向を取得します。",
+    "desc":"目的地までの経路を簡単に検索することができます。",
     "driving":"車",
     "transit":"公共機関",
     "walking":"徒歩",
@@ -357,33 +357,33 @@
     "name":"Pocket",
     "desc":"Pocket に保存した記事、ビデオ、および Web ページの一覧を表示します。",
     "settings":{
-      "links_shown":"表示されるリンクの数",
-      "open":"リンクを開く",
-      "open_pocket":"ポケットの中",
-      "open_original":"彼らの元の URL で"
+      "links_shown":"表示するリンクの数",
+      "open":"リンクの開き方",
+      "open_pocket":"Pocket 内",
+      "open_original":"オリジナルの URL"
     },
     "by":"By",
     "no_links":"リンクはありません。",
     "grant_access":"アクセスを許可",
-    "no_key":"それはあなたのリンクを読み込むことができます前に、あなたのポケットのアカウントに iChrome アクセスを与える必要があります。"
+    "no_key":"Pocket からリンクを読み込むために、iChrome にアクセス権限を与える必要があります。"
   },
   "analytics":{
     "name":"アナリティクス",
-    "desc":"Googleアナリティクスプロフィールからさまざまな統計情報を表示",
+    "desc":"Google アナリティクスからさまざまな統計情報を表示します。",
     "sessions":"セッション",
     "pageviews":"ページビュー数",
     "pagesvisit":"訪問別ページ数",
     "bouncerate":"直帰率",
-    "completions":"補完",
+    "completions":"コンバージョン",
     "noprofile_title":"プロファイルが選択されていません",
-    "noprofile":"まだプロフィールが選択されていないようです！\n<br \/><br \/>\n右上の設定アイコンから１つ選択してみてください。",
+    "noprofile":"プロファイルが選択されていません。\n<br \/>\n右上にあるレンチアイコンからプロファイルを選択してください。",
     "settings":{
       "profile":"プロフィール"
     }
   },
   "classroom":{
     "name":"Classroom",
-    "desc":"あなたのグーグル・クラスルーム割り当ておよびクラスで最新にしておきます。",
+    "desc":"Google Classroom での課題と授業を管理できます。",
     "settings":{
       "mode":"ウィジェットモード",
       "mode_teacher":"教師",
@@ -403,21 +403,21 @@
     "less":"閉じる",
     "synonyms":"類義語",
     "antonyms":"対義語",
-    "web_definitions":"Web の定義",
+    "web_definitions":"Web 定義",
     "no_definitions":"意味が見つかりませんでした"
   },
   "drive":{
     "name":"ドライブ",
     "desc":"Google ドライブで最近変更されたファイルを表示します。",
     "settings":{
-      "files_shown":"表示されるファイルの数"
+      "files_shown":"表示するファイルの数"
     },
     "modified_by":"by",
-    "authMessage":"何かをここで示すことができる前にあなたのドライブのファイルを表示する iChrome のアクセス許可を与える必要があります。"
+    "authMessage":"Google ドライブからファイルを表示するためには、iChrome に許可を与える必要があります。"
   },
   "gmail":{
     "name":"Gmail",
-    "desc":"Gmail の受信トレイが表示されます。"
+    "desc":"Gmail の受信トレイを表示します。"
   },
   "iframe":{
     "name":"iFrame",
@@ -435,7 +435,7 @@
   },
   "news":{
     "name":"ニュース",
-    "desc":"カテゴリと版によって現在のトップニュースを表示します。",
+    "desc":"指定した言語、カテゴリの現在のトップニュースを表示します。",
     "all_stories":"すべて",
     "settings":{
       "page_title":"設定",
@@ -458,7 +458,7 @@
   },
   "rss":{
     "name":"RSS",
-    "desc":"RSSもしくはAtomフィードからのアイテムをオプション画像とともに表示",
+    "desc":"RSS や Atom フィードからの記事を、画像とともに表示します。",
     "settings":{
       "page_title":"設定",
       "save":"保存",
@@ -468,51 +468,51 @@
       "link_placeholder":"ウィジェットのタイトルのリンクを入力",
       "feeds":"フィード",
       "feeds_help":"フィードをクリックして編集",
-      "feeds_placeholder":"フィード URL とプレスを追加する入力を入力してください。",
-      "feeds_pro_only":"のみプロのユーザーの場合は、それぞれのウィジェットに複数のフィードを使用できます。Pro の設定で。",
+      "feeds_placeholder":"フィード URL を入力し、Enter キーを押して追加",
+      "feeds_pro_only":"Pro 版ユーザーのみが複数のフィードをそれぞれのウィジェットに設定できます。設定からご購入ください。",
       "feed_name_placeholder":"フィード名",
       "feed_url_placeholder":"フィードの URL",
       "articles":"表示する記事数"
     },
     "by":"By",
     "all_articles":"すべての記事",
-    "feed_error":"フィードを取得しようとしてエラーが発生しました：%s。\nURLを再度チェックするか、ウィジェットの設定を確かめてください。"
+    "feed_error":"フィードを取得中にエラーが発生しました：%s\nURLを再度チェックしてください。"
   },
   "sports":{
     "name":"スポーツ",
-    "desc":"スコア、スケジュール、およびあなたの好みのチームからのニュースが表示されます。",
+    "desc":"スコア、スケジュール、およびお好きなチームのニュースを表示します。",
     "settings":{
       "page_title":"お気に入り",
       "save":"保存",
-      "teams_placeholder":"チーム名を入力し、enter キーを押して追加"
+      "teams_placeholder":"チーム名を入力し、Enter キーを押して追加"
     },
     "favorites":"お気に入り",
     "top_games":"人気の試合",
     "scores":"スコア",
     "news":"ニュース",
-    "last_play":"最後に再生",
-    "no_games":"ゲームが見つかりません",
+    "last_play":"前回のプレー",
+    "no_games":"試合が見つかりません",
     "pro_splash1":"スポーツニュースは Pro 専用の機能です。",
-    "pro_splash2":"設定から Pro を購入してください。",
+    "pro_splash2":"設定から Pro をご購入ください。",
     "preview":"プレビュー",
     "tickets":"チケット",
-    "live":"現在",
+    "live":"ライブ",
     "recap":"要約",
     "box_score":"ボックススコア"
   },
   "stocks":{
     "name":"株価",
-    "desc":"指定した銘柄の現況を表示します。",
+    "desc":"指定した銘柄の現在の情報を表示します。",
     "settings":{
       "stocks":"株価",
       "stocks_placeholder":"会社名またはコードを入力"
     },
-    "as_of":"時点",
+    "as_of":" ",
     "exchange_time":"取引時間",
     "overview":"概要",
     "news":"ニュース",
-    "pro_splash1":"リアルタイム データ、チャート、ニュース、および詳細な株価情報は Pro のみの機能です。",
-    "pro_splash2":"「設定」で Pro を購入します。",
+    "pro_splash1":"リアルタイムデータ、チャート、ニュース、および詳細な株価情報は Pro 版のみの機能です。",
+    "pro_splash2":"設定から Pro をご購入ください。",
     "time_ranges":{
       "1d":"1日",
       "5d":"5日",
@@ -522,30 +522,30 @@
       "5y":"5年",
       "max":"最大"
     },
-    "open":"開始値",
+    "open":"始値",
     "prev_close":"前日終値",
     "high":"高値",
     "52high":"52週高値",
     "low":"安値",
     "52low":"52週安値",
     "volume":"出来高",
-    "avg_volume":"平均ボリューム",
+    "avg_volume":"平均出来高",
     "shares":"株価",
     "cap":"時価総額",
-    "pe":"価格\/収益",
+    "pe":"株価収益率",
     "eps":"EPS",
     "beta":"ベータ値",
-    "inst_own":"独自の研"
+    "inst_own":"機関投資家保有割合"
   },
   "todo":{
     "name":"To-Do",
-    "desc":"重要なことや完了したアイテムなど、インタラクティブなTo-Doリストを表示します。",
+    "desc":"編集可能な To-Do リストを表示します。",
     "title":"To-Do リスト",
     "settings":{
       "color":"フォントの色",
       "color_options":{
         "light":"明るい",
-        "dark":"暗い"
+        "dark":"ダーク"
       },
       "tags":"タグ",
       "tags_placeholder":"タグを入力して Enter"
@@ -556,9 +556,9 @@
   },
   "topsites":{
     "name":"トップサイト",
-    "desc":"最も訪問したサイト\/トップサイトを表示します。",
+    "desc":"よく閲覧するサイトを表示します。",
     "settings":{
-      "show":"表示されるサイトの数"
+      "show":"表示するサイトの数"
     }
   },
   "traffic":{
@@ -590,7 +590,7 @@
   },
   "translate":{
     "name":"翻訳",
-    "desc":"入力するとすぐに 90 の言語からの翻訳することができます。",
+    "desc":"入力されたテキストを約 90 個の言語に一瞬で翻訳することができます。",
     "from_placeholder":"翻訳するテキストを入力",
     "to_placeholder":"翻訳されたテキストが表示されます",
     "detect_lang":"言語を検出",
@@ -601,7 +601,7 @@
     "name":"Gmail の未読メール",
     "desc":"Gmail の受信トレイにある未読メールの数を表示します。",
     "settings":{
-      "open":"クリックすると開く"
+      "open":"クリック時に開くサービス"
     },
     "unread_none":"未読メール",
     "unread_one":"未読メール",
@@ -609,10 +609,10 @@
   },
   "voice":{
     "name":"Voice",
-    "desc":"Google Voiceアカウントの不在着信した電話やメッセージの数を表示",
-    "call":"発信元",
-    "text":"送信元",
-    "missed":"不在着信ボイス",
+    "desc":"Google Voice の不在着信やメッセージの数を表示します。",
+    "call":"着信",
+    "text":"SMS 着信",
+    "missed":"不在ボイス着信",
     "texts":"未読メッセージ",
     "calls":"不在着信"
   },

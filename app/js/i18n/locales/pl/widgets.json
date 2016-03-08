@@ -580,12 +580,12 @@
     "to_home":"do domu",
     "to_work":"do pracy",
     "hour":"%s hour",
-    "hours":"%s hours",
-    "hours_letter":"%sh",
+    "hours":"%s godziny",
+    "hours_letter":"%sg",
     "minute":"%s minute",
     "minutes":"%s minutes",
     "minute_short":"%s min",
-    "minutes_short":"%s mins",
+    "minutes_short":"%s min",
     "minutes_letter":"%sm"
   },
   "translate":{

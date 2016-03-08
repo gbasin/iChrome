@@ -66,7 +66,7 @@
     "signin_dismiss":"Odbaci",
     "signin_confirm":{
       "title":"Zadrži lokalne podatke?",
-      "desc":"Would you like to keep your local data, and replace the configuration in your account with it, or replace this computer's configuration with the one already in your account?",
+      "desc":"Želiš li zadržati lokalne podatke i zamijeniti konfiguraciju tvoga računa s lokalnom konfiguracijom ili da tvoju lokalnu konfiguraciju zamijenimo s konfiguracijom tvog računa u oblacima?",
       "keep_account":"Koristi račun",
       "keep_local":"Zadrži lokalno"
     },
@@ -145,7 +145,7 @@
     "visual":{
       "background":{
         "title":"Pozadina",
-        "desc":"Ovo je slika ili skup slika koji se prikazuje kao pozadina vaših kartica",
+        "desc":"Ovo je slika ili skup slika koji se prikazuje kao pozadina tvojih kartica",
         "current":"Trenutna pozadina",
         "custom":"Prilagođena",
         "unnamed":"Tema %s",
@@ -213,7 +213,7 @@
       "create_new":"Napravi novu",
       "make_default":"Postavi kao početnu",
       "desc1":"Kartice su stranice unutar iChrome-a. Svaka kartica ima svoj vlastiti set widgeta koji je u potpunosti odvojen od svake druge kartice.",
-      "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
+      "desc2":"Možeš se prebacivati između kartica klikom na gumbe koji se pojavljuju lijevo i desno kada miš pomakneš na karticu ili se možeš prebacivati pomoću strelica na tipkovnici.",
       "name_placeholder":"Unesi naziv kartice",
       "delete_confirm":"Ova akcija je nepovratna. Svi podaci widgeta u ovoj kartici bit će trajno izgubljeni."
     },
@@ -232,19 +232,19 @@
     "advanced":{
       "backups":{
         "title":"Sigurnosno kopiranje i vraćanje podataka",
-        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
-        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
+        "desc":"Sigurnosne kopije su potpune kopije tvojih kartica, postavka i widgeta. Automatski se stvaraju svaki dan kada otvoriš iChrome.",
+        "desc2":"Pomoću gumba ispod možeš vratiti podatke iChrome-a iz prošlosti ili možeš skinuti te podatke.",
         "backup":"Izradi sigurnosnu kopiju sada",
         "upload":"Povrati podatke iz datoteke",
         "download":"Preuzmi",
         "restore":"Povrati podatke",
         "download_name":"iChrome sigurnosna kopija",
-        "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
-        "restore_error":"An error occurred while trying to parse the provided data, please try again later."
+        "restore_confirm":"Ovo će prepisati sve lokalne i sinkronizirane podatke. Izgubit ćeš trenutnu konfiguraciju na svim kompjuterima s ovim računom.",
+        "restore_error":"Došlo je do pogreške prilikom analiziranja podataka, pokušaj ponovo kasnije."
       },
       "css":{
         "title":"Osobni CSS",
-        "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
+        "desc":"Možeš koristiti CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definicija<\/a>) za prilagođavanje gotovo svakog dijela iChrome-a.",
         "placeholder":"Unesi najviše 1000 znakova CSS-a ovdje"
       },
       "debug_tools":{
@@ -297,7 +297,7 @@
         "braintree_notice":"Uplate sigurno obrađuje Braintree.",
         "monthly_notice":"Ako se pretplatite, ovlašćujete iChrome da vam naplati $2 svaki mjesec sve dok ne otkažete pretplatu.",
         "yearly_notice":"Ako se pretplatite, ovlašćujete iChrome da vam naplati $20 svaki mjesec sve dok ne otkažete pretplatu.",
-        "update_notice":"Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
+        "update_notice":"Iako se ciklus naplate promijeni odmah, ne će vam biti naplaćeno dok trenutni ciklus ne završi.",
         "thank_you":"Hvala ti na kupnji iChrome Pro verzije!",
         "thank_you2":"iChrome će se osvježiti za nekoliko sekunda i sve će biti spremno!",
         "error":"Nešto je pošlo po zlu prilikom procesiranja vaše uplate.",
@@ -320,7 +320,7 @@
         "status":"Status",
         "status_active":"Aktivan",
         "status_trial":"Trial",
-        "status_pastdue":"Past due",
+        "status_pastdue":"Datum dospijeća",
         "subscription_date":"Datum pretplate",
         "paid_through":"Plaćeno do",
         "next_bill":"Sljedeći račun",
@@ -385,8 +385,8 @@
           "hide":"Sakrij"
         },
         "account":"ID računa",
-        "account_help":"If you're signed into multiple accounts, this is the \"authuser=\" value.\n<br \/><br \/>\nFor example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"authuser\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
-        "account_placeholder":"Your \"authuser=\" value",
+        "account_help":"Ako si prijavljen sa više računa, ovo je tvoja \"authuser=\" vrijednost.\n<br \/><br \/>\nNpr. ako si prijavljen s dva računa, ihorvat1@gmail.com i ihorvat2@gmail.com, vrijednost \"authuser=\" za ihorvat2@gmail.com jest 1 zbog toga što je to drugi račun kojim si prijavljen (računajući od nule).",
+        "account_placeholder":"Tvoja \"authuser=\" vrijednost",
         "on":"Uključeno",
         "off":"Isključeno"
       }
@@ -414,13 +414,13 @@
     "feed":"Ova tema prikazuje novu sliku svaki dan iz vanjskih izvora",
     "video":"Ova tema prikazuje aktivan videozapis",
     "pro_only":"Ova tema je dostupna isključivo Pro korisnicima. Kupi Pro u postavkama.",
-    "delete_confirm":"Are you really sure you would like to delete this theme?\r\nThis action is irreversible; the entire theme will be permanently lost.",
+    "delete_confirm":"Jesi li zaista siguran da želiš izbrisati ovu temu?\nOva akcija je nepovratna; cijela tema bit će potpuno izgubljena.",
     "delete_error":"Dogodila se pogreška prilikom brisanja teme. Pokušaj ponovo kasnije.",
     "feed_fetching":"Molimo pričekajte, prikupljanje feed-a...",
     "feed_error":"Nešto je pošlo po zlu prilikom skupljanja feed-a. Pokušaj ponovo kasnije.",
     "caching":"Molimo pričekajte, pohranjivanje teme...",
     "cache_status":"%s od %s slika pohranjeno",
-    "cache_error":"An error occurred while trying to cache the theme.  Please try again later",
+    "cache_error":"Došlo je do pogreške prilikom pohranjivanja teme.  Pokušaj ponovo kasnije",
     "bginfo":{
       "view":"Prikaz",
       "source":"Izvor",
@@ -436,7 +436,7 @@
       "name_placeholder":"Unesi naziv teme",
       "image":"URL slike",
       "image_placeholder":"Unesi URL slike pozadine",
-      "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy and paste the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
+      "image_help":"Postavljene slike <b>nije moguće sinkronizirati<\/b> između kompjutera.<br \/><br \/>Molimo uploadaj slike na servis kao na primjer <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Zatim kopiraj URL slike (najčešće .jpg) i zalijepi ga na polje lijevo.",
       "color":"Pozadinska boja",
       "color_placeholder":"Unesi naziv bilo koje boje",
       "position":"Pozicija",
@@ -468,8 +468,8 @@
       "attach_window":"Prozor",
       "preview":"Pregled",
       "save":"Spremi i Zatvori",
-      "cache_error":"An error occurred while trying to cache the image you provided, please double-check the URL.",
-      "upload_error":"An error occurred while trying to upload the file you provided, please make sure that it's a reasonable size and an image."
+      "cache_error":"Došlo je do pogreške prilikom pohranjivanja slike koju si unio, molimo provjeri URL.",
+      "upload_error":"Došlo je do pogreške prilikom uploadanja datoteke koju si unio, molimo da provjeriš je li slika prihvatljive veličine."
     }
   }
 }
