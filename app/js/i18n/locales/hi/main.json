@@ -436,7 +436,7 @@
       "name_placeholder":"थीम का नाम दर्ज करें",
       "image":"छवि URL",
       "image_placeholder":"एक पृष्ठभूमि छवि का URL दर्ज करें",
-      "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy and paste the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
+      "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
       "color":"फ़ॉलबैक रंग",
       "color_placeholder":"किसी भी रंग का नाम दर्ज करें",
       "position":"पोजीशन (स्थान)",

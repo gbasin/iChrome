@@ -579,14 +579,14 @@
     },
     "to_home":"до дома",
     "to_work":"до работы",
-    "hour":"%s hour",
-    "hours":"%s hours",
-    "hours_letter":"%sh",
-    "minute":"%s minute",
-    "minutes":"%s minutes",
-    "minute_short":"%s min",
-    "minutes_short":"%s mins",
-    "minutes_letter":"%sm"
+    "hour":"%s час",
+    "hours":"%s час(а\/ов)",
+    "hours_letter":"%sч",
+    "minute":"%s минута",
+    "minutes":"%s минут(ы)",
+    "minute_short":"%s мин",
+    "minutes_short":"%s мин",
+    "minutes_letter":"%sм"
   },
   "translate":{
     "name":"Переводчик",

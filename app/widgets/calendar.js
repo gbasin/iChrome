@@ -131,7 +131,9 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 				this.setOAuth();
 			}
 
-			if (!this.config.calendars || !this.config.calendars.length) {
+			this.config.calendars = this.config.calendars || [];
+
+			if (!this.config.calendars.length) {
 				if (this.config.calendar) {
 					this.config.calendars = [this.config.calendar];
 
@@ -406,7 +408,7 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 				};
 			}));
 
-			if (this.config.calendars.length > 1) {
+			if ((this.config.calendars || []).length > 1) {
 				data.multiple = true;
 			}
 

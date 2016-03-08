@@ -436,7 +436,7 @@
       "name_placeholder":"Enter a theme name",
       "image":"Image URL",
       "image_placeholder":"Enter a background image URL",
-      "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy and paste the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
+      "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
       "color":"Fallback Color",
       "color_placeholder":"Enter any color name",
       "position":"Position",
