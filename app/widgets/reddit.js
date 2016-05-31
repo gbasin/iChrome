@@ -222,7 +222,7 @@ define(["jquery", "moment"], function($, moment) {
 						comments: e.num_comments.toLocaleString()
 					};
 
-					if (e.thumbnail && e.thumbnail !== "" && e.thumbnail.trim().indexOf("http") === "0") {
+					if (e.thumbnail && e.thumbnail !== "" && e.thumbnail.trim().indexOf("http") === 0) {
 						link.image = e.thumbnail.trim();
 					}
 
