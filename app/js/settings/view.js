@@ -131,7 +131,6 @@ define([
 				{ opacity: 0 }
 			], {
 				duration: 150,
-				direction: "forwards",
 				easing: "cubic-bezier(.4, 0, .2, 1)"
 			}).onfinish = function() {
 				this.$el.removeClass("visible");
