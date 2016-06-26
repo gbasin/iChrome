@@ -400,31 +400,27 @@ header .title ~ .tabs {
 }
 
 .maximized .items.cards .item .image {
-	flex: 0 0;
+	flex: 0 0 auto;
 	width: 100%;
-	min-width: 0; /* crbug.com/546034 fix - flex issues in Chrome 48+ */
 	height: 175px;
 }
 
 .maximized .items.cards .item .title {
-	flex: 0 0;
-	min-width: 0; /* crbug.com/546034 fix - flex issues in Chrome 48+ */
+	flex: 0 0 auto;
 	margin: 10px 10px 0;
 }
 
 .maximized .items.cards .item .desc {
-	flex: 1 1;
-	min-width: 0; /* crbug.com/546034 fix - flex issues in Chrome 48+ */
+	flex: 1 1 auto;
 	margin: 3px 10px 0;
 	max-height: initial;
 	width: initial!important;
 }
 
 .maximized .items.cards .item .details {
-	flex: 0 0;
+	flex: 0 0 auto;
 	margin: 0;
 	height: 28px;
-	min-width: 0; /* crbug.com/546034 fix - flex issues in Chrome 48+ */
 	color: #757575;
 	display: block;
 	padding: 0 10px;
@@ -495,11 +491,10 @@ header .title ~ .tabs {
 }
 
 .maximized .items.cards .item.featured .desc {
-	flex: 0 1;
+	flex: 0 1 auto;
 	margin: 0;
 	color: #FFF;
 	bottom: 25px;
-	min-width: 0; /* crbug.com/546034 fix - flex issues in Chrome 48+ */
 	padding: 0 10px;
 	max-height: 36px;
 	transition: max-height .2s ease;
