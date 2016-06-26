@@ -41,11 +41,9 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 		},
 
 		refresh: function() {
-			Browser.sessions.getRecentlyClosed({
-				maxResults: parseInt(this.config.tabs || 5)
-			}, function(sessions) {
+			Browser.sessions.getRecentlyClosed(function(sessions) {
 				this.saveData({
-					tabs: _.compact(_.map(sessions, function(e) {
+					tabs: _(sessions).map(function(e) {
 						var ret = {};
 
 						if (e.tab) {
@@ -69,7 +67,7 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 						else {
 							return null;
 						}
-					}, this))
+					}, this).compact().take(parseInt(this.config.tabs || 5)).value()
 				});
 			}.bind(this));
 		}
