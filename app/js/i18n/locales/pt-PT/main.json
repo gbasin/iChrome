@@ -1,7 +1,7 @@
 {
   "lang_code":"pt-PT",
   "language":"Português",
-  "extName":"iChrome - A Fast, Productive Home Page",
+  "extName":"iChrome-A página principal rápida e produtiva",
   "newtabName":"iChrome novo separador",
   "extDescription":"A MELHOR homepage para o Chrome. Temas incríveis, dezenas de widgets, super rápido, e super costumizavel!",
   "newtabDescription":"A MELHOR homepage para o Chrome, também para novo separador. Lindos temas, vários widgets, ultra rápido e loucamente personalizável!",
@@ -26,7 +26,7 @@
       "about_desc":"Abas são preenchidas com mini aplicações em blocos. Por exemplo, a mini aplicação de Meteorologia fica num bloco e em um outro noticias do dia, seus emails etc. Os blocos com as mini aplicações podem ser personalizados da forma que desejar.",
       "terms":"Nota: Ao prosseguir, aceita que está de acordo com os <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Termos<\/a>e com a<a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Politica de privacidade\"<\/a> do iChrome",
       "sign_in":"Inscreva-se com a sua conta do Google",
-      "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
+      "sign_in_desc":"Entre com sua conta do Google antes de começar a gravar as suas alterações de forma segura on-line.",
       "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
       "sign_in_button":"Inicie sessão com o Google",
       "have_account":"Parece que você já tem uma conta!",
@@ -215,13 +215,13 @@
       "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
       "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
       "name_placeholder":"Digite um nome de separador",
-      "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
+      "delete_confirm":"Esta ação é irreversível. Todos os dados de todos os widgets serão permanentemente perdidos."
     },
     "accounts":{
       "status":{
         "title":"Estado",
-        "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
-        "reset_account":"Reset account",
+        "signed_in":"Está actualmente <b>ligado<\/b> como %s (%s).",
+        "reset_account":"Redefinir a conta",
         "sign_out":"Terminar Sessão",
         "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
         "sign_in":"Iniciar sessão com o Google"

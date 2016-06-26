@@ -385,7 +385,7 @@
           "hide":"非表示"
         },
         "account":"アカウント ID",
-        "account_help":"複数のアカウントにサインインしている場合、こちらが\"authuser=\" 値になります。\n<br \/><br \/>\n例えば、jsmith1@gmail.com と jsmith2@gmail.com という２つのアカウントにサインインしている場合、jsmith2@gmail.com は２つめのアカウントになるため \"authuser\" の値は1 になります（ゼロから数えるため）。",
+        "account_help":"複数のアカウントにログインしている場合、これが \"authuser=\" の値になります。\n<br \/><br \/>\n例えば、tanaka1@gmail.com と tanaka2@gmail.com という2個のアカウントにログインしている場合、tanaka2@gmail.com は2つ目のアカウントになるので、\"authuser\" の値は0から数えるため1になります。",
         "account_placeholder":"\"authuser=\" の値",
         "on":"ON",
         "off":"OFF"
