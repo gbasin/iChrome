@@ -55,6 +55,7 @@
 		"48": "icon/48.png",
 		"128": "icon/128.png"
 	},
+	"browser_action": {},
 	"permissions": [
 		"storage",
 		"cookies",

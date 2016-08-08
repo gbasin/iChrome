@@ -58,6 +58,11 @@ if (localStorage.length && (!localStorage.version || localStorage.version.indexO
 
 localStorage.version = chrome.runtime.getManifest().version;
 
+chrome.browserAction.onClicked.addListener(function() {
+	chrome.tabs.create({
+		url: chrome.extension.getURL("index.html")
+	}, function() {});
+});
 
 /**
  * Feed refresh manager
