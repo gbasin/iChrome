@@ -77,6 +77,10 @@
   "toolbar":{
     "placeholder":"輸入並搜尋",
     "placeholder_ok":"輸入並搜尋或說“OK, Google\"...",
+    "suggestions":{
+      "url_subtext":"Visit URL",
+      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+    },
     "apps":{
       "search":"搜尋",
       "youtube":"YouTube",
@@ -188,9 +192,10 @@
         "title":"搜尋",
         "desc":"這些設定控制著搜尋框與語音搜尋將如何運作",
         "engine":"搜尋引擎",
-        "engines_google":"Google (預設)",
+        "engines_default":"Default",
         "engines_custom":"自訂",
         "engines_custom_desc":"輸入一個搜尋網址可用來接收查詢，替換<b>%s<\/b> 以自製查詢要求",
+        "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"啟用語音搜尋",
         "ok_google":"啟用 \"OK Google\" 指令偵測",
         "search_tab":"在新分頁中顯示搜尋結果"

@@ -77,6 +77,10 @@
   "toolbar":{
     "placeholder":"Inserisci i termini della tua ricerca",
     "placeholder_ok":"Inserisci i termini della tua ricerca o pronuncia \"OK, Google\"",
+    "suggestions":{
+      "url_subtext":"Visit URL",
+      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+    },
     "apps":{
       "search":"Cerca",
       "youtube":"YouTube",
@@ -188,9 +192,10 @@
         "title":"Cerca",
         "desc":"Queste impostazioni controllano il motore di ricerca e la voce funzione di ricerca",
         "engine":"Motori di Ricerca",
-        "engines_google":"Google (impostazione predefinita)",
+        "engines_default":"Default",
         "engines_custom":"personalizzato",
         "engines_custom_desc":"Immettere un URL che devono essere inviate, con <b>%s<\/b> dove dovrebbe andare la query.",
+        "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"Attivare la ricerca vocale",
         "ok_google":"Attiva il rilevamento della frase chiave \"OK Google\"",
         "search_tab":"Apri i risultati della ricerca in una nuova scheda"

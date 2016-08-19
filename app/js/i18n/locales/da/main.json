@@ -77,6 +77,10 @@
   "toolbar":{
     "placeholder":"Indtast dine betingelser",
     "placeholder_ok":"Indtast dine betingelser eller sig \"OK, Google\"",
+    "suggestions":{
+      "url_subtext":"Visit URL",
+      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+    },
     "apps":{
       "search":"Søg",
       "youtube":"Youtube",
@@ -188,9 +192,10 @@
         "title":"Søg",
         "desc":"Disse indstillinger kontrollerer hvordan søgeboks og stemmesøgning fungerer",
         "engine":"Søgemaskine",
-        "engines_google":"Google (standard)",
+        "engines_default":"Default",
         "engines_custom":"Brugerdefineret",
         "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
+        "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"Aktiver stemmesøgning",
         "ok_google":"Aktiver \"OK Google\" nøgleord detektion",
         "search_tab":"Åben søgeresultater i en ny fane"

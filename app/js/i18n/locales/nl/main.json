@@ -77,6 +77,10 @@
   "toolbar":{
     "placeholder":"Vul uw zoekopdracht in",
     "placeholder_ok":"Vul uw zoekopdracht in of zeg \"OK, Google\"",
+    "suggestions":{
+      "url_subtext":"Visit URL",
+      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+    },
     "apps":{
       "search":"Zoeken",
       "youtube":"YouTube",
@@ -188,9 +192,10 @@
         "title":"Zoeken",
         "desc":"Deze instellingen bepalen hoe het zoekvak en de stemzoekfunctie functioneren",
         "engine":"Zoekmachine",
-        "engines_google":"Google (standaard)",
+        "engines_default":"Default",
         "engines_custom":"Custom",
         "engines_custom_desc":"Voer een URL in waar de query's naar verzonden moeten worden, met <b>%s<\/b> waar de query naar moet gaan.",
+        "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"Stembediening inschakelen",
         "ok_google":"Schakel \"OK Google\" herkenning in",
         "search_tab":"Open de zoekresultaten in een nieuw tabblad"

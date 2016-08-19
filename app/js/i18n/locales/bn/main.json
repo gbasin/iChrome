@@ -77,6 +77,10 @@
   "toolbar":{
     "placeholder":"আপনার অনুসন্ধানের শব্দ লিখুন",
     "placeholder_ok":"আপনার শব্দ লিখুন বা \"OK, Google\" বলুন",
+    "suggestions":{
+      "url_subtext":"Visit URL",
+      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+    },
     "apps":{
       "search":"অনুসন্ধান",
       "youtube":"ইউটিউব",
@@ -188,9 +192,10 @@
         "title":"অনুসন্ধান",
         "desc":"These settings control how the search box and voice search function",
         "engine":"অনুসন্ধান ইঞ্জিন",
-        "engines_google":"গুগল (পূর্বনির্ধারিত)",
+        "engines_default":"Default",
         "engines_custom":"স্বনির্ধারিত",
         "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
+        "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"কন্ঠস্বর অনুসন্ধান সক্ষম করুন",
         "ok_google":"Enable \"OK Google\" hotword detection",
         "search_tab":"Open search results in a new tab"
