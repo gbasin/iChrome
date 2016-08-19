@@ -77,6 +77,10 @@
   "toolbar":{
     "placeholder":"अपने शब्द दर्ज करें",
     "placeholder_ok":"अपने शब्द दर्ज करें या \"OK, Google\" कहें",
+    "suggestions":{
+      "url_subtext":"Visit URL",
+      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+    },
     "apps":{
       "search":"खोज",
       "youtube":"यूट्यूब",
@@ -188,9 +192,10 @@
         "title":"खोज",
         "desc":"These settings control how the search box and voice search function",
         "engine":"Search engine",
-        "engines_google":"Google (Default)",
+        "engines_default":"Default",
         "engines_custom":"अनुकूल",
         "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
+        "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"Enable voice search",
         "ok_google":"Enable \"OK Google\" hotword detection",
         "search_tab":"Open search results in a new tab"

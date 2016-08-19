@@ -77,6 +77,10 @@
   "toolbar":{
     "placeholder":"キーワードを入力",
     "placeholder_ok":"キーワードを入力するか、\"OK, Google\" と言ってください",
+    "suggestions":{
+      "url_subtext":"Visit URL",
+      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+    },
     "apps":{
       "search":"検索",
       "youtube":"YouTube",
@@ -188,9 +192,10 @@
         "title":"検索",
         "desc":"検索ボックスと音声検索の設定を変更できます",
         "engine":"検索エンジン",
-        "engines_google":"Google (デフォルト)",
+        "engines_default":"Default",
         "engines_custom":"カスタム",
         "engines_custom_desc":"クエリを <b>%s<\/b> にして URL を入力",
+        "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"音声検索を有効にする",
         "ok_google":"ホットワード ”OK Google\" の検出を有効にする",
         "search_tab":"検索結果を新しいタブで開く"

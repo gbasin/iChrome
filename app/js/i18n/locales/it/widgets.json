@@ -579,13 +579,13 @@
     },
     "to_home":"Verso casa",
     "to_work":"Verso il luogo di lavoro",
-    "hour":"%s hour",
-    "hours":"%s hours",
+    "hour":"%s ora",
+    "hours":"%s ore",
     "hours_letter":"%sh",
-    "minute":"%s minute",
-    "minutes":"%s minutes",
+    "minute":"%s minuto",
+    "minutes":"%s minuti",
     "minute_short":"%s min",
-    "minutes_short":"%s mins",
+    "minutes_short":"%s min.",
     "minutes_letter":"%sm"
   },
   "translate":{

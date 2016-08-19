@@ -77,6 +77,10 @@
   "toolbar":{
     "placeholder":"Введите запрос",
     "placeholder_ok":"Введите запрос, или скажите \"ОК, Google\"",
+    "suggestions":{
+      "url_subtext":"Visit URL",
+      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+    },
     "apps":{
       "search":"Поиск",
       "youtube":"YouTube",
@@ -188,9 +192,10 @@
         "title":"Поиск",
         "desc":"Эти параметры определяют то, как будет работать поле поиска и функции голосового поиска",
         "engine":"Поисковая система",
-        "engines_google":"Google (по умолчанию)",
+        "engines_default":"Default",
         "engines_custom":"Свои",
         "engines_custom_desc":"Введите URL, на который будут отправлены запросы, с <0>%s<\/0>, где находится текст запроса.",
+        "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"Включить голосовой поиск",
         "ok_google":"Включить распознавание фразы \"OK Google\"",
         "search_tab":"Открывать результаты поиска в новой вкладке"

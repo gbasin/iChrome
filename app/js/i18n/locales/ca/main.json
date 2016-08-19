@@ -77,6 +77,10 @@
   "toolbar":{
     "placeholder":"Introdueix els termes a cercar",
     "placeholder_ok":"Introdueix els termes a cercar o digues \"OK, Google\"",
+    "suggestions":{
+      "url_subtext":"Visit URL",
+      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+    },
     "apps":{
       "search":"Cerca",
       "youtube":"YouTube",
@@ -188,9 +192,10 @@
         "title":"Cerca",
         "desc":"Aquesta configuració controla com funcionen el quadre de cerca i la cerca per veu",
         "engine":"Motor de cerca",
-        "engines_google":"Google (per defecte)",
+        "engines_default":"Default",
         "engines_custom":"Personalitzat",
         "engines_custom_desc":"Introduïu la URL a la que s'enviaran les consultes, amb <b>%s<\/b> on hauria d'anar la consulta.",
+        "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"Habilita la cerca per veu",
         "ok_google":"Activar la detecció de la paraula clau \"OK Google\"",
         "search_tab":"Obre els Resultats de la cerca en una pestanya nova"

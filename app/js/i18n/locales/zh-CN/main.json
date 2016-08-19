@@ -77,6 +77,10 @@
   "toolbar":{
     "placeholder":"输入并搜索...",
     "placeholder_ok":"请输入或说“OK, Google\"启动语音搜索...",
+    "suggestions":{
+      "url_subtext":"Visit URL",
+      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+    },
     "apps":{
       "search":"搜索",
       "youtube":"Youtube",
@@ -188,9 +192,10 @@
         "title":"搜索",
         "desc":"此设置控制搜索框及语音搜索功能",
         "engine":"搜索引擎",
-        "engines_google":"Google (默认)",
+        "engines_default":"Default",
         "engines_custom":"自定义",
         "engines_custom_desc":"请输入搜索请求所使用的的URL地址，您输入的关键词在此由<b>%s<\/b>代替。",
+        "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"启用语音搜索",
         "ok_google":"启用\"OK Google“声音检测",
         "search_tab":"在新选项卡中打开搜索结果页"

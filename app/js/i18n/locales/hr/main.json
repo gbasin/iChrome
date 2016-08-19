@@ -45,7 +45,7 @@
     },
     "settings":{
       "intro":"Sada pogledajmo <b>izbornik<\/b> da vidimo što još može.",
-      "instructions":"Klikni na istaknutu sliku da ju otvoriš.",
+      "instructions":"Klikni na istaknut dio da ga otvoriš.",
       "skip":"Preskoči",
       "tooltips":{
         "settings":"Izmjeni kako iChrome izgleda i radi",
@@ -77,6 +77,10 @@
   "toolbar":{
     "placeholder":"Unesi pojmove",
     "placeholder_ok":"Unesi pojmove ili reci \"OK, Google\"",
+    "suggestions":{
+      "url_subtext":"Visit URL",
+      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+    },
     "apps":{
       "search":"Pretraživanje",
       "youtube":"YouTube",
@@ -188,9 +192,10 @@
         "title":"Pretraživanje",
         "desc":"Ove postavke kontroliraju rad pretraživanja i glasovnog pretraživanja",
         "engine":"Pretražitelj",
-        "engines_google":"Google (zadano)",
+        "engines_default":"Default",
         "engines_custom":"Prilagođen",
         "engines_custom_desc":"Unesi URL koji ima <b>%s<\/b> tamo gdje treba ići pojam pretraživanja.",
+        "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"Omogući glasovno pretraživanje",
         "ok_google":"Omogući \"OK Google\" detekciju",
         "search_tab":"Otvori rezultate pretraživanja u novoj kartici"
