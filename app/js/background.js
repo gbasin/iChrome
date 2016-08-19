@@ -71,10 +71,23 @@ chrome.browserAction.onClicked.addListener(function() {
 });
 
 
-var showNotice = localStorage.searchCaptureNotified !== "true";
 
-var captureOmniboxFocus = function(tab) {
-	if (tab.url === "chrome://newtab/") {
+/**
+ * Omnibox focus capturing
+ */
+chrome.permissions.contains({
+	permissions: ["tabs"]
+}, function(tabsPermission) {
+	var showNotice = localStorage.searchCaptureNotified !== "true";
+
+	var settings = JSON.parse(localStorage.config || "{}").settings || {};
+
+	var captureFocus = settings.toolbar !== "button" && !!settings.captureFocus;
+
+
+	var internalCreate = false;
+
+	var captureOmniboxFocus = function(tab) {
 		chrome.tabs.remove(tab.id);
 
 		// If the user hasn't seen the notice before, show it when we first capture focus
@@ -86,38 +99,95 @@ var captureOmniboxFocus = function(tab) {
 			localStorage.searchCaptureNotified = "true";
 		}
 
+		internalCreate = true;
+
 		chrome.tabs.create({
 			url: appURL,
 			active: true,
 			windowId: tab.windowId
 		});
-	}
-};
+	};
 
-var settings = JSON.parse(localStorage.config || "{}").settings || {};
+	var tabHandler = function(tab) {
+		if (internalCreate) {
+			internalCreate = false;
 
-var captureFocus = settings.toolbar !== "button" && !!settings.captureFocus;
+			return;
+		}
 
-window.addEventListener("storage", function(e) {
-	if (!e || e.key !== "config" || !e.newValue) {
-		return;
-	}
+		if (tab.url === "chrome://newtab/") {
+			captureOmniboxFocus(tab);
+		}
+	};
 
-	settings = JSON.parse(e.newValue || "{}").settings || {};
 
-	var newCaptureFocus = settings.toolbar !== "button" && !!settings.captureFocus;
+	var activeTabs = {};
 
-	// Don't do anything if the setting hasn't changed, this stops duplicate listeners from getting added
-	if (captureFocus === newCaptureFocus) {
-		return;
-	}
+	var webRequestHandler = function(e) {
+		if (!activeTabs.hasOwnProperty(e.tabId)) {
+			return;
+		}
 
-	captureFocus = newCaptureFocus;
+		captureOmniboxFocus({
+			id: e.tabId
+		});
+	};
 
-	chrome.tabs.onCreated[captureFocus ? "addListener" : "removeListener"](captureOmniboxFocus);
+	var webRequestTabHandler = function(tab) {
+		if (internalCreate) {
+			internalCreate = false;
+
+			return;
+		}
+
+		activeTabs[tab.id] = {
+			windowId: tab.windowId
+		};
+
+		// Clean up
+		setTimeout(function() {
+			delete activeTabs[tab.id];
+		}, 50);
+	};
+
+
+
+	var handleListener = function() {
+		if (tabsPermission) {
+			chrome.tabs.onCreated[captureFocus ? "addListener" : "removeListener"](tabHandler);
+		}
+		else {
+			chrome.tabs.onCreated[captureFocus ? "addListener" : "removeListener"](webRequestTabHandler);
+
+			chrome.webRequest.onBeforeRequest[captureFocus ? "addListener" : "removeListener"](webRequestHandler, {
+				urls: [appURL], // Chrome doesn't see chrome://newtab as a valid URL for filters, this slows things down by a few ms
+				types: ["main_frame"]
+			});
+		}
+	};
+
+
+	window.addEventListener("storage", function(e) {
+		if (!e || e.key !== "config" || !e.newValue) {
+			return;
+		}
+
+		settings = JSON.parse(e.newValue || "{}").settings || {};
+
+		var newCaptureFocus = settings.toolbar !== "button" && !!settings.captureFocus;
+
+		// Don't do anything if the setting hasn't changed, this stops duplicate listeners from getting added
+		if (captureFocus === newCaptureFocus) {
+			return;
+		}
+
+		captureFocus = newCaptureFocus;
+
+		handleListener();
+	});
+
+	handleListener();
 });
-
-chrome.tabs.onCreated[captureFocus ? "addListener" : "removeListener"](captureOmniboxFocus);
 
 
 /**
