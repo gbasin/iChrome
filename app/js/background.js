@@ -10,7 +10,10 @@ var Hogan={};
 /* globals chrome,PERSISTENT */
 
 
-if (!localStorage.length) {
+// Capture the localStorage length before we make any modifications
+var storageLength = localStorage.length;
+
+if (!storageLength) {
 	localStorage.firstRun = "true";
 
 	chrome.tabs.create({
@@ -51,18 +54,19 @@ else if (!localStorage.version || localStorage.version !== chrome.runtime.getMan
 	}
 }
 
-if (localStorage.length && (!localStorage.version || localStorage.version.indexOf("3.0.0") !== 0)) {
+if (storageLength && (!localStorage.firstRun || localStorage.firstRun !== "true") && (!localStorage.version || localStorage.version.indexOf("3.0.0") !== 0)) {
 	localStorage.showUpdated = "true";
 	localStorage.showSignInNotice = "true";
 }
 
 localStorage.version = chrome.runtime.getManifest().version;
 
+var appURL = chrome.extension.getURL("index.html");
 
 chrome.browserAction.onClicked.addListener(function() {
 	chrome.tabs.create({
-		url: chrome.extension.getURL("index.html")
-	}, function() {});
+		url: appURL
+	});
 });
 
 chrome.webRequest.onBeforeRequest.addListener(
@@ -76,6 +80,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 	},
 	["blocking"]
 );
+
 
 /**
  * Feed refresh manager

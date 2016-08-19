@@ -9,6 +9,20 @@
 	</head>
 
 	<body class="unloaded">
+		<!--
+			This element is used to capture text typed before the page is finished loading so
+			it can be used in searches that are run.
+		-->
+		<input type="search" id="preload-search-input" data-submit="false" autofocus="autofocus" tabindex="-1" style="position:fixed;top:-100vh;left:-100vw" />
+
+		<script id="preload-search-script">
+			document.getElementById("preload-search-input").onkeydown = function(e) {
+				if (e.keyCode === 13) {
+					this.setAttribute("data-submit", "true");
+				}
+			};
+		</script>
+
 		<div class="loading">
 			<!-- This is nested inside the element so it gets cleaned up after load along with the element -->
 			<style>

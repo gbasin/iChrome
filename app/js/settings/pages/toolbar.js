@@ -2,14 +2,7 @@
  * The toolbar settings page
  */
 define(["lodash", "jquery", "core/auth", "settings/page"], function(_, $, Auth, Page) {
-	var searchEngineURLs = [
-		"https://google.com/search?q=%s",
-		"https://search.yahoo.com/search?p=%s",
-		"https://www.bing.com/search?q=%s",
-		"https://duckduckgo.com/?q=%s",
-		"http://www.ask.com/web?q=%s",
-		"http://search.aol.com/aol/search?q=%s"
-	];
+	var builtInSearchEngines = ["default", "google", "yahoo", "bing", "duckduckgo", "ask", "aol"];
 
 	var View = Page.extend({
 		id: "toolbar",
@@ -18,6 +11,7 @@ define(["lodash", "jquery", "core/auth", "settings/page"], function(_, $, Auth, 
 			"style": "style",
 			"search-engine": "searchEngine",
 			"search-url": "customSearchURL",
+			"omnibox-capture": "captureFocus",
 			"voice-search": "voice",
 			"ok-google": "ok_google",
 			"new-tab": "searchInNewTab",
@@ -26,7 +20,7 @@ define(["lodash", "jquery", "core/auth", "settings/page"], function(_, $, Auth, 
 			"apps-menu": "apps"
 		},
 
-		monitorProps: ["apps", "gmail", "links", "ok", "plus", "searchURL", "searchInNewTab", "toolbar", "voice"],
+		monitorProps: ["apps", "gmail", "links", "ok", "plus", "searchEngine", "captureFocus", "searchInNewTab", "toolbar", "voice"],
 
 		events: {
 			"click .links button.remove": function(e) {
@@ -56,6 +50,7 @@ define(["lodash", "jquery", "core/auth", "settings/page"], function(_, $, Auth, 
 				"voice-search": "voice",
 				"ok-google": "ok",
 				"new-tab": "searchInNewTab",
+				"omnibox-capture": "captureFocus",
 				"google-plus": "plus",
 				"gmail": "gmail",
 				"apps-menu": "apps"
@@ -69,10 +64,10 @@ define(["lodash", "jquery", "core/auth", "settings/page"], function(_, $, Auth, 
 			else if (name === "search-engine" && value === "custom") {
 				$(elm).parents(".input").first().children(".input.other").addClass("visible");
 			}
-			else if (name === "search-engine" || name === "searchURL") {
+			else if (name === "search-engine" || name === "search-url") {
 				$(elm).parents(".input").first().children(".input.other").removeClass("visible");
 
-				this.model.set("searchURL", value, {
+				this.model.set("searchEngine", value, {
 					noRender: true
 				});
 			}
@@ -103,7 +98,7 @@ define(["lodash", "jquery", "core/auth", "settings/page"], function(_, $, Auth, 
 		onBeforeRender: function(data) {
 			var ret = {
 				style: data.toolbar,
-				searchEngine: searchEngineURLs.indexOf(data.searchURL) === -1 ? "custom" : data.searchURL,
+				searchEngine: builtInSearchEngines.indexOf(data.searchEngine) === -1 ? "custom" : data.searchEngine,
 				voice: data.voice,
 				ok_google: data.ok,
 				searchInNewTab: data.searchInNewTab,
@@ -117,7 +112,7 @@ define(["lodash", "jquery", "core/auth", "settings/page"], function(_, $, Auth, 
 			};
 
 			if (ret.searchEngine === "custom") {
-				ret.customSearchURL = data.searchURL;
+				ret.customSearchURL = data.searchEngine;
 			}
 
 			return ret;

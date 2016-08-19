@@ -33,12 +33,13 @@
 				<h4>{{i18n.settings.toolbar.search.engine}}</h4>
 
 				<select name="search-engine">
-					<option value="https://google.com/search?q=%s">{{i18n.settings.toolbar.search.engines_google}}</option>
-					<option value="https://search.yahoo.com/search?p=%s">Yahoo!</option>
-					<option value="https://www.bing.com/search?q=%s">Bing</option>
-					<option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
-					<option value="http://www.ask.com/web?q=%s">Ask</option>
-					<option value="http://search.aol.com/aol/search?q=%s">AOL</option>
+					<option value="default">{{i18n.settings.toolbar.search.engines_default}}</option>
+					<option value="google">Google</option>
+					<option value="yahoo">Yahoo!</option>
+					<option value="bing">Bing</option>
+					<option value="duckduckgo">DuckDuckGo</option>
+					<option value="ask">Ask</option>
+					<option value="aol">AOL</option>
 					<option value="custom">{{i18n.settings.toolbar.search.engines_custom}}</option>
 				</select>
 			</label>
@@ -49,6 +50,14 @@
 				<input type="text" name="search-url" placeholder="i.e. https://google.com/search?q=%s" value="{{customSearchURL}}" />
 			</label>
 		</div>
+
+		<!-- <label class="input switch">
+			<h4>{{i18n.settings.toolbar.search.omnibox_capture}}</h4>
+
+			<input type="checkbox" name="omnibox-capture" value="1" checked />
+
+			<span class="switch"></span>
+		</label> -->
 
 		<label class="input switch">
 			<h4>{{i18n.settings.toolbar.search.voice}}</h4>
