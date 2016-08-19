@@ -120,6 +120,11 @@ define([
 
 				this.Search = new Search();
 
+				// The inserted event is triggered once the toolbar is inserted into the document
+				this.once("inserted", function() {
+					this.Search.trigger("inserted");
+				});
+
 				// init() needs to be called after the listener is attached to prevent a race condition when storage is already loaded.
 				// It also needs to be here instead of attached directly to new Model() otherwise this.model might not be set yet.
 				this.model.on("change", this.render, this).init();

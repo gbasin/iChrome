@@ -10,7 +10,10 @@ var Hogan={};
 /* globals chrome,PERSISTENT */
 
 
-if (!localStorage.length) {
+// Capture the localStorage length before we make any modifications
+var storageLength = localStorage.length;
+
+if (!storageLength) {
 	localStorage.firstRun = "true";
 
 	chrome.tabs.create({
@@ -51,18 +54,71 @@ else if (!localStorage.version || localStorage.version !== chrome.runtime.getMan
 	}
 }
 
-if (localStorage.length && (!localStorage.version || localStorage.version.indexOf("3.0.0") !== 0)) {
+if (storageLength && (!localStorage.firstRun || localStorage.firstRun !== "true") && (!localStorage.version || localStorage.version.indexOf("3.0.0") !== 0)) {
 	localStorage.showUpdated = "true";
 	localStorage.showSignInNotice = "true";
 }
 
 localStorage.version = chrome.runtime.getManifest().version;
 
+
+var appURL = chrome.extension.getURL("index.html");
+
 chrome.browserAction.onClicked.addListener(function() {
 	chrome.tabs.create({
-		url: chrome.extension.getURL("index.html")
-	}, function() {});
+		url: appURL
+	});
 });
+
+
+var showNotice = localStorage.searchCaptureNotified !== "true";
+
+var captureOmniboxFocus = function(tab) {
+	if (tab.url === "chrome://newtab/") {
+		chrome.tabs.remove(tab.id);
+
+		// If the user hasn't seen the notice before, show it when we first capture focus
+		if (showNotice) {
+			showNotice = false;
+
+			localStorage.showOmniboxNotice = "true";
+
+			localStorage.searchCaptureNotified = "true";
+		}
+
+		chrome.tabs.create({
+			url: appURL,
+			active: true,
+			windowId: tab.windowId
+		});
+	}
+};
+
+var settings = JSON.parse(localStorage.config || "{}").settings || {};
+
+var captureFocus = settings.toolbar !== "button" && !!settings.captureFocus;
+
+window.addEventListener("storage", function(e) {
+	if (!e || e.key !== "config" || !e.newValue) {
+		return;
+	}
+
+	settings = JSON.parse(e.newValue || "{}").settings || {};
+
+	var newCaptureFocus = settings.toolbar !== "button" && !!settings.captureFocus;
+
+	// Don't do anything if the setting hasn't changed, this stops duplicate listeners from getting added
+	if (captureFocus === newCaptureFocus) {
+		return;
+	}
+
+	captureFocus = newCaptureFocus;
+
+	chrome.tabs.onCreated[captureFocus ? "addListener" : "removeListener"](captureOmniboxFocus);
+});
+
+chrome.tabs.onCreated[captureFocus ? "addListener" : "removeListener"](captureOmniboxFocus);
+
 
 /**
  * Feed refresh manager

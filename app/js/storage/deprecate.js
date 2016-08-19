@@ -33,8 +33,7 @@ define(["lodash"], function(_) {
 				def: "defaultTab",
 				stab: "searchInNewTab",
 				ltab: "openLinksInNewTab",
-				"custom-css": "customCSS",
-				"search-url": "searchURL"
+				"custom-css": "customCSS"
 			}, function(updated, prev) {
 				// Actual old property removal is handled below
 				if (settings.hasOwnProperty(prev)) {
@@ -56,7 +55,8 @@ define(["lodash"], function(_) {
 				"stab", // Search results tab
 				"ltab", // Link target
 				"custom-css", // Custom CSS
-				"search-url" // Search URL
+				"search-url", // Search URL
+				"searchURL" // Later search URL
 			);
 
 

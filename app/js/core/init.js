@@ -83,6 +83,8 @@ define([
 					}
 
 					this.$el.prepend(this.Toolbar.render().el);
+
+					this.Toolbar.trigger("inserted");
 				}
 				else {
 					if (!this.MenuButton) {

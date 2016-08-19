@@ -1,7 +1,9 @@
 /**
  * This handles and fetches search suggestions
  */
-define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Backbone, Track) {
+define(["jquery", "underscore", "browser/api", "backbone", "core/analytics", "i18n/i18n"], function($, _, Browser, Backbone, Track, Translate) {
+	var captureNotice = '<div class="capture-notice">' + Translate("toolbar.suggestions.capture_notice") + '</div>';
+
 	var Suggestions = Backbone.View.extend({
 			tagName: "div",
 			className: "suggestions",
@@ -14,6 +16,55 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 			},
 			current: 0,
 			visible: false,
+
+			/**
+			 * Determines if the provided `val` is a URL, returning the normalized URL if
+			 * it is and false if it isn't
+			 *
+			 * @param   {String}          val  The value entered in the search box
+			 * @return  {Boolean|String}       `false` if the text isn't a URL and a normalized URL if it is
+			 */
+			isURL: function(val) {
+				val = val.trim().toLowerCase();
+
+				// If there are spaces, this isn't a URL
+				if (val.indexOf(" ") > -1) {
+					return false;
+				}
+
+				if (val.indexOf("http://") === 0 ||
+					val.indexOf("https://") === 0 ||
+					val.indexOf("ftp://") === 0 ||
+					val.indexOf("file://") === 0 ||
+					val.indexOf("chrome://") === 0 ||
+					val.indexOf("chrome-extension://") === 0 ||
+					val.indexOf("about:") === 0
+				) {
+					return val;
+				}
+
+				// If the input ends with a slash or matches an ab.cd.ef format, say it's a URL
+				if (val.slice(-1) === "/" || /^([a-z]+\.)+[a-z]{2,}(?!\.)\b/.test(val)) {
+					return "http://" + val;
+				}
+
+				return false;
+			},
+
+			initialize: function() {
+				if (Browser.storage.showOmniboxNotice === "true") {
+					this._showingNotice = true;
+
+					this.on("element:updated", function() {
+						if (this._showingNotice) {
+							this.$el.html(captureNotice);
+
+							this.show();
+						}
+					});
+				}
+			},
+
 			load: function(val) {
 				if (val) {
 					this.visible = true;
@@ -27,8 +78,16 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 							hl: navigator.language
 						},
 						success: function(d) {
-							var html = '<div class="suggestion active">' + _.escape(val) + '</div>',
-								num = 1;
+							var html = "";
+
+							if (this.isURL(val)) {
+								html = '<div class="suggestion url active">' + _.escape(val) + '<span class="subtext">' + Translate("toolbar.suggestions.url_subtext") + '</span></div>';
+							}
+							else {
+								html = '<div class="suggestion active">' + _.escape(val) + '</div>';
+							}
+
+							var num = 1;
 
 							d[1].forEach(function(e) {
 								if (num > 10) {
@@ -36,13 +95,19 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 								}
 
 								if (e[0] !== val) {
-									html += '<div class="suggestion">' + _.escape(e[0]) + '</div>';
+									html += '<div class="suggestion' + (this.isURL(e[0]) ? " url" : "") + '">' + _.escape(e[0]) + '</div>';
 
 									num++;
 								}
-							});
+							}.bind(this));
 
 							this.current = 0;
+
+							if (this._showingNotice) {
+								delete Browser.storage.showOmniboxNotice;
+
+								html += captureNotice;
+							}
 
 							this.$el.html(html);
 
@@ -94,7 +159,7 @@ define(["jquery", "underscore", "backbone", "core/analytics"], function($, _, Ba
 					this.current = which;
 				}
 
-				this.trigger("focuschange", active.text());
+				this.trigger("focuschange", active[0].childNodes[0].nodeValue);
 			},
 			clearFocus: function(skipVar) {
 				this.$("div.active").removeClass("active");

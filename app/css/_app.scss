@@ -1665,6 +1665,15 @@ header.toolbar {
 		text-overflow: ellipsis;
 		font-family: Roboto, sans-serif;
 		border-left: 4px solid transparent;
+
+		.subtext {
+			color: #888;
+			font-size: 13px;
+
+			&:before {
+				content: " - ";
+			}
+		}
 	}
 
 	.search .suggestions div:hover,
@@ -1680,6 +1689,22 @@ header.toolbar {
 
 	.search .suggestions div.active {
 		border-left-color: #738FFE;
+
+		&.url {
+			border-left-color: #4CAF50;
+		}
+	}
+
+	.search .suggestions .capture-notice {
+		border: none;
+		color: #757575;
+		cursor: default;
+		font-size: 12px;
+		line-height: 20px;
+		padding: 10px 16px;
+		background: #F5F5F5;
+		white-space: initial;
+		border-top: 1px solid rgba(0, 0, 0, .1);
 	}
 
 	.search .speech {
