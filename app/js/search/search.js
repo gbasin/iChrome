@@ -173,7 +173,8 @@ define(["backbone", "browser/api", "storage/storage", "core/render", "core/analy
 							ok: this.model.get("ok"),
 							voice: this.model.get("voice")
 						})
-					);
+					)
+					.find("input").focus();
 
 				this.Suggestions.setElement(this.$(".suggestions")).trigger("element:updated");
 
