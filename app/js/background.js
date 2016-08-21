@@ -88,8 +88,6 @@ chrome.permissions.contains({
 	var internalCreate = false;
 
 	var captureOmniboxFocus = function(tab) {
-		chrome.tabs.remove(tab.id);
-
 		// If the user hasn't seen the notice before, show it when we first capture focus
 		if (showNotice) {
 			showNotice = false;
@@ -106,6 +104,9 @@ chrome.permissions.contains({
 			active: true,
 			windowId: tab.windowId
 		});
+
+		// Remove after creating the new tab so new windows don't instantly close
+		chrome.tabs.remove(tab.id);
 	};
 
 	var tabHandler = function(tab) {
