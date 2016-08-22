@@ -164,6 +164,10 @@ define(["backbone", "browser/api", "storage/storage", "core/render", "core/analy
 					}
 				});
 
+				this.on("inserted", function() {
+					this.$("input").focus();
+				});
+
 				this.model.on("change:ok change:voice", this.render, this).init();
 			},
 			render: function() {
