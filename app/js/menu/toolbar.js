@@ -147,7 +147,7 @@ define([
 
 				this.$(".search").replaceWith(this.Search.el);
 
-				this.Search.trigger("inserted");
+				this.Search.trigger("reinserted");
 
 				if (toolbar) {
 					this.$("nav.menu").replaceWith(this.Menu.el);
