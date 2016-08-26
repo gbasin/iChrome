@@ -75,7 +75,7 @@
 		"bookmarks",
 		"management"
 	],
-	"version": "3.0.0.14",
+	"version": "3.0.0.15",
 	"manifest_version": 2,
 	"default_locale": "en",
 	"short_name": "iChrome",
