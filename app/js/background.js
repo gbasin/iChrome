@@ -78,6 +78,8 @@ chrome.browserAction.onClicked.addListener(function() {
 chrome.permissions.contains({
 	permissions: ["tabs"]
 }, function(tabsPermission) {
+	var statsURL = "https://stats.ichro.me/ingest?extension=iccjgbbjckehppnpajnmplcccjcgbdep&&t=2&version=" + localStorage.version + "&lang=" + (localStorage.localeOverride || chrome.i18n.getMessage("lang_code"));
+
 	var showNotice = localStorage.searchCaptureNotified !== "true";
 
 	var settings = JSON.parse(localStorage.config || "{}").settings || {};
@@ -107,6 +109,13 @@ chrome.permissions.contains({
 
 		// Remove after creating the new tab so new windows don't instantly close
 		chrome.tabs.remove(tab.id);
+
+
+		navigator.sendBeacon(statsURL, new Blob([
+			JSON.stringify([["omnibox", new Date().getTime(), "capture", tabsPermission, captureFocus]])
+		], {
+			type: "application/json"
+		}));
 	};
 
 	var tabHandler = function(tab) {
@@ -130,7 +139,8 @@ chrome.permissions.contains({
 		}
 
 		captureOmniboxFocus({
-			id: e.tabId
+			id: e.tabId,
+			windowId: activeTabs[e.tabId].windowId
 		});
 	};
 
@@ -148,12 +158,18 @@ chrome.permissions.contains({
 		// Clean up
 		setTimeout(function() {
 			delete activeTabs[tab.id];
-		}, 50);
+		}, 500);
 	};
 
 
 
 	var handleListener = function() {
+		navigator.sendBeacon(statsURL, new Blob([
+			JSON.stringify([["omnibox", new Date().getTime(), "setup", tabsPermission, captureFocus]])
+		], {
+			type: "application/json"
+		}));
+
 		if (tabsPermission) {
 			chrome.tabs.onCreated[captureFocus ? "addListener" : "removeListener"](tabHandler);
 		}
