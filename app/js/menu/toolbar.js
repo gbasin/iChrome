@@ -120,9 +120,16 @@ define([
 
 				this.Search = new Search();
 
+
+				var insertTrigerred = false;
+
 				// The inserted event is triggered once the toolbar is inserted into the document
-				this.once("inserted", function() {
-					this.Search.trigger("inserted");
+				this.on("inserted", function() {
+					this.Search.trigger(insertTrigerred ? "reinserted" : "inserted");
+
+					if (!insertTrigerred) {
+						insertTrigerred = true;
+					}
 				});
 
 				// init() needs to be called after the listener is attached to prevent a race condition when storage is already loaded.
