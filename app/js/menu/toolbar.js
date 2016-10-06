@@ -121,10 +121,14 @@ define([
 				this.Search = new Search();
 
 
+				var insertTriggered = false;
 
 				// The inserted event is triggered once the toolbar is inserted into the document
 				this.on("inserted", function() {
+					this.Search.trigger(insertTriggered ? "reinserted" : "inserted");
 
+					if (!insertTriggered) {
+						insertTriggered = true;
 					}
 				});
 
