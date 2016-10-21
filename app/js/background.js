@@ -16,6 +16,15 @@ var storageLength = localStorage.length;
 if (!storageLength) {
 	localStorage.firstRun = "true";
 
+	navigator.sendBeacon("https://stats.ichro.me/ingest?" +
+		"extension=" + chrome.i18n.getMessage("@@extension_id") + "&version=" + chrome.runtime.getManifest().version + "&lang=" + chrome.i18n.getMessage("lang_code"),
+		new Blob([
+			JSON.stringify([["install", new Date().getTime()]])
+		], {
+			type: "application/json"
+		})
+	);
+
 	chrome.tabs.create({
 		url: "index.html"
 	});
