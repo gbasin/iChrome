@@ -261,6 +261,11 @@ define(
 					// condition when storage is already loaded.  It also needs to be here instead
 					// of attached directly to new Model() otherwise this.model might not be set yet.
 					this.model.on("change", this.render, this).init();
+
+					// If this was a direct link to the settings, show them
+					if (location.hash === "#settings") {
+						this.Settings = new Settings();
+					}
 				},
 
 
