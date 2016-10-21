@@ -53,6 +53,7 @@
 		"128": "icon/128.png"
 	},
 	"browser_action": {},
+	"options_page": "index.html#settings",
 	"chrome_settings_overrides": {
 		"homepage": "http://ichro.me/redirect"
 	},
