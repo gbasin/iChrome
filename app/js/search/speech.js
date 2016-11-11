@@ -196,5 +196,13 @@ define(["jquery", "underscore", "backbone", "core/analytics", "storage/storage",
 			}
 		});
 
-	return View;
+	var speech = null;
+
+	return function() {
+		if (!speech) {
+			speech = new View();
+		}
+
+		return speech;
+	};
 });
