@@ -18,66 +18,6 @@
 	</label>
 
 	<label class="input">
-		<span>{{i18n.settings.edition}}</span>
-
-		<select class="edition" name="edition">
-			<option value="ar-ae">(الإمارات العربية المتحدة (العربية</option>
-			<option value="ar-eg">(مصر (العربية</option>
-			<option value="ar-sa">(السعودية (العربية</option>
-			<option value="da-dk">Danmark (Dansk)</option>
-			<option value="de-at">Österreich (Deutsch)</option>
-			<option value="de-ch">Schweiz (Deutsch)</option>
-			<option value="de-de">Deutschland (Deutsch)</option>
-			<option value="el-gr">Ελλάδα (ελληνικά)</option>
-			<option value="en-ae">U.A.E. (English)</option>
-			<option value="en-au">Australia (English)</option>
-			<option value="en-ca">Canada (English)</option>
-			<option value="en-gb">United Kingdom (English)</option>
-			<option value="en-ie">Ireland (English)</option>
-			<option value="en-in">India (English)</option>
-			<option value="en-my">Malaysia (English)</option>
-			<option value="en-nz">New Zealand (English)</option>
-			<option value="en-ph">Philippines (English)</option>
-			<option value="en-sg">Singapore (English)</option>
-			<option value="en-us" selected>United States (English)</option>
-			<option value="en-za">South Africa (English)</option>
-			<option value="es-ar">Argentina (español)</option>
-			<option value="es-cl">Chile (español)</option>
-			<option value="es-co">Colombia (español)</option>
-			<option value="es-es">España (español)</option>
-			<option value="es-mx">México (español)</option>
-			<option value="es-pe">Perú (español)</option>
-			<option value="es-us">United States (español)</option>
-			<option value="es-ve">Venezuela (español)</option>
-			<option value="es-xl">América Latina (español)</option>
-			<option value="fi-fi">Suomi (Suomi)</option>
-			<option value="fr-be">Belgique (Français)</option>
-			<option value="fr-ca">Canada (Français)</option>
-			<option value="fr-ch">Suisse (Français)</option>
-			<option value="fr-fr">France (Français)</option>
-			<option value="he-il">(ישראל (עברית</option>
-			<option value="id-id">Indonesia (Bahasa Indonesia)</option>
-			<option value="it-it">Italia (Italiano)</option>
-			<option value="ja-jp">日本 (日本語)</option>
-			<option value="ko-kr">한국 (한국어)</option>
-			<option value="nb-no">Norge (Norsk, bokmål)</option>
-			<option value="nl-be">België (Nederlands)</option>
-			<option value="nl-nl">Nederland (Nederlands)</option>
-			<option value="pl-pl">Polska (polski)</option>
-			<option value="pt-br">Brasil (Português)</option>
-			<option value="pt-pt">Portugal (Português)</option>
-			<option value="ru-ru">Россия (Pусский)</option>
-			<option value="sv-se">Sverige (Svenska)</option>
-			<option value="th-th">ไทย (ไทย)</option>
-			<option value="tr-tr">Türkiye (Türkçe)</option>
-			<option value="vi-vn">Việt Nam (Tiếng Việt)</option>
-			<option value="zh-cn">中华人民共和国 (中文)</option>
-			<option value="zh-hk">香港特別行政區 (中文)</option>
-			<option value="zh-tw">台灣 (中文)</option>
-		</select>
-	</label>
-
-	<label class="input">
 		<span>{{i18n.settings.default_topic}}</span>
 
 		<select class="topic" name="topic">

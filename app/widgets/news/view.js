@@ -167,6 +167,8 @@ define(["lodash", "moment", "widgets/views/main"], function(_, moment, WidgetVie
 					this.style.height = "20px";
 				});
 			}
+
+			this.model.trigger("viewed");
 		}
 	});
 });

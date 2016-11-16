@@ -45,6 +45,8 @@
 				<div class="details">
 					{{#source}}<span class="source">{{source}}</span>{{/source}}
 
+					{{#promoted}}&mdash; <span class="promoted">Promoted content</span>{{/promoted}}
+
 					<span class="date">{{date}}</span>
 				</div>
 			</a>
@@ -53,7 +55,7 @@
 		{{#items}}
 			<a href="{{url}}" class="item">
 				{{#list}}
-					<span class="source">{{source}}</span>
+					<span class="source">{{source}}{{#promoted}}&mdash; Promoted{{/promoted}}</span>
 
 					<span class="desc">
 						<b class="title">{{title}}</b>
@@ -73,6 +75,8 @@
 
 					<div class="details">
 						{{#source}}<span class="source">{{source}}</span>{{/source}}
+
+						{{#promoted}}&mdash; <span class="promoted">Promoted content</span>{{/promoted}}
 
 						<span class="date">{{date}}</span>
 					</div>
