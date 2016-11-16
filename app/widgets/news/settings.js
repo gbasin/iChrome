@@ -42,7 +42,7 @@ define(["lodash", "jquery", "widgets/views/settings", "jquery.serializejson"], f
 		},
 
 		onRender: function(config) {
-			this.$(".topic").val(config.topic)
+			this.$(".topic").val(config.topic);
 		}
 	});
 });

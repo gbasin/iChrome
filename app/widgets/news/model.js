@@ -149,10 +149,9 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 		 * Parses and normalizes articles
 		 *
 		 * @param   {Array}   docs       The items to parse
-		 * @param   {Boolean} maximized  If we're maximized and should parse larger images
 		 * @return  {Object}             An array of parsed, normalized entries
 		 */
-		parseArticles: function(docs, maximized) {
+		parseArticles: function(docs) {
 			var articles = _.map(docs, function(e) {
 				var doc = e.document || {};
 
