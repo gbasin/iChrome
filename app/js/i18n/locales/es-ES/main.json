@@ -10,6 +10,7 @@
     "me":"Yo"
   },
   "remove_widget":"Quitar",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"Ignorar",
     "confirm_title":"¿Está seguro de que quiere hacer esto?",

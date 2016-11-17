@@ -41,39 +41,8 @@ define(["lodash", "jquery", "widgets/views/settings", "jquery.serializejson"], f
 			return config;
 		},
 
-
 		onRender: function(config) {
-			var topic = this.$(".topic").val(config.topic),
-				edition = this.$(".edition").val(config.edition);
-
-			edition.on("change", function() {
-				if (edition.val() !== config.edition) {
-					this.model.getTopics(function(topics) {
-						var currTopic = topic.val();
-
-						var hEscape = function(str) {
-							str = String(str || "");
-							
-							if (/[&<>\{\"\']/.test(str)) {
-								return str
-									.replace(/&/g, "&amp;")
-									.replace(/</g, "&lt;")
-									.replace(/>/g, "&gt;")
-									.replace(/\'/g, "&#39;")
-									.replace(/\"/g, "&quot;")
-									.replace(/\{/g, "&#123;");
-							}
-							else {
-								return str;
-							}
-						};
-
-						topic.html(_.map(topics, function(e) {
-							return '<option value="' + hEscape(e[0]) + '"' + (e[0] === currTopic ? " selected" : "") + '>' + hEscape(e[1]) + '</option>';
-						}).join(""));
-					}, edition.val());
-				}
-			}.bind(this));
+			this.$(".topic").val(config.topic);
 		}
 	});
 });

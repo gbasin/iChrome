@@ -66,10 +66,10 @@ define(
 					},
 					"click .tabs .add": function() {
 						if (!this.Settings) {
-							this.Settings = new Settings();
+							this.Settings = Settings("tabs");
 						}
 						else {
-							this.Settings.show();
+							this.Settings.show("tabs");
 						}
 
 						this.Settings.createTab();
@@ -101,7 +101,7 @@ define(
 					switch (elm.attr("data-item")) {
 						case "settings":
 							if (!this.Settings) {
-								this.Settings = new Settings();
+								this.Settings = Settings();
 							}
 							else {
 								this.Settings.show();
@@ -264,7 +264,7 @@ define(
 
 					// If this was a direct link to the settings, show them
 					if (location.hash === "#settings") {
-						this.Settings = new Settings();
+						this.Settings = Settings();
 					}
 				},
 
@@ -284,10 +284,18 @@ define(
 				render: function() {
 					// This enables OK Google hotword detection even when there's only a menu and no toolbar
 					if (this.model.get("ok") && !this.Speech) {
-						this.Speech = new Speech();
+						this.Speech = Speech();
 
 						// This calls the search submit handler using the Speech model for settings
-						this.Speech.on("result", Search.prototype.submit, this.Speech);
+						this.Speech.on("result", function(val) {
+							if (!this.Search) {
+								this.Search = new Search();
+
+								// This is inside the if statement because if the search view already existed
+								// it would have caught the event normally
+								this.Search.onSpeechResult(val);
+							}
+						}, this);
 					}
 
 					this.$el.html(render("menu", this.model.toJSON()));

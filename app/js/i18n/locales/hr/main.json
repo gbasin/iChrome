@@ -10,6 +10,7 @@
     "me":"Ja"
   },
   "remove_widget":"Ukloni",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"Odbaci",
     "confirm_title":"Jeste li sigurni da želite to napraviti?",

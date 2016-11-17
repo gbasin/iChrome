@@ -10,6 +10,7 @@
     "me":"Saya"
   },
   "remove_widget":"Hapus",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"Hentikan",
     "confirm_title":"Apakah Anda yakin akan melakukan ini?",

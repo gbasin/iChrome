@@ -579,14 +579,14 @@
     },
     "to_home":"到家",
     "to_work":"上班",
-    "hour":"%s hour",
-    "hours":"%s hours",
-    "hours_letter":"%sh",
-    "minute":"%s minute",
-    "minutes":"%s minutes",
-    "minute_short":"%s min",
-    "minutes_short":"%s mins",
-    "minutes_letter":"%sm"
+    "hour":"%s小时",
+    "hours":"%s小时",
+    "hours_letter":"%s时",
+    "minute":"%s分钟",
+    "minutes":"%s分钟",
+    "minute_short":"%s分钟",
+    "minutes_short":"%s分钟",
+    "minutes_letter":"%s分"
   },
   "translate":{
     "name":"翻译",

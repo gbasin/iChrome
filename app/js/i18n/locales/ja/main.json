@@ -10,6 +10,7 @@
     "me":"自分"
   },
   "remove_widget":"削除",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"閉じる",
     "confirm_title":"これを行ってもよろしいですか？",
@@ -192,7 +193,7 @@
         "title":"検索",
         "desc":"検索ボックスと音声検索の設定を変更できます",
         "engine":"検索エンジン",
-        "engines_default":"Default",
+        "engines_default":"デフォルト",
         "engines_custom":"カスタム",
         "engines_custom_desc":"クエリを <b>%s<\/b> にして URL を入力",
         "omnibox_capture":"Handle searches normally made in the Omnibox",

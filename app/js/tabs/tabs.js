@@ -2,8 +2,8 @@
  * The tabs container-model.
  */
 define(
-	["lodash", "jquery", "backbone", "browser/api", "storage/storage", "storage/defaults", "core/status", "core/analytics", "tabs/collection", "i18n/i18n"],
-	function(_, $, Backbone, Browser, Storage, Defaults, Status, Track, Tabs, Translate) {
+	["lodash", "jquery", "backbone", "browser/api", "storage/storage", "storage/defaults", "core/status", "core/analytics", "tabs/collection", "i18n/i18n", "settings/view"],
+	function(_, $, Backbone, Browser, Storage, Defaults, Status, Track, Tabs, Translate, Settings) {
 		var Model = Backbone.Model.extend({
 				initialize: function() {
 					this.tabs = new Tabs();
@@ -61,6 +61,9 @@ define(
 					"click .tab-nav button": function(e) {
 						this.model.tabs.navigate($(e.currentTarget).attr("data-direction"));
 					},
+					"click .ad-unit button.hide-ad": function() {
+						Settings("pro");
+					},
 					"keydown": function(e) {
 						if (e.which === 37) {
 							this.model.tabs.navigate("prev");
@@ -93,6 +96,25 @@ define(
 				initialize: function(options, navigate) {
 					// Sortable must be initialized before the model tries to create the tabs
 					this.sortable();
+
+					// Listen for ad unit messages
+					window.addEventListener("message", function(e) {
+						if (e.origin === "http://localhost:4000" || e.origin === "https://ichro.me" || e.origin === "http://ichro.me") {
+							var d = {};
+
+							try {
+								d = JSON.parse(e.data);
+							}
+							catch (err) {}
+
+							if (d && d.hideAd) {
+								this.$el.find("#" + d.hideAd).remove();
+							}
+							else if (d && d.showProScreen) {
+								Settings("pro");
+							}
+						}
+					}.bind(this), false);
 
 					this.model = new Model();
 
@@ -345,6 +367,10 @@ define(
 						)
 						.toggleClass("one-tab", this.model.tabs.length === 1)
 						.append(_.pluck(this.model.tabs.views, "el"));
+
+					_.each(this.model.tabs.views, function(e) {
+						e.trigger("inserted");
+					});
 
 					return this;
 				}

@@ -435,7 +435,7 @@
   },
   "news":{
     "name":"News",
-    "desc":"Displays the current top news by category and edition.",
+    "desc":"Displays personalized and general news by category",
     "all_stories":"All",
     "settings":{
       "page_title":"Settings",

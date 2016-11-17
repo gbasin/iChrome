@@ -10,6 +10,7 @@
     "me":"मैं"
   },
   "remove_widget":"हटाना",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"Dismiss",
     "confirm_title":"Are you sure you want to do this?",

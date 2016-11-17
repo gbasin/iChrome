@@ -1,12 +1,17 @@
 /**
  * This handles the searchbox
  */
-define(["backbone", "browser/api", "storage/storage", "core/render", "core/analytics", "search/suggestions", "search/speech"], function(Backbone, Browser, Storage, render, Track, Suggestions, Speech) {
+define([
+	"backbone", "browser/api", "storage/storage", "core/render", "core/analytics", "search/suggestions", "search/speech", "search/page"
+], function(Backbone, Browser, Storage, render, Track, Suggestions, Speech, Page) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
 					this.set(storage.settings);
 				}, this);
+			},
+			isDefault: function() {
+				return (this.get("searchEngine") || "default") === "default";
 			}
 		}),
 		View = Backbone.View.extend({
@@ -41,6 +46,10 @@ define(["backbone", "browser/api", "storage/storage", "core/render", "core/analy
 			change: function(e, w) {
 				var val = e.currentTarget.value.trim();
 
+				if (val !== "" && this.model.isDefault()) {
+					return this.searchPage().setQuery(val);
+				}
+
 				if (val !== "" && w !== "focusout") {
 					this.Suggestions.load(val);
 
@@ -61,6 +70,10 @@ define(["backbone", "browser/api", "storage/storage", "core/render", "core/analy
 
 				if (typeof val !== "string") {
 					val = this.$("input").val().trim();
+				}
+
+				if (val !== "" && this.model.isDefault()) {
+					return this.searchPage().setQuery(val).submit();
 				}
 
 
@@ -115,10 +128,40 @@ define(["backbone", "browser/api", "storage/storage", "core/render", "core/analy
 
 				Track.event("Search", "Speech", "Start");
 			},
+			searchPage: function() {
+				if (!this.Page) {
+					this.Page = new Page();
+				}
+
+				this.Page.on("hide", function(searchVal) {
+					this.$("input").val(searchVal);
+				}, this);
+
+				return this.Page;
+			},
+			onSpeechResult: function(val) {
+				if (this.model.isDefault()) {
+					// Hide the speech UI
+					this.Speech.stop();
+
+					return this.searchPage().trigger("speech:result", val);
+				}
+
+				Track.queue("search", val, true);
+
+				Track.ga("send", {
+					useBeacon: true,
+					hitType: "pageview",
+					title: "Voice Search: " + val,
+					page: "/search/speech?q=" + encodeURIComponent(val)
+				});
+
+				this.submit(val, true);
+			},
 			initialize: function() {
 				this.model = new Model();
 
-				this.Speech = new Speech();
+				this.Speech = Speech();
 
 				this.Suggestions = new Suggestions();
 
@@ -129,18 +172,7 @@ define(["backbone", "browser/api", "storage/storage", "core/render", "core/analy
 					this.submit(val);
 				}, this);
 
-				this.Speech.on("result", function(val) {
-					Track.queue("search", val, true);
-
-					Track.ga("send", {
-						useBeacon: true,
-						hitType: "pageview",
-						title: "Voice Search: " + val,
-						page: "/search/speech?q=" + encodeURIComponent(val)
-					});
-
-					this.submit(val, true);
-				}, this);
+				this.Speech.on("result", this.onSpeechResult, this);
 
 				this.once("inserted", function() {
 					// The preloadInput element captures text that's entered while the page is

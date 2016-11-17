@@ -435,7 +435,7 @@
   },
   "news":{
     "name":"Haberler",
-    "desc":"Displays the current top news by category and edition.",
+    "desc":"Displays personalized and general news by category",
     "all_stories":"Tümü",
     "settings":{
       "page_title":"Ayarlar",

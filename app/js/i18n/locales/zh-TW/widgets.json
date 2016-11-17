@@ -295,7 +295,7 @@
     "settings":{
       "link":"連結網址：",
       "link_placeholder":"http:\/\/www.google.com\/",
-      "image":"圖像 URL",
+      "image":"圖像網址",
       "image_placeholder":"http:\/\/www.example.com\/image.png",
       "color":"圖片背景顏色",
       "style":"圖片樣式",

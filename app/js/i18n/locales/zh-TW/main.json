@@ -10,6 +10,7 @@
     "me":"我"
   },
   "remove_widget":"刪除",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"取消",
     "confirm_title":"你確定要這樣做嗎？",
@@ -78,8 +79,8 @@
     "placeholder":"輸入並搜尋",
     "placeholder_ok":"輸入並搜尋或說“OK, Google\"...",
     "suggestions":{
-      "url_subtext":"Visit URL",
-      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+      "url_subtext":"訪問網址",
+      "capture_notice":"iChrome將取代您地址欄的搜尋功能，您可隨時在設定中禁用此設置。"
     },
     "apps":{
       "search":"搜尋",
@@ -154,7 +155,7 @@
         "custom":"自訂",
         "unnamed":"主題 %s",
         "select":"選擇一個主題",
-        "or":"or",
+        "or":"或",
         "url_placeholder":"輸入圖片網址"
       },
       "layout":{
@@ -192,10 +193,10 @@
         "title":"搜尋",
         "desc":"這些設定控制著搜尋框與語音搜尋將如何運作",
         "engine":"搜尋引擎",
-        "engines_default":"Default",
+        "engines_default":"預設",
         "engines_custom":"自訂",
         "engines_custom_desc":"輸入一個搜尋網址可用來接收查詢，替換<b>%s<\/b> 以自製查詢要求",
-        "omnibox_capture":"Handle searches normally made in the Omnibox",
+        "omnibox_capture":"使用iChrome取代地址欄的搜尋功能",
         "voice":"啟用語音搜尋",
         "ok_google":"啟用 \"OK Google\" 指令偵測",
         "search_tab":"在新分頁中顯示搜尋結果"
@@ -402,7 +403,7 @@
     "all":"全部",
     "custom":"自訂",
     "create":"建立新的主題",
-    "url_or_upload":"or",
+    "url_or_upload":"或",
     "upload_image":"上傳圖像",
     "edit_btn":"編輯",
     "delete":"刪除",
@@ -439,9 +440,9 @@
       "name":"主題名稱",
       "default_name":"新增主題",
       "name_placeholder":"請輸入主題名稱",
-      "image":"圖像 URL",
-      "image_placeholder":"輸入背景圖像的 URL",
-      "image_help":"上載了的圖像在電腦之間 <b>無法同步<\/b> <br \/> <br \/> 如果這對你很重要，請將您的圖像上載到 <a href=\"HTTP:\/\/imgur.com\/\"target=\"_blank\"> imgur<\/a> 類似的服務。然後複製和貼上含有副檔名 (即.jpg) 的 URL 到左側欄內。",
+      "image":"圖像網址",
+      "image_placeholder":"輸入背景圖像的網址",
+      "image_help":"上載了的圖像在電腦之間 <b>無法同步<\/b> <br \/> <br \/> 如果這對你很重要，請將您的圖像上載到 <a href=\"HTTP:\/\/imgur.com\/\"target=\"_blank\"> imgur<\/a> 類似的服務。然後複製和貼上含有副檔名 (即.jpg) 的網址到左側欄內。",
       "color":"背景顏色",
       "color_placeholder":"輸入顏色名稱",
       "position":"位置",
