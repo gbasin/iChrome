@@ -105,7 +105,7 @@ define(
 							try {
 								d = JSON.parse(e.data);
 							}
-							catch (e) {}
+							catch (err) {}
 
 							if (d && d.hideAd) {
 								this.$el.find("#" + d.hideAd).remove();
