@@ -10,6 +10,7 @@
     "me":"Ich"
   },
   "remove_widget":"Löschen",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"Verwerfen",
     "confirm_title":"Sind Sie sicher?",
@@ -78,8 +79,8 @@
     "placeholder":"Begriff eingeben",
     "placeholder_ok":"Begriff eingeben oder \"OK, Google\"",
     "suggestions":{
-      "url_subtext":"Visit URL",
-      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+      "url_subtext":"URL besuchen",
+      "capture_notice":"iChrome sucht generell mittels Omnibox. Dies kann jederzeit in den Einstellungen deaktiviert werden."
     },
     "apps":{
       "search":"Suche",
@@ -192,10 +193,10 @@
         "title":"Suche",
         "desc":"Diese Einstellungen bestimmen die Funktion des Suchfeldes und der Sprachsuche",
         "engine":"Suchmaschine",
-        "engines_default":"Default",
+        "engines_default":"Voreinstellung",
         "engines_custom":"Benutzerdefiniert",
         "engines_custom_desc":"Bitte eine URL eingeben an die Abfragen gesendet werden sollen, <b>%s<\/b> enthält das Ziel.",
-        "omnibox_capture":"Handle searches normally made in the Omnibox",
+        "omnibox_capture":"Handhabung von Suchen welche generell in der Omnibox erfolgen",
         "voice":"Sprachsuche aktivieren",
         "ok_google":"Aktivieren Sie die \"OK-Google\" -Erkennung",
         "search_tab":"Öffnet Suchergebnisse in einem neuen Tab"

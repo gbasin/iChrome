@@ -10,6 +10,7 @@
     "me":"Jo"
   },
   "remove_widget":"Treure",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"Ignorar",
     "confirm_title":"Segur que ho vols fer?",

@@ -10,6 +10,7 @@
     "me":"Mig"
   },
   "remove_widget":"Fjern",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"Slet",
     "confirm_title":"Er du sikker på du vil gøre dette?",

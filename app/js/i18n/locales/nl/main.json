@@ -10,6 +10,7 @@
     "me":"Ik"
   },
   "remove_widget":"Verwijder",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"Negeren",
     "confirm_title":"Weet u zeker dat u dit wilt doen?",

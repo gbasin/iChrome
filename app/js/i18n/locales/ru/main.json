@@ -10,6 +10,7 @@
     "me":"Я"
   },
   "remove_widget":"Удалить",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"Отклонить",
     "confirm_title":"Вы уверены что хотите это сделать?",

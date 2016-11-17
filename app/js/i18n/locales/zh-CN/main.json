@@ -10,6 +10,7 @@
     "me":"我"
   },
   "remove_widget":"移除",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"忽略",
     "confirm_title":"您确定要这样做？",
@@ -78,8 +79,8 @@
     "placeholder":"输入并搜索...",
     "placeholder_ok":"请输入或说“OK, Google\"启动语音搜索...",
     "suggestions":{
-      "url_subtext":"Visit URL",
-      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+      "url_subtext":"访问链接",
+      "capture_notice":"iChrome将取代您网址栏的搜索功能，您可随时在设置中禁用此设置。"
     },
     "apps":{
       "search":"搜索",
@@ -192,10 +193,10 @@
         "title":"搜索",
         "desc":"此设置控制搜索框及语音搜索功能",
         "engine":"搜索引擎",
-        "engines_default":"Default",
+        "engines_default":"默认",
         "engines_custom":"自定义",
         "engines_custom_desc":"请输入搜索请求所使用的的URL地址，您输入的关键词在此由<b>%s<\/b>代替。",
-        "omnibox_capture":"Handle searches normally made in the Omnibox",
+        "omnibox_capture":"使用iChrome代替网址栏的搜索功能",
         "voice":"启用语音搜索",
         "ok_google":"启用\"OK Google“声音检测",
         "search_tab":"在新选项卡中打开搜索结果页"

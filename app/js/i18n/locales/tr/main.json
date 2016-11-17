@@ -10,6 +10,7 @@
     "me":"Ben"
   },
   "remove_widget":"Kaldır",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"Yoksay",
     "confirm_title":"Bunu yapmak istediğinizden emin misiniz?",

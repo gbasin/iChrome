@@ -10,6 +10,7 @@
     "me":"Ja"
   },
   "remove_widget":"Ukloni",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"Одбаци",
     "confirm_title":"Да ли сте сигурни да желите то урадити?",

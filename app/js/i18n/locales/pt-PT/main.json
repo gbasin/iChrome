@@ -10,6 +10,7 @@
     "me":"Eu"
   },
   "remove_widget":"Remover",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"dispensar",
     "confirm_title":"Tem a certeza que quer fazer isto?",

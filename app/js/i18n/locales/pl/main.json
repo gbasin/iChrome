@@ -10,6 +10,7 @@
     "me":"Ja"
   },
   "remove_widget":"Usuń",
+  "hide_banner":"Hide this banner",
   "alert":{
     "default_button":"Odrzuć",
     "confirm_title":"Czy na pewno chcesz to zrobić?",
