@@ -56,6 +56,10 @@ define([
 		navigate: function(itm, cb) {
 			cb = typeof cb === "function" ? cb : _.noop;
 
+			if (typeof itm === "string") {
+				itm = this.$(".side-nav nav > ul > li[data-id='" + itm + "']");
+			}
+
 			var page = itm.attr("data-id");
 
 			if (!pages[page]) {
@@ -97,7 +101,7 @@ define([
 			}
 		},
 
-		show: function() {
+		show: function(page) {
 			if (this._activePage) {
 				this.pages[this._activePage].$el.detach();
 
@@ -106,7 +110,7 @@ define([
 
 			this.$el.html(render("settings"));
 
-			this.navigate(this.$(".side-nav nav > ul > li:first"));
+			this.navigate(page || this.$(".side-nav nav > ul > li:first"));
 
 			// The settings are a "page", not a modal. The document shouldn't scroll.
 			//
@@ -141,24 +145,33 @@ define([
 
 
 		/**
-		 * Displays the tabs page and creates a new tab
+		 * Creates a new tab
 		 */
 		createTab: function() {
-			this.navigate(this.$(".side-nav nav > ul > li[data-id='tabs']"));
-
 			this.pages.tabs.createTab();
 		},
 
-		initialize: function() {
+		initialize: function(options) {
 			this.model = model();
 
 			this.listenTo(this.model, "save", function() {
 				new Snackbar(Translate("settings.saved"));
 			});
 
-			this.show();
+			this.show(options && options.page);
 		}
 	});
 
-	return View;
+	var Settings = null;
+
+	return function(page) {
+		if (Settings) {
+			Settings.show(page);
+
+			return Settings;
+		}
+		else {
+			return (Settings = new View({ page: page }));
+		}
+	};
 });

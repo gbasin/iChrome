@@ -39,6 +39,8 @@ define(["lodash", "jquery", "backbone", "backbone.viewcollection", "tabs/model",
 
 			this.active = this.indexOf(tab.model);
 
+			tab.trigger("displayed");
+
 			$(_(this.views).without(tab).pluck("el").valueOf()).removeClass("active");
 
 			this.trigger("navigate", this.active, tab, tab.model);

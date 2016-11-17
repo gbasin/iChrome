@@ -66,10 +66,10 @@ define(
 					},
 					"click .tabs .add": function() {
 						if (!this.Settings) {
-							this.Settings = new Settings();
+							this.Settings = Settings("tabs");
 						}
 						else {
-							this.Settings.show();
+							this.Settings.show("tabs");
 						}
 
 						this.Settings.createTab();
@@ -101,7 +101,7 @@ define(
 					switch (elm.attr("data-item")) {
 						case "settings":
 							if (!this.Settings) {
-								this.Settings = new Settings();
+								this.Settings = Settings();
 							}
 							else {
 								this.Settings.show();
@@ -264,7 +264,7 @@ define(
 
 					// If this was a direct link to the settings, show them
 					if (location.hash === "#settings") {
-						this.Settings = new Settings();
+						this.Settings = Settings();
 					}
 				},
 

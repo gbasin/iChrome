@@ -1,7 +1,7 @@
 /**
  * The tabs view.  This does the actual rendering of data, creaton of columns and widget insertion.
  */
-define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i18n"], function($, _, Backbone, Status, Track, Translate) {
+define(["jquery", "lodash", "backbone", "core/auth", "core/status", "core/analytics", "i18n/i18n"], function($, _, Backbone, Auth, Status, Track, Translate) {
 	var GRID_SIZE = 10;
 
 	var view = Backbone.View.extend({
@@ -17,6 +17,10 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 				if (!(options && options.noRefresh)) {
 					this.render();
 				}
+			}, this);
+
+			this.once("inserted", function() {
+				this._inserted = true;
 			}, this);
 
 			this.render(true);
@@ -234,6 +238,56 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 		},
 
 
+		/**
+		 * Constructs a block ad element and appends it to the provided element
+		 *
+		 * @param   {Boolean}  active  If the tab is currently active
+		 * @param   {Element}  el      The element the ad should be appended to
+		 */
+		insertAd: function(active, el) {
+			if (Auth.isPro) {
+				return;
+			}
+
+			var adId = _.uniqueId("blockAd"),
+				ad = document.createElement("section");
+
+			ad.setAttribute("class", "ad-unit");
+
+			ad.setAttribute("id", adId);
+
+			el.appendChild(ad);
+
+
+			// We avoid inflating impressions by only displaying the ad once the tab is visible
+			// This could be modified to preload the various scripts and only show the ad itself later, but that causes issues with certain ads
+			var displayAd = function() {
+				ad.innerHTML = '<iframe src="https://ichro.me/blockad.html#' + adId + '" style="width:300px;height:250px;" seamless></iframe>' + '<button type="button" class="material green hide-ad">' + Translate("hide_banner") + '</button>';
+			};
+
+			this.once("render:complete", function() {
+				if (this._inserted && this.$el.hasClass("active")) {
+					displayAd();
+				}
+				else if (this._inserted) {
+					this.once("displayed", displayAd);
+				}
+				else {
+					this.once("inserted", function() {
+						if (this.$el.hasClass("active")) {
+							displayAd();
+						}
+						else {
+							this.once("displayed", displayAd);
+						}
+					}, this);
+				}
+			}, this);
+
+			return true;
+		},
+
+
 		render: function(initial) {
 			// Remove sortable
 			if (initial !== true) {
@@ -257,12 +311,16 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 			this.el.innerHTML = '<div class="remove">' + Translate("remove_widget") + '</div>';
 
 
+
 			var main = document.createElement("main");
 
 			main.setAttribute("class", "widgets-container" + (this.model.get("fixed") && !isGrid ? " fixed" : "") + (isGrid ? " grid" : ""));
 
 
-			var models = _.map(this.model.columns, function(collection) {
+			var adInserted = false,
+				insertAd = this.insertAd.bind(this, this.$el.hasClass("active"));
+
+			var models = _.map(this.model.columns, function(collection, i) {
 				var column = main;
 
 				if (!isGrid) {
@@ -273,9 +331,36 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 					main.appendChild(column);
 				}
 
-				_.each(collection.views, function(e) {
+				_.each(collection.views, function(e, i) {
+					if (adInserted || isGrid) {
+						return column.appendChild(e.el);
+					}
+
+
+					var size = e.model.get("size");
+
+					// Insert the ad before the widget if
+					if (
+						size !== "tiny" && i !== 0 // This isn't a tiny widget and the previous ones were (if they weren't the ad would already be in)
+					) {
+						adInserted = insertAd(column);
+					}
+
 					column.appendChild(e.el);
+
+					// Insert the ad after the widget if
+					if (
+						!adInserted &&
+						size !== "tiny" || // This isn't a tiny widget
+						size === "tiny" && i === 3 // This is the 4th tiny widget in a row
+					) {
+						adInserted = insertAd(column);
+					}
 				});
+
+				if (i === 0 && !isGrid && !adInserted) {
+					adInserted = insertAd(column);
+				}
 
 				return collection.models;
 			});
@@ -311,6 +396,8 @@ define(["jquery", "lodash", "backbone", "core/status", "core/analytics", "i18n/i
 
 
 			this.sortable();
+
+			this.trigger("render:complete");
 
 			return this;
 		}

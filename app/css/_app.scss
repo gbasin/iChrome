@@ -3110,6 +3110,25 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 
 
+
+/*---------------------------------------------
+	/ Widgets Layout / Ad Units
+*/
+.widgets-container .ad-unit {
+	flex: 2 100%;
+	margin: 15px 2%;
+	text-align: center;
+
+	button {
+		margin-top: 15px;
+	}
+}
+
+
+
+
+
+
 /*---------------------------------------------
 	/ Widgets Layout / Tabbed Widgets
 */
