@@ -25,7 +25,7 @@
       "wrong_extension_action":"Kliknite ovdje",
       "about":"U iChrome-u sve je u karticama i widgetima",
       "about_desc":"Kartice su stranice pune widgeta - blokova koji pokazuju vrijeme, vijesti i e-poštu. Možete dodati widgeta koliko kod želite, a većinu ih možete prilagođavati.",
-      "terms":"Napomena: Nastavkom se slažete sa iChrome <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\"> Uvjetima<\/a> i <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\"> Pravilima o privatnosti<\/a>",
+      "terms":"Napomena: Nastavkom se slažete sa iChrome <a href=\"https://ichro.me/tos\" target=\"_blank\"> Uvjetima</a> i <a href=\"https://ichro.me/privacy\" target=\"_blank\"> Pravilima o privatnosti</a>",
       "sign_in":"Prijavi se pomoću Google računa",
       "sign_in_desc":"Prijavi se pomoću Google računa prije početka da bi sigurno pohranili tvoje promjene online.",
       "sign_in_desc2":"Možeš ostati odjavljen ako želiš, ali tvoja stranica neće biti spremljena online i nećeš joj moći pristupiti s drugih računala.",
@@ -37,15 +37,15 @@
     },
     "widgets":{
       "configure":"Podesi widget.",
-      "configure_desc":"Klikni na alatni ključ da otvoriš <b>postavke<\/b> vremenskog widgeta.",
+      "configure_desc":"Klikni na alatni ključ da otvoriš <b>postavke</b> vremenskog widgeta.",
       "configure_skip":"Preskoči",
-      "settings":"Zamijeni <b>San Francisco, CA<\/b> sa svojom lokacijom pa klikni <b>Spremi<\/b>.",
-      "move":"Možeš <b>pomicati<\/b> widgete uokolo tako da klikneš i držiš tri točkice.",
-      "remove":"Kada vučeš widget, ispusti ga na crvenu traku (nije prikazana trenutno) da ga <b>ukloniš<\/b>.",
+      "settings":"Zamijeni <b>San Francisco, CA</b> sa svojom lokacijom pa klikni <b>Spremi</b>.",
+      "move":"Možeš <b>pomicati</b> widgete uokolo tako da klikneš i držiš tri točkice.",
+      "remove":"Kada vučeš widget, ispusti ga na crvenu traku (nije prikazana trenutno) da ga <b>ukloniš</b>.",
       "done":"Shvaćam"
     },
     "settings":{
-      "intro":"Sada pogledajmo <b>izbornik<\/b> da vidimo što još može.",
+      "intro":"Sada pogledajmo <b>izbornik</b> da vidimo što još može.",
       "instructions":"Klikni na istaknut dio da ga otvoriš.",
       "skip":"Preskoči",
       "tooltips":{
@@ -57,7 +57,7 @@
         "support":"Ovdje nam možeš poslati poruku ili ostaviti recenziju"
       },
       "finished":"To je sve!",
-      "finished_next":"Odaberi opciju iz izbornika (za početak, pokušaj s <b>widgetima<\/b>) i postavi svoju stranicu!",
+      "finished_next":"Odaberi opciju iz izbornika (za početak, pokušaj s <b>widgetima</b>) i postavi svoju stranicu!",
       "finished_contact":"Koristi link za podršku ako ti treba pomoć i javit ćemo vam se što prije."
     }
   },
@@ -114,7 +114,7 @@
   "voice":{
     "listening":"Slušanje...",
     "searching":"Tražim: %s",
-    "missed":"Nismo razumjeli. <a>Pokušajte ponovo<\/a>"
+    "missed":"Nismo razumjeli. <a>Pokušajte ponovo</a>"
   },
   "settings":{
     "title":"Postavke",
@@ -125,7 +125,8 @@
       "visual_sections":{
         "background":"Pozadina",
         "layout":"Raspored",
-        "theme":"Tema aplikacije"
+        "theme":"Tema aplikacije",
+        "ad_placement":"Ad placement"
       },
       "toolbar":"Alatna traka",
       "toolbar_sections":{
@@ -180,6 +181,14 @@
         "dark":"Tamna",
         "transparent":"Prozirna",
         "transparent_darker":"Prozirna (tamnije)"
+      },
+      "ad_placement":{
+        "title":"Ad placement",
+        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -195,7 +204,7 @@
         "engine":"Pretražitelj",
         "engines_default":"Default",
         "engines_custom":"Prilagođen",
-        "engines_custom_desc":"Unesi URL koji ima <b>%s<\/b> tamo gdje treba ići pojam pretraživanja.",
+        "engines_custom_desc":"Unesi URL koji ima <b>%s</b> tamo gdje treba ići pojam pretraživanja.",
         "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"Omogući glasovno pretraživanje",
         "ok_google":"Omogući \"OK Google\" detekciju",
@@ -209,7 +218,7 @@
         "custom_note1":"Najviše 3",
         "custom_note2":"korisnici mogu 8",
         "custom_name_placeholder":"Tekst linka",
-        "custom_url_placeholder":"URL linka, npr. https:\/\/www.google.com\/"
+        "custom_url_placeholder":"URL linka, npr. https://www.google.com/"
       }
     },
     "misc":{
@@ -226,10 +235,10 @@
     "accounts":{
       "status":{
         "title":"Status",
-        "signed_in":"Trenutno si <b>prijavljen<\/b> kao %s (%s).",
+        "signed_in":"Trenutno si <b>prijavljen</b> kao %s (%s).",
         "reset_account":"Resetiranje računa",
         "sign_out":"Odjavi se",
-        "signed_out":"Trenutno <b>nisi prijavljen<\/b>. Prijavi se s Google računom sada da bi mogli sigurno pohraniti i sinkronizirati tvoju konfiguraciju.",
+        "signed_out":"Trenutno <b>nisi prijavljen</b>. Prijavi se s Google računom sada da bi mogli sigurno pohraniti i sinkronizirati tvoju konfiguraciju.",
         "sign_in":"Prijavi se sa Googleom"
       },
       "reset_confirm_desc":"Ovo će izbrisati sve lokalne i sinkronizirane podatke, ne postoji način za povratak.",
@@ -250,12 +259,12 @@
       },
       "css":{
         "title":"Osobni CSS",
-        "desc":"Možeš koristiti CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definicija<\/a>) za prilagođavanje gotovo svakog dijela iChrome-a.",
+        "desc":"Možeš koristiti CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definicija</a>) za prilagođavanje gotovo svakog dijela iChrome-a.",
         "placeholder":"Unesi najviše 1000 znakova CSS-a ovdje"
       },
       "debug_tools":{
         "title":"Alati za debug",
-        "desc":"<b>UPOZORENJE:<\/b> Ovi alati mogu izbrisati sve podatke u jednom kliku. Koristite ih samo ako vas developer upućuje.",
+        "desc":"<b>UPOZORENJE:</b> Ovi alati mogu izbrisati sve podatke u jednom kliku. Koristite ih samo ako vas developer upućuje.",
         "open":"Otvori alate"
       }
     },
@@ -322,7 +331,7 @@
           "education":"Obrazovni",
           "custom":"Prilagođen"
         },
-        "uneditable_desc":"Poslovni, obrazovni i prilagođeni planovi ne mogu se ažurirati iz iChrome-a. Molimo <a href=\"mailto:support@ichro.me\">kontaktirajte nas<\/a> za ažuriranje ili otkazivanje pretplate.",
+        "uneditable_desc":"Poslovni, obrazovni i prilagođeni planovi ne mogu se ažurirati iz iChrome-a. Molimo <a href=\"mailto:support@ichro.me\">kontaktirajte nas</a> za ažuriranje ili otkazivanje pretplate.",
         "status":"Status",
         "status_active":"Aktivan",
         "status_trial":"Trial",
@@ -391,7 +400,7 @@
           "hide":"Sakrij"
         },
         "account":"ID računa",
-        "account_help":"Ako si prijavljen sa više računa, ovo je tvoja \"authuser=\" vrijednost.\n<br \/><br \/>\nNpr. ako si prijavljen s dva računa, ihorvat1@gmail.com i ihorvat2@gmail.com, vrijednost \"authuser=\" za ihorvat2@gmail.com jest 1 zbog toga što je to drugi račun kojim si prijavljen (računajući od nule).",
+        "account_help":"Ako si prijavljen sa više računa, ovo je tvoja \"authuser=\" vrijednost.\n<br /><br />\nNpr. ako si prijavljen s dva računa, ihorvat1@gmail.com i ihorvat2@gmail.com, vrijednost \"authuser=\" za ihorvat2@gmail.com jest 1 zbog toga što je to drugi račun kojim si prijavljen (računajući od nule).",
         "account_placeholder":"Tvoja \"authuser=\" vrijednost",
         "on":"Uključeno",
         "off":"Isključeno"
@@ -442,7 +451,7 @@
       "name_placeholder":"Unesi naziv teme",
       "image":"URL slike",
       "image_placeholder":"Unesi URL slike pozadine",
-      "image_help":"Postavljene slike <b>nije moguće sinkronizirati<\/b> između kompjutera.<br \/><br \/>Molimo uploadaj slike na servis kao na primjer <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Zatim kopiraj URL slike (najčešće .jpg) i zalijepi ga na polje lijevo.",
+      "image_help":"Postavljene slike <b>nije moguće sinkronizirati</b> između kompjutera.<br /><br />Molimo uploadaj slike na servis kao na primjer <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>. Zatim kopiraj URL slike (najčešće .jpg) i zalijepi ga na polje lijevo.",
       "color":"Pozadinska boja",
       "color_placeholder":"Unesi naziv bilo koje boje",
       "position":"Pozicija",

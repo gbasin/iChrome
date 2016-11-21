@@ -25,7 +25,7 @@
       "wrong_extension_action":"请点击此处",
       "about":"iChrome中的一切都基于选项卡和小工具",
       "about_desc":"标签页由小部件组成。小部件可以显示各种各样的信息，例如天气预报，最新新闻以及您的邮件。您可以随心所欲的自定义绝大多数小部件，最妙的是您想添加多少就可以添加多少。",
-      "terms":"请注意：开始使用iChrome代表您同意iChrome的<a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">使用条款<\/a>及<a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">隐私政策<\/a>",
+      "terms":"请注意：开始使用iChrome代表您同意iChrome的<a href=\"https://ichro.me/tos\" target=\"_blank\">使用条款</a>及<a href=\"https://ichro.me/privacy\" target=\"_blank\">隐私政策</a>",
       "sign_in":"使用您的 Google 帐户登录",
       "sign_in_desc":"在可在线安全的保存您所做更改前，请登录您的Google账户。",
       "sign_in_desc2":"您可以保持未登录状态，但您的iChrome页面将不会被在线保存，而且您将无法在其他计算机上访问此页面。",
@@ -37,15 +37,15 @@
     },
     "widgets":{
       "configure":"让我们来配置一个小部件。",
-      "configure_desc":"单击扳手按钮，打开天气小部件的<b>设置<\/b>窗口。",
+      "configure_desc":"单击扳手按钮，打开天气小部件的<b>设置</b>窗口。",
       "configure_skip":"跳过",
-      "settings":"将<b>San Francisco, CA<\/b>替换为您的所在位置，然后单击<b>保存<\/b>。",
-      "move":"您可以<b>拖动<\/b>这个标记来移动小部件的位置。",
-      "remove":"在拖动小部件时将小部件拖到红色的边栏(当前未显示)，就可将其<b>删除<\/b>。",
+      "settings":"将<b>San Francisco, CA</b>替换为您的所在位置，然后单击<b>保存</b>。",
+      "move":"您可以<b>拖动</b>这个标记来移动小部件的位置。",
+      "remove":"在拖动小部件时将小部件拖到红色的边栏(当前未显示)，就可将其<b>删除</b>。",
       "done":"好"
     },
     "settings":{
-      "intro":"现在让我们看看 <b>菜单<\/b>，看看你能做什么。",
+      "intro":"现在让我们看看 <b>菜单</b>，看看你能做什么。",
       "instructions":"点击高亮的位置以来打开它。",
       "skip":"跳过",
       "tooltips":{
@@ -57,7 +57,7 @@
         "support":"给我们发送消息或在此留下您对iChrome的评价。"
       },
       "finished":"就是这样！",
-      "finished_next":"您可以从菜单中选择一个选项(试着从<b>小部件<\/b>开始) ，然后开始自定义您的页面!",
+      "finished_next":"您可以从菜单中选择一个选项(试着从<b>小部件</b>开始) ，然后开始自定义您的页面!",
       "finished_contact":"如果您需要任何帮助，请点击“支持”。我们会尽快给您回复。"
     }
   },
@@ -114,7 +114,7 @@
   "voice":{
     "listening":"正在聆听...",
     "searching":"正在搜索：%s",
-    "missed":"抱歉，没有听清楚。<a>再试一次<\/a>"
+    "missed":"抱歉，没有听清楚。<a>再试一次</a>"
   },
   "settings":{
     "title":"设置",
@@ -125,7 +125,8 @@
       "visual_sections":{
         "background":"背景",
         "layout":"布局",
-        "theme":"应用主题"
+        "theme":"应用主题",
+        "ad_placement":"Ad placement"
       },
       "toolbar":"工具栏",
       "toolbar_sections":{
@@ -180,6 +181,14 @@
         "dark":"暗色调",
         "transparent":"半透明",
         "transparent_darker":"半透明（暗色）"
+      },
+      "ad_placement":{
+        "title":"Ad placement",
+        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -195,7 +204,7 @@
         "engine":"搜索引擎",
         "engines_default":"默认",
         "engines_custom":"自定义",
-        "engines_custom_desc":"请输入搜索请求所使用的的URL地址，您输入的关键词在此由<b>%s<\/b>代替。",
+        "engines_custom_desc":"请输入搜索请求所使用的的URL地址，您输入的关键词在此由<b>%s</b>代替。",
         "omnibox_capture":"使用iChrome代替网址栏的搜索功能",
         "voice":"启用语音搜索",
         "ok_google":"启用\"OK Google“声音检测",
@@ -209,7 +218,7 @@
         "custom_note1":"普通用户最多可设置3个链接",
         "custom_note2":"用户可以设置高达8条链接",
         "custom_name_placeholder":"链接文本",
-        "custom_url_placeholder":"链接地址，例如 http:\/\/www.google.com\/"
+        "custom_url_placeholder":"链接地址，例如 http://www.google.com/"
       }
     },
     "misc":{
@@ -226,10 +235,10 @@
     "accounts":{
       "status":{
         "title":"账户状态",
-        "signed_in":"您当前正以 %s (%s) 的身份 <b>登录<\/b>。",
+        "signed_in":"您当前正以 %s (%s) 的身份 <b>登录</b>。",
         "reset_account":"重置帐户",
         "sign_out":"登出",
-        "signed_out":"您当前并未<b>登录<\/b>。登录您的谷歌帐户以便安全地存储和同步您的配置。",
+        "signed_out":"您当前并未<b>登录</b>。登录您的谷歌帐户以便安全地存储和同步您的配置。",
         "sign_in":"使用 Google 帐号登录"
       },
       "reset_confirm_desc":"该操作将清除所有本地和同步数据，请注意该操作没有备份并且无法撤消。",
@@ -250,12 +259,12 @@
       },
       "css":{
         "title":"自定义 CSS",
-        "desc":"您可以使用 CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\"target=\"blank\"> 介绍<\/a>) 来自定义iChrome的几乎任何部分。",
+        "desc":"您可以使用 CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\"target=\"blank\"> 介绍</a>) 来自定义iChrome的几乎任何部分。",
         "placeholder":"您最多可输入1000个字符"
       },
       "debug_tools":{
         "title":"调试工具",
-        "desc":"<b>警告:<\/b>您仅需单击这些工具便有可能清除整个配置，请只有在得到开发人员指示时使用它们。",
+        "desc":"<b>警告:</b>您仅需单击这些工具便有可能清除整个配置，请只有在得到开发人员指示时使用它们。",
         "open":"打开工具"
       }
     },
@@ -322,7 +331,7 @@
           "education":"教育版",
           "custom":"自定义"
         },
-        "uneditable_desc":"商业，教育及自定义套餐不能在iChrome内设置。请 <a href=\"mailto:support@ichro.me\"> 联系我们<\/a>以更新或取消您的订阅。",
+        "uneditable_desc":"商业，教育及自定义套餐不能在iChrome内设置。请 <a href=\"mailto:support@ichro.me\"> 联系我们</a>以更新或取消您的订阅。",
         "status":"订阅状态",
         "status_active":"已激活",
         "status_trial":"试用",
@@ -391,7 +400,7 @@
           "hide":"隐藏"
         },
         "account":"帐户 ID",
-        "account_help":"如果您已经登录到多个帐户，这就是\"authuser =\"值。\n<br \/><br \/>例如，如果您已经登录了两个帐户、 jsmith1@gmail.com、 jsmith2@gmail.com、 jsmith2@gmail.com 的\"authuser\"值将为 1 ，因为它是第二个帐户 (authuser值从0开始计数)。",
+        "account_help":"如果您已经登录到多个帐户，这就是\"authuser =\"值。\n<br /><br />例如，如果您已经登录了两个帐户、 jsmith1@gmail.com、 jsmith2@gmail.com、 jsmith2@gmail.com 的\"authuser\"值将为 1 ，因为它是第二个帐户 (authuser值从0开始计数)。",
         "account_placeholder":"您的\"authuser=\"值",
         "on":"开启",
         "off":"关闭"
@@ -442,7 +451,7 @@
       "name_placeholder":"输入主题名称",
       "image":"图像地址",
       "image_placeholder":"背景图像链接",
-      "image_help":"上传的图片<b>无法在电脑之间同步<\/b><br \/><br \/>如果这对您很重要，请将您的图像上传到类似 <a href=\"http:\/\/imgur.com\/\"target=\"_blank\"> imgur<\/a> 的图床服务。然后复制和粘贴带扩展名的链接 (例如.jpg) 并将其粘贴到左侧的文本框中。",
+      "image_help":"上传的图片<b>无法在电脑之间同步</b><br /><br />如果这对您很重要，请将您的图像上传到类似 <a href=\"http://imgur.com/\"target=\"_blank\"> imgur</a> 的图床服务。然后复制和粘贴带扩展名的链接 (例如.jpg) 并将其粘贴到左侧的文本框中。",
       "color":"回退颜色",
       "color_placeholder":"输入颜色名称",
       "position":"位置",

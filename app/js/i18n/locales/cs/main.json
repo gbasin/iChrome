@@ -25,7 +25,7 @@
       "wrong_extension_action":"Klikněte zde",
       "about":"iChrome je celý o kartách a widgetech",
       "about_desc":"Karty jsou stránky s widgety - bloky, které ukazují věci, jako je například počasí, zpravodajství a nebo váš email. Většinu widgetů si můžete upravit jakkoliv chcete a mít jich kolik jen chcete.",
-      "terms":"Upozornění: Pokračováním souhlasíte s <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Podmínkami<\/a> a <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Ochranou soukromí<\/a> dle iChrome",
+      "terms":"Upozornění: Pokračováním souhlasíte s <a href=\"https://ichro.me/tos\" target=\"_blank\">Podmínkami</a> a <a href=\"https://ichro.me/privacy\" target=\"_blank\">Ochranou soukromí</a> dle iChrome",
       "sign_in":"Přihlásit se pomocí účtu Google",
       "sign_in_desc":"Pro bezpečné online ukládání Vašich změn se nejprve přihlaste pomocí Vašeho účtu Google.",
       "sign_in_desc2":"Pokud chcete, můžete zůstat odhlášeni, ale vaše stránka nebude ukládána online a nebudete k ní mít přístup z jiných počítačů.",
@@ -37,15 +37,15 @@
     },
     "widgets":{
       "configure":"Pojďme si nastavit widget.",
-      "configure_desc":"Pro <b>nastavení<\/b> widgetu počasí klikněte na symbol klíče.",
+      "configure_desc":"Pro <b>nastavení</b> widgetu počasí klikněte na symbol klíče.",
       "configure_skip":"Přeskočit",
-      "settings":"Nahraďte <b>San Francisco, CA<\/b> Vaší lokací a stiskněte tlačítko <b>Uložit<\/b>.",
-      "move":"Widgety můžete <b>přetahovat<\/b> tažením za zvýrazněný symbol.",
-      "remove":"Widget můžete <b>odstranit<\/b> přetažením na červený pruh (ten se při přesouvání objeví v horní části obrazovky).",
+      "settings":"Nahraďte <b>San Francisco, CA</b> Vaší lokací a stiskněte tlačítko <b>Uložit</b>.",
+      "move":"Widgety můžete <b>přetahovat</b> tažením za zvýrazněný symbol.",
+      "remove":"Widget můžete <b>odstranit</b> přetažením na červený pruh (ten se při přesouvání objeví v horní části obrazovky).",
       "done":"Rozumím"
     },
     "settings":{
-      "intro":"Teď se pojďme podívat na <b>menu<\/b> a uvidíme, co dalšího můžete dělat.",
+      "intro":"Teď se pojďme podívat na <b>menu</b> a uvidíme, co dalšího můžete dělat.",
       "instructions":"Klikněte na zvýrazněný obrázek pro jeho otevření.",
       "skip":"Přeskočit",
       "tooltips":{
@@ -57,7 +57,7 @@
         "support":"Pošlete nám zprávu nebo nám nechte recenzi zde"
       },
       "finished":"A je to!",
-      "finished_next":"Vyberte volbu z menu (zkuste začít s volbou <b>Widgety<\/b>) a nastavte si Vaši stránku!",
+      "finished_next":"Vyberte volbu z menu (zkuste začít s volbou <b>Widgety</b>) a nastavte si Vaši stránku!",
       "finished_contact":"Použijte odkaz na podporu pokud potřebujete jakoukoli pomoc a my Vám odpovíme co nejrychleji to půjde."
     }
   },
@@ -114,7 +114,7 @@
   "voice":{
     "listening":"Poslouchám...",
     "searching":"Hledání: %s",
-    "missed":"Nerozumím. <a>Zkuste to znovu.<\/a>"
+    "missed":"Nerozumím. <a>Zkuste to znovu.</a>"
   },
   "settings":{
     "title":"Nastavení",
@@ -125,7 +125,8 @@
       "visual_sections":{
         "background":"Pozadí",
         "layout":"Rozložení",
-        "theme":"Motiv aplikace"
+        "theme":"Motiv aplikace",
+        "ad_placement":"Ad placement"
       },
       "toolbar":"Panel nástrojů",
       "toolbar_sections":{
@@ -180,6 +181,14 @@
         "dark":"Tmavý",
         "transparent":"Průhledný",
         "transparent_darker":"Průhledný (tmavší)"
+      },
+      "ad_placement":{
+        "title":"Ad placement",
+        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -195,7 +204,7 @@
         "engine":"Vyhledávač",
         "engines_default":"Default",
         "engines_custom":"Vlastní",
-        "engines_custom_desc":"Toto je adresa, na kterou se budou odesílat dotazy vyhledávání. V adrese se <b>%s<\/b> nahradí vyhledávaným textem.",
+        "engines_custom_desc":"Toto je adresa, na kterou se budou odesílat dotazy vyhledávání. V adrese se <b>%s</b> nahradí vyhledávaným textem.",
         "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"Povolit vyhledávání pomocí hlasu",
         "ok_google":"Zapnout detekci klíčového slova \"OK Google\"",
@@ -209,7 +218,7 @@
         "custom_note1":"Jsou povoleny maximálně 3",
         "custom_note2":"uživatelé dostanou 8",
         "custom_name_placeholder":"Text odkazu",
-        "custom_url_placeholder":"Adresa odkazu, např. https:\/\/www.google.com\/"
+        "custom_url_placeholder":"Adresa odkazu, např. https://www.google.com/"
       }
     },
     "misc":{
@@ -226,10 +235,10 @@
     "accounts":{
       "status":{
         "title":"Stav",
-        "signed_in":"Jste <b>přihlášeni<\/b> jako %s (%s).",
+        "signed_in":"Jste <b>přihlášeni</b> jako %s (%s).",
         "reset_account":"Resetovat účet",
         "sign_out":"Odhlásit",
-        "signed_out":"Nyní <b>nejste přihlášeni<\/b>. Přihlaste se nyní pomocí Vašeho Google účtu aby mohla být vaše konfigurace bezpečně ukládána a synchronizována.",
+        "signed_out":"Nyní <b>nejste přihlášeni</b>. Přihlaste se nyní pomocí Vašeho Google účtu aby mohla být vaše konfigurace bezpečně ukládána a synchronizována.",
         "sign_in":"Přihlásit se přes Google"
       },
       "reset_confirm_desc":"Tato akce vymaže Vaše lokální i synchronizovaná data. Neexistuje žádná záloha ani způsob jak tuto akci vrátit zpět.",
@@ -250,12 +259,12 @@
       },
       "css":{
         "title":"Vlastní CSS",
-        "desc":"Můžete použít CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definice<\/a>) a nastavit si téměř každou část iChrome.",
+        "desc":"Můžete použít CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definice</a>) a nastavit si téměř každou část iChrome.",
         "placeholder":"Zde vložte až 1000 znaků CSS"
       },
       "debug_tools":{
         "title":"Debugovací nástroje",
-        "desc":"<b>POZOR:<\/b> Tyto nástroje mohou smazat veškeré vaše nastavení jedním klikem. Použijte je pouze pokud vás navede váš developer.",
+        "desc":"<b>POZOR:</b> Tyto nástroje mohou smazat veškeré vaše nastavení jedním klikem. Použijte je pouze pokud vás navede váš developer.",
         "open":"Otevřít nástroje"
       }
     },
@@ -322,7 +331,7 @@
           "education":"Pro školy",
           "custom":"Vlastní"
         },
-        "uneditable_desc":"Plány pro firmy, školy a speciální plány nelze aktualizovat přes iChrome. Prosím <a href=\"mailto:support@ichro.me\">kontaktujte nás<\/a> pro aktualizaci nebo zrušení Vašeho předplatného.",
+        "uneditable_desc":"Plány pro firmy, školy a speciální plány nelze aktualizovat přes iChrome. Prosím <a href=\"mailto:support@ichro.me\">kontaktujte nás</a> pro aktualizaci nebo zrušení Vašeho předplatného.",
         "status":"Stav",
         "status_active":"Aktivní",
         "status_trial":"Zkušební verze",
@@ -391,7 +400,7 @@
           "hide":"Skrýt"
         },
         "account":"ID účtu",
-        "account_help":"Pokud jste přihlášeni na více účtech, toto je \"authuser =\" hodnota. < br \/ > < br \/ > Například pokud jste přihlášeni na dvou účtech, jnovak1@gmail.com a jnovak2@gmail.com, \"authuser\" hodnota pro jnovak2@gmail.com je 1, protože je to druhý účet (počítáno od nuly) .",
+        "account_help":"Pokud jste přihlášeni na více účtech, toto je \"authuser =\" hodnota. < br / > < br / > Například pokud jste přihlášeni na dvou účtech, jnovak1@gmail.com a jnovak2@gmail.com, \"authuser\" hodnota pro jnovak2@gmail.com je 1, protože je to druhý účet (počítáno od nuly) .",
         "account_placeholder":"Vaše \"authuser =\" hodnota",
         "on":"Zapnout",
         "off":"Vypnout"
@@ -442,7 +451,7 @@
       "name_placeholder":"Zadejte název motivu",
       "image":"URL adresa obrázku",
       "image_placeholder":"Zadejte URL obrázku pozadí",
-      "image_help":"Nahrané obrázky <b>nelze synchronizovat<\/b> mezi počítači.<br \/><br \/>Pokud je to pro vás důležité, prosím nahrajte obrázek na webovou službu jako například <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Poté zkopírujte a vložte URL adresu s příponou (tj. jpg) a vložte ji do pole vlevo.",
+      "image_help":"Nahrané obrázky <b>nelze synchronizovat</b> mezi počítači.<br /><br />Pokud je to pro vás důležité, prosím nahrajte obrázek na webovou službu jako například <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>. Poté zkopírujte a vložte URL adresu s příponou (tj. jpg) a vložte ji do pole vlevo.",
       "color":"Základní barva",
       "color_placeholder":"Zadejte libovolný název barvy",
       "position":"Pozice",

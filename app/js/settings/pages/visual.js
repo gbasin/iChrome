@@ -8,10 +8,11 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/auth", "settings/page", "th
 		dynamicControls: {
 			theme: "style",
 			layout: "layout",
+			adPlacement: "adPlacement",
 			column_width: "column_width"
 		},
 
-		monitorProps: ["theme", "backgroundImage", "layout", "columns", "columnWidth", "style"],
+		monitorProps: ["theme", "backgroundImage", "layout", "columns", "columnWidth", "style", "adPlacement"],
 
 		events: {
 			"click .background button.select": function() {
@@ -114,6 +115,12 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/auth", "settings/page", "th
 						noRender: true
 					});
 				break;
+
+				case "adPlacement":
+					this.model.set("adPlacement", value, {
+						noRender: true
+					});
+				break;
 			}
 		},
 
@@ -164,7 +171,10 @@ define(["jquery", "i18n/i18n", "modals/alert", "core/auth", "settings/page", "th
 				column_width: data.columnWidth,
 
 				// Style
-				style: Auth.isPro ? data.style : "light"
+				style: Auth.isPro ? data.style : "light",
+
+				// Ad placement
+				adPlacement: data.adPlacement
 			};
 		},
 

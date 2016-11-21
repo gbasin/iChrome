@@ -25,7 +25,7 @@
       "wrong_extension_action":"Clique aqui",
       "about":"iChrome é construido á base de abas e mini aplicações.",
       "about_desc":"Abas são preenchidas com mini aplicações em blocos. Por exemplo, a mini aplicação de Meteorologia fica num bloco e em um outro noticias do dia, seus emails etc. Os blocos com as mini aplicações podem ser personalizados da forma que desejar.",
-      "terms":"Nota: Ao prosseguir, aceita que está de acordo com os <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Termos<\/a>e com a<a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Politica de privacidade\"<\/a> do iChrome",
+      "terms":"Nota: Ao prosseguir, aceita que está de acordo com os <a href=\"https://ichro.me/tos\" target=\"_blank\">Termos</a>e com a<a href=\"https://ichro.me/privacy\" target=\"_blank\">Politica de privacidade\"</a> do iChrome",
       "sign_in":"Inscreva-se com a sua conta do Google",
       "sign_in_desc":"Entre com sua conta do Google antes de começar a gravar as suas alterações de forma segura on-line.",
       "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
@@ -37,15 +37,15 @@
     },
     "widgets":{
       "configure":"Vamos configurar um widget.",
-      "configure_desc":"clica na chave de fendas para abrir o widget da meteorologia <b>settings<\/b>.",
+      "configure_desc":"clica na chave de fendas para abrir o widget da meteorologia <b>settings</b>.",
       "configure_skip":"Saltar",
-      "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
-      "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
-      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
+      "settings":"Replace <b>San Francisco, CA</b> with your location, then press <b>Save</b>.",
+      "move":"You can <b>drag</b> widgets using the highlighted handle to move them.",
+      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove</b> it.",
       "done":"Compreendi"
     },
     "settings":{
-      "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
+      "intro":"Now let's take a look at <b>the menu</b> and see what else you can do.",
       "instructions":"Click the highlighted image to open it.",
       "skip":"Saltar",
       "tooltips":{
@@ -57,7 +57,7 @@
         "support":"Send us a message or leave a review here"
       },
       "finished":"Está pronto!",
-      "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
+      "finished_next":"Choose an option from the menu (try starting with <b>Widgets</b>) and set your page up!",
       "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
     }
   },
@@ -114,7 +114,7 @@
   "voice":{
     "listening":"A ouvir...",
     "searching":"À procura de: %s",
-    "missed":"Não entendi. <a>Tente de novo<\/a>"
+    "missed":"Não entendi. <a>Tente de novo</a>"
   },
   "settings":{
     "title":"Opções",
@@ -125,7 +125,8 @@
       "visual_sections":{
         "background":"Imagem de fundo",
         "layout":"Estrutura",
-        "theme":"Tema da aplicação"
+        "theme":"Tema da aplicação",
+        "ad_placement":"Ad placement"
       },
       "toolbar":"Barra de Ferramentas",
       "toolbar_sections":{
@@ -180,6 +181,14 @@
         "dark":"Escuro",
         "transparent":"Transparent",
         "transparent_darker":"Transparente (mais escuro)"
+      },
+      "ad_placement":{
+        "title":"Ad placement",
+        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -195,7 +204,7 @@
         "engine":"Motor de busca",
         "engines_default":"Default",
         "engines_custom":"Personalizado",
-        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
+        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s</b> where the query should go.",
         "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"Ativar a pesquisa por voz",
         "ok_google":"Ativar a detecção do hotword \"Ok, Google\"",
@@ -209,7 +218,7 @@
         "custom_note1":"Máximo de 3 permitidos",
         "custom_note2":"users get 8",
         "custom_name_placeholder":"Texto da ligação",
-        "custom_url_placeholder":"URL da ligação, por ex: https:\/\/www.google.com\/"
+        "custom_url_placeholder":"URL da ligação, por ex: https://www.google.com/"
       }
     },
     "misc":{
@@ -226,10 +235,10 @@
     "accounts":{
       "status":{
         "title":"Estado",
-        "signed_in":"Está actualmente <b>ligado<\/b> como %s (%s).",
+        "signed_in":"Está actualmente <b>ligado</b> como %s (%s).",
         "reset_account":"Redefinir a conta",
         "sign_out":"Terminar Sessão",
-        "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
+        "signed_out":"You are <b>not currently signed in</b>. Sign in with your Google account now to securely store and sync your configuration.",
         "sign_in":"Iniciar sessão com o Google"
       },
       "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
@@ -250,12 +259,12 @@
       },
       "css":{
         "title":"CSS Personalizado",
-        "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
+        "desc":"You can use CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definition</a>) to customize almost any part of iChrome.",
         "placeholder":"Digite até 1000 caracteres da CSS aqui"
       },
       "debug_tools":{
         "title":"Ferramentas de depuração",
-        "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
+        "desc":"<b>WARNING:</b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
         "open":"Open tools"
       }
     },
@@ -322,7 +331,7 @@
           "education":"Education",
           "custom":"Personalizado"
         },
-        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
+        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us</a> to update or cancel your subscription.",
         "status":"Estado",
         "status_active":"Active",
         "status_trial":"Trial",
@@ -391,7 +400,7 @@
           "hide":"Esconder"
         },
         "account":"ID da conta",
-        "account_help":"Se você estiver conectado em várias contas, este é o \"authuser =\" valor. <br \/> <br \/> \nPor exemplo, se você estiver conectado em duas contas, jsmith1@gmail.com e jsmith2@gmail.com, o valor \"authuser\" para jsmith2@gmail.com seria uma vez que é a segunda conta (contando a partir de zero) que está assinado em.\n",
+        "account_help":"Se você estiver conectado em várias contas, este é o \"authuser =\" valor. <br /> <br /> \nPor exemplo, se você estiver conectado em duas contas, jsmith1@gmail.com e jsmith2@gmail.com, o valor \"authuser\" para jsmith2@gmail.com seria uma vez que é a segunda conta (contando a partir de zero) que está assinado em.\n",
         "account_placeholder":"Seu \"authuser =\" valor",
         "on":"Ligado",
         "off":"Desligado"
@@ -442,7 +451,7 @@
       "name_placeholder":"Digite um nome de tema",
       "image":"URL da imagem",
       "image_placeholder":"Digite a URL para uma imagem de plano de fundo",
-      "image_help":"Imagens carregadas <b>não pode ser sincronizado<\/b> entre computadores. <br \/> <br \/> Se isso é importante para você, por favor enviar sua imagem para um serviço como o <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Depois copie e cole o URL terminando com uma extensão (ou seja, .jpg) e cole-o no campo do lado esquerdo.",
+      "image_help":"Imagens carregadas <b>não pode ser sincronizado</b> entre computadores. <br /> <br /> Se isso é importante para você, por favor enviar sua imagem para um serviço como o <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>. Depois copie e cole o URL terminando com uma extensão (ou seja, .jpg) e cole-o no campo do lado esquerdo.",
       "color":"Cor de Fundo",
       "color_placeholder":"Introduza o nome da cor",
       "position":"Posição",

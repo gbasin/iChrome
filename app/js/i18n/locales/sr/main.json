@@ -25,7 +25,7 @@
       "wrong_extension_action":"Кликните овде",
       "about":"iChrome's all about tabs and widgets",
       "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
-      "terms":"Напомена: Уколико наставите, прихватате  iChrome-ове <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\"> услове <\/a> и <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">политику приватности<\/a>",
+      "terms":"Напомена: Уколико наставите, прихватате  iChrome-ове <a href=\"https://ichro.me/tos\" target=\"_blank\"> услове </a> и <a href=\"https://ichro.me/privacy\" target=\"_blank\">политику приватности</a>",
       "sign_in":"Пријавите се са Google налогом",
       "sign_in_desc":"Пријавите се са својим Google налогом пре почетка како би безбедно сачували своје измене на мрежи (online).",
       "sign_in_desc2":"Ако желите, можете остати одјављени, али Ваша страница неће бити сачувана на мрежи и нећете моћи да јој приступите са других рачунара.",
@@ -37,15 +37,15 @@
     },
     "widgets":{
       "configure":"Let's configure a widget.",
-      "configure_desc":"Кликните на кључ (дугме са иконицом француског кључа) да бисте отворили мрежну алатку (widget) за време <b>settings<\/b>.",
+      "configure_desc":"Кликните на кључ (дугме са иконицом француског кључа) да бисте отворили мрежну алатку (widget) за време <b>settings</b>.",
       "configure_skip":"Прескочи",
-      "settings":"Замените <b>San Francisco, CA<\/b> својом локацијом, а затим притисните <b>Save<\/b>.",
-      "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
-      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
+      "settings":"Замените <b>San Francisco, CA</b> својом локацијом, а затим притисните <b>Save</b>.",
+      "move":"You can <b>drag</b> widgets using the highlighted handle to move them.",
+      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove</b> it.",
       "done":"Got it"
     },
     "settings":{
-      "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
+      "intro":"Now let's take a look at <b>the menu</b> and see what else you can do.",
       "instructions":"Click the highlighted image to open it.",
       "skip":"Прескочи",
       "tooltips":{
@@ -57,7 +57,7 @@
         "support":"Send us a message or leave a review here"
       },
       "finished":"That's it!",
-      "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
+      "finished_next":"Choose an option from the menu (try starting with <b>Widgets</b>) and set your page up!",
       "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
     }
   },
@@ -114,7 +114,7 @@
   "voice":{
     "listening":"Слушање...",
     "searching":"Тражење: %s",
-    "missed":"Није обављено. <a>Пробај поново<\/a>"
+    "missed":"Није обављено. <a>Пробај поново</a>"
   },
   "settings":{
     "title":"Подешавања",
@@ -125,7 +125,8 @@
       "visual_sections":{
         "background":"Background",
         "layout":"Распоред",
-        "theme":"App theme"
+        "theme":"App theme",
+        "ad_placement":"Ad placement"
       },
       "toolbar":"Toolbar",
       "toolbar_sections":{
@@ -180,6 +181,14 @@
         "dark":"Тамно",
         "transparent":"Transparent",
         "transparent_darker":"Transparent (darker)"
+      },
+      "ad_placement":{
+        "title":"Ad placement",
+        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -195,7 +204,7 @@
         "engine":"Search engine",
         "engines_default":"Default",
         "engines_custom":"Прилагођено",
-        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
+        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s</b> where the query should go.",
         "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"Enable voice search",
         "ok_google":"Enable \"OK Google\" hotword detection",
@@ -209,7 +218,7 @@
         "custom_note1":"Maximum of 3 allowed",
         "custom_note2":"users get 8",
         "custom_name_placeholder":"Link text",
-        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+        "custom_url_placeholder":"Link URL, i.e. https://www.google.com/"
       }
     },
     "misc":{
@@ -226,10 +235,10 @@
     "accounts":{
       "status":{
         "title":"Status",
-        "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
+        "signed_in":"You are currently <b>signed in</b> as %s (%s).",
         "reset_account":"Reset account",
         "sign_out":"Sign out",
-        "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
+        "signed_out":"You are <b>not currently signed in</b>. Sign in with your Google account now to securely store and sync your configuration.",
         "sign_in":"Sign in with Google"
       },
       "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
@@ -250,12 +259,12 @@
       },
       "css":{
         "title":"Custom CSS",
-        "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
+        "desc":"You can use CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definition</a>) to customize almost any part of iChrome.",
         "placeholder":"Enter up to 1000 characters of CSS here"
       },
       "debug_tools":{
         "title":"Debug tools",
-        "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
+        "desc":"<b>WARNING:</b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
         "open":"Open tools"
       }
     },
@@ -322,7 +331,7 @@
           "education":"Education",
           "custom":"Прилагођено"
         },
-        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
+        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us</a> to update or cancel your subscription.",
         "status":"Status",
         "status_active":"Active",
         "status_trial":"Trial",
@@ -391,7 +400,7 @@
           "hide":"Сакриј"
         },
         "account":"ID Налога",
-        "account_help":"Ако си уписан у више рачуна, ово је \"ауторизациона=\" вредност.\n<br \/><br \/>\nНа пример, ако си уписан у два рачуна, jsmith1@gmail.com и jsmith2@gmail.com,  \"ауторизациона\" вредност за jsmith2@gmail.com била би 1 пошто је то други рачун (рачунајући од нуле) у који си уписан.",
+        "account_help":"Ако си уписан у више рачуна, ово је \"ауторизациона=\" вредност.\n<br /><br />\nНа пример, ако си уписан у два рачуна, jsmith1@gmail.com и jsmith2@gmail.com,  \"ауторизациона\" вредност за jsmith2@gmail.com била би 1 пошто је то други рачун (рачунајући од нуле) у који си уписан.",
         "account_placeholder":"Твоја \"ауторизаторска=\" вредност",
         "on":"Укључено",
         "off":"Искључено"
@@ -442,7 +451,7 @@
       "name_placeholder":"Унеси назив теме",
       "image":"УРЛ слике",
       "image_placeholder":"Унеси УРЛ слике за позадину",
-      "image_help":"Уплоадоване слике <b>Не може да се синхронизује<\/b> између рачунара.<br \/><br \/>Ако ти је ово битно, молимо те уплоадуј твоју слику на сервис као <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Онда копирај па проследи крај УРЛ-а са екстензијом (нпр. .jpg) и проследи га у поље са леве стране.",
+      "image_help":"Уплоадоване слике <b>Не може да се синхронизује</b> између рачунара.<br /><br />Ако ти је ово битно, молимо те уплоадуј твоју слику на сервис као <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>. Онда копирај па проследи крај УРЛ-а са екстензијом (нпр. .jpg) и проследи га у поље са леве стране.",
       "color":"Резервна боја",
       "color_placeholder":"Унеси име било које боје",
       "position":"Позиција",

@@ -25,7 +25,7 @@
       "wrong_extension_action":"ここをクリック",
       "about":"iChrome のタブとウィジェットについて",
       "about_desc":"タブには、ウィジェット（天気やニュース、メールなど）を追加することができます。ほとんどのウィジェットをカスタマイズ可能で、必要なだけ追加することができます。",
-      "terms":"iChrome を利用することにより、<a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">利用規約<\/a> と <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">プライバシーポリシー<\/a> に同意したものとみなされます。",
+      "terms":"iChrome を利用することにより、<a href=\"https://ichro.me/tos\" target=\"_blank\">利用規約</a> と <a href=\"https://ichro.me/privacy\" target=\"_blank\">プライバシーポリシー</a> に同意したものとみなされます。",
       "sign_in":"Google アカウントでログイン",
       "sign_in_desc":"オンラインでの変更を安全に保存するために、Google アカウントでログインしてください。",
       "sign_in_desc2":"ログインせずに使用することも可能ですが、その場合、ウィジェットの配置などがオンラインに保存されず、別のコンピューターと共有することができません。",
@@ -37,27 +37,27 @@
     },
     "widgets":{
       "configure":"ウィジェットを設定してみましょう。",
-      "configure_desc":"天気ウィジェットのレンチアイコンをクリックし、<b>設定<\/b>を開きましょう。",
+      "configure_desc":"天気ウィジェットのレンチアイコンをクリックし、<b>設定</b>を開きましょう。",
       "configure_skip":"スキップ",
-      "settings":"<b>San Francisco, CA<\/b> をお住まいの市町村に書き換え、 <b>保存<\/b>を押しましょう。",
-      "move":"<b>ドラッグ<\/b>ボタンを使って、ウィジェットを移動できます。",
-      "remove":"ウィジェットを<b>削除<\/b>するには、ウィジェットを移動させると表示される赤いバーにドラッグしてください。",
+      "settings":"<b>San Francisco, CA</b> をお住まいの市町村に書き換え、 <b>保存</b>を押しましょう。",
+      "move":"<b>ドラッグ</b>ボタンを使って、ウィジェットを移動できます。",
+      "remove":"ウィジェットを<b>削除</b>するには、ウィジェットを移動させると表示される赤いバーにドラッグしてください。",
       "done":"OK"
     },
     "settings":{
-      "intro":"では、<b>メニュー<\/b>を見て、ほかに何ができるかを確認してみましょう。",
+      "intro":"では、<b>メニュー</b>を見て、ほかに何ができるかを確認してみましょう。",
       "instructions":"ユーザーのアイコンをクリックすると開くことができます。",
       "skip":"スキップ",
       "tooltips":{
         "settings":"iChrome の外観と動作を変更",
         "widgets":"新規ウィジェットを追加 - 必要なだけ追加することができます",
-        "editing":"ウィジェットの編集ボタンを表示\/非表示",
+        "editing":"ウィジェットの編集ボタンを表示/非表示",
         "links":"リンク一覧 - 設定でよく利用するサイトを追加できます",
         "tabs":"タブ - 設定で追加できます",
-        "support":"お問い合わせ\/レビュー"
+        "support":"お問い合わせ/レビュー"
       },
       "finished":"以上です！",
-      "finished_next":"<b>ウィジェット<\/b> をクリックして、ウィジェットを配置しましょう！",
+      "finished_next":"<b>ウィジェット</b> をクリックして、ウィジェットを配置しましょう！",
       "finished_contact":"ヘルプが必要な場合はサポートをご利用ください。迅速にご連絡いたします。"
     }
   },
@@ -114,7 +114,7 @@
   "voice":{
     "listening":"お話しください",
     "searching":"検索: %s",
-    "missed":"聞き取れませんでした。<a>再試行<\/a>"
+    "missed":"聞き取れませんでした。<a>再試行</a>"
   },
   "settings":{
     "title":"設定",
@@ -125,7 +125,8 @@
       "visual_sections":{
         "background":"背景",
         "layout":"レイアウト",
-        "theme":"アプリのテーマ"
+        "theme":"アプリのテーマ",
+        "ad_placement":"Ad placement"
       },
       "toolbar":"ツールバー",
       "toolbar_sections":{
@@ -180,6 +181,14 @@
         "dark":"ダーク",
         "transparent":"透明",
         "transparent_darker":"半透明 (ダーク)"
+      },
+      "ad_placement":{
+        "title":"Ad placement",
+        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -195,7 +204,7 @@
         "engine":"検索エンジン",
         "engines_default":"デフォルト",
         "engines_custom":"カスタム",
-        "engines_custom_desc":"クエリを <b>%s<\/b> にして URL を入力",
+        "engines_custom_desc":"クエリを <b>%s</b> にして URL を入力",
         "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"音声検索を有効にする",
         "ok_google":"ホットワード ”OK Google\" の検出を有効にする",
@@ -209,7 +218,7 @@
         "custom_note1":"最大3個",
         "custom_note2":"ユーザーは最大8個",
         "custom_name_placeholder":"リンクテキスト",
-        "custom_url_placeholder":"リンクURL（例: https:\/\/www.google.co.jp\/）"
+        "custom_url_placeholder":"リンクURL（例: https://www.google.co.jp/）"
       }
     },
     "misc":{
@@ -226,10 +235,10 @@
     "accounts":{
       "status":{
         "title":"ステータス",
-        "signed_in":"現在、%s (%s) として<b>ログイン中<\/b>です。",
+        "signed_in":"現在、%s (%s) として<b>ログイン中</b>です。",
         "reset_account":"アカウントをリセット",
         "sign_out":"ログアウト",
-        "signed_out":"<b>現在、ログインしていません。<\/b>Google アカウントでログインし、安全に設定を保存および同期してください。",
+        "signed_out":"<b>現在、ログインしていません。</b>Google アカウントでログインし、安全に設定を保存および同期してください。",
         "sign_in":"Google でログイン"
       },
       "reset_confirm_desc":"アカウントをリセットすると、ローカルおよび同期されたデータ、バックアップがすべて削除されます。この操作を元に戻すことはできません。",
@@ -250,12 +259,12 @@
       },
       "css":{
         "title":"カスタム CSS",
-        "desc":"<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\"target=\"blank\">CSS<\/a> を使用すると、iChrome のほとんどをカスタマイズできます。",
+        "desc":"<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\"target=\"blank\">CSS</a> を使用すると、iChrome のほとんどをカスタマイズできます。",
         "placeholder":"CSS をここに入力（最大1000文字）"
       },
       "debug_tools":{
         "title":"デバッグツール",
-        "desc":"<b>警告:<\/b> これらのツールは、設定を1クリックで消去することができます。指示があった場合にのみ使用してください。",
+        "desc":"<b>警告:</b> これらのツールは、設定を1クリックで消去することができます。指示があった場合にのみ使用してください。",
         "open":"ツールを開く"
       }
     },
@@ -288,7 +297,7 @@
         "bg_downloads":"ダウンロード可能な背景画像",
         "weather":"1時間ごとの天気予報を10日後まで表示",
         "toolbar":"より多くのツールバーリンク",
-        "support":"優先サポート\/ご提案",
+        "support":"優先サポート/ご提案",
         "buy_pro":"Pro を購入"
       },
       "checkout":{
@@ -322,7 +331,7 @@
           "education":"教育",
           "custom":"カスタム"
         },
-        "uneditable_desc":"ビジネス、教育、およびカスタムのプランは、iChrome 内からは更新できません。更新または解約するには、<a href=\"mailto:support@ichro.me\">サポート<\/a> へお問い合わせください。",
+        "uneditable_desc":"ビジネス、教育、およびカスタムのプランは、iChrome 内からは更新できません。更新または解約するには、<a href=\"mailto:support@ichro.me\">サポート</a> へお問い合わせください。",
         "status":"ステータス",
         "status_active":"有効",
         "status_trial":"試用版",
@@ -391,7 +400,7 @@
           "hide":"非表示"
         },
         "account":"アカウント ID",
-        "account_help":"複数のアカウントにログインしている場合、これが \"authuser=\" の値になります。\n<br \/><br \/>\n例えば、tanaka1@gmail.com と tanaka2@gmail.com という2個のアカウントにログインしている場合、tanaka2@gmail.com は2つ目のアカウントになるので、\"authuser\" の値は0から数えるため1になります。",
+        "account_help":"複数のアカウントにログインしている場合、これが \"authuser=\" の値になります。\n<br /><br />\n例えば、tanaka1@gmail.com と tanaka2@gmail.com という2個のアカウントにログインしている場合、tanaka2@gmail.com は2つ目のアカウントになるので、\"authuser\" の値は0から数えるため1になります。",
         "account_placeholder":"\"authuser=\" の値",
         "on":"ON",
         "off":"OFF"
@@ -425,7 +434,7 @@
     "feed_fetching":"フィードを取得中です。しばらくお待ちください。",
     "feed_error":"フィードの取得に失敗しました。後でもう一度やり直してください。",
     "caching":"テーマをキャッシュ中です。しばらくお待ちください。",
-    "cache_status":"画像のキャッシュ中: %s\/%s",
+    "cache_status":"画像のキャッシュ中: %s/%s",
     "cache_error":"テーマをキャッシュ中にエラーが発生しました。後でもう一度やり直してください。",
     "bginfo":{
       "view":"表示",
@@ -442,7 +451,7 @@
       "name_placeholder":"テーマ名を入力",
       "image":"背景画像の URL",
       "image_placeholder":"画像の URL を入力",
-      "image_help":"アップロードされた画像は <b>同期ができません<\/b>。<br \/><br \/>背景画像の同期が必要な場合は、<a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a> などのサービスへ画像をアップロードしてから、左のフィールドに .jpg などの拡張子で終わる URL を入力してください。",
+      "image_help":"アップロードされた画像は <b>同期ができません</b>。<br /><br />背景画像の同期が必要な場合は、<a href=\"http://imgur.com/\" target=\"_blank\">imgur</a> などのサービスへ画像をアップロードしてから、左のフィールドに .jpg などの拡張子で終わる URL を入力してください。",
       "color":"背景色",
       "color_placeholder":"色の名前を入力",
       "position":"位置",
@@ -455,12 +464,12 @@
         "bottom_center":"中央下",
         "bottom_right":"右下"
       },
-      "scaling":"拡大\/縮小",
+      "scaling":"拡大/縮小",
       "scaling_options":{
         "auto":"自動",
         "width":"最大幅",
         "height":"最大高",
-        "none":"拡大\/縮小しない (プレビューが不正確な可能性あり)"
+        "none":"拡大/縮小しない (プレビューが不正確な可能性あり)"
       },
       "repeat":"背景画像をタイル表示",
       "repeat_options":{

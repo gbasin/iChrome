@@ -11,7 +11,7 @@ define(["jquery", "lodash", "widgets/model"], function($, _, WidgetModel) {
 				type: "POST",
 				dataType: "text",
 				url: "https://www.google.com/async/translate?nocache=" + new Date().getTime(),
-				data: "async=translate,sl:" + from + ",tl:" + to + ",st:" + encodeURIComponent(text) + ",id:1,_pms:qd,_fmt:json",
+				data: "async=translate,sl:" + from + ",tl:" + to + ",st:" + encodeURIComponent(text) + ",qc:true,ac:true,id:1,_pms:qd,_fmt:json",
 				success: function(d) {
 					try {
 						d = JSON.parse(d.replace(")]}'", "").trim());
