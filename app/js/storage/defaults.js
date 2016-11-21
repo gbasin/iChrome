@@ -63,6 +63,7 @@ define(["i18n/i18n"], function(Translate) {
 			captureFocus: true,
 			searchInNewTab: false,
 			searchEngine: "default",
+			adPlacement: "footer_leaderboard",
 
 			editing: true,
 			customCSS: "",

@@ -11,7 +11,7 @@ define(["jquery", "lodash", "backbone", "core/auth", "core/status", "core/analyt
 		},
 
 		initialize: function() {
-			this.model.on("columns:sort columns:update columns:reset columns:views:change update:columns change:fixed change:isGrid", function() {
+			this.model.on("columns:sort columns:update columns:reset columns:views:change update:columns change:fixed change:isGrid change:adPlacement", function() {
 				var options = _.last(arguments);
 
 				if (!(options && options.noRefresh)) {
@@ -241,18 +241,22 @@ define(["jquery", "lodash", "backbone", "core/auth", "core/status", "core/analyt
 		/**
 		 * Constructs a block ad element and appends it to the provided element
 		 *
-		 * @param   {Boolean}  active  If the tab is currently active
-		 * @param   {Element}  el      The element the ad should be appended to
+		 * @param   {Boolean}  active       If the tab is currently active
+		 * @param   {Element}  el           The element the ad should be appended to
+		 * @param   {String}   [placement]  The id of the placement for this ad
 		 */
-		insertAd: function(active, el) {
+		insertAd: function(active, el, placement) {
 			if (Auth.isPro) {
 				return;
 			}
 
-			var adId = _.uniqueId("blockAd"),
-				ad = document.createElement("section");
+			placement = placement || this.model.get("adPlacement") || "widget_block";
 
-			ad.setAttribute("class", "ad-unit");
+			var leaderboard = placement === "header_leaderboard" || placement === "footer_leaderboard",
+				adId = _.uniqueId("blockAd"),
+				ad = document.createElement(leaderboard ? "div" : "section");
+
+			ad.setAttribute("class", "ad-unit" + (leaderboard ? (placement === "header_leaderboard" ? " top" : " bottom") : ""));
 
 			ad.setAttribute("id", adId);
 
@@ -262,7 +266,7 @@ define(["jquery", "lodash", "backbone", "core/auth", "core/status", "core/analyt
 			// We avoid inflating impressions by only displaying the ad once the tab is visible
 			// This could be modified to preload the various scripts and only show the ad itself later, but that causes issues with certain ads
 			var displayAd = function() {
-				ad.innerHTML = '<iframe src="https://ichro.me/blockad.html#' + adId + '" style="width:300px;height:250px;" seamless></iframe>' + '<button type="button" class="material green hide-ad">' + Translate("hide_banner") + '</button>';
+				ad.innerHTML = '<iframe src="https://ichro.me/adframe/' + placement + '#' + adId + '" style="' + (leaderboard ? "width:728px;height:90px;" : "width:300px;height:250px;") + '" seamless></iframe>';
 			};
 
 			this.once("render:complete", function() {
@@ -312,15 +316,34 @@ define(["jquery", "lodash", "backbone", "core/auth", "core/status", "core/analyt
 
 
 
+			var adColumn = 0,
+				adInserted = false,
+				adPlacement = this.model.get("adPlacement"),
+				insertAd = this.insertAd.bind(this, this.$el.hasClass("active"));
+
+			// If this is a grid-based or empty tab, and the user hasn't chosen to have a header leaderboard,
+			// default to a footer one since block-based ones don't work
+			if (!Auth.isPro && adPlacement !== "header_leaderboard" && (isGrid || !_.reduce(this.model.columns, function(e, v) { return e + v.length }, 0))) {
+				adPlacement = "footer_leaderboard";
+			}
+
+			if (adPlacement === "header_leaderboard" || adPlacement === "footer_leaderboard") {
+				insertAd(this.el, adPlacement);
+
+				adInserted = true;
+			}
+
+			if (adPlacement === "right_block") {
+				adColumn = this.model.columns.length - 1;
+			}
+
+
 			var main = document.createElement("main");
 
 			main.setAttribute("class", "widgets-container" + (this.model.get("fixed") && !isGrid ? " fixed" : "") + (isGrid ? " grid" : ""));
 
 
-			var adInserted = false,
-				insertAd = this.insertAd.bind(this, this.$el.hasClass("active"));
-
-			var models = _.map(this.model.columns, function(collection, i) {
+			var models = _.map(this.model.columns, function(collection, columnIndex) {
 				var column = main;
 
 				if (!isGrid) {
@@ -332,7 +355,7 @@ define(["jquery", "lodash", "backbone", "core/auth", "core/status", "core/analyt
 				}
 
 				_.each(collection.views, function(e, i) {
-					if (adInserted || isGrid) {
+					if (adInserted || isGrid || columnIndex !== adColumn) {
 						return column.appendChild(e.el);
 					}
 
@@ -343,7 +366,7 @@ define(["jquery", "lodash", "backbone", "core/auth", "core/status", "core/analyt
 					if (
 						size !== "tiny" && i !== 0 // This isn't a tiny widget and the previous ones were (if they weren't the ad would already be in)
 					) {
-						adInserted = insertAd(column);
+						adInserted = insertAd(column, adPlacement);
 					}
 
 					column.appendChild(e.el);
@@ -354,12 +377,12 @@ define(["jquery", "lodash", "backbone", "core/auth", "core/status", "core/analyt
 						size !== "tiny" || // This isn't a tiny widget
 						size === "tiny" && i === 3 // This is the 4th tiny widget in a row
 					) {
-						adInserted = insertAd(column);
+						adInserted = insertAd(column, adPlacement);
 					}
 				});
 
-				if (i === 0 && !isGrid && !adInserted) {
-					adInserted = insertAd(column);
+				if (columnIndex === adColumn && !isGrid && !adInserted) {
+					adInserted = insertAd(column, adPlacement);
 				}
 
 				return collection.models;

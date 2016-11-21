@@ -2864,6 +2864,53 @@ body.resizing .grid {
 
 
 
+
+
+/*---------------------------------------------
+	/ Widgets Layout / Ads
+*/
+.tab-container .tab > .ad-unit {
+	left: 50%;
+	z-index: 99;
+	width: 728px;
+	height: 90px;
+	margin-left: -364px;
+
+	&.top {
+		top: 20px;
+		position: absolute;
+
+		& ~ .widgets-container {
+			margin-top: 125px;
+		}
+	}
+
+	&.bottom {
+		bottom: 20px;
+		position: fixed;
+
+		& ~ .widgets-container {
+			margin-bottom: 145px;
+		}
+	}
+}
+
+.widgets-container .ad-unit {
+	flex: 2 100%;
+	margin: 15px 2%;
+	text-align: center;
+
+	button {
+		margin-top: 15px;
+	}
+}
+
+
+
+
+
+
+
 /*---------------------------------------------
 	/ Widgets Layout / Widgets
 */
@@ -3107,22 +3154,6 @@ body.no-edit .widgets-container .widget.tabbed:before {
 }
 
 
-
-
-
-
-/*---------------------------------------------
-	/ Widgets Layout / Ad Units
-*/
-.widgets-container .ad-unit {
-	flex: 2 100%;
-	margin: 15px 2%;
-	text-align: center;
-
-	button {
-		margin-top: 15px;
-	}
-}
 
 
 

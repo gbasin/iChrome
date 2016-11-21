@@ -37,13 +37,11 @@ define(["lodash", "backbone", "backbone.viewcollection", "widgets/registry"], fu
 
 
 		parse: function(data) {
-			var defaults;
+			var defaults = _.result(this, "defaults");
 
 			// If these properties are missing from the new data, they
 			// need to be set back to their defaults
 			if (typeof data.isGrid === "undefined" && this.has("isGrid")) {
-				defaults = _.result(this, "defaults");
-
 				data.isGrid = defaults.isGrid;
 
 				if (typeof defaults.isGrid === "undefined") {
@@ -52,14 +50,15 @@ define(["lodash", "backbone", "backbone.viewcollection", "widgets/registry"], fu
 			}
 
 			if (typeof data.fixed === "undefined" && this.has("fixed")) {
-				defaults = defaults || _.result(this, "defaults");
-
 				data.fixed = defaults.fixed;
 
 				if (typeof defaults.fixed === "undefined") {
 					this.unset("fixed");
 				}
 			}
+
+			// The adPlacement property piggybacks on the defaults system, but doesn't actually change
+			data.adPlacement = defaults.adPlacement;
 
 			return data;
 		},

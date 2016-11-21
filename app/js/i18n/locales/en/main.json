@@ -156,7 +156,8 @@
 			"visual_sections": {
 				"background": "Background",
 				"layout": "Layout",
-				"theme": "App theme"
+				"theme": "App theme",
+				"ad_placement": "Ad placement"
 			},
 
 			"toolbar": "Toolbar",
@@ -220,6 +221,16 @@
 				"dark": "Dark",
 				"transparent": "Transparent",
 				"transparent_darker": "Transparent (darker)"
+			},
+
+			"ad_placement": {
+				"title": "Ad placement",
+				"desc": "We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
+
+				"left": "In the leftmost column",
+				"right": "In the rightmost column",
+				"top": "Above the tab",
+				"bottom": "Floating at the bottom"
 			}
 		},
 

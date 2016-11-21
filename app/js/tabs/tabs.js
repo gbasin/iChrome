@@ -13,6 +13,7 @@ define(
 					Storage.on("done updated", function(storage, promise, data) {
 						if (!(data && data.tabSort)) {
 							var defaults = _.assign({}, Defaults.tab, {
+								adPlacement: storage.settings.adPlacement,
 								isGrid: storage.settings.layout === "grid",
 								fixed: storage.settings.columnWidth === "fixed"
 							});
@@ -60,9 +61,6 @@ define(
 				events: {
 					"click .tab-nav button": function(e) {
 						this.model.tabs.navigate($(e.currentTarget).attr("data-direction"));
-					},
-					"click .ad-unit button.hide-ad": function() {
-						Settings("pro");
 					},
 					"keydown": function(e) {
 						if (e.which === 37) {
