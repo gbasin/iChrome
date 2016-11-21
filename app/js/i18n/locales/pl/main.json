@@ -25,7 +25,7 @@
       "wrong_extension_action":"Kliknij tutaj",
       "about":"W iChrome'ie wszystko opiera się na kartach i widgetach",
       "about_desc":"Karty to strony wypełnione widgetami - blokami, które pokazuję rzeczy takie jak pogoda, wiadomości i twój e-mail. Możesz skonfigurować większość widgetów i dodać tak dużo jak tylko chcesz.",
-      "terms":"Uwaga: Kontynuując zgadzasz się na <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Warunki korzystania z serwisu<\/a> iChrome. <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\"> Polityka prywatności<\/a>",
+      "terms":"Uwaga: Kontynuując zgadzasz się na <a href=\"https://ichro.me/tos\" target=\"_blank\">Warunki korzystania z serwisu</a> iChrome. <a href=\"https://ichro.me/privacy\" target=\"_blank\"> Polityka prywatności</a>",
       "sign_in":"Zaloguj się przy pomocy konta Google",
       "sign_in_desc":"Zaloguj się używając konta Google zanim zaczniesz aby bezpiecznie przechowywać Twoje zmiany online.",
       "sign_in_desc2":"Jeżeli nie chcesz, nie musisz się logować, ale twoja strona nie będzie zapisana online i nie będziesz mieć do niej dostępu z innego komputera.",
@@ -37,15 +37,15 @@
     },
     "widgets":{
       "configure":"Skonfiguruj swój wigdet.",
-      "configure_desc":"Kliknij ikonkę klucza aby otworzyć <b>ustawienia<\/b> widgetu pogody.",
+      "configure_desc":"Kliknij ikonkę klucza aby otworzyć <b>ustawienia</b> widgetu pogody.",
       "configure_skip":"Pomiń",
-      "settings":"Zastąp <b>San Francisco, CA<\/b> twoją lokalizacją i wciśnij <b>Zapisz<\/b>.",
-      "move":"Możesz <b>przeciągać<\/b> widgety korzystając z podświetlonego uchwytu.",
-      "remove":"Kiedy przeciągasz widget, upuść go na czerwony pasek (nie pokazany) aby go <b>usunąć<\/b>.",
+      "settings":"Zastąp <b>San Francisco, CA</b> twoją lokalizacją i wciśnij <b>Zapisz</b>.",
+      "move":"Możesz <b>przeciągać</b> widgety korzystając z podświetlonego uchwytu.",
+      "remove":"Kiedy przeciągasz widget, upuść go na czerwony pasek (nie pokazany) aby go <b>usunąć</b>.",
       "done":"OK"
     },
     "settings":{
-      "intro":"Teraz spójrzmy na <b>menu<\/b> i zobaczmy co jeszcze możesz zrobić.",
+      "intro":"Teraz spójrzmy na <b>menu</b> i zobaczmy co jeszcze możesz zrobić.",
       "instructions":"Kliknij podświetlony obraz, aby go otworzyć.",
       "skip":"Pomiń",
       "tooltips":{
@@ -57,7 +57,7 @@
         "support":"Wyślij nam wiadomość albo zostaw tutaj swoją recenzję"
       },
       "finished":"I już!",
-      "finished_next":"Wybierz opcję z menu (spróbuj zacząć od <b>Widgety<\/b>) i stwórz swój układ strony!",
+      "finished_next":"Wybierz opcję z menu (spróbuj zacząć od <b>Widgety</b>) i stwórz swój układ strony!",
       "finished_contact":"Użyj odnośnika wsparcia jeśli potrzebujesz pomocy a odpiszemy Ci najszybciej jak to możliwe."
     }
   },
@@ -114,7 +114,7 @@
   "voice":{
     "listening":"Słucham...",
     "searching":"Wyszukiwanie: %s",
-    "missed":"Nie rozumiem. <a>Spróbuj ponownie<\/a>"
+    "missed":"Nie rozumiem. <a>Spróbuj ponownie</a>"
   },
   "settings":{
     "title":"Ustawienia",
@@ -125,7 +125,8 @@
       "visual_sections":{
         "background":"Tło",
         "layout":"Układ",
-        "theme":"Motyw aplikacji"
+        "theme":"Motyw aplikacji",
+        "ad_placement":"Ad placement"
       },
       "toolbar":"Pasek narzędzi",
       "toolbar_sections":{
@@ -180,6 +181,14 @@
         "dark":"Ciemny",
         "transparent":"Przezroczysty",
         "transparent_darker":"Przezroczysty (ciemniejszy)"
+      },
+      "ad_placement":{
+        "title":"Ad placement",
+        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -195,7 +204,7 @@
         "engine":"Wyszukiwarka",
         "engines_default":"Default",
         "engines_custom":"Niestandardowy",
-        "engines_custom_desc":"Jest to adres URL wyszukiwarki który użyje tekstu z pola wyszukiwarki. Umieść <b>%s<\/b> w miejsce gdzie parametry wyszukiwania mają się znaleźć.",
+        "engines_custom_desc":"Jest to adres URL wyszukiwarki który użyje tekstu z pola wyszukiwarki. Umieść <b>%s</b> w miejsce gdzie parametry wyszukiwania mają się znaleźć.",
         "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"Włącz wyszukiwanie głosowe",
         "ok_google":"Włącz detekcje słów \"OK Google\"",
@@ -209,7 +218,7 @@
         "custom_note1":"Dozwolone maksymalnie 3",
         "custom_note2":"użytkownicy otrzymują 8",
         "custom_name_placeholder":"Tytuł linku",
-        "custom_url_placeholder":"Adres URL linku, przykładowo http:\/\/www.google.com\/"
+        "custom_url_placeholder":"Adres URL linku, przykładowo http://www.google.com/"
       }
     },
     "misc":{
@@ -226,10 +235,10 @@
     "accounts":{
       "status":{
         "title":"Status",
-        "signed_in":"Jesteś aktualnie <b>zalogowany\/a<\/b> jako %s (%s).",
+        "signed_in":"Jesteś aktualnie <b>zalogowany/a</b> jako %s (%s).",
         "reset_account":"Zresetuj konto",
         "sign_out":"Wyloguj się",
-        "signed_out":"<b>Nie jesteś aktualnie zalogowany<\/b>. Zaloguj się na swoje konto Google teraz by bezpiecznie przechowywać i synchronizować konfigurację.",
+        "signed_out":"<b>Nie jesteś aktualnie zalogowany</b>. Zaloguj się na swoje konto Google teraz by bezpiecznie przechowywać i synchronizować konfigurację.",
         "sign_in":"Zaloguj się z Google"
       },
       "reset_confirm_desc":"Ta akcja usunie wszystkie twoje lokalne i zsynchronizowane dane. Nie istnieje kopia zapasowa i nie ma możliwości cofnięcia tej akcji.",
@@ -250,12 +259,12 @@
       },
       "css":{
         "title":"Niestandardowy CSS",
-        "desc":"Możesz użyć kodu CSS (<a href=\"https:\/\/developer.mozilla.org\/pl\/docs\/Web\/CSS\" target=\"blank\">definicja<\/a>) do dostosowania prawie każdej części iChrome.",
+        "desc":"Możesz użyć kodu CSS (<a href=\"https://developer.mozilla.org/pl/docs/Web/CSS\" target=\"blank\">definicja</a>) do dostosowania prawie każdej części iChrome.",
         "placeholder":"Wprowadź maksymalnie 1000 znaków kodu CSS"
       },
       "debug_tools":{
         "title":"Narzędzia debugowania",
-        "desc":"<b>Ostrzeżenie:<\/b> Narzędzia te mogą usunąć całą konfigurację jednym kliknięciem. Użyj ich tylko jeśli Twój developer tak cię poinstruuje.",
+        "desc":"<b>Ostrzeżenie:</b> Narzędzia te mogą usunąć całą konfigurację jednym kliknięciem. Użyj ich tylko jeśli Twój developer tak cię poinstruuje.",
         "open":"Otwórz narzędzia"
       }
     },
@@ -322,7 +331,7 @@
           "education":"Edukacja",
           "custom":"Niestandardowy"
         },
-        "uneditable_desc":"Plan Biznes, Edukacja i Niestandardowy nie można zaktualizować z poziomu iChrome. Proszę <a href=\"mailto:support@ichro.me\"> skontaktuj się z nami<\/a> by dokonać aktualizacji lub rezygnacji z subskrypcji.",
+        "uneditable_desc":"Plan Biznes, Edukacja i Niestandardowy nie można zaktualizować z poziomu iChrome. Proszę <a href=\"mailto:support@ichro.me\"> skontaktuj się z nami</a> by dokonać aktualizacji lub rezygnacji z subskrypcji.",
         "status":"Status",
         "status_active":"Aktywny",
         "status_trial":"Wersja próbna",
@@ -391,7 +400,7 @@
           "hide":"Ukryj"
         },
         "account":"ID Klienta",
-        "account_help":"Jeśli posiadasz wiele kont, to jest to wartość \"authuser=\".\n<br \/><br \/>\nNa przykład, gdy zalogujesz się na dwa konta, example1@gmail.com i example2@gmail.com, wartość \"authuser\" dla example2@gmail.com wynosi 1, ponieważ to drugie konto na którym jesteś zalogowany\/zalogowana dla \"authuser\" przyjmuje wartość 0 (liczyć od 0 należy).",
+        "account_help":"Jeśli posiadasz wiele kont, to jest to wartość \"authuser=\".\n<br /><br />\nNa przykład, gdy zalogujesz się na dwa konta, example1@gmail.com i example2@gmail.com, wartość \"authuser\" dla example2@gmail.com wynosi 1, ponieważ to drugie konto na którym jesteś zalogowany/zalogowana dla \"authuser\" przyjmuje wartość 0 (liczyć od 0 należy).",
         "account_placeholder":"Twoja wartość \"authuser=\"",
         "on":"Włącz",
         "off":"Wyłącz"
@@ -442,7 +451,7 @@
       "name_placeholder":"Wprowadź nazwę motywu",
       "image":"Adres URL obrazu",
       "image_placeholder":"Wprowadź adres URL obrazu tła",
-      "image_help":"Przesłane obrazy <b>nie mogą być zsynchronizowane<\/b> pomiędzy komputerami.<br \/><br \/>Jeśli jest to dla Ciebie ważne, proszę przesłać obrazy do usług takich jak <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Następnie skopiuj i wklej adres URL kończącego się z rozszerzeniem (np. jpg) i wklej go w polu po lewej stronie.",
+      "image_help":"Przesłane obrazy <b>nie mogą być zsynchronizowane</b> pomiędzy komputerami.<br /><br />Jeśli jest to dla Ciebie ważne, proszę przesłać obrazy do usług takich jak <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>. Następnie skopiuj i wklej adres URL kończącego się z rozszerzeniem (np. jpg) i wklej go w polu po lewej stronie.",
       "color":"Kolor awaryjny",
       "color_placeholder":"Wprowadź nazwę koloru",
       "position":"Pozycja",

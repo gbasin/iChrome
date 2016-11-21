@@ -25,7 +25,7 @@
       "wrong_extension_action":"Cliquez ici",
       "about":"Tout à propos des onglets et des widgets d'iChrome",
       "about_desc":"Les onglets sont des pages contenant des widgets - des blocs qui montrent des informations comme la météo, les actualités ou votre boîte mail. Vous pouvez personnaliser la plupart des widgets et en ajouter autant que vous voulez.",
-      "terms":"Remarque : En continuant, vous acceptez <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">les conditions d'utilisation<\/a> d'iChrome et <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">la Politique de confidentialité<\/a>",
+      "terms":"Remarque : En continuant, vous acceptez <a href=\"https://ichro.me/tos\" target=\"_blank\">les conditions d'utilisation</a> d'iChrome et <a href=\"https://ichro.me/privacy\" target=\"_blank\">la Politique de confidentialité</a>",
       "sign_in":"Connectez-vous avec votre compte Google",
       "sign_in_desc":"Connectez-vous avec votre compte Google avant de commencer pour sauvegarder vos changements en ligne.",
       "sign_in_desc2":"Vous pouvez rester déconnecté si vous voulez, mais votre page ne sera pas sauvegardée en ligne et vous ne pourrez pas y accéder à partir d'un autre ordinateur.",
@@ -37,15 +37,15 @@
     },
     "widgets":{
       "configure":"Configurons un widget.",
-      "configure_desc":"Cliquez sur la clé pour ouvrir les <b>paramètres<\/b> du gadget météo.",
+      "configure_desc":"Cliquez sur la clé pour ouvrir les <b>paramètres</b> du gadget météo.",
       "configure_skip":"Passer",
-      "settings":"Remplacez <b>San Francisco, CA<\/b> par votre emplacement, puis cliquez sur <b>Sauvegarder<\/b>.",
-      "move":"Vous pouvez <b>faire glisser<\/b> des widgets à l'aide de la poignée en surbrillance pour les déplacer.",
-      "remove":"Lorsque vous faites glisser un widget, déposez-le sur la barre rouge (non illustrée) pour le <b>supprimer<\/b>.",
+      "settings":"Remplacez <b>San Francisco, CA</b> par votre emplacement, puis cliquez sur <b>Sauvegarder</b>.",
+      "move":"Vous pouvez <b>faire glisser</b> des widgets à l'aide de la poignée en surbrillance pour les déplacer.",
+      "remove":"Lorsque vous faites glisser un widget, déposez-le sur la barre rouge (non illustrée) pour le <b>supprimer</b>.",
       "done":"Compris"
     },
     "settings":{
-      "intro":"Maintenant, allons jeter un oeil au <b>menu<\/b> et voir ce que vous pouvez faire d'autre.",
+      "intro":"Maintenant, allons jeter un oeil au <b>menu</b> et voir ce que vous pouvez faire d'autre.",
       "instructions":"Cliquez sur l'image en surbrillance pour l'ouvrir.",
       "skip":"Passer",
       "tooltips":{
@@ -57,7 +57,7 @@
         "support":"Envoyez-nous un message ou laissez un commentaire ici"
       },
       "finished":"C'est tout!",
-      "finished_next":"Choisissez une option depuis le menu (essayez en commençant avec <b>Widgets<\/b>) et configurez votre page !",
+      "finished_next":"Choisissez une option depuis le menu (essayez en commençant avec <b>Widgets</b>) et configurez votre page !",
       "finished_contact":"Utilisez le lien de support si vous avez besoin d'aide et nous allons revenir vers vous le plus tôt possible."
     }
   },
@@ -114,7 +114,7 @@
   "voice":{
     "listening":"A l'écoute...",
     "searching":"Recherche : %s",
-    "missed":"Je n'ai pas compris. <a>Réessayer<\/a>"
+    "missed":"Je n'ai pas compris. <a>Réessayer</a>"
   },
   "settings":{
     "title":"Paramètres",
@@ -125,7 +125,8 @@
       "visual_sections":{
         "background":"Fond d'écran",
         "layout":"Mode d'affichage",
-        "theme":"Thème de l'application"
+        "theme":"Thème de l'application",
+        "ad_placement":"Ad placement"
       },
       "toolbar":"Barre d’outils",
       "toolbar_sections":{
@@ -180,6 +181,14 @@
         "dark":"sombre",
         "transparent":"Transparent",
         "transparent_darker":"Transparent (plus sombre)"
+      },
+      "ad_placement":{
+        "title":"Ad placement",
+        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -195,7 +204,7 @@
         "engine":"Moteur de recherche",
         "engines_default":"Default",
         "engines_custom":"Personalisé",
-        "engines_custom_desc":"Entrez une URL à laquelle les requêtes doivent être envoyées, avec <b>%s<\/b> à l'endroit de la requête.",
+        "engines_custom_desc":"Entrez une URL à laquelle les requêtes doivent être envoyées, avec <b>%s</b> à l'endroit de la requête.",
         "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"Activer la recherche vocal",
         "ok_google":"Activer le mot clé \"OK Google\" pour la detection vocal",
@@ -209,7 +218,7 @@
         "custom_note1":"Maximum de 3 permis",
         "custom_note2":"les utilisateurs en obtiennent 8",
         "custom_name_placeholder":"Texte du lien",
-        "custom_url_placeholder":"URL de lien (Exemple : http:\/\/www.google.com\/)"
+        "custom_url_placeholder":"URL de lien (Exemple : http://www.google.com/)"
       }
     },
     "misc":{
@@ -226,10 +235,10 @@
     "accounts":{
       "status":{
         "title":"État",
-        "signed_in":"Vous êtes actuellement <b>connecté<\/b> comme %s (%s).",
+        "signed_in":"Vous êtes actuellement <b>connecté</b> comme %s (%s).",
         "reset_account":"Réinitialiser le compte",
         "sign_out":"Déconnexion",
-        "signed_out":"Vous êtes <b>actuellement non connecté<\/b>. Connectez-vous avec votre compte Google pour sauvegarder et synchroniser votre configuration.",
+        "signed_out":"Vous êtes <b>actuellement non connecté</b>. Connectez-vous avec votre compte Google pour sauvegarder et synchroniser votre configuration.",
         "sign_in":"Connectez-vous avec Google"
       },
       "reset_confirm_desc":"Ceci effacera toutes les données locales et synchronisées, il n'y a pas de sauvegarde et aucun moyen d'annuler cette action.",
@@ -250,12 +259,12 @@
       },
       "css":{
         "title":"CSS personnalisé",
-        "desc":"Vous pouvez utiliser le CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\"> définition<\/a>) pour personnaliser presque n'importe quoi d'iChrome.",
+        "desc":"Vous pouvez utiliser le CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\"> définition</a>) pour personnaliser presque n'importe quoi d'iChrome.",
         "placeholder":"Entrez jusqu'à 1000 caractères de CSS ici"
       },
       "debug_tools":{
         "title":"Outils de débogage",
-        "desc":"<b>Avertissement :<\/b> Ces outils peuvent effacer l'ensemble de votre configuration en un seul clic. Utilisez-les seulement si le développeur vous l'indique.",
+        "desc":"<b>Avertissement :</b> Ces outils peuvent effacer l'ensemble de votre configuration en un seul clic. Utilisez-les seulement si le développeur vous l'indique.",
         "open":"Outils sous licence ibre"
       }
     },
@@ -322,7 +331,7 @@
           "education":"Éducation",
           "custom":"Personalisé"
         },
-        "uneditable_desc":"Les plans d'affaires, d'éducation et personnalisés ne peuvent être mis à jours depuis iChrome. Veuillez <a href=\"mailto:support@ichro.me\">nous contacter<\/a> pour mettre à jour ou annuler votre abonnement.",
+        "uneditable_desc":"Les plans d'affaires, d'éducation et personnalisés ne peuvent être mis à jours depuis iChrome. Veuillez <a href=\"mailto:support@ichro.me\">nous contacter</a> pour mettre à jour ou annuler votre abonnement.",
         "status":"État",
         "status_active":"Actif",
         "status_trial":"Démo",
@@ -442,7 +451,7 @@
       "name_placeholder":"Entrer le nom du thème",
       "image":"URL de l'image",
       "image_placeholder":"Entrer l'URL d'une image qui sera utilisé comme fond d'écran",
-      "image_help":"Votre image n'a pas pu êtres envoyée de votre ordinateur.\n<br \/><br \/>\nSi vous tenez à avoir cette image, vous pouvez l'envoyé depuis le site <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>.\nPuis copiez l'url que ce site vous fournira, mais faite attention que l'url ce finisse par une extension d'image de type (i.e. .jpg), puis collez la dans le champ de gauche.",
+      "image_help":"Votre image n'a pas pu êtres envoyée de votre ordinateur.\n<br /><br />\nSi vous tenez à avoir cette image, vous pouvez l'envoyé depuis le site <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>.\nPuis copiez l'url que ce site vous fournira, mais faite attention que l'url ce finisse par une extension d'image de type (i.e. .jpg), puis collez la dans le champ de gauche.",
       "color":"Couleur d'arrière-plan",
       "color_placeholder":"Entrez une couleur",
       "position":"Position",

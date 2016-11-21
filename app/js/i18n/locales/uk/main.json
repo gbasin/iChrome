@@ -25,7 +25,7 @@
       "wrong_extension_action":"Натисніть тут",
       "about":"iChrome - вкладки та віджети",
       "about_desc":"Вкладки це сторінки з віджетами, блоками які показують таке як погоду, новини і вашу пошту. Ви можете настроїти більшість віджетів і додати стільки скільки забажаєте.",
-      "terms":"Зауважте: Продовжуючи, Ви погоджуєтесь з <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Умовами<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Політики конфіденційності<\/a>",
+      "terms":"Зауважте: Продовжуючи, Ви погоджуєтесь з <a href=\"https://ichro.me/tos\" target=\"_blank\">Умовами</a> and <a href=\"https://ichro.me/privacy\" target=\"_blank\">Політики конфіденційності</a>",
       "sign_in":"Увійдіть за допомогою свого облікового запису Google",
       "sign_in_desc":"Увійдіть за допомогою свого облікового запису Google, що безпечно зберегти свої зміни онлайн.",
       "sign_in_desc2":"Ви можете не входити якщо бажаєте, але ваша сторінка не буде збережена в онлайні і ви не зможете отримати до неї доступ з інших комп'ютерів.",
@@ -37,15 +37,15 @@
     },
     "widgets":{
       "configure":"Давайте налаштуємо віджет.",
-      "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
+      "configure_desc":"Click the wrench to open the weather widget's <b>settings</b>.",
       "configure_skip":"Пропустити",
-      "settings":"Replace <b>San Francisco, CA<\/b> with your location, then press <b>Save<\/b>.",
-      "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
-      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
+      "settings":"Replace <b>San Francisco, CA</b> with your location, then press <b>Save</b>.",
+      "move":"You can <b>drag</b> widgets using the highlighted handle to move them.",
+      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove</b> it.",
       "done":"Зрозуміло"
     },
     "settings":{
-      "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
+      "intro":"Now let's take a look at <b>the menu</b> and see what else you can do.",
       "instructions":"Click the highlighted image to open it.",
       "skip":"Пропустити",
       "tooltips":{
@@ -57,7 +57,7 @@
         "support":"Відправте нам повідомлення чи залиште відгук тут"
       },
       "finished":"Ось і все!",
-      "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
+      "finished_next":"Choose an option from the menu (try starting with <b>Widgets</b>) and set your page up!",
       "finished_contact":"Використайте посилання підтримки, якщо вам потрібна будь-яка допомога, ми відповімо вам якомога скоріш."
     }
   },
@@ -114,7 +114,7 @@
   "voice":{
     "listening":"Відтворення...",
     "searching":"Шукаємо: %s",
-    "missed":"Запит не отримано  <a>Повторити спробу<\/a>"
+    "missed":"Запит не отримано  <a>Повторити спробу</a>"
   },
   "settings":{
     "title":"Налаштування",
@@ -125,7 +125,8 @@
       "visual_sections":{
         "background":"Тло",
         "layout":"Макет",
-        "theme":"Тема додатка"
+        "theme":"Тема додатка",
+        "ad_placement":"Ad placement"
       },
       "toolbar":"Панель інструментів",
       "toolbar_sections":{
@@ -180,6 +181,14 @@
         "dark":"Темна",
         "transparent":"Прозора",
         "transparent_darker":"Прозора(темніша)"
+      },
+      "ad_placement":{
+        "title":"Ad placement",
+        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -195,7 +204,7 @@
         "engine":"Пошукова система",
         "engines_default":"Default",
         "engines_custom":"Індивідуальний",
-        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
+        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s</b> where the query should go.",
         "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"Enable voice search",
         "ok_google":"Enable \"OK Google\" hotword detection",
@@ -209,7 +218,7 @@
         "custom_note1":"Maximum of 3 allowed",
         "custom_note2":"users get 8",
         "custom_name_placeholder":"Link text",
-        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+        "custom_url_placeholder":"Link URL, i.e. https://www.google.com/"
       }
     },
     "misc":{
@@ -226,10 +235,10 @@
     "accounts":{
       "status":{
         "title":"Стан",
-        "signed_in":"Ви зараз <b>увійшли в<\/b> як %s (%s).",
+        "signed_in":"Ви зараз <b>увійшли в</b> як %s (%s).",
         "reset_account":"Скинути обліковий запис",
         "sign_out":"Вийти з облікового запису",
-        "signed_out":"Ви <b>не зайшли у<\/b>. Увійдіть в обліковий запис Google зараз, аби безпечно зберегти і синхронізувати ваші налаштування.",
+        "signed_out":"Ви <b>не зайшли у</b>. Увійдіть в обліковий запис Google зараз, аби безпечно зберегти і синхронізувати ваші налаштування.",
         "sign_in":"Зайти в обліковий запис Google"
       },
       "reset_confirm_desc":"Це зітре всі локальні і синхронізовані дані, резервної копії немає, ви не зможете відмінити зроблене.",
@@ -250,12 +259,12 @@
       },
       "css":{
         "title":"Індивідуальний CSS код",
-        "desc":"Ви можете використовувати CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>), аби налаштувати під себе майже будь-яку частину iChrome.",
+        "desc":"Ви можете використовувати CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definition</a>), аби налаштувати під себе майже будь-яку частину iChrome.",
         "placeholder":"Введіть не більше 1000 символів CSS тут"
       },
       "debug_tools":{
         "title":"Інструменти налагодження",
-        "desc":"<b>УВАГА:<\/b> Ці інструменти можуть зтерти всі ваші налаштування одним натиском. Використовуйте їх тільки якщо розробник інструктує вас.",
+        "desc":"<b>УВАГА:</b> Ці інструменти можуть зтерти всі ваші налаштування одним натиском. Використовуйте їх тільки якщо розробник інструктує вас.",
         "open":"Відкрити інструменти"
       }
     },
@@ -322,7 +331,7 @@
           "education":"Education",
           "custom":"Custom"
         },
-        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
+        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us</a> to update or cancel your subscription.",
         "status":"Стан",
         "status_active":"Active",
         "status_trial":"Trial",
@@ -391,7 +400,7 @@
           "hide":"Hide"
         },
         "account":"Account ID",
-        "account_help":"If you're signed into multiple accounts, this is the \"authuser=\" value.\n<br \/><br \/>\nFor example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"authuser\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
+        "account_help":"If you're signed into multiple accounts, this is the \"authuser=\" value.\n<br /><br />\nFor example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"authuser\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
         "account_placeholder":"Your \"authuser=\" value",
         "on":"On",
         "off":"Off"
@@ -442,7 +451,7 @@
       "name_placeholder":"Enter a theme name",
       "image":"Image URL",
       "image_placeholder":"Enter a background image URL",
-      "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
+      "image_help":"Uploaded images <b>cannot be synced</b> between computers.<br /><br />If this is important to you, please upload your image to a service such as <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>. Then copy the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
       "color":"Fallback Color",
       "color_placeholder":"Enter any color name",
       "position":"Position",

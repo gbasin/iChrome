@@ -3,7 +3,7 @@
   "language":"বাংলা",
   "extName":"iChrome - একটি দ্রুত, উত্পাদনশীল মূল পাতা",
   "newtabName":"iChrome নতুন ট্যাব - দ্রুত, সহজ নতুন ট্যাব",
-  "extDescription":"A lightning fast home\/start page dashboard with stunning backgrounds, news, weather, sports, RSS, todo, and more!",
+  "extDescription":"A lightning fast home/start page dashboard with stunning backgrounds, news, weather, sports, RSS, todo, and more!",
   "newtabDescription":"A lightning fast new tab page dashboard with stunning backgrounds, news, weather, sports, RSS, todo, and more!",
   "defaults":{
     "tab":"মূল পাতা",
@@ -25,7 +25,7 @@
       "wrong_extension_action":"এখানে ক্লিক করুন",
       "about":"iChrome's all about tabs and widgets",
       "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
-      "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https:\/\/ichro.me\/tos\" target=\"_blank\">Terms<\/a> and <a href=\"https:\/\/ichro.me\/privacy\" target=\"_blank\">Privacy Policy<\/a>",
+      "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https://ichro.me/tos\" target=\"_blank\">Terms</a> and <a href=\"https://ichro.me/privacy\" target=\"_blank\">Privacy Policy</a>",
       "sign_in":"Sign in with your Google account",
       "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
       "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
@@ -37,15 +37,15 @@
     },
     "widgets":{
       "configure":"Let's configure a widget.",
-      "configure_desc":"Click the wrench to open the weather widget's <b>settings<\/b>.",
+      "configure_desc":"Click the wrench to open the weather widget's <b>settings</b>.",
       "configure_skip":"এড়ান",
-      "settings":"<b>San Francisco, CA<\/b> কে আপনার অবস্থান দিয়ে পরিবর্তন করুন, এরপর <b>সংরক্ষণ<\/b> টিপুন।",
-      "move":"You can <b>drag<\/b> widgets using the highlighted handle to move them.",
-      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove<\/b> it.",
+      "settings":"<b>San Francisco, CA</b> কে আপনার অবস্থান দিয়ে পরিবর্তন করুন, এরপর <b>সংরক্ষণ</b> টিপুন।",
+      "move":"You can <b>drag</b> widgets using the highlighted handle to move them.",
+      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove</b> it.",
       "done":"বুঝেছি"
     },
     "settings":{
-      "intro":"Now let's take a look at <b>the menu<\/b> and see what else you can do.",
+      "intro":"Now let's take a look at <b>the menu</b> and see what else you can do.",
       "instructions":"Click the highlighted image to open it.",
       "skip":"এড়ান",
       "tooltips":{
@@ -57,7 +57,7 @@
         "support":"এখানে আমাদের বার্তা দিন বা পর্যালোচনা লিখুন"
       },
       "finished":"এটাই!",
-      "finished_next":"Choose an option from the menu (try starting with <b>Widgets<\/b>) and set your page up!",
+      "finished_next":"Choose an option from the menu (try starting with <b>Widgets</b>) and set your page up!",
       "finished_contact":"Use the support link if you need any help and we'll get back to you ASAP."
     }
   },
@@ -114,7 +114,7 @@
   "voice":{
     "listening":"শুনছেন...",
     "searching":"অনুসন্ধান করছেন: %s",
-    "missed":"এটা বুঝা যায়নি। <a>আবার চেষ্টা করুন<\/a>"
+    "missed":"এটা বুঝা যায়নি। <a>আবার চেষ্টা করুন</a>"
   },
   "settings":{
     "title":"সেটিংস",
@@ -125,7 +125,8 @@
       "visual_sections":{
         "background":"Background",
         "layout":"লেআউট",
-        "theme":"App theme"
+        "theme":"App theme",
+        "ad_placement":"Ad placement"
       },
       "toolbar":"Toolbar",
       "toolbar_sections":{
@@ -180,6 +181,14 @@
         "dark":"গাঢ়",
         "transparent":"স্বচ্ছ",
         "transparent_darker":"স্বচ্ছ (কালো)"
+      },
+      "ad_placement":{
+        "title":"Ad placement",
+        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -195,7 +204,7 @@
         "engine":"অনুসন্ধান ইঞ্জিন",
         "engines_default":"Default",
         "engines_custom":"স্বনির্ধারিত",
-        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s<\/b> where the query should go.",
+        "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s</b> where the query should go.",
         "omnibox_capture":"Handle searches normally made in the Omnibox",
         "voice":"কন্ঠস্বর অনুসন্ধান সক্ষম করুন",
         "ok_google":"Enable \"OK Google\" hotword detection",
@@ -209,7 +218,7 @@
         "custom_note1":"সর্বোচ্চ ৩টি মঞ্জুরিপ্রাপ্ত",
         "custom_note2":"users get 8",
         "custom_name_placeholder":"Link text",
-        "custom_url_placeholder":"Link URL, i.e. https:\/\/www.google.com\/"
+        "custom_url_placeholder":"Link URL, i.e. https://www.google.com/"
       }
     },
     "misc":{
@@ -226,10 +235,10 @@
     "accounts":{
       "status":{
         "title":"অবস্থা",
-        "signed_in":"You are currently <b>signed in<\/b> as %s (%s).",
+        "signed_in":"You are currently <b>signed in</b> as %s (%s).",
         "reset_account":"Reset account",
         "sign_out":"সাইন আউট",
-        "signed_out":"You are <b>not currently signed in<\/b>. Sign in with your Google account now to securely store and sync your configuration.",
+        "signed_out":"You are <b>not currently signed in</b>. Sign in with your Google account now to securely store and sync your configuration.",
         "sign_in":"Sign in with Google"
       },
       "reset_confirm_desc":"This will erase all local and synced data, there is no backup and no way to undo this.",
@@ -250,12 +259,12 @@
       },
       "css":{
         "title":"Custom CSS",
-        "desc":"You can use CSS (<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/CSS\" target=\"blank\">definition<\/a>) to customize almost any part of iChrome.",
+        "desc":"You can use CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definition</a>) to customize almost any part of iChrome.",
         "placeholder":"Enter up to 1000 characters of CSS here"
       },
       "debug_tools":{
         "title":"Debug tools",
-        "desc":"<b>WARNING:<\/b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
+        "desc":"<b>WARNING:</b> These tools can erase your entire configuration in a single click. Only use them if your developer instructs you to.",
         "open":"Open tools"
       }
     },
@@ -322,7 +331,7 @@
           "education":"শিক্ষা",
           "custom":"স্বনির্ধারিত"
         },
-        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us<\/a> to update or cancel your subscription.",
+        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us</a> to update or cancel your subscription.",
         "status":"অবস্থা",
         "status_active":"সক্রিয়",
         "status_trial":"Trial",
@@ -391,7 +400,7 @@
           "hide":"লুকান"
         },
         "account":"Account ID",
-        "account_help":"If you're signed into multiple accounts, this is the \"authuser=\" value.\n<br \/><br \/>\nFor example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"authuser\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
+        "account_help":"If you're signed into multiple accounts, this is the \"authuser=\" value.\n<br /><br />\nFor example, if you're signed into two accounts, jsmith1@gmail.com and jsmith2@gmail.com, the \"authuser\" value for jsmith2@gmail.com would be 1 since it's the second account (counting from zero) that you're signed into.",
         "account_placeholder":"আপনার \"authuser=\" মান",
         "on":"চালু",
         "off":"বন্ধ"
@@ -442,7 +451,7 @@
       "name_placeholder":"থিম নাম প্রবেশ করাএ",
       "image":"চিত্রের URL",
       "image_placeholder":"পটভূমি চিত্রের URL লিখুন",
-      "image_help":"Uploaded images <b>cannot be synced<\/b> between computers.<br \/><br \/>If this is important to you, please upload your image to a service such as <a href=\"http:\/\/imgur.com\/\" target=\"_blank\">imgur<\/a>. Then copy the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
+      "image_help":"Uploaded images <b>cannot be synced</b> between computers.<br /><br />If this is important to you, please upload your image to a service such as <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>. Then copy the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
       "color":"Fallback Color",
       "color_placeholder":"যে কোন রঙের নাম লিখুন",
       "position":"অবস্থান",
