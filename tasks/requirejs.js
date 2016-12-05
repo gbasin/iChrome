@@ -23,8 +23,10 @@ module.exports = function(grunt) {
 			baseUrl: "build/js/",
 			out: "build/js/app.js",
 			mainConfigFile: "build/js/app.js",
+			generateSourceMaps: flag === "testrun",
+			preserveLicenseComments: flag !== "testrun",
 			stubModules: ["widgetTemplate", "text", "json"],
-			optimize: flag === "webstore" ? "uglify2" : "none",
+			optimize: (flag === "webstore" || flag === "testrun") ? "uglify2" : "none",
 
 			// By including the main app file this way we ensure that the widget
 			// modules are registered before require is switched to "sync mode" (

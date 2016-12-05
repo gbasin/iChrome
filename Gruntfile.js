@@ -106,6 +106,9 @@ module.exports = function (grunt) {
 					src: "build/js/app.js",
 					dest: "app/js/app.js"
 				}, {
+					src: "build/js/app.js.map",
+					dest: "app/js/app.js.map"
+				}, {
 					src: "build/css/style.css",
 					dest: "app/css/style.css"
 				}, {
@@ -257,7 +260,7 @@ module.exports = function (grunt) {
 			all: ["tmp", "build/**/Thumbs.db", "build/templates", "build/widgets", "build/js/*", "!build/js/lib", "build/js/lib/*", "!build/js/lib/require.js", "!build/js/app.js", "!build/js/background.js", "build/**/*.scss"],
 			webstore: ["build"],
 			travis: ["build", "webstore.zip", "descriptions"],
-			testrun: ["app/js/app.unbuilt.js", "app/css/style.unbuilt.css", "app/assets"]
+			testrun: ["app/js/app.unbuilt.js", "app/js/app.js.map", "app/css/style.unbuilt.css", "app/assets"]
 		}
 	});
 
@@ -357,7 +360,7 @@ module.exports = function (grunt) {
 		"i18n:compile",
 		"hogan:compilebinder",
 		"hogan:compile",
-		"requirejs:webstore",
+		"requirejs:testrun",
 		"string-replace:analytics",
 		"string-replace:apikeys",
 		"string-replace:cachebust",
