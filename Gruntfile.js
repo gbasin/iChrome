@@ -212,6 +212,16 @@ module.exports = function (grunt) {
 					}]
 				}
 			},
+			removeRequire: {
+				src: "build/index.html",
+				dest: "build/index.html",
+				options: {
+					replacements: [{
+						pattern: '<script type="text/javascript" src="js/lib/require.js"></script>',
+						replacement: ""
+					}]
+				}
+			},
 			apikeys: {
 				src: "build/js/app.js",
 				dest: "build/js/app.js",
@@ -300,6 +310,7 @@ module.exports = function (grunt) {
 		"string-replace:apiCalls",
 		"requirejs:build",
 		"string-replace:apikeys",
+		"string-replace:removeRequire",
 		"string-replace:cachebust",
 		"clean:all"
 	]);
@@ -320,6 +331,7 @@ module.exports = function (grunt) {
 		"string-replace:apiCalls",
 		"requirejs:webstore",
 		"string-replace:apikeys",
+		"string-replace:removeRequire",
 		"string-replace:cachebust",
 		"clean:all",
 		"compress",
@@ -341,6 +353,7 @@ module.exports = function (grunt) {
 		"string-replace:analytics",
 		"string-replace:apiCalls",
 		"requirejs:build",
+		"string-replace:removeRequire",
 		"string-replace:cachebust",
 		"clean:all",
 		"compress",

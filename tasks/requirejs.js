@@ -31,7 +31,8 @@ module.exports = function(grunt) {
 			// By including the main app file this way we ensure that the widget
 			// modules are registered before require is switched to "sync mode" (
 			// see app.js)
-			include: (grunt.option("widgetModules") || []).concat("app")
+			// Anything that gets dynamically included needs to be added here
+			include: ["lib/almond"].concat(grunt.option("widgetModules") || []).concat(["settings/view", "onboarding/controller", "notices/updated", "notices/signin",  "app"])
 		}, this.async());
 	});
 };

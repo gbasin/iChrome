@@ -34,9 +34,11 @@ require.config({
 // require wait at least 4ms before resolving, even if the module has been
 // registered (but not initialized). The difference is difficult to measure but
 // this saves approximately 200ms until the first full widget paint.
-require.s.contexts._.nextTick = function(fn) {
-	return fn();
-};
+if (require.s) {
+	require.s.contexts._.nextTick = function(fn) {
+		return fn();
+	};
+}
 
 
 /**
