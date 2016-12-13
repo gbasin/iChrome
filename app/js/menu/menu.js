@@ -4,9 +4,9 @@
 define(
 	[
 		"lodash", "jquery", "backbone", "browser/api", "core/auth", "core/analytics", "storage/storage", "storage/defaults", "i18n/i18n",
-		"search/search", "search/speech", "settings/view", "widgets/store", "core/uservoice", "core/render"
+		"search/search", "search/speech", "settings/proxy", "widgets/store", "core/uservoice", "core/render"
 	],
-	function(_, $, Backbone, Browser, Auth, Track, Storage, Defaults, Translate, Search, Speech, Settings, Store, UserVoice, render) {
+	function(_, $, Backbone, Browser, Auth, Track, Storage, Defaults, Translate, Search, Speech, SettingsProxy, Store, UserVoice, render) {
 		var Model = Backbone.Model.extend({
 				init: function() {
 					Storage.on("done updated", function(storage) {
@@ -65,14 +65,9 @@ define(
 						}
 					},
 					"click .tabs .add": function() {
-						if (!this.Settings) {
-							this.Settings = Settings("tabs");
-						}
-						else {
-							this.Settings.show("tabs");
-						}
-
-						this.Settings.createTab();
+						SettingsProxy.getSettings(function(Settings) {
+							Settings("tabs").createTab();
+						});
 					},
 					"click .footer .support": function(e) {
 						e.preventDefault();
@@ -100,12 +95,7 @@ define(
 
 					switch (elm.attr("data-item")) {
 						case "settings":
-							if (!this.Settings) {
-								this.Settings = Settings();
-							}
-							else {
-								this.Settings.show();
-							}
+							SettingsProxy();
 						break;
 
 						case "widgets":
@@ -264,7 +254,7 @@ define(
 
 					// If this was a direct link to the settings, show them
 					if (location.hash === "#settings") {
-						this.Settings = Settings();
+						SettingsProxy();
 					}
 				},
 
