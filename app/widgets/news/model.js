@@ -16,7 +16,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 
 			data: {
 				topics: [
-					["default", "Personalized"],
+					["default", "Top"],
 					["autos", "Autos"],
 					["news", "News"],
 					["technologyandinternet", "Technology and Internet"],
@@ -92,6 +92,10 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 				this.config.edition = conversions[this.config.edition] || "en-us";
 			}
 
+			if (!this.config.number || this.config.number > 20) {
+				this.config.number = 20;
+			}
+
 
 			this.set("activeTab", this.config.topic);
 
@@ -137,7 +141,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 						return [d.alternateName, altNames[d.alternateName] || d.name, d.href];
 					});
 
-					topics.unshift(["default", "Personalized"]);
+					topics.unshift(["default", "Top"]);
 
 					cb.call(this, topics || []);
 				}.bind(this)
@@ -197,7 +201,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 			var topic = _.find(this.data.topics, [activeTab]) || [];
 
 			$.ajax({
-				url: "https://sphere.outbrain.com/api/v1/recommendations/documents",
+				url: "https://sphere.outbrain.com/api/v1/trending/documents",
 				data: {
 					thumbnailSize: "190x200",
 					limit: maximized ? 45 : this.config.number,
