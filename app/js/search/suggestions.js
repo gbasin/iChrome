@@ -122,11 +122,15 @@ define(["jquery", "underscore", "browser/api", "backbone", "core/analytics", "i1
 				this.visible = true;
 
 				this.$el.addClass("visible");
+
+				this.trigger("show");
 			},
 			hide: function() {
 				this.visible = false;
 
 				this.$el.removeClass("visible");
+
+				this.trigger("hide");
 			},
 			setFocus: function(which) {
 				var active;

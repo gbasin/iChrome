@@ -59,16 +59,20 @@ define(["backbone", "jquery", "lodash", "browser/api", "core/analytics", "search
 			});
 
 
-			var results = this.get("results") || [];
+			var topAds = this.get("ads") || [],
+				results = this.get("results") || [];
 
 			if (results.length) {
 				results = results.concat(organic, ads.slice(0, 4));
 			}
 			else {
-				results = results.concat(ads.slice(0, 4).concat(organic, ads.slice(4, 7)));
+				topAds = ads.slice(0, 4);
+
+				results = results.concat(organic, ads.slice(4, 7));
 			}
 
 			return {
+				ads: topAds,
 				results: results,
 				next: d.next || null
 			};
@@ -109,6 +113,10 @@ define(["backbone", "jquery", "lodash", "browser/api", "core/analytics", "search
 
 			"click button.load-more": function() {
 				this.model.fetch();
+			},
+
+			"click .tabs a": function(e) {
+				e.currentTarget.href = e.currentTarget.href.split("q=")[0] + "q=" + encodeURIComponent(this.model.get("query"));
 			}
 		},
 
@@ -206,7 +214,11 @@ define(["backbone", "jquery", "lodash", "browser/api", "core/analytics", "search
 				this.$("input").val(val);
 
 				this.handleInstant(val);
-			}, this).on("select", this.submit, this);
+			}, this).on("select", this.submit, this).on("show", function() {
+				this.$el.addClass("suggestions-visible");
+			}, this).on("hide", function() {
+				this.$el.removeClass("suggestions-visible");
+			}, this);
 
 			// Speech results are forwarded from the toolbar search handler
 			this.on("speech:result", function(val) {

@@ -2461,6 +2461,23 @@ dialog.announcements li {
 		margin-left: 160px;
 	}
 
+	&.suggestions-visible .results {
+		padding-top: 300px;
+	}
+
+	.ads {
+		display: block;
+		border-bottom: 1px solid #EDEDED;
+
+		p.notice {
+			margin: 0;
+		}
+
+		ul {
+			padding: 0;
+		}
+	}
+
 	.result {
 		display: block;
 		padding: 15px 0;
