@@ -15,6 +15,12 @@
 	"remove_widget": "Remove",
 	"hide_banner": "Hide this banner",
 
+	"hide_ad": {
+		"content": "Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
+		"upgrade": "Upgrade",
+		"hide": "Hide ads"
+	},
+
 	"alert": {
 		"default_button": "Dismiss",
 

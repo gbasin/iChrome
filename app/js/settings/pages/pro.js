@@ -54,17 +54,7 @@ define([
 				}
 			},
 
-			onInputChange: _.noop,
-
-			onBeforeRender: function(data) {
-				if (this._rendered) {
-					return false;
-				}
-
-				this._rendered = true;
-
-				return data;
-			}
+			onInputChange: _.noop
 		});
 
 		return PromoView;
