@@ -92,9 +92,5 @@ define([
 		}
 	});
 
-	if (Browser.storage.showUpdated === "true") {
-		new View();
-	}
-
-	return View;
+	return new View();
 });
