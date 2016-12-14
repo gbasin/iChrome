@@ -106,6 +106,9 @@ module.exports = function (grunt) {
 					src: "build/js/app.js",
 					dest: "app/js/app.js"
 				}, {
+					src: "build/js/app.js.map",
+					dest: "app/js/app.js.map"
+				}, {
 					src: "build/css/style.css",
 					dest: "app/css/style.css"
 				}, {
@@ -199,6 +202,26 @@ module.exports = function (grunt) {
 					}]
 				}
 			},
+			apiCalls: {
+				src: "build/js/browser/chrome.js",
+				dest: "build/js/browser/chrome.js",
+				options: {
+					replacements: [{
+						pattern: "chrome.runtime.getManifest().version",
+						replacement: JSON.stringify(grunt.file.readJSON("app/manifest.json").version)
+					}]
+				}
+			},
+			removeRequire: {
+				src: "build/index.html",
+				dest: "build/index.html",
+				options: {
+					replacements: [{
+						pattern: '<script type="text/javascript" src="js/lib/require.js"></script>',
+						replacement: ""
+					}]
+				}
+			},
 			apikeys: {
 				src: "build/js/app.js",
 				dest: "build/js/app.js",
@@ -257,7 +280,7 @@ module.exports = function (grunt) {
 			all: ["tmp", "build/**/Thumbs.db", "build/templates", "build/widgets", "build/js/*", "!build/js/lib", "build/js/lib/*", "!build/js/lib/require.js", "!build/js/app.js", "!build/js/background.js", "build/**/*.scss"],
 			webstore: ["build"],
 			travis: ["build", "webstore.zip", "descriptions"],
-			testrun: ["app/js/app.unbuilt.js", "app/css/style.unbuilt.css", "app/assets"]
+			testrun: ["app/js/app.unbuilt.js", "app/js/app.js.map", "app/css/style.unbuilt.css", "app/assets"]
 		}
 	});
 
@@ -283,9 +306,11 @@ module.exports = function (grunt) {
 		"i18n:compile",
 		"hogan:compilebinder",
 		"hogan:compile",
-		"requirejs:build",
 		"string-replace:analytics",
+		"string-replace:apiCalls",
+		"requirejs:build",
 		"string-replace:apikeys",
+		"string-replace:removeRequire",
 		"string-replace:cachebust",
 		"clean:all"
 	]);
@@ -302,9 +327,11 @@ module.exports = function (grunt) {
 		"hogan:compilebinder",
 		"hogan:compile",
 		"removekey",
-		"requirejs:webstore",
 		"string-replace:analytics",
+		"string-replace:apiCalls",
+		"requirejs:webstore",
 		"string-replace:apikeys",
+		"string-replace:removeRequire",
 		"string-replace:cachebust",
 		"clean:all",
 		"compress",
@@ -323,8 +350,10 @@ module.exports = function (grunt) {
 		"hogan:compilebinder",
 		"hogan:compile",
 		"removekey",
-		"requirejs:build",
 		"string-replace:analytics",
+		"string-replace:apiCalls",
+		"requirejs:build",
+		"string-replace:removeRequire",
 		"string-replace:cachebust",
 		"clean:all",
 		"compress",
@@ -357,8 +386,9 @@ module.exports = function (grunt) {
 		"i18n:compile",
 		"hogan:compilebinder",
 		"hogan:compile",
-		"requirejs:webstore",
 		"string-replace:analytics",
+		"string-replace:apiCalls",
+		"requirejs:testrun",
 		"string-replace:apikeys",
 		"string-replace:cachebust",
 		"copy:testrun",

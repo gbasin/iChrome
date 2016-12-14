@@ -26,35 +26,35 @@
 
 		<ul class="tabs">
 			<li class="active">
-				<a href="https://www.google.com/search?tbm=&amp;q={{query}}&amp;hl=en">All</a>
+				<a href="https://www.google.com/search?q=">All</a>
 			</li>
 
 			<li>
-				<a href="https://www.google.com/search?tbm=isch&amp;q={{query}}&amp;hl=en">Images</a>
+				<a href="https://www.google.com/search?tbm=isch&amp;q=">Images</a>
 			</li>
 
 			<li>
-				<a href="https://www.google.com/search?tbm=vid&amp;q={{query}}&amp;hl=en">Videos</a>
+				<a href="https://www.google.com/search?tbm=vid&amp;q=">Videos</a>
 			</li>
 
 			<li>
-				<a href="https://maps.google.com/maps?q={{query}}&amp;hl=en">Maps</a>
+				<a href="https://maps.google.com/maps?q=">Maps</a>
 			</li>
 
 			<li>
-				<a href="https://www.google.com/search?tbm=nws&amp;q={{query}}&amp;hl=en">News</a>
+				<a href="https://www.google.com/search?tbm=nws&amp;q=">News</a>
 			</li>
 
 			<li>
-				<a href="https://www.google.com/search?tbm=shop&amp;q={{query}}&amp;hl=en">Shopping</a>
+				<a href="https://www.google.com/search?tbm=shop&amp;q=">Shopping</a>
 			</li>
 
 			<li>
-				<a href="https://www.google.com/search?tbm=bks&amp;q={{query}}&amp;hl=en">Books</a>
+				<a href="https://www.google.com/search?tbm=bks&amp;q=">Books</a>
 			</li>
 
 			<li>
-				<a href="https://www.google.com/search?tbm=app&amp;q={{query}}&amp;hl=en">Apps</a>
+				<a href="https://www.google.com/search?tbm=app&amp;q=">Apps</a>
 			</li>
 		</ul>
 	</header>
@@ -63,6 +63,24 @@
 <div class="results-container">
 	{{#hasResults}}
 		<ul class="results">
+			{{#ads.0}}
+				<li class="ads">
+					<p class="notice">Ads related to: {{query}}</p>
+
+					<ul>
+						{{#ads}}
+							<li class="result">
+								<h2><a href="{{link}}" target="_self">{{{title}}}</a></h2>
+
+								<cite class="url">{{domain}}</cite>
+
+								<p>{{{text}}}</p>
+							</li>
+						{{/ads}}
+					</ul>
+				</li>
+			{{/ads.0}}
+
 			{{#results}}
 				<li class="result{{#ad}} ad{{/ad}}">
 					<h2><a href="{{link}}" target="_self">{{{title}}}</a></h2>

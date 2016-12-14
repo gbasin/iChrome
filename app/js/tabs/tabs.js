@@ -2,8 +2,8 @@
  * The tabs container-model.
  */
 define(
-	["lodash", "jquery", "backbone", "browser/api", "storage/storage", "storage/defaults", "core/status", "core/analytics", "tabs/collection", "i18n/i18n", "settings/view"],
-	function(_, $, Backbone, Browser, Storage, Defaults, Status, Track, Tabs, Translate, Settings) {
+	["lodash", "jquery", "backbone", "browser/api", "storage/storage", "storage/defaults", "core/status", "modals/alert", "core/analytics", "tabs/collection", "i18n/i18n", "settings/proxy"],
+	function(_, $, Backbone, Browser, Storage, Defaults, Status, Alert, Track, Tabs, Translate, SettingsProxy) {
 		var Model = Backbone.Model.extend({
 				initialize: function() {
 					this.tabs = new Tabs();
@@ -84,6 +84,27 @@ define(
 					},
 					"mouseout .tab-nav button": function() {
 						clearTimeout(this.timeout);
+					},
+
+					"click .ad-unit button.hide-ad": function() {
+						Alert({
+							contents: [Translate("hide_ad.content")],
+							buttons: {
+								negative: Translate("hide_ad.upgrade"),
+								positive: Translate("hide_ad.hide")
+							}
+						}, function(hide) {
+							if (hide) {
+								var elm = document.createElement("style");
+
+								elm.innerHTML = ".ad-unit { display: none; }";
+
+								this.$el.before(elm);
+							}
+							else {
+								SettingsProxy("pro");
+							}
+						}.bind(this));
 					}
 				},
 
@@ -109,7 +130,7 @@ define(
 								this.$el.find("#" + d.hideAd).remove();
 							}
 							else if (d && d.showProScreen) {
-								Settings("pro");
+								SettingsProxy("pro");
 							}
 						}
 					}.bind(this), false);

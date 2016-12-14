@@ -51,9 +51,5 @@ define([
 		}
 	});
 
-	if (Browser.storage.showSignInNotice === "true") {
-		new View();
-	}
-
-	return View;
+	return new View();
 });

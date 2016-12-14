@@ -4,8 +4,6 @@
 define([
 	"lodash", "backbone", "browser/api", "core/analytics", "onboarding/modal", "onboarding/widgets", "onboarding/settings"
 ], function(_, Backbone, Browser, Track, Modal, WidgetGuide, SettingsGuide) {
-	var firstRun = Browser.storage.firstRun === "true" || Browser.storage.firstRun === "resume";
-
 	var Controller = function() {
 		// The onboarding process is heavily tracked, it's important to know where new users
 		// might be giving up or how far they get through the process
@@ -69,9 +67,5 @@ define([
 		}
 	});
 
-	if (firstRun) {
-		new Controller();
-	}
-
-	return Controller;
+	return new Controller();
 });

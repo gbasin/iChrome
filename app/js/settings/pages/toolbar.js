@@ -105,6 +105,7 @@ define(["lodash", "jquery", "core/auth", "settings/page"], function(_, $, Auth, 
 				gplus: data.plus,
 				gmail: data.gmail,
 				apps: data.apps,
+				captureFocus: data.captureFocus,
 				customLinks: _.map(data.links, function(e, i) {
 					return _.assign({}, e, { i: i });
 				}),

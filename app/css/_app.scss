@@ -2461,6 +2461,23 @@ dialog.announcements li {
 		margin-left: 160px;
 	}
 
+	&.suggestions-visible .results {
+		padding-top: 300px;
+	}
+
+	.ads {
+		display: block;
+		border-bottom: 1px solid #EDEDED;
+
+		p.notice {
+			margin: 0;
+		}
+
+		ul {
+			padding: 0;
+		}
+	}
+
 	.result {
 		display: block;
 		padding: 15px 0;
@@ -2869,6 +2886,19 @@ body.resizing .grid {
 /*---------------------------------------------
 	/ Widgets Layout / Ads
 */
+.ad-unit button.hide-ad {
+	top: -8px;
+	border: 0;
+	padding: 0;
+	right: -8px;
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	border-radius: 50%;
+	background: center/100% none;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAP1BMVEUAAAAbGxsbGxsbGxsbGxsbGxsbGxsbGxsbGxsbGxsbGxsbGxsbGxsaGhoWFhYNDQ3///+CgoJ8fHx2dnaYmJhas4+jAAAADXRSTlMAitpVNhYT7ein7Kal+GfFbwAAAINJREFUGNNtkVsOhSAMRKlYEL0jIO5/rReoijGdDxIOU/oyIrYUAlk2Q44WdC3kbjZPeDTNF/N4yXfqxDe87QdC1b6Pk2retd3OHIGYz0ZXNrZbcjpiPFLuVivRqKCU+gCJDxBaUirC8FOhGq4nYv8tybNavN6mPhB9dPqQZR3b9qzjD4nKD0ltCmdAAAAAAElFTkSuQmCC);
+}
+
 .tab-container .tab > .ad-unit {
 	left: 50%;
 	z-index: 99;
@@ -2899,9 +2929,11 @@ body.resizing .grid {
 	flex: 2 100%;
 	margin: 15px 2%;
 	text-align: center;
+	position: relative;
 
-	button {
-		margin-top: 15px;
+	button.hide-ad {
+		right: initial;
+		left: calc(50% + 142px);
 	}
 }
 
