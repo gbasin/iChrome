@@ -15,9 +15,9 @@ define(function() {
 
 	var API = {
 		app: {
-			id: "oghkljobbhapacbahlneolfclkniiami", // chrome.runtime.id
+			id: "iccjgbbjckehppnpajnmplcccjcgbdep", // chrome.runtime.id
 			version: chrome.runtime.getManifest().version,
-			newTab: false // chrome.runtime.id === "iccjgbbjckehppnpajnmplcccjcgbdep"
+			newTab: true // chrome.runtime.id === "iccjgbbjckehppnpajnmplcccjcgbdep"
 		},
 
 		environment: "chrome",
