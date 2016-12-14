@@ -10,7 +10,6 @@
 					<li data-id="background">{{i18n.settings.nav.visual_sections.background}}</li>
 					<li data-id="layout">{{i18n.settings.nav.visual_sections.layout}}</li>
 					<li data-id="theme">{{i18n.settings.nav.visual_sections.theme}}</li>
-					<li data-id="ad-placement">{{i18n.settings.nav.visual_sections.ad_placement}}</li>
 				</ul>
 			</li>
 
@@ -26,6 +25,10 @@
 
 			<li data-id="tabs">
 				<span class="header">{{i18n.settings.nav.tabs}}</span>
+			</li>
+
+			<li data-id="ads">
+				<span class="header">{{i18n.settings.nav.ads}}</span>
 			</li>
 
 			<li data-id="widgets">

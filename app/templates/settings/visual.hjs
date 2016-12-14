@@ -100,36 +100,4 @@
 			<button type="button" class="material flat blue preview">{{i18n.settings.visual.theme.preview}}</button>
 		</label>
 	</section>
-
-	<section class="ad-placement" data-id="ad-placement">
-		<h3>{{i18n.settings.visual.ad_placement.title}}</h3>
-
-		<p class="desc">{{i18n.settings.visual.ad_placement.desc}}</p>
-
-		<div class="input main radios no-label">
-			<label>
-				<input type="radio" name="adPlacement" value="widget_block" />
-
-				<span>{{i18n.settings.visual.ad_placement.left}}</span>
-			</label>
-
-			<label>
-				<input type="radio" name="adPlacement" value="right_block" />
-
-				<span>{{i18n.settings.visual.ad_placement.right}}</span>
-			</label>
-
-			<label>
-				<input type="radio" name="adPlacement" value="header_leaderboard" />
-
-				<span>{{i18n.settings.visual.ad_placement.top}}</span>
-			</label>
-
-			<label>
-				<input type="radio" name="adPlacement" value="footer_leaderboard" />
-
-				<span>{{i18n.settings.visual.ad_placement.bottom}}</span>
-			</label>
-		</div>
-	</section>
 </main>

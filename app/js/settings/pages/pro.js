@@ -2,7 +2,7 @@
  * The Pro settings page
  */
 define([
-	"lodash", "moment", "core/auth", "modals/alert", "i18n/i18n", "storage/storage", "storage/syncapi", "settings/page", "core/uservoice", "settings/pro-checkout"
+	"lodash", "moment", "core/auth", "modals/alert", "i18n/i18n", "storage/storage", "storage/syncapi", "settings/page", "core/uservoice", "settings/checkout"
 ], function(_, moment, Auth, Alert, Translate, Storage, SyncAPI, Page, UserVoice, Checkout) {
 	if (!Auth.isPro) {
 		var PromoView = Page.extend({
@@ -34,7 +34,7 @@ define([
 											location.reload();
 										}
 										else {
-											new Checkout();
+											new Checkout("pro");
 										}
 									});
 								});
@@ -44,7 +44,7 @@ define([
 						return;
 					}
 
-					new Checkout();
+					new Checkout("pro");
 				},
 
 				"click header .business a": function(e) {
@@ -65,7 +65,7 @@ define([
 
 		events: {
 			"click section.plan button.update-plan, section.plan button.update-billing": function() {
-				new Checkout(true);
+				new Checkout("pro", true);
 			},
 
 			"click section.plan button.cancel": function() {

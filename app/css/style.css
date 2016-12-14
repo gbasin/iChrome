@@ -6856,7 +6856,31 @@ input.sp-input[type="text"] {
 	text-align: left;
 }
 
-/* line 218, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 2, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_ads.scss */
+.app.settings .page.ads .text > p {
+	width: 60%;
+}
+
+/* line 6, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_ads.scss */
+.app.settings .page.ads .controls {
+	width: 35%;
+	float: right;
+}
+
+/* line 10, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_ads.scss */
+.app.settings .page.ads .controls button.upgrade {
+	display: block;
+	font-size: 16px;
+	line-height: 54px;
+	margin: 0 auto 20px;
+}
+
+/* line 17, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/pages/_ads.scss */
+.app.settings .page.ads .controls .placement h3 {
+	padding-bottom: 0;
+}
+
+/* line 219, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 .app.settings .item,
 .app.settings .input {
 	margin: 0;
@@ -6868,7 +6892,7 @@ input.sp-input[type="text"] {
 	border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-/* line 228, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 229, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 .app.settings .item h4,
 .app.settings .input h4 {
 	float: left;
@@ -6876,7 +6900,7 @@ input.sp-input[type="text"] {
 	display: inline-block;
 }
 
-/* line 234, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 235, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 .app.settings .item .note,
 .app.settings .input .note {
 	color: #757575;
@@ -6884,13 +6908,13 @@ input.sp-input[type="text"] {
 	line-height: 25px;
 }
 
-/* line 239, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 240, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 .dark .app.settings .item .note, .dark
 .app.settings .input .note {
 	color: #AAA;
 }
 
-/* line 244, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 245, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 .app.settings .item .desc,
 .app.settings .input .desc {
 	float: left;
@@ -6900,26 +6924,26 @@ input.sp-input[type="text"] {
 	max-width: calc(100% - 300px);
 }
 
-/* line 251, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 252, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 .app.settings .item .desc + input,
 .app.settings .input .desc + input {
 	width: 285px;
 }
 
-/* line 256, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 257, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 .app.settings .item .value,
 .app.settings .input .value {
 	max-width: 60%;
 	font-size: 14px;
 }
 
-/* line 261, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 262, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 .app.settings .item.no-label button + button,
 .app.settings .input.no-label button + button {
 	margin-left: 10px;
 }
 
-/* line 266, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
+/* line 267, C:/Users/Avi/Documents/GitHub/iChrome/app/css/settings/_base.scss */
 .app.settings .input {
 	/**
  * Radio

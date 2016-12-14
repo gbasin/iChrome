@@ -1,0 +1,21 @@
+&.ads {
+	.text > p {
+		width: 60%;
+	}
+
+	.controls {
+		width: 35%;
+		float: right;
+
+		button.upgrade {
+			display: block;
+			font-size: 16px;
+			line-height: 54px;
+			margin: 0 auto 20px;
+		}
+
+		.placement h3 {
+			padding-bottom: 0;
+		}
+	}
+}

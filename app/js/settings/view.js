@@ -5,8 +5,8 @@ define([
 	"lodash", "jquery", "backbone", "core/analytics", "i18n/i18n", "modals/snackbar", "settings/model", "core/render",
 
 	"settings/pages/accounts", "settings/pages/advanced", "settings/pages/misc", "settings/pages/pro",
-	"settings/pages/tabs", "settings/pages/toolbar", "settings/pages/visual", "settings/pages/widgets"
-], function(_, $, Backbone, Track, Translate, Snackbar, model, render, Accounts, Advanced, Misc, Pro, Tabs, Toolbar, Visual, Widgets) {
+	"settings/pages/tabs", "settings/pages/toolbar", "settings/pages/visual", "settings/pages/widgets", "settings/pages/ads"
+], function(_, $, Backbone, Track, Translate, Snackbar, model, render, Accounts, Advanced, Misc, Pro, Tabs, Toolbar, Visual, Widgets, Ads) {
 	var pages = {
 		accounts: Accounts,
 		advanced: Advanced,
@@ -16,6 +16,7 @@ define([
 		toolbar: Toolbar,
 		visual: Visual,
 		widgets: Widgets,
+		ads: Ads
 	};
 
 	var View = Backbone.View.extend({
