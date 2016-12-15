@@ -11,6 +11,11 @@
   },
   "remove_widget":"Rimuovi",
   "hide_banner":"Hide this banner",
+  "hide_ad":{
+    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
+    "upgrade":"Upgrade",
+    "hide":"Hide ads"
+  },
   "alert":{
     "default_button":"Scarta",
     "confirm_title":"Sei sicuro di voler proseguire?",
@@ -136,6 +141,7 @@
       },
       "tabs":"Schede",
       "widgets":"Widgets",
+      "ads":"Ads",
       "pro":"Pro",
       "accounts":"Profilo",
       "misc":"Varie",
@@ -181,14 +187,6 @@
         "dark":"Scuro",
         "transparent":"Trasparente",
         "transparent_darker":"Trasparente (più scuro)"
-      },
-      "ad_placement":{
-        "title":"Ad placement",
-        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
-        "left":"In the leftmost column",
-        "right":"In the rightmost column",
-        "top":"Above the tab",
-        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -297,6 +295,7 @@
         "bg_downloads":"Sfondi scaricabili",
         "weather":"Previsioni meteo orarie fino a 10 giorni",
         "toolbar":"Altri link per la barra degli strumenti",
+        "ads":"A completely ad-free experience",
         "support":"Priorità per supporto e suggerimenti",
         "buy_pro":"Acquista la versione Pro"
       },
@@ -345,6 +344,24 @@
         "cancel":"Annulla sottoscrizione",
         "cancel_notice":"L'abbonamento verrà annullato immediatamente",
         "cancel_notice2":"Se desideri un rimborso, ti preghiamo di contattarci a support@ichro.me"
+      }
+    },
+    "ads":{
+      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "upgrade_btn":"Upgrade to ad-free",
+      "already_upgraded":"It looks like you've already upgraded to ad-free",
+      "signin":"Registrati",
+      "signin_desc":"Sign in before upgrading so we can link your purchase to your account",
+      "signin_btn":"Registrati",
+      "thank_you":"Thank you for upgrading to ad-free!",
+      "placement":{
+        "title":"Ad placement",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     }
   },

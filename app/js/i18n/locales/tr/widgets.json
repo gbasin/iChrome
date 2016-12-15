@@ -42,7 +42,7 @@
       "title":"Yer imi adı",
       "title_placeholder":"Google",
       "url":"Yer imi URL",
-      "url_placeholder":"http:\/\/www.google.com\/",
+      "url_placeholder":"http://www.google.com/",
       "save":"Kaydet"
     },
     "new_caption":"Yeni",
@@ -89,10 +89,10 @@
       "timezone_local":"Yerel",
       "format":"Saat biçimi",
       "format_options":{
-        "ampm":"AM\/PM - Dijital",
+        "ampm":"AM/PM - Dijital",
         "24hour":"24 saat - Dijital",
         "analog":"12 Hour - Analog",
-        "ampmseconds":"AM\/PM - Digital, No Seconds",
+        "ampmseconds":"AM/PM - Digital, No Seconds",
         "24hourseconds":"24 Hour - Digital, No Seconds"
       },
       "sound":"Alert Sound"
@@ -184,7 +184,7 @@
     "desc":"Reddit üzerindeki popüler başlıkları görüntüler.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
+      "subreddit_help":"Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
       "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
       "sort":"Sırala",
       "sort_options":{
@@ -260,7 +260,7 @@
         "six":"Six small"
       },
       "from":"Show Videos From",
-      "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
+      "from_help":"This must be an <b>exact</b> username as shown in the URL of the page when you're viewing their profile.\n<br /><br />\nThis value never includes spaces.",
       "from_placeholder":"Leave blank to show Top Videos",
       "open":"Open search results in"
     },
@@ -294,9 +294,9 @@
     "desc":"Displays a link, optionally with a title and thumbnail",
     "settings":{
       "link":"Link URL",
-      "link_placeholder":"http:\/\/www.google.com\/",
+      "link_placeholder":"http://www.google.com/",
       "image":"Resim URL'si",
-      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "image_placeholder":"http://www.example.com/image.png",
       "color":"Image Background Color",
       "style":"Image Style",
       "style_fill":"Fill",
@@ -372,11 +372,11 @@
     "desc":"Google Analytics profilindeki çeşitli ölçümleri görüntüler.",
     "sessions":"oturumlar",
     "pageviews":"Sayfa görüntüleme",
-    "pagesvisit":"Sayfa\/ziyaret",
+    "pagesvisit":"Sayfa/ziyaret",
     "bouncerate":"Hemen çıkma oranı",
     "completions":"Tamamlananlar",
     "noprofile_title":"No profile selected",
-    "noprofile":"Henüz bir profil seçilmiş gibi görünmüyor!\n<br \/><br \/>\nSağ üstteki ingiliz anahtarı simgesi ile seçmeyi deneyin.",
+    "noprofile":"Henüz bir profil seçilmiş gibi görünmüyor!\n<br /><br />\nSağ üstteki ingiliz anahtarı simgesi ile seçmeyi deneyin.",
     "settings":{
       "profile":"Profil"
     }
@@ -424,7 +424,7 @@
     "desc":"Displays a webpage of your choice within an iframe.",
     "settings":{
       "url":"Frame URL",
-      "url_placeholder":"örneğin http:\/\/www.google.com\/",
+      "url_placeholder":"örneğin http://www.google.com/",
       "height":"Frame Height",
       "padding":"Padding"
     }
@@ -476,7 +476,7 @@
     },
     "by":"Yapan",
     "all_articles":"All articles",
-    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
+    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and/or modify the widget settings."
   },
   "sports":{
     "name":"Spor",
@@ -532,7 +532,7 @@
     "avg_volume":"Avg. Volume",
     "shares":"Shares",
     "cap":"Market Cap",
-    "pe":"Price \/ Earnings",
+    "pe":"Price / Earnings",
     "eps":"EPS",
     "beta":"Beta",
     "inst_own":"Inst. own"

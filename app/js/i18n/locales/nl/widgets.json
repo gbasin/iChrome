@@ -42,7 +42,7 @@
       "title":"Bladwijzer titel",
       "title_placeholder":"Google",
       "url":"Bladwijzer URL",
-      "url_placeholder":"http:\/\/www.google.com\/",
+      "url_placeholder":"http://www.google.com/",
       "save":"Opslaan"
     },
     "new_caption":"Nieuw",
@@ -89,10 +89,10 @@
       "timezone_local":"Lokaal",
       "format":"Kloknotatie",
       "format_options":{
-        "ampm":"AM\/PM - Digitaal",
+        "ampm":"AM/PM - Digitaal",
         "24hour":"24-uurs - Digitaal",
         "analog":"12-uurs - Analoog",
-        "ampmseconds":"AM\/PM - Digitaal, geen Seconden",
+        "ampmseconds":"AM/PM - Digitaal, geen Seconden",
         "24hourseconds":"24-uurs - Digitaal, geen Seconden"
       },
       "sound":"Geluid"
@@ -184,7 +184,7 @@
     "desc":"Toont de populairste items op Reddit voor elke opgegeven subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Vul een subreddit in dat volgt na <b>\/r\/<\/b> op Reddit.\n<br \/><br \/>\n'Technology' is bijvoorbeeld te vinden via: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, wat betekent dat u <b>technology<\/b> invult",
+      "subreddit_help":"Vul een subreddit in dat volgt na <b>/r/</b> op Reddit.\n<br /><br />\n'Technology' is bijvoorbeeld te vinden via: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, wat betekent dat u <b>technology</b> invult",
       "subreddit_placeholder":"Geef een subreddit om links ervan te tonen (bijv. technologie)",
       "sort":"Sorteervolgorde",
       "sort_options":{
@@ -260,7 +260,7 @@
         "six":"Zes klein"
       },
       "from":"Toon video's van",
-      "from_help":"Dit moet een <b>exacte<\/b> gebruikersnaam zijn zoals weergegeven in de URL van de pagina wanneer u dat profiel bekijkt. <br \/><br \/> Deze waarde bevat nooit spaties.",
+      "from_help":"Dit moet een <b>exacte</b> gebruikersnaam zijn zoals weergegeven in de URL van de pagina wanneer u dat profiel bekijkt. <br /><br /> Deze waarde bevat nooit spaties.",
       "from_placeholder":"Laat leeg om de populairste video's te laten zien",
       "open":"Open zoekresultaten in"
     },
@@ -294,9 +294,9 @@
     "desc":"Geeft een link weer, optioneel met een titel en een miniatuurweergave",
     "settings":{
       "link":"URL",
-      "link_placeholder":"http:\/\/www.google.com\/",
+      "link_placeholder":"http://www.google.com/",
       "image":"Afbeelding-URL",
-      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "image_placeholder":"http://www.example.com/image.png",
       "color":"Achtergrondkleur",
       "style":"Afbeelding stijl",
       "style_fill":"Vul in",
@@ -376,7 +376,7 @@
     "bouncerate":"Bounce Rate",
     "completions":"Opleveringen",
     "noprofile_title":"Geen profiel geselecteerd",
-    "noprofile":"Zo te zien heeft u nog geen profiel geselecteerd!\n<br \/><br \/>\nSelecteer er een via het steeksleutel icoon rechtsbovenin.",
+    "noprofile":"Zo te zien heeft u nog geen profiel geselecteerd!\n<br /><br />\nSelecteer er een via het steeksleutel icoon rechtsbovenin.",
     "settings":{
       "profile":"Profiel"
     }
@@ -424,7 +424,7 @@
     "desc":"Laat een webpagina van uw keuze in een iframe zien.",
     "settings":{
       "url":"Frame URL",
-      "url_placeholder":"bijvoorbeeld http:\/\/www.google.com\/",
+      "url_placeholder":"bijvoorbeeld http://www.google.com/",
       "height":"Framehoogte",
       "padding":"Opvulling"
     }
@@ -476,7 +476,7 @@
     },
     "by":"Door",
     "all_articles":"Alle artikelen",
-    "feed_error":"Een fout is opgetreden tijdens het ophalen van de feed: %s.\nControleer nogmaals de URL en\/of verander de instellingen van de widget."
+    "feed_error":"Een fout is opgetreden tijdens het ophalen van de feed: %s.\nControleer nogmaals de URL en/of verander de instellingen van de widget."
   },
   "sports":{
     "name":"Sport",
@@ -532,7 +532,7 @@
     "avg_volume":"Gem. Volume",
     "shares":"Aandelen",
     "cap":"Beurswaarde",
-    "pe":"Koers \/ Winst",
+    "pe":"Koers / Winst",
     "eps":"WPA",
     "beta":"Beta",
     "inst_own":"Inst. own"
@@ -556,7 +556,7 @@
   },
   "topsites":{
     "name":"Topsites",
-    "desc":"Geeft uw meest bezochte\/beste websites weer.",
+    "desc":"Geeft uw meest bezochte/beste websites weer.",
     "settings":{
       "show":"Aantal getoonde websites"
     }

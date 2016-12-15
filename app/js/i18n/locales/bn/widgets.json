@@ -42,7 +42,7 @@
       "title":"বুকমার্কের শিরোনাম",
       "title_placeholder":"গুগল",
       "url":"বুকমার্ক URL",
-      "url_placeholder":"http:\/\/www.google.com.bd\/",
+      "url_placeholder":"http://www.google.com.bd/",
       "save":"সংরক্ষণ"
     },
     "new_caption":"নতুন",
@@ -89,10 +89,10 @@
       "timezone_local":"স্থানীয়",
       "format":"ঘড়ির বিন্যাস",
       "format_options":{
-        "ampm":"পুর্বাহ্ন\/অপরাহ্ন - ডিজিটাল",
+        "ampm":"পুর্বাহ্ন/অপরাহ্ন - ডিজিটাল",
         "24hour":"২৪ ঘণ্টা - ডিজিটাল",
         "analog":"১২ ঘণ্টা - এনালগ",
-        "ampmseconds":"পুর্বাহ্ন\/অপরাহ্ন - ডিজিটাল, সেকেন্ডবিহীন",
+        "ampmseconds":"পুর্বাহ্ন/অপরাহ্ন - ডিজিটাল, সেকেন্ডবিহীন",
         "24hourseconds":"২৪ ঘণ্টা - ডিজিটাল, সেকেন্ডবিহীন"
       },
       "sound":"সতর্কতা শব্দ"
@@ -184,7 +184,7 @@
     "desc":"Displays the top items on Reddit for any given subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
+      "subreddit_help":"Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
       "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
       "sort":"সজ্জাক্রম",
       "sort_options":{
@@ -260,7 +260,7 @@
         "six":"ছয়টি ছোট"
       },
       "from":"এ থেকে ভিডিও দেখান",
-      "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
+      "from_help":"This must be an <b>exact</b> username as shown in the URL of the page when you're viewing their profile.\n<br /><br />\nThis value never includes spaces.",
       "from_placeholder":"Leave blank to show Top Videos",
       "open":"Open search results in"
     },
@@ -294,9 +294,9 @@
     "desc":"Displays a link, optionally with a title and thumbnail",
     "settings":{
       "link":"Link URL",
-      "link_placeholder":"http:\/\/www.google.com.bd\/",
+      "link_placeholder":"http://www.google.com.bd/",
       "image":"চিত্রের URL",
-      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "image_placeholder":"http://www.example.com/image.png",
       "color":"Image Background Color",
       "style":"Image Style",
       "style_fill":"Fill",
@@ -372,11 +372,11 @@
     "desc":"গুগল বিশ্লেষণ প্রোফাইল থেকে বিভিন্ন বৈশিষ্ট্যের মান প্রদর্শন করা হয়।",
     "sessions":"অধিবেশন",
     "pageviews":"পাতাপরিদর্শন",
-    "pagesvisit":"পাতা\/ভ্রমণ",
+    "pagesvisit":"পাতা/ভ্রমণ",
     "bouncerate":"বাউন্স রেট",
     "completions":"সম্পূর্ণতা",
     "noprofile_title":"No profile selected",
-    "noprofile":"আপনি এখনো একটি প্রোফাইল নির্বাচন করার মত দেখাচ্ছে না!\n<br \/><br \/>\nউপরে ডানদিকে রেঞ্চ আইকন মাধ্যমে একটি নির্বাচন করার চেষ্টা করুন।",
+    "noprofile":"আপনি এখনো একটি প্রোফাইল নির্বাচন করার মত দেখাচ্ছে না!\n<br /><br />\nউপরে ডানদিকে রেঞ্চ আইকন মাধ্যমে একটি নির্বাচন করার চেষ্টা করুন।",
     "settings":{
       "profile":"প্রোফাইল"
     }
@@ -424,7 +424,7 @@
     "desc":"Displays a webpage of your choice within an iframe.",
     "settings":{
       "url":"ফ্রেম URL",
-      "url_placeholder":"উদা. http:\/\/www.google.com.bd\/",
+      "url_placeholder":"উদা. http://www.google.com.bd/",
       "height":"ফ্রেমের উচ্চতা",
       "padding":"Padding"
     }
@@ -476,7 +476,7 @@
     },
     "by":"কর্তৃক",
     "all_articles":"সকল নিবন্ধ",
-    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
+    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and/or modify the widget settings."
   },
   "sports":{
     "name":"ক্রীড়া",
@@ -532,7 +532,7 @@
     "avg_volume":"Avg. Volume",
     "shares":"Shares",
     "cap":"Market Cap",
-    "pe":"Price \/ Earnings",
+    "pe":"Price / Earnings",
     "eps":"EPS",
     "beta":"Beta",
     "inst_own":"Inst. own"
@@ -556,7 +556,7 @@
   },
   "topsites":{
     "name":"শীর্ষ সাইট",
-    "desc":"Displays your most visited\/top sites.",
+    "desc":"Displays your most visited/top sites.",
     "settings":{
       "show":"দেখানো সাইটের সংখ্যা"
     }

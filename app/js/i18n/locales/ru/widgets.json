@@ -42,7 +42,7 @@
       "title":"Заголовок",
       "title_placeholder":"Google",
       "url":"URL-адрес",
-      "url_placeholder":"http:\/\/www.google.com\/",
+      "url_placeholder":"http://www.google.com/",
       "save":"Сохранить"
     },
     "new_caption":"Создать",
@@ -89,10 +89,10 @@
       "timezone_local":"Системный",
       "format":"Формат часов",
       "format_options":{
-        "ampm":"AM\/PM - Цифровые",
+        "ampm":"AM/PM - Цифровые",
         "24hour":"24-часовые цифровые",
         "analog":"12-часовые аналоговые",
-        "ampmseconds":"AM\/PM - цифровые, без секунд",
+        "ampmseconds":"AM/PM - цифровые, без секунд",
         "24hourseconds":"24-часовые цифровые, без секунд"
       },
       "sound":"Звук оповещения"
@@ -184,7 +184,7 @@
     "desc":"Отображает лучшее с Reddit из любого выбранного субреддита.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Введите название субреддита без <b>\/r\/<\/b>.\n<br \/><br \/>\nНапример полный адрес субреддита Technology выглядит так: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, однако в это поле необходимо написать только <b>technology<\/b>",
+      "subreddit_help":"Введите название субреддита без <b>/r/</b>.\n<br /><br />\nНапример полный адрес субреддита Technology выглядит так: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, однако в это поле необходимо написать только <b>technology</b>",
       "subreddit_placeholder":"Введите название субреддита (напр. technology)",
       "sort":"Сортировка",
       "sort_options":{
@@ -260,7 +260,7 @@
         "six":"Шесть маленьких"
       },
       "from":"Канал пользователя",
-      "from_help":"Значение этого поля должно <b>соответствовать<\/b> имени пользователя из адреса который Вы видите при просмотре его канала.\n<br \/><br \/>\nПробелов быть не должно!",
+      "from_help":"Значение этого поля должно <b>соответствовать</b> имени пользователя из адреса который Вы видите при просмотре его канала.\n<br /><br />\nПробелов быть не должно!",
       "from_placeholder":"Оставьте это поле пустым для просмотра Лучших Видео",
       "open":"Открывать результаты поиска в"
     },
@@ -294,9 +294,9 @@
     "desc":"Отображает ссылку на сайт с заголовком и миниатюрой",
     "settings":{
       "link":"Адрес ссылки",
-      "link_placeholder":"http:\/\/www.google.com\/",
+      "link_placeholder":"http://www.google.com/",
       "image":"Адрес изображения",
-      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "image_placeholder":"http://www.example.com/image.png",
       "color":"Цвет фона",
       "style":"Стиль изображения",
       "style_fill":"Заполнить",
@@ -372,11 +372,11 @@
     "desc":"Отображает различные метрики из профиля Google Analytics.",
     "sessions":"Сеансы",
     "pageviews":"Страницы",
-    "pagesvisit":"Страниц\/сеанс",
+    "pagesvisit":"Страниц/сеанс",
     "bouncerate":"Показатель отказов",
     "completions":"Цели",
     "noprofile_title":"Профиль не выбран",
-    "noprofile":"Похоже, вы не выбрали профиль GA!\n<br \/><br \/>\nВыберите профиль, щелкнув кнопку настройки виджета в его правом верхнем углу.",
+    "noprofile":"Похоже, вы не выбрали профиль GA!\n<br /><br />\nВыберите профиль, щелкнув кнопку настройки виджета в его правом верхнем углу.",
     "settings":{
       "profile":"Профиль"
     }
@@ -424,7 +424,7 @@
     "desc":"Отображает указанную веб-страницу внутри виджета с помощью iframe.",
     "settings":{
       "url":"URL-адрес для отображения",
-      "url_placeholder":"напр. http:\/\/www.google.com\/",
+      "url_placeholder":"напр. http://www.google.com/",
       "height":"Высота фрейма",
       "padding":"Отступ"
     }
@@ -532,7 +532,7 @@
     "avg_volume":"Среднее значение",
     "shares":"Акции",
     "cap":"Рыночная капитализация",
-    "pe":"Цена \/ Заработок",
+    "pe":"Цена / Заработок",
     "eps":"EPS",
     "beta":"Бета",
     "inst_own":"Доля инвест. фондов"
@@ -580,7 +580,7 @@
     "to_home":"до дома",
     "to_work":"до работы",
     "hour":"%s час",
-    "hours":"%s час(а\/ов)",
+    "hours":"%s час(а/ов)",
     "hours_letter":"%sч",
     "minute":"%s минута",
     "minutes":"%s минут(ы)",

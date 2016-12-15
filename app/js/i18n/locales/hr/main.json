@@ -10,7 +10,12 @@
     "me":"Ja"
   },
   "remove_widget":"Ukloni",
-  "hide_banner":"Hide this banner",
+  "hide_banner":"Sakrij ovaj oglas",
+  "hide_ad":{
+    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
+    "upgrade":"Upgrade",
+    "hide":"Hide ads"
+  },
   "alert":{
     "default_button":"Odbaci",
     "confirm_title":"Jeste li sigurni da želite to napraviti?",
@@ -79,7 +84,7 @@
     "placeholder":"Unesi pojmove",
     "placeholder_ok":"Unesi pojmove ili reci \"OK, Google\"",
     "suggestions":{
-      "url_subtext":"Visit URL",
+      "url_subtext":"Otvori URL",
       "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
     },
     "apps":{
@@ -126,7 +131,7 @@
         "background":"Pozadina",
         "layout":"Raspored",
         "theme":"Tema aplikacije",
-        "ad_placement":"Ad placement"
+        "ad_placement":"Oglasi"
       },
       "toolbar":"Alatna traka",
       "toolbar_sections":{
@@ -136,6 +141,7 @@
       },
       "tabs":"Kartice",
       "widgets":"Widgeti",
+      "ads":"Ads",
       "pro":"Pro",
       "accounts":"Račun",
       "misc":"Ostalo",
@@ -181,14 +187,6 @@
         "dark":"Tamna",
         "transparent":"Prozirna",
         "transparent_darker":"Prozirna (tamnije)"
-      },
-      "ad_placement":{
-        "title":"Ad placement",
-        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
-        "left":"In the leftmost column",
-        "right":"In the rightmost column",
-        "top":"Above the tab",
-        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -202,7 +200,7 @@
         "title":"Pretraživanje",
         "desc":"Ove postavke kontroliraju rad pretraživanja i glasovnog pretraživanja",
         "engine":"Pretražitelj",
-        "engines_default":"Default",
+        "engines_default":"Zadan",
         "engines_custom":"Prilagođen",
         "engines_custom_desc":"Unesi URL koji ima <b>%s</b> tamo gdje treba ići pojam pretraživanja.",
         "omnibox_capture":"Handle searches normally made in the Omnibox",
@@ -297,6 +295,7 @@
         "bg_downloads":"Pozadine koje se mogu preuzeti",
         "weather":"Prognoza po satu za 10 dana unaprijed",
         "toolbar":"Više linkova na traci",
+        "ads":"A completely ad-free experience",
         "support":"Prioritizirana podrška i prijedlozi",
         "buy_pro":"Kupi Pro"
       },
@@ -345,6 +344,24 @@
         "cancel":"Otkaži pretplatu",
         "cancel_notice":"Vaša pretplata će biti otkazana odmah",
         "cancel_notice2":"Ako želiš povrat novca, molimo kontaktiraj nas na support@ichro.me"
+      }
+    },
+    "ads":{
+      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "upgrade_btn":"Upgrade to ad-free",
+      "already_upgraded":"It looks like you've already upgraded to ad-free",
+      "signin":"Prijavi se",
+      "signin_desc":"Sign in before upgrading so we can link your purchase to your account",
+      "signin_btn":"Prijavi se",
+      "thank_you":"Thank you for upgrading to ad-free!",
+      "placement":{
+        "title":"Oglasi",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     }
   },

@@ -42,7 +42,7 @@
       "title":"Název záložky",
       "title_placeholder":"Google",
       "url":"URL záložky",
-      "url_placeholder":"http:\/\/www.google.com\/",
+      "url_placeholder":"http://www.google.com/",
       "save":"Uložit"
     },
     "new_caption":"Nový",
@@ -89,10 +89,10 @@
       "timezone_local":"Místní",
       "format":"Formát hodin",
       "format_options":{
-        "ampm":"AM\/PM - digitální",
+        "ampm":"AM/PM - digitální",
         "24hour":"24 hodinové - digitální",
         "analog":"12 hodinové - analogové",
-        "ampmseconds":"DOP\/ODP - Digitální, bez sekund",
+        "ampmseconds":"DOP/ODP - Digitální, bez sekund",
         "24hourseconds":"24 hodin -  - Digitální, bez sekund"
       },
       "sound":"Zvuk upozornění"
@@ -184,7 +184,7 @@
     "desc":"Zobrazí top položky na Reddit-u pro daný subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Pokud používáte Reddit, na termín se odkazujte textem umístěným za <b>\/r\/<\/b>. < br \/><br \/>\nNapříklad termín Technology je na: <a href=\"http:\/\/www.reddit.com\/r\/technology\"> http:\/\/www.reddit.com\/r\/technology<\/a>, tedy zadáte <b>technology<\/b>",
+      "subreddit_help":"Pokud používáte Reddit, na termín se odkazujte textem umístěným za <b>/r/</b>. < br /><br />\nNapříklad termín Technology je na: <a href=\"http://www.reddit.com/r/technology\"> http://www.reddit.com/r/technology</a>, tedy zadáte <b>technology</b>",
       "subreddit_placeholder":"Zadejte subreddit pro zobrazení odkazů. (například: technologie)",
       "sort":"Řadit podle",
       "sort_options":{
@@ -260,7 +260,7 @@
         "six":"Šest malých"
       },
       "from":"Zobrazí videa z",
-      "from_help":"Toto musí být <b>přesné<\/b> uživatelské jméno, jak je uvedeno v URL stránky, když zobrazujete jejich profil.\n<br \/><br \/>\nTato hodnota nikdy obsahuje mezery.",
+      "from_help":"Toto musí být <b>přesné</b> uživatelské jméno, jak je uvedeno v URL stránky, když zobrazujete jejich profil.\n<br /><br />\nTato hodnota nikdy obsahuje mezery.",
       "from_placeholder":"Pro zobrazení top videí ponechejte prázdné",
       "open":"Otevřít výsledky vyhledávání v"
     },
@@ -294,9 +294,9 @@
     "desc":"Vytvoří odkaz - volitelně s názvem a náhledem",
     "settings":{
       "link":"URL odkazu",
-      "link_placeholder":"http:\/\/www.google.com\/",
+      "link_placeholder":"http://www.google.com/",
       "image":"URL adresa obrázku",
-      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "image_placeholder":"http://www.example.com/image.png",
       "color":"Barva pozadí obrázku",
       "style":"Styl obrázku",
       "style_fill":"Vyplnit",
@@ -372,11 +372,11 @@
     "desc":"Zobrazit různé metriky z profilu Google Analytics.",
     "sessions":"zasedání",
     "pageviews":"Zobrazení stránek",
-    "pagesvisit":"Stránky \/ zobrazení",
+    "pagesvisit":"Stránky / zobrazení",
     "bouncerate":"Bounce Rate",
     "completions":"Dokončené",
     "noprofile_title":"Není vybrán žádný profil",
-    "noprofile":"Vypadá to, že jste ještě nevybrali profil! <br \/><br \/> Vyberte jeden přes ikonu klíče v pravém horním rohu.",
+    "noprofile":"Vypadá to, že jste ještě nevybrali profil! <br /><br /> Vyberte jeden přes ikonu klíče v pravém horním rohu.",
     "settings":{
       "profile":"Profil"
     }
@@ -424,7 +424,7 @@
     "desc":"Zobrazí webovou stránku dle vašeho výběru v rámci objektu iframe.",
     "settings":{
       "url":"URL rámečku",
-      "url_placeholder":"např. http:\/\/www.google.com\/",
+      "url_placeholder":"např. http://www.google.com/",
       "height":"Výška rámečku",
       "padding":"Odsazení"
     }
@@ -532,7 +532,7 @@
     "avg_volume":"Prům. objem",
     "shares":"Akcie",
     "cap":"Tržní kapitalizace",
-    "pe":"Cena \/ Zisky",
+    "pe":"Cena / Zisky",
     "eps":"EPS",
     "beta":"Beta",
     "inst_own":"Inst. vlastnictví"

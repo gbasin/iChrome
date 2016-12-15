@@ -11,6 +11,11 @@
   },
   "remove_widget":"Verwijder",
   "hide_banner":"Hide this banner",
+  "hide_ad":{
+    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
+    "upgrade":"Upgrade",
+    "hide":"Hide ads"
+  },
   "alert":{
     "default_button":"Negeren",
     "confirm_title":"Weet u zeker dat u dit wilt doen?",
@@ -136,6 +141,7 @@
       },
       "tabs":"Tabbladen",
       "widgets":"Widgets",
+      "ads":"Ads",
       "pro":"PRO",
       "accounts":"Account",
       "misc":"Diversen",
@@ -181,14 +187,6 @@
         "dark":"Donker",
         "transparent":"Transparantie",
         "transparent_darker":"Transparant (donkerder)"
-      },
-      "ad_placement":{
-        "title":"Ad placement",
-        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
-        "left":"In the leftmost column",
-        "right":"In the rightmost column",
-        "top":"Above the tab",
-        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -297,6 +295,7 @@
         "bg_downloads":"Downloadbare achtergronden",
         "weather":"Weersverwachting per uur tot 10 dagen vooruit",
         "toolbar":"Meer werkbalk links",
+        "ads":"A completely ad-free experience",
         "support":"Prioriteeer steun en suggesties",
         "buy_pro":"Koop de volledige versie"
       },
@@ -345,6 +344,24 @@
         "cancel":"Abonnement annuleren",
         "cancel_notice":"Uw abonnement zal onmiddellijk worden geannuleerd",
         "cancel_notice2":"Als u graag een restitutie wilt, neem dan gelieve contact met ons op via support@ichro.me"
+      }
+    },
+    "ads":{
+      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "upgrade_btn":"Upgrade to ad-free",
+      "already_upgraded":"It looks like you've already upgraded to ad-free",
+      "signin":"Aanmelden",
+      "signin_desc":"Sign in before upgrading so we can link your purchase to your account",
+      "signin_btn":"Aanmelden",
+      "thank_you":"Thank you for upgrading to ad-free!",
+      "placement":{
+        "title":"Ad placement",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     }
   },

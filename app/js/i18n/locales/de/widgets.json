@@ -42,7 +42,7 @@
       "title":"Lesezeichen-Bezeichnung",
       "title_placeholder":"Google",
       "url":"Lesezeichen URL",
-      "url_placeholder":"http:\/\/www.google.com\/",
+      "url_placeholder":"http://www.google.com/",
       "save":"Speichern"
     },
     "new_caption":"Neu",
@@ -89,10 +89,10 @@
       "timezone_local":"lokal",
       "format":"Uhrzeit-Format",
       "format_options":{
-        "ampm":"AM\/PM - Digital",
+        "ampm":"AM/PM - Digital",
         "24hour":"24-Stunden - Digital",
         "analog":"12-Stunden - Analog",
-        "ampmseconds":"AM\/PM - Digital, keine Sekunden",
+        "ampmseconds":"AM/PM - Digital, keine Sekunden",
         "24hourseconds":"24-Stunden - Digital, keine Sekunden"
       },
       "sound":"Benachrichtigungston"
@@ -184,7 +184,7 @@
     "desc":"Zeigt die Top-Elemente auf Reddit für jeden Subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Gebe einen Subreddit mit dem Teil hinter <b>\/r\/<\/b> ein, wenn auf Reddit.\n<br \/><br \/>\nBeispielsweise, für Technologie: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, daher gib <b>Technologie<\/b> ein",
+      "subreddit_help":"Gebe einen Subreddit mit dem Teil hinter <b>/r/</b> ein, wenn auf Reddit.\n<br /><br />\nBeispielsweise, für Technologie: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, daher gib <b>Technologie</b> ein",
       "subreddit_placeholder":"Geben Sie eine Subreddit zum Anzeigen von Links aus (z.B. Technologie)",
       "sort":"Sortierreihenfolge",
       "sort_options":{
@@ -260,7 +260,7 @@
         "six":"Sechs kleine"
       },
       "from":"Videos anzeigen von",
-      "from_help":"Dies muss ein <b>exakter<\/b> Benutzername sein, wie dieser auf der Profilseite angezeigt wird.\n<br \/><br \/>\nDieser Wert schließt niemals mit einem Leerzeichen.",
+      "from_help":"Dies muss ein <b>exakter</b> Benutzername sein, wie dieser auf der Profilseite angezeigt wird.\n<br /><br />\nDieser Wert schließt niemals mit einem Leerzeichen.",
       "from_placeholder":"Freilassen um Top Videos anzuzeigen",
       "open":"Öffne Suchergebnisse in"
     },
@@ -294,9 +294,9 @@
     "desc":"Zeigt einen Link an, optional mit Titel und Bild",
     "settings":{
       "link":"Link-URL",
-      "link_placeholder":"http:\/\/www.google.com\/",
+      "link_placeholder":"http://www.google.com/",
       "image":"Bild-URL",
-      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "image_placeholder":"http://www.example.com/image.png",
       "color":"Hintergrundfarbe des Bildes",
       "style":"Bildstil",
       "style_fill":"Füllung",
@@ -372,11 +372,11 @@
     "desc":"Zeigt einige Metriken von einen Google Analytics Profil.",
     "sessions":"Sitzung",
     "pageviews":"Seitenzugriffe",
-    "pagesvisit":"Seiten\/Besuch",
+    "pagesvisit":"Seiten/Besuch",
     "bouncerate":"Absprungrate",
     "completions":"Abschlüsse",
     "noprofile_title":"Kein Profil ausgewählt",
-    "noprofile":"Es scheint so, als ob Sie kein Profil ausgewählt haben.\n<br \/><br \/>\nVersuchen Sie eins über das Schraubenschlüssel-Symbol in der rechten oberen Ecke auszuwählen.",
+    "noprofile":"Es scheint so, als ob Sie kein Profil ausgewählt haben.\n<br /><br />\nVersuchen Sie eins über das Schraubenschlüssel-Symbol in der rechten oberen Ecke auszuwählen.",
     "settings":{
       "profile":"Profil"
     }
@@ -424,7 +424,7 @@
     "desc":"Zeigt eine Webseite Deiner Wahl in einem iFrame.",
     "settings":{
       "url":"Frame-URL",
-      "url_placeholder":"z.B. http:\/\/www.google.com\/",
+      "url_placeholder":"z.B. http://www.google.com/",
       "height":"Frame Höhe",
       "padding":"Seitlicher Abstand"
     }
@@ -476,7 +476,7 @@
     },
     "by":"Von",
     "all_articles":"Alle Artikel",
-    "feed_error":"Es ist ein Fehler aufgetreten während veruscht wurde, den Feed zu laden: %s'. Bitte überprüfe die URL und\/oder passe die Widget-Einstellungen an."
+    "feed_error":"Es ist ein Fehler aufgetreten während veruscht wurde, den Feed zu laden: %s'. Bitte überprüfe die URL und/oder passe die Widget-Einstellungen an."
   },
   "sports":{
     "name":"Sport",
@@ -532,7 +532,7 @@
     "avg_volume":"Gesamtvolumen",
     "shares":"Aktien",
     "cap":"Marktkapitalisierung",
-    "pe":"Preis \/ Gewinn",
+    "pe":"Preis / Gewinn",
     "eps":"EPS",
     "beta":"Beta",
     "inst_own":"Institutioneller Besitz"
@@ -556,7 +556,7 @@
   },
   "topsites":{
     "name":"Top-Seiten",
-    "desc":"Zeigt die meistbesuchten-\/Top-Websites.",
+    "desc":"Zeigt die meistbesuchten-/Top-Websites.",
     "settings":{
       "show":"Anzahl der angezeigten Websites"
     }

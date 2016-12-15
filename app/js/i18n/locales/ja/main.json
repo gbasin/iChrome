@@ -11,6 +11,11 @@
   },
   "remove_widget":"削除",
   "hide_banner":"Hide this banner",
+  "hide_ad":{
+    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
+    "upgrade":"Upgrade",
+    "hide":"Hide ads"
+  },
   "alert":{
     "default_button":"閉じる",
     "confirm_title":"これを行ってもよろしいですか？",
@@ -136,6 +141,7 @@
       },
       "tabs":"タブ",
       "widgets":"ウィジェット",
+      "ads":"Ads",
       "pro":"Pro",
       "accounts":"アカウント",
       "misc":"その他",
@@ -181,14 +187,6 @@
         "dark":"ダーク",
         "transparent":"透明",
         "transparent_darker":"半透明 (ダーク)"
-      },
-      "ad_placement":{
-        "title":"Ad placement",
-        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
-        "left":"In the leftmost column",
-        "right":"In the rightmost column",
-        "top":"Above the tab",
-        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -297,6 +295,7 @@
         "bg_downloads":"ダウンロード可能な背景画像",
         "weather":"1時間ごとの天気予報を10日後まで表示",
         "toolbar":"より多くのツールバーリンク",
+        "ads":"A completely ad-free experience",
         "support":"優先サポート/ご提案",
         "buy_pro":"Pro を購入"
       },
@@ -345,6 +344,24 @@
         "cancel":"定期購入を解約",
         "cancel_notice":"定期購入はすぐに停止されます",
         "cancel_notice2":"返金が必要な場合は、support@ichro.me にお問い合わせください"
+      }
+    },
+    "ads":{
+      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "upgrade_btn":"Upgrade to ad-free",
+      "already_upgraded":"It looks like you've already upgraded to ad-free",
+      "signin":"ログイン",
+      "signin_desc":"Sign in before upgrading so we can link your purchase to your account",
+      "signin_btn":"ログイン",
+      "thank_you":"Thank you for upgrading to ad-free!",
+      "placement":{
+        "title":"Ad placement",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     }
   },

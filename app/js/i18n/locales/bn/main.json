@@ -11,6 +11,11 @@
   },
   "remove_widget":"বাতিল",
   "hide_banner":"Hide this banner",
+  "hide_ad":{
+    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
+    "upgrade":"Upgrade",
+    "hide":"Hide ads"
+  },
   "alert":{
     "default_button":"বাদ দিন",
     "confirm_title":"আপনি কি নিশ্চিত যে আপনি এটি করতে চান?",
@@ -136,6 +141,7 @@
       },
       "tabs":"ট্যাব",
       "widgets":"উইজেট",
+      "ads":"Ads",
       "pro":"Pro",
       "accounts":"Account",
       "misc":"Miscellaneous",
@@ -181,14 +187,6 @@
         "dark":"গাঢ়",
         "transparent":"স্বচ্ছ",
         "transparent_darker":"স্বচ্ছ (কালো)"
-      },
-      "ad_placement":{
-        "title":"Ad placement",
-        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
-        "left":"In the leftmost column",
-        "right":"In the rightmost column",
-        "top":"Above the tab",
-        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -297,6 +295,7 @@
         "bg_downloads":"Downloadable backgrounds",
         "weather":"Hourly weather forecasts up to 10 days out",
         "toolbar":"More toolbar links",
+        "ads":"A completely ad-free experience",
         "support":"Prioritized support and suggestions",
         "buy_pro":"Pro কিনুন"
       },
@@ -345,6 +344,24 @@
         "cancel":"Cancel subscription",
         "cancel_notice":"Your subscription will be canceled immediately",
         "cancel_notice2":"If you would like a refund, please contact us at support@ichro.me"
+      }
+    },
+    "ads":{
+      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "upgrade_btn":"Upgrade to ad-free",
+      "already_upgraded":"It looks like you've already upgraded to ad-free",
+      "signin":"Sign in",
+      "signin_desc":"Sign in before upgrading so we can link your purchase to your account",
+      "signin_btn":"Sign in",
+      "thank_you":"Thank you for upgrading to ad-free!",
+      "placement":{
+        "title":"Ad placement",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     }
   },
