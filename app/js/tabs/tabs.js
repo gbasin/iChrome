@@ -102,7 +102,7 @@ define(
 								this.$el.before(elm);
 							}
 							else {
-								SettingsProxy("pro");
+								SettingsProxy("ads");
 							}
 						}.bind(this));
 					}
@@ -128,6 +128,9 @@ define(
 
 							if (d && d.hideAd) {
 								this.$el.find("#" + d.hideAd).remove();
+							}
+							else if (d && d.showAdsScreen) {
+								SettingsProxy("ads");
 							}
 							else if (d && d.showProScreen) {
 								SettingsProxy("pro");

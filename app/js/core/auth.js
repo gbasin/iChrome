@@ -11,11 +11,14 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 
 	var Auth = Backbone.Model.extend({
 		isPro: false,
+		adFree: false,
 		isSignedIn: false,
 
 		initialize: function() {
 			this.on("change:isPro", function() {
 				this.isPro = this.get("isPro");
+			}, this).on("change:adFree", function() {
+				this.adFree = this.get("adFree");
 			}, this).on("change:user", function() {
 				this.isSignedIn = !!this.get("user");
 			}, this);
@@ -176,9 +179,12 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 
 			this.isPro = payload.plan && payload.plan !== "free";
 
+			this.adFree = this.isPro || !!payload.adFree;
+
 			this.set({
 				isPro: this.isPro,
 				user: payload.sub,
+				adFree: this.adFree,
 				expiry: payload.exp * 1000,
 				plan: payload.plan || "free",
 				subscription: payload.subscription

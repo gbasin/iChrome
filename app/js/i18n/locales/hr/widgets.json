@@ -42,7 +42,7 @@
       "title":"Naslov oznake",
       "title_placeholder":"Google",
       "url":"URL oznake",
-      "url_placeholder":"http:\/\/www.google.com\/",
+      "url_placeholder":"http://www.google.com/",
       "save":"Spremi"
     },
     "new_caption":"Novi",
@@ -89,10 +89,10 @@
       "timezone_local":"Lokalna",
       "format":"Format sata",
       "format_options":{
-        "ampm":"AM\/PM - Digitalni",
+        "ampm":"AM/PM - Digitalni",
         "24hour":"24 sata - Digitalni",
         "analog":"12 sati - Analogni",
-        "ampmseconds":"AM\/PM - Digitalni, bez sekunda",
+        "ampmseconds":"AM/PM - Digitalni, bez sekunda",
         "24hourseconds":"24 sata - Digitalni, bez sekunda"
       },
       "sound":"Zvuk upozorenja"
@@ -184,7 +184,7 @@
     "desc":"Prikazuje najpopularnije stavke na Reddit-u za bilo koji zadani subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Unesi subreddit kao dio nakon <b>\/r\/<\/b>.\n<br \/><br \/>\nNa primjer, \"Technology\" je: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, dakle, unio bi <b>technology<\/b>",
+      "subreddit_help":"Unesi subreddit kao dio nakon <b>/r/</b>.\n<br /><br />\nNa primjer, \"Technology\" je: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, dakle, unio bi <b>technology</b>",
       "subreddit_placeholder":"Unesi subreddit (npr. technology)",
       "sort":"Redoslijed sortiranja",
       "sort_options":{
@@ -260,7 +260,7 @@
         "six":"Šest malih"
       },
       "from":"Pokaži videozapise od",
-      "from_help":"Ovo mora biti <b>točno<\/b> korisničko ime koje je prikazano u URL-u stranice kada je prikazan taj račun.\n<br \/><br \/>\nNikad ne uključuje razmake.",
+      "from_help":"Ovo mora biti <b>točno</b> korisničko ime koje je prikazano u URL-u stranice kada je prikazan taj račun.\n<br /><br />\nNikad ne uključuje razmake.",
       "from_placeholder":"Ostavite prazno za prikaz najpopularnijih videozapisa",
       "open":"Otvori rezultate pretraživanja u"
     },
@@ -294,9 +294,9 @@
     "desc":"Prikazuje link, po želji s nazivom i sličicom",
     "settings":{
       "link":"URL linka",
-      "link_placeholder":"http:\/\/www.google.com\/",
+      "link_placeholder":"http://www.google.com/",
       "image":"URL slike",
-      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "image_placeholder":"http://www.example.com/image.png",
       "color":"Boja pozadinske slike",
       "style":"Stil slike",
       "style_fill":"Popuni",
@@ -376,7 +376,7 @@
     "bouncerate":"Stopa napuštanja",
     "completions":"Konverzije",
     "noprofile_title":"Nije odabran profil",
-    "noprofile":"Izgleda da niste odabrali profil! \n<br \/><br \/>\nPokušajte ga odabrati preko ključ ikonice u gornjem desnom kutu.",
+    "noprofile":"Izgleda da niste odabrali profil! \n<br /><br />\nPokušajte ga odabrati preko ključ ikonice u gornjem desnom kutu.",
     "settings":{
       "profile":"Profil"
     }
@@ -424,7 +424,7 @@
     "desc":"Prikazuje web-stranicu tvog izbora u pametnom okviru.",
     "settings":{
       "url":"URL stranice",
-      "url_placeholder":"npr. http:\/\/www.google.com\/",
+      "url_placeholder":"npr. http://www.google.com/",
       "height":"Visina okvira",
       "padding":"Udaljenost od ruba"
     }
@@ -532,7 +532,7 @@
     "avg_volume":"Pros. volumen",
     "shares":"Dionice",
     "cap":"Tržišni kapital",
-    "pe":"Cijena \/ Zarada",
+    "pe":"Cijena / Zarada",
     "eps":"EPS",
     "beta":"Beta",
     "inst_own":"Inst. vlasništvo"
@@ -620,7 +620,7 @@
     "name":"Vrijeme",
     "desc":"Prikazuje trenutno vrijeme i prognozu za sljedeća 4 dana.",
     "settings":{
-      "location":"Lokacija\/e",
+      "location":"Lokacija/e",
       "location_placeholder":"Unesi lokaciju i pritisni Enter",
       "units":"Jedinice",
       "units_imperial":"Imperialno (Fahrenheit)",

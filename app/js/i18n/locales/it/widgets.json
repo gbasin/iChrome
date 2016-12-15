@@ -42,7 +42,7 @@
       "title":"Titolo Segnalibro",
       "title_placeholder":"Google",
       "url":"URL Segnalibro",
-      "url_placeholder":"http:\/\/www.google.com\/",
+      "url_placeholder":"http://www.google.com/",
       "save":"Salva"
     },
     "new_caption":"Nuovo",
@@ -89,10 +89,10 @@
       "timezone_local":"Locale",
       "format":"Formato orologio",
       "format_options":{
-        "ampm":"AM\/PM - digitale",
+        "ampm":"AM/PM - digitale",
         "24hour":"24 ore - digitale",
         "analog":"12 ore - analogico",
-        "ampmseconds":"AM\/PM - digitale, senza secondi",
+        "ampmseconds":"AM/PM - digitale, senza secondi",
         "24hourseconds":"24 ore - digitale, senza secondi"
       },
       "sound":"Suono di avviso"
@@ -184,7 +184,7 @@
     "desc":"Mostra i migliori elementi di Reddit per ogni subreddit dato.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Inserire un subreddit inserendo soltanto la parte dell'URL di quel subreddit a partire da <b>\/r\/<\/b>.\n<br \/><br \/>\nPer esempio, Technology si trova su: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, quindi va inserito soltanto <b>technology<\/b>",
+      "subreddit_help":"Inserire un subreddit inserendo soltanto la parte dell'URL di quel subreddit a partire da <b>/r/</b>.\n<br /><br />\nPer esempio, Technology si trova su: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, quindi va inserito soltanto <b>technology</b>",
       "subreddit_placeholder":"Inserisci un subreddit di per poter vedere i links. (es: technology)",
       "sort":"Ordinamento",
       "sort_options":{
@@ -260,7 +260,7 @@
         "six":"Sei piccoli"
       },
       "from":"Mostra video da",
-      "from_help":"Questo deve essere il nome <b>utente esatto<\/b> come mostrato nel URL della pagina in cui visualizzi il tuo profilo su YouTube.\n<br \/><br \/>\nQuesto valore non include mai spazzi.",
+      "from_help":"Questo deve essere il nome <b>utente esatto</b> come mostrato nel URL della pagina in cui visualizzi il tuo profilo su YouTube.\n<br /><br />\nQuesto valore non include mai spazzi.",
       "from_placeholder":"Lascia vuoto per mostrare i video popolari",
       "open":"Apri risultati in"
     },
@@ -294,9 +294,9 @@
     "desc":"Mostra un link, facoltativamente con un titolo e una miniatura",
     "settings":{
       "link":"URL Link",
-      "link_placeholder":"http:\/\/www.google.com\/",
+      "link_placeholder":"http://www.google.com/",
       "image":"URL dell'immagine",
-      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "image_placeholder":"http://www.example.com/image.png",
       "color":"Colore di sfondo dell'immagine",
       "style":"Stile dell'immagine",
       "style_fill":"Riempi",
@@ -372,11 +372,11 @@
     "desc":"Consente di visualizzare i vari parametri di un profilo Google Analytics.",
     "sessions":"sessioni",
     "pageviews":"Visualizzazioni",
-    "pagesvisit":"Pagine\/visita",
+    "pagesvisit":"Pagine/visita",
     "bouncerate":"Tasso di rimbalzo",
     "completions":"Completamenti",
     "noprofile_title":"Nessun profilo selezionato",
-    "noprofile":"Non sembra ancora selezionato un profilo!\n <br \/><br \/>\nProvare a selezionarne uno tramite l'icona della chiave inglese in alto a destra.",
+    "noprofile":"Non sembra ancora selezionato un profilo!\n <br /><br />\nProvare a selezionarne uno tramite l'icona della chiave inglese in alto a destra.",
     "settings":{
       "profile":"Profilo"
     }
@@ -424,7 +424,7 @@
     "desc":"Consente di visualizzare una pagina web a vostra scelta all'interno di un iframe.",
     "settings":{
       "url":"Frame URL",
-      "url_placeholder":"i.e. http:\/\/www.google.com\/",
+      "url_placeholder":"i.e. http://www.google.com/",
       "height":"Altezza frame",
       "padding":"Rientro"
     }
@@ -476,7 +476,7 @@
     },
     "by":"di",
     "all_articles":"Tutti gli articoli",
-    "feed_error":"Si è verificato un errore durante il recupero dei feed a: %s.\nSi prega di ricontrollare l'URL e\/o modificare le impostazioni del widget."
+    "feed_error":"Si è verificato un errore durante il recupero dei feed a: %s.\nSi prega di ricontrollare l'URL e/o modificare le impostazioni del widget."
   },
   "sports":{
     "name":"Sport",
@@ -532,7 +532,7 @@
     "avg_volume":"Media Volume",
     "shares":"Azioni",
     "cap":"Capitalizzazione di mercato",
-    "pe":"Prezzo \/ utili",
+    "pe":"Prezzo / utili",
     "eps":"EPS",
     "beta":"Beta",
     "inst_own":"Proprietà istituzionale"
@@ -620,7 +620,7 @@
     "name":"Meteo",
     "desc":"Mostra il meteo per i prossimi 4 giorni.",
     "settings":{
-      "location":"Luogo\/i",
+      "location":"Luogo/i",
       "location_placeholder":"Inserisci un luogo e premi invio",
       "units":"Unità di misura",
       "units_imperial":"Fahrenheit",

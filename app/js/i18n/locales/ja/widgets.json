@@ -42,7 +42,7 @@
       "title":"ブックマークのタイトル",
       "title_placeholder":"Google",
       "url":"ブックマークの URL",
-      "url_placeholder":"https:\/\/www.google.co.jp\/",
+      "url_placeholder":"https://www.google.co.jp/",
       "save":"保存"
     },
     "new_caption":"新着",
@@ -89,10 +89,10 @@
       "timezone_local":"ローカル",
       "format":"時刻の表示方法",
       "format_options":{
-        "ampm":"AM\/PM - デジタル",
+        "ampm":"AM/PM - デジタル",
         "24hour":"24時間制 - デジタル",
         "analog":"12時間制 - アナログ",
-        "ampmseconds":"AM\/PM - デジタル, 秒表示なし",
+        "ampmseconds":"AM/PM - デジタル, 秒表示なし",
         "24hourseconds":"24時間制 - デジタル, 秒表示なし"
       },
       "sound":"アラーム音"
@@ -184,7 +184,7 @@
     "desc":"Reddit 上の指定した subreddit の投稿を表示します。",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Reddit の URL の <b>\/r\/<\/b> の後にある subreddit を入力してください。\n<br \/><br \/>\n例えば Technology の場合、<a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a> の<b>technology<\/b> を入力します。",
+      "subreddit_help":"Reddit の URL の <b>/r/</b> の後にある subreddit を入力してください。\n<br /><br />\n例えば Technology の場合、<a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a> の<b>technology</b> を入力します。",
       "subreddit_placeholder":"表示させたい subreddit を入力 (例: technology)",
       "sort":"並べ替え順序",
       "sort_options":{
@@ -260,7 +260,7 @@
         "six":"6個小さく表示"
       },
       "from":"表示する動画",
-      "from_help":"ユーザーの URL にあるユーザー名を <b>正確に<\/b> 設定する必要があります。\n<br \/><br \/>\nこの値にスペースが含まれることはありません。",
+      "from_help":"ユーザーの URL にあるユーザー名を <b>正確に</b> 設定する必要があります。\n<br /><br />\nこの値にスペースが含まれることはありません。",
       "from_placeholder":"空白のままでトップの動画を表示",
       "open":"検索結果の表示"
     },
@@ -294,9 +294,9 @@
     "desc":"リンクをタイトルやサムネイルとともに表示します。",
     "settings":{
       "link":"リンク先の URL",
-      "link_placeholder":"https:\/\/www.google.co.jp\/",
+      "link_placeholder":"https://www.google.co.jp/",
       "image":"画像 URL",
-      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "image_placeholder":"http://www.example.com/image.png",
       "color":"画像の背景色",
       "style":"画像のスタイル",
       "style_fill":"埋める",
@@ -376,7 +376,7 @@
     "bouncerate":"直帰率",
     "completions":"コンバージョン",
     "noprofile_title":"プロファイルが選択されていません",
-    "noprofile":"プロファイルが選択されていません。\n<br \/>\n右上にあるレンチアイコンからプロファイルを選択してください。",
+    "noprofile":"プロファイルが選択されていません。\n<br />\n右上にあるレンチアイコンからプロファイルを選択してください。",
     "settings":{
       "profile":"プロフィール"
     }
@@ -424,7 +424,7 @@
     "desc":"iframe 内で指定した Web ページを表示します。",
     "settings":{
       "url":"フレームの URL",
-      "url_placeholder":"例: https:\/\/www.google.co.jp\/",
+      "url_placeholder":"例: https://www.google.co.jp/",
       "height":"フレームの高さ",
       "padding":"余白"
     }

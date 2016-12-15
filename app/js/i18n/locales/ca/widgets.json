@@ -42,7 +42,7 @@
       "title":"Títol de l'adreça d'interès",
       "title_placeholder":"Google",
       "url":"URL de l'adreça d'interès",
-      "url_placeholder":"http:\/\/www.Google.com\/",
+      "url_placeholder":"http://www.Google.com/",
       "save":"Desa"
     },
     "new_caption":"Nou",
@@ -89,10 +89,10 @@
       "timezone_local":"Local",
       "format":"Format del rellotge",
       "format_options":{
-        "ampm":"AM\/PM - Digital",
+        "ampm":"AM/PM - Digital",
         "24hour":"24 hores - Digital",
         "analog":"12 hores - Analògic",
-        "ampmseconds":"AM\/PM - Digital, sense segons",
+        "ampmseconds":"AM/PM - Digital, sense segons",
         "24hourseconds":"24 hores - Digital, sense segons"
       },
       "sound":"So d'alerta"
@@ -184,7 +184,7 @@
     "desc":"Displays the top items on Reddit for any given subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
+      "subreddit_help":"Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
       "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
       "sort":"Sort Order",
       "sort_options":{
@@ -260,7 +260,7 @@
         "six":"Six small"
       },
       "from":"Show Videos From",
-      "from_help":"This must be an <b>exact<\/b> username as shown in the URL of the page when you're viewing their profile.\n<br \/><br \/>\nThis value never includes spaces.",
+      "from_help":"This must be an <b>exact</b> username as shown in the URL of the page when you're viewing their profile.\n<br /><br />\nThis value never includes spaces.",
       "from_placeholder":"Leave blank to show Top Videos",
       "open":"Open search results in"
     },
@@ -294,9 +294,9 @@
     "desc":"Displays a link, optionally with a title and thumbnail",
     "settings":{
       "link":"Link URL",
-      "link_placeholder":"http:\/\/www.Google.com\/",
+      "link_placeholder":"http://www.Google.com/",
       "image":"Image URL",
-      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "image_placeholder":"http://www.example.com/image.png",
       "color":"Image Background Color",
       "style":"Image Style",
       "style_fill":"Fill",
@@ -372,11 +372,11 @@
     "desc":"Displays various metrics from a Google Analytics profile.",
     "sessions":"sessions",
     "pageviews":"Pageviews",
-    "pagesvisit":"Pages\/visit",
+    "pagesvisit":"Pages/visit",
     "bouncerate":"Bounce Rate",
     "completions":"Completions",
     "noprofile_title":"No profile selected",
-    "noprofile":"It doesn't look like you've selected a profile yet!\n<br \/>\nTry selecting one via the wrench icon at the top right.",
+    "noprofile":"It doesn't look like you've selected a profile yet!\n<br />\nTry selecting one via the wrench icon at the top right.",
     "settings":{
       "profile":"Profile"
     }
@@ -424,7 +424,7 @@
     "desc":"Displays a webpage of your choice within an iframe.",
     "settings":{
       "url":"Frame URL",
-      "url_placeholder":"i.e. http:\/\/www.google.com\/",
+      "url_placeholder":"i.e. http://www.google.com/",
       "height":"Frame Height",
       "padding":"Padding"
     }
@@ -476,7 +476,7 @@
     },
     "by":"By",
     "all_articles":"All articles",
-    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and\/or modify the widget settings."
+    "feed_error":"An error occurred while trying to fetch the feed at: %s.\r\nPlease double check the URL and/or modify the widget settings."
   },
   "sports":{
     "name":"Sports",
@@ -532,7 +532,7 @@
     "avg_volume":"Avg. Volume",
     "shares":"Shares",
     "cap":"Market Cap",
-    "pe":"Price \/ Earnings",
+    "pe":"Price / Earnings",
     "eps":"EPS",
     "beta":"Beta",
     "inst_own":"Inst. own"
@@ -556,7 +556,7 @@
   },
   "topsites":{
     "name":"Top Sites",
-    "desc":"Displays your most visited\/top sites.",
+    "desc":"Displays your most visited/top sites.",
     "settings":{
       "show":"Number of sites shown"
     }

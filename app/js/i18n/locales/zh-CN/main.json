@@ -11,6 +11,11 @@
   },
   "remove_widget":"移除",
   "hide_banner":"Hide this banner",
+  "hide_ad":{
+    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
+    "upgrade":"Upgrade",
+    "hide":"Hide ads"
+  },
   "alert":{
     "default_button":"忽略",
     "confirm_title":"您确定要这样做？",
@@ -136,6 +141,7 @@
       },
       "tabs":"标签页",
       "widgets":"小部件",
+      "ads":"Ads",
       "pro":"专业版",
       "accounts":"帐户",
       "misc":"其他设置",
@@ -181,14 +187,6 @@
         "dark":"暗色调",
         "transparent":"半透明",
         "transparent_darker":"半透明（暗色）"
-      },
-      "ad_placement":{
-        "title":"Ad placement",
-        "desc":"We place one ad so we can afford to offer iChrome for free. Here you can choose where the ad is shown",
-        "left":"In the leftmost column",
-        "right":"In the rightmost column",
-        "top":"Above the tab",
-        "bottom":"Floating at the bottom"
       }
     },
     "toolbar":{
@@ -297,6 +295,7 @@
         "bg_downloads":"背景图片可任意下载",
         "weather":"提供长达未来10天每小时的天气预报",
         "toolbar":"可设置更多工具栏链接",
+        "ads":"A completely ad-free experience",
         "support":"技术支持及建议优先处理",
         "buy_pro":"立即购买专业版"
       },
@@ -345,6 +344,24 @@
         "cancel":"取消订阅",
         "cancel_notice":"您的订阅将被立即取消",
         "cancel_notice2":"如果您想要退款，请通过邮件support@ichro.me联系我们"
+      }
+    },
+    "ads":{
+      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "upgrade_btn":"Upgrade to ad-free",
+      "already_upgraded":"It looks like you've already upgraded to ad-free",
+      "signin":"登入",
+      "signin_desc":"Sign in before upgrading so we can link your purchase to your account",
+      "signin_btn":"登入",
+      "thank_you":"Thank you for upgrading to ad-free!",
+      "placement":{
+        "title":"Ad placement",
+        "left":"In the leftmost column",
+        "right":"In the rightmost column",
+        "top":"Above the tab",
+        "bottom":"Floating at the bottom"
       }
     }
   },

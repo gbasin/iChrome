@@ -113,6 +113,7 @@
 					<li>{{i18n.settings.pro.promo.bg_downloads}}</li>
 					<li>{{i18n.settings.pro.promo.weather}}</li>
 					<li>{{i18n.settings.pro.promo.toolbar}}</li>
+					<li>{{i18n.settings.pro.promo.ads}}</li>
 					<li>{{i18n.settings.pro.promo.support}}</li>
 				</ul>
 			</div>

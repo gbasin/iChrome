@@ -42,7 +42,7 @@
       "title":"Titre du marque-page",
       "title_placeholder":"Google",
       "url":"URL du marque-page",
-      "url_placeholder":"http:\/\/www.google.com\/",
+      "url_placeholder":"http://www.google.com/",
       "save":"Enregistrer"
     },
     "new_caption":"Nouveau",
@@ -89,10 +89,10 @@
       "timezone_local":"Mon appareil",
       "format":"Format de l'heure ",
       "format_options":{
-        "ampm":"AM\/PM - Digitale",
+        "ampm":"AM/PM - Digitale",
         "24hour":"24 Heures - Digitale",
         "analog":"12 Heures - Analogique",
-        "ampmseconds":"AM\/PM - Digitale, Sans Secondes",
+        "ampmseconds":"AM/PM - Digitale, Sans Secondes",
         "24hourseconds":"24 Heures - Digitale, Sans Secondes"
       },
       "sound":"Alerte sonore"
@@ -184,7 +184,7 @@
     "desc":"Affiche les liens populaires de Reddit pour tout subreddit donné.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Entrez le nom de n'importe que subreddit après le <b>\/r\/<\/b>\n<br \/><br \/>\nExemple : Pour le subreddit technologie est à : <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, donc vous devez entrer <b>technology<\/b>",
+      "subreddit_help":"Entrez le nom de n'importe que subreddit après le <b>/r/</b>\n<br /><br />\nExemple : Pour le subreddit technologie est à : <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, donc vous devez entrer <b>technology</b>",
       "subreddit_placeholder":"Entrez un subreddit ici pour afficher les liens de celui-ci (Exemple : technology)",
       "sort":"Le classement",
       "sort_options":{
@@ -260,7 +260,7 @@
         "six":"Six petites"
       },
       "from":"Afficher videos depuis",
-      "from_help":"Ce doit être le nom d'utilisateur <b>exactement<\/b> comme indiqué dans l'URL de la page lorsque vous consultez leur profil. <br \/> <br \/> Cette valeur n'inclut jamais d'espaces.",
+      "from_help":"Ce doit être le nom d'utilisateur <b>exactement</b> comme indiqué dans l'URL de la page lorsque vous consultez leur profil. <br /> <br /> Cette valeur n'inclut jamais d'espaces.",
       "from_placeholder":"Laissez vide pour montrer les vidéos populaires",
       "open":"Ouvrir les résultats de la recherche dans "
     },
@@ -294,9 +294,9 @@
     "desc":"Affiche un lien, éventuellement avec un titre et une vignette",
     "settings":{
       "link":"Lien URL",
-      "link_placeholder":"http:\/\/www.google.com\/",
+      "link_placeholder":"http://www.google.com/",
       "image":"URL de l'image",
-      "image_placeholder":"http:\/\/www.exemple.fr\/image.png",
+      "image_placeholder":"http://www.exemple.fr/image.png",
       "color":"Couleur d'arrière-plan de la page",
       "style":"Style d'images",
       "style_fill":"Remplir",
@@ -376,7 +376,7 @@
     "bouncerate":"Taux de rebonds",
     "completions":"Accomplissements",
     "noprofile_title":"Aucun profil sélectionné",
-    "noprofile":"Il semblerait que vous n'ayez pas encore choisi de profil !\n<br \/>\nEssayez d'en choisir un depuis l'icône de clé a molette en haut à droite.",
+    "noprofile":"Il semblerait que vous n'ayez pas encore choisi de profil !\n<br />\nEssayez d'en choisir un depuis l'icône de clé a molette en haut à droite.",
     "settings":{
       "profile":"Profil"
     }
@@ -424,7 +424,7 @@
     "desc":"Afficher une page web de votre choix dans \"iframe\"",
     "settings":{
       "url":"URL de l'image",
-      "url_placeholder":"e.g. http:\/\/www.google.com\/",
+      "url_placeholder":"e.g. http://www.google.com/",
       "height":"Hauteur de l'image",
       "padding":"Remplissage"
     }
@@ -476,7 +476,7 @@
     },
     "by":"par",
     "all_articles":"Tous les articles",
-    "feed_error":"Une erreur s'est produite en essayant d'aller chercher de le flux à: %s. S'il vous plaît vérifier l'URL et\/ou modifier les paramètres du widget."
+    "feed_error":"Une erreur s'est produite en essayant d'aller chercher de le flux à: %s. S'il vous plaît vérifier l'URL et/ou modifier les paramètres du widget."
   },
   "sports":{
     "name":"Sports",
@@ -532,7 +532,7 @@
     "avg_volume":"Volume moyen",
     "shares":"Actions",
     "cap":"Capitalisation boursière",
-    "pe":"Prix \/ bénéfice",
+    "pe":"Prix / bénéfice",
     "eps":"BPA",
     "beta":"Bêta",
     "inst_own":"Instant propre"
@@ -556,7 +556,7 @@
   },
   "topsites":{
     "name":"Sites favoris",
-    "desc":"Affiche vos sites préférés\/les plus visités.",
+    "desc":"Affiche vos sites préférés/les plus visités.",
     "settings":{
       "show":"Nombre de sites affichés"
     }

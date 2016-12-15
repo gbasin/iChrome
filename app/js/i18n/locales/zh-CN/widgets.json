@@ -42,7 +42,7 @@
       "title":"书签名",
       "title_placeholder":"谷歌（Google）",
       "url":"添加链接",
-      "url_placeholder":"http:\/\/www.google.com\/",
+      "url_placeholder":"http://www.google.com/",
       "save":"保存"
     },
     "new_caption":"新建",
@@ -89,10 +89,10 @@
       "timezone_local":"本地",
       "format":"时钟格式",
       "format_options":{
-        "ampm":"AM\/PM-数字",
+        "ampm":"AM/PM-数字",
         "24hour":"24 小时-数字",
         "analog":"12 小时-模拟",
-        "ampmseconds":"AM\/PM-数字（无“秒”）",
+        "ampmseconds":"AM/PM-数字（无“秒”）",
         "24hourseconds":"24 小时-数字（无“秒”）"
       },
       "sound":"提示声"
@@ -184,7 +184,7 @@
     "desc":"显示Reddit上的热门话题",
     "settings":{
       "subreddit":"Reddit分类",
-      "subreddit_help":"输入在Reddit分类网页链接<b>\/r\/<\/b>后的字符。\n<br \/><br \/>\n例如，科技类的链接是<a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>所以您需要输入<b>technology<\/b>",
+      "subreddit_help":"输入在Reddit分类网页链接<b>/r/</b>后的字符。\n<br /><br />\n例如，科技类的链接是<a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>所以您需要输入<b>technology</b>",
       "subreddit_placeholder":"输入Reddit分类的显示链接。（例如technology）",
       "sort":"排序方式",
       "sort_options":{
@@ -260,7 +260,7 @@
         "six":"六个小位置"
       },
       "from":"显示视频来源",
-      "from_help":"这必须是与您查看个人资料时<b>完全一致<\/b>的用户名。\n<br \/><br \/>\n此值永远不会包含空格。",
+      "from_help":"这必须是与您查看个人资料时<b>完全一致</b>的用户名。\n<br /><br />\n此值永远不会包含空格。",
       "from_placeholder":"为空则显示热门视频",
       "open":"搜索结果打开方式"
     },
@@ -294,9 +294,9 @@
     "desc":"显示一个带有标题和缩略图（可选）的链接",
     "settings":{
       "link":"链接 URL：",
-      "link_placeholder":"http:\/\/www.google.com\/",
+      "link_placeholder":"http://www.google.com/",
       "image":"图像地址",
-      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "image_placeholder":"http://www.example.com/image.png",
       "color":"图像背景色",
       "style":"图像样式",
       "style_fill":"填充",
@@ -372,11 +372,11 @@
     "desc":"显示您谷歌分析中的各项指标",
     "sessions":"会话",
     "pageviews":"页面访问量",
-    "pagesvisit":"页\/访问",
+    "pagesvisit":"页/访问",
     "bouncerate":"回访率",
     "completions":"达成",
     "noprofile_title":"没有选定配置文件",
-    "noprofile":"看起来您未选择一个项目！\n<br \/><br \/>\n请尝试通过右上角的扳手图标选择一个项目。",
+    "noprofile":"看起来您未选择一个项目！\n<br /><br />\n请尝试通过右上角的扳手图标选择一个项目。",
     "settings":{
       "profile":"项目档案"
     }
@@ -424,7 +424,7 @@
     "desc":"在您选择的位置用 iframe 嵌入网页。",
     "settings":{
       "url":"框架链接",
-      "url_placeholder":"例如 http:\/\/www.google.com\/",
+      "url_placeholder":"例如 http://www.google.com/",
       "height":"框架高度",
       "padding":"内边框"
     }
@@ -532,7 +532,7 @@
     "avg_volume":"平均交易量",
     "shares":"股票",
     "cap":"市值",
-    "pe":"价格 \/ 收益",
+    "pe":"价格 / 收益",
     "eps":"每股收益",
     "beta":"测试版",
     "inst_own":"机构持股"
@@ -556,7 +556,7 @@
   },
   "topsites":{
     "name":"常用网站",
-    "desc":"显示您经常访问\/常用的的网站。",
+    "desc":"显示您经常访问/常用的的网站。",
     "settings":{
       "show":"显示网站数目"
     }

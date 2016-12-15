@@ -42,7 +42,7 @@
       "title":"書籤標題",
       "title_placeholder":"Google",
       "url":"書籤網址",
-      "url_placeholder":"http:\/\/www.google.com\/",
+      "url_placeholder":"http://www.google.com/",
       "save":"儲存"
     },
     "new_caption":"新增",
@@ -89,10 +89,10 @@
       "timezone_local":"本地",
       "format":"時鐘格式",
       "format_options":{
-        "ampm":"上午\/下午 - 數位時鐘",
+        "ampm":"上午/下午 - 數位時鐘",
         "24hour":"24 小時 - 數位時鐘",
         "analog":"12 小時 - 類比時鐘",
-        "ampmseconds":"上午\/下午 - 數位時鐘，沒有「秒」",
+        "ampmseconds":"上午/下午 - 數位時鐘，沒有「秒」",
         "24hourseconds":"24 小時 - 數位時鐘，沒有「秒」"
       },
       "sound":"提示音效"
@@ -184,7 +184,7 @@
     "desc":"根據提供的reddit細目顯示Reddit上熱門話題。",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"在網址的<b>\/r\/<\/b>之後輸入任何reddit細目。\n<br \/><br \/>\n例如，科技類的網址是<a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, 因此你需要輸入<b>technology<\/b>",
+      "subreddit_help":"在網址的<b>/r/</b>之後輸入任何reddit細目。\n<br /><br />\n例如，科技類的網址是<a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, 因此你需要輸入<b>technology</b>",
       "subreddit_placeholder":"輸入 reddit 細目（例如：technology）以顯示連結。",
       "sort":"排列次序",
       "sort_options":{
@@ -260,7 +260,7 @@
         "six":"六個小的"
       },
       "from":"顯示影片從",
-      "from_help":"這個使用者名稱必須和你在檢視他們的個人資料時所顯示在該頁面網址中的名稱<b>一模一樣<\/b>。\n<br \/><br \/>\n其中絕對不會有任何空格。",
+      "from_help":"這個使用者名稱必須和你在檢視他們的個人資料時所顯示在該頁面網址中的名稱<b>一模一樣</b>。\n<br /><br />\n其中絕對不會有任何空格。",
       "from_placeholder":"留空格來顯示精華影片。",
       "open":"開啟搜尋結果於"
     },
@@ -294,9 +294,9 @@
     "desc":"在頁面上顯示一個包含網站名稱與縮圖的連結",
     "settings":{
       "link":"連結網址：",
-      "link_placeholder":"http:\/\/www.google.com\/",
+      "link_placeholder":"http://www.google.com/",
       "image":"圖像網址",
-      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "image_placeholder":"http://www.example.com/image.png",
       "color":"圖片背景顏色",
       "style":"圖片樣式",
       "style_fill":"填滿",
@@ -372,11 +372,11 @@
     "desc":"從您個人的Google報表中顯示各種指標",
     "sessions":"連線對話",
     "pageviews":"網頁點閱次數",
-    "pagesvisit":"頁面\/訪問",
+    "pagesvisit":"頁面/訪問",
     "bouncerate":"跳出率",
     "completions":"落成",
     "noprofile_title":"未選取設定檔",
-    "noprofile":"看起來您仍未選擇一個設定檔!\n<br \/><br \/>\n請試著在右上角的扳手圖示中選擇一個。",
+    "noprofile":"看起來您仍未選擇一個設定檔!\n<br /><br />\n請試著在右上角的扳手圖示中選擇一個。",
     "settings":{
       "profile":"設定檔"
     }
@@ -424,7 +424,7 @@
     "desc":"在 iframe 內顯示一個您選擇的網頁。",
     "settings":{
       "url":"框架位址",
-      "url_placeholder":"例如： http:\/\/www.google.com\/",
+      "url_placeholder":"例如： http://www.google.com/",
       "height":"框架高度",
       "padding":"留邊距離"
     }
@@ -476,7 +476,7 @@
     },
     "by":"由",
     "all_articles":"所有文章",
-    "feed_error":"試圖獲取進料時出錯： %s。請仔細檢查該 URL 和\/或修改小部件設置。"
+    "feed_error":"試圖獲取進料時出錯： %s。請仔細檢查該 URL 和/或修改小部件設置。"
   },
   "sports":{
     "name":"體育",
@@ -556,7 +556,7 @@
   },
   "topsites":{
     "name":"置頂網站",
-    "desc":"顯示您最常去\/熱門網站",
+    "desc":"顯示您最常去/熱門網站",
     "settings":{
       "show":"顯示的網站的數目"
     }

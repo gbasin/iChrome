@@ -42,7 +42,7 @@
       "title":"Tytuł zakładki",
       "title_placeholder":"Google",
       "url":"Adres URL zakładki",
-      "url_placeholder":"http:\/\/www.google.com\/",
+      "url_placeholder":"http://www.google.com/",
       "save":"Zapisz"
     },
     "new_caption":"Nowy",
@@ -89,10 +89,10 @@
       "timezone_local":"Lokalny",
       "format":"Format zegara",
       "format_options":{
-        "ampm":"AM\/PM - cyfrowy",
+        "ampm":"AM/PM - cyfrowy",
         "24hour":"24 godzinny - cyfrowy",
         "analog":"12 godzinny - analogowy",
-        "ampmseconds":"AM\/PM - cyfrowy, bez sekund",
+        "ampmseconds":"AM/PM - cyfrowy, bez sekund",
         "24hourseconds":"24 godzinny - cyfrowy, bez sekund"
       },
       "sound":"Dźwięk alarmu"
@@ -184,7 +184,7 @@
     "desc":"Displays the top items on Reddit for any given subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>\/r\/<\/b> when on Reddit.\n<br \/><br \/>\nFor example, Technology is at: <a href=\"http:\/\/www.reddit.com\/r\/technology\">http:\/\/www.reddit.com\/r\/technology<\/a>, therefore you would enter <b>technology<\/b>",
+      "subreddit_help":"Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
       "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
       "sort":"Kolejność sortowania",
       "sort_options":{
@@ -260,7 +260,7 @@
         "six":"Sześć małych"
       },
       "from":"Pokaż Filmy Użytkownika",
-      "from_help":"Tu musi być wpisana <b>dokładna<\/b> nazwa użytkownika, taka jak występuje w URL strony kiedy oglądasz profil użytkownika.\n<br \/><br \/>\nNazwa użytkownika nigdy nie zawiera spacji.",
+      "from_help":"Tu musi być wpisana <b>dokładna</b> nazwa użytkownika, taka jak występuje w URL strony kiedy oglądasz profil użytkownika.\n<br /><br />\nNazwa użytkownika nigdy nie zawiera spacji.",
       "from_placeholder":"Pozostaw puste żeby pokazywać najpopularniejsze filmy",
       "open":"Otwórzy wyniki wyszukiwania w"
     },
@@ -294,9 +294,9 @@
     "desc":"Wyświetla odnośnik, opcjonalnie z tytułem i miniaturką strony",
     "settings":{
       "link":"URL odnośnika",
-      "link_placeholder":"http:\/\/www.google.com\/",
+      "link_placeholder":"http://www.google.com/",
       "image":"Adres URL obrazu",
-      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "image_placeholder":"http://www.example.com/image.png",
       "color":"Kolor tła",
       "style":"Styl obrazu",
       "style_fill":"Wypełnij",
@@ -340,7 +340,7 @@
   },
   "directions":{
     "name":"Wyznacz trasę",
-    "desc":"Wyznacz trasę z\/do niemal dowolnego miejsca, bezpośrednio na swojej stronie domowej",
+    "desc":"Wyznacz trasę z/do niemal dowolnego miejsca, bezpośrednio na swojej stronie domowej",
     "driving":"Samochód",
     "transit":"Transport publiczny",
     "walking":"Pieszo",
@@ -372,11 +372,11 @@
     "desc":"Wyświetl różne metryki z profilu w usłudze Google Analytics.",
     "sessions":"sesje",
     "pageviews":"Odsłon",
-    "pagesvisit":"Strony\/odwiedziny",
+    "pagesvisit":"Strony/odwiedziny",
     "bouncerate":"Współczynnik odrzuceń",
     "completions":"Zakończonych",
     "noprofile_title":"Nie wybrano profilu",
-    "noprofile":"Wygląda na to że nie wybrano profilu.\n<br \/><br \/>\nProszę wybrać jeden poprzez ikonę klucza w prawym górnym rogu.",
+    "noprofile":"Wygląda na to że nie wybrano profilu.\n<br /><br />\nProszę wybrać jeden poprzez ikonę klucza w prawym górnym rogu.",
     "settings":{
       "profile":"Profil"
     }
@@ -424,7 +424,7 @@
     "desc":"Wyświetla wybraną stronę internetową w iframe.",
     "settings":{
       "url":"Adres URL ramki",
-      "url_placeholder":"np. http:\/\/www.google.com\/",
+      "url_placeholder":"np. http://www.google.com/",
       "height":"Wysokość ramki",
       "padding":"Dopełnienie"
     }
@@ -476,7 +476,7 @@
     },
     "by":"Przez",
     "all_articles":"Wszystkie artykuły",
-    "feed_error":"Wystąpił błąd podczas ściągania zawartości strumienia: %s.\nSprawdź ponownie URL i\/lub zmień ustawienia widżetu."
+    "feed_error":"Wystąpił błąd podczas ściągania zawartości strumienia: %s.\nSprawdź ponownie URL i/lub zmień ustawienia widżetu."
   },
   "sports":{
     "name":"Sport",
@@ -532,8 +532,8 @@
     "avg_volume":"Średni Obrót",
     "shares":"Akcje",
     "cap":"Wartość Rynku",
-    "pe":"Cena\/Zysk",
-    "eps":"Zysk\/Akcja",
+    "pe":"Cena/Zysk",
+    "eps":"Zysk/Akcja",
     "beta":"Beta",
     "inst_own":"Wł. Inst."
   },
@@ -590,7 +590,7 @@
   },
   "translate":{
     "name":"Tłumacz",
-    "desc":"Pozwala szybko tłumaczyć z\/na 90 języków w miarę pisania",
+    "desc":"Pozwala szybko tłumaczyć z/na 90 języków w miarę pisania",
     "from_placeholder":"Tu zacznij pisać",
     "to_placeholder":"Tu pojawi się przetłumaczony tekst",
     "detect_lang":"Wykruj język",

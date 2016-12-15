@@ -333,6 +333,12 @@ header .title ~ .tabs {
 	border-top: 1px solid rgba(200, 200, 200, .5);
 }
 
+.dark .footer {
+	color: #AAA;
+	background: rgba(0, 0, 0, .2);
+	border-top-color: rgba(0, 0, 0, .15);
+}
+
 .footer svg {
 	height: 16px;
 	display: inline-block;

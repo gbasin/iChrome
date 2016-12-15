@@ -42,7 +42,7 @@
       "title":"Favoritos Título",
       "title_placeholder":"Google",
       "url":"URL do favorito",
-      "url_placeholder":"http:\/\/www.google.com",
+      "url_placeholder":"http://www.google.com",
       "save":"Gravar"
     },
     "new_caption":"Novo",
@@ -89,10 +89,10 @@
       "timezone_local":"Local",
       "format":"Formato de relógio",
       "format_options":{
-        "ampm":"AM \/ PM - Digital",
+        "ampm":"AM / PM - Digital",
         "24hour":"24 horas - Digital",
         "analog":"12 horas - Analógico",
-        "ampmseconds":"AM \/ PM - Digital, não há Segundos",
+        "ampmseconds":"AM / PM - Digital, não há Segundos",
         "24hourseconds":"24 horas - Digital, não há Segundos"
       },
       "sound":"Alert Sound"
@@ -184,7 +184,7 @@
     "desc":"Apresenta os principais itens da Reddit para qualquer subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Digite qualquer subreddit pela parte passado <b> \/ r \/ <\/ b> quando no Reddit. <br \/> <br \/> \nPor exemplo, a tecnologia está em: <a href = \"http:\/\/www.reddit.com \/ r \/ tecnologia \"> http:\/\/www.reddit.com\/r\/technology <\/a> , portanto, você deve digitar <b> tecnologia <\/ b>\n",
+      "subreddit_help":"Digite qualquer subreddit pela parte passado <b> / r / </ b> quando no Reddit. <br /> <br /> \nPor exemplo, a tecnologia está em: <a href = \"http://www.reddit.com / r / tecnologia \"> http://www.reddit.com/r/technology </a> , portanto, você deve digitar <b> tecnologia </ b>\n",
       "subreddit_placeholder":"Digite um subreddit para mostrar links de. (Ou seja, a tecnologia)",
       "sort":"Ordem de classificação",
       "sort_options":{
@@ -260,7 +260,7 @@
         "six":"Seis pequeno"
       },
       "from":"Mostrar vídeos de",
-      "from_help":"Este deve ser um <b> exatamente <\/ b> nome de usuário, como mostra a URL da página quando você está vendo seu perfil. <br \/> <br \/> \nEsse valor nunca inclui espaços.\n",
+      "from_help":"Este deve ser um <b> exatamente </ b> nome de usuário, como mostra a URL da página quando você está vendo seu perfil. <br /> <br /> \nEsse valor nunca inclui espaços.\n",
       "from_placeholder":"Deixe em branco para mostrar Melhores Vídeos",
       "open":"Resultados da pesquisa em"
     },
@@ -294,9 +294,9 @@
     "desc":"Displays a link, optionally with a title and thumbnail",
     "settings":{
       "link":"Link URL",
-      "link_placeholder":"http:\/\/www.google.com",
+      "link_placeholder":"http://www.google.com",
       "image":"URL da imagem",
-      "image_placeholder":"http:\/\/www.example.com\/image.png",
+      "image_placeholder":"http://www.example.com/image.png",
       "color":"Image Background Color",
       "style":"Image Style",
       "style_fill":"Fill",
@@ -372,11 +372,11 @@
     "desc":"Exibe várias métricas de um perfil do Google Analytics.",
     "sessions":"sessões",
     "pageviews":"Vistas das paginas",
-    "pagesvisit":"Páginas\/visita",
+    "pagesvisit":"Páginas/visita",
     "bouncerate":"Taxa de rejeição",
     "completions":"Conclusões",
     "noprofile_title":"No profile selected",
-    "noprofile":"Ele não se parece com você selecionou um perfil ainda! <br \/> <br \/> \nTente selecionar um através do ícone de chave inglesa no canto superior direito.\n",
+    "noprofile":"Ele não se parece com você selecionou um perfil ainda! <br /> <br /> \nTente selecionar um através do ícone de chave inglesa no canto superior direito.\n",
     "settings":{
       "profile":"Perfil"
     }
@@ -424,7 +424,7 @@
     "desc":"Exibe uma página de sua escolha dentro de um iframe.",
     "settings":{
       "url":"URL frame",
-      "url_placeholder":"http:\/\/www.google.com\/",
+      "url_placeholder":"http://www.google.com/",
       "height":"Quadro Altura",
       "padding":"Acolchoamento"
     }
@@ -476,7 +476,7 @@
     },
     "by":"por",
     "all_articles":"Todos os artigos",
-    "feed_error":"Ocorreu um erro ao tentar buscar o feed em: % s . \nPor favor, verifique o URL e \/ ou modificar os widgets configurações."
+    "feed_error":"Ocorreu um erro ao tentar buscar o feed em: % s . \nPor favor, verifique o URL e / ou modificar os widgets configurações."
   },
   "sports":{
     "name":"Desporto",
@@ -532,7 +532,7 @@
     "avg_volume":"Avg. Volume",
     "shares":"Shares",
     "cap":"Market Cap",
-    "pe":"Price \/ Earnings",
+    "pe":"Price / Earnings",
     "eps":"EPS",
     "beta":"Beta",
     "inst_own":"Inst. own"
@@ -556,7 +556,7 @@
   },
   "topsites":{
     "name":"Top Sites",
-    "desc":"Exibe suas principais sites mais visitados \/.",
+    "desc":"Exibe suas principais sites mais visitados /.",
     "settings":{
       "show":"Número de locais mostrado"
     }

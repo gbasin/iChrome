@@ -246,7 +246,7 @@ define(["jquery", "lodash", "backbone", "core/auth", "core/status", "core/analyt
 		 * @param   {String}   [placement]  The id of the placement for this ad
 		 */
 		insertAd: function(active, el, placement) {
-			if (Auth.isPro) {
+			if (Auth.adFree) {
 				return;
 			}
 
@@ -324,7 +324,7 @@ define(["jquery", "lodash", "backbone", "core/auth", "core/status", "core/analyt
 
 			// If this is a grid-based or empty tab, and the user hasn't chosen to have a header leaderboard,
 			// default to a footer one since block-based ones don't work
-			if (!Auth.isPro && adPlacement !== "header_leaderboard" && (isGrid || !_.reduce(this.model.columns, function(e, v) { return e + v.length; }, 0))) {
+			if (!Auth.adFree && adPlacement !== "header_leaderboard" && (isGrid || !_.reduce(this.model.columns, function(e, v) { return e + v.length; }, 0))) {
 				adPlacement = "footer_leaderboard";
 			}
 

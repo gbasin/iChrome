@@ -1,6 +1,4 @@
 define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
-	var authHeader = "API_KEY 8b04677e27d5498a90e306eedbf19fb3";
-
 	return WidgetModel.extend({
 		refreshInterval: 300000,
 
@@ -92,9 +90,12 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 				this.config.edition = conversions[this.config.edition] || "en-us";
 			}
 
+
 			if (!this.config.number || this.config.number > 20) {
 				this.config.number = 20;
 			}
+
+			this.authHeader = this.Auth.adFree ? "API_KEY db72b4be78c04a3a97b2b11ea8ab1e4a" : "API_KEY 8b04677e27d5498a90e306eedbf19fb3";
 
 
 			this.set("activeTab", this.config.topic);
@@ -111,10 +112,10 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 				$.ajax({
 					url: this.reportUrl,
 					headers: {
-						Authorization: authHeader
+						Authorization: this.authHeader
 					}
 				});
-			});
+			}, this);
 		},
 
 
@@ -133,7 +134,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 			$.ajax({
 				url: "https://sphere.outbrain.com/api/v1/recommendations/categories?limit=10",
 				headers: {
-					Authorization: authHeader
+					Authorization: this.authHeader
 				},
 				dataType: "json",
 				success: function(d) {
@@ -208,7 +209,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 					filter: topic[0] === "default" ? undefined : "categories:" + topic[0]
 				},
 				headers: {
-					Authorization: authHeader
+					Authorization: this.authHeader
 				},
 				dataType: "json",
 				success: function(d) {

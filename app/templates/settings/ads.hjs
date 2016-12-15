@@ -1,0 +1,54 @@
+<header class="large-header">
+	<h2 class="page-name">{{i18n.settings.nav.ads}}</h2>
+</header>
+
+<main class="content" tabindex="-1">
+	<section class="text">
+		<div class="controls">
+			{{#adFree}}
+				<h3>{{i18n.settings.ads.already_upgraded}}</h3>
+			{{/adFree}}
+			{{^adFree}}
+				<button type="button" class="material blue large upgrade">{{i18n.settings.ads.upgrade_btn}}</button>
+
+				<div class="placement">
+					<h3>{{i18n.settings.ads.placement.title}}</h3>
+
+					<div class="input main radios no-label">
+						<label>
+							<input type="radio" name="adPlacement" value="widget_block" />
+
+							<span>{{i18n.settings.ads.placement.left}}</span>
+						</label>
+
+						<label>
+							<input type="radio" name="adPlacement" value="header_leaderboard" />
+
+							<span>{{i18n.settings.ads.placement.top}}</span>
+						</label>
+
+						<label>
+							<input type="radio" name="adPlacement" value="right_block" />
+
+							<span>{{i18n.settings.ads.placement.right}}</span>
+						</label>
+
+						<label>
+							<input type="radio" name="adPlacement" value="footer_leaderboard" />
+
+							<span>{{i18n.settings.ads.placement.bottom}}</span>
+						</label>
+					</div>
+				</div>
+			{{/adFree}}
+		</div>
+
+		<p>
+			{{i18n.settings.ads.text1}}
+			<br /><br />
+			{{i18n.settings.ads.text2}}
+			<br /><br />
+			{{i18n.settings.ads.text3}}
+		</p>
+	</section>
+</main>
