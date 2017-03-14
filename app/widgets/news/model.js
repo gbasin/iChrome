@@ -202,11 +202,11 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 			var topic = _.find(this.data.topics, [activeTab]) || [];
 
 			$.ajax({
-				url: "https://sphere.outbrain.com/api/v1/trending/documents",
+				url: "https://sphere.outbrain.com/api/v1/recommendations/documents",
 				data: {
 					thumbnailSize: "190x200",
 					limit: maximized ? 45 : this.config.number,
-					filter: topic[0] === "default" ? undefined : "categories:" + topic[0]
+					filter: (topic[0] === "default" ? "" : "categories:" + topic[0] + ",") + "from:2d"
 				},
 				headers: {
 					Authorization: this.authHeader
