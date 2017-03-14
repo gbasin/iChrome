@@ -6,6 +6,7 @@ define(["jquery", "widgets/framefix"], function($, frameFix) {
 		id: 30,
 		size: 5,
 		order: 14,
+		unlisted: true,
 		nicename: "plus",
 		sizes: ["variable"],
 		settings: [
