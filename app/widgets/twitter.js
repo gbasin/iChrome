@@ -41,6 +41,46 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 				{
 					id: "453275760728367104",
 					content: "Video: What are Games Developers looking for in the Cloud? <a href=\"http://t.co/V4qdADsn5m\" target=\"_blank\">goo.gl/R9Strw</a>  /by <a href=\"http://www.twitter.com/tekgrrl\" target=\"_blank\" title=\"Mandy Waite\">@tekgrrl</a> <a href=\"http://www.twitter.com/search?q=%23gaming&amp;src=hash\" target=\"_blank\">#gaming</a> <a href=\"http://www.twitter.com/search?q=%23cloud&amp;src=hash\" target=\"_blank\">#cloud</a> <a href=\"http://www.twitter.com/search?q=%23developers&amp;src=hash\" target=\"_blank\">#developers</a>",
+					media: {
+						photos: [
+						                {
+						                    "id": 868394997854425088,
+						                    "id_str": "868394997854425088",
+						                    "indices": [
+						                        115,
+						                        138
+						                    ],
+						                    "media_url": "http://pbs.twimg.com/media/DA0opkvW0AAqYAW.jpg",
+						                    "media_url_https": "https://pbs.twimg.com/media/DA0opkvW0AAqYAW.jpg",
+						                    "url": "https://t.co/gdtLoxDDj5",
+						                    "display_url": "pic.twitter.com/gdtLoxDDj5",
+						                    "expanded_url": "https://twitter.com/Thom_astro/status/868437882670694401/photo/1",
+						                    "type": "photo",
+						                    "sizes": {
+						                        "small": {
+						                            "w": 680,
+						                            "h": 453,
+						                            "resize": "fit"
+						                        },
+						                        "thumb": {
+						                            "w": 150,
+						                            "h": 150,
+						                            "resize": "crop"
+						                        },
+						                        "large": {
+						                            "w": 1024,
+						                            "h": 682,
+						                            "resize": "fit"
+						                        },
+						                        "medium": {
+						                            "w": 1024,
+						                            "h": 682,
+						                            "resize": "fit"
+						                        }
+						                    }
+						                }
+						        ],
+						},
 					user: "Google Developers",
 					username: "googledevs",
 					image: "https://pbs.twimg.com/profile_images/440636713354817536/I_Z3SDmE_normal.png",
@@ -49,6 +89,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 				{
 					id: "453275245143916545",
 					content: "Explore archives &amp; exhibits about Tezuka Osamu, the godfather of <a href=\"http://www.twitter.com/search?q=%23manga&amp;src=hash\" target=\"_blank\">#manga</a>. <a href=\"http://t.co/QyYNRCnmuf\" target=\"_blank\">goo.gl/LeHLIa</a>",
+					media: {photos:[]},
 					user: "A Googler",
 					username: "google",
 					image: "https://pbs.twimg.com/profile_images/2504370963/6u5qf6cl9jtwew6poxcj_normal.png",
@@ -57,6 +98,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 				{
 					id: "453238414838493185",
 					content: "New video from <a href=\"http://www.twitter.com/ade_oshineye\" target=\"_blank\" title=\"Adewale Oshineye\">@ade_oshineye</a>: Grow with Google(+) <a href=\"http://t.co/uuyw94RFFh\" target=\"_blank\">goo.gl/5lU7Hs</a>",
+					media: {photos:[]},
 					user: "Google Developers",
 					username: "googledevs",
 					image: "https://pbs.twimg.com/profile_images/440636713354817536/I_Z3SDmE_normal.png",
@@ -65,6 +107,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 				{
 					id: "452513890287370241",
 					content: "RT <a href=\"http://www.twitter.com/jaffathecake\" target=\"_blank\" title=\"Jake Archibald\">@jaffathecake</a>: The Extensible Web Summit was bloody great &amp; should be done again. Notes at <a href=\"http://t.co/wdQIaH9G6i\" target=\"_blank\">lanyrd.com/2014/extensibl…</a> - nice one <a href=\"http://www.twitter.com/torgo\" target=\"_blank\" title=\"Daniel Appelquist\">@torgo</a> <a href=\"http://www.twitter.com/annevk\" target=\"_blank\" title=\"Anne van Kesteren\">@annevk</a> <a href=\"http://www.twitter.com/domenic\" target=\"_blank\" title=\"Domenic Denicola\">@domenic</a> et al",
+					media: {photos:[]},
 					user: "Google Developers",
 					username: "googledevs",
 					image: "https://pbs.twimg.com/profile_images/440636713354817536/I_Z3SDmE_normal.png",
@@ -73,6 +116,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 				{
 					id: "452161945513103360",
 					content: "RT <a href=\"http://www.twitter.com/addyosmani\" target=\"_blank\" title=\"Addy Osmani\">@addyosmani</a>: Writing Accessible Web Components: <a href=\"http://t.co/Tlkl7ucRsK\" target=\"_blank\">polymer-project.org/articles/acces…</a> - Part 1 of a new guide by <a href=\"http://www.twitter.com/sundress\" target=\"_blank\" title=\"Alice Boxhall\">@sundress</a> and I. <a href=\"http://www.twitter.com/search?q=%23a11y&amp;src=hash\" target=\"_blank\">#a11y</a>",
+					media: {photos:[]},
 					user: "Google Developers",
 					username: "googledevs",
 					image: "https://pbs.twimg.com/profile_images/440636713354817536/I_Z3SDmE_normal.png",
@@ -363,6 +407,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 							var tweet = {
 								id: e.id_str,
 								content: (retweet ? retweet.text : e.text),
+								media: {photos: []},
 								user: e.user.name,
 								username: e.user.screen_name,
 								image: e.user.profile_image_url_https,
@@ -370,6 +415,16 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 							};
 
 							var replaces = [];
+
+							var media = (retweet ? retweet.entities.media : e.entities.media);
+							if(media){
+								media.forEach(function(entity){
+									if(entity.type === "photo"){
+										tweet.media.photos.push(entity);
+										replaces.push({loc: entity.indices, text: ""});
+									}
+								});
+							}
 
 							(retweet ? retweet.entities : e.entities).hashtags.forEach(function(e) {
 								replaces.push({
@@ -459,6 +514,23 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 			}
 
 			this.utils.render(data);
+
+			if(!this.handlersRegistered){
+				$(this.elm).on("click", ".thumbnail", function(event){
+					event.stopPropagation();
+					var src = this.getAttribute("src");
+					$(".media-preview").attr("src", src.substr(0, src.length - 6));
+					$(".media-preview-container").fadeToggle();
+				});
+
+				$(this.elm).on("click", ".media-preview-container", function(event){
+					event.stopPropagation();
+					$(this).fadeOut();
+				});
+
+				this.handlersRegistered = true;
+			}
+
 		}
 	};
 });

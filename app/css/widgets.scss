@@ -2414,6 +2414,10 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Twitter
 */
+.widgets-container section.twitter.widget {
+	z-index: 8;
+}
+
 .twitter .tweet {
 	color: #777;
 	padding: 15px;
@@ -2476,9 +2480,7 @@ body.no-edit .bookmarks .tools {
 }
 
 .twitter .tweet img {
-	float: left;
 	border-radius: 3px;
-	margin: 4px 15px 4px 0;
 }
 
 .twitter .tweet .tools {
@@ -2486,6 +2488,7 @@ body.no-edit .bookmarks .tools {
 	margin-top: 5px;
 	text-align: right;
 	margin-bottom: -7px;
+	clear: both;
 }
 
 .twitter .tools a {
@@ -2531,9 +2534,39 @@ body.no-edit .bookmarks .tools {
 	float: left;
 }
 
+.twitter .profile {
+	width: 50px;
+	margin: 4px 15px 4px 0;
+	float:left;
+}
+
+.twitter .content {
+	padding-left: 65px;
+}
+
+.twitter .media .thumbnail {
+    width: 25%;
+    margin: 3px;
+    vertical-align: baseline;
+}
 
 
+.twitter .media-preview-container {
+    z-index: 99;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    display: none;
+}
 
+.twitter .media-preview {
+	position:relative;
+	left:-50%;
+	border-radius: 3px;
+	border: 7px solid white;
+	max-height:80vh;
+	max-width:80vw;
+}
 
 /*---------------------------------------------
 	/ Twitter / Authorize & No Tweets
