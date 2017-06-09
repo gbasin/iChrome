@@ -87,7 +87,7 @@ define(["backbone", "jquery", "lodash", "browser/api", "core/analytics", "search
 			this._fetchXhr = Backbone.Model.prototype.fetch.call(this, options);
 
 			return this._fetchXhr;
-		},
+		}
 	});
 
 	var View = Backbone.View.extend({
@@ -181,18 +181,6 @@ define(["backbone", "jquery", "lodash", "browser/api", "core/analytics", "search
 				return;
 			}
 
-
-			if (!source || source !== "speech") {
-				Track.queue("search", val);
-
-				Track.ga("send", {
-					useBeacon: true,
-					hitType: "pageview",
-					title: "Search: " + val,
-					page: "/search/page?q=" + encodeURIComponent(val)
-				});
-			}
-
 			this.$("input").blur();
 
 			this.model.set("query", val);
@@ -207,7 +195,22 @@ define(["backbone", "jquery", "lodash", "browser/api", "core/analytics", "search
 
 			this.$el.appendTo(document.body);
 
-			this.model.on("change", this.render, this);
+			var skipNextTrack = false;
+
+			this.model.on("change", this.render, this).on("sync", function(model) {
+				if (skipNextTrack) {
+					skipNextTrack = false;
+
+					return;
+				}
+
+				// This isn't the right place for it, but we want to track a pageview for each query that's made
+				var q = model.get("query");
+
+				Track.queue("search", q);
+
+				Track.pageview("Search: " + q, "/search/page?q=" + encodeURIComponent(q));
+			});
 
 			// This is attached to both select and focuschange since searches won't happen instantly and it's good for users to see what they've selected
 			this.Suggestions.on("select focuschange", function(val) {
@@ -224,12 +227,9 @@ define(["backbone", "jquery", "lodash", "browser/api", "core/analytics", "search
 			this.on("speech:result", function(val) {
 				Track.queue("search", val, true);
 
-				Track.ga("send", {
-					useBeacon: true,
-					hitType: "pageview",
-					title: "Voice Search: " + val,
-					page: "/search/speech?q=" + encodeURIComponent(val)
-				});
+				Track.pageview("Voice Search: " + val, "/search/speech?q=" + encodeURIComponent(val));
+
+				skipNextTrack = true;
 
 				this.$("input").val(val);
 
