@@ -227,7 +227,7 @@ define(["backbone", "jquery", "lodash", "browser/api", "core/analytics", "search
 			this.on("speech:result", function(val) {
 				Track.queue("search", val, true);
 
-				Track.pageview("Voice Search: " + q, "/search/speech?q=" + encodeURIComponent(q));
+				Track.pageview("Voice Search: " + val, "/search/speech?q=" + encodeURIComponent(val));
 
 				skipNextTrack = true;
 
