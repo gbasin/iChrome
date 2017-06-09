@@ -1,7 +1,7 @@
 /**
  * Exports a global analytics API
  */
-define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
+define(["lodash", "browser/api", "core/status", "core/auth"], function(_, Browser, Status, Auth) {
 	var sendQueue = [],
 		sendTimeout = null,
 		pageTime, totalLoad, toolbarStyle;
@@ -36,6 +36,7 @@ define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 		sendQueue = [];
 	};
 
+	// GA setup
 	(function() {
 		// Uncompressed Google Analytics insertion code
 		window.GoogleAnalyticsObject = "ga";
@@ -64,6 +65,8 @@ define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 		ga("set", "transport", "beacon");
 
 		ga("require", "displayfeatures");
+
+		ga("set", "dimension1", Auth.isPro ? "Pro" : Auth.adFree ? "Ad-free" : Auth.isSignedIn ? "Signed in" : "Anonymous");
 	})();
 
 	var track = function() {

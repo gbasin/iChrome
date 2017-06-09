@@ -1,7 +1,7 @@
 /**
  * Template renderer and cacher
  */
-define(["lodash", "hogan", "core/status", "i18n/i18n", "core/analytics", "core/templates"], function(_, Hogan, Status, Translate, Track, templates) {
+define(["lodash", "hogan", "core/status", "i18n/i18n", "core/templates"], function(_, Hogan, Status, Translate, templates) {
 	var cache = templates.compiled || {},
 		raw = templates.raw || {},
 		i18n = Translate.getAll();
@@ -10,8 +10,6 @@ define(["lodash", "hogan", "core/status", "i18n/i18n", "core/analytics", "core/t
 		var compiled = render.getTemplate(template);
 
 		if (!compiled) {
-			Track.queue("templates", "notfound", template);
-
 			return 'Template "' + template + '" not found!';
 		}
 
@@ -37,8 +35,6 @@ define(["lodash", "hogan", "core/status", "i18n/i18n", "core/analytics", "core/t
 			}
 			catch (e) {
 				Status.error("An error occurred while trying to render the " + template + " template!");
-
-				Track.queue("templates", "error", template);
 			}
 		}
 
