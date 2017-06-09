@@ -21,7 +21,7 @@ if (!storageLength) {
 		new Blob([
 			JSON.stringify([["install", new Date().getTime()]])
 		], {
-			type: "application/json"
+			type: "text/plain"
 		})
 	);
 
