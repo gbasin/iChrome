@@ -30,7 +30,7 @@ define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 		}
 
 		navigator.sendBeacon("https://stats.ichro.me/ingest?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language, new Blob([JSON.stringify(sendQueue)], {
-			type: "application/json"
+			type: "text/plain" // Fix for Chrome 59 which requires sendBeacon to use CORS-safe content-types
 		}));
 
 		sendQueue = [];
@@ -46,30 +46,33 @@ define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 
 		window.ga.l = new Date().getTime();
 
-		// Analytics are not critical, delay insertion
-		setTimeout(function() {
-			var script = document.createElement("script"),
-				firstScript = document.getElementsByTagName("script")[0];
 
-			script.async = true;
-			script.src = "https://ssl.google-analytics.com/analytics.js";
+		var script = document.createElement("script"),
+			firstScript = document.getElementsByTagName("script")[0];
 
-			firstScript.parentNode.insertBefore(script, firstScript);
-		}, 0);
+		script.async = true;
+		script.src = "https://www.google-analytics.com/analytics.js";
+
+		firstScript.parentNode.insertBefore(script, firstScript);
 
 
 		/* global ga */
-		ga("create", "UA-41131844-4", "ichro.me"); // This is temporarily set to a blank profile since the page is reloaded hundreds of times during development.
-		ga("require", "displayfeatures");
+		ga("create", "UA-41131844-4", "auto"); // This is temporarily set to a blank profile since the page is reloaded hundreds of times during development.
 
 		ga("set", "checkProtocolTask", function() {}); // Fixes the incompatibility with Chrome extensions: https://code.google.com/p/analytics-issues/issues/detail?id=312#c2
+
+		ga("set", "transport", "beacon");
+
+		ga("require", "displayfeatures");
 	})();
 
 	var track = function() {
 		track.event.call(track, arguments);
 	};
 
-	track.ga = ga;
+	Object.defineProperty(track, "ga", { get: function() {
+		return ga;
+	} });
 
 	/*
 		This wraps the Analytics event tracker.
@@ -79,24 +82,17 @@ define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 	track.event = function(category, action, label, value, nin) {
 		if (nin) { // All previous parameters have been defined
 			ga("send", "event", category, action, label.toString(), value, {
-				nonInteraction: 1,
-				transport: "beacon"
+				nonInteraction: 1
 			});
 		}
 		else if (value) {
-			ga("send", "event", category, action, label.toString(), value, {
-				transport: "beacon"
-			});
+			ga("send", "event", category, action, label.toString(), value);
 		}
 		else if (label) {
-			ga("send", "event", category, action, label.toString(), {
-				transport: "beacon"
-			});
+			ga("send", "event", category, action, label.toString());
 		}
 		else {
-			ga("send", "event", category, action, {
-				transport: "beacon"
-			});
+			ga("send", "event", category, action);
 		}
 	};
 
@@ -115,14 +111,11 @@ define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 		if (path && title) {
 			ga("send", "pageview", {
 				page: path,
-				title: title,
-				transport: "beacon"
+				title: title
 			});
 		}
 		else {
-			ga("send", "pageview", path || ("/v" + Browser.app.version + (Browser.app.newTab ? "/newtab" : "")), {
-				transport: "beacon"
-			});
+			ga("send", "pageview", path || ("/v" + Browser.app.version + (Browser.app.newTab ? "/newtab" : "")));
 		}
 	};
 
@@ -144,9 +137,7 @@ define(["lodash", "browser/api", "core/status"], function(_, Browser, Status) {
 		return function(category, variable) {
 			track.queue("timing", category, variable, new Date().getTime() - time);
 
-			ga("send", "timing", category, variable || "Time", new Date().getTime() - time, {
-				transport: "beacon"
-			});
+			ga("send", "timing", category, variable || "Time", new Date().getTime() - time);
 		};
 	};
 
