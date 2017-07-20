@@ -106,7 +106,7 @@
 	},
 
 	"toolbar": {
-		"placeholder": "Enter your terms",
+		"placeholder": "Search the web",
 		"placeholder_ok": "Enter your terms or say \"OK, Google\"",
 
 		"suggestions": {

@@ -2,16 +2,13 @@
  * This handles the searchbox
  */
 define([
-	"backbone", "browser/api", "storage/storage", "core/render", "core/analytics", "search/suggestions", "search/speech", "search/page"
-], function(Backbone, Browser, Storage, render, Track, Suggestions, Speech, Page) {
+	"backbone", "browser/api", "storage/storage", "core/render", "core/analytics", "search/suggestions", "search/speech"
+], function(Backbone, Browser, Storage, render, Track, Suggestions, Speech) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
 					this.set(storage.settings);
 				}, this);
-			},
-			isDefault: function() {
-				return (this.get("searchEngine") || "default") === "default";
 			}
 		}),
 		View = Backbone.View.extend({
@@ -46,10 +43,6 @@ define([
 			change: function(e, w) {
 				var val = e.currentTarget.value.trim();
 
-				if (val !== "" && this.model.isDefault()) {
-					return this.searchPage().setQuery(val);
-				}
-
 				if (val !== "" && w !== "focusout") {
 					this.Suggestions.load(val);
 
@@ -70,10 +63,6 @@ define([
 
 				if (typeof val !== "string") {
 					val = this.$("input").val().trim();
-				}
-
-				if (val !== "" && this.model.isDefault()) {
-					return this.searchPage().setQuery(val).submit();
 				}
 
 
@@ -110,7 +99,7 @@ define([
 				}
 
 
-				var searchURL = "https://ichro.me/search?" +
+				var searchURL = "https://search.ichro.me/search?" +
 					"ext=" + (Browser.app.newTab ? "newtab" : "main") +
 					"&engine=" + encodeURIComponent(this.model.get("searchEngine") || "default") +
 					"&q=" + encodeURIComponent(val);
@@ -128,25 +117,7 @@ define([
 
 				Track.event("Search", "Speech", "Start");
 			},
-			searchPage: function() {
-				if (!this.Page) {
-					this.Page = new Page();
-				}
-
-				this.Page.on("hide", function(searchVal) {
-					this.$("input").val(searchVal);
-				}, this);
-
-				return this.Page;
-			},
 			onSpeechResult: function(val) {
-				if (this.model.isDefault()) {
-					// Hide the speech UI
-					this.Speech.stop();
-
-					return this.searchPage().trigger("speech:result", val);
-				}
-
 				Track.queue("search", val, true);
 
 				Track.ga("send", {
