@@ -1,5 +1,6 @@
 var eventQueue = [];
 
+/* global FB */
 window.fbAsyncInit = function() {
 	FB.init({
 		appId: "1646068945432680",
@@ -406,7 +407,7 @@ var refreshFeeds = function() {
 
 				console.log("Updating cached theme " + key + ", last fetched on " + new Date(theme.lastFetched));
 
-				getFeed(theme, function() {
+				getFeed(theme, function() { // jshint ignore:line
 					active--;
 
 					if (active === 0) {
