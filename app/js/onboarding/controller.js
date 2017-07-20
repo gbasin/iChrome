@@ -48,6 +48,8 @@ define([
 			this.trigger("complete");
 
 			Track.event("Onboarding", "Complete");
+
+			Track.FB.logEvent("COMPLETED_TUTORIAL");
 		},
 
 		showWidgetGuide: function() {

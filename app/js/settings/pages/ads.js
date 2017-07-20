@@ -2,13 +2,15 @@
  * The ads settings page
  */
 define([
-	"settings/page", "core/auth", "modals/alert", "i18n/i18n", "storage/storage", "storage/syncapi", "settings/checkout"
-], function(Page, Auth, Alert, Translate, Storage, SyncAPI, Checkout) {
+	"settings/page", "core/auth", "core/analytics", "modals/alert", "i18n/i18n", "storage/storage", "storage/syncapi", "settings/checkout"
+], function(Page, Auth, Track, Alert, Translate, Storage, SyncAPI, Checkout) {
 	var View = Page.extend({
 		id: "ads",
 
 		events: {
 			"click button.upgrade": function() {
+				Track.FB.logEvent("INITIATED_CHECKOUT", null, { fb_content_type: "adfree" });
+
 				if (!Auth.isSignedIn) {
 					Alert({
 						confirm: true,
@@ -76,6 +78,10 @@ define([
 				// Ad placement
 				adPlacement: data.adPlacement
 			};
+		},
+
+		onRender: function() {
+			Track.FB.logEvent("VIEWED_CONTENT", null, { fb_content_type: "page", fb_content_id: "adfree" });
 		}
 	});
 

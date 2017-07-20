@@ -173,6 +173,8 @@ define([
 
 			this.modal.hide();
 
+			Track.FB.logEvent("WidgetConfigure", null, { widgetId: this.widget.name });
+
 			Track.event("Widgets", "Configure", this.widget.name);
 
 

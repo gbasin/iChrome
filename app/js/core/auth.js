@@ -6,7 +6,7 @@
  * posts authorization (usually a Google login token) and the server responds with
  * access and refresh tokens.
  */
-define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/alert", "storage/filesystem"], function(_, $, Backbone, Browser, Translate, Alert, FileSystem) {
+define(["lodash", "jquery", "backbone", "browser/api", "fbanalytics", "i18n/i18n", "modals/alert", "storage/filesystem"], function(_, $, Backbone, Browser, FB, Translate, Alert, FileSystem) {
 	var API_HOST = "https://api.ichro.me";
 
 	var Auth = Backbone.Model.extend({
@@ -125,6 +125,8 @@ define(["lodash", "jquery", "backbone", "browser/api", "i18n/i18n", "modals/aler
 						if (!d || d.error || !d.token) {
 							return cb(d.error || true);
 						}
+
+						FB.logEvent("COMPLETED_REGISTRATION");
 
 						this.set({
 							token: d.token,

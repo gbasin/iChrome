@@ -236,6 +236,8 @@ define(
 									item.removed = true;
 
 									if (!item.installing) {
+										Track.FB.logEvent("WidgetUninstall", null, { fb_content_id: item.attr("data-name") });
+
 										Track.event("Widgets", "Uninstall", item.attr("data-name"));
 									}
 								}
@@ -289,6 +291,8 @@ define(
 								view.refresh();
 
 								if (item.installing) {
+									Track.FB.logEvent("WidgetInstall", null, { widgetId: view.widget.name, size: view.model.get("size") });
+
 									Track.queue("widgets", "install", view.widget.name, view.model.get("size"));
 
 									Track.event("Widgets", "Install", view.widget.name);

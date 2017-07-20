@@ -1,3 +1,44 @@
+var eventQueue = [];
+
+window.fbAsyncInit = function() {
+	FB.init({
+		appId: "1646068945432680",
+		xfbml: false,
+		version: "v2.10"
+	});
+
+	FB.AppEvents.setAppVersion(chrome.runtime.getManifest().version + "-" + (chrome.i18n.getMessage("@@extension_id") === "iccjgbbjckehppnpajnmplcccjcgbdep" ? "nt" : "hp"));
+
+	try {
+		var authData = JSON.parse(localStorage.authData);
+
+		if (authData.user) {
+			FB.AppEvents.setUserID(authData.user);
+		}
+
+		FB.AppEvents.updateUserProperties({
+			"$user_type": authData.isPro ? "Pro" : authData.adFree ? "Ad-free" : !!authData.user ? "Signed in" : "Anonymous"
+		});
+	}
+	catch (e) {}
+
+	FB.AppEvents.logEvent("BackgroundLoad");
+
+	if (eventQueue.length) {
+		eventQueue.forEach(function(e) {
+			FB.AppEvents.logEvent(e[0], e[1], e[2]);
+		});
+	}
+};
+
+(function(d, s, id){
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) {return;}
+	js = d.createElement(s); js.id = id;
+	js.src = "https://connect.facebook.net/en_US/sdk.js";
+	fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
+
 /**
 * @preserve Copyright 2012 Twitter, Inc.
 * @license http://www.apache.org/licenses/LICENSE-2.0.txt
@@ -15,6 +56,13 @@ var storageLength = localStorage.length;
 
 if (!storageLength) {
 	localStorage.firstRun = "true";
+
+	if (FB && FB.AppEvents) {
+		FB.AppEvents.logEvent("BackgroundInstall");
+	}
+	else {
+		eventQueue.push(["BackgroundInstall"]);
+	}
 
 	navigator.sendBeacon("https://stats.ichro.me/ingest?" +
 		"extension=" + chrome.i18n.getMessage("@@extension_id") + "&version=" + chrome.runtime.getManifest().version + "&lang=" + chrome.i18n.getMessage("lang_code"),
@@ -73,6 +121,13 @@ localStorage.version = chrome.runtime.getManifest().version;
 var appURL = chrome.extension.getURL("index.html");
 
 chrome.browserAction.onClicked.addListener(function() {
+	if (FB && FB.AppEvents) {
+		FB.AppEvents.logEvent("ActionClicked");
+	}
+	else {
+		eventQueue.push(["ActionClicked"]);
+	}
+
 	chrome.tabs.create({
 		url: appURL
 	});

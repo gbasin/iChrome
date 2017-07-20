@@ -87,6 +87,8 @@ define([
 				}
 
 
+				Track.FB.logEvent("SEARCHED", null, { fb_search_string: val });
+
 				if (!speech) {
 					Track.queue("search", val);
 
