@@ -6,6 +6,7 @@ define(["jquery", "oauth", "browser/api"], function($, OAuth, Browser) {
 		id: 24,
 		size: 1,
 		order: 6,
+		unlisted: true,
 		interval: 300000,
 		nicename: "now",
 		sizes: ["variable"],

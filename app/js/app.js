@@ -14,8 +14,10 @@ require.config({
 		"jquery": "lib/jquery",
 		"backbone": "lib/backbone",
 		"oauth2": "../oauth2/oauth2",
+		"fbanalytics": "lib/fbanalytics",
 		"widgetTemplate": "widgets/registry/template",
 		"jquery.serializejson": "lib/jquery.serializejson",
+		"facebooksdk": "https://connect.facebook.net/en_US/sdk",
 		"backbone.viewcollection": "lib/backbone.viewcollection"
 	},
 	map: {
@@ -24,7 +26,10 @@ require.config({
 		}
 	},
 	shim: {
-		"lib/jquery.sortable": ["jquery"]
+		"lib/jquery.sortable": ["jquery"],
+		"facebooksdk": {
+			exports: "FB"
+		}
 	}
 });
 

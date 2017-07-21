@@ -127,6 +127,8 @@ define([
 				easing: "cubic-bezier(.4, 0, .2, 1)"
 			});
 
+			Track.FB.logEvent("VIEWED_CONTENT", null, { fb_content_type: "page", fb_content_id: "settings" });
+
 			Track.pageview("Settings", "/settings");
 		},
 

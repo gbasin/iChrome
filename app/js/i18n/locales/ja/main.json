@@ -13,8 +13,8 @@
   "hide_banner":"Hide this banner",
   "hide_ad":{
     "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
-    "upgrade":"Upgrade",
-    "hide":"Hide ads"
+    "upgrade":"アップグレード",
+    "hide":"広告を非表示"
   },
   "alert":{
     "default_button":"閉じる",
@@ -84,7 +84,7 @@
     "placeholder":"キーワードを入力",
     "placeholder_ok":"キーワードを入力するか、\"OK, Google\" と言ってください",
     "suggestions":{
-      "url_subtext":"Visit URL",
+      "url_subtext":"URL を参照",
       "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
     },
     "apps":{
@@ -141,7 +141,7 @@
       },
       "tabs":"タブ",
       "widgets":"ウィジェット",
-      "ads":"Ads",
+      "ads":"広告",
       "pro":"Pro",
       "accounts":"アカウント",
       "misc":"その他",
@@ -350,17 +350,17 @@
       "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
       "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
       "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
-      "upgrade_btn":"Upgrade to ad-free",
+      "upgrade_btn":"広告なしバージョンにアップグレード",
       "already_upgraded":"It looks like you've already upgraded to ad-free",
       "signin":"ログイン",
       "signin_desc":"Sign in before upgrading so we can link your purchase to your account",
       "signin_btn":"ログイン",
-      "thank_you":"Thank you for upgrading to ad-free!",
+      "thank_you":"広告なしバージョンにアップグレードしていただきありがとうございます ！",
       "placement":{
         "title":"Ad placement",
         "left":"In the leftmost column",
         "right":"In the rightmost column",
-        "top":"Above the tab",
+        "top":"タブの上",
         "bottom":"Floating at the bottom"
       }
     }

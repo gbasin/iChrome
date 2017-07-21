@@ -1,7 +1,7 @@
 /**
  * Exports a global analytics API
  */
-define(["lodash", "browser/api", "core/status", "core/auth"], function(_, Browser, Status, Auth) {
+define(["lodash", "browser/api", "core/status", "core/auth", "fbanalytics"], function(_, Browser, Status, Auth, FB) {
 	var sendQueue = [],
 		sendTimeout = null,
 		pageTime, totalLoad, toolbarStyle;
@@ -76,6 +76,8 @@ define(["lodash", "browser/api", "core/status", "core/auth"], function(_, Browse
 	Object.defineProperty(track, "ga", { get: function() {
 		return ga;
 	} });
+
+	track.FB = FB;
 
 	/*
 		This wraps the Analytics event tracker.

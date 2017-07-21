@@ -1,7 +1,7 @@
 /**
  * The checkout handler
  */
-define(["lodash", "jquery", "browser/api", "modals/alert", "i18n/i18n", "core/auth"], function(_, $, Browser, Alert, Translate, Auth) {
+define(["lodash", "jquery", "browser/api", "core/analytics", "modals/alert", "i18n/i18n", "core/auth"], function(_, $, Browser, Track, Alert, Translate, Auth) {
 	var POPUP_WIDTH = 400,
 		POPUP_HEIGHT = 500,
 		PRO_URL = "https://api.ichro.me/billing/v1/checkout",
@@ -164,6 +164,10 @@ define(["lodash", "jquery", "browser/api", "modals/alert", "i18n/i18n", "core/au
 							Auth.set("token", d.authToken);
 						}
 
+						if (!isUpdating) {
+							Track.FB.logPurchase(plan === "pro_monthly" ? 2 : 20, "USD", { fb_content_type: "pro", fb_content_id: plan });
+						}
+
 						Alert({
 							title: Translate("settings.pro.checkout.thank_you"),
 							contents: isUpdating ? null : [Translate("settings.pro.checkout.thank_you2")]
@@ -199,6 +203,8 @@ define(["lodash", "jquery", "browser/api", "modals/alert", "i18n/i18n", "core/au
 						if (d.authToken) {
 							Auth.set("token", d.authToken);
 						}
+
+						Track.FB.logPurchase(10, "USD", { fb_content_type: "adfree", fb_content_id: "adfree_onetime" });
 
 						Alert({
 							title: Translate("settings.ads.thank_you"),

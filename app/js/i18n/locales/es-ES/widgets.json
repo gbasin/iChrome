@@ -1,7 +1,7 @@
 {
   "lang_code":"es-widgets",
   "apps":{
-    "name":"Aplicaciónes",
+    "name":"Aplicaciones",
     "desc":"Muestra tus aplicaciones Google Chrome instalados actualmente.",
     "settings":{
       "format":"Formato widget",
@@ -518,9 +518,9 @@
       "5d":"5d",
       "1m":"1m",
       "3m":"3m",
-      "1y":"1y",
-      "5y":"5y",
-      "max":"max"
+      "1y":"1a",
+      "5y":"5a",
+      "max":"máx"
     },
     "open":"abrir",
     "prev_close":"Previous Close",
@@ -530,9 +530,9 @@
     "52low":"52 week low",
     "volume":"volumen",
     "avg_volume":"Avg. Volume",
-    "shares":"Shares",
+    "shares":"Veces compartido",
     "cap":"Market Cap",
-    "pe":"Price / Earnings",
+    "pe":"Precio / Ganancias",
     "eps":"EPS",
     "beta":"Beta",
     "inst_own":"Inst. own"
@@ -579,22 +579,22 @@
     },
     "to_home":"a casa",
     "to_work":"para trabajar",
-    "hour":"%s hour",
-    "hours":"%s hours",
+    "hour":"%s hora",
+    "hours":"%s horas",
     "hours_letter":"%sh",
-    "minute":"%s minute",
-    "minutes":"%s minutes",
+    "minute":"%s minuto",
+    "minutes":"%s minutos",
     "minute_short":"%s min",
-    "minutes_short":"%s mins",
+    "minutes_short":"%s minutos",
     "minutes_letter":"%sm"
   },
   "translate":{
     "name":"Traducir",
     "desc":"Lets you quickly translate to and from 90 languages as you type",
-    "from_placeholder":"Start typing here",
-    "to_placeholder":"Translated text will appear here",
-    "detect_lang":"Detect language",
-    "translating":"Translating...",
+    "from_placeholder":"Comienza escribiendo aquí",
+    "to_placeholder":"El texto traducido aparecerá aquí",
+    "detect_lang":"Detectar idioma",
+    "translating":"Traduciendo...",
     "unknown":"Desconocido"
   },
   "unread":{
@@ -622,28 +622,28 @@
     "settings":{
       "location":"Localización(es)",
       "location_placeholder":"Escriba una ubicación y pulse Enter",
-      "units":"Units",
+      "units":"Unidades",
       "units_imperial":"Imperial (Fahrenheit)",
       "units_metric":"Metric (Celsius)",
       "enabled":"Habilitado",
       "disabled":"Deshabilitado",
-      "forecast":"Forecasts",
-      "hourly":"Hourly forecasts"
+      "forecast":"Previsiones",
+      "hourly":"Pronósticos por horas"
     },
     "more":"Más",
-    "less":"Less",
+    "less":"Menos",
     "wind":"Velocidad de viento",
     "precipitation":"Precip",
     "uv":"UV index",
-    "feelslike":"Feels like",
-    "barometer":"Barometer",
-    "visibility":"Visibility",
+    "feelslike":"Sensación",
+    "barometer":"Barómetro",
+    "visibility":"Visibilidad",
     "humidity":"Humedad",
     "dewpoint":"Dew point",
-    "moonphase":"Moon",
-    "sunrise":"Sunrise",
-    "sunset":"Sunset",
-    "moonrise":"Moonrise",
-    "moonset":"Moonset"
+    "moonphase":"Luna",
+    "sunrise":"Amanecer",
+    "sunset":"Atardecer",
+    "moonrise":"Salida de la luna",
+    "moonset":"Puesta de la Luna"
   }
 }

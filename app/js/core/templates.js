@@ -9,7 +9,6 @@ var templates = [
 		"alert",				"menu",					"widget-settings.inputs",
 		"whatsnew",				"bginfo",				"updated",
 		"widgets/auth-required","widgets/error",		"widgets/permissions-request",
-		"search-page",
 
 		"onboarding/modal",		"onboarding/widgets",	"onboarding/settings",
 

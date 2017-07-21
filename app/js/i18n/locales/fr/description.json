@@ -1,20 +1,20 @@
 {
   "lang_code":"fr",
   "line_1":"Faites votre page d'accueil de la bonne façon : Rapide, personnalisable, belle et productive !",
-  "link":"Vous voulez iChrome sur votre page Nouvel onglet ? Essayez iChrome New Tab : https:\/\/ichro.me\/n",
-  "newtab_line_1":"Faites votre page d'accueil \/ Nouvel onglet de la bonne façon : Rapide, personnalisable, belle et productive !",
-  "newtab_link":"Vous voulez iChrome visible seulement quand vous lancez Google Chrome ? Essayez l'extension principale : https:\/\/ichro.me\/w",
+  "link":"Vous voulez iChrome sur votre page Nouvel onglet ? Essayez iChrome New Tab : https://ichro.me/n",
+  "newtab_line_1":"Faites votre page d'accueil / Nouvel onglet de la bonne façon : Rapide, personnalisable, belle et productive !",
+  "newtab_link":"Vous voulez iChrome visible seulement quand vous lancez Google Chrome ? Essayez l'extension principale : https://ichro.me/w",
   "line_2":"iChrome comprend environ 50 widgets, des milliers de fond d'écran époustouflant, et de puissantes fonctionnalités, y compris :",
   "features":[
-    "Dozens of widgets including: Weather, Sports, News, Stocks, RSS, Bookmarks, Gmail, Recently Closed Tabs, and more!",
-    "Drag and drop customization on 1-5 columns or a grid!",
-    "Fully featured voice search and \"OK Google\" hotword detection",
-    "Buy Pro and get dark and transparent themes, live backgrounds, maximizable widgets, hourly weather forecasts, and more",
-    "Navigate between an unlimited number of customizable tabs, each with their own widgets",
-    "Work completely offline anytime, everything (even the backgrounds) is ready whenever you are!",
-    "And hundreds more features! Install iChrome now and check them out!"
+    "Des dizaines de widgets y compris: Météo, Sports, Actualités, Magasins, RSS, Marque-pages, Gmail, Onglet récemment fermés, et plus encore !",
+    "Personnalisable en glisser-déposer sur 1-5 colonnes ou une grille!",
+    "Recherche vocal avec toutes les options, incluant la détection de \"OK Google\"",
+    "Achetez la version pro et obtenez des thèmes sombres et transparents, des fonds d'écran animés, des widgets agrandissables, des prévisions météorologiques, et plus encore",
+    "Naviguez entre un nombre illimité d'onglets personnalisables, chacun avec leurs propres extensions",
+    "Travaillez complètement hors ligne à n'importe quel moment, tout (et en arrière-plan) est prêt peu importe où vous vous trouvez !",
+    "Et des centaines de fonctionnalités supplémentaires ! Installez iChrome maintenant et découvrez-les !"
   ],
-  "line_3":"iChrome est un projet open source. Voyez-le sur Github : https:\/\/github.com\/AMKohn\/iChrome",
-  "line_4":"Vos commentaires et suggestions sont les bienvenus à tout moment au : http:\/\/ichrome.uservoice.com",
+  "line_3":"iChrome est un projet open source. Voyez-le sur Github : https://github.com/AMKohn/iChrome",
+  "line_4":"Vos commentaires et suggestions sont les bienvenus à tout moment au : http://ichrome.uservoice.com",
   "line_5":"Fatigués des extensions pages personnelles qui vous brident et ne vous laissent rien personnaliser ? Bombardés par les publicités ? Cherchez-vous toujours \"Le\" substitut pour iGoogle ? Vous recherchez une belle page de démarrage qui ne cesse de s'améliorer ? iChrome est pour vous !"
 }

@@ -66,6 +66,8 @@ define(
 
 							wModal.content = wModal.$(".content");
 
+							Track.FB.logEvent("VIEWED_CONTENT", null, { fb_content_type: "page", fb_content_id: "widgets/" + widget.name });
+
 							Track.pageview("Store: " + widget.name, "/store/" + widget.name);
 
 							wModal.content.find(".sizes").sortable({
@@ -137,6 +139,8 @@ define(
 					this.$el.removeClass("content").addClass("wrapper").html(render("store", {
 						widgets: this.model.get("widgets")
 					}));
+
+					Track.FB.logEvent("VIEWED_CONTENT", null, { fb_content_type: "page", fb_content_id: "widgets" });
 
 					return this;
 				}

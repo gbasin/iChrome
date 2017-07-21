@@ -10,11 +10,11 @@
     "me":"Ja"
   },
   "remove_widget":"Usuń",
-  "hide_banner":"Hide this banner",
+  "hide_banner":"Ukryj ten baner",
   "hide_ad":{
-    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
-    "upgrade":"Upgrade",
-    "hide":"Hide ads"
+    "content":"Czy chcesz ukryć reklamy, aż do następnego uruchomienia iChrome, lub uaktualnić go, by trwale je usunąć?",
+    "upgrade":"Ulepsz",
+    "hide":"Ukryj reklamy"
   },
   "alert":{
     "default_button":"Odrzuć",
@@ -84,8 +84,8 @@
     "placeholder":"Wpisz słowa kluczowe",
     "placeholder_ok":"Wpisz słowa kluczowe lub powiedz \"OK, Google\"",
     "suggestions":{
-      "url_subtext":"Visit URL",
-      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+      "url_subtext":"Odwiedź URL",
+      "capture_notice":"iChrome obsługuje wyszukiwania, które normalnie wprowadzasz z omniboksu. Można to wyłączyć w dowolnym momencie w ustawieniach"
     },
     "apps":{
       "search":"Szukaj",
@@ -131,7 +131,7 @@
         "background":"Tło",
         "layout":"Układ",
         "theme":"Motyw aplikacji",
-        "ad_placement":"Ad placement"
+        "ad_placement":"Miejsce docelowe reklamy"
       },
       "toolbar":"Pasek narzędzi",
       "toolbar_sections":{
@@ -141,7 +141,7 @@
       },
       "tabs":"Karty",
       "widgets":"Widżety",
-      "ads":"Ads",
+      "ads":"Reklamy",
       "pro":"Pro",
       "accounts":"Konto",
       "misc":"Inne",
@@ -200,7 +200,7 @@
         "title":"Szukaj",
         "desc":"Ustawienia te kontrolują, w jaki sposób wyszukiwanie tekstowe i głosowe działają",
         "engine":"Wyszukiwarka",
-        "engines_default":"Default",
+        "engines_default":"Domyślny",
         "engines_custom":"Niestandardowy",
         "engines_custom_desc":"Jest to adres URL wyszukiwarki który użyje tekstu z pola wyszukiwarki. Umieść <b>%s</b> w miejsce gdzie parametry wyszukiwania mają się znaleźć.",
         "omnibox_capture":"Handle searches normally made in the Omnibox",
@@ -350,18 +350,18 @@
       "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
       "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
       "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
-      "upgrade_btn":"Upgrade to ad-free",
-      "already_upgraded":"It looks like you've already upgraded to ad-free",
+      "upgrade_btn":"Uaktualnij do wersji bez reklam",
+      "already_upgraded":"Wygląda na to, że masz już uaktualnione do wersji premium",
       "signin":"Zaloguj się",
       "signin_desc":"Sign in before upgrading so we can link your purchase to your account",
       "signin_btn":"Zaloguj się",
-      "thank_you":"Thank you for upgrading to ad-free!",
+      "thank_you":"Dziękujemy za zakup wersji premium!",
       "placement":{
-        "title":"Ad placement",
-        "left":"In the leftmost column",
-        "right":"In the rightmost column",
-        "top":"Above the tab",
-        "bottom":"Floating at the bottom"
+        "title":"Miejsce docelowe reklamy",
+        "left":"W kolumnie z lewej strony",
+        "right":"W kolumnie z prawej strony",
+        "top":"Powyżej zakładki",
+        "bottom":"Pływające na dole"
       }
     }
   },

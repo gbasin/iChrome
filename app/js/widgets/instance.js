@@ -144,6 +144,8 @@ define([
 
 
 			if (!this.isPreview) {
+				Track.FB.logEvent("VIEWED_CONTENT", null, { fb_content_type: "widget", fb_content_id: this.widget.name, widgetSize: this.model.get("size") });
+
 				Track.queue("widgets", "view", this.widget.name, this.model.get("size"));
 			}
 

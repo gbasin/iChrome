@@ -435,7 +435,7 @@
   },
   "news":{
     "name":"সংবাদ",
-    "desc":"Displays personalized and general news by category",
+    "desc":"Displays the current top news by category and edition.",
     "all_stories":"সব",
     "settings":{
       "page_title":"সেটিংস",

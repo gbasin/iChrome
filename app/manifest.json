@@ -76,7 +76,7 @@
 		"bookmarks",
 		"management"
 	],
-	"version": "3.0.0.21",
+	"version": "3.0.0.22",
 	"manifest_version": 2,
 	"default_locale": "en",
 	"short_name": "iChrome",
@@ -86,5 +86,5 @@
 	"description": "__MSG_extDescription__",
 	"update_url": "http://clients2.google.com/service/update2/crx",
 	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxwfbvOggtaBdJLMJbzEvFWW+BCZ2tEZwH9Nolbnj7t7ph5wnFg5DAkv34/N8hD4gAfQBdNM045g9EEccicqkLYsFLR7YT4kczrgHbq83qS3odYiAWPOEjQM+ydwUDxj0gjtgdwE7KugLWOZkOUQUJJ9IzeRvVHjyZUeIgeBBEFvwQyI7bKTyxeXKBwzt+0JTBs7W/0IQ/KGzNFZo5YXYuPIdjRCR823u1uJ8Zgr8CGmUrkqDoJuxmY+De7FxVZfJsINlpoGRAeXE38FYRgDkTfk4gad0pgromIYVRS7gDJXGBdm52Yvi+Ah5cCXhqB+Lj8xtOCN98WL6M9exn88VoQIDAQAB",
-	"content_security_policy": "script-src 'self' 'unsafe-eval' 'sha256-hNWUbwB8ZS/vP+O4TfqZ/mmkMSYSJqGZ/4t5SSwAEk0=' 'sha256-1U43HAOlAXz6irAbXBbIpCr9fs/nLVDSCTx+uGZSAvY=' https://www.google-analytics.com https://*.uservoice.com https://www.google.com https://js.braintreegateway.com https://assets.braintreegateway.com https://www.paypalobjects.com; object-src 'self'"
+	"content_security_policy": "script-src 'self' 'unsafe-eval' 'sha256-hNWUbwB8ZS/vP+O4TfqZ/mmkMSYSJqGZ/4t5SSwAEk0=' 'sha256-1U43HAOlAXz6irAbXBbIpCr9fs/nLVDSCTx+uGZSAvY=' https://*.facebook.net https://*.facebook.com https://www.google-analytics.com https://*.uservoice.com https://www.google.com https://js.braintreegateway.com https://assets.braintreegateway.com https://www.paypalobjects.com; object-src 'self'"
 }

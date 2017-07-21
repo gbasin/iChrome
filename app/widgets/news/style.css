@@ -227,7 +227,6 @@ header .title ~ .tabs {
 .item {
 	font-size: 0;
 	display: block;
-	position: relative;
 	transition: background .1s ease;
 }
 
@@ -296,7 +295,6 @@ header .title ~ .tabs {
 	overflow: hidden;
 	font-weight: 500;
 	max-height: 36px;
-	padding-right: 10px;
 	line-height: inherit;
 	font-family: inherit;
 	transition: color .1s ease;
@@ -309,42 +307,6 @@ header .title ~ .tabs {
 .item .content.desc .title {
 	margin-bottom: 3px;
 }
-
-.item.promoted .title {
-	padding-right: 10px;
-}
-
-.item.promoted .title .m-icon {
-	top: 6px;
-	right: 5px;
-	color: #43A047;
-	font-size: 16px;
-	position: absolute;
-}
-
-.footer {
-	color: #666;
-	display: block;
-	padding: 0 10px;
-	font-size: 10px;
-	text-align: right;
-	line-height: 30px;
-	background: #F5F5F5;
-	border-top: 1px solid rgba(200, 200, 200, .5);
-}
-
-.dark .footer {
-	color: #AAA;
-	background: rgba(0, 0, 0, .2);
-	border-top-color: rgba(0, 0, 0, .15);
-}
-
-.footer svg {
-	height: 16px;
-	display: inline-block;
-	vertical-align: middle;
-}
-
 
 
 
