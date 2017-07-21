@@ -103,6 +103,7 @@ define([
 
 				var searchURL = "https://search.ichro.me/search?" +
 					"ext=" + (Browser.app.newTab ? "newtab" : "main") +
+					"&version=" + Browser.app.version +
 					"&engine=" + encodeURIComponent(this.model.get("searchEngine") || "default") +
 					"&q=" + encodeURIComponent(val);
 
