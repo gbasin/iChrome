@@ -14,7 +14,7 @@
   "hide_ad":{
     "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
     "upgrade":"Upgrade",
-    "hide":"Hide ads"
+    "hide":"বিজ্ঞাপন লুকান"
   },
   "alert":{
     "default_button":"বাদ দিন",
@@ -37,7 +37,7 @@
       "sign_in_button":"গুগল দিয়ে সাইন ইন করুন",
       "have_account":"দেখে মনে হচ্ছে আপনার ইতিমধ্যে একটি অ্যাকাউন্ট আছে!",
       "have_account_desc":"All your tabs and widgets are ready to use!",
-      "get_started":"Let's get started!",
+      "get_started":"চলুন শুরু করা যাক!",
       "get_started_desc":"You're good to go! Let's get your page set up."
     },
     "widgets":{
@@ -111,8 +111,8 @@
       "support":"সমর্থন",
       "feedback":"প্রতিক্রিয়া",
       "review":"পর্যালোচনা",
-      "terms":"Terms",
-      "privacy":"Privacy",
+      "terms":"শর্তাবলী",
+      "privacy":"গোপনীয়তা",
       "by":"Avi Kohn কর্তৃক"
     }
   },
@@ -123,25 +123,25 @@
   },
   "settings":{
     "title":"সেটিংস",
-    "exit":"Exit settings",
-    "saved":"Settings saved",
+    "exit":"প্রস্থান সেটিংস",
+    "saved":"সেটিংস সংরক্ষণ করা হয়েছে",
     "nav":{
-      "visual":"Visual",
+      "visual":"চাক্ষুষ",
       "visual_sections":{
-        "background":"Background",
+        "background":"পটভূমি",
         "layout":"লেআউট",
-        "theme":"App theme",
+        "theme":"অ্যাপ থিম",
         "ad_placement":"Ad placement"
       },
-      "toolbar":"Toolbar",
+      "toolbar":"সরঞ্জামদণ্ড",
       "toolbar_sections":{
-        "style":"Style",
+        "style":"শৈলী",
         "search":"অনুসন্ধান",
-        "links":"Links"
+        "links":"সংযোগ"
       },
       "tabs":"ট্যাব",
       "widgets":"উইজেট",
-      "ads":"Ads",
+      "ads":"বিজ্ঞাপন",
       "pro":"Pro",
       "accounts":"Account",
       "misc":"Miscellaneous",
@@ -180,7 +180,7 @@
         }
       },
       "theme":{
-        "title":"App theme",
+        "title":"অ্যাপ থিম",
         "desc":"The app theme controls the style of iChrome itself and all widgets",
         "preview":"প্রাকদর্শন",
         "light":"Light (default)",
@@ -191,7 +191,7 @@
     },
     "toolbar":{
       "style":{
-        "title":"Style",
+        "title":"শৈলী",
         "desc":"This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
         "normal":"স্বাভাবিক",
         "button":"বোতাম"
@@ -200,7 +200,7 @@
         "title":"অনুসন্ধান",
         "desc":"These settings control how the search box and voice search function",
         "engine":"অনুসন্ধান ইঞ্জিন",
-        "engines_default":"Default",
+        "engines_default":"পূর্ব-নির্ধারিত",
         "engines_custom":"স্বনির্ধারিত",
         "engines_custom_desc":"Enter a URL that queries should be sent to, with <b>%s</b> where the query should go.",
         "omnibox_capture":"Handle searches normally made in the Omnibox",
@@ -209,7 +209,7 @@
         "search_tab":"Open search results in a new tab"
       },
       "links":{
-        "title":"Links",
+        "title":"সংযোগ",
         "desc":"These are the items shown at the right of the toolbar",
         "apps":"অ্যাপ মেনু",
         "custom":"Custom links",
@@ -249,14 +249,14 @@
         "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
         "backup":"Backup now",
         "upload":"Restore from file",
-        "download":"Download",
-        "restore":"Restore",
-        "download_name":"iChrome Backup",
+        "download":"ডাউনলোড",
+        "restore":"পুনঃস্থাপন",
+        "download_name":"iChrome ব্যাকআপ",
         "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
         "restore_error":"An error occurred while trying to parse the provided data, please try again later."
       },
       "css":{
-        "title":"Custom CSS",
+        "title":"স্বনির্ধারিত CSS",
         "desc":"You can use CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definition</a>) to customize almost any part of iChrome.",
         "placeholder":"Enter up to 1000 characters of CSS here"
       },
@@ -303,8 +303,8 @@
         "title":"Checkout",
         "updating_title":"হালনাগাদ পরিকল্পনা",
         "payment_options":"Pay",
-        "pay_monthly":"Monthly ($2)",
-        "pay_yearly":"Yearly ($20)",
+        "pay_monthly":"মাসিক (2$)",
+        "pay_yearly":"বাত্সরিক ($20)",
         "cancel":"বাতিল",
         "update":"হালনাগাদ",
         "subscribe":"সদস্যতা",
@@ -321,7 +321,7 @@
         "signin_btn":"Sign in"
       },
       "plan":{
-        "title":"Plan",
+        "title":"পরিকল্পনা",
         "desc":"You are currently subscribed to iChrome Pro (%s)",
         "types":{
           "monthly":"মাসিক",

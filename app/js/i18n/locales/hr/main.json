@@ -10,11 +10,11 @@
     "me":"Ja"
   },
   "remove_widget":"Ukloni",
-  "hide_banner":"Sakrij ovaj oglas",
+  "hide_banner":"Sakrij reklamu",
   "hide_ad":{
-    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
-    "upgrade":"Upgrade",
-    "hide":"Hide ads"
+    "content":"Želiš li da se reklame ne prikazuju do sljedećeg otvaranja iChrome-a ili da se trajno sakriju nadogradnjom?",
+    "upgrade":"Nadogradi",
+    "hide":"Sakrij reklame"
   },
   "alert":{
     "default_button":"Odbaci",
@@ -85,7 +85,7 @@
     "placeholder_ok":"Unesi pojmove ili reci \"OK, Google\"",
     "suggestions":{
       "url_subtext":"Otvori URL",
-      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+      "capture_notice":"iChrome preuzima pretraživanja iz Chrome omniboxa. Moguće je to onemogućiti u postavkama"
     },
     "apps":{
       "search":"Pretraživanje",
@@ -131,7 +131,7 @@
         "background":"Pozadina",
         "layout":"Raspored",
         "theme":"Tema aplikacije",
-        "ad_placement":"Oglasi"
+        "ad_placement":"Mjesto reklama"
       },
       "toolbar":"Alatna traka",
       "toolbar_sections":{
@@ -141,7 +141,7 @@
       },
       "tabs":"Kartice",
       "widgets":"Widgeti",
-      "ads":"Ads",
+      "ads":"Reklame",
       "pro":"Pro",
       "accounts":"Račun",
       "misc":"Ostalo",
@@ -203,7 +203,7 @@
         "engines_default":"Zadan",
         "engines_custom":"Prilagođen",
         "engines_custom_desc":"Unesi URL koji ima <b>%s</b> tamo gdje treba ići pojam pretraživanja.",
-        "omnibox_capture":"Handle searches normally made in the Omnibox",
+        "omnibox_capture":"Preuzmi pretraživanja iz Chrome omniboxa",
         "voice":"Omogući glasovno pretraživanje",
         "ok_google":"Omogući \"OK Google\" detekciju",
         "search_tab":"Otvori rezultate pretraživanja u novoj kartici"
@@ -295,7 +295,7 @@
         "bg_downloads":"Pozadine koje se mogu preuzeti",
         "weather":"Prognoza po satu za 10 dana unaprijed",
         "toolbar":"Više linkova na traci",
-        "ads":"A completely ad-free experience",
+        "ads":"Potpuno iskustvo bez reklama",
         "support":"Prioritizirana podrška i prijedlozi",
         "buy_pro":"Kupi Pro"
       },
@@ -347,21 +347,21 @@
       }
     },
     "ads":{
-      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
-      "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
-      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
-      "upgrade_btn":"Upgrade to ad-free",
-      "already_upgraded":"It looks like you've already upgraded to ad-free",
+      "text1":"iChrome prikazuje nekoliko malih reklama kako bi serveri mogli biti plaćeni kao i daljni razvoj aplikacije. S ovim reklamama iChrome može biti besplatan svakome.",
+      "text2":"Ovdje možeš odabrati mjesto prikazivanja reklama ili kupiti nadogradnju na Iskustvo bez oglasa.",
+      "text3":"Iskustvo bez oglasa je jednokratna kupnja koja trajno uklanja reklame iz iChrome-a gdjegod si prijavljen. Također možeš nadograditi na Pro koji uz trajno uklanjanje reklama nudi još dodatne mogućnosti.",
+      "upgrade_btn":"Nadogradi na Iskustvo bez oglasa",
+      "already_upgraded":"Već ste nadograđeni na Iskustvo bez oglasa",
       "signin":"Prijavi se",
-      "signin_desc":"Sign in before upgrading so we can link your purchase to your account",
+      "signin_desc":"Prijavi se prije nadogradnje tako da kupnja bude povezana s tvojim računom",
       "signin_btn":"Prijavi se",
-      "thank_you":"Thank you for upgrading to ad-free!",
+      "thank_you":"Hvala vam na nadogradnji na Iskustvo bez oglasa!",
       "placement":{
-        "title":"Oglasi",
-        "left":"In the leftmost column",
-        "right":"In the rightmost column",
-        "top":"Above the tab",
-        "bottom":"Floating at the bottom"
+        "title":"Mjesto reklama",
+        "left":"U prvom stupcu",
+        "right":"U posljednjem stupcu",
+        "top":"Iznad kartice",
+        "bottom":"Na dnu zaslona"
       }
     }
   },

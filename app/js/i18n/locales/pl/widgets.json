@@ -181,18 +181,18 @@
   },
   "reddit":{
     "name":"Reddit",
-    "desc":"Displays the top items on Reddit for any given subreddit.",
+    "desc":"Wyświetla najpopularniejsze elementy na Reddit dla dowolnego danego subreddita.",
     "settings":{
       "subreddit":"Subreddit",
       "subreddit_help":"Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
-      "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
+      "subreddit_placeholder":"Wprowadź subreddit aby wyświetlić łącza (np. Technologia)",
       "sort":"Kolejność sortowania",
       "sort_options":{
         "hot":"Gorący",
         "top":"Góra",
         "new":"Nowy",
-        "gilded":"Gilded",
-        "rising":"Rising",
+        "gilded":"Pozłocone",
+        "rising":"Wschodzące",
         "controversial":"Kontrowersyjne"
       },
       "links":"Ilość linków",
@@ -579,11 +579,11 @@
     },
     "to_home":"do domu",
     "to_work":"do pracy",
-    "hour":"%s hour",
+    "hour":"%s godzina",
     "hours":"%s godziny",
     "hours_letter":"%sg",
-    "minute":"%s minute",
-    "minutes":"%s minutes",
+    "minute":"%s minuta",
+    "minutes":"%s minut",
     "minute_short":"%s min",
     "minutes_short":"%s min",
     "minutes_letter":"%sm"
@@ -593,7 +593,7 @@
     "desc":"Pozwala szybko tłumaczyć z/na 90 języków w miarę pisania",
     "from_placeholder":"Tu zacznij pisać",
     "to_placeholder":"Tu pojawi się przetłumaczony tekst",
-    "detect_lang":"Wykruj język",
+    "detect_lang":"Wykryj język",
     "translating":"Tłumaczę...",
     "unknown":"Brak tłumaczenia"
   },

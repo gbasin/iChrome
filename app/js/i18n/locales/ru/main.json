@@ -10,11 +10,11 @@
     "me":"Я"
   },
   "remove_widget":"Удалить",
-  "hide_banner":"Hide this banner",
+  "hide_banner":"Спрятать этот баннер",
   "hide_ad":{
-    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
-    "upgrade":"Upgrade",
-    "hide":"Hide ads"
+    "content":"Вы хотите скрыть рекламу только сейчас, или обновить до Pro версии чтобы больше не видеть её никогда?",
+    "upgrade":"Обновить",
+    "hide":"Скрыть рекламу"
   },
   "alert":{
     "default_button":"Отклонить",
@@ -84,8 +84,8 @@
     "placeholder":"Введите запрос",
     "placeholder_ok":"Введите запрос, или скажите \"ОК, Google\"",
     "suggestions":{
-      "url_subtext":"Visit URL",
-      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+      "url_subtext":"Открыть URL",
+      "capture_notice":"iChrome обрабатывает ваши поисковые запросы из Omnibox. Это можно отключить в настройках в любое время"
     },
     "apps":{
       "search":"Поиск",
@@ -131,7 +131,7 @@
         "background":"Фоновое изображение",
         "layout":"Раскладка",
         "theme":"Тема приложения",
-        "ad_placement":"Ad placement"
+        "ad_placement":"Расположение рекламы"
       },
       "toolbar":"Панель инструментов",
       "toolbar_sections":{
@@ -141,7 +141,7 @@
       },
       "tabs":"Вкладки",
       "widgets":"Виджеты",
-      "ads":"Ads",
+      "ads":"Реклама",
       "pro":"Pro",
       "accounts":"Учетная запись",
       "misc":"Прочее",
@@ -200,10 +200,10 @@
         "title":"Поиск",
         "desc":"Эти параметры определяют то, как будет работать поле поиска и функции голосового поиска",
         "engine":"Поисковая система",
-        "engines_default":"Default",
+        "engines_default":"По умолчанию",
         "engines_custom":"Свои",
         "engines_custom_desc":"Введите URL, на который будут отправлены запросы, с <0>%s</0>, где находится текст запроса.",
-        "omnibox_capture":"Handle searches normally made in the Omnibox",
+        "omnibox_capture":"Обрабатывать поисковые запросы в Omnibox",
         "voice":"Включить голосовой поиск",
         "ok_google":"Включить распознавание фразы \"OK Google\"",
         "search_tab":"Открывать результаты поиска в новой вкладке"
@@ -295,7 +295,7 @@
         "bg_downloads":"Загружаемые обои",
         "weather":"Почасовой прогноз погоды до 10 дней",
         "toolbar":"Больше ссылок в панели инструментов",
-        "ads":"A completely ad-free experience",
+        "ads":"Полностью без рекламы",
         "support":"Приоритетная поддержка и предложения",
         "buy_pro":"Обновиться до Pro версии"
       },
@@ -347,21 +347,21 @@
       }
     },
     "ads":{
-      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
-      "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
-      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
-      "upgrade_btn":"Upgrade to ad-free",
-      "already_upgraded":"It looks like you've already upgraded to ad-free",
+      "text1":"iChrome показывает немного реламы, чтобы оплачивать сервера и затраты на разработку. С такой рекламой мы можем позволить iChrome быть бесплатным для всех.",
+      "text2":"Здесь вы можете выбрать отображаемую рекламу, или купить ad-free, для её полного удаления.",
+      "text3":"Ad-free это одноразовая покупка которая полностью удаляет рекламу из iChrome везде, где вы пользуетесь. Вы можете обновить до Pro для получения дополнительных возможностей в дополнение к этому.",
+      "upgrade_btn":"Обновить до ad-free",
+      "already_upgraded":"Похоже, вы уже обновлены до ad-free",
       "signin":"Войти",
-      "signin_desc":"Sign in before upgrading so we can link your purchase to your account",
+      "signin_desc":"Войдите в свой аккаунт перед обновлением, чтобы была возможность связать покупку с вашим аккаунтом",
       "signin_btn":"Войти",
-      "thank_you":"Thank you for upgrading to ad-free!",
+      "thank_you":"Спасибо за обновление до ad-free!",
       "placement":{
-        "title":"Ad placement",
-        "left":"In the leftmost column",
-        "right":"In the rightmost column",
-        "top":"Above the tab",
-        "bottom":"Floating at the bottom"
+        "title":"Расположение рекламы",
+        "left":"В крайнем левом столбце",
+        "right":"В крайнем правом столбце",
+        "top":"Над вкладкой",
+        "bottom":"Внизу"
       }
     }
   },

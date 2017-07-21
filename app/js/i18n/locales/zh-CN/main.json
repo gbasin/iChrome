@@ -10,11 +10,11 @@
     "me":"我"
   },
   "remove_widget":"移除",
-  "hide_banner":"Hide this banner",
+  "hide_banner":"隐藏横幅广告",
   "hide_ad":{
-    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
-    "upgrade":"Upgrade",
-    "hide":"Hide ads"
+    "content":"您想要隐藏广告直到您下一次使用iChrome，或升级以永久移除广告吗？",
+    "upgrade":"立即升级",
+    "hide":"隐藏广告"
   },
   "alert":{
     "default_button":"忽略",
@@ -131,7 +131,7 @@
         "background":"背景",
         "layout":"布局",
         "theme":"应用主题",
-        "ad_placement":"Ad placement"
+        "ad_placement":"广告位置"
       },
       "toolbar":"工具栏",
       "toolbar_sections":{
@@ -141,7 +141,7 @@
       },
       "tabs":"标签页",
       "widgets":"小部件",
-      "ads":"Ads",
+      "ads":"广告",
       "pro":"专业版",
       "accounts":"帐户",
       "misc":"其他设置",
@@ -295,7 +295,7 @@
         "bg_downloads":"背景图片可任意下载",
         "weather":"提供长达未来10天每小时的天气预报",
         "toolbar":"可设置更多工具栏链接",
-        "ads":"A completely ad-free experience",
+        "ads":"完全无干扰的体验",
         "support":"技术支持及建议优先处理",
         "buy_pro":"立即购买专业版"
       },
@@ -348,20 +348,20 @@
     },
     "ads":{
       "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
-      "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
+      "text2":"在这里你可以选择广告在哪里显示，或升级至无广告版以获取无干扰的体验。",
       "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
-      "upgrade_btn":"Upgrade to ad-free",
-      "already_upgraded":"It looks like you've already upgraded to ad-free",
+      "upgrade_btn":"升级至无广告版",
+      "already_upgraded":"看起来您已经升级到无广告版了",
       "signin":"登入",
-      "signin_desc":"Sign in before upgrading so we can link your purchase to your account",
+      "signin_desc":"在升级前请您登录以便我们将其关联到您的账号",
       "signin_btn":"登入",
-      "thank_you":"Thank you for upgrading to ad-free!",
+      "thank_you":"感谢您升级到无广告版！",
       "placement":{
-        "title":"Ad placement",
-        "left":"In the leftmost column",
-        "right":"In the rightmost column",
-        "top":"Above the tab",
-        "bottom":"Floating at the bottom"
+        "title":"广告位置",
+        "left":"最左列",
+        "right":"最右列",
+        "top":"最上方",
+        "bottom":"底部漂浮"
       }
     }
   },

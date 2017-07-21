@@ -1,9 +1,9 @@
 {
   "lang_code":"pl",
-  "line_1":"Zmodyfikuj swoją stronę domową \/ startową aby była: szybka, konfigurowalna, śliczna i produktywna!",
-  "link":"Chcesz iChrome na swojej nowej zakładce? Wypróbuj iChrome New Tab: https:\/\/ichro.me\/n",
-  "newtab_line_1":"Zmodyfikuj swoje nowe zakładki \/ stronę startową aby była: szybka, konfigurowalna, śliczna i produktywna!",
-  "newtab_link":"Chcesz aby iChrome wyświetlał się tylko przy uruchomieniu przeglądarki Google Chrome? Wypróbuj główne rozszerzenie: https:\/\/ichro.me\/w",
+  "line_1":"Zmodyfikuj swoją stronę domową / startową aby była: szybka, konfigurowalna, śliczna i produktywna!",
+  "link":"Chcesz iChrome na swojej nowej zakładce? Wypróbuj iChrome New Tab: https://ichro.me/n",
+  "newtab_line_1":"Zmodyfikuj swoje nowe zakładki / stronę startową aby była: szybka, konfigurowalna, śliczna i produktywna!",
+  "newtab_link":"Chcesz aby iChrome wyświetlał się tylko przy uruchomieniu przeglądarki Google Chrome? Wypróbuj główne rozszerzenie: https://ichro.me/w",
   "line_2":"iChrome zawiera prawie 50 widget'ów, tysiące wspaniałych teł i zaawansowane funkcjonalności, w tym:",
   "features":[
     "Dozens of widgets including: Weather, Sports, News, Stocks, RSS, Bookmarks, Gmail, Recently Closed Tabs, and more!",
@@ -14,7 +14,7 @@
     "Work completely offline anytime, everything (even the backgrounds) is ready whenever you are!",
     "And hundreds more features! Install iChrome now and check them out!"
   ],
-  "line_3":"iChrome jest projektem open source, sprawdź go na Github: https:\/\/github.com\/AMKohn\/iChrome",
-  "line_4":"Opinie i sugestie są w każdej chwili mile widziane na: http:\/\/ichrome.uservoice.com",
+  "line_3":"iChrome jest projektem open source, sprawdź go na Github: https://github.com/AMKohn/iChrome",
+  "line_4":"Opinie i sugestie są w każdej chwili mile widziane na: http://ichrome.uservoice.com",
   "line_5":"Masz dosyć rozszerzeń strony domowej które Cię blokują i nie pozwalają skonfigurować się tak jak byś chciał? Atakują Cię reklamy? Wciąż poszukujesz zamiennika iGoogle? Wypatrujesz za śliczną stroną startową która będzie coraz lepsza? iChrome jest dla Ciebie!"
 }

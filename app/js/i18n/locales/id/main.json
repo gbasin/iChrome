@@ -81,7 +81,7 @@
     "pastdue_desc":"Please update your billing information in the settings"
   },
   "toolbar":{
-    "placeholder":"Enter your terms",
+    "placeholder":"Search the web",
     "placeholder_ok":"Enter your terms or say \"OK, Google\"",
     "suggestions":{
       "url_subtext":"Visit URL",

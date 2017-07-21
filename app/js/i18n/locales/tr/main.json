@@ -1,7 +1,7 @@
 {
   "lang_code":"tr",
   "language":"Türkçe",
-  "extName":"iChrome - A Fast, Productive Home Page",
+  "extName":"iChrome - Hızlı ve verimli Anasayfa",
   "newtabName":"Yeni iChrome Sekmesi",
   "extDescription":"Chrome için EN İYİ ana sayfa. Çarpıcı temalar, onlarca eklenti, inanılmaz hız, çılgınca özelleştirilebilir!",
   "newtabDescription":"Chrome için EN İYİ ana sayfa. Artık yeni sekme için. Çarpıcı temalar, onlarca eklenti, inanılmaz hız, çılgınca özelleştirilebilir!",
@@ -10,11 +10,11 @@
     "me":"Ben"
   },
   "remove_widget":"Kaldır",
-  "hide_banner":"Hide this banner",
+  "hide_banner":"Bu reklam bandını gizle",
   "hide_ad":{
-    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
-    "upgrade":"Upgrade",
-    "hide":"Hide ads"
+    "content":"Reklamları bir sonraki iChrome kullanımı,güncellemesi veya sistemden kaldırana kadar gizlemek ister misiniz?",
+    "upgrade":"Yükseltin",
+    "hide":"Reklamları gizle"
   },
   "alert":{
     "default_button":"Yoksay",
@@ -24,27 +24,27 @@
   },
   "onboarding":{
     "modal":{
-      "tagline":"All the sites and apps you use, in one place",
-      "wrong_extension":"Want iChrome on your new tab page instead?",
-      "wrong_extension_newtab":"Want iChrome on your home page instead?",
+      "tagline":"Kullandığınız bütün siteler ve uygulamalar tek bir yerde",
+      "wrong_extension":"Yeni sekme sayfasında iChrome ister misin?",
+      "wrong_extension_newtab":"Ana sayfanızın iChrome olmasını ister misin?",
       "wrong_extension_action":"Buraya tıkla",
-      "about":"iChrome's all about tabs and widgets",
-      "about_desc":"Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
-      "terms":"Note: By proceeding, you agree to iChrome's <a href=\"https://ichro.me/tos\" target=\"_blank\">Terms</a> and <a href=\"https://ichro.me/privacy\" target=\"_blank\">Privacy Policy</a>",
-      "sign_in":"Sign in with your Google account",
-      "sign_in_desc":"Sign in with your Google account before getting started to securely save your changes online.",
-      "sign_in_desc2":"You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
-      "sign_in_button":"Sign in with Google",
-      "have_account":"It looks like you already have an account!",
-      "have_account_desc":"All your tabs and widgets are ready to use!",
-      "get_started":"Let's get started!",
-      "get_started_desc":"You're good to go! Let's get your page set up."
+      "about":"iChrome sekmeler ve widgetlardan oluşur",
+      "about_desc":"Sekmeler widgedlarla dolu sayfalardır - Hava durumu, haberler ve emaillerinizi gizler. Widgetlarınızı düzenleyebilir ve istediğiniz daha bir çok widget ekleyebilirsiniz.",
+      "terms":"Devam etmekle, iChrome'un <a href=\"https://ichro.me/tos\" target=\"_blank\">Hükümler </a> ve <a href=\"https://ichro.me/privacy\" target=\"_blank\"> Koşullarını</a> kabul etmiş sayılırsınız",
+      "sign_in":"Google Hesabınızı kullanarak oturum açın",
+      "sign_in_desc":"Güvenli bir şekilde ayarlarınızı değiştirmeden önce Google hesabınızla giriş yapın.",
+      "sign_in_desc2":"İsterseniz giriş yapmayabilirsiniz, fakat sayfalarınız online olarak kaydedilmez ve siz başka bilgisayarlardan giriş yapıp değiştiremezsiniz.",
+      "sign_in_button":"Google ile giriş yap",
+      "have_account":"Zaten bir hesabınız var gibi görünüyor!",
+      "have_account_desc":"Tüm sekmeleri ve widgetları kullanmaya hazırsınız!",
+      "get_started":"Haydi Başlayalım!",
+      "get_started_desc":"Gitmeye hazırız! Sayfanı kuralım."
     },
     "widgets":{
-      "configure":"Let's configure a widget.",
-      "configure_desc":"Click the wrench to open the weather widget's <b>settings</b>.",
+      "configure":"Hadi bir widget yapılandırın.",
+      "configure_desc":"Hava durumu widget'ının <b>ayarlarını</b> değiştirmek için anahtara basın.",
       "configure_skip":"Geç",
-      "settings":"Replace <b>San Francisco, CA</b> with your location, then press <b>Save</b>.",
+      "settings":"Konumunuzu <b>San Francisco, CA</b> ile değiştirin, sonra <b>Kaydet</b> tuşuna basın.",
       "move":"You can <b>drag</b> widgets using the highlighted handle to move them.",
       "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove</b> it.",
       "done":"Anladım"
