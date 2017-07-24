@@ -9,6 +9,19 @@ try {
 catch (e) {}
 
 /* globals FB,chrome,PERSISTENT */
+
+var logFBEvent = function(name, value, params) {
+	params = params || {};
+
+	params.userType = userType;
+
+	if (FB && FB.AppEvents) {
+		FB.AppEvents.logEvent(name, value, params);
+	}
+	else {
+		eventQueue.push([name, value, params]);
+	}
+};
 window.fbAsyncInit = function() {
 	FB.init({
 		appId: "1646068945432680",
@@ -46,19 +59,6 @@ window.fbAsyncInit = function() {
 		eventQueue.forEach(function(e) {
 			FB.AppEvents.logEvent(e[0], e[1], e[2]);
 		});
-	}
-};
-
-var logFBEvent = function(name, value, params) {
-	params = params || {};
-
-	params.userType = userType;
-
-	if (FB && FB.AppEvents) {
-		FB.AppEvents.logEvent(name, value, params);
-	}
-	else {
-		eventQueue.push([name, value, params]);
 	}
 };
 
