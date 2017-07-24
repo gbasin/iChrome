@@ -1,4 +1,12 @@
-var eventQueue = [];
+var eventQueue = [],
+	authData, userType;
+
+try {
+	authData = JSON.parse(localStorage.authData);
+
+	userType = authData.isPro ? "Pro" : authData.adFree ? "Ad-free" : !!authData.user ? "Signed in" : "Anonymous";
+}
+catch (e) {}
 
 /* globals FB,chrome,PERSISTENT */
 window.fbAsyncInit = function() {
@@ -10,25 +18,47 @@ window.fbAsyncInit = function() {
 
 	FB.AppEvents.setAppVersion(chrome.runtime.getManifest().version + "-" + (chrome.i18n.getMessage("@@extension_id") === "iccjgbbjckehppnpajnmplcccjcgbdep" ? "nt" : "hp"));
 
-	try {
-		var authData = JSON.parse(localStorage.authData);
+	if (authData && authData.user) {
+		FB.AppEvents.setUserID(authData.user);
+	}
+	else {
+		if (!localStorage.uuid) {
+			function s4() { // jshint ignore:line
+				return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+			}
 
-		if (authData.user) {
-			FB.AppEvents.setUserID(authData.user);
+			localStorage.uuid = s4() + s4() + "-" + s4() + "-" + s4() + "-" + s4() + "-" + s4() + s4() + s4();
 		}
 
+		FB.AppEvents.setUserID(localStorage.uuid);
+	}
+
+	try {
 		FB.AppEvents.updateUserProperties({
-			"$user_type": authData.isPro ? "Pro" : authData.adFree ? "Ad-free" : !!authData.user ? "Signed in" : "Anonymous"
+			"$user_type": userType
 		});
 	}
 	catch (e) {}
 
-	FB.AppEvents.logEvent("BackgroundLoad");
+	logFBEvent("BackgroundLoad");
 
 	if (eventQueue.length) {
 		eventQueue.forEach(function(e) {
 			FB.AppEvents.logEvent(e[0], e[1], e[2]);
 		});
+	}
+};
+
+var logFBEvent = function(name, value, params) {
+	params = params || {};
+
+	params.userType = userType;
+
+	if (FB && FB.AppEvents) {
+		FB.AppEvents.logEvent(name, value, params);
+	}
+	else {
+		eventQueue.push([name, value, params]);
 	}
 };
 
@@ -56,12 +86,7 @@ var storageLength = localStorage.length;
 if (!storageLength) {
 	localStorage.firstRun = "true";
 
-	if (FB && FB.AppEvents) {
-		FB.AppEvents.logEvent("BackgroundInstall");
-	}
-	else {
-		eventQueue.push(["BackgroundInstall"]);
-	}
+	logFBEvent("BackgroundInstall");
 
 	navigator.sendBeacon("https://stats.ichro.me/ingest?" +
 		"extension=" + chrome.i18n.getMessage("@@extension_id") + "&version=" + chrome.runtime.getManifest().version + "&lang=" + chrome.i18n.getMessage("lang_code"),
@@ -120,12 +145,7 @@ localStorage.version = chrome.runtime.getManifest().version;
 var appURL = chrome.extension.getURL("index.html");
 
 chrome.browserAction.onClicked.addListener(function() {
-	if (FB && FB.AppEvents) {
-		FB.AppEvents.logEvent("ActionClicked");
-	}
-	else {
-		eventQueue.push(["ActionClicked"]);
-	}
+	logFBEvent("ActionClicked");
 
 	chrome.tabs.create({
 		url: appURL
