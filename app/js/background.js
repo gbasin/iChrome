@@ -194,6 +194,8 @@ chrome.permissions.contains({
 		chrome.tabs.remove(tab.id);
 
 
+		logFBEvent("OmniboxCapture");
+
 		navigator.sendBeacon(statsURL, new Blob([
 			JSON.stringify([["omnibox", new Date().getTime(), "capture", tabsPermission, captureFocus]])
 		], {
