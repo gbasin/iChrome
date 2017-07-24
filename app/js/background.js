@@ -177,7 +177,7 @@ chrome.permissions.contains({
 		navigator.sendBeacon(statsURL, new Blob([
 			JSON.stringify([["omnibox", new Date().getTime(), "capture", tabsPermission, captureFocus]])
 		], {
-			type: "application/json"
+			type: "text/plain"
 		}));
 	};
 
@@ -230,7 +230,7 @@ chrome.permissions.contains({
 		navigator.sendBeacon(statsURL, new Blob([
 			JSON.stringify([["omnibox", new Date().getTime(), "setup", tabsPermission, captureFocus]])
 		], {
-			type: "application/json"
+			type: "text/plain"
 		}));
 
 		if (tabsPermission) {
