@@ -8,6 +8,8 @@ try {
 }
 catch (e) {}
 
+/* globals FB,chrome,PERSISTENT */
+
 var logFBEvent = function(name, value, params) {
 	params = params || {};
 
@@ -20,8 +22,6 @@ var logFBEvent = function(name, value, params) {
 		eventQueue.push([name, value, params]);
 	}
 };
-
-/* globals FB,chrome,PERSISTENT */
 window.fbAsyncInit = function() {
 	FB.init({
 		appId: "1646068945432680",
