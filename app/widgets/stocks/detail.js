@@ -97,7 +97,7 @@ define(["lodash", "jquery", "moment", "./lib/chart", "widgets/views/main"], func
 				else {
 					this.state = "news";
 
-					var loadNews = this.model.getNews.bind(this, this.stock.id, function(news) {
+					var loadNews = this.model.getNews.bind(this, this.stock.ticker, function(news) {
 						this.render(_.assign({}, this.stock, {
 							items: news
 						}));
@@ -141,8 +141,7 @@ define(["lodash", "jquery", "moment", "./lib/chart", "widgets/views/main"], func
 			this.state = "overview";
 
 			this.stock = _.find(this.model.data.stocks, {
-				ticker: this.model.activeSymbol[0],
-				exchange: this.model.activeSymbol[1]
+				ticker: this.model.activeTicker
 			});
 
 			this.render(this.stock);
@@ -260,7 +259,7 @@ define(["lodash", "jquery", "moment", "./lib/chart", "widgets/views/main"], func
 							}
 
 							if (tooltip.body) {
-								var date = moment.utc(tooltip.body[0]);
+								var date = moment(parseInt(tooltip.body[0]));
 
 								tipElm
 									.find(".price").text(tooltip.title.toLocaleString())

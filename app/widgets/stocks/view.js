@@ -4,7 +4,7 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 			"click .list .stock": function(e) {
 				var stock = this.model.data.stocks[$(e.currentTarget).index()];
 
-				this.model.activeSymbol = [stock.ticker, stock.exchange];
+				this.model.activeTicker = stock.ticker;
 
 				this.model.set("state", "detail");
 			}
