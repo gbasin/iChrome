@@ -40,8 +40,8 @@
 		<ul class="tabs picker">
 			<li data-value="1d" class="active">{{i18n.time_ranges.1d}}</li>
 			<li data-value="5d">{{i18n.time_ranges.5d}}</li>
-			<li data-value="1m">{{i18n.time_ranges.1m}}</li>
-			<li data-value="3m">{{i18n.time_ranges.3m}}</li>
+			<li data-value="1mo">{{i18n.time_ranges.1m}}</li>
+			<li data-value="3mo">{{i18n.time_ranges.3m}}</li>
 			<li data-value="1y">{{i18n.time_ranges.1y}}</li>
 			<li data-value="5y">{{i18n.time_ranges.5y}}</li>
 			<li data-value="max">{{i18n.time_ranges.max}}</li>
@@ -117,16 +117,6 @@
 		<div>
 			<span class="label">{{i18n.eps}}</span>
 			<span class="value" data-field="earningsPerShare">{{earningsPerShare}}</span>
-		</div>
-
-		<div>
-			<span class="label">{{i18n.beta}}</span>
-			<span class="value" data-field="beta">{{beta}}</span>
-		</div>
-
-		<div>
-			<span class="label">{{i18n.inst_own}}</span>
-			<span class="value" data-field="institutional">{{institutional}}</span>
 		</div>
 	</div>
 {{/overview}}

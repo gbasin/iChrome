@@ -8,14 +8,14 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 			config: {
 				title: "My Stocks",
 				size: "small",
-				stocks: ["NASDAQ:AAPL", "NASDAQ:FB", "NASDAQ:GOOG", "NASDAQ:NFLX", "NASDAQ:TSLA", "INDEXDJX:.DJI"]
+				stocks: ["AAPL", "FB", "GOOG", "NFLX", "TSLA", "^DJI"]
 			},
 			data: {
 				stocks: [
 					{
 						name: "Apple Inc.",
 						ticker: "AAPL",
-						exchange: "NASDAQ",
+						exchange: "NasdaqGS",
 						value: "118.47",
 						change: "-0.31",
 						changePercent: "-0.26",
@@ -25,7 +25,7 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 					{
 						name: "Facebook Inc",
 						ticker: "FB",
-						exchange: "NASDAQ",
+						exchange: "NasdaqGS",
 						value: "106.20",
 						change: "-0.06",
 						changePercent: "-0.06",
@@ -35,7 +35,7 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 					{
 						name: "Alphabet Inc",
 						ticker: "GOOG",
-						exchange: "NASDAQ",
+						exchange: "NasdaqGS",
 						value: "738.82",
 						change: "+0.41",
 						changePercent: "0.06",
@@ -45,7 +45,7 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 					{
 						name: "Netflix, Inc.",
 						ticker: "NFLX",
-						exchange: "NASDAQ",
+						exchange: "NasdaqGS",
 						value: "120.20",
 						change: "-0.02",
 						changePercent: "-0.02",
@@ -55,7 +55,7 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 					{
 						name: "Tesla Motors Inc",
 						ticker: "TSLA",
-						exchange: "NASDAQ",
+						exchange: "NasdaqGS",
 						value: "221.94",
 						change: "+0.14",
 						changePercent: "0.06",
@@ -64,8 +64,8 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 					},
 					{
 						name: "Dow Jones Industrial Average",
-						ticker: ".DJI",
-						exchange: "INDEXDJX",
+						ticker: "^DJI",
+						exchange: "DJI",
 						value: "17,732.75",
 						change: "-4.41",
 						changePercent: "-0.02",
@@ -77,21 +77,13 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 		},
 
 		autocomplete: function(val, cb) {
-			$.getJSON("https://www.google.com/finance/match?matchtype=matchall&q=" + encodeURIComponent(val), function(d) {
-				if (!d || !d.matches || !d.matches.length) {
-					return cb([]);
-				}
-
-				cb(_(d.matches).map(function(e) {
-					if (!e.e || !e.t) {
-						return;
-					}
-
+			$.getJSON("https://s.yimg.com/xb/v6/finance/autocomplete?nresults=5&output=json&lang=en-US&query=" + encodeURIComponent(val), function(d) {
+				cb(_.map(d.ResultSet.Result, function(e) {
 					return {
-						value: e.e + ":" + e.t,
-						label: e.n + " (" + e.e + ":" + e.t + ")"
+						value: e.symbol,
+						label: e.name + " (" + e.symbol + ")"
 					};
-				}).compact().take(5).value());
+				}));
 			});
 		},
 
@@ -126,20 +118,20 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 			}
 
 			var intervals = {
-				"1d": 300,
-				"5d": 1800,
-				"1m": 86400,
-				"3m": 86400,
-				"1y": 86400,
-				"5y": 604800,
-				"40y": 604800
+				"1d": "5m",
+				"5d": "30m",
+				"1mo": "1d",
+				"3mo": "1d",
+				"1y": "1d",
+				"5y": "1wk",
+				"40y": "1wk"
 			};
 
 			var displayIntervals = {
 				"1d": "hour",
 				"5d": "day",
-				"1m": "day",
-				"3m": "month",
+				"1mo": "day",
+				"3mo": "month",
 				"1y": "month",
 				"5y": "year",
 				"40y": "year"
@@ -147,72 +139,48 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 
 			$.ajax({
 				type: "GET",
-				url: "https://www.google.com/async/finance_chart_data?async=q:" + encodeURIComponent(ticker) +
-					",x:" + encodeURIComponent(exchange) +
-					",p:" + (period[1] === "d" ? period.toLowerCase() : period.toUpperCase()) +
-					",i:" + intervals[period] +
-					",ext:true,_fmt:json",
+				url: "https://query1.finance.yahoo.com/v8/finance/chart/" + encodeURIComponent(ticker) + "?" +
+					"range=" + period +
+					"&interval=" + intervals[period] +
+					"&includePrePost=false",
+				dataType: "json",
 				success: function(d) {
-					d = JSON.parse(JSON.parse(d.replace(")]}'", "").trim()).tnv.value);
-
 					var ret = {
-						times: d.t,
-						values: d.v[0],
+						times: _.map(d.chart.result[0].timestamp, function(e) { return e * 1000 }),
+						values: d.chart.result[0].indicators.quote[0].close,
 						interval: displayIntervals[period]
 					};
 
-					ret.start = (d.m && d.m.include && d.m.include.t1) || ret.times[0];
-					ret.end = (d.m && d.m.include && d.m.include.t2) || ret.times[ret.times.length - 1];
+					ret.start = ret.times[0];
+					ret.end = ret.times[ret.times.length - 1];
 
 					cb.call(this, ret);
-				}.bind(this),
-				dataType: "text"
+				}.bind(this)
 			});
 		},
 
 
 		/**
-		 * Retrieves news for a given stock ticker ID
+		 * Retrieves news for a given stock ticker
 		 *
-		 * @param  {String}   id  The ID of the ticker to fetch news for
+		 * @param  {String}   ticker  The ticker to fetch news for
 		 * @param  {Function} cb  The callback
 		 */
-		getNews: function(id, cb) {
+		getNews: function(ticker, cb) {
 			$.ajax({
 				type: "GET",
-				dataType: "text",
-				url: "https://www.google.com/finance/kd?output=json&sort=date&keydevs=1&recnews=0&cid=" + id,
+				dataType: "json",
+				url: "https://query1.finance.yahoo.com/v2/finance/news?symbols=" + ticker + "&count=10",
 				success: function(d) {
-					// We unfortunately need to eval the response to properly parse it
-					//
-					// This is no more or less safe than JSONP however, and the data is
-					// coming via a secure connection with Google
-					try {
-						d = eval("(" + d + ")"); // jshint ignore:line
-					}
-					catch (e) {
-						return;
-					}
-
-					if (!d || !d.clusters) {
-						return;
-					}
-
-					cb(_(d.clusters).map(function(e) {
-						e = e.a && e.a[0];
-
-						if (!e) {
-							return;
-						}
-
+					cb(_.map(d.Content.result, function(e) {
 						return {
-							url: e.u,
-							title: e.t,
-							desc: e.sp,
-							source: e.s,
-							date: moment(e.tt * 1000).fromNow()
+							url: e.url,
+							title: e.title,
+							desc: e.summary,
+							source: e.provider_name,
+							date: moment(e.provider_publish_time * 1000).fromNow()
 						};
-					}).compact().take(10).value());
+					}));
 				}
 			});
 		},
@@ -220,14 +188,14 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 
 		refresh: function() {
 			var isDetail = this.get("state") === "detail",
-				symbol = (this.config.stocks || ["NASDAG:GOOG"]).join(",");
+				ticker = (this.config.stocks || ["GOOG"]).map(function(e) { return e.split(":").pop() }).join(",");
 
 			if (isDetail) {
-				symbol = this.activeSymbol.join(":");
+				ticker = this.activeTicker;
 
 				if (this.Auth.isPro) {
-					this.getChartData(this.activeSymbol[0], this.activeSymbol[1], this.chartPeriod || "1d", function(chartData) {
-						if (isDetail && this.activeSymbol.join(":") === symbol) {
+					this.getChartData(this.activeTicker, "", this.chartPeriod || "1d", function(chartData) {
+						if (isDetail && this.activeTicker === ticker) {
 							this.trigger("chart:loaded", chartData);
 						}
 					});
@@ -236,54 +204,59 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 
 			$.ajax({
 				type: "GET",
-				url: "https://finance.google.com/finance/info?infotype=infoquoteall&q=" + encodeURIComponent(symbol),
+				url: "https://query1.finance.yahoo.com/v7/finance/quote?symbols=" + encodeURIComponent(ticker) + "&fields=" + [
+						"symbol", "shortName", "regularMarketPrice", "regularMarketChangePercent",
+						"regularMarketChange", "regularMarketVolume", "regularMarketDayLow", "regularMarketDayHigh", "fiftyTwoWeekLow", "fiftyTwoWeekHigh",
+						"regularMarketOpen", "regularMarketPreviousClose", "preMarketPrice", "preMarketChangePercent", "preMarketTime", "postMarketPrice",
+						"preMarketChange", "postMarketTime", "postMarketChange", "postMarketChangePercent", "epsTrailingTwelveMonths", "trailingPE", "marketCap",
+						"averageDailyVolume3Month"
+				].join(","),
+				dataType: "json",
 				success: function(d) {
-					d = JSON.parse(d
-							.replace("// [", "[") // Undo Google's escaping
-							.replace(/\\x([A-z0-9]{2})/g, function(match, $1) { // This replaces \x escapes so the JSON doesn't have to be eval'd
-								try {
-									return String.fromCharCode(parseInt($1, 16));
-								}
-								catch(e) {
-									return "?";
-								}
-							})
-						);
+					if (typeof d !== "object") {
+						try {
+							d = JSON.parse(d);
+						}
+						catch (e) {
+							return;
+						}
+					}
 
-					var stocks = _.map(d, function(e) {
+					if (!d.quoteResponse || !d.quoteResponse.result || d.quoteResponse.error) {
+						return;
+					}
+
+					var stocks = _.map(d.quoteResponse.result, function(e) {
 						return {
-							id: e.id,
-							name: e.name,
-							ticker: e.t,
-							exchange: e.e,
+							name: e.shortName,
+							ticker: e.symbol,
+							exchange: e.fullExchangeName,
 
-							value: e.el || e.l,
-							change: e.ec || e.c,
-							changePercent: e.ecp || e.cp,
-							changeDirection: (e.ec || e.c).indexOf("-") !== 0 ? "up" : "down",
-							date: moment(e.elt_dts || e.lt_dts || e.elt || e.lt).format("MMM Do h:mm A"),
+							value: (e.preMarketPrice || e.postMarketPrice || e.regularMarketPrice || 0).toLocaleString(),
+							change: (e.preMarketChange || e.postMarketChange || e.regularMarketChange || 0).toLocaleString(),
+							changePercent: (e.preMarketChangePercent || e.postMarketChangePercent || e.regularMarketChangePercent || 0).toLocaleString(),
+							changeDirection: (e.preMarketChange || e.postMarketChange || e.regularMarketChange) > 0 ? "up" : "down",
+							date: moment((e.preMarketTime || e.postMarketTime || e.regularMarketTime) * 1000).format("MMM Do h:mm A"),
 
-							low: e.lo,
-							high: e.hi,
-							open: e.op,
-							low52: e.lo52,
-							high52: e.hi52,
-							previousClose: parseFloat(e.pcls || e.pcls_fix).toLocaleString(),
+							low: (e.regularMarketDayLow || 0).toLocaleString(),
+							high: (e.regularMarketDayHigh || 0).toLocaleString(),
+							open: (e.regularMarketOpen || 0).toLocaleString(),
+							low52: (e.fiftyTwoWeekLow || 0).toLocaleString(),
+							high52: (e.fiftyTwoWeekHigh || 0).toLocaleString(),
+							previousClose: (e.regularMarketPreviousClose || 0).toLocaleString(),
 
-							volume: e.vo,
-							marketCap: e.mc,
-							shares: e.shares,
-							averageVolume: e.avvo,
-							institutional: e.inst_own,
+							volume: (e.regularMarketVolume || 0).toLocaleString(),
+							marketCap: (e.marketCap || 0).toLocaleString(),
+							shares: (e.sharesOutstanding || 0).toLocaleString(),
+							averageVolume: (e.averageDailyVolume3Month || 0).toLocaleString(),
 
-							beta: e.beta,
-							earningsPerShare: e.eps,
-							priceToEarnings: e.pe || ((e.el || e.l) / e.eps).toLocaleString(),
-							extraInfo: e.s === "1" ? "Pre Market" : e.s === "2" ? "After Hours" : null
+							earningsPerShare: (e.epsTrailingTwelveMonths || 0).toLocaleString(),
+							priceToEarnings: (e.trailingPE || 0).toLocaleString(),
+							extraInfo: e.preMarketPrice ? "Pre Market" : e.postMarketPrice ? "After Hours" : null
 						};
 					});
 
-					if (isDetail && this.activeSymbol.join(":") === symbol) {
+					if (isDetail && this.activeTicker === ticker) {
 						this.trigger("stock:loaded", stocks[0]);
 					}
 					else if (!isDetail) {
@@ -291,8 +264,7 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 							stocks: stocks
 						});
 					}
-				}.bind(this),
-				dataType: "text" // Google comments out the opening array tag so the JSON parser crashes
+				}.bind(this)
 			});
 		}
 	});
