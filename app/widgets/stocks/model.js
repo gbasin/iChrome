@@ -146,7 +146,7 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 				dataType: "json",
 				success: function(d) {
 					var ret = {
-						times: _.map(d.chart.result[0].timestamp, function(e) { return e * 1000 }),
+						times: _.map(d.chart.result[0].timestamp, function(e) { return e * 1000; }),
 						values: d.chart.result[0].indicators.quote[0].close,
 						interval: displayIntervals[period]
 					};
@@ -188,7 +188,7 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 
 		refresh: function() {
 			var isDetail = this.get("state") === "detail",
-				ticker = (this.config.stocks || ["GOOG"]).map(function(e) { return e.split(":").pop() }).join(",");
+				ticker = (this.config.stocks || ["GOOG"]).map(function(e) { return e.split(":").pop(); }).join(",");
 
 			if (isDetail) {
 				ticker = this.activeTicker;
