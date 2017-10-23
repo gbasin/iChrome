@@ -227,32 +227,41 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 					}
 
 					var stocks = _.map(d.quoteResponse.result, function(e) {
+						var marketType = "regularMarket";
+
+						if ((!e.regularMarketTime || !e.regularMarketPrice || e.preMarketTime > e.regularMarketTime) && e.preMarketPrice) {
+							marketType = "preMarket";
+						}
+						else if ((!e.regularMarketTime || !e.regularMarketPrice || e.postMarketTime > e.regularMarketTime) && e.postMarketPrice) {
+							marketType = "postMarket";
+						}
+
 						return {
 							name: e.shortName,
 							ticker: e.symbol,
 							exchange: e.fullExchangeName,
 
-							value: (e.preMarketPrice || e.postMarketPrice || e.regularMarketPrice || 0).toLocaleString(),
-							change: (e.preMarketChange || e.postMarketChange || e.regularMarketChange || 0).toLocaleString(),
-							changePercent: (e.preMarketChangePercent || e.postMarketChangePercent || e.regularMarketChangePercent || 0).toLocaleString(),
-							changeDirection: (e.preMarketChange || e.postMarketChange || e.regularMarketChange) > 0 ? "up" : "down",
-							date: moment((e.preMarketTime || e.postMarketTime || e.regularMarketTime) * 1000).format("MMM Do h:mm A"),
+							value: (e[marketType + "Price"] || 0).toLocaleString(undefined, { minimumFractionDigits: 2 }),
+							change: (e[marketType + "Change"] || 0).toLocaleString(undefined, { minimumFractionDigits: 2 }),
+							changePercent: (e[marketType + "ChangePercent"] || 0).toLocaleString(undefined, { maximumFractionDigits: 2 }),
+							changeDirection: (e[marketType + "Change"] || 0) > 0 ? "up" : "down",
+							date: moment((e[marketType + "Time"] || 0) * 1000).format("MMM Do h:mm A"),
 
-							low: (e.regularMarketDayLow || 0).toLocaleString(),
-							high: (e.regularMarketDayHigh || 0).toLocaleString(),
-							open: (e.regularMarketOpen || 0).toLocaleString(),
-							low52: (e.fiftyTwoWeekLow || 0).toLocaleString(),
-							high52: (e.fiftyTwoWeekHigh || 0).toLocaleString(),
-							previousClose: (e.regularMarketPreviousClose || 0).toLocaleString(),
+							low: (e.regularMarketDayLow || 0).toLocaleString(undefined, { minimumFractionDigits: 2 }),
+							high: (e.regularMarketDayHigh || 0).toLocaleString(undefined, { minimumFractionDigits: 2 }),
+							open: (e.regularMarketOpen || 0).toLocaleString(undefined, { minimumFractionDigits: 2 }),
+							low52: (e.fiftyTwoWeekLow || 0).toLocaleString(undefined, { minimumFractionDigits: 2 }),
+							high52: (e.fiftyTwoWeekHigh || 0).toLocaleString(undefined, { minimumFractionDigits: 2 }),
+							previousClose: (e.regularMarketPreviousClose || 0).toLocaleString(undefined, { minimumFractionDigits: 2 }),
 
 							volume: (e.regularMarketVolume || 0).toLocaleString(),
 							marketCap: (e.marketCap || 0).toLocaleString(),
 							shares: (e.sharesOutstanding || 0).toLocaleString(),
 							averageVolume: (e.averageDailyVolume3Month || 0).toLocaleString(),
 
-							earningsPerShare: (e.epsTrailingTwelveMonths || 0).toLocaleString(),
+							earningsPerShare: (e.epsTrailingTwelveMonths || 0).toLocaleString(undefined, { minimumFractionDigits: 2 }),
 							priceToEarnings: (e.trailingPE || 0).toLocaleString(),
-							extraInfo: e.preMarketPrice ? "Pre Market" : e.postMarketPrice ? "After Hours" : null
+							extraInfo: marketType === "preMarket" ? "Pre Market" : marketType === "postMarket" ? "After Hours" : null
 						};
 					});
 
