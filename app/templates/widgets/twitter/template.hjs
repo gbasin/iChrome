@@ -8,10 +8,19 @@
 				<span class="age">{{age}}</span>
 			</div>
 
+			<div class="profile"><a href="https://twitter.com/{{username}}" class="user"><img src="{{image}}" /></a></div>
 			<div class="content">
-				<a href="https://twitter.com/{{username}}" class="user"><img src="{{image}}" /></a>
+
 
 				{{{content}}}
+
+				<div class="media">
+				{{#media}}
+					{{#photos}}
+					<img src="{{media_url_https}}:thumb" class="thumbnail" />
+					{{/photos}}
+				{{/media}}
+				</div>
 			</div>
 
 			<div class="tools">
@@ -35,4 +44,8 @@
 			</div>
 		{{/authorize}}
 	{{/tweets}}
+
+	<div class="media-preview-container">
+		<img src="" class="media-preview" />
+	</div>
 </div>

@@ -2690,6 +2690,9 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Twitter
 */
+.widgets-container section.twitter.widget {
+	z-index: 8;
+}
 /* line 2417, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .twitter .tweet {
 	color: #777;
@@ -2766,9 +2769,7 @@ body.no-edit .bookmarks .tools {
 
 /* line 2478, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .twitter .tweet img {
-	float: left;
 	border-radius: 3px;
-	margin: 4px 15px 4px 0;
 }
 
 /* line 2484, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
@@ -2777,6 +2778,7 @@ body.no-edit .bookmarks .tools {
 	margin-top: 5px;
 	text-align: right;
 	margin-bottom: -7px;
+	clear: both;
 }
 
 /* line 2491, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
@@ -2829,6 +2831,40 @@ body.no-edit .bookmarks .tools {
 /* line 2530, C:/Users/Avi/Documents/GitHub/iChrome/app/css/widgets.scss */
 .twitter .tools .more {
 	float: left;
+}
+
+.twitter .profile {
+	width: 50px;
+	margin: 4px 15px 4px 0;
+	float:left;
+}
+
+.twitter .content {
+	padding-left: 65px;
+}
+
+.twitter .media .thumbnail {
+    width: 25%;
+    margin: 3px;
+    vertical-align: baseline;
+}
+
+
+.twitter .media-preview-container {
+    z-index: 99;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    display: none;
+}
+
+.twitter .media-preview {
+	position:relative;
+	left:-50%;
+	border-radius: 3px;
+	border: 7px solid white;
+	max-height:80vh;
+	max-width:80vw;
 }
 
 /*---------------------------------------------
