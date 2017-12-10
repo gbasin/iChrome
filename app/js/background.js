@@ -164,6 +164,12 @@ chrome.webRequest.onBeforeRequest.addListener(
 	["blocking"]
 );
 
+/**
+ * Uninstallation URL
+ */
+chrome.runtime.setUninstallURL("https://ichro.me/uninstall?" +
+	"extension=" + chrome.i18n.getMessage("@@extension_id") + "&version=" + chrome.runtime.getManifest().version + "&lang=" + chrome.i18n.getMessage("lang_code")
+);
 
 /**
  * Feed refresh manager
