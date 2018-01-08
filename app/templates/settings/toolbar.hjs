@@ -34,7 +34,6 @@
 
 				<select name="search-engine">
 					<option value="default">{{i18n.settings.toolbar.search.engines_default}}</option>
-					<option value="google">Google</option>
 					<option value="yahoo">Yahoo!</option>
 					<option value="bing">Bing</option>
 					<option value="duckduckgo">DuckDuckGo</option>
@@ -47,7 +46,7 @@
 			<label class="input other{{#customSearchURL}} visible{{/customSearchURL}}">
 				<span class="desc">{{{i18n.settings.toolbar.search.engines_custom_desc}}}</span>
 
-				<input type="text" name="search-url" placeholder="i.e. https://google.com/search?q=%s" value="{{customSearchURL}}" />
+				<input type="text" name="search-url" placeholder="i.e. https://www.bing.com/search?q=%s" value="{{customSearchURL}}" />
 			</label>
 		</div>
 
