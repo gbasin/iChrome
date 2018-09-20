@@ -25,10 +25,10 @@ module.exports = function(grunt) {
 
 				_.each(locale, function(e, i) {
 					if (i !== "lang_code" && i.indexOf("newtab") === -1 && typeof e === "string") {
-						desc += e + "\n\n";
+						desc += e + "\r\n\r\n";
 					}
 					else if (Array.isArray(e)) {
-						desc += "✔ " + e.join("\n✔ ") + "\n\n";
+						desc += "✔ " + e.join("\r\n✔ ") + "\r\n\r\n";
 					}
 				});
 
