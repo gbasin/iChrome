@@ -32,7 +32,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 			tokenURL: "https://www.googleapis.com/oauth2/v3/token",
 			tokenParams: "code={{code}}&client_id={{clientID}}&client_secret={{secret}}&redirect_uri={{redirectURL}}&grant_type=authorization_code",
 			refreshParams: "client_id={{clientID}}&client_secret={{secret}}&refresh_token={{refreshToken}}&grant_type=refresh_token",
-			redirectURL: "http://ichro.me/auth"
+			redirectURL: "https://ichro.me/auth"
 		}, config);
 
 		this.data = {};

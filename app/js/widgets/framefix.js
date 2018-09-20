@@ -2,7 +2,8 @@
  * This creates an onHeadersReceived listener on an as-needed basis.
  */
 define(["jquery", "browser/api"], function($, Browser) {
-	var listening = false,
+	var tabId = null,
+		listening = false,
 		attaching = false,
 		callbacks = [];
 
@@ -22,6 +23,8 @@ define(["jquery", "browser/api"], function($, Browser) {
 		attaching = true;
 
 		Browser.tabs.getCurrent(function(tab) {
+			tabId = tab.id;
+
 			Browser.webRequest.onHeadersReceived.addListener(
 				function(info) {
 					var headers = info.responseHeaders || [];
@@ -45,7 +48,7 @@ define(["jquery", "browser/api"], function($, Browser) {
 					};
 				},
 				{
-					tabId: tab.id,
+					tabId: tabId,
 					urls: [ "*://*/*" ],
 					types: [ "sub_frame" ]
 				},
@@ -63,6 +66,10 @@ define(["jquery", "browser/api"], function($, Browser) {
 		});
 
 		return false;
+	};
+
+	check.getTabId = function() {
+		return tabId;
 	};
 
 	return check;

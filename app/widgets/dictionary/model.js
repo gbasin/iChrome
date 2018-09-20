@@ -167,9 +167,9 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 		},
 
 		getWordOfDay: function(cb) {
-			$.getJSON("https://cloud.feedly.com/v3/streams/contents?count=1&streamId=feed%2Fhttp%3A%2F%2Fdictionary.reference.com%2Fwordoftheday%2Fwotd.rss", function(d) {
+			$.getJSON("https://cloud.feedly.com/v3/streams/contents?count=1&streamId=feed%2Fhttp%3A%2F%2Fwww.thefreedictionary.com%2F_%2FWoD%2Frss.aspx", function(d) {
 				if (d && d.items && d.items[0] && d.items[0].title) {
-					cb.call(this, null, d.items[0].title.split(":")[0].trim());
+					cb.call(this, null, d.items[0].title.trim());
 				}
 				else {
 					cb.call(this, true);

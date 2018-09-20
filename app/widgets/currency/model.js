@@ -9,7 +9,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 			}
 		},
 
-		_cache: {},
+		rates: null,
 
 		initialize: function() {
 			if (typeof this.data === "object" && this.data.from) {
@@ -26,16 +26,15 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 				return cb.call(ctx, value * 1);
 			}
 
-
-			if (this._cache[from + "-" + to] || this._cache[to + "-" + from]) {
-				cb.call(ctx, this._cache[from + "-" + to] ? value * this._cache[from + "-" + to] : value / this._cache[to + "-" + from]);
+			if (this.rates) {
+				cb.call(ctx, Math.round((value / this.rates[from]) * this.rates[to] * 10000) / 10000);
 			}
 			else {
-				$.getJSON('https://query.yahooapis.com/v1/public/yql?format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%3D"' + from + to + '"', function(d) {
-					if (d && d.query && d.query.results && d.query.results.rate && d.query.results.rate.Rate) {
-						this._cache[from + "-" + to] = parseFloat(d.query.results.rate.Rate);
+				$.getJSON("https://api.ichro.me/currency/v1/rates", function(d) {
+					if (d) {
+						this.rates = d;
 
-						cb.call(ctx, value * this._cache[from + "-" + to]);
+						cb.call(ctx, Math.round((value / this.rates[from]) * this.rates[to] * 10000) / 10000);
 					}
 				}.bind(this));
 			}

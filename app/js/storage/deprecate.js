@@ -1,5 +1,5 @@
 /**
- * Converts a non-JSON.stringify()able tabs object to JSON.  This is used for syncing and comparing tab objects.
+ * Handles settings deprecation
  */
 define(["lodash"], function(_) {
 	var Deprecate = {
