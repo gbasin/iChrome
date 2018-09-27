@@ -15,13 +15,14 @@ var logFBEvent = function(name, value, params) {
 
 	params.userType = userType;
 
-	if (FB && FB.AppEvents) {
+	if (typeof FB !== "undefined" && FB.AppEvents) {
 		FB.AppEvents.logEvent(name, value, params);
 	}
 	else {
 		eventQueue.push([name, value, params]);
 	}
 };
+
 window.fbAsyncInit = function() {
 	FB.init({
 		appId: "1646068945432680",
