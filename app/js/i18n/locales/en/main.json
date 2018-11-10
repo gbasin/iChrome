@@ -21,6 +21,14 @@
 		"hide": "Hide ads"
 	},
 
+	"upgrade_to_pro": {
+		"title-weather": "Hourly Weather",
+		"title-default": "Upgrade",
+		"content-default": "Please upgrade to Pro version to activate this feature.",
+		"upgrade": "Upgrade",
+		"close": "Close"
+	},
+
 	"alert": {
 		"default_button": "Dismiss",
 
