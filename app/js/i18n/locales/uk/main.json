@@ -16,6 +16,13 @@
     "upgrade":"Upgrade",
     "hide":"Hide ads"
   },
+	"upgrade_to_pro": {
+		"title-weather": "Погода Погодинно",
+		"title-default": "Апґрейд",
+		"content-default": "Ця функціональність доступна у Про версії",
+		"upgrade": "Апґрейд",
+		"close": "Закрити"
+	},
   "alert":{
     "default_button":"Відмінити",
     "confirm_title":"Ви впевнені, що хочете це зробити?",

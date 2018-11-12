@@ -105,6 +105,27 @@ define(
 								SettingsProxy("ads");
 							}
 						}.bind(this));
+					},
+
+					"click .upgrade-to-pro": function(e) {
+						var titleVar = $(e.currentTarget).data('title');
+						if (titleVar === null) { titleVar = "title-default"; }
+						var title = Translate("upgrade_to_pro." + titleVar);
+
+						Alert({
+							title: title,
+							contents: [Translate("upgrade_to_pro.content-default")],
+							buttons: {
+							negative: Translate("upgrade_to_pro.upgrade"),
+								positive: Translate("upgrade_to_pro.close")
+							}
+						}, function(close) {
+							if (close) {
+							}
+							else {
+								SettingsProxy("pro");
+							}
+						}.bind(this));
 					}
 				},
 

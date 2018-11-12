@@ -6,6 +6,43 @@
 	overflow: visible!important;
 }
 
+div.header-wrapper {
+	display: table;
+	width: 100%;
+}
+
+div.header-wrapper > * {
+	display: table-cell;	
+}
+
+div.header-wrapper > div {
+	text-align: left; 
+	width: 50px; 
+	position: relative;
+}
+
+div.toggle-hourly {
+	position: absolute; 
+	top: -5px;
+	opacity: 0;
+	color: #888;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 20px;
+	padding-right: 10px;
+	white-space: normal;
+	transition: opacity .2s ease;
+}
+
+div.toggle-hourly span:last-child{
+	cursor: pointer;
+}
+
+:root:hover div.toggle-hourly {
+	opacity: 1;
+}
+
+
 h2.header {
 	padding: 0;
 	line-height: 18px;
@@ -15,6 +52,7 @@ h2.header a {
 	color: inherit;
 	text-decoration: none;
 }
+
 
 .location ~ .location .header {
 	margin: 0 -15px 10px;
@@ -106,12 +144,16 @@ h2.header a {
 }
 
 .temp .toggle span:hover,
-.temp .toggle span.active {
+.temp .toggle span.active,
+div.toggle-hourly span:hover,
+div.toggle-hourly span.active {
 	color: #333;
 }
 
 .dark .temp .toggle span:hover,
-.dark .temp .toggle span.active {
+.dark .temp .toggle span.active,
+.dark div.toggle-hourly span:hover,
+.dark div.toggle-hourly span.active {
 	color: #EEE;
 }
 
