@@ -20,7 +20,7 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 				e.preventDefault();
 				e.stopPropagation();
 
-				this.model.config.hourly = this.model.config.hourly == "enabled" ? "" : "enabled";
+				this.model.config.hourly = (this.model.config.hourly === "enabled") ? "" : "enabled";
 
 				this.model.saveConfig();
 

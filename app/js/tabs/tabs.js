@@ -109,7 +109,7 @@ define(
 
 					"click .upgrade-to-pro": function(e) {
 						var titleVar = $(e.currentTarget).data('title');
-						if (titleVar == null) titleVar = "title-default";
+						if (titleVar === null) { titleVar = "title-default"; }
 						var title = Translate("upgrade_to_pro." + titleVar);
 
 						Alert({
