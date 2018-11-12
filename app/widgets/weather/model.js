@@ -283,7 +283,8 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 							index: i,
 							name: this.config.resolvedNames[i],
 							nameEnc: encodeURIComponent(this.config.resolvedNames[i]),
-							current: d.current
+							current: d.current,
+							hourly: this.config.hourly === "enabled" ? "active" : ""
 						};
 
 						var formatValues = function(d) {

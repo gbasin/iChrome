@@ -12,6 +12,21 @@ define(["lodash", "jquery", "widgets/views/main"], function(_, $, WidgetView) {
 				this.model.refresh();
 			},
 
+			"click .header-wrapper .toggle-hourly span:last-child": function(e) {
+				if (!this.Auth.isPro) {
+					return;
+				}
+
+				e.preventDefault();
+				e.stopPropagation();
+
+				this.model.config.hourly = (this.model.config.hourly === "enabled") ? "" : "enabled";
+
+				this.model.saveConfig();
+
+				this.model.refresh();
+			},
+
 			"click button.more": function(e) {
 				var btn = $(e.currentTarget),
 					details = btn.parent().next(".details"),
