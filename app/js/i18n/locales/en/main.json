@@ -24,7 +24,7 @@
 	"upgrade_to_pro": {
 		"title-weather": "Hourly Weather",
 		"title-default": "Upgrade",
-		"content-default": "Please upgrade to Pro version to activate this feature.",
+		"content-default": "Please upgrade to Pro version to view hourly weather.",
 		"upgrade": "Upgrade",
 		"close": "Close"
 	},
