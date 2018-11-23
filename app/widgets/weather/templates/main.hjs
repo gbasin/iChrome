@@ -1,6 +1,17 @@
 {{#weather}}
 	<div class="location" data-index="{{index}}">
-		<h2 class="header"><a href="https://www.google.com/search?q=weather%20{{nameEnc}}">{{name}}</a></h2>
+		<div class="{{^tiny}}header-wrapper{{/tiny}}">
+			<h2 class="header"><a href="https://www.google.com/search?q=weather%20{{nameEnc}}">{{name}}</a></h2>
+			{{^tiny}}
+				<div>
+					<div class="toggle-hourly">
+						<span data-units="D" class="active">D</span>
+						<span>/</span>
+						<span data-title="title-weather" data-units="H" class="{{^isPro}}upgrade-to-pro{{/isPro}} {{hourly}}">H</span>
+					</div>
+				</div>			
+			{{/tiny}}
+		</div>
 
 		{{#tiny}}
 			<span class="temp">
