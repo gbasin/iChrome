@@ -102,7 +102,8 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 					var value = e;
 					var label = e;
 					if (tokens.length == 3) {
-						label = value = tokens[0] + "," + tokens[1] + " region," + tokens[2]w;
+						value = tokens[0] + "," + tokens[1] + " region," + tokens[2];
+						label = value;
 					}
 
 					return {
