@@ -100,6 +100,12 @@
 			"show_options": {
 				"all": "All time",
 				"today": "Today only"
+			},
+			"view": "Calendar view",
+			"view_options": {
+				"agenda1d": "Agenda Day",
+				"list2w": "List",
+				"short1d": "Short Day"
 			}
 		},
 
@@ -107,7 +113,9 @@
 
 		"calendar": "Calendar",
 
-		"noevents": "No events found in the near future, it looks like your schedule's clear!"
+		"noevents": "No events found in the near future, it looks like your schedule's clear!",
+
+		"nocalendars": "Please select the calendar in the settings"		
 	},
 
 	"clock": {

@@ -1,7 +1,7 @@
 /*
  * The Calendar widget.
  */
-define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
+define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, moment, OAuth, calendar) {
 	return {
 		id: 10,
 		size: 1,
@@ -31,62 +31,69 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 					all: "i18n.settings.show_options.all",
 					today: "i18n.settings.show_options.today"
 				}
+			},
+			{
+				type: "radio",
+				label: "i18n.settings.view",
+				nicename: "view",
+				options: {
+					agenda1d: "i18n.settings.view_options.agenda1d",
+					list2w: "i18n.settings.view_options.list2w",
+					short1d: "i18n.settings.view_options.short1d",
+				},
 			}
+
 		],
 		config: {
 			title: "i18n.title",
 			size: "variable",
 			show: "all",
+			view: "agenda1d",
 			calendars: []
 		},
 		data: {
 			events: [
 				{
-					"link": "https://www.google.com/calendar",
+					"url": "https://www.google.com/calendar",
 					"title": "Multi-day Event",
-					"start": 1437278400000,
-					"end": 1437624000000,
-					"time": "July 19th - July 22nd",
+					"start": "2018-07-19",
+					"start": "2018-07-22",
 					"calendar": "Personal",
 					"calendarId": "Personal",
 					"location": "Mountain View, CA, USA",
 					"color": "#4986e7"
 				},
 				{
-					"link": "https://www.google.com/calendar",
+					"url": "https://www.google.com/calendar",
 					"title": "Single day event",
-					"start": 1437364800000,
-					"end": 1437451200000,
+					"start": "2018-07-19",
 					"calendar": "Secondary Calendar",
 					"calendarId": "Secondary Calendar",
 					"color": "#ffad46"
 				},
 				{
-					"link": "https://www.google.com/calendar",
+					"url": "https://www.google.com/calendar",
 					"title": "Lunch",
-					"start": 1437494400000,
-					"end": 1437494400000,
-					"time": "12 PM",
+					"start": "2018-07-19 12:00:00",
+					"end": "2018-07-19 13:00:00",
 					"calendar": "Secondary Calendar",
 					"calendarId": "Secondary Calendar",
 					"color": "#ffad46"
 				},
 				{
-					"link": "https://www.google.com/calendar",
+					"url": "https://www.google.com/calendar",
 					"title": "Meeting",
-					"start": 1437505200000,
-					"end": 1437505200000,
-					"time": "3 PM",
+					"start": "2018-07-19 15:00:00",
+					"end": "2018-07-19 16:00:00",
 					"calendar": "Secondary Calendar",
 					"calendarId": "Secondary Calendar",
 					"color": "#ffad46"
 				},
 				{
-					"link": "https://www.google.com/calendar",
+					"url": "https://www.google.com/calendar",
 					"title": "Dinner",
-					"start": 1437604200000,
-					"end": 1437607800000,
-					"time": "6:30 PM - 7:30 PM",
+					"start": "2018-07-19 16:30:00",
+					"end": "2018-07-19 19:30:00",
 					"calendar": "emailaddress@gmail.com",
 					"calendarId": "emailaddress@gmail.com",
 					"color": "#4986e7"
@@ -98,7 +105,8 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 			this.oAuth = new OAuth({
 				name: "calendar",
 				id: "559765430405-2710gl95r9js4c6m4q9nveijgjji50b8.apps.googleusercontent.com",
-				secret: "__API_KEY_calendar__",
+				//secret: "__API_KEY_calendar__",
+				secret: "QLlFpcECWen5pm-7XWj-fMS3",
 				scope: "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar"
 			});
 		},
@@ -161,7 +169,6 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 					params.timeMax = moment().endOf("day").format("YYYY-MM-DDTHH:mm:ss.SSSZ");
 				}
 
-
 				var requests = [],
 					calendarColors = {};
 
@@ -200,17 +207,12 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 							if (d && d.items) {
 								events = events.concat(_.map(d.items, function(e) {
 									var event = {
-										link: e.htmlLink,
+										id: e.id,
 										title: e.summary,
-										start: new Date(e.start.dateTime || e.start.date + " 00:00:00").getTime(),
-										end: e.end && new Date(e.end.dateTime || e.end.date + " 00:00:00").getTime()
+										start: e.start.dateTime || e.start.date,
+										end: e.end.dateTime || e.end.date,
+										url: e.htmlLink
 									};
-
-									event.time = this.getTimeStr(event.start, event.end);
-
-									if (!event.time) {
-										delete event.time;
-									}
 
 									if (multiple && d.summary) {
 										event.calendar = d.summary;
@@ -224,6 +226,10 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 										event.location = e.location;
 									}
 
+									if (e.description) {
+										event.description = e.description;
+									}
+
 									return event;
 								}, this));
 							}
@@ -232,11 +238,6 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 				}, this));
 
 				$.when.apply($, requests).then(function() {
-					events = events.sort(function(a, b) {
-						return a.start - b.start;
-					}).slice(0, 20);
-
-
 					if (multiple && Object.keys(calendarColors).length) {
 						events = events.map(function(e) {
 							if (e.calendarId && calendarColors[e.calendarId]) {
@@ -247,94 +248,17 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 						});
 					}
 
-
 					this.data = {
 						events: events
 					};
 
-					this.render();
+					var gcalendar = this.elm.children('.gcalendar');
+					gcalendar.fullCalendar('removeEventSources');
+					gcalendar.fullCalendar('addEventSource', this.data.events);
 
 					this.utils.saveData(this.data);
 				}.bind(this));
 			}.bind(this));
-		},
-
-
-		/**
-		 * Returns a formatted time string for an event
-		 *
-		 * @api     private
-		 * @param   {Number}  oStart  The start time of the event, in ms
-		 * @param   {Number}  oEnd    The end time of the event
-		 * @return  {String}          The formatted time, date, or range string
-		 */
-		getTimeStr: function(oStart, oEnd) {
-			var start = moment(oStart),
-				end = moment(oEnd),
-				timeStr;
-
-
-			var endTimeStr = end.minutes() ? "h:mm A" : "h A",
-				endHasTime = end.hours() + end.minutes();
-
-			var endSameAsStart = (endHasTime && end.clone().startOf("day").isSame(start.clone().startOf("day"))) ||
-								(!endHasTime && end.subtract(1, "days").isSame(start)) || end.isSame(start);
-
-			// If the end time doesn't exist, or it's the same as the start date, delete it
-			if (!oEnd || (endSameAsStart && !endHasTime) || end.isSame(start)) {
-				end = null;
-			}
-
-			// If it has time and is on the same day as the start date, format it as a simple time value
-			else if (endHasTime && endSameAsStart) {
-				timeStr = end.format(endTimeStr);
-			}
-
-			// Otherwise, if it does have time and didn't match the last clause (meaning it's on a different
-			// date than the start date), format it with a month and day.
-			else if (endHasTime) {
-				timeStr = end.format("MMMM Do, " + endTimeStr);
-			}
-
-			// If it doesn't match the last clause (and doesn't have a time) and is not on the same day as
-			// the start date, format it as a plain date string
-			else {
-				timeStr = end.format("MMMM Do");
-			}
-
-
-			var startTimeStr = start.minutes() ? "h:mm A" : "h A",
-				startHasTime = start.hours() + start.minutes();
-
-			// If the start time doesn't exist (for some reason) or it doesn't have time or an end date (and
-			// therefore shouldn't be displayed), return now
-			if (!oStart || (!startHasTime && !end)) {
-				return;
-			}
-
-			// If it has time and is on the same day as the end date, format it as a plain time string
-			else if (startHasTime && end && endSameAsStart) {
-				timeStr = start.format(startTimeStr) + " - " + timeStr;
-			}
-
-			// Otherwise, if it has time and is not on the same day as the end date, which exists, format
-			// it as a date and time string
-			else if (startHasTime && end) {
-				timeStr = start.format("MMMM Do, " + startTimeStr) + " - " + timeStr;
-			}
-
-			// If it has time and the end date doesn't exist
-			else if (startHasTime) {
-				timeStr = start.format(startTimeStr);
-			}
-
-			// If it didn't match the last clauses (and doesn't have time), and has an end date
-			// that's not on the same day, format it as a date string
-			else if (end && !endSameAsStart) {
-				timeStr = start.format("MMMM Do") + " - " + timeStr;
-			}
-
-			return timeStr;
 		},
 
 		render: function(demo) {
@@ -342,81 +266,90 @@ define(["jquery", "lodash", "moment", "oauth"], function($, _, moment, OAuth) {
 
 			data.title = this.config.title;
 
-			data.days = {};
-
-			_(data.events).each(function(e) {
-				var start = new Date(e.start).toDateString();
-
-				data.days[start] = (data.days[start] || []);
-
-				data.days[start].push(e);
-
-				var end = moment(e.end).subtract(1, "seconds").startOf("day");
-
-				if (end.isValid() && end.toDate().toDateString() !== start) {
-					var diff = end.diff(moment(e.start).startOf("day"), "days"),
-						d;
-
-					for (var i = 1; i <= diff; i++) {
-						d = new Date(e.start + (864E5 * i)).toDateString();
-
-						data.days[d] = (data.days[d] || []);
-
-						data.days[d].push(e);
-					}
-				}
-			}, this).value();
-
-
-			var dt = new Date();
-
-			if (demo) {
-				dt = new Date(1437364800000);
-			}
-
-			var today = moment(dt).startOf("day"),
-				rangeStart, rangeEnd;
-
-			if (this.config.show === "today") {
-				rangeStart = moment(dt).startOf("day");
-				rangeEnd = moment(dt).endOf("day");
-			}
-			else {
-				rangeStart = moment(dt).startOf("day");
-				rangeEnd = null;
-			}
-
-			data.days = _.compact(_.map(data.days, function(e, i) {
-				var date = moment(new Date(i)),
-					dateStr = "";
-
-				if (date.isBefore(rangeStart) || (rangeEnd && date.isAfter(rangeEnd))) {
-					return null;
-				}
-
-				if (date.diff(new Date(), "days") + 1 >= 7) {
-					dateStr = date.format("dddd, MMMM Do YYYY");
-				}
-				else {
-					dateStr = date.calendar(dt).replace(" at 12:00 AM", "");
-				}
-
-				return {
-					events: e,
-					date: dateStr,
-					status: date.isSame(today) ? "today" : date.isBefore(today) ? "past" : ""
-				};
-			}));
-
-			if ((this.config.calendars || []).length > 1) {
-				data.multiple = true;
-			}
-
-			if (!data.days.length) {
-				data.noEvents = true;
+			if (!demo && (!this.config.calendars || !this.config.calendars.length)) {
+				data.noCalendars = true;
+				this.utils.render(data);
+				return;
 			}
 
 			this.utils.render(data);
+
+			if (_.indexOf(["agenda1d", "list2w", "short1d"], this.config.view) < 0) {
+				this.config.view = "agenda1d";
+			}
+
+			var gcalendar = this.elm.children('.gcalendar');
+			var settings = {
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+					//right: ''
+					right: 'agenda1d,list2w,short1d'
+				},
+				
+				height: "auto",
+
+				displayEventTime: true, 
+			
+				showNonCurrentDates : false,
+
+				eventLimit: true, 
+				
+				defaultView: this.config.view,
+			
+				eventRender: function(event, element) {
+					var location = _.isString(event.location) ? "Location: " + event.location : null;
+					var calendar = _.isString(event.calendar) ? "Calendar: " + event.calendar : null;
+					element.attr('data-tooltip', [event.description, location, calendar].filter(Boolean).join('<br>'));
+				},
+				
+				lazyFetching: false,
+	
+				viewRender: function(view, element) {
+					if (this.config.view != view.name) {
+						this.config.view = view.name;
+						this.utils.saveConfig();
+					}
+				}.bind(this),
+
+				views: {
+					short1d:  {
+						type: 'list',
+						duration: { weeks: 3 },
+						buttonText: 'list'
+					},
+					list2w:  {
+						type: 'basic',
+						duration: {days: 1 },
+						buttonText: 'short',
+						eventLimit: false, 
+					},
+					agenda1d:  {
+						type: 'agenda',
+						duration: {days: 1 },
+						buttonText: 'agenda'
+					}
+				}    
+			};
+
+			if (!demo) {
+				settings.validRange = {
+					start: moment().startOf("day"),
+					end: moment().add(2, 'weeks').startOf("day")
+				};
+			}
+
+			gcalendar.fullCalendar(settings);
+			gcalendar.fullCalendar('removeEventSources');
+			gcalendar.fullCalendar('addEventSource', data.events);
+			if (demo) {
+				setTimeout(function() {
+					gcalendar.fullCalendar('refetchEvents');
+					gcalendar.fullCalendar('gotoDate', moment("2018-07-19"));
+				});
+			}
 		}
+
+
 	};
 });
