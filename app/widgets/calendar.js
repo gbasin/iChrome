@@ -41,14 +41,25 @@ define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, m
 					list2w: "i18n.settings.view_options.list2w",
 					short1d: "i18n.settings.view_options.short1d",
 				},
+			},
+			{
+				type: "time",
+				label: "i18n.settings.range.start",
+				nicename: "startTime"
+			},
+			{
+				type: "time",
+				label: "i18n.settings.range.end",
+				nicename: "endTime"
 			}
-
 		],
 		config: {
 			title: "i18n.title",
 			size: "variable",
 			show: "all",
 			view: "agenda1d",
+			startTime: "08:00",
+			endTime: "22:00",
 			calendars: []
 		},
 		data: {
@@ -157,11 +168,11 @@ define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, m
 				var events = [],
 					multiple = this.config.calendars.length > 1,
 					params = {
-						maxResults: 20,
 						singleEvents: true,
 						orderBy: "startTime",
 						timeZone: -(new Date().getTimezoneOffset() / 60),
 						timeMin: moment().startOf("day").format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
+						timeMax: moment().startOf("day").add(14, 'days').format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
 						fields: "summary,items(description,htmlLink,id,location,start,end,summary)"
 					};
 
@@ -211,7 +222,7 @@ define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, m
 										title: e.summary,
 										start: e.start.dateTime || e.start.date,
 										end: e.end.dateTime || e.end.date,
-										url: e.htmlLink
+										url: e.htmlLink,
 									};
 
 									if (multiple && d.summary) {
@@ -248,12 +259,30 @@ define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, m
 						});
 					}
 
+					if (events.length > 0) {
+						var startDate = this.getRange(events).start;
+						var maxEvents = 40;
+						if (events.length > maxEvents) {
+							//Remove extra days from array until it < 40
+							var days = 13;
+							while (days > 1 && events.length > maxEvents) {
+								var endDate = moment(startDate).add(days, 'days');
+								events = _.filter(events, function(e) {
+									return moment(e.start, moment.ISO_8601).startOf('day').diff(endDate) < 0;
+								});
+	
+								days--;
+							}
+						}
+					}
+
 					this.data = {
 						events: events
 					};
 
 					var gcalendar = this.elm.children('.gcalendar');
 					gcalendar.fullCalendar('removeEventSources');
+					gcalendar.fullCalendar('option', 'validRange', this.getRange(events));
 					gcalendar.fullCalendar('addEventSource', this.data.events);
 
 					this.utils.saveData(this.data);
@@ -286,32 +315,23 @@ define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, m
 					//right: ''
 					right: 'agenda1d,list2w,short1d'
 				},
-				
 				height: "auto",
-
 				displayEventTime: true, 
-			
 				showNonCurrentDates : false,
-
 				eventLimit: true, 
-				
 				defaultView: this.config.view,
-			
 				eventRender: function(event, element) {
 					var location = _.isString(event.location) ? "Location: " + event.location : null;
 					var calendar = _.isString(event.calendar) ? "Calendar: " + event.calendar : null;
 					element.attr('data-tooltip', [event.description, location, calendar].filter(Boolean).join('<br>'));
 				},
-				
 				lazyFetching: false,
-	
 				viewRender: function(view, element) {
 					if (this.config.view != view.name) {
 						this.config.view = view.name;
 						this.utils.saveConfig();
 					}
 				}.bind(this),
-
 				views: {
 					short1d:  {
 						type: 'list',
@@ -332,11 +352,13 @@ define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, m
 				}    
 			};
 
+			if (this.config.startTime != this.config.endTime) {
+				settings.minTime = this.config.startTime;
+				settings.maxTime = settings.this.config.endTime;
+			}
+
 			if (!demo) {
-				settings.validRange = {
-					start: moment().startOf("day"),
-					end: moment().add(2, 'weeks').startOf("day")
-				};
+				settings.validRange = this.getRange(data.events);
 			}
 
 			gcalendar.fullCalendar(settings);
@@ -348,7 +370,25 @@ define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, m
 					gcalendar.fullCalendar('gotoDate', moment("2018-07-19"));
 				});
 			}
+		},
+
+		getRange: function(events) {
+			if (events.length <= 0)	{
+				return {
+					start: moment().startOf("day"),
+					end: moment().add(2, 'weeks').startOf("day")
+				};
+			}
+
+			var starts = events.map(function(e) { return moment(e.start).startOf("day"); });
+			var ends = events.map(function(e) { return moment(e.end).add(1, 'days').subtract(1, 'seconds').startOf("day"); });
+			
+			return {
+				start: starts.reduce(function(a, b) { return a.valueOf() <= b.valueOf() ? a : b}).format('YYYY-MM-DD'),
+				end: ends.reduce(function(a, b) { return a.valueOf() >= b.valueOf() ? a : b}).format('YYYY-MM-DD')
+			};
 		}
+
 
 
 	};

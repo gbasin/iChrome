@@ -106,6 +106,10 @@
 				"agenda1d": "Agenda Day",
 				"list2w": "List",
 				"short1d": "Short Day"
+			},
+			"range": {
+				"start": "Start Time",
+				"end": "End Time"
 			}
 		},
 
