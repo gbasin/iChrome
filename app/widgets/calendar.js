@@ -354,7 +354,7 @@ define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, m
 
 			if (this.config.startTime != this.config.endTime) {
 				settings.minTime = this.config.startTime;
-				settings.maxTime = settings.this.config.endTime;
+				settings.maxTime = this.config.endTime;
 			}
 
 			if (!demo) {

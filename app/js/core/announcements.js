@@ -11,6 +11,12 @@ define(["backbone", "browser/api", "modals/alert", "core/analytics", "i18n/i18n"
 		},
 
 		initialize: function() {
+			var showNewVersion = "3.0.0.32";
+			if (Browser.storage.lastShowWhatsNewVersion !== showNewVersion) {
+				Browser.storage.lastShowWhatsNewVersion = showNewVersion;
+				Browser.storage.showWhatsNew = 0;
+			}
+
 			if (Browser.storage.showWhatsNew) {
 				this.set({
 					count: 10,

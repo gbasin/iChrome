@@ -1,25 +1,15 @@
-<p>You just got the latest update!  Here's what's new:</p>
+<p>You just got the latest update!</p>
+
 
 <section>
-	<h3>New widgets</h3>
+	<h3>New features and other changes:</h3>
 
 	<ul>
-		<li>Pocket</li>
-		<li>Directions</li>
-		<li>LinkedIn</li>
-		<li>Pushbullet</li>
-	</ul>
-</section>
-
-<section>
-	<h3>New features and other changes</h3>
-
-	<ul>
-		<li>A new syncing system has been implemented</li>
-		<li>The Calendar widget has been redesigned and now displays a full agenda</li>
-		<li>Your entire configuration is now backed up regularly</li>
-		<li>The Announcements alert and panel have been added</li>
-		<li>The Currency widget now saves your 15 most recently converted currencies</li>
-		<li>The stopwatch in the Clock widget now displays milliseconds</li>
+		<li>The Calendar widget has been redesigned and now proposes three modes: Day, Short and List.</li>
+		<li>The Weather is improved:</li>
+		<ul>
+			<li>On adding the widget shows the user's location</li>
+			<li>On new location typing in the Settings the widget proposes the variants of city names</li>
+		</ul>
 	</ul>
 </section>
