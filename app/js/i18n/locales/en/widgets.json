@@ -98,7 +98,7 @@
 
 			"show": "Show events from",
 			"show_options": {
-				"all": "All time",
+				"all": "All time (up to 20 events)",
 				"today": "Today only"
 			},
 			"view": "Calendar view",
@@ -108,8 +108,8 @@
 				"short1d": "Short Day"
 			},
 			"range": {
-				"start": "Start Time",
-				"end": "End Time"
+				"start": "Agenda Start Time",
+				"end": "Agenda End Time"
 			}
 		},
 
