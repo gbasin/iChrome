@@ -1,6 +1,7 @@
 /*
  * The Calendar widget.
  */
+/* exported EXPORTED_LIB */
 define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, moment, OAuth, calendar) {
 	return {
 		id: 10,
@@ -68,7 +69,7 @@ define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, m
 					"url": "https://www.google.com/calendar",
 					"title": "Multi-day Event",
 					"start": "2018-07-19",
-					"start": "2018-07-22",
+					"end": "2018-07-22",
 					"calendar": "Personal",
 					"calendarId": "Personal",
 					"location": "Mountain View, CA, USA",
@@ -116,6 +117,7 @@ define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, m
 			this.oAuth = new OAuth({
 				name: "calendar",
 				id: "559765430405-2710gl95r9js4c6m4q9nveijgjji50b8.apps.googleusercontent.com",
+				//secret: "__API_KEY_calendar__",
 				secret: "__API_KEY_calendar__",
 				scope: "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar"
 			});
@@ -262,7 +264,7 @@ define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, m
 						var startDate = this.getRange(events).start;
 						var maxEvents = 40;
 						if (events.length > maxEvents) {
-							//Remove extra days from array until it < 40
+							//Remove extra days from array until it is < 40
 							var days = 13;
 							while (days > 1 && events.length > maxEvents) {
 								var endDate = moment(startDate).add(days, 'days');
@@ -325,8 +327,8 @@ define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, m
 					element.attr('data-tooltip', [event.description, location, calendar].filter(Boolean).join('<br>'));
 				},
 				lazyFetching: false,
-				viewRender: function(view, element) {
-					if (this.config.view != view.name) {
+				viewRender: function(view) {
+					if (this.config.view !== view.name) {
 						this.config.view = view.name;
 						this.utils.saveConfig();
 					}
@@ -351,7 +353,7 @@ define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, m
 				}    
 			};
 
-			if (this.config.startTime != this.config.endTime) {
+			if (this.config.startTime !== this.config.endTime) {
 				settings.minTime = this.config.startTime;
 				settings.maxTime = this.config.endTime;
 			}
@@ -383,8 +385,8 @@ define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, m
 			var ends = events.map(function(e) { return moment(e.end).add(1, 'days').subtract(1, 'seconds').startOf("day"); });
 			
 			return {
-				start: starts.reduce(function(a, b) { return a.valueOf() <= b.valueOf() ? a : b}).format('YYYY-MM-DD'),
-				end: ends.reduce(function(a, b) { return a.valueOf() >= b.valueOf() ? a : b}).format('YYYY-MM-DD')
+				start: starts.reduce(function(a, b) { return a.valueOf() <= b.valueOf() ? a : b; }).format('YYYY-MM-DD'),
+				end: ends.reduce(function(a, b) { return a.valueOf() >= b.valueOf() ? a : b; }).format('YYYY-MM-DD')
 			};
 		}
 

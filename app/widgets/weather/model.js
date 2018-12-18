@@ -1,4 +1,4 @@
-define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
+define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel, moment, $) {
 	return WidgetModel.extend({
 		refreshInterval: 300000,
 
@@ -97,11 +97,11 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 		autocomplete: function(val, cb) {
 			$.getJSON("http://gd.geobytes.com/AutoCompleteCity?callback=&sort=size&q=" + encodeURIComponent(val), function(d) {
 				cb(_.compact(_.map(d, function(e) {
-					if (e === "%s" || e === "")	return null;
+					if (e === "%s" || e === "")	{ return null; }
 					var tokens = e.split(",");
 					var value = e;
 					var label = e;
-					if (tokens.length == 3) {
+					if (tokens.length === 3) {
 						value = tokens[0] + "," + tokens[1] + " region," + tokens[2];
 						label = value;
 					}
