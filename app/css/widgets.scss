@@ -1153,6 +1153,30 @@
 }
 
 
+body.dark {
+	.fc-unthemed {
+		.fc-divider, .fc-popover .fc-header, .fc-list-heading td {
+			background: rgb(51, 51, 51);
+		}
+
+		.fc-list-item:hover td {
+			background: rgb(90, 90, 90);
+		}
+	}
+}
+
+body.transparent {
+	.fc-unthemed {
+		.fc-divider, .fc-popover .fc-header, .fc-list-heading td {
+			background: rgba(51, 51, 51, .2);
+		}
+
+		.fc-list-item:hover td {
+			background: rgba(128, 128, 128, .2);
+		}
+	}
+}
+
 
 /*---------------------------------------------
 	/ Calendar / Agenda

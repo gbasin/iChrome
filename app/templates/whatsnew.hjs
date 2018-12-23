@@ -9,7 +9,7 @@
 		<li>The Weather is improved:</li>
 		<ul>
 			<li>On adding the widget shows the user's location</li>
-			<li>On new location typing in the Settings the widget proposes the variants of city names</li>
+			<li>Typing new location you can see the list of city names</li>
 		</ul>
 	</ul>
 </section>

@@ -1,9 +1,8 @@
-/*
+ /*
  * The Calendar widget.
  */
- /* exported calendar */
- define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, moment, OAuth, calendar) {
-	return {
+ define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, moment, OAuth) { 
+ 	return {
 		id: 10,
 		size: 1,
 		order: 7,

@@ -12,7 +12,7 @@ define(["backbone", "browser/api", "modals/alert", "core/analytics", "i18n/i18n"
 
 		initialize: function() {
 			var showNewVersion = 2;
-			if (Browser.storage.lastShowWhatsNewVersion !== showNewVersion) {
+			if (Number(Browser.storage.lastShowWhatsNewVersion) !== showNewVersion) {
 				Browser.storage.lastShowWhatsNewVersion = showNewVersion;
 				Browser.storage.showWhatsNew = 0;
 			}
