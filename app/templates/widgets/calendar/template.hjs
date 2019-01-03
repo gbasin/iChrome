@@ -4,28 +4,10 @@
 	</header>
 {{/title}}
 
-<div class="agenda{{#multiple}} multiple{{/multiple}}">
-	{{#days}}
-		<div class="day">
-			<div class="date {{status}}">{{date}}</div>
+{{#noCalendars}}
+<div class="notice"><p>{{i18n.nocalendars}}</p></div>
+{{/noCalendars}}
 
-			<div class="events">
-				{{#events}}
-					<a class="event" href="{{link}}" {{#multiple}}title="{{i18n.calendar}}: {{calendar}}"{{/multiple}} {{#color}}style="border-left-color: {{color}};"{{/color}}>
-						<h3 class="title" title="{{title}}">{{title}}</h3>
-
-						{{#time}}<div class="time" title="{{time}}">{{time}}</div>{{/time}}
-
-						{{#location}}<div class="location" title="{{location}}">{{location}}</div>{{/location}}
-					</a>
-				{{/events}}
-			</div>
-		</div>
-	{{/days}}
-
-	{{#noEvents}}
-		<div class="notice no-events">
-			<p>{{i18n.noevents}}</p>
-		</div>
-	{{/noEvents}}
-</div>
+{{^noCalendars}}
+<div class="gcalendar"></div>
+{{/noCalendars}}

@@ -98,8 +98,18 @@
 
 			"show": "Show events from",
 			"show_options": {
-				"all": "All time",
+				"all": "All time (up to 40 events)",
 				"today": "Today only"
+			},
+			"view": "Calendar view",
+			"view_options": {
+				"agenda1d": "Agenda Day",
+				"list2w": "List",
+				"short1d": "Short Day"
+			},
+			"range": {
+				"start": "Agenda Start Time",
+				"end": "Agenda End Time"
 			}
 		},
 
@@ -107,7 +117,9 @@
 
 		"calendar": "Calendar",
 
-		"noevents": "No events found in the near future, it looks like your schedule's clear!"
+		"noevents": "No events found in the near future, it looks like your schedule's clear!",
+
+		"nocalendars": "Please select the calendar in the settings"		
 	},
 
 	"clock": {

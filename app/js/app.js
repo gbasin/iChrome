@@ -17,7 +17,8 @@ require.config({
 		"fbanalytics": "lib/fbanalytics",
 		"widgetTemplate": "widgets/registry/template",
 		"jquery.serializejson": "lib/jquery.serializejson",
-		"backbone.viewcollection": "lib/backbone.viewcollection"
+		"backbone.viewcollection": "lib/backbone.viewcollection",
+		"fullcalendar": "lib/fullcalendar",
 	},
 	map: {
 		"*": {
