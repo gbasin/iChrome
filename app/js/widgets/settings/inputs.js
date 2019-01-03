@@ -198,6 +198,10 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 
 			var inputElm = elm.find("input#widget-" + input.name);
 
+			if (typeof input.browserautocomplete === "string") {
+				inputElm.attr('autocomplete', input.browserautocomplete);
+			}
+
 			var sElm = elm.find("ul.suggestions").on("mousedown", "li", function(e) {
 				$(e.currentTarget).addClass("active").siblings().removeClass("active");
 

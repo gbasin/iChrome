@@ -18,7 +18,8 @@ require.config({
 		"widgetTemplate": "widgets/registry/template",
 		"jquery.serializejson": "lib/jquery.serializejson",
 		"facebooksdk": "https://connect.facebook.net/en_US/sdk",
-		"backbone.viewcollection": "lib/backbone.viewcollection"
+		"backbone.viewcollection": "lib/backbone.viewcollection",		
+		"fullcalendar": "lib/fullcalendar",
 	},
 	map: {
 		"*": {
