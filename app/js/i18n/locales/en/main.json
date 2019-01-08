@@ -138,6 +138,7 @@
 	"menu": {
 		"settings":			"Settings",
 		"widgets":			"Widgets",
+		"support":			"Support",
 		"editing":			"Editing",
 		"editing_enabled":	"Enabled",
 		"editing_disabled":	"Disabled",

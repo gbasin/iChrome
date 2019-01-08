@@ -98,6 +98,20 @@ define(
 							SettingsProxy();
 						break;
 
+						case "support":
+						{
+							var url = "https://ichrome.uservoice.com/knowledgebase";
+							Browser.tabs.getCurrent(function(d) {
+								Browser.tabs.create({
+									url: url,
+									index: d.index + 1
+								});
+							});
+
+							Track.event("Menu", "Link Click", "Chrome");
+						}
+						break;
+
 						case "widgets":
 							if (!this.Store) {
 								this.Store = new Store();
