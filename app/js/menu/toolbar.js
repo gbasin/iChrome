@@ -140,6 +140,7 @@ define([
 
 			render: function() {
 				var toolbar = this.model.get("toolbar") === "full" || this.model.get("toolbar") === true;
+				this.model.set('isFull', toolbar, {silent:true});
 
 				if (toolbar) {
 					this.Menu.$el.detach();
@@ -151,6 +152,7 @@ define([
 				this.Search.$el.detach();
 
 				this.$el.html(render("toolbar", this.model.toJSON()));
+				this.$el.toggleClass('floating', !toolbar);
 
 				this.$(".search").replaceWith(this.Search.el);
 
@@ -158,9 +160,9 @@ define([
 
 				if (toolbar) {
 					this.$("nav.menu").replaceWith(this.Menu.el);
-
-					this.Menu.delegateEvents();
 				}
+
+				this.Menu.delegateEvents();
 
 				return this;
 			}

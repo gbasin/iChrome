@@ -1,3 +1,8 @@
+{{^isFull}}
+	<div class="search"></div>
+{{/isFull}}
+
+{{#isFull}}
 <div class="logo"></div>
 
 <div class="search"></div>
@@ -84,3 +89,4 @@
 
 	<nav class="menu"></nav>
 </div>
+{{/isFull}}
