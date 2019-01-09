@@ -23,8 +23,10 @@
 	}, {
 		"type": "list",
 		"name": "location",
+		"autocomplete": "autocomplete",
 		"label": "i18n.settings.location",
-		"placeholder": "i18n.settings.location_placeholder"
+		"placeholder": "i18n.settings.location_placeholder",
+		"browserautocomplete": "nope"
 	}, {
 		"type": "radio",
 		"name": "units",

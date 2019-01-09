@@ -73,9 +73,19 @@
       "calendar":"Календар",
       "show":"Show events from",
       "show_options":{
-        "all":"All time",
-        "today":"Today only"
-      }
+        "all":"Весь час (до 40 подій)",
+        "today":"Сьогодні"
+      },
+			"view": "Тип календаря",
+			"view_options": {
+				"agenda1d": "Сьогодні",
+				"list2w": "Список",
+				"short1d": "Короткий"
+			},
+			"range": {
+				"start": "Сьогодні, З",
+				"end": "Сьогодні, До"
+			}
     },
     "title":"Agenda",
     "calendar":"Календар",

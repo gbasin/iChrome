@@ -1,4 +1,4 @@
-define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
+define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel, moment, $) {
 	return WidgetModel.extend({
 		refreshInterval: 300000,
 
@@ -92,6 +92,26 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 					}
 				]
 			}
+		},
+
+		autocomplete: function(val, cb) {
+			$.getJSON("http://gd.geobytes.com/AutoCompleteCity?callback=&sort=size&q=" + encodeURIComponent(val), function(d) {
+				cb(_.compact(_.map(d, function(e) {
+					if (e === "%s" || e === "")	{ return null; }
+					var tokens = e.split(",");
+					var value = e;
+					var label = e;
+					if (tokens.length === 3) {
+						value = tokens[0] + "," + tokens[1] + " region," + tokens[2];
+						label = value;
+					}
+
+					return {
+						value: value,
+						label: label
+					};
+				})));
+			});
 		},
 
 		initialize: function() {
@@ -340,15 +360,37 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 				}, this);
 			};
 
-			if (typeof this.config.location === "string") {
-				this.config.location = [this.config.location];
+			var doResolve = function() {
+				if (typeof this.config.location === "string") {
+					this.config.location = [this.config.location];
+				}
+	
+				if (this.config.resolvedNames && this.config.resolvedNames.join("|") === this.config.location.join("|")) {
+					get.call(this);
+				}
+				else {
+					this.resolveLocs(get);
+				}
 			}
+			.bind(this);
 
-			if (this.config.resolvedNames && this.config.resolvedNames.join("|") === this.config.location.join("|")) {
-				get.call(this);
+			var isDefaultLoc = _.size(this.config.resolvedLocs) === 1 && _.head(this.config.resolvedLocs) === "defaultLoc";
+			if (!isDefaultLoc) {
+				doResolve();
 			}
-			else {
-				this.resolveLocs(get);
+			else{
+				$.getJSON('http://www.geoplugin.net/json.gp', function(data) {
+					var name = data.geoplugin_city + ", " + data.geoplugin_regionCode + ", " + data.geoplugin_countryName;
+					this.config.location = [name];
+					this.config.resolvedNames = [name];
+					this.config.resolvedLocs = [[data.geoplugin_latitude, data.geoplugin_longitude]];
+					this.saveData();
+				}
+				.bind(this)
+				)
+				.done(function() {
+					doResolve();
+				});
 			}
 		}
 	});
