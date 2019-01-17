@@ -104,7 +104,7 @@ define(
 							Browser.tabs.getCurrent(function(d) {
 								Browser.tabs.create({
 									url: url,
-									index: d.index + 1
+									index: d != null ? d.index + 1 : 0
 								});
 							});
 
