@@ -11,7 +11,6 @@ var script = document.createElement("script");
 script.async = true;
 script.type = "text/javascript";
 var useSSL = 'https:' == document.location.protocol;
-//script.src = 'https://s3.amazonaws.com/cdn.pubguru.com/pg.js';
 script.src = 'https://cdn.pubguru.com/pg.js';
 var target = document.getElementsByTagName("head")[0];
 target.insertBefore(script, target.firstChild);

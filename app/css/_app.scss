@@ -3942,7 +3942,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 
 
-
+/* Onboarding */
+.modal-overlay.onboarding, .modal.onboarding {
+	z-index: 9998;
+}
 
 
 /*---------------------------------------------
