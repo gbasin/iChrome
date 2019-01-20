@@ -150,6 +150,29 @@
 				}
 			}
 
+			&.pro {
+				color: #FFF;
+				background: #4285F4;
+
+				div.hero {
+					height: 340px;
+				}
+
+				div.caption {
+					padding-left: 15px; 
+					padding-right: 20px; 
+					padding-top: 25px;	
+
+					h2 {
+						margin-bottom: 15px;
+					}
+				}
+
+				li {
+					text-align: left;
+				}
+			}
+
 			h2 {
 				font-size: 24px;
 				font-weight: 400;
