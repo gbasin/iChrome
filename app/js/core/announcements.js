@@ -72,7 +72,7 @@ define(["backbone", "browser/api", "modals/alert", "core/analytics", "i18n/i18n"
 			var d = this.attributes;
 
 			var newCount = 0;
-			if (d.isUpdate) newCount++;
+			if (d.isUpdate) { newCount++; }
 			if (d.common) {
 				var lastId = Browser.storage.dismissedAnnouncement || 0;
 				for (var i = 0; i < d.common.length; i++) {
@@ -109,7 +109,7 @@ define(["backbone", "browser/api", "modals/alert", "core/analytics", "i18n/i18n"
 				buttons: {
 					positive: "Got it"
 				}
-			}, function(res) {
+			}, function() {
 				model.trigger("dismissed");
 
 				Browser.storage.removeItem("showWhatsNew");
@@ -154,13 +154,12 @@ define(["backbone", "browser/api", "modals/alert", "core/analytics", "i18n/i18n"
 		topCommon: function() {
 			var d = this.model.attributes;
 
-			if (d.common == null) {
-				return;
+			if (!d.common) {
+				return null;
 			}
 
 			var lastId = Browser.storage.dismissedAnnouncement || 0;
 
-			var item = null;
 			for (var i = 0; i < d.common.length; i++) {
 				if (d.common[i].announcement_id > lastId) {
 					return d.common[i];
@@ -178,15 +177,15 @@ define(["backbone", "browser/api", "modals/alert", "core/analytics", "i18n/i18n"
 			}
 
 			var item = this.topCommon();
-			if (item != null) {
+			if (item !== null) {
 				this.showCommon(item);
 			}
 		},
 
 		render: function() {
 			var item = this.topCommon();
-			if (item != null && item.alert) {
-				showCommon(item);
+			if (item !== null && item.alert) {
+				this.showCommon(item);
 			}
 		}
 	});

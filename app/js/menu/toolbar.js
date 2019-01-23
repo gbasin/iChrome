@@ -16,7 +16,7 @@ define([
 
 					set.profileimage = storage.user.image ? storage.user.image.replace("s128-c", "s72-c") : Defaults.user.image;
 
-					if (set.toolbar == "full") {
+					if (set.toolbar === "full") {
 						set.toolbar = "button";
 						storage.settings = "button";
 					}
@@ -144,7 +144,7 @@ define([
 
 
 			render: function() {
-				var toolbar = this.model.get("toolbar") === "full2" || this.model.get("toolbar") === true;
+				var toolbar = this.model.get("toolbar") === "full" || this.model.get("toolbar") === "full2" || this.model.get("toolbar") === true;
 				this.model.set('isFull', toolbar, {silent:true});
 
 				if (toolbar) {
