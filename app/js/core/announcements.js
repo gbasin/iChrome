@@ -11,7 +11,7 @@ define(["backbone", "browser/api", "modals/alert", "core/analytics", "i18n/i18n"
 		},
 
 		initialize: function() {
-			var showNewVersion = 6; //This number shouldbe increased on "What's new" dialog modification
+			var showNewVersion = 3; //This number shouldbe increased on "What's new" dialog modification
 			if (Number(Browser.storage.lastShowWhatsNewVersion) !== showNewVersion) {
 				Browser.storage.lastShowWhatsNewVersion = showNewVersion;
 				Browser.storage.showWhatsNew = 0; //Start the counter from 0 (show max first 10 widget starts)
