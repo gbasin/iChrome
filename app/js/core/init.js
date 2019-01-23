@@ -74,7 +74,7 @@ define([
 					this.Toolbar = new Toolbar();
 				}
 
-				if (this.model.get("toolbar") === "full") {
+				if (this.model.get("toolbar") === "full2" || this.model.get("toolbar") === "full") {
 					if (this.MenuButton) {
 						this.MenuButton.$el.detach();
 					}
