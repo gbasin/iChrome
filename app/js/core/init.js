@@ -70,11 +70,11 @@ define([
 			// This only fires on change otherwise users with the
 			// button might see a FOUT (Flash Of Unchosen Toolbar)
 			this.model.on("change:toolbar", function() {
-				if (this.model.get("toolbar") === "full") {
-					if (!this.Toolbar) {
-						this.Toolbar = new Toolbar();
-					}
+				if (!this.Toolbar) {
+					this.Toolbar = new Toolbar();
+				}
 
+				if (this.model.get("toolbar") === "full2" || this.model.get("toolbar") === "full") {
 					if (this.MenuButton) {
 						this.MenuButton.$el.detach();
 					}
@@ -82,9 +82,7 @@ define([
 						Track.event("Toolbar", "Load"); // If a menu button doesn't exist this isn't a setting change
 					}
 
-					this.$el.prepend(this.Toolbar.render().el);
-
-					this.Toolbar.trigger("inserted");
+					this.$el.removeClass("floating-toolbar");
 				}
 				else {
 					if (!this.MenuButton) {
@@ -99,8 +97,12 @@ define([
 					}
 
 					this.$el.prepend(this.MenuButton.render().el);
+
+					this.$el.addClass("floating-toolbar");
 				}
 
+				this.$el.prepend(this.Toolbar.render().el);
+				this.Toolbar.trigger("inserted");
 
 				if (!loaded) {
 					loaded = true;
@@ -146,6 +148,7 @@ define([
 				menu.navigate.apply(menu, arguments);
 			});
 
+			//Append custom CSS to body
 			this.$el.append(this.css.el);
 
 

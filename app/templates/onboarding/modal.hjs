@@ -30,7 +30,7 @@
 	<span class="footer note">{{{i18n.onboarding.modal.terms}}}</span>
 </section>
 
-<section class="slide sign-in final" data-id="3">
+<section class="slide sign-in" data-id="3">
 	<div class="pending visible">
 		<div class="caption">
 			<h2>{{i18n.onboarding.modal.sign_in}}</h2>
@@ -56,4 +56,35 @@
 
 		<p>{{i18n.onboarding.modal.get_started_desc}}</p>
 	</div>
+</section>
+
+<section class="slide pro final" data-id="4">
+	<div class="hero" style="background-image: url(images/onboarding_pro.png)"></div>
+
+	<div class="caption">
+		<h2>{{i18n.onboarding.modal.pro_title}}</h2>
+
+		<div class="row">
+			<div class="col-xs-12">{{i18n.onboarding.modal.pro_desc1}}</div>
+			<div class="col-xs-7">
+				<ul>
+					<li>{{i18n.onboarding.modal.pro_desc2}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc3}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc4}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc5}}</li>
+				</ul>
+			</div>
+			<div class="col-xs-5">
+				<ul>
+					<li>{{i18n.onboarding.modal.pro_desc6}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc7}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc8}}</li>
+				</ul>
+			</div>
+			<div class="col-xs-12">
+				{{i18n.onboarding.modal.pro_upgrade}}
+			</div>
+		</div>
+
+	<span class="footer note">{{{i18n.onboarding.modal.pro_mback}}}</span>
 </section>

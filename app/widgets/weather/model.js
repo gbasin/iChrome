@@ -380,7 +380,16 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 			}
 			else{
 				$.getJSON('http://www.geoplugin.net/json.gp', function(data) {
-					var name = data.geoplugin_city + ", " + data.geoplugin_regionCode + ", " + data.geoplugin_countryName;
+					if (!data.geoplugin_city || data.geoplugin_city === "") { return; } //The resolve function does does not work if city is absent
+					var name = data.geoplugin_city;
+					if (!data.geoplugin_regionCode && data.geoplugin_regionCode !== "") {
+						name += ", ";
+						name += data.geoplugin_regionCode;
+					}
+					if (!data.geoplugin_countryName && data.geoplugin_countryName !== "") {
+						name += ", ";
+						name += data.geoplugin_countryName;
+					}
 					this.config.location = [name];
 					this.config.resolvedNames = [name];
 					this.config.resolvedLocs = [[data.geoplugin_latitude, data.geoplugin_longitude]];

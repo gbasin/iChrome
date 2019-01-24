@@ -55,6 +55,18 @@
 			"sign_in_desc2": "You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.",
 			"sign_in_button": "Sign in with Google",
 
+			"pro_title": "iChrome Pro",
+			"pro_desc1": "Upgrade to iChrome Pro to get:",
+			"pro_desc2": "Hourly Weather Forecasts up to 10 days out",
+			"pro_desc3": "Team-specific sports news",
+			"pro_desc4": "Real Time stock prices with extended and historical data",
+			"pro_desc5": "Dark and Transparent Themes - See more of your background",
+			"pro_desc6": "A completely ad-free experience",
+			"pro_desc7": "Prioritized Support and Suggestions",
+			"pro_desc8": "And more…",
+			"pro_upgrade": "Upgrade to Pro for only $2",
+			"pro_mback": "Try iChrome Pro Risk Free with our 30 Day Money Back Guarantee",
+
 			"have_account": "It looks like you already have an account!",
 			"have_account_desc": "All your tabs and widgets are ready to use!",
 
@@ -138,6 +150,7 @@
 	"menu": {
 		"settings":			"Settings",
 		"widgets":			"Widgets",
+		"support":			"Support",
 		"editing":			"Editing",
 		"editing_enabled":	"Enabled",
 		"editing_disabled":	"Disabled",

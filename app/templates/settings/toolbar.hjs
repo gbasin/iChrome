@@ -10,7 +10,7 @@
 
 		<div class="input radios no-label">
 			<label>
-				<input type="radio" name="style" value="full" checked />
+				<input type="radio" name="style" value="full2" checked />
 
 				<span>{{i18n.settings.toolbar.style.normal}}</span>
 			</label>

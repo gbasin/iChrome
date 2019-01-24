@@ -50,6 +50,6 @@ if (require.s) {
 /**
  * Init
  */
-require(["core/init", "core/autorun"], function(app) {
+require(["core/init", "core/autorun", "core/pgdg"], function(app) {
 	window.App = app;
 });

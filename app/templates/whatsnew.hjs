@@ -2,14 +2,22 @@
 
 
 <section>
-	<h3>New features and other changes:</h3>
+	{{!-- <h3>New features and other changes:</h3> --}}
 
 	<ul>
-		<li>The Calendar widget has been redesigned and now proposes three modes: Day, Short and List.</li>
-		<li>The Weather is improved:</li>
+		<li>New features:</li>
 		<ul>
-			<li>On adding the widget shows the user's location</li>
-			<li>Typing new location you can see the list of city names</li>
+			<li>Notification system is redesigned to make it more friendly and informative</li>
+			<li>New more prominent Search bar mode</li>
+			<li>Sports widget now remembers the selected team</li>
+			<li>Support feature is now more accesible</li>
+		</ul>
+		<li>Fixes:</li>
+		<ul>
+			<li>Bookmark widget could sometimes forget settings</li>
+			<li>Stock widget could reset the settings to defaults</li>
+			<li>Calendar, News and Feedly widget sometimes stopped to update</li>
+			<li>Weather widget could stop working on placing if the city cannot be detected by IP address</li>
 		</ul>
 	</ul>
 </section>
