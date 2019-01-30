@@ -148,6 +148,7 @@
 	},
 
 	"menu": {
+		"notifications":	"Notifications",
 		"settings":			"Settings",
 		"widgets":			"Widgets",
 		"support":			"Support",
