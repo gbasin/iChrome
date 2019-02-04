@@ -2,22 +2,22 @@
 
 
 <section>
-	{{!-- <h3>New features and other changes:</h3> --}}
+    {{!-- <h3>New features and other changes:</h3> --}}
 
-	<ul>
-		<li>New features:</li>
-		<ul>
-			<li>Notification system is redesigned to make it more friendly and informative</li>
-			<li>New more prominent Search bar mode</li>
-			<li>Sports widget now remembers the selected team</li>
-			<li>Support feature is now more accesible</li>
-		</ul>
-		<li>Fixes:</li>
-		<ul>
-			<li>Bookmark widget could sometimes forget settings</li>
-			<li>Stock widget could reset the settings to defaults</li>
-			<li>Calendar, News and Feedly widget sometimes stopped to update</li>
-			<li>Weather widget could stop working on placing if the city cannot be detected by IP address</li>
-		</ul>
-	</ul>
+    <ul>
+        <li>New features:</li>
+        <ul>
+            <li>The notification system has been redesigned to be easier to use and informative</li>
+            <li> The search bar is more visible and easier to use</li>
+            <li>The sports widget now remembers the selected team</li>
+            <li>The support feature is now more accessible in the menu bar</li>
+        </ul>
+        <li>Fixes:</li>
+        <ul>
+            <li>Bookmark widget would sometimes forget settings</li>
+            <li>The Stock widget sometimes reset to the default settings</li>
+            <li>Calendar, News and Feedly widget sometimes failed to update</li>
+            <li>Weather widget could stop working and forget the selected city</li>
+        </ul>
+    </ul>
 </section>
