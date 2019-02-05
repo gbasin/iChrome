@@ -1,0 +1,35 @@
+<div class="nav">
+	<button type="button" class="material fab m-icon next finish" data-direction="next"></button>
+</div>
+
+<section class="slide pro final active" data-id="1">
+	<div class="hero" style="background-image: url(images/onboarding_pro.png)"></div>
+
+	<div class="caption">
+		<h2>{{i18n.onboarding.modal.pro_title}}</h2>
+
+		<div class="row">
+			<div class="col-xs-12">{{i18n.onboarding.modal.pro_desc1}}</div>
+			<div class="col-xs-6">
+				<ul>
+					<li>{{i18n.onboarding.modal.pro_desc2}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc3}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc4}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc5}}</li>
+				</ul>
+			</div>
+			<div class="col-xs-6">
+				<ul>
+					<li>{{i18n.onboarding.modal.pro_desc6}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc7}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc8}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc9}}</li>
+				</ul>
+			</div>
+			<div class="col-xs-12">
+				<a href="#" class="upgrade">{{i18n.onboarding.modal.pro_upgrade}}</a>
+			</div>
+		</div>
+
+	<span class="footer note">{{{i18n.onboarding.modal.pro_mback}}}</span>
+</section>

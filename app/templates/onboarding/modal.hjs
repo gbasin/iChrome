@@ -30,7 +30,7 @@
 	<span class="footer note">{{{i18n.onboarding.modal.terms}}}</span>
 </section>
 
-<section class="slide sign-in" data-id="3">
+<section class="slide sign-in final" data-id="3">
 	<div class="pending visible">
 		<div class="caption">
 			<h2>{{i18n.onboarding.modal.sign_in}}</h2>
@@ -58,7 +58,7 @@
 	</div>
 </section>
 
-<section class="slide pro final" data-id="4">
+<section class="pro final" data-id="4">
 	<div class="hero" style="background-image: url(images/onboarding_pro.png)"></div>
 
 	<div class="caption">

@@ -2,8 +2,8 @@
  * The onboarding guide this is shown once on installation unless a logged in user is synced in
  */
 define([
-	"lodash", "backbone", "browser/api", "core/analytics", "onboarding/modal", "onboarding/widgets", "onboarding/settings"
-], function(_, Backbone, Browser, Track, Modal, WidgetGuide, SettingsGuide) {
+	"lodash", "backbone", "browser/api", "core/analytics", "onboarding/modal", "onboarding/widgets", "onboarding/settings", "onboarding/modalpro"
+], function(_, Backbone, Browser, Track, Modal, WidgetGuide, SettingsGuide, ModalPro) {
 	var Controller = function() {
 		// The onboarding process is heavily tracked, it's important to know where new users
 		// might be giving up or how far they get through the process
@@ -65,7 +65,15 @@ define([
 
 			this.settingsGuide = new SettingsGuide();
 
-			this.listenToOnce(this.settingsGuide, "complete", this.complete);
+			this.listenToOnce(this.settingsGuide, "complete", this.showProModal);
+		},
+
+		showProModal: function() {
+			Track.event("Onboarding", "ModalPro", "Shown");
+
+			this.modal = new ModalPro();
+
+			this.listenToOnce(this.modal, "complete", this.complete);
 		}
 	});
 

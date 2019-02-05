@@ -5415,7 +5415,13 @@ input.sp-input[type="text"] {
 	padding-left: 20px;
 }
 
-/* line 180, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 179, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+.onboarding.modal .slide.pro a.upgrade {
+	color: white;
+	text-decoration: underline;
+}
+
+/* line 185, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .onboarding.modal .slide h2 {
 	font-size: 24px;
 	font-weight: 400;
@@ -5423,7 +5429,7 @@ input.sp-input[type="text"] {
 	font-family: inherit;
 }
 
-/* line 187, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 192, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .onboarding.modal .slide .hero {
 	height: 390px;
 	background-size: 100%;
@@ -5434,24 +5440,24 @@ input.sp-input[type="text"] {
 	background-position: bottom center;
 }
 
-/* line 197, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 202, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .onboarding.modal .slide .caption {
 	font-size: 15px;
 	line-height: 24px;
 	padding: 32px 80px;
 }
 
-/* line 202, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 207, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .onboarding.modal .slide .caption p {
 	margin-bottom: 25px;
 }
 
-/* line 206, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 211, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .onboarding.modal .slide .caption p:last-child {
 	margin-bottom: 0;
 }
 
-/* line 211, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 216, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .onboarding.modal .slide .footer.note {
 	left: 0;
 	right: 0;
@@ -5459,7 +5465,7 @@ input.sp-input[type="text"] {
 	position: absolute;
 }
 
-/* line 221, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 226, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase {
 	width: 80px;
 	z-index: 40;
@@ -5471,7 +5477,7 @@ input.sp-input[type="text"] {
 	font-family: Roboto, sans-serif;
 }
 
-/* line 231, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 236, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase:before {
 	width: 100%;
 	content: "";
@@ -5487,22 +5493,22 @@ input.sp-input[type="text"] {
 	border: solid 8192px #FFF;
 }
 
-/* line 246, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 251, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase.blue:before {
 	border-color: #3367D6;
 }
 
-/* line 250, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 255, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase.orange:before {
 	border-color: #E65100;
 }
 
-/* line 254, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 259, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase.green:before {
 	border-color: #0B8043;
 }
 
-/* line 258, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 263, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase:after {
 	content: "";
 	display: block;
@@ -5510,7 +5516,7 @@ input.sp-input[type="text"] {
 	box-shadow: inset 0 2px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* line 265, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 270, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase:after,
 .showcase .action-mask {
 	top: 0;
@@ -5521,7 +5527,7 @@ input.sp-input[type="text"] {
 	border-radius: 50%;
 }
 
-/* line 275, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 280, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase .action-mask {
 	z-index: 1;
 	width: 24px;
@@ -5529,51 +5535,51 @@ input.sp-input[type="text"] {
 	margin: auto;
 }
 
-/* line 282, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 287, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase.settings .action-mask {
 	width: 50px;
 	height: 50px;
 }
 
-/* line 287, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 292, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase .caption {
 	color: #FFF;
 	cursor: default;
 	position: absolute;
 }
 
-/* line 292, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 297, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase .caption.top-left {
 	right: 100%;
 	bottom: 100%;
 }
 
-/* line 297, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 302, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase .caption.top-right {
 	left: 100%;
 	bottom: 100%;
 }
 
-/* line 302, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 307, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase .caption.bottom-left {
 	top: 100%;
 	right: 100%;
 }
 
-/* line 307, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 312, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase .caption.bottom-right {
 	top: 100%;
 	left: 100%;
 }
 
-/* line 312, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 317, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase .caption p {
 	width: 360px;
 	font-size: 22px;
 	line-height: 1.5;
 }
 
-/* line 318, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 323, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .showcase .caption button {
 	color: #FFF;
 	font-size: 16px;
@@ -5582,12 +5588,12 @@ input.sp-input[type="text"] {
 	pointer-events: auto;
 }
 
-/* line 328, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 333, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .widget-settings.tutorial.modal-overlay {
 	background: rgba(0, 0, 0, 0.7);
 }
 
-/* line 331, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 336, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .widget-settings.tutorial.modal-overlay .caption {
 	top: 50%;
 	color: #FFF;
@@ -5601,18 +5607,18 @@ input.sp-input[type="text"] {
 	font-family: Roboto, sans-serif;
 }
 
-/* line 345, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 350, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial {
 	overflow: visible;
 }
 
-/* line 348, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 353, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .menu {
 	z-index: 1;
 	position: relative;
 }
 
-/* line 353, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 358, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .labels {
 	top: 0;
 	bottom: 0;
@@ -5626,7 +5632,7 @@ input.sp-input[type="text"] {
 	position: absolute;
 }
 
-/* line 365, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 370, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .labels li {
 	margin: 11px 5px;
 	padding: 2px 6px;
@@ -5639,7 +5645,7 @@ input.sp-input[type="text"] {
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
-/* line 376, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 381, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .labels li:after {
 	top: 50%;
 	width: 0;
@@ -5653,28 +5659,28 @@ input.sp-input[type="text"] {
 	border-left-color: rgba(70, 70, 70, 0.9);
 }
 
-/* line 390, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 395, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .labels li.custom-links, .menu-container.tutorial .labels li.tabs, .menu-container.tutorial .labels li.support {
 	right: 0;
 	position: absolute;
 }
 
-/* line 395, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 400, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .labels li.custom-links {
 	top: 151px;
 }
 
-/* line 400, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 405, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .labels li.tabs {
 	top: 254px;
 }
 
-/* line 405, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 410, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .menu-container.tutorial .labels li.support {
 	top: 340px;
 }
 
-/* line 412, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 417, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .menu-tutorial-overlay {
 	top: 0;
 	left: 0;
@@ -5686,7 +5692,7 @@ input.sp-input[type="text"] {
 	background: #E65100;
 }
 
-/* line 422, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 427, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .menu-tutorial-overlay .caption {
 	top: 125px;
 	color: #FFF;
@@ -5699,13 +5705,13 @@ input.sp-input[type="text"] {
 }
 
 @media (max-width: 1366px) {
-	/* line 434, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+	/* line 439, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 	.menu-tutorial-overlay .caption {
 		left: 40px;
 	}
 }
 
-/* line 439, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 444, c:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .menu-tutorial-overlay + header.toolbar {
 	z-index: 3;
 }
