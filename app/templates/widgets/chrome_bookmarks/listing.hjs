@@ -1,5 +1,5 @@
 {{#url}}
-	<a class="link" href="{{url}}{{#newTab}}" target="_blank{{/newTab}}">
+	<a class="link" href="{{url}}{{#newTab}}" target="_blank{{/newTab}}{{^newTab}}" target="_self{{/newTab}}">
 		<img class="favicon" src="{{favicon}}" />
 
 		<span class="title" title="{{title}}&#013;{{url}}">{{title}}</span>
