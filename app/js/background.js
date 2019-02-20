@@ -169,6 +169,7 @@ chrome.permissions.contains({
 	var settings = JSON.parse(localStorage.config || "{}").settings || {};
 
 	var captureFocus = settings.toolbar !== "button" && (typeof settings.captureFocus === "boolean" ? settings.captureFocus : true);
+	captureFocus = false;
 
 
 	var internalCreate = false;
@@ -278,6 +279,7 @@ chrome.permissions.contains({
 		settings = JSON.parse(e.newValue || "{}").settings || {};
 
 		var newCaptureFocus = settings.toolbar !== "button" && (typeof settings.captureFocus === "boolean" ? settings.captureFocus : true);
+		newCaptureFocus = false;
 
 		// Don't do anything if the setting hasn't changed, this stops duplicate listeners from getting added
 		if (captureFocus === newCaptureFocus) {
