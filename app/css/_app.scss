@@ -217,6 +217,25 @@ iframe[seamless] {
 
 
 
+/*---------------------------------------------
+	/ Add widget
+*/
+.add-widget-link {
+	z-index: 1;
+	color: #C0C0c0;
+	right: 6px;
+	bottom: 40px;
+	position: fixed;
+	cursor: pointer;
+
+	.icon {
+		text-shadow: 0 0 3px rgba(0, 0, 0, .5);
+		font-size: 45px;
+	}
+	
+}
+
+
 
 
 /*---------------------------------------------

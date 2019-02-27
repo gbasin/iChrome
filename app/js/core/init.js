@@ -3,8 +3,8 @@
  */
 define([
 	"jquery", "lodash", "browser/api", "backbone", "core/auth", "core/status", "core/analytics", "storage/storage", "core/css",
-	"themes/controller", "themes/bginfo", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs"
-], function($, _, Browser, Backbone, Auth, Status, Track, Storage, CSS, Themes, BGInfo, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
+	"themes/controller", "themes/bginfo", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs", "widgets/store"
+], function($, _, Browser, Backbone, Auth, Status, Track, Storage, CSS, Themes, BGInfo, Tooltips, Menu, Toolbar, MenuButton, Tabs, Store) {
 	var Model = Backbone.Model.extend({
 		init: function() {
 			this.on("change:theme", function() {
@@ -58,6 +58,15 @@ define([
 				e.currentTarget.parentNode.appendChild(new BGInfo({
 					body: this.$el
 				}).el);
+			},
+
+			"click .add-widget-link .icon": function(e) {
+				if (!this.Store) {
+					this.Store = new Store();
+				}
+
+				// This delays displaying the modal until after the init JS is done so the animation is smooth
+				requestAnimationFrame(this.Store.show.bind(this.Store));
 			}
 		},
 
