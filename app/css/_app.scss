@@ -1808,9 +1808,9 @@ header.toolbar {
 		}
 	}
 
-
-
-
+	&.floating.nosearch .search {
+		display: none;
+	}
 
 
 	/*---------------------------------------------

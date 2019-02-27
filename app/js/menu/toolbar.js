@@ -159,6 +159,9 @@ define([
 				this.$el.html(render("toolbar", this.model.toJSON()));
 				this.$el.toggleClass('floating', !toolbar);
 
+				var hiddenSearch = this.model.get("toolbar") === "button_ns";
+				this.$el.toggleClass('nosearch', hiddenSearch);
+
 				this.$(".search").replaceWith(this.Search.el);
 
 				this.Search.trigger("reinserted");

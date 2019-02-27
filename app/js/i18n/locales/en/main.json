@@ -259,7 +259,8 @@
 				"title": "Style",
 				"desc": "This controls the style of the toolbar.  It can either appear normally or as an out of the way button",
 				"normal": "Normal",
-				"button": "Button"
+				"button": "Button",
+				"button_ns": "No search bar"
 			},
 
 			"search": {

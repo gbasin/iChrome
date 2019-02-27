@@ -2057,6 +2057,11 @@ header.toolbar.floating .search input:focus {
 	background: rgba(48, 48, 48, 0.7);
 }
 
+/* line 1811, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+header.toolbar.floating.nosearch .search {
+	display: none;
+}
+
 /* line 1819, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 header.toolbar .announcements {
 	flex: 0 0 45px;
