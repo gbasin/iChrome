@@ -1,5 +1,7 @@
 define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 	return WidgetModel.extend({
+		widgetClassname: "tabbed-corner",
+
 		refreshInterval: 300000,
 
 		defaults: {

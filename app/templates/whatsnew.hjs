@@ -7,17 +7,15 @@
     <ul>
         <li>New features:</li>
         <ul>
-            <li>The notification system has been redesigned to be easier to use and informative</li>
-            <li> The search bar is more visible and easier to use</li>
-            <li>The sports widget now remembers the selected team</li>
-            <li>The support feature is now more accessible in the menu bar</li>
+            <li>The notification system has been redesigned to be more flexible and convenient</li>
+            <li>New "+" button in the right bottom corner for easy widget addition</li>
+            <li>The easy-to-use "Widget Deletion" button in each widget toolbar. The iChrome will ask for confirmation on deletion</li>
+            <li>It is now possible to remove the Search Bar in the Settings</li>
         </ul>
         <li>Fixes:</li>
         <ul>
-            <li>Bookmark widget would sometimes forget settings</li>
-            <li>The Stock widget sometimes reset to the default settings</li>
-            <li>Calendar, News and Feedly widget sometimes failed to update</li>
-            <li>Weather widget could stop working and forget the selected city</li>
+            <li>Bookmark widget opening in the same tab fixed</li>
+            <li>Fixed database backup issues</li>
         </ul>
     </ul>
 </section>
