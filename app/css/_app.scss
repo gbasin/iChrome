@@ -3009,6 +3009,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 .widgets-container .widget.tabbed-corner.maximized .delete {
 	right: 0;
+	display: none;
 }
 
 .widgets-container .widget.tabbed.maximized .settings {
@@ -3017,6 +3018,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 .widgets-container .widget.tabbed.maximized .delete {
 	right: -3px;
+	display: none;
 }
 
 .widgets-container .widget.tabbed .minimize {
