@@ -87,7 +87,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 
 		getIndIds: function() {
 			var annIndIds = Browser.storage.annIndIds;
-			if (typeof annIndIds === 'undefined') return [];
+			if (typeof annIndIds === 'undefined') { return []; }
 			var annIndIdsInt = JSON.parse(annIndIds);
 			return Array.isArray(annIndIdsInt) ? annIndIdsInt : [annIndIdsInt];
 		},
@@ -106,8 +106,8 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 
 			var lastIndividualInt = Number(d.lastindividual);
 			var annIndIdsFiltered = _.filter(this.getIndIds(), function(x) { return !Number.isNaN(x) && x > lastIndividualInt; });
-			if (annIndIds.length != annIndIdsFiltered.length) {
-				if (annIndIdsFiltered.length == 0) {
+			if (annIndIds.length !== annIndIdsFiltered.length) {
+				if (annIndIdsFiltered.length === 0) {
 					delete Browser.storage.annIndIds;	
 				}
 				else{
@@ -118,13 +118,13 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 
 		individualsToShow: function() {
 			var d = this.attributes;
-			if (d.individual.length == 0) return [];
+			if (d.individual.length === 0) { return []; }
 			var lastindividual = Number(Browser.storage.lastindividual || 0);
 
 			var annIndIds = this.getIndIds();
 			return _.filter(d.individual, function(x) { 
 				return x.announcement_id > lastindividual && !annIndIds.includes(x.announcement_id); 
-			})
+			});
 		},
 
 	    updateCounter: function() {
@@ -228,7 +228,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 				model.trigger("dismissed");
 
 				//Add seen id to storage. It will be sent to server on next announcements update.
-				annIndIdsInt = model.getIndIds();
+				var annIndIdsInt = model.getIndIds();
 				if (!_.includes(annIndIdsInt, d.announcement_id)) {
 					annIndIdsInt.push(d.announcement_id);
 					Browser.storage.annIndIds = JSON.stringify(annIndIdsInt);
@@ -311,7 +311,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 				return;
 			}
 
-			var item = this.topIndividual();
+			item = this.topIndividual();
 			if (item !== null && item.alert) {
 				this.topIndividual(item);
 				return;

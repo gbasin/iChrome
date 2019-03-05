@@ -17,12 +17,12 @@ define([
 		 * @api    private
 		 * @param  {Event}  e  A click event
 		 */
-		navigate: function(e) {
+		navigate: function() {
 			this.modal.hide();
 			this.trigger("complete", this._userType || "unknown");
 		},
 
-		upgrade: function(e) {
+		upgrade: function() {
 			this.modal.hide();
 			this.trigger("complete", this._userType || "unknown");
 			SettingsProxy("pro");

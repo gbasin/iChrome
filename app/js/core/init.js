@@ -60,7 +60,7 @@ define([
 				}).el);
 			},
 
-			"click .add-widget-link .icon": function(e) {
+			"click .add-widget-link .icon": function() {
 				if (!this.Store) {
 					this.Store = new Store();
 				}
