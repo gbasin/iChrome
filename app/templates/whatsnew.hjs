@@ -4,7 +4,7 @@
    <ul>
        <li>New features:</li>
        <ul>
-           <li>We've added a "+" button in the bottom right corner for easy widget addition</li>
+           <li>We've added a "+" button in the top right corner for easy widget addition</li>
            <li>We've added an easy-to-use "Delete" button in each widget toolbar. Simply hover over the top corner of each widget to see it. iChrome will ask for confirmation on deletion</li>
            <li>It is now possible to remove the Search Bar in Settings if you’d prefer not to have it</li>
            <li>The notification system has been redesigned to make it easier to notify you of relevant updates</li>
