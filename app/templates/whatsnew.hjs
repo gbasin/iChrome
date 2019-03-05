@@ -1,21 +1,20 @@
 <p>You just got the latest update!</p>
 
-
 <section>
-    {{!-- <h3>New features and other changes:</h3> --}}
-
-    <ul>
-        <li>New features:</li>
-        <ul>
-            <li>The notification system has been redesigned to be more flexible and convenient</li>
-            <li>New "+" button in the right bottom corner for easy widget addition</li>
-            <li>The easy-to-use "Widget Deletion" button in each widget toolbar. The iChrome will ask for confirmation on deletion</li>
-            <li>It is now possible to remove the Search Bar in the Settings</li>
-        </ul>
-        <li>Fixes:</li>
-        <ul>
-            <li>Bookmark widget opening in the same tab fixed</li>
-            <li>Fixed database backup issues</li>
-        </ul>
-    </ul>
+   <ul>
+       <li>New features:</li>
+       <ul>
+           <li>We've added a "+" button in the bottom right corner for easy widget addition</li>
+           <li>We've added an easy-to-use "Delete" button in each widget toolbar. Simply hover over the top corner of each widget to see it. iChrome will ask for confirmation on deletion</li>
+           <li>It is now possible to remove the Search Bar in Settings if you’d prefer not to have it</li>
+           <li>The notification system has been redesigned to make it easier to notify you of relevant updates</li>
+       </ul>
+       <li>Fixes:</li>
+       <ul>
+           <li>Bookmark widget opening in the other tab fixed</li>
+           <li>The extension installation buttons on ichro.me work now in last Chrome browser versions</li>
+           <li>Database backup issues fixed</li>
+       </ul>
+   </ul>
 </section>
+
