@@ -137,6 +137,26 @@ define(
 					// Sortable must be initialized before the model tries to create the tabs
 					this.sortable();
 
+					$(document).bind("deletewidget", function(e, widgetDiv) {
+						var item = $(widgetDiv);
+
+						if (!item.hasClass('widget')) {
+							return;
+						}
+
+						if (confirm(Translate("widgets.delete_confirm"))) {
+							item.remove();
+
+							item.removed = true;
+
+							Track.FB.logEvent("WidgetUninstall", null, { fb_content_id: item.attr("data-name") });
+
+							Track.event("Widgets", "Uninstall", item.attr("data-name"));
+
+							this.serialize(true);
+						}
+					}.bind(this));
+
 					// Listen for ad unit messages
 					window.addEventListener("message", function(e) {
 						if (e.origin === "http://localhost:4000" || e.origin === "https://ichro.me" || e.origin === "http://ichro.me") {
@@ -374,6 +394,8 @@ define(
 							});
 						}
 					}
+
+					return elm;
 				},
 
 

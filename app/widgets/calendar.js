@@ -370,6 +370,8 @@
 					gcalendar.fullCalendar('gotoDate', moment("2018-07-19"));
 				});
 			}
+
+			this.elm.addClass("tabbed");
 		},
 
 		getRange: function(events) {
