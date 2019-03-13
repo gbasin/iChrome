@@ -2197,8 +2197,61 @@ dialog.announcements li {
 }
 
 
+.menu-wrapper {
+	display: flex; 
+	flex-direction:row; 
+	position: relative; 
+	left: 0;
+    -webkit-transition: left 0.5s ease;
+    -moz-transition: left 0.5s ease;
+    -o-transition: left 0.5s ease;
+    transition: left 0.5s ease;	
+
+	nav.menu-announcements {
+		width: 215px;
+
+		div.back {
+			padding: 10px 15px 35px 15px; 
+			cursor: pointer;
+		}
+
+		div.item {
+			width: 100%; 
+			padding: 10px 10px 10px 10px; 
+			border-top: 1px solid #909090; 
+			display:flex; 
+			flex-direction:row; 
+			justify-content: space-between; 
+			border-left: 4px solid transparent;
+
+			div.title {
+				padding-top:3px; 
+				padding-left:5px; 
+				width: 100%; 
+				cursor: pointer;
+			}
 
 
+			div.close {
+				cursor:pointer; 
+				color:red;
+			}
+		}
+	}
+}
+
+.menu-container.notifications .menu-wrapper {
+	left: -215px;
+}
+
+.menu-wrapper nav.menu-announcements div.item:hover {
+	background-color: #F5F5F5;
+	border-left-color: #646464;
+}
+
+.dark .menu-wrapper nav.menu-announcements div.item:hover {
+	background: #303030;
+}
 
 
 
