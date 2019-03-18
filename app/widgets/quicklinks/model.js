@@ -22,7 +22,7 @@ define(["lodash", "widgets/model"], function(_, WidgetModel) {
 					icon: "youtube"
 				}, {
 					title: "Amazon",
-					url: "http://www.amazon.com/",
+					url: "https://amzn.to/2NQaf8A",
 					icon: "amazon"
 				}, {
 					title: "Wikipedia",
