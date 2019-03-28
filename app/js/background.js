@@ -136,10 +136,10 @@ else if (!localStorage.version || localStorage.version !== chrome.runtime.getMan
 	}
 }
 
-if (storageLength && (!localStorage.firstRun || localStorage.firstRun !== "true") /*&& (!localStorage.version || localStorage.version.indexOf("3.0.0") !== 0)*/) {
-	//localStorage.showUpdated = "true";
-	localStorage.showSignInNotice = "true";
-}
+// if (storageLength && (!localStorage.firstRun || localStorage.firstRun !== "true") && (!localStorage.version || localStorage.version.indexOf("3.0.0") !== 0)) {
+// 	localStorage.showUpdated = "true";
+// 	localStorage.showSignInNotice = "true";
+// }
 
 localStorage.version = chrome.runtime.getManifest().version;
 

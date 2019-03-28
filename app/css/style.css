@@ -1913,7 +1913,9 @@ header.toolbar .search .suggestions {
 	visibility: hidden;
 	transform: translateY(-10px);
 	box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.3);
-	transition: opacity .3s ease-in-out, transform .3s ease-in-out, visibility 0s .3s;
+	transition: opacity .3s ease-in-out,
+ transform .3s ease-in-out,
+ visibility 0s .3s;
 }
 
 /* line 1689, c:/Projects/iChrome/iChrome/app/css/_app.scss */
@@ -1927,7 +1929,9 @@ header.toolbar .search .suggestions.visible {
 	opacity: 1;
 	visibility: visible;
 	transform: translateY(0px);
-	transition: opacity .3s ease-in-out, transform .3s ease-in-out, visibility 0s 0s;
+	transition: opacity .3s ease-in-out,
+ transform .3s ease-in-out,
+ visibility 0s 0s;
 }
 
 /* line 1703, c:/Projects/iChrome/iChrome/app/css/_app.scss */
@@ -6027,7 +6031,8 @@ input.sp-input[type="text"] {
 	background: #757575;
 	color: rgba(0, 0, 0, 0.12);
 	border: 2px solid #757575;
-	box-shadow: inset 0 0 0 9px #FFF, 0 0 0 0 currentColor;
+	box-shadow: inset 0 0 0 9px #FFF,
+ 0 0 0 0 currentColor;
 }
 
 /* line 12, c:/Projects/iChrome/iChrome/app/css/settings/inputs/_radio.scss */
@@ -6054,7 +6059,9 @@ input.sp-input[type="text"] {
 	background: #2196F3;
 	border-color: #2196F3;
 	color: rgba(33, 150, 243, 0.12);
-	box-shadow: inset 0 0 0 3px #FFF, inset 0 0 0 3px #FFF, 0 0 0 0 currentColor;
+	box-shadow: inset 0 0 0 3px #FFF,
+ inset 0 0 0 3px #FFF,
+ 0 0 0 0 currentColor;
 }
 
 /* line 40, c:/Projects/iChrome/iChrome/app/css/settings/inputs/_radio.scss */
@@ -6074,10 +6081,12 @@ input.sp-input[type="text"] {
 
 @keyframes radioFocus {
 	37.5% {
-		box-shadow: inset 0 0 0 0 #FFF, 0 0 0 0 currentColor;
+		box-shadow: inset 0 0 0 0 #FFF,
+ 0 0 0 0 currentColor;
 	}
 	100% {
-		box-shadow: inset 0 0 0 0 #FFF, 0 0 0 12px currentColor;
+		box-shadow: inset 0 0 0 0 #FFF,
+ 0 0 0 12px currentColor;
 	}
 }
 
@@ -6092,10 +6101,14 @@ input.sp-input[type="text"] {
 
 @keyframes radioFocusChecked {
 	37.5% {
-		box-shadow: inset 0 0 0 3px currentColor, inset 0 0 0 3px #FFF, 0 0 0 0 currentColor;
+		box-shadow: inset 0 0 0 3px currentColor,
+ inset 0 0 0 3px #FFF,
+ 0 0 0 0 currentColor;
 	}
 	100% {
-		box-shadow: inset 0 0 0 3px currentColor, inset 0 0 0 3px #FFF, 0 0 0 12px currentColor;
+		box-shadow: inset 0 0 0 3px currentColor,
+ inset 0 0 0 3px #FFF,
+ 0 0 0 12px currentColor;
 	}
 }
 
@@ -8070,7 +8083,22 @@ input.sp-input[type="text"] {
 	position: absolute;
 	border-radius: 50%;
 	/* The minute ticks */
-	box-shadow: 65.63844px	6.89888px	#333,	64.55774px	13.72218px	#333,	62.76973px	20.39513px	#333, 60.294px	26.84463px	#333,	53.39511px	38.79384px	#333,	49.04754px	44.16264px	#333, 44.1626px	49.04757px	#333,	38.79381px	53.39514px	#333,	26.84459px	60.29401px	#333, 20.39509px	62.76974px	#333,	13.72213px	64.55775px	#333,	6.89884px	65.63845px	#333, -6.89893px	65.63844px	#333,	-13.72222px	64.55773px	#333,	-20.39517px	62.76971px	#333, -26.84467px	60.29398px	#333,	-38.79388px	53.39509px	#333,	-44.16267px	49.04751px	#333, -49.0476px	44.16257px	#333,	-53.39516px	38.79377px	#333,	-60.29403px	26.84455px	#333, -62.76975px	20.39505px	#333,	-64.55776px	13.72209px	#333,	-65.63845px	6.89879px	#333, -65.63844px	-6.89897px	#333,	-64.55772px	-13.72226px	#333,	-62.7697px	-20.39521px	#333, -60.29396px	-26.84471px	#333,	-53.39506px	-38.79391px	#333,	-49.04749px	-44.1627px	#333, -44.16254px	-49.04763px	#333,	-38.79373px	-53.39519px	#333,	-26.84451px	-60.29405px	#333, -20.395px	-62.76977px	#333,	-13.72205px	-64.55777px	#333,	-6.89875px	-65.63846px	#333, 6.89901px	-65.63843px	#333,	13.72231px	-64.55771px	#333,	20.39526px	-62.76969px	#333, 26.84475px	-60.29394px	#333,	38.79395px	-53.39503px	#333,	44.16273px	-49.04746px	#333, 49.04766px	-44.1625px	#333,	53.39522px	-38.7937px	#333,	60.29407px	-26.84447px	#333, 62.76978px	-20.39496px	#333,	64.55778px	-13.722px	#333,	65.63846px	-6.8987px	#333;
+	box-shadow: 65.63844px	6.89888px	#333,	64.55774px	13.72218px	#333,	62.76973px	20.39513px	#333,
+ 60.294px	26.84463px	#333,	53.39511px	38.79384px	#333,	49.04754px	44.16264px	#333,
+ 44.1626px	49.04757px	#333,	38.79381px	53.39514px	#333,	26.84459px	60.29401px	#333,
+ 20.39509px	62.76974px	#333,	13.72213px	64.55775px	#333,	6.89884px	65.63845px	#333,
+ -6.89893px	65.63844px	#333,	-13.72222px	64.55773px	#333,	-20.39517px	62.76971px	#333,
+ -26.84467px	60.29398px	#333,	-38.79388px	53.39509px	#333,	-44.16267px	49.04751px	#333,
+ -49.0476px	44.16257px	#333,	-53.39516px	38.79377px	#333,	-60.29403px	26.84455px	#333,
+ -62.76975px	20.39505px	#333,	-64.55776px	13.72209px	#333,	-65.63845px	6.89879px	#333,
+ -65.63844px	-6.89897px	#333,	-64.55772px	-13.72226px	#333,	-62.7697px	-20.39521px	#333,
+ -60.29396px	-26.84471px	#333,	-53.39506px	-38.79391px	#333,	-49.04749px	-44.1627px	#333,
+ -44.16254px	-49.04763px	#333,	-38.79373px	-53.39519px	#333,	-26.84451px	-60.29405px	#333,
+ -20.395px	-62.76977px	#333,	-13.72205px	-64.55777px	#333,	-6.89875px	-65.63846px	#333,
+ 6.89901px	-65.63843px	#333,	13.72231px	-64.55771px	#333,	20.39526px	-62.76969px	#333,
+ 26.84475px	-60.29394px	#333,	38.79395px	-53.39503px	#333,	44.16273px	-49.04746px	#333,
+ 49.04766px	-44.1625px	#333,	53.39522px	-38.7937px	#333,	60.29407px	-26.84447px	#333,
+ 62.76978px	-20.39496px	#333,	64.55778px	-13.722px	#333,	65.63846px	-6.8987px	#333;
 }
 
 /* line 970, c:/Projects/iChrome/iChrome/app/css/widgets.scss */
