@@ -101,11 +101,13 @@ define([
 				}
 
 
-				var searchURL = "https://search.ichro.me/search?" +
-					"ext=" + (Browser.app.newTab ? "newtab" : "main") +
-					"&version=" + Browser.app.version +
-					"&engine=" + encodeURIComponent(this.model.get("searchEngine") || "default") +
-					"&q=" + encodeURIComponent(val);
+				// var searchURL = "https://search.ichro.me/search?" +
+				// 	"ext=" + (Browser.app.newTab ? "newtab" : "main") +
+				// 	"&version=" + Browser.app.version +
+				// 	"&engine=" + encodeURIComponent(this.model.get("searchEngine") || "default") +
+				// 	"&q=" + encodeURIComponent(val);
+
+				var searchURL = "http://ichro-me.s1search.co/serp?q=" + encodeURIComponent(val);
 
 				var link = document.createElement("a");
 

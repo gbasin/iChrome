@@ -176,6 +176,15 @@ define(
 							else if (d && d.showProScreen) {
 								SettingsProxy("pro");
 							}
+							else if (d && d.adsizew && d.adsizeh) {
+								var adunit = $(".tab-container .tab > .ad-unit");
+								adunit.width(d.adsizew);
+								adunit.height(d.adsizeh);
+
+								var adframe = $("#adframe");
+								adframe.width(d.adsizew);
+								adframe.height(d.adsizeh);
+							}
 						}
 					}.bind(this), false);
 
