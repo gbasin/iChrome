@@ -16,6 +16,11 @@ define([
 
 					set.profileimage = storage.user.image ? storage.user.image.replace("s128-c", "s72-c") : Defaults.user.image;
 
+					if (set.toolbar === "full") {
+						set.toolbar = "button";
+						storage.settings = "button";
+					}
+
 					Announcements.off("countchange", null, this).on("countchange", function(count) {
 						this.set("announcements", count);
 					}, this);
@@ -139,7 +144,8 @@ define([
 
 
 			render: function() {
-				var toolbar = this.model.get("toolbar") === "full" || this.model.get("toolbar") === true;
+				var toolbar = this.model.get("toolbar") === "full" || this.model.get("toolbar") === "full2" || this.model.get("toolbar") === true;
+				this.model.set('isFull', toolbar, {silent:true});
 
 				if (toolbar) {
 					this.Menu.$el.detach();
@@ -151,6 +157,10 @@ define([
 				this.Search.$el.detach();
 
 				this.$el.html(render("toolbar", this.model.toJSON()));
+				this.$el.toggleClass('floating', !toolbar);
+
+				var hiddenSearch = this.model.get("toolbar") === "button_ns";
+				this.$el.toggleClass('nosearch', hiddenSearch);
 
 				this.$(".search").replaceWith(this.Search.el);
 
@@ -158,9 +168,9 @@ define([
 
 				if (toolbar) {
 					this.$("nav.menu").replaceWith(this.Menu.el);
-
-					this.Menu.delegateEvents();
 				}
+
+				this.Menu.delegateEvents();
 
 				return this;
 			}

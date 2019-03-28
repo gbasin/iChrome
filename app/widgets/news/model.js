@@ -1,5 +1,7 @@
 define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 	return WidgetModel.extend({
+		widgetClassname: "tabbed-corner",
+
 		refreshInterval: 300000,
 
 		defaults: {
@@ -220,7 +222,8 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 				count: maximized ? 45 : this.config.number,
 				market: this.config.edition,
 				tenant: "amp",
-				vertical: "news"
+				vertical: "news",
+				_: new Date().getTime() //to avoid caching
 			}, function(d) {
 				// If the active tab has changed (i.e. the user has switched tabs
 				// twice before the request finished), we don't want to emit any entries

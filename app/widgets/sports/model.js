@@ -225,7 +225,15 @@ define(["jquery", "lodash", "widgets/model"], function($, _, WidgetModel) {
 				this.set("size", "variable");
 			}
 
+			this._activeView = this.config.last;
+
 			WidgetModel.prototype.initialize.call(this);
+		},
+
+		setActiveView: function(view) {
+			this._activeView = view;
+			this.config.last = view;
+			this.saveData();
 		},
 
 		getNews: function() {

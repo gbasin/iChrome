@@ -10,15 +10,15 @@
 
 		<div class="input radios no-label">
 			<label>
-				<input type="radio" name="style" value="full" checked />
-
-				<span>{{i18n.settings.toolbar.style.normal}}</span>
-			</label>
-
-			<label>
 				<input type="radio" name="style" value="button" />
 
 				<span>{{i18n.settings.toolbar.style.button}}</span>
+			</label>
+
+			<label>
+				<input type="radio" name="style" value="button_ns" />
+
+				<span>{{i18n.settings.toolbar.style.button_ns}}</span>
 			</label>
 		</div>
 	</section>

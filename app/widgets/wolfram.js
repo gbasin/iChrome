@@ -13,6 +13,7 @@ define(function() {
 		},
 		render: function() {
 			this.utils.render();
+			this.elm.addClass("tabbed");
 		}
 	};
 });

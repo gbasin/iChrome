@@ -23,7 +23,7 @@ define(["lodash", "jquery", "moment", "widgets/views/main"], function(_, $, mome
 			"click header .select .options li": function(e) {
 				delete this.model._state;
 
-				this.model._activeView = e.currentTarget.getAttribute("data-id");
+				this.model.setActiveView(e.currentTarget.getAttribute("data-id"));
 
 				this.render({
 					loading: true

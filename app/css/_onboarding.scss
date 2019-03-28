@@ -150,6 +150,38 @@
 				}
 			}
 
+			&.pro {
+				color: #FFF;
+				background: #4285F4;
+
+				div.hero {
+					height: 320px;
+				}
+
+				div.caption {
+					padding-left: 15px; 
+					padding-right: 20px; 
+					padding-top: 15px;	
+
+					h2 {
+						margin-bottom: 15px;
+					}
+				}
+
+				li {
+					text-align: left;
+				}
+
+				ul {
+					padding-left: 20px;
+				}
+
+				a.upgrade {
+					color: white;
+					text-decoration: underline;					
+				}
+			}
+
 			h2 {
 				font-size: 24px;
 				font-weight: 400;
@@ -184,7 +216,7 @@
 			.footer.note {
 				left: 0;
 				right: 0;
-				bottom: 20px;
+				bottom: 15px;
 				position: absolute;
 			}
 		}

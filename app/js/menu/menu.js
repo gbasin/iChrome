@@ -4,9 +4,9 @@
 define(
 	[
 		"lodash", "jquery", "backbone", "browser/api", "core/auth", "core/analytics", "storage/storage", "storage/defaults", "i18n/i18n",
-		"search/search", "search/speech", "settings/proxy", "widgets/store", "core/uservoice", "core/render"
+		"search/search", "search/speech", "settings/proxy", "widgets/store", "core/uservoice", "core/render", "core/announcements"
 	],
-	function(_, $, Backbone, Browser, Auth, Track, Storage, Defaults, Translate, Search, Speech, SettingsProxy, Store, UserVoice, render) {
+	function(_, $, Backbone, Browser, Auth, Track, Storage, Defaults, Translate, Search, Speech, SettingsProxy, Store, UserVoice, render, Announcements) {
 		var Model = Backbone.Model.extend({
 				init: function() {
 					Storage.on("done updated", function(storage) {
@@ -94,8 +94,26 @@ define(
 					var elm = $(e.currentTarget);
 
 					switch (elm.attr("data-item")) {
+						case "notifications":
+							Announcements.show();
+						break;
+
 						case "settings":
 							SettingsProxy();
+						break;
+
+						case "support":
+						{
+							var url = "https://ichrome.uservoice.com/knowledgebase";
+							Browser.tabs.getCurrent(function(d) {
+								Browser.tabs.create({
+									url: url,
+									index: d !== null && typeof(d) !== 'undefined' ? d.index + 1 : 0
+								});
+							});
+
+							Track.event("Menu", "Link Click", "Chrome");
+						}
 						break;
 
 						case "widgets":
@@ -252,6 +270,8 @@ define(
 					// of attached directly to new Model() otherwise this.model might not be set yet.
 					this.model.on("change", this.render, this).init();
 
+					Announcements.on("countchange", this.render, this);
+
 					// If this was a direct link to the settings, show them
 					if (location.hash === "#settings") {
 						SettingsProxy();
@@ -272,6 +292,8 @@ define(
 
 
 				render: function() {
+					this.model.attributes.notifications = Announcements.count && Announcements.count > 0 ? Announcements.count : null;
+
 					// This enables OK Google hotword detection even when there's only a menu and no toolbar
 					if (this.model.get("ok") && !this.Speech) {
 						this.Speech = Speech();

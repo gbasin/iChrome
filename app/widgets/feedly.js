@@ -451,6 +451,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				oAuth.ajax({
 					type: "GET",
 					url: "http://cloud.feedly.com/v3/subscriptions",
+					cache: false,
 					success: function(d) {
 						var feeds = {
 							label: this.utils.translate("settings.source_feeds")
@@ -636,6 +637,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 			req({
 				type: "GET",
 				url: "http://cloud.feedly.com/v3/streams/contents?count=10&streamId=" + encodeURIComponent(this.config.source) + (this.config.show === "unread" ? "&unreadOnly=true" : "") + "&ranked=" + this.config.sort,
+				cache: false,
 				success: function(d) {
 					if (!d) {
 						return;
@@ -754,6 +756,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 					that.oAuth.ajax({
 						type: "GET",
 						url: "http://cloud.feedly.com/v3/streams/contents?count=20&streamId=" + encodeURIComponent(that.config.source) + "&continuation=" + encodeURIComponent(next) + (that.config.show === "unread" ? "&unreadOnly=true" : "") + "&ranked=" + that.config.sort,
+						cache: false,
 						success: function(d) {
 							if (!(d)) {
 								return;

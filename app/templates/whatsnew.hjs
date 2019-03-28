@@ -1,15 +1,20 @@
 <p>You just got the latest update!</p>
 
-
 <section>
-	<h3>New features and other changes:</h3>
-
-	<ul>
-		<li>The Calendar widget has been redesigned and now proposes three modes: Day, Short and List.</li>
-		<li>The Weather is improved:</li>
-		<ul>
-			<li>On adding the widget shows the user's location</li>
-			<li>Typing new location you can see the list of city names</li>
-		</ul>
-	</ul>
+   <ul>
+       <li>New features:</li>
+       <ul>
+           <li>We've added a "+" button in the top right corner for easy widget addition</li>
+           <li>We've added an easy-to-use "Delete" button in each widget toolbar. Simply hover over the top corner of each widget to see it. iChrome will ask for confirmation on deletion</li>
+           <li>It is now possible to remove the Search Bar in Settings if you’d prefer not to have it</li>
+           <li>The notification system has been redesigned to make it easier to notify you of relevant updates</li>
+       </ul>
+       <li>Fixes:</li>
+       <ul>
+           <li>Bookmark widget opening in the other tab fixed</li>
+           <li>The extension installation buttons on ichro.me work now in last Chrome browser versions</li>
+           <li>Database backup issues fixed</li>
+       </ul>
+   </ul>
 </section>
+

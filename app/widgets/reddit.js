@@ -275,6 +275,7 @@ define(["jquery", "moment"], function($, moment) {
 			}
 
 			this.utils.render(data);
+			this.elm.addClass("tabbed");
 		}
 	};
 });

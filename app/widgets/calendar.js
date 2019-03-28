@@ -116,7 +116,6 @@
 			this.oAuth = new OAuth({
 				name: "calendar",
 				id: "559765430405-2710gl95r9js4c6m4q9nveijgjji50b8.apps.googleusercontent.com",
-				//secret: "__API_KEY_calendar__",
 				secret: "__API_KEY_calendar__",
 				scope: "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar"
 			});
@@ -210,6 +209,7 @@
 						type: "GET",
 						dataType: "json",
 						data: params,
+						cache: false,
 						url: "https://www.googleapis.com/calendar/v3/calendars/" + encodeURIComponent(calendar) + "/events",
 						beforeSend: function(xhr) {
 							xhr.setRequestHeader("Authorization", "Bearer " + token);
@@ -370,6 +370,8 @@
 					gcalendar.fullCalendar('gotoDate', moment("2018-07-19"));
 				});
 			}
+
+			this.elm.addClass("tabbed");
 		},
 
 		getRange: function(events) {
