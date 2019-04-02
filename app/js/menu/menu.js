@@ -28,6 +28,10 @@ define(
 						if (JSON.stringify(set) !== JSON.stringify(this.toJSON())) {
 							this.set(set);
 						}
+
+						if (Backbone.history.location.hash === "#upgrade") {
+							SettingsProxy("pro");
+						}
 					}, this);
 				}
 			}),
