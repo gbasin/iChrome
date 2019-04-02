@@ -69,6 +69,15 @@
 		"bookmarks",
 		"management"
 	],
+	"externally_connectable": {
+		"ids": [
+		  "*"
+		],
+		"matches": [
+		  "http://localhost:59232/*",
+		  "http://ichro.me/*"
+		]
+	},
 	"version": "3.0.0.37",
 	"manifest_version": 2,
 	"default_locale": "en",

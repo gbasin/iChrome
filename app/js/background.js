@@ -8,6 +8,15 @@ try {
 }
 catch (e) {}
 
+try {
+	chrome.runtime.onConnectExternal.addListener(function(port) {
+		port.onMessage.addListener(function(msg) {
+		  // See other examples for sample onMessage handlers.
+		});
+	  });
+}
+catch(e) {}
+
 /* globals FB,chrome,PERSISTENT */
 
 var logFBEvent = function(name, value, params) {

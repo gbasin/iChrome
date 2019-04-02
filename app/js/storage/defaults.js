@@ -21,8 +21,12 @@ define(["i18n/i18n"], function(Translate) {
 					}, {
 						id: 17,
 						size: "variable"
+					}, {
+						id: 33,
+						size: "variable",
+						view: "icons"
 					}
-				], [
+			], [
 					{
 						id: 35,
 						size: "variable"

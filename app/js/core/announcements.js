@@ -7,7 +7,8 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 
 		defaults: {
 			count: 0,
-			title: "Announcements"
+			title: "Announcements",
+			list: []
 		},
 
 		initialize: function() {
@@ -127,6 +128,51 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 			});
 		},
 
+		individualById: function(id) {
+			var d = this.attributes;
+			if (d.individual.length === 0) { return null; }
+			return _.find(d.individual, function(x) { 
+				return x.announcement_id === id; 
+			});
+		},
+
+		topCommon: function() {
+			var d = this.attributes;
+
+			if (!d.common) {
+				return null;
+			}
+
+			var lastId = Browser.storage.dismissedAnnouncement || 0;
+
+			for (var i = 0; i < d.common.length; i++) {
+				if (d.common[i].announcement_id > lastId) {
+					return d.common[i];
+				}
+			}
+
+			return null;
+		},
+
+		topIndividual: function() {
+			var d = this.attributes;
+
+			if (!d.individual) {
+				return null;
+			}
+
+			var lastId = Number(Browser.storage.lastindividual || 0);
+			var annIndIdsInt = this.getIndIds();
+			for (var i = 0; i < d.individual.length; i++) {
+				var id = d.individual[i].announcement_id;
+				if (id > lastId && !annIndIdsInt.includes(id)) {
+					return d.individual[i];
+				}
+			}
+
+			return null;
+		},
+
 	    updateCounter: function() {
 			var d = this.attributes;
 
@@ -145,10 +191,38 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 				newCount += this.individualsToShow().length;
 			}
 
+			var result = [];
+			if (d.isUpdate) { 
+				result.push({
+					type: "u",
+					title: "New features and changes"
+				});
+			}
+
+			var topCommonItem = this.topCommon();
+			if (topCommonItem != null) {
+				result.push({
+					type: "c",
+					id: topCommonItem.announcement_id,
+					title: topCommonItem.title
+				});
+			}	
+
+			if (d.individual) {
+				result = result.concat(this.individualsToShow().map(function(item) {
+					return {
+						type: "i",
+						id: item.announcement_id,
+						title: item.title
+					}
+				}));
+			}
+
 			this.set({
+				list: result,
 				count: newCount
 			});
-		},		
+		}
 	});
 
 	var View = Backbone.View.extend({
@@ -157,22 +231,17 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 
 			this.model.on("change", this.render, this).on("change:count", function() {
 				this.count = this.model.get("count");
+				this.list = this.model.get("list");
 
 				this.trigger("countchange", this.count);
 			}, this).trigger("change change:count");
 		},
 
-		showWhatsNew : function() {
+		showWhatsNew : function(doDismiss) {
 			var model = this.model;
 			var d = model.attributes;
-			Alert({
-				title: "What's New",
-				classes: "announcements",
-				html: render("whatsnew"),
-				buttons: {
-					positive: "Got it"
-				}
-			}, function() {
+
+			var dismiss = function() {
 				model.trigger("dismissed");
 
 				Browser.storage.removeItem("showWhatsNew");
@@ -181,22 +250,31 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 				model.updateCounter();
 				
 				Track.event("Announcements", "Dismissed");
+			};			
+
+			if (doDismiss) {
+				dismiss();
+				return;
+			}
+
+			Alert({
+				title: "What's New",
+				classes: "announcements",
+				html: render("whatsnew"),
+				buttons: {
+					positive: "Got it"
+				}
+			}, function() {
+				dismiss();
 			}.bind(this));
 
 			Track.event("Announcements", "Shown", "WhatsNew");
 		},
 
-		showCommon: function(d) {
+		showCommon: function(d, doDismiss) {
 			var model = this.model;
-			Alert({
-				title: d.title,
-				classes: "announcements",
-				html: d.contents,
-				buttons: {
-					positive: d.action ? d.action.text : "Got it",
-					negative: d.dismiss || (d.action ? Translate("alert.default_button") : undefined)
-				}
-			}, function(res) {
+
+			var dismiss = function(res) {
 				model.trigger("dismissed");
 				Browser.storage.dismissedAnnouncement = d.announcement_id;
 
@@ -209,13 +287,13 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 				model.updateCounter();
 
 				Track.event("Announcements", "Dismissed");
-			}.bind(this));
+			};
 
-			Track.event("Announcements", "Shown", "Alert");
-		},
-
-		showIndividual: function(d) {
-			var model = this.model;
+			if (doDismiss){
+				dismiss(false);
+				return;
+			}
+ 
 			Alert({
 				title: d.title,
 				classes: "announcements",
@@ -225,6 +303,16 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 					negative: d.dismiss || (d.action ? Translate("alert.default_button") : undefined)
 				}
 			}, function(res) {
+				dismiss(res);
+			}.bind(this));
+
+			Track.event("Announcements", "Shown", "Alert");
+		},
+
+		showIndividual: function(d, doDismiss) {
+			var model = this.model;
+
+			var dismiss = function(res) {
 				model.trigger("dismissed");
 
 				//Add seen id to storage. It will be sent to server on next announcements update.
@@ -243,46 +331,26 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 				model.updateCounter();
 
 				Track.event("Announcements", "Dismissed");
+			};
+
+			if (doDismiss) {
+				dismiss(false);
+				return;
+			}
+
+			Alert({
+				title: d.title,
+				classes: "announcements",
+				html: d.contents,
+				buttons: {
+					positive: d.action ? d.action.text : "Got it",
+					negative: d.dismiss || (d.action ? Translate("alert.default_button") : undefined)
+				}
+			}, function(res) {
+				dismiss(res);
 			}.bind(this));
 
 			Track.event("Announcements", "Shown", "Alert");
-		},
-
-		topCommon: function() {
-			var d = this.model.attributes;
-
-			if (!d.common) {
-				return null;
-			}
-
-			var lastId = Browser.storage.dismissedAnnouncement || 0;
-
-			for (var i = 0; i < d.common.length; i++) {
-				if (d.common[i].announcement_id > lastId) {
-					return d.common[i];
-				}
-			}
-
-			return null;
-		},
-
-		topIndividual: function() {
-			var d = this.model.attributes;
-
-			if (!d.individual) {
-				return null;
-			}
-
-			var lastId = Number(Browser.storage.lastindividual || 0);
-			var annIndIdsInt = this.model.getIndIds();
-			for (var i = 0; i < d.individual.length; i++) {
-				var id = d.individual[i].announcement_id;
-				if (id > lastId && !annIndIdsInt.includes(id)) {
-					return d.individual[i];
-				}
-			}
-
-			return null;
 		},
 
 	    show: function() {
@@ -292,26 +360,54 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 				return;
 			}
 
-			var item = this.topCommon();
+			var item = this.model.topCommon();
 			if (item !== null) {
 				this.showCommon(item);
 				return;
 			}
 
-			item = this.topIndividual();
+			item = this.model.topIndividual();
 			if (item !== null) {
 				this.showIndividual(item);
 			}
 		},
 
+	    showId: function(type, id, doDismiss) {
+			var d = this.model.attributes;
+			
+			switch (type)
+			{
+				case "u":
+					this.showWhatsNew(doDismiss);
+					return;
+				case "c":
+				{
+					var item = this.model.topCommon();
+					if (item !== null) {
+						this.showCommon(item, doDismiss);
+						return;
+					}
+					break;
+				}
+				case "i":
+				{
+					var item = this.model.individualById(Number(id));
+					if (item) {
+						this.showIndividual(item, doDismiss);
+					}
+					break;
+				}
+			}
+		},
+
 		render: function() {
-			var item = this.topCommon();
+			var item = this.model.topCommon();
 			if (item !== null && item.alert) {
 				this.showCommon(item);
 				return;
 			}
 
-			item = this.topIndividual();
+			item = this.model.topIndividual();
 			if (item !== null && item.alert) {
 				this.topIndividual(item);
 				return;

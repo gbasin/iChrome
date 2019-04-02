@@ -1,3 +1,5 @@
+<div class="menu-wrapper">
+
 <nav class="menu">
 	<div data-item="notifications" {{^notifications}}style="display: none"{{/notifications}}>
 		<svg width="18" height="18" >
@@ -97,3 +99,16 @@
 		<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US" target="_blank">CC BY-SA 3.0</a>
 	</div>
 </nav>
+<nav class="menu-announcements">
+	<div data-item="back" class="m-icon back">backspace</div>
+
+	{{#notificationsList}}
+		<div class="item">
+			<div class="m-icon" style="color:grey">notifications_none</div>
+			<div data-type="{{type}}" data-id="{{id}}" data-item="item-announcement" class="title">{{title}}</div>
+			<div data-type="{{type}}" data-id="{{id}}" data-item="dismiss-announcement" class="m-icon close">close</div>
+		</div>
+	{{/notificationsList}}
+</nav>
+
+</div>
