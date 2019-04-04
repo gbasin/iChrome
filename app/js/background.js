@@ -8,21 +8,15 @@ try {
 }
 catch (e) {}
 
-try {
-	// chrome.runtime.onConnectExternal.addListener(function(port) {
-	// 	port.onMessage.addListener(function(msg) {
-	// 		port.postMessage("object");
-	// 	});
-	//   });
+/* globals FB,chrome,PERSISTENT */
 
+try {
 	  chrome.runtime.onMessageExternal.addListener( 
 		function(request, sender, sendResponse) {
 			sendResponse("object");
- 	  })	  
+ 	  });
 }
 catch(e) {}
-
-/* globals FB,chrome,PERSISTENT */
 
 var logFBEvent = function(name, value, params) {
 	params = params || {};

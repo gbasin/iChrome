@@ -16,7 +16,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 				this.email = storage.user.email;
 			}, this);
 
-			var showNewVersion = 4; //This number should be increased on "What's new" dialog modification
+			var showNewVersion = 5; //This number should be increased on "What's new" dialog modification
 			if (Number(Browser.storage.lastShowWhatsNewVersion) !== showNewVersion) {
 				Browser.storage.lastShowWhatsNewVersion = showNewVersion;
 				Browser.storage.showWhatsNew = 0; //Start the counter from 0 (show max first 10 widget starts)
@@ -200,7 +200,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 			}
 
 			var topCommonItem = this.topCommon();
-			if (topCommonItem != null) {
+			if (topCommonItem !== null) {
 				result.push({
 					type: "c",
 					id: topCommonItem.announcement_id,
@@ -214,7 +214,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 						type: "i",
 						id: item.announcement_id,
 						title: item.title
-					}
+					};
 				}));
 			}
 
@@ -373,8 +373,6 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 		},
 
 	    showId: function(type, id, doDismiss) {
-			var d = this.model.attributes;
-			
 			switch (type)
 			{
 				case "u":
@@ -382,9 +380,9 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 					return;
 				case "c":
 				{
-					var item = this.model.topCommon();
-					if (item !== null) {
-						this.showCommon(item, doDismiss);
+					var topItem = this.model.topCommon();
+					if (topItem !== null) {
+						this.showCommon(topItem, doDismiss);
 						return;
 					}
 					break;
