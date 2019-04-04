@@ -75,7 +75,7 @@
 		],
 		"matches": [
 		  "http://localhost:59232/*",
-		  "http://ichro.me/*"
+		  "https://ichro.me/*"
 		]
 	},
 	"version": "3.0.0.37",

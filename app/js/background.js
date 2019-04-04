@@ -9,11 +9,16 @@ try {
 catch (e) {}
 
 try {
-	chrome.runtime.onConnectExternal.addListener(function(port) {
-		port.onMessage.addListener(function(msg) {
-		  // See other examples for sample onMessage handlers.
-		});
-	  });
+	// chrome.runtime.onConnectExternal.addListener(function(port) {
+	// 	port.onMessage.addListener(function(msg) {
+	// 		port.postMessage("object");
+	// 	});
+	//   });
+
+	  chrome.runtime.onMessageExternal.addListener( 
+		function(request, sender, sendResponse) {
+			sendResponse("object");
+ 	  })	  
 }
 catch(e) {}
 
