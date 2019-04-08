@@ -10,14 +10,6 @@ catch (e) {}
 
 /* globals FB,chrome,PERSISTENT */
 
-try {
-	  chrome.runtime.onMessageExternal.addListener( 
-		function(request, sender, sendResponse) {
-			sendResponse("object");
- 	  });
-}
-catch(e) {}
-
 var logFBEvent = function(name, value, params) {
 	params = params || {};
 
