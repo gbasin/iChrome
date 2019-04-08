@@ -39,7 +39,8 @@
 		"newtab": "index.html"
 	},
 	"web_accessible_resources": [
-		"index.html"
+		"index.html",
+		"uniqueid_19548234.png"
 	],
 	"background": {
 		"scripts": ["js/background.js"]
@@ -69,16 +70,7 @@
 		"bookmarks",
 		"management"
 	],
-	"externally_connectable": {
-		"ids": [
-		  "*"
-		],
-		"matches": [
-		  "http://localhost:59232/*",
-		  "https://ichro.me/*"
-		]
-	},
-	"version": "3.0.37.1",
+	"version": "3.0.37.5",
 	"manifest_version": 2,
 	"default_locale": "en",
 	"short_name": "iChrome",
