@@ -12,7 +12,7 @@
   "remove_widget":"移除",
   "hide_banner":"隐藏横幅广告",
   "hide_ad":{
-    "content":"您想要隐藏广告直到您下一次使用iChrome，或升级以永久移除广告吗？",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make iChrome available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support iChrome directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"立即升级",
     "hide":"隐藏广告"
   },
