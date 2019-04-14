@@ -29,6 +29,14 @@
 		"close": "Close"
 	},
 
+	"upgrade_tooltips": {
+		"weather": "for only $2 month see hourly weather",
+		"sport": "for only $2 month read sport news",
+		"news": "for only $2 month use tabs and maximize news",
+		"rss": "for only $2 month use multiple feeds and maximize widget",
+		"stocks": "for only $2 month get realtime stocks with history"
+	},
+
 	"alert": {
 		"default_button": "Dismiss",
 
