@@ -1,17 +1,16 @@
 <p>You just got the latest update!</p>
 
 <section>
-   <ul>
-       <li>New features:</li>
-       <ul>
-           <li>The notification system is simplified for user. It is now possible to read the notification when it is convenient and in any order</li>
-           <li>New QuickLinks widget is implemented</li>
-           <li>The Search Bar is improved</li>
-       </ul>
-       <li>Fixes:</li>
-       <ul>
-           <li>TODO widget item deletion button did not work</li>
-       </ul>
-   </ul>
+  <ul>
+      <li>New features:</li>
+      <ul>
+          <li>The notification system is simplified and easier to use so you can read the notifications when it’s convenient for you</li>
+          <li>There is a new QuickLinks widget which makes it easy to access new sites with a single click from iChrome</li>
+          <li>The Search Bar has been redesigned to make it easier and friendlier to use</li>
+      </ul>
+      <li>Fixes:</li>
+      <ul>
+          <li>The TODO widget item deletion button did not work</li>
+      </ul>
+  </ul>
 </section>
-
