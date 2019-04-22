@@ -1,7 +1,8 @@
 /**
  * Announcements
  */
-define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "i18n/i18n", "core/render", "core/settings", "storage/storage"], function(_, Backbone, Browser, Alert, Track, Translate, render, settings, Storage) {
+define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "i18n/i18n", "core/render", "core/settings", "storage/storage", "settings/proxy", "core/auth"
+], function(_, Backbone, Browser, Alert, Track, Translate, render, settings, Storage, SettingsProxy, Auth) {
 	var Model = Backbone.Model.extend({
 		url: settings.apidomain + "/announcements?extension=" + Browser.app.id + "&version=" + Browser.app.version + "&lang=" + Browser.language + "&aver=2",
 
@@ -45,6 +46,17 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 
 					this.updateCounter();
 				}.bind(this), 3000);
+			}
+
+			if (!Auth.isSignedIn) {
+				if (this.isSignInPopup()) {
+					require(["notices/signin"]);				
+				}
+			}
+
+			//Set extension "installed" time
+			if (!Browser.storage.installed) {
+				Browser.storage.installed = new Date().getTime();
 			}
 
 			this.callFetch();
@@ -128,11 +140,76 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 			});
 		},
 
+		timeDiffInMins: function(date1, date2) {
+			return (date1.getTime() - date2.getTime()) / 60000.0;
+		},
+
+		isSignInPopup: function() {
+			var installedTime = Browser.storage.installed;
+			if (typeof installedTime === "undefined") return null;
+
+			var installedTimeDate = new Date(Number(installedTime));
+			var passed = this.timeDiffInMins(new Date(), installedTimeDate);
+
+			var lastNotificationDate = new Date(Number(Browser.storage.lastUpgradeNotification || installedTime));
+			var notificationPassed = this.timeDiffInMins(lastNotificationDate, installedTimeDate);
+			return passed > 10080 && notificationPassed < 10080;
+		},
+
+		messageOnInstalledToShow: function() {
+			var result = null;
+
+			if (!Auth.isSignedIn) {
+				var installedTime = Browser.storage.installed || 0;
+				if (typeof installedTime === "undefined") return null;
+				var installedTimeDate = new Date(Number(installedTime));
+
+				var now = new Date();
+				var passed = this.timeDiffInMins(now, installedTimeDate);
+
+				var lastNotificationDate = new Date(Number(Browser.storage.lastUpgradeNotification || installedTime));
+				var notificationPassed = this.timeDiffInMins(lastNotificationDate, installedTimeDate);
+
+				var doShow = [1140.0, 60.0, 2.0].some(function(element) {
+					return passed > element && notificationPassed < element;
+				});
+
+				if (doShow) {
+					result = [
+						{
+							type: "l",
+							id: 1,
+							title: "You are not singed in now",
+							contents: "<p>Sing in with your Chrome account to securely store/sync your configuration and enjoy 30 days Pro version trial for free</p>",
+							positiveText: "Sign in",
+							negativeText: "Dismiss",
+							positiveAction: function() {
+								SettingsProxy("accounts");
+							},
+							finallyAction: function() {
+								Browser.storage.lastUpgradeNotification = new Date().getTime();
+							}
+						}
+					];
+				}
+			};
+
+			return result;
+		},
+
 		individualById: function(id) {
 			var d = this.attributes;
 			if (d.individual.length === 0) { return null; }
 			return _.find(d.individual, function(x) { 
 				return x.announcement_id === id; 
+			});
+		},
+
+		messageOnInstalledById: function(id) {
+			var messages = this.messageOnInstalledToShow();
+			if (messages == null) { return null; }
+			return _.find(messages, function(x) { 
+				return x.id === id; 
 			});
 		},
 
@@ -177,6 +254,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 			var d = this.attributes;
 
 			var newCount = 0;
+
 			if (d.isUpdate) { newCount++; }
 			if (d.common) {
 				var lastId = Browser.storage.dismissedAnnouncement || 0;
@@ -216,6 +294,12 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 						title: item.title
 					};
 				}));
+			}
+
+			var messageOnInstalled = this.messageOnInstalledToShow();
+			if (messageOnInstalled != null) {
+				newCount += messageOnInstalled.length;
+				result = result.concat(messageOnInstalled);
 			}
 
 			this.set({
@@ -353,6 +437,52 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 			Track.event("Announcements", "Shown", "Alert");
 		},
 
+
+		showMessageOnInstalled: function(d, doDismiss) {
+			var model = this.model;
+
+			var dismiss = function(res) {
+				model.trigger("dismissed");
+
+				if (res) {
+					if (d.positiveAction) {
+						d.positiveAction();
+						Track.event("Announcements", "Confirmed");
+					}
+				} else {
+					if (d.negativeAction) {
+						d.negativeAction();
+						Track.event("Announcements", "Dismissed");
+					}
+				}
+
+				if (d.finallyAction) {
+					d.finallyAction();
+				}
+
+				model.updateCounter();
+			};
+
+			if (doDismiss) {
+				dismiss(false);
+				return;
+			}
+
+			Alert({
+				title: d.title,
+				classes: "announcements",
+				html: d.contents,
+				buttons: {
+					positive: d.positiveText,
+					negative: d.negativeText
+				}
+			}, function(res) {
+				dismiss(res);
+			}.bind(this));
+
+			Track.event("Announcements", "Shown", "Alert");
+		},
+
 	    show: function() {
 			var d = this.model.attributes;
 			if (d.isUpdate) {
@@ -392,6 +522,14 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 					var item = this.model.individualById(Number(id));
 					if (item) {
 						this.showIndividual(item, doDismiss);
+					}
+					break;
+				}
+				case "l":
+				{
+					var item = this.model.messageOnInstalledById(Number(id));
+					if (item) {
+						this.showMessageOnInstalled(item, doDismiss);
 					}
 					break;
 				}
