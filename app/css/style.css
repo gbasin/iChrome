@@ -3159,10 +3159,10 @@ body.resizing .grid {
 .widgets-container .widget .settings,
 .widgets-container .widget .minimize,
 .widgets-container .widget .maximize,
-.widgets-container .widget .delete,
+.widgets-container .widget .wdelete,
 .store-detail .preview .widget .handle,
 .store-detail .preview .widget .settings,
-.store-detail .preview .widget .delete,
+.store-detail .preview .widget .wdelete,
 .store-detail .preview .widget .minimize,
 .store-detail .preview .widget .maximize {
 	opacity: 0;
@@ -3221,21 +3221,21 @@ body.resizing .grid {
 .widgets-container .widget:hover .handle,
 .widgets-container .widget:hover .settings,
 .widgets-container .widget:hover .minimize,
-.widgets-container .widget:hover .delete,
+.widgets-container .widget:hover .wdelete,
 .widgets-container .widget:hover .maximize, .widgets-container .widget.hovered .handle,
 .widgets-container .widget.hovered .settings,
 .widgets-container .widget.hovered .minimize,
-.widgets-container .widget.hovered .delete,
+.widgets-container .widget.hovered .wdelete,
 .widgets-container .widget.hovered .maximize,
 .store-detail .preview .widget:hover .handle,
 .store-detail .preview .widget:hover .settings,
 .store-detail .preview .widget:hover .minimize,
-.store-detail .preview .widget:hover .delete,
+.store-detail .preview .widget:hover .wdelete,
 .store-detail .preview .widget:hover .maximize,
 .store-detail .preview .widget.hovered .handle,
 .store-detail .preview .widget.hovered .settings,
 .store-detail .preview .widget.hovered .minimize,
-.store-detail .preview .widget.hovered .delete,
+.store-detail .preview .widget.hovered .wdelete,
 .store-detail .preview .widget.hovered .maximize {
 	opacity: 1;
 }
@@ -3243,9 +3243,9 @@ body.resizing .grid {
 /* line 2928, C:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widgets-container .widget .handle:before,
 .widgets-container .widget .settings:before,
-.widgets-container .widget .delete:before,
+.widgets-container .widget .wdelete:before,
 .store-detail .preview .widget .handle:before,
-.store-detail .preview .widget .settings:before .store-detail .preview .widget .delete:before {
+.store-detail .preview .widget .settings:before .store-detail .preview .widget .wdelete:before {
 	top: -15px;
 	left: -15px;
 	right: -10px;
@@ -3267,8 +3267,8 @@ body.resizing .grid {
 }
 
 /* line 2953, C:/Projects/iChrome/iChrome/app/css/_app.scss */
-.widgets-container .widget .delete,
-.store-detail .preview .widget .delete {
+.widgets-container .widget .wdelete,
+.store-detail .preview .widget .wdelete {
 	top: 50px;
 	right: 0;
 	color: red;
@@ -3278,21 +3278,21 @@ body.resizing .grid {
 
 /* line 2963, C:/Projects/iChrome/iChrome/app/css/_app.scss */
 .dark .widgets-container .widget .settings,
-.dark .store-detail .preview .widget .settings .dark .widgets-container .widget .delete,
-.dark .store-detail .preview .widget .delete {
+.dark .store-detail .preview .widget .settings .dark .widgets-container .widget .wdelete,
+.dark .store-detail .preview .widget .wdelete {
 	color: #DDD;
 	text-shadow: none;
 }
 
 /* line 2971, C:/Projects/iChrome/iChrome/app/css/_app.scss */
-.widgets-container .widget.maximized .settings .widgets-container .widget.maximized .delete {
+.widgets-container .widget.maximized .settings .widgets-container .widget.maximized .wdelete {
 	top: 5px;
 }
 
 /* line 2976, C:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widgets-container .widget .settings:before,
-.store-detail .preview .widget .settings:before .widgets-container .widget .delete:before,
-.store-detail .preview .widget .delete:before {
+.store-detail .preview .widget .settings:before .widgets-container .widget .wdelete:before,
+.store-detail .preview .widget .wdelete:before {
 	top: -1px;
 	left: -6px;
 	bottom: -5px;
@@ -3300,15 +3300,15 @@ body.resizing .grid {
 
 /* line 2985, C:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widgets-container .widget .settings:hover,
-.store-detail .preview .widget .settings:hover .widgets-container .widget .delete:hover,
-.store-detail .preview .widget .delete:hover {
+.store-detail .preview .widget .settings:hover .widgets-container .widget .wdelete:hover,
+.store-detail .preview .widget .wdelete:hover {
 	color: #428BCA;
 }
 
 /* line 2992, C:/Projects/iChrome/iChrome/app/css/_app.scss */
 body.no-edit .widgets-container .widget .handle,
 body.no-edit .widgets-container .widget .settings,
-body.no-edit .widgets-container .widget .delete,
+body.no-edit .widgets-container .widget .wdelete,
 body.no-edit .widgets-container .widget.tabbed:before {
 	display: none;
 }
@@ -3377,14 +3377,14 @@ body.no-edit .widgets-container .widget.tabbed:before {
 }
 
 /* line 3061, C:/Projects/iChrome/iChrome/app/css/_app.scss */
-.widgets-container .widget.tabbed .delete {
+.widgets-container .widget.tabbed .wdelete {
 	right: -23px;
 	box-shadow: none;
 	background: transparent;
 }
 
 /* line 3067, C:/Projects/iChrome/iChrome/app/css/_app.scss */
-.widgets-container .widget.tabbed-corner .delete {
+.widgets-container .widget.tabbed-corner .wdelete {
 	top: 5px;
 	right: 50px;
 	box-shadow: none;
@@ -3392,7 +3392,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 }
 
 /* line 3074, C:/Projects/iChrome/iChrome/app/css/_app.scss */
-.widgets-container .widget.tabbed-corner.maximized .delete {
+.widgets-container .widget.tabbed-corner.maximized .wdelete {
 	right: 0;
 	display: none;
 }
@@ -3403,7 +3403,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 }
 
 /* line 3083, C:/Projects/iChrome/iChrome/app/css/_app.scss */
-.widgets-container .widget.tabbed.maximized .delete {
+.widgets-container .widget.tabbed.maximized .wdelete {
 	right: -3px;
 	display: none;
 }
@@ -3941,7 +3941,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 }
 
 /* line 3602, C:/Projects/iChrome/iChrome/app/css/_app.scss */
-.widget-settings .list .tools .delete:hover {
+.widget-settings .list .tools .wdelete:hover {
 	color: #E43431;
 }
 

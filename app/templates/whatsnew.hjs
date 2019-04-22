@@ -8,6 +8,10 @@
            <li>New QuickLinks widget is implemented</li>
            <li>The Search Bar is improved</li>
        </ul>
+       <li>Fixes:</li>
+       <ul>
+           <li>TODO widget item deletion button did not work</li>
+       </ul>
    </ul>
 </section>
 
