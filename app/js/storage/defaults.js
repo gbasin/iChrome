@@ -10,7 +10,7 @@ define(["i18n/i18n"], function(Translate) {
 						id: 1,
 						size: "variable"
 					}, { //Quick Links
-						id: 33,
+						id: 53,
 						size: "variable",
 						view: "icons"
 					}

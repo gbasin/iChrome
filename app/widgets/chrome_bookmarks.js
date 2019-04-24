@@ -4,6 +4,7 @@
 define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Browser) {
 	return {
 		id: 33,
+		sort: 80,
 		size: 2,
 		order: 12,
 		permissions: ["bookmarks"],
