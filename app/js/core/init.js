@@ -160,6 +160,9 @@ define([
 			//Append custom CSS to body
 			this.$el.append(this.css.el);
 
+			if (Auth.isPro) {
+				this.$el.addClass("main-pro");
+			}
 
 			// requestAnimationFrame ensures this runs after everything is done
 			requestAnimationFrame(function() {

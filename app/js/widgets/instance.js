@@ -2,8 +2,8 @@
  * The widget instance wrapper, manages elements, configuration and data persistence, settings, etc.
  */
 define([
-	"lodash", "jquery", "backbone", "browser/api", "core/uservoice", "core/auth", "core/analytics", "i18n/i18n", "core/status", "widgets/settings", "widgets/views/main", "widgets/views/maximized", "widgets/views/minimized", "widgets/model", "core/render"
-], function(_, $, Backbone, Browser, UserVoice, Auth, Track, Translate, Status, Settings, MainView, Maximized, Minimized, WidgetModel, render) {
+	"lodash", "jquery", "backbone", "browser/api", "core/uservoice", "core/auth", "core/analytics", "i18n/i18n", "core/status", "widgets/settings", "widgets/views/main", "widgets/views/maximized", "widgets/views/minimized", "widgets/model", "core/render", "settings/proxy"
+], function(_, $, Backbone, Browser, UserVoice, Auth, Track, Translate, Status, Settings, MainView, Maximized, Minimized, WidgetModel, render, SettingsProxy) {
 	var sizes = {
 		1: "tiny",
 		2: "small",
@@ -62,6 +62,10 @@ define([
 
 			"click > .maximize": function() {
 				this.model.set("state", "maximized");
+			},
+
+			"click > .wtooltip": function() {
+				SettingsProxy("pro");
 			}
 		},
 
@@ -700,7 +704,15 @@ define([
 
 			// Here we safely use innerHTML since we don't want to destroy the
 			// widget view's event listeners
-			this.el.innerHTML =
+			this.el.innerHTML = '';
+				if (this.widgetModel.pro_tooltip) {
+					this.el.innerHTML +=
+						'<div class="wtooltip" data-tooltip="' + Translate("upgrade_tooltips." + this.widgetModel.pro_tooltip) + '">' + 
+							'<svg enable-background="new 0 0 500 300" height="20px" id="Layer_1" version="1.1" viewBox="20 20 280 280" width="20px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M150.842,14.519c-74.785,0-135.409,60.631-135.409,135.415c0,74.783,60.624,135.415,135.409,135.415   c74.788,0,135.411-60.632,135.411-135.415C286.253,75.15,225.63,14.519,150.842,14.519z M150.842,266.196   c-64.209,0-116.262-52.055-116.262-116.263c0-64.208,52.053-116.267,116.262-116.267c64.212,0,116.263,52.059,116.263,116.267   C267.104,214.142,215.054,266.196,150.842,266.196z" fill="#FFB200"/><path d="M255.587,149.934c0,57.852-46.894,104.745-104.745,104.745c-57.85,0-104.743-46.894-104.743-104.745   S92.992,45.188,150.842,45.188C208.693,45.188,255.587,92.082,255.587,149.934z" fill="#FFB200"/><g><path d="M164.922,204.148c-3.927,3.838-8.669,5.761-14.221,5.761c-5.775,0-10.525-1.858-14.259-5.592    c-3.725-3.733-5.59-8.483-5.59-14.261c0-5.607,1.931-10.362,5.801-14.257c3.866-3.897,8.552-5.845,14.043-5.845    c5.495,0,10.218,1.991,14.176,5.97c3.951,3.982,5.93,8.722,5.93,14.217C170.807,195.641,168.844,200.307,164.922,204.148z" fill="#FFFFFF"/><path d="M172.995,153.216c-3.358,1.686-5.414,3.143-6.139,4.377c-0.731,1.228-1.086,3.87-1.086,7.909h-31.205    v-5.303c0-7.011,0.78-12.185,2.355-15.527c1.567-3.335,4.429-5.926,8.583-7.78l5.721-2.518c4.32-1.911,6.477-4.598,6.477-8.078    c0-2.023-0.712-3.725-2.104-5.137c-1.399-1.392-3.117-2.104-5.133-2.104c-5.495,0-8.247,3.822-8.247,11.445h-29.019    c0-10.21,2.361-18.533,7.07-24.981c3.479-4.767,7.989-8.552,13.541-11.356c5.553-2.8,11.3-4.208,17.246-4.208    c10.547,0,19.413,3.496,26.622,10.475s10.81,15.632,10.81,25.951C188.471,139.108,183.313,148.059,172.995,153.216z" fill="#FFFFFF"/></g></g></svg>' + 
+						'</div>\r\n';
+				}
+
+				this.el.innerHTML +=
 				(this.state === "maximized" ?
 					'<div class="minimize" title="' + Translate("widgets.minimize") + '">' +
 						'<svg viewBox="0 0 24 24"><path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"></path></svg>' +
