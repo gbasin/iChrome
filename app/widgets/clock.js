@@ -467,6 +467,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 
 	return {
 		id: 2,
+		sort: 30,
 		size: 2,
 		nicename: "clock",
 		sizes: ["tiny", "small"],

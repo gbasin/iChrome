@@ -1,5 +1,6 @@
 {
 	"id": 17,
+	"sort": 70,
 	"name": "todo",
 	"model": "model",
 	"css": "style.css",

@@ -4,6 +4,7 @@
 define(["jquery", "lodash", "browser/api", "modals/modals", "lib/parseurl"], function($, _, Browser, Modal, parseUrl) {
 	return {
 		id: 16,
+		sort: 80,
 		size: 2,
 		order: 12,
 		unlisted: true,
