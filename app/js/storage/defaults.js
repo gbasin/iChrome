@@ -6,19 +6,24 @@ define(["i18n/i18n"], function(Translate) {
 		tabs: [{
 			columns: [
 				[
-					{ //Weather
-						id: 1,
-						size: "variable"
-					}, { //Quick Links
+					{ //Clocks
+						id: 2,
+						size: "small"
+					},
+					{ //Quick Links
 						id: 53,
 						size: "variable",
 						view: "icons"
 					}
 				], [
-					{ //Sports
-						id: 15,
+					{ //Quotes
+						id: 35,
 						size: "variable"
-					}
+					}, 
+					{ //Weather
+						id: 1,
+						size: "variable"
+					}, 
 				], [
 					{ //News
 						id: 4,
