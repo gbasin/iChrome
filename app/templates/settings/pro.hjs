@@ -1,4 +1,4 @@
-{{#isPro}}
+{{#isSubscribed}}
 	<header>
 		<h2 class="page-name">{{i18n.settings.title}} &ndash; {{i18n.settings.nav.pro}}</h2>
 	</header>
@@ -54,11 +54,15 @@
 			{{/uneditable}}
 		</section>
 	</main>
-{{/isPro}}
-{{^isPro}}
+{{/isSubscribed}}
+{{^isSubscribed}}
 	<main class="content" tabindex="-1">
 		<header class="large-header">
 			<h2 class="page-name">iChrome Pro</h2>
+
+			{{#isTrial}}
+				<p style="color:yellow">You are currently using the trial iChrome Pro subscription which is expired on {{trialExpiration}}. Press 'Upgrade' button to continue to use the Pro features.</p>
+			{{/isTrial}}
 
 			<h3 class="subheader pricing">
 				{{i18n.settings.pro.promo.monthly_price}}
@@ -127,4 +131,4 @@
 			</div>
 		</section>
 	</main>
-{{/isPro}}
+{{/isSubscribed}}

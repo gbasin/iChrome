@@ -157,6 +157,8 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 		},
 
 		messageOnInstalledToShow: function() {
+			var now = new Date();
+
 			var result = null;
 
 			if (!Auth.isSignedIn) {
@@ -164,7 +166,6 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 				if (typeof installedTime === "undefined") return null;
 				var installedTimeDate = new Date(Number(installedTime));
 
-				var now = new Date();
 				var passed = this.timeDiffInMins(now, installedTimeDate);
 
 				var lastNotificationDate = new Date(Number(Browser.storage.lastUpgradeNotification || installedTime));
@@ -193,6 +194,33 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 					];
 				}
 			};
+
+			if (Auth.isPro && Auth.isTrial && Auth.trialExpiration) {
+				var expDate = new Date(Number(Auth.trialExpiration));
+				var minsViewsTillExp = this.timeDiffInMins(expDate, new Date(Number(Browser.storage.trialExp || 0)));
+				var minsTillExp = this.timeDiffInMins(expDate, now);
+				var doShow = [10080.0, 1440.0].some(function(element) {
+					return element >= minsTillExp && element < minsViewsTillExp;
+				});
+				
+				if (doShow) {
+					result = result || [];
+					result.push({
+							type: "l",
+							id: 2,
+							title: "Your trial Pro subscription expires soon",
+							contents: "<p>You have 1 month trial Pro subscripion which is expiring. Please press 'Upgrade' button for permanent subscription</p>",
+							positiveText: "Upgrade",
+							negativeText: "Dismiss",
+							positiveAction: function() {
+								SettingsProxy("pro");
+							},
+							finallyAction: function() {
+								Browser.storage.trialExp = new Date().getTime();
+							}
+					});
+				}
+			}
 
 			return result;
 		},

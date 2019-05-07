@@ -13,10 +13,14 @@ define(["lodash", "jquery", "backbone", "browser/api", "fbanalytics", "i18n/i18n
 		isPro: false,
 		adFree: false,
 		isSignedIn: false,
+		isTrial: false,
+		trialExpiration: "0",
 
 		initialize: function() {
 			this.on("change:isPro", function() {
 				this.isPro = this.get("isPro");
+				this.isTrial = this.get("isTrial");
+				this.trialExpiration = this.get("trialExpiration");
 			}, this).on("change:adFree", function() {
 				this.adFree = this.get("adFree");
 			}, this).on("change:user", function() {
@@ -181,6 +185,8 @@ define(["lodash", "jquery", "backbone", "browser/api", "fbanalytics", "i18n/i18n
 
 			this.isPro = payload.plan && payload.plan !== "free";
 
+			this.isTrial = payload.plan && payload.plan === "trial";
+
 			this.adFree = this.isPro || !!payload.adFree;
 
 			this.set({
@@ -189,7 +195,9 @@ define(["lodash", "jquery", "backbone", "browser/api", "fbanalytics", "i18n/i18n
 				adFree: this.adFree,
 				expiry: payload.exp * 1000,
 				plan: payload.plan || "free",
-				subscription: payload.subscription
+				subscription: payload.subscription,
+				isTrial: this.isTrial,
+				trialExpiration: payload.trial
 			});
 
 			return this;
