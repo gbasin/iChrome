@@ -276,8 +276,8 @@
     },
     "pro":{
       "promo":{
-        "monthly_price":"2$ par mois",
-        "yearly_price":"ou 20$ par an",
+        "monthly_price":"4.99$ par mois",
+        "yearly_price":"ou 29.99$ par an",
         "upgrade_btn":"Mettre à niveau maintenant",
         "business":"Intéressé à acheter la version Pro pour votre entreprise ou votre école ?",
         "business_contact":"Contactez nous",
@@ -303,8 +303,8 @@
         "title":"Sortie",
         "updating_title":"Plan de mise à jour",
         "payment_options":"Payer",
-        "pay_monthly":"Mensuel (2$)",
-        "pay_yearly":"Annuel (20$)",
+        "pay_monthly":"Mensuel (4.99$)",
+        "pay_yearly":"Annuel (29.99$)",
         "cancel":"Annuler",
         "update":"Actualiser",
         "subscribe":"S'abonner",

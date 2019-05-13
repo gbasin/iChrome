@@ -209,7 +209,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 							type: "l",
 							id: 2,
 							title: "Your trial Pro subscription expires soon",
-							contents: "<p>You have 1 month trial Pro subscripion which is expiring. Please press 'Upgrade' button for permanent subscription</p>",
+							contents: "<p>You have 1 month trial Pro subscription which is expiring. Please press 'Upgrade' button for permanent subscription</p>",
 							positiveText: "Upgrade",
 							negativeText: "Dismiss",
 							positiveAction: function() {
