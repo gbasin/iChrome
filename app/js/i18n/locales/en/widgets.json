@@ -386,7 +386,9 @@
 
 			"js": "JavaScript",
 
-			"height": "Widget Height"
+			"height": "Widget Height",
+
+			"refresh": "Refresh interval, secs"
 		}
 	},
 
