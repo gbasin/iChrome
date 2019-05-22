@@ -181,7 +181,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 							type: "l",
 							id: 1,
 							title: "You are not singed in now",
-							contents: "<p>Sing in with your Chrome account to securely store/sync your configuration and enjoy 30 days Pro version trial for free</p>",
+							contents: "<p>Try iChrome Pro free for 30 Days! Sign in with your Chrome account to securely store and sync your settings, and experience the full features of iChrome Pro.</p>",
 							positiveText: "Sign in",
 							negativeText: "Dismiss",
 							positiveAction: function() {
