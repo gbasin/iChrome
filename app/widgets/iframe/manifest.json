@@ -1,5 +1,6 @@
 {
 	"id": 7,
+	"sort": 90,
 	"tabbed": true,
 	"name": "iframe",
 	"model": "model",

@@ -867,6 +867,7 @@
 .clock.analog {
 	height: 150px; /* Unfortunately hardcoded since I can't find a way to make the clock scale. */
 	box-shadow: none;
+	animation-fill-mode: none;	
 	background: rgba(0, 0, 0, 0)!important;
 }
 

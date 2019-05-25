@@ -12,7 +12,7 @@
   "remove_widget":"বাতিল",
   "hide_banner":"Hide this banner",
   "hide_ad":{
-    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make iChrome available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support iChrome directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"Upgrade",
     "hide":"বিজ্ঞাপন লুকান"
   },
@@ -276,8 +276,8 @@
     },
     "pro":{
       "promo":{
-        "monthly_price":"মাস প্রতি $২",
-        "yearly_price":"বা বছর প্রতি $২০",
+        "monthly_price":"মাস প্রতি $4.99",
+        "yearly_price":"বা বছর প্রতি $29.99",
         "upgrade_btn":"Upgrade Now",
         "business":"Interested in buying Pro for your business or school?",
         "business_contact":"আমাদের সাথে যোগাযোগ",
@@ -303,14 +303,14 @@
         "title":"Checkout",
         "updating_title":"হালনাগাদ পরিকল্পনা",
         "payment_options":"Pay",
-        "pay_monthly":"মাসিক (2$)",
-        "pay_yearly":"বাত্সরিক ($20)",
+        "pay_monthly":"মাসিক ($4.99)",
+        "pay_yearly":"বাত্সরিক ($29.99)",
         "cancel":"বাতিল",
         "update":"হালনাগাদ",
         "subscribe":"সদস্যতা",
         "braintree_notice":"Payments securely processed by Braintree.",
-        "monthly_notice":"By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
-        "yearly_notice":"By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
+        "monthly_notice":"By subscribing, you authorize iChrome to charge you $4.99 every month until you cancel your subscription.",
+        "yearly_notice":"By subscribing, you authorize iChrome to charge you $29.99 every year until you cancel your subscription.",
         "update_notice":"Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
         "thank_you":"Thank you for buying iChrome Pro!",
         "thank_you2":"iChrome will reload in a few seconds and you'll be all set!",

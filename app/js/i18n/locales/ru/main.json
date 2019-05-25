@@ -12,7 +12,7 @@
   "remove_widget":"Удалить",
   "hide_banner":"Спрятать этот баннер",
   "hide_ad":{
-    "content":"Вы хотите скрыть рекламу только сейчас, или обновить до Pro версии чтобы больше не видеть её никогда?",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make iChrome available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support iChrome directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"Обновить",
     "hide":"Скрыть рекламу"
   },
@@ -276,8 +276,8 @@
     },
     "pro":{
       "promo":{
-        "monthly_price":"$2 в месяц",
-        "yearly_price":"или $20 в год",
+        "monthly_price":"$4.99 в месяц",
+        "yearly_price":"или $29.99 в год",
         "upgrade_btn":"Улучшить сейчас",
         "business":"Заинтересованы в покупке версии Pro для вашей компании или учебного заведения?",
         "business_contact":"Обратная связь",
@@ -303,14 +303,14 @@
         "title":"Оформление заказа",
         "updating_title":"Обновить тариф",
         "payment_options":"Оплатить",
-        "pay_monthly":"Ежемесячно ($2)",
-        "pay_yearly":"В год ($20)",
+        "pay_monthly":"Ежемесячно ($4.99)",
+        "pay_yearly":"В год ($29.99)",
         "cancel":"Oтменить",
         "update":"Обновить",
         "subscribe":"Подписаться",
         "braintree_notice":"Платёж успешно обработан в Braintree.",
-        "monthly_notice":"Подписываясь, вы потверждаете ежегодную оплату в размере 20$ до момента отписки.",
-        "yearly_notice":"Подписываясь, вы потверждаете ежегодную оплату в размере 20$ до момента отписки.",
+        "monthly_notice":"Подписываясь, вы потверждаете ежемесячную оплату в размере 4.99$ до момента отписки.",
+        "yearly_notice":"Подписываясь, вы потверждаете ежегодную оплату в размере 29.99$ до момента отписки.",
         "update_notice":"Хотя изменения платежного цикла вступают в силу немедленно, вы не будете платить до тех пор, пока ваш текущий цикл не закончится.",
         "thank_you":"Благодарим вас за покупку iChrome Pro!",
         "thank_you2":"iChrome будет перезагружен через несколько секунд, не волнуйтесь всё будет в порядке!",

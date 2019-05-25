@@ -2,6 +2,8 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 	return WidgetModel.extend({
 		widgetClassname: "tabbed",
 
+		pro_tooltip: "stocks",
+
 		refreshInterval: function() {
 			return this.Auth.isPro ? 10000 : 300000;
 		},

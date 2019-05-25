@@ -4,6 +4,7 @@
  define(["jquery", "lodash", "moment", "oauth", "fullcalendar"], function($, _, moment, OAuth) { 
  	return {
 		id: 10,
+		sort: 50,
 		size: 1,
 		order: 7,
 		interval: 300000,

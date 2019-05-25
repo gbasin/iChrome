@@ -14,6 +14,8 @@ define(
 
 						var set = _.clone(storage.settings);
 
+						set.isPro = Auth.isPro;
+
 						set.links = _.take(set.links, Auth.isPro ? 8 : 3);
 
 						set.tabs = _.map(storage.tabs, function(e) {
@@ -137,6 +139,10 @@ define(
 							Track.event("Menu", "Link Click", "Chrome");
 						}
 						break;
+
+						case "upgrade":
+							SettingsProxy("pro");
+							break;
 
 						case "widgets":
 							if (!this.Store) {

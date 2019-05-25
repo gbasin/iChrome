@@ -21,12 +21,17 @@ define(
 							id: widget.id,
 							icon: widget.icon,
 							name: widget.translate("name"),
-							desc: widget.translate("desc")
+							desc: widget.translate("desc"),
+							sort: widget.sort || 99999
 						};
 					}).value().sort(function(a, b) {
-						// sensitivity: "accent" ensures that accented characters differ
-						// while ignoring case and avoiding a toLocaleLowerCase() call
-						return a.name.localeCompare(b.name, "en", { sensitivity: "accent" });
+						if (a.sort === b.sort) {
+							// sensitivity: "accent" ensures that accented characters differ
+							// while ignoring case and avoiding a toLocaleLowerCase() call
+							return a.name.localeCompare(b.name, "en", { sensitivity: "accent" });
+						}
+
+						return a.sort > b.sort ? 1 : -1;
 					});
 
 					this.set({

@@ -2,6 +2,8 @@ define(["jquery", "lodash", "widgets/model"], function($, _, WidgetModel) {
 	return WidgetModel.extend({
 		refreshInterval: 180000,
 
+		pro_tooltip: "sport",
+
 		defaults: {
 			config: {
 				size: "variable",

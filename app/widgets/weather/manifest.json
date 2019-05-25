@@ -1,5 +1,6 @@
 {
 	"id": 1,
+	"sort": 10,
 	"name": "weather",
 	"model": "model",
 	"css": "style.css",

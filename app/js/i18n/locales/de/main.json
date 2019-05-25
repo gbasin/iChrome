@@ -12,7 +12,7 @@
   "remove_widget":"Löschen",
   "hide_banner":"Hide this banner",
   "hide_ad":{
-    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make iChrome available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support iChrome directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"Upgrade",
     "hide":"Hide ads"
   },
@@ -276,8 +276,8 @@
     },
     "pro":{
       "promo":{
-        "monthly_price":"$2 pro Monat",
-        "yearly_price":"oder $20 pro Jahr",
+        "monthly_price":"$4.99 pro Monat",
+        "yearly_price":"oder $29.99 pro Jahr",
         "upgrade_btn":"Vollversion kaufen",
         "business":"Interessiert, für Ihr Unternehmen oder Ihre Schule Pro zu erwerben?",
         "business_contact":"Nehmen Sie mit uns Kontakt auf",
@@ -303,14 +303,14 @@
         "title":"Zur Kasse gehen",
         "updating_title":"Updateplan",
         "payment_options":"Bezahlen",
-        "pay_monthly":"Monatlich ($2)",
-        "pay_yearly":"Jährlich ($20)",
+        "pay_monthly":"Monatlich ($4.99)",
+        "pay_yearly":"Jährlich ($29.99)",
         "cancel":"Abbrechen",
         "update":"Update",
         "subscribe":"Abonnieren",
         "braintree_notice":"Die Zahlungen werden sicher von Braintree bearbeitet.",
-        "monthly_notice":"Durch ankreuzen bestätigen Sie, dass iChrome monatlich 2$ von ihnen berechnen darf, bis Sie kündigen.",
-        "yearly_notice":"Durch ankreuzen bestätigen Sie, dass iChrome jährlich 20$ von ihnen berechnen darf, bis Sie kündigen.",
+        "monthly_notice":"Durch ankreuzen bestätigen Sie, dass iChrome monatlich 4.99$ von ihnen berechnen darf, bis Sie kündigen.",
+        "yearly_notice":"Durch ankreuzen bestätigen Sie, dass iChrome jährlich 29.99$ von ihnen berechnen darf, bis Sie kündigen.",
         "update_notice":"Obwohl die Abrechnungszyklus-Änderungen sofort wirksam werden, werden Sie nicht belastet bis Ihr aktueller Zyklus endet.",
         "thank_you":"Vielen Dank für den Kauf von iChrome Pro!",
         "thank_you2":"iChrome ladet in wenigen Sekunden neu und du hast es geschafft!",

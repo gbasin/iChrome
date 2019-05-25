@@ -80,5 +80,5 @@
 	"description": "__MSG_extDescription__",
 	"update_url": "http://clients2.google.com/service/update2/crx",
 	"key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCNyJlz1NfUOvI1q7YiXjTvStaC99OmJCfnfo07UVF6N7/5coAGTUAASUYmdFd5LxTt4GOrODbzbbdOKO3iEuDtUZFklgvMO81tmoRPJNMf0cb1rpSfnmmB33xtgi2CWzmlVzx3pdbbkGwo2R+rwbeAQkG+zXvzgmnHDSt1a5zqjwIDAQAB",
-	"content_security_policy": "script-src 'self' 'unsafe-eval' 'sha256-hNWUbwB8ZS/vP+O4TfqZ/mmkMSYSJqGZ/4t5SSwAEk0=' 'sha256-1U43HAOlAXz6irAbXBbIpCr9fs/nLVDSCTx+uGZSAvY=' https://*.facebook.net https://*.facebook.com https://www.google-analytics.com https://*.uservoice.com https://www.google.com https://js.braintreegateway.com https://assets.braintreegateway.com https://www.paypalobjects.com https://www.geoplugin.net https://cdn.pubguru.com https://z-na.amazon-adsystem.com; object-src 'self'"
+	"content_security_policy": "script-src 'self' 'unsafe-eval' 'sha256-hNWUbwB8ZS/vP+O4TfqZ/mmkMSYSJqGZ/4t5SSwAEk0=' 'sha256-1U43HAOlAXz6irAbXBbIpCr9fs/nLVDSCTx+uGZSAvY=' https://*.facebook.net https://*.facebook.com https://www.google-analytics.com https://*.uservoice.com https://www.google.com https://js.braintreegateway.com https://assets.braintreegateway.com https://www.paypalobjects.com https://www.geoplugin.net https://cdn.pubguru.com https://z-na.amazon-adsystem.com https://worldtimeapi.org; object-src 'self'"
 }

@@ -9,8 +9,6 @@
 				<h3>{{i18n.settings.ads.already_upgraded}}</h3>
 			{{/adFree}}
 			{{^adFree}}
-				<button type="button" class="material blue large upgrade">{{i18n.settings.ads.upgrade_btn}}</button>
-
 				<div class="placement">
 					<h3>{{i18n.settings.ads.placement.title}}</h3>
 
