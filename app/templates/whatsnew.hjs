@@ -4,16 +4,17 @@
   <ul>
       <li>New features:</li>
       <ul>
-          <li>Added an Auto-refresh option to the HTML widget</li>
-          <li>Widgets now sorted by popularity</li>
+          <li>Added an Auto-refresh option to the HTML widget.</li>
+          <li>Widgets now sorted by popularity.</li>
           <li>Improved Pro features and notification for new users.</li>
-          <li>Optimized default widgets for new users</li>
-          <li>Free one month trial of iChrome Pro for new users! Click here to find out more</li>
+          <li>Optimized default widgets for new users.</li>
+          <li>Free one month trial of iChrome Pro for new users!</li>
+          <li>Timezone by region in the Clocks widget.</li>
       </ul>
   </ul>
       <li>Fixes:</li>
       <ul>
-          <li>Twitter widget now shows 280 characters</li>
-          <li>Analog clock artefacts removed</li>
+          <li>Twitter widget now shows 280 characters.</li>
+          <li>Analog clock artefacts removed.</li>
       </ul>
 </section>
