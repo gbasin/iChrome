@@ -146,7 +146,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 
 		isSignInPopup: function() {
 			var installedTime = Browser.storage.installed;
-			if (typeof installedTime === "undefined") return null;
+			if (typeof installedTime === "undefined") { return null; }
 
 			var installedTimeDate = new Date(Number(installedTime));
 			var passed = this.timeDiffInMins(new Date(), installedTimeDate);
@@ -163,7 +163,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 
 			if (!Auth.isSignedIn) {
 				var installedTime = Browser.storage.installed || 0;
-				if (typeof installedTime === "undefined") return null;
+				if (typeof installedTime === "undefined") { return null; }
 				var installedTimeDate = new Date(Number(installedTime));
 
 				var passed = this.timeDiffInMins(now, installedTimeDate);
@@ -193,17 +193,17 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 						}
 					];
 				}
-			};
+			}
 
 			if (Auth.isPro && Auth.isTrial && Auth.trialExpiration) {
 				var expDate = new Date(Number(Auth.trialExpiration));
 				var minsViewsTillExp = this.timeDiffInMins(expDate, new Date(Number(Browser.storage.trialExp || 0)));
 				var minsTillExp = this.timeDiffInMins(expDate, now);
-				var doShow = [10080.0, 1440.0].some(function(element) {
+				var doShowNotification = [10080.0, 1440.0].some(function(element) {
 					return element >= minsTillExp && element < minsViewsTillExp;
 				});
 				
-				if (doShow) {
+				if (doShowNotification) {
 					result = result || [];
 					result.push({
 							type: "l",
@@ -235,7 +235,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 
 		messageOnInstalledById: function(id) {
 			var messages = this.messageOnInstalledToShow();
-			if (messages == null) { return null; }
+			if (messages === null) { return null; }
 			return _.find(messages, function(x) { 
 				return x.id === id; 
 			});
@@ -325,7 +325,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 			}
 
 			var messageOnInstalled = this.messageOnInstalledToShow();
-			if (messageOnInstalled != null) {
+			if (messageOnInstalled !== null) {
 				newCount += messageOnInstalled.length;
 				result = result.concat(messageOnInstalled);
 			}
@@ -531,6 +531,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 		},
 
 	    showId: function(type, id, doDismiss) {
+			var item;
 			switch (type)
 			{
 				case "u":
@@ -547,7 +548,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 				}
 				case "i":
 				{
-					var item = this.model.individualById(Number(id));
+					item = this.model.individualById(Number(id));
 					if (item) {
 						this.showIndividual(item, doDismiss);
 					}
@@ -555,7 +556,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 				}
 				case "l":
 				{
-					var item = this.model.messageOnInstalledById(Number(id));
+					item = this.model.messageOnInstalledById(Number(id));
 					if (item) {
 						this.showMessageOnInstalled(item, doDismiss);
 					}
