@@ -6,41 +6,28 @@ define(["i18n/i18n"], function(Translate) {
 		tabs: [{
 			columns: [
 				[
-					{
-						id: 1,
-						size: "variable"
-					}, {
-						id: 9,
-						size: "tiny"
-					}, {
-						id: 14,
-						size: "tiny",
-						config: {
-							title: "Google, Inc."
-						}
-					}, {
-						id: 17,
-						size: "variable"
-					}, {
+					{ //Clocks
+						id: 2,
+						size: "small"
+					},
+					{ //Quick Links
 						id: 53,
 						size: "variable",
 						view: "icons"
 					}
-			], [
-					{
+				], [
+					{ //Quotes
 						id: 35,
 						size: "variable"
-					}, {
-						id: 15,
+					}, 
+					{ //Weather
+						id: 1,
 						size: "variable"
-					}
+					}, 
 				], [
-					{
+					{ //News
 						id: 4,
 						size: "large"
-					}, {
-						id: 46,
-						size: "medium"
 					}
 				]
 			],

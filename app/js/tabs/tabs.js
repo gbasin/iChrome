@@ -102,7 +102,7 @@ define(
 								this.$el.before(elm);
 							}
 							else {
-								SettingsProxy("ads");
+								SettingsProxy("pro");
 							}
 						}.bind(this));
 					},

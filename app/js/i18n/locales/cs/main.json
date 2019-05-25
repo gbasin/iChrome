@@ -12,7 +12,7 @@
   "remove_widget":"Odstranit",
   "hide_banner":"Hide this banner",
   "hide_ad":{
-    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make iChrome available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support iChrome directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"Upgrade",
     "hide":"Hide ads"
   },
@@ -276,8 +276,8 @@
     },
     "pro":{
       "promo":{
-        "monthly_price":"$2 za měsíc",
-        "yearly_price":"nebo $20 za rok",
+        "monthly_price":"$4.99 za měsíc",
+        "yearly_price":"nebo $29.99 za rok",
         "upgrade_btn":"Vylepšit teď",
         "business":"Máte zájem koupit Pro verzi pro vaši firmu nebo školu?",
         "business_contact":"Kontaktujte nás",
@@ -303,14 +303,14 @@
         "title":"Platba",
         "updating_title":"Aktualizovat plán",
         "payment_options":"Zaplatit",
-        "pay_monthly":"Měsíčně($2)",
-        "pay_yearly":"Ročně ($20)",
+        "pay_monthly":"Měsíčně($4.99)",
+        "pay_yearly":"Ročně ($29.99)",
         "cancel":"Zrušit",
         "update":"Aktualizovat",
         "subscribe":"Předplatit",
         "braintree_notice":"Platby jsou bezpečně zpracovávány přes Braintree.",
-        "monthly_notice":"Předplacením povolujete iChrome aby Vám účtoval $2 každý měsíc, dokud nezrušíte své předplatné.",
-        "yearly_notice":"Předplacením povolujete iChrome aby Vám účtoval $20 každý měsíc, dokud nezrušíte své předplatné.",
+        "monthly_notice":"Předplacením povolujete iChrome aby Vám účtoval $4.99 každý měsíc, dokud nezrušíte své předplatné.",
+        "yearly_notice":"Předplacením povolujete iChrome aby Vám účtoval $29.99 každý měsíc, dokud nezrušíte své předplatné.",
         "update_notice":"Ačkoliv změny účtovacího cyklu se projeví okamžitě, částka Vám nebude účtována dokud neskončí aktuální cyklus.",
         "thank_you":"Děkujeme za zakoupení iChrome Pro!",
         "thank_you2":"iChrome se znovu načte za pár sekund a poté budete připraveni!",

@@ -16,7 +16,7 @@
 	"hide_banner": "Hide this banner",
 
 	"hide_ad": {
-		"content": "Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
+		"content":"Hey! We're not crazy about ads either, but we're only able to make iChrome available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support iChrome directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
 		"upgrade": "Upgrade",
 		"hide": "Hide ads"
 	},
@@ -27,6 +27,14 @@
 		"content-default": "Please upgrade to Pro version to view hourly weather.",
 		"upgrade": "Upgrade",
 		"close": "Close"
+	},
+
+	"upgrade_tooltips": {
+		"weather": "for only $4.99 month see hourly weather",
+		"sport": "for only $4.99 month read sport news",
+		"news": "for only $4.99 month use tabs and maximize news",
+		"rss": "for only $4.99 month use multiple feeds and maximize widget",
+		"stocks": "for only $4.99 month get realtime stocks with history"
 	},
 
 	"alert": {
@@ -65,7 +73,7 @@
 			"pro_desc7": "A completely ad-free experience",
 			"pro_desc8": "Prioritized Support and Suggestions",
 			"pro_desc9": "And more…",
-			"pro_upgrade": "Upgrade to Pro for only $2",
+			"pro_upgrade": "Upgrade to Pro for only $4.99",
 			"pro_mback": "Try iChrome Pro Risk Free with our 30 Day Money Back Guarantee",
 
 			"have_account": "It looks like you already have an account!",
@@ -153,6 +161,7 @@
 		"settings":			"Settings",
 		"widgets":			"Widgets",
 		"support":			"Support",
+		"upgrade":			"Upgrade to Pro",
 		"editing":			"Editing",
 		"editing_enabled":	"Enabled",
 		"editing_disabled":	"Disabled",
@@ -367,8 +376,8 @@
 
 		"pro": {
 			"promo": {
-				"monthly_price": "$2 per month",
-				"yearly_price": "or $20 per year",
+				"monthly_price": "$4.99 per month",
+				"yearly_price": "or $29.99 per year",
 				"upgrade_btn": "Upgrade Now",
 				"business": "Interested in buying Pro for your business or school?",
 				"business_contact": "Contact us",
@@ -401,16 +410,16 @@
 				"updating_title": "Update plan",
 
 				"payment_options": "Pay",
-				"pay_monthly": "Monthly ($2)",
-				"pay_yearly": "Yearly ($20)",
+				"pay_monthly": "Monthly ($4.99)",
+				"pay_yearly": "Yearly ($29.99)",
 
 				"cancel": "Cancel",
 				"update": "Update",
 				"subscribe": "Subscribe",
 
 				"braintree_notice": "Payments securely processed by Braintree.",
-				"monthly_notice": "By subscribing, you authorize iChrome to charge you $2 every month until you cancel your subscription.",
-				"yearly_notice": "By subscribing, you authorize iChrome to charge you $20 every year until you cancel your subscription.",
+				"monthly_notice": "By subscribing, you authorize iChrome to charge you $4.99 every month until you cancel your subscription.",
+				"yearly_notice": "By subscribing, you authorize iChrome to charge you $29.99 every year until you cancel your subscription.",
 				"update_notice": "Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
 
 				"thank_you": "Thank you for buying iChrome Pro!",

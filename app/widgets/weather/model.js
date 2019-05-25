@@ -2,6 +2,8 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 	return WidgetModel.extend({
 		refreshInterval: 300000,
 
+		pro_tooltip: "weather",
+
 		defaults: {
 			config: {
 				size: "variable",
@@ -14,6 +16,7 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 			},
 
 			data: {
+				pro_tooltip: "text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 ",
 				units: {
 					temp: "F",
 					pressure: "in",

@@ -1,6 +1,10 @@
 define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, WidgetModel, parseUrl) {
 	return WidgetModel.extend({
+		widgetClassname: "tabbed",
+
 		refreshInterval: 300000,
+
+		pro_tooltip: "rss",
 
 		defaults: {
 			config: {

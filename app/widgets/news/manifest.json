@@ -1,5 +1,6 @@
 {
 	"id": 4,
+	"sort": 20,
 	"name": "news",
 	"model": "model",
 	"css": "style.css",

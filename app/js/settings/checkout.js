@@ -165,7 +165,7 @@ define(["lodash", "jquery", "browser/api", "core/analytics", "modals/alert", "i1
 						}
 
 						if (!isUpdating) {
-							Track.FB.logPurchase(plan === "pro_monthly" ? 2 : 20, "USD", { fb_content_type: "pro", fb_content_id: plan });
+							Track.FB.logPurchase(plan === "MONTHLY-PRO" ? 4.99 : 29.99, "USD", { fb_content_type: "pro", fb_content_id: plan });
 						}
 
 						Alert({

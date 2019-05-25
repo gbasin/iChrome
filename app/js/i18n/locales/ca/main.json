@@ -12,7 +12,7 @@
   "remove_widget":"Treure",
   "hide_banner":"Hide this banner",
   "hide_ad":{
-    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make iChrome available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support iChrome directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"Upgrade",
     "hide":"Hide ads"
   },
@@ -276,8 +276,8 @@
     },
     "pro":{
       "promo":{
-        "monthly_price":"2$ al mes",
-        "yearly_price":"o 20$ per any",
+        "monthly_price":"4.99$ al mes",
+        "yearly_price":"o 29.99$ per any",
         "upgrade_btn":"Actualitza ara",
         "business":"T' Interessa comprar la versió Pro per al teu negoci o per l'escola?",
         "business_contact":"Contacta amb nosaltres",
@@ -303,14 +303,14 @@
         "title":"Verificar",
         "updating_title":"Pla d'actualització",
         "payment_options":"Pagar",
-        "pay_monthly":"Mensual (2$)",
-        "pay_yearly":"Anual (20$)",
+        "pay_monthly":"Mensual (4.99$)",
+        "pay_yearly":"Anual (29.99$)",
         "cancel":"Cancelar",
         "update":"Actualitzar",
         "subscribe":"Subscriure’s",
         "braintree_notice":"Pagaments processats de manera segura per Braintree.",
-        "monthly_notice":"Subscrivint-te, autoritzes l' iChrome a cobrar 2$ cada mes fins que es cancel·li la subscripció.",
-        "yearly_notice":"Subscrivint-te, autoritzes l' iChrome a cobrar 20$ cada any fins que es cancel·li la subscripció.",
+        "monthly_notice":"Subscrivint-te, autoritzes l' iChrome a cobrar 4.99$ cada mes fins que es cancel·li la subscripció.",
+        "yearly_notice":"Subscrivint-te, autoritzes l' iChrome a cobrar 29.99$ cada any fins que es cancel·li la subscripció.",
         "update_notice":"Encara que els canvis als cicles de facturació tenen efecte immediat, no se't cobrarà fins que acabi el cicle actuals.",
         "thank_you":"Gràcies per comprar l'iChrome Pro!",
         "thank_you2":"iChrome es recarregarà d'aquí a pocs segons i estarà tot a punt!",

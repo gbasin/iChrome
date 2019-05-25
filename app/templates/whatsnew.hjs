@@ -4,13 +4,17 @@
   <ul>
       <li>New features:</li>
       <ul>
-          <li>The notification system is simplified and easier to use so you can read the notifications when it’s convenient for you</li>
-          <li>There is a new QuickLinks widget which makes it easy to access new sites with a single click from iChrome</li>
-          <li>The Search Bar has been redesigned to make it easier and friendlier to use</li>
-      </ul>
-      <li>Fixes:</li>
-      <ul>
-          <li>The TODO widget item deletion button did not work</li>
+          <li>Added an Auto-refresh option to the HTML widget.</li>
+          <li>Widgets now sorted by popularity.</li>
+          <li>Improved Pro features and notification for new users.</li>
+          <li>Optimized default widgets for new users.</li>
+          <li>Free one month trial of iChrome Pro for new users!</li>
+          <li>Timezone by region in the Clocks widget.</li>
       </ul>
   </ul>
+      <li>Fixes:</li>
+      <ul>
+          <li>Twitter widget now shows 280 characters.</li>
+          <li>Analog clock artefacts removed.</li>
+      </ul>
 </section>

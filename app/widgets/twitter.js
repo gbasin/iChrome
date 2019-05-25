@@ -318,21 +318,21 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 				source = this.config.source;
 
 			if (source === "home" || !source) {
-				url = "https://api.twitter.com/1.1/statuses/home_timeline.json?";
+				url = "https://api.twitter.com/1.1/statuses/home_timeline.json?tweet_mode=extended&";
 			}
 			else if (source === "retweets") {
-				url = "https://api.twitter.com/1.1/statuses/retweets_of_me.json?";
+				url = "https://api.twitter.com/1.1/statuses/retweets_of_me.json?tweet_mode=extended&";
 			}
 			else if (source === "mentions") {
-				url = "https://api.twitter.com/1.1/statuses/mentions_timeline.json?";
+				url = "https://api.twitter.com/1.1/statuses/mentions_timeline.json?tweet_mode=extended&";
 			}
 			else {
-				url = "https://api.twitter.com/1.1/lists/statuses.json?list_id=" + source + "&";
+				url = "https://api.twitter.com/1.1/lists/statuses.json?tweet_mode=extended&list_id=" + source + "&";
 			}
 
 			this.ajax({
 				type: "GET",
-				url: url + "count=" + (this.config.tweets || 5),
+				url: url + "count=" + (this.config.tweets || 5),	
 				success: function(d) {
 					var tweets = [];
 
@@ -362,7 +362,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 
 							var tweet = {
 								id: e.id_str,
-								content: (retweet ? retweet.text : e.text),
+								content: (retweet ? (retweet.full_text ? retweet.full_text : retweet.text) : (e.full_text ? e.full_text : e.text)),
 								user: e.user.name,
 								username: e.user.screen_name,
 								image: e.user.profile_image_url_https,
