@@ -61,7 +61,7 @@
 			<h2 class="page-name">iChrome Pro</h2>
 
 			{{#isTrial}}
-				<p style="color:yellow">You are currently using the trial iChrome Pro subscription which is expired on {{trialExpiration}}. Press 'Upgrade' button to continue to use the Pro features.</p>
+				<p style="color:yellow">Your iChrome Pro trial expires on {{trialExpiration}}! Click upgrade to keep advanced widget features and customization options.</p>
 			{{/isTrial}}
 
 			<h3 class="subheader pricing">

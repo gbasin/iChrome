@@ -375,6 +375,14 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 				html: render("whatsnew"),
 				buttons: {
 					positive: "Got it"
+				},
+				extlink: function(type) {
+					switch (type || "") {
+						case "topro": 
+							this.hide();
+							SettingsProxy("pro");
+							break;
+					}
 				}
 			}, function() {
 				dismiss();
