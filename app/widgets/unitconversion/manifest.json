@@ -1,0 +1,72 @@
+{
+	"id": 54,
+	"name": "unitconversion",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["medium"],
+
+	"views": {
+		"default": "view"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"settings": [{
+		"type": "text",
+		"name": "title",
+		"label": "i18n.settings.title",
+		"placeholder": "i18n.settings.title_placeholder"
+	}],
+
+	"strings": {
+		"en": {
+			"name": "Unit Conversion",
+			"desc": "Conversion between different units of measurement for the same quantity",
+
+			"default_title": "Unit Conversion",
+
+			"units": {
+				"select_unit": "Select a unit..."
+			},
+
+			"cat": {
+				"select_category": "Select a category...",
+				"acceleration" : "Acceleration",
+				"angle" : "Angle",
+				"apparentPower" : "Apparent Power",
+				"area" : "Area",
+				"charge" : "Charge",
+				"current" : "Current",
+				"digital" : "Digital",
+				"each" : "Each",
+				"energy" : "Energy",
+				"force" : "Force",
+				"frequency" : "Frequency",
+				"illuminance" : "Illuminance",
+				"length" : "Length",
+				"mass" : "Mass",
+				"pace" : "Pace",
+				"partsPer" : "Parts Per",
+				"power" : "Power",
+				"pressure" : "Pressure",
+				"reactiveEnergy" : "Reactive Energy",
+				"reactivePower" : "Reactive Power",
+				"speed" : "Speed",
+				"temperature" : "Temperature",
+				"time" : "Time",
+				"voltage" : "Voltage",
+				"volume" : "Volume",
+				"volumeFlowRate" : "Volume Flow Rate"
+			},
+
+			"settings": {
+				"title": "Title",
+				"title_placeholder": "Enter a widget title"
+			}
+		}
+	}
+}
