@@ -180,7 +180,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 						{
 							type: "l",
 							id: 1,
-							title: "You are not singed in now",
+							title: "You are not signed in now",
 							contents: "<p>Try iChrome Pro free for 30 Days! Sign in with your Chrome account to securely store and sync your settings, and experience the full features of iChrome Pro.</p>",
 							positiveText: "Sign in",
 							negativeText: "Dismiss",
@@ -375,6 +375,14 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 				html: render("whatsnew"),
 				buttons: {
 					positive: "Got it"
+				},
+				extlink: function(type) {
+					switch (type || "") {
+						case "topro": 
+							this.hide();
+							SettingsProxy("pro");
+							break;
+					}
 				}
 			}, function() {
 				dismiss();
