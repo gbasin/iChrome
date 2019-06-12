@@ -22,7 +22,7 @@
 	<label>I want to convert</label>
 
 	<div class="form-group">
-		<select class="form-control from" id="uc_from" name="uc_from" {{^category}}disabled{{/category}}>
+		<select class="form-control uc-from"  name="uc-from" {{^category}}disabled{{/category}}>
 			{{#froms}}
 				<option value="{{k}}" {{#s}}selected{{/s}}>{{n}}</option>
 			{{/froms}}
@@ -32,7 +32,7 @@
 	<label>to</label>
 
 	<div class="form-group">
-		<select class="form-control to" id="uc_to" name="uc_to" {{^category}}disabled{{/category}}>
+		<select class="form-control uc-to"  name="uc-to" {{^category}}disabled{{/category}}>
 			{{#toes}}
 				<option value="{{k}}" {{#s}}selected{{/s}}>{{n}}</option>
 			{{/toes}}

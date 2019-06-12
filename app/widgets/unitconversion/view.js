@@ -22,7 +22,7 @@ define(["widgets/views/main", "core/settings"], function(WidgetView, settings) {
 
 				$.ajax({
 					type: "GET",
-					url: settings.apidomain + "/unitconv?cat=" + this.model.category,
+					url: settings.apidomain + "/unitconv/list?cat=" + this.model.category,
 					headers: { 
 						Accept : "application/json",
 						"Content-Type": "application/json"
@@ -31,10 +31,8 @@ define(["widgets/views/main", "core/settings"], function(WidgetView, settings) {
 						this.render({
 							loading: true
 						});
-		
-						xhr.setRequestHeader("Authorization", "Basic " + btoa(this.config.apiKey));
 					}.bind(this),
-					always: function() {
+					complete: function() {
 						this.render({
 							loading: false
 						});
@@ -52,11 +50,11 @@ define(["widgets/views/main", "core/settings"], function(WidgetView, settings) {
 							"n": this.widget.strings.units.select_unit,
 							"s": true
 						}].concat(
-							d.units.map(function(item) {
+							d.map(function(item) {
 								return {
-									"k": item.key,
-									"n": item.key + ", " + item.name,
-									"coeff": item.coeff
+									"k": item.a,
+									"n": (item.a === item.n) ? item.a : (item.a + ", " + item.n),
+									"coeff": item.c
 								};
 							})
 						);
@@ -74,6 +72,9 @@ define(["widgets/views/main", "core/settings"], function(WidgetView, settings) {
 			"change select.uc-to": function(e) {
 				this.model.to = $(e.currentTarget).find("option:selected").val();
 				this.updateConfig();
+			},
+			"change input.uc-source": function(e) {
+				this.recalculate(e);
 			}
 		},
 
