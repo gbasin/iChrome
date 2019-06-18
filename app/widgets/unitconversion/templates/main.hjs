@@ -1,6 +1,6 @@
 {{#config.title}}<h2 class="header">{{config.title}}</h2>{{/config.title}}
 
-<div class="uc-wrapper" style="padding-right: 15px;  padding-left: 15px; padding-bottom: 15px; margin-right: auto;  margin-left: auto;">
+<div class="uc-wrapper">
 
 {{#loading}}
 	<div class="loading">
@@ -19,20 +19,27 @@
 		</select>
 	</div>
 
-	<label>I want to convert</label>
+	<div class="uc-from-label">
+		<label>{{i18n.messages.from}}</label>
+		<div class="uc-refresh">
+			<a href="#" title="{{i18n.messages.refresh_tooltip}}">
+				<span class="icon m-icon">refresh</span>
+			</a>
+		</div>
+	</div>
 
 	<div class="form-group">
-		<select class="form-control uc-from"  name="uc-from" {{^category}}disabled{{/category}}>
+		<select class="form-control uc-from"  name="uc-from" {{^area}}disabled{{/area}} {{#offline}}disabled{{/offline}}>
 			{{#froms}}
 				<option value="{{k}}" {{#s}}selected{{/s}}>{{n}}</option>
 			{{/froms}}
 		</select>
 	</div>
 
-	<label>to</label>
+	<label>{{i18n.messages.to}}</label>
 
 	<div class="form-group">
-		<select class="form-control uc-to"  name="uc-to" {{^category}}disabled{{/category}}>
+		<select class="form-control uc-to"  name="uc-to" {{^area}}disabled{{/area}} {{#offline}}disabled{{/offline}}>
 			{{#toes}}
 				<option value="{{k}}" {{#s}}selected{{/s}}>{{n}}</option>
 			{{/toes}}
@@ -42,16 +49,22 @@
 	<div class="uc-result-wrapper">
 		<div class="uc-values">
 			<div class="uc-source">
-				<input type="search" class="form-control uc-input" />
+				<input type="search" class="form-control uc-input" value="{{input}}" />
 			</div>
 
 			<div class="uc-result">
-				= {{result_value}} {{result_currency}}
+				= <span class="value"></span> <span class="unit"></span>
 			</div>
 		</div>
 
+		<div class="uc-copy">
+			<a href="#" title="{{i18n.messages.copy_tooltip}}">
+				<span class="icon m-icon">description</span>
+			</a>
+		</div>
+
 		<div class="uc-swap">
-			<a>
+			<a href="#" title="{{i18n.messages.swap_tooltip}}">
 				<span class="icon m-icon">swap_vert</span>
 			</a>
 		</div>

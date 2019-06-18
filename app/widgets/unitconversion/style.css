@@ -373,6 +373,22 @@ label {
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
+.uc-wrapper {
+	padding-right: 15px;  
+	padding-left: 15px; 
+	padding-bottom: 15px; 
+	margin-right: auto;  
+	margin-left: auto;
+}
+
+div.uc-from-label label {
+	float:left;
+}
+
+div.uc-refresh {
+	float:right;
+}
+
 .uc-result-wrapper {
 	margin-top: 10px;
 	height: 34px;
@@ -386,9 +402,10 @@ label {
 	justify-content: space-between;
 }
 
-.uc-result-wrapper .uc-swap {
+.uc-result-wrapper .uc-swap, .uc-result-wrapper .uc-copy {
 	flex: 1;
 	padding-top: 6px;
+	word-wrap: break-word;
 }
 
 .uc-result-wrapper .uc-values {
@@ -412,6 +429,11 @@ label {
 	padding-top: 7px;
 	flex: 0 0 50%;
 	padding-left: 5px;
+}
+
+.uc-result-wrapper .uc-result .value {
+	word-break: break-all; 
+	user-select: text;
 }
 
 .uc-input-down {

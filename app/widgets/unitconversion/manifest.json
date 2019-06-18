@@ -33,6 +33,14 @@
 				"select_unit": "Select a unit..."
 			},
 
+			"messages": {
+				"from": "I want to convert",
+				"to": "to",
+				"refresh_tooltip": "Update units list",
+				"copy_tooltip": "Copy to clipboard",
+				"swap_tooltip": "Change units"
+			},
+
 			"cat": {
 				"select_category": "Select a category...",
 				"acceleration" : "Acceleration",

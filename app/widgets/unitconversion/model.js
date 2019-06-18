@@ -20,18 +20,15 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 		 * We override this so we only refresh once on init
 		 */
 		initialize: function() {
-			// this.getWordOfDay(function(err, word) {
-			// 	if (!err && word) {
-			// 		this.getDefinition(word, function(err, definition) {
-			// 			if (!err && definition) {
-			// 				this.saveData({
-			// 					defaultWord: word,
-			// 					definition: definition
-			// 				});
-			// 			}
-			// 		});
-			// 	}
-			// });
+			if (this.config) {
+				if (this.config.from) {
+					this.from = this.config.from.k;
+				}
+				if (this.config.to) {
+					this.to = this.config.to.k;
+				}
+				this.area = this.config.area;
+			}	
 		}
 	});
 });
