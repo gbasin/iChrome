@@ -1,0 +1,460 @@
+/*---------------------------------------------
+	/ Main Styles
+*/
+header {
+	z-index: 1;
+	padding: 0;
+	width: 100%;
+	line-height: 50px;
+	position: relative;
+	background: rgba(0, 0, 0, .03);
+	border-bottom: 1px solid rgba(0, 0, 0, .075);
+}
+
+.dark header {
+	background: rgba(0, 0, 0, .15);
+}
+
+header:before {
+	top: 0;
+	left: 0;
+	width: 50px;
+	color: #777;
+	position: absolute;
+	pointer-events: none;
+}
+
+header input {
+	width: 100%;
+	font-size: 15px;
+	border-radius: 0;
+	border: 0!important;
+	vertical-align: top;
+	padding: 0 0 0 50px!important;
+}
+
+div.definition {
+	overflow: auto;
+	cursor: initial;
+	padding: 15px 20px 20px;
+	-webkit-user-select: initial;
+	max-height: calc(100% - 51px); /* Header height (50px) + 1px bottom border */
+}
+
+.definition button.more {
+	float: right;
+	padding: 0 6px;
+	min-width: 60px;
+	line-height: 28px;
+	margin: 0 -5px 0 0;
+}
+
+.definition .term {
+	font: inherit;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 30px;
+}
+
+.definition .pronunciation {
+	font: inherit;
+	font-size: 14px;
+}
+
+.definition .pronunciation span:before,
+.definition .pronunciation span:after {
+	content: "/";
+}
+
+.definition .audio {
+	outline: 0;
+	padding: 0;
+	opacity: .6;
+	border: initial;
+	font-size: 18px;
+	background: initial;
+	-webkit-appearance: none;
+}
+
+.dark .definition .audio {
+	color: #FFF;
+}
+
+.definition .audio:hover,
+.definition .audio:focus {
+	opacity: .9;
+}
+
+.definition div.form {
+	font-size: 13px;
+	font-style: italic;
+}
+
+.definition .usage {
+	padding-top: 10px;
+}
+
+.definition .forms {
+	color: #777;
+	font-size: 13px;
+}
+
+.dark .definition .forms {
+	color: #AAA;
+}
+
+.definition .forms .form:not(:last-child):after {
+	content: ";";
+}
+
+.definition .forms .value {
+	font-weight: 700;
+}
+
+.definition ol {
+	margin: 0;
+	padding-left: 25px;
+}
+
+.definition ol li {
+	font-size: 13px;
+	padding-top: 10px;
+}
+
+.definition ol li p {
+	margin: 0;
+}
+
+.definition ol li q {
+	color: #878787;
+}
+
+.dark .definition ol li q {
+	color: #BBB;
+}
+
+.definition ol li .synonyms,
+.definition ol li .antonyms {
+	color: #777;
+	font-size: 12px;
+	padding-top: 2px;
+}
+
+.dark .definition ol li .synonyms,
+.dark .definition ol li .antonyms {
+	color: #CCC;
+}
+
+.definition ol li .synonyms .title,
+.definition ol li .antonyms .title {
+	text-transform: lowercase;
+}
+
+.definition ol li .synonyms .group:not(:last-child):after,
+.definition ol li .antonyms .group:not(:last-child):after {
+	content: ";";
+}
+
+.definition ol li .synonyms .group span:not(:last-child):after,
+.definition ol li .antonyms .group span:not(:last-child):after {
+	color: #777;
+	content: ",";
+	text-decoration: none;
+}
+
+.definition ol li .has-def {
+	color: #1565C0;
+	cursor: pointer;
+}
+
+.dark .definition ol li .has-def {
+	color: #42A5F5;
+}
+
+.definition ol li .has-def:hover {
+	text-decoration: underline;
+}
+
+.definition ol li .labels span {
+	color: #777;
+	font-size: 11px;
+	padding: 3px 5px;
+	background: #EEE;
+	margin-right: 5px;
+	letter-spacing: .2px;
+	display: inline-block;
+	text-transform: uppercase;
+}
+
+.dark .definition ol li .labels span {
+	color: #CCC;
+	background: rgba(255, 255, 255, .1);
+}
+
+.web-definitions {
+	font-size: 13px;
+	padding-top: 15px;
+}
+
+.web-definitions h2 {
+	font: inherit;
+	font-weight: 500;
+}
+
+.web-definitions p {
+	padding: 5px 10px 0;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Maximization styles
+*/
+.definition .forms,
+.definition ol li .synonyms,
+.definition ol li .antonyms,
+.definition ol li:nth-child(n + 2),
+.definition .usage:nth-of-type(n + 3),
+.definition .usage ~ .web-definitions {
+	display: none;
+}
+
+
+
+
+
+
+/*---------------------------------------------
+	/ Loading screen
+*/
+.loading {
+	height: 225px;
+	position: relative;
+}
+
+.loading svg {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+}
+
+.spinner {
+	-webkit-animation: rotator 1.4s linear infinite;
+}
+
+.spinner circle {
+	stroke-dashoffset: 0;
+	stroke-dasharray: 187;
+	transform-origin: center;
+	animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@-webkit-keyframes rotator {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(270deg);
+	}
+}
+
+@-webkit-keyframes colors {
+	0%		{ stroke: #4285F4; }
+	25%		{ stroke: #DE3E35; }
+	50%		{ stroke: #F7C223; }
+	75%		{ stroke: #1B9A59; }
+	100%	{ stroke: #4285F4; }
+}
+
+@-webkit-keyframes dash {
+	0% {
+		stroke-dashoffset: 187;
+	}
+	50% {
+		stroke-dashoffset: 46.75;
+		transform: rotate(135deg);
+	}
+	100% {
+		stroke-dashoffset: 187;
+		transform: rotate(450deg);
+	}
+}
+
+
+
+
+
+
+
+/*---------------------------------------------
+	/ No definition splash
+*/
+.splash.no-definition {
+	color: #888;
+	padding: 40px 0;
+	text-align: center;
+	background: #F2F2F2;
+}
+
+.dark .no-definition {
+	color: #AAA;
+	background: #2A2A2A;
+}
+
+.dark.transparent .no-definition {
+	color: #DDD;
+	background: rgba(0, 0, 0, .2);
+}
+
+.no-definition svg {
+	width: 125px;
+	height: 125px;
+	fill: currentColor;
+}
+
+.no-definition p {
+	padding: 0 35px;
+	margin: 15px 0 0;
+	line-height: 22px;
+}
+
+
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.uc-wrapper {
+	padding-right: 15px;  
+	padding-left: 15px; 
+	padding-bottom: 15px; 
+	margin-right: auto;  
+	margin-left: auto;
+}
+
+div.uc-from-label label {
+	float:left;
+}
+
+div.uc-refresh {
+	float:right;
+}
+
+.uc-result-wrapper {
+	margin-top: 10px;
+	height: 34px;
+    /* padding: 0px 12px; */
+	width: 100%;
+	/* background-color: #eef2ff; */
+	margin-left: 0px;
+	margin-right: 0px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+.uc-result-wrapper .uc-swap, .uc-result-wrapper .uc-copy {
+	flex: 1;
+	padding-top: 6px;
+	word-wrap: break-word;
+}
+
+.uc-result-wrapper .uc-values {
+    display: flex;
+    flex: 1 1 100%;
+    justify-content: flex-start;
+}
+
+.uc-result-wrapper .uc-source {
+	flex: 0 0 8em;
+	padding-top: 1px;
+	width: 8em;
+}
+
+.uc-result-wrapper .uc-source input {
+	height: 30px;
+}
+
+.uc-result-wrapper .uc-result {
+	font-weight: bold;
+	padding-top: 7px;
+	flex: 0 0 50%;
+	padding-left: 5px;
+}
+
+.uc-result-wrapper .uc-result .value {
+	word-break: break-all; 
+	user-select: text;
+}
+
+.uc-input-down {
+	display: flex;
+}
+.uc-input-down > div:first-child {
+	flex: 1 1 50%;
+}
+
+.uc-input-down input {
+	width: 100%; 
+}
+
+.uc-input-down button {
+	height: 34px; 
+	background: white; 
+	border: 1px solid #E5E5E5; 
+	border-radius: 3px;
+	border-left: none;
+}
+
+.uc-category input, .uc-input-down button {
+	cursor: pointer
+}

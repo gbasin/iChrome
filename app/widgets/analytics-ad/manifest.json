@@ -1,0 +1,82 @@
+{
+	"id": 55,
+	"name": "analytics-ad",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["variable"],
+
+	"defaultSize": "variable",
+
+	"views": {
+		"default": "view"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"settings": [{
+		"type": "text",
+		"name": "title",
+		"label": "i18n.settings.title",
+		"placeholder": "i18n.settings.title_placeholder",
+		"defaultVal": ""
+	}, {
+		"type": "size"
+	}, {
+		"type": "select",
+		"name": "profile",
+		"label": "i18n.settings.profile",
+		"options": "getProfiles"
+	}, {
+		"type": "radio",
+		"label": "i18n.settings.showYear.title",
+		"nicename": "Show Year",
+		"options": {
+			"on": "i18n.settings.showYear.on",
+			"off": "i18n.settings.showYear.off"
+		}
+	}, {
+		"type": "radio",
+		"label": "i18n.settings.showMonth.title",
+		"nicename": "Show Month",
+		"options": {
+			"on": "i18n.settings.showMonth.on",
+			"off": "i18n.settings.showMonth.off"
+		}
+	}],
+
+	"strings": {
+		"en": {
+			"name": "Analytics Advanced",
+			"desc": "Displays various metrics and charts from a Google Analytics profile.",
+
+			"sessions": "sessions",
+			"pageviews": "Pageviews",
+			"pagesvisit": "Pages/visit",
+			"bouncerate": "Bounce Rate",
+			"completions": "Completions",
+
+			"noprofile_title": "No profile selected",
+			"noprofile": "It doesn't look like you've selected a profile yet!\n<br />\nTry selecting one via the wrench icon at the top right.",
+
+			"settings": {
+				"profile": "Profile",
+
+				"showYear": {
+					"title": "This Year vs Last Year",
+					"on": "show",
+					"off": "hide"
+				},
+				
+				"showMonth": {
+					"title": "This Month vs Last Month",
+					"on": "show",
+					"off": "hide"
+				}
+			}
+		}
+	}
+}

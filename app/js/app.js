@@ -19,6 +19,7 @@ require.config({
 		"jquery.serializejson": "lib/jquery.serializejson",
 		"backbone.viewcollection": "lib/backbone.viewcollection",
 		"fullcalendar": "lib/fullcalendar",
+		"gcloader": "lib/gcloader"
 	},
 	map: {
 		"*": {
