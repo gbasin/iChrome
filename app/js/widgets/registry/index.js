@@ -16,7 +16,7 @@ var widgets = [
 	"currency",			"traffic",			"unread",
 	"voice",			"iframe",			"classroom",
 	"gmail",			"keep", 			"quicklinks",
-	"unitconversion", 	"analytics-ad"
+	"unitconversion"
 ].map(function(e) {
 	return "json!w/" + e + "/manifest.json";
 });
