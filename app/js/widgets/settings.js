@@ -58,6 +58,7 @@ define([
 				else if (t.hasClass("delete")) {
 					p.slideUp(function() {
 						p.remove();
+
 					});
 				}
 			},

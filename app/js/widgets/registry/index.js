@@ -15,7 +15,8 @@ var widgets = [
 	"recentlyclosed",	"topsites",			"todo",
 	"currency",			"traffic",			"unread",
 	"voice",			"iframe",			"classroom",
-	"gmail",			"keep", 			"quicklinks"
+	"gmail",			"keep", 			"quicklinks",
+	"unitconversion"
 ].map(function(e) {
 	return "json!w/" + e + "/manifest.json";
 });

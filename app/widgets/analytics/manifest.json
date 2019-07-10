@@ -30,6 +30,42 @@
 		"name": "profile",
 		"label": "i18n.settings.profile",
 		"options": "getProfiles"
+	},{
+		"type": "radio",
+		"name": "weekweek",
+		"label": "i18n.settings.showWeek.title",
+		"nicename": "Weekly",
+		"options": {
+			"1": "i18n.settings.showWeek.on",
+			"0": "i18n.settings.showWeek.off"
+		}
+	},{
+		"type": "radio",
+		"name": "yearyear",
+		"label": "i18n.settings.showYear.title",
+		"nicename": "Yearly",
+		"options": {
+			"1": "i18n.settings.showYear.on",
+			"0": "i18n.settings.showYear.off"
+		}
+	},{
+		"type": "radio",
+		"name": "topvisited",
+		"label": "i18n.settings.topVisited.title",
+		"nicename": "Top Visited Pages",
+		"options": {
+			"1": "i18n.settings.topVisited.on",
+			"0": "i18n.settings.topVisited.off"
+		}
+	}, {
+		"type": "radio",
+		"name": "channels",
+		"label": "i18n.settings.channels.title",
+		"nicename": "Traffic Channels",
+		"options": {
+			"1": "i18n.settings.channels.on",
+			"0": "i18n.settings.channels.off"
+		}
 	}],
 
 	"strings": {
@@ -46,8 +82,34 @@
 			"noprofile_title": "No profile selected",
 			"noprofile": "It doesn't look like you've selected a profile yet!\n<br />\nTry selecting one via the wrench icon at the top right.",
 
+			"empty_title": "No Google Analytics data",
+
 			"settings": {
-				"profile": "Profile"
+				"profile": "Profile",
+
+				"showYear": {
+					"title": "This Year vs Last Year",
+					"on": "show",
+					"off": "hide"
+				},
+				
+				"showWeek": {
+					"title": "This Week vs Last Week",
+					"on": "show",
+					"off": "hide"
+				},
+
+				"topVisited": {
+					"title": "Top Visited Pages",
+					"on": "show",
+					"off": "hide"
+				},
+
+				"channels": {
+					"title": "Traffic Channels",
+					"on": "show",
+					"off": "hide"
+				}				
 			}
 		}
 	}

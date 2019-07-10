@@ -1,0 +1,76 @@
+{{#config.title}}<h2 class="header">{{config.title}}</h2>{{/config.title}}
+
+<div class="uc-wrapper">
+
+{{#loading}}
+	<div class="loading">
+		<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+			<circle fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+		</svg>
+	</div>
+{{/loading}}
+
+{{^loading}}
+	<div class="form-group">
+		<select class="form-control uc-category" name="uc-category">
+			{{#cat_options}}
+				<option value="{{k}}" {{#s}}selected{{/s}}>{{n}}</option>
+			{{/cat_options}}
+		</select>
+	</div>
+
+	<div class="uc-from-label">
+		<label>{{i18n.messages.from}}</label>
+		<div class="uc-refresh">
+			<a href="#" title="{{i18n.messages.refresh_tooltip}}">
+				<span class="icon m-icon">refresh</span>
+			</a>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<select class="form-control uc-from"  name="uc-from" {{^area}}disabled{{/area}} {{#offline}}disabled{{/offline}}>
+			{{#froms}}
+				<option value="{{k}}" {{#s}}selected{{/s}}>{{n}}</option>
+			{{/froms}}
+		</select>
+	</div>
+
+	<label>{{i18n.messages.to}}</label>
+
+	<div class="form-group">
+		<select class="form-control uc-to"  name="uc-to" {{^area}}disabled{{/area}} {{#offline}}disabled{{/offline}}>
+			{{#toes}}
+				<option value="{{k}}" {{#s}}selected{{/s}}>{{n}}</option>
+			{{/toes}}
+		</select>
+	</div>
+	
+	<div class="uc-result-wrapper">
+		<div class="uc-values">
+			<div class="uc-source">
+				<input type="search" class="form-control uc-input" value="{{input}}" />
+			</div>
+
+			<div class="uc-result">
+				= <span class="value"></span> <span class="unit"></span>
+			</div>
+		</div>
+
+		<div class="uc-copy">
+			<a href="#" title="{{i18n.messages.copy_tooltip}}">
+				<span class="icon m-icon">description</span>
+			</a>
+		</div>
+
+		<div class="uc-swap">
+			<a href="#" title="{{i18n.messages.swap_tooltip}}">
+				<span class="icon m-icon">swap_vert</span>
+			</a>
+		</div>
+
+
+	</div>
+{{/loading}}
+
+</div>
