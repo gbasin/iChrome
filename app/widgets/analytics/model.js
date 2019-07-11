@@ -14,12 +14,12 @@ define(["lodash", "jquery", "moment", "widgets/model"], function(_, $, moment, W
 			},
 
 			data: {
-				commonDefault: {
-					visits: 5605,
-					pageviews: 15033,
-					bounceRate: 12.57,
-					completions: 4853,
-					pagesVisit: 8.54
+				common: {
+					visits: 0,
+					pageviews: 0,
+					bounceRate: 0,
+					completions: 0,
+					pagesVisit: 0
 				}
 			},
 
@@ -334,13 +334,6 @@ define(["lodash", "jquery", "moment", "widgets/model"], function(_, $, moment, W
 									}, function(e) {
 										return parseInt(e).toLocaleString();
 									});
-			
-									/*if (this.get("range") === "today") {
-										this.saveData(data);
-									}
-									else {
-										this.trigger("data:loaded", data);
-									}*/
 								}
 							}
 						}
@@ -422,7 +415,12 @@ define(["lodash", "jquery", "moment", "widgets/model"], function(_, $, moment, W
 				complete: function() {
 					var yearlyComplete = function() {
 						var weeklyComplete = function() {
-							that.trigger("data:loaded", data);
+							if (that.get("range") === "today") {
+								that.saveData(data);
+							}
+							else {
+								that.trigger("data:loaded", data);
+							}
 						}
 						
 						if (data.isYearly) {

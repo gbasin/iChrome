@@ -27,7 +27,13 @@ define(["lodash", "widgets/views/main", "lib/gcloader"], function(_, WidgetView,
 			}
 
 			if (isPreview) {
-				data.common = data.commonDefault;
+				data.common = {
+					visits: 5605,
+					pageviews: 15033,
+					bounceRate: 12.57,
+					completions: 4853,
+					pagesVisit: 8.54
+				};
 			}
 
 			var activeView = this.model.get("range");
