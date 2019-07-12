@@ -1,4 +1,5 @@
 define(["lodash", "widgets/views/main", "lib/gcloader"], function(_, WidgetView, GCLoader) {
+	/*global google */
 	return WidgetView.extend({
 		events: {
 			"click header .select .options li": function(e) {
@@ -62,10 +63,10 @@ define(["lodash", "widgets/views/main", "lib/gcloader"], function(_, WidgetView,
 				return;
 			}
 
-
+			var chartData, options, chart;
 			if (data.weekly) {
-				var chartData = google.visualization.arrayToDataTable(data.weekly.items);
-				var options = {
+				chartData = google.visualization.arrayToDataTable(data.weekly.items);
+				options = {
 					title: 'This Week vs Last Week',
 					hAxis: { slantedText: true },
 					vAxis: {textPosition: 'in', title: 'By Sessions',  titleTextStyle: {color: '#333'}, minValue: 0},
@@ -80,13 +81,13 @@ define(["lodash", "widgets/views/main", "lib/gcloader"], function(_, WidgetView,
 					chartArea: { width: '92%' },
 				};
 		  
-				var chart = new google.visualization.AreaChart(document.getElementById('weekly_charts'));
+				chart = new google.visualization.AreaChart(document.getElementById('weekly_charts'));
 				chart.draw(chartData, options);
 			}
 
 			if (data.yearly) {
-				var chartData = google.visualization.arrayToDataTable(data.yearly.items);
-				var options = {
+				chartData = google.visualization.arrayToDataTable(data.yearly.items);
+				options = {
 					title: 'This Year vs Last Year',
 					hAxis: { slantedText: true },
 					vAxis: { textPosition: 'in', title: 'By Sessions',  titleTextStyle: { color: '#333' }, minValue: 0 },
@@ -101,15 +102,14 @@ define(["lodash", "widgets/views/main", "lib/gcloader"], function(_, WidgetView,
 					chartArea: { width: '92%' }
 				};
 		  
-				var chart = new google.visualization.AreaChart(document.getElementById('yearly_charts'));
+				chart = new google.visualization.AreaChart(document.getElementById('yearly_charts'));
 				chart.draw(chartData, options);
 			}
 			
 
 			if (data.channels) {
-				var chartData = google.visualization.arrayToDataTable(data.channels.items);
-
-				var options = {
+				chartData = google.visualization.arrayToDataTable(data.channels.items);
+				options = {
 					title: 'Traffic Channels',
 					width: "100%",
 					height: 400,
@@ -126,7 +126,7 @@ define(["lodash", "widgets/views/main", "lib/gcloader"], function(_, WidgetView,
 					}
 				};			
 	
-				var chart = new google.visualization.ColumnChart(document.getElementById("channels_charts"));
+				chart = new google.visualization.ColumnChart(document.getElementById("channels_charts"));
 				chart.draw(chartData, options);
 			}
 
