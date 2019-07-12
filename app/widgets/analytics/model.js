@@ -14,12 +14,12 @@ define(["lodash", "jquery", "moment", "widgets/model"], function(_, $, moment, W
 			},
 
 			data: {
-				commonDefault: {
-					visits: 5605,
-					pageviews: 15033,
-					bounceRate: 12.57,
-					completions: 4853,
-					pagesVisit: 8.54
+				common: {
+					visits: 0,
+					pageviews: 0,
+					bounceRate: 0,
+					completions: 0,
+					pagesVisit: 0
 				}
 			},
 
@@ -334,13 +334,6 @@ define(["lodash", "jquery", "moment", "widgets/model"], function(_, $, moment, W
 									}, function(e) {
 										return parseInt(e).toLocaleString();
 									});
-			
-									/*if (this.get("range") === "today") {
-										this.saveData(data);
-									}
-									else {
-										this.trigger("data:loaded", data);
-									}*/
 								}
 							}
 						}
@@ -349,16 +342,16 @@ define(["lodash", "jquery", "moment", "widgets/model"], function(_, $, moment, W
 							var respTopPages = d.reports[1];
 							if (respTopPages.data && respTopPages.data.rows) {
 								var items = respTopPages.data.rows.map(function(row) {
-									if (!row.dimensions || row.dimensions.length === 0) return null;
-									if (!row.metrics || !row.metrics.length === 0) return null;
+									if (!row.dimensions || row.dimensions.length === 0) { return null; }
+									if (!row.metrics || row.metrics.length === 0) { return null; }
 									var metric = row.metrics[0];
-									if (!metric.values || metric.values.length == 0) return null;
+									if (!metric.values || metric.values.length === 0) { return null; }
 									return {
 										url: row.dimensions[0],
 										count: metric.values[0]
-									}
+									};
 								}).filter(function(item) {
-									return item != null;
+									return item !== null;
 								});
 
 								data.top10 = {
@@ -371,10 +364,10 @@ define(["lodash", "jquery", "moment", "widgets/model"], function(_, $, moment, W
 							var respChannelsTraffic = d.reports[data.isTopVisited ? 2 : 1];
 							if (respChannelsTraffic.data && respChannelsTraffic.data.rows) {
 								var allItems = respChannelsTraffic.data.rows.map(function(row) {
-									if (!row.dimensions || row.dimensions.length !== 2) return;
-									if (!row.metrics || row.metrics.length === 0) return;
+									if (!row.dimensions || row.dimensions.length !== 2) { return; }
+									if (!row.metrics || row.metrics.length === 0) { return; }
 									var metric = row.metrics[0];
-									if (!metric.values || metric.values.length === 0) return;
+									if (!metric.values || metric.values.length === 0) { return; }
 									return {
 										yyyymmdd: parseInt(row.dimensions[0]),
 										channel: row.dimensions[1],
@@ -387,34 +380,34 @@ define(["lodash", "jquery", "moment", "widgets/model"], function(_, $, moment, W
 								}));
 
 								var chartData = [];
-								var header = ["Channels"].concat(channels, [{ role: 'annotation' }])
+								var header = ["Channels"].concat(channels, [{ role: 'annotation' }]);
 								chartData.push(header);
 
 								var groups = _.groupBy(allItems, "yyyymmdd");
 								for (var date in groups) {
 									var dateChannels = groups[date];
-									var row = [];
+									var chartRow = [];
 									if (isSingleDay) {
-										row.push(date);
+										chartRow.push(date);
 									}else{
-										row.push(moment(date + "", 'YYYYMMDD').format("MMM DD"));
+										chartRow.push(moment(date + "", 'YYYYMMDD').format("MMM DD"));
 									}
 
 									channels.forEach(function(channel) {
 										var foundItem = dateChannels.find(function(el) {
 											return el.channel === channel;
-										})
+										});
 
-										row.push(foundItem ? foundItem.value : 0);
-									})
+										chartRow.push(foundItem ? foundItem.value : 0);
+									});
 
-									row.push('');
-									chartData.push(row);
+									chartRow.push('');
+									chartData.push(chartRow);
 								}
 
 								data.channels = {
 									items: chartData
-								}
+								};
 							}
 						}
 					}
@@ -422,8 +415,13 @@ define(["lodash", "jquery", "moment", "widgets/model"], function(_, $, moment, W
 				complete: function() {
 					var yearlyComplete = function() {
 						var weeklyComplete = function() {
-							that.trigger("data:loaded", data);
-						}
+							if (that.get("range") === "today") {
+								that.saveData(data);
+							}
+							else {
+								that.trigger("data:loaded", data);
+							}
+						};
 						
 						if (data.isYearly) {
 							this.oAuth.ajax({
@@ -442,12 +440,12 @@ define(["lodash", "jquery", "moment", "widgets/model"], function(_, $, moment, W
 										var restWeekly = d.reports[0];
 										if (restWeekly.data && restWeekly.data.rows) {
 											restWeekly.data.rows.forEach(function(row) {
-												if (!row.dimensions || row.dimensions.length === 0) return;
-												if (!row.metrics || row.metrics.length !== 2) return;
+												if (!row.dimensions || row.dimensions.length === 0) { return; }
+												if (!row.metrics || row.metrics.length !== 2) { return; }
 												var metric0 = row.metrics[0];
 												var metric1 = row.metrics[1];
-												if (!metric0.values || metric0.values.length === 0) return;
-												if (!metric1.values || metric1.values.length === 0) return;
+												if (!metric0.values || metric0.values.length === 0) { return; }
+												if (!metric1.values || metric1.values.length === 0) { return; }
 												chartData.push([
 													moment((parseInt(row.dimensions[0]) + 1) + "", "M").format("MMM"), 
 													metric0.values[0] === "0" ? null : Number(metric0.values[0]), 
@@ -457,7 +455,7 @@ define(["lodash", "jquery", "moment", "widgets/model"], function(_, $, moment, W
 		
 											data.yearly = {
 												items: chartData
-											}
+											};
 										}
 									}
 		
@@ -489,12 +487,12 @@ define(["lodash", "jquery", "moment", "widgets/model"], function(_, $, moment, W
 									var restWeekly = d.reports[0];
 									if (restWeekly.data && restWeekly.data.rows) {
 										restWeekly.data.rows.forEach(function(row) {
-											if (!row.dimensions || row.dimensions.length === 0) return;
-											if (!row.metrics || row.metrics.length !== 2) return;
+											if (!row.dimensions || row.dimensions.length === 0) { return; }
+											if (!row.metrics || row.metrics.length !== 2) { return; }
 											var metric0 = row.metrics[0];
 											var metric1 = row.metrics[1];
-											if (!metric0.values || metric0.values.length === 0) return;
-											if (!metric1.values || metric1.values.length === 0) return;
+											if (!metric0.values || metric0.values.length === 0) { return; }
+											if (!metric1.values || metric1.values.length === 0) { return; }
 											chartData.push([
 												moment().isoWeekday(Number(row.dimensions[0])).format("ddd"), 
 												metric0.values[0] === "0" ? null : Number(metric0.values[0]), 
@@ -504,7 +502,7 @@ define(["lodash", "jquery", "moment", "widgets/model"], function(_, $, moment, W
 	
 										data.weekly = {
 											items: chartData
-										}
+										};
 									}
 								}
 	
