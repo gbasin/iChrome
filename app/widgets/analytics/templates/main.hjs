@@ -58,12 +58,12 @@
 
 			{{#weekly}}
 				<hr class="margin-bottom: 0"> 
-				<div id="weekly_charts"></div>
+				<div id="weekly_charts{{cid}}"></div>
 			{{/weekly}}
 
 			{{#yearly}}
 				<hr class="margin-bottom: 0"> 
-				<div id="yearly_charts"></div>
+				<div id="yearly_charts{{cid}}"></div>
 			{{/yearly}}
 
 			{{#top10}}
@@ -91,7 +91,7 @@
 
 			{{#channels}}
 				<hr class="margin-bottom: 0"> 
-				<div id="channels_charts"></div>
+				<div id="channels_charts{{cid}}"></div>
 			{{/channels}}
 
 
