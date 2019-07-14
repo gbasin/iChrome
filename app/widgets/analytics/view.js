@@ -27,6 +27,8 @@ define(["lodash", "widgets/views/main", "lib/gcloader"], function(_, WidgetView,
 				data.noProfile = true;
 			}
 
+			data.cid = this.cid;
+
 			if (isPreview) {
 				data.common = {
 					visits: 5605,
@@ -81,7 +83,7 @@ define(["lodash", "widgets/views/main", "lib/gcloader"], function(_, WidgetView,
 					chartArea: { width: '92%' },
 				};
 		  
-				chart = new google.visualization.AreaChart(document.getElementById('weekly_charts'));
+				chart = new google.visualization.AreaChart(document.getElementById('weekly_charts' + this.cid));
 				chart.draw(chartData, options);
 			}
 
@@ -102,7 +104,7 @@ define(["lodash", "widgets/views/main", "lib/gcloader"], function(_, WidgetView,
 					chartArea: { width: '92%' }
 				};
 		  
-				chart = new google.visualization.AreaChart(document.getElementById('yearly_charts'));
+				chart = new google.visualization.AreaChart(document.getElementById('yearly_charts' + this.cid));
 				chart.draw(chartData, options);
 			}
 			
@@ -126,7 +128,7 @@ define(["lodash", "widgets/views/main", "lib/gcloader"], function(_, WidgetView,
 					}
 				};			
 	
-				chart = new google.visualization.ColumnChart(document.getElementById("channels_charts"));
+				chart = new google.visualization.ColumnChart(document.getElementById("channels_charts" + this.cid));
 				chart.draw(chartData, options);
 			}
 
