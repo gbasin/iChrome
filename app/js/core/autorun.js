@@ -2,7 +2,7 @@
  * Handles auto-running certain modules without the cost of initializing them when they aren't needed
  */
 define(["browser/api"], function(Browser) {
-	if (Browser.storage.firstRun === "true" || Browser.storage.firstRun === "resume") {
+	if (Browser.storage.firstRun === "true" || Browser.storage.firstRun === "resume" || (Browser.storage.nextAuth && Browser.storage.nextAuth >= new Date().getTime())) {
 		require(["onboarding/controller"]);
 	}
 

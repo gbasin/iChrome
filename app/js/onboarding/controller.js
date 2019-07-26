@@ -15,7 +15,9 @@ define([
 			return this.showWidgetGuide();
 		}
 
-		this.modal = new Modal();
+		var isAuth = Browser.storage.firstRun !== "true" && Browser.storage.nextAuth && Browser.storage.nextAuth >= new Date().getTime();
+
+		this.modal = new Modal({isAuth: isAuth});
 
 		this.listenToOnce(this.modal, "close", function(userType) {
 			if (userType.indexOf("existing") === 0) {
