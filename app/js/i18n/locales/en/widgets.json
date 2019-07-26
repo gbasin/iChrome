@@ -130,9 +130,6 @@
 			"timezone": "Time Zone",
 			"timezone_local": "Local",
 
-			"group_byregion": "Regions",
-			"group_UTC": "Universal Time",
-
 			"format": "Clock Format",
 			"format_options": {
 				"ampm": "AM/PM - Digital",
@@ -389,9 +386,7 @@
 
 			"js": "JavaScript",
 
-			"height": "Widget Height",
-
-			"refresh": "Refresh interval, secs"
+			"height": "Widget Height"
 		}
 	},
 
