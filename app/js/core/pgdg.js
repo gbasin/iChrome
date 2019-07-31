@@ -2,7 +2,7 @@ window.pgjs = window.pgjs || {};
 window.pgjs.gdpr = window.pgjs.gdpr || {};
 window.pgjs.publisher = window.pgjs.publisher || {};
 window.pgjs.publisher.name = 'iChrome';
-window.pgjs.publisher.privacyPolicy = 'http://www.yourdomain.com/link-to-your-privacy-policy.html';			
+window.pgjs.publisher.privacyPolicy = 'https://ichro.me/privacy';			
 // pgjs.publisher.dataUses = 'user experience customization, analytics';
 // pgjs.publisher.logo = 'https://pubguru.com/wp-content/uploads/2017/06/PubGuru-Logo-Final-color-high-res-trans-2000.png';
 

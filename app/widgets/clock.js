@@ -7,7 +7,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 			"click header.tabs .item": function(e) {
 				var tab = e.currentTarget.getAttribute("data-id");
 
-				$(e.currentTarget).add(this.$(".section." + tab)).addClass("active").siblings().removeClass("active");
+				$(e.currentTarget).add(this.$(".section." + tab)).addClass("tab-active").siblings().removeClass("tab-active");
 
 				this.data.tab = tab;
 
@@ -528,7 +528,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 			this.utils.render(data);
 
 			if (this.data.tab) {
-				this.$(".tabs .item[data-id=" + this.data.tab + "], .section." + this.data.tab).addClass("active").siblings().removeClass("active");
+				this.$(".tabs .item[data-id=" + this.data.tab + "], .section." + this.data.tab).addClass("tab-active").siblings().removeClass("tab-active");
 			}
 
 
