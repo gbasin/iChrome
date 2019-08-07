@@ -1,30 +1,45 @@
 <div class="nav">
 	<button type="button" class="material fab m-icon prev" data-direction="prev">arrow_back</button>
-	<button type="button" class="material fab m-icon next" data-direction="next"></button>
+	<button type="button" class="material fab m-icon next close" data-direction="next"></button>
 </div>
 
-<section class="slide intro active final" data-id="1">
-	<img class="logo" src="icon/300.png" />
 
-	<h2 class="appname">{{i18n.onboarding.modal.intro_title}}</h2>
-
-	<span class="tagline">{{i18n.onboarding.modal.intro_moto}}</span>
-
-	<div class="note">{{i18n.onboarding.modal.intro_desc}}</span>
-</section>
-
-<section1 class="slide sign-in final" data-id="3">
+<section class="slide active sign-in final">
 	<div class="pending visible">
 		<div class="caption">
-			<h2>{{i18n.onboarding.modal.sign_in}}</h2>
+			<h2>{{i18n.onboarding.modal.signin_title}}</h2>
 
-			<p>{{i18n.onboarding.modal.sign_in_desc}}</p>
+			<p>{{i18n.onboarding.modal.signin_desc1}}</p>
 
-			<p>{{i18n.onboarding.modal.sign_in_desc2}}</p>
+			<p>{{i18n.onboarding.modal.signin_desc2}}</p>
 		</div>
 
-		<div class="btn-container">
-			<button type="button" class="material large red sign-in">{{i18n.onboarding.modal.sign_in_button}}</button>
+		<div class="row text-left" style="margin-left: 45px; margin-right: 60px">
+			<div class="col-xs-12 text-center" style="font-size: 15px">{{i18n.onboarding.modal.pro_desc1}}</div>
+			<div class="col-xs-6">
+				<ul>
+					<li>{{i18n.onboarding.modal.pro_desc2}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc3}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc4}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc5}}</li>
+				</ul>
+			</div>
+			<div class="col-xs-6">
+				<ul>
+					<li>{{i18n.onboarding.modal.pro_desc6}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc7}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc8}}</li>
+					<li>{{i18n.onboarding.modal.pro_desc9}}</li>
+				</ul>
+			</div>
+
+			<div style="margin-top: 140px; font-size: 15px" class="text-center">
+				<p>{{i18n.onboarding.modal.signin_desc3}}</p>
+			</div>
+
+			<div class="col-xs-12 text-center" >
+				<button style="margin-top: 50px" type="button" class="material large red sign-in">{{i18n.onboarding.modal.sign_in_button}}</button>
+			</div>
 		</div>
 	</div>
 
@@ -39,7 +54,7 @@
 
 		<p>{{i18n.onboarding.modal.get_started_desc}}</p>
 	</div>
-</section1>
+</section>
 
 <section1 class="pro final" data-id="4">
 	<div class="hero" style="background-image: url(images/onboarding_pro.png)"></div>

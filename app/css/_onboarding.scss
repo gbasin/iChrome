@@ -54,6 +54,10 @@
 				&.finish:before {
 					content: "done";
 				}
+
+				&.close:before {
+					content: "close";
+				}
 			}
 		}
 
@@ -87,12 +91,12 @@
 				}
 
 				.appname {
-					font-size: 45px;
+					font-size: 65px;
 					margin-bottom: 30px;
 				}
 
 				.tagline {
-					font-size: 22px;
+					font-size: 32px;
 				}
 			}
 
@@ -328,6 +332,71 @@
 			pointer-events: auto;
 		}
 	}
+}
+
+.onboarding-flat { 
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 200%;
+    width: 100%;
+	z-index: 40;
+	display:flex; 
+	justify-content:center; 
+	align-items:center;
+	background-color: /*#3367D6*/ #0B8043;
+	font-family: Roboto, sans-serif;
+	opacity: .9;
+	color: white;
+
+	button {
+		color: #FFF;
+		font-size: 16px;
+		line-height: 40px;
+		margin: 16px -8px 16px -24px;
+		pointer-events: auto;
+	}
+
+	.intro {
+		width:50%; 
+		height: 75%; 
+		display: flex; 
+		flex-direction:column; 
+		align-items: center;
+
+		.appname {
+			font-size: 48px;
+			margin-bottom: 30px;
+		}
+	
+		.tagline {
+			font-size: 26px;
+			margin: 15px 0px 15px 0px;
+		}
+
+		.note {
+			font-size: 16px;
+		}
+
+		.footer {
+			margin-top: 30px;
+
+			a {
+				color: yellowgreen;
+			}
+
+			a:hover {
+				color: yellow;
+			}
+
+		}
+
+	}
+}
+
+.tutorial-buttons {
+	display: flex; 
+	justify-content: space-between;
 }
 
 .widget-settings.tutorial.modal-overlay {

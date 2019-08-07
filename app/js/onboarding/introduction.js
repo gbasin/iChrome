@@ -1,21 +1,17 @@
 /**
- * The onboarding widget guide
+ * The introduction modal
  */
 define(["jquery", "backbone", "i18n/i18n", "core/analytics", "core/render"], function($, Backbone, Translate, Track, render) {
 	var View = Backbone.View.extend({
 		tagName: "div",
-		className: "showcase blue widget-settings",
+		className: "onboarding-flat blue widget-introduction",
 
 		events: {
-			"click button.next": function() {
-				this.showSecondScreen();
-			},
-
 			"click button.done": function() {
 				this.transitionOut(function() {
 					this.remove();
 
-					this.$targetEl.parent().removeClass("hovered");
+					//this.$targetEl.parent().removeClass("hovered");
 
 					this.trigger("next");
 				});
@@ -32,7 +28,7 @@ define(["jquery", "backbone", "i18n/i18n", "core/analytics", "core/render"], fun
 			}
 		},
 
-		transitionIn: function() {
+		/*transitionIn: function() {
 			this.$el.css("display", "");
 
 			this.el.animate([{
@@ -47,7 +43,7 @@ define(["jquery", "backbone", "i18n/i18n", "core/analytics", "core/render"], fun
 				duration: 300,
 				easing: "cubic-bezier(0, 0, .2, 1)"
 			});
-		},
+		},*/
 
 		transitionOut: function(cb) {
 			if (!cb) {
@@ -67,7 +63,7 @@ define(["jquery", "backbone", "i18n/i18n", "core/analytics", "core/render"], fun
 		},
 
 
-		showSecondScreen: function() {
+		/*showSecondScreen: function() {
 			this.$targetEl = this.$targetEl.siblings(".handle");
 
 			this.render(true);
@@ -75,28 +71,28 @@ define(["jquery", "backbone", "i18n/i18n", "core/analytics", "core/render"], fun
 			this.transitionIn();
 
 			Track.pageview("Widget onboarding: Screen 2", "/onboarding/widgets/screen2");
-		},
+		},*/
 
-		handleWidgetSettings: function() {
+		/*handleWidgetSettings: function() {
 			this.transitionOut(function() {
 				this.$el.css("display", "none");
 			});
 
 			$(".modal-overlay.widget-settings").addClass("tutorial").html('<p class="caption">' + Translate("onboarding.widgets.settings") + '</p>');
 
-			Track.pageview("Widget onboarding: Settings screen", "/onboarding/widgets/settings");
+			Track.pageview("Widget onboarding: Settings screen", "/onboarding/widgets/introduction");
 
 			this.listenToOnce(this.widgetView, "settings:hide", this.showSecondScreen);
-		},
+		},*/
 
-		initialize: function(retry) {
-			retry = retry === true;
+		initialize: function() {
+			/*retry = retry === true;
 
 			this.$targetEl = $(".widget.weather > .settings").first();
 
 			if (!this.$targetEl.length && !retry) {
 				if (retry) {
-					this.trigger("next");
+					this.trigger("complete");
 				}
 				else {
 					setTimeout(this.initialize.bind(this, true), 1000);
@@ -107,46 +103,19 @@ define(["jquery", "backbone", "i18n/i18n", "core/analytics", "core/render"], fun
 
 			this.widgetView = this.$targetEl.parent().data("view");
 
-			this.listenToOnce(this.widgetView, "settings:show", this.handleWidgetSettings);
+			this.listenToOnce(this.widgetView, "settings:show", this.handleWidgetSettings);*/
 
 			this.render();
 
 			this.$el.appendTo(document.body);
 
-			this.transitionIn();
+			//this.transitionIn();
 
 			Track.pageview("Widget onboarding: Screen 1", "/onboarding/widgets/screen1");
 		},
 
 		render: function(secondScreen) {
-			var offset = this.$targetEl.offset();
-
-			this.$el.css({
-				top: offset.top + this.$targetEl.height() / 2,
-				left: offset.left + this.$targetEl.width() / 2
-			}).html(render("onboarding/widgets", {
-				screenOne: !secondScreen,
-				screenTwo: !!secondScreen
-			})).find(".action-mask").on("mouseover", function(e) {
-				this.$el.css("pointer-events", "none");
-
-				var rect = e.currentTarget.getBoundingClientRect();
-
-				$(document.body).on("mousemove.showcase", function(e) {
-					if (!(
-						e.pageX > rect.left &&
-						e.pageX < rect.right &&
-						e.pageY > rect.top &&
-						e.pageY < rect.bottom
-					)) {
-						$(document.body).off("mousemove.showcase");
-
-						this.$el.css("pointer-events", "");
-					}
-				}.bind(this));
-			}.bind(this));
-
-			this.$targetEl.parent().addClass("hovered");
+			this.$el.html(render("onboarding/introduction"));
 		}
 	});
 
