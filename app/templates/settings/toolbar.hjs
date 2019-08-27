@@ -8,6 +8,22 @@
 
 		<p class="desc">{{i18n.settings.toolbar.style.desc}}</p>
 
+	
+		{{#canSelectSearch}}
+			<div class="input select other">
+				<label>
+					<h4>{{i18n.settings.toolbar.search.engine}}</h4>
+
+					<select name="search-engine">
+						<option value="default">{{i18n.settings.toolbar.search.engines_default}}</option>
+						<option value="bing">Bing</option>
+						<option value="duckduckgo">DuckDuckGo</option>
+					</select>
+				</label>
+			</div>
+		{{/canSelectSearch}}
+
+
 		<div class="input radios no-label">
 			<label>
 				<input type="radio" name="style" value="button" />
