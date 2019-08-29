@@ -1,10 +1,12 @@
 {
   "lang_code":"sr",
   "language":"Енглески",
-  "extName":"iChrome - Брза, продуктивна матична страница",
-  "newtabName":"iChrome нови прозор",
-  "extDescription":"Најбоља основна страна за Chrome. Заносне теме, десетине додатака, ултра брз, невероватно прилагодљив!",
-  "newtabDescription":"Најбоља основна страна за Chrome. Сада за нови прозор. Заносне теме, десетине додатака, ултра брз, невероватно прилагодљив!",
+
+	"extName": "iChrome - Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"Почетна страна",
     "me":"Ja"
