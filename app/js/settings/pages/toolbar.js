@@ -2,7 +2,7 @@
  * The toolbar settings page
  */
 define(["lodash", "jquery", "core/auth", "settings/page"], function(_, $, Auth, Page) {
-	var builtInSearchEngines = ["default", "yahoo", "bing", "duckduckgo", "ask", "aol"];
+	var builtInSearchEngines = ["default", "yahoo", "bing", "duckduckgo", "ask", "aol", "startpage"];
 
 	var View = Page.extend({
 		id: "toolbar",
