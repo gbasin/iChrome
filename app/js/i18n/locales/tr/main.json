@@ -1,10 +1,12 @@
 {
   "lang_code":"tr",
   "language":"Türkçe",
-  "extName":"iChrome - Hızlı ve verimli Anasayfa",
-  "newtabName":"Yeni iChrome Sekmesi",
-  "extDescription":"Chrome için EN İYİ ana sayfa. Çarpıcı temalar, onlarca eklenti, inanılmaz hız, çılgınca özelleştirilebilir!",
-  "newtabDescription":"Chrome için EN İYİ ana sayfa. Artık yeni sekme için. Çarpıcı temalar, onlarca eklenti, inanılmaz hız, çılgınca özelleştirilebilir!",
+  
+	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"Ana Sayfa",
     "me":"Ben"

@@ -1,10 +1,12 @@
 {
   "lang_code":"hr",
   "language":"Hrvatski",
-  "extName":"iChrome - brza i produktivna početna stranica",
-  "newtabName":"iChrome New Tab - produktivna nova kartica",
-  "extDescription":"NAJBOLJA početna stranica za Chrome. Fantastične teme, mnogo widgeta, lagana i brza, ludo prilagodljiva!",
-  "newtabDescription":"NAJBOLJA početna stranica za Chrome. Sada dostupna za novi tab. Fantastične teme, mnogo widgeta, lak i brz, ludo prilagodljiv!",
+
+	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"Početna",
     "me":"Ja"

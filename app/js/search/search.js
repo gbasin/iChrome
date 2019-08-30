@@ -2,8 +2,8 @@
  * This handles the searchbox
  */
 define([
-	"backbone", "browser/api", "storage/storage", "core/render", "core/analytics", "search/suggestions", "search/speech"
-], function(Backbone, Browser, Storage, render, Track, Suggestions, Speech) {
+	"backbone", "browser/api", "storage/storage", "core/render", "core/analytics", "search/suggestions", "search/speech", "core/auth"
+], function(Backbone, Browser, Storage, render, Track, Suggestions, Speech, Auth) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -100,14 +100,16 @@ define([
 					});
 				}
 
-
-				// var searchURL = "https://search.ichro.me/search?" +
-				// 	"ext=" + (Browser.app.newTab ? "newtab" : "main") +
-				// 	"&version=" + Browser.app.version +
-				// 	"&engine=" + encodeURIComponent(this.model.get("searchEngine") || "default") +
-				// 	"&q=" + encodeURIComponent(val);
-
-				var searchURL = "http://ichro-me.s1search.co/serp?q=" + encodeURIComponent(val);
+				var searchEngine = this.model.get("searchEngine") || "default";
+				if (!Auth.isPro) {
+					searchEngine = "default";
+				}
+				
+				var searchURL = "https://search.ichro.me/search?" +
+					"ext=" + (Browser.app.newTab ? "newtab" : "main") +
+					"&version=" + Browser.app.version +
+					"&engine=" + encodeURIComponent(searchEngine) +
+					"&q=" + encodeURIComponent(val);
 
 				var link = document.createElement("a");
 

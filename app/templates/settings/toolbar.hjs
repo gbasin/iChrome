@@ -8,6 +8,7 @@
 
 		<p class="desc">{{i18n.settings.toolbar.style.desc}}</p>
 
+	
 		<div class="input radios no-label">
 			<label>
 				<input type="radio" name="style" value="button" />
@@ -27,6 +28,28 @@
 		<h3>{{i18n.settings.toolbar.search.title}}</h3>
 
 		<p class="desc">{{i18n.settings.toolbar.search.desc}}</p>
+
+		{{#canSelectSearch}}
+			<div class="input select other">
+				<label>
+					<h4>{{i18n.settings.toolbar.search.engine}}</h4>
+
+					<select name="search-engine">
+						<option value="default">{{i18n.settings.toolbar.search.engines_default}}</option>
+						<option value="bing">Bing</option>
+						<option value="duckduckgo">DuckDuckGo</option>
+						<option value="startpage">Startpage</option>
+						<option value="custom">{{i18n.settings.toolbar.search.engines_custom}}</option>
+					</select>
+				</label>
+
+				<label class="input other{{#customSearchURL}} visible{{/customSearchURL}}">
+					<span class="desc">{{{i18n.settings.toolbar.search.engines_custom_desc}}}</span>
+
+					<input type="text" name="search-url" placeholder="i.e. https://www.bing.com/search?q=%s" value="{{customSearchURL}}" />
+				</label>				
+			</div>
+		{{/canSelectSearch}}
 
 		<label class="input switch">
 			<h4>{{i18n.settings.toolbar.search.voice}}</h4>

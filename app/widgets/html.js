@@ -58,8 +58,9 @@ define(function() {
 						var iframes = this.elm.find("iframe");
 						if (iframes.length > 0) {
 							var iframe = iframes[0];
-							iframe.contentWindow.location.reload(true);
-
+							if (iframe.contentWindow.location.protocol !== "chrome-extension:") {
+								iframe.contentWindow.location.reload(true);
+							}
 						}
 					}.bind(this), expectedRefresh * 1000);
 				}

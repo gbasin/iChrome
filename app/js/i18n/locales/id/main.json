@@ -1,10 +1,12 @@
 {
   "lang_code":"id",
   "language":"Bahasa Indonesia",
-  "extName":"iChrome - A Fast, Productive Home Page",
-  "newtabName":"tab baru iChrome",
-  "extDescription":"Beranda TERBAIK untuk Chrome. Tema-tema yang memukau, belasan widget, secepat kilat, dapat dikustomisasi sesukamu!",
-  "newtabDescription":"Beranda TERBAIK untuk Chrome. Sekarang untuk tab baru. Tema yang memukau, belasan widget, secepat kilat, kustomisasi sesukamu!",
+  
+	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+  
   "defaults":{
     "tab":"Beranda",
     "me":"Saya"

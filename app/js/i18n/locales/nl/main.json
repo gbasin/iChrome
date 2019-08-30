@@ -1,10 +1,12 @@
 {
   "lang_code":"nl",
   "language":"Nederlands",
-  "extName":"iChrome",
-  "newtabName":"iChrome Nieuw Tabblad",
-  "extDescription":"De BESTE startpagina voor Chrome. Adembenemende thema's, tientallen widgets, bliksemsnel en ongelooflijk aanpasbaar!",
-  "newtabDescription":"De BESTE homepage voor Chrome. Nu voor nieuwe tabs. Adembenemende thema's, tientallen widgets, bliksemsnel, ongelooflijk aanpasbaar!",
+
+	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"Home",
     "me":"Ik"

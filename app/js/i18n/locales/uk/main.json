@@ -1,10 +1,12 @@
 {
   "lang_code":"uk",
   "language":"Українська",
-  "extName":"iChrome",
-  "newtabName":"Нова вкладка iChrome",
-  "extDescription":"Краща початкова сторінка для Хрому. Швидка, є багато опцій для налаштування \"під себе\", також є багато тем та віджетів!",
-  "newtabDescription":"Найкраща домашня сторінка для Chrome. Зараз доступно для нової вкладки. Приголомшливі теми та десятки віджетів!",
+
+	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"Додому",
     "me":"Я"
@@ -12,7 +14,7 @@
   "remove_widget":"Вилучити",
   "hide_banner":"Hide this banner",
   "hide_ad":{
-    "content":"Гей! Ми також не з'їхали з глузду дивитись рекламу, але показуючи рекламу ми можемо зробити iChrome доступним і продовжувати розробку для наших безкоштовних користувачів (а це Ви!). Якщо ви хочете підтримати iChrome напряму і позбавитись реклами, то ми будемо вдячні якщо Ви заапгрейдeтесь до pro версії",
+    "content":"Гей! Ми також не з'їхали з глузду дивитися рекламу, але показуючи рекламу ми можемо зробити iChrome доступним і продовжувати розробку для наших безкоштовних користувачів (а це Ви!). Якщо ви хочете підтримати iChrome напряму і позбавитись реклами, то ми будемо вдячні якщо Ви заапгрейдeтесь до pro версії",
     "upgrade":"Upgrade",
     "hide":"Hide ads"
   },

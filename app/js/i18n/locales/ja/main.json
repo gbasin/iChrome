@@ -1,10 +1,12 @@
 {
   "lang_code":"ja",
   "language":"日本語",
-  "extName":"iChrome - 高速・生産的なホームページ",
-  "newtabName":"iChrome 新しいタブ - 高速・生産的な新しいタブ",
-  "extDescription":"Chromeのための最高のホームページ。最高のテーマ、たくさんのウィジェット、超高速、カスタマイズが自由自在！",
-  "newtabDescription":"Chromeのための最高のホームページ。新しいタブにしましょう。見事なテーマ、多数のウィジェット、さらに超高速。めちゃくちゃにカスタマイズ できます！",
+
+	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"ホーム",
     "me":"自分"

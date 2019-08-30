@@ -1,10 +1,12 @@
 {
   "lang_code":"bn",
   "language":"বাংলা",
-  "extName":"iChrome - একটি দ্রুত, উত্পাদনশীল মূল পাতা",
-  "newtabName":"iChrome নতুন ট্যাব - দ্রুত, সহজ নতুন ট্যাব",
-  "extDescription":"A lightning fast home/start page dashboard with stunning backgrounds, news, weather, sports, RSS, todo, and more!",
-  "newtabDescription":"A lightning fast new tab page dashboard with stunning backgrounds, news, weather, sports, RSS, todo, and more!",
+  
+	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"মূল পাতা",
     "me":"আমি"

@@ -1,10 +1,12 @@
 {
   "lang_code":"hi",
   "language":"हिन्दी",
-  "extName":"iChrome - A Fast, Productive Home Page",
-  "newtabName":"iChrome नया टैब",
-  "extDescription":"क्रोम के लिए सर्वश्रेष्ठ मुखपृष्ठ। तेजस्वी थीम्स,  दर्जनों widgets  बिजली से तेज, पागल बना देने वाले अनुकूलन योग्य!",
-  "newtabDescription":"क्रोम के लिए सर्वश्रेष्ठ हौमपेज। अब नये टैब के लिए आश्चर्यजनक। दर्जनों थीम्स, विजेट्स, बिजली तेज, अनुकूलन योग्य!",
+  
+	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+  
   "defaults":{
     "tab":"घऱ",
     "me":"मैं"

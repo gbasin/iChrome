@@ -151,7 +151,8 @@ define(["lodash", "jquery", "moment", "widgets/views/main"], function(_, $, mome
 				"soccer/ita.1": "Italian Serie A",
 				"soccer/ger.1": "German Bundesliga",
 				"soccer/fifa.wwc": "Women's World Cup",
-				"soccer/fifa.world": "FIFA World Cup"
+				"soccer/fifa.world": "FIFA World Cup",
+				"mma/ufc": "Ultimate Fighting Championship",
 			}, function(e, k) {
 				if (k === activeView) {
 					data.activeView = e;
