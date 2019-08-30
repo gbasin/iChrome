@@ -1,10 +1,12 @@
 {
   "lang_code":"fr",
   "language":"Français",
-  "extName":"iChrome - page d'accueil rapide et pratique",
-  "newtabName":"Nouvel onglet iChrome",
-  "extDescription":"La meilleure page d'accueil pour Chrome. Des thèmes impressionnants, des dizaines de widgets, et une vitesse incroyable!",
-  "newtabDescription":"La MEILLEURE page d'accueil pour Chrome. Maintenant nouvel onglet. Thèmes fabuleux, de nombreux widgets, rapide et personnalisable !",
+
+	"extName": "iChrome - Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"Accueil",
     "me":"Moi"

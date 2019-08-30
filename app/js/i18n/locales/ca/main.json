@@ -1,10 +1,12 @@
 {
   "lang_code":"ca",
   "language":"Català",
-  "extName":"iChrome - Inici ràpid i productiu",
-  "newtabName":"Nova pestanya iChrome",
-  "extDescription":"La millor pàgina d'inici per Chrome. Temes impressionants, dotzenes de widgets, ràpida com un llamp, exageradament personalitzable!",
-  "newtabDescription":"La MILLOR \"pestanya nova\" per Chrome. Temes impressionants, dotzenes de widgets, ràpida com un llamp, exageradament personalitzable!",
+  
+	"extName": "iChrome - Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+  
   "defaults":{
     "tab":"Inici",
     "me":"Jo"

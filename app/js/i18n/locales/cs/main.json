@@ -1,10 +1,12 @@
 {
   "lang_code":"cs",
   "language":"Česky",
-  "extName":"iChrome",
-  "newtabName":"Nová karta iChrome",
-  "extDescription":"NEJLEPŠÍ domovská stránka pro Chrome. Nádherné motivy, desítky widgetů, bleskově rychlý, šíleně přizpůsobitelný!",
-  "newtabDescription":"Nejlepší výchozí stránka pro Chrome. Nyní i pro nově otevřený panel. Krásná témata, hromada widgetů, rychlý a konfigurovatelný!",
+
+	"extName": "iChrome - Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"Domovská stránka",
     "me":"Já"

@@ -1,10 +1,12 @@
 {
   "lang_code":"zh-TW",
   "language":"正體中文（臺灣）",
-  "extName":"iChrome",
-  "newtabName":"iChrome 新分頁",
-  "extDescription":"Chrome 平臺最好的主頁擴充套件。擁有令人驚嘆的主題，速度飛快的小工具，彈性極大的自訂空間！",
-  "newtabDescription":"Chrome 平臺最好的主頁擴充套件。現在支援新分頁。擁有令人驚嘆的主題，速度飛快的小工具，彈性極大的自訂空間！",
+
+	"extName": "iChrome - Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"主頁",
     "me":"我"

@@ -1,10 +1,12 @@
 {
   "lang_code":"zh-CN",
   "language":"简体中文",
-  "extName":"iChrome - 快速，高效的主页",
-  "newtabName":"iChrome 新选项卡 - 快速，高效的新选项卡",
-  "extDescription":"Chrome最好用的主页，拥有令人惊叹且可以任意定制的主题和小部件，并如闪电般急速！",
-  "newtabDescription":"Chrome最好用的新选项卡，拥有令人惊叹且可以任意定制的主题和小部件，并如闪电般急速！",
+
+	"extName": "iChrome - Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"首页",
     "me":"我"

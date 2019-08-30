@@ -1,10 +1,12 @@
 {
   "lang_code":"de",
   "language":"Deutsch",
-  "extName":"iChrome",
-  "newtabName":"iChrome neue Registerkarte",
-  "extDescription":"Die BESTE Startseite für Chrome. Atemberaubende Themes, dutzende Widgets, blitzschnell und unglaublich personalisierbar!",
-  "newtabDescription":"Die beste Homepage für Chrome. Jetzt für neue Tabs. Atemberaubende Themes, Dutzende Widgets, blitzschnell, unglaublich personalisierbar!",
+  
+	"extName": "iChrome - Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+  
   "defaults":{
     "tab":"Home",
     "me":"Ich"

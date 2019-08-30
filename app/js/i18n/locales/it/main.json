@@ -1,10 +1,12 @@
 {
   "lang_code":"it",
   "language":"Italiano",
-  "extName":"iChrome",
-  "newtabName":"nuova scheda iChrome",
-  "extDescription":"La migliore homepage per Chrome. Temi favolosi, dozzine di widgets, velocissima, pazzamente personalizzabile!",
-  "newtabDescription":"La  MIGLIORE homepage per Chrome. Ora per la nuova scheda. Temi mozzafiato, tanti widget, velocissima, follemente personalizzabile!",
+
+	"extName": "iChrome - Ultimate Personal Dashboard Homepage",
+	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"Home",
     "me":"Io"

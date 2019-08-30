@@ -1,21 +1,15 @@
-<p>Welcome to iChrome version 1.39!</p>
+<p>Welcome to iChrome version 1.40!</p>
 
 <section>
+
+<p>What's New:</p>
 <ul>
-    <li>New features:</li>
-    <ul>
-        <li>New Widget: Unit Conversion. Featuring over 200 conversion units, offline access and state saving (it will remember your previously selected units pair).</li>
-        <li>Widget Revamp: Google Analytics Widget has been completely overhauled!</li>
-        <ul>
-            <li>Migrated to the Google Analytics Reporting API v4 for more accurate reporting.</li>
-            <li>Now includes several charts to choose from to visualize your data:</li>
-                <ul>
-                    <li>Year vs Year, by Sessions</li>
-                    <li>Week vs Week, by Users</li>
-                    <li>Top 10 Visited Pages (for today, yesterday or previous week)</li>
-                    <li>Traffic Channels (for today, yesterday or previous week)</li>
-                </ul>
-        </ul>
-    </ul>
+<li>Updated intro screen experience for new users!</li>
+<li>FIX: Clock widget broken on install.</li>
+<li>NEW: UFC Fans Rejoice! UFC results now available in the Sports widget.</li>
 </ul>
+
+<p>Plus, you asked and we delivered! We're pleased to announce Pro users will now have multiple options for search bar settings including DuckDuckGo and StartPage. </p>
+
+<p>To change your search bar settings, go to Settings > Display > Search Bar Options. Interested in changing your search bar settings plus access to dozens of other great Pro features? Upgrade to iChrome Pro to help us keep developing new features you guys request. </p>
 </section>
