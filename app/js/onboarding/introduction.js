@@ -114,7 +114,7 @@ define(["jquery", "backbone", "i18n/i18n", "core/analytics", "core/render"], fun
 			Track.pageview("Widget onboarding: Screen 1", "/onboarding/widgets/screen1");
 		},
 
-		render: function(secondScreen) {
+		render: function() {
 			this.$el.html(render("onboarding/introduction"));
 		}
 	});

@@ -72,7 +72,7 @@ define([
 			Track.pageview("Onboarding Modal: Slide " + slideID, "/onboarding/modal/slide" + slideID);
 		},
 
-		constructor: function(opts) {
+		constructor: function() {
 			this.modal = new (Modal.extend({
 				classes: "onboarding",
 
