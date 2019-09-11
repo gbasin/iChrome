@@ -59,7 +59,7 @@ define([
 			onInputChange: _.noop,
 
 			onBeforeRender: function() {
-				var plan = (Auth.get("plan") || "").replace("pro_", "");
+				var plan = (Auth.get("plan") || "").replace("pro_", "").replace("-PRO", "");
 
 				var isTrial = Auth.get("isTrial") || false;
 				
@@ -70,7 +70,7 @@ define([
 				}
 
 				var ret = {
-					uneditable: plan && plan !== "monthly" && plan !== "yearly",
+					uneditable: plan && plan !== "monthly" && plan !== "yearly" && plan !== "MONTHLY" && plan !== "YEARLY",
 					desc: Translate("settings.pro.plan.desc", Translate("settings.pro.plan.types." + plan)),
 					isSubscribed: Auth.isPro && !isTrial,
 					isTrial: isTrial,
@@ -166,10 +166,10 @@ define([
 		onInputChange: _.noop,
 
 		onBeforeRender: function() {
-			var plan = (Auth.get("plan") || "").replace("pro_", "");
+			var plan = (Auth.get("plan") || "").replace("pro_", "").replace("-PRO", "");
 
 			var ret = {
-				uneditable: plan && plan !== "monthly" && plan !== "yearly",
+				uneditable: plan && plan !== "monthly" && plan !== "yearly" && plan !== "MONTHLY" && plan !== "YEARLY",
 				desc: Translate("settings.pro.plan.desc", Translate("settings.pro.plan.types." + plan)),
 				isSubscribed: Auth.isPro
 			};
