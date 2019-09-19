@@ -1,6 +1,6 @@
 {
 	"id": 14,
-	"sort": 60,
+	"sort": 100,
 	"name": "stocks",
 	"model": "model",
 	"css": "style.css",

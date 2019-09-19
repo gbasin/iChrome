@@ -4,7 +4,7 @@
 define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 	return {
 		id: 38,
-		sort: 100,
+		sort: 10,
 		size: 1,
 		nicename: "sitelink",
 		sizes: ["tiny", "medium"],

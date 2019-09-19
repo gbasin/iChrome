@@ -6,6 +6,7 @@ define(["jquery", "lodash", "browser/api", "widgets/framefix"], function($, _, B
 
 	return {
 		id: 43,
+		sort: 360,
 		size: 5,
 		nicename: "linkedin",
 		sizes: ["variable"],

@@ -1,5 +1,6 @@
 {
 	"id": 8,
+	"sort": 70,
 	"name": "rss",
 	"model": "model",
 	"css": "style.css",

@@ -4,6 +4,7 @@
 define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 	return {
 		id: 26,
+		sort: 200,
 		size: 1,
 		order: 15,
 		interval: 300000,

@@ -155,6 +155,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 
 	return {
 		id: 44,
+		sort: 340,
 		size: 1,
 		nicename: "directions",
 		sizes: ["variable"],

@@ -1,5 +1,6 @@
 {
 	"id": 20,
+	"sort": 260,
 	"name": "translate",
 	"model": "model",
 	"css": "style.css",

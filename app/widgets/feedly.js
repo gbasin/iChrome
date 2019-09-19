@@ -38,6 +38,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 	return {
 		id: 19,
+		sort: 170,
 		size: 6,
 		order: 22,
 		interval: 300000,

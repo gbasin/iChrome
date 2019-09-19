@@ -38,6 +38,7 @@ define(["lodash", "jquery", "moment"], function(_, $, moment) {
 
 	return {
 		id: 29,
+		sort: 300,
 		size: 6,
 		order: 18,
 		interval: 300000,
