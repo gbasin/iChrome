@@ -4,6 +4,7 @@
 define(function() {
 	return {
 		id: 36,
+		sort: 370,
 		size: 4,
 		order: 4,
 		nicename: "html",

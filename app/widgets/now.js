@@ -4,6 +4,7 @@
 define(["jquery", "oauth", "browser/api"], function($, OAuth, Browser) {
 	return {
 		id: 24,
+		sort: 420,
 		size: 1,
 		order: 6,
 		unlisted: true,

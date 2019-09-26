@@ -1,5 +1,6 @@
 {
 	"id": 53,
+	"sort": 390,
 	"name": "quicklinks",
 	"model": "model",
 	"css": "style.css",

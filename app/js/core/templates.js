@@ -10,7 +10,7 @@ var templates = [
 		"whatsnew",				"bginfo",				"updated",
 		"widgets/auth-required","widgets/error",		"widgets/permissions-request",
 
-		"onboarding/modal",		"onboarding/widgets",	"onboarding/settings", "onboarding/introduction",
+		"onboarding/modal",		"onboarding/widgets",	"onboarding/settings", "onboarding/introduction", "onboarding/upgrade",
 
 		"settings",				"settings/accounts",	"settings/advanced",
 		"settings/misc",		"settings/tabs",		"settings/toolbar",

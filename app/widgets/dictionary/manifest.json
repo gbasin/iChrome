@@ -1,5 +1,6 @@
 {
 	"id": 46,
+	"sort": 50,
 	"name": "dictionary",
 	"model": "model",
 	"css": "style.css",

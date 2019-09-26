@@ -279,6 +279,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 
 	return {
 		id: 42,
+		sort: 400,
 		size: 4,
 		nicename: "pushbullet",
 		sizes: ["medium"],

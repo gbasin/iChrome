@@ -45,15 +45,15 @@
     "widgets":{
       "configure":"點此設定小部件",
       "configure_desc":"點擊扳手打開天氣 Widget 的<b>設定</b>",
-      "configure_skip":"跳過",
-      "settings":"把<b>San Fancisco, CA</b>替換成你所在的位置，然後按一下<b>保存</b>",
-      "move":"你可以按著標註的位置 <b>拖動</b> 小部件視窗來移動它們。",
-      "remove":"當拖動一個小部件時，可把它拖放在的紅色欄 (目前未顯示)來 <b>刪除</b> 它。",
+			"configure_skip": "Skip Tutorial",
+			"settings": "Replace <b>Widget Title</b> with your text, then press <b>Save</b>.",
+			"move": "You can <b>reposition</b> widgets by clicking and dragging the three dots highlighted here.",
+			"remove": "To <b>delete</b>, simply click the red trash bin icon.",
       "done":"我知道了"
     },
     "settings":{
-      "intro":"接著讓我們看看 <b>功能表</b>，並且了解它能為你做什麼。",
-      "instructions":"點擊被標註的圖片以開啟它",
+			"intro": "Now let's add a new widget. The button on the right is where you can access your settings, and the button to the left opens the add widget menu.",
+			"instructions": "Click the new widget button on the left to open the widget menu!",
       "skip":"跳過",
       "tooltips":{
         "settings":"設置iChrome的外觀與內容",

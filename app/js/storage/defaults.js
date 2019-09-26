@@ -6,28 +6,49 @@ define(["i18n/i18n"], function(Translate) {
 		tabs: [{
 			columns: [
 				[
-					{ //Clocks
-						id: 2,
-						size: "small"
+					{ 
+						id: 54,
+						size: "medium"
 					},
-					{ //Quick Links
-						id: 53,
-						size: "variable",
-						view: "icons"
-					}
-				], [
-					{ //Quotes
-						id: 35,
-						size: "variable"
-					}, 
-					{ //Weather
+					{ 
 						id: 1,
 						size: "variable"
 					}, 
 				], [
-					{ //News
+					{ 
+						id: 38,
+						size: "tiny"
+					}, 
+					{ 
+						id: 38,
+						size: "tiny",
+						config: {
+							color: "rgb(255, 255, 255)",
+							title: "Leave a 5* Review? :)",
+							link: "https://chrome.google.com/webstore/detail/ichrome-new-tab-ultimate/iccjgbbjckehppnpajnmplcccjcgbdep/related?hl=en",
+							image: "https://ichro.me/img/press/8.png"
+						}
+					}, 
+					{ 
 						id: 4,
-						size: "large"
+						size: "variable"
+					}
+				], [
+					{ 
+						id: 13,
+						size: "variable"
+					},
+					{ 
+						id: 8,
+						size: "variable",
+						config: {
+							feeds: [
+								{
+									url:  "http://feeds.gawker.com/lifehacker/full",
+									name: "Lifehacker"
+								}
+							]
+						}
 					}
 				]
 			],

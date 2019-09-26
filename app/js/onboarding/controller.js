@@ -2,8 +2,8 @@
  * The onboarding guide this is shown once on installation unless a logged in user is synced in
  */
 define([
-	"lodash", "backbone", "browser/api", "core/analytics", "core/auth", "storage/storage", "onboarding/modal", "onboarding/widgets", "onboarding/settings", "onboarding/introduction"
-], function(_, Backbone, Browser, Track, Auth, Storage, Modal, WidgetGuide, SettingsGuide, Introduction) {
+	"lodash", "backbone", "browser/api", "core/analytics", "core/auth", "storage/storage", "onboarding/modal", "onboarding/widgets", "onboarding/settings", "onboarding/introduction", "onboarding/upgrade"
+], function(_, Backbone, Browser, Track, Auth, Storage, Modal, WidgetGuide, SettingsGuide, Introduction, UpgradePage) {
 	var Controller = function() {
 		// The onboarding process is heavily tracked, it's important to know where new users
 		// might be giving up or how far they get through the process
@@ -70,7 +70,7 @@ define([
 	};
 
 	_.extend(Controller.prototype, Backbone.Events, {
-		complete: function() {
+		complete: function(withDelay) {
 			delete Browser.storage.firstRun;
 
 			this.trigger("complete");
@@ -80,9 +80,17 @@ define([
 			Track.FB.logEvent("COMPLETED_TUTORIAL");
 
 			if (!Browser.storage.nextAuth) {
-				Browser.storage.nextAuth = new Date().getTime(); //Run onboarding next start to show the SignIn page
+				Browser.storage.nextAuth = new Date().getTime() + (withDelay ? 3000 : 0); //Run onboarding next start to show the SignIn page
 			}
 
+		},
+
+		dismiss: function() {
+			delete Browser.storage.firstRun;
+			
+			Track.event("Onboarding", "Dismiss");
+
+			Track.FB.logEvent("DISMISS_TUTORIAL");
 		},
 
 		showWidgetGuide: function() {
@@ -99,9 +107,19 @@ define([
 
 			this.settingsGuide = new SettingsGuide();
 
-			//this.listenToOnce(this.modal, "complete", this.complete);
-			this.listenToOnce(this.settingsGuide, "complete", this.complete);
+			this.listenToOnce(this.settingsGuide, "skip", this.complete);
+			this.listenToOnce(this.settingsGuide, "next", this.showUpgradeScreen);
+		},
+
+		showUpgradeScreen: function() {
+			Track.event("Onboarding", "Upgrade", "Shown");
+
+			this.upgradePage = new UpgradePage();
+
+			this.listenToOnce(this.upgradePage, "complete", this.complete);
+			this.listenToOnce(this.upgradePage, "dismiss", this.dismiss);
 		}
+
 
 	});
 

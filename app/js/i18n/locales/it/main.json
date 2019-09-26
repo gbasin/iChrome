@@ -45,15 +45,15 @@
     "widgets":{
       "configure":"Configuriamo un widget.",
       "configure_desc":"Fare click sulla chiave per aprire <b>impostazioni</b> del widget meteo.",
-      "configure_skip":"Salta",
-      "settings":"Sostituire <b>San Francisco, CA</b> con la vostra posizione, quindi premere <b>Salva</b>.",
-      "move":"È possibile <b>trascinare</b> i widget usando la maniglia evidenziata per spostarli.",
-      "remove":"Quando si trascina un widget, è necessario rilasciarlo sulla barra rossa (non mostrata) per <b>rimuoverlo</b>.",
+			"configure_skip": "Skip Tutorial",
+			"settings": "Replace <b>Widget Title</b> with your text, then press <b>Save</b>.",
+			"move": "You can <b>reposition</b> widgets by clicking and dragging the three dots highlighted here.",
+			"remove": "To <b>delete</b>, simply click the red trash bin icon.",
       "done":"Ok"
     },
     "settings":{
-      "intro":"Ora diamo un'occhiata <b>al menu</b> e vediamo cos'altro si può fare.",
-      "instructions":"Clicca sull'immagine evidenziata per aprirla.",
+			"intro": "Now let's add a new widget. The button on the right is where you can access your settings, and the button to the left opens the add widget menu.",
+			"instructions": "Click the new widget button on the left to open the widget menu!",
       "skip":"Salta",
       "tooltips":{
         "settings":"Modificare l'aspetto e le funzioni di iChrome",

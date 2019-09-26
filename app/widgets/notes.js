@@ -4,6 +4,7 @@
 define(["jquery"], function($) {
 	return {
 		id: 13,
+		sort: 140,
 		size: 2,
 		order: 17,
 		nicename: "notes",

@@ -4,6 +4,7 @@
 define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 	return {
 		id: 34,
+		sort: 330,
 		size: 2,
 		order: 8,
 		interval: 300000,

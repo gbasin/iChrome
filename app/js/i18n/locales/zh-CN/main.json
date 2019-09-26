@@ -45,15 +45,15 @@
     "widgets":{
       "configure":"让我们来配置一个小部件。",
       "configure_desc":"单击扳手按钮，打开天气小部件的<b>设置</b>窗口。",
-      "configure_skip":"跳过",
-      "settings":"将<b>San Francisco, CA</b>替换为您的所在位置，然后单击<b>保存</b>。",
-      "move":"您可以<b>拖动</b>这个标记来移动小部件的位置。",
-      "remove":"在拖动小部件时将小部件拖到红色的边栏(当前未显示)，就可将其<b>删除</b>。",
+			"configure_skip": "Skip Tutorial",
+			"settings": "Replace <b>Widget Title</b> with your text, then press <b>Save</b>.",
+			"move": "You can <b>reposition</b> widgets by clicking and dragging the three dots highlighted here.",
+			"remove": "To <b>delete</b>, simply click the red trash bin icon.",
       "done":"好"
     },
     "settings":{
-      "intro":"现在让我们看看 <b>菜单</b>，看看你能做什么。",
-      "instructions":"点击高亮的位置以来打开它。",
+			"intro": "Now let's add a new widget. The button on the right is where you can access your settings, and the button to the left opens the add widget menu.",
+			"instructions": "Click the new widget button on the left to open the widget menu!",
       "skip":"跳过",
       "tooltips":{
         "settings":"改变 iChrome 的外观和功能",

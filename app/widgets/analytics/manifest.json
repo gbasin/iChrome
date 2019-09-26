@@ -1,5 +1,6 @@
 {
 	"id": 3,
+	"sort": 380,
 	"name": "analytics",
 	"model": "model",
 	"css": "style.css",

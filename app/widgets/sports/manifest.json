@@ -1,5 +1,6 @@
 {
 	"id": 15,
+	"sort": 120,
 	"name": "sports",
 	"model": "model",
 	"css": "style.css",

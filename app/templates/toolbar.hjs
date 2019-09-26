@@ -1,5 +1,10 @@
 {{^isFull}}
 	<div class="search"></div>
+
+	<div class="add-widget-link">
+		<span class="icon m-icon">add_circle</span>
+	</div>
+
 {{/isFull}}
 
 {{#isFull}}

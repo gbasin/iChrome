@@ -554,7 +554,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 
 	return {
 		id: 2,
-		sort: 30,
+		sort: 60,
 		size: 2,
 		nicename: "clock",
 		sizes: ["tiny", "small"],

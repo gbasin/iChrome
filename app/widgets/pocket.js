@@ -270,6 +270,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 
 	return {
 		id: 45,
+		sort: 350,
 		size: 1,
 		interval: 300000,
 		nicename: "pocket",
