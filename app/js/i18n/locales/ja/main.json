@@ -45,15 +45,15 @@
     "widgets":{
       "configure":"ウィジェットを設定してみましょう。",
       "configure_desc":"天気ウィジェットのレンチアイコンをクリックし、<b>設定</b>を開きましょう。",
-      "configure_skip":"スキップ",
-      "settings":"<b>San Francisco, CA</b> をお住まいの市町村に書き換え、 <b>保存</b>を押しましょう。",
-      "move":"<b>ドラッグ</b>ボタンを使って、ウィジェットを移動できます。",
-      "remove":"ウィジェットを<b>削除</b>するには、ウィジェットを移動させると表示される赤いバーにドラッグしてください。",
+			"configure_skip": "Skip Tutorial",
+			"settings": "Replace <b>Widget Title</b> with your text, then press <b>Save</b>.",
+			"move": "You can <b>reposition</b> widgets by clicking and dragging the three dots highlighted here.",
+			"remove": "To <b>delete</b>, simply click the red trash bin icon.",
       "done":"OK"
     },
     "settings":{
-      "intro":"では、<b>メニュー</b>を見て、ほかに何ができるかを確認してみましょう。",
-      "instructions":"ユーザーのアイコンをクリックすると開くことができます。",
+			"intro": "Now let's add a new widget. The button on the right is where you can access your settings, and the button to the left opens the add widget menu.",
+			"instructions": "Click the new widget button on the left to open the widget menu!",
       "skip":"スキップ",
       "tooltips":{
         "settings":"iChrome の外観と動作を変更",

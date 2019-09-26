@@ -222,17 +222,45 @@ iframe[seamless] {
 */
 .add-widget-link {
 	z-index: 1;
-	color: #C0C0c0;
-	right: 7px;
-	top: 70px;
-	position: fixed;
+	color: #B2B2B2;
+	right: 70px;
+	top: 8px;
+	position: absolute;
 	cursor: pointer;
+	overflow: hidden;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+	:hover {
+		color: #D23F31;
+		transition: all .2s ease-in-out;
+	}
 
 	.icon {
-		text-shadow: 0 0 3px rgba(0, 0, 0, .5);
-		font-size: 52px;
+		font-size: 60px;
+		top: -5px;
+		left: -5px;
+		position: relative;
+		background: lightgrey;
 	}
-	
+}
+
+.dark .add-widget-link {
+	color: #333;
+
+	:hover {
+		color: #444;
+	}
+}
+
+.transparent.dark .add-widget-link {
+	color: rgba(0, 0, 0, .4);
+
+	:hover {
+		color: rgba(0, 0, 0, .6);
+	}
 }
 
 

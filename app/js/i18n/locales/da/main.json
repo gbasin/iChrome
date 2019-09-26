@@ -45,15 +45,15 @@
     "widgets":{
       "configure":"Lad os konfigurere en widget.",
       "configure_desc":"Klik på skruenøglen for at åbne vejr-widgets <b>Indstillinger</b>.",
-      "configure_skip":"Spring over",
-      "settings":"Erstat <b>San Francisco, CA</b> med din placering, tryk derefter på <b>Gem</b>.",
-      "move":"Du kan <b>trække</b> widgets ved at bruge det fremhævede håndtag til at flytte dem.",
-      "remove":"Når du trækker en widget, slip den på den røde bjælke (ikke vist) for at <b>fjerne</b> den.",
+			"configure_skip": "Skip Tutorial",
+			"settings": "Replace <b>Widget Title</b> with your text, then press <b>Save</b>.",
+			"move": "You can <b>reposition</b> widgets by clicking and dragging the three dots highlighted here.",
+			"remove": "To <b>delete</b>, simply click the red trash bin icon.",
       "done":"Forstået"
     },
     "settings":{
-      "intro":"Lad os tage et kig på <b>menu'en</b> og se, hvad du ellers kan gøre.",
-      "instructions":"Klik på det markerede billede for at åbne det.",
+			"intro": "Now let's add a new widget. The button on the right is where you can access your settings, and the button to the left opens the add widget menu.",
+			"instructions": "Click the new widget button on the left to open the widget menu!",
       "skip":"Spring over",
       "tooltips":{
         "settings":"Skift iChromes udseende og funktion",

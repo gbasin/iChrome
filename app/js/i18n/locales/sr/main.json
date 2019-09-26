@@ -45,15 +45,15 @@
     "widgets":{
       "configure":"Let's configure a widget.",
       "configure_desc":"Кликните на кључ (дугме са иконицом француског кључа) да бисте отворили мрежну алатку (widget) за време <b>settings</b>.",
-      "configure_skip":"Прескочи",
-      "settings":"Замените <b>San Francisco, CA</b> својом локацијом, а затим притисните <b>Save</b>.",
-      "move":"You can <b>drag</b> widgets using the highlighted handle to move them.",
-      "remove":"When dragging a widget, drop it on the red bar (not shown) to <b>remove</b> it.",
+			"configure_skip": "Skip Tutorial",
+			"settings": "Replace <b>Widget Title</b> with your text, then press <b>Save</b>.",
+			"move": "You can <b>reposition</b> widgets by clicking and dragging the three dots highlighted here.",
+			"remove": "To <b>delete</b>, simply click the red trash bin icon.",
       "done":"Got it"
     },
     "settings":{
-      "intro":"Now let's take a look at <b>the menu</b> and see what else you can do.",
-      "instructions":"Click the highlighted image to open it.",
+			"intro": "Now let's add a new widget. The button on the right is where you can access your settings, and the button to the left opens the add widget menu.",
+			"instructions": "Click the new widget button on the left to open the widget menu!",
       "skip":"Прескочи",
       "tooltips":{
         "settings":"Change the way iChrome looks and works",

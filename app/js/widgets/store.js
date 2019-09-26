@@ -40,7 +40,11 @@ define(
 				}
 			}),
 			modal = new (Modal.extend({
-				classes: "store"
+				classes: "store",
+				close: function() {
+					Backbone.trigger("widgets-closed");
+					return this.hide();
+				}
 			}))(),
 			View = Backbone.View.extend({
 				el: modal.content,

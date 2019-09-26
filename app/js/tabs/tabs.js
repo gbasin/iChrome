@@ -357,6 +357,8 @@ define(
 							$("#originalLoc").remove();
 
 							this.serialize(true);
+
+							Backbone.trigger("widget-dropped");
 						}.bind(this),
 						afterMove: function(placeholder, container) {
 							if (container.el[0].className.indexOf("widgets-container") === -1) {

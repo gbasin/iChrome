@@ -45,15 +45,15 @@
     "widgets":{
       "configure":"Configurons un widget.",
       "configure_desc":"Cliquez sur la clé pour ouvrir les <b>paramètres</b> du gadget météo.",
-      "configure_skip":"Passer",
-      "settings":"Remplacez <b>San Francisco, CA</b> par votre emplacement, puis cliquez sur <b>Sauvegarder</b>.",
-      "move":"Vous pouvez <b>faire glisser</b> des widgets à l'aide de la poignée en surbrillance pour les déplacer.",
-      "remove":"Lorsque vous faites glisser un widget, déposez-le sur la barre rouge (non illustrée) pour le <b>supprimer</b>.",
+			"configure_skip": "Skip Tutorial",
+			"settings": "Replace <b>Widget Title</b> with your text, then press <b>Save</b>.",
+			"move": "You can <b>reposition</b> widgets by clicking and dragging the three dots highlighted here.",
+			"remove": "To <b>delete</b>, simply click the red trash bin icon.",
       "done":"Compris"
     },
     "settings":{
-      "intro":"Maintenant, allons jeter un oeil au <b>menu</b> et voir ce que vous pouvez faire d'autre.",
-      "instructions":"Cliquez sur l'image en surbrillance pour l'ouvrir.",
+			"intro": "Now let's add a new widget. The button on the right is where you can access your settings, and the button to the left opens the add widget menu.",
+			"instructions": "Click the new widget button on the left to open the widget menu!",
       "skip":"Passer",
       "tooltips":{
         "settings":"Modifiez l'apparence et le fonctionnement d'iChrome",

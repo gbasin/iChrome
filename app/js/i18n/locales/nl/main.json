@@ -45,15 +45,15 @@
     "widgets":{
       "configure":"Laten we een widget instellen.",
       "configure_desc":"Klik op de moersleutel om de <b>instellingen</b> van de weerwidget te openen.",
-      "configure_skip":"Overslaan",
-      "settings":"Vervang <b>San Francisco, CA</b> door uw locatie en druk daarna op <b>Opslaan</b>.",
-      "move":"U kunt widgets <b>verslepen</b> door ze met het gemarkeerde handvat te verplaatsen.",
-      "remove":"Sleep de widget naar de rode balk (niet weergegeven) om deze te <b>verwijderen</b>.",
+			"configure_skip": "Skip Tutorial",
+			"settings": "Replace <b>Widget Title</b> with your text, then press <b>Save</b>.",
+			"move": "You can <b>reposition</b> widgets by clicking and dragging the three dots highlighted here.",
+			"remove": "To <b>delete</b>, simply click the red trash bin icon.",
       "done":"Oké, ik snap het"
     },
     "settings":{
-      "intro":"Laten we nu een kijkje nemen naar <b>het menu</b> om te zien wat u nog meer kunt doen.",
-      "instructions":"Klik op de gemarkeerde afbeelding om deze te openen.",
+			"intro": "Now let's add a new widget. The button on the right is where you can access your settings, and the button to the left opens the add widget menu.",
+			"instructions": "Click the new widget button on the left to open the widget menu!",
       "skip":"Overslaan",
       "tooltips":{
         "settings":"Het uiterlijk en de functionaliteit van iChrome aanpassen",
