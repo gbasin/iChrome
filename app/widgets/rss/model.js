@@ -135,6 +135,9 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, Wid
 			else if (html.find("iframe[data-chomp-id]").length) {
 				item.image = "http://img.youtube.com/vi/" + html.find("iframe[data-chomp-id]").attr("data-chomp-id") + "/1.jpg";
 			}
+			else if (e.enclosure && e.enclosure.length > 0 && e.enclosure[0].width && e.enclosure[0].height && e.enclosure[0].href) {
+				item.image = e.enclosure[0].href;
+			}
 
 
 			// Find any element that isn't allowed and replace it with its contents
