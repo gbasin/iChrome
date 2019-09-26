@@ -50,7 +50,7 @@ define([
 		 * @api    private
 		 * @param  {Event}  e  A click event
 		 */
-		navigate: function(e) {
+		navigate: function() {
 			if (!this._interactionTracked) {
 				// It's important to know how many users don't even click to see the next slide
 				Track.event("Onboarding", "Modal", "Interaction");

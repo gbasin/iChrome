@@ -93,7 +93,7 @@ define(["jquery", "backbone", "i18n/i18n", "core/analytics", "core/render"], fun
 			retry = retry === true;
 
 			this.$targetEl = $(".widget.sitelink > .settings").first();
-			if (this.$targetEl.length == 0) {
+			if (this.$targetEl.length === 0) {
 				this.$targetEl =  $(".widget > .settings").first();
 			}
 
