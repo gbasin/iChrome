@@ -20,10 +20,11 @@ define(["lodash", "jquery", "widgets/views/settings", "jquery.serializejson"], f
 			// Trigger a topic reload
 			this.model.topicsLoaded = false;
 
+			var topic = this.model.getTopic(config);
 			this.model.set({
 				config: config,
 				state: "default",
-				activeTab: config.topic
+				activeTab: topic
 			});
 		},
 
@@ -37,6 +38,7 @@ define(["lodash", "jquery", "widgets/views/settings", "jquery.serializejson"], f
 
 		onBeforeRender: function(config) {
 			config.topics = this.model.data.topics;
+			config.bbctopics = this.model.bbctopics;
 
 			return config;
 		},
@@ -44,7 +46,16 @@ define(["lodash", "jquery", "widgets/views/settings", "jquery.serializejson"], f
 
 		onRender: function(config) {
 			var topic = this.$(".topic").val(config.topic),
-				edition = this.$(".edition").val(config.edition);
+				edition = this.$(".edition").val(config.edition),
+				source = this.$(".source").val(config.source),
+				bbctopic = this.$(".bbctopic").val(config.bbctopic);
+
+			source.on("change", function() {
+				var form = this.$("form");
+				form.removeClass("msn");
+				form.removeClass("bbc");
+				form.addClass(source.val());
+			}.bind(this));
 
 			edition.on("change", function() {
 				if (edition.val() !== config.edition) {
@@ -71,7 +82,7 @@ define(["lodash", "jquery", "widgets/views/settings", "jquery.serializejson"], f
 						topic.html(_.map(topics, function(e) {
 							return '<option value="' + hEscape(e[0]) + '"' + (e[0] === currTopic ? " selected" : "") + '>' + hEscape(e[1]) + '</option>';
 						}).join(""));
-					}, edition.val());
+					}, source.var(), edition.val());
 				}
 			}.bind(this));
 		}

@@ -38,6 +38,10 @@
 
 				"edition": "Edition",
 
+				"language": "Language",
+
+				"source": "Source",
+
 				"default_topic": "Default Topic"
 			}
 		}
