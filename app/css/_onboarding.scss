@@ -335,6 +335,7 @@
 			line-height: 40px;
 			margin: 16px -16px;
 			pointer-events: auto;
+			min-width: unset;
 		}
 	}
 }
@@ -366,8 +367,9 @@ body.dragging {
 		color: #FFF;
 		font-size: 16px;
 		line-height: 40px;
-		margin: 16px -8px 16px -24px;
+		margin: 16px 0 8px 0;
 		pointer-events: auto;
+		min-width: unset;
 	}
 
 	.intro {
@@ -408,14 +410,12 @@ body.dragging {
 }
 
 .tutorial-buttons {
-	display: flex; 
-	justify-content: space-between;
-	flex-direction: row-reverse;
+	width: max-content;
+	float: right;	
 
 	.skip  {
-		position: fixed;
-		left: 20px;
-		bottom: 0;
+		display: block;
+		margin-left: 0;
 	}
 }
 
