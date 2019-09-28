@@ -1,15 +1,13 @@
-<p>Welcome to iChrome version 1.40!</p>
+<p>Welcome to iChrome version 1.41!</p>
 
 <section>
 
 <p>What's New:</p>
 <ul>
-<li>Updated intro screen experience for new users!</li>
-<li>FIX: Clock widget broken on install.</li>
-<li>NEW: UFC Fans Rejoice! UFC results now available in the Sports widget.</li>
+<li>ADDED the BBC News source to the News widget</li>
+<li>Updated on-boarding process and default widgets for new users!</li>
+<li>The widgets are sorted by popularity statistics in the Add Widget</li>
+<li>FIX: absent RSS widget thumbmails.</li>
 </ul>
 
-<p>Plus, you asked and we delivered! We're pleased to announce Pro users will now have multiple options for search bar settings including DuckDuckGo and StartPage. </p>
-
-<p>To change your search bar settings, go to Settings > Display > Search Bar Options. Interested in changing your search bar settings plus access to dozens of other great Pro features? Upgrade to iChrome Pro to help us keep developing new features you guys request. </p>
 </section>

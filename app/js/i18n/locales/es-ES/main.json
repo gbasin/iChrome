@@ -44,16 +44,16 @@
     },
     "widgets":{
       "configure":"Let's configure a widget.",
-      "configure_desc":"Click the wrench to open the weather widget's <b>settings</b>.",
+			"configure_desc": "Click the wrench to open a widget's <b>settings</b>.",
 			"configure_skip": "Skip Tutorial",
-			"settings": "Replace <b>Widget Title</b> with your text, then press <b>Save</b>.",
+			"settings": "Replace <b>Link URL</b> with your favorite site, then press <b>Save</b>.",
 			"move": "You can <b>reposition</b> widgets by clicking and dragging the three dots highlighted here.",
 			"remove": "To <b>delete</b>, simply click the red trash bin icon.",
       "done":"Got it"
     },
     "settings":{
-			"intro": "Now let's add a new widget. The button on the right is where you can access your settings, and the button to the left opens the add widget menu.",
-			"instructions": "Click the new widget button on the left to open the widget menu!",
+			"intro": "Now let’s add a new widget. This highlighted button is where you can access the Widget Menu.",
+			"instructions": "Click the new widget button on to open the widget menu!",
       "skip":"Pasar",
       "tooltips":{
         "settings":"Cambiar el aspecto y el funcionamiento de iChrome",

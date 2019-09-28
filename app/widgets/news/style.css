@@ -581,6 +581,10 @@ header .title ~ .tabs {
 	margin: 12px -12px 12px 0;
 }
 
+.settings div.maximize, .settings div.delete {
+	display: none;
+}
+
 .settings form {
 	min-height: 0;
 	flex: 1 1 100%;
@@ -590,4 +594,12 @@ header .title ~ .tabs {
 
 .dark :root.settings form {
 	background: rgba(0, 0, 0, .15);
+}
+
+.settings .msn-wrapper, .settings .bbc-wrapper {
+	display: none;
+}
+
+.settings form.msn .msn-wrapper, .settings form.bbc .bbc-wrapper {
+	display: block;
 }

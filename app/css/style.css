@@ -5833,15 +5833,16 @@ input.sp-input[type="text"] {
 	line-height: 40px;
 	margin: 16px -16px;
 	pointer-events: auto;
+	min-width: unset;
 }
 
-/* line 343, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 344, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 body.dragging .showcase.settings {
 	opacity: 0;
 	transition: opacity .5s ease;
 }
 
-/* line 350, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 351, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .onboarding-flat {
 	position: absolute;
 	left: 0;
@@ -5858,16 +5859,17 @@ body.dragging .showcase.settings {
 	color: white;
 }
 
-/* line 365, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 366, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .onboarding-flat button {
 	color: #FFF;
 	font-size: 16px;
 	line-height: 40px;
-	margin: 16px -8px 16px -24px;
+	margin: 16px 0 8px 0;
 	pointer-events: auto;
+	min-width: unset;
 }
 
-/* line 373, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 375, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .onboarding-flat .intro {
 	width: 50%;
 	height: 75%;
@@ -5876,50 +5878,48 @@ body.dragging .showcase.settings {
 	align-items: center;
 }
 
-/* line 380, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 382, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .onboarding-flat .intro .appname {
 	font-size: 48px;
 	margin-bottom: 30px;
 }
 
-/* line 385, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 387, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .onboarding-flat .intro .tagline {
 	font-size: 26px;
 	margin: 15px 0px 15px 0px;
 }
 
-/* line 390, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 392, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .onboarding-flat .intro .note {
 	font-size: 16px;
 }
 
-/* line 394, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 396, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .onboarding-flat .intro .footer {
 	margin-top: 30px;
 }
 
-/* line 397, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 399, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .onboarding-flat .intro .footer a {
 	color: yellowgreen;
 }
 
-/* line 401, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 403, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .onboarding-flat .intro .footer a:hover {
 	color: yellow;
 }
 
-/* line 410, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 412, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .tutorial-buttons {
-	display: flex;
-	justify-content: space-between;
-	flex-direction: row-reverse;
+	width: max-content;
+	float: right;
 }
 
-/* line 415, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
+/* line 416, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */
 .tutorial-buttons .skip {
-	position: fixed;
-	left: 20px;
-	bottom: 0;
+	display: block;
+	margin-left: 0;
 }
 
 /* line 423, C:/Projects/iChrome/iChrome/app/css/_onboarding.scss */

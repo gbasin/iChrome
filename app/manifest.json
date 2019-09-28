@@ -70,7 +70,7 @@
 		"bookmarks",
 		"management"
 	],
-	"version": "3.0.41.0",
+	"version": "3.0.41.1",
 	"manifest_version": 2,
 	"default_locale": "en",
 	"short_name": "iChrome",
