@@ -47,8 +47,7 @@ define(["lodash", "jquery", "widgets/views/settings", "jquery.serializejson"], f
 		onRender: function(config) {
 			var topic = this.$(".topic").val(config.topic),
 				edition = this.$(".edition").val(config.edition),
-				source = this.$(".source").val(config.source),
-				bbctopic = this.$(".bbctopic").val(config.bbctopic);
+				source = this.$(".source").val(config.source);
 
 			source.on("change", function() {
 				var form = this.$("form");

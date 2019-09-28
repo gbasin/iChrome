@@ -257,7 +257,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 
 
 		refresh: function() {
-			if (this.isBbc(config.source)) {
+			if (this.isBbc()) {
 				this.refreshBbc();
 				return;
 			}
@@ -337,7 +337,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 
 			var topic = _.find(this.bbctopics, [activeTab]);
 
-			var url = "http://feeds.bbci.co.uk/news/"
+			var url = "http://feeds.bbci.co.uk/news/";
 			if (topic && topic.length > 2) {
 				url += topic[2] + "/";
 			}
