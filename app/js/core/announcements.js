@@ -17,7 +17,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 				this.email = storage.user.email;
 			}, this);
 
-			var showNewVersion = 7; //This number should be increased on "What's new" dialog modification
+			var showNewVersion = 8; //This number should be increased on "What's new" dialog modification
 			if (Number(Browser.storage.lastShowWhatsNewVersion) !== showNewVersion) {
 				Browser.storage.lastShowWhatsNewVersion = showNewVersion;
 				Browser.storage.showWhatsNew = 0; //Start the counter from 0 (show max first 10 widget starts)
