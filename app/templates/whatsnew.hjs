@@ -4,10 +4,10 @@
 
 <p>What's New:</p>
 <ul>
-<li>ADDED the BBC News source to the News widget</li>
-<li>Updated on-boarding process and default widgets for new users!</li>
-<li>The widgets are sorted by popularity statistics in the Add Widget</li>
-<li>FIX: absent RSS widget thumbmails.</li>
+<li>NEW: BBC News added as a secondary option for the news widget!</li>
+<li>NEW: Revamped onboarding process and default widgets for new users!</li>
+<li>NEW: Widgets now sorted by popularity in the Add Widget menu!</li>
+<li>FIXED: Absent RSS widget thumbnails bug.</li>
 </ul>
 
 </section>
