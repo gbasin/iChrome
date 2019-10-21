@@ -114,6 +114,11 @@
 			"text": {
 				"color": "Events Text Color",
 				"placeholder": "Examples: black, #000, #000000, rgb(0,0,0), ..."
+			},
+			"timezone": {
+				"title": "Events Timezone",
+				"calendar": "Calendars settings",
+				"local": "Local"
 			}
 		},
 
