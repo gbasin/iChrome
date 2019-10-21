@@ -52,6 +52,12 @@
 				type: "time",
 				label: "i18n.settings.range.end",
 				nicename: "endTime"
+			},
+			{
+				type: "text",
+				nicename: "textcolor",
+				label: "i18n.settings.text.color",
+				placeholder: "i18n.settings.text.placeholder"
 			}
 		],
 		config: {
@@ -352,6 +358,10 @@
 					}
 				}    
 			};
+
+			if (_.isString(this.config.textcolor) && this.config.textcolor !== '') {
+				settings.eventTextColor = this.config.textcolor;
+			}
 
 			if (this.config.startTime !== this.config.endTime) {
 				settings.minTime = this.config.startTime;

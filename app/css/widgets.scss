@@ -1115,6 +1115,11 @@
 .widget.calendar {
 	padding: 0!important;
 	font-family: Roboto, sans-serif!important;
+
+
+	.fc-event  .fc-bg {
+		opacity: 1;
+	}
 }
 
 .calendar header {

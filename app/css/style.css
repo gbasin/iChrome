@@ -8625,6 +8625,11 @@ body.dragging .showcase.settings {
 }
 
 /* line 1120, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+.widget.calendar .fc-event .fc-bg {
+	opacity: 1;
+}
+
+/* line 1125, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar header {
 	width: 100%;
 	height: 55px;
@@ -8636,13 +8641,13 @@ body.dragging .showcase.settings {
 	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
 }
 
-/* line 1131, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1136, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar header a {
 	color: inherit;
 	text-decoration: none;
 }
 
-/* line 1136, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1141, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar .notice {
 	color: #888;
 	height: 250px;
@@ -8650,38 +8655,38 @@ body.dragging .showcase.settings {
 	padding: 85px 10% 20px;
 }
 
-/* line 1143, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1148, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .calendar .notice {
 	color: #EEE;
 }
 
-/* line 1147, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1152, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar .notice p {
 	line-height: 22px;
 	margin: 5px 0 15px;
 }
 
-/* line 1152, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1157, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar .gcalendar {
 	margin: 5px;
 }
 
-/* line 1159, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1164, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 body.dark .fc-unthemed .fc-divider, body.dark .fc-unthemed .fc-popover .fc-header, body.dark .fc-unthemed .fc-list-heading td {
 	background: #333333;
 }
 
-/* line 1163, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1168, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 body.dark .fc-unthemed .fc-list-item:hover td {
 	background: #5a5a5a;
 }
 
-/* line 1171, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1176, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 body.transparent .fc-unthemed .fc-divider, body.transparent .fc-unthemed .fc-popover .fc-header, body.transparent .fc-unthemed .fc-list-heading td {
 	background: rgba(51, 51, 51, 0.2);
 }
 
-/* line 1175, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1180, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 body.transparent .fc-unthemed .fc-list-item:hover td {
 	background: rgba(128, 128, 128, 0.2);
 }
@@ -8689,7 +8694,7 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 /*---------------------------------------------
 	/ Calendar / Agenda
 */
-/* line 1185, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1190, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar .agenda {
 	overflow: auto;
 	padding-top: 8px;
@@ -8697,44 +8702,44 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 	background: #FAFAFA;
 }
 
-/* line 1192, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1197, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .calendar .agenda {
 	background: #282828;
 }
 
-/* line 1196, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1201, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .calendar .agenda {
 	background: rgba(0, 0, 0, 0.15);
 }
 
-/* line 1200, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1205, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .grid .calendar .agenda {
 	max-height: 100%;
 }
 
-/* line 1204, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1209, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .grid .calendar .header ~ .agenda {
 	max-height: calc(100% - 55px);
 }
 
-/* line 1208, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1213, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar .agenda .day .date {
 	font-size: 13px;
 	font-weight: 500;
 	padding: 8px 14px;
 }
 
-/* line 1214, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1219, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar .agenda .day .date.today {
 	color: #4285F4;
 }
 
-/* line 1218, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1223, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar .agenda .day .date.past {
 	color: #999;
 }
 
-/* line 1222, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1227, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar .agenda .day .events {
 	background: #FFF;
 	overflow: hidden;
@@ -8743,17 +8748,17 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 
-/* line 1230, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1235, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .calendar .agenda .day .events {
 	background: #3A3A3A;
 }
 
-/* line 1234, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1239, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .calendar .agenda .day .events {
 	background: rgba(0, 0, 0, 0.2);
 }
 
-/* line 1238, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1243, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar .agenda .day .event {
 	color: #333;
 	display: block;
@@ -8762,44 +8767,44 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 	text-decoration: none;
 }
 
-/* line 1246, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1251, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .calendar .agenda .day .event {
 	color: #EEE;
 }
 
-/* line 1250, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1255, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar .agenda.multiple .day .event {
 	border-left: 3px solid #2196F3;
 }
 
-/* line 1254, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1259, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar .agenda .day .event:not(:first-child) {
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* line 1258, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1263, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar .agenda .day .event:hover {
 	background: #F5F5F5;
 }
 
-/* line 1262, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1267, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .calendar .agenda .day .event:hover {
 	background: #303030;
 }
 
-/* line 1266, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1271, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .calendar .agenda .day .event:hover {
 	background: rgba(0, 0, 0, 0.2);
 }
 
-/* line 1270, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1275, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar .agenda .day .event > * {
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
 
-/* line 1276, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1281, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calendar .agenda .day .event .title {
 	width: 100%;
 	font-size: 15px;
@@ -8811,7 +8816,7 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 /*---------------------------------------------
 	/ Apps
 */
-/* line 1291, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1296, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .apps .list {
 	font-size: 0;
 	display: block;
@@ -8819,7 +8824,7 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 	max-height: 365px;
 }
 
-/* line 1298, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1303, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .apps .app {
 	width: 50%;
 	color: #666;
@@ -8831,31 +8836,31 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 	font-family: Open Sans, sans-serif;
 }
 
-/* line 1309, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1314, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .apps .app {
 	color: #EEE;
 }
 
-/* line 1313, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1318, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .apps .app.holder {
 	border-radius: 3px;
 	vertical-align: top;
 	background: rgba(0, 0, 0, 0.05);
 }
 
-/* line 1319, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1324, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .apps .app.unavailable {
 	color: #888;
 }
 
-/* line 1323, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1328, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .apps .thumb {
 	width: 32px;
 	margin-right: 5px;
 	border-radius: 2px;
 }
 
-/* line 1329, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1334, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .apps .list .title {
 	overflow: hidden;
 	white-space: nowrap;
@@ -8868,14 +8873,14 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 /*---------------------------------------------
 	/ Apps / Tile View
 */
-/* line 1345, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1350, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .apps .tiles {
 	display: flex;
 	padding: 0 15px;
 	flex-flow: row wrap;
 }
 
-/* line 1351, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1356, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .apps .tiles .app {
 	flex: 1;
 	height: auto;
@@ -8884,14 +8889,14 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 	text-align: center;
 }
 
-/* line 1359, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1364, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .apps .tiles .thumb {
 	width: 64px;
 	margin-right: 0;
 	border-radius: 4px;
 }
 
-/* line 1365, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1370, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .apps .tiles .title {
 	display: block;
 	margin-top: 5px;
@@ -8900,111 +8905,111 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 /*---------------------------------------------
 	/ Notes
 */
-/* line 1377, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1382, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .notes .note {
 	margin: -15px;
 	padding: 15px;
 	height: calc(100% + 30px);
 }
 
-/* line 1383, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1388, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .notes .note {
 	color: #333;
 }
 
-/* line 1387, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1392, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .notes .note {
 	color: #FFF;
 }
 
-/* line 1391, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1396, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .notes .note.yellow {
 	background: #FFFFB5;
 }
 
-/* line 1392, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1397, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .notes .note.blue {
 	background: #B5E4FF;
 }
 
-/* line 1393, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1398, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .notes .note.red {
 	background: #FFB5B5;
 }
 
-/* line 1394, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1399, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .notes .note.orange {
 	background: #FFD280;
 }
 
-/* line 1395, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1400, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .notes .note.green {
 	background: #99DA99;
 }
 
-/* line 1397, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1402, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .notes .note.yellow {
 	background: #F9A825;
 }
 
-/* line 1398, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1403, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .notes .note.green {
 	background: #4CAF50;
 }
 
-/* line 1399, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1404, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .notes .note.orange {
 	background: #FB8C00;
 }
 
-/* line 1400, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1405, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .notes .note.blue {
 	background: #2196F3;
 }
 
-/* line 1402, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1407, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .notes .note.red {
 	color: #DDD;
 	background: #E53935;
 }
 
-/* line 1407, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1412, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .notes .note.red .header {
 	color: #DDD;
 }
 
-/* line 1411, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1416, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .notes .note.blue a {
 	color: #CCC;
 }
 
 /* These are the same colors as the dark theme ones, just at 50% */
-/* line 1416, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1421, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .notes .note.yellow {
 	background: rgba(249, 168, 37, 0.5);
 }
 
-/* line 1417, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1422, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .notes .note.blue {
 	background: rgba(33, 150, 243, 0.5);
 }
 
-/* line 1418, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1423, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .notes .note.red {
 	background: rgba(244, 67, 54, 0.5);
 }
 
-/* line 1419, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1424, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .notes .note.orange {
 	background: rgba(251, 140, 0, 0.5);
 }
 
-/* line 1420, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1425, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .notes .note.green {
 	background: rgba(76, 175, 80, 0.5);
 }
 
-/* line 1422, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1427, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .notes .note input.header {
 	border: 0 !important;
 	padding: 0 !important;
@@ -9012,17 +9017,17 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 	font-family: Open Sans, sans-serif !important;
 }
 
-/* line 1429, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1434, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .notes .note input.header {
 	color: #333;
 }
 
-/* line 1433, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1438, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .notes .note input.header {
 	color: #FFF;
 }
 
-/* line 1437, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1442, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .notes .note .content {
 	cursor: text;
 	overflow-x: hidden;
@@ -9032,17 +9037,17 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 /*---------------------------------------------
 	/ Notes / Content Overrides
 */
-/* line 1450, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1455, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .notes .note * {
 	font-family: Arial, sans-serif !important;
 }
 
-/* line 1454, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1459, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .notes img {
 	max-width: 100% !important;
 }
 
-/* line 1458, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1463, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .notes ul {
 	padding-left: 20px !important;
 }
@@ -9050,7 +9055,7 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 /*---------------------------------------------
 	/ Wolfram Alpha
 */
-/* line 1469, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1474, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .wolfram form {
 	padding: 15px;
 	margin-top: 10px;
@@ -9060,7 +9065,7 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 	box-shadow: 0 0 3px 1px #CCC;
 }
 
-/* line 1478, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1483, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .wolfram img {
 	width: 150px;
 	margin-top: -50px;
@@ -9068,7 +9073,7 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 	background: white;
 }
 
-/* line 1485, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1490, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .wolfram img {
 	background: #333;
 	box-shadow: 0 0 15px 10px #333;
@@ -9078,13 +9083,13 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
  * It would take significant work to get the widget functioning with a proper fade.
  * Instead we just let the border show through. The widget is almost never used anyway.
  */
-/* line 1494, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1499, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .wolfram img {
 	background: none;
 	box-shadow: none;
 }
 
-/* line 1499, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1504, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .wolfram input,
 .wolfram input:hover,
 .wolfram input:focus {
@@ -9101,12 +9106,12 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 /*---------------------------------------------
 	/ Bookmarks
 */
-/* line 1523, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1528, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widget.bookmarks h2.header {
 	margin-bottom: 25px !important;
 }
 
-/* line 1527, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1532, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .new {
 	opacity: 0;
 	float: right;
@@ -9115,14 +9120,14 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 	transition: opacity .3s ease-in-out;
 }
 
-/* line 1535, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1540, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .list {
 	font-size: 0;
 	margin: -15px;
 	display: block;
 }
 
-/* line 1541, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1546, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .link {
 	color: #666;
 	height: 40px;
@@ -9134,39 +9139,39 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 	font-family: Open Sans, sans-serif;
 }
 
-/* line 1552, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1557, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .link:hover {
 	background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 1556, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1561, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .drag.dragged {
 	cursor: move;
 	position: absolute;
 	background: #F7F7F7;
 }
 
-/* line 1562, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1567, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .list.two-column > .drag {
 	width: 50%;
 	display: inline-block;
 	vertical-align: middle;
 }
 
-/* line 1568, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1573, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .link.holder {
 	border-width: 1px 0;
 	border: 1px solid #F3F3F3;
 }
 
-/* line 1573, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1578, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .favicon {
 	width: 16px;
 	margin-right: 5px;
 	border-radius: 2px;
 }
 
-/* line 1579, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1584, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .title {
 	overflow: hidden;
 	white-space: nowrap;
@@ -9176,12 +9181,12 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 	width: calc(100% - 25px);
 }
 
-/* line 1588, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1593, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .link:hover .title {
 	width: calc(100% - 100px);
 }
 
-/* line 1592, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1597, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .tools {
 	top: 0;
 	right: 0;
@@ -9194,29 +9199,29 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 	padding: 10px 10px 10px 0;
 }
 
-/* line 1604, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1609, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks:hover .new,
 .bookmarks .link:hover .tools,
 .bookmarks .drag.dragged .tools {
 	opacity: 1;
 }
 
-/* line 1610, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1615, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .tools span {
 	padding: 0 5px;
 }
 
-/* line 1614, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1619, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .tools .edit:hover {
 	color: #428BCA;
 }
 
-/* line 1615, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1620, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .tools .delete:hover {
 	color: #E43431;
 }
 
-/* line 1616, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1621, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .tools .move:hover {
 	cursor: move;
 }
@@ -9224,7 +9229,7 @@ body.transparent .fc-unthemed .fc-list-item:hover td {
 /*---------------------------------------------
 	/ Bookmarks / Edit Mode Styles
 */
-/* line 1626, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1631, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 body.no-edit .bookmarks .new,
 body.no-edit .bookmarks .tools {
 	display: none;
@@ -9233,7 +9238,7 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Bookmarks / Folders
 */
-/* line 1638, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1643, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .folder {
 	color: #666;
 	cursor: pointer;
@@ -9242,18 +9247,18 @@ body.no-edit .bookmarks .tools {
 	position: relative;
 }
 
-/* line 1646, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1651, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .folder .tools {
 	background: inherit;
 }
 
-/* line 1650, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1655, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .folder .tools:hover,
 .bookmarks .folder .name:hover + .tools {
 	opacity: 1;
 }
 
-/* line 1655, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1660, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .folder .name {
 	color: #444;
 	cursor: pointer;
@@ -9266,32 +9271,32 @@ body.no-edit .bookmarks .tools {
 	font-family: Open Sans, sans-serif;
 }
 
-/* line 1667, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1672, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .folder .name:hover {
 	color: #666;
 }
 
-/* line 1671, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1676, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .folder .name:hover {
 	width: calc(100% - 100px);
 }
 
-/* line 1675, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1680, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .folder > .items {
 	display: none;
 }
 
-/* line 1679, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1684, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .folder.active > .items {
 	display: block;
 }
 
-/* line 1683, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1688, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .folder .folder {
 	padding-left: 10px;
 }
 
-/* line 1687, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1692, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .folder .link {
 	padding-left: 25px;
 }
@@ -9299,14 +9304,14 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Bookmarks / Modal
 */
-/* line 1700, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1705, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .modal.bookmarks-modal form {
 	overflow: auto;
 	padding: 20px 25px;
 	height: calc(100% - 110px);
 }
 
-/* line 1706, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1711, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .modal.bookmarks-modal input[type="tel"],
 .modal.bookmarks-modal input[type="text"],
 .modal.bookmarks-modal input[type="email"],
@@ -9316,12 +9321,12 @@ body.no-edit .bookmarks .tools {
 	width: 100%;
 }
 
-/* line 1715, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1720, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .modal.bookmarks-modal .form-group:last-child {
 	margin-bottom: 0;
 }
 
-/* line 1719, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1724, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .modal.bookmarks-modal .btn {
 	float: right;
 	margin-right: 20px;
@@ -9330,19 +9335,19 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Bookmarks / Link Drop
 */
-/* line 1730, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1735, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .drop {
 	z-index: 9;
 	display: none;
 	background: rgba(255, 255, 255, 0.8);
 }
 
-/* line 1736, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1741, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .drop.active {
 	display: block;
 }
 
-/* line 1740, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1745, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .drop,
 .bookmarks .drop > div {
 	top: 0;
@@ -9352,7 +9357,7 @@ body.no-edit .bookmarks .tools {
 	position: absolute;
 }
 
-/* line 1749, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1754, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .drop .text {
 	margin: auto;
 	width: 200px;
@@ -9364,7 +9369,7 @@ body.no-edit .bookmarks .tools {
 	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
-/* line 1760, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1765, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .bookmarks .drop .catch {
 	opacity: 0;
 }
@@ -9372,12 +9377,12 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Chrome Bookmarks
 */
-/* line 1773, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1778, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widget.chrome_bookmarks h2.header {
 	margin-bottom: 25px !important;
 }
 
-/* line 1777, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1782, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .chrome_bookmarks .list {
 	font-size: 0;
 	display: block;
@@ -9386,17 +9391,17 @@ body.no-edit .bookmarks .tools {
 	margin: -5px -15px;
 }
 
-/* line 1785, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1790, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .grid .chrome_bookmarks .list {
 	max-height: calc(100% + 10px);
 }
 
-/* line 1789, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1794, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .grid .chrome_bookmarks .header ~ .list {
 	max-height: calc(100% - 32px);
 }
 
-/* line 1793, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1798, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .chrome_bookmarks .link,
 .chrome_bookmarks .folder {
 	color: #444;
@@ -9413,32 +9418,32 @@ body.no-edit .bookmarks .tools {
 	border-left: 3px solid transparent;
 }
 
-/* line 1809, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1814, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .chrome_bookmarks .link,
 .dark .chrome_bookmarks .folder {
 	color: #DDD;
 }
 
-/* line 1814, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1819, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .chrome_bookmarks .link,
 .dark.transparent .chrome_bookmarks .folder {
 	color: #EEE;
 }
 
-/* line 1819, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1824, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .chrome_bookmarks .link:hover,
 .chrome_bookmarks .folder:hover {
 	border-left-color: #1E88E5;
 	background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 1825, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1830, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .chrome_bookmarks .link:hover,
 .dark .chrome_bookmarks .folder:hover {
 	background: rgba(0, 0, 0, 0.15);
 }
 
-/* line 1830, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1835, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .chrome_bookmarks .favicon {
 	width: 16px;
 	height: 16px;
@@ -9447,7 +9452,7 @@ body.no-edit .bookmarks .tools {
 	vertical-align: top;
 }
 
-/* line 1838, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1843, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .chrome_bookmarks .title {
 	flex-grow: 1;
 	overflow: hidden;
@@ -9456,12 +9461,12 @@ body.no-edit .bookmarks .tools {
 	text-overflow: ellipsis;
 }
 
-/* line 1846, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1851, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .chrome_bookmarks .folder .title {
 	padding-right: 10px;
 }
 
-/* line 1850, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1855, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .chrome_bookmarks .count {
 	color: #757575;
 	flex-shrink: 0;
@@ -9469,7 +9474,7 @@ body.no-edit .bookmarks .tools {
 	font-family: Open Sans, sans-serif;
 }
 
-/* line 1857, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1862, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .chrome_bookmarks .count {
 	color: #AAA;
 }
@@ -9477,7 +9482,7 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Bookmarks / Folders
 */
-/* line 1869, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1874, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .chrome_bookmarks .folder:before {
 	width: 16px;
 	content: "";
@@ -9487,44 +9492,44 @@ body.no-edit .bookmarks .tools {
 	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#444" viewBox="0 0 24 24"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/></svg>');
 }
 
-/* line 1878, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1883, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .chrome_bookmarks .folder:before {
 	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#BBB" viewBox="0 0 24 24"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/></svg>');
 }
 
-/* line 1882, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1887, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .chrome_bookmarks .folder.active:before {
 	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#444" viewBox="0 0 24 24"><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/></svg>');
 }
 
-/* line 1886, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1891, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .chrome_bookmarks .folder.active:before {
 	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#BBB" viewBox="0 0 24 24"><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/></svg>');
 }
 
-/* line 1890, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1895, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .chrome_bookmarks .folder .title {
 	padding-right: 0;
 }
 
-/* line 1894, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1899, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .chrome_bookmarks .folder:not(.active) + .folder-items {
 	display: none;
 }
 
-/* line 1898, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1903, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .chrome_bookmarks .folder-items > .link,
 .chrome_bookmarks .folder-items > .folder {
 	padding-left: 22px;
 }
 
-/* line 1903, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1908, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .chrome_bookmarks .folder-items > .folder-items > .link,
 .chrome_bookmarks .folder-items > .folder-items > .folder {
 	padding-left: 29px;
 }
 
-/* line 1908, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1913, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .chrome_bookmarks .folder-items > .folder-items > .folder-items > .link,
 .chrome_bookmarks .folder-items > .folder-items > .folder-items > .folder {
 	padding-left: 36px;
@@ -9533,19 +9538,19 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Tasks
 */
-/* line 1921, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1926, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widget.tasks h2.header {
 	margin-bottom: 25px;
 }
 
-/* line 1925, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1930, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .authorize {
 	font-size: 14px;
 	padding: 10px 20px;
 	text-align: center;
 }
 
-/* line 1931, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1936, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks button {
 	font-size: 13px;
 	background: none;
@@ -9556,19 +9561,19 @@ body.no-edit .bookmarks .tools {
 	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* line 1941, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1946, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks button:hover,
 .tasks button:focus {
 	background: rgba(153, 153, 153, 0.2);
 }
 
-/* line 1946, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1951, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks button:active {
 	box-shadow: none;
 	background: rgba(153, 153, 153, 0.4);
 }
 
-/* line 1951, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1956, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .add {
 	opacity: 0;
 	color: #666;
@@ -9578,24 +9583,24 @@ body.no-edit .bookmarks .tools {
 	margin-right: -5px;
 }
 
-/* line 1960, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1965, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .tasks .add {
 	color: #CCC;
 }
 
-/* line 1964, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1969, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks:hover .add {
 	opacity: 1;
 }
 
-/* line 1968, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1973, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .items {
 	font-size: 0;
 	display: block;
 	margin: -5px -15px;
 }
 
-/* line 1974, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1979, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .item {
 	opacity: 1;
 	color: #444;
@@ -9616,24 +9621,24 @@ body.no-edit .bookmarks .tools {
 	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* line 1994, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 1999, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .tasks .item {
 	color: #E0E0E0;
 }
 
-/* line 1998, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2003, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .item.transitioning {
 	opacity: 0;
 }
 
-/* line 2002, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2007, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .item.edit,
 .tasks .item:hover {
 	border-left-color: #1ABC9C;
 	background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 2008, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2013, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .check {
 	margin: 1px;
 	width: 18px;
@@ -9647,7 +9652,7 @@ body.no-edit .bookmarks .tools {
  * This increases the checkbox's click target area to minimize
  * the chance of user frustration from missing the box.
  */
-/* line 2021, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2026, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .check:after {
 	top: -9px;
 	border: 0;
@@ -9661,13 +9666,13 @@ body.no-edit .bookmarks .tools {
 	position: absolute;
 }
 
-/* line 2034, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2039, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .check:checked {
 	background: none;
 	box-shadow: none;
 }
 
-/* line 2039, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2044, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .check:checked:before {
 	top: -1px;
 	left: -1px;
@@ -9677,7 +9682,7 @@ body.no-edit .bookmarks .tools {
 	content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="#1ABC9C" viewBox="0 0 20 20"><path d="M10,1.667c-4.604,0-8.333,3.729-8.333,8.333S5.396,18.333,10,18.333s8.333-3.729,8.333-8.333S14.604,1.667,10,1.667z M10,16.667c-3.683,0-6.667-2.984-6.667-6.667c0-3.683,2.983-6.667,6.667-6.667c3.683,0,6.667,2.983,6.667,6.667 C16.667,13.683,13.683,16.667,10,16.667z M15,7.933l-6.429,6.428l-1.428-1.428L5,10.789L6.429,9.36l2.143,2.144l5-5L15,7.933z" /></svg>');
 }
 
-/* line 2048, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2053, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .title {
 	flex-grow: 1;
 	overflow: hidden;
@@ -9687,17 +9692,17 @@ body.no-edit .bookmarks .tools {
 	transition: color 0.25s cubic-bezier(0.55, 0, 0.1, 1);
 }
 
-/* line 2057, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2062, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .check:checked + .title {
 	color: #888;
 }
 
-/* line 2061, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2066, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .tasks .check:checked + .title {
 	color: #AAA;
 }
 
-/* line 2065, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2070, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .title .strikethrough {
 	max-width: 100%;
 	overflow: hidden;
@@ -9706,7 +9711,7 @@ body.no-edit .bookmarks .tools {
 	text-overflow: ellipsis;
 }
 
-/* line 2073, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2078, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .title .strikethrough:before {
 	left: 0;
 	top: 50%;
@@ -9717,12 +9722,12 @@ body.no-edit .bookmarks .tools {
 	transition: width 0.25s cubic-bezier(0.55, 0, 0.1, 1);
 }
 
-/* line 2083, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2088, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .check:checked + .title .strikethrough:before {
 	width: 100%;
 }
 
-/* line 2087, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2092, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .due-date {
 	color: #757575;
 	flex-shrink: 0;
@@ -9730,17 +9735,17 @@ body.no-edit .bookmarks .tools {
 	font-family: Open Sans, sans-serif;
 }
 
-/* line 2094, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2099, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .tasks .due-date:not(.overdue):not(.due-today) {
 	color: #AAA;
 }
 
-/* line 2098, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2103, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .due-date.due-today {
 	color: #2196F3;
 }
 
-/* line 2102, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2107, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .due-date.overdue {
 	color: #F44336;
 }
@@ -9749,13 +9754,13 @@ body.no-edit .bookmarks .tools {
  * This removes the need for a re-render when items are checked off
  * by disabling the title (pointer-events) and date styling.
  */
-/* line 2110, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2115, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .check:checked ~ .due-date {
 	color: #757575;
 	pointer-events: none;
 }
 
-/* line 2115, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2120, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .tasks .check:checked ~ .due-date {
 	color: #999;
 }
@@ -9763,7 +9768,7 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Tasks / Edit
 */
-/* line 2126, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2131, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .item.edit {
 	height: 154px;
 	/* This is hardcoded so the height can be transitioned */
@@ -9775,7 +9780,7 @@ body.no-edit .bookmarks .tools {
 	box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.25);
 }
 
-/* line 2136, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2141, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .edit textarea,
 .tasks .edit input[type="text"] {
 	border-radius: 0;
@@ -9783,7 +9788,7 @@ body.no-edit .bookmarks .tools {
 	border-width: 0 0 1px 0 !important;
 }
 
-/* line 2143, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2148, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .edit input.title[type="text"] {
 	font-size: inherit;
 	margin-right: 10px;
@@ -9791,12 +9796,12 @@ body.no-edit .bookmarks .tools {
 	flex-basis: calc(72% - 10px);
 }
 
-/* line 2150, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2155, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .edit .due-date {
 	flex-basis: 28%;
 }
 
-/* line 2154, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2159, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .edit textarea.notes {
 	height: 56px;
 	resize: none;
@@ -9805,34 +9810,34 @@ body.no-edit .bookmarks .tools {
 	margin: 12px 0 10px;
 }
 
-/* line 2162, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2167, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .edit button.done {
 	color: #0FAD8E;
 	margin-left: auto;
 }
 
-/* line 2167, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2172, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .tasks .edit button.done {
 	color: #0ECEA8;
 }
 
-/* line 2171, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2176, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .edit button.icon {
 	padding: 3px 5px;
 }
 
-/* line 2175, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2180, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .edit button.icon svg {
 	fill: #474747;
 	vertical-align: top;
 }
 
-/* line 2180, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2185, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .tasks .edit button.icon svg {
 	fill: #CCC;
 }
 
-/* line 2184, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2189, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .tasks .edit button.delete svg {
 	margin: 2px;
 	width: 20px;
@@ -9842,7 +9847,7 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ iframe widgets shared
 */
-/* line 2197, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2202, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widget.html,
 .widget.plus,
 .widget.linkedin,
@@ -9851,7 +9856,7 @@ body.no-edit .bookmarks .tools {
 	padding: 0 !important;
 }
 
-/* line 2205, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2210, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .html iframe,
 .plus iframe,
 .linkedin iframe,
@@ -9864,7 +9869,7 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Now
 */
-/* line 2221, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2226, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widgets-container .widget.now,
 .store-detail .preview .widget.now {
 	padding: 0 !important;
@@ -9873,7 +9878,7 @@ body.no-edit .bookmarks .tools {
 	background: transparent !important;
 }
 
-/* line 2229, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2234, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .cards {
 	display: flex;
 	flex-flow: row wrap;
@@ -9881,7 +9886,7 @@ body.no-edit .bookmarks .tools {
 	align-content: flex-start;
 }
 
-/* line 2236, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2241, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .card {
 	color: #333;
 	flex: 1 100%;
@@ -9893,36 +9898,36 @@ body.no-edit .bookmarks .tools {
 	box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1);
 }
 
-/* line 2247, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2252, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .now .card {
 	color: #EEE;
 	background: #333;
 }
 
-/* line 2252, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2257, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .now .card {
 	background: rgba(0, 0, 0, 0.3);
 	color: #FFF;
 }
 
-/* line 2257, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2262, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .transparent.darker .now .card {
 	background: rgba(0, 0, 0, 0.6);
 }
 
-/* line 2261, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2266, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .card:not(:first-child) {
 	z-index: 9;
 	margin-top: 15px;
 }
 
-/* line 2266, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2271, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .card.btns {
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 }
 
-/* line 2271, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2276, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .card .dismiss {
 	top: 2px;
 	right: 4px;
@@ -9933,27 +9938,27 @@ body.no-edit .bookmarks .tools {
 	font-family: Entypo;
 }
 
-/* line 2281, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2286, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .now .card .dismiss {
 	color: #CCC;
 }
 
-/* line 2285, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2290, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .card:first-child .dismiss {
 	right: 20px;
 }
 
-/* line 2289, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2294, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .card .dismiss:hover {
 	color: #555;
 }
 
-/* line 2293, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2298, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .card:hover .dismiss {
 	opacity: 1;
 }
 
-/* line 2297, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2302, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .card .icon {
 	float: left;
 	width: 80px;
@@ -9962,17 +9967,17 @@ body.no-edit .bookmarks .tools {
 	background: #F5F5F5 center no-repeat;
 }
 
-/* line 2305, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2310, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .now .card .icon {
 	background-color: #2A2A2A;
 }
 
-/* line 2309, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2314, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .now .card .icon {
 	background-color: rgba(0, 0, 0, 0.15);
 }
 
-/* line 2313, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2318, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .card h2 {
 	font-size: 14px;
 	font-weight: 400;
@@ -9986,7 +9991,7 @@ body.no-edit .bookmarks .tools {
 	font-family: Roboto;
 }
 
-/* line 2326, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2331, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .card .desc {
 	font-size: 12px;
 	overflow: hidden;
@@ -9999,7 +10004,7 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Now / Card Buttons
 */
-/* line 2342, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2347, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .cards .buttons {
 	width: 100%;
 	z-index: 10;
@@ -10013,24 +10018,24 @@ body.no-edit .bookmarks .tools {
 	box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1);
 }
 
-/* line 2355, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2360, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .now .cards .buttons {
 	background: #2A2A2A;
 	border-top-color: #222;
 }
 
-/* line 2360, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2365, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .now .cards .buttons {
 	background: rgba(0, 0, 0, 0.45);
 	border-top-color: rgba(0, 0, 0, 0.1);
 }
 
-/* line 2365, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2370, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .transparent.darker .now .cards .buttons {
 	background: rgba(0, 0, 0, 0.7);
 }
 
-/* line 2369, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2374, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .cards .buttons a {
 	flex: 1;
 	color: #333;
@@ -10042,28 +10047,28 @@ body.no-edit .bookmarks .tools {
 	text-decoration: none;
 }
 
-/* line 2380, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2385, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .now .cards .buttons a {
 	color: #EEE;
 }
 
-/* line 2384, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2389, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .cards .buttons a:hover {
 	color: #006AD1;
 	background: #F7F7F7;
 }
 
-/* line 2389, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2394, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .now .cards .buttons a:hover {
 	background: #333;
 }
 
-/* line 2393, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2398, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .now .cards .buttons a:hover {
 	background: rgba(0, 0, 0, 0.25);
 }
 
-/* line 2397, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2402, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .buttons img {
 	width: 16px;
 	height: 16px;
@@ -10076,7 +10081,7 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Now / Card Variations
 */
-/* line 2412, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2417, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .card .image {
 	clear: both;
 	width: 100%;
@@ -10087,12 +10092,12 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Now / Authorize
 */
-/* line 2426, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2431, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .authorize {
 	text-align: center;
 }
 
-/* line 2430, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2435, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .now .authorize .btn {
 	margin: 15px 0;
 	width: calc(100% - 35px);
@@ -10101,7 +10106,7 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Twitter
 */
-/* line 2442, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2447, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tweet {
 	color: #777;
 	padding: 15px;
@@ -10109,80 +10114,80 @@ body.no-edit .bookmarks .tools {
 	text-decoration: none;
 }
 
-/* line 2449, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2454, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .twitter .tweet {
 	color: #BBB;
 }
 
-/* line 2453, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2458, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tweet:hover {
 	background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 2457, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2462, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .twitter .tweet:hover {
 	background: rgba(0, 0, 0, 0.15);
 }
 
-/* line 2461, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2466, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tweet .topbar {
 	color: #333;
 	line-height: 10px;
 	margin-bottom: 9px;
 }
 
-/* line 2467, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2472, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .topbar a.user {
 	color: #333;
 	text-decoration: none;
 }
 
-/* line 2472, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2477, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .twitter .topbar a.user {
 	color: #EEE;
 }
 
-/* line 2476, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2481, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .topbar a.user:hover {
 	color: #428BCA;
 }
 
-/* line 2480, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2485, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tweet .tweeter {
 	color: #666;
 	padding-left: 5px;
 }
 
-/* line 2485, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2490, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .twitter .tweet .tweeter {
 	color: #AAA;
 }
 
-/* line 2489, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2494, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tweet .age {
 	color: #777;
 	float: right;
 	font-size: 12px;
 }
 
-/* line 2495, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2500, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .twitter .tweet .age {
 	color: #CCC;
 }
 
-/* line 2499, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2504, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tweet .content {
 	font-size: 13px;
 }
 
-/* line 2503, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2508, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tweet img {
 	float: left;
 	border-radius: 3px;
 	margin: 4px 15px 4px 0;
 }
 
-/* line 2509, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2514, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tweet .tools {
 	font-size: 12px;
 	margin-top: 5px;
@@ -10190,7 +10195,7 @@ body.no-edit .bookmarks .tools {
 	margin-bottom: -7px;
 }
 
-/* line 2516, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2521, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tools a {
 	opacity: 0;
 	color: #777;
@@ -10198,22 +10203,22 @@ body.no-edit .bookmarks .tools {
 	text-decoration: none;
 }
 
-/* line 2523, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2528, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .twitter .tools a {
 	color: #BBB;
 }
 
-/* line 2527, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2532, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tools a:hover {
 	color: #3E85C2;
 }
 
-/* line 2531, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2536, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tweet:hover .tools a {
 	opacity: 1;
 }
 
-/* line 2535, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2540, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tools a:before {
 	font-size: 14px;
 	line-height: 15px;
@@ -10222,22 +10227,22 @@ body.no-edit .bookmarks .tools {
 	vertical-align: bottom;
 }
 
-/* line 2543, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2548, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tools .reply:before {
 	content: "\e60a";
 }
 
-/* line 2547, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2552, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tools .retweet:before {
 	content: "\e68e";
 }
 
-/* line 2551, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2556, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tools .favorite:before {
 	content: "\e61b";
 }
 
-/* line 2555, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2560, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .tools .more {
 	float: left;
 }
@@ -10245,20 +10250,20 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Twitter / Authorize & No Tweets
 */
-/* line 2566, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2571, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .no-tweets {
 	padding: 25px 0;
 	text-align: center;
 	font-family: Open Sans, sans-serif;
 }
 
-/* line 2572, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2577, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .authorize {
 	padding: 20px;
 	text-align: center;
 }
 
-/* line 2577, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2582, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .twitter .authorize .btn {
 	width: 100%;
 	margin-top: 15px;
@@ -10267,12 +10272,12 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Calculator
 */
-/* line 2589, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2594, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widget.calc {
 	padding: 0 !important;
 }
 
-/* line 2593, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2598, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calc .display {
 	width: 100%;
 	font-size: 35px;
@@ -10282,13 +10287,13 @@ body.no-edit .bookmarks .tools {
 	font-family: Open Sans, sans-serif;
 }
 
-/* line 2602, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2607, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calc .buttons {
 	display: flex;
 	flex-flow: row wrap;
 }
 
-/* line 2607, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2612, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calc button {
 	border: 0;
 	margin: 0;
@@ -10304,63 +10309,63 @@ body.no-edit .bookmarks .tools {
 	box-shadow: inset 1px 1px rgba(0, 0, 0, 0.06);
 }
 
-/* line 2622, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2627, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .calc button {
 	color: #EEE;
 	background: #2A2A2A;
 	box-shadow: inset 1px 1px rgba(0, 0, 0, 0.15);
 }
 
-/* line 2628, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2633, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .calc button {
 	background: rgba(0, 0, 0, 0.3);
 }
 
-/* line 2632, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2637, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calc .buttons button:hover {
 	background: #8BE;
 	box-shadow: inset 1px 1px 0 0 rgba(0, 0, 0, 0.06), inset -1px 0 0 rgba(0, 0, 0, 0.06);
 }
 
-/* line 2637, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2642, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calc .buttons button:active,
 .calc button[data-id="equals"] {
 	background: #67A9E2;
 }
 
-/* line 2642, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2647, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .calc .buttons button:hover,
 .dark .calc button[data-id="equals"] {
 	background: #1565C0;
 }
 
-/* line 2647, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2652, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .calc .buttons button:hover,
 .dark.transparent .calc button[data-id="equals"] {
 	background: rgba(21, 101, 192, 0.6);
 }
 
-/* line 2652, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2657, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .calc .buttons button:active {
 	background: #0D47A1;
 }
 
-/* line 2656, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2661, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .calc .buttons button:active {
 	background: #1565C0;
 }
 
-/* line 2660, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2665, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calc button:hover + button:not(:nth-child(4n + 1)) {
 	box-shadow: inset 0 1px rgba(0, 0, 0, 0.06);
 }
 
-/* line 2664, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2669, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calc button[data-id="minus"] {
 	font-size: 20px;
 }
 
-/* line 2668, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2673, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calc button.larger {
 	font-size: 30px;
 }
@@ -10368,7 +10373,7 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Calculator / Medium
 */
-/* line 2679, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2684, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .calc.medium button[data-id="equals"] {
 	width: 50%;
 }
@@ -10376,14 +10381,14 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ YouTube
 */
-/* line 2690, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2695, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .searchbox {
 	overflow: hidden;
 	border-radius: 4px;
 	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.2);
 }
 
-/* line 2696, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2701, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .searchbox input {
 	float: left;
 	border-radius: 0;
@@ -10393,22 +10398,22 @@ body.no-edit .bookmarks .tools {
 	background: #F5F5F5 !important;
 }
 
-/* line 2705, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2710, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .youtube .searchbox input {
 	background: #484848 !important;
 }
 
-/* line 2709, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2714, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .youtube .searchbox input {
 	background: rgba(0, 0, 0, 0.2) !important;
 }
 
-/* line 2713, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2718, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .searchbox input:focus {
 	background: #EEE !important;
 }
 
-/* line 2717, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2722, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .searchbox button {
 	border: 0;
 	outline: 0;
@@ -10423,38 +10428,38 @@ body.no-edit .bookmarks .tools {
 	transition-property: color, background-color;
 }
 
-/* line 2731, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2736, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .youtube .searchbox button {
 	color: #EEE;
 	background: #484848;
 }
 
-/* line 2736, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2741, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .youtube .searchbox button {
 	background: rgba(0, 0, 0, 0.2);
 }
 
-/* line 2740, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2745, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .searchbox button:hover {
 	background: #EAEAEA;
 }
 
-/* line 2744, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2749, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .youtube .searchbox button:hover {
 	background: #303030;
 }
 
-/* line 2748, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2753, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .youtube .searchbox button:hover {
 	background: rgba(0, 0, 0, 0.3);
 }
 
-/* line 2752, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2757, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .searchbox button:active {
 	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* line 2756, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2761, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .video {
 	width: 48%;
 	overflow: hidden;
@@ -10467,32 +10472,32 @@ body.no-edit .bookmarks .tools {
 	box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.1), 1px 0 0 0 rgba(0, 0, 0, 0.05), -1px 0 0 0 rgba(0, 0, 0, 0.05);
 }
 
-/* line 2770, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2775, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .youtube .video {
 	background: #484848;
 }
 
-/* line 2774, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2779, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .youtube .video {
 	background: rgba(0, 0, 0, 0.2);
 }
 
-/* line 2778, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2783, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .video:hover {
 	background: #F9F9F9;
 }
 
-/* line 2782, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2787, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .youtube .video:hover {
 	background: #404040;
 }
 
-/* line 2786, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2791, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .video:nth-child(2n) {
 	float: right;
 }
 
-/* line 2790, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2795, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .video .thumb {
 	width: 100%;
 	position: relative;
@@ -10502,7 +10507,7 @@ body.no-edit .bookmarks .tools {
 	box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.2);
 }
 
-/* line 2799, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2804, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .video .thumb:after {
 	right: 0;
 	bottom: 0;
@@ -10516,7 +10521,7 @@ body.no-edit .bookmarks .tools {
 	background: rgba(0, 0, 0, 0.7);
 }
 
-/* line 2812, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2817, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .video h2 {
 	color: #333;
 	height: 40px;
@@ -10528,22 +10533,22 @@ body.no-edit .bookmarks .tools {
 	font-family: Open Sans, sans-serif;
 }
 
-/* line 2823, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2828, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .youtube .video h2 {
 	color: #EEE;
 }
 
-/* line 2827, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2832, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .video:hover h2 {
 	color: #28C;
 }
 
-/* line 2831, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2836, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .youtube .video:hover h2 {
 	color: #BBB;
 }
 
-/* line 2835, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2840, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .video span {
 	color: #888;
 	padding: 0 8px;
@@ -10555,22 +10560,22 @@ body.no-edit .bookmarks .tools {
 	text-overflow: ellipsis;
 }
 
-/* line 2846, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2851, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .youtube .video span {
 	color: #AAA;
 }
 
-/* line 2850, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2855, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .youtube .video span {
 	color: #DDD;
 }
 
-/* line 2854, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2859, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .video .views {
 	float: right;
 }
 
-/* line 2858, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2863, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .featured.video {
 	width: 100%;
 	display: block;
@@ -10578,7 +10583,7 @@ body.no-edit .bookmarks .tools {
 	margin-bottom: 5px;
 }
 
-/* line 2865, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2870, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .featured.video h2 {
 	height: auto;
 	padding: 0 8px;
@@ -10587,7 +10592,7 @@ body.no-edit .bookmarks .tools {
 	margin-bottom: 5px;
 }
 
-/* line 2873, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2878, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .youtube .featured.video .views {
 	font-size: 13px;
 }
@@ -10595,7 +10600,7 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Quotes
 */
-/* line 2887, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2892, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .quotes blockquote {
 	border: 0;
 	margin: 0;
@@ -10606,24 +10611,24 @@ body.no-edit .bookmarks .tools {
 	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
-/* line 2897, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2902, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .quotes blockquote {
 	color: #DDD;
 }
 
-/* line 2901, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2906, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .quotes blockquote {
 	color: #EEE;
 }
 
-/* line 2905, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2910, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .quotes blockquote > a {
 	color: inherit;
 	display: block;
 	text-decoration: none;
 }
 
-/* line 2911, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2916, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .quotes blockquote p {
 	font: inherit;
 	font-style: italic;
@@ -10632,33 +10637,33 @@ body.no-edit .bookmarks .tools {
 	white-space: pre-wrap;
 }
 
-/* line 2919, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2924, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .quotes blockquote p.no-quotes {
 	margin-top: 8px;
 }
 
-/* line 2923, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2928, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .quotes blockquote p:not(.no-quotes):before {
 	content: "\201C";
 }
 
-/* line 2927, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2932, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .quotes blockquote p:not(.no-quotes):after {
 	content: "\201D";
 }
 
-/* line 2931, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2936, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .quotes blockquote footer {
 	font-size: 14px;
 	text-align: right;
 }
 
-/* line 2936, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2941, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .quotes blockquote p.no-quotes + footer {
 	margin-bottom: -12px;
 }
 
-/* line 2940, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2945, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .quotes footer cite {
 	color: #444;
 	overflow: hidden;
@@ -10669,17 +10674,17 @@ body.no-edit .bookmarks .tools {
 	max-width: calc(100% - 70px);
 }
 
-/* line 2950, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2955, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .quotes footer cite {
 	color: #BBB;
 }
 
-/* line 2954, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2959, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .quotes footer cite {
 	color: #DDD;
 }
 
-/* line 2958, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2963, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .quotes footer span {
 	opacity: 0;
 	float: left;
@@ -10689,12 +10694,12 @@ body.no-edit .bookmarks .tools {
 	transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* line 2967, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2972, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .quotes:hover footer span {
 	opacity: 1;
 }
 
-/* line 2971, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2976, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .quotes footer .tweet:before {
 	color: #55ACEE;
 	font-size: 20px;
@@ -10703,19 +10708,19 @@ body.no-edit .bookmarks .tools {
 	font-family: Entypo;
 }
 
-/* line 2979, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2984, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .quotes footer .refresh svg {
 	fill: #444;
 	width: 20px;
 	height: 20px;
 }
 
-/* line 2985, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2990, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .quotes footer .refresh svg {
 	fill: #BBB;
 }
 
-/* line 2989, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 2994, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .quotes footer .refresh:hover svg {
 	fill: #222;
 }
@@ -10723,25 +10728,25 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Site Link
 */
-/* line 3002, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3007, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widget.sitelink {
 	padding: 0 !important;
 	border-radius: 4px 4px 2px 2px;
 }
 
-/* line 3007, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3012, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .sitelink a {
 	display: block;
 	text-decoration: none;
 }
 
-/* line 3011, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3016, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widget.sitelink h2.header {
 	padding: 12px;
 	margin: 0 !important;
 }
 
-/* line 3016, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3021, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .sitelink .thumbnail {
 	display: block;
 	overflow: hidden;
@@ -10752,17 +10757,17 @@ body.no-edit .bookmarks .tools {
 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
-/* line 3026, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3031, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .sitelink .thumbnail {
 	background: #222;
 }
 
-/* line 3030, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3035, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .sitelink .thumbnail:not(.fill) {
 	background-image: none !important;
 }
 
-/* line 3034, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3039, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .sitelink .thumbnail img {
 	top: 0;
 	left: 0;
@@ -10774,14 +10779,14 @@ body.no-edit .bookmarks .tools {
 	position: absolute;
 }
 
-/* line 3045, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3050, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .sitelink .thumbnail.fill {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 }
 
-/* line 3051, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3056, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .sitelink .thumbnail.fill img {
 	display: none;
 }
@@ -10789,23 +10794,23 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ System Stats
 */
-/* line 3064, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3069, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .stats {
 	font-family: Roboto, sans-serif !important;
 }
 
-/* line 3068, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3073, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .stats .header {
 	margin-bottom: 15px;
 }
 
-/* line 3072, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3077, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .stats .cpu,
 .stats .memory {
 	margin-bottom: 20px;
 }
 
-/* line 3077, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3082, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .stats .label {
 	width: 60px;
 	padding-right: 5px;
@@ -10813,7 +10818,7 @@ body.no-edit .bookmarks .tools {
 	vertical-align: middle;
 }
 
-/* line 3084, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3089, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .stats h3 {
 	font-size: 13px;
 	font-weight: 500;
@@ -10822,7 +10827,7 @@ body.no-edit .bookmarks .tools {
 	font-family: inherit;
 }
 
-/* line 3092, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3097, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .stats .icon {
 	width: 100%;
 	opacity: .6;
@@ -10830,27 +10835,27 @@ body.no-edit .bookmarks .tools {
 	display: inline-block;
 }
 
-/* line 3099, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3104, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .stats .icon {
 	fill: #CCC;
 	opacity: 1;
 }
 
-/* line 3104, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3109, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .stats .status {
 	display: inline-block;
 	vertical-align: middle;
 	width: calc(100% - 65px);
 }
 
-/* line 3110, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3115, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .stats .name,
 .stats .summary {
 	font-size: 13px;
 	margin-bottom: 2px;
 }
 
-/* line 3116, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3121, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .stats progress {
 	border: 0;
 	width: 100%;
@@ -10864,19 +10869,19 @@ body.no-edit .bookmarks .tools {
 	-webkit-appearance: none;
 }
 
-/* line 3129, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3134, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .stats progress::-webkit-progress-value {
 	background: #2196F3;
 	transition: width .5s ease;
 }
 
-/* line 3134, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3139, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .stats progress::-moz-progress-bar {
 	background: #2196F3;
 	transition: width .5s ease;
 }
 
-/* line 3139, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3144, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .stats progress::-webkit-progress-bar {
 	background: inherit;
 }
@@ -10884,14 +10889,14 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Search
 */
-/* line 3152, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3157, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widget.search form {
 	height: 50px;
 	margin: -15px;
 	position: relative;
 }
 
-/* line 3158, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3163, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widget.search .searchbox {
 	top: 0;
 	left: 0;
@@ -10907,13 +10912,13 @@ body.no-edit .bookmarks .tools {
 	padding: 6px 18px !important;
 }
 
-/* line 3173, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3178, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widget.search .searchbox:focus,
 .widget.search .searchbox:active {
 	background: rgba(0, 0, 0, 0.015) !important;
 }
 
-/* line 3178, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3183, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widget.search button.submit {
 	top: 0;
 	right: 0;
@@ -10923,17 +10928,17 @@ body.no-edit .bookmarks .tools {
 	position: absolute;
 }
 
-/* line 3187, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3192, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .widget.search button.submit {
 	background: #1976D2;
 }
 
-/* line 3191, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3196, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .widget.search button.submit {
 	background: rgba(25, 118, 210, 0.6);
 }
 
-/* line 3195, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3200, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widget.search.tiny form {
 	height: 65px;
 }
@@ -10941,24 +10946,24 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Pushbullet
 */
-/* line 3208, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3213, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widget.pushbullet {
 	padding: 0 !important;
 	font-family: Roboto, sans-serif !important;
 }
 
-/* line 3213, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3218, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .widget.pushbullet {
 	background: #2A2A2A;
 }
 
-/* line 3217, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3222, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet a {
 	color: inherit;
 	text-decoration: none;
 }
 
-/* line 3222, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3227, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet header {
 	width: 100%;
 	padding: 0 25px;
@@ -10970,29 +10975,29 @@ body.no-edit .bookmarks .tools {
 	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
 }
 
-/* line 3233, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3238, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .pushbullet header {
 	background: #3A3A3A;
 }
 
-/* line 3237, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3242, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .pushbullet header {
 	background: rgba(0, 0, 0, 0.2);
 }
 
-/* line 3241, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3246, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet .items {
 	padding: 8px 0;
 	overflow: auto;
 	max-height: 400px;
 }
 
-/* line 3247, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3252, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .grid .pushbullet .items {
 	max-height: calc(100% - 55px);
 }
 
-/* line 3251, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3256, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet .items .item {
 	display: block;
 	min-height: 68px;
@@ -11000,12 +11005,12 @@ body.no-edit .bookmarks .tools {
 	transition: background-color .2s ease;
 }
 
-/* line 3258, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3263, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet .items .item:hover {
 	background: rgba(0, 0, 0, 0.03);
 }
 
-/* line 3262, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3267, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet .item .thumb {
 	width: 40px;
 	float: left;
@@ -11020,29 +11025,29 @@ body.no-edit .bookmarks .tools {
 	background-repeat: no-repeat;
 }
 
-/* line 3276, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3281, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .pushbullet .item .thumb {
 	background-color: #555;
 }
 
-/* line 3280, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3285, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet .item .sender {
 	font-weight: 500;
 }
 
-/* line 3284, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3289, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet .item .date {
 	color: #666;
 	float: right;
 	font-size: 13px;
 }
 
-/* line 3290, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3295, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .pushbullet .item .date {
 	color: #BBB;
 }
 
-/* line 3294, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3299, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet .item .body {
 	margin: 0;
 	display: block;
@@ -11051,13 +11056,13 @@ body.no-edit .bookmarks .tools {
 	overflow: hidden;
 }
 
-/* line 3302, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3307, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet .item .body .title,
 .pushbullet .item .body.title span {
 	font-weight: 500;
 }
 
-/* line 3307, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3312, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet .item .link,
 .pushbullet .item .body.title {
 	overflow: hidden;
@@ -11065,7 +11070,7 @@ body.no-edit .bookmarks .tools {
 	text-overflow: ellipsis;
 }
 
-/* line 3314, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3319, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet .item .image {
 	width: 185px;
 	height: 115px;
@@ -11082,7 +11087,7 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Pushbullet / Notice pages
 */
-/* line 3336, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3341, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet .notice {
 	color: #888;
 	height: 400px;
@@ -11091,37 +11096,37 @@ body.no-edit .bookmarks .tools {
 	padding: 85px 10% 20px;
 }
 
-/* line 3344, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3349, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .pushbullet .notice {
 	color: #BBB;
 	background: #282828;
 }
 
-/* line 3349, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3354, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .pushbullet .notice {
 	color: #DDD;
 	background: rgba(0, 0, 0, 0.2);
 }
 
-/* line 3354, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3359, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet .notice.no-key {
 	padding-top: 55px;
 }
 
-/* line 3358, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3363, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet .notice svg {
 	width: 150px;
 	height: 150px;
 	fill: currentColor;
 }
 
-/* line 3364, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3369, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet .notice p {
 	line-height: 22px;
 	margin: 5px 0 15px;
 }
 
-/* line 3369, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3374, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pushbullet .notice button {
 	min-width: 90px;
 	margin-top: 10px;
@@ -11130,18 +11135,18 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Directions
 */
-/* line 3383, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3388, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widget.directions {
 	padding: 0 !important;
 	font-family: Roboto, sans-serif !important;
 }
 
-/* line 3388, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3393, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .grid .directions {
 	overflow-y: auto;
 }
 
-/* line 3392, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3397, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .methods {
 	height: 46px;
 	display: flex;
@@ -11149,17 +11154,17 @@ body.no-edit .bookmarks .tools {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-/* line 3399, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3404, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .directions .methods {
 	background: #484848;
 }
 
-/* line 3403, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3408, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .directions .methods {
 	background: rgba(0, 0, 0, 0.3);
 }
 
-/* line 3407, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3412, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .methods button {
 	flex: 1;
 	margin: 0;
@@ -11170,17 +11175,17 @@ body.no-edit .bookmarks .tools {
 	border-bottom: 2px solid transparent;
 }
 
-/* line 3417, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3422, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .directions .methods button {
 	color: #BBB;
 }
 
-/* line 3421, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3426, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .methods button:hover {
 	border-bottom-color: rgba(33, 150, 243, 0.5);
 }
 
-/* line 3425, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3430, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .methods button:hover,
 .directions .methods button:focus,
 .directions .methods button:active {
@@ -11188,25 +11193,25 @@ body.no-edit .bookmarks .tools {
 	background: initial;
 }
 
-/* line 3432, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3437, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .directions .methods button:hover,
 .dark .directions .methods button:focus,
 .dark .directions .methods button:active {
 	color: #EEE;
 }
 
-/* line 3438, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3443, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .methods button.active {
 	color: #2196F3;
 	border-bottom-color: currentColor;
 }
 
-/* line 3443, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3448, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .directions .methods button.active {
 	color: #42A5F5;
 }
 
-/* line 3447, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3452, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions input {
 	width: 100%;
 	font-size: 14px;
@@ -11215,32 +11220,32 @@ body.no-edit .bookmarks .tools {
 	padding: 15px 20px !important;
 }
 
-/* line 3455, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3460, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions input.to,
 .directions input.to:hover,
 .directions input.to:focus {
 	border-top: 1px solid #E2E2E2 !important;
 }
 
-/* line 3461, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3466, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .directions input.to,
 .dark .directions input.to:hover,
 .dark .directions input.to:focus {
 	border-top-color: rgba(0, 0, 0, 0.2) !important;
 }
 
-/* line 3467, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3472, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .map {
 	width: 100%;
 }
 
-/* line 3471, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3476, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .map-wrapper {
 	display: block;
 	overflow: hidden;
 }
 
-/* line 3476, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3481, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .notice {
 	height: 0;
 	color: #888;
@@ -11251,35 +11256,35 @@ body.no-edit .bookmarks .tools {
 	background-color: #F5F5F5;
 }
 
-/* line 3486, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3491, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .directions .notice {
 	background-color: #2A2A2A;
 }
 
-/* line 3490, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3495, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .directions .notice {
 	color: #DDD;
 	background: rgba(0, 0, 0, 0.3);
 }
 
-/* line 3495, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3500, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .notice.visible {
 	height: auto;
 	padding: 30px 10% 20px;
 	border-top: 1px solid #E2E2E2;
 }
 
-/* line 3501, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3506, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .directions .notice.visible {
 	border-top-color: #222;
 }
 
-/* line 3505, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3510, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .directions .notice.visible {
 	border-top-color: rgba(0, 0, 0, 0.15);
 }
 
-/* line 3509, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3514, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .notice p {
 	line-height: 22px;
 	margin: 5px 0 15px;
@@ -11288,22 +11293,22 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Directions / Routes
 */
-/* line 3523, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3528, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .route {
 	overflow: hidden;
 }
 
-/* line 3527, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3532, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .results .route:not(:last-child) {
 	border-bottom: 1px solid #E2E2E2;
 }
 
-/* line 3531, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3536, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .directions .results .route:not(:last-child) {
 	border-bottom-color: #2A2A2A;
 }
 
-/* line 3535, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3540, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .route .summary {
 	cursor: pointer;
 	font-size: 14px;
@@ -11314,7 +11319,7 @@ body.no-edit .bookmarks .tools {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-/* line 3545, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3550, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .route .summary a {
 	top: 18px;
 	opacity: 0;
@@ -11324,30 +11329,30 @@ body.no-edit .bookmarks .tools {
 	transition: opacity .15s ease;
 }
 
-/* line 3554, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3559, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .route .summary:hover a {
 	opacity: 1;
 }
 
-/* line 3558, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3563, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .route .summary a:hover {
 	color: #444;
 }
 
-/* line 3562, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3567, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .route .summary svg {
 	width: 24px;
 	height: 24px;
 	fill: currentColor;
 }
 
-/* line 3568, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3573, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .route .time {
 	color: #4CAF50;
 	font-weight: 500;
 }
 
-/* line 3573, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3578, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .steps {
 	padding: 0;
 	max-height: 0;
@@ -11357,17 +11362,17 @@ body.no-edit .bookmarks .tools {
 	transition: all .2s ease;
 }
 
-/* line 3582, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3587, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .directions .steps {
 	background: #2A2A2A;
 }
 
-/* line 3586, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3591, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .directions .steps {
 	background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* line 3590, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3595, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .route.active .steps,
 .directions .route:focus .steps {
 	overflow: auto;
@@ -11375,38 +11380,38 @@ body.no-edit .bookmarks .tools {
 	max-height: 350px;
 }
 
-/* line 3597, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3602, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .steps li {
 	display: flex;
 	font-size: 13px;
 	padding: 5px 18px;
 }
 
-/* line 3603, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3608, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .steps li b {
 	font-weight: 500;
 }
 
-/* line 3607, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3612, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .steps .description {
 	flex: 1;
 	min-width: 0;
 }
 
-/* line 3612, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3617, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .steps .description div {
 	text-indent: 10px;
 	font-size: 12px !important;
 }
 
-/* line 3617, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3622, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .steps li .distance {
 	flex-shrink: 0;
 	font-weight: 500;
 	margin-left: 10px;
 }
 
-/* line 3623, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3628, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .directions .steps li.copyrights {
 	display: block;
 	font-size: 11px;
@@ -11416,13 +11421,13 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Pocket
 */
-/* line 3638, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3643, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .widget.pocket {
 	padding: 0 !important;
 	font-family: Roboto, sans-serif !important;
 }
 
-/* line 3643, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3648, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket header {
 	width: 100%;
 	padding: 0 25px;
@@ -11433,7 +11438,7 @@ body.no-edit .bookmarks .tools {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-/* line 3653, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3658, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket header:after {
 	height: 4px;
 	content: "";
@@ -11442,35 +11447,35 @@ body.no-edit .bookmarks .tools {
 	background: linear-gradient(to right, #83EDB8 0%, #83EDB8 25%, #32BCB6 25%, #32BCB6 50%, #EF4056 50%, #EF4056 75%, #FCB64B 75%, #FCB64B 100%);
 }
 
-/* line 3661, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3666, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket a {
 	color: inherit;
 	text-decoration: none;
 }
 
-/* line 3666, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3671, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket .link {
 	font-size: 0;
 	display: block;
 	transition: background .1s ease;
 }
 
-/* line 3672, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3677, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket .link:hover {
 	background: #FAFAFA;
 }
 
-/* line 3676, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3681, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .pocket .link:hover {
 	background: #2C2C2C;
 }
 
-/* line 3680, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3685, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .pocket .link:hover {
 	background: rgba(0, 0, 0, 0.15);
 }
 
-/* line 3684, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3689, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket .link .image {
 	width: 100px;
 	height: 95px;
@@ -11478,17 +11483,17 @@ body.no-edit .bookmarks .tools {
 	background: #EAEAEA center/cover no-repeat;
 }
 
-/* line 3691, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3696, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .pocket .link .image {
 	background-color: #2A2A2A;
 }
 
-/* line 3695, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3700, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .pocket .link .image {
 	background-color: rgba(0, 0, 0, 0.15);
 }
 
-/* line 3699, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3704, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket .link .info {
 	padding: 15px 15px;
 	vertical-align: top;
@@ -11496,23 +11501,23 @@ body.no-edit .bookmarks .tools {
 	width: calc(100% - 100px);
 }
 
-/* line 3706, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3711, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket .link:not(:last-child) .info {
 	padding-bottom: 14px;
 	border-bottom: 1px solid #EEE;
 }
 
-/* line 3711, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3716, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .pocket .link:not(:last-child) .info {
 	border-bottom-color: #2A2A2A;
 }
 
-/* line 3715, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3720, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .pocket .link:not(:last-child) .info {
 	border-bottom-color: rgba(0, 0, 0, 0.2);
 }
 
-/* line 3719, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3724, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket .link .title {
 	height: 40px;
 	font-size: 14px;
@@ -11524,12 +11529,12 @@ body.no-edit .bookmarks .tools {
 	transition: color .1s ease;
 }
 
-/* line 3730, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3735, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket .link:hover .title {
 	color: #26A69A;
 }
 
-/* line 3734, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3739, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket .link .details {
 	margin: 0;
 	color: #757575;
@@ -11538,12 +11543,12 @@ body.no-edit .bookmarks .tools {
 	line-height: 15px;
 }
 
-/* line 3742, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3747, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .pocket .link .details {
 	color: #DDD;
 }
 
-/* line 3746, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3751, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket .link .details .date {
 	float: right;
 }
@@ -11551,7 +11556,7 @@ body.no-edit .bookmarks .tools {
 /*---------------------------------------------
 	/ Pocket / Notice pages
 */
-/* line 3759, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3764, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket .notice {
 	color: #888;
 	height: 400px;
@@ -11560,37 +11565,37 @@ body.no-edit .bookmarks .tools {
 	padding: 85px 10% 20px;
 }
 
-/* line 3767, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3772, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark .pocket .notice {
 	color: #BBB;
 	background: #282828;
 }
 
-/* line 3772, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3777, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .dark.transparent .pocket .notice {
 	color: #DDD;
 	background: rgba(0, 0, 0, 0.2);
 }
 
-/* line 3777, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3782, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket .notice.no-key {
 	padding-top: 55px;
 }
 
-/* line 3781, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3786, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket .notice svg {
 	width: 150px;
 	height: 150px;
 	fill: currentColor;
 }
 
-/* line 3787, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3792, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket .notice p {
 	line-height: 22px;
 	margin: 5px 0 15px;
 }
 
-/* line 3792, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3797, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket .notice button {
 	color: #FFF;
 	min-width: 90px;
@@ -11598,7 +11603,7 @@ body.no-edit .bookmarks .tools {
 	background: #EE4056;
 }
 
-/* line 3799, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
+/* line 3804, C:/Projects/iChrome/iChrome/app/css/widgets.scss */
 .pocket .notice button:active {
 	background: #E02C43;
 }
