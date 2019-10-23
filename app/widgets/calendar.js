@@ -351,6 +351,18 @@
 					if (this.config.view !== view.name) {
 						this.config.view = view.name;
 						this.utils.saveConfig();
+
+						var gcal = this.elm.children('.gcalendar');
+						if (view.name === "short1d") {
+							this.lastDate = gcal.fullCalendar('getDate');
+							gcal.fullCalendar('today');
+						}else{
+							if (this.lastDate) {
+								gcal.fullCalendar('gotoDate', this.lastDate);
+							}
+
+							this.lastDate = null;
+						}
 					}
 				}.bind(this),
 				views: {
