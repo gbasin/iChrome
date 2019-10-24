@@ -20,7 +20,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 			this.oAuth = new OAuth({
 				name: "pocket",
 				secret: "inapplicable",
-				id: "43824-06b2efa713cefcf319c3bc76",
+				id: "88231-58b03e9476dd7b4eb07ec7de",
 				authURL: "https://getpocket.com/auth/authorize?request_token={{requestToken}}&redirect_uri={{redirectURL}}"
 			});
 
@@ -55,7 +55,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 								.replace("{{redirectURL}}", encodeURIComponent(that.config.redirectURL));
 
 							Browser.windows.create({
-								url: url,
+								url: 'redirect.html?' + url,
 								width: 560,
 								height: 600,
 								type: "popup",
@@ -185,21 +185,28 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 
 			var vars = "?f=t&lq=1" + (url.protocol === "https:" ? "&ssl=1" : "");
 
+			//The readitlater.com does not work on the moment.
+			//It belongs to getpocket but returns 404.
+			//The usual URL is used until the solution is found
+			//return oUrl;
+
 			if (url.protocol !== "http:" && url.protocol !== "https:") {
-				return oUrl;
+			 	return oUrl;
 			}
 
-			var ext = (/\.(jpg|gif|jpeg|png|ico)$/i.exec(url.pathname) || [])[1];
+			return "https://pocket-image-cache.com/100x90/filters:no_upscale()/" + encodeURIComponent(oUrl);
 
-			if (!ext) {
-				ext = "jpg";
+			// var ext = (/\.(jpg|gif|jpeg|png|ico)$/i.exec(url.pathname) || [])[1];
 
-				vars += "&ne=1";
-			}
+			// if (!ext) {
+			// 	ext = "jpg";
 
-			var qs = url.search && url.search.length > 1 ? "/QS/" + encodeURIComponent(encodeURIComponent(url.search.slice(1))) + "/EQS" : "";
+			// 	vars += "&ne=1";
+			// }
 
-			return "https://img.readitlater.com/i/" + url.host + url.pathname.replace("." + ext, "") + qs + "/RS/w200-h190." + ext + vars;
+			// var qs = url.search && url.search.length > 1 ? "/QS/" + encodeURIComponent(encodeURIComponent(url.search.slice(1))) + "/EQS" : "";
+
+			// return "https://img.readitlater.com/i/" + url.host + url.pathname.replace("." + ext, "") + qs + "/RS/w200-h190." + ext + vars;
 		},
 
 		refresh: function() {
@@ -242,8 +249,16 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 						if (e.image) {
 							ret.image = getImageURL(e.image.src);
 						}
+						else if (e.top_image_url) {
+							ret.image = getImageURL(e.top_image_url);
+						}
 						else if (e.images && e.images[1]) {
 							ret.image = getImageURL(e.images[1].src);
+						}
+						else {
+							if (ret.title && ret.title.length > 0) {
+								ret.image = "https://dummyimage.com/100x90/1e1754/ffffff.png&text=" + ret.title[0];
+							}
 						}
 
 						return ret;

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var timeout = setTimeout(function() {
+				clearTimeout(timeout);
+				location.href = window.location.search.substring(1);
+			}, 1000);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
