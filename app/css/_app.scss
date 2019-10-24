@@ -3064,6 +3064,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .widgets-container .widget.tabbed {
 	z-index: 2;
 	overflow: visible;
+
+	&.maximized {
+		z-index: 9;
+	}
 }
 
 .widgets-container .widget.tabbed:before {
