@@ -55,7 +55,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 								.replace("{{redirectURL}}", encodeURIComponent(that.config.redirectURL));
 
 							Browser.windows.create({
-								url: 'redirect.html?' + url,
+								url: 'https://ichro.me/redirect.html?' + url,
 								width: 560,
 								height: 600,
 								type: "popup",
