@@ -1930,7 +1930,7 @@ header.toolbar {
 	/ Announcements
 */
 dialog.announcements {
-	max-width: 450px;
+	max-width: 900px; /* was 450 */
 }
 
 dialog.announcements .content {
@@ -2649,6 +2649,7 @@ body > .widgets-container {
 
 	&.maximized {
 		width: auto;
+		z-index: 9;
 	}
 }
 
@@ -2810,6 +2811,11 @@ body.resizing .grid {
 .transparent.darker .widget-preview .widget,
 .transparent.darker .widgets-container .widget {
 	background: rgba(0, 0, 0, .6);
+}
+
+.transparent.darker .widgets-container .widget.settings,
+.transparent.dark .widgets-container .widget.settings {
+	background: black;
 }
 
 @keyframes widget-box-shadow {
@@ -3058,6 +3064,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .widgets-container .widget.tabbed {
 	z-index: 2;
 	overflow: visible;
+
+	&.maximized {
+		z-index: 9;
+	}
 }
 
 .widgets-container .widget.tabbed:before {

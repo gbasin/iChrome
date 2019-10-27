@@ -44,7 +44,7 @@ define(["i18n/i18n"], function(Translate) {
 						config: {
 							feeds: [
 								{
-									url:  "http://feeds.gawker.com/lifehacker/full",
+									url:  "https://lifehacker.com/rss",
 									name: "Lifehacker"
 								}
 							]

@@ -15,7 +15,13 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, Wid
 				images: "true",
 				desc: "true",
 				size: "variable",
-				url: "http://feeds.gawker.com/lifehacker/full"
+				feeds: [
+					{
+						url:  "https://lifehacker.com/rss",
+						name: "Lifehacker"
+					}
+				]
+	//url: "https://lifehacker.com/rss"
 			},
 
 			data: {
@@ -74,6 +80,27 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, Wid
 				delete this.config.url;
 
 				this.saveConfig();
+			}
+			else {
+				//Migrate to new default settings
+				var isUpdated = false;
+				if (this.config.feeds) {
+					this.config.feeds.forEach(function(e) {
+						if (e.url === "http://feeds.gawker.com/lifehacker/full") {
+							e.url = "https://lifehacker.com/rss";
+							isUpdated = true;
+						}
+					});
+				}
+
+				if (this.config.url) {
+					delete this.config.url;
+					isUpdated = true;
+				}
+
+				if (isUpdated) {
+					this.saveConfig();
+				}
 			}
 
 			this.set("activeTab", 0);
@@ -216,11 +243,11 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, Wid
 		 */
 		getAll: function() {
 			var feeds = _.uniq(_.map(this.config.feeds, function(e) {
-				return parseUrl(e.url || "http://feeds.gawker.com/lifehacker/full");
+				return parseUrl(e.url || "https://lifehacker.com/rss");
 			}));
 
 			if (!feeds.length) {
-				feeds = [this.config.url || "http://feeds.gawker.com/lifehacker/full"];
+				feeds = [this.config.url || "https://lifehacker.com/rss"];
 			}
 
 
@@ -258,11 +285,16 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, Wid
 				return this.set("activeTab", 0);
 			}
 
+			if (this.config.feeds && activeTab >= this.config.feeds.length) {
+				//The active tab is deleted in the settings
+				return this.set("activeTab", 0);
+			}
+
 			if (activeTab === "all") {
 				return this.getAll();
 			}
 
-			var feedURL = (this.config.feeds && this.config.feeds[activeTab].url) || this.config.url || "http://feeds.gawker.com/lifehacker/full";
+			var feedURL = (this.config.feeds && this.config.feeds[activeTab].url) || this.config.url || "https://lifehacker.com/rss";
 
 			var maximized = this.get("state") === "maximized";
 

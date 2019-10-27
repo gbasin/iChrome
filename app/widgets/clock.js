@@ -236,6 +236,9 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 
 				html += '</div><div class="date">' + date + "</div>";
 			}
+			else {
+				html += "</div>";
+			}
 
 			if (returnHTML) {
 				return html;
@@ -727,6 +730,8 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 			this.view.data = this.data || {};
 
 			this.view.render();
+
+			this.elm.addClass("tabbed");
 		}
 	};
 });

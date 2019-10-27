@@ -52,6 +52,21 @@
 				type: "time",
 				label: "i18n.settings.range.end",
 				nicename: "endTime"
+			},
+			{
+				type: "radio",
+				label: "i18n.settings.timezone.title",
+				nicename: "timezone",
+				options: {
+					calendar: "i18n.settings.timezone.calendar",
+					local: "i18n.settings.timezone.local",
+				},
+			},
+			{
+				type: "text",
+				nicename: "textcolor",
+				label: "i18n.settings.text.color",
+				placeholder: "i18n.settings.text.placeholder"
 			}
 		],
 		config: {
@@ -61,7 +76,8 @@
 			view: "agenda1d",
 			startTime: "08:00",
 			endTime: "22:00",
-			calendars: []
+			calendars: [],
+			timezone: "local"
 		},
 		data: {
 			events: [
@@ -170,11 +186,15 @@
 					params = {
 						singleEvents: true,
 						orderBy: "startTime",
-						timeZone: -(new Date().getTimezoneOffset() / 60),
 						timeMin: moment().startOf("day").format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
 						timeMax: moment().startOf("day").add(14, 'days').format("YYYY-MM-DDTHH:mm:ss.SSSZ"),
 						fields: "summary,items(description,htmlLink,id,location,start,end,summary)"
 					};
+
+					if (this.config.timezone && this.config.timezone === "local") {
+						try { params.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch {};
+					}
+					
 
 				if (this.config.show === "today") {
 					params.timeMax = moment().endOf("day").format("YYYY-MM-DDTHH:mm:ss.SSSZ");
@@ -331,6 +351,18 @@
 					if (this.config.view !== view.name) {
 						this.config.view = view.name;
 						this.utils.saveConfig();
+
+						var gcal = this.elm.children('.gcalendar');
+						if (view.name === "short1d") {
+							this.lastDate = gcal.fullCalendar('getDate');
+							gcal.fullCalendar('today');
+						}else{
+							if (this.lastDate) {
+								gcal.fullCalendar('gotoDate', this.lastDate);
+							}
+
+							this.lastDate = null;
+						}
 					}
 				}.bind(this),
 				views: {
@@ -352,6 +384,10 @@
 					}
 				}    
 			};
+
+			if (_.isString(this.config.textcolor) && this.config.textcolor !== '') {
+				settings.eventTextColor = this.config.textcolor;
+			}
 
 			if (this.config.startTime !== this.config.endTime) {
 				settings.minTime = this.config.startTime;
