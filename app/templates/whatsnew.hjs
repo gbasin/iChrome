@@ -1,13 +1,25 @@
-<p>Welcome to iChrome version 1.41!</p>
+<p>Welcome to iChrome version 1.42!</p>
+
+<p>Multiple bugs you reporeted are fixed. Please continue to inform us about the bugs in the UserVoice. The clear explanation, screenshots and screencasts are very helpful for us to repeat and fix the issue.</p>
 
 <section>
-
 <p>What's New:</p>
 <ul>
-<li>NEW: BBC News added as a secondary option for the news widget!</li>
-<li>NEW: Revamped onboarding process and default widgets for new users!</li>
-<li>NEW: Widgets now sorted by popularity in the Add Widget menu!</li>
-<li>FIXED: Absent RSS widget thumbnails bug.</li>
+<li>FIXED: Absent "resize" rulers in the Clock widget in the 24-hours mode in the Tiny size</li>
+<li>FIXED: The background pictures were blank periodically</li>
+<li>FIXED: The Pocket widget authentication issue is fixed</li>
+<li>FIXED: The Pocket widget stopped to show the items thumbnail after the Pocket server update</li>
+<li>IMPROVED: The Pocket widget now shows the first character placeholder in case the item image is not available (as it is implemented in the Pocket GUI)</li>
+<li>FIXED: Some wigets overlapped the 'maximized' Keep widget.</li>
+<li>IMPROVED: The Calendar widget now translates the events to the browser local time independently on the Google Calendar GUI settings. Note: New Calendar Settings option still allows to use calendar's timezone as before</li>
+<li>FIXED: The Calendar widget background color was 10% ligher than the Google Calendar GUI colors and it could make the text unreadable</li>
+<li>ADDED: On your request the events text color option is added to the Calendar widget settings</li>
+<li>FIXED: The default Lifehacker feed did not work in the RSS widget</li>
+<li>FIXED: The RSS widget URL was not stored in some situations (Note: please do not forget to press "Enter" when adding new RSS widget feed URL in the Settings)</li>
+<li>FIXED: The RSS widget did not update the settings in the database if the active tab URL is deleted in the Settings</li>
+<li>FIXED: Some wigets overlapped the 'maximized' News widget.</li>
+<li>FIXED: Absent trash icon in the Drive widget if the authentication is not passed</li>
+<li>FIXED: The Drive widget authentication issue is fixed</li>
 </ul>
 
 </section>
