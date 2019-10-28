@@ -183,7 +183,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api", "oauth"], funct
 
 			var url = new URL(oUrl);
 
-			var vars = "?f=t&lq=1" + (url.protocol === "https:" ? "&ssl=1" : "");
+			//var vars = "?f=t&lq=1" + (url.protocol === "https:" ? "&ssl=1" : "");
 
 			//The readitlater.com does not work on the moment.
 			//It belongs to getpocket but returns 404.
