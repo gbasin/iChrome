@@ -731,7 +731,7 @@ define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _,
 
 			this.view.render();
 
-			this.elm.addClass("tabbed");
+			//this.elm.addClass("tabbed");
 		}
 	};
 });
