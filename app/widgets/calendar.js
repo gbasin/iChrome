@@ -192,7 +192,7 @@
 					};
 
 					if (this.config.timezone && this.config.timezone === "local") {
-						try { params.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch {};
+						try { params.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch(e) {}
 					}
 					
 
