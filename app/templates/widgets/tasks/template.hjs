@@ -2,9 +2,14 @@
 
 <div class="items">
 	{{#items}}
-		<div class="item" data-id="{{id}}">
+		<div class="item" data-id="{{id}}" data-level="{{parent}}">
 			{{>item}}
 		</div>
+		{{#children}}
+			<div class="item" data-id="{{id}}" data-level="{{parent}}" style="margin-left: 15px">
+				{{>item}}
+			</div>
+		{{/children}}
 	{{/items}}
 	{{^items}}
 		{{#authorize}}

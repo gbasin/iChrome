@@ -105,17 +105,22 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 				return false;
 			}
 
+			var url = "https://www.googleapis.com/tasks/v1/lists/" + this.config.list + "/tasks?fields=items(completed%2Cdue%2Cid%2Cnotes%2Cstatus%2Ctitle%2Cposition%2Cparent)"; 
+			url += "&nc=" + new Date().getTime();
+
 			this.oAuth.ajax({
 				type: "GET",
 				dataType: "json",
-				url: "https://www.googleapis.com/tasks/v1/lists/" + this.config.list + "/tasks?fields=items(completed%2Cdue%2Cid%2Cnotes%2Cstatus%2Ctitle)",
+				url: url,
 				success: function(d) {
 					if (d && d.items) {
 						var items = d.items.map(function(e) {
 							var ret = {
 								id: e.id,
 								title: e.title.trim(),
-								done: e.status === "completed"
+								done: e.status === "completed",
+								parent: e.parent || '',
+								pos: e.position || ''
 							};
 
 							if (e.notes) {
@@ -129,6 +134,29 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 
 							return ret;
 						});
+
+						var groupedItems = _.groupBy(items, function(item) {
+							return item.parent;
+						});
+
+						var order = function(i) {
+							return i.sort(function(a, b) {
+								if (a.parent < b.parent) return -1;
+								if (a.parent > b.parent) return 1;
+								if (a.pos < b.pos) return -1;
+								if (a.pos > b.pos) return 1;
+								return 0;
+							});
+						};
+
+						items = order(groupedItems[''] || []);
+						items.forEach(function(e) {
+							var children = groupedItems[e.id];
+							if (children) {
+								e.children = order(children);
+							}
+						});
+
 
 						this.data = {
 							items: items
@@ -177,7 +205,6 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 				}
 			}
 
-
 			var item;
 
 			if (elm.is(this.addForm)) {
@@ -187,9 +214,15 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 					dta.due = new Date(dta.due);
 				}
 
+				var lastitem = _.last(that.data.items);
+				var url = "https://www.googleapis.com/tasks/v1/lists/" + this.config.list + "/tasks?fields=id";
+				if (lastitem) {
+					url += "&previous=" + lastitem.id;
+				}
+
 				oAuth.ajax({
 					type: "POST",
-					url: "https://www.googleapis.com/tasks/v1/lists/" + this.config.list + "/tasks?fields=id&previous=" + _.last(that.data.items).id,
+					url: url,
 					data: JSON.stringify(dta),
 					contentType: "application/json",
 					complete: function(xhr) {
@@ -221,10 +254,8 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 			else {
 				var id = elm.attr("data-id");
 
-				item = _.find(this.data.items, {
-					id: id
-				});
-
+				item = that.findItem(id);
+				
 				_.assign(item, dta);
 
 				this.utils.saveData(this.data);
@@ -244,6 +275,24 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 					elm.removeClass("edit").html(that.utils.renderTemplate("item", that.formatItem(item))).removeClass("transitioning");
 				}, 150);
 			}
+		},
+
+
+		findItem: function(id) {
+			var pattern = { id : id };
+			var result = _.find(this.data.items, pattern);
+			if (result) {
+				return result;
+			}
+
+			for (var i = 0; i < this.data.items.length; i++) {
+				result = _.find(this.data.items[i].children, pattern);
+				if (result) {
+					return result;
+				}
+			}
+
+			return null;
 		},
 
 
@@ -309,6 +358,16 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 
 			var that = this;
 
+			var moveChildren = function(item, children) {
+				var current = item;
+				for (var i = 0; i < children.length; i++)
+				{
+					var el = children[i];
+					$(el).insertAfter(current);
+					current = el;
+				};
+			};
+
 			this.elm.off(".tasks")
 				.on("click.tasks", "button.add", function() {
 					if (that.addForm) {
@@ -333,9 +392,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 					item.addClass("transitioning");
 
 					setTimeout(function() {
-						var itm = _.clone(_.find(that.data.items, {
-							id: item.attr("data-id")
-						}));
+						var itm = _.clone(that.findItem(item.attr("data-id")));
 
 						if (itm && itm.due) {
 							itm.due = moment(itm.due).format("MMMM Do YYYY");
@@ -398,18 +455,34 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 				})
 				.on("click.tasks", ".item.edit .move-up", function() {
 					var item = $(this).parent(),
-						id = item.attr("data-id");
+						id = item.attr("data-id"),
+						level = item.data("level");
 
-					if (!item.prev().length) {
+
+					var prevs = item.prevAll('[data-level="' + level + '"]');
+
+					var prev0 = prevs.first();
+					if (!prev0.length) {
 						return;
 					}
 
-					item.insertBefore(item.prev());
+					var prev1 = prevs[1];
+
+					var children = item.parent().find('div[data-level="' + id +  '"]');
+
+					item.insertBefore(prev0);
+
+					moveChildren(item, children);
+
+					var url = "https://www.googleapis.com/tasks/v1/lists/" + that.config.list + "/tasks/" + id + "/move";
+					url += "?parent=" + level;
+					if (prev1) {
+						url += "&previous=" + $(prev1).attr("data-id");
+					}
 
 					oAuth.ajax({
 						type: "POST",
-						url: "https://www.googleapis.com/tasks/v1/lists/" + that.config.list + "/tasks/" + id + "/move" +
-								"?previous=" + item.prev().attr("data-id"),
+						url: url,
 						success: function() {
 							var idx = _.findIndex(that.data.items, { id: id });
 
@@ -421,18 +494,30 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 				})
 				.on("click.tasks", ".item.edit .move-down", function() {
 					var item = $(this).parent(),
-						id = item.attr("data-id");
+						id = item.attr("data-id"),
+						level = item.data("level");
 
-					if (!item.next().length) {
+					var next = item.nextAll('[data-level="' + level + '"]').first();
+
+					if (!next.length) {
 						return;
 					}
 
-					item.insertAfter(item.next());
+					var nextChildren = item.parent().find('div[data-level="' + next.data("id") +  '"]');
 
+					var children = item.parent().find('div[data-level="' + id +  '"]');
+
+					item.insertAfter(nextChildren.length ? nextChildren.last() : next);
+
+					moveChildren(item, children);
+
+					var url = "https://www.googleapis.com/tasks/v1/lists/" + that.config.list + "/tasks/" + id + "/move" +
+						"?parent=" + level +
+						"&previous=" + next.attr("data-id");
+						
 					oAuth.ajax({
 						type: "POST",
-						url: "https://www.googleapis.com/tasks/v1/lists/" + that.config.list + "/tasks/" + id + "/move" +
-								"?previous=" + item.prev().attr("data-id"),
+						url: url,
 						success: function() {
 							var idx = _.findIndex(that.data.items, { id: id });
 
@@ -470,10 +555,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 								check.checked = false;
 							}
 							else {
-								_.find(that.data.items, {
-									id: id
-								}).done = check.checked;
-
+								that.findItem(id).done = check.checked;
 								that.utils.saveData(that.data);
 							}
 						}

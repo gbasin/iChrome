@@ -61,7 +61,7 @@ define([
 
 				else {
 					Browser.storage.nextAuth = new Date().getTime() + 86400000 * 2; //Next run in 2 days
-					this.showIntroductionGuide();
+					//this.showIntroductionGuide();
 				}
 			});
 			
