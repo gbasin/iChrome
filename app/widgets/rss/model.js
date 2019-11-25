@@ -1,6 +1,6 @@
 define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, WidgetModel, parseUrl) {
 	return WidgetModel.extend({
-		widgetClassname: "tabbed",
+		widgetClassname: "tabbed-corner",
 
 		refreshInterval: 300000,
 

@@ -2166,7 +2166,7 @@ header.toolbar .announcements:after {
 */
 /* line 1932, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 dialog.announcements {
-	max-width: 900px;
+	max-width: 1000px;
 	/* was 450 */
 }
 
