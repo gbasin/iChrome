@@ -183,6 +183,8 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 
 			switch (code) {
 				case 1:
+				case 2: //"Mostly Sunny"
+				case 39: //"Fair"
 					return "sunny";
 
 				case 3:
@@ -194,25 +196,32 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 				case 7:
 				case 9:
 				case 12:
+				case 32:
+				case 90: //"Smoke"
 				case 91:
 					return "cloudy";
 
 				case 8:
 				case 19:
+				case 46:
 					return "lightrain";
 
 				case 14:
 				case 22:
+				case 49: //"Rain"
 					return "rain";
 
 				case 10:
 				case 15:
+				case 25:
+				case 52:
 					return "snow";
 
 				case 16:
 				case 20:
 				case 26:
 				case 43:
+				case 47:
 				case 82:
 					return "lightsnow";
 
@@ -220,6 +229,8 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 					return "showers";
 
 				case 24:
+				case 75:
+				case 76: //"Light Rain and Snow"
 				case 77:
 				case 78:
 					return "lightrain-snow";
@@ -229,10 +240,12 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 					return "tstorms";
 
 				case 28:
+				case 29: //"Mostly Clear"				
 					return "clear-night";
 
 				case 30:
-					return "partlycloudy-night";
+				case 31: //"Mostly cloudy"
+				return "partlycloudy-night";
 
 				case 50:
 					return "showers-night";
