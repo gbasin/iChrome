@@ -154,9 +154,22 @@ define(["lodash", "jquery", "moment", "./lib/chart", "widgets/views/main"], func
 		updateData: function() {
 			var stock = this.stock;
 
-			this.$("header .price")
-				.children(".current").text(this.stock.value).end()
+			var price = this.$("header .price");
+			price
+				.children(".current.value").text(this.stock.value).end()
 				.children(".change").text(this.stock.change + " (" + this.stock.changePercent + "%)");
+
+			var closing = price.children(".current.closing");
+			if (closing) {
+				closing.show();
+				closing.text(this.stock.value);
+			}
+			else {
+				close.hide();
+			}
+
+			
+
 
 			this.$(".details div span.value").each(function() {
 				this.textContent = stock[this.getAttribute("data-field")];

@@ -197,6 +197,7 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 				case 9:
 				case 12:
 				case 32:
+				case 36: //"Fog"
 				case 90: //"Smoke"
 				case 91:
 					return "cloudy";
@@ -245,7 +246,7 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 
 				case 30:
 				case 31: //"Mostly cloudy"
-				return "partlycloudy-night";
+					return "partlycloudy-night";
 
 				case 50:
 					return "showers-night";
