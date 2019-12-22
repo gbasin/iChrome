@@ -4,7 +4,7 @@ define(["lodash", "jquery", "widgets/views/settings", "lib/parseurl", "jquery.se
 			"click header button.save": function(e) {
 				var add = this.$("form").find(".feeds input.add");
 				var url = add.val();
-				if (url !== null && url !== '') {
+				if (!_.isEmpty(url)) {
 					this.addUrl(url, function() {
 						this.serialize();
 					}.bind(this));
