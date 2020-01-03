@@ -639,3 +639,7 @@ header .title ~ .tabs {
 .settings .feeds ul li:hover button.toggle {
 	opacity: 1;
 }
+
+.settings div.maximize, .settings div.delete {
+	display: none;
+}

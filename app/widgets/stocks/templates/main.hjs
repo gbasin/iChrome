@@ -17,7 +17,7 @@
 				</div>
 
 				<div class="price">
-					<span class="current">{{value}}</span>
+					<span class="current">{{value}} {{#closingPrice}}<span class="closing">({{closingPrice}})</span>{{/closingPrice}} </span>
 					<span class="change">{{change}} ({{changePercent}}%)</span>
 				</div>
 			</div>

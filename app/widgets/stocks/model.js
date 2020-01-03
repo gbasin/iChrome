@@ -1,6 +1,6 @@
 define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetModel, moment) {
 	return WidgetModel.extend({
-		widgetClassname: "tabbed",
+		widgetClassname: "tabbed-corner nomax",
 
 		pro_tooltip: "stocks",
 
@@ -12,7 +12,8 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 			config: {
 				title: "My Stocks",
 				size: "small",
-				stocks: ["AAPL", "FB", "GOOG", "NFLX", "TSLA", "^DJI"]
+				stocks: ["AAPL", "FB", "GOOG", "NFLX", "TSLA", "^DJI"],
+				regularinpost: "1"
 			},
 			data: {
 				stocks: [
@@ -233,17 +234,27 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 					var stocks = _.map(d.quoteResponse.result, function(e) {
 						var marketType = "regularMarket";
 
+						var getClosingPrice = function(e) {
+							if (this.config.regularinpost !== "1") { return null; }
+							return !e.regularMarketPrice ? null : e.regularMarketPrice.toLocaleString(undefined, { minimumFractionDigits: 2 });
+						}.bind(this);
+
+						var closingPrice = null;
 						if ((!e.regularMarketTime || !e.regularMarketPrice || e.preMarketTime > e.regularMarketTime) && e.preMarketPrice) {
 							marketType = "preMarket";
+							closingPrice = getClosingPrice(e);
 						}
 						else if ((!e.regularMarketTime || !e.regularMarketPrice || e.postMarketTime > e.regularMarketTime) && e.postMarketPrice) {
 							marketType = "postMarket";
+							closingPrice = getClosingPrice(e);
 						}
 
 						return {
 							name: e.shortName,
 							ticker: e.symbol,
 							exchange: e.fullExchangeName,
+
+							closingPrice: closingPrice,
 
 							value: (e[marketType + "Price"] || 0).toLocaleString(undefined, { minimumFractionDigits: 2 }),
 							change: (e[marketType + "Change"] || 0).toLocaleString(undefined, { minimumFractionDigits: 2 }),
@@ -267,7 +278,7 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 							priceToEarnings: (e.trailingPE || 0).toLocaleString(),
 							extraInfo: marketType === "preMarket" ? "Pre Market" : marketType === "postMarket" ? "After Hours" : null
 						};
-					});
+					}.bind(this));
 
 					if (isDetail && this.activeTicker === ticker) {
 						this.trigger("stock:loaded", stocks[0]);

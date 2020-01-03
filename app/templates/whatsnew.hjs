@@ -1,32 +1,21 @@
-<p>Welcome to iChrome version 1.42!</p>
+<p>Welcome to iChrome version 1.43!</p>
 
-<p>We have spent the last month or so ruthlessly removing some small bugs that have been plaguing and annoying us all! You can expect your new version of iChrome to run more smoothly, have fewer annoyances, and simply be a better experience overall.
-
-But we aren't finished yet - if you find any unusual behavior in iChrome, we want to hear about it!
-
-Please do not hesitate to let us know about any bugs or issues you find via our support button. Special thanks to everyone who has submitted bug reports already for your continued clear explanations, screenshots and screencasts. These have been invaluable in helping us identify, repeat and fix issues as we hear about them.
-
-Thanks again for helping us make iChrome the best new tab extension on the Chrome Webstore!</p>
-
+<p>We continue the bugs fixing. Thank you all who reported the issues, and especially who helped us to identify the bugs and provided the clear explanations, screenshots and screencasts. It helps much!</p>
+    
 <section>
-<p>What's New in Version 1.42:</p>
+<p>What's New in Version 1.43:</p>
 <ul>
-<li>FIXED: Fixed Clock widget resizing issues for 24 hours mode. (Absent "resize" rulers). </li>
-<li>FIXED: Some users were reporting background pictures going blank periodically.</li>
-<li>FIXED: Pocket widget authentication issue</li>
-<li>FIXED: Pocket widget not showing thumbnail images (this was caused after the Pocket server update).</li>
-<li>IMPROVED: Pocket widget now shows the first character placeholder in case the item image is not available (as it is implemented in the Pocket GUI)</li>
-<li>FIXED: Some widgets were overlapping the Keep widget when 'maximized'.</li>
-<li>IMPROVED: Calendar widget now translates events to the browser local time. Previous timezone issues were caused from Google Calendar GUI settings. (Note: New Calendar Settings option still allows to use calendar's timezone as before if you wish.)</li>
-<li>FIXED: Calendar widget background color was 10% lighter than the Google Calendar GUI colors and sometimes made the text unreadable</li>
-<li>ADDED: As you requested, the events text color option is added to the Calendar widget settings</li>
-<li>FIXED: Calendar now shows the events starting from Today in the List mode, independent of the date browser position</li>
-<li>FIXED: The default Lifehacker feed now works in the RSS widget.</li>
-<li>FIXED: The RSS widget URL was not saving in some situations (Note: please do not forget to press "Enter" when adding new RSS widget feed URL in the Settings)</li>
-<li>FIXED: The RSS widget was not updating settings if the active tab URL was deleted in the Settings</li>
-<li>FIXED: Some widgets overlapped the News widget when 'maximized'.</li>
-<li>FIXED: Absent trash icon in the Drive widget when unauthenticated.</li>
-<li>FIXED: Invisible Settings background in transparent modes</li>
+<li>FIXED. Annoying "application is not verified" authentication issue of Calendar, Drive, Tasks and Analytics widgets.</li>
+<li>FIXED. Extension crash on "Add Widget" click on some Chromebook and Linux versions</li>
+<li>FIXED. The Weather widget icon was incorrectly shown as "Sunny" sometimes.</li>
+<li>IMPROVED. RSS widget now stores the entered URL on "Save" button click. No needs to press "Enter" on keyboard</li>
+<li>FIXED. RSS widget could overlap the neighbour column</li>
+<li>FIXED. Could not add the item if list list is empty in the Tasks widget</li>
+<li>FIXED. Stocks widget now shows both Yesterday Closing price and after-hours price in the Pre- and Post- market states</li>
+<li>FIXED. The items order in the Tasks widget did not correspond to the order on the Google Tasks website</li>
+<li>FIXED. The Tasks widget items order changed by Up or Down buttons was not remebered</li>
+<li>FIXED. The tasks and subtasks were mixed in some random order in the Tasks widget</li>
+<li>FIXED. The subtasks reordering by Up or Down buttons did not work in the Tasks widget</li>
 </ul>
 
 </section>

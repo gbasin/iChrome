@@ -2166,7 +2166,7 @@ header.toolbar .announcements:after {
 */
 /* line 1932, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 dialog.announcements {
-	max-width: 900px;
+	max-width: 1000px;
 	/* was 450 */
 }
 
@@ -3486,24 +3486,29 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	display: none;
 }
 
-/* line 3158, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3157, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+.widgets-container .widget.tabbed-corner.nomax .wdelete {
+	right: 22px;
+}
+
+/* line 3162, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widgets-container .widget.tabbed.maximized .settings {
 	right: 2px;
 }
 
-/* line 3162, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3166, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widgets-container .widget.tabbed.maximized .wdelete {
 	right: -3px;
 	display: none;
 }
 
-/* line 3167, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3171, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widgets-container .widget.tabbed.maximized .wtooltip {
 	right: -23px;
 	display: none;
 }
 
-/* line 3172, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3176, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widgets-container .widget.tabbed .minimize {
 	top: 0px;
 	right: -1px;
@@ -3512,21 +3517,21 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Widgets Layout / Transitions
 */
-/* line 3185, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3189, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .unloaded .widgets-container .widget {
 	transform-origin: top center;
 	animation: fly-in-from-bottom .2s ease-in-out both;
 	-webkit-animation: fly-in-from-bottom .2s ease-in-out both;
 }
 
-/* line 3191, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3195, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .unloaded .widgets-container .column:first-child .widget {
 	transform-origin: top left;
 	animation-name: fly-in-from-left;
 	-webkit-animation-name: fly-in-from-left;
 }
 
-/* line 3197, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3201, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .unloaded .widgets-container .column:last-child .widget {
 	transform-origin: top right;
 	animation-name: fly-in-from-right;
@@ -3578,7 +3583,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Widgets Layout / Drag Styles
 */
-/* line 3252, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3256, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widgets-container .dragged {
 	margin: 0;
 	opacity: .95;
@@ -3586,12 +3591,12 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	position: absolute;
 }
 
-/* line 3259, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3263, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widgets-container .dragged iframe {
 	pointer-events: none;
 }
 
-/* line 3263, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3267, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widgets-container .placeholder {
 	flex: 2 100%;
 	margin: 10px;
@@ -3602,13 +3607,13 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	background: rgba(255, 255, 255, 0.2);
 }
 
-/* line 3273, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3277, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widgets-container .placeholder.tiny {
 	flex: 1 45%;
 	max-width: 45%;
 }
 
-/* line 3278, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3282, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .dragging {
 	cursor: move;
 }
@@ -3616,18 +3621,18 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Widgets / Splashes
 */
-/* line 3291, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3295, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash,
 .widget.legacy.splash {
 	padding: 0 !important;
 }
 
-/* line 3296, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3300, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .grid .widget.splash {
 	height: auto !important;
 }
 
-/* line 3300, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3304, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash .splash {
 	color: #FFF;
 	padding: 50px 0;
@@ -3635,31 +3640,31 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	text-align: center;
 }
 
-/* line 3307, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3311, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash .splash svg {
 	width: 150px;
 	height: 150px;
 	fill: currentColor;
 }
 
-/* line 3313, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3317, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash .notice {
 	padding: 0;
 	background: #FBFBFB;
 	font: 400 14px/20px Roboto, sans-serif;
 }
 
-/* line 3319, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3323, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .dark .widget.splash .notice {
 	background: #333;
 }
 
-/* line 3323, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3327, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .dark.transparent .widget.splash .notice {
 	background: rgba(0, 0, 0, 0.2);
 }
 
-/* line 3327, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3331, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash h2 {
 	margin: 0;
 	font: inherit;
@@ -3668,7 +3673,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	padding: 24px 16px 0;
 }
 
-/* line 3335, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3339, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash p {
 	margin: 0;
 	color: #757575;
@@ -3676,23 +3681,23 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	padding: 16px 16px 0;
 }
 
-/* line 3342, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3346, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .dark .widget.splash p {
 	color: #CCC;
 }
 
-/* line 3346, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3350, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash.tiny p:last-of-type {
 	padding-bottom: 16px;
 }
 
-/* line 3350, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3354, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash footer {
 	padding: 8px;
 	text-align: right;
 }
 
-/* line 3355, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3359, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash footer button.material.flat {
 	margin: 0;
 	padding: 0 8px;
@@ -3701,12 +3706,12 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	line-height: 36px;
 }
 
-/* line 3363, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3367, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash footer button.material.flat:hover:not(:focus) {
 	background: rgba(0, 0, 0, 0.05);
 }
 
-/* line 3367, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3371, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash footer button.material.flat:active {
 	background: rgba(0, 0, 0, 0.075);
 }
@@ -3714,29 +3719,29 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Widget / Splashes / Tiny styles
 */
-/* line 3380, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3384, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash.tiny .splash {
 	padding: 20px 0;
 }
 
-/* line 3384, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3388, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash.tiny .splash svg {
 	width: 100px;
 	height: 100px;
 }
 
-/* line 3389, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3393, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash.tiny h2 {
 	display: none;
 }
 
-/* line 3393, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3397, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash.tiny footer {
 	text-align: left;
 	padding: 8px 10px;
 }
 
-/* line 3398, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3402, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.splash.tiny p:last-of-type {
 	padding-bottom: 0;
 }
@@ -3744,17 +3749,17 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Widgets / Permissions Splash
 */
-/* line 3411, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3415, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.permissions-request .splash {
 	background: #20AA58;
 }
 
-/* line 3415, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3419, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .dark.transparent .widget.permissions-request .splash {
 	background: rgba(32, 170, 88, 0.4);
 }
 
-/* line 3419, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3423, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.permissions-request.tiny h2 {
 	display: none;
 }
@@ -3762,22 +3767,22 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Widgets / Error Splash
 */
-/* line 3432, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3436, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.error .splash {
 	background: #F44336;
 }
 
-/* line 3436, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3440, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .dark.transparent .widget.error .splash {
 	background: rgba(244, 67, 54, 0.4);
 }
 
-/* line 3440, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3444, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .dark .widget.error button.support {
 	color: #DDD;
 }
 
-/* line 3444, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3448, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.error.tiny .splash {
 	display: none;
 }
@@ -3785,18 +3790,18 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Widget / Authorization
 */
-/* line 3457, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3461, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.auth-required,
 .widget.legacy.auth-required {
 	padding: 0 !important;
 }
 
-/* line 3462, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3466, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .grid .widget.auth-required {
 	height: auto !important;
 }
 
-/* line 3466, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3470, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.auth-required .notice {
 	color: #888;
 	text-align: center;
@@ -3804,38 +3809,38 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	padding-bottom: 55px;
 }
 
-/* line 3473, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3477, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .dark .widget.auth-required .notice {
 	color: #AAA;
 	background: #2A2A2A;
 }
 
-/* line 3478, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3482, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .dark.transparent .widget.auth-required .notice {
 	color: #DDD;
 	background: rgba(0, 0, 0, 0.2);
 }
 
-/* line 3483, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3487, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.auth-required .notice svg {
 	width: 150px;
 	height: 150px;
 	fill: currentColor;
 }
 
-/* line 3489, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3493, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.auth-required .notice p {
 	padding: 0 35px;
 	line-height: 22px;
 	margin: 20px 0 15px;
 }
 
-/* line 3495, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3499, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.auth-required .notice button {
 	margin-top: 10px;
 }
 
-/* line 3499, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3503, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.auth-required .notice h2 {
 	padding: 15px;
 	font-size: 16px;
@@ -3846,17 +3851,17 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Widget / Authorization / Tiny Styles
 */
-/* line 3515, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3519, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.auth-required.tiny .notice {
 	padding-bottom: 20px;
 }
 
-/* line 3519, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3523, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.auth-required.tiny .notice svg {
 	display: none;
 }
 
-/* line 3523, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3527, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget.auth-required.tiny .notice p {
 	margin: 10px 0;
 	padding: 0 15px;
@@ -3865,23 +3870,23 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Widget Settings
 */
-/* line 3537, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3541, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .close {
 	display: none;
 	/* The save button replaces this, you can close by clicking the BG or hitting esc. */
 }
 
-/* line 3541, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3545, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .content {
 	background: #FBFBFB;
 }
 
-/* line 3545, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3549, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings h2.title {
 	background: #FFF;
 }
 
-/* line 3549, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3553, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .btn.save {
 	float: right;
 	margin-top: -6px;
@@ -3889,30 +3894,30 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	margin-right: -10px;
 }
 
-/* line 3555, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3559, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings form {
 	overflow: auto;
 	padding: 20px 25px;
 	height: calc(100% - 60px);
 }
 
-/* line 3561, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3565, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .form-group.hidden {
 	display: none;
 }
 
-/* line 3565, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3569, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .form-group:last-child {
 	margin-bottom: 0;
 }
 
-/* line 3569, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3573, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .form-group > label {
 	width: 98%;
 	display: block;
 }
 
-/* line 3574, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3578, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .form-group.pro > label:after {
 	color: #FB8C00;
 	padding: 0 3px;
@@ -3927,7 +3932,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	font-family: Roboto, sans-serif;
 }
 
-/* line 3588, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3592, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .help {
 	color: #777;
 	float: right;
@@ -3936,17 +3941,17 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	display: inline-block;
 }
 
-/* line 3596, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3600, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .help:hover {
 	color: #3C7EC2;
 }
 
-/* line 3600, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3604, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .help:before {
 	font-size: 14px;
 }
 
-/* line 3604, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3608, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings select,
 .widget-settings textarea,
 .widget-settings input[type="tel"],
@@ -3958,13 +3963,13 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	width: 100%;
 }
 
-/* line 3615, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3619, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings input[type="radio"]:not(:active),
 .widget-settings input[type="checkbox"]:not(:active):not(:checked) {
 	background: #FFF;
 }
 
-/* line 3620, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3624, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings select[size],
 .widget-settings select[multiple] {
 	padding: 10px !important;
@@ -3973,21 +3978,21 @@ body.no-edit .widgets-container .widget.tabbed:before {
 /*---------------------------------------------
 	/ Widget Settings / List Input
 */
-/* line 3632, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3636, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list > div,
 .widget-settings .list > div > input {
 	border-radius: 0;
 	position: relative;
 }
 
-/* line 3638, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3642, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list .item {
 	height: 35px;
 	position: relative;
 	font-family: Open Sans, sans-serif;
 }
 
-/* line 3644, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3648, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list .item input {
 	left: 0;
 	right: 0;
@@ -3998,17 +4003,17 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	position: absolute;
 }
 
-/* line 3654, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3658, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list input:hover {
 	z-index: 1;
 }
 
-/* line 3658, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3662, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list input:focus {
 	z-index: 2;
 }
 
-/* line 3662, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3666, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list .tools {
 	top: 0;
 	right: 0;
@@ -4023,45 +4028,45 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	padding: 10px 10px 10px 0;
 }
 
-/* line 3676, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3680, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list .item:hover .tools,
 .widget-settings .list .item input:focus + .tools {
 	opacity: 1;
 }
 
-/* line 3681, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3685, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list .tools span:hover {
 	color: #428BCA;
 	cursor: pointer;
 }
 
-/* line 3686, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3690, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list .tools .wdelete:hover {
 	color: #E43431;
 }
 
-/* line 3690, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3694, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list .tools .wtooltip:hover {
 	color: #E43431;
 }
 
-/* line 3694, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3698, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 body.main-pro .wtooltip {
 	display: none;
 }
 
-/* line 3698, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3702, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list .sp-preview {
 	height: 34px;
 }
 
-/* line 3702, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3706, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list .sp-replacer + input {
 	left: 35px;
 	width: calc(100% - 35px);
 }
 
-/* line 3707, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3711, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list .suggestions {
 	top: 32px;
 	left: 1px;
@@ -4079,14 +4084,14 @@ body.main-pro .wtooltip {
 	transition: opacity .2s ease, visibility 0s .2s;
 }
 
-/* line 3724, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3728, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list .suggestions.visible {
 	opacity: 1;
 	visibility: visible;
 	transition: opacity .2s ease, visibility 0s 0s;
 }
 
-/* line 3730, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3734, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list .suggestions li {
 	padding: 0 12px;
 	overflow: hidden;
@@ -4096,20 +4101,20 @@ body.main-pro .wtooltip {
 	border-left: 4px solid transparent;
 }
 
-/* line 3739, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3743, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list .suggestions li:hover,
 .widget-settings .list .suggestions li.active {
 	background: #F5F5F5;
 	border-left-color: #888;
 }
 
-/* line 3745, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3749, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .dark .widget-settings .list .suggestions li:hover,
 .dark .widget-settings .list .suggestions li.active {
 	background: #303030;
 }
 
-/* line 3750, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3754, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .widget-settings .list .suggestions li.active {
 	border-left-color: #738FFE;
 }
@@ -4117,7 +4122,7 @@ body.main-pro .wtooltip {
 /*---------------------------------------------
 	/ Modal Styles
 */
-/* line 3763, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3767, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal {
 	top: 0;
 	left: 0;
@@ -4141,12 +4146,12 @@ body.main-pro .wtooltip {
 	transition: transform .3s ease-in-out, opacity .3s ease-in-out, visibility 0s .3s;
 }
 
-/* line 3787, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3791, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal:not(.visible) * {
 	display: none;
 }
 
-/* line 3791, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3795, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal.visible {
 	opacity: 1;
 	visibility: visible;
@@ -4155,7 +4160,7 @@ body.main-pro .wtooltip {
 	/* See above */
 }
 
-/* line 3798, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3802, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal > .title,
 .modal > .content > .title {
 	font-size: 20px;
@@ -4165,12 +4170,12 @@ body.main-pro .wtooltip {
 	font-family: Open Sans, sans-serif;
 }
 
-/* line 3807, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3811, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal > .content {
 	height: 100%;
 }
 
-/* line 3811, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3815, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal > .close {
 	top: 0;
 	right: 0;
@@ -4185,14 +4190,14 @@ body.main-pro .wtooltip {
 	-webkit-text-stroke: 2px #FFF;
 }
 
-/* line 3825, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3829, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal > .close:hover {
 	color: #666;
 	background: #EEE;
 	-webkit-text-stroke: 2px #EEE;
 }
 
-/* line 3831, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3835, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal > .close:before {
 	font-size: 35px;
 	content: "\E678";
@@ -4204,7 +4209,7 @@ body.main-pro .wtooltip {
 
 	Modals are light, even when the dark theme is enabled
 */
-/* line 3848, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3852, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .dark .modal:not(.store-detail) input[type="tel"],
 .dark .modal:not(.store-detail) input[type="text"],
 .dark .modal:not(.store-detail) input[type="time"],
@@ -4218,13 +4223,13 @@ body.main-pro .wtooltip {
 	border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
-/* line 3861, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3865, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .dark .modal:not(.store-detail) select option,
 .dark .modal:not(.store-detail) select optgroup {
 	background: #FFF;
 }
 
-/* line 3866, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3870, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .dark .modal:not(.store-detail) input[type="tel"]:hover,
 .dark .modal:not(.store-detail) input[type="text"]:hover,
 .dark .modal:not(.store-detail) input[type="time"]:hover,
@@ -4246,7 +4251,7 @@ body.main-pro .wtooltip {
 	color: #333;
 }
 
-/* line 3888, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3892, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .dark .modal:not(.store-detail) input[type="radio"]:not(:active):not(:checked),
 .dark .modal:not(.store-detail) input[type="checkbox"]:not(:active):not(:checked) {
 	background: #F5F5F5;
@@ -4256,21 +4261,21 @@ body.main-pro .wtooltip {
 /*---------------------------------------------
 	/ Modal Styles / Small
 */
-/* line 3903, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3907, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal.small > .title,
 .modal.small .content > .title {
 	font-size: 18px;
 	padding: 20px 25px;
 }
 
-/* line 3909, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3913, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal.small > .close {
 	width: 60px;
 	height: 60px;
 	line-height: 60px;
 }
 
-/* line 3915, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3919, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal.small > .close:before {
 	font-size: 30px;
 }
@@ -4278,7 +4283,7 @@ body.main-pro .wtooltip {
 /*---------------------------------------------
 	/ Overlays
 */
-/* line 3927, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3931, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal-overlay,
 .speech-overlay,
 .preview-overlay {
@@ -4295,13 +4300,13 @@ body.main-pro .wtooltip {
 	transition: visibility 0s .3s, opacity .3s ease-in-out;
 }
 
-/* line 3943, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3947, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal-overlay,
 .speech-overlay {
 	background: rgba(255, 255, 255, 0.4);
 }
 
-/* line 3948, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3952, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal-overlay.visible,
 .speech-overlay.visible,
 .preview-overlay.visible {
@@ -4313,7 +4318,7 @@ body.main-pro .wtooltip {
 /*---------------------------------------------
 	/ Widget Store
 */
-/* line 3964, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3968, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal.store {
 	overflow: visible;
 	/* This fixes the 1px white gap above the close button caused by subpixel rounding in the automatic modal centering. */
@@ -4321,12 +4326,12 @@ body.main-pro .wtooltip {
 	max-height: 700px;
 }
 
-/* line 3970, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3974, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store .wrapper {
 	height: 100%;
 }
 
-/* line 3974, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3978, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store .wrapper > .title {
 	height: 70px;
 	font-size: 20px;
@@ -4336,13 +4341,13 @@ body.main-pro .wtooltip {
 	box-shadow: 0 4px 3px -2px rgba(0, 0, 0, 0.05);
 }
 
-/* line 3983, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3987, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store .content,
 .store .title {
 	position: relative;
 }
 
-/* line 3988, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3992, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store .content {
 	overflow: auto;
 	padding: 10px 15px;
@@ -4350,7 +4355,7 @@ body.main-pro .wtooltip {
 	height: calc(100% - 70px);
 }
 
-/* line 3995, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 3999, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store .content:before {
 	top: 0;
 	left: 0;
@@ -4362,7 +4367,7 @@ body.main-pro .wtooltip {
 	background: #F5F5F5;
 }
 
-/* line 4006, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4010, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store .content .widget {
 	margin: 5px;
 	cursor: pointer;
@@ -4375,12 +4380,12 @@ body.main-pro .wtooltip {
 	box-shadow: 0 1px 2px rgba(102, 102, 102, 0.1);
 }
 
-/* line 4018, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4022, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store .content .widget:hover {
 	background: #FCFCFC;
 }
 
-/* line 4022, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4026, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store .content .widget img {
 	width: 80px;
 	float: left;
@@ -4390,7 +4395,7 @@ body.main-pro .wtooltip {
 	border-radius: 2px;
 }
 
-/* line 4031, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4035, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store .content .widget h2.title {
 	font-size: 16px;
 	overflow: hidden;
@@ -4401,7 +4406,7 @@ body.main-pro .wtooltip {
 	font-family: Open Sans, sans-serif;
 }
 
-/* line 4041, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4045, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store .content .widget .desc {
 	color: #666;
 	font-size: 12px;
@@ -4416,13 +4421,13 @@ body.main-pro .wtooltip {
 	/ Store Detail
 	These need to be direct-descendant selectors so they don't interfere with widget previews
 */
-/* line 4061, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4065, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal.store-detail {
 	width: 490px;
 	max-height: 700px;
 }
 
-/* line 4066, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4070, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store-detail > .content {
 	overflow: auto;
 	padding: 25px 30px;
@@ -4430,12 +4435,12 @@ body.main-pro .wtooltip {
 	height: calc(100% - 70px);
 }
 
-/* line 4073, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4077, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store-detail > .content > section {
 	margin-bottom: 25px;
 }
 
-/* line 4077, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4081, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store-detail > .content > section > h3 {
 	font-size: 13px;
 	font-weight: 500;
@@ -4443,13 +4448,13 @@ body.main-pro .wtooltip {
 	font-family: Roboto, sans-serif;
 }
 
-/* line 4084, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4088, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store-detail > .content > section > h3 .legend {
 	float: right;
 	font-weight: 400;
 }
 
-/* line 4089, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4093, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store-detail > .content > .installation .handle {
 	font-size: 13px;
 	background: #FFF;
@@ -4464,12 +4469,12 @@ body.main-pro .wtooltip {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* line 4104, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4108, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store-detail > .content > .installation .handle:first-of-type {
 	margin-left: 20px;
 }
 
-/* line 4108, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4112, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store-detail > .content > .installation .handle:focus,
 .store-detail > .content > .installation .handle:hover,
 .store-detail > .content > .installation .handle:active {
@@ -4479,13 +4484,13 @@ body.main-pro .wtooltip {
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-/* line 4118, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4122, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store-detail > .content > .installation .handle:focus,
 .store-detail > .content > .installation .handle:active {
 	background: #1E88E5;
 }
 
-/* line 4123, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4127, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store-detail > .content > .description .desc {
 	overflow: auto;
 	max-height: 250px;
@@ -4494,12 +4499,12 @@ body.main-pro .wtooltip {
 	padding-right: 15px;
 }
 
-/* line 4131, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4135, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store-detail > .content > section.preview {
 	padding-bottom: 10px;
 }
 
-/* line 4135, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4139, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store-detail > .content > section.preview > .widget {
 	width: 410px;
 	font-size: 14px;
@@ -4510,14 +4515,14 @@ body.main-pro .wtooltip {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* line 4146, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4150, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store-detail > .content > section.preview > .widget.legacy {
 	padding: 15px;
 	font-family: Open Sans, sans-serif;
 }
 
 /* This doesn't have to use direct-desendant because widgets need to be tolerant of the handle and settings classes */
-/* line 4152, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4156, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store-detail .preview .widget .handle,
 .store-detail .preview .widget .settings,
 .store-detail .preview .widget .minimize,
@@ -4525,13 +4530,13 @@ body.main-pro .wtooltip {
 	pointer-events: none;
 }
 
-/* line 4159, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4163, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .store-detail > .content > section.preview > .widget.tiny {
 	width: 210px;
 }
 
 /* Onboarding */
-/* line 4167, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4171, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal-overlay.onboarding, .modal.onboarding {
 	z-index: 9998;
 }
@@ -4539,7 +4544,7 @@ body.main-pro .wtooltip {
 /*---------------------------------------------
 	/ Themes
 */
-/* line 4175, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4179, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal.themes {
 	top: 25px;
 	left: 25px;
@@ -4550,7 +4555,7 @@ body.main-pro .wtooltip {
 	max-height: 700px;
 }
 
-/* line 4185, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4189, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal.themes .content > .title {
 	z-index: 1;
 	position: relative;
@@ -4558,13 +4563,13 @@ body.main-pro .wtooltip {
 	box-shadow: 0 4px 3px -2px rgba(0, 0, 0, 0.1);
 }
 
-/* line 4192, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4196, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .modal.themes .content.fadeout > .title {
 	transition: box-shadow .2s 0s ease-in-out;
 	box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, 0.1);
 }
 
-/* line 4197, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4201, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .btn {
 	font-size: 14px;
 	font-weight: 300;
@@ -4572,22 +4577,22 @@ body.main-pro .wtooltip {
 	font-family: Open Sans, sans-serif;
 }
 
-/* line 4204, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4208, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .btn-primary {
 	background: #5BA4E5;
 }
 
-/* line 4208, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4212, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .btn-primary:hover {
 	background: #2F8CDE;
 }
 
-/* line 4212, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4216, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .btn-primary:active {
 	box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px inset;
 }
 
-/* line 4216, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4220, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .nav {
 	left: 0;
 	top: 70px;
@@ -4600,7 +4605,7 @@ body.main-pro .wtooltip {
 	border-top: 1px solid #EEE;
 }
 
-/* line 4228, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4232, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .nav li {
 	color: #428BCA;
 	cursor: pointer;
@@ -4608,12 +4613,12 @@ body.main-pro .wtooltip {
 	padding-left: 35px;
 }
 
-/* line 4235, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4239, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .nav li:hover {
 	background: #EEE;
 }
 
-/* line 4239, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4243, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .nav li.active {
 	color: #333;
 	background: #FFF;
@@ -4621,12 +4626,12 @@ body.main-pro .wtooltip {
 	box-shadow: inset 0 -1px #EEE;
 }
 
-/* line 4246, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4250, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .nav li:not(:first-child).active {
 	box-shadow: inset 0 1px #EEE, inset 0 -1px #EEE;
 }
 
-/* line 4250, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4254, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .nav li.create {
 	left: 0;
 	right: 0;
@@ -4637,13 +4642,13 @@ body.main-pro .wtooltip {
 	background: transparent !important;
 }
 
-/* line 4260, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4264, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .nav li.create .btn {
 	width: 100%;
 	padding: 12px;
 }
 
-/* line 4265, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4269, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .container {
 	top: 70px;
 	right: 0;
@@ -4660,17 +4665,17 @@ body.main-pro .wtooltip {
 	transition: opacity .25s ease-in-out;
 }
 
-/* line 4281, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4285, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .container:after {
 	display: none;
 }
 
-/* line 4285, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4289, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .content.fadeout .container {
 	opacity: 0;
 }
 
-/* line 4289, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4293, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .container:before {
 	left: 0;
 	top: 1px;
@@ -4687,7 +4692,7 @@ body.main-pro .wtooltip {
 /*---------------------------------------------
 	/ Themes / Theme
 */
-/* line 4308, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4312, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme {
 	flex: 1 20%;
 	height: 125px;
@@ -4699,19 +4704,19 @@ body.main-pro .wtooltip {
 	box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.3);
 }
 
-/* line 4319, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4323, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme .push {
 	padding-top: 56.25%;
 	background-size: cover;
 }
 
-/* line 4324, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4328, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme .push.lazy {
 	background-color: #EEE;
 	background-image: none !important;
 }
 
-/* line 4329, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4333, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme .caption {
 	top: 0;
 	left: 0;
@@ -4724,12 +4729,12 @@ body.main-pro .wtooltip {
 	transition: opacity .2s ease-in-out;
 }
 
-/* line 4341, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4345, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme:hover .caption {
 	opacity: 1;
 }
 
-/* line 4345, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4349, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme .caption h2 {
 	font-size: 15px;
 	margin-top: -2px;
@@ -4741,14 +4746,14 @@ body.main-pro .wtooltip {
 }
 
 /* Custom themes can wrap since there's nothing below */
-/* line 4355, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4359, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme:not(.custom) .caption h2 {
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
 
-/* line 4361, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4365, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme h2 span {
 	color: #666;
 	float: right;
@@ -4758,12 +4763,12 @@ body.main-pro .wtooltip {
 	font-family: Entypo;
 }
 
-/* line 4370, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4374, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme h2 span:not(:first-child) {
 	margin-right: 8px;
 }
 
-/* line 4374, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4378, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme h2 span.pro {
 	margin-top: 0;
 	color: #FB8C00;
@@ -4776,23 +4781,23 @@ body.main-pro .wtooltip {
 	font-family: Roboto, sans-serif;
 }
 
-/* line 4386, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4390, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme .specs {
 	font-size: 13px;
 }
 
-/* line 4390, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4394, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme .caption h2 + .specs {
 	margin-top: 10px;
 }
 
-/* line 4394, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4398, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme .specs span:not(:first-child) {
 	display: block;
 	padding-top: 5px;
 }
 
-/* line 4399, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4403, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme .btn {
 	left: 0;
 	bottom: 0;
@@ -4804,18 +4809,18 @@ body.main-pro .wtooltip {
 	font-family: Open Sans, sans-serif;
 }
 
-/* line 4410, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4414, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme .btn.preview {
 	right: 0;
 	left: 50%;
 }
 
-/* line 4415, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4419, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme .btn.edit {
 	bottom: 32px;
 }
 
-/* line 4419, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4423, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes .theme .btn.delete {
 	right: 0;
 	left: 50%;
@@ -4825,12 +4830,12 @@ body.main-pro .wtooltip {
 /*---------------------------------------------
 	/ Themes / Create
 */
-/* line 4433, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4437, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create .content .title {
 	box-shadow: none;
 }
 
-/* line 4437, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4441, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create form {
 	width: 35%;
 	float: left;
@@ -4840,19 +4845,19 @@ body.main-pro .wtooltip {
 	height: calc(100% - 135px);
 }
 
-/* line 4446, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4450, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create select,
 .themes.create input[type="text"] {
 	width: 100%;
 	border-radius: 2px;
 }
 
-/* line 4452, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4456, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create input.image {
 	width: 56%;
 }
 
-/* line 4456, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4460, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create .upload {
 	width: 40%;
 	float: right;
@@ -4860,7 +4865,7 @@ body.main-pro .wtooltip {
 	padding-left: 15px;
 }
 
-/* line 4463, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4467, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create .upload input {
 	float: right;
 	padding: 8px 0;
@@ -4869,19 +4874,19 @@ body.main-pro .wtooltip {
 	-webkit-appearance: none;
 }
 
-/* line 4472, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4476, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create .upload input:after {
 	display: block;
 	text-align: center;
 	content: "__MSG_themes_upload_image__";
 }
 
-/* line 4478, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4482, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create .upload input::-webkit-file-upload-button {
 	display: none;
 }
 
-/* line 4482, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4486, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create .help {
 	top: -8px;
 	width: 2%;
@@ -4892,12 +4897,12 @@ body.main-pro .wtooltip {
 	position: relative;
 }
 
-/* line 4492, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4496, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create .help:before {
 	font-size: 14px;
 }
 
-/* line 4496, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4500, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create .content > .preview {
 	float: right;
 	margin: 25px 30px;
@@ -4914,7 +4919,7 @@ body.main-pro .wtooltip {
 	background-position: top center;
 }
 
-/* line 4513, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4517, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create .content > .preview:before {
 	top: 0;
 	left: 0;
@@ -4927,14 +4932,14 @@ body.main-pro .wtooltip {
 	background-image: url(../images/preview.png);
 }
 
-/* line 4525, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4529, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create .buttons {
 	clear: both;
 	text-align: right;
 	padding: 10px 40px;
 }
 
-/* line 4531, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4535, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create .buttons .preview {
 	margin-right: 25px;
 }
@@ -4942,18 +4947,18 @@ body.main-pro .wtooltip {
 /*---------------------------------------------
 	/ Themes / Create / Locale Fixes
 */
-/* line 4542, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4546, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create form:lang(ru) {
 	width: 40%;
 }
 
-/* line 4546, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4550, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create .content > .preview:lang(ru) {
 	margin: 25px;
 	width: calc(60% - 50px);
 }
 
-/* line 4551, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4555, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create .image:lang(ru),
 .themes.create .image:lang(cs),
 .themes.create .image:lang(ja),
@@ -4961,7 +4966,7 @@ body.main-pro .wtooltip {
 	width: 54%;
 }
 
-/* line 4558, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4562, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create .upload:lang(ru),
 .themes.create .upload:lang(cs),
 .themes.create .upload:lang(ja),
@@ -4970,7 +4975,7 @@ body.main-pro .wtooltip {
 	padding-left: 5px;
 }
 
-/* line 4566, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4570, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .themes.create .upload input:lang(cs),
 .themes.create .upload input:lang(ja),
 .themes.create .upload input:lang(tr) {
@@ -4982,7 +4987,7 @@ body.main-pro .wtooltip {
 
 	These are at the end so no !important declarations are needed
 */
-/* line 4583, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4587, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .menu:lang(zh),
 .tooltip:lang(zh),
 .getting-started .slide:lang(zh),
@@ -4993,7 +4998,7 @@ body.main-pro .wtooltip {
 	font-family: "微軟正黑體", "Microsoft JhengHei", Roboto;
 }
 
-/* line 4593, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4597, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .menu:lang(ja),
 .tooltip:lang(ja),
 .getting-started .slide:lang(ja),
@@ -5004,7 +5009,7 @@ body.main-pro .wtooltip {
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Roboto;
 }
 
-/* line 4604, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4608, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .btn:lang(zh),
 .themes .btn:lang(zh),
 .notification:lang(zh),
@@ -5024,7 +5029,7 @@ body.main-pro .wtooltip {
 	font-family: "微軟正黑體", "Microsoft JhengHei", Open Sans;
 }
 
-/* line 4624, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4628, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .btn:lang(ja),
 .themes .btn:lang(ja),
 .notification:lang(ja),
@@ -5054,7 +5059,7 @@ body.main-pro .wtooltip {
 	License: MIT
 	Modified by: Avi Kohn
 ***/
-/* line 4657, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4661, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-container {
 	position: absolute;
 	top: 0;
@@ -5064,19 +5069,19 @@ body.main-pro .wtooltip {
 	overflow: hidden;
 }
 
-/* line 4658, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4662, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-container.sp-flat {
 	position: relative;
 }
 
-/* line 4659, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4663, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-top {
 	position: relative;
 	width: 100%;
 	display: inline-block;
 }
 
-/* line 4660, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4664, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-top-inner {
 	position: absolute;
 	top: 0;
@@ -5085,7 +5090,7 @@ body.main-pro .wtooltip {
 	right: 0;
 }
 
-/* line 4661, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4665, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-color {
 	position: absolute;
 	top: 0;
@@ -5094,7 +5099,7 @@ body.main-pro .wtooltip {
 	right: 20%;
 }
 
-/* line 4662, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4666, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-hue {
 	position: absolute;
 	top: 0;
@@ -5104,18 +5109,18 @@ body.main-pro .wtooltip {
 	height: 100%;
 }
 
-/* line 4663, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4667, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-clear-enabled .sp-hue {
 	top: 33px;
 	height: 77.5%;
 }
 
-/* line 4664, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4668, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-fill {
 	padding-top: 80%;
 }
 
-/* line 4665, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4669, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-color:before, .sp-sat, .sp-val {
 	position: absolute;
 	top: 0;
@@ -5124,24 +5129,24 @@ body.main-pro .wtooltip {
 	bottom: 0;
 }
 
-/* line 4666, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4670, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-color:before {
 	content: "";
 	z-index: 1;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.15);
 }
 
-/* line 4667, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4671, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-alpha-enabled .sp-top {
 	margin-bottom: 32px;
 }
 
-/* line 4668, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4672, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-alpha-enabled .sp-alpha {
 	display: block;
 }
 
-/* line 4669, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4673, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-alpha-handle {
 	position: absolute;
 	top: -4px;
@@ -5154,7 +5159,7 @@ body.main-pro .wtooltip {
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
-/* line 4670, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4674, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-alpha {
 	display: none;
 	position: absolute;
@@ -5164,17 +5169,17 @@ body.main-pro .wtooltip {
 	height: 10px;
 }
 
-/* line 4671, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4675, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-clear {
 	display: none;
 }
 
-/* line 4672, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4676, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-clear.sp-clear-display {
 	background-position: center;
 }
 
-/* line 4673, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4677, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-clear-enabled .sp-clear {
 	display: block;
 	position: absolute;
@@ -5185,48 +5190,48 @@ body.main-pro .wtooltip {
 	height: 28px;
 }
 
-/* line 4674, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4678, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-palette-disabled .sp-palette-container {
 	display: none;
 }
 
-/* line 4675, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4679, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-initial-disabled .sp-initial {
 	display: none;
 }
 
-/* line 4676, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4680, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-sat {
 	background-image: linear-gradient(to right, #fff, rgba(204, 154, 129, 0));
 }
 
-/* line 4677, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4681, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-val {
 	background-image: linear-gradient(to top, #000, rgba(204, 154, 129, 0));
 }
 
-/* line 4678, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4682, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-hue {
 	background: linear-gradient(to bottom, #F00 0%, #FF0 17%, #0F0 33%, #0FF 50%, #00F 67%, #F0F 83%, #F00 100%);
 }
 
-/* line 4679, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4683, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-hidden {
 	display: none !important;
 }
 
-/* line 4680, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4684, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-cf:before, .sp-cf:after {
 	content: "";
 	display: table;
 }
 
-/* line 4681, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4685, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-cf:after {
 	clear: both;
 }
 
-/* line 4682, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4686, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-dragger {
 	border-radius: 5px;
 	height: 5px;
@@ -5239,7 +5244,7 @@ body.main-pro .wtooltip {
 	left: 0;
 }
 
-/* line 4683, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4687, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-slider {
 	position: absolute;
 	top: 0;
@@ -5252,7 +5257,7 @@ body.main-pro .wtooltip {
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
-/* line 4684, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4688, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-container {
 	background-color: #F5F5F5;
 	padding: 0;
@@ -5260,24 +5265,24 @@ body.main-pro .wtooltip {
 	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15);
 }
 
-/* line 4685, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4689, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-container, .sp-container input, .sp-color, .sp-hue, .sp-clear {
 	font: normal 12px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 	box-sizing: border-box;
 }
 
-/* line 4686, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4690, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-color, .sp-hue, .sp-clear, .sp-alpha-inner, .sp-initial span {
 	border-radius: 2px;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.15);
 }
 
-/* line 4687, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4691, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-color {
 	box-shadow: none;
 }
 
-/* line 4688, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4692, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-input-container {
 	float: right;
 	line-height: 16px;
@@ -5286,12 +5291,12 @@ body.main-pro .wtooltip {
 	margin-bottom: 4px;
 }
 
-/* line 4689, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4693, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-initial-disabled .sp-input-container {
 	width: 100%;
 }
 
-/* line 4690, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4694, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 input.sp-input[type="text"] {
 	outline: 0;
 	font-size: 12px;
@@ -5305,13 +5310,13 @@ input.sp-input[type="text"] {
 	border-bottom: 1px dotted #BBB !important;
 }
 
-/* line 4691, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4695, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-input.sp-validation-error {
 	border: 1px solid red;
 	background: #fdd;
 }
 
-/* line 4692, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4696, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-picker-container, .sp-palette-container {
 	float: left;
 	position: relative;
@@ -5320,17 +5325,17 @@ input.sp-input[type="text"] {
 	margin-bottom: -290px;
 }
 
-/* line 4693, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4697, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-picker-container {
 	width: 200px;
 }
 
-/* line 4694, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4698, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-initial {
 	float: left;
 }
 
-/* line 4695, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4699, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-initial span {
 	width: 20px;
 	height: 20px;
@@ -5340,22 +5345,22 @@ input.sp-input[type="text"] {
 	margin: 0;
 }
 
-/* line 4696, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4700, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-initial .sp-thumb-el:first-child {
 	display: none;
 }
 
-/* line 4697, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4701, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-initial .sp-clear-display {
 	background-position: center;
 }
 
-/* line 4698, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4702, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-button-container {
 	display: none;
 }
 
-/* line 4699, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4703, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-replacer {
 	margin: 0;
 	overflow: hidden;
@@ -5366,25 +5371,25 @@ input.sp-input[type="text"] {
 	border-radius: 2px;
 }
 
-/* line 4700, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4704, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-replacer:hover, .sp-replacer.sp-active {
 	border-color: #BBB;
 	color: #111;
 }
 
-/* line 4701, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4705, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-replacer.sp-disabled {
 	cursor: default;
 	border-color: silver;
 	color: silver;
 }
 
-/* line 4702, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4706, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-dd {
 	display: none;
 }
 
-/* line 4703, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4707, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-preview {
 	position: relative;
 	width: 75px;
@@ -5393,12 +5398,12 @@ input.sp-input[type="text"] {
 	z-index: 0;
 }
 
-/* line 4704, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4708, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-palette {
 	max-width: 220px;
 }
 
-/* line 4705, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4709, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-palette .sp-thumb-el {
 	width: 16px;
 	height: 16px;
@@ -5406,18 +5411,18 @@ input.sp-input[type="text"] {
 	border: solid 1px #d0d0d0;
 }
 
-/* line 4706, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4710, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-container {
 	padding-bottom: 0;
 }
 
-/* line 4707, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4711, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-container button {
 	font-size: 13px;
 	padding: 5px 10px;
 }
 
-/* line 4708, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4712, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-cancel {
 	font-size: 11px;
 	color: #d93f3f !important;
@@ -5428,24 +5433,24 @@ input.sp-input[type="text"] {
 	text-decoration: none;
 }
 
-/* line 4709, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4713, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-cancel:hover {
 	color: #d93f3f !important;
 	text-decoration: underline;
 }
 
-/* line 4710, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4714, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-palette span:hover, .sp-palette span.sp-thumb-active {
 	border-color: #000;
 }
 
-/* line 4711, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4715, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-preview, .sp-alpha, .sp-thumb-el {
 	position: relative;
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==);
 }
 
-/* line 4712, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4716, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-preview-inner, .sp-alpha-inner, .sp-thumb-inner {
 	display: block;
 	position: absolute;
@@ -5455,13 +5460,13 @@ input.sp-input[type="text"] {
 	right: 0;
 }
 
-/* line 4713, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4717, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-palette .sp-thumb-inner {
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 }
 
-/* line 4714, c:/Projects/iChrome/iChrome/app/css/_app.scss */
+/* line 4718, c:/Projects/iChrome/iChrome/app/css/_app.scss */
 .sp-palette .sp-thumb-light.sp-thumb-active .sp-thumb-inner {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIVJREFUeNpiYBhsgJFMffxAXABlN5JruT4Q3wfi/0DsT64h8UD8HmpIPCWG/KemIfOJCUB+Aoacx6EGBZyHBqI+WsDCwuQ9mhxeg2A210Ntfo8klk9sOMijaURm7yc1UP2RNCMbKE9ODK1HM6iegYLkfx8pligC9lCD7KmRof0ZhjQACDAAceovrtpVBRkAAAAASUVORK5CYII=);
 }

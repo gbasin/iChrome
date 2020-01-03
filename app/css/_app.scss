@@ -3154,6 +3154,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	display: none;
 }
 
+.widgets-container .widget.tabbed-corner.nomax .wdelete {
+	right: 22px;
+}
+
 
 .widgets-container .widget.tabbed.maximized .settings {
 	right: 2px;
