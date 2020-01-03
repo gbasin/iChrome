@@ -141,10 +141,10 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 
 						var order = function(i) {
 							return i.sort(function(a, b) {
-								if (a.parent < b.parent) return -1;
-								if (a.parent > b.parent) return 1;
-								if (a.pos < b.pos) return -1;
-								if (a.pos > b.pos) return 1;
+								if (a.parent < b.parent) { return -1; }
+								if (a.parent > b.parent) { return 1; }
+								if (a.pos < b.pos) { return -1; }
+								if (a.pos > b.pos) { return 1; }
 								return 0;
 							});
 						};
@@ -365,7 +365,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 					var el = children[i];
 					$(el).insertAfter(current);
 					current = el;
-				};
+				}
 			};
 
 			this.elm.off(".tasks")

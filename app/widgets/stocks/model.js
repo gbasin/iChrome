@@ -235,7 +235,7 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 						var marketType = "regularMarket";
 
 						var getClosingPrice = function(e) {
-							if (this.config.regularinpost !== "1") return null;
+							if (this.config.regularinpost !== "1") { return null; }
 							return !e.regularMarketPrice ? null : e.regularMarketPrice.toLocaleString(undefined, { minimumFractionDigits: 2 });
 						}.bind(this);
 

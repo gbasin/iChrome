@@ -1,7 +1,7 @@
 define(["lodash", "jquery", "widgets/views/settings", "lib/parseurl", "jquery.serializejson"], function(_, $, WidgetView, parseUrl) {
 	return WidgetView.extend({
 		events: {
-			"click header button.save": function(e) {
+			"click header button.save": function() {
 				var add = this.$("form").find(".feeds input.add");
 				var url = add.val();
 				if (!_.isEmpty(url)) {
