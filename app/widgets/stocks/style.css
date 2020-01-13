@@ -43,11 +43,11 @@ h2.header {
 }
 
 .list .stock div.name {
-	width: 70%;
+	width: 65%;
 }
 
 .list .stock .price {
-	width: 30%;
+	width: 35%;
 	float: right;
 	text-align: right;
 }
