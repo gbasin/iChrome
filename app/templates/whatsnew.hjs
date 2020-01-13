@@ -1,21 +1,21 @@
 <p>Welcome to iChrome version 1.43!</p>
 
-<p>We continue the bugs fixing. Thank you all who reported the issues, and especially who helped us to identify the bugs and provided the clear explanations, screenshots and screencasts. It helps much!</p>
+<p>Happy new year everyone! We've come into the new decade with a heap of new bug fixes and improvements. Thanks to all who reported issues, and especially who helped us to identify the bugs and provided us with clear explanations, screenshots and screencasts. It all helps so much in making iChrome better and better!</p>
     
 <section>
 <p>What's New in Version 1.43:</p>
 <ul>
-<li>FIXED. Annoying "application is not verified" authentication issue of Calendar, Drive, Tasks and Analytics widgets.</li>
-<li>FIXED. Extension crash on "Add Widget" click on some Chromebook and Linux versions</li>
-<li>FIXED. The Weather widget icon was incorrectly shown as "Sunny" sometimes.</li>
-<li>IMPROVED. RSS widget now stores the entered URL on "Save" button click. No needs to press "Enter" on keyboard</li>
-<li>FIXED. RSS widget could overlap the neighbour column</li>
-<li>FIXED. Could not add the item if list list is empty in the Tasks widget</li>
-<li>FIXED. Stocks widget now shows both Yesterday Closing price and after-hours price in the Pre- and Post- market states</li>
-<li>FIXED. The items order in the Tasks widget did not correspond to the order on the Google Tasks website</li>
-<li>FIXED. The Tasks widget items order changed by Up or Down buttons was not remebered</li>
-<li>FIXED. The tasks and subtasks were mixed in some random order in the Tasks widget</li>
-<li>FIXED. The subtasks reordering by Up or Down buttons did not work in the Tasks widget</li>
+<li>FIXED. Annoying "application is not verified" authentication issue in Calendar, Drive, Tasks and Analytics widgets.</li>
+<li>FIXED. (Long awaited!) Extension crash on "Add Widget" click on some Chromebook and Linux versions.</li>
+<li>FIXED. (Long awaited!) The Stocks widget now shows both Yesterday Closing price and after-hours price in the Pre- and Post- market states.</li>
+<li>FIXED. The Weather widget icon was incorrectly showing as "Sunny" even when this was not true.</li>
+<li>IMPROVED. RSS widget now stores the entered URL when the "Save" button is clicked. No more need to press the "Enter" key</li>
+<li>FIXED. The RSS widget was sometimes overlapping the neighboring column - no more!</li>
+<li>FIXED. Minor issue where it was not possible to add a new item if the Task widget list was empty.
+<li>FIXED. The order of items in the Tasks widget did not correspond to the order on the Google Tasks website.</li>
+<li>FIXED. In the Tasks widget, Tasks and SubTasks were sometimes mixed together randomly.</li>
+<li>FIXED. The order of items in the Tasks widget beign edited with up and down buttons was not being saved.</li>
+<li>FIXED. In the Tasks Widget, SubTasks reordering with the Up and Down buttons sometimes didn't work.</li>
 </ul>
 
 </section>
