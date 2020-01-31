@@ -381,20 +381,21 @@ body.dragging {
 
 		.appname {
 			font-size: 48px;
-			margin-bottom: 30px;
 		}
 	
 		.tagline {
 			font-size: 26px;
-			margin: 15px 0px 15px 0px;
+			margin: 20px 0px 20px 0px;
 		}
 
-		.note {
+		.desc {
 			font-size: 16px;
 		}
 
-		.footer {
+		.note {
 			margin-top: 30px;
+
+			font-size: 0.70em; 
 
 			a {
 				color: yellowgreen;

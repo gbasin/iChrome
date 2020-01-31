@@ -80,6 +80,7 @@
 			"about_desc": "Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
 
 			"terms": "Note: By proceeding, you agree to iChrome's <a href=\"https://ichro.me/tos\" target=\"_blank\">Terms</a> and <a href=\"https://ichro.me/privacy\" target=\"_blank\">Privacy Policy</a>",
+			"terms_desc": "iChrome collects the minimum amount of Personal and Non-personal user information required to fulfill core functions of the service. This includes communicating with users, fulfilling requests, and customizing, operating, and improving our services. For a detailed description of our data usage and collection, please refer to the full iChrome Privacy Policy.",
 
 			"sign_in": "Sign in with your Google account",
 			"sign_in_desc": "Sign in with your Google account before getting started to securely save your changes online.",

@@ -4,7 +4,9 @@
 
 	<div class="tagline">{{i18n.onboarding.modal.intro_moto}}</div>
 
-	<div class="note">{{i18n.onboarding.modal.intro_desc}}</span>
+	<div class="desc">{{i18n.onboarding.modal.intro_desc}}</span>
+
+	<div class="note">{{{i18n.onboarding.modal.terms}}}. {{{i18n.onboarding.modal.terms_desc}}}</span>
 
 	<div class="tutorial-buttons">
 		<button type="button" class="button material flat done">{{i18n.onboarding.next}}</button>
@@ -12,4 +14,4 @@
 	</div>
 </div>
 
-<div class="footer">{{{i18n.onboarding.modal.terms}}}</span>
+
