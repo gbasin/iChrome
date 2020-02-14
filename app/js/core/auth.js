@@ -75,7 +75,7 @@ define(["lodash", "jquery", "backbone", "browser/api", "fbanalytics", "i18n/i18n
 		signout: function(fromError) {
 			var cb = function() {
 				if (this.has("refreshToken")) {
-					$.post(API_HOST + "/oauth/v1/token/revoke?refresh_token=" + encodeURIComponent(this.get("refreshToken")));
+					$.post(API_HOST + "/oauth2/v1/token/revoke?refresh_token=" + encodeURIComponent(this.get("refreshToken")));
 				}
 
 				this.clear();
@@ -114,48 +114,44 @@ define(["lodash", "jquery", "backbone", "browser/api", "fbanalytics", "i18n/i18n
 		authorize: function(cb) {
 			var that = this;
 
-			Browser.windows.create({
-				width: 560,
-				height: 600,
-				type: "popup",
-				focused: true,
-				url: API_HOST + "/oauth/v1/authorize?extension=" + (Browser.app.newTab ? "newtab" : "main"),
-				top: Math.round((screen.availHeight - 600) / 2),
-				left: Math.round((screen.availWidth - 560) / 2)
-			}, function(win) {
-				// We cancel the final request to issue the token and make it ourselves
-				Browser.webRequest.onBeforeRequest.addListener(function(info) {
-					$.getJSON(info.url, function(d) {
-						if (!d || d.error || !d.token) {
-							return cb(d.error || true);
-						}
+			var messageHandler = function(event) {
+				if (event.origin !== "https://api.ichro.me") {
+					return;
+				}
 
-						FB.logEvent("COMPLETED_REGISTRATION");
+				if (!event.data || !event.data.token) {
+					return;
+				}
 
-						this.set({
-							token: d.token,
-							expiry: d.expiry * 1000,
-							refreshToken: d.refreshToken
-						});
+				FB.logEvent("COMPLETED_REGISTRATION");
 
-						cb(null, !!d.isNewUser);
-					}.bind(that)).fail(function() {
-						cb(true);
-					});
+				this.set({
+					token: event.data.token,
+					expiry: event.data.expiry * 1000,
+					refreshToken: event.data.refreshToken
+				});
 
-					Browser.windows.remove(win.id);
+				if (that.child) {
+					that.child.close();
+				};
 
-					return {
-						cancel: true
-					};
-				}, {
-					windowId: win.id,
-					types: ["main_frame"],
-					urls: [API_HOST + "/oauth/v1/token*"]
-				}, [
-					"blocking"
-				]);
-			});
+				cb(null, !!event.data.isNewUser);
+			}.bind(this);
+
+			window.addEventListener("message", messageHandler);
+
+			var url = API_HOST + "/oauth2/v1/authorize?extension=" + (Browser.app.newTab ? "newtab" : "main");
+			var top = Math.round((screen.availHeight - 600) / 2);
+			var left = Math.round((screen.availWidth - 560) / 2);
+
+			var timer = setInterval(function() {   
+				if(that.child && that.child.closed) {  
+					clearInterval(timer);  
+					window.removeEventListener("message", messageHandler);
+				}  
+			}, 200); 
+
+			that.child = window.open(url, "_blank", "top=" + top + ",left=" + left + ",height=600,width=560");
 		},
 
 
@@ -213,7 +209,7 @@ define(["lodash", "jquery", "backbone", "browser/api", "fbanalytics", "i18n/i18n
 				return;
 			}
 
-			this._refreshPromise = $.post(API_HOST + "/oauth/v1/token/refresh", "refresh_token=" + encodeURIComponent(this.get("refreshToken")), function(d) {
+			this._refreshPromise = $.post(API_HOST + "/oauth2/v1/token/refresh", "refresh_token=" + encodeURIComponent(this.get("refreshToken")), function(d) {
 				if (typeof d !== "object") {
 					d = JSON.parse(d);
 				}
