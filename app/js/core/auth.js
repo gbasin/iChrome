@@ -133,7 +133,7 @@ define(["lodash", "jquery", "backbone", "browser/api", "fbanalytics", "i18n/i18n
 
 				if (that.child) {
 					that.child.close();
-				};
+				}
 
 				cb(null, !!event.data.isNewUser);
 			}.bind(this);
