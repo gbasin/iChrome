@@ -26,7 +26,7 @@ define(["i18n/i18n"], function(Translate) {
 							color: "rgb(255, 255, 255)",
 							title: "Leave a 5* Review? :)",
 							link: "https://chrome.google.com/webstore/detail/ichrome-new-tab-ultimate/iccjgbbjckehppnpajnmplcccjcgbdep/related?hl=en",
-							image: "https://ichro.me/img/press/8.png"
+							image: "images/sitelink_logo.png"
 						}
 					}, 
 					{ 
