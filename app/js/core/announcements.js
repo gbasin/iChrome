@@ -181,7 +181,7 @@ define(["lodash", "backbone", "browser/api", "modals/alert", "core/analytics", "
 							type: "l",
 							id: 1,
 							title: "You are not signed in now",
-							contents: "<p>Try iChrome Pro free for 30 Days! Sign in with your Chrome account to securely store and sync your settings, and experience the full features of iChrome Pro.</p>",
+							contents: "<p>Try ProductivityTab Pro free for 30 Days! Sign in with your Chrome account to securely store and sync your settings, and experience the full features of ProductivityTab Pro.</p>",
 							positiveText: "Sign in",
 							negativeText: "Dismiss",
 							positiveAction: function() {

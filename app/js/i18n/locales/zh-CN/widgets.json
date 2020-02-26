@@ -166,7 +166,7 @@
   "now":{
     "name":"Google Now",
     "desc":"显示Google Now卡片，提供包括并不限于航班状态和包裹追踪的各种卡片。",
-    "authorize":"在任何东西显示之前您需要授予iChrome查看您Google Now卡片的权限。",
+    "authorize":"在任何东西显示之前您需要授予ProductivityTab查看您Google Now卡片的权限。",
     "authorize_btn":"授权",
     "caught_up":"没有新通知",
     "no_title":"无标题"
@@ -230,8 +230,8 @@
       "source":"显示从推文来源",
       "show":"显示Tweets"
     },
-    "authorize":"您需要给予iChrome授权",
-    "authorize_msg":"在显示任何东西之前您需要授予iChrome权限以查看您账户中的推文。",
+    "authorize":"您需要给予ProductivityTab授权",
+    "authorize_msg":"在显示任何东西之前您需要授予ProductivityTab权限以查看您账户中的推文。",
     "authorize_btn":"授权",
     "no_tweets":"似乎这里没有任何Tweets...",
     "home":"首页",
@@ -365,7 +365,7 @@
     "by":"作者",
     "no_links":"找不到链接",
     "grant_access":"授予访问权限",
-    "no_key":"在加载您保存在Pocket中的链接前，请先授权iChrome访问您的Pocket账号。"
+    "no_key":"在加载您保存在Pocket中的链接前，请先授权ProductivityTab访问您的Pocket账号。"
   },
   "analytics":{
     "name":"分析",
@@ -413,7 +413,7 @@
       "files_shown":"显示文件个数"
     },
     "modified_by":"作者",
-    "authMessage":"在任何东西能够显示前您需要授权iChrome浏览本地文件。"
+    "authMessage":"在任何东西能够显示前您需要授权ProductivityTab浏览本地文件。"
   },
   "gmail":{
     "name":"Gmail",
@@ -512,7 +512,7 @@
     "overview":"概览",
     "news":"新闻",
     "pro_splash1":"获取实时数据，图表，新闻以及股票详细信息是专业版的功能。",
-    "pro_splash2":"请在设置中购买iChrome专业版。",
+    "pro_splash2":"请在设置中购买ProductivityTab专业版。",
     "time_ranges":{
       "1d":"1日",
       "5d":"5日",

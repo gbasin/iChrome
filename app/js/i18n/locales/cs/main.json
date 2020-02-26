@@ -2,8 +2,8 @@
   "lang_code":"cs",
   "language":"Česky",
 
-	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
-	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extName": "ProductivityTab - Ultimate Personal Dashboard Homepage",
+	"newtabName": "ProductivityTab New Tab - Ultimate Personal Dashboard",
 	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
 	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
 
@@ -14,7 +14,7 @@
   "remove_widget":"Odstranit",
   "hide_banner":"Hide this banner",
   "hide_ad":{
-    "content":"Hey! We're not crazy about ads either, but we're only able to make iChrome available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support iChrome directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make ProductivityTab available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support ProductivityTab directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"Upgrade",
     "hide":"Hide ads"
   },
@@ -27,12 +27,12 @@
   "onboarding":{
     "modal":{
       "tagline":"Všechny weby a aplikace, které používáte, na jednom místě",
-      "wrong_extension":"Chcete mít iChrome na vaší nové kartě?",
-      "wrong_extension_newtab":"Chcete mít iChrome jako domovskou stránku?",
+      "wrong_extension":"Chcete mít ProductivityTab na vaší nové kartě?",
+      "wrong_extension_newtab":"Chcete mít ProductivityTab jako domovskou stránku?",
       "wrong_extension_action":"Klikněte zde",
-      "about":"iChrome je celý o kartách a widgetech",
+      "about":"ProductivityTab je celý o kartách a widgetech",
       "about_desc":"Karty jsou stránky s widgety - bloky, které ukazují věci, jako je například počasí, zpravodajství a nebo váš email. Většinu widgetů si můžete upravit jakkoliv chcete a mít jich kolik jen chcete.",
-      "terms":"Upozornění: Pokračováním souhlasíte s <a href=\"https://ichro.me/tos\" target=\"_blank\">Podmínkami</a> a <a href=\"https://ichro.me/privacy\" target=\"_blank\">Ochranou soukromí</a> dle iChrome",
+      "terms":"Upozornění: Pokračováním souhlasíte s <a href=\"https://ichro.me/tos\" target=\"_blank\">Podmínkami</a> a <a href=\"https://ichro.me/privacy\" target=\"_blank\">Ochranou soukromí</a> dle ProductivityTab",
       "sign_in":"Přihlásit se pomocí účtu Google",
       "sign_in_desc":"Pro bezpečné online ukládání Vašich změn se nejprve přihlaste pomocí Vašeho účtu Google.",
       "sign_in_desc2":"Pokud chcete, můžete zůstat odhlášeni, ale vaše stránka nebude ukládána online a nebudete k ní mít přístup z jiných počítačů.",
@@ -56,7 +56,7 @@
 			"instructions": "Click the new widget button on to open the widget menu!",
       "skip":"Přeskočit",
       "tooltips":{
-        "settings":"Změňte vzhled i fungování iChrome",
+        "settings":"Změňte vzhled i fungování ProductivityTab",
         "widgets":"Přidat nový widget - můžete jich mít kolik jen budete chtít",
         "editing":"Zobrazit nebo skrýt tlačítka pro úpravu widgetů",
         "links":"Toto je seznam odkazů, přidejte si odkazy na webové stránky, které často navštěvujete. Změnu provedete v nastavení",
@@ -87,7 +87,7 @@
     "placeholder_ok":"Zadejte dotaz, nebo řekněte \"OK, Google\"",
     "suggestions":{
       "url_subtext":"Visit URL",
-      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+      "capture_notice":"ProductivityTab handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
     },
     "apps":{
       "search":"Hledat",
@@ -183,7 +183,7 @@
       },
       "theme":{
         "title":"Motiv aplikace",
-        "desc":"Motiv aplikace ovlivňuje styl samotného iChrome a všech widgetů",
+        "desc":"Motiv aplikace ovlivňuje styl samotného ProductivityTab a všech widgetů",
         "preview":"Náhled",
         "light":"Světlý (výchozí)",
         "dark":"Tmavý",
@@ -227,7 +227,7 @@
     "tabs":{
       "create_new":"Vytvořit novou",
       "make_default":"Nastavit jako výchozí",
-      "desc1":"Karty jsou stránky uvnitř iChrome. Každá karta má vlastní sadu widgetů, zcela nezávisle na ostatních kartách.",
+      "desc1":"Karty jsou stránky uvnitř ProductivityTab. Každá karta má vlastní sadu widgetů, zcela nezávisle na ostatních kartách.",
       "desc2":"Můžete přepínat mezi kartami kliknutím na tlačítka, která se zobrazí na levé a pravé straně obrazovky, když přejedete myší přes kartu nebo pomocí kláves se šipkami na Vaší klávesnici.",
       "name_placeholder":"Zadejte název karty",
       "delete_confirm":"Tato akce je nezvratná. Všechna data widgetů na kartě budou navždy ztracena."
@@ -247,19 +247,19 @@
     "advanced":{
       "backups":{
         "title":"Záloha a obnova",
-        "desc":"Zálohy jsou plné kopie všech vašich záložek, nastavení a widgetů. Jsou generovány automaticky, když poprvé otevřete iChrome každý den.",
-        "desc2":"Použijte tlačítka níže pro vrácení iChrome do stavu k určitému datu nebo stáhněte některou ze svých záloh.",
+        "desc":"Zálohy jsou plné kopie všech vašich záložek, nastavení a widgetů. Jsou generovány automaticky, když poprvé otevřete ProductivityTab každý den.",
+        "desc2":"Použijte tlačítka níže pro vrácení ProductivityTab do stavu k určitému datu nebo stáhněte některou ze svých záloh.",
         "backup":"Zálohovat nyní",
         "upload":"Obnovit ze souboru",
         "download":"Stáhnout",
         "restore":"Obnovit",
-        "download_name":"iChrome zálohování",
+        "download_name":"ProductivityTab zálohování",
         "restore_confirm":"Toto přepíše všechna lokální i synchronizovaná data. Ztratíte celou svoji aktuální konfiguraci na všech počítačích s tímto účtem.",
         "restore_error":"Nastala chyba při pokusu o čtení poskytnutých dat, zkuste to prosím později."
       },
       "css":{
         "title":"Vlastní CSS",
-        "desc":"Můžete použít CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definice</a>) a nastavit si téměř každou část iChrome.",
+        "desc":"Můžete použít CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definice</a>) a nastavit si téměř každou část ProductivityTab.",
         "placeholder":"Zde vložte až 1000 znaků CSS"
       },
       "debug_tools":{
@@ -288,7 +288,7 @@
         "bgs":"Živé pozadí",
         "bgs_desc":"Oživte svoji stránku jedním z 20ti živých pozadí ve vysokém rozlišení",
         "widgets":"Maximalizovatelné widgety",
-        "widgets_desc":"Poznejte novou úroveň iChrome použitím maximalizovatelných widgetů",
+        "widgets_desc":"Poznejte novou úroveň ProductivityTab použitím maximalizovatelných widgetů",
         "more_header":"A další",
         "stocks":"Akcie v reálném čase s jejich detaily a historií",
         "rss":"Podpora více RSS feedů v jednom widgetu",
@@ -311,11 +311,11 @@
         "update":"Aktualizovat",
         "subscribe":"Předplatit",
         "braintree_notice":"Platby jsou bezpečně zpracovávány přes Braintree.",
-        "monthly_notice":"Předplacením povolujete iChrome aby Vám účtoval $4.99 každý měsíc, dokud nezrušíte své předplatné.",
-        "yearly_notice":"Předplacením povolujete iChrome aby Vám účtoval $29.99 každý měsíc, dokud nezrušíte své předplatné.",
+        "monthly_notice":"Předplacením povolujete ProductivityTab aby Vám účtoval $4.99 každý měsíc, dokud nezrušíte své předplatné.",
+        "yearly_notice":"Předplacením povolujete ProductivityTab aby Vám účtoval $29.99 každý měsíc, dokud nezrušíte své předplatné.",
         "update_notice":"Ačkoliv změny účtovacího cyklu se projeví okamžitě, částka Vám nebude účtována dokud neskončí aktuální cyklus.",
-        "thank_you":"Děkujeme za zakoupení iChrome Pro!",
-        "thank_you2":"iChrome se znovu načte za pár sekund a poté budete připraveni!",
+        "thank_you":"Děkujeme za zakoupení ProductivityTab Pro!",
+        "thank_you2":"ProductivityTab se znovu načte za pár sekund a poté budete připraveni!",
         "error":"Něco se nepodařilo během zpracování Vaší platby.",
         "error2":"Prosím zkuste to později nebo nás kontaktujte na support@ichro.me",
         "signin":"Přihlásit se",
@@ -324,7 +324,7 @@
       },
       "plan":{
         "title":"Plán",
-        "desc":"Právě jste přihlášeni k předplatnému iChrome Pro (%s)",
+        "desc":"Právě jste přihlášeni k předplatnému ProductivityTab Pro (%s)",
         "types":{
           "monthly":"Měsíčně",
           "yearly":"Ročně",
@@ -332,7 +332,7 @@
           "education":"Pro školy",
           "custom":"Vlastní"
         },
-        "uneditable_desc":"Plány pro firmy, školy a speciální plány nelze aktualizovat přes iChrome. Prosím <a href=\"mailto:support@ichro.me\">kontaktujte nás</a> pro aktualizaci nebo zrušení Vašeho předplatného.",
+        "uneditable_desc":"Plány pro firmy, školy a speciální plány nelze aktualizovat přes ProductivityTab. Prosím <a href=\"mailto:support@ichro.me\">kontaktujte nás</a> pro aktualizaci nebo zrušení Vašeho předplatného.",
         "status":"Stav",
         "status_active":"Aktivní",
         "status_trial":"Zkušební verze",
@@ -349,9 +349,9 @@
       }
     },
     "ads":{
-      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text1":"ProductivityTab displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer ProductivityTab free to everyone.",
       "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
-      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from ProductivityTab wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
       "upgrade_btn":"Upgrade to ad-free",
       "already_upgraded":"It looks like you've already upgraded to ad-free",
       "signin":"Přihlásit se",

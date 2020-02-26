@@ -2,8 +2,8 @@
   "lang_code":"it",
   "language":"Italiano",
 
-	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
-	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extName": "ProductivityTab-Ultimate Personal Dashboard Homepage",
+	"newtabName": "ProductivityTab New Tab - Ultimate Personal Dashboard",
 	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
 	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
 
@@ -14,7 +14,7 @@
   "remove_widget":"Rimuovi",
   "hide_banner":"Hide this banner",
   "hide_ad":{
-    "content":"Hey! We're not crazy about ads either, but we're only able to make iChrome available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support iChrome directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make ProductivityTab available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support ProductivityTab directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"Upgrade",
     "hide":"Hide ads"
   },
@@ -27,10 +27,10 @@
   "onboarding":{
     "modal":{
       "tagline":"Tutti i siti e le applicazioni che utilizzi, in un unico posto",
-      "wrong_extension":"Vuoi che iChrome sostituisca la tua nuova scheda?",
-      "wrong_extension_newtab":"Vuoi che iChrome diventi la tua home page?",
+      "wrong_extension":"Vuoi che ProductivityTab sostituisca la tua nuova scheda?",
+      "wrong_extension_newtab":"Vuoi che ProductivityTab diventi la tua home page?",
       "wrong_extension_action":"Clicca qui",
-      "about":"iChrome è fatto di tab e widget",
+      "about":"ProductivityTab è fatto di tab e widget",
       "about_desc":"I Tab (o Schede) sono pagine contenenti widget - riquadri che mostrano cose come il meteo, le news e le tue email. Puoi personalizzare la maggior parte dei widget e aggiungerne quanti ne vuoi.",
       "terms":"Nota: Procedendo, accetti le<a href=\"https://ichro.me/tos\" target=\"_blank\">condizioni</a> e i<a href=\"https://ichro.me/privacy\" target=\"_blank\">termini sulla privacy</a>",
       "sign_in":"Registrati con il tuo account Google",
@@ -56,7 +56,7 @@
 			"instructions": "Click the new widget button on to open the widget menu!",
       "skip":"Salta",
       "tooltips":{
-        "settings":"Modificare l'aspetto e le funzioni di iChrome",
+        "settings":"Modificare l'aspetto e le funzioni di ProductivityTab",
         "widgets":"Aggiungere nuovi widget - se ne possono avere quanti ne vuoi",
         "editing":"Mostrare o nascondere i pulsanti di modifica sui widget",
         "links":"Questo è un elenco di link, aggiungi i siti che si utilizzi spesso nelle impostazioni",
@@ -87,7 +87,7 @@
     "placeholder_ok":"Inserisci i termini della tua ricerca o pronuncia \"OK, Google\"",
     "suggestions":{
       "url_subtext":"Visit URL",
-      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+      "capture_notice":"ProductivityTab handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
     },
     "apps":{
       "search":"Cerca",
@@ -183,7 +183,7 @@
       },
       "theme":{
         "title":"Tema dell'Applicazione",
-        "desc":"L'Applicazione del Tema controlla lo stile dello stesso iChrome e di tutti i widgets",
+        "desc":"L'Applicazione del Tema controlla lo stile dello stesso ProductivityTab e di tutti i widgets",
         "preview":"Anteprima",
         "light":"Chiaro (impostazione predefinita)",
         "dark":"Scuro",
@@ -227,7 +227,7 @@
     "tabs":{
       "create_new":"Crea nuova",
       "make_default":"Rendilo predefinito",
-      "desc1":"Le schede sono pagine all'interno di iChrome. Ogni scheda ha il suo insieme di widget che è totalmente separato rispetto da ogni altra scheda.",
+      "desc1":"Le schede sono pagine all'interno di ProductivityTab. Ogni scheda ha il suo insieme di widget che è totalmente separato rispetto da ogni altra scheda.",
       "desc2":"È possibile cambiare scheda cliccando i pulsanti che appaiono a sinistra e destra dello schermo quando muovi il mouse sopra una scheda, oppure tramite i tasti freccia sulla tastiera.",
       "name_placeholder":"Inserire nome scheda",
       "delete_confirm":"Quest'azione è irreversibile. Tutti i dati dei widgets nella scheda saranno persi definitivamente."
@@ -247,19 +247,19 @@
     "advanced":{
       "backups":{
         "title":"Backup e ripristino",
-        "desc":"I backup sono copie complete di tutte le tue schede, impostazioni e widget. Sono creati automaticamente ogni giorno quando apri iChrome la prima volta.",
-        "desc2":"Usa i pulsanti qui sotto per riportare iChrome ad una data precisa o scarica uno dei tuoi backup.",
+        "desc":"I backup sono copie complete di tutte le tue schede, impostazioni e widget. Sono creati automaticamente ogni giorno quando apri ProductivityTab la prima volta.",
+        "desc2":"Usa i pulsanti qui sotto per riportare ProductivityTab ad una data precisa o scarica uno dei tuoi backup.",
         "backup":"Esegui il backup ora",
         "upload":"Ripristina da un file",
         "download":"Download",
         "restore":"Ripristina",
-        "download_name":"Backup iChrome",
+        "download_name":"Backup ProductivityTab",
         "restore_confirm":"Questo sovrascriverà tutti i dati locali e sincronizzati. Perderai la tua intera configurazione corrente su tutti i computer con questo account.",
         "restore_error":"Si è verificato un errore durante il tentativo di analizzare i dati forniti, si prega di riprovare più tardi."
       },
       "css":{
         "title":"Personalizza CSS",
-        "desc":"Puoi usare i CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definizione</a>) per personalizzare quasi tutte le parti di iChrome.",
+        "desc":"Puoi usare i CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definizione</a>) per personalizzare quasi tutte le parti di ProductivityTab.",
         "placeholder":"Inserire fino a 1000 caratteri CSS qui"
       },
       "debug_tools":{
@@ -288,7 +288,7 @@
         "bgs":"Sfondi live",
         "bgs_desc":"Dai vita alla tua pagina con 20 sfondi in alta definizione",
         "widgets":"Windget massimizabile",
-        "widgets_desc":"Porta iChrome ad un altro livello con i Windgets massimizzabili",
+        "widgets_desc":"Porta ProductivityTab ad un altro livello con i Windgets massimizzabili",
         "more_header":"E altro ancora",
         "stocks":"Azioni di mercato in tempo reale con informazioni storiche estese",
         "rss":"Supporto per più feed RSS per widget",
@@ -311,11 +311,11 @@
         "update":"Aggiorna",
         "subscribe":"Iscriviti",
         "braintree_notice":"I pagamenti sono elaborati in modo sicuro da Braintree.",
-        "monthly_notice":"Mediante la sottoscrizione, si autorizza iChrome a farti pagare 4.99 dollari ogni mese fino a quando non si annulla la sottoscrizione.",
-        "yearly_notice":"Mediante la sottoscrizione, si autorizza iChrome a farti pagare 29.99 dollari ogni anno fino a quando non si annulla la sottoscrizione.",
+        "monthly_notice":"Mediante la sottoscrizione, si autorizza ProductivityTab a farti pagare 4.99 dollari ogni mese fino a quando non si annulla la sottoscrizione.",
+        "yearly_notice":"Mediante la sottoscrizione, si autorizza ProductivityTab a farti pagare 29.99 dollari ogni anno fino a quando non si annulla la sottoscrizione.",
         "update_notice":"Anche se i cambiamenti al ciclo di fatturazione sono immediati, non ti sarà addebitato niente fino alla fine del ciclo corrente.",
-        "thank_you":"Grazie per aver acquistato iChrome Pro!",
-        "thank_you2":"iChrome ricaricherà in pochi secondi e sarà tutto impostato!",
+        "thank_you":"Grazie per aver acquistato ProductivityTab Pro!",
+        "thank_you2":"ProductivityTab ricaricherà in pochi secondi e sarà tutto impostato!",
         "error":"Qualcosa è andato storto durante il tentativo di elaborare il pagamento.",
         "error2":"Si prega di riprovare più tardi o scrivere a support@ichro.me",
         "signin":"Accedi",
@@ -324,7 +324,7 @@
       },
       "plan":{
         "title":"Piano",
-        "desc":"Sei attualmente iscritto ad iChrome Pro (%s)",
+        "desc":"Sei attualmente iscritto ad ProductivityTab Pro (%s)",
         "types":{
           "monthly":"Mensilmente",
           "yearly":"Annualmente",
@@ -332,7 +332,7 @@
           "education":"Educazione",
           "custom":"personalizzato"
         },
-        "uneditable_desc":"Business, education e piani personalizzati non possono essere aggiornati all'interno di hexitiChrome. Si prega di <a href=\"mailto:support@ichro.me\"> contattarci</a> per aggiornare o cancellare la tua iscrizione.",
+        "uneditable_desc":"Business, education e piani personalizzati non possono essere aggiornati all'interno di ProductivityTab. Si prega di <a href=\"mailto:support@ichro.me\"> contattarci</a> per aggiornare o cancellare la tua iscrizione.",
         "status":"Stato",
         "status_active":"Attivo",
         "status_trial":"Versione di prova",
@@ -349,9 +349,9 @@
       }
     },
     "ads":{
-      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text1":"ProductivityTab displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer ProductivityTab free to everyone.",
       "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
-      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from ProductivityTab wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
       "upgrade_btn":"Upgrade to ad-free",
       "already_upgraded":"It looks like you've already upgraded to ad-free",
       "signin":"Registrati",

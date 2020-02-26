@@ -166,7 +166,7 @@
   "now":{
     "name":"Google Now",
     "desc":"Zeigt Karten von Google Now an, einschließlich Flugstatus und Paketverfolgung.",
-    "authorize":"Erlaube iChrome, Google Now-Karten anzuzeigen, bevor diese hier auftauchen.",
+    "authorize":"Erlaube ProductivityTab, Google Now-Karten anzuzeigen, bevor diese hier auftauchen.",
     "authorize_btn":"Autorisieren",
     "caught_up":"Alles erledigt, hier gibt es nichts.",
     "no_title":"Kein Titel"
@@ -230,8 +230,8 @@
       "source":"Zeige Tweets von",
       "show":"Tweets angezeigt"
     },
-    "authorize":"Du musst iChrome zuerst autorisieren",
-    "authorize_msg":"Du musst iChrome die Berechtigung zum Anzeigen von Tweets von Ihrem Konto geben, bevor diese hier auftauchen werden.",
+    "authorize":"Du musst ProductivityTab zuerst autorisieren",
+    "authorize_msg":"Du musst ProductivityTab die Berechtigung zum Anzeigen von Tweets von Ihrem Konto geben, bevor diese hier auftauchen werden.",
     "authorize_btn":"Autorisieren",
     "no_tweets":"Es scheint hier keine Tweets zu geben...",
     "home":"Home",
@@ -365,7 +365,7 @@
     "by":"Von",
     "no_links":"Keine Links gefunden",
     "grant_access":"Zugriff gewähren",
-    "no_key":"Sie müssen iChrome Zugriff zu Ihrem Pocket-Konto gewähren damit Ihre Verknüpfungen geladen werden können."
+    "no_key":"Sie müssen ProductivityTab Zugriff zu Ihrem Pocket-Konto gewähren damit Ihre Verknüpfungen geladen werden können."
   },
   "analytics":{
     "name":"Analytik",
@@ -413,7 +413,7 @@
       "files_shown":"Anzahl der angezeigten Dateien"
     },
     "modified_by":"von",
-    "authMessage":"Du musst iChrome dazu berechtigen, auf all deine Dateien zuzugreifen, bevor hier etwas angezeigt werden kann."
+    "authMessage":"Du musst ProductivityTab dazu berechtigen, auf all deine Dateien zuzugreifen, bevor hier etwas angezeigt werden kann."
   },
   "gmail":{
     "name":"Gmail",

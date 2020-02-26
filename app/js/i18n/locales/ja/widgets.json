@@ -166,7 +166,7 @@
   "now":{
     "name":"Google Now",
     "desc":"フライト情報や荷物の追跡などの Google Now カードを表示します。",
-    "authorize":"Google Now のカードを表示するためには、iChrome に許可を与える必要があります。",
+    "authorize":"Google Now のカードを表示するためには、ProductivityTab に許可を与える必要があります。",
     "authorize_btn":"許可",
     "caught_up":"カードはありません",
     "no_title":"タイトルなし"
@@ -230,8 +230,8 @@
       "source":"表示するツイート",
       "show":"表示するツイートの数"
     },
-    "authorize":"まず iChrome を許可する必要があります",
-    "authorize_msg":"あなたの Twitter アカウントからツイートを表示するためには、iChrome に許可を与える必要があります。",
+    "authorize":"まず ProductivityTab を許可する必要があります",
+    "authorize_msg":"あなたの Twitter アカウントからツイートを表示するためには、ProductivityTab に許可を与える必要があります。",
     "authorize_btn":"許可",
     "no_tweets":"ツイートがありません",
     "home":"ホーム",
@@ -365,7 +365,7 @@
     "by":"By",
     "no_links":"リンクはありません。",
     "grant_access":"アクセスを許可",
-    "no_key":"Pocket からリンクを読み込むために、iChrome にアクセス権限を与える必要があります。"
+    "no_key":"Pocket からリンクを読み込むために、ProductivityTab にアクセス権限を与える必要があります。"
   },
   "analytics":{
     "name":"アナリティクス",
@@ -413,7 +413,7 @@
       "files_shown":"表示するファイルの数"
     },
     "modified_by":"by",
-    "authMessage":"Google ドライブからファイルを表示するためには、iChrome に許可を与える必要があります。"
+    "authMessage":"Google ドライブからファイルを表示するためには、ProductivityTab に許可を与える必要があります。"
   },
   "gmail":{
     "name":"Gmail",

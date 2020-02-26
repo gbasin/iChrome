@@ -166,7 +166,7 @@
   "now":{
     "name":"Google Now",
     "desc":"Affiche les cartes depuis Google Now, ceci inclus le statut de votre vol ou de vos colis.",
-    "authorize":"Vous devez autoriser iChrome à accéder à vos cartes Google Now avant que quoi que ce soit soit affiché ici.",
+    "authorize":"Vous devez autoriser ProductivityTab à accéder à vos cartes Google Now avant que quoi que ce soit soit affiché ici.",
     "authorize_btn":"Autoriser",
     "caught_up":"Tout a été récupéré, il n'y a plus rien ici.",
     "no_title":"Pas de titre"
@@ -230,8 +230,8 @@
       "source":"Afficher les Tweets de",
       "show":"Tweets montrés"
     },
-    "authorize":"Vous aurez tout d'abord besoin d'autoriser iChrome",
-    "authorize_msg":"Vous devez donner iChrome la permission d'accéder à votre compte Twitter avant que ce ne soit affiché ici.",
+    "authorize":"Vous aurez tout d'abord besoin d'autoriser ProductivityTab",
+    "authorize_msg":"Vous devez donner ProductivityTab la permission d'accéder à votre compte Twitter avant que ce ne soit affiché ici.",
     "authorize_btn":"Autoriser",
     "no_tweets":"Il ne semble pas y avoir de tweets ici...",
     "home":"Accueil",
@@ -365,7 +365,7 @@
     "by":"par",
     "no_links":"Aucun lien trouvé",
     "grant_access":"Accorder l'accès",
-    "no_key":"Vous devrez donner à iChrome un accès à votre compte Pocket avant de charger vos liens."
+    "no_key":"Vous devrez donner à ProductivityTab un accès à votre compte Pocket avant de charger vos liens."
   },
   "analytics":{
     "name":"Analytics",
@@ -413,7 +413,7 @@
       "files_shown":"Nombre de fichiers affichés"
     },
     "modified_by":"par",
-    "authMessage":"Vous devez donner à iChrome la permission d'accéder aux fichiers de votre Drive pour qu'ils apparaissent ici."
+    "authMessage":"Vous devez donner à ProductivityTab la permission d'accéder aux fichiers de votre Drive pour qu'ils apparaissent ici."
   },
   "gmail":{
     "name":"Gmail",

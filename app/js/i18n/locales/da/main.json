@@ -2,8 +2,8 @@
   "lang_code":"da",
   "language":"Dansk",
 
-	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
-	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extName": "ProductivityTab - Ultimate Personal Dashboard Homepage",
+	"newtabName": "ProductivityTab New Tab - Ultimate Personal Dashboard",
 	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
 	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
 
@@ -14,7 +14,7 @@
   "remove_widget":"Fjern",
   "hide_banner":"Hide this banner",
   "hide_ad":{
-    "content":"Hey! We're not crazy about ads either, but we're only able to make iChrome available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support iChrome directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make ProductivityTab available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support ProductivityTab directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"Upgrade",
     "hide":"Hide ads"
   },
@@ -27,12 +27,12 @@
   "onboarding":{
     "modal":{
       "tagline":"Alle de websteder og programmer, du bruger, på ét sted",
-      "wrong_extension":"Vil du have iChrome på dit ny faneblad i stedet?",
-      "wrong_extension_newtab":"Vil du have iChrome på startside i stedet?",
+      "wrong_extension":"Vil du have ProductivityTab på dit ny faneblad i stedet?",
+      "wrong_extension_newtab":"Vil du have ProductivityTab på startside i stedet?",
       "wrong_extension_action":"Klik her",
-      "about":"iChrome er lutter faner og widgets",
+      "about":"ProductivityTab er lutter faner og widgets",
       "about_desc":"Faner er sider fyldt med widgets - blokke, der viser ting som vejret, nyheder og din e-mail. Du kan tilpasse de fleste widgets og tilføje så mange som du ønsker.",
-      "terms":"Bemærk: Hvis du fortsætter, accepterer du iChrome's <a href=\"https://ichro.me/tos\" target=\"_blank\">Terms</a> and <a href=\"https://ichro.me/privacy\" target=\"_blank\">Privat Politik</a>",
+      "terms":"Bemærk: Hvis du fortsætter, accepterer du ProductivityTab's <a href=\"https://ichro.me/tos\" target=\"_blank\">Terms</a> and <a href=\"https://ichro.me/privacy\" target=\"_blank\">Privat Politik</a>",
       "sign_in":"Log ind med din Google-konto",
       "sign_in_desc":"Log ind med din Google konto før du starter, så du kan gemme dine ændringer online.",
       "sign_in_desc2":"Du kan forblive logget ud, hvis du ønsker det, men din side vil ikke blive gemt online og du vil ikke kunne tilgå din side fra andre computere.",
@@ -56,7 +56,7 @@
 			"instructions": "Click the new widget button on to open the widget menu!",
       "skip":"Spring over",
       "tooltips":{
-        "settings":"Skift iChromes udseende og funktion",
+        "settings":"Skift ProductivityTabs udseende og funktion",
         "widgets":"Tilføje nye widgets - du kan have så mange som du ønsker",
         "editing":"Vis eller skjul redigeringsknapperne på widgets",
         "links":"Dette er en liste over links, tilføj websteder, du bruger ofte i indstillingerne",
@@ -87,7 +87,7 @@
     "placeholder_ok":"Indtast dine betingelser eller sig \"OK, Google\"",
     "suggestions":{
       "url_subtext":"Visit URL",
-      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+      "capture_notice":"ProductivityTab handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
     },
     "apps":{
       "search":"Søg",
@@ -183,7 +183,7 @@
       },
       "theme":{
         "title":"App tema",
-        "desc":"App temaet styrer udseendet af iChrome og alle widgets",
+        "desc":"App temaet styrer udseendet af ProductivityTab og alle widgets",
         "preview":"Forhåndsvisning",
         "light":"Lys (standard)",
         "dark":"Mørk",
@@ -227,7 +227,7 @@
     "tabs":{
       "create_new":"Opret ny",
       "make_default":"Vælg som standard",
-      "desc1":"Faner er sider indeni iChrome. Hver fane har sit eget sæt af widgets, der er helt uafhængig fra alle andre faner.",
+      "desc1":"Faner er sider indeni ProductivityTab. Hver fane har sit eget sæt af widgets, der er helt uafhængig fra alle andre faner.",
       "desc2":"Du kan skifte mellem faner ved at klikke på knapperne, der vises til venstre og højre side af skærmen, når du flytter musen hen over en fane eller ved at bruge piletasterne på dit tastatur.",
       "name_placeholder":"Angiv et fanenavn",
       "delete_confirm":"Denne aktion er uigenkaldelig. Alle data fra alle widgets i fanebladet mistes."
@@ -247,19 +247,19 @@
     "advanced":{
       "backups":{
         "title":"Backup og gendan",
-        "desc":"Backups er komplette kopier af alle dine tabs, indstillinger og widgets. De bliver automatisk genereret hver dag når du starter iChrome første gang.",
-        "desc2":"Brug nedenstående knapper for at vælge en specifik iChrome genskabelses dato, eller download en af dine backups.",
+        "desc":"Backups er komplette kopier af alle dine tabs, indstillinger og widgets. De bliver automatisk genereret hver dag når du starter ProductivityTab første gang.",
+        "desc2":"Brug nedenstående knapper for at vælge en specifik ProductivityTab genskabelses dato, eller download en af dine backups.",
         "backup":"Sikkerhedskopi nu",
         "upload":"Gendan fra fil",
         "download":"Download",
         "restore":"Gendan",
-        "download_name":"iChrome sikkerhedskopi",
+        "download_name":"ProductivityTab sikkerhedskopi",
         "restore_confirm":"Dette vil overskrive alle lokale og synkroniserede data. Du vil miste din hele aktuelle konfiguration på alle computere under denne konto.",
         "restore_error":"An error occurred while trying to parse the provided data, please try again later."
       },
       "css":{
         "title":"Custom CSS",
-        "desc":"You can use CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definition</a>) to customize almost any part of iChrome.",
+        "desc":"You can use CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definition</a>) to customize almost any part of ProductivityTab.",
         "placeholder":"Indtast op til 1000 tegn i CSS her"
       },
       "debug_tools":{
@@ -288,7 +288,7 @@
         "bgs":"Levende baggrunde",
         "bgs_desc":"Giv din side liv med 20 live HD baggrunde",
         "widgets":"Widget kan maksimeres",
-        "widgets_desc":"Få mere ud af iChrome med widgets der kan maksimeres",
+        "widgets_desc":"Få mere ud af ProductivityTab med widgets der kan maksimeres",
         "more_header":"Og meget mere",
         "stocks":"Aktier i realtid, med udvidet og historisk information",
         "rss":"Understøttelse af simultane RSS feeds per widget",
@@ -311,11 +311,11 @@
         "update":"Opdater",
         "subscribe":"Abonnér",
         "braintree_notice":"Betaling håndteres sikkert via Braintree.",
-        "monthly_notice":"Ved at abonnere giver du iChrome ret til at trække 4.99$ hver måned indtil du opsiger dit abonnement.",
-        "yearly_notice":"Ved at abonnere giver to iChrome ret til at trække 29.99$ hvert år indtil du opsiger dit abonnement.",
+        "monthly_notice":"Ved at abonnere giver du ProductivityTab ret til at trække 4.99$ hver måned indtil du opsiger dit abonnement.",
+        "yearly_notice":"Ved at abonnere giver to ProductivityTab ret til at trække 29.99$ hvert år indtil du opsiger dit abonnement.",
         "update_notice":"Ændringer i betalings cyklus sker med det samme, men der trækkes ikke penge før den nuværende cyklus er afsluttet.",
-        "thank_you":"Tak for at du købte iChrome Pro!",
-        "thank_you2":"iChrome genstarter om få sekunder, herefter vil alt være klart!",
+        "thank_you":"Tak for at du købte ProductivityTab Pro!",
+        "thank_you2":"ProductivityTab genstarter om få sekunder, herefter vil alt være klart!",
         "error":"Noget gik galt under behandlingen af din betaling.",
         "error2":"Prøv venligst igen senere, eller send os en mail på support@ichro.me",
         "signin":"Log ind",
@@ -324,7 +324,7 @@
       },
       "plan":{
         "title":"Planlæg",
-        "desc":"Du abonnerer på iChrome Pro (%s)",
+        "desc":"Du abonnerer på ProductivityTab Pro (%s)",
         "types":{
           "monthly":"Månedlig",
           "yearly":"Årlig",
@@ -332,7 +332,7 @@
           "education":"Uddannelse",
           "custom":"Brugerdefineret"
         },
-        "uneditable_desc":"Erhverv, uddannelse og brugerdefinerede planer kan ikke opdateres indefra iChrome. Venligst <a href=\"mailto:support@ichro.me\">kontakt os</a> for at opdatere eller annullere dit abonnement.",
+        "uneditable_desc":"Erhverv, uddannelse og brugerdefinerede planer kan ikke opdateres indefra ProductivityTab. Venligst <a href=\"mailto:support@ichro.me\">kontakt os</a> for at opdatere eller annullere dit abonnement.",
         "status":"Status",
         "status_active":"Aktiv",
         "status_trial":"Prøveversion",
@@ -349,9 +349,9 @@
       }
     },
     "ads":{
-      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text1":"ProductivityTab displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer ProductivityTab free to everyone.",
       "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
-      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from ProductivityTab wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
       "upgrade_btn":"Upgrade to ad-free",
       "already_upgraded":"It looks like you've already upgraded to ad-free",
       "signin":"Sign in",

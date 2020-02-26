@@ -1,10 +1,10 @@
 {
   "lang_code":"zh-TW",
   "line_1":"您的首頁 \/ 啟始頁面應該要：快速，具個人風格，美觀又實用。",
-  "link":"想在你的新頁籤使用 iChome 嗎？試試 iChrome New Tab 吧！https:\/\/ichro.me\/n",
+  "link":"想在你的新頁籤使用 iChome 嗎？試試 ProductivityTab New Tab 吧！https:\/\/ichro.me\/n",
   "newtab_line_1":"您的新分頁 \/ 啟始頁面應該要：快速，具個人風格，美觀又實用。",
-  "newtab_link":"當你開起Google Chrome的時候只希望iChrome呈現出來嗎？試試看這個擴充功能：https:\/\/ichro.me\/w",
-  "line_2":"iChrome包含了近50個Widget小工具，數以千計的絕美背景，和這些強大的功能：",
+  "newtab_link":"當你開起Google Chrome的時候只希望ProductivityTab呈現出來嗎？試試看這個擴充功能：https:\/\/ichro.me\/w",
+  "line_2":"ProductivityTab包含了近50個Widget小工具，數以千計的絕美背景，和這些強大的功能：",
   "features":[
     "Dozens of widgets including: Weather, Sports, News, Stocks, RSS, Bookmarks, Gmail, Recently Closed Tabs, and more!",
     "Drag and drop customization on 1-5 columns or a grid!",
@@ -12,9 +12,9 @@
     "Buy Pro and get dark and transparent themes, live backgrounds, maximizable widgets, hourly weather forecasts, and more",
     "Navigate between an unlimited number of customizable tabs, each with their own widgets",
     "Work completely offline anytime, everything (even the backgrounds) is ready whenever you are!",
-    "And hundreds more features! Install iChrome now and check them out!"
+    "And hundreds more features! Install ProductivityTab now and check them out!"
   ],
-  "line_3":"iChrome 是一個開源專案，請到 Github 去瀏覽：https:\/\/github.com\/AMKohn\/iChrome",
+  "line_3":"ProductivityTab 是一個開源專案，請到 Github 去瀏覽：https:\/\/github.com\/AMKohn\/iChrome",
   "line_4":"任何時候都歡迎回饋和建議：http:\/\/ichrome.uservoice.com",
-  "line_5":"覺得不讓你客製化任何東西主頁很討人厭嗎？受夠了越來越囂張的廣告嗎？還在尋找 \"那個\" iGoogle 的代替品嗎？尋找優雅而且更好地管理的起始頁嗎？iChrome 為你而生 ！"
+  "line_5":"覺得不讓你客製化任何東西主頁很討人厭嗎？受夠了越來越囂張的廣告嗎？還在尋找 \"那個\" iGoogle 的代替品嗎？尋找優雅而且更好地管理的起始頁嗎？ProductivityTab 為你而生 ！"
 }

@@ -1,6 +1,6 @@
-iChrome is a home / start page extension that aims to create your homepage the way it should be: Fast, customizable, beautiful and productive.
+ProductivityTab is a home / start page extension that aims to create your homepage the way it should be: Fast, customizable, beautiful and productive.
 
-Build YOUR home page with over 30 widgets and dozens of stunning themes.  iChrome's hundreds of features include these and many more:
+Build YOUR home page with over 30 widgets and dozens of stunning themes.  ProductivityTab's hundreds of features include these and many more:
 
 ✔ Dozens of full screen, beautiful wallpapers and themes including the Bing and Webshots photos of the day
 ✔ Complete syncing between computers including your todo lists, notes and custom themes
@@ -17,8 +17,8 @@ Build YOUR home page with over 30 widgets and dozens of stunning themes.  iChrom
 ✔ Check out top content on YouTube or Reddit with full widget support
 ✔ Work completely offline anytime, everything (even your theme) is ready whenever you are!
 
-iChrome is an open source project, check it out on Github: https://github.com/AMKohn/iChrome
+ProductivityTab is an open source project, check it out on Github: https://github.com/AMKohn/iChrome
 
 Feedback and suggestions are welcome anytime at: http://ichrome.uservoice.com
 
-Sick of homepage extensions that lock you in and don't let you customize things?  Getting blasted with ads?  Still looking for "the" iGoogle replacement? Looking for the beautiful page that keeps getting better? iChrome is for you!
+Sick of homepage extensions that lock you in and don't let you customize things?  Getting blasted with ads?  Still looking for "the" iGoogle replacement? Looking for the beautiful page that keeps getting better? ProductivityTab is for you!

@@ -1,10 +1,10 @@
 {
   "lang_code":"es",
   "line_1":"¡Haz que tu página de inicio sea como debería: rápida, personada, estéticamente bonita y productiva!",
-  "link":"¿Quieres que iChrome aparezca en nueva pestaña? Prueba iChrome New Tab: https://ichro.me/n",
+  "link":"¿Quieres que ProductivityTab aparezca en nueva pestaña? Prueba ProductivityTab New Tab: https://ichro.me/n",
   "newtab_line_1":"¡Haz que tu página de inicio sea como debería: rápida, personada, estéticamente bonita y productiva!",
-  "newtab_link":"¿Solo quieres que aparezca iChrome cuando inicias Google Chrome? Prueba la extensión principal: https://ichro.me/w",
-  "line_2":"iChrome incluye cerca de 50 widgets, miles de fondos asombrosos y potentísimas características, entre las que se incluyen:",
+  "newtab_link":"¿Solo quieres que aparezca ProductivityTab cuando inicias Google Chrome? Prueba la extensión principal: https://ichro.me/w",
+  "line_2":"ProductivityTab incluye cerca de 50 widgets, miles de fondos asombrosos y potentísimas características, entre las que se incluyen:",
   "features":[
     "¡Docenas de widgets, incluyendo: Tiempo, Deportes, Noticias, Almacenaje, RRSS, Marca páginas, Gmail, Ventanas Cerradas Recientemente y más!",
     "¡Arrastra y suelta tu personalización en 1-5 columnas o una cuadrícula!",
@@ -12,9 +12,9 @@
     "Compra la versión Pro y consigue temas oscuros y transparentes, pantallas en movimiento, widgets maximizables, la predicción del tiempo por horas y más",
     "Navega por un número ilimitado de ventanas personalizadas, cada una con sus propios widgets",
     "¡Trabaja completamente desconectado cuando quieras, todo (incluso tu fondo de pantalla) estará listo cuando tú lo estés!",
-    "¡Y cientas características más! ¡Instala ahora iChrome y échales un vistazo!"
+    "¡Y cientas características más! ¡Instala ahora ProductivityTab y échales un vistazo!"
   ],
-  "line_3":"iChrome es un proyecto de código abierto, échale un vistazo en Github: https://github.com/AMKohn/iChrome",
+  "line_3":"ProductivityTab es un proyecto de código abierto, échale un vistazo en Github: https://github.com/AMKohn/iChrome",
   "line_4":"Comentarios y sugerencias son bienvenidos en cualquier momento en: http://ichrome.uservoice.com",
-  "line_5":"¿Cansado de extensiones para páginas de inicio que te encierran y no te dejan personalizar nada? ¿Harto de los anuncios? ¿Aún buscando \"el\" sustituto de iGoogle? ¿Buscando una hermosa página de inicio que mejora con el tiempo? ¡iChrome es para ti!"
+  "line_5":"¿Cansado de extensiones para páginas de inicio que te encierran y no te dejan personalizar nada? ¿Harto de los anuncios? ¿Aún buscando \"el\" sustituto de iGoogle? ¿Buscando una hermosa página de inicio que mejora con el tiempo? ¡ProductivityTab es para ti!"
 }

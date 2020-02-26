@@ -166,7 +166,7 @@
   "now":{
     "name":"Google Now",
     "desc":"Zobrazí karty z Google Now včetně letového provozu a sledování zásilek.",
-    "authorize":"Budete muset dát iChrome oprávnění k zobrazení karet Google Now dříve, než se tady něco objeví.",
+    "authorize":"Budete muset dát ProductivityTab oprávnění k zobrazení karet Google Now dříve, než se tady něco objeví.",
     "authorize_btn":"Povolit",
     "caught_up":"Vše zachyceno",
     "no_title":"Bez názvu"
@@ -230,8 +230,8 @@
       "source":"Zobrazit Tweety od",
       "show":"Zobrazené Tweety"
     },
-    "authorize":"Je zapotřebí nejprve autorizovat iChrome",
-    "authorize_msg":"Je potřeba nejprve udělit iChrome povolení k prohlížení tweetů z vašeho účtu, než bude možné zde něco zobrazit.",
+    "authorize":"Je zapotřebí nejprve autorizovat ProductivityTab",
+    "authorize_msg":"Je potřeba nejprve udělit ProductivityTab povolení k prohlížení tweetů z vašeho účtu, než bude možné zde něco zobrazit.",
     "authorize_btn":"Povolit",
     "no_tweets":"Nezdá se, že by zde byly nějaké tweety...",
     "home":"Domovská stránka",
@@ -365,7 +365,7 @@
     "by":"Od",
     "no_links":"Nenalezeny žádné odkazy",
     "grant_access":"Udělit přístup",
-    "no_key":"Budete muset dát iChrome přístup k vašemu účtu Pocket, aby mohl načíst vaše odkazy."
+    "no_key":"Budete muset dát ProductivityTab přístup k vašemu účtu Pocket, aby mohl načíst vaše odkazy."
   },
   "analytics":{
     "name":"Analytics",
@@ -413,7 +413,7 @@
       "files_shown":"Počet zobrazených souborů"
     },
     "modified_by":"od",
-    "authMessage":"Musíte dát iChrome oprávnění k zobrazení souborů ve vašem Disku Google, než tu bude moct být cokoli zobrazeno."
+    "authMessage":"Musíte dát ProductivityTab oprávnění k zobrazení souborů ve vašem Disku Google, než tu bude moct být cokoli zobrazeno."
   },
   "gmail":{
     "name":"Gmail",

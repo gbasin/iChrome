@@ -1,6 +1,6 @@
 # How to contribute
 
-iChrome loves to welcome your contributions. There are several ways to help out:
+ProductivityTab loves to welcome your contributions. There are several ways to help out:
 
 * Create an [issue](https://github.com/AMKohn/iChrome/issues) on GitHub, if you have found a bug
 * Write test cases for open bug issues
@@ -44,7 +44,7 @@ chance of keeping on top of things.
 ## Submitting Changes
 
 * Push your changes to a topic branch in your fork of the repository.
-* Submit a pull request to the repository in the iChrome repository, with the
+* Submit a pull request to the repository in the ProductivityTab repository, with the
   correct target branch.
 
 # Additional Resources

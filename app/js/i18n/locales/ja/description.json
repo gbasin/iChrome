@@ -1,10 +1,10 @@
 {
   "lang_code":"ja",
   "line_1":"理想のホーム画面／スタートページをあなたに：高速で、カスタマイズでき、美しく、生産的！",
-  "link":"新しいタブページに iChrome を表示させたい場合は、\"iChrome 新しいタブ\" をお試しください: https://ichro.me/n",
+  "link":"新しいタブページに ProductivityTab を表示させたい場合は、\"ProductivityTab 新しいタブ\" をお試しください: https://ichro.me/n",
   "newtab_line_1":"理想の新しいタブ/スタートページをつくりましょう：高速かつカスタマイズ可能、美しく生産的に！",
-  "newtab_link":"iChrome を Google Chrome の起動時だけに使用したい場合は、メインの拡張機能をお試しください: https://ichro.me/w",
-  "line_2":"iChrome では、約50種類のウィジェット、数千種類の背景、強力な機能などを使うことができます:",
+  "newtab_link":"ProductivityTab を Google Chrome の起動時だけに使用したい場合は、メインの拡張機能をお試しください: https://ichro.me/w",
+  "line_2":"ProductivityTab では、約50種類のウィジェット、数千種類の背景、強力な機能などを使うことができます:",
   "features":[
     "天気、スポーツ、ニュース、株価、RSS、ブックマーク、Gmail、最近閉じたタブなど、たくさんのウィジェットがあります！",
     "Drag and drop customization on 1-5 columns or a grid!",
@@ -12,9 +12,9 @@
     "Pro版を購入すると、ダークなテーマや透明なテーマ、ライブ背景、最大化ウィジェット、1時間ごとの天気予報などを利用できます。",
     "Navigate between an unlimited number of customizable tabs, each with their own widgets",
     "Work completely offline anytime, everything (even the backgrounds) is ready whenever you are!",
-    "その他にも多くの機能があります。iChrome をぜひご利用ください！"
+    "その他にも多くの機能があります。ProductivityTab をぜひご利用ください！"
   ],
-  "line_3":"iChrome は Github で公開されているオープンソースプロジェクトです: https://github.com/AMKohn/iChrome",
+  "line_3":"ProductivityTab は Github で公開されているオープンソースプロジェクトです: https://github.com/AMKohn/iChrome",
   "line_4":"フィードバックやご提案をお寄せください: http://ichrome.uservoice.com",
-  "line_5":"カスタマイズができないホームページにうんざりしていますか？広告が邪魔ですか？まだ満足できる iGoogle の代わりが見つかりませんか？より良く美しいスタートページをお探しですか？そんなあなたに iChrome！"
+  "line_5":"カスタマイズができないホームページにうんざりしていますか？広告が邪魔ですか？まだ満足できる iGoogle の代わりが見つかりませんか？より良く美しいスタートページをお探しですか？そんなあなたに ProductivityTab！"
 }

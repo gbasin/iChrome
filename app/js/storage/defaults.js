@@ -1,5 +1,5 @@
 /**
- * This stores the storage defaults.  It's mainly used for comparisons, unextends and resetting iChrome.
+ * This stores the storage defaults.  It's mainly used for comparisons, unextends and resetting ProductivityTab.
  */
 define(["i18n/i18n"], function(Translate) {
 	return {

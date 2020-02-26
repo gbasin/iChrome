@@ -6,11 +6,11 @@
 <section class="slide intro active" data-id="1">
 	<img class="logo" src="icon/300.png" />
 
-	<h2 class="header">iChrome just got better</h2>
+	<h2 class="header">ProductivityTab just got better</h2>
 
 	<span class="subheader">Click the button at the right to see what's new in V3</span>
 
-	<span class="footer note"><b>Note:</b> New <a href="https://ichro.me/tos" target="_blank">Terms</a> and <a href="https://ichro.me/privacy" target="_blank">Privacy Policies</a> apply. Your continued use of iChrome indicates acceptance of these.</span>
+	<span class="footer note"><b>Note:</b> New <a href="https://ichro.me/tos" target="_blank">Terms</a> and <a href="https://ichro.me/privacy" target="_blank">Privacy Policies</a> apply. Your continued use of ProductivityTab indicates acceptance of these.</span>
 </section>
 
 <section class="slide pro" data-id="2">
@@ -28,7 +28,7 @@
 		<div class="caption">
 			<h2>Sign in</h2>
 
-			<p>iChrome has a new, better sync system. Sign in with Google to save and sync your configuration.</p>
+			<p>ProductivityTab has a new, better sync system. Sign in with Google to save and sync your configuration.</p>
 
 			<p>You can stay signed out if you want, but your page won't be saved online and you won't be able to access it from other computers.</p>
 		</div>
@@ -47,7 +47,7 @@
 
 <section class="slide other final" data-id="3">
 	<div class="caption">
-		<h2>Other ways iChrome has improved</h2>
+		<h2>Other ways ProductivityTab has improved</h2>
 
 		<p>The main settings have been completely reworked to be simpler and easier to use</p>
 		<p>Over a dozen widgets have been completely redesigned and rebuilt</p>

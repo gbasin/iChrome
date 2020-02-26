@@ -166,7 +166,7 @@
   "now":{
     "name":"Google Now",
     "desc":"Displays cards from Google Now including flight status and package tracking.",
-    "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
+    "authorize":"You'll need to give ProductivityTab permission to view your Google Now cards before anything will show up here.",
     "authorize_btn":"Authorize",
     "caught_up":"All caught up, nothing here.",
     "no_title":"No Title"
@@ -230,8 +230,8 @@
       "source":"Show Tweets from",
       "show":"Tweets Shown"
     },
-    "authorize":"You'll need to authorize iChrome first",
-    "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
+    "authorize":"You'll need to authorize ProductivityTab first",
+    "authorize_msg":"You'll need to give ProductivityTab permission to view tweets from your account before anything will show up here.",
     "authorize_btn":"Authorize",
     "no_tweets":"There don't seem to be any tweets here...",
     "home":"Inici",
@@ -365,7 +365,7 @@
     "by":"By",
     "no_links":"No links found",
     "grant_access":"Grant access",
-    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
+    "no_key":"You'll need to give ProductivityTab access to your Pocket account before it can load your links."
   },
   "analytics":{
     "name":"Analytics",
@@ -413,7 +413,7 @@
       "files_shown":"Number of Files Shown"
     },
     "modified_by":"by",
-    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+    "authMessage":"You'll need to give ProductivityTab permission to view files in your Drive before anything can be shown here."
   },
   "gmail":{
     "name":"Gmail",

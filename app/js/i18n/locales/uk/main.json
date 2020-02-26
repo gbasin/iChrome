@@ -2,8 +2,8 @@
   "lang_code":"uk",
   "language":"Українська",
 
-	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
-	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extName": "ProductivityTab-Ultimate Personal Dashboard Homepage",
+	"newtabName": "ProductivityTab New Tab - Ultimate Personal Dashboard",
 	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
 	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
 
@@ -14,7 +14,7 @@
   "remove_widget":"Вилучити",
   "hide_banner":"Hide this banner",
   "hide_ad":{
-    "content":"Гей! Ми також не з'їхали з глузду дивитися рекламу, але показуючи рекламу ми можемо зробити iChrome доступним і продовжувати розробку для наших безкоштовних користувачів (а це Ви!). Якщо ви хочете підтримати iChrome напряму і позбавитись реклами, то ми будемо вдячні якщо Ви заапгрейдeтесь до pro версії",
+    "content":"Гей! Ми також не з'їхали з глузду дивитися рекламу, але показуючи рекламу ми можемо зробити ProductivityTab доступним і продовжувати розробку для наших безкоштовних користувачів (а це Ви!). Якщо ви хочете підтримати ProductivityTab напряму і позбавитись реклами, то ми будемо вдячні якщо Ви заапгрейдeтесь до pro версії",
     "upgrade":"Upgrade",
     "hide":"Hide ads"
   },
@@ -34,10 +34,10 @@
   "onboarding":{
     "modal":{
       "tagline":"Всі Ваші сайти й додатки на одній сорінці",
-      "wrong_extension":"Використовувати iChrome для нової вкладки?",
-      "wrong_extension_newtab":"Використовувати iChrome як домашню сторінку?",
+      "wrong_extension":"Використовувати ProductivityTab для нової вкладки?",
+      "wrong_extension_newtab":"Використовувати ProductivityTab як домашню сторінку?",
       "wrong_extension_action":"Натисніть тут",
-      "about":"iChrome - вкладки та віджети",
+      "about":"ProductivityTab - вкладки та віджети",
       "about_desc":"Вкладки це сторінки з віджетами, блоками які показують таке як погоду, новини і вашу пошту. Ви можете настроїти більшість віджетів і додати стільки скільки забажаєте.",
       "terms":"Зауважте: Продовжуючи, Ви погоджуєтесь з <a href=\"https://ichro.me/tos\" target=\"_blank\">Умовами</a> and <a href=\"https://ichro.me/privacy\" target=\"_blank\">Політики конфіденційності</a>",
       "sign_in":"Увійдіть за допомогою свого облікового запису Google",
@@ -63,7 +63,7 @@
 			"instructions": "Click the new widget button on to open the widget menu!",
       "skip":"Пропустити",
       "tooltips":{
-        "settings":"Change the way iChrome looks and works",
+        "settings":"Change the way ProductivityTab looks and works",
         "widgets":"Додайте нових віджетів - ви можете розмістити стільки, скільки захочете",
         "editing":"Показуйте і сховуйте кнопки змін на віджетах",
         "links":"Це список посилань, додавайте сайти, які ви часто використовуєте, в налаштуваннях",
@@ -94,7 +94,7 @@
     "placeholder_ok":"Введіть свої значення, чи скажіть \"OK, Google\"",
     "suggestions":{
       "url_subtext":"Visit URL",
-      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+      "capture_notice":"ProductivityTab handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
     },
     "apps":{
       "search":"Пошук",
@@ -190,7 +190,7 @@
       },
       "theme":{
         "title":"Тема додатка",
-        "desc":"The app theme controls the style of iChrome itself and all widgets",
+        "desc":"The app theme controls the style of ProductivityTab itself and all widgets",
         "preview":"Передперегляд",
         "light":"Світла (за замовчуванням)",
         "dark":"Темна",
@@ -234,7 +234,7 @@
     "tabs":{
       "create_new":"Create new",
       "make_default":"Make default",
-      "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
+      "desc1":"Tabs are pages inside ProductivityTab. Each tab has its own set of widgets that is completely separate from every other tab.",
       "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
       "name_placeholder":"Введіть назву вкладки",
       "delete_confirm":"Ця дія незворотня. Всі дані віджетів у вкладці будуть втрачені назавжди."
@@ -254,19 +254,19 @@
     "advanced":{
       "backups":{
         "title":"Резервація і відновлення",
-        "desc":"Резервна копія зберігає повністю всі ваші вкладки, налаштування і віджети. Вони автоматично створюються, коли ви відкриваєте iChrome першого разу кожного дня.",
-        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
+        "desc":"Резервна копія зберігає повністю всі ваші вкладки, налаштування і віджети. Вони автоматично створюються, коли ви відкриваєте ProductivityTab першого разу кожного дня.",
+        "desc2":"Use the buttons below to roll ProductivityTab back to a particular date or download one of your backups.",
         "backup":"Створити резервну копію зараз",
         "upload":"Відновити із файла",
         "download":"Завантажити",
         "restore":"Відтворити",
-        "download_name":"Резервна копія iChrome",
+        "download_name":"Резервна копія ProductivityTab",
         "restore_confirm":"Це перезапише всі локальні і синхронізовані дані. Ви втратите усі ваші налаштування на всіх комп'ютерах цього облікового запису.",
         "restore_error":"Відбулася помилка при спробах розібрати предоставлені дані. Будь ласка, спробуйте пізніше."
       },
       "css":{
         "title":"Індивідуальний CSS код",
-        "desc":"Ви можете використовувати CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definition</a>), аби налаштувати під себе майже будь-яку частину iChrome.",
+        "desc":"Ви можете використовувати CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definition</a>), аби налаштувати під себе майже будь-яку частину ProductivityTab.",
         "placeholder":"Введіть не більше 1000 символів CSS тут"
       },
       "debug_tools":{
@@ -295,7 +295,7 @@
         "bgs":"\"Живі\" фони",
         "bgs_desc":"Оживіть сторінку використовуючи 20 високоякісних \"живих\" фонів",
         "widgets":"Максимізувати віджети",
-        "widgets_desc":"Виведіть iChrome на новий рівень з максимізованими віджетами",
+        "widgets_desc":"Виведіть ProductivityTab на новий рівень з максимізованими віджетами",
         "more_header":"І більше",
         "stocks":"Інформація про ринки у реальному часі з розширенною і історичною інформацією",
         "rss":"Support for multiple RSS feeds per widget",
@@ -318,11 +318,11 @@
         "update":"Update",
         "subscribe":"Subscribe",
         "braintree_notice":"Payments securely processed by Braintree.",
-        "monthly_notice":"By subscribing, you authorize iChrome to charge you $4.99 every month until you cancel your subscription.",
-        "yearly_notice":"By subscribing, you authorize iChrome to charge you $29.99 every year until you cancel your subscription.",
+        "monthly_notice":"By subscribing, you authorize ProductivityTab to charge you $4.99 every month until you cancel your subscription.",
+        "yearly_notice":"By subscribing, you authorize ProductivityTab to charge you $29.99 every year until you cancel your subscription.",
         "update_notice":"Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
-        "thank_you":"Thank you for buying iChrome Pro!",
-        "thank_you2":"iChrome will reload in a few seconds and you'll be all set!",
+        "thank_you":"Thank you for buying ProductivityTab Pro!",
+        "thank_you2":"ProductivityTab will reload in a few seconds and you'll be all set!",
         "error":"Something went wrong while trying to process your payment.",
         "error2":"Please try again later or email us at support@ichro.me",
         "signin":"Sign in",
@@ -331,7 +331,7 @@
       },
       "plan":{
         "title":"Plan",
-        "desc":"You are currently subscribed to iChrome Pro (%s)",
+        "desc":"You are currently subscribed to ProductivityTab Pro (%s)",
         "types":{
           "monthly":"Monthly",
           "yearly":"Yearly",
@@ -339,7 +339,7 @@
           "education":"Education",
           "custom":"Custom"
         },
-        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us</a> to update or cancel your subscription.",
+        "uneditable_desc":"Business, education, and custom plans cannot be updated from within ProductivityTab. Please <a href=\"mailto:support@ichro.me\">contact us</a> to update or cancel your subscription.",
         "status":"Стан",
         "status_active":"Active",
         "status_trial":"Trial",
@@ -356,9 +356,9 @@
       }
     },
     "ads":{
-      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text1":"ProductivityTab displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer ProductivityTab free to everyone.",
       "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
-      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from ProductivityTab wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
       "upgrade_btn":"Upgrade to ad-free",
       "already_upgraded":"It looks like you've already upgraded to ad-free",
       "signin":"Sign in",

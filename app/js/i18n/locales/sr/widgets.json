@@ -166,7 +166,7 @@
   "now":{
     "name":"Google Now",
     "desc":"Приказује картице са Google Now укључујући статус лета и праћење пакета.",
-    "authorize":"Потребно је да даш овлашћење iChrome-у да види твоје Google Now картице пре него се било шта појави овде. ",
+    "authorize":"Потребно је да даш овлашћење ProductivityTab-у да види твоје Google Now картице пре него се било шта појави овде. ",
     "authorize_btn":"Ауторизуј",
     "caught_up":"Све свршено, нема ничега овде.",
     "no_title":"Без наслова"
@@ -230,8 +230,8 @@
       "source":"Прикажи Твитове са",
       "show":"Приказани Твитови"
     },
-    "authorize":"Мораш прво да даш овлашћење iChrome-у",
-    "authorize_msg":"Потребно је да даш овлашћење iChrome-у да види твитове са твог рачуна пре него се било шта појави овде. ",
+    "authorize":"Мораш прво да даш овлашћење ProductivityTab-у",
+    "authorize_msg":"Потребно је да даш овлашћење ProductivityTab-у да види твитове са твог рачуна пре него се било шта појави овде. ",
     "authorize_btn":"Ауторизуј",
     "no_tweets":"Изгледа да овде нема твитова...",
     "home":"Почетна страна",
@@ -365,7 +365,7 @@
     "by":"од",
     "no_links":"No links found",
     "grant_access":"Grant access",
-    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
+    "no_key":"You'll need to give ProductivityTab access to your Pocket account before it can load your links."
   },
   "analytics":{
     "name":"Аналитика",
@@ -413,7 +413,7 @@
       "files_shown":"Број Приказаних Фајлова"
     },
     "modified_by":"од",
-    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+    "authMessage":"You'll need to give ProductivityTab permission to view files in your Drive before anything can be shown here."
   },
   "gmail":{
     "name":"Gmail",

@@ -1,10 +1,10 @@
 {
   "lang_code":"tr",
   "line_1":"Make your home / start page the way it should be: Fast, customizable, beautiful and productive!",
-  "link":"Want iChrome on your new tab page? Try iChrome New Tab: https://ichro.me/n",
+  "link":"Want ProductivityTab on your new tab page? Try ProductivityTab New Tab: https://ichro.me/n",
   "newtab_line_1":"Make your new tab / start page the way it should be: Fast, customizable, beautiful and productive!",
-  "newtab_link":"Only want iChrome to show when you start Google Chrome? Try the main extension: https://ichro.me/w",
-  "line_2":"iChrome includes nearly 50 widgets, thousands of stunning backgrounds, and powerful features including:",
+  "newtab_link":"Only want ProductivityTab to show when you start Google Chrome? Try the main extension: https://ichro.me/w",
+  "line_2":"ProductivityTab includes nearly 50 widgets, thousands of stunning backgrounds, and powerful features including:",
   "features":[
     "Dozens of widgets including: Weather, Sports, News, Stocks, RSS, Bookmarks, Gmail, Recently Closed Tabs, and more!",
     "Drag and drop customization on 1-5 columns or a grid!",
@@ -12,9 +12,9 @@
     "Buy Pro and get dark and transparent themes, live backgrounds, maximizable widgets, hourly weather forecasts, and more",
     "Navigate between an unlimited number of customizable tabs, each with their own widgets",
     "Work completely offline anytime, everything (even the backgrounds) is ready whenever you are!",
-    "And hundreds more features! Install iChrome now and check them out!"
+    "And hundreds more features! Install ProductivityTab now and check them out!"
   ],
-  "line_3":"iChrome is an open source project, check it out on Github: https://github.com/AMKohn/iChrome",
+  "line_3":"ProductivityTab is an open source project, check it out on Github: https://github.com/AMKohn/iChrome",
   "line_4":"Feedback and suggestions are welcome anytime at: http://ichrome.uservoice.com",
-  "line_5":"Sick of homepage extensions that lock you in and don't let you customize things?  Getting blasted with ads?  Still looking for \"the\" iGoogle replacement? Looking for a beautiful start page that keeps getting better? iChrome is for you!"
+  "line_5":"Sick of homepage extensions that lock you in and don't let you customize things?  Getting blasted with ads?  Still looking for \"the\" iGoogle replacement? Looking for a beautiful start page that keeps getting better? ProductivityTab is for you!"
 }

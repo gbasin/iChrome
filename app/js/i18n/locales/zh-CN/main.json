@@ -2,8 +2,8 @@
   "lang_code":"zh-CN",
   "language":"简体中文",
 
-	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
-	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extName": "ProductivityTab-Ultimate Personal Dashboard Homepage",
+	"newtabName": "ProductivityTab New Tab - Ultimate Personal Dashboard",
 	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
 	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
 
@@ -14,7 +14,7 @@
   "remove_widget":"移除",
   "hide_banner":"隐藏横幅广告",
   "hide_ad":{
-    "content":"Hey! We're not crazy about ads either, but we're only able to make iChrome available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support iChrome directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make ProductivityTab available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support ProductivityTab directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"立即升级",
     "hide":"隐藏广告"
   },
@@ -27,15 +27,15 @@
   "onboarding":{
     "modal":{
       "tagline":"您所有的站点及应用，全在这里",
-      "wrong_extension":"想将iChrome设为您的新标签页？",
-      "wrong_extension_newtab":"想将iChrome设为您的主页？",
+      "wrong_extension":"想将ProductivityTab设为您的新标签页？",
+      "wrong_extension_newtab":"想将ProductivityTab设为您的主页？",
       "wrong_extension_action":"请点击此处",
-      "about":"iChrome中的一切都基于选项卡和小工具",
+      "about":"ProductivityTab中的一切都基于选项卡和小工具",
       "about_desc":"标签页由小部件组成。小部件可以显示各种各样的信息，例如天气预报，最新新闻以及您的邮件。您可以随心所欲的自定义绝大多数小部件，最妙的是您想添加多少就可以添加多少。",
-      "terms":"请注意：开始使用iChrome代表您同意iChrome的<a href=\"https://ichro.me/tos\" target=\"_blank\">使用条款</a>及<a href=\"https://ichro.me/privacy\" target=\"_blank\">隐私政策</a>",
+      "terms":"请注意：开始使用ProductivityTab代表您同意ProductivityTab的<a href=\"https://ichro.me/tos\" target=\"_blank\">使用条款</a>及<a href=\"https://ichro.me/privacy\" target=\"_blank\">隐私政策</a>",
       "sign_in":"使用您的 Google 帐户登录",
       "sign_in_desc":"在可在线安全的保存您所做更改前，请登录您的Google账户。",
-      "sign_in_desc2":"您可以保持未登录状态，但您的iChrome页面将不会被在线保存，而且您将无法在其他计算机上访问此页面。",
+      "sign_in_desc2":"您可以保持未登录状态，但您的ProductivityTab页面将不会被在线保存，而且您将无法在其他计算机上访问此页面。",
       "sign_in_button":"使用 Google 帐号登录",
       "have_account":"看起来您已经有了一个账户！",
       "have_account_desc":"您现在可以使用所有的标签页和小部件了！",
@@ -56,12 +56,12 @@
 			"instructions": "Click the new widget button on to open the widget menu!",
       "skip":"跳过",
       "tooltips":{
-        "settings":"改变 iChrome 的外观和功能",
+        "settings":"改变 ProductivityTab 的外观和功能",
         "widgets":"添加新小部件 - 您可以添加任意数量的小部件",
         "editing":"显示或隐藏小部件上的编辑按钮",
         "links":"这是常用链接列表，您可以在在设置中添加您经常访问的站点",
         "tabs":"这是您的标签页列表，您可随时在设置中添加更多标签页。",
-        "support":"给我们发送消息或在此留下您对iChrome的评价。"
+        "support":"给我们发送消息或在此留下您对ProductivityTab的评价。"
       },
       "finished":"就是这样！",
       "finished_next":"您可以从菜单中选择一个选项(试着从<b>小部件</b>开始) ，然后开始自定义您的页面!",
@@ -87,7 +87,7 @@
     "placeholder_ok":"请输入或说“OK, Google\"启动语音搜索...",
     "suggestions":{
       "url_subtext":"访问链接",
-      "capture_notice":"iChrome将取代您网址栏的搜索功能，您可随时在设置中禁用此设置。"
+      "capture_notice":"ProductivityTab将取代您网址栏的搜索功能，您可随时在设置中禁用此设置。"
     },
     "apps":{
       "search":"搜索",
@@ -183,7 +183,7 @@
       },
       "theme":{
         "title":"应用主题",
-        "desc":"iChrome及所有小部件的界面设置",
+        "desc":"ProductivityTab及所有小部件的界面设置",
         "preview":"预览",
         "light":"浅色(默认)",
         "dark":"暗色调",
@@ -205,7 +205,7 @@
         "engines_default":"默认",
         "engines_custom":"自定义",
         "engines_custom_desc":"请输入搜索请求所使用的的URL地址，您输入的关键词在此由<b>%s</b>代替。",
-        "omnibox_capture":"使用iChrome代替网址栏的搜索功能",
+        "omnibox_capture":"使用ProductivityTab代替网址栏的搜索功能",
         "voice":"启用语音搜索",
         "ok_google":"启用\"OK Google“声音检测",
         "search_tab":"在新选项卡中打开搜索结果页"
@@ -227,7 +227,7 @@
     "tabs":{
       "create_new":"新建",
       "make_default":"设为默认",
-      "desc1":"标签页是iChrome里的页面。每个标签页都有其自己的小部件，彼此之间完全独立。",
+      "desc1":"标签页是ProductivityTab里的页面。每个标签页都有其自己的小部件，彼此之间完全独立。",
       "desc2":"您可以移动鼠标以点击屏幕左右边的按钮，或使用键盘上的方向键来切换标签页。",
       "name_placeholder":"输入标签页名称",
       "delete_confirm":"警告，此操作并不可逆。此标签页中所有小部件的数据将会永久丢失。"
@@ -247,19 +247,19 @@
     "advanced":{
       "backups":{
         "title":"备份与恢复",
-        "desc":"备份是指您所有选项卡，设置和小部件的完整备份。在您每天第一次打开iChrome时备份将会自动建立。",
-        "desc2":"使用下面的按钮将iChrome回滚至过去的设置，您也可以下载您的备份。",
+        "desc":"备份是指您所有选项卡，设置和小部件的完整备份。在您每天第一次打开ProductivityTab时备份将会自动建立。",
+        "desc2":"使用下面的按钮将ProductivityTab回滚至过去的设置，您也可以下载您的备份。",
         "backup":"立即备份",
         "upload":"从文件还原",
         "download":"下载",
         "restore":"还原",
-        "download_name":"iChrome 备份",
+        "download_name":"ProductivityTab 备份",
         "restore_confirm":"警告，这将覆盖您本地及同步的所有数据。您将失去该帐户下所有计算机上的当前配置。",
         "restore_error":"在解析您提供的数据时出错了，请稍后再试。"
       },
       "css":{
         "title":"自定义 CSS",
-        "desc":"您可以使用 CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\"target=\"blank\"> 介绍</a>) 来自定义iChrome的几乎任何部分。",
+        "desc":"您可以使用 CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\"target=\"blank\"> 介绍</a>) 来自定义ProductivityTab的几乎任何部分。",
         "placeholder":"您最多可输入1000个字符"
       },
       "debug_tools":{
@@ -288,7 +288,7 @@
         "bgs":"动态背景",
         "bgs_desc":"二十种高清动态背景令您的标签页富有趣味",
         "widgets":"可最大化的窗口小部件",
-        "widgets_desc":"有了可最大化的小部件，iChrome将大有不同",
+        "widgets_desc":"有了可最大化的小部件，ProductivityTab将大有不同",
         "more_header":"以及更多功能",
         "stocks":"带有延伸资料和历史记录的实时股票信息",
         "rss":"支持订阅多RSS源的小部件",
@@ -311,11 +311,11 @@
         "update":"更新",
         "subscribe":"订阅",
         "braintree_notice":"您的付款信息将安全地交由Braintree处理。",
-        "monthly_notice":"您如订阅，代表您授权iChrome每个月收取您 4.99 美元，直到您取消订阅。",
-        "yearly_notice":"您如订阅，代表您授权iChrome每年收取您 29.99 美元，直到您取消订阅。",
+        "monthly_notice":"您如订阅，代表您授权ProductivityTab每个月收取您 4.99 美元，直到您取消订阅。",
+        "yearly_notice":"您如订阅，代表您授权ProductivityTab每年收取您 29.99 美元，直到您取消订阅。",
         "update_notice":"虽然计费周期更改将立即生效，直到当前付款周期结束前您将不会被收取任何费用。",
-        "thank_you":"感谢您购买 iChrome 专业版!",
-        "thank_you2":"一切即将就绪，iChrome将在几秒钟内重新加载。",
+        "thank_you":"感谢您购买 ProductivityTab 专业版!",
+        "thank_you2":"一切即将就绪，ProductivityTab将在几秒钟内重新加载。",
         "error":"在尝试处理您的付款时出错了。",
         "error2":"请稍后再试或发给我们发送电子邮件 support@ichro.me",
         "signin":"登录",
@@ -324,7 +324,7 @@
       },
       "plan":{
         "title":"套餐",
-        "desc":"您目前已订阅 iChrome 专业版 (%s)",
+        "desc":"您目前已订阅 ProductivityTab 专业版 (%s)",
         "types":{
           "monthly":"月付",
           "yearly":"年付",
@@ -332,7 +332,7 @@
           "education":"教育版",
           "custom":"自定义"
         },
-        "uneditable_desc":"商业，教育及自定义套餐不能在iChrome内设置。请 <a href=\"mailto:support@ichro.me\"> 联系我们</a>以更新或取消您的订阅。",
+        "uneditable_desc":"商业，教育及自定义套餐不能在ProductivityTab内设置。请 <a href=\"mailto:support@ichro.me\"> 联系我们</a>以更新或取消您的订阅。",
         "status":"订阅状态",
         "status_active":"已激活",
         "status_trial":"试用",
@@ -349,9 +349,9 @@
       }
     },
     "ads":{
-      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text1":"ProductivityTab displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer ProductivityTab free to everyone.",
       "text2":"在这里你可以选择广告在哪里显示，或升级至无广告版以获取无干扰的体验。",
-      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from ProductivityTab wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
       "upgrade_btn":"升级至无广告版",
       "already_upgraded":"看起来您已经升级到无广告版了",
       "signin":"登入",
