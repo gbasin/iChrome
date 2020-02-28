@@ -2,7 +2,7 @@
 
 ProductivityTab loves to welcome your contributions. There are several ways to help out:
 
-* Create an [issue](https://github.com/AMKohn/iChrome/issues) on GitHub, if you have found a bug
+* Create an [issue](https://github.com/gbasin/iChrome/issues) on GitHub, if you have found a bug
 * Write test cases for open bug issues
 * Write patches for open bug/feature issues, preferably with test cases included
 
@@ -12,7 +12,7 @@ chance of keeping on top of things.
 ## Getting Started
 
 * Make sure you have a [GitHub account](https://github.com/signup/free).
-* Submit an [issue](https://github.com/AMKohn/iChrome/issues), assuming one does not already exist.
+* Submit an [issue](https://github.com/gbasin/iChrome/issues), assuming one does not already exist.
   * Clearly describe the issue including steps to reproduce when it is a bug.
   * Make sure you fill in the earliest version that you know has the issue.
 * Fork the repository on GitHub.
@@ -49,6 +49,6 @@ chance of keeping on top of things.
 
 # Additional Resources
 
-* [Existing issues](https://github.com/AMKohn/iChrome/issues)
+* [Existing issues](https://github.com/gbasin/iChrome/issues)
 * [General GitHub documentation](https://help.github.com/)
 * [GitHub pull request documentation](https://help.github.com/send-pull-requests/)

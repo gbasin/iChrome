@@ -70,10 +70,10 @@
 		"bookmarks",
 		"management"
 	],
-	"version": "3.0.43.4",
+	"version": "3.0.43.5",
 	"manifest_version": 2,
 	"default_locale": "en",
-	"short_name": "iChrome",
+	"short_name": "ProductivityTab",
 	"offline_enabled": true,
 	"name": "__MSG_extName__",
 	"minimum_chrome_version": "39.0",

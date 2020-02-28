@@ -5,14 +5,14 @@
   "main": "app/js/app.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AMKohn/iChrome.git"
+    "url": "https://github.com/gbasin/iChrome.git"
   },
   "author": "Avi Kohn",
   "license": "CC-BY-SA-3.0",
   "bugs": {
-    "url": "https://github.com/AMKohn/iChrome/issues"
+    "url": "https://github.com/gbasin/iChrome/issues"
   },
-  "homepage": "http://www.ichro.me/",
+  "homepage": "http://www.productivitytab.co/",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
