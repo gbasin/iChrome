@@ -48,7 +48,7 @@
 
 			"settings": {
 				"url": "Frame URL",
-				"url_placeholder": "i.e. http://www.google.com/",
+				"url_placeholder": "i.e. https://www.google.com/",
 
 				"height": "Frame Height",
 

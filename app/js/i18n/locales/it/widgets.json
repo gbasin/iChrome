@@ -42,7 +42,7 @@
       "title":"Titolo Segnalibro",
       "title_placeholder":"Google",
       "url":"URL Segnalibro",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"Salva"
     },
     "new_caption":"Nuovo",
@@ -184,7 +184,7 @@
     "desc":"Mostra i migliori elementi di Reddit per ogni subreddit dato.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Inserire un subreddit inserendo soltanto la parte dell'URL di quel subreddit a partire da <b>/r/</b>.\n<br /><br />\nPer esempio, Technology si trova su: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, quindi va inserito soltanto <b>technology</b>",
+      "subreddit_help":"Inserire un subreddit inserendo soltanto la parte dell'URL di quel subreddit a partire da <b>/r/</b>.\n<br /><br />\nPer esempio, Technology si trova su: <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, quindi va inserito soltanto <b>technology</b>",
       "subreddit_placeholder":"Inserisci un subreddit di per poter vedere i links. (es: technology)",
       "sort":"Ordinamento",
       "sort_options":{
@@ -294,9 +294,9 @@
     "desc":"Mostra un link, facoltativamente con un titolo e una miniatura",
     "settings":{
       "link":"URL Link",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"URL dell'immagine",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"Colore di sfondo dell'immagine",
       "style":"Stile dell'immagine",
       "style_fill":"Riempi",
@@ -424,7 +424,7 @@
     "desc":"Consente di visualizzare una pagina web a vostra scelta all'interno di un iframe.",
     "settings":{
       "url":"Frame URL",
-      "url_placeholder":"i.e. http://www.google.com/",
+      "url_placeholder":"i.e. https://www.google.com/",
       "height":"Altezza frame",
       "padding":"Rientro"
     }

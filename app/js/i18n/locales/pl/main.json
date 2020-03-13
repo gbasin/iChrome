@@ -32,7 +32,7 @@
       "wrong_extension_action":"Kliknij tutaj",
       "about":"W ProductivityTab'ie wszystko opiera się na kartach i widgetach",
       "about_desc":"Karty to strony wypełnione widgetami - blokami, które pokazuję rzeczy takie jak pogoda, wiadomości i twój e-mail. Możesz skonfigurować większość widgetów i dodać tak dużo jak tylko chcesz.",
-      "terms":"Uwaga: Kontynuując zgadzasz się na <a href=\"https://ichro.me/tos\" target=\"_blank\">Warunki korzystania z serwisu</a> ProductivityTab. <a href=\"https://ichro.me/privacy\" target=\"_blank\"> Polityka prywatności</a>",
+      "terms":"Uwaga: Kontynuując zgadzasz się na <a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\">Warunki korzystania z serwisu</a> ProductivityTab. <a href=\"https://productivitytab.co/privacy-policy-2\" target=\"_blank\"> Polityka prywatności</a>",
       "sign_in":"Zaloguj się przy pomocy konta Google",
       "sign_in_desc":"Zaloguj się używając konta Google zanim zaczniesz aby bezpiecznie przechowywać Twoje zmiany online.",
       "sign_in_desc2":"Jeżeli nie chcesz, nie musisz się logować, ale twoja strona nie będzie zapisana online i nie będziesz mieć do niej dostępu z innego komputera.",
@@ -218,7 +218,7 @@
         "custom_note1":"Dozwolone maksymalnie 3",
         "custom_note2":"użytkownicy otrzymują 8",
         "custom_name_placeholder":"Tytuł linku",
-        "custom_url_placeholder":"Adres URL linku, przykładowo http://www.google.com/"
+        "custom_url_placeholder":"Adres URL linku, przykładowo https://www.google.com/"
       }
     },
     "misc":{
@@ -470,7 +470,7 @@
       "name_placeholder":"Wprowadź nazwę motywu",
       "image":"Adres URL obrazu",
       "image_placeholder":"Wprowadź adres URL obrazu tła",
-      "image_help":"Przesłane obrazy <b>nie mogą być zsynchronizowane</b> pomiędzy komputerami.<br /><br />Jeśli jest to dla Ciebie ważne, proszę przesłać obrazy do usług takich jak <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>. Następnie skopiuj i wklej adres URL kończącego się z rozszerzeniem (np. jpg) i wklej go w polu po lewej stronie.",
+      "image_help":"Przesłane obrazy <b>nie mogą być zsynchronizowane</b> pomiędzy komputerami.<br /><br />Jeśli jest to dla Ciebie ważne, proszę przesłać obrazy do usług takich jak <a href=\"https://imgur.com/\" target=\"_blank\">imgur</a>. Następnie skopiuj i wklej adres URL kończącego się z rozszerzeniem (np. jpg) i wklej go w polu po lewej stronie.",
       "color":"Kolor awaryjny",
       "color_placeholder":"Wprowadź nazwę koloru",
       "position":"Pozycja",

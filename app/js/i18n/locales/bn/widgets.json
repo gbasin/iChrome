@@ -42,7 +42,7 @@
       "title":"বুকমার্কের শিরোনাম",
       "title_placeholder":"গুগল",
       "url":"বুকমার্ক URL",
-      "url_placeholder":"http://www.google.com.bd/",
+      "url_placeholder":"https://www.google.com.bd/",
       "save":"সংরক্ষণ"
     },
     "new_caption":"নতুন",
@@ -184,7 +184,7 @@
     "desc":"Displays the top items on Reddit for any given subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
+      "subreddit_help":"Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
       "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
       "sort":"সজ্জাক্রম",
       "sort_options":{
@@ -294,9 +294,9 @@
     "desc":"Displays a link, optionally with a title and thumbnail",
     "settings":{
       "link":"Link URL",
-      "link_placeholder":"http://www.google.com.bd/",
+      "link_placeholder":"https://www.google.com.bd/",
       "image":"চিত্রের URL",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"Image Background Color",
       "style":"Image Style",
       "style_fill":"Fill",
@@ -424,7 +424,7 @@
     "desc":"Displays a webpage of your choice within an iframe.",
     "settings":{
       "url":"ফ্রেম URL",
-      "url_placeholder":"উদা. http://www.google.com.bd/",
+      "url_placeholder":"উদা. https://www.google.com.bd/",
       "height":"ফ্রেমের উচ্চতা",
       "padding":"Padding"
     }

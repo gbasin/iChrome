@@ -42,7 +42,7 @@
       "title":"书签名",
       "title_placeholder":"谷歌（Google）",
       "url":"添加链接",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"保存"
     },
     "new_caption":"新建",
@@ -184,7 +184,7 @@
     "desc":"显示Reddit上的热门话题",
     "settings":{
       "subreddit":"Reddit分类",
-      "subreddit_help":"输入在Reddit分类网页链接<b>/r/</b>后的字符。\n<br /><br />\n例如，科技类的链接是<a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>所以您需要输入<b>technology</b>",
+      "subreddit_help":"输入在Reddit分类网页链接<b>/r/</b>后的字符。\n<br /><br />\n例如，科技类的链接是<a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>所以您需要输入<b>technology</b>",
       "subreddit_placeholder":"输入Reddit分类的显示链接。（例如technology）",
       "sort":"排序方式",
       "sort_options":{
@@ -294,9 +294,9 @@
     "desc":"显示一个带有标题和缩略图（可选）的链接",
     "settings":{
       "link":"链接 URL：",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"图像地址",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"图像背景色",
       "style":"图像样式",
       "style_fill":"填充",
@@ -424,7 +424,7 @@
     "desc":"在您选择的位置用 iframe 嵌入网页。",
     "settings":{
       "url":"框架链接",
-      "url_placeholder":"例如 http://www.google.com/",
+      "url_placeholder":"例如 https://www.google.com/",
       "height":"框架高度",
       "padding":"内边框"
     }

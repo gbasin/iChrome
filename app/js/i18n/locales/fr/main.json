@@ -32,7 +32,7 @@
       "wrong_extension_action":"Cliquez ici",
       "about":"Tout à propos des onglets et des widgets d'ProductivityTab",
       "about_desc":"Les onglets sont des pages contenant des widgets - des blocs qui montrent des informations comme la météo, les actualités ou votre boîte mail. Vous pouvez personnaliser la plupart des widgets et en ajouter autant que vous voulez.",
-      "terms":"Remarque : En continuant, vous acceptez <a href=\"https://ichro.me/tos\" target=\"_blank\">les conditions d'utilisation</a> d'ProductivityTab et <a href=\"https://ichro.me/privacy\" target=\"_blank\">la Politique de confidentialité</a>",
+      "terms":"Remarque : En continuant, vous acceptez <a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\">les conditions d'utilisation</a> d'ProductivityTab et <a href=\"https://productivitytab.co/privacy-policy-2\" target=\"_blank\">la Politique de confidentialité</a>",
       "sign_in":"Connectez-vous avec votre compte Google",
       "sign_in_desc":"Connectez-vous avec votre compte Google avant de commencer pour sauvegarder vos changements en ligne.",
       "sign_in_desc2":"Vous pouvez rester déconnecté si vous voulez, mais votre page ne sera pas sauvegardée en ligne et vous ne pourrez pas y accéder à partir d'un autre ordinateur.",
@@ -218,7 +218,7 @@
         "custom_note1":"Maximum de 3 permis",
         "custom_note2":"les utilisateurs en obtiennent 8",
         "custom_name_placeholder":"Texte du lien",
-        "custom_url_placeholder":"URL de lien (Exemple : http://www.google.com/)"
+        "custom_url_placeholder":"URL de lien (Exemple : https://www.google.com/)"
       }
     },
     "misc":{
@@ -470,7 +470,7 @@
       "name_placeholder":"Entrer le nom du thème",
       "image":"URL de l'image",
       "image_placeholder":"Entrer l'URL d'une image qui sera utilisé comme fond d'écran",
-      "image_help":"Votre image n'a pas pu êtres envoyée de votre ordinateur.\n<br /><br />\nSi vous tenez à avoir cette image, vous pouvez l'envoyé depuis le site <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>.\nPuis copiez l'url que ce site vous fournira, mais faite attention que l'url ce finisse par une extension d'image de type (i.e. .jpg), puis collez la dans le champ de gauche.",
+      "image_help":"Votre image n'a pas pu êtres envoyée de votre ordinateur.\n<br /><br />\nSi vous tenez à avoir cette image, vous pouvez l'envoyé depuis le site <a href=\"https://imgur.com/\" target=\"_blank\">imgur</a>.\nPuis copiez l'url que ce site vous fournira, mais faite attention que l'url ce finisse par une extension d'image de type (i.e. .jpg), puis collez la dans le champ de gauche.",
       "color":"Couleur d'arrière-plan",
       "color_placeholder":"Entrez une couleur",
       "position":"Position",

@@ -42,7 +42,7 @@
       "title":"書籤標題",
       "title_placeholder":"Google",
       "url":"書籤網址",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"儲存"
     },
     "new_caption":"新增",
@@ -184,7 +184,7 @@
     "desc":"根據提供的reddit細目顯示Reddit上熱門話題。",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"在網址的<b>/r/</b>之後輸入任何reddit細目。\n<br /><br />\n例如，科技類的網址是<a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, 因此你需要輸入<b>technology</b>",
+      "subreddit_help":"在網址的<b>/r/</b>之後輸入任何reddit細目。\n<br /><br />\n例如，科技類的網址是<a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, 因此你需要輸入<b>technology</b>",
       "subreddit_placeholder":"輸入 reddit 細目（例如：technology）以顯示連結。",
       "sort":"排列次序",
       "sort_options":{
@@ -294,9 +294,9 @@
     "desc":"在頁面上顯示一個包含網站名稱與縮圖的連結",
     "settings":{
       "link":"連結網址：",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"圖像網址",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"圖片背景顏色",
       "style":"圖片樣式",
       "style_fill":"填滿",
@@ -424,7 +424,7 @@
     "desc":"在 iframe 內顯示一個您選擇的網頁。",
     "settings":{
       "url":"框架位址",
-      "url_placeholder":"例如： http://www.google.com/",
+      "url_placeholder":"例如： https://www.google.com/",
       "height":"框架高度",
       "padding":"留邊距離"
     }

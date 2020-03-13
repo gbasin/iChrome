@@ -160,7 +160,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 		};
 	},
 	{
-		urls: ["http://ichro.me/redirect"]
+		urls: ["https://ichro.me/redirect"]
 	},
 	["blocking"]
 );

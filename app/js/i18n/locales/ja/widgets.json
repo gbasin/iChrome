@@ -184,7 +184,7 @@
     "desc":"Reddit 上の指定した subreddit の投稿を表示します。",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Reddit の URL の <b>/r/</b> の後にある subreddit を入力してください。\n<br /><br />\n例えば Technology の場合、<a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a> の<b>technology</b> を入力します。",
+      "subreddit_help":"Reddit の URL の <b>/r/</b> の後にある subreddit を入力してください。\n<br /><br />\n例えば Technology の場合、<a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a> の<b>technology</b> を入力します。",
       "subreddit_placeholder":"表示させたい subreddit を入力 (例: technology)",
       "sort":"並べ替え順序",
       "sort_options":{
@@ -296,7 +296,7 @@
       "link":"リンク先の URL",
       "link_placeholder":"https://www.google.co.jp/",
       "image":"画像 URL",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"画像の背景色",
       "style":"画像のスタイル",
       "style_fill":"埋める",

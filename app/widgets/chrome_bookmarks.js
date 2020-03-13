@@ -48,12 +48,12 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 			bookmarks: [
 				{
 					title: "Google",
-					url: "http://www.google.com/",
+					url: "https://www.google.com/",
 					favicon: "chrome://favicon/size/16@4x/origin/http://www.google.com/"
 				},
 				{
 					title: "Facebook",
-					url: "http://www.facebook.com/",
+					url: "https://www.facebook.com/",
 					favicon: "chrome://favicon/size/16@4x/origin/http://www.facebook.com/"
 				},
 				{
@@ -61,19 +61,19 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 					items: [
 						{
 							title: "Youtube",
-							url: "http://www.youtube.com/",
+							url: "https://www.youtube.com/",
 							favicon: "chrome://favicon/size/16@4x/origin/http://www.youtube.com/"
 						},
 						{
 							title: "Amazon",
-							url: "http://www.amazon.com/",
+							url: "https://www.amazon.com/",
 							favicon: "chrome://favicon/size/16@4x/origin/http://www.amazon.com/"
 						}
 					]
 				},
 				{
 					title: "Wikipedia",
-					url: "http://www.wikipedia.org/",
+					url: "https://www.wikipedia.org/",
 					favicon: "chrome://favicon/size/16@4x/origin/http://www.wikipedia.org/"
 				}
 			]

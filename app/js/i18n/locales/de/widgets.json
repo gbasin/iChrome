@@ -42,7 +42,7 @@
       "title":"Lesezeichen-Bezeichnung",
       "title_placeholder":"Google",
       "url":"Lesezeichen URL",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"Speichern"
     },
     "new_caption":"Neu",
@@ -184,7 +184,7 @@
     "desc":"Zeigt die Top-Elemente auf Reddit für jeden Subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Gebe einen Subreddit mit dem Teil hinter <b>/r/</b> ein, wenn auf Reddit.\n<br /><br />\nBeispielsweise, für Technologie: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, daher gib <b>Technologie</b> ein",
+      "subreddit_help":"Gebe einen Subreddit mit dem Teil hinter <b>/r/</b> ein, wenn auf Reddit.\n<br /><br />\nBeispielsweise, für Technologie: <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, daher gib <b>Technologie</b> ein",
       "subreddit_placeholder":"Geben Sie eine Subreddit zum Anzeigen von Links aus (z.B. Technologie)",
       "sort":"Sortierreihenfolge",
       "sort_options":{
@@ -294,9 +294,9 @@
     "desc":"Zeigt einen Link an, optional mit Titel und Bild",
     "settings":{
       "link":"Link-URL",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"Bild-URL",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"Hintergrundfarbe des Bildes",
       "style":"Bildstil",
       "style_fill":"Füllung",
@@ -424,7 +424,7 @@
     "desc":"Zeigt eine Webseite Deiner Wahl in einem iFrame.",
     "settings":{
       "url":"Frame-URL",
-      "url_placeholder":"z.B. http://www.google.com/",
+      "url_placeholder":"z.B. https://www.google.com/",
       "height":"Frame Höhe",
       "padding":"Seitlicher Abstand"
     }

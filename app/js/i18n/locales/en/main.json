@@ -78,7 +78,7 @@
 			"about": "ProductivityTab's all about tabs and widgets",
 			"about_desc": "Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
 
-			"terms": "Note: By proceeding, you agree to ProductivityTab's <a href=\"https://ichro.me/tos\" target=\"_blank\">Terms</a> and <a href=\"https://ichro.me/privacy\" target=\"_blank\">Privacy Policy</a>",
+			"terms": "Note: By proceeding, you agree to ProductivityTab's <a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\">Terms</a> and <a href=\"https://productivitytab.co/privacy-policy-2\" target=\"_blank\">Privacy Policy</a>",
 			"terms_desc": "ProductivityTab collects the minimum amount of Personal and Non-personal user information required to fulfill core functions of the service. This includes communicating with users, fulfilling requests, and customizing, operating, and improving our services. For a detailed description of our data usage and collection, please refer to the full ProductivityTab Privacy Policy.",
 
 			"sign_in": "Sign in with your Google account",
@@ -187,6 +187,7 @@
 			"review":	"Review",
 			"terms":	"Terms",
 			"privacy":	"Privacy",
+			"permissions":	"Permissions",
 			"by": 		"By Avi Kohn"
 		}
 	},
@@ -635,7 +636,7 @@
 
 			"image": "Image URL",
 			"image_placeholder": "Enter a background image URL",
-			"image_help": "Uploaded images <b>cannot be synced</b> between computers.<br /><br />If this is important to you, please upload your image to a service such as <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>. Then copy the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
+			"image_help": "Uploaded images <b>cannot be synced</b> between computers.<br /><br />If this is important to you, please upload your image to a service such as <a href=\"https://imgur.com/\" target=\"_blank\">imgur</a>. Then copy the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
 
 			"color": "Fallback Color",
 			"color_placeholder": "Enter any color name",

@@ -42,7 +42,7 @@
       "title":"Tytuł zakładki",
       "title_placeholder":"Google",
       "url":"Adres URL zakładki",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"Zapisz"
     },
     "new_caption":"Nowy",
@@ -184,7 +184,7 @@
     "desc":"Wyświetla najpopularniejsze elementy na Reddit dla dowolnego danego subreddita.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
+      "subreddit_help":"Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
       "subreddit_placeholder":"Wprowadź subreddit aby wyświetlić łącza (np. Technologia)",
       "sort":"Kolejność sortowania",
       "sort_options":{
@@ -294,9 +294,9 @@
     "desc":"Wyświetla odnośnik, opcjonalnie z tytułem i miniaturką strony",
     "settings":{
       "link":"URL odnośnika",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"Adres URL obrazu",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"Kolor tła",
       "style":"Styl obrazu",
       "style_fill":"Wypełnij",
@@ -424,7 +424,7 @@
     "desc":"Wyświetla wybraną stronę internetową w iframe.",
     "settings":{
       "url":"Adres URL ramki",
-      "url_placeholder":"np. http://www.google.com/",
+      "url_placeholder":"np. https://www.google.com/",
       "height":"Wysokość ramki",
       "padding":"Dopełnienie"
     }

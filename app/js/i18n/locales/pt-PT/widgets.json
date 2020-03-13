@@ -42,7 +42,7 @@
       "title":"Favoritos Título",
       "title_placeholder":"Google",
       "url":"URL do favorito",
-      "url_placeholder":"http://www.google.com",
+      "url_placeholder":"https://www.google.com",
       "save":"Gravar"
     },
     "new_caption":"Novo",
@@ -184,7 +184,7 @@
     "desc":"Apresenta os principais itens da Reddit para qualquer subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Digite qualquer subreddit pela parte passado <b> / r / </ b> quando no Reddit. <br /> <br /> \nPor exemplo, a tecnologia está em: <a href = \"http://www.reddit.com / r / tecnologia \"> http://www.reddit.com/r/technology </a> , portanto, você deve digitar <b> tecnologia </ b>\n",
+      "subreddit_help":"Digite qualquer subreddit pela parte passado <b> / r / </ b> quando no Reddit. <br /> <br /> \nPor exemplo, a tecnologia está em: <a href = \"https://www.reddit.com / r / tecnologia \"> https://www.reddit.com/r/technology </a> , portanto, você deve digitar <b> tecnologia </ b>\n",
       "subreddit_placeholder":"Digite um subreddit para mostrar links de. (Ou seja, a tecnologia)",
       "sort":"Ordem de classificação",
       "sort_options":{
@@ -294,9 +294,9 @@
     "desc":"Displays a link, optionally with a title and thumbnail",
     "settings":{
       "link":"Link URL",
-      "link_placeholder":"http://www.google.com",
+      "link_placeholder":"https://www.google.com",
       "image":"URL da imagem",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"Image Background Color",
       "style":"Image Style",
       "style_fill":"Fill",
@@ -424,7 +424,7 @@
     "desc":"Exibe uma página de sua escolha dentro de um iframe.",
     "settings":{
       "url":"URL frame",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "height":"Quadro Altura",
       "padding":"Acolchoamento"
     }

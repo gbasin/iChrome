@@ -90,14 +90,15 @@
 			</a>
 		</div>
 
-		<a href="http://ichrome.uservoice.com/" class="support">{{i18n.menu.footer.support}}</a> &nbsp;·&nbsp;
-		<a href="http://ichrome.uservoice.com/" class="feedback">{{i18n.menu.footer.feedback}}</a> &nbsp;·&nbsp;
+		<a href="https://productivitytab.uservoice.com/" class="support">{{i18n.menu.footer.support}}</a> &nbsp;·&nbsp;
+		<a href="https://productivitytab.uservoice.com/" class="feedback">{{i18n.menu.footer.feedback}}</a> &nbsp;·&nbsp;
 		<a href="https://chrome.google.com/webstore/detail/ichrome/oghkljobbhapacbahlneolfclkniiami/reviews">{{i18n.menu.footer.review}}</a>
 
 		<br />
 
-		<a href="https://ichro.me/tos" class="terms">{{i18n.menu.footer.terms}}</a> &nbsp;·&nbsp;
-		<a href="https://ichro.me/privacy" class="privacy">{{i18n.menu.footer.privacy}}</a>
+		<a href="https://productivitytab.co/terms-of-service" class="terms">{{i18n.menu.footer.terms}}</a> &nbsp;·&nbsp;
+		<a href="https://productivitytab.co/privacy-policy-2" class="privacy">{{i18n.menu.footer.privacy}}</a> &nbsp;·&nbsp;
+		<a href="https://productivitytab.co/permissions" class="permissions">{{i18n.menu.footer.permissions}}</a>
 
 		<hr class="separator" />
 

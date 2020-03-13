@@ -42,7 +42,7 @@
       "title":"Marcador de título",
       "title_placeholder":"Google",
       "url":"Bookmark URL",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"Guardar"
     },
     "new_caption":"Nuevo",
@@ -184,7 +184,7 @@
     "desc":"Muestra los elementos principales en Reddit para cualquier subreddit dado.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Introduzca cualquier subreddit por la parte más allá de <b>/r/</b> cuando en Reddit.\n<br /><br />\nPor ejemplo, la Tecnología es: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, por lo tanto, es necesario introducir <b>tecnología</b>",
+      "subreddit_help":"Introduzca cualquier subreddit por la parte más allá de <b>/r/</b> cuando en Reddit.\n<br /><br />\nPor ejemplo, la Tecnología es: <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, por lo tanto, es necesario introducir <b>tecnología</b>",
       "subreddit_placeholder":"Introduzca un subreddit para mostrar enlaces de. (es decir, tecnología)",
       "sort":"Orden de clasificación",
       "sort_options":{
@@ -294,9 +294,9 @@
     "desc":"Displays a link, optionally with a title and thumbnail",
     "settings":{
       "link":"URL del Enlace",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"URL de la imagen",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"Color de fondo del imagen",
       "style":"Estilo de Imagen",
       "style_fill":"Llenar",
@@ -424,7 +424,7 @@
     "desc":"Muestra una página web de su elección dentro de un iframe.",
     "settings":{
       "url":"Marco URL",
-      "url_placeholder":"es decir, http://www.google.com/",
+      "url_placeholder":"es decir, https://www.google.com/",
       "height":"Altura del marco",
       "padding":"Relleno"
     }

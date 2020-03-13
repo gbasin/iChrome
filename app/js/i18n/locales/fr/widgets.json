@@ -42,7 +42,7 @@
       "title":"Titre du marque-page",
       "title_placeholder":"Google",
       "url":"URL du marque-page",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"Enregistrer"
     },
     "new_caption":"Nouveau",
@@ -184,7 +184,7 @@
     "desc":"Affiche les liens populaires de Reddit pour tout subreddit donné.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Entrez le nom de n'importe que subreddit après le <b>/r/</b>\n<br /><br />\nExemple : Pour le subreddit technologie est à : <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, donc vous devez entrer <b>technology</b>",
+      "subreddit_help":"Entrez le nom de n'importe que subreddit après le <b>/r/</b>\n<br /><br />\nExemple : Pour le subreddit technologie est à : <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, donc vous devez entrer <b>technology</b>",
       "subreddit_placeholder":"Entrez un subreddit ici pour afficher les liens de celui-ci (Exemple : technology)",
       "sort":"Le classement",
       "sort_options":{
@@ -294,7 +294,7 @@
     "desc":"Affiche un lien, éventuellement avec un titre et une vignette",
     "settings":{
       "link":"Lien URL",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"URL de l'image",
       "image_placeholder":"http://www.exemple.fr/image.png",
       "color":"Couleur d'arrière-plan de la page",
@@ -424,7 +424,7 @@
     "desc":"Afficher une page web de votre choix dans \"iframe\"",
     "settings":{
       "url":"URL de l'image",
-      "url_placeholder":"e.g. http://www.google.com/",
+      "url_placeholder":"e.g. https://www.google.com/",
       "height":"Hauteur de l'image",
       "padding":"Remplissage"
     }

@@ -98,7 +98,7 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 		},
 
 		autocomplete: function(val, cb) {
-			$.getJSON("http://gd.geobytes.com/AutoCompleteCity?callback=&sort=size&q=" + encodeURIComponent(val), function(d) {
+			$.getJSON("https://gd.geobytes.com/AutoCompleteCity?callback=&sort=size&q=" + encodeURIComponent(val), function(d) {
 				cb(_.compact(_.map(d, function(e) {
 					if (e === "%s" || e === "")	{ return null; }
 					var tokens = e.split(",");

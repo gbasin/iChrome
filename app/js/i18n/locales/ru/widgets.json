@@ -42,7 +42,7 @@
       "title":"Заголовок",
       "title_placeholder":"Google",
       "url":"URL-адрес",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"Сохранить"
     },
     "new_caption":"Создать",
@@ -194,7 +194,7 @@
     "desc":"Отображает лучшее с Reddit из любого выбранного субреддита.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Введите название субреддита без <b>/r/</b>.\n<br /><br />\nНапример полный адрес субреддита Technology выглядит так: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, однако в это поле необходимо написать только <b>technology</b>",
+      "subreddit_help":"Введите название субреддита без <b>/r/</b>.\n<br /><br />\nНапример полный адрес субреддита Technology выглядит так: <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, однако в это поле необходимо написать только <b>technology</b>",
       "subreddit_placeholder":"Введите название субреддита (напр. technology)",
       "sort":"Сортировка",
       "sort_options":{
@@ -304,9 +304,9 @@
     "desc":"Отображает ссылку на сайт с заголовком и миниатюрой",
     "settings":{
       "link":"Адрес ссылки",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"Адрес изображения",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"Цвет фона",
       "style":"Стиль изображения",
       "style_fill":"Заполнить",
@@ -434,7 +434,7 @@
     "desc":"Отображает указанную веб-страницу внутри виджета с помощью iframe.",
     "settings":{
       "url":"URL-адрес для отображения",
-      "url_placeholder":"напр. http://www.google.com/",
+      "url_placeholder":"напр. https://www.google.com/",
       "height":"Высота фрейма",
       "padding":"Отступ"
     }

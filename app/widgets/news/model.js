@@ -472,7 +472,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 					span.textContent = e.textContent.replace(/\n/g, "  ").trim();
 
 
-					var href = e.getAttribute("href") || "http://www.google.com/";
+					var href = e.getAttribute("href") || "https://www.google.com/";
 
 					if (href.trim().indexOf("//") === 0) {
 						href =  "http:" + href.trim();

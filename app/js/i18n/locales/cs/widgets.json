@@ -42,7 +42,7 @@
       "title":"Název záložky",
       "title_placeholder":"Google",
       "url":"URL záložky",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"Uložit"
     },
     "new_caption":"Nový",
@@ -184,7 +184,7 @@
     "desc":"Zobrazí top položky na Reddit-u pro daný subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Pokud používáte Reddit, na termín se odkazujte textem umístěným za <b>/r/</b>. < br /><br />\nNapříklad termín Technology je na: <a href=\"http://www.reddit.com/r/technology\"> http://www.reddit.com/r/technology</a>, tedy zadáte <b>technology</b>",
+      "subreddit_help":"Pokud používáte Reddit, na termín se odkazujte textem umístěným za <b>/r/</b>. < br /><br />\nNapříklad termín Technology je na: <a href=\"https://www.reddit.com/r/technology\"> https://www.reddit.com/r/technology</a>, tedy zadáte <b>technology</b>",
       "subreddit_placeholder":"Zadejte subreddit pro zobrazení odkazů. (například: technologie)",
       "sort":"Řadit podle",
       "sort_options":{
@@ -294,9 +294,9 @@
     "desc":"Vytvoří odkaz - volitelně s názvem a náhledem",
     "settings":{
       "link":"URL odkazu",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"URL adresa obrázku",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"Barva pozadí obrázku",
       "style":"Styl obrázku",
       "style_fill":"Vyplnit",
@@ -424,7 +424,7 @@
     "desc":"Zobrazí webovou stránku dle vašeho výběru v rámci objektu iframe.",
     "settings":{
       "url":"URL rámečku",
-      "url_placeholder":"např. http://www.google.com/",
+      "url_placeholder":"např. https://www.google.com/",
       "height":"Výška rámečku",
       "padding":"Odsazení"
     }

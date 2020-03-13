@@ -32,7 +32,7 @@
       "wrong_extension_action":"Clicca qui",
       "about":"ProductivityTab è fatto di tab e widget",
       "about_desc":"I Tab (o Schede) sono pagine contenenti widget - riquadri che mostrano cose come il meteo, le news e le tue email. Puoi personalizzare la maggior parte dei widget e aggiungerne quanti ne vuoi.",
-      "terms":"Nota: Procedendo, accetti le<a href=\"https://ichro.me/tos\" target=\"_blank\">condizioni</a> e i<a href=\"https://ichro.me/privacy\" target=\"_blank\">termini sulla privacy</a>",
+      "terms":"Nota: Procedendo, accetti le<a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\">condizioni</a> e i<a href=\"https://productivitytab.co/privacy-policy-2\" target=\"_blank\">termini sulla privacy</a>",
       "sign_in":"Registrati con il tuo account Google",
       "sign_in_desc":"Accedi con il tuo account Google prima di cominciare per salvare in sicurezza le modifiche online.",
       "sign_in_desc2":"Puoi non essere loggato se vuoi, ma la pagina non verrá salvata online e tu non avrai la possibilitá di accedervi da altri computer.",
@@ -218,7 +218,7 @@
         "custom_note1":"Massimo di 3 ammessi",
         "custom_note2":"gli utenti ottengono 8",
         "custom_name_placeholder":"Testo del link",
-        "custom_url_placeholder":"URL del link, es: http://www.google.com/"
+        "custom_url_placeholder":"URL del link, es: https://www.google.com/"
       }
     },
     "misc":{
@@ -470,7 +470,7 @@
       "name_placeholder":"Inserisci il nome di un tema",
       "image":"URL dell'immagine",
       "image_placeholder":"Inserire l'URL dell'immagine di sfondo",
-      "image_help":"Le immagini caricate <b>non possono essere sincronizzate</b> tra computer.<br /><br />Se per te questo è importate, si consiglia di caricare la tua immagine su un servizio di hosting immagini tipo <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>. Dopo di che copia l'URL che finisce con un estensione (es: .jpg) ed incollalo nel campo a sinistra.",
+      "image_help":"Le immagini caricate <b>non possono essere sincronizzate</b> tra computer.<br /><br />Se per te questo è importate, si consiglia di caricare la tua immagine su un servizio di hosting immagini tipo <a href=\"https://imgur.com/\" target=\"_blank\">imgur</a>. Dopo di che copia l'URL che finisce con un estensione (es: .jpg) ed incollalo nel campo a sinistra.",
       "color":"Colore di riserva",
       "color_placeholder":"Inserisci il nome di colore",
       "position":"Posizione",

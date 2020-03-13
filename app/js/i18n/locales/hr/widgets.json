@@ -42,7 +42,7 @@
       "title":"Naslov oznake",
       "title_placeholder":"Google",
       "url":"URL oznake",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"Spremi"
     },
     "new_caption":"Novi",
@@ -184,7 +184,7 @@
     "desc":"Prikazuje najpopularnije stavke na Reddit-u za bilo koji zadani subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Unesi subreddit kao dio nakon <b>/r/</b>.\n<br /><br />\nNa primjer, \"Technology\" je: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, dakle, unio bi <b>technology</b>",
+      "subreddit_help":"Unesi subreddit kao dio nakon <b>/r/</b>.\n<br /><br />\nNa primjer, \"Technology\" je: <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, dakle, unio bi <b>technology</b>",
       "subreddit_placeholder":"Unesi subreddit (npr. technology)",
       "sort":"Redoslijed sortiranja",
       "sort_options":{
@@ -294,9 +294,9 @@
     "desc":"Prikazuje link, po želji s nazivom i sličicom",
     "settings":{
       "link":"URL linka",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"URL slike",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"Boja pozadinske slike",
       "style":"Stil slike",
       "style_fill":"Popuni",
@@ -424,7 +424,7 @@
     "desc":"Prikazuje web-stranicu tvog izbora u pametnom okviru.",
     "settings":{
       "url":"URL stranice",
-      "url_placeholder":"npr. http://www.google.com/",
+      "url_placeholder":"npr. https://www.google.com/",
       "height":"Visina okvira",
       "padding":"Udaljenost od ruba"
     }

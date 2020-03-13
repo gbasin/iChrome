@@ -50,7 +50,7 @@
 	"browser_action": {},
 	"options_page": "index.html#settings",
 	"chrome_settings_overrides": {
-		"homepage": "http://ichro.me/redirect"
+		"homepage": "https://ichro.me/redirect"
 	},
 	"permissions": [
 		"storage",
