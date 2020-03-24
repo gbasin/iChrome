@@ -58,11 +58,11 @@
 			</li>
 
 			<li data-id="support">
-				<a class="header" href="https://productivitytab.uservoice.com/knowledgebase" target="_blank">{{i18n.settings.nav.support}}</a>
+				<a class="header" href="https://ichrome.uservoice.com/knowledgebase" target="_blank">{{i18n.settings.nav.support}}</a>
 			</li>
 
 			<li data-id="suggest">
-				<a class="header" href="https://productivitytab.uservoice.com/" target="_blank">{{i18n.settings.nav.suggest}}</a>
+				<a class="header" href="https://ichrome.uservoice.com/" target="_blank">{{i18n.settings.nav.suggest}}</a>
 			</li>
 		</ul>
 	</nav>

@@ -90,8 +90,8 @@
 			</a>
 		</div>
 
-		<a href="https://productivitytab.uservoice.com/" class="support">{{i18n.menu.footer.support}}</a> &nbsp;·&nbsp;
-		<a href="https://productivitytab.uservoice.com/" class="feedback">{{i18n.menu.footer.feedback}}</a> &nbsp;·&nbsp;
+		<a href="https://ichrome.uservoice.com/" class="support">{{i18n.menu.footer.support}}</a> &nbsp;·&nbsp;
+		<a href="https://ichrome.uservoice.com/" class="feedback">{{i18n.menu.footer.feedback}}</a> &nbsp;·&nbsp;
 		<a href="https://chrome.google.com/webstore/detail/ichrome/oghkljobbhapacbahlneolfclkniiami/reviews">{{i18n.menu.footer.review}}</a>
 
 		<br />

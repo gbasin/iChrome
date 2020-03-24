@@ -128,7 +128,7 @@ define(
 
 						case "support":
 						{
-							var url = "https://productivitytab.uservoice.com/knowledgebase";
+							var url = "https://ichrome.uservoice.com/knowledgebase";
 							Browser.tabs.getCurrent(function(d) {
 								Browser.tabs.create({
 									url: url,
