@@ -153,7 +153,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 			this.ajax({
 				type: "POST",
 				data: {
-					oauth_callback: "http://www.ichro.me/twitter_redirect"
+					oauth_callback: "https://www.ichro.me/twitter_redirect"
 				},
 				url: "https://api.twitter.com/oauth/request_token",
 				success: function(d) {
@@ -194,7 +194,7 @@ define(["jquery", "moment", "browser/api"], function($, moment, Browser) {
 									}
 								},
 								{
-									urls: [ "http://www.ichro.me/twitter_redirect*" ]
+									urls: [ "https://www.ichro.me/twitter_redirect*" ]
 								},
 								["blocking", "requestBody"]
 							);

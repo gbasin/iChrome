@@ -60,40 +60,40 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 						"title": "EXCLUSIVE-Chemical weapons used in Syrian fighting - watchdog",
 						"desc": "Chemical weapons experts have determined that mustard gas was used during fighting in Syria in August, according to a report by an international watchdog seen by Reuters.",
 						"date": 1446747372000,
-						"image": "http://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBmSQjO_m5_h190_w200.jpg",
-						"url": "http://a.msn.com/r/2/BBmSxTl",
+						"image": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBmSQjO_m5_h190_w200.jpg",
+						"url": "https://a.msn.com/r/2/BBmSxTl",
 						"source": "Reuters"
 					},
 					{
 						"title": "The tragic case of the boy who was missing for 13 years — and didn’t know it",
 						"desc": "Julian Hernandez was abducted in Alabama by his father in 2002, police said. He was found in Ohio, living under assumed name.",
 						"date": 1446746400000,
-						"image": "http://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBmSxnS_m5_h190_w200.jpg",
-						"url": "http://a.msn.com/r/2/BBmSx48",
+						"image": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBmSxnS_m5_h190_w200.jpg",
+						"url": "https://a.msn.com/r/2/BBmSx48",
 						"source": "The Washington Post"
 					},
 					{
 						"title": "Rumsfeld: Bush 41 'getting up in years'",
 						"desc": "The former Defense secretary is pushing back on criticism from the elder Bush.",
 						"date": 1446752880000,
-						"image": "http://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBmSvmg_m5_h190_w200.jpg",
-						"url": "http://a.msn.com/r/2/BBmSFha",
+						"image": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBmSvmg_m5_h190_w200.jpg",
+						"url": "https://a.msn.com/r/2/BBmSFha",
 						"source": "The Hill"
 					},
 					{
 						"title": "Russia, Egypt reject British PM's terrorist bomb speculation",
 						"desc": "British Prime Minister David Cameron said Thursday there is a \"strong possibility\" a terrorist bomb brought down a Russian plane over the Sinai even as Russia and Egypt dismissed such talk as premature speculation.",
 						"date": 1446746400000,
-						"image": "http://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBmSnRb_m5_h190_w200.jpg",
-						"url": "http://a.msn.com/r/2/BBmPoS9",
+						"image": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBmSnRb_m5_h190_w200.jpg",
+						"url": "https://a.msn.com/r/2/BBmPoS9",
 						"source": "USA Today"
 					},
 					{
 						"title": "Detective: 'Hero' cop sought hit-man to cover up thefts",
 						"desc": "Months before an Illinois police officer staged his suicide to look like murder, prompting an expensive manhunt that put his community under siege, he tried to find a hit man to kill a village administrator.",
 						"date": 1446750000000,
-						"image": "http://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBmS7SA_m5_h190_w200.jpg",
-						"url": "http://a.msn.com/r/2/BBmScSG",
+						"image": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBmS7SA_m5_h190_w200.jpg",
+						"url": "https://a.msn.com/r/2/BBmScSG",
 						"source": "Associated Press"
 					}
 				]
@@ -183,7 +183,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 		getMsnTopics: function(cb, edition) {
 			edition = edition || this.config.edition;
 
-			$.getJSON("http://cdn.content.prod.cms.msn.com/none/sources/alias/compositestreambyname/today?market=" + edition + "&tenant=amp&vertical=news", function(d) {
+			$.getJSON("https://cdn.content.prod.cms.msn.com/none/sources/alias/compositestreambyname/today?market=" + edition + "&tenant=amp&vertical=news", function(d) {
 				var topics = _.map(d && d._links && d._links.sources, function(d) {
 					return [d.categoryKey, d.sourceName, d.href];
 				});
@@ -292,7 +292,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 
 			var topic = _.find(this.data.topics, [activeTab]);
 
-			$.getJSON("http://cdn.content.prod.cms.msn.com/common/abstract/" + (topic[0] === "$allStories" ? "alias/compositestreambyname/today" : "id/" + topic[2]), {
+			$.getJSON("https://cdn.content.prod.cms.msn.com/common/abstract/" + (topic[0] === "$allStories" ? "alias/compositestreambyname/today" : "id/" + topic[2]), {
 				count: maximized ? 45 : this.config.number,
 				market: this.config.edition,
 				tenant: "amp",

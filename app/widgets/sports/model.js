@@ -128,7 +128,7 @@ define(["jquery", "lodash", "widgets/model"], function($, _, WidgetModel) {
 						odds: 0,
 						broadcasts: ["FOX"],
 						preview: "https://espn.go.com/nfl/preview?gameId=400791514",
-						tickets: "http://www.stubhub.com/atlanta-falcons-atlanta-georgia-dome-11-29-2015-9298672",
+						tickets: "https://www.stubhub.com/atlanta-falcons-atlanta-georgia-dome-11-29-2015-9298672",
 						home: {
 							id: 1,
 							name: "Falcons",
@@ -159,7 +159,7 @@ define(["jquery", "lodash", "widgets/model"], function($, _, WidgetModel) {
 						odds: 0,
 						broadcasts: ["FOX"],
 						preview: "https://espn.go.com/nfl/preview?gameId=400791506",
-						tickets: "http://www.stubhub.com/washington-redskins-landover-fedexfield-11-29-2015-9298625",
+						tickets: "https://www.stubhub.com/washington-redskins-landover-fedexfield-11-29-2015-9298625",
 						home: {
 							id: 28,
 							name: "Redskins",
@@ -190,7 +190,7 @@ define(["jquery", "lodash", "widgets/model"], function($, _, WidgetModel) {
 						odds: 0,
 						broadcasts: ["CBS"],
 						preview: "https://espn.go.com/nfl/preview?gameId=400791522",
-						tickets: "http://www.stubhub.com/new-york-jets-east-rutherford-metlife-stadium-11-29-2015-9298555",
+						tickets: "https://www.stubhub.com/new-york-jets-east-rutherford-metlife-stadium-11-29-2015-9298555",
 						home: {
 							id: 20,
 							name: "Jets",
