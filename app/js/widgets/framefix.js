@@ -32,6 +32,24 @@ define(["jquery", "browser/api"], function($, Browser) {
 					for (var i = headers.length - 1; i >= 0; --i) {
 						var header = headers[i].name.toLowerCase();
 
+						// if (header === "set-cookie") {
+						// 	var val = headers[i].value;
+						// 	if (val.indexOf("SameSite=") < 0) {
+						// 		val = val + ";SameSite=None";
+
+						// 		val.replace("SameSite=Lax", "SameSite=None");
+						// 		val.replace("SameSite=Strict", "SameSite=None");
+
+
+						// 		if (val.indexOf(";Secure") < 0) {
+						// 			val = val + ";Secure";
+						// 		}
+
+
+						// 		headers[i].value = val;
+						// 	}
+						// }
+
 						if (header === "x-frame-options" || header === "frame-options") {
 							headers.splice(i, 1);
 						}
@@ -53,6 +71,7 @@ define(["jquery", "browser/api"], function($, Browser) {
 					types: [ "sub_frame" ]
 				},
 				["blocking", "responseHeaders"]
+				//["blocking", "responseHeaders", "extraHeaders"]
 			);
 
 			listening = true;

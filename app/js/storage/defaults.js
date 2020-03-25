@@ -1,5 +1,5 @@
 /**
- * This stores the storage defaults.  It's mainly used for comparisons, unextends and resetting iChrome.
+ * This stores the storage defaults.  It's mainly used for comparisons, unextends and resetting ProductivityTab.
  */
 define(["i18n/i18n"], function(Translate) {
 	return {
@@ -25,8 +25,8 @@ define(["i18n/i18n"], function(Translate) {
 						config: {
 							color: "rgb(255, 255, 255)",
 							title: "Leave a 5* Review? :)",
-							link: "https://chrome.google.com/webstore/detail/ichrome-new-tab-ultimate/iccjgbbjckehppnpajnmplcccjcgbdep/related?hl=en",
-							image: "https://ichro.me/img/press/8.png"
+							link: "https://chrome.google.com/webstore/detail/ichrome-new-tab-ultimate/###productivitytab###/related?hl=en",
+							image: "images/sitelink_logo.png"
 						}
 					}, 
 					{ 

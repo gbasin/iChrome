@@ -91,43 +91,43 @@ define(["lodash", "jquery", "moment"], function(_, $, moment) {
 			videos: [
 				{
 					title: "Official Extended Trailer | GOTHAM | FOX BROADCASTING",
-					url: "http://www.youtube.com/watch?v=0d1zpt6k5OI&feature=youtube_gdata",
+					url: "https://www.youtube.com/watch?v=0d1zpt6k5OI&feature=youtube_gdata",
 					uploader: "FOX",
 					duration: "2:07",
-					thumb: "http://i1.ytimg.com/vi/0d1zpt6k5OI/0.jpg",
+					thumb: "https://i1.ytimg.com/vi/0d1zpt6k5OI/0.jpg",
 					views: 1143620
 				},
 				{
 					title: "Rick Grimes vs Walter White.  Epic Rap Battles of History Season 3.",
-					url: "http://www.youtube.com/watch?v=krQHQvtIr6w&feature=youtube_gdata",
+					url: "https://www.youtube.com/watch?v=krQHQvtIr6w&feature=youtube_gdata",
 					views: 2980000,
 					uploader: "ERB",
 					duration: "2:18",
-					thumb: "http://i1.ytimg.com/vi/krQHQvtIr6w/0.jpg"
+					thumb: "https://i1.ytimg.com/vi/krQHQvtIr6w/0.jpg"
 				},
 				{
 					title: "Usher - Good Kisser",
-					url: "http://www.youtube.com/watch?v=1lQtoRFaLsA&feature=youtube_gdata",
+					url: "https://www.youtube.com/watch?v=1lQtoRFaLsA&feature=youtube_gdata",
 					views: 790000,
 					uploader: "UsherVEVO",
 					duration: "5:04",
-					thumb: "http://i1.ytimg.com/vi/1lQtoRFaLsA/0.jpg"
+					thumb: "https://i1.ytimg.com/vi/1lQtoRFaLsA/0.jpg"
 				},
 				{
 					title: "Linkin Park - \"Until It's Gone\" [Official Lyric Video]",
-					url: "http://www.youtube.com/watch?v=Nym1P-BO_ws&feature=youtube_gdata",
+					url: "https://www.youtube.com/watch?v=Nym1P-BO_ws&feature=youtube_gdata",
 					views: 714000,
 					uploader: "Linkin Park",
 					duration: "3:41",
-					thumb: "http://i1.ytimg.com/vi/Nym1P-BO_ws/0.jpg"
+					thumb: "https://i1.ytimg.com/vi/Nym1P-BO_ws/0.jpg"
 				},
 				{
 					title: "Internet Citizens: Defend Net Neutrality",
-					url: "http://www.youtube.com/watch?v=wtt2aSV8wdw&feature=youtube_gdata",
+					url: "https://www.youtube.com/watch?v=wtt2aSV8wdw&feature=youtube_gdata",
 					views: 368000,
 					uploader: "CGP Grey",
 					duration: "3:34",
-					thumb: "http://i1.ytimg.com/vi/wtt2aSV8wdw/0.jpg"
+					thumb: "https://i1.ytimg.com/vi/wtt2aSV8wdw/0.jpg"
 				}
 			]
 		},

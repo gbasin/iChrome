@@ -1,5 +1,5 @@
 /**
- * The main iChrome view, this initializes everything.
+ * The main ProductivityTab view, this initializes everything.
  */
 define([
 	"jquery", "lodash", "browser/api", "backbone", "core/auth", "core/status", "core/analytics", "storage/storage", "core/css",

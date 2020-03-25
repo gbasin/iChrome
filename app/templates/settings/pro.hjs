@@ -58,10 +58,10 @@
 {{^isSubscribed}}
 	<main class="content" tabindex="-1">
 		<header class="large-header">
-			<h2 class="page-name">iChrome Pro</h2>
+			<h2 class="page-name">ProductivityTab Pro</h2>
 
 			{{#isTrial}}
-				<p style="color:yellow">Your iChrome Pro trial expires on {{trialExpiration}}! Click upgrade to keep advanced widget features and customization options.</p>
+				<p style="color:yellow">Your ProductivityTab Pro trial expires on {{trialExpiration}}! Click upgrade to keep advanced widget features and customization options.</p>
 			{{/isTrial}}
 
 			<h3 class="subheader pricing">

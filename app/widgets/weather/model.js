@@ -1,4 +1,4 @@
-define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel, moment, $) {
+define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 	return WidgetModel.extend({
 		refreshInterval: 300000,
 
@@ -98,22 +98,31 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 		},
 
 		autocomplete: function(val, cb) {
-			$.getJSON("http://gd.geobytes.com/AutoCompleteCity?callback=&sort=size&q=" + encodeURIComponent(val), function(d) {
-				cb(_.compact(_.map(d, function(e) {
-					if (e === "%s" || e === "")	{ return null; }
-					var tokens = e.split(",");
-					var value = e;
-					var label = e;
-					if (tokens.length === 3) {
-						value = tokens[0] + "," + tokens[1] + " region," + tokens[2];
-						label = value;
+			this.Auth.ajax({
+				url: "/weather/autocomplete?s=" + val,
+				success: function(d) {
+					if (d && typeof(d) === "string") {
+						try {
+							var data = JSON.parse(d);
+							cb(_.compact(_.map(data, function(e) {
+								if (e === "%s" || e === "")	{ return null; }
+								var tokens = e.split(",");
+								var value = e;
+								var label = e;
+								if (tokens.length === 3) {
+									value = tokens[0] + "," + tokens[1] + " region," + tokens[2];
+									label = value;
+								}
+			
+								return {
+									value: value,
+									label: label
+								};
+							})));
+						} catch(e) {
+						}							
 					}
-
-					return {
-						value: value,
-						label: label
-					};
-				})));
+				}.bind(this)
 			});
 		},
 
@@ -296,7 +305,8 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 							lat: loc[0],
 							lon: loc[1],
 							units: this.config.units || null,
-							hourly: this.config.hourly === "enabled" ? true : null
+							hourly: this.config.hourly === "enabled" ? true : null,
+							nc: new Date().getTime()
 						}
 					}).done(function(d) {
 						if (!d) {
@@ -396,25 +406,33 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 				doResolve();
 			}
 			else{
-				$.getJSON('http://www.geoplugin.net/json.gp', function(data) {
-					if (!data.geoplugin_city || data.geoplugin_city === "") { return; } //The resolve function does does not work if city is absent
-					var name = data.geoplugin_city;
-					if (!data.geoplugin_regionCode && data.geoplugin_regionCode !== "") {
-						name += ", ";
-						name += data.geoplugin_regionCode;
-					}
-					if (!data.geoplugin_countryName && data.geoplugin_countryName !== "") {
-						name += ", ";
-						name += data.geoplugin_countryName;
-					}
-					this.config.location = [name];
-					this.config.resolvedNames = [name];
-					this.config.resolvedLocs = [[data.geoplugin_latitude, data.geoplugin_longitude]];
-					this.saveData();
-				}
-				.bind(this)
-				)
-				.done(function() {
+				this.Auth.ajax({
+					url: "/weather/getLocation",
+					success: function(d) {
+						if (d && typeof(d) === "string") {
+							var data = {};
+							try {
+								data = JSON.parse(d);
+							} catch(e) {
+							}							
+
+							if (!data.geoplugin_city || data.geoplugin_city === "") { return; } //The resolve function does does not work if city is absent
+							var name = data.geoplugin_city;
+							if (!data.geoplugin_regionCode && data.geoplugin_regionCode !== "") {
+								name += ", ";
+								name += data.geoplugin_regionCode;
+							}
+							if (!data.geoplugin_countryName && data.geoplugin_countryName !== "") {
+								name += ", ";
+								name += data.geoplugin_countryName;
+							}
+							this.config.location = [name];
+							this.config.resolvedNames = [name];
+							this.config.resolvedLocs = [[data.geoplugin_latitude, data.geoplugin_longitude]];
+							this.saveData();
+						}
+					}.bind(this),
+				}).always(function() {
 					doResolve();
 				});
 			}

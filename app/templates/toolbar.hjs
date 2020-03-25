@@ -83,7 +83,7 @@
 					</a>
 				</div>
 
-				<a href="http://www.google.com/about/products/" class="more">{{i18n.toolbar.apps.more}}</a>
+				<a href="https://www.google.com/about/products/" class="more">{{i18n.toolbar.apps.more}}</a>
 			</nav>
 		</div>
 	</div>

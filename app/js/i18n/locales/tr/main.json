@@ -2,8 +2,8 @@
   "lang_code":"tr",
   "language":"Türkçe",
   
-	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
-	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extName": "ProductivityTab — Custom Homepage Dashboard",
+	"newtabName": "ProductivityTab — Custom New Tab Dashboard",
 	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
 	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
 
@@ -14,7 +14,7 @@
   "remove_widget":"Kaldır",
   "hide_banner":"Bu reklam bandını gizle",
   "hide_ad":{
-    "content":"Hey! We're not crazy about ads either, but we're only able to make iChrome available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support iChrome directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make ProductivityTab available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support ProductivityTab directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"Yükseltin",
     "hide":"Reklamları gizle"
   },
@@ -27,12 +27,12 @@
   "onboarding":{
     "modal":{
       "tagline":"Kullandığınız bütün siteler ve uygulamalar tek bir yerde",
-      "wrong_extension":"Yeni sekme sayfasında iChrome ister misin?",
-      "wrong_extension_newtab":"Ana sayfanızın iChrome olmasını ister misin?",
+      "wrong_extension":"Yeni sekme sayfasında ProductivityTab ister misin?",
+      "wrong_extension_newtab":"Ana sayfanızın ProductivityTab olmasını ister misin?",
       "wrong_extension_action":"Buraya tıkla",
-      "about":"iChrome sekmeler ve widgetlardan oluşur",
+      "about":"ProductivityTab sekmeler ve widgetlardan oluşur",
       "about_desc":"Sekmeler widgedlarla dolu sayfalardır - Hava durumu, haberler ve emaillerinizi gizler. Widgetlarınızı düzenleyebilir ve istediğiniz daha bir çok widget ekleyebilirsiniz.",
-      "terms":"Devam etmekle, iChrome'un <a href=\"https://ichro.me/tos\" target=\"_blank\">Hükümler </a> ve <a href=\"https://ichro.me/privacy\" target=\"_blank\"> Koşullarını</a> kabul etmiş sayılırsınız",
+      "terms":"Devam etmekle, ProductivityTab'un <a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\">Hükümler </a> ve <a href=\"https://productivitytab.co/privacy-policy-2\" target=\"_blank\"> Koşullarını</a> kabul etmiş sayılırsınız",
       "sign_in":"Google Hesabınızı kullanarak oturum açın",
       "sign_in_desc":"Güvenli bir şekilde ayarlarınızı değiştirmeden önce Google hesabınızla giriş yapın.",
       "sign_in_desc2":"İsterseniz giriş yapmayabilirsiniz, fakat sayfalarınız online olarak kaydedilmez ve siz başka bilgisayarlardan giriş yapıp değiştiremezsiniz.",
@@ -56,7 +56,7 @@
 			"instructions": "Click the new widget button on to open the widget menu!",
       "skip":"Geç",
       "tooltips":{
-        "settings":"Change the way iChrome looks and works",
+        "settings":"Change the way ProductivityTab looks and works",
         "widgets":"Add new widgets - you can have as many as you want",
         "editing":"Show or hide the editing buttons on widgets",
         "links":"This is a list of links, add sites you use often in the settings",
@@ -87,7 +87,7 @@
     "placeholder_ok":"Aramak istediğiniz kelimeyi girin veya \"OK, Google\" deyin",
     "suggestions":{
       "url_subtext":"Visit URL",
-      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+      "capture_notice":"ProductivityTab handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
     },
     "apps":{
       "search":"Ara",
@@ -183,7 +183,7 @@
       },
       "theme":{
         "title":"App theme",
-        "desc":"The app theme controls the style of iChrome itself and all widgets",
+        "desc":"The app theme controls the style of ProductivityTab itself and all widgets",
         "preview":"Önizleme",
         "light":"Light (default)",
         "dark":"Siyah",
@@ -227,7 +227,7 @@
     "tabs":{
       "create_new":"Create new",
       "make_default":"Make default",
-      "desc1":"Tabs are pages inside iChrome. Each tab has its own set of widgets that is completely separate from every other tab.",
+      "desc1":"Tabs are pages inside ProductivityTab. Each tab has its own set of widgets that is completely separate from every other tab.",
       "desc2":"You can switch between tabs by clicking the buttons that appear at the left and right of the screen when you move your mouse over a tab or by using the arrow keys on your keyboard.",
       "name_placeholder":"Enter a tab name",
       "delete_confirm":"This action is irreversible. All data from all widgets in the tab will be permanently lost."
@@ -247,19 +247,19 @@
     "advanced":{
       "backups":{
         "title":"Backup and restore",
-        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open iChrome each day.",
-        "desc2":"Use the buttons below to roll iChrome back to a particular date or download one of your backups.",
+        "desc":"Backups are complete copies of all your tabs, settings, and widgets. They're automatically created when you first open ProductivityTab each day.",
+        "desc2":"Use the buttons below to roll ProductivityTab back to a particular date or download one of your backups.",
         "backup":"Backup now",
         "upload":"Restore from file",
         "download":"Download",
         "restore":"Restore",
-        "download_name":"iChrome Backup",
+        "download_name":"ProductivityTab Backup",
         "restore_confirm":"This will overwrite all local and synced data. You will lose your entire current configuration on all computers under this account.",
         "restore_error":"An error occurred while trying to parse the provided data, please try again later."
       },
       "css":{
         "title":"Custom CSS",
-        "desc":"You can use CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definition</a>) to customize almost any part of iChrome.",
+        "desc":"You can use CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definition</a>) to customize almost any part of ProductivityTab.",
         "placeholder":"Enter up to 1000 characters of CSS here"
       },
       "debug_tools":{
@@ -288,7 +288,7 @@
         "bgs":"Live backgrounds",
         "bgs_desc":"Bring your page to life with 20 live high-definition backgrounds",
         "widgets":"Maximizable widgets",
-        "widgets_desc":"Take iChrome to another level with maximizable widgets",
+        "widgets_desc":"Take ProductivityTab to another level with maximizable widgets",
         "more_header":"And more",
         "stocks":"Realtime stocks with extended and historical information",
         "rss":"Support for multiple RSS feeds per widget",
@@ -311,11 +311,11 @@
         "update":"Update",
         "subscribe":"Subscribe",
         "braintree_notice":"Payments securely processed by Braintree.",
-        "monthly_notice":"By subscribing, you authorize iChrome to charge you $4.99 every month until you cancel your subscription.",
-        "yearly_notice":"By subscribing, you authorize iChrome to charge you $29.99 every year until you cancel your subscription.",
+        "monthly_notice":"By subscribing, you authorize ProductivityTab to charge you $4.99 every month until you cancel your subscription.",
+        "yearly_notice":"By subscribing, you authorize ProductivityTab to charge you $29.99 every year until you cancel your subscription.",
         "update_notice":"Although billing cycle changes take effect immediately, you won't be charged until your current cycle ends.",
-        "thank_you":"Thank you for buying iChrome Pro!",
-        "thank_you2":"iChrome will reload in a few seconds and you'll be all set!",
+        "thank_you":"Thank you for buying ProductivityTab Pro!",
+        "thank_you2":"ProductivityTab will reload in a few seconds and you'll be all set!",
         "error":"Something went wrong while trying to process your payment.",
         "error2":"Please try again later or email us at support@ichro.me",
         "signin":"Sign in",
@@ -324,7 +324,7 @@
       },
       "plan":{
         "title":"Plan",
-        "desc":"You are currently subscribed to iChrome Pro (%s)",
+        "desc":"You are currently subscribed to ProductivityTab Pro (%s)",
         "types":{
           "monthly":"Monthly",
           "yearly":"Yearly",
@@ -332,7 +332,7 @@
           "education":"Education",
           "custom":"Özel"
         },
-        "uneditable_desc":"Business, education, and custom plans cannot be updated from within iChrome. Please <a href=\"mailto:support@ichro.me\">contact us</a> to update or cancel your subscription.",
+        "uneditable_desc":"Business, education, and custom plans cannot be updated from within ProductivityTab. Please <a href=\"mailto:support@ichro.me\">contact us</a> to update or cancel your subscription.",
         "status":"Status",
         "status_active":"Active",
         "status_trial":"Trial",
@@ -349,9 +349,9 @@
       }
     },
     "ads":{
-      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text1":"ProductivityTab displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer ProductivityTab free to everyone.",
       "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
-      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from ProductivityTab wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
       "upgrade_btn":"Upgrade to ad-free",
       "already_upgraded":"It looks like you've already upgraded to ad-free",
       "signin":"Sign in",
@@ -470,7 +470,7 @@
       "name_placeholder":"Tema adı girin",
       "image":"Resim URL'si",
       "image_placeholder":"Bir arka plan görüntüsü URL'si girin",
-      "image_help":"Uploaded images <b>cannot be synced</b> between computers.<br /><br />If this is important to you, please upload your image to a service such as <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>. Then copy the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
+      "image_help":"Uploaded images <b>cannot be synced</b> between computers.<br /><br />If this is important to you, please upload your image to a service such as <a href=\"https://imgur.com/\" target=\"_blank\">imgur</a>. Then copy the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
       "color":"Temel renk",
       "color_placeholder":"Herhangi bir renk adı girin",
       "position":"Konum",

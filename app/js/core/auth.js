@@ -138,20 +138,50 @@ define(["lodash", "jquery", "backbone", "browser/api", "fbanalytics", "i18n/i18n
 				cb(null, !!event.data.isNewUser);
 			}.bind(this);
 
-			window.addEventListener("message", messageHandler);
+			var error = function(text) {
+				Alert({
+					title: "Error",
+					classes: "error",
+					html: "<p>" + text + "</p>",
+					buttons: {
+						positive: "OK",
+					}
+				});
+			};
 
-			var url = API_HOST + "/oauth2/v1/authorize?extension=" + (Browser.app.newTab ? "newtab" : "main");
-			var top = Math.round((screen.availHeight - 600) / 2);
-			var left = Math.round((screen.availWidth - 560) / 2);
+			var url = API_HOST + "/oauth2/v1/getstart?extension=" + (Browser.app.newTab ? "newtab" : "main");
 
-			var timer = setInterval(function() {   
-				if(that.child && that.child.closed) {  
-					clearInterval(timer);  
-					window.removeEventListener("message", messageHandler);
-				}  
-			}, 200); 
+			this._autorizePromise = $.post(url, function(d) {
+				if (typeof d !== "object") {
+					d = JSON.parse(d);
+				}
 
-			that.child = window.open(url, "_blank", "top=" + top + ",left=" + left + ",height=600,width=560");
+				if (!d.url) {
+					error("Cannot start authentication flow");
+					return;
+				}
+
+				window.addEventListener("message", messageHandler);
+
+				var top = Math.round((screen.availHeight - 600) / 2);
+				var left = Math.round((screen.availWidth - 560) / 2);
+	
+				var timer = setInterval(function() {   
+					if(that.child && that.child.closed) {  
+						clearInterval(timer);  
+						window.removeEventListener("message", messageHandler);
+					}  
+				}, 200); 
+	
+				that.child = window.open(d.url, "_blank", "top=" + top + ",left=" + left + ",height=600,width=560");
+
+				this._autorizePromise = null;
+			}.bind(this)).fail(function(xhr) {
+				error("Error start authentication flow. Error code: " + xhr.status.toString());
+
+				// If something fails, the next request coming through should retry
+				this._autorizePromise = null;
+			}.bind(this));
 		},
 
 

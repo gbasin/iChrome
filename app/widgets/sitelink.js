@@ -63,6 +63,8 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 			this.elm.off("click.sitelink").on("click.sitelink", "a", function(e) {
 				var href = this.getAttribute("href");
 
+				var template = "###productivitytab###";
+
 				if (href.indexOf("chrome") === 0) { // chrome:// links can't be opened directly for security reasons, this bypasses that feature.
 					e.preventDefault();
 
@@ -79,6 +81,11 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 							});
 						}
 					});
+				} 
+				else if (href.indexOf(template)) {
+					e.preventDefault();
+					href = href.replace(template, Browser.app.id);
+					window.open(href, '_blank');
 				}
 			});
 		}

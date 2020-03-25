@@ -42,7 +42,7 @@
       "title":"Naslov oznake",
       "title_placeholder":"Google",
       "url":"URL oznake",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"Spremi"
     },
     "new_caption":"Novi",
@@ -166,7 +166,7 @@
   "now":{
     "name":"Google Now",
     "desc":"Prikazuje kartice sa Google Now-a, uključujući stanje letova i praćenje paketa.",
-    "authorize":"iChrome-u morate dati dozvolu za prikaz Google Now kartica da bi se ovdje nešto prikazivalo.",
+    "authorize":"ProductivityTab-u morate dati dozvolu za prikaz Google Now kartica da bi se ovdje nešto prikazivalo.",
     "authorize_btn":"Autoriziraj",
     "caught_up":"Sada sve znate.",
     "no_title":"Bez naslova"
@@ -184,7 +184,7 @@
     "desc":"Prikazuje najpopularnije stavke na Reddit-u za bilo koji zadani subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Unesi subreddit kao dio nakon <b>/r/</b>.\n<br /><br />\nNa primjer, \"Technology\" je: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, dakle, unio bi <b>technology</b>",
+      "subreddit_help":"Unesi subreddit kao dio nakon <b>/r/</b>.\n<br /><br />\nNa primjer, \"Technology\" je: <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, dakle, unio bi <b>technology</b>",
       "subreddit_placeholder":"Unesi subreddit (npr. technology)",
       "sort":"Redoslijed sortiranja",
       "sort_options":{
@@ -230,8 +230,8 @@
       "source":"Pokaži tweetove od",
       "show":"Tweetovi prikazani"
     },
-    "authorize":"Prvo ćete morati autorizirati iChrome",
-    "authorize_msg":"Morat ćeš dati iChrome-u dozvolu za prikaz tweetova sa tvog računa da bi se prikazali ovdje.",
+    "authorize":"Prvo ćete morati autorizirati ProductivityTab",
+    "authorize_msg":"Morat ćeš dati ProductivityTab-u dozvolu za prikaz tweetova sa tvog računa da bi se prikazali ovdje.",
     "authorize_btn":"Autoriziraj",
     "no_tweets":"Izgleda da ovdje nema tweetova...",
     "home":"Početna",
@@ -294,9 +294,9 @@
     "desc":"Prikazuje link, po želji s nazivom i sličicom",
     "settings":{
       "link":"URL linka",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"URL slike",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"Boja pozadinske slike",
       "style":"Stil slike",
       "style_fill":"Popuni",
@@ -365,7 +365,7 @@
     "by":"Autor",
     "no_links":"Nema linkova",
     "grant_access":"Odobri pristup",
-    "no_key":"Morat ćeš dati iChrome-u pristup svom Pocket računu da bi se ovdje prikazali linkovi."
+    "no_key":"Morat ćeš dati ProductivityTab-u pristup svom Pocket računu da bi se ovdje prikazali linkovi."
   },
   "analytics":{
     "name":"Analytics",
@@ -413,7 +413,7 @@
       "files_shown":"Broj prikazanih datoteka"
     },
     "modified_by":"od",
-    "authMessage":"Morat ćeš dati iChrome-u dozvolu za pregledavanje datoteka na tvojem Disku da bi se datoteke prikazale."
+    "authMessage":"Morat ćeš dati ProductivityTab-u dozvolu za pregledavanje datoteka na tvojem Disku da bi se datoteke prikazale."
   },
   "gmail":{
     "name":"Gmail",
@@ -424,7 +424,7 @@
     "desc":"Prikazuje web-stranicu tvog izbora u pametnom okviru.",
     "settings":{
       "url":"URL stranice",
-      "url_placeholder":"npr. http://www.google.com/",
+      "url_placeholder":"npr. https://www.google.com/",
       "height":"Visina okvira",
       "padding":"Udaljenost od ruba"
     }

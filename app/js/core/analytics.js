@@ -190,7 +190,7 @@ define(["lodash", "browser/api", "core/status", "core/auth", "fbanalytics"], fun
 	};
 
 	/**
-	 * Queues an item in iChrome's "native" analytics
+	 * Queues an item in ProductivityTab's "native" analytics
 	 *
 	 * @api     public
 	 */

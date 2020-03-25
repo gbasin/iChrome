@@ -42,7 +42,7 @@
       "title":"Titre du marque-page",
       "title_placeholder":"Google",
       "url":"URL du marque-page",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"Enregistrer"
     },
     "new_caption":"Nouveau",
@@ -166,7 +166,7 @@
   "now":{
     "name":"Google Now",
     "desc":"Affiche les cartes depuis Google Now, ceci inclus le statut de votre vol ou de vos colis.",
-    "authorize":"Vous devez autoriser iChrome à accéder à vos cartes Google Now avant que quoi que ce soit soit affiché ici.",
+    "authorize":"Vous devez autoriser ProductivityTab à accéder à vos cartes Google Now avant que quoi que ce soit soit affiché ici.",
     "authorize_btn":"Autoriser",
     "caught_up":"Tout a été récupéré, il n'y a plus rien ici.",
     "no_title":"Pas de titre"
@@ -184,7 +184,7 @@
     "desc":"Affiche les liens populaires de Reddit pour tout subreddit donné.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Entrez le nom de n'importe que subreddit après le <b>/r/</b>\n<br /><br />\nExemple : Pour le subreddit technologie est à : <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, donc vous devez entrer <b>technology</b>",
+      "subreddit_help":"Entrez le nom de n'importe que subreddit après le <b>/r/</b>\n<br /><br />\nExemple : Pour le subreddit technologie est à : <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, donc vous devez entrer <b>technology</b>",
       "subreddit_placeholder":"Entrez un subreddit ici pour afficher les liens de celui-ci (Exemple : technology)",
       "sort":"Le classement",
       "sort_options":{
@@ -230,8 +230,8 @@
       "source":"Afficher les Tweets de",
       "show":"Tweets montrés"
     },
-    "authorize":"Vous aurez tout d'abord besoin d'autoriser iChrome",
-    "authorize_msg":"Vous devez donner iChrome la permission d'accéder à votre compte Twitter avant que ce ne soit affiché ici.",
+    "authorize":"Vous aurez tout d'abord besoin d'autoriser ProductivityTab",
+    "authorize_msg":"Vous devez donner ProductivityTab la permission d'accéder à votre compte Twitter avant que ce ne soit affiché ici.",
     "authorize_btn":"Autoriser",
     "no_tweets":"Il ne semble pas y avoir de tweets ici...",
     "home":"Accueil",
@@ -294,7 +294,7 @@
     "desc":"Affiche un lien, éventuellement avec un titre et une vignette",
     "settings":{
       "link":"Lien URL",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"URL de l'image",
       "image_placeholder":"http://www.exemple.fr/image.png",
       "color":"Couleur d'arrière-plan de la page",
@@ -365,7 +365,7 @@
     "by":"par",
     "no_links":"Aucun lien trouvé",
     "grant_access":"Accorder l'accès",
-    "no_key":"Vous devrez donner à iChrome un accès à votre compte Pocket avant de charger vos liens."
+    "no_key":"Vous devrez donner à ProductivityTab un accès à votre compte Pocket avant de charger vos liens."
   },
   "analytics":{
     "name":"Analytics",
@@ -413,7 +413,7 @@
       "files_shown":"Nombre de fichiers affichés"
     },
     "modified_by":"par",
-    "authMessage":"Vous devez donner à iChrome la permission d'accéder aux fichiers de votre Drive pour qu'ils apparaissent ici."
+    "authMessage":"Vous devez donner à ProductivityTab la permission d'accéder aux fichiers de votre Drive pour qu'ils apparaissent ici."
   },
   "gmail":{
     "name":"Gmail",
@@ -424,7 +424,7 @@
     "desc":"Afficher une page web de votre choix dans \"iframe\"",
     "settings":{
       "url":"URL de l'image",
-      "url_placeholder":"e.g. http://www.google.com/",
+      "url_placeholder":"e.g. https://www.google.com/",
       "height":"Hauteur de l'image",
       "padding":"Remplissage"
     }

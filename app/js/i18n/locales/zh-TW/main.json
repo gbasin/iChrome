@@ -2,8 +2,8 @@
   "lang_code":"zh-TW",
   "language":"正體中文（臺灣）",
 
-	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
-	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extName": "ProductivityTab — Custom Homepage Dashboard",
+	"newtabName": "ProductivityTab — Custom New Tab Dashboard",
 	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
 	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
 
@@ -14,7 +14,7 @@
   "remove_widget":"刪除",
   "hide_banner":"Hide this banner",
   "hide_ad":{
-    "content":"Hey! We're not crazy about ads either, but we're only able to make iChrome available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support iChrome directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make ProductivityTab available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support ProductivityTab directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"Upgrade",
     "hide":"Hide ads"
   },
@@ -27,12 +27,12 @@
   "onboarding":{
     "modal":{
       "tagline":"您所有的網站與應用程式都放在同一個地方。",
-      "wrong_extension":"你希望iChrome取代在你的新分頁上嗎？",
-      "wrong_extension_newtab":"你希望使用iChrome來作為首頁嗎？",
+      "wrong_extension":"你希望ProductivityTab取代在你的新分頁上嗎？",
+      "wrong_extension_newtab":"你希望使用ProductivityTab來作為首頁嗎？",
       "wrong_extension_action":"點擊此處",
-      "about":"iChrome是關於分頁與小工具",
+      "about":"ProductivityTab是關於分頁與小工具",
       "about_desc":"分頁是由小工具構成，顯示像是天氣、新聞和您的電子郵件。你可以客製化大部分的小工具，並且如果您想要，你可以添加更多。",
-      "terms":"注意：若繼續，您將同意 iChrome 的 <a href=\"https://ichro.me/tos\" target=\"_blank\">使用條款</a> 和 <a href=\"https://ichro.me/privacy\" target=\"_blank\">隱私權政策</a>",
+      "terms":"注意：若繼續，您將同意 ProductivityTab 的 <a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\">使用條款</a> 和 <a href=\"https://productivitytab.co/privacy-policy-2\" target=\"_blank\">隱私權政策</a>",
       "sign_in":"以Google帳號登入",
       "sign_in_desc":"在開始之前請登入你的 Google 帳號以便安全地將你的更懂保存在線上",
       "sign_in_desc2":"你可以保持不登入，但你的頁面將不會被儲存在線上而且你也不能從別臺電腦上存取。",
@@ -56,7 +56,7 @@
 			"instructions": "Click the new widget button on to open the widget menu!",
       "skip":"跳過",
       "tooltips":{
-        "settings":"設置iChrome的外觀與內容",
+        "settings":"設置ProductivityTab的外觀與內容",
         "widgets":"新增新的小部件 — 你想有幾個都行",
         "editing":"顯示或隱藏在小部件上的編輯按鈕",
         "links":"這是連結的列表，可在設定中將常用的網站設定上去",
@@ -87,7 +87,7 @@
     "placeholder_ok":"輸入並搜尋或說“OK, Google\"...",
     "suggestions":{
       "url_subtext":"訪問網址",
-      "capture_notice":"iChrome將取代您地址欄的搜尋功能，您可隨時在設定中禁用此設置。"
+      "capture_notice":"ProductivityTab將取代您地址欄的搜尋功能，您可隨時在設定中禁用此設置。"
     },
     "apps":{
       "search":"搜尋",
@@ -183,7 +183,7 @@
       },
       "theme":{
         "title":"App主題",
-        "desc":"App主題將會套用在iChrome與其他所有小部件的樣式上。",
+        "desc":"App主題將會套用在ProductivityTab與其他所有小部件的樣式上。",
         "preview":"預覽",
         "light":"明亮（預設）",
         "dark":"暗色",
@@ -205,7 +205,7 @@
         "engines_default":"預設",
         "engines_custom":"自訂",
         "engines_custom_desc":"輸入一個搜尋網址可用來接收查詢，替換<b>%s</b> 以自製查詢要求",
-        "omnibox_capture":"使用iChrome取代地址欄的搜尋功能",
+        "omnibox_capture":"使用ProductivityTab取代地址欄的搜尋功能",
         "voice":"啟用語音搜尋",
         "ok_google":"啟用 \"OK Google\" 指令偵測",
         "search_tab":"在新分頁中顯示搜尋結果"
@@ -227,8 +227,8 @@
     "tabs":{
       "create_new":"創建新項目",
       "make_default":"設為預設值",
-      "desc1":"Tab是在iChrome中的一個一個頁面，每個Tab皆有它自己的完全獨立於其他Tab的小部件集。",
-      "desc2":"您可以透過點擊iChrome首頁左右兩側的箭頭圖示按鈕，或是使用鍵盤上的左右方向鍵來切換不同的iChrome分頁。",
+      "desc1":"Tab是在ProductivityTab中的一個一個頁面，每個Tab皆有它自己的完全獨立於其他Tab的小部件集。",
+      "desc2":"您可以透過點擊ProductivityTab首頁左右兩側的箭頭圖示按鈕，或是使用鍵盤上的左右方向鍵來切換不同的ProductivityTab分頁。",
       "name_placeholder":"輸入一個Tab名稱",
       "delete_confirm":"此操作將會是是不可逆的。在這個tab中的所有資料與部件將會永久遺失。"
     },
@@ -247,19 +247,19 @@
     "advanced":{
       "backups":{
         "title":"備份與還原",
-        "desc":"備份功能將完全複製您所有的分頁及小工具的設置。此功能會在您每一天初次開啟iChrome時自動執行。",
-        "desc2":"使用這個按鈕來還原iChrome至特定日期或下載您其中的一個備份。",
+        "desc":"備份功能將完全複製您所有的分頁及小工具的設置。此功能會在您每一天初次開啟ProductivityTab時自動執行。",
+        "desc2":"使用這個按鈕來還原ProductivityTab至特定日期或下載您其中的一個備份。",
         "backup":"立即備份",
         "upload":"從檔案還原",
         "download":"下載",
         "restore":"還原",
-        "download_name":"備份iChrome",
+        "download_name":"備份ProductivityTab",
         "restore_confirm":"這將覆蓋所有的本機與同步資料。你將失去當前所有連結於此帳戶電腦中的全部配置，",
         "restore_error":"在解析您所提供的資料時發生錯誤，請稍後再嘗試。"
       },
       "css":{
         "title":"自訂 CSS",
-        "desc":"您可以使用 CSS語法 (<a href=\"HTTPs://developer.mozilla.org/en-US/docs/Web/CSS\"target=\"blank\"> 定義</a>) 來自訂幾乎任何部分的 iChrome。",
+        "desc":"您可以使用 CSS語法 (<a href=\"HTTPs://developer.mozilla.org/en-US/docs/Web/CSS\"target=\"blank\"> 定義</a>) 來自訂幾乎任何部分的 ProductivityTab。",
         "placeholder":"在此可輸入最高1000字元的CSS語法"
       },
       "debug_tools":{
@@ -288,7 +288,7 @@
         "bgs":"動態背景",
         "bgs_desc":"多達20 種高解析背景將使你的頁面活躍起來",
         "widgets":"更大可能化的部件",
-        "widgets_desc":"透過更多可能化的小工具，將iChrome帶往另外一個境界",
+        "widgets_desc":"透過更多可能化的小工具，將ProductivityTab帶往另外一個境界",
         "more_header":"以及更多功能",
         "stocks":"即時股票資訊加上過往或相關延伸消息",
         "rss":"支援一次多個RSS來源的小部件",
@@ -311,11 +311,11 @@
         "update":"更新",
         "subscribe":"訂閱",
         "braintree_notice":"訂單將交由Braintree安全的處理。",
-        "monthly_notice":"藉由訂閱，您將授權iChrome每個月收取4.99美金直到您取消訂閱為止。",
-        "yearly_notice":"藉由訂閱，您將授權iChrome每年收取29.99美金直到您取消訂閱為止。",
+        "monthly_notice":"藉由訂閱，您將授權ProductivityTab每個月收取4.99美金直到您取消訂閱為止。",
+        "yearly_notice":"藉由訂閱，您將授權ProductivityTab每年收取29.99美金直到您取消訂閱為止。",
         "update_notice":"儘管購買週期的變更已經立即生效了，但你將不會有費用的收取直到下次週期結束為止。",
-        "thank_you":"感謝您購買 iChrome Pro!",
-        "thank_you2":"iChrome將需要幾秒來重新載入，並且為您準備好一切！",
+        "thank_you":"感謝您購買 ProductivityTab Pro!",
+        "thank_you2":"ProductivityTab將需要幾秒來重新載入，並且為您準備好一切！",
         "error":"我們在處理您的訂單時出了點問題。",
         "error2":"請稍後在做嘗試，或使用E-mail聯繫我們： support@ichro.me",
         "signin":"登入",
@@ -324,7 +324,7 @@
       },
       "plan":{
         "title":"方案",
-        "desc":"您目前正訂閱著 iChrome Pro (%s)",
+        "desc":"您目前正訂閱著 ProductivityTab Pro (%s)",
         "types":{
           "monthly":"每月",
           "yearly":"每年",
@@ -332,7 +332,7 @@
           "education":"教育",
           "custom":"自訂"
         },
-        "uneditable_desc":"商業，教育和自訂的方案無法從 iChrome內部更新。請 <a href=\"mailto:support@ichro.me\"> 聯繫我們</a> 來更新或取消您的訂閱。",
+        "uneditable_desc":"商業，教育和自訂的方案無法從 ProductivityTab內部更新。請 <a href=\"mailto:support@ichro.me\"> 聯繫我們</a> 來更新或取消您的訂閱。",
         "status":"狀態",
         "status_active":"啟動",
         "status_trial":"試用",
@@ -349,9 +349,9 @@
       }
     },
     "ads":{
-      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text1":"ProductivityTab displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer ProductivityTab free to everyone.",
       "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
-      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from ProductivityTab wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
       "upgrade_btn":"Upgrade to ad-free",
       "already_upgraded":"It looks like you've already upgraded to ad-free",
       "signin":"登入",

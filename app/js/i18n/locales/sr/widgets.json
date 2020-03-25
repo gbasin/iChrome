@@ -42,7 +42,7 @@
       "title":"Назив Букмарка",
       "title_placeholder":"Google",
       "url":"УРЛ Букмарка",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"Сачувај"
     },
     "new_caption":"Ново",
@@ -166,7 +166,7 @@
   "now":{
     "name":"Google Now",
     "desc":"Приказује картице са Google Now укључујући статус лета и праћење пакета.",
-    "authorize":"Потребно је да даш овлашћење iChrome-у да види твоје Google Now картице пре него се било шта појави овде. ",
+    "authorize":"Потребно је да даш овлашћење ProductivityTab-у да види твоје Google Now картице пре него се било шта појави овде. ",
     "authorize_btn":"Ауторизуј",
     "caught_up":"Све свршено, нема ничега овде.",
     "no_title":"Без наслова"
@@ -184,7 +184,7 @@
     "desc":"Приказује најчитаније артикле на Reddit-у за било који дати subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Унеси било који subreddit по делу прошлости <b>/r/</b> када на Reddit-у.\n<br /><br />\nНа пример, Технологија је на: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, тако да ћеш унети <b>технологија</b>",
+      "subreddit_help":"Унеси било који subreddit по делу прошлости <b>/r/</b> када на Reddit-у.\n<br /><br />\nНа пример, Технологија је на: <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, тако да ћеш унети <b>технологија</b>",
       "subreddit_placeholder":"Унеси subreddit да прикажеш линкове са. (прим. технологија)",
       "sort":"Ред Сортирања",
       "sort_options":{
@@ -230,8 +230,8 @@
       "source":"Прикажи Твитове са",
       "show":"Приказани Твитови"
     },
-    "authorize":"Мораш прво да даш овлашћење iChrome-у",
-    "authorize_msg":"Потребно је да даш овлашћење iChrome-у да види твитове са твог рачуна пре него се било шта појави овде. ",
+    "authorize":"Мораш прво да даш овлашћење ProductivityTab-у",
+    "authorize_msg":"Потребно је да даш овлашћење ProductivityTab-у да види твитове са твог рачуна пре него се било шта појави овде. ",
     "authorize_btn":"Ауторизуј",
     "no_tweets":"Изгледа да овде нема твитова...",
     "home":"Почетна страна",
@@ -294,9 +294,9 @@
     "desc":"Displays a link, optionally with a title and thumbnail",
     "settings":{
       "link":"Link URL",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"УРЛ слике",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"Image Background Color",
       "style":"Image Style",
       "style_fill":"Fill",
@@ -365,7 +365,7 @@
     "by":"од",
     "no_links":"No links found",
     "grant_access":"Grant access",
-    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
+    "no_key":"You'll need to give ProductivityTab access to your Pocket account before it can load your links."
   },
   "analytics":{
     "name":"Аналитика",
@@ -413,7 +413,7 @@
       "files_shown":"Број Приказаних Фајлова"
     },
     "modified_by":"од",
-    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+    "authMessage":"You'll need to give ProductivityTab permission to view files in your Drive before anything can be shown here."
   },
   "gmail":{
     "name":"Gmail",
@@ -424,7 +424,7 @@
     "desc":"Приказује веб страну твог одабира у оквиру iframe-а.",
     "settings":{
       "url":"Оквир УРЛ",
-      "url_placeholder":"прим. http://www.google.com/",
+      "url_placeholder":"прим. https://www.google.com/",
       "height":"Висина Оквира",
       "padding":"Испуна"
     }

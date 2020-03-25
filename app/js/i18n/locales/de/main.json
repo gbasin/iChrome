@@ -2,8 +2,8 @@
   "lang_code":"de",
   "language":"Deutsch",
   
-	"extName": "iChrome-Ultimate Personal Dashboard Homepage",
-	"newtabName": "iChrome New Tab - Ultimate Personal Dashboard",
+	"extName": "ProductivityTab — Custom Homepage Dashboard",
+	"newtabName": "ProductivityTab — Custom New Tab Dashboard",
 	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
 	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
   
@@ -14,7 +14,7 @@
   "remove_widget":"Löschen",
   "hide_banner":"Hide this banner",
   "hide_ad":{
-    "content":"Hey! We're not crazy about ads either, but we're only able to make iChrome available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support iChrome directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make ProductivityTab available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support ProductivityTab directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"Upgrade",
     "hide":"Hide ads"
   },
@@ -27,12 +27,12 @@
   "onboarding":{
     "modal":{
       "tagline":"Alle Webseiten und Programme die Sie nutzen an einem Platz",
-      "wrong_extension":"Neue-Tab-Seite durch iChrome ersetzen?",
-      "wrong_extension_newtab":"iChrome als Startseite festlegen?",
+      "wrong_extension":"Neue-Tab-Seite durch ProductivityTab ersetzen?",
+      "wrong_extension_newtab":"ProductivityTab als Startseite festlegen?",
       "wrong_extension_action":"Hier klicken",
-      "about":"Bei iChrome geht es um Tabs und Widgets",
+      "about":"Bei ProductivityTab geht es um Tabs und Widgets",
       "about_desc":"Tabs sind Seiten voller Widgets - Blöcke die einem Dinge zeigen wie z. B. das Wetter, Nachrichten und deine E-Mails. Viele kannst du an deinen Stil anpassen. Hinzufügen kannst du so viele wie du möchtest.",
-      "terms":"Hinweis: Indem Sie fortfahren erklären Sie sich mit iChrome's <a href=\"https://ichro.me/tos\" target=\"_blank\">Nutzungsbedingungen</a> und <a href=\"https://ichro.me/privacy\" target=\"_blank\">Datenschutzrichtlinien</a> einverstanden",
+      "terms":"Hinweis: Indem Sie fortfahren erklären Sie sich mit ProductivityTab's <a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\">Nutzungsbedingungen</a> und <a href=\"https://productivitytab.co/privacy-policy-2\" target=\"_blank\">Datenschutzrichtlinien</a> einverstanden",
       "sign_in":"Google Account zum einloggen nutzen",
       "sign_in_desc":"Bevor Sie anfangen, melden Sie sich mit Ihrem Google Account an, um Ihre Änderungen sicher online speichern zu können.",
       "sign_in_desc2":"Sie müssen sich nicht einloggen, aber Ihre Seite wird nicht online gespeichert und kann nicht von anderen Computern aufgerufen werden.",
@@ -56,7 +56,7 @@
 			"instructions": "Click the new widget button on to open the widget menu!",
       "skip":"Überspringen",
       "tooltips":{
-        "settings":"Ändern Sie Aussehen und Funktionen von iChrome",
+        "settings":"Ändern Sie Aussehen und Funktionen von ProductivityTab",
         "widgets":"Fügen Sie neue Widgets hinzu - Sie können so viele nutzen, wie Sie möchten",
         "editing":"Zeige oder verberge die Editier-Schaltfläche der Widgets",
         "links":"Dies ist eine Liste mit Links, die Sie in den Einstellungen um Seiten erweitern können, die Sie oft verwenden",
@@ -87,7 +87,7 @@
     "placeholder_ok":"Begriff eingeben oder \"OK, Google\"",
     "suggestions":{
       "url_subtext":"URL besuchen",
-      "capture_notice":"iChrome sucht generell mittels Omnibox. Dies kann jederzeit in den Einstellungen deaktiviert werden."
+      "capture_notice":"ProductivityTab sucht generell mittels Omnibox. Dies kann jederzeit in den Einstellungen deaktiviert werden."
     },
     "apps":{
       "search":"Suche",
@@ -183,7 +183,7 @@
       },
       "theme":{
         "title":"App-Design",
-        "desc":"Das App-Thema bestimmt den Stil von iChrome selbst und aller Widgets",
+        "desc":"Das App-Thema bestimmt den Stil von ProductivityTab selbst und aller Widgets",
         "preview":"Vorschau",
         "light":"Hell (Standard)",
         "dark":"Dunkel",
@@ -218,7 +218,7 @@
         "custom_note1":"Maximal 3 sind zulässig",
         "custom_note2":"Benutzer erhalten 8",
         "custom_name_placeholder":"Link-Text",
-        "custom_url_placeholder":"Link-URL, z.B. http://www.google.com/"
+        "custom_url_placeholder":"Link-URL, z.B. https://www.google.com/"
       }
     },
     "misc":{
@@ -227,7 +227,7 @@
     "tabs":{
       "create_new":"Neuen erstellen",
       "make_default":"Als Standard festlegen",
-      "desc1":"Tabs sind Seiten in iChrome. Ein jeder Tab hat seine eigenen Widgets und ist völlig eigenständig.",
+      "desc1":"Tabs sind Seiten in ProductivityTab. Ein jeder Tab hat seine eigenen Widgets und ist völlig eigenständig.",
       "desc2":"Sie können zwischen den Registerkarten wechseln, indem Sie die Pfeiltasten der Tastatur nutzen oder mittels der Schaltflächen, die links oder rechts angezeigt werden, wenn Sie die Maus auf einem Tab bewegen.",
       "name_placeholder":"Benennen Sie den Tab",
       "delete_confirm":"Diese Aktion ist endgültig. Alle Daten aller Widgets auf dem Tab werden dauerhaft gelöscht."
@@ -247,19 +247,19 @@
     "advanced":{
       "backups":{
         "title":"Sichern und Wiederherstellen",
-        "desc":"Die Sicherungen sind vollständige Kopien aller Tabs, Einstellungen und Widgets. Sie werden täglich automatisch bei der ersten Öffnung von iChrome erstellt.",
-        "desc2":"Verwenden Sie die Schaltflächen unten, um iChrome auf ein bestimmtes Datum zurückzusetzen oder um eines Ihre Backups zu laden.",
+        "desc":"Die Sicherungen sind vollständige Kopien aller Tabs, Einstellungen und Widgets. Sie werden täglich automatisch bei der ersten Öffnung von ProductivityTab erstellt.",
+        "desc2":"Verwenden Sie die Schaltflächen unten, um ProductivityTab auf ein bestimmtes Datum zurückzusetzen oder um eines Ihre Backups zu laden.",
         "backup":"Jetzt sichern",
         "upload":"Aus Datei wiederherstellen",
         "download":"Herunterladen",
         "restore":"Wiederherstellen",
-        "download_name":"iChrome Sicherung",
+        "download_name":"ProductivityTab Sicherung",
         "restore_confirm":"Hiermit werden sowohl lokale als auch synchronisierte Daten überschrieben. Sie verlieren Ihre vollständige aktuelle Konfiguration auf allen Computern, die mit diesem Konto verbunden sind.",
         "restore_error":"Fehler beim Versuch, die bereitgestellten Daten zu analysieren; versuchen Sie es bitte später erneut."
       },
       "css":{
         "title":"Benutzerdefiniertes CSS",
-        "desc":"Sie können mit CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definition</a>) beinahe alles in iChrome individualisieren.",
+        "desc":"Sie können mit CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definition</a>) beinahe alles in ProductivityTab individualisieren.",
         "placeholder":"Geben Sie hier bis zu 1000 Zeichen in CSS ein"
       },
       "debug_tools":{
@@ -288,7 +288,7 @@
         "bgs":"Live Hintergründe",
         "bgs_desc":"Gestalten Sie Ihre Seite mit 20 Live-Hd-Hintergründen lebendig",
         "widgets":"Maximierbare Widgets",
-        "widgets_desc":"Bring iChrome auf ein anderes Level mit unbegrenzt vielen Widgets",
+        "widgets_desc":"Bring ProductivityTab auf ein anderes Level mit unbegrenzt vielen Widgets",
         "more_header":"Und mehr",
         "stocks":"Echtzeit Kurse mit erweiterter historischer Information",
         "rss":"Unterstützung für mehrere RSS Feeds pro Widget",
@@ -311,11 +311,11 @@
         "update":"Update",
         "subscribe":"Abonnieren",
         "braintree_notice":"Die Zahlungen werden sicher von Braintree bearbeitet.",
-        "monthly_notice":"Durch ankreuzen bestätigen Sie, dass iChrome monatlich 4.99$ von ihnen berechnen darf, bis Sie kündigen.",
-        "yearly_notice":"Durch ankreuzen bestätigen Sie, dass iChrome jährlich 29.99$ von ihnen berechnen darf, bis Sie kündigen.",
+        "monthly_notice":"Durch ankreuzen bestätigen Sie, dass ProductivityTab monatlich 4.99$ von ihnen berechnen darf, bis Sie kündigen.",
+        "yearly_notice":"Durch ankreuzen bestätigen Sie, dass ProductivityTab jährlich 29.99$ von ihnen berechnen darf, bis Sie kündigen.",
         "update_notice":"Obwohl die Abrechnungszyklus-Änderungen sofort wirksam werden, werden Sie nicht belastet bis Ihr aktueller Zyklus endet.",
-        "thank_you":"Vielen Dank für den Kauf von iChrome Pro!",
-        "thank_you2":"iChrome ladet in wenigen Sekunden neu und du hast es geschafft!",
+        "thank_you":"Vielen Dank für den Kauf von ProductivityTab Pro!",
+        "thank_you2":"ProductivityTab ladet in wenigen Sekunden neu und du hast es geschafft!",
         "error":"Etwas ist falsch gelaufen beim verarbeiten ihrer Zahlung.",
         "error2":"Bitte versuchen sie es später erneut, oder senden sie uns eine E-Mail an support@ichro.me",
         "signin":"Einloggen",
@@ -324,7 +324,7 @@
       },
       "plan":{
         "title":"Tarif",
-        "desc":"Sie haben zurzeit iChrome Pro (%s) erworben",
+        "desc":"Sie haben zurzeit ProductivityTab Pro (%s) erworben",
         "types":{
           "monthly":"monatlich",
           "yearly":"jährlich",
@@ -332,7 +332,7 @@
           "education":"Bildung",
           "custom":"Benutzerdefiniert"
         },
-        "uneditable_desc":"Wirtschaft, Bildung und benutzerdefinierte Pläne können nicht innerhalb iChrome aktualisiert werden. Bitte <a href=\"mailto:support@ichro.me\"> kontaktieren Sie uns</a>, für Anpassungen oder um Ihr Abonnement kündigen.",
+        "uneditable_desc":"Wirtschaft, Bildung und benutzerdefinierte Pläne können nicht innerhalb ProductivityTab aktualisiert werden. Bitte <a href=\"mailto:support@ichro.me\"> kontaktieren Sie uns</a>, für Anpassungen oder um Ihr Abonnement kündigen.",
         "status":"Status",
         "status_active":"aktiv",
         "status_trial":"Trial",
@@ -349,9 +349,9 @@
       }
     },
     "ads":{
-      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text1":"ProductivityTab displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer ProductivityTab free to everyone.",
       "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
-      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from ProductivityTab wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
       "upgrade_btn":"Upgrade to ad-free",
       "already_upgraded":"It looks like you've already upgraded to ad-free",
       "signin":"Einloggen",
@@ -470,7 +470,7 @@
       "name_placeholder":"Theme Namen eingeben",
       "image":"Bild-URL",
       "image_placeholder":"Gebe eine Hintergrundbild-URL ein",
-      "image_help":"Hochgeladen Bilder <b>können zwischen Computern nicht synchronisiert werden</b>. <br /> <br /> Falls dies wichtig ist, das Bild bitte mit einem Dienst wie <a href=\"http://imgur.com/\" target=\"_blank\">Imgur</a> hochladen. Dann kopiere die URL, welche mit einer Erweiterung endet (d.h. .jpg), und füge diese in das Feld auf der linken Seite ein.",
+      "image_help":"Hochgeladen Bilder <b>können zwischen Computern nicht synchronisiert werden</b>. <br /> <br /> Falls dies wichtig ist, das Bild bitte mit einem Dienst wie <a href=\"https://imgur.com/\" target=\"_blank\">Imgur</a> hochladen. Dann kopiere die URL, welche mit einer Erweiterung endet (d.h. .jpg), und füge diese in das Feld auf der linken Seite ein.",
       "color":"Reserve-Farbe",
       "color_placeholder":"Gebe eine Farbbezeichnung ein",
       "position":"Position",

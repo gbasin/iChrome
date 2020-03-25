@@ -1,7 +1,7 @@
 /*
  * The Feedly widget.
  */
-define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
+define(["jquery", "moment", "oauth", "lodash"], function($, moment, OAuth, _) {
 	var abbreviate = function(num, min, precision) {
 		var newValue = num;
 
@@ -451,7 +451,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 				oAuth.ajax({
 					type: "GET",
-					url: "http://cloud.feedly.com/v3/subscriptions",
+					url: "https://cloud.feedly.com/v3/subscriptions",
 					cache: false,
 					success: function(d) {
 						var feeds = {
@@ -472,6 +472,46 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 					}.bind(this)
 				});
 			}.bind(this));
+		},
+		knowDomains: [
+			"www.reuters.com",
+			"feeds.kinja.com",
+			"www.lemonde.fr",
+			"vimeo.com",
+			"feeds.feedburner.com",
+			"mubi.com",
+			"ruffledblog.com",
+			"daringfireball.net",
+			"www.nationalgeographic.com",
+			"www.lefigaro.fr",
+			"www.theverge.com",
+			"www.nytimes.com",
+			"www.guardian.co.uk",
+			"pandodaily.com",
+			"www.calculatedriskblog.com",
+			"www.indiegames.com",
+			"feed.500px.com",
+			"www.swiss-miss.com",
+			"ikeahacker.blogspot.com",
+			"adsoftheworld.com",
+			"www.etsy.com"
+		],
+		fixlinks: function(item) {
+			var fix = function(url) {
+				if (!_.isEmpty(url)) {
+					for (var i = 0; i < this.knowDomains.length; i++) {
+						var domain = this.knowDomains[i];
+
+						if (url.indexOf("http://" + domain) === 0) {
+							return url.slice(0, 4) + "s" + url.slice(4);
+						}
+					}
+				}
+
+				return url;
+			}.bind(this);
+
+			item.image = fix(item.image);
 		},
 		getArticles: function(d) {
 			if (!this.oAuth) {
@@ -620,8 +660,10 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 				article.image = getImage(article);
 
+				this.fixlinks(article);
+
 				articles.push(article);
-			});
+			}.bind(this));
 
 			return articles;
 		},
@@ -637,7 +679,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 			req({
 				type: "GET",
-				url: "http://cloud.feedly.com/v3/streams/contents?count=10&streamId=" + encodeURIComponent(this.config.source) + (this.config.show === "unread" ? "&unreadOnly=true" : "") + "&ranked=" + this.config.sort,
+				url: "https://cloud.feedly.com/v3/streams/contents?count=10&streamId=" + encodeURIComponent(this.config.source) + (this.config.show === "unread" ? "&unreadOnly=true" : "") + "&ranked=" + this.config.sort,
 				cache: false,
 				success: function(d) {
 					if (!d) {
@@ -695,7 +737,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 							entryIds: ids
 						}),
 						contentType: "application/json",
-						url: "http://cloud.feedly.com/v3/markers",
+						url: "https://cloud.feedly.com/v3/markers",
 						success: function() {
 							submitting = false;
 						}
@@ -720,7 +762,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 							entryIds: [id]
 						}),
 						contentType: "application/json",
-						url: "http://cloud.feedly.com/v3/markers"
+						url: "https://cloud.feedly.com/v3/markers"
 					});
 				}
 			}).on("click", ".item .recommendations", function(e) {
@@ -732,7 +774,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				if (elm.hasClass("saved")) {
 					that.oAuth.ajax({
 						type: "DELETE",
-						url: "http://cloud.feedly.com/v3/tags/" + encodeURIComponent("user/" + that.oAuth.data.id + "/tag/global.saved") + "/" + encodeURIComponent(elm.parents(".item").first().attr("data-id")),
+						url: "https://cloud.feedly.com/v3/tags/" + encodeURIComponent("user/" + that.oAuth.data.id + "/tag/global.saved") + "/" + encodeURIComponent(elm.parents(".item").first().attr("data-id")),
 						complete: function() {
 							elm.removeClass("saved").text(parseInt(elm.text()) - 1);
 						}
@@ -744,7 +786,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 						data: JSON.stringify({
 							entryId: elm.parents(".item").first().attr("data-id")
 						}),
-						url: "http://cloud.feedly.com/v3/tags/" + encodeURIComponent("user/" + that.oAuth.data.id + "/tag/global.saved"),
+						url: "https://cloud.feedly.com/v3/tags/" + encodeURIComponent("user/" + that.oAuth.data.id + "/tag/global.saved"),
 						complete: function() {
 							elm.addClass("saved").text(parseInt(elm.text()) + 1);
 						}
@@ -756,7 +798,7 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 					that.oAuth.ajax({
 						type: "GET",
-						url: "http://cloud.feedly.com/v3/streams/contents?count=20&streamId=" + encodeURIComponent(that.config.source) + "&continuation=" + encodeURIComponent(next) + (that.config.show === "unread" ? "&unreadOnly=true" : "") + "&ranked=" + that.config.sort,
+						url: "https://cloud.feedly.com/v3/streams/contents?count=20&streamId=" + encodeURIComponent(that.config.source) + "&continuation=" + encodeURIComponent(next) + (that.config.show === "unread" ? "&unreadOnly=true" : "") + "&ranked=" + that.config.sort,
 						cache: false,
 						success: function(d) {
 							if (!(d)) {
