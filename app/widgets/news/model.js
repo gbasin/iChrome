@@ -265,6 +265,35 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 			this.refreshMsn();
 		},
 
+		knowDomains: [
+			"www.reuters.com",
+			"a.msn.com",
+			"img-s-msn-com.akamaized.net",
+			"img.s-msn.com"
+		],
+
+		fixlinks: function(items) {
+			var fix = function(url) {
+				if (!_.isEmpty(url)) {
+					for (var i = 0; i < this.knowDomains.length; i++) {
+						var domain = this.knowDomains[i];
+
+						if (url.indexOf("http://" + domain) === 0) {
+							return url.slice(0, 4) + "s" + url.slice(4);
+						}
+					}
+				}
+
+				return url;
+			}.bind(this);
+
+			if (!_.isEmpty(items))  {
+				_.each(items, function(item) {
+					item.url = fix(item.url);
+					item.image = fix(item.image);
+				});
+			}
+		},
 
 		refreshMsn: function() {
 			// We load the list of topics once when the page loads since it might
@@ -306,6 +335,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 					d && d._embedded && d._embedded.documents
 				) {
 					var items = this.parseArticles(d._embedded.documents, maximized);
+					this.fixlinks(items);
 
 					// Only save data if this is the default tab and we aren't
 					// maximized (and therefore didn't fetch more articles)
@@ -356,6 +386,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 					this.get("activeTab") === activeTab && d && d.items
 				) {
 					var items = _.map(d.items, this.parseFeedlyEntry, this);
+					this.fixlinks(items);
 
 					// Only save data if this is the default tab and we aren't
 					// maximized (and therefore didn't fetch more articles)

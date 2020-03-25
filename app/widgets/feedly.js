@@ -1,7 +1,7 @@
 /*
  * The Feedly widget.
  */
-define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
+define(["jquery", "moment", "oauth", "lodash"], function($, moment, OAuth, _) {
 	var abbreviate = function(num, min, precision) {
 		var newValue = num;
 
@@ -473,6 +473,46 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 				});
 			}.bind(this));
 		},
+		knowDomains: [
+			"www.reuters.com",
+			"feeds.kinja.com",
+			"www.lemonde.fr",
+			"vimeo.com",
+			"feeds.feedburner.com",
+			"mubi.com",
+			"ruffledblog.com",
+			"daringfireball.net",
+			"www.nationalgeographic.com",
+			"www.lefigaro.fr",
+			"www.theverge.com",
+			"www.nytimes.com",
+			"www.guardian.co.uk",
+			"pandodaily.com",
+			"www.calculatedriskblog.com",
+			"www.indiegames.com",
+			"feed.500px.com",
+			"www.swiss-miss.com",
+			"ikeahacker.blogspot.com",
+			"adsoftheworld.com",
+			"www.etsy.com"
+		],
+		fixlinks: function(item) {
+			var fix = function(url) {
+				if (!_.isEmpty(url)) {
+					for (var i = 0; i < this.knowDomains.length; i++) {
+						var domain = this.knowDomains[i];
+
+						if (url.indexOf("http://" + domain) === 0) {
+							return url.slice(0, 4) + "s" + url.slice(4);
+						}
+					}
+				}
+
+				return url;
+			}.bind(this);
+
+			item.image = fix(item.image);
+		},
 		getArticles: function(d) {
 			if (!this.oAuth) {
 				this.setOAuth();
@@ -620,8 +660,10 @@ define(["jquery", "moment", "oauth"], function($, moment, OAuth) {
 
 				article.image = getImage(article);
 
+				this.fixlinks(article);
+
 				articles.push(article);
-			});
+			}.bind(this));
 
 			return articles;
 		},
