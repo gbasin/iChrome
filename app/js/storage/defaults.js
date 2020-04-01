@@ -24,7 +24,7 @@ define(["i18n/i18n"], function(Translate) {
 						size: "tiny",
 						config: {
 							color: "rgb(255, 255, 255)",
-							title: "Leave a 5* Review? :)",
+							title: "Leave a Review?",
 							link: "https://chrome.google.com/webstore/detail/ichrome-new-tab-ultimate/###productivitytab###/related?hl=en",
 							image: "images/sitelink_logo.png"
 						}
