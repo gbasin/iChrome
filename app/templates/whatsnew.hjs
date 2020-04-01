@@ -1,21 +1,17 @@
-<p>Welcome to ProductivityTab version 1.43!</p>
+<p>Welcome to ProductivityTab version 1.44!</p>
 
-<p>Happy new year everyone! We've come into the new decade with a heap of new bug fixes and improvements. Thanks to all who reported issues, and especially who helped us to identify the bugs and provided us with clear explanations, screenshots and screencasts. It all helps so much in making ProductivityTab better and better!</p>
-    
+<p>We've spent the last month making the ProductivityTab even more secure and adding new features to help protect your privacy. We've reviewed every line of code in the app to make sure it's 100% compliant with recently updated Google and Braintree policies. As you may have noticed, we've also rebranded to ProductivityTab going forward. Hopefully this makes your favorite dashboard more expressive and less associated with certain large technology companies ;)</p>
+
 <section>
-<p>What's New in Version 1.43:</p>
+<p>What's New in Version 1.44:</p>
 <ul>
-<li>FIXED. Annoying "application is not verified" authentication issue in Calendar, Drive, Tasks and Analytics widgets.</li>
-<li>FIXED. (Long awaited!) Extension crash on "Add Widget" click on some Chromebook and Linux versions.</li>
-<li>FIXED. (Long awaited!) The Stocks widget now shows both Yesterday Closing price and after-hours price in the Pre- and Post- market states.</li>
-<li>FIXED. The Weather widget icon was incorrectly showing as "Sunny" even when this was not true.</li>
-<li>IMPROVED. RSS widget now stores the entered URL when the "Save" button is clicked. No more need to press the "Enter" key</li>
-<li>FIXED. The RSS widget was sometimes overlapping the neighboring column - no more!</li>
-<li>FIXED. Minor issue where it was not possible to add a new item if the Task widget list was empty.
-<li>FIXED. The order of items in the Tasks widget did not correspond to the order on the Google Tasks website.</li>
-<li>FIXED. In the Tasks widget, Tasks and SubTasks were sometimes mixed together randomly.</li>
-<li>FIXED. The order of items in the Tasks widget beign edited with up and down buttons was not being saved.</li>
-<li>FIXED. In the Tasks Widget, SubTasks reordering with the Up and Down buttons sometimes didn't work.</li>
+<li>IMPROVED. Network data transmission encryption is upgraded and implemented wherever possible. Additional user data protection added at key points.</li>
+<li>IMPROVED. Updated our Privacy Policy with extra detail on user data implementation: https://productivitytab.co/privacy-policy.</li>
+<li>FIXED. Several minor (but annoying) payment issues.</li>
+<li>FIXED. Widespread Gmail widget blinking issue.</li>
+<li>FIXED. Some minor Stocks widget GUI issues.</li>
+<li>FIXED. Lightweight! Space occupied by ProductivityTab size on hard disk is reduced by around 2x</li>
 </ul>
 
+<p>Everyone stay indoors and practice safe social distancing during these troubling times! All the best from the ProductivityTab Team</p>
 </section>
