@@ -32,7 +32,7 @@
       "wrong_extension_action":"ここをクリック",
       "about":"ProductivityTab のタブとウィジェットについて",
       "about_desc":"タブには、ウィジェット（天気やニュース、メールなど）を追加することができます。ほとんどのウィジェットをカスタマイズ可能で、必要なだけ追加することができます。",
-      "terms":"ProductivityTab を利用することにより、<a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\">利用規約</a> と <a href=\"https://productivitytab.co/privacy-policy-2\" target=\"_blank\">プライバシーポリシー</a> に同意したものとみなされます。",
+      "terms":"ProductivityTab を利用することにより、<a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\">利用規約</a> と <a href=\"https://productivitytab.co/privacy-policy\" target=\"_blank\">プライバシーポリシー</a> に同意したものとみなされます。",
       "sign_in":"Google アカウントでログイン",
       "sign_in_desc":"オンラインでの変更を安全に保存するために、Google アカウントでログインしてください。",
       "sign_in_desc2":"ログインせずに使用することも可能ですが、その場合、ウィジェットの配置などがオンラインに保存されず、別のコンピューターと共有することができません。",
