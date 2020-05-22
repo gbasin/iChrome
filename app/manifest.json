@@ -12,11 +12,6 @@
 			"all_frames": true
 		},
 		{
-			"css": [ "inject/css/keep.css" ],
-			"matches": [ "https://keep.google.com/*" ],
-			"all_frames": true
-		},
-		{
 			"css": [ "inject/css/gplus.css" ],
 			"matches": [ "https://plus.google.com/app/basic*" ],
 			"all_frames": true
