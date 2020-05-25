@@ -1,4 +1,4 @@
-define(["widgets/views/main"], function(WidgetView) {
+define(["widgets/views/main", "browser/api"], function(WidgetView, Browser) {
 	return WidgetView.extend({
 		isFrame: true,
 
@@ -9,7 +9,7 @@ define(["widgets/views/main"], function(WidgetView) {
 			data.randomMessage = randomMessage;
 
 			function injectInFrame(tabId, frameId) {
-				chrome.tabs.insertCSS(tabId, {
+				Browser.tabs.insertCSS(tabId, {
 					frameId,
 					file: "/inject/css/keep.css", 
 					allFrames: true
@@ -17,12 +17,12 @@ define(["widgets/views/main"], function(WidgetView) {
 			}
 
 			function frameMessageListener(msg, sender) {
-				if (msg !== randomMessage) return;
+				if (msg !== randomMessage) { return; }
 				var tabId = sender.tab.id;
 				var frameId = sender.frameId;
 				var f = document.getElementById(randomMessage);
 
-				chrome.runtime.onMessage.removeListener(frameMessageListener);
+				Browser.runtime.onMessage.removeListener(frameMessageListener);
 				// This will cause the script to be run on the first load.
 				// If the frame redirects elsewhere, then the injection can seemingly fail.
 				f.addEventListener('load', function onload() {
@@ -31,14 +31,17 @@ define(["widgets/views/main"], function(WidgetView) {
 				});
 				f.src = data.url;
 
-				for (var i = 0; i < 20; i++) {
+				for (var i = 0; i < 7; i++) {
 					setTimeout(function() {
-						injectInFrame(tabId, frameId);
-					}, 100 * i);
+						try {
+							injectInFrame(tabId, frameId);
+						}
+						catch(e) {}
+					}, 500 + 200 * i);
 				}
 			}
 
-			chrome.runtime.onMessage.addListener(frameMessageListener);
+			Browser.runtime.onMessage.addListener(frameMessageListener);
 
 			return data;
 		},
