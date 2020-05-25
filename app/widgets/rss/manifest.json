@@ -44,7 +44,7 @@
 				"feed_url_placeholder": "Feed URL",
 
 				"articles": "Articles Shown",
-				"cache_time": "Refresh Time (mins)"
+				"cache_time": "Min Cache Time (mins)"
 			},
 
 			"by": "By",
