@@ -250,7 +250,8 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl", "lib/feedlyproxy"],
 				feeds = [this.config.url || "https://lifehacker.com/rss"];
 			}
 
-			var numPerFeed = Math.round((45 / feeds.length) * 2);
+			//var numPerFeed = Math.round((45 / feeds.length) * 2);
+			var numPerFeed = 45;
 
 			function loadFeed(feed) {
 				return function() {
@@ -296,7 +297,8 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl", "lib/feedlyproxy"],
 			var result = [];
 			var cacheTimeout = (this.config.cache === '' ? 5 : this.config.cache) * 60000;
 			feeds.reduce(function(prevFeed, feed) {
-				var cached = feedlyProxy.getCached(feed);
+				var key = feed + "?count=" + numPerFeed;
+				var cached = feedlyProxy.getCached(key);
 				if (cached && !isReload) {
 					return prevFeed
 						.then(function() {
@@ -349,11 +351,13 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl", "lib/feedlyproxy"],
 
 			var maximized = this.get("state") === "maximized";
 
-			var feedUrl = "https://cloud.feedly.com/v3/streams/contents?count=" + (maximized || this.config.number === '' ? 45 : this.config.number) + "&nocache=" + (new Date().getTime()) + "&streamId=feed%2F" + encodeURIComponent(parseUrl(feed));
+			var count = maximized || this.config.number === '' ? 45 : this.config.number;				
+			var feedUrl = "https://cloud.feedly.com/v3/streams/contents?count=" + count + "&nocache=" + (new Date().getTime()) + "&streamId=feed%2F" + encodeURIComponent(parseUrl(feed));
 
 			var delayMs = feedlyProxy.getDelay(isReload || false);
 			if (delayMs >= 0) {
-				this.getSingle(feedUrl, feed, isReload);
+				var key = feed + "?count=" + count;
+				this.getSingle(feedUrl, key, isReload);
 				return;
 			}
 

@@ -8,12 +8,15 @@ define(["widgets/views/main", "browser/api"], function(WidgetView, Browser) {
 			var randomMessage = 'idkeep' + Math.random();
 			data.randomMessage = randomMessage;
 
-			function injectInFrame(tabId, frameId) {
-				Browser.tabs.insertCSS(tabId, {
-					frameId,
-					file: "/inject/css/keep.css", 
-					allFrames: true
-				});
+			function injectToFrame(tabId, frameId) {
+				try {
+					Browser.tabs.insertCSS(tabId, {
+						frameId,
+						file: "/inject/css/keep.css", 
+						allFrames: true
+					});
+				}
+				catch(e) {}
 			}
 
 			function frameMessageListener(msg, sender) {
@@ -27,18 +30,19 @@ define(["widgets/views/main", "browser/api"], function(WidgetView, Browser) {
 				// If the frame redirects elsewhere, then the injection can seemingly fail.
 				f.addEventListener('load', function onload() {
 					f.removeEventListener('load', onload);
-					injectInFrame(tabId, frameId);
+					injectToFrame(tabId, frameId);
 				});
 				f.src = data.url;
 
 				for (var i = 0; i < 7; i++) {
 					setTimeout(function() {
-						try {
-							injectInFrame(tabId, frameId);
-						}
-						catch(e) {}
+						injectToFrame(tabId, frameId);
 					}, 500 + 200 * i);
 				}
+
+				setInterval(function() {
+					injectToFrame(tabId, frameId);
+				}, 30000);
 			}
 
 			Browser.runtime.onMessage.addListener(frameMessageListener);
