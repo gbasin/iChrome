@@ -20,7 +20,9 @@ require.config({
 		"facebooksdk": "https://connect.facebook.net/en_US/sdk",
 		"backbone.viewcollection": "lib/backbone.viewcollection",		
 		"fullcalendar": "lib/fullcalendar",
-		"gcloader": "lib/gcloader"
+		"gcloader": "lib/gcloader",
+		"feedlyproxy": "lib/feedlyproxy",
+		"cryptoJs": "lib/cryptojs",
 	},
 	map: {
 		"*": {

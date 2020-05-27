@@ -3,7 +3,11 @@ define(["widgets/views/main"], function(WidgetView) {
 		isFrame: true,
 
 		onBeforeRender: function(data) {
-			data.url = "https://mail.google.com/mail/u/" + (this.model.config.user || 0) + "/x/" + (new Date().getTime())  + "/?f=1";
+			if ( (this.model.config.type || "new") === "old" ) {
+				data.url = "https://mail.google.com/mail/mu/mp/?authuser=" + (this.model.config.user || 0);	
+			} else{
+				data.url = "https://mail.google.com/mail/u/" + (this.model.config.user || 0) + "/x/" + (new Date().getTime())  + "/?f=1";
+			}
 
 			return data;
 		},

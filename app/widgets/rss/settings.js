@@ -70,9 +70,17 @@ define(["lodash", "jquery", "widgets/views/settings", "lib/parseurl", "jquery.se
 		 * Serializes and saves the contents of the settings form
 		 */
 		serialize: function() {
+			var newValue = this.$("form").serializeJSON();
+			if (isNaN(newValue.cache)) {
+				newValue.cache = 5;
+			}
+			if (newValue.cache < 5) {
+				newValue.cache = 5;
+			}
+
 			this.model.set({
 				state: "default",
-				config: _.assign({}, this.model.config, this.$("form").serializeJSON())
+				config: _.assign({}, this.model.config, newValue)
 			});
 		},
 

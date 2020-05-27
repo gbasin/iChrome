@@ -1,7 +1,7 @@
 body { visibility: visible!important; display: block!important; }
 #nav { display: none; }
-a#bnc, input#tr, input#more.more, a#bnm img, div.email table tbody tr:last-child input[name=t], ul#menu {display: none; }
-body.menu ul#menu { display: inherit; }
+a#bnc, input#tr, input#more.more, a#bnm img, div.email table tbody tr:last-child input[name=t], ul.menu {display: none; }
+body.menu ul.menu { display: inherit; }
 
 table.actionBar, a#bnm { 
     background-color: #F1F1F1;

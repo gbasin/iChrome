@@ -1421,6 +1421,10 @@ header.toolbar {
 	background: #FFF;
 	position: relative;
 
+	.title {
+		font-size: 12px;
+	}
+
 	.dark & {
 		background: #303030;
 	}
@@ -2891,16 +2895,25 @@ body.resizing .grid {
 .widgets-container .widget .maximize,
 .widgets-container .widget .wdelete,
 .widgets-container .widget .wtooltip,
+.widgets-container .widget .wrefresh,
 .store-detail .preview .widget .handle,
 .store-detail .preview .widget .settings,
 .store-detail .preview .widget .wdelete,
 .store-detail .preview .widget .wtooltip,
+.store-detail .preview .widget .wrefresh,
 .store-detail .preview .widget .minimize,
 .store-detail .preview .widget .maximize {
 	opacity: 0;
 	z-index: 9;
 	position: absolute;
 	transition: opacity .3s ease-in-out;
+}
+
+.widgets-container .widget .wrefresh,
+.store-detail .preview .widget .wrefresh
+{
+	display: none;
+	cursor: pointer;
 }
 
 .widgets-container .widget .minimize,
@@ -2955,6 +2968,7 @@ body.resizing .grid {
 		.settings,
 		.minimize,
 		.wdelete,
+		.wrefresh,
 		.wtooltip,
 		.maximize {
 			opacity: 1;
@@ -3133,6 +3147,18 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .widgets-container .widget.tabbed-corner.maximized .wdelete {
 	right: 0;
 	display: none;
+}
+
+.widgets-container .widget.tabbed-corner.refreshable .wrefresh {
+	top: 8px;
+	right: 85px;
+	box-shadow: none;
+	background: transparent;
+	display: block;
+}
+
+.widgets-container .widget.tabbed-corner.maximized.refreshable .wrefresh {
+	right: 120px;
 }
 
 
