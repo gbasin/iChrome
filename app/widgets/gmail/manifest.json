@@ -51,7 +51,7 @@
 					"name": "Version",
 					"new": "Basic",
 					"old": "Original",
-					"help": "The Basic is default version which works in all browser versions.\n<br /><br />\nYou can also choose Original version which proposes more functionality but it can be unstable in some new browser versions and possibly requires the disabing the new \"SameSite by default cookies\" feature on the chrome://flags web page."
+					"help": "The Basic is the default version which works in all browser versions.\n<br /><br />\nYou can also choose the Original version which proposes more functionality but it can be unstable in some new browser versions and possibly requires the disabling of the new \"SameSite by default cookies\" feature on the chrome://flags web page."
 				}
 			}
 		}

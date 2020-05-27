@@ -1,7 +1,15 @@
-<p>Welcome to ProductivityTab version 1.44!</p>
+<p>Welcome to ProductivityTab version 1.45!</p>
 
-<p>We've spent the last month making the ProductivityTab even more secure and adding new features to help protect your privacy. We've reviewed every line of code in the app to make sure it's 100% compliant with recently updated Google and Braintree policies. As you may have noticed, we've also rebranded to ProductivityTab going forward. Hopefully this makes your favorite dashboard more expressive and less associated with certain large technology companies ;)</p>
+<p>We improved ProductivityTab and fixed bugs. Also, we added features to help protect your privacy even better. We've reviewed every line of code in the app to make sure it's 100% compliant with recently updated Google and Braintree policies. As you may have noticed, we've also rebranded to ProductivityTab going forward. Hopefully this makes your favorite dashboard more expressive and less associated with certain large technology companies ;)</p>
 
+<section>
+<p>What's New in Version 1.45:</p>
+<ul>
+<li>FIXED. The broken Keep widget is now fixed.</li>
+<li>IMPROVED. Added two styles to the Gmail widget. The default style works on all browser versions with default settings.</li>
+<li>IMPROVED. The RSS widget is significantly improved to make it quicker and to reduce the possible IP blocking by the RSS server due to frequent requests. Added new options to the Settings.</li>
+</ul>
+</section>
 <section>
 <p>What's New in Version 1.44:</p>
 <ul>
@@ -12,6 +20,4 @@
 <li>FIXED. Some minor Stocks widget GUI issues.</li>
 <li>FIXED. Lightweight! Space occupied by ProductivityTab size on hard disk is reduced by around 2x</li>
 </ul>
-
-<p>Everyone stay indoors and practice safe social distancing during these troubling times! All the best from the ProductivityTab Team</p>
 </section>
