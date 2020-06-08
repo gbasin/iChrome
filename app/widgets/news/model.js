@@ -1,4 +1,4 @@
-define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
+define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy"], function(_, $, WidgetModel, feedlyProxy) {
 	return WidgetModel.extend({
 		widgetClassname: "tabbed-corner",
 
@@ -355,7 +355,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 			}.bind(this));
 		},
 
-		refreshBbc: function() {
+		refreshBbc: function(isReload) {
 			// We save the active tab in case it changes before the request is finished
 			var activeTab = this.get("activeTab");
 
@@ -367,7 +367,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 
 			var topic = _.find(this.bbctopics, [activeTab]);
 
-			var url = "http://feeds.bbci.co.uk/news/";
+			var url = "https://feeds.bbci.co.uk/news/";
 			if (topic && topic.length > 2) {
 				url += topic[2] + "/";
 			}
@@ -376,10 +376,7 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 				url += topic[3];
 			}
 
-			$.getJSON("https://cloud.feedly.com/v3/streams/contents?streamId=feed%2F" + encodeURIComponent(url), {
-				count: maximized ? 45 : this.config.number,
-				nocache: new Date().getTime()
-			}, function(d) {
+			var process = function(d) {
 				// If the active tab has changed (i.e. the user has switched tabs
 				// twice before the request finished), we don't want to emit any entries
 				if (
@@ -403,7 +400,41 @@ define(["lodash", "jquery", "widgets/model"], function(_, $, WidgetModel) {
 						});
 					}
 				}
-			}.bind(this));
+			}.bind(this);
+
+			var getSingle = function() {
+				var cached = feedlyProxy.getCached(url);
+				if (cached && !isReload) {
+					setTimeout(function() {
+						process(cached);
+					}, 0);
+					return;
+				}
+
+				var cacheTimeout = 3 * 60000;
+
+				$.getJSON("https://cloud.feedly.com/v3/streams/contents?streamId=feed%2F" + encodeURIComponent(url), {
+					bnd: new Date().getTime(),
+					count: maximized ? 45 : this.config.number
+				}, function(d) {
+					feedlyProxy.onsent(d, url, new Date().getTime() + cacheTimeout);
+					process(d);
+				}.bind(this)).fail(function() {
+					this.trigger("entries:loaded", {
+						errors: 1
+					})
+				});
+			}.bind(this);
+
+			var delayMs = feedlyProxy.getDelay(isReload || false);
+			if (delayMs >= 0) {
+				getSingle();
+				return;
+			}
+
+			setTimeout(function() {
+				getSingle();
+			}.bind(this), delayMs);
 		},
 
 

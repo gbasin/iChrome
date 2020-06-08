@@ -396,7 +396,9 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl", "lib/feedlyproxy"],
 
 			var cached = feedlyProxy.getCached(feed);
 			if (cached && !isReload) {
-				process(cached);
+				setTimeout(function() {
+					process(cached);
+				}, 0)
 				return;
 			}
 
