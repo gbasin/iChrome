@@ -398,7 +398,7 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl", "lib/feedlyproxy"],
 			if (cached && !isReload) {
 				setTimeout(function() {
 					process(cached);
-				}, 0)
+				}, 0);
 				return;
 			}
 

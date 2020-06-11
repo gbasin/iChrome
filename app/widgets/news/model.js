@@ -422,7 +422,7 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy"], function(_, $, 
 				}.bind(this)).fail(function() {
 					this.trigger("entries:loaded", {
 						errors: 1
-					})
+					});
 				});
 			}.bind(this);
 
