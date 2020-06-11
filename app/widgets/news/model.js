@@ -367,7 +367,7 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy"], function(_, $, 
 
 			var topic = _.find(this.bbctopics, [activeTab]);
 
-			var url = "https://feeds.bbci.co.uk/news/";
+			var url = "http://feeds.bbci.co.uk/news/"; //Important! The "https://" here do not return image, for unknown reason
 			if (topic && topic.length > 2) {
 				url += topic[2] + "/";
 			}
