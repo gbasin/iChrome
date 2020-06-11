@@ -419,7 +419,14 @@
 
 			"style": "Image Style",
 			"style_fill": "Fill",
-			"style_center": "Center"
+			"style_center": "Center",
+
+			"target": {
+				"title": "Target",
+				"default": "Default",
+				"same": "The same",
+				"new": "New tab"
+			}
 		}
 	},
 
