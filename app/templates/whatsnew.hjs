@@ -3,6 +3,12 @@
 <p>We improved ProductivityTab and fixed bugs. Also, we added features to help protect your privacy even better. We've reviewed every line of code in the app to make sure it's 100% compliant with recently updated Google and Braintree policies. As you may have noticed, we've also rebranded to ProductivityTab going forward. Hopefully this makes your favorite dashboard more expressive and less associated with certain large technology companies ;)</p>
 
 <section>
+<p>What's New in Version 1.45.3:</p>
+<ul>
+<li>FIXED. The broken BBC News is fixed.</li>
+<li>FIXED. The SiteLink widget default target is fixed. Also, the target options are added the widget Settings.</li>
+</ul>
+</section>
 <p>What's New in Version 1.45:</p>
 <ul>
 <li>FIXED. The broken Keep widget is now fixed.</li>
