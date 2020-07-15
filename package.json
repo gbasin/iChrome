@@ -26,7 +26,7 @@
     "grunt-string-replace": "^1.0.0",
     "hogan.js": "^3.0.2",
     "jshint-stylish": "^2.0.0",
-    "lodash": "^3.3.1",
+    "lodash": "^4.17.19",
     "requirejs": "^2.1.20",
     "rework": "^1.0.1",
     "rework-assets": "AMKohn/rework-assets#patch-1"
