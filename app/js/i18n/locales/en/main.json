@@ -78,7 +78,7 @@
 			"about": "ProductivityTab's all about tabs and widgets",
 			"about_desc": "Tabs are pages filled with widgets - blocks that show things like the weather, news, and your email. You can customize most widgets and add as many as you want.",
 
-			"terms": "Note: By proceeding, you agree to ProductivityTab's <a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\">Terms</a> and <a href=\"https://productivitytab.co/privacy-policy\" target=\"_blank\">Privacy Policy</a>",
+			"terms":"By checking, you agree to ProductivityTab's <a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\">Terms</a> and <a href=\"https://productivitytab.co/privacy-policy\" target=\"_blank\">Privacy Policy</a>",
 			"terms_desc": "ProductivityTab collects the minimum amount of Personal and Non-personal user information required to fulfill core functions of the service. This includes communicating with users, fulfilling requests, and customizing, operating, and improving our services. For a detailed description of our data usage and collection, please refer to the full ProductivityTab Privacy Policy.",
 
 			"sign_in": "Sign in with your Google account",
