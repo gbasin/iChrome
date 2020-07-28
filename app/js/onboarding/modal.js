@@ -8,10 +8,6 @@ define([
 		events: {
 			"click .nav button": "navigate",
 
-			"click .terms_checkbox": function() {
-				this.$(".terms_checkbox").removeClass("invisible");
-			},
-
 			"click .sign-in button.sign-in": function() {
 				Storage.once("done", function(storage) {
 					SyncAPI.authorize(storage, false, function(err, isNewUser) {
