@@ -59,6 +59,13 @@
 					content: "close";
 				}
 			}
+
+			button.close {
+				top: 0;
+				right: 10px;
+				z-index: 2;
+				box-shadow: none;
+			}
 		}
 
 		&[data-slide="1"] .nav button.prev {

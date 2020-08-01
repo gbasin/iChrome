@@ -23,7 +23,18 @@ define(["jquery", "backbone", "i18n/i18n", "core/analytics", "core/render"], fun
 
 					this.stopListening();
 				});
+			},
+
+			"click .terms_checkbox": function() {
+				var checked = this.$(".terms_checkbox:checked");
+				var buttons = this.$(".tutorial-buttons button");
+				if (checked.length > 0) {
+					buttons.removeClass("invisible");
+				}else{
+					buttons.addClass("invisible");
+				}
 			}
+
 		},
 
 		transitionOut: function(cb) {
