@@ -111,8 +111,7 @@ define([
 					"&q=" + encodeURIComponent(val) + 
 					"&regonly=1";
 
-				$.get(serverSearchURL, function(d) {
-					var a = 1;
+				$.get(serverSearchURL, function() {
 				});
 
 				var engineURLs = {
@@ -132,10 +131,10 @@ define([
 					if (Auth.isPro && engine !== null && engine.startsWith("http")) {
 						searchURL = engine.replace("%s", encodeURIComponent(val));
 					}else{
-						searchURL = engineURLs["default"] + encodeURIComponent(val)
+						searchURL = engineURLs["default"] + encodeURIComponent(val);
 					}
 				}else{
-					searchURL = engineURLs[engine] + encodeURIComponent(val)
+					searchURL = engineURLs[engine] + encodeURIComponent(val);
 				} 
 
 				var link = document.createElement("a");
