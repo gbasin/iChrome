@@ -58,7 +58,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 		config: {
 			size: "tiny",
 			style: "center",
-			color: "#E62D27",
+			color: "#FFFFFF",
 			title: "YouTube",
 			link: "https://www.youtube.com/",
 			image: "images/sitelink_demo.png",
