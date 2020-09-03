@@ -1,4 +1,4 @@
-define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy"], function(_, $, WidgetModel, feedlyProxy) {
+define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"], function(_, $, WidgetModel, feedlyProxy, settings) {
 	return WidgetModel.extend({
 		widgetClassname: "tabbed-corner",
 
@@ -188,6 +188,7 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy"], function(_, $, 
 					return [d.categoryKey, d.sourceName, d.href];
 				});
 
+				topics = topics.filter(function(d) { return d && d.length > 0 && d[0] !== "rt_AppSpotlightCard"; });
 				topics.unshift(["$allStories", this.translate("all_stories")]);
 
 				cb.call(this, topics || []);
@@ -256,9 +257,35 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy"], function(_, $, 
 		},
 
 
+		/**
+		 * Parses and normalizes CodeFuel MSN articles
+		 *
+		 * @param   {Array}   docs       The items to parse
+		 * @return  {Object}             An array of parsed, normalized entries
+		 */
+		parseArticlesCodeFuel: function(docs, maximized) {
+			return _.map(docs, function(e) {
+				return {
+					title: e.Title || "",
+					desc: e.Description || "",
+					date: new Date(e.DatePublished).getTime(),
+					pixel: e.PixelUrl,
+					image: maximized ? e.ThumbnailUrl : (e.ThumbnailUrl || "").replace(".img", "_m5_h190_w200.jpg"),
+					url: e.TargetedUrl,
+					source: e.Provider
+				};
+			});
+		},
+
+
 		refresh: function() {
 			if (this.isBbc()) {
 				this.refreshBbc();
+				return;
+			}
+
+			if (this.config.edition === "en-us") {
+				this.refreshMsnCodeFuel();
 				return;
 			}
 
@@ -295,6 +322,68 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy"], function(_, $, 
 			}
 		},
 
+		refreshMsnCodeFuel: function() {
+			// We load the list of topics once when the page loads since it might
+			// have changed since we last loaded it
+			if (!this.topicsLoaded) {
+				this.getTopics(function(topics) {
+					this.topicsLoaded = true;
+
+					this.data.topics = topics;
+
+					this.refresh();
+				});
+
+				return;
+			}
+
+			// We save the active tab in case it changes before the request is finished
+			var activeTab = this.get("activeTab");
+
+			if (!this.Auth.isPro && activeTab !== this.config.topic) {
+				return this.set("activeTab", this.config.topic);
+			}
+
+			var maximized = this.get("state") === "maximized";
+
+			var topic = _.find(this.data.topics, [activeTab]);
+			var query;
+			if (topic && topic.length > 1) {
+				query = topic[0] === "$allStories" ? "Top Stories" : topic[1];
+			}
+			query = query || "Top Stories";
+
+			$.getJSON("https://feed.cf-se.com/v2/News", {
+				gd: settings.isHomepage ? "SY1002609" : "SY1002608",
+				format: "json",
+				source: 80,
+				q: encodeURIComponent(query),
+				numnews: maximized ? 45 : this.config.number,
+				_: new Date().getTime() //to avoid caching
+			}, function(d) {
+				// If the active tab has changed (i.e. the user has switched tabs
+				// twice before the request finished), we don't want to emit any entries
+				if (this.get("activeTab") === activeTab && d && d.NewsResults && d.NewsResults.Items) {
+					var items = this.parseArticlesCodeFuel(d.NewsResults.Items, maximized);
+					
+					// Only save data if this is the default tab and we aren't
+					// maximized (and therefore didn't fetch more articles)
+					if (activeTab === this.config.topic && !maximized) {
+						this.data.items = items;
+
+						this.saveData();
+					}
+					else {
+						// We only trigger the entries:loaded event if this is not the
+						// first tab so the view doesn't render twice
+						this.trigger("entries:loaded", {
+							items: items
+						});
+					}
+				}
+			}.bind(this));
+		},
+
 		refreshMsn: function() {
 			// We load the list of topics once when the page loads since it might
 			// have changed since we last loaded it
@@ -320,8 +409,15 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy"], function(_, $, 
 			var maximized = this.get("state") === "maximized";
 
 			var topic = _.find(this.data.topics, [activeTab]);
+			var query;
+			if (topic && topic.length > 1) {
+				query = topic[0] === "$allStories" ? "alias/compositestreambyname/today" : "id/" + topic[2];
+			}
+			if (!query) {
+				query = "alias/compositestreambyname/today";
+			}
 
-			$.getJSON("https://cdn.content.prod.cms.msn.com/common/abstract/" + (topic[0] === "$allStories" ? "alias/compositestreambyname/today" : "id/" + topic[2]), {
+			$.getJSON("https://cdn.content.prod.cms.msn.com/common/abstract/" + query, {
 				count: maximized ? 45 : this.config.number,
 				market: this.config.edition,
 				tenant: "amp",
