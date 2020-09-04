@@ -349,9 +349,9 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 			var topic = _.find(this.data.topics, [activeTab]);
 			var query;
 			if (topic && topic.length > 1) {
-				query = topic[0] === "$allStories" ? "Top Stories" : topic[1];
+				query = topic[0] === "$allStories" ? "News" : topic[1];
 			}
-			query = query || "Top Stories";
+			query = query || "News";
 
 			$.getJSON("https://feed.cf-se.com/v2/News", {
 				gd: settings.isHomepage ? "SY1002609" : "SY1002608",
