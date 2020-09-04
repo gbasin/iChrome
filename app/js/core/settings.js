@@ -3,6 +3,7 @@
  */
 define([], function() {
 	return {
-		apidomain: "https://api.ichro.me"
+		apidomain: "https://api.ichro.me",
+		isHomepage: false
 	};
 });

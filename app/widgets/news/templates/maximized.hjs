@@ -59,6 +59,7 @@
 						<b class="title">{{title}}</b>
 
 						{{{desc}}}
+						{{#pixel}}<img src="{{pixel}}" />{{/pixel}}
 					</span>
 
 					<span class="date">{{date}}</span>
@@ -69,7 +70,7 @@
 
 					<h3 class="title">{{title}}</h3>
 
-					<div class="desc">{{{desc}}}</div>
+					<div class="desc">{{{desc}}}{{#pixel}}<img src="{{pixel}}" />{{/pixel}}</div>
 
 					<div class="details">
 						{{#source}}<span class="source">{{source}}</span>{{/source}}

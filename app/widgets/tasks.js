@@ -117,7 +117,7 @@ define(["lodash", "jquery", "moment", "oauth"], function(_, $, moment, OAuth) {
 						var items = d.items.map(function(e) {
 							var ret = {
 								id: e.id,
-								title: e.title.trim(),
+								title: (e.title || '').trim(),
 								done: e.status === "completed",
 								parent: e.parent || '',
 								pos: e.position || ''
