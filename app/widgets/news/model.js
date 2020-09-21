@@ -353,13 +353,7 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 			}
 			query = query || "News";
 
-			$.getJSON("https://feed.cf-se.com/v2/News", {
-				gd: settings.isHomepage ? "SY1002609" : "SY1002608",
-				format: "json",
-				source: 80,
-				q: encodeURIComponent(query),
-				numnews: maximized ? 45 : this.config.number,
-				_: new Date().getTime() //to avoid caching
+			$.getJSON("https://feed.cf-se.com/v2/News?gd=" + (settings.isHomepage ? "SY1002609" : "SY1002608") + "format=json&source=80&q=" + encodeURIComponent(query) + "&numnews=" + (maximized ? 45 : this.config.number) + "&_=" + new Date().getTime(), {
 			}, function(d) {
 				// If the active tab has changed (i.e. the user has switched tabs
 				// twice before the request finished), we don't want to emit any entries
