@@ -26,7 +26,7 @@ define(["lodash", "jquery", "browser/api", "widgets/views/main"], function(_, $,
 				}
 			},
 
-			"click .group span.has-def": function(e) {
+			"click span.has-def": function(e) {
 				this.lookupTerm(e.currentTarget.textContent.trim());
 			},
 
@@ -42,7 +42,7 @@ define(["lodash", "jquery", "browser/api", "widgets/views/main"], function(_, $,
 				loading: true
 			});
 
-			this.model.getDefinition(term, function(err, d) {
+			this.model.getDefinition(term, null, function(err, d) {
 				if (!err && d) {
 					this.render({
 						definition: d

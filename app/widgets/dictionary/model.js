@@ -1,169 +1,104 @@
 define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Browser, WidgetModel) {
 	return WidgetModel.extend({
 		defaults: {
+			config: {
+				title: "i18n.name",
+				lang: "en",
+			},
+
 			data: {
 				defaultWord: "test",
-				definition: {
-					term: "test",
-					uses: [{
-						form: "noun",
-						forms: [
+				definition: [
+					{
+						"word": "test",
+						"first": 1,
+						"phonetics": [
 							{
-								form: "test",
-								desc: "noun"
-							},
-							{
-								form: "tests",
-								desc: "plural noun"
+								"text": "/tɛst/",
+								"audio": "https://lex-audio.useremarkable.com/mp3/test_us_1.mp3"
 							}
 						],
-						definitions: [
+						"meanings": [
 							{
-								definition: "a procedure intended to establish the quality, performance, or reliability of something, especially before it is taken into widespread use.",
-								synonymGroups: [{
-									synonyms: [
-										{ text: "trial" },
-										{ text: "experiment" },
-										{ text: "test case" },
-										{ text: "case study" },
-										{
-											text: "pilot study",
-											noDef: true
-										},
-										{ text: "trial run" },
-										{ text: "tryout" },
-										{ text: "dry run" }
-									]
-								}, {
-									synonyms: [
-										{ text: "check" },
-										{ text: "examination" },
-										{ text: "assessment" },
-										{ text: "evaluation" },
-										{ text: "appraisal" },
-										{ text: "investigation" },
-										{ text: "inspection" },
-										{ text: "analysis" },
-										{ text: "scrutiny" },
-										{ text: "study" },
-										{ text: "probe" },
-										{ text: "exploration" }
-									]
-								}, {
-									synonyms: [
-										{ text: "screening" },
-										{ text: "workup" }
-									]
-								}, {
-									register: "technical",
-									synonyms: [
-										{ text: "assay" }
-									]
-								}],
-								example: "no sparking was visible during the tests"
+								"partOfSpeech": "noun",
+								"definitions": [
+									{
+										"definition": "A procedure intended to establish the quality, performance, or reliability of something, especially before it is taken into widespread use.",
+										"example": "no sparking was visible during the tests",
+										"synonyms": [
+											"trial",
+											"experiment",
+											"pilot study",
+											"try-out"
+										]
+									},
+									{
+										"definition": "A movable hearth in a reverberating furnace, used for separating gold or silver from lead.",
+										"example": "When fully prepared, the test is allowed to dry, and is then placed in a  furnace, constructed in all respects like a common reverberator)' furnace,  except that a space is left open in the bed of it to receive the test, and that  the width of the arch is much reduced."
+									}
+								]
 							},
 							{
-								labels: ["Metallurgy"],
-								definition: "a movable hearth in a reverberating furnace, used for separating gold or silver from lead."
+								"partOfSpeech": "transitive verb",
+								"definitions": [
+									{
+										"definition": "Take measures to check the quality, performance, or reliability of (something), especially before putting it into widespread use or practice.",
+										"example": "this range has not been tested on animals",
+										"synonyms": [
+											"try out",
+											"trial",
+											"carry out trials on",
+											"put to the test",
+											"put through its paces",
+											"experiment with",
+											"pilot"
+										]
+									}
+								]
 							}
 						]
-					}, {
-						form: "verb",
-						forms: [{
-							form: "test",
-							desc: "verb"
-						}, {
-							form: "tests",
-							desc: "3rd person present"
-						}, {
-							form: "tested",
-							desc: "past tense"
-						}, {
-							form: "tested",
-							desc: "past participle"
-						}, {
-							form: "testing",
-							desc: "gerund or present participle"
-						}],
-						definitions: [
+					},
+					{
+						"word": "test",
+						"phonetics": [
 							{
-								definition: "take measures to check the quality, performance, or reliability of (something), especially before putting it into widespread use or practice.",
-								synonymGroups: [{
-									synonyms: [
-										{
-											text: "try out",
-											noDef: true
-										}, {
-											text: "put to the test",
-											noDef: true
-										}, {
-											text: "put through its paces",
-											noDef: true
-										}, {
-											text: "experiment with",
-											noDef: true
-										},
-										{ text: "pilot" }
-									]
-								},
-								{
-									synonyms: [
-										{ text: "check" },
-										{ text: "examine" },
-										{ text: "assess" },
-										{ text: "evaluate" },
-										{ text: "appraise" },
-										{ text: "investigate" },
-										{ text: "analyze" },
-										{ text: "scrutinize" },
-										{ text: "study" },
-										{ text: "probe" },
-										{ text: "explore" },
-										{ text: "trial" }
-									]
-								},
-								{
-									synonyms: [
-										{ text: "sample" }
-									]
-								},
-								{
-									synonyms: [
-										{ text: "screen" }
-									]
-								},
-								{
-									register: "technical",
-									synonyms: [
-										{ text: "assay" }
-									]
-								}],
-								example: "this range has not been tested on animals"
+								"text": "/tɛst/",
+								"audio": "https://lex-audio.useremarkable.com/mp3/test_us_1.mp3"
+							}
+						],
+						"meanings": [
+							{
+								"partOfSpeech": "noun",
+								"definitions": [
+									{
+										"definition": "The shell or integument of some invertebrates and protozoans, especially the chalky shell of a foraminiferan or the tough outer layer of a tunicate.",
+										"example": "The tests of the shells are recrystallized, but the original ornamentation is preserved in very good detail."
+									}
+								]
 							}
 						]
-					}],
-					webDefinitions: ["put to the test, as for its quality, or give experimental use to; \"This approach has been tried with good results\"; \"Test this recipe\""],
-					audio: "https://ssl.gstatic.com/dictionary/static/sounds/de/0/test.mp3",
-					pronunciation: "test"
-				}
+					}
+				]
 			}
 		},
 
-		getDefinition: function(term, cb) {
-			this.Auth.ajax({
+		getDefinition: function(term, lang, cb) {
+			var lang = lang || this.config.lang || Browser.language || "en";
+			$.ajax({
 				type: "GET",
-				url: "/dictionary/v1/definition/" + encodeURIComponent(term),
-				data: {
-					lang: Browser.language
-				},
+				dataType: "json",
+				url: "https://api.dictionaryapi.dev/api/v2/entries/" + lang + "/" + encodeURIComponent(term),
 				success: function(d) {
-					if (!d || !d.term) {
+					if (!d || !Array.isArray(d) || !d[0].word) {
 						return cb.call(this, true);
 					}
 
+					d[0].first = 1;
 					cb.call(this, null, d);
-				}.bind(this)
-			}).fail(cb.bind(this, true, null));
+				}.bind(this),
+			}).fail(function() {
+				cb.call(this, true);
+			});
 		},
 
 		getWordOfDay: function(cb) {
@@ -183,7 +118,7 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 		initialize: function() {
 			this.getWordOfDay(function(err, word) {
 				if (!err && word) {
-					this.getDefinition(word, function(err, definition) {
+					this.getDefinition(word, "en", function(err, definition) {
 						if (!err && definition) {
 							this.saveData({
 								defaultWord: word,
