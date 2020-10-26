@@ -83,7 +83,7 @@ define(["jquery", "lodash", "browser/api", "widgets/model"], function($, _, Brow
 		},
 
 		getDefinition: function(term, lang, cb) {
-			var lang = lang || this.config.lang || Browser.language || "en";
+			lang = lang || this.config.lang || Browser.language || "en";
 			$.ajax({
 				type: "GET",
 				dataType: "json",
