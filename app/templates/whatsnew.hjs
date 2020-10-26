@@ -1,8 +1,8 @@
-<p>Welcome to ProductivityTab version 1.45.7!</p>
+<p>Welcome to ProductivityTab version 1.45.10!</p>
 <section>
-<p>What's New in Version 1.45.7:</p>
+<p>What's New in Version 1.45.10:</p>
 <ul>
-<li>FIXED. Several News widget categories stopped working for USA news. We made an agreement with a more reliable news provider.</li>
-<li>FIXED. Empty topics in Google Tasks that blocked Tasks widget update.</li>
+<li>FIXED. Dictionary widget is fixed</li>
+<li>ADDED. Added language selection option to the Dictionary widget</li>
 </ul>
 </section>
