@@ -8,12 +8,14 @@
 	"sizes": ["medium"],
 
 	"views": {
-		"default": "view"
+		"default": "view",
+		"settings": "settings"
 	},
 
 	"templates": {
 		"desc": "templates/desc.hjs",
-		"default": "templates/main.hjs"
+		"default": "templates/main.hjs",
+		"settings": "templates/settings.hjs"
 	},
 
 	"strings": {
@@ -31,7 +33,16 @@
 
 			"web_definitions": "Web definitions",
 
-			"no_definitions": "No definitions found"
+			"no_definitions": "No definitions found",
+
+			"settings": {
+				"page_title": "Settings",
+				"save": "Save",
+				"title": "Widget Title",
+				"title_placeholder": "Enter a widget title or leave blank to hide",
+
+				"lang": "Language"
+			}
 		}
 	}
 }
