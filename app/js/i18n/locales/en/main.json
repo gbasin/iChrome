@@ -559,6 +559,13 @@
 
 				"height": "Widget Height",
 
+				"sync": "Synchronization by",
+
+				"sync_options": {
+					"id": "Identity",
+					"path": "Path"
+				},
+
 				"open_options": {
 					"current": "The current tab",
 					"blank": "A new tab"

@@ -28,6 +28,15 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 			},
 			{
 				type: "radio",
+				nicename: "sync",
+				label: "i18n.settings.sync",
+				options: {
+					0: "i18n.settings.sync_options.id",
+					1: "i18n.settings.sync_options.path"
+				}
+			},
+			{
+				type: "radio",
 				nicename: "target",
 				label: "i18n.settings.open",
 				options: {
@@ -40,7 +49,9 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 			title: "i18n.name",
 			size: "variable",
 			from: "1", // Folder #1 is the bookmarks bar
-			target: "_self"
+			frompath: "",
+			target: "_self",
+			sync: "0"
 		},
 
 
@@ -79,6 +90,52 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 			]
 		},
 
+		flatFolders: function() {
+			if (this.folders === null) {
+				return [];
+			}
+
+			function isNormalInteger(str) {
+				var n = Math.floor(Number(str));
+				return n !== Infinity && String(n) === str && n >= 0;
+			}			
+
+			var foldersByKey = function(current, path) {
+				var result = [];
+
+				for (var propertyName in current) {
+					if (current.hasOwnProperty(propertyName)) {
+						if (isNormalInteger(propertyName)) {
+							result.push({ key: propertyName, value: path.concat([current[propertyName]]).join("/|`") });
+						}else if (propertyName.endsWith("_folders")) {
+							result = result.concat(foldersByKey(current[propertyName], path.concat([current[propertyName.substring(0, propertyName.length - 8)]])));
+						}
+
+					}
+				}				
+
+				return result;
+			};
+
+			return foldersByKey(this.folders, []);
+		},
+
+
+		adjustConfig: function(config) {
+			if (!config || !config.from || !this.folders) {
+				return;
+			}
+
+			config.fromPath = "";
+			if (config.from !== "1") {
+				var found = this.flatFolders().filter(function(i) { return i.key === config.from; } );
+				if (found && found.length === 1) {
+					config.fromPath = found[0].value;
+				}
+			}
+		},
+
+		folders: {},
 
 		/**
 		 * Returns a listing of bookmark folders
@@ -107,8 +164,10 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 					return res;
 				}, {});
 
+				this.folders = folders;
+
 				cb(folders);
-			});
+			}.bind(this));
 		},
 
 
@@ -117,37 +176,60 @@ define(["jquery", "lodash", "moment", "browser/api"], function($, _, moment, Bro
 				return;
 			}
 
-			// Even though this is a Chrome API call it takes as long as a web request
-			// and therefore should be part of a refresh pattern for faster loading
-			Browser.bookmarks.getSubTree(this.config.from, function(d) {
-				var getItems = function(e) {
-					if (e.children) {
-						return {
-							name: e.title,
-							items: _.map(_.sortBy(e.children, "index"), getItems)
-						};
+			var refreshTree = function(from)
+			{
+				// Even though this is a Chrome API call it takes as long as a web request
+				// and therefore should be part of a refresh pattern for faster loading
+				Browser.bookmarks.getSubTree(from, function(d) {
+					var getItems = function(e) {
+						if (e.children) {
+							return {
+								name: e.title,
+								items: _.map(_.sortBy(e.children, "index"), getItems)
+							};
+						}
+						else {
+							return {
+								url: e.url,
+								favicon: Browser.getFavicon(e.url),
+								title: (e.title || "").trim() || (e.url || "").replace(/^[A-z]+\:\/+(?:www\.)?/, "")
+							};
+						}
+					};
+
+
+					// Bookmarks in the root folder are not sorted properly
+					var bookmarks = _.map(_.sortBy(d[0].children, "index"), getItems);
+
+					this.data = {
+						bookmarks: bookmarks
+					};
+
+					this.render();
+
+					this.utils.saveData(this.data);
+				}.bind(this));
+			}.bind(this);
+
+			var from = this.config.from;
+			
+			if (this.config.sync === "1" && from !== "1" && this.config.fromPath) {
+				this.getFolders(function() {
+					if (this.folders) {
+						var ff = this.flatFolders();
+						var found = ff.filter(function(i) { return i.value === this.config.fromPath; }.bind(this) );
+						if (found && found.length > 0 && !found.find(function(i) { return i.key === from; })) {
+							if (found.length === 1) {
+								from = found[0].key;
+							}
+						}
 					}
-					else {
-						return {
-							url: e.url,
-							favicon: Browser.getFavicon(e.url),
-							title: (e.title || "").trim() || (e.url || "").replace(/^[A-z]+\:\/+(?:www\.)?/, "")
-						};
-					}
-				};
 
+					refreshTree(from);
+				}.bind(this));
+			}
 
-				// Bookmarks in the root folder are not sorted properly
-				var bookmarks = _.map(_.sortBy(d[0].children, "index"), getItems);
-
-				this.data = {
-					bookmarks: bookmarks
-				};
-
-				this.render();
-
-				this.utils.saveData(this.data);
-			}.bind(this));
+			refreshTree(from);
 		},
 
 

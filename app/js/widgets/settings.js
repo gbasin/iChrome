@@ -185,6 +185,10 @@ define([
 				this.instance.widgetModel.set(set);
 			}
 			else if (this.instance.instance) {
+				if (this.instance.instance.adjustConfig) {
+					this.instance.instance.adjustConfig(set.config);
+				}
+
 				this.instance.instance.config = set.config;
 
 				this.instance.instance.size = this.instance.instance.config.size = set.size;
