@@ -104,21 +104,38 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 					if (d && typeof(d) === "string") {
 						try {
 							var data = JSON.parse(d);
-							cb(_.compact(_.map(data, function(e) {
+							var items = _.compact(_.flatten(_.map(data, function(e) {
 								if (e === "%s" || e === "")	{ return null; }
 								var tokens = e.split(",");
 								var value = e;
 								var label = e;
-								if (tokens.length === 3) {
-									value = tokens[0] + "," + tokens[1] + " region," + tokens[2];
-									label = value;
+								if (tokens.length !== 3) {
+									return {
+										value: value,
+										label: label
+									};
 								}
-			
-								return {
-									value: value,
-									label: label
-								};
+								
+								return [
+									{
+										value: tokens[0] + "," +  tokens[2] /*+ "," + tokens[1] + " region"*/,
+										label: tokens[0] + "," +  tokens[2] /*+ "," + tokens[1] + " region"*/,
+									},
+									{
+										value: tokens[0] + "," +  tokens[2] + "," + tokens[1] + " region",
+										label: tokens[0] + "," +  tokens[2] + "," + tokens[1] + " region",
+									},
+								];								
 							})));
+							if (items && items.length > 0) {
+								var empty = {
+									value: "<novalue>",
+									label: "."
+								};
+	
+								items = [empty].concat(items);
+							}
+							cb(items);
 						} catch(e) {
 						}							
 					}
