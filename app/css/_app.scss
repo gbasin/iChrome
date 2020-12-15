@@ -472,6 +472,7 @@ textarea {
 .dark select option,
 .dark select optgroup {
 	background: #424242;
+	color: #FFFFFF;
 }
 
 input[type="time"]::-webkit-clear-button,
@@ -3774,7 +3775,7 @@ body.main-pro .wtooltip {
 
 .dark .widget-settings .list .suggestions li:hover,
 .dark .widget-settings .list .suggestions li.active {
-	background: #303030;
+	// background: #303030;
 }
 
 .widget-settings .list .suggestions li.active {
