@@ -1,13 +1,10 @@
-<p>Welcome to ProductivityTab version 1.45.10!</p>
+<p>Welcome to ProductivityTab version 1.45.12!</p>
 <section>
-<p>What's New in Version 1.45.10:</p>
+<p>What's New in Version 1.45.12:</p>
 <ul>
-<li>FIXED. Dictionary widget is fixed</li>
-<li>ADDED. Added language selection option to the Dictionary widget</li>
-</ul>
-<p>What's New in Version 1.45.11:</p>
-<ul>
-<li>ADDED. Bookmarks widget synchronization type option</li>
+<li>FIXED. Weather widget location search is fixed</li>
+<li>FIXED. Invisible selected item on dark themes in the Weather widget is fixed</li>
+<li>FIXED. Unreadable fields on dark themes in the Unit Conversion widget</li>
 </ul>
 <section>
 </section>
