@@ -28,7 +28,8 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 				type: "text",
 				nicename: "image",
 				label: "i18n.settings.image",
-				placeholder: "i18n.settings.image_placeholder"
+				placeholder: "i18n.settings.image_placeholder",
+				help: "i18n.settings.image_help",
 			},
 			{
 				type: "color",

@@ -414,6 +414,7 @@
 
 			"image": "Image URL",
 			"image_placeholder": "https://www.example.com/image.png",
+			"image_help": "Please upload your image to any image sharing service such as <a href=\"https://postimg.cc/\" target=\"_blank\">PostImage</a>, <a href=\"https://imgur.com/\" target=\"_blank\">imgur</a>, <a href=\"https://imgbb.com/\" target=\"_blank\">Imgbb</a> or share an image on file hostings like Google Drive or DropBox. Then copy the URL ending with an extension (i.e. .jpg, .gif or .png) and paste it into the field.",
 
 			"color": "Image Background Color",
 
