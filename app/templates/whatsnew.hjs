@@ -1,10 +1,9 @@
-<p>Welcome to ProductivityTab version 1.45.12!</p>
+<p>Welcome to ProductivityTab version 1.45.14!</p>
 <section>
-<p>What's New in Version 1.45.12:</p>
+<p>What's New in Version 1.45.14:</p>
 <ul>
-<li>FIXED. Weather widget location search is fixed</li>
-<li>FIXED. Invisible selected item on dark themes in the Weather widget is fixed</li>
-<li>FIXED. Unreadable fields on dark themes in the Unit Conversion widget</li>
+<li>FIXED. Facebook, Keep and iframe widgets "unable to connect" issues are fixed</li>
+<li>FIXED. Invisible dropdown controls in dark themes</li>
+<li>IMPROVEMENT. SiteLink widget image replacement is explained</li>
 </ul>
-<section>
 </section>

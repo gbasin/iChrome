@@ -475,6 +475,11 @@ textarea {
 	color: #FFFFFF;
 }
 
+.dark .widget-settings select option {
+	color: #444;
+}
+
+
 input[type="time"]::-webkit-clear-button,
 input[type="time"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-clear-button,
