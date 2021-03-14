@@ -81,26 +81,6 @@ define(["jquery", "browser/api"], function($, Browser) {
 						}
 					});
 
-					[
-						{ name:"access-control-allow-headers", value:"*" },
-						{ name:"access-control-expose-headers", value:"*" },
-						{ name:"access-control-allow-methods", value:"GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS" },
-						{ name:"access-control-allow-origin", value:"*" }
-					].forEach(function(el) {
-						var found = false;
-						for (var i = 0; i < headers.length; i++) {
-							var header = headers[i].name.toLowerCase();
-							if (el.name === header) {
-								headers[i].value = el.value;
-								found = true;
-							}
-						}							
-
-						if (!found) {
-							headers.push(el);
-						}
-					});
-
 					
 					return {
 						responseHeaders: headers
