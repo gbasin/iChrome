@@ -389,7 +389,7 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 
 								e.index = i;
 
-								e.date = moment(e.date).format("ddd");
+								e.date = moment(e.date).add(12, 'hours').format("ddd");
 
 								return formatValues(e);
 							});
