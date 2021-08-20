@@ -131,6 +131,14 @@ define(["lodash", "jquery", "moment"], function(_, $, moment) {
 				}
 			]
 		},
+		resetChannelSettings: function() {
+			delete this.config.resolvedId;
+			delete this.config.resolvedUser;
+			this.config.user = "";
+			this.refresh();
+		},
+		//apiKey: "AIzaSyBWWt5WxgH6uX2Q39CkPdJqm4RVIPidJeo",
+		apiKey: "__API_KEY_youtube__",
 		refresh: function() {
 			var that = this;
 
@@ -138,21 +146,39 @@ define(["lodash", "jquery", "moment"], function(_, $, moment) {
 
 			if (this.config.user && this.config.user.trim() !== "") {
 				if (!this.config.resolvedId || this.config.resolvedUser !== this.config.user) {
-					return $.get(url + "channels?part=contentDetails&forUsername=" + encodeURIComponent(this.config.user) + "&fields=items/contentDetails/relatedPlaylists/uploads&maxResults=1&key=__API_KEY_youtube__", function(d) {
+					return $.get(url + "channels?part=contentDetails&forUsername=" + encodeURIComponent(this.config.user) + "&fields=items/contentDetails/relatedPlaylists/uploads&maxResults=1&key=" + this.apiKey, function(d) {						
 						try {
 							this.config.resolvedId = d.items[0].contentDetails.relatedPlaylists.uploads;
-
 							this.config.resolvedUser = this.config.user;
+							this.refresh();
+							return;
 						}
 						catch (e) {
-							delete this.config.resolvedId;
-
-							delete this.config.resolvedUser;
-
-							this.config.user = "";
+							//Try to search
 						}
 
-						this.refresh();
+						return $.get(url + "search?part=id&maxResults=1&q=" + encodeURIComponent(this.config.user) + "&type=channel&&fields=items/id&key=" + this.apiKey, function(c) {						
+							var channelId = '';
+							try
+							{
+								channelId = c.items[0].id.channelId;
+							}
+							catch (e) {
+								this.resetChannelSettings();
+								return;
+							}
+
+							return $.get(url + "channels?part=contentDetails&id=" + channelId + "&fields=items/contentDetails/relatedPlaylists/uploads&maxResults=1&key="  + this.apiKey, function(d2) {
+								try {
+									this.config.resolvedId = d2.items[0].contentDetails.relatedPlaylists.uploads;
+									this.config.resolvedUser = this.config.user;
+									this.refresh();
+								}
+								catch (e) {
+									this.resetChannelSettings();
+								}
+							}.bind(this));								
+						}.bind(this));								
 					}.bind(this));
 				}
 
@@ -162,7 +188,8 @@ define(["lodash", "jquery", "moment"], function(_, $, moment) {
 				url += "videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=us&fields=items(id,snippet(title,description,thumbnails/high/url,channelTitle),statistics/viewCount,contentDetails/duration)";
 			}
 
-			url += "&maxResults=6&key=__API_KEY_youtube__";
+			//url += "&maxResults=6&key=__API_KEY_youtube__";
+			url += "&maxResults=6&key="  + this.apiKey;
 
 
 			$.get(url, function(d) {

@@ -362,7 +362,7 @@
 			},
 
 			"from": "Show Videos From",
-			"from_help": "This must be an <b>exact</b> username as shown in the URL of the page when you're viewing their profile.\n<br /><br />\nThis value never includes spaces.",
+			"from_help": "This must be an <b>exact</b> username or channel name as shown in the URL of the page when you're viewing their profile.\n<br /><br />\nThis value never includes spaces.",
 			"from_placeholder": "Leave blank to show Top Videos",
 
 			"open": "Open search results in"

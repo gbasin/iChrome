@@ -1,9 +1,9 @@
-<p>Welcome to ProductivityTab version 1.45.14!</p>
+<p>Welcome to ProductivityTab version 1.45.15!</p>
 <section>
-<p>What's New in Version 1.45.14:</p>
+<p>What's New in Version 1.45.15:</p>
 <ul>
-<li>FIXED. Facebook, Keep and iframe widgets "unable to connect" issues are fixed</li>
-<li>FIXED. Invisible dropdown controls in dark themes</li>
-<li>IMPROVEMENT. SiteLink widget image replacement is explained</li>
+<li>FIXED. Youtube widget could not always find channels.</li>
+<li>FIXED. Weather widget icons were incorrect sometimes.</li>
+<li>IMPROVEMENT. Weather widget timezone offset.</li>
 </ul>
 </section>
