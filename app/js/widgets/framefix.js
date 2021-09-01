@@ -95,6 +95,41 @@ define(["jquery", "browser/api"], function($, Browser) {
 				["blocking", "responseHeaders", "extraHeaders"]
 			);
 
+			Browser.webRequest.onBeforeSendHeaders.addListener(
+				function(info) {
+					var headers = info.requestHeaders || [];
+
+					[
+						{ name:"sec-fetch-dest", value:"empty" },
+						{ name:"sec-fetch-site", value:"same-origin" }
+					].forEach(function(el) {
+						var found = false;
+						for (var i = 0; i < headers.length; i++) {
+							var header = headers[i].name.toLowerCase();
+							if (el.name === header) {
+								headers[i].value = el.value;
+								found = true;
+							}
+						}							
+
+						if (!found) {
+							headers.push(el);
+						}
+					});
+
+
+					return {
+						requestHeaders: headers
+					};
+				},
+				{
+					tabId: tabId,
+					urls: [ "*://*/*" ],
+					types: [ "sub_frame" ]
+				},
+				["blocking", "requestHeaders"]
+			);
+
 			listening = true;
 			attaching = false;
 

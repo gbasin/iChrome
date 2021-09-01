@@ -3,7 +3,7 @@ define(["widgets/views/main", "browser/api"], function(WidgetView, Browser) {
 		isFrame: true,
 
 		onBeforeRender: function(data) {
-			data.url = "https://keep.google.com/u/" + (this.model.config.user || 0);
+			data.url = "https://keep.google.com/u/" + (this.model.config.user || 0) + "/";
 
 			var randomMessage = 'idkeep' + Math.random();
 			data.randomMessage = randomMessage;
