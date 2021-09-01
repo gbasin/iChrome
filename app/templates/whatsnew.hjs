@@ -1,9 +1,11 @@
-<p>Welcome to ProductivityTab version 1.45.15!</p>
+<p>Welcome to ProductivityTab version 1.45.16!</p>
 <section>
-<p>What's New in Version 1.45.15:</p>
+<p>What's New in Version 1.45.16:</p>
 <ul>
 <li>FIXED. Youtube widget could not always find channels.</li>
 <li>FIXED. Weather widget icons were incorrect sometimes.</li>
-<li>IMPROVEMENT. Weather widget timezone offset.</li>
+<li>IMPROVEMENT. Weather widget timezone calculation.</li>
+<li>FIXED. Keep widget stopped to work.</li>
+<li>IMPROVEMENT. More sites work now with iFrame widget.</li>
 </ul>
 </section>
