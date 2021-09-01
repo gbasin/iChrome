@@ -4,6 +4,7 @@
 define(["jquery"], function($) {
 	return {
 		id: 13,
+		sort: 140,
 		size: 2,
 		order: 17,
 		nicename: "notes",
@@ -54,7 +55,7 @@ define(["jquery"], function($) {
 		},
 		syncData: {
 			title: "Sample note title",
-			content: 'This is sample note content.<br><br>This note widget can contain and display many things including images, <a href="http://www.google.com">links</a>, <b>bold</b>, <i>italic</i>&nbsp;and <u>underlined</u>&nbsp;text.<br><br>Via the settings menu (click the wrench icon in the top right) you can set the note color, font face and font size.<br><br>Have fun!'
+			content: 'This is sample note content.<br><br>This note widget can contain and display many things including images, <a href="https://www.google.com">links</a>, <b>bold</b>, <i>italic</i>&nbsp;and <u>underlined</u>&nbsp;text.<br><br>Via the settings menu (click the wrench icon in the top right) you can set the note color, font face and font size.<br><br>Have fun!'
 		},
 		saveNote: function() {
 			if (this.titleElm && this.noteElm) {

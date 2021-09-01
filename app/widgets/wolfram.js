@@ -4,6 +4,7 @@
 define(function() {
 	return {
 		id: 5,
+		sort: 410,
 		size: 1,
 		order: 32,
 		nicename: "wolfram",

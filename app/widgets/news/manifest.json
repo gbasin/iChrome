@@ -1,5 +1,6 @@
 {
 	"id": 4,
+	"sort": 30,
 	"name": "news",
 	"model": "model",
 	"css": "style.css",
@@ -36,6 +37,10 @@
 				"articles": "Articles Shown",
 
 				"edition": "Edition",
+
+				"language": "Language",
+
+				"source": "Source",
 
 				"default_topic": "Default Topic"
 			}

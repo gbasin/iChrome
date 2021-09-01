@@ -54,6 +54,17 @@
 				&.finish:before {
 					content: "done";
 				}
+
+				&.close:before {
+					content: "close";
+				}
+			}
+
+			button.close {
+				top: 0;
+				right: 10px;
+				z-index: 2;
+				box-shadow: none;
 			}
 		}
 
@@ -87,12 +98,12 @@
 				}
 
 				.appname {
-					font-size: 45px;
+					font-size: 65px;
 					margin-bottom: 30px;
 				}
 
 				.tagline {
-					font-size: 22px;
+					font-size: 32px;
 				}
 			}
 
@@ -221,6 +232,11 @@
 			}
 		}
 	}
+
+	&.modal.upgrade {
+		max-width: 80%;
+		width: 1500px;
+	}
 }
 
 .showcase {
@@ -326,9 +342,91 @@
 			line-height: 40px;
 			margin: 16px -16px;
 			pointer-events: auto;
+			min-width: unset;
 		}
 	}
 }
+
+body.dragging {
+	.showcase.settings {
+		//display: none;
+		opacity: 0;
+		transition: opacity .5s ease;
+	}
+}
+
+.onboarding-flat { 
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 200%;
+    width: 100%;
+	z-index: 40;
+	display:flex; 
+	justify-content:center; 
+	align-items:center;
+	background-color: /*#3367D6*/ #0B8043;
+	font-family: Roboto, sans-serif;
+	opacity: .9;
+	color: white;
+
+	button {
+		color: #FFF;
+		font-size: 16px;
+		line-height: 40px;
+		margin: 16px 0 8px 0;
+		pointer-events: auto;
+		min-width: unset;
+	}
+
+	.intro {
+		width:50%; 
+		height: 75%; 
+		display: flex; 
+		flex-direction:column; 
+		align-items: center;
+
+		.appname {
+			font-size: 48px;
+		}
+	
+		.tagline {
+			font-size: 26px;
+			margin: 20px 0px 20px 0px;
+		}
+
+		.desc {
+			font-size: 16px;
+		}
+
+		.note {
+			margin-top: 30px;
+
+			font-size: 0.70em; 
+
+			a {
+				color: yellowgreen;
+			}
+
+			a:hover {
+				color: yellow;
+			}
+
+		}
+
+	}
+}
+
+.tutorial-buttons {
+	width: max-content;
+	float: right;	
+
+	.skip  {
+		display: block;
+		margin-left: 0;
+	}
+}
+
 
 .widget-settings.tutorial.modal-overlay {
 	background: rgba(0, 0, 0, .7);
@@ -443,5 +541,170 @@
 
 	& + header.toolbar {
 		z-index: 3;
+	}
+}
+
+
+
+.onboarding.modal.upgrade section {
+	width: 100%;
+	height: 100%;
+	color: #757575;
+	background: #FFF;
+	position: absolute;
+	border-radius: 6px;
+	transition: opacity .4s $fast-in;
+	overflow: auto;
+
+	header {
+		height: auto;
+		text-align: center;
+		padding: 50px 0 20px;
+
+		color: #FFF;
+		background: #EF6C00;		
+
+		& + main.content {
+			height: auto;
+		}
+
+		h2 {
+			font-size: 85px;
+			line-height: 150px;
+		}
+
+		.pricing {
+			font-size: 36px;
+			line-height: 40px;
+
+			.yearly {
+				display: block;
+				font-size: 24px;
+			}
+		}
+
+		button.upgrade {
+			margin-top: 30px;
+		}
+
+		p.business {
+			font-size: 14px;
+			margin: 30px 0 0;
+			line-height: 20px;
+
+			a {
+				color: inherit;
+				line-height: 14px;
+				display: inline-block;
+				text-decoration: none;
+				border-bottom: 1px dotted;
+			}
+		}
+	}
+
+	main.content {
+		padding: 0;
+		overflow: initial;
+		max-height: initial;
+
+		section {
+			margin: 0;
+			width: auto;
+			font-size: 16px;
+			background: none;
+			box-shadow: none;
+			line-height: 20px;
+			position: relative;
+			border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+			.content {
+				display: flex;
+				margin: 0 auto;
+				max-width: 1200px;
+				min-height: 500px;
+				flex-direction: column;
+				justify-content: center;
+
+				@media (max-width: 1550px) {
+					& {
+						padding: 0 40px;
+					}
+				}
+			}
+
+			h3 {
+				padding: 0;
+				font-size: 36px;
+				font-weight: 300;
+				line-height: 48px;
+				margin-bottom: 15px;
+			}
+
+			p {
+				padding: 0;
+				font-size: 22px;
+				max-width: 350px;
+				font-weight: 300;
+				line-height: 1.5;
+			}
+
+			.media {
+				top: 0;
+				left: 50%;
+				width: 50%;
+				height: 100%;
+				position: absolute;
+				background: rgba(0, 0, 0, .03) left center/auto 100% no-repeat;
+			}
+
+			&.live-bgs {
+				.content {
+					text-align: right;
+					align-items: flex-end;
+				}
+
+				.media {
+					right: 50%;
+					width: auto;
+					left: initial;
+				}
+			}
+
+			&.more {
+				background: #FFF;
+
+				.content {
+					display: block;
+					padding-top: 50px; // The padding shorthand can't be used here or the media query will get overridden
+					min-height: initial;
+					padding-bottom: 50px;
+				}
+
+				ul {
+					padding-left: 24px;
+
+					li {
+						display: block;
+						font-size: 20px;
+						font-weight: 300;
+						line-height: 36px;
+					}
+				}
+			}
+
+			&.get {
+				.content {
+					display: block;
+					padding-top: 75px;
+					min-height: 400px;
+					text-align: center;
+					padding-bottom: 75px;
+				}
+
+				h3 {
+					margin-bottom: 35px;
+				}
+			}
+		}
 	}
 }

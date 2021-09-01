@@ -1,5 +1,6 @@
 {
 	"id": 21,
+	"sort": 270,
 	"name": "currency",
 	"model": "model",
 	"css": "style.css",

@@ -1,20 +1,20 @@
 {
   "lang_code":"zh-CN",
   "line_1":"你的新标签页本该如此：快速，可自定义，美观而又高效！",
-  "link":"想让iChrome成为您的新标签页？试试iChrome新标签页扩展: https://ichro.me/n",
+  "link":"想让ProductivityTab成为您的新标签页？试试ProductivityTab新标签页扩展: https://ichro.me/n",
   "newtab_line_1":"您的新标签页本该如此：快速，可自定义，美观而又高效！",
-  "newtab_link":"希望iChrome只在您启动Chrome时出现？试试这个扩展：https://ichro.me/w",
-  "line_2":"iChrome拥有接近50个小部件，数以千计的精美背景图片和以下强大的功能：",
+  "newtab_link":"希望ProductivityTab只在您启动Chrome时出现？试试这个扩展：https://ichro.me/w",
+  "line_2":"ProductivityTab拥有接近50个小部件，数以千计的精美背景图片和以下强大的功能：",
   "features":[
     "这些小部件包括有： 天气、 体育、 新闻、 股票、 RSS、 书签、 Gmail、 最近关闭的标签，并远远不止这些!",
     "完全可拖拽定制的1-5个列表或网格",
-    "语音识别将搜索事务化繁为简，iChrome拥有全方位的语音识别搜索功能，更可随时说出\"OK Google\"启动，令搜索就像与人交谈一样自如。",
+    "语音识别将搜索事务化繁为简，ProductivityTab拥有全方位的语音识别搜索功能，更可随时说出\"OK Google\"启动，令搜索就像与人交谈一样自如。",
     "升级到高级版可得到暗色和透明主题、 动态背景、 可最大化的小部件，精确到每小时的天气预报和更多功能",
     "在无限数量的自定义选项卡之间任意切换，每个选项卡都可设置不同的小部件",
     "所有部件随时都可完全脱机工作，一切都将在不知不觉中准备妥当",
-    "iChrome还有近百种其他功能！立即安装iChrome并感受这一切吧！"
+    "ProductivityTab还有近百种其他功能！立即安装ProductivityTab并感受这一切吧！"
   ],
-  "line_3":"iChrome 是一个开源项目，如果您感兴趣可以在Github查看它 ： https://github.com/AMKohn/iChrome",
-  "line_4":"随时欢迎在此反馈问题和建议： http://ichrome.uservoice.com",
-  "line_5":"您是否厌倦了千篇一律且不可定制的的主页拓展？您是否在被植入广告不断骚扰？您还在不断的寻找，心目中的启动器究竟在哪里吗？想要使用一个易用而且能干，简洁亦精美的启动页改变这一切吗？iChrome为您而生！"
+  "line_3":"",
+  "line_4":"随时欢迎在此反馈问题和建议： https:\/\/ichrome.uservoice.com",
+  "line_5":"您是否厌倦了千篇一律且不可定制的的主页拓展？您是否在被植入广告不断骚扰？您还在不断的寻找，心目中的启动器究竟在哪里吗？想要使用一个易用而且能干，简洁亦精美的启动页改变这一切吗？ProductivityTab为您而生！"
 }

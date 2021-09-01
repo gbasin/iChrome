@@ -7,17 +7,29 @@ define(["jquery", "backbone", "i18n/i18n", "core/analytics", "core/render"], fun
 		className: "showcase blue widget-settings",
 
 		events: {
+			"click button.next": function() {
+				this.showSecondScreen();
+			},
+
 			"click button.done": function() {
 				this.transitionOut(function() {
 					this.remove();
 
 					this.$targetEl.parent().removeClass("hovered");
 
-					this.trigger("complete");
+					this.trigger("next");
 				});
 			},
 
-			"click button.skip": "showSecondScreen"
+			"click button.skip": function() {
+				this.transitionOut(function() {
+					this.remove();
+
+					this.trigger("skip");
+
+					this.stopListening();
+				});
+			}
 		},
 
 		transitionIn: function() {
@@ -38,6 +50,10 @@ define(["jquery", "backbone", "i18n/i18n", "core/analytics", "core/render"], fun
 		},
 
 		transitionOut: function(cb) {
+			if (!cb) {
+				cb = function() {};
+			}
+
 			this.el.animate([{
 				opacity: 1,
 				pointerEvents: "none"
@@ -76,11 +92,15 @@ define(["jquery", "backbone", "i18n/i18n", "core/analytics", "core/render"], fun
 		initialize: function(retry) {
 			retry = retry === true;
 
-			this.$targetEl = $(".widget.weather > .settings").first();
+			this.$targetEl = $(".widget.sitelink > .settings").first();
+			if (this.$targetEl.length === 0) {
+				this.$targetEl =  $(".widget > .settings").first();
+			}
+
 
 			if (!this.$targetEl.length && !retry) {
 				if (retry) {
-					this.trigger("complete");
+					this.trigger("next");
 				}
 				else {
 					setTimeout(this.initialize.bind(this, true), 1000);
@@ -106,7 +126,7 @@ define(["jquery", "backbone", "i18n/i18n", "core/analytics", "core/render"], fun
 			var offset = this.$targetEl.offset();
 
 			this.$el.css({
-				top: offset.top + this.$targetEl.height() / 2,
+				top: offset.top + this.$targetEl.height() / 2 ,
 				left: offset.left + this.$targetEl.width() / 2
 			}).html(render("onboarding/widgets", {
 				screenOne: !secondScreen,

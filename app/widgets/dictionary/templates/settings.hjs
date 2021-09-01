@@ -1,0 +1,29 @@
+<header>
+	<span class="title">{{i18n.settings.page_title}}</span>
+
+	<button type="button" class="material flat blue save">{{i18n.settings.save}}</button>
+</header>
+
+<form class="material-form {{source}}">
+	<div class="msn-wrapper">
+		<label class="input">
+			<span>{{i18n.settings.lang}}</span>
+
+			<select class="lang" name="lang">
+				<option value="en">English</option>
+				<option value="hi">Hindi</option>
+				<option value="es">Spanish</option>
+				<option value="fr">French</option>
+				<option value="ja">Japanese</option>
+				<option value="ru">Russian</option>
+				<option value="de">German</option>
+				<option value="it">Italian</option>
+				<option value="ko">Korean</option>
+				<option value="pt-BR">Brazilian Portuguese</option>
+				<option value="ar">Arabic</option>
+				<option value="tr">Turkish</option>
+			</select>
+		</label>
+	</div>
+
+</form>

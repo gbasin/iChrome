@@ -32,6 +32,24 @@ define(["jquery", "browser/api"], function($, Browser) {
 					for (var i = headers.length - 1; i >= 0; --i) {
 						var header = headers[i].name.toLowerCase();
 
+						// if (header === "set-cookie") {
+						// 	var val = headers[i].value;
+						// 	if (val.indexOf("SameSite=") < 0) {
+						// 		val = val + ";SameSite=None";
+
+						// 		val.replace("SameSite=Lax", "SameSite=None");
+						// 		val.replace("SameSite=Strict", "SameSite=None");
+
+
+						// 		if (val.indexOf(";Secure") < 0) {
+						// 			val = val + ";Secure";
+						// 		}
+
+
+						// 		headers[i].value = val;
+						// 	}
+						// }
+
 						if (header === "x-frame-options" || header === "frame-options") {
 							headers.splice(i, 1);
 						}
@@ -43,6 +61,27 @@ define(["jquery", "browser/api"], function($, Browser) {
 						}
 					}
 
+					[
+						{ name:"access-control-allow-headers", value:"*" },
+						{ name:"access-control-expose-headers", value:"*" },
+						{ name:"access-control-allow-methods", value:"GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS" },
+						{ name:"access-control-allow-origin", value:"*" }
+					].forEach(function(el) {
+						var found = false;
+						for (var i = 0; i < headers.length; i++) {
+							var header = headers[i].name.toLowerCase();
+							if (el.name === header) {
+								headers[i].value = el.value;
+								found = true;
+							}
+						}							
+
+						if (!found) {
+							headers.push(el);
+						}
+					});
+
+					
 					return {
 						responseHeaders: headers
 					};
@@ -52,7 +91,43 @@ define(["jquery", "browser/api"], function($, Browser) {
 					urls: [ "*://*/*" ],
 					types: [ "sub_frame" ]
 				},
-				["blocking", "responseHeaders"]
+				//["blocking", "responseHeaders"]
+				["blocking", "responseHeaders", "extraHeaders"]
+			);
+
+			Browser.webRequest.onBeforeSendHeaders.addListener(
+				function(info) {
+					var headers = info.requestHeaders || [];
+
+					[
+						{ name:"sec-fetch-dest", value:"empty" },
+						{ name:"sec-fetch-site", value:"same-origin" }
+					].forEach(function(el) {
+						var found = false;
+						for (var i = 0; i < headers.length; i++) {
+							var header = headers[i].name.toLowerCase();
+							if (el.name === header) {
+								headers[i].value = el.value;
+								found = true;
+							}
+						}							
+
+						if (!found) {
+							headers.push(el);
+						}
+					});
+
+
+					return {
+						requestHeaders: headers
+					};
+				},
+				{
+					tabId: tabId,
+					urls: [ "*://*/*" ],
+					types: [ "sub_frame" ]
+				},
+				["blocking", "requestHeaders"]
 			);
 
 			listening = true;

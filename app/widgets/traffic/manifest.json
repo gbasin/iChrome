@@ -1,5 +1,6 @@
 {
 	"id": 9,
+	"sort": 150,
 	"name": "traffic",
 	"model": "model",
 	"css": "style.css",

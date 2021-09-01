@@ -1,10 +1,12 @@
 {
   "lang_code":"hr",
   "language":"Hrvatski",
-  "extName":"iChrome - brza i produktivna početna stranica",
-  "newtabName":"iChrome New Tab - produktivna nova kartica",
-  "extDescription":"NAJBOLJA početna stranica za Chrome. Fantastične teme, mnogo widgeta, lagana i brza, ludo prilagodljiva!",
-  "newtabDescription":"NAJBOLJA početna stranica za Chrome. Sada dostupna za novi tab. Fantastične teme, mnogo widgeta, lak i brz, ludo prilagodljiv!",
+
+	"extName": "ProductivityTab — Custom Homepage Dashboard",
+	"newtabName": "ProductivityTab — Custom New Tab Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"Početna",
     "me":"Ja"
@@ -12,7 +14,7 @@
   "remove_widget":"Ukloni",
   "hide_banner":"Sakrij reklamu",
   "hide_ad":{
-    "content":"Želiš li da se reklame ne prikazuju do sljedećeg otvaranja iChrome-a ili da se trajno sakriju nadogradnjom?",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make ProductivityTab available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support ProductivityTab directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"Nadogradi",
     "hide":"Sakrij reklame"
   },
@@ -25,12 +27,12 @@
   "onboarding":{
     "modal":{
       "tagline":"Sve web-stranice i aplikacije koje koristite, na jednom mjestu",
-      "wrong_extension":"Želite li iChrome na novom tabu?",
-      "wrong_extension_newtab":"Želite li iChrome na početnoj stranici?",
+      "wrong_extension":"Želite li ProductivityTab na novom tabu?",
+      "wrong_extension_newtab":"Želite li ProductivityTab na početnoj stranici?",
       "wrong_extension_action":"Kliknite ovdje",
-      "about":"U iChrome-u sve je u karticama i widgetima",
+      "about":"U ProductivityTab-u sve je u karticama i widgetima",
       "about_desc":"Kartice su stranice pune widgeta - blokova koji pokazuju vrijeme, vijesti i e-poštu. Možete dodati widgeta koliko kod želite, a većinu ih možete prilagođavati.",
-      "terms":"Napomena: Nastavkom se slažete sa iChrome <a href=\"https://ichro.me/tos\" target=\"_blank\"> Uvjetima</a> i <a href=\"https://ichro.me/privacy\" target=\"_blank\"> Pravilima o privatnosti</a>",
+      "terms":"Nastavkom se slažete sa ProductivityTab <a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\"> Uvjetima</a> i <a href=\"https://productivitytab.co/privacy-policy\" target=\"_blank\"> Pravilima o privatnosti</a>",
       "sign_in":"Prijavi se pomoću Google računa",
       "sign_in_desc":"Prijavi se pomoću Google računa prije početka da bi sigurno pohranili tvoje promjene online.",
       "sign_in_desc2":"Možeš ostati odjavljen ako želiš, ali tvoja stranica neće biti spremljena online i nećeš joj moći pristupiti s drugih računala.",
@@ -42,19 +44,19 @@
     },
     "widgets":{
       "configure":"Podesi widget.",
-      "configure_desc":"Klikni na alatni ključ da otvoriš <b>postavke</b> vremenskog widgeta.",
-      "configure_skip":"Preskoči",
-      "settings":"Zamijeni <b>San Francisco, CA</b> sa svojom lokacijom pa klikni <b>Spremi</b>.",
-      "move":"Možeš <b>pomicati</b> widgete uokolo tako da klikneš i držiš tri točkice.",
-      "remove":"Kada vučeš widget, ispusti ga na crvenu traku (nije prikazana trenutno) da ga <b>ukloniš</b>.",
+			"configure_desc": "Click the wrench to open a widget's <b>settings</b>.",
+			"configure_skip": "Skip Tutorial",
+			"settings": "Replace <b>Link URL</b> with your favorite site, then press <b>Save</b>.",
+			"move": "You can <b>reposition</b> widgets by clicking and dragging the three dots highlighted here.",
+			"remove": "To <b>delete</b>, simply click the red trash bin icon.",
       "done":"Shvaćam"
     },
     "settings":{
-      "intro":"Sada pogledajmo <b>izbornik</b> da vidimo što još može.",
-      "instructions":"Klikni na istaknut dio da ga otvoriš.",
+			"intro": "Now let’s add a new widget. This highlighted button is where you can access the Widget Menu.",
+			"instructions": "Click the new widget button on to open the widget menu!",
       "skip":"Preskoči",
       "tooltips":{
-        "settings":"Izmjeni kako iChrome izgleda i radi",
+        "settings":"Izmjeni kako ProductivityTab izgleda i radi",
         "widgets":"Dodaj novi widget - možete ih imati koliko god želite",
         "editing":"Prikaži ili sakri gumbove za uređivanje widgeta",
         "links":"Ovo je popis linkova, u postavkama dodajte stranice koje često posjećujete",
@@ -85,7 +87,7 @@
     "placeholder_ok":"Unesi pojmove ili reci \"OK, Google\"",
     "suggestions":{
       "url_subtext":"Otvori URL",
-      "capture_notice":"iChrome preuzima pretraživanja iz Chrome omniboxa. Moguće je to onemogućiti u postavkama"
+      "capture_notice":"ProductivityTab preuzima pretraživanja iz Chrome omniboxa. Moguće je to onemogućiti u postavkama"
     },
     "apps":{
       "search":"Pretraživanje",
@@ -181,7 +183,7 @@
       },
       "theme":{
         "title":"Tema aplikacije",
-        "desc":"Tema aplikacije određuje stil iChrome-a i widgeta",
+        "desc":"Tema aplikacije određuje stil ProductivityTab-a i widgeta",
         "preview":"Pregled",
         "light":"Svijetla (zadano)",
         "dark":"Tamna",
@@ -225,7 +227,7 @@
     "tabs":{
       "create_new":"Napravi novu",
       "make_default":"Postavi kao početnu",
-      "desc1":"Kartice su stranice unutar iChrome-a. Svaka kartica ima svoj vlastiti set widgeta koji je u potpunosti odvojen od svake druge kartice.",
+      "desc1":"Kartice su stranice unutar ProductivityTab-a. Svaka kartica ima svoj vlastiti set widgeta koji je u potpunosti odvojen od svake druge kartice.",
       "desc2":"Možeš se prebacivati između kartica klikom na gumbe koji se pojavljuju lijevo i desno kada miš pomakneš na karticu ili se možeš prebacivati pomoću strelica na tipkovnici.",
       "name_placeholder":"Unesi naziv kartice",
       "delete_confirm":"Ova akcija je nepovratna. Svi podaci widgeta u ovoj kartici bit će trajno izgubljeni."
@@ -245,19 +247,19 @@
     "advanced":{
       "backups":{
         "title":"Sigurnosno kopiranje i vraćanje podataka",
-        "desc":"Sigurnosne kopije su potpune kopije tvojih kartica, postavka i widgeta. Automatski se stvaraju svaki dan kada otvoriš iChrome.",
-        "desc2":"Pomoću gumba ispod možeš vratiti podatke iChrome-a iz prošlosti ili možeš skinuti te podatke.",
+        "desc":"Sigurnosne kopije su potpune kopije tvojih kartica, postavka i widgeta. Automatski se stvaraju svaki dan kada otvoriš ProductivityTab.",
+        "desc2":"Pomoću gumba ispod možeš vratiti podatke ProductivityTab-a iz prošlosti ili možeš skinuti te podatke.",
         "backup":"Izradi sigurnosnu kopiju sada",
         "upload":"Povrati podatke iz datoteke",
         "download":"Preuzmi",
         "restore":"Povrati podatke",
-        "download_name":"iChrome sigurnosna kopija",
+        "download_name":"ProductivityTab sigurnosna kopija",
         "restore_confirm":"Ovo će prepisati sve lokalne i sinkronizirane podatke. Izgubit ćeš trenutnu konfiguraciju na svim kompjuterima s ovim računom.",
         "restore_error":"Došlo je do pogreške prilikom analiziranja podataka, pokušaj ponovo kasnije."
       },
       "css":{
         "title":"Osobni CSS",
-        "desc":"Možeš koristiti CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definicija</a>) za prilagođavanje gotovo svakog dijela iChrome-a.",
+        "desc":"Možeš koristiti CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\">definicija</a>) za prilagođavanje gotovo svakog dijela ProductivityTab-a.",
         "placeholder":"Unesi najviše 1000 znakova CSS-a ovdje"
       },
       "debug_tools":{
@@ -276,8 +278,8 @@
     },
     "pro":{
       "promo":{
-        "monthly_price":"$2 mjesečno",
-        "yearly_price":"ili $20 godišnje",
+        "monthly_price":"$4.99 mjesečno",
+        "yearly_price":"ili $29.99 godišnje",
         "upgrade_btn":"Nadogradi sada",
         "business":"Zainteresirani ste za kupnju Pro verzije za posao ili školu?",
         "business_contact":"Kontaktirajte nas",
@@ -286,7 +288,7 @@
         "bgs":"Aktivne pozadine",
         "bgs_desc":"Oživi svoju stranicu sa 20 aktivnih HD pozadina",
         "widgets":"Proširi widgete",
-        "widgets_desc":"Nadogradi iChrome na novu razinu uz proširene widgete",
+        "widgets_desc":"Nadogradi ProductivityTab na novu razinu uz proširene widgete",
         "more_header":"I više",
         "stocks":"Dionice u stvarnom vremenu uz proširene i povijesne podatke",
         "rss":"Podrška za više RSS feed-ova po widgetu",
@@ -303,17 +305,17 @@
         "title":"Kupnja",
         "updating_title":"Plan",
         "payment_options":"Plati",
-        "pay_monthly":"Mjesečno ($2)",
-        "pay_yearly":"Godišnje ($20)",
+        "pay_monthly":"Mjesečno ($4.99)",
+        "pay_yearly":"Godišnje ($29.99)",
         "cancel":"Poništi",
         "update":"Obnovi",
         "subscribe":"Pretplati se",
         "braintree_notice":"Uplate sigurno obrađuje Braintree.",
-        "monthly_notice":"Ako se pretplatite, ovlašćujete iChrome da vam naplati $2 svaki mjesec sve dok ne otkažete pretplatu.",
-        "yearly_notice":"Ako se pretplatite, ovlašćujete iChrome da vam naplati $20 svaki mjesec sve dok ne otkažete pretplatu.",
+        "monthly_notice":"Ako se pretplatite, ovlašćujete ProductivityTab da vam naplati $4.99 svaki mjesec sve dok ne otkažete pretplatu.",
+        "yearly_notice":"Ako se pretplatite, ovlašćujete ProductivityTab da vam naplati $29.99 svaki mjesec sve dok ne otkažete pretplatu.",
         "update_notice":"Iako se ciklus naplate promijeni odmah, ne će vam biti naplaćeno dok trenutni ciklus ne završi.",
-        "thank_you":"Hvala ti na kupnji iChrome Pro verzije!",
-        "thank_you2":"iChrome će se osvježiti za nekoliko sekunda i sve će biti spremno!",
+        "thank_you":"Hvala ti na kupnji ProductivityTab Pro verzije!",
+        "thank_you2":"ProductivityTab će se osvježiti za nekoliko sekunda i sve će biti spremno!",
         "error":"Nešto je pošlo po zlu prilikom procesiranja vaše uplate.",
         "error2":"Molimo pokušajte kasnije ili nam pošaljite mail na support@ichro.me",
         "signin":"Prijavi se",
@@ -322,7 +324,7 @@
       },
       "plan":{
         "title":"Plan",
-        "desc":"Trenutačno si pretplaćen na iChrome Pro (%s)",
+        "desc":"Trenutačno si pretplaćen na ProductivityTab Pro (%s)",
         "types":{
           "monthly":"Mjesečni",
           "yearly":"Godišnji",
@@ -330,7 +332,7 @@
           "education":"Obrazovni",
           "custom":"Prilagođen"
         },
-        "uneditable_desc":"Poslovni, obrazovni i prilagođeni planovi ne mogu se ažurirati iz iChrome-a. Molimo <a href=\"mailto:support@ichro.me\">kontaktirajte nas</a> za ažuriranje ili otkazivanje pretplate.",
+        "uneditable_desc":"Poslovni, obrazovni i prilagođeni planovi ne mogu se ažurirati iz ProductivityTab-a. Molimo <a href=\"mailto:support@ichro.me\">kontaktirajte nas</a> za ažuriranje ili otkazivanje pretplate.",
         "status":"Status",
         "status_active":"Aktivan",
         "status_trial":"Trial",
@@ -347,9 +349,9 @@
       }
     },
     "ads":{
-      "text1":"iChrome prikazuje nekoliko malih reklama kako bi serveri mogli biti plaćeni kao i daljni razvoj aplikacije. S ovim reklamama iChrome može biti besplatan svakome.",
+      "text1":"ProductivityTab prikazuje nekoliko malih reklama kako bi serveri mogli biti plaćeni kao i daljni razvoj aplikacije. S ovim reklamama ProductivityTab može biti besplatan svakome.",
       "text2":"Ovdje možeš odabrati mjesto prikazivanja reklama ili kupiti nadogradnju na Iskustvo bez oglasa.",
-      "text3":"Iskustvo bez oglasa je jednokratna kupnja koja trajno uklanja reklame iz iChrome-a gdjegod si prijavljen. Također možeš nadograditi na Pro koji uz trajno uklanjanje reklama nudi još dodatne mogućnosti.",
+      "text3":"Iskustvo bez oglasa je jednokratna kupnja koja trajno uklanja reklame iz ProductivityTab-a gdjegod si prijavljen. Također možeš nadograditi na Pro koji uz trajno uklanjanje reklama nudi još dodatne mogućnosti.",
       "upgrade_btn":"Nadogradi na Iskustvo bez oglasa",
       "already_upgraded":"Već ste nadograđeni na Iskustvo bez oglasa",
       "signin":"Prijavi se",
@@ -468,7 +470,7 @@
       "name_placeholder":"Unesi naziv teme",
       "image":"URL slike",
       "image_placeholder":"Unesi URL slike pozadine",
-      "image_help":"Postavljene slike <b>nije moguće sinkronizirati</b> između kompjutera.<br /><br />Molimo uploadaj slike na servis kao na primjer <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>. Zatim kopiraj URL slike (najčešće .jpg) i zalijepi ga na polje lijevo.",
+      "image_help":"Postavljene slike <b>nije moguće sinkronizirati</b> između kompjutera.<br /><br />Molimo uploadaj slike na servis kao na primjer <a href=\"https://imgur.com/\" target=\"_blank\">imgur</a>. Zatim kopiraj URL slike (najčešće .jpg) i zalijepi ga na polje lijevo.",
       "color":"Pozadinska boja",
       "color_placeholder":"Unesi naziv bilo koje boje",
       "position":"Pozicija",

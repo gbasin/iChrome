@@ -53,7 +53,7 @@ define(["backbone", "browser/api", "storage/filesystem", "modals/modals", "core/
 
 						alert(
 							"Debug info (hit Ctrl+C or Cmd+C to copy):" + "\n" +
-							"iChrome Version: " + Browser.app.version + "\n" +
+							"ProductivityTab Version: " + Browser.app.version + "\n" +
 							"Chrome Version: " + (/Chrome\/([0-9.]+)/.exec(navigator.userAgent) || [])[1] + "\n" +
 							"Operating System: " + info.os + "\n" +
 							"OAuth keys: " + Object.keys(JSON.parse(Browser.storage.oauth || "{}")).join(", ") + "\n" +
@@ -69,8 +69,8 @@ define(["backbone", "browser/api", "storage/filesystem", "modals/modals", "core/
 
 				case "update":
 					if (confirm(
-						"If an update is available, this may reload the extension in Chrome, closing any open iChrome tabs.  Before executing this, ensure that a tab other" +
-						" than iChrome is open otherwise Chrome itself will close.\r\nHit cancel to open a new tab and avoid this or OK to continue."
+						"If an update is available, this may reload the extension in Chrome, closing any open ProductivityTab tabs.  Before executing this, ensure that a tab other" +
+						" than ProductivityTab is open otherwise Chrome itself will close.\r\nHit cancel to open a new tab and avoid this or OK to continue."
 					)) {
 						Browser.runtime.requestUpdateCheck(function(status, details) {
 							if (status === "throttled") {
@@ -88,8 +88,8 @@ define(["backbone", "browser/api", "storage/filesystem", "modals/modals", "core/
 
 				case "reload-extension":
 					if (confirm(
-						"This will reload the extension in Chrome, closing any open iChrome tabs.  Before executing this, ensure that a tab other" +
-						" than iChrome is open otherwise Chrome itself will close.\r\nHit cancel to open a new tab and avoid this or OK to continue."
+						"This will reload the extension in Chrome, closing any open ProductivityTab tabs.  Before executing this, ensure that a tab other" +
+						" than ProductivityTab is open otherwise Chrome itself will close.\r\nHit cancel to open a new tab and avoid this or OK to continue."
 					)) {
 						Browser.runtime.reload();
 					}

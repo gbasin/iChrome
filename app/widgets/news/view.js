@@ -108,26 +108,32 @@ define(["lodash", "moment", "widgets/views/main"], function(_, moment, WidgetVie
 
 			if (this.model.config.title) {
 				data.title = this.model.config.title;
+				if (this.model.isBbc()) {
+					if (data.title !== "BBC News") {
+						data.title += ", BBC News";
+					}
+				}
 			}
 
 			if (this.model.config.link) {
 				data.link = this.model.config.link;
 			}
 
-
-			if (this.Auth.isPro && this.model.data.topics) {
+			var topics = this.model.getStoredTopics();
+			var topic = this.model.getTopic();
+			if (this.Auth.isPro && topics) {
 				var activeTab = this.model.get("activeTab");
 
 				var defaultTab = [];
 
-				var tabs = _.compact(_.map(this.model.data.topics, function(e) {
+				var tabs = _.compact(_.map(topics, function(e) {
 					e = {
 						id: e[0],
 						name: e[1],
 						active: e[0] === activeTab
 					};
 
-					if (e.id === this.model.config.topic) {
+					if (e.id === topic) {
 						defaultTab = [e];
 
 						return;

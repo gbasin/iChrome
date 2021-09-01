@@ -1,0 +1,12 @@
+{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+
+<ul class="items {{view}}">
+	{{#sites}}
+	<li>
+		<a class="item" href="{{url}}">
+			<img src="images/quicklinks/{{icon}}.png" />
+			<div>{{title}}</div>
+		</a>
+	</li>
+	{{/sites}}
+</div>

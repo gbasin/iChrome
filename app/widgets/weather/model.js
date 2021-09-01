@@ -1,6 +1,8 @@
-define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel, moment, $) {
+define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 	return WidgetModel.extend({
 		refreshInterval: 300000,
+
+		pro_tooltip: "weather",
 
 		defaults: {
 			config: {
@@ -14,6 +16,7 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 			},
 
 			data: {
+				pro_tooltip: "text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 text 11 22 ",
 				units: {
 					temp: "F",
 					pressure: "in",
@@ -95,22 +98,48 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 		},
 
 		autocomplete: function(val, cb) {
-			$.getJSON("http://gd.geobytes.com/AutoCompleteCity?callback=&sort=size&q=" + encodeURIComponent(val), function(d) {
-				cb(_.compact(_.map(d, function(e) {
-					if (e === "%s" || e === "")	{ return null; }
-					var tokens = e.split(",");
-					var value = e;
-					var label = e;
-					if (tokens.length === 3) {
-						value = tokens[0] + "," + tokens[1] + " region," + tokens[2];
-						label = value;
+			this.Auth.ajax({
+				url: "/weather/autocomplete?s=" + val,
+				success: function(d) {
+					if (d && typeof(d) === "string") {
+						try {
+							var data = JSON.parse(d);
+							var items = _.compact(_.flatten(_.map(data, function(e) {
+								if (e === "%s" || e === "")	{ return null; }
+								var tokens = e.split(",");
+								var value = e;
+								var label = e;
+								if (tokens.length !== 3) {
+									return {
+										value: value,
+										label: label
+									};
+								}
+								
+								return [
+									{
+										value: tokens[0] + "," +  tokens[2] /*+ "," + tokens[1] + " region"*/,
+										label: tokens[0] + "," +  tokens[2] /*+ "," + tokens[1] + " region"*/,
+									},
+									{
+										value: tokens[0] + "," +  tokens[2] + "," + tokens[1] + " region",
+										label: tokens[0] + "," +  tokens[2] + "," + tokens[1] + " region",
+									},
+								];								
+							})));
+							if (items && items.length > 0) {
+								var empty = {
+									value: "<novalue>",
+									label: "."
+								};
+	
+								items = [empty].concat(items);
+							}
+							cb(items);
+						} catch(e) {
+						}							
 					}
-
-					return {
-						value: value,
-						label: label
-					};
-				})));
+				}.bind(this)
 			});
 		},
 
@@ -180,6 +209,8 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 
 			switch (code) {
 				case 1:
+				case 2: //"Mostly Sunny"
+				case 39: //"Fair"
 					return "sunny";
 
 				case 3:
@@ -191,25 +222,33 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 				case 7:
 				case 9:
 				case 12:
+				case 32:
+				case 36: //"Fog"
+				case 90: //"Smoke"
 				case 91:
 					return "cloudy";
 
 				case 8:
 				case 19:
+				case 46:
 					return "lightrain";
 
 				case 14:
 				case 22:
+				case 49: //"Rain"
 					return "rain";
 
 				case 10:
 				case 15:
+				case 25:
+				case 52:
 					return "snow";
 
 				case 16:
 				case 20:
 				case 26:
 				case 43:
+				case 47:
 				case 82:
 					return "lightsnow";
 
@@ -217,6 +256,8 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 					return "showers";
 
 				case 24:
+				case 75:
+				case 76: //"Light Rain and Snow"
 				case 77:
 				case 78:
 					return "lightrain-snow";
@@ -226,9 +267,11 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 					return "tstorms";
 
 				case 28:
+				case 29: //"Mostly Clear"				
 					return "clear-night";
 
 				case 30:
+				case 31: //"Mostly cloudy"
 					return "partlycloudy-night";
 
 				case 50:
@@ -279,7 +322,8 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 							lat: loc[0],
 							lon: loc[1],
 							units: this.config.units || null,
-							hourly: this.config.hourly === "enabled" ? true : null
+							hourly: this.config.hourly === "enabled" ? true : null,
+							nc: new Date().getTime()
 						}
 					}).done(function(d) {
 						if (!d) {
@@ -345,7 +389,7 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 
 								e.index = i;
 
-								e.date = moment(e.date).format("ddd");
+								e.date = moment(e.date).add(12, 'hours').format("ddd");
 
 								return formatValues(e);
 							});
@@ -379,25 +423,33 @@ define(["lodash", "widgets/model", "moment", "jquery"], function(_, WidgetModel,
 				doResolve();
 			}
 			else{
-				$.getJSON('http://www.geoplugin.net/json.gp', function(data) {
-					if (!data.geoplugin_city || data.geoplugin_city === "") { return; } //The resolve function does does not work if city is absent
-					var name = data.geoplugin_city;
-					if (!data.geoplugin_regionCode && data.geoplugin_regionCode !== "") {
-						name += ", ";
-						name += data.geoplugin_regionCode;
-					}
-					if (!data.geoplugin_countryName && data.geoplugin_countryName !== "") {
-						name += ", ";
-						name += data.geoplugin_countryName;
-					}
-					this.config.location = [name];
-					this.config.resolvedNames = [name];
-					this.config.resolvedLocs = [[data.geoplugin_latitude, data.geoplugin_longitude]];
-					this.saveData();
-				}
-				.bind(this)
-				)
-				.done(function() {
+				this.Auth.ajax({
+					url: "/weather/getLocation",
+					success: function(d) {
+						if (d && typeof(d) === "string") {
+							var data = {};
+							try {
+								data = JSON.parse(d);
+							} catch(e) {
+							}							
+
+							if (!data.geoplugin_city || data.geoplugin_city === "") { return; } //The resolve function does does not work if city is absent
+							var name = data.geoplugin_city;
+							if (!data.geoplugin_regionCode && data.geoplugin_regionCode !== "") {
+								name += ", ";
+								name += data.geoplugin_regionCode;
+							}
+							if (!data.geoplugin_countryName && data.geoplugin_countryName !== "") {
+								name += ", ";
+								name += data.geoplugin_countryName;
+							}
+							this.config.location = [name];
+							this.config.resolvedNames = [name];
+							this.config.resolvedLocs = [[data.geoplugin_latitude, data.geoplugin_longitude]];
+							this.saveData();
+						}
+					}.bind(this),
+				}).always(function() {
 					doResolve();
 				});
 			}

@@ -38,6 +38,7 @@
 					</h3>
 
 					{{{desc}}}
+					{{#pixel}}<img src="{{pixel}}" />{{/pixel}}
 				</div>
 			</a>
 		{{/items}}

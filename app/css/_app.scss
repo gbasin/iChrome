@@ -133,7 +133,7 @@ body {
 	background-position: top center;
 	-webkit-font-smoothing: antialiased;
 
-	/* Disable selection since it gives iChrome a more app-like feel and users should never end up copying text. */
+	/* Disable selection since it gives ProductivityTab a more app-like feel and users should never end up copying text. */
 	cursor: default;
 	-moz-user-select: none;
 	-webkit-user-select: none;
@@ -222,17 +222,45 @@ iframe[seamless] {
 */
 .add-widget-link {
 	z-index: 1;
-	color: #C0C0c0;
-	right: 7px;
-	top: 70px;
-	position: fixed;
+	color: #B2B2B2;
+	right: 70px;
+	top: 8px;
+	position: absolute;
 	cursor: pointer;
+	overflow: hidden;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+	:hover {
+		color: #D23F31;
+		transition: all .2s ease-in-out;
+	}
 
 	.icon {
-		text-shadow: 0 0 3px rgba(0, 0, 0, .5);
-		font-size: 52px;
+		font-size: 60px;
+		top: -5px;
+		left: -5px;
+		position: relative;
+		background: lightgrey;
 	}
-	
+}
+
+.dark .add-widget-link {
+	color: #333;
+
+	:hover {
+		color: #444;
+	}
+}
+
+.transparent.dark .add-widget-link {
+	color: rgba(0, 0, 0, .4);
+
+	:hover {
+		color: rgba(0, 0, 0, .6);
+	}
 }
 
 
@@ -444,7 +472,13 @@ textarea {
 .dark select option,
 .dark select optgroup {
 	background: #424242;
+	color: #FFFFFF;
 }
+
+.dark .widget-settings select option {
+	color: #444;
+}
+
 
 input[type="time"]::-webkit-clear-button,
 input[type="time"]::-webkit-inner-spin-button,
@@ -1387,11 +1421,15 @@ dialog footer button.material.flat:active {
 */
 header.toolbar {
 	width: 100%;
-	height: 50px;
+	height: 55px;
 	font-size: 0;
 	display: flex;
 	background: #FFF;
 	position: relative;
+
+	.title {
+		font-size: 12px;
+	}
 
 	.dark & {
 		background: #303030;
@@ -1624,7 +1662,7 @@ header.toolbar {
 	}
 
 	.search .icon {
-		top: 0;
+		top: 2px;
 		left: 0;
 		z-index: 9;
 		width: 22px;
@@ -1762,7 +1800,7 @@ header.toolbar {
 	}
 
 	.search .speech {
-		top: 0;
+		top: 2px;
 		right: 0;
 		z-index: 9;
 		width: 15px;
@@ -1785,18 +1823,29 @@ header.toolbar {
 	.search .speech:hover {
 		opacity: .8;
 	}
+ 
+	.search ::-webkit-input-placeholder {
+		font-weight: bold;
+		color: #909090;
+	} 
 
 	&.floating .search {
 		//background: #FBFBFB;
 		width: 100%;
-		margin-right: 68px;
-		margin-left: 8px;
+		// margin-right: 68px;
+		//margin-left: 8px;
 		flex-basis: unset;
 		margin-top: 8px;
+
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	&.floating .search input {
 		background-color: white;
+		box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.70)  !important;		
+		border-radius: 2px;
 
 		.dark & {
 			background: #303030;
@@ -1891,7 +1940,7 @@ header.toolbar {
 	/ Announcements
 */
 dialog.announcements {
-	max-width: 450px;
+	max-width: 1000px; /* was 450 */
 }
 
 dialog.announcements .content {
@@ -2197,8 +2246,61 @@ dialog.announcements li {
 }
 
 
+.menu-wrapper {
+	display: flex; 
+	flex-direction:row; 
+	position: relative; 
+	left: 0;
+    -webkit-transition: left 0.5s ease;
+    -moz-transition: left 0.5s ease;
+    -o-transition: left 0.5s ease;
+    transition: left 0.5s ease;	
+
+	nav.menu-announcements {
+		width: 215px;
+
+		div.back {
+			padding: 10px 15px 35px 15px; 
+			cursor: pointer;
+		}
+
+		div.item {
+			width: 100%; 
+			padding: 10px 10px 10px 10px; 
+			border-top: 1px solid #909090; 
+			display:flex; 
+			flex-direction:row; 
+			justify-content: space-between; 
+			border-left: 4px solid transparent;
+
+			div.title {
+				padding-top:3px; 
+				padding-left:5px; 
+				width: 100%; 
+				cursor: pointer;
+			}
 
 
+			div.close {
+				cursor:pointer; 
+				color:red;
+			}
+		}
+	}
+}
+
+.menu-container.notifications .menu-wrapper {
+	left: -215px;
+}
+
+.menu-wrapper nav.menu-announcements div.item:hover {
+	background-color: #F5F5F5;
+	border-left-color: #646464;
+}
+
+.dark .menu-wrapper nav.menu-announcements div.item:hover {
+	background: #303030;
+}
 
 
 
@@ -2259,7 +2361,7 @@ dialog.announcements li {
 }
 
 .voicebar .button {
-	width: 60%;
+	// width: 60%;
 	height: 100%;
 	min-width: 100px;
 	vertical-align: top;
@@ -2557,6 +2659,7 @@ body > .widgets-container {
 
 	&.maximized {
 		width: auto;
+		z-index: 9;
 	}
 }
 
@@ -2720,6 +2823,11 @@ body.resizing .grid {
 	background: rgba(0, 0, 0, .6);
 }
 
+.transparent.darker .widgets-container .widget.settings,
+.transparent.dark .widgets-container .widget.settings {
+	background: black;
+}
+
 @keyframes widget-box-shadow {
 	from { box-shadow: none; }
 	to { box-shadow: 0 2px 1px rgba(102, 102, 102, 0.1); }
@@ -2791,16 +2899,27 @@ body.resizing .grid {
 .widgets-container .widget .settings,
 .widgets-container .widget .minimize,
 .widgets-container .widget .maximize,
-.widgets-container .widget .delete,
+.widgets-container .widget .wdelete,
+.widgets-container .widget .wtooltip,
+.widgets-container .widget .wrefresh,
 .store-detail .preview .widget .handle,
 .store-detail .preview .widget .settings,
-.store-detail .preview .widget .delete,
+.store-detail .preview .widget .wdelete,
+.store-detail .preview .widget .wtooltip,
+.store-detail .preview .widget .wrefresh,
 .store-detail .preview .widget .minimize,
 .store-detail .preview .widget .maximize {
 	opacity: 0;
 	z-index: 9;
 	position: absolute;
 	transition: opacity .3s ease-in-out;
+}
+
+.widgets-container .widget .wrefresh,
+.store-detail .preview .widget .wrefresh
+{
+	display: none;
+	cursor: pointer;
 }
 
 .widgets-container .widget .minimize,
@@ -2854,7 +2973,9 @@ body.resizing .grid {
 		.handle,
 		.settings,
 		.minimize,
-		.delete,
+		.wdelete,
+		.wrefresh,
+		.wtooltip,
 		.maximize {
 			opacity: 1;
 		}
@@ -2863,10 +2984,12 @@ body.resizing .grid {
 
 .widgets-container .widget .handle:before,
 .widgets-container .widget .settings:before,
-.widgets-container .widget .delete:before,
+.widgets-container .widget .wdelete:before,
+.widgets-container .widget .wtooltip:before,
 .store-detail .preview .widget .handle:before,
 .store-detail .preview .widget .settings:before 
-.store-detail .preview .widget .delete:before {
+.store-detail .preview .widget .wdelete:before 
+.store-detail .preview .widget .wtooltip:before {
 	top: -15px;
 	left: -15px;
 	right: -10px;
@@ -2886,8 +3009,8 @@ body.resizing .grid {
 	text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
 }
 
-.widgets-container .widget .delete,
-.store-detail .preview .widget .delete {
+.widgets-container .widget .wdelete,
+.store-detail .preview .widget .wdelete {
 	top: 50px;
 	right: 0;
 	color: red;
@@ -2895,24 +3018,37 @@ body.resizing .grid {
 	text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
 }
 
+.widgets-container .widget .wtooltip,
+.store-detail .preview .widget .wtooltip {
+	top: 9px;
+	right: 20px;
+	color: red;
+	cursor: pointer;
+	text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+}
 
 .dark .widgets-container .widget .settings,
 .dark .store-detail .preview .widget .settings 
-.dark .widgets-container .widget .delete,
-.dark .store-detail .preview .widget .delete {
-	color: #DDD;
+.dark .widgets-container .widget .wdelete,
+.dark .store-detail .preview .widget .wdelete 
+.dark .widgets-container .widget .wtooltip,
+.dark .store-detail .preview .widget .wtooltip {
+		color: #DDD;
 	text-shadow: none;
 }
 
 .widgets-container .widget.maximized .settings 
-.widgets-container .widget.maximized .delete {
+.widgets-container .widget.maximized .wdelete 
+.widgets-container .widget.maximized .wtooltip {
 	top: 5px;
 }
 
 .widgets-container .widget .settings:before,
 .store-detail .preview .widget .settings:before 
-.widgets-container .widget .delete:before,
-.store-detail .preview .widget .delete:before {
+.widgets-container .widget .wdelete:before,
+.store-detail .preview .widget .wdelete:before 
+.widgets-container .widget .wtooltip:before,
+.store-detail .preview .widget .wtooltip:before {
 	top: -1px;
 	left: -6px;
 	bottom: -5px;
@@ -2920,14 +3056,17 @@ body.resizing .grid {
 
 .widgets-container .widget .settings:hover,
 .store-detail .preview .widget .settings:hover 
-.widgets-container .widget .delete:hover,
-.store-detail .preview .widget .delete:hover {
+.widgets-container .widget .wdelete:hover,
+.store-detail .preview .widget .wdelete:hover 
+.widgets-container .widget .wtooltip:hover,
+.store-detail .preview .widget .wtooltip:hover {
 	color: #428BCA;
 }
 
 body.no-edit .widgets-container .widget .handle,
 body.no-edit .widgets-container .widget .settings,
-body.no-edit .widgets-container .widget .delete,
+body.no-edit .widgets-container .widget .wdelete,
+body.no-edit .widgets-container .widget .wtooltip,
 body.no-edit .widgets-container .widget.tabbed:before {
 	display: none;
 }
@@ -2945,6 +3084,10 @@ body.no-edit .widgets-container .widget.tabbed:before {
 .widgets-container .widget.tabbed {
 	z-index: 2;
 	overflow: visible;
+
+	&.maximized {
+		z-index: 9;
+	}
 }
 
 .widgets-container .widget.tabbed:before {
@@ -2994,30 +3137,71 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	background: transparent;
 }
 
-.widgets-container .widget.tabbed .delete {
+.widgets-container .widget.tabbed .wdelete {
 	right: -23px;
 	box-shadow: none;
 	background: transparent;
 }
 
-.widgets-container .widget.tabbed-corner .delete {
+.widgets-container .widget.tabbed-corner .wdelete {
 	top: 5px;
 	right: 50px;
 	box-shadow: none;
 	background: transparent;
 }
 
-.widgets-container .widget.tabbed-corner.maximized .delete {
+.widgets-container .widget.tabbed-corner.maximized .wdelete {
 	right: 0;
 	display: none;
 }
+
+.widgets-container .widget.tabbed-corner.refreshable .wrefresh {
+	top: 8px;
+	right: 110px;
+	box-shadow: none;
+	background: transparent;
+	display: block;
+}
+
+.widgets-container .widget.tabbed-corner.maximized.refreshable .wrefresh {
+	right: 120px;
+}
+
+
+.widgets-container .widget.tabbed .wtooltip {
+	right: 0;
+	box-shadow: none;
+	background: transparent;
+}
+
+.widgets-container .widget.tabbed-corner .wtooltip {
+	top: 8px;
+	right: 80px;
+	box-shadow: none;
+	background: transparent;
+}
+
+.widgets-container .widget.tabbed-corner.maximized .wtooltip {
+	right: 0;
+	display: none;
+}
+
+.widgets-container .widget.tabbed-corner.nomax .wdelete {
+	right: 22px;
+}
+
 
 .widgets-container .widget.tabbed.maximized .settings {
 	right: 2px;
 }
 
-.widgets-container .widget.tabbed.maximized .delete {
+.widgets-container .widget.tabbed.maximized .wdelete {
 	right: -3px;
+	display: none;
+}
+
+.widgets-container .widget.tabbed.maximized .wtooltip {
+	right: -23px;
 	display: none;
 }
 
@@ -3535,8 +3719,16 @@ body.no-edit .widgets-container .widget.tabbed:before {
 	cursor: pointer;
 }
 
-.widget-settings .list .tools .delete:hover {
+.widget-settings .list .tools .wdelete:hover {
 	color: #E43431;
+}
+
+.widget-settings .list .tools .wtooltip:hover {
+	color: #E43431;
+}
+
+body.main-pro .wtooltip {
+	display: none;
 }
 
 .widget-settings .list .sp-preview {
@@ -3588,7 +3780,7 @@ body.no-edit .widgets-container .widget.tabbed:before {
 
 .dark .widget-settings .list .suggestions li:hover,
 .dark .widget-settings .list .suggestions li.active {
-	background: #303030;
+	// background: #303030;
 }
 
 .widget-settings .list .suggestions li.active {

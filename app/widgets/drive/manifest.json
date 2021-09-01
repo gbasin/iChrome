@@ -1,5 +1,6 @@
 {
 	"id": 27,
+	"sort": 320,
 	"name": "drive",
 	"model": "model",
 	"css": "style.css",
@@ -39,7 +40,7 @@
 
 			"modified_by": "by",
 
-			"authMessage": "You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+			"authMessage": "You'll need to give ProductivityTab permission to view files in your Drive before anything can be shown here."
 		}
 	}
 }

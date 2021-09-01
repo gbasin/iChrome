@@ -4,7 +4,7 @@
 var _ = require("lodash");
 
 module.exports = function(grunt) {
-	grunt.registerMultiTask("descriptions", "Compile iChrome description files", function() {
+	grunt.registerMultiTask("descriptions", "Compile ProductivityTab description files", function() {
 		this.files.forEach(function(file) {
 			var locales = file.src.filter(function(filepath) {
 				if (!grunt.file.exists(filepath)) {

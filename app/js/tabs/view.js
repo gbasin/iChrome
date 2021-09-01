@@ -268,7 +268,7 @@ define(["jquery", "lodash", "backbone", "core/auth", "core/status", "core/analyt
 			var displayAd = function() {
 				var rightNow = new Date().toISOString().slice(0,10).replace(/-/g,"");
 				ad.innerHTML = '<button type="button" class="hide-ad"></button>' +
-					'<iframe src="https://ichro.me/adframe/' + placement + "?refresh=" + rightNow + '#' + adId + '" style="' + (leaderboard ? "width:728px;height:90px;" : "width:300px;height:250px;") + '" seamless></iframe>';
+					'<iframe id="adframe" src="https://ichro.me/adframe/' + placement + "?refresh=" + rightNow + '#' + adId + '" style="' + (leaderboard ? "width:728px;height:90px;" : "width:300px;height:250px;") + '" seamless></iframe>';
 			};
 
 			this.once("render:complete", function() {

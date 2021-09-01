@@ -1,10 +1,12 @@
 {
   "lang_code":"fr",
   "language":"Français",
-  "extName":"iChrome - page d'accueil rapide et pratique",
-  "newtabName":"Nouvel onglet iChrome",
-  "extDescription":"La meilleure page d'accueil pour Chrome. Des thèmes impressionnants, des dizaines de widgets, et une vitesse incroyable!",
-  "newtabDescription":"La MEILLEURE page d'accueil pour Chrome. Maintenant nouvel onglet. Thèmes fabuleux, de nombreux widgets, rapide et personnalisable !",
+
+	"extName": "ProductivityTab — Custom Homepage Dashboard",
+	"newtabName": "ProductivityTab — Custom New Tab Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"Accueil",
     "me":"Moi"
@@ -12,7 +14,7 @@
   "remove_widget":"Supprimer",
   "hide_banner":"Masquer cette bannière",
   "hide_ad":{
-    "content":"Vous souhaitez masquer les annonces jusqu'à la prochaine fois que vous utiliserait iChrome, ou mettre à niveau pour les supprimer définitivement ?",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make ProductivityTab available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support ProductivityTab directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"Mettre à jour",
     "hide":"Cacher les annonces"
   },
@@ -25,12 +27,12 @@
   "onboarding":{
     "modal":{
       "tagline":"Tous les sites web et applications que vous utilisez, en un seul endroit",
-      "wrong_extension":"Voulez-vous définir iChrome comme page de nouvel onglet par défaut ?",
-      "wrong_extension_newtab":"Voulez-vous définir iChrome comme page d'accueil ?",
+      "wrong_extension":"Voulez-vous définir ProductivityTab comme page de nouvel onglet par défaut ?",
+      "wrong_extension_newtab":"Voulez-vous définir ProductivityTab comme page d'accueil ?",
       "wrong_extension_action":"Cliquez ici",
-      "about":"Tout à propos des onglets et des widgets d'iChrome",
+      "about":"Tout à propos des onglets et des widgets d'ProductivityTab",
       "about_desc":"Les onglets sont des pages contenant des widgets - des blocs qui montrent des informations comme la météo, les actualités ou votre boîte mail. Vous pouvez personnaliser la plupart des widgets et en ajouter autant que vous voulez.",
-      "terms":"Remarque : En continuant, vous acceptez <a href=\"https://ichro.me/tos\" target=\"_blank\">les conditions d'utilisation</a> d'iChrome et <a href=\"https://ichro.me/privacy\" target=\"_blank\">la Politique de confidentialité</a>",
+      "terms":"En continuant, vous acceptez <a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\">les conditions d'utilisation</a> d'ProductivityTab et <a href=\"https://productivitytab.co/privacy-policy\" target=\"_blank\">la Politique de confidentialité</a>",
       "sign_in":"Connectez-vous avec votre compte Google",
       "sign_in_desc":"Connectez-vous avec votre compte Google avant de commencer pour sauvegarder vos changements en ligne.",
       "sign_in_desc2":"Vous pouvez rester déconnecté si vous voulez, mais votre page ne sera pas sauvegardée en ligne et vous ne pourrez pas y accéder à partir d'un autre ordinateur.",
@@ -42,19 +44,19 @@
     },
     "widgets":{
       "configure":"Configurons un widget.",
-      "configure_desc":"Cliquez sur la clé pour ouvrir les <b>paramètres</b> du gadget météo.",
-      "configure_skip":"Passer",
-      "settings":"Remplacez <b>San Francisco, CA</b> par votre emplacement, puis cliquez sur <b>Sauvegarder</b>.",
-      "move":"Vous pouvez <b>faire glisser</b> des widgets à l'aide de la poignée en surbrillance pour les déplacer.",
-      "remove":"Lorsque vous faites glisser un widget, déposez-le sur la barre rouge (non illustrée) pour le <b>supprimer</b>.",
+			"configure_desc": "Click the wrench to open a widget's <b>settings</b>.",
+			"configure_skip": "Skip Tutorial",
+			"settings": "Replace <b>Link URL</b> with your favorite site, then press <b>Save</b>.",
+			"move": "You can <b>reposition</b> widgets by clicking and dragging the three dots highlighted here.",
+			"remove": "To <b>delete</b>, simply click the red trash bin icon.",
       "done":"Compris"
     },
     "settings":{
-      "intro":"Maintenant, allons jeter un oeil au <b>menu</b> et voir ce que vous pouvez faire d'autre.",
-      "instructions":"Cliquez sur l'image en surbrillance pour l'ouvrir.",
+			"intro": "Now let’s add a new widget. This highlighted button is where you can access the Widget Menu.",
+			"instructions": "Click the new widget button on to open the widget menu!",
       "skip":"Passer",
       "tooltips":{
-        "settings":"Modifiez l'apparence et le fonctionnement d'iChrome",
+        "settings":"Modifiez l'apparence et le fonctionnement d'ProductivityTab",
         "widgets":"Ajoutez de nouveaux widgets - vous pouvez en avoir autant que vous voulez",
         "editing":"Affichez ou cachez les boutons d'édition sur les widgets",
         "links":"Voici une liste de liens, ajoutez des sites que vous utilisez souvent dans les paramètres",
@@ -85,7 +87,7 @@
     "placeholder_ok":"Entrez ce que vous cherchez ou dites \"OK,Google\"",
     "suggestions":{
       "url_subtext":"Voir l'URL",
-      "capture_notice":"iChrome gère les recherches que vous effectuez normalement à partir de l’Omnibox. Vous pouvez désactiver celà à tout moment depuis les paramètres"
+      "capture_notice":"ProductivityTab gère les recherches que vous effectuez normalement à partir de l’Omnibox. Vous pouvez désactiver celà à tout moment depuis les paramètres"
     },
     "apps":{
       "search":"Rechercher",
@@ -181,7 +183,7 @@
       },
       "theme":{
         "title":"Thème de l'application",
-        "desc":"Le thème de l'application contrôle le style d'iChrome et de tous les widgets",
+        "desc":"Le thème de l'application contrôle le style d'ProductivityTab et de tous les widgets",
         "preview":"Aperçu ",
         "light":"Clair (par défaut)",
         "dark":"sombre",
@@ -216,7 +218,7 @@
         "custom_note1":"Maximum de 3 permis",
         "custom_note2":"les utilisateurs en obtiennent 8",
         "custom_name_placeholder":"Texte du lien",
-        "custom_url_placeholder":"URL de lien (Exemple : http://www.google.com/)"
+        "custom_url_placeholder":"URL de lien (Exemple : https://www.google.com/)"
       }
     },
     "misc":{
@@ -225,7 +227,7 @@
     "tabs":{
       "create_new":"Nouveau",
       "make_default":"Définir par défaut",
-      "desc1":"Les onglets sont des pages à l'intérieur d'iChrome. Chaque onglet possède son propre ensemble de widgets qui est complètement séparé de chaque autre onglet.",
+      "desc1":"Les onglets sont des pages à l'intérieur d'ProductivityTab. Chaque onglet possède son propre ensemble de widgets qui est complètement séparé de chaque autre onglet.",
       "desc2":"Vous pouvez basculer entre les onglets en cliquant sur les boutons qui apparaissent à gauche et à droite de l'écran lorsque vous déplacez votre souris sur un onglet ou en utilisant les flèches de votre clavier.",
       "name_placeholder":"Entrez un nom d'onglet",
       "delete_confirm":"Cette action est irréversible. Toutes les données de tous les widgets dans l'onglet seront définitivement perdues."
@@ -245,19 +247,19 @@
     "advanced":{
       "backups":{
         "title":"Sauvegarder et restaurer",
-        "desc":"Les sauvegardes sont des copies complètes de tous vos onglets, vos paramètres et vos widgets.Elles sont créés quotidiennement lorsque vous ouvrez iChrome.",
-        "desc2":"Utilisez les boutons ci-dessous pour restaurer iChrome à une date précise ou télécharger une de vos sauvegardes.",
+        "desc":"Les sauvegardes sont des copies complètes de tous vos onglets, vos paramètres et vos widgets.Elles sont créés quotidiennement lorsque vous ouvrez ProductivityTab.",
+        "desc2":"Utilisez les boutons ci-dessous pour restaurer ProductivityTab à une date précise ou télécharger une de vos sauvegardes.",
         "backup":"Sauvegarder maintenant",
         "upload":"Restaurer à partir d'un fichier",
         "download":"Télécharger",
         "restore":"Restaurer",
-        "download_name":"Sauvegarde iChrome",
+        "download_name":"Sauvegarde ProductivityTab",
         "restore_confirm":"Ceci écrasera toutes les données locales et synchronisées. Vous perdrez l'ensemble votre configuration actuelle sur tous les ordinateurs connectés à ce compte.",
         "restore_error":"Une erreur s'est produite en essayant d'interpréter les données fournies, Veuillez réessayer ultérieurement."
       },
       "css":{
         "title":"CSS personnalisé",
-        "desc":"Vous pouvez utiliser le CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\"> définition</a>) pour personnaliser presque n'importe quoi d'iChrome.",
+        "desc":"Vous pouvez utiliser le CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\"> définition</a>) pour personnaliser presque n'importe quoi d'ProductivityTab.",
         "placeholder":"Entrez jusqu'à 1000 caractères de CSS ici"
       },
       "debug_tools":{
@@ -276,8 +278,8 @@
     },
     "pro":{
       "promo":{
-        "monthly_price":"2$ par mois",
-        "yearly_price":"ou 20$ par an",
+        "monthly_price":"4.99$ par mois",
+        "yearly_price":"ou 29.99$ par an",
         "upgrade_btn":"Mettre à niveau maintenant",
         "business":"Intéressé à acheter la version Pro pour votre entreprise ou votre école ?",
         "business_contact":"Contactez nous",
@@ -286,7 +288,7 @@
         "bgs":"Arrière-plans intéractifs",
         "bgs_desc":"Donner vie à votre page avec 20 fonds haute-définition en direct",
         "widgets":"Agrandir les Widgets",
-        "widgets_desc":"Rendez iChrome plus confortable avec les widgets agrandis",
+        "widgets_desc":"Rendez ProductivityTab plus confortable avec les widgets agrandis",
         "more_header":"Et plus encore",
         "stocks":"Bourse en direct avec historique des cours et informations complètes",
         "rss":"Prise en charge de plusieurs flux RSS par widget",
@@ -303,17 +305,17 @@
         "title":"Sortie",
         "updating_title":"Plan de mise à jour",
         "payment_options":"Payer",
-        "pay_monthly":"Mensuel (2$)",
-        "pay_yearly":"Annuel (20$)",
+        "pay_monthly":"Mensuel (4.99$)",
+        "pay_yearly":"Annuel (29.99$)",
         "cancel":"Annuler",
         "update":"Actualiser",
         "subscribe":"S'abonner",
         "braintree_notice":"Paiements traités en toute sécurité par Braintree.",
-        "monthly_notice":"En vous inscrivant, vous autorisez iChrome à vous facturer 2 $ chaque mois jusqu'à ce que vous annuliez votre abonnement.",
-        "yearly_notice":"En vous inscrivant, vous autorisez iChrome à vous payer 20 $ chaque année jusqu'à ce que vous annuliez votre abonnement.",
+        "monthly_notice":"En vous inscrivant, vous autorisez ProductivityTab à vous facturer 4.99 $ chaque mois jusqu'à ce que vous annuliez votre abonnement.",
+        "yearly_notice":"En vous inscrivant, vous autorisez ProductivityTab à vous payer 29.99 $ chaque année jusqu'à ce que vous annuliez votre abonnement.",
         "update_notice":"Bien que le cycle de facturation prenne effet immédiatement, vous ne serez pas débité d'ici la fin de votre cycle actuel.",
-        "thank_you":"Merci d'avoir acheté iChrome Pro !",
-        "thank_you2":"iChrome va se recharger dans quelques secondes et vos réglages seront pris en compte !",
+        "thank_you":"Merci d'avoir acheté ProductivityTab Pro !",
+        "thank_you2":"ProductivityTab va se recharger dans quelques secondes et vos réglages seront pris en compte !",
         "error":"Une erreur s'est produite pendant le traitement de votre paiement.",
         "error2":"Veuillez réessayer ultérieurement ou nous écrire à support@ichro.me",
         "signin":"Se connecter",
@@ -322,7 +324,7 @@
       },
       "plan":{
         "title":"Plan",
-        "desc":"Vous êtes actuellement abonnés à iChrome Pro (%s)",
+        "desc":"Vous êtes actuellement abonnés à ProductivityTab Pro (%s)",
         "types":{
           "monthly":"Mensuel",
           "yearly":"Annuellement",
@@ -330,7 +332,7 @@
           "education":"Éducation",
           "custom":"Personalisé"
         },
-        "uneditable_desc":"Les plans d'affaires, d'éducation et personnalisés ne peuvent être mis à jours depuis iChrome. Veuillez <a href=\"mailto:support@ichro.me\">nous contacter</a> pour mettre à jour ou annuler votre abonnement.",
+        "uneditable_desc":"Les plans d'affaires, d'éducation et personnalisés ne peuvent être mis à jours depuis ProductivityTab. Veuillez <a href=\"mailto:support@ichro.me\">nous contacter</a> pour mettre à jour ou annuler votre abonnement.",
         "status":"État",
         "status_active":"Actif",
         "status_trial":"Démo",
@@ -347,9 +349,9 @@
       }
     },
     "ads":{
-      "text1":"iChrome affiche quelques petites annonces pour payer les frais de développement, de serveur et de soutien. Avec ces annonces, nous pouvons nous permettre d’offrir iChrome gratuit pour tout le monde.",
+      "text1":"ProductivityTab affiche quelques petites annonces pour payer les frais de développement, de serveur et de soutien. Avec ces annonces, nous pouvons nous permettre d’offrir ProductivityTab gratuit pour tout le monde.",
       "text2":"Ici, vous pouvez choisir où ces annonces sont affichées, ou acheter sans publicité pour les supprimer définitivement.",
-      "text3":"Sans publicité, est un achat ponctuel qui supprime définitivement les annonces d’iChrome partout où vous êtes connecté. Vous pouvez également mettre à niveau vers Pro pour des fonctionnalités supplémentaires en plus une expérience sans publicité.",
+      "text3":"Sans publicité, est un achat ponctuel qui supprime définitivement les annonces d’ProductivityTab partout où vous êtes connecté. Vous pouvez également mettre à niveau vers Pro pour des fonctionnalités supplémentaires en plus une expérience sans publicité.",
       "upgrade_btn":"Mise à niveau pour enlever les publicité",
       "already_upgraded":"On dirait que vous avez déjà mis à niveau vers sans publicité",
       "signin":"Se connecter",
@@ -468,7 +470,7 @@
       "name_placeholder":"Entrer le nom du thème",
       "image":"URL de l'image",
       "image_placeholder":"Entrer l'URL d'une image qui sera utilisé comme fond d'écran",
-      "image_help":"Votre image n'a pas pu êtres envoyée de votre ordinateur.\n<br /><br />\nSi vous tenez à avoir cette image, vous pouvez l'envoyé depuis le site <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>.\nPuis copiez l'url que ce site vous fournira, mais faite attention que l'url ce finisse par une extension d'image de type (i.e. .jpg), puis collez la dans le champ de gauche.",
+      "image_help":"Votre image n'a pas pu êtres envoyée de votre ordinateur.\n<br /><br />\nSi vous tenez à avoir cette image, vous pouvez l'envoyé depuis le site <a href=\"https://imgur.com/\" target=\"_blank\">imgur</a>.\nPuis copiez l'url que ce site vous fournira, mais faite attention que l'url ce finisse par une extension d'image de type (i.e. .jpg), puis collez la dans le champ de gauche.",
       "color":"Couleur d'arrière-plan",
       "color_placeholder":"Entrez une couleur",
       "position":"Position",

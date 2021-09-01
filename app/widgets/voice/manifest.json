@@ -1,5 +1,6 @@
 {
 	"id": 22,
+	"sort": 430,
 	"name": "voice",
 	"model": "model",
 	"css": "style.css",

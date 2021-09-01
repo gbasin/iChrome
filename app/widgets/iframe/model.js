@@ -5,7 +5,7 @@ define(["widgets/model"], function(WidgetModel) {
 				height: 400,
 				padding: "false",
 				size: "variable",
-				url: "http://mail.google.com/mail/mu/mp/?source=ig&mui=igh"
+				url: "https://en.m.wikipedia.org/"
 			}
 		}
 	});

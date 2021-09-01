@@ -1,0 +1,119 @@
+/*---------------------------------------------
+	/ Main Styles
+*/
+
+ul {
+	padding-left: 0;
+}
+
+li {
+	list-style-type: none;	
+}
+
+ul a {
+	color: #444;
+	cursor: pointer;
+}
+
+ul a:hover {
+	border-left-color: #1E88E5;
+	background-color: rgba(0, 0, 0, .1);
+}
+
+ul.icons { 
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-content: flex-start;
+	justify-content: center;
+	overflow: visible;
+}
+
+ul.icons a {
+	display: block; 
+	cursor: pointer;
+	font-size: 13px;
+	overflow: hidden;
+	line-height: 36px;
+	white-space: nowrap;
+	text-decoration: none;
+	padding: 5px 15px 5px 15px;
+	text-overflow: ellipsis;
+	/* border-left: 3px solid transparent; */
+	/* background: 12px center/16px no-repeat; */
+}
+
+ul.icons img {
+	width: 64px;
+	height: 64px;
+}
+
+ul.icons a div {
+	text-align: center;
+}
+
+ul.list a {
+	display: flex; 
+	flex-direction: row;
+	font-size: 13px;
+	overflow: hidden;
+	line-height: 24px;
+	white-space: nowrap;
+	text-decoration: none;
+	padding: 5px 5px 5px 5px;
+	text-overflow: ellipsis;
+	/* border-left: 3px solid transparent; */
+	/* background: 12px center/16px no-repeat; */
+}
+
+ul.list img {
+	width: 24px;
+	height: 24px;
+	margin-right: 16px;
+	margin-left: 8px;
+}
+
+
+/* .items.list .item {
+	color: #444;
+	display: block;
+	cursor: pointer;
+	font-size: 13px;
+	overflow: hidden;
+	line-height: 36px;
+	white-space: nowrap;
+	text-decoration: none;
+	padding: 0 15px 0 40px;
+	text-overflow: ellipsis;
+	border-left: 3px solid transparent;
+	background: 12px center/16px no-repeat;
+}
+
+
+.items.icons .item {
+	color: #444;
+	display: block;
+	cursor: pointer;
+	font-size: 13px;
+	overflow: hidden;
+	line-height: 36px;
+	white-space: nowrap;
+	text-decoration: none;
+	padding: 0 15px 0 40px;
+	text-overflow: ellipsis;
+	border-left: 3px solid transparent;
+	background: 32px center/32px no-repeat;
+} */
+
+.dark .item {
+	color: #DDD;
+}
+
+.dark.transparent .item {
+	color: #EEE;
+}
+
+.dark .items.list li:hover {
+	background-color: rgba(0, 0, 0, .15);
+}
+

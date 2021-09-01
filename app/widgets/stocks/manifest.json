@@ -1,5 +1,6 @@
 {
 	"id": 14,
+	"sort": 100,
 	"name": "stocks",
 	"model": "model",
 	"css": "style.css",
@@ -27,6 +28,14 @@
 	}, {
 		"type": "size"
 	}, {
+		"type": "radio",
+		"name": "regularinpost",
+		"label": "i18n.settings.regularinpost.title",
+		"options": {
+			"1": "i18n.settings.regularinpost.on",
+			"0": "i18n.settings.regularinpost.off"
+		}
+	}, {
 		"type": "list",
 		"name": "stocks",
 		"autocomplete": "autocomplete",
@@ -41,7 +50,13 @@
 
 			"settings": {
 				"stocks": "Stocks",
-				"stocks_placeholder": "Type a company or exchange name and hit Enter"
+				"stocks_placeholder": "Type a company or exchange name and hit Enter",
+
+				"regularinpost": {
+					"title": "Regular price in Pre- or Post- state",
+					"on": "show",
+					"off": "hide"
+				}
 			},
 
 			"as_of": "as of",

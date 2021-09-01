@@ -30,6 +30,9 @@ define([
 							location.reload();
 						}
 					}.bind(this));
+
+					//Needed to stop to show the signin announcements
+					Browser.storage.lastUpgradeNotification = new Date().getTime();
 				}.bind(this));
 
 				delete Browser.storage.showSignInNotice;

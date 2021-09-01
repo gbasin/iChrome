@@ -1,11 +1,13 @@
 {
 	"id": 41,
+	"sort": 460,
 	"tabbed": true,
 	"name": "classroom",
 	"model": "model",
 	"css": "style.css",
 	"icon": "icon.png",
 	"sizes": ["variable"],
+	"listed": true,
 
 	"views": {
 		"default": "view",

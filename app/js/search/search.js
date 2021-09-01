@@ -2,8 +2,8 @@
  * This handles the searchbox
  */
 define([
-	"backbone", "browser/api", "storage/storage", "core/render", "core/analytics", "search/suggestions", "search/speech"
-], function(Backbone, Browser, Storage, render, Track, Suggestions, Speech) {
+	"backbone", "jquery", "browser/api", "storage/storage", "core/render", "core/analytics", "search/suggestions", "search/speech", "core/auth"
+], function(Backbone, $, Browser, Storage, render, Track, Suggestions, Speech, Auth) {
 	var Model = Backbone.Model.extend({
 			init: function() {
 				Storage.on("done updated", function(storage) {
@@ -65,7 +65,6 @@ define([
 					val = this.$("input").val().trim();
 				}
 
-
 				var queryURL = this.Suggestions.isURL(val);
 
 				if (queryURL && (queryURL.indexOf("chrome:") === 0 || queryURL.indexOf("about:"))) {
@@ -100,19 +99,47 @@ define([
 					});
 				}
 
-
-				var searchURL = "https://search.ichro.me/search?" +
+				var searchEngine = this.model.get("searchEngine") || "default";
+				if (!Auth.isPro) {
+					searchEngine = "default";
+				}
+				
+				var serverSearchURL = "https://search.ichro.me/search?" +
 					"ext=" + (Browser.app.newTab ? "newtab" : "main") +
 					"&version=" + Browser.app.version +
-					"&engine=" + encodeURIComponent(this.model.get("searchEngine") || "default") +
-					"&q=" + encodeURIComponent(val);
+					"&engine=" + encodeURIComponent(searchEngine) +
+					"&q=" + encodeURIComponent(val) + 
+					"&regonly=1";
+
+				$.get(serverSearchURL, function() {
+				});
+
+				var engineURLs = {
+					google: "https://ichro-me.s1search.co/serp?q=",
+					yahoo: "https://search.yahoo.com/search?p=",
+					default: "https://ichro-me.s1search.co/serp?q=",
+					bing: "https://ichro-me.s1search.co/serp?q=",
+					duckduckgo: "https://duckduckgo.com/?q=",
+					ask: "https://www.ask.com/web?q=",
+					aol: "https://search.aol.com/aol/search?q=",
+					startpage: "https://www.startpage.com/do/dsearch?query="
+				};
+
+				var engine = searchEngine || "default";
+				var searchURL = "";
+				if (!engineURLs.hasOwnProperty(engine)) {
+					if (Auth.isPro && engine !== null && engine.startsWith("http")) {
+						searchURL = engine.replace("%s", encodeURIComponent(val));
+					}else{
+						searchURL = engineURLs["default"] + encodeURIComponent(val);
+					}
+				}else{
+					searchURL = engineURLs[engine] + encodeURIComponent(val);
+				} 
 
 				var link = document.createElement("a");
-
 				link.setAttribute("href", queryURL || searchURL);
-
 				link.setAttribute("target", (newTab ? "_blank" : "_self"));
-
 				link.click();
 			},
 			speech: function() {
