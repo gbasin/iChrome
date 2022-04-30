@@ -90,44 +90,44 @@ define(["lodash", "jquery", "moment"], function(_, $, moment) {
 		data: {
 			videos: [
 				{
-					title: "Official Extended Trailer | GOTHAM | FOX BROADCASTING",
-					url: "https://www.youtube.com/watch?v=0d1zpt6k5OI&feature=youtube_gdata",
-					uploader: "FOX",
+					title: "Underwater ecosystem | DEMO",
+					url: "#",
+					uploader: "DEMO",
 					duration: "2:07",
-					thumb: "https://i1.ytimg.com/vi/0d1zpt6k5OI/0.jpg",
+					thumb: "https://ichro.me/img/youtube/coral.jpg",
 					views: 1143620
 				},
 				{
-					title: "Rick Grimes vs Walter White.  Epic Rap Battles of History Season 3.",
-					url: "https://www.youtube.com/watch?v=krQHQvtIr6w&feature=youtube_gdata",
+					title: "Mars polar ice caps | DEMO",
+					url: "#",
 					views: 2980000,
-					uploader: "ERB",
+					uploader: "DEMO",
 					duration: "2:18",
-					thumb: "https://i1.ytimg.com/vi/krQHQvtIr6w/0.jpg"
+					thumb: "https://ichro.me/img/youtube/mars.jpg"
 				},
 				{
-					title: "Usher - Good Kisser",
-					url: "https://www.youtube.com/watch?v=1lQtoRFaLsA&feature=youtube_gdata",
+					title: "The giant panda | DEMO",
+					url: "#",
 					views: 790000,
-					uploader: "UsherVEVO",
+					uploader: "DEMO",
 					duration: "5:04",
-					thumb: "https://i1.ytimg.com/vi/1lQtoRFaLsA/0.jpg"
+					thumb: "https://ichro.me/img/youtube/panda.jpg"
 				},
 				{
-					title: "Linkin Park - \"Until It's Gone\" [Official Lyric Video]",
-					url: "https://www.youtube.com/watch?v=Nym1P-BO_ws&feature=youtube_gdata",
+					title: "Sugar has been around for well over 10k years | DEMO",
+					url: "#",
 					views: 714000,
-					uploader: "Linkin Park",
+					uploader: "DEMO",
 					duration: "3:41",
-					thumb: "https://i1.ytimg.com/vi/Nym1P-BO_ws/0.jpg"
+					thumb: "https://ichro.me/img/youtube/sugar.jpg"
 				},
 				{
-					title: "Internet Citizens: Defend Net Neutrality",
-					url: "https://www.youtube.com/watch?v=wtt2aSV8wdw&feature=youtube_gdata",
+					title: "Largest living cat species | DEMO",
+					url: "#",
 					views: 368000,
-					uploader: "CGP Grey",
+					uploader: "DEMO",
 					duration: "3:34",
-					thumb: "https://i1.ytimg.com/vi/wtt2aSV8wdw/0.jpg"
+					thumb: "https://ichro.me/img/youtube/tiger.jpg"
 				}
 			]
 		},
