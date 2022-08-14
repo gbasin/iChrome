@@ -25,110 +25,110 @@ define(["jquery", "browser/api"], function($, Browser) {
 		Browser.tabs.getCurrent(function(tab) {
 			tabId = tab.id;
 
-			Browser.webRequest.onHeadersReceived.addListener(
-				function(info) {
-					var headers = info.responseHeaders || [];
+			// Browser.webRequest.onHeadersReceived.addListener(
+			// 	function(info) {
+			// 		var headers = info.responseHeaders || [];
 
-					for (var i = headers.length - 1; i >= 0; --i) {
-						var header = headers[i].name.toLowerCase();
+			// 		for (var i = headers.length - 1; i >= 0; --i) {
+			// 			var header = headers[i].name.toLowerCase();
 
-						// if (header === "set-cookie") {
-						// 	var val = headers[i].value;
-						// 	if (val.indexOf("SameSite=") < 0) {
-						// 		val = val + ";SameSite=None";
+			// 			// if (header === "set-cookie") {
+			// 			// 	var val = headers[i].value;
+			// 			// 	if (val.indexOf("SameSite=") < 0) {
+			// 			// 		val = val + ";SameSite=None";
 
-						// 		val.replace("SameSite=Lax", "SameSite=None");
-						// 		val.replace("SameSite=Strict", "SameSite=None");
-
-
-						// 		if (val.indexOf(";Secure") < 0) {
-						// 			val = val + ";Secure";
-						// 		}
+			// 			// 		val.replace("SameSite=Lax", "SameSite=None");
+			// 			// 		val.replace("SameSite=Strict", "SameSite=None");
 
 
-						// 		headers[i].value = val;
-						// 	}
-						// }
+			// 			// 		if (val.indexOf(";Secure") < 0) {
+			// 			// 			val = val + ";Secure";
+			// 			// 		}
 
-						if (header === "x-frame-options" || header === "frame-options") {
-							headers.splice(i, 1);
-						}
-						else if (header === "content-security-policy") {
-							// Remove any frame-ancestors CSP directives, this is actually spec-compliant
-							headers[i].value = headers[i].value.split(";").filter(function(e) {
-								return e.trim().toLowerCase().indexOf("frame-ancestors") !== 0;
-							}).join(";");
-						}
-					}
 
-					[
-						{ name:"access-control-allow-headers", value:"*" },
-						{ name:"access-control-expose-headers", value:"*" },
-						{ name:"access-control-allow-methods", value:"GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS" },
-						{ name:"access-control-allow-origin", value:"*" }
-					].forEach(function(el) {
-						var found = false;
-						for (var i = 0; i < headers.length; i++) {
-							var header = headers[i].name.toLowerCase();
-							if (el.name === header) {
-								headers[i].value = el.value;
-								found = true;
-							}
-						}							
+			// 			// 		headers[i].value = val;
+			// 			// 	}
+			// 			// }
 
-						if (!found) {
-							headers.push(el);
-						}
-					});
+			// 			if (header === "x-frame-options" || header === "frame-options") {
+			// 				headers.splice(i, 1);
+			// 			}
+			// 			else if (header === "content-security-policy") {
+			// 				// Remove any frame-ancestors CSP directives, this is actually spec-compliant
+			// 				headers[i].value = headers[i].value.split(";").filter(function(e) {
+			// 					return e.trim().toLowerCase().indexOf("frame-ancestors") !== 0;
+			// 				}).join(";");
+			// 			}
+			// 		}
+
+			// 		[
+			// 			{ name:"access-control-allow-headers", value:"*" },
+			// 			{ name:"access-control-expose-headers", value:"*" },
+			// 			{ name:"access-control-allow-methods", value:"GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS" },
+			// 			{ name:"access-control-allow-origin", value:"*" }
+			// 		].forEach(function(el) {
+			// 			var found = false;
+			// 			for (var i = 0; i < headers.length; i++) {
+			// 				var header = headers[i].name.toLowerCase();
+			// 				if (el.name === header) {
+			// 					headers[i].value = el.value;
+			// 					found = true;
+			// 				}
+			// 			}							
+
+			// 			if (!found) {
+			// 				headers.push(el);
+			// 			}
+			// 		});
 
 					
-					return {
-						responseHeaders: headers
-					};
-				},
-				{
-					tabId: tabId,
-					urls: [ "*://*/*" ],
-					types: [ "sub_frame" ]
-				},
-				//["blocking", "responseHeaders"]
-				["blocking", "responseHeaders", "extraHeaders"]
-			);
+			// 		return {
+			// 			responseHeaders: headers
+			// 		};
+			// 	},
+			// 	{
+			// 		tabId: tabId,
+			// 		urls: [ "*://*/*" ],
+			// 		types: [ "sub_frame" ]
+			// 	},
+			// 	//["blocking", "responseHeaders"]
+			// 	["blocking", "responseHeaders", "extraHeaders"]
+			// );
 
-			Browser.webRequest.onBeforeSendHeaders.addListener(
-				function(info) {
-					var headers = info.requestHeaders || [];
+			// Browser.webRequest.onBeforeSendHeaders.addListener(
+			// 	function(info) {
+			// 		var headers = info.requestHeaders || [];
 
-					[
-						{ name:"sec-fetch-dest", value:"empty" },
-						{ name:"sec-fetch-site", value:"same-origin" }
-					].forEach(function(el) {
-						var found = false;
-						for (var i = 0; i < headers.length; i++) {
-							var header = headers[i].name.toLowerCase();
-							if (el.name === header) {
-								headers[i].value = el.value;
-								found = true;
-							}
-						}							
+			// 		[
+			// 			{ name:"sec-fetch-dest", value:"empty" },
+			// 			{ name:"sec-fetch-site", value:"same-origin" }
+			// 		].forEach(function(el) {
+			// 			var found = false;
+			// 			for (var i = 0; i < headers.length; i++) {
+			// 				var header = headers[i].name.toLowerCase();
+			// 				if (el.name === header) {
+			// 					headers[i].value = el.value;
+			// 					found = true;
+			// 				}
+			// 			}							
 
-						if (!found) {
-							headers.push(el);
-						}
-					});
+			// 			if (!found) {
+			// 				headers.push(el);
+			// 			}
+			// 		});
 
 
-					return {
-						requestHeaders: headers
-					};
-				},
-				{
-					tabId: tabId,
-					urls: [ "*://*/*" ],
-					types: [ "sub_frame" ]
-				},
-				["blocking", "requestHeaders"]
-			);
+			// 		return {
+			// 			requestHeaders: headers
+			// 		};
+			// 	},
+			// 	{
+			// 		tabId: tabId,
+			// 		urls: [ "*://*/*" ],
+			// 		types: [ "sub_frame" ]
+			// 	},
+			// 	["blocking", "requestHeaders"]
+			// );
 
 			listening = true;
 			attaching = false;

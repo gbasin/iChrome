@@ -1,4 +1,4 @@
-<p>Welcome to ProductivityTab version 1.45.16!</p>
+<p>Welcome to ProductivityTab version 1.45.18!</p>
 <section>
 <p>What's New in Version 1.45.16:</p>
 <ul>
@@ -7,5 +7,12 @@
 <li>IMPROVEMENT. Weather widget timezone calculation.</li>
 <li>FIXED. Keep widget stopped to work.</li>
 <li>IMPROVEMENT. More sites work now with iFrame widget.</li>
+</ul>
+</section>
+
+<section>
+<p>What's New in Version 1.45.18:</p>
+<ul>
+<li>FIXED. Crashes on second tab opening in new Chrome v104.</li>
 </ul>
 </section>
