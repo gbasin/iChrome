@@ -88,7 +88,7 @@ h2.header a {
 	height: 128px;
 	vertical-align: top;
 	display: inline-block;
-	background: url(icons/sunny.png) center/auto 110% no-repeat;
+	background: url(icons/unknown.png) center/auto 110% no-repeat;
 }
 
 .current .cond {
@@ -181,6 +181,9 @@ div.toggle-hourly span.active {
 .cond.lightrain-snow	{ background-image: url(icons/lightrain-snow.png); }
 .cond.partlycloudy-night{ background-image: url(icons/partlycloudy-night.png); }
 .cond.showers-night		{ background-image: url(icons/showers-night.png); }
+.cond.unknown			{ background-image: url(icons/unknown.png); }
+.cond.mist				{ background-image: url(icons/mist.png); }
+.cond.sunny				{ background-image: url(icons/sunny.png); }
 
 
 
