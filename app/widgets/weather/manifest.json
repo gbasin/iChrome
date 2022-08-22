@@ -38,6 +38,14 @@
 		}
 	}, {
 		"type": "radio",
+		"name": "source",
+		"label": "i18n.settings.source",
+		"options": {
+			"0": "i18n.settings.source0",
+			"1": "i18n.settings.source1"
+		}
+	}, {
+		"type": "radio",
 		"name": "forecast",
 		"sizes": ["variable"],
 		"label": "i18n.settings.forecast",
@@ -69,6 +77,10 @@
 				"units": "Units",
 				"units_imperial": "Imperial (Fahrenheit)",
 				"units_metric": "Metric (Celsius)",
+
+				"source": "Weather Server",
+				"source0": "1",
+				"source1": "2",
 
 				"enabled": "Enabled",
 				"disabled": "Disabled",
