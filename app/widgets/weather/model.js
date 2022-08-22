@@ -289,7 +289,7 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 						loc = [37.777, -122.42];
 					}
 
-					if (this.config.source === 1)
+					if (this.config.source === "1")
 					{
 						this.Auth.ajax({
 							url: "/weather",
