@@ -302,23 +302,31 @@ chrome.runtime.setUninstallURL("https://ichro.me/uninstall?" +
 );
 
 
-function isMe(url) {
-	if (!url || !url.startsWith("chrome-extension")) {
-		return false;
-	}
-	
-	var ids = [
-		"iccjgbbjckehppnpajnmplcccjcgbdep",
-		"oghkljobbhapacbahlneolfclkniiami",
-		"ggnceihnaabghbfmifjmofepelnahpjb",
-		"fchofdkiekcoogalkgmhhpkokabblmog",
-		"jlmkfmonpepbnocphhcdheedjlibkbpk"
-	];
+function isMe(initiator, url) {
+	if (initiator && initiator.startsWith("chrome-extension")) {
+		var ids = [
+			"iccjgbbjckehppnpajnmplcccjcgbdep",
+			"oghkljobbhapacbahlneolfclkniiami",
+			"ggnceihnaabghbfmifjmofepelnahpjb",
+			"fchofdkiekcoogalkgmhhpkokabblmog",
+			"jlmkfmonpepbnocphhcdheedjlibkbpk"
+		];
 
-	var dbg = false;
-	return dbg || ids.some(function(id) {
-		return url.indexOf(id) > 0;
-	});
+		var dbg = false;
+		return dbg || ids.some(function(id) {
+			return initiator.indexOf(id) > 0;
+		});
+	}
+
+	if (initiator && (initiator.startsWith("https://m.facebook.com") || initiator.startsWith("https://ichro.me") || initiator.startsWith("https://www.linkedin.com"))) {
+		return true;
+	}
+
+	if (url && (url.startsWith("https://m.facebook.com") || url.startsWith("https://mail.google.com/mail") || url.startsWith("https://ichro.me"))) {
+		return true;
+	}
+
+	return false;
 }
 
 if (chrome.webRequest)
@@ -326,7 +334,7 @@ if (chrome.webRequest)
 	chrome.webRequest.onBeforeSendHeaders.addListener(
 		function(info) {
 			var headers = info.requestHeaders || [];
-			if (isMe(info.initiator))
+			if (isMe(info.initiator, info.url))
 			{
 				[
 					{ name:"sec-fetch-dest", value:"empty" },
@@ -364,7 +372,7 @@ if (chrome.webRequest)
 		function(info) {
 			var headers = info.responseHeaders || [];
 	
-			if (isMe(info.initiator))
+			if (isMe(info.initiator, info.url))
 			{
 				for (var i = headers.length - 1; i >= 0; --i) {
 					var header = headers[i].name.toLowerCase();
