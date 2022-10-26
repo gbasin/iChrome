@@ -284,10 +284,12 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 				return;
 			}
 
+			/*
 			if (this.config.edition === "en-us") {
 				this.refreshMsnCodeFuel();
 				return;
 			}
+			*/
 
 			this.refreshMsn();
 		},
