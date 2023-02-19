@@ -1,4 +1,12 @@
-<p>Welcome to ProductivityTab version 1.45.20!</p>
+<p>Welcome to ProductivityTab version 1.45.21!</p>
+
+<section>
+<p>What's New in Version 1.45.21:</p>
+<ul>
+<li>FIX. Fix Weather widget issues.</li>
+</ul>
+</section>
+
 
 <section>
 <p>What's New in Version 1.45.20:</p>
@@ -19,17 +27,6 @@
 <p>What's New in Version 1.45.18:</p>
 <ul>
 <li>FIXED. Crashes on second tab opening in new Chrome v104.</li>
-</ul>
-</section>
-
-<section>
-<p>What's New in Version 1.45.16:</p>
-<ul>
-<li>FIXED. Youtube widget could not always find channels.</li>
-<li>FIXED. Weather widget icons were incorrect sometimes.</li>
-<li>IMPROVEMENT. Weather widget timezone calculation.</li>
-<li>FIXED. Keep widget stopped to work.</li>
-<li>IMPROVEMENT. More sites work now with iFrame widget.</li>
 </ul>
 </section>
 

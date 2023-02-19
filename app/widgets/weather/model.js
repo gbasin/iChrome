@@ -384,7 +384,8 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 								lon: loc[1],
 								units: this.config.units || null,
 								hourly: this.config.hourly === "enabled" ? true : null,
-								nc: new Date().getTime()
+								nc: new Date().getTime(),
+								l: this.lastRefresh
 								//force: 101
 							}
 						}).done(function(d) {
@@ -420,6 +421,34 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 
 							if (!units && d.units2) {
 								units = d.units2;
+							}
+
+							var overtime = Math.round(d.overtime || 0);
+							if (overtime > 0 && this.isPendingRefresh != true) {
+								//Hit API limit ==> refresh in random time.
+								var maxDelay = 15000;
+								if (this.Auth.isPro) {
+									maxDelay = 3000;
+								}
+								var weightedTime = 15000 / overtime + 1;
+								if (weightedTime > 5000) {
+									weightedTime = 5000;
+								}
+								var last = this.lastRefresh || 0; // Increase time on each unsuccessful request
+								if (last > 100000) {
+									last = 100000;
+								}
+								var delayMs = Math.round(Math.random() * maxDelay + 100 + weightedTime) + last;
+								this.lastRefresh = delayMs;
+
+								this.isPendingRefresh = true;
+								window.setTimeout(function() {
+									this.isPendingRefresh = null;
+									this.refresh();
+								}.bind(this), delayMs);
+							}
+							else{
+								this.lastRefresh = null;
 							}
 
 							var ret = {
