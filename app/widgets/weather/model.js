@@ -424,7 +424,7 @@ define(["lodash", "widgets/model", "moment"], function(_, WidgetModel, moment) {
 							}
 
 							var overtime = Math.round(d.overtime || 0);
-							if (overtime > 0 && this.isPendingRefresh != true) {
+							if (overtime > 0 && this.isPendingRefresh !== true) {
 								//Hit API limit ==> refresh in random time.
 								var maxDelay = 15000;
 								if (this.Auth.isPro) {
