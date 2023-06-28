@@ -1,4 +1,12 @@
-<p>Welcome to ProductivityTab version 1.45.21!</p>
+<p>Welcome to ProductivityTab version 1.45.23!</p>
+
+<section>
+<p>What's New in Version 1.45.23:</p>
+<ul>
+<li>FIX. Fix RSS widget.</li>
+<li>FIX. Fix News widget for BBC.</li>
+</ul>
+</section>
 
 <section>
 <p>What's New in Version 1.45.21:</p>
@@ -29,4 +37,3 @@
 <li>FIXED. Crashes on second tab opening in new Chrome v104.</li>
 </ul>
 </section>
-

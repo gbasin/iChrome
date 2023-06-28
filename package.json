@@ -22,7 +22,7 @@
     "grunt-contrib-jshint": "^0.11.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-hogan": "^0.3.0",
-    "grunt-sass": "^1.2.1",
+    "grunt-sass": "^2.1.0",
     "grunt-string-replace": "^1.0.0",
     "hogan.js": "^3.0.2",
     "jshint-stylish": "^2.0.0",
