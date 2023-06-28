@@ -506,7 +506,7 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 				var cacheTimeout = 3 * 60000;
 
 				$.getJSON("https://cloud.feedly.com/v3/streams/contents?streamId=feed%2F" + encodeURIComponent(url), {
-					bnd: new Date().getTime(),
+					//bnd: new Date().getTime(),
 					count: maximized ? 45 : this.config.number
 				}, function(d) {
 					feedlyProxy.onsent(d, url, new Date().getTime() + cacheTimeout);

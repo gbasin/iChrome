@@ -255,7 +255,7 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl", "lib/feedlyproxy"],
 
 			function loadFeed(feed) {
 				return function() {
-					return $.getJSON("https://cloud.feedly.com/v3/streams/contents?count=" + numPerFeed + "&nc=" + (new Date().getTime()) + "&streamId=feed%2F" + encodeURIComponent(feed));
+					return $.getJSON("https://cloud.feedly.com/v3/streams/contents?count=" + numPerFeed + "&streamId=feed%2F" + encodeURIComponent(feed));
 				};
 			}
 
@@ -352,7 +352,7 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl", "lib/feedlyproxy"],
 			var maximized = this.get("state") === "maximized";
 
 			var count = maximized || this.config.number === '' ? 45 : this.config.number;				
-			var feedUrl = "https://cloud.feedly.com/v3/streams/contents?count=" + count + "&nc=" + (new Date().getTime()) + "&streamId=feed%2F" + encodeURIComponent(parseUrl(feed));
+			var feedUrl = "https://cloud.feedly.com/v3/streams/contents?count=" + count + "&streamId=feed%2F" + encodeURIComponent(parseUrl(feed));
 
 			var delayMs = feedlyProxy.getDelay(isReload || false);
 			if (delayMs >= 0) {
