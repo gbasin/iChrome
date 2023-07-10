@@ -15,7 +15,8 @@
 		<span>{{i18n.settings.source}}</span>
 
 		<select class="source" name="source">
-			<option value="msn">MSN</option>
+			<option value="fn">Fox News</option>
+			<option value="nyt">New York Times</option>
 			<option value="bbc">BBC</option>
 		</select>
 	</label>
@@ -106,6 +107,30 @@
 				{{#bbctopics}}
 					<option  value="{{0}}">{{1}}</option>
 				{{/bbctopics}}
+			</select>
+		</label>
+	</div>
+
+	<div class="fn-wrapper">
+		<label class="input">
+			<span>{{i18n.settings.default_topic}}</span>
+
+			<select class="fntopic" name="fntopic">
+				{{#fntopics}}
+					<option  value="{{0}}">{{1}}</option>
+				{{/fntopics}}
+			</select>
+		</label>
+	</div>
+
+	<div class="nyt-wrapper">
+		<label class="input">
+			<span>{{i18n.settings.default_topic}}</span>
+
+			<select class="nyttopic" name="nyttopic">
+				{{#nyttopics}}
+					<option  value="{{0}}">{{1}}</option>
+				{{/nyttopics}}
 			</select>
 		</label>
 	</div>

@@ -75,6 +75,18 @@ define(["lodash", "./view", "moment"], function(_, MainView, moment) {
 				width = Math.round(((containerWidth / 5) - 10) * 2);
 			}
 
+			if (this.model.isFn()) {
+				return;
+			}
+
+			if (this.model.isNyt()) {
+				if (e.image) {
+					e.image = e.image.replace(/-moth(-v\d)?\.jpg$/, "-facebookJumbo.jpg");
+				}
+				
+				return;
+			}
+
 			if (this.model.isBbc()) {
 				if (width > 2048) {
 					width = 2048;
@@ -148,6 +160,16 @@ define(["lodash", "./view", "moment"], function(_, MainView, moment) {
 				if (this.model.isBbc()) {
 					if (data.title !== "BBC News") {
 						data.title += ", BBC News";
+					}
+				}
+				else if (this.model.isFn()) {
+					if (data.title !== "Fox News") {
+						data.title += ", Fox News";
+					}
+				}
+				else if (this.model.isNyt()) {
+					if (data.title && data.title !== "New York Times") {
+						data.title += ", New York Times";
 					}
 				}
 			}

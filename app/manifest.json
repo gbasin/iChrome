@@ -70,7 +70,7 @@
 		"bookmarks",
 		"management"
 	],
-	"version": "3.0.45.23",
+	"version": "3.0.45.24",
 	"manifest_version": 2,
 	"default_locale": "en",
 	"short_name": "ProductivityTab",

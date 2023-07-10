@@ -596,10 +596,10 @@ header .title ~ .tabs {
 	background: rgba(0, 0, 0, .15);
 }
 
-.settings .msn-wrapper, .settings .bbc-wrapper {
+.settings .msn-wrapper, .settings .bbc-wrapper, .settings .fn-wrapper, .settings .nyt-wrapper {
 	display: none;
 }
 
-.settings form.msn .msn-wrapper, .settings form.bbc .bbc-wrapper {
+.settings form.msn .msn-wrapper, .settings form.bbc .bbc-wrapper, .settings form.fn .fn-wrapper, .settings form.nyt .nyt-wrapper {
 	display: block;
 }

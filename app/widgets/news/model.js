@@ -27,15 +27,100 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 			["topint", "Top / Rest world", "", "?edition=int"]
 		],
 
+		fntopics: [
+			["top", "Top", "latest"],
+			["wus", "USA", "us"],
+			["world", "World", "world"],
+			["politics", "Politics", "politics"],
+			["science", "Science", "science"],
+			["sports", "Sports", "sports"],
+			["travel", "Travel", "travel"],
+			["tech", "Technology", "tech"],
+			["opinion", "Opinion", "opinion"],
+			["videos", "Videos", "videos"],
+		],
+
+		nyttopics: [
+			// Group 0: Tops
+			["top", "Top", "HomePage"],
+			["mostviewed", "Most Viewed", "MostViewed"],
+			["mostemailed", "Most Emailed", "MostEmailed"],
+			["mostshared", "Most Shared", "MostShared"],
+
+			// Group 1: Locations
+			["us", "US", "US"],
+			["nyregion", "NY Region", "NYRegion"],
+			["americas", "Americas", "Americas"],
+			["world", "World", "World"],
+			["europe", "Europe", "Europe"],
+			["africa", "Africa", "Africa"],
+			["middleeast", "Middle East", "MiddleEast"],
+			["asiapacific", "Asia Pacific", "AsiaPacific"],
+			
+			// Group 2: Arts and Entertainment
+			["arts", "Arts", "Arts"],
+			["artanddesign", "Art and Design", "ArtandDesign"],
+			["movies", "Movies", "Movies"],
+			["music", "Music", "Music"],
+			["theater", "Theater", "Theater"],
+			["tmagazine", "T Magazine", "TMagazine"],
+			
+			// Group 3: Sports
+			["sports", "Sports", "Sports"],
+			["baseball", "Baseball", "Baseball"],
+			["collegebasketball", "College Basketball", "CollegeBasketball"],
+			["collegefootball", "College Football", "CollegeFootball"],
+			["golf", "Golf", "Golf"],
+			["hockey", "Hockey", "Hockey"],
+			["probasketball", "Pro Basketball", "ProBasketball"],
+			["profootball", "Pro Football", "ProFootball"],
+			["soccer", "Soccer", "Soccer"],
+			["tennis", "Tennis", "Tennis"],
+			
+			// Group 4: Business and Economy
+			["business", "Business", "Business"],
+			["economy", "Economy", "Economy"],
+			["yourmoney", "Your Money", "YourMoney"],
+			["smallbusiness", "Small Business", "SmallBusiness"],
+			["jobs", "Jobs", "Jobs"],
+			["automobiles", "Automobiles", "Automobiles"],
+			["dealbook", "Dealbook", "Dealbook"],
+			["realestate", "Real Estate", "RealEstate"],
+			
+			// Group 5: Science and Technology
+			["science", "Science", "Science"],
+			["technology", "Technology", "Technology"],
+			["personaltech", "Personal Tech", "PersonalTech"],
+			["climate", "Climate", "Climate"],
+			["energyenvironment", "Energy Environment", "EnergyEnvironment"],
+			
+			// Group 6: Lifestyle and Features
+			["booksreview", "Books/Review", "Books/Review"],
+			["diningandwine", "Dining and Wine", "DiningandWine"],
+			["fashionandstyle", "Fashion and Style", "FashionandStyle"],
+			["lens", "Lens", "Lens"],
+			["mediaandadvertising", "Media and Advertising", "MediaandAdvertising"],
+			["obituaries", "Obituaries", "Obituaries"],
+			["sundaybookreview", "Sunday Book Review", "SundayBookReview"],
+			["sundayreview", "Sunday Review", "Sunday-Review"],
+			["television", "Television", "Television"],
+			["travel", "Travel", "Travel"],
+			["upshot", "Upshot", "Upshot"],
+			["weddings", "Weddings", "Weddings"],
+			["well", "Well", "Well"],
+		],
+
 		defaults: {
 			config: {
 				size: "variable",
 				title: "i18n.name",
-				source: "msn",
+				source: "fn",
 				number: 5,
 				edition: "en-us",
 				topic: "$allStories",
 				bbctopic: "top",
+				fntopic: "top",
+				nyttopic: "top",
 				link: "https://news.google.com"
 			},
 
@@ -57,7 +142,7 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 				],
 				items: [
 					{
-						"title": "EXCLUSIVE-Chemical weapons used in Syrian fighting - watchdog",
+						"title": "DEMO: EXCLUSIVE-Chemical weapons used in Syrian fighting - watchdog",
 						"desc": "Chemical weapons experts have determined that mustard gas was used during fighting in Syria in August, according to a report by an international watchdog seen by Reuters.",
 						"date": 1446747372000,
 						"image": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBmSQjO_m5_h190_w200.jpg",
@@ -65,7 +150,7 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 						"source": "Reuters"
 					},
 					{
-						"title": "The tragic case of the boy who was missing for 13 years — and didn’t know it",
+						"title": "DEMO: The tragic case of the boy who was missing for 13 years — and didn’t know it",
 						"desc": "Julian Hernandez was abducted in Alabama by his father in 2002, police said. He was found in Ohio, living under assumed name.",
 						"date": 1446746400000,
 						"image": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBmSxnS_m5_h190_w200.jpg",
@@ -73,7 +158,7 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 						"source": "The Washington Post"
 					},
 					{
-						"title": "Rumsfeld: Bush 41 'getting up in years'",
+						"title": "DEMO: Rumsfeld: Bush 41 'getting up in years'",
 						"desc": "The former Defense secretary is pushing back on criticism from the elder Bush.",
 						"date": 1446752880000,
 						"image": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBmSvmg_m5_h190_w200.jpg",
@@ -81,7 +166,7 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 						"source": "The Hill"
 					},
 					{
-						"title": "Russia, Egypt reject British PM's terrorist bomb speculation",
+						"title": "DEMO: Russia, Egypt reject British PM's terrorist bomb speculation",
 						"desc": "British Prime Minister David Cameron said Thursday there is a \"strong possibility\" a terrorist bomb brought down a Russian plane over the Sinai even as Russia and Egypt dismissed such talk as premature speculation.",
 						"date": 1446746400000,
 						"image": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBmSnRb_m5_h190_w200.jpg",
@@ -89,7 +174,7 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 						"source": "USA Today"
 					},
 					{
-						"title": "Detective: 'Hero' cop sought hit-man to cover up thefts",
+						"title": "DEMO: Detective: 'Hero' cop sought hit-man to cover up thefts",
 						"desc": "Months before an Illinois police officer staged his suicide to look like murder, prompting an expensive manhunt that put his community under siege, he tried to find a hit man to kill a village administrator.",
 						"date": 1446750000000,
 						"image": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBmS7SA_m5_h190_w200.jpg",
@@ -125,9 +210,13 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 				this.config.edition = conversions[this.config.edition] || "en-us";
 			}
 
-
 			if (!this.config.number || this.config.number > 20) {
 				this.config.number = 20;
+			}
+
+			if (!this.config.source || this.config.source === "msn") {
+				this.config.source = "fn";
+				this.config.topic = "top";
 			}
 
 			this.authHeader = this.Auth.adFree ? "API_KEY db72b4be78c04a3a97b2b11ea8ab1e4a" : "API_KEY 8b04677e27d5498a90e306eedbf19fb3";
@@ -143,35 +232,43 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 			}, this);
 		},
 
-		getTopic: function(config) {
+		getTopic(config) {
 			config = config || this.config;
-			if (this.isBbc(config.source)) {
-				return config.bbctopic;
-			}
-
-			return config.topic;
+			
+			if (this.isBbc(config.source)) { return config.bbctopic; }
+			if (this.isMsn(config.source)) { return config.topic; }
+			if (this.isNyt(config.source)) { return config.nyttopic; }
+			if (this.isFn(config.source)) { return config.fntopic; }
+			
+			return config.fntopic; // Default is Fox News
 		},
 
-		getTopics: function(cb, source, edition) {
-			if (this.isBbc(source)) {
-				return this.getBbcTopics(cb);
-			}
+		getTopics: function(cb, source) {
+			if (this.isBbc(source)) { return this.getBbcTopics(cb); }
+			if (this.isMsn(source)) { return this.getMsnTopics(cb); }
+			if (this.isNyt(source)) { return this.getNytTopics(cb); }
+			if (this.isFn(source)) { return this.getFnTopics(cb); }
 
-			edition = edition || this.config.edition;
-			return this.getMsnTopics(cb, edition);
+			return this.getFnTopics(cb);
 		},
 
 		getStoredTopics: function() {
-			if (this.isBbc()) {
-				return this.bbctopics;
-			}
-
-			return this.data.topics;
+			if (this.isBbc()) { return this.bbctopics; }
+			if (this.isMsn()) { return this.topics; }
+			if (this.isNyt()) { return this.nyttopics; }
+			return this.fntopics;
 		},
 
-		isBbc: function(source) {
+		isBbc: function(source) { return this.isThatSource(source, "bbc"); },
+		isMsn: function(source) { return this.isThatSource(source, "msn2"); },
+		isNyt: function(source) { return this.isThatSource(source, "nyt"); },
+		isFn: function(source) { 
+			return this.isThatSource(source, "fn") || (!this.isBbc() && !this.isMsn() && !this.isNyt()); //Fox News is default
+		},
+
+		isThatSource: function(source, val) {
 			source = source || this.config.source;
-			return source === "bbc";
+			return source === val;
 		},
 
 		/**
@@ -197,12 +294,22 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 
 
 		/**
-		 * Loads the list of topics for the current BBC news edition.
+		 * Loads the list of topics for a current news source edition.
 		 *
 		 * @param   {Function}  cb         The callback
 		 */
 		getBbcTopics: function(cb) {
 			var topics = this.bbctopics;
+			cb.call(this, topics);
+		},
+
+		getNytTopics: function(cb) {
+			var topics = this.nyttopics;
+			cb.call(this, topics);
+		},
+
+		getFnTopics: function(cb) {
+			var topics = this.fntopics;
 			cb.call(this, topics);
 		},
 
@@ -212,7 +319,7 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 		 * @param   {Array}   docs       The items to parse
 		 * @return  {Object}             An array of parsed, normalized entries
 		 */
-		parseArticles: function(docs, maximized) {
+		parseArticlesMsn: function(docs, maximized) {
 			// Bing returns a relational data structure, we need to index the items
 			// for fast lookups
 			var images = {},
@@ -277,21 +384,19 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 			});
 		},
 
-
 		refresh: function() {
 			if (this.isBbc()) {
 				this.refreshBbc();
-				return;
 			}
-
-			/*
-			if (this.config.edition === "en-us") {
-				this.refreshMsnCodeFuel();
-				return;
+			else if (this.isMsn()) {
+				this.refreshMsn();
 			}
-			*/
-
-			this.refreshMsn();
+			else if (this.isNyt()) {
+				this.refreshNyt();
+			}
+			else {
+				this.refreshFn();
+			}
 		},
 
 		knowDomains: [
@@ -301,7 +406,7 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 			"img.s-msn.com"
 		],
 
-		fixlinks: function(items) {
+		fixlinksMsn: function(items) {
 			var fix = function(url) {
 				if (!_.isEmpty(url)) {
 					for (var i = 0; i < this.knowDomains.length; i++) {
@@ -426,8 +531,8 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 					this.get("activeTab") === activeTab &&
 					d && d._embedded && d._embedded.documents
 				) {
-					var items = this.parseArticles(d._embedded.documents, maximized);
-					this.fixlinks(items);
+					var items = this.parseArticlesMsn(d._embedded.documents, maximized);
+					this.fixlinksMsn(items);
 
 					// Only save data if this is the default tab and we aren't
 					// maximized (and therefore didn't fetch more articles)
@@ -475,7 +580,7 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 					this.get("activeTab") === activeTab && d && d.items
 				) {
 					var items = _.map(d.items, this.parseFeedlyEntry, this);
-					this.fixlinks(items);
+					this.fixlinksMsn(items);
 
 					// Only save data if this is the default tab and we aren't
 					// maximized (and therefore didn't fetch more articles)
@@ -640,7 +745,6 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 
 					span.setAttribute("data-href", href);
 
-
 					$(e).replaceWith(span);
 				});
 
@@ -648,8 +752,211 @@ define(["lodash", "jquery", "widgets/model", "lib/feedlyproxy", "core/settings"]
 			}
 
 			return item;
-		}
+		},
+		
 
+		refreshNyt: function() {
+			// We save the active tab in case it changes before the request is finished
+			var activeTab = this.get("activeTab");
+
+			if (!this.Auth.isPro && activeTab !== this.config.nyttopic) {
+				return this.set("activeTab", this.config.nyttopic);
+			}
+
+			var maximized = this.get("state") === "maximized";
+
+			var topic = _.find(this.nyttopics, [activeTab]);
+
+			var url = "https://rss.nytimes.com/services/xml/rss/nyt/";
+			if (topic && topic.length > 2) {
+				url += (topic[2] + ".xml");
+			}
+
+			var process = function(d) {
+				// If the active tab has changed (i.e. the user has switched tabs
+				// twice before the request finished), we don't want to emit any entries
+				if (this.get("activeTab") === activeTab && d) {
+					const items = [];
+					try {
+						const itemNodes = d.querySelectorAll('item');
+						let count = 0;
+						if (itemNodes) {
+							itemNodes.forEach((item) => {
+								if (count++ >= this.config.number) {
+									return; 
+								}					
+								
+								const getTextContent = (element, selector) => {
+									const match = element.querySelector(selector);
+									return match ? match.textContent : undefined;
+								};								
+								
+								const itemTitle = getTextContent(item, "title");
+								const itemLink = getTextContent(item, "link");
+								const itemGuid = getTextContent(item, "guid");
+								const itemDescription = getTextContent(item, "description");
+								let itemAuthor = null;
+								const dcCreator = item.getElementsByTagNameNS("http://purl.org/dc/elements/1.1/", "creator");
+								if (dcCreator.length > 0) {
+									itemAuthor = dcCreator[0] ? dcCreator[0].textContent : undefined;
+								}
+								const itemPubDate = getTextContent(item, "pubDate");
+								const mediaContent = item.getElementsByTagNameNS("http://search.yahoo.com/mrss/", "content");
+								let image = null;
+								if (mediaContent.length > 0) {
+									image = mediaContent[0].getAttribute("url");
+								}
+
+								items.push({
+									title: itemTitle,
+									url: itemLink,
+									id: itemGuid,
+									desc: itemDescription,
+									date: itemPubDate,
+									author: itemAuthor,
+									image: image,
+									source: ''
+								});
+							});						
+						}
+					}
+					catch (e) {
+						//TODO: log
+					}
+
+					// Only save data if this is the default tab and we aren't
+					// maximized (and therefore didn't fetch more articles)
+					if (activeTab === this.config.nyttopic && !maximized) {
+						this.data.items = items;
+						this.saveData();
+					} else {
+						// We only trigger the entries:loaded event if this is not the
+						// first tab so the view doesn't render twice
+						this.trigger("entries:loaded", { items: items });
+					}
+				}
+			}.bind(this);
+
+			var getSingle = function() {
+				$.ajax({
+					url: url,
+					dataType: "xml",
+					cache: false,
+					data: {
+						//bnd: Math.floor(new Date().getTime() / 120)
+					},
+					success: function(d) {
+						process(d);
+					},
+					error: function() {
+						this.trigger("entries:loaded", { errors: 1 });
+					}.bind(this)
+				});
+			}.bind(this);
+
+			getSingle();
+		},
+
+		refreshFn: function() {
+			// We save the active tab in case it changes before the request is finished
+			var activeTab = this.get("activeTab");
+
+			if (!this.Auth.isPro && activeTab !== this.config.fntopic) {
+				return this.set("activeTab", this.config.fntopic);
+			}
+
+			var maximized = this.get("state") === "maximized";
+
+			var topic = _.find(this.fntopics, [activeTab]);
+
+			var url = "https://moxie.foxnews.com/google-publisher/";
+			if (topic && topic.length > 2) {
+				url += (topic[2] + ".xml");
+			}
+
+			var process = function(d) {
+				// If the active tab has changed (i.e. the user has switched tabs
+				// twice before the request finished), we don't want to emit any entries
+				if (this.get("activeTab") === activeTab && d) {
+					const items = [];
+					try {
+						const itemNodes = d.querySelectorAll('item');
+						let count = 0; 
+						if (itemNodes) {
+							itemNodes.forEach((item) => {
+								if (count++ >= this.config.number) {
+									return; 
+								}
+
+								const getTextContent = (element, selector) => {
+									const match = element.querySelector(selector);
+									return match ? match.textContent : undefined;
+								};								
+
+								const itemTitle = getTextContent(item, 'title');
+								const itemLink = getTextContent(item, 'link');
+								const itemGuid = getTextContent(item, 'guid');
+								const itemDescription = getTextContent(item, 'description');
+								const itemPubDate = getTextContent(item, 'pubDate');
+								const mediaContent = item.getElementsByTagNameNS('http://search.yahoo.com/mrss/', 'content');
+								var image = null;
+								if (mediaContent.length > 0) {
+									image = mediaContent[0].getAttribute('url');
+								}				
+
+								items.push({
+									title: itemTitle,
+									url: itemLink || itemGuid,
+									id: itemGuid,
+									desc: itemDescription,
+									date: itemPubDate,
+									author: null,
+									image: image,
+									source: ''
+								});							
+							});						
+						}
+					}
+					catch (e) {
+						//TODO: log
+					}
+
+					// Only save data if this is the default tab and we aren't
+					// maximized (and therefore didn't fetch more articles)
+					if (activeTab === this.config.fntopic && !maximized) {
+						this.data.items = items;
+						this.saveData();
+					} else {
+						// We only trigger the entries:loaded event if this is not the
+						// first tab so the view doesn't render twice
+						this.trigger("entries:loaded", { items: items });
+					}
+				}
+			}.bind(this);
+
+			var getSingle = function() {
+				$.ajax({
+					url: url,
+					dataType: "xml",
+					timeout: 60000,
+					// cache: true,
+					// beforeSend: function(xhr) {
+					// 	xhr.setRequestHeader("If-Modified-Since", new Date(Date.now() - 60000).toUTCString());
+					// },					
+					data: {
+						//bnd: Math.floor(new Date().getTime() / 120)
+					},
+					success: function(d) {
+						process(d);
+					},
+					error: function() {
+						this.trigger("entries:loaded", { errors: 1 });
+					}.bind(this)
+				});
+			}.bind(this);
+
+			getSingle();
+		}
 
 	});
 });
