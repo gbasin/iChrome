@@ -39,6 +39,8 @@ define(["lodash", "jquery", "widgets/views/settings", "jquery.serializejson"], f
 		onBeforeRender: function(config) {
 			config.topics = this.model.data.topics;
 			config.bbctopics = this.model.bbctopics;
+			config.fntopics = this.model.fntopics;
+			config.nyttopics = this.model.nyttopics;
 
 			return config;
 		},
@@ -53,6 +55,8 @@ define(["lodash", "jquery", "widgets/views/settings", "jquery.serializejson"], f
 				var form = this.$("form");
 				form.removeClass("msn");
 				form.removeClass("bbc");
+				form.removeClass("fn");
+				form.removeClass("nyt");
 				form.addClass(source.val());
 			}.bind(this));
 

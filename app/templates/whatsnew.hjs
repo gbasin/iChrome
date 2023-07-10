@@ -1,6 +1,14 @@
 <p>Welcome to ProductivityTab version 1.45.23!</p>
 
 <section>
+<p>What's New in Version 1.45.24:</p>
+<ul>
+<li>FIX. Added Fox News to News widget.</li>
+<li>FIX. Added NYT to News widget.</li>
+</ul>
+</section>
+
+<section>
 <p>What's New in Version 1.45.23:</p>
 <ul>
 <li>FIX. Fix RSS widget.</li>

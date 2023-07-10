@@ -113,6 +113,16 @@ define(["lodash", "moment", "widgets/views/main"], function(_, moment, WidgetVie
 						data.title += ", BBC News";
 					}
 				}
+				else if (this.model.isFn()) {
+					if (data.title !== "Fox News") {
+						data.title += ", Fox News";
+					}
+				}
+				else if (this.model.isNyt()) {
+					if (data.title !== "New York Times") {
+						data.title += ", New York Times";
+					}
+				}
 			}
 
 			if (this.model.config.link) {
