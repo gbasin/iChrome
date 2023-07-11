@@ -1,10 +1,12 @@
 {
   "lang_code":"ja",
   "language":"日本語",
-  "extName":"iChrome - 高速・生産的なホームページ",
-  "newtabName":"iChrome 新しいタブ - 高速・生産的な新しいタブ",
-  "extDescription":"Chromeのための最高のホームページ。最高のテーマ、たくさんのウィジェット、超高速、カスタマイズが自由自在！",
-  "newtabDescription":"Chromeのための最高のホームページ。新しいタブにしましょう。見事なテーマ、多数のウィジェット、さらに超高速。めちゃくちゃにカスタマイズ できます！",
+
+	"extName": "ProductivityTab — Custom Homepage Dashboard",
+	"newtabName": "ProductivityTab — Custom New Tab Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"ホーム",
     "me":"自分"
@@ -12,7 +14,7 @@
   "remove_widget":"削除",
   "hide_banner":"Hide this banner",
   "hide_ad":{
-    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make ProductivityTab available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support ProductivityTab directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"アップグレード",
     "hide":"広告を非表示"
   },
@@ -25,12 +27,12 @@
   "onboarding":{
     "modal":{
       "tagline":"よく使うサイトとアプリをまとめます",
-      "wrong_extension":"新しいタブに iChrome を表示させたいですか？",
-      "wrong_extension_newtab":"ホームページを iChrome に設定しますか？",
+      "wrong_extension":"新しいタブに ProductivityTab を表示させたいですか？",
+      "wrong_extension_newtab":"ホームページを ProductivityTab に設定しますか？",
       "wrong_extension_action":"ここをクリック",
-      "about":"iChrome のタブとウィジェットについて",
+      "about":"ProductivityTab のタブとウィジェットについて",
       "about_desc":"タブには、ウィジェット（天気やニュース、メールなど）を追加することができます。ほとんどのウィジェットをカスタマイズ可能で、必要なだけ追加することができます。",
-      "terms":"iChrome を利用することにより、<a href=\"https://ichro.me/tos\" target=\"_blank\">利用規約</a> と <a href=\"https://ichro.me/privacy\" target=\"_blank\">プライバシーポリシー</a> に同意したものとみなされます。",
+      "terms":"ProductivityTab を利用することにより、<a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\">利用規約</a> と <a href=\"https://productivitytab.co/privacy-policy\" target=\"_blank\">プライバシーポリシー</a> に同意したものとみなされます。",
       "sign_in":"Google アカウントでログイン",
       "sign_in_desc":"オンラインでの変更を安全に保存するために、Google アカウントでログインしてください。",
       "sign_in_desc2":"ログインせずに使用することも可能ですが、その場合、ウィジェットの配置などがオンラインに保存されず、別のコンピューターと共有することができません。",
@@ -42,19 +44,19 @@
     },
     "widgets":{
       "configure":"ウィジェットを設定してみましょう。",
-      "configure_desc":"天気ウィジェットのレンチアイコンをクリックし、<b>設定</b>を開きましょう。",
-      "configure_skip":"スキップ",
-      "settings":"<b>San Francisco, CA</b> をお住まいの市町村に書き換え、 <b>保存</b>を押しましょう。",
-      "move":"<b>ドラッグ</b>ボタンを使って、ウィジェットを移動できます。",
-      "remove":"ウィジェットを<b>削除</b>するには、ウィジェットを移動させると表示される赤いバーにドラッグしてください。",
+			"configure_desc": "Click the wrench to open a widget's <b>settings</b>.",
+			"configure_skip": "Skip Tutorial",
+			"settings": "Replace <b>Link URL</b> with your favorite site, then press <b>Save</b>.",
+			"move": "You can <b>reposition</b> widgets by clicking and dragging the three dots highlighted here.",
+			"remove": "To <b>delete</b>, simply click the red trash bin icon.",
       "done":"OK"
     },
     "settings":{
-      "intro":"では、<b>メニュー</b>を見て、ほかに何ができるかを確認してみましょう。",
-      "instructions":"ユーザーのアイコンをクリックすると開くことができます。",
+			"intro": "Now let’s add a new widget. This highlighted button is where you can access the Widget Menu.",
+			"instructions": "Click the new widget button on to open the widget menu!",
       "skip":"スキップ",
       "tooltips":{
-        "settings":"iChrome の外観と動作を変更",
+        "settings":"ProductivityTab の外観と動作を変更",
         "widgets":"新規ウィジェットを追加 - 必要なだけ追加することができます",
         "editing":"ウィジェットの編集ボタンを表示/非表示",
         "links":"リンク一覧 - 設定でよく利用するサイトを追加できます",
@@ -85,7 +87,7 @@
     "placeholder_ok":"キーワードを入力するか、\"OK, Google\" と言ってください",
     "suggestions":{
       "url_subtext":"URL を参照",
-      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+      "capture_notice":"ProductivityTab handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
     },
     "apps":{
       "search":"検索",
@@ -157,7 +159,7 @@
     "visual":{
       "background":{
         "title":"背景",
-        "desc":"iChrome のタブの背景として表示される画像です",
+        "desc":"ProductivityTab のタブの背景として表示される画像です",
         "current":"現在の背景画像",
         "custom":"カスタム",
         "unnamed":"テーマ %s",
@@ -181,7 +183,7 @@
       },
       "theme":{
         "title":"アプリのテーマ",
-        "desc":"iChrome とウィジェットの外観を変更できます",
+        "desc":"ProductivityTab とウィジェットの外観を変更できます",
         "preview":"プレビュー",
         "light":"明るい (デフォルト)",
         "dark":"ダーク",
@@ -225,7 +227,7 @@
     "tabs":{
       "create_new":"新規作成",
       "make_default":"デフォルトに設定",
-      "desc1":"タブは iChrome 内のページです。それぞれのタブごとにウィジェットを配置することができます。",
+      "desc1":"タブは ProductivityTab 内のページです。それぞれのタブごとにウィジェットを配置することができます。",
       "desc2":"画面の左右にマウスを移動すると表示されるボタンをクリックするか、キーボードの矢印キーを使用してタブを切り替えることができます。",
       "name_placeholder":"タブ名を入力",
       "delete_confirm":"このタブを削除してよろしいですか？\nこの操作を元に戻すことはできません。タブ内のすべてのウィジェットが消去されます。"
@@ -245,19 +247,19 @@
     "advanced":{
       "backups":{
         "title":"バックアップと復元",
-        "desc":"すべてのタブ、設定、ウィジェットのデータがバックアップされます。これは毎日、最初に iChrome を開いた時に自動的に実行されます。",
+        "desc":"すべてのタブ、設定、ウィジェットのデータがバックアップされます。これは毎日、最初に ProductivityTab を開いた時に自動的に実行されます。",
         "desc2":"下のボタンを使って、特定の日付に戻ったり、バックアップデータをダウンロードしたりできます。",
         "backup":"今すぐバックアップ",
         "upload":"ファイルから復元",
         "download":"ダウンロード",
         "restore":"復元",
-        "download_name":"iChrome バックアップ",
-        "restore_confirm":"このアカウントでログインしているすべてのコンピューターの iChrome データおよび同期されたデータが上書きされます。",
+        "download_name":"ProductivityTab バックアップ",
+        "restore_confirm":"このアカウントでログインしているすべてのコンピューターの ProductivityTab データおよび同期されたデータが上書きされます。",
         "restore_error":"データの解析中にエラーが発生しました。後でもう一度やり直してください。"
       },
       "css":{
         "title":"カスタム CSS",
-        "desc":"<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\"target=\"blank\">CSS</a> を使用すると、iChrome のほとんどをカスタマイズできます。",
+        "desc":"<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\"target=\"blank\">CSS</a> を使用すると、ProductivityTab のほとんどをカスタマイズできます。",
         "placeholder":"CSS をここに入力（最大1000文字）"
       },
       "debug_tools":{
@@ -276,8 +278,8 @@
     },
     "pro":{
       "promo":{
-        "monthly_price":"月額 $2",
-        "yearly_price":"または年額 $20",
+        "monthly_price":"月額 $4.99",
+        "yearly_price":"または年額 $29.99",
         "upgrade_btn":"今すぐアップグレード",
         "business":"ビジネスや教育目的で Pro 版を購入することに興味をお持ちの場合は",
         "business_contact":"ご連絡ください",
@@ -286,7 +288,7 @@
         "bgs":"動く背景画像",
         "bgs_desc":"20種の高解像度画像を使って、あなたのページに命を吹き込みましょう！",
         "widgets":"ウィジェットの最大化",
-        "widgets_desc":"最大化できるウィジェットと共に、iChromeは新しいレベルに引き上げられます。",
+        "widgets_desc":"最大化できるウィジェットと共に、ProductivityTabは新しいレベルに引き上げられます。",
         "more_header":"その他の機能",
         "stocks":"チャートやリアルタイムの詳細な株価情報",
         "rss":"複数の RSS フィードをサポート",
@@ -303,17 +305,17 @@
         "title":"購入",
         "updating_title":"プランを更新",
         "payment_options":"お支払い",
-        "pay_monthly":"毎月 ($2)",
-        "pay_yearly":"毎年 ($20)",
+        "pay_monthly":"毎月 ($4.99)",
+        "pay_yearly":"毎年 ($29.99)",
         "cancel":"キャンセル",
         "update":"更新",
         "subscribe":"定期購入",
         "braintree_notice":"お支払いは Braintree によって安全に処理されます。",
-        "monthly_notice":"定期購入を停止するまで、毎月 $2 を請求します。",
-        "yearly_notice":"定期購入を停止するまで、毎年 $20 を請求します。",
+        "monthly_notice":"定期購入を停止するまで、毎月 $4.99 を請求します。",
+        "yearly_notice":"定期購入を停止するまで、毎年 $29.99 を請求します。",
         "update_notice":"定期支払いの変更の反映はすぐに行われますが、現在の支払い期間終了まで請求されません。",
-        "thank_you":"iChrome Pro をご購入いただきありがとうございます！",
-        "thank_you2":"iChrome Pro はすぐにご利用いただけるようになります！",
+        "thank_you":"ProductivityTab Pro をご購入いただきありがとうございます！",
+        "thank_you2":"ProductivityTab Pro はすぐにご利用いただけるようになります！",
         "error":"お支払いの処理中に問題が発生しました。",
         "error2":"後でもう一度やり直してください。問題が解決しない場合は、support@ichro.me までお問い合わせください。",
         "signin":"ログイン",
@@ -322,7 +324,7 @@
       },
       "plan":{
         "title":"プラン",
-        "desc":"iChrome Pro (%s) に加入契約済みです",
+        "desc":"ProductivityTab Pro (%s) に加入契約済みです",
         "types":{
           "monthly":"毎月",
           "yearly":"毎年",
@@ -330,7 +332,7 @@
           "education":"教育",
           "custom":"カスタム"
         },
-        "uneditable_desc":"ビジネス、教育、およびカスタムのプランは、iChrome 内からは更新できません。更新または解約するには、<a href=\"mailto:support@ichro.me\">サポート</a> へお問い合わせください。",
+        "uneditable_desc":"ビジネス、教育、およびカスタムのプランは、ProductivityTab 内からは更新できません。更新または解約するには、<a href=\"mailto:support@ichro.me\">サポート</a> へお問い合わせください。",
         "status":"ステータス",
         "status_active":"有効",
         "status_trial":"試用版",
@@ -347,9 +349,9 @@
       }
     },
     "ads":{
-      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text1":"ProductivityTab displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer ProductivityTab free to everyone.",
       "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
-      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from ProductivityTab wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
       "upgrade_btn":"広告なしバージョンにアップグレード",
       "already_upgraded":"It looks like you've already upgraded to ad-free",
       "signin":"ログイン",
@@ -468,7 +470,7 @@
       "name_placeholder":"テーマ名を入力",
       "image":"背景画像の URL",
       "image_placeholder":"画像の URL を入力",
-      "image_help":"アップロードされた画像は <b>同期ができません</b>。<br /><br />背景画像の同期が必要な場合は、<a href=\"http://imgur.com/\" target=\"_blank\">imgur</a> などのサービスへ画像をアップロードしてから、左のフィールドに .jpg などの拡張子で終わる URL を入力してください。",
+      "image_help":"アップロードされた画像は <b>同期ができません</b>。<br /><br />背景画像の同期が必要な場合は、<a href=\"https://imgur.com/\" target=\"_blank\">imgur</a> などのサービスへ画像をアップロードしてから、左のフィールドに .jpg などの拡張子で終わる URL を入力してください。",
       "color":"背景色",
       "color_placeholder":"色の名前を入力",
       "position":"位置",

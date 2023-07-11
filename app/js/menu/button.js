@@ -10,12 +10,7 @@ define(["backbone", "menu/menu", "core/announcements"], function(Backbone, Menu,
 			"click .menu-container": Menu.toggle.bind(Menu),
 
 			"click .menu-button, .announcements": function(e) {
-				if (Announcements.count) {
-					Announcements.show();
-				}
-				else {
-					Menu.toggle(e);
-				}
+				Menu.toggle(e);
 			}
 		},
 

@@ -42,7 +42,7 @@
       "title":"书签名",
       "title_placeholder":"谷歌（Google）",
       "url":"添加链接",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"保存"
     },
     "new_caption":"新建",
@@ -166,7 +166,7 @@
   "now":{
     "name":"Google Now",
     "desc":"显示Google Now卡片，提供包括并不限于航班状态和包裹追踪的各种卡片。",
-    "authorize":"在任何东西显示之前您需要授予iChrome查看您Google Now卡片的权限。",
+    "authorize":"在任何东西显示之前您需要授予ProductivityTab查看您Google Now卡片的权限。",
     "authorize_btn":"授权",
     "caught_up":"没有新通知",
     "no_title":"无标题"
@@ -184,7 +184,7 @@
     "desc":"显示Reddit上的热门话题",
     "settings":{
       "subreddit":"Reddit分类",
-      "subreddit_help":"输入在Reddit分类网页链接<b>/r/</b>后的字符。\n<br /><br />\n例如，科技类的链接是<a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>所以您需要输入<b>technology</b>",
+      "subreddit_help":"输入在Reddit分类网页链接<b>/r/</b>后的字符。\n<br /><br />\n例如，科技类的链接是<a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>所以您需要输入<b>technology</b>",
       "subreddit_placeholder":"输入Reddit分类的显示链接。（例如technology）",
       "sort":"排序方式",
       "sort_options":{
@@ -230,8 +230,8 @@
       "source":"显示从推文来源",
       "show":"显示Tweets"
     },
-    "authorize":"您需要给予iChrome授权",
-    "authorize_msg":"在显示任何东西之前您需要授予iChrome权限以查看您账户中的推文。",
+    "authorize":"您需要给予ProductivityTab授权",
+    "authorize_msg":"在显示任何东西之前您需要授予ProductivityTab权限以查看您账户中的推文。",
     "authorize_btn":"授权",
     "no_tweets":"似乎这里没有任何Tweets...",
     "home":"首页",
@@ -294,9 +294,9 @@
     "desc":"显示一个带有标题和缩略图（可选）的链接",
     "settings":{
       "link":"链接 URL：",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"图像地址",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"图像背景色",
       "style":"图像样式",
       "style_fill":"填充",
@@ -365,7 +365,7 @@
     "by":"作者",
     "no_links":"找不到链接",
     "grant_access":"授予访问权限",
-    "no_key":"在加载您保存在Pocket中的链接前，请先授权iChrome访问您的Pocket账号。"
+    "no_key":"在加载您保存在Pocket中的链接前，请先授权ProductivityTab访问您的Pocket账号。"
   },
   "analytics":{
     "name":"分析",
@@ -413,7 +413,7 @@
       "files_shown":"显示文件个数"
     },
     "modified_by":"作者",
-    "authMessage":"在任何东西能够显示前您需要授权iChrome浏览本地文件。"
+    "authMessage":"在任何东西能够显示前您需要授权ProductivityTab浏览本地文件。"
   },
   "gmail":{
     "name":"Gmail",
@@ -424,7 +424,7 @@
     "desc":"在您选择的位置用 iframe 嵌入网页。",
     "settings":{
       "url":"框架链接",
-      "url_placeholder":"例如 http://www.google.com/",
+      "url_placeholder":"例如 https://www.google.com/",
       "height":"框架高度",
       "padding":"内边框"
     }
@@ -512,7 +512,7 @@
     "overview":"概览",
     "news":"新闻",
     "pro_splash1":"获取实时数据，图表，新闻以及股票详细信息是专业版的功能。",
-    "pro_splash2":"请在设置中购买iChrome专业版。",
+    "pro_splash2":"请在设置中购买ProductivityTab专业版。",
     "time_ranges":{
       "1d":"1日",
       "5d":"5日",

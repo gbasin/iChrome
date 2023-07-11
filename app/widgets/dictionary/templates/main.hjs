@@ -12,85 +12,53 @@
 {{^loading}}
 	{{#definition}}
 		<div class="definition">
-			{{#uses.0}}<button type="button" class="material flat blue more">{{i18n.more}}</button>{{/uses.0}}
+			{{#first}}<button type="button" class="material flat blue more">{{i18n.more}}</button>{{/first}}
 
-			<h2 class="term">{{term}}</h2>
+			<h2 class="term">{{word}}</h2>
 
-			{{#pronunciation}}
+			{{#phonetics}}
 				<h3 class="pronunciation">
-					<span>{{pronunciation}}</span>
+					<span>{{text}}</span>
 
 					{{#audio}}<button type="button" class="audio m-icon" data-url="{{audio}}">volume_up</button>{{/audio}}
 				</h3>
-			{{/pronunciation}}
+			{{/phonetics}}
 
-			{{#uses}}
+			{{#meanings}}
 				<div class="usage">
-					<div class="form">{{form}}</div>
-
-					<div class="forms">
-						{{#forms}}
-							<span class="form"><span class="desc">{{desc}}:</span> <span class="value">{{form}}</span></span>
-						{{/forms}}
-					</div>
+					<div class="form">{{partOfSpeech}}</div>
 
 					<ol class="definitions">
 						{{#definitions}}
 							<li>
-								{{#labels.0}}
-									<div class="labels">
-										{{#labels}}<span>{{.}}</span>{{/labels}}
-									</div>
-								{{/labels.0}}
-
 								<p class="definition">{{{definition}}}</p>
 
 								{{#example}}<q class="example">{{{example}}}</q>{{/example}}
 
-								{{#synonymGroups.0}}
+								{{#synonyms.0}}
 									<div class="synonyms">
 										<i class="title">{{i18n.synonyms}}:</i>
 
-										{{#synonymGroups}}
-											<span class="group">
-												{{#register}}<i class="register">{{register}}</i>{{/register}}
-
-												{{!
-													This is formatted like this because extra trailing whitespace messes with the
-													semicolon display, while leading whitespace is necessary for the commas
-												}}
-												{{#synonyms}}
-													<span{{^noDef}} class="has-def"{{/noDef}}>{{text}}</span>{{/synonyms}}</span>
-										{{/synonymGroups}}
+										{{#synonyms}}
+											<span class="has-def">{{.}}</span>
+										{{/synonyms}}
 									</div>
-								{{/synonymGroups.0}}
+								{{/synonyms.0}}
 
-								{{#antonymGroups.0}}
+								{{#antonyms.0}}
 									<div class="antonyms">
 										<i class="title">{{i18n.antonyms}}:</i>
 
-										{{#antonymGroups}}
-											<span class="group">
-												{{#register}}<i class="register">{{register}}</i>{{/register}}
-
-												{{#antonyms}}
-													<span{{^noDef}} class="has-def"{{/noDef}}>{{text}}</span>{{/antonyms}}</span>
-										{{/antonymGroups}}
+										{{#antonyms}}
+											<span class="has-def">{{.}}</span>
+										{{/antonyms}}
 									</div>
-								{{/antonymGroups.0}}
+								{{/antonyms.0}}
 							</li>
 						{{/definitions}}
 					</ol>
 				</div>
-			{{/uses}}
-
-			{{#webDefinitions.0}}
-				<div class="web-definitions">
-					<h2>{{i18n.web_definitions}}</h2>
-
-					{{#webDefinitions}}<p>{{webDefinitions}}</p>{{/webDefinitions}}
-				</div>
-			{{/webDefinitions.0}}
+			{{/meanings}}
 		</div>
 	{{/definition}}
 	{{^definition}}

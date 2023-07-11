@@ -42,7 +42,7 @@
       "title":"বুকমার্কের শিরোনাম",
       "title_placeholder":"গুগল",
       "url":"বুকমার্ক URL",
-      "url_placeholder":"http://www.google.com.bd/",
+      "url_placeholder":"https://www.google.com.bd/",
       "save":"সংরক্ষণ"
     },
     "new_caption":"নতুন",
@@ -166,7 +166,7 @@
   "now":{
     "name":"গুগল নাও",
     "desc":"Displays cards from Google Now including flight status and package tracking.",
-    "authorize":"You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
+    "authorize":"You'll need to give ProductivityTab permission to view your Google Now cards before anything will show up here.",
     "authorize_btn":"অনুমোদন",
     "caught_up":"All caught up, nothing here.",
     "no_title":"কোন শিরোনাম নেই"
@@ -184,7 +184,7 @@
     "desc":"Displays the top items on Reddit for any given subreddit.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
+      "subreddit_help":"Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
       "subreddit_placeholder":"Enter a subreddit to show links from. (i.e. technology)",
       "sort":"সজ্জাক্রম",
       "sort_options":{
@@ -230,8 +230,8 @@
       "source":"Show Tweets from",
       "show":"Tweets Shown"
     },
-    "authorize":"You'll need to authorize iChrome first",
-    "authorize_msg":"You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
+    "authorize":"You'll need to authorize ProductivityTab first",
+    "authorize_msg":"You'll need to give ProductivityTab permission to view tweets from your account before anything will show up here.",
     "authorize_btn":"অনুমোদন",
     "no_tweets":"There don't seem to be any tweets here...",
     "home":"মূল পাতা",
@@ -294,9 +294,9 @@
     "desc":"Displays a link, optionally with a title and thumbnail",
     "settings":{
       "link":"Link URL",
-      "link_placeholder":"http://www.google.com.bd/",
+      "link_placeholder":"https://www.google.com.bd/",
       "image":"চিত্রের URL",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"Image Background Color",
       "style":"Image Style",
       "style_fill":"Fill",
@@ -365,7 +365,7 @@
     "by":"কর্তৃক",
     "no_links":"No links found",
     "grant_access":"Grant access",
-    "no_key":"You'll need to give iChrome access to your Pocket account before it can load your links."
+    "no_key":"You'll need to give ProductivityTab access to your Pocket account before it can load your links."
   },
   "analytics":{
     "name":"বিশ্লেষণমূলক",
@@ -413,7 +413,7 @@
       "files_shown":"দেখানো ফাইলের সংখ্যা"
     },
     "modified_by":"কর্তৃক",
-    "authMessage":"You'll need to give iChrome permission to view files in your Drive before anything can be shown here."
+    "authMessage":"You'll need to give ProductivityTab permission to view files in your Drive before anything can be shown here."
   },
   "gmail":{
     "name":"জিমেইল",
@@ -424,7 +424,7 @@
     "desc":"Displays a webpage of your choice within an iframe.",
     "settings":{
       "url":"ফ্রেম URL",
-      "url_placeholder":"উদা. http://www.google.com.bd/",
+      "url_placeholder":"উদা. https://www.google.com.bd/",
       "height":"ফ্রেমের উচ্চতা",
       "padding":"Padding"
     }

@@ -9,23 +9,23 @@ define(["lodash", "browser/api", "widgets/model"], function(_, Browser, WidgetMo
 			data: {
 				sites: [{
 					title: "Google",
-					url: "http://www.google.com/",
+					url: "https://www.google.com/",
 					favicon: "https://www.google.com/s2/favicons?domain=www.google.com&sz=32"
 				}, {
 					title: "Facebook",
-					url: "http://www.facebook.com/",
+					url: "https://www.facebook.com/",
 					favicon: "https://www.google.com/s2/favicons?domain=www.facebook.com&sz=16"
 				}, {
 					title: "Youtube",
-					url: "http://www.youtube.com/",
+					url: "https://www.youtube.com/",
 					favicon: "https://www.google.com/s2/favicons?domain=www.youtube.com&sz=32"
 				}, {
 					title: "Amazon",
-					url: "http://www.amazon.com/",
+					url: "https://www.amazon.com/",
 					favicon: "https://www.google.com/s2/favicons?domain=www.amazon.com&sz=32"
 				}, {
 					title: "Wikipedia",
-					url: "http://www.wikipedia.org/",
+					url: "https://www.wikipedia.org/",
 					favicon: "https://www.google.com/s2/favicons?domain=www.wikipedia.org&sz=32"
 				}]
 			}

@@ -4,6 +4,7 @@
 define(function() {
 	return {
 		id: 28,
+		sort: 230,
 		size: 4,
 		order: 20,
 		nicename: "calc",

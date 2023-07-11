@@ -4,7 +4,8 @@ define(["widgets/model"], function(WidgetModel) {
 			config: {
 				user: "0",
 				height: 400,
-				size: "variable"
+				size: "variable",
+				type: "new"
 			}
 		}
 	});

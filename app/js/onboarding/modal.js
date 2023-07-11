@@ -56,6 +56,10 @@ define([
 				this.$(".nav button.next").toggleClass("finish", !page.next(".slide").length);
 			}
 			else if (active.attr("data-id") !== "1") {
+				active.removeClass("active");
+
+				page.addClass("active");
+
 				this.modal.hide();
 
 				this.trigger("close", this._userType || "unknown");

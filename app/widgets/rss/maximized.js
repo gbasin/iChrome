@@ -43,9 +43,20 @@ define(["lodash", "./view", "moment", "lib/parseurl"], function(_, MainView, mom
 
 			this.layout = "cards";
 
+			this.listenTo(this.model, "wrefresh", function() {
+				this.render({
+					loading: true
+				});
+
+				this.model.refresh(true);
+			}.bind(this));
+
+
 			this.render({
 				loading: true
 			});
+
+			this.model.refresh();
 		},
 
 

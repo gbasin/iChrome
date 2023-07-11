@@ -26,7 +26,10 @@
 
 		<p>{{i18n.onboarding.settings.instructions}}</p>
 
-		<button type="button" class="button material flat skip">{{i18n.onboarding.settings.skip}}</button>
+	<div class="tutorial-buttons">
+			<button type="button" class="button material flat next">{{i18n.onboarding.next}}</button>
+			<button type="button" class="button material flat skip">{{i18n.onboarding.widgets.configure_skip}}</button>
+		</div>
 	</div>
 
 	<div class="action-mask"></div>

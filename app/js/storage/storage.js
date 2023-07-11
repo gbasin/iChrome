@@ -333,6 +333,9 @@ define([
 					var syncString = JSON.stringify(_.pick(storage, "user", "tabsSync", "settings", "themes"));
 
 					var sync = forceSync || (syncString !== lastSynced);
+					if (!storage.isSync) {
+						storage.isSync = sync;
+					}
 
 					if (sync) {
 						lastSynced = syncString;
@@ -343,11 +346,13 @@ define([
 
 					if (!now) {
 						timeout = setTimeout(function() {
-							save(sync, cb);
+							save(storage.isSync, cb);
+							storage.isSync = false;
 						}, 2000);
 					}
 					else {
-						save(sync, cb);
+						save(storage.isSync, cb);
+						storage.isSync = false;
 					}
 
 
@@ -363,7 +368,8 @@ define([
 				else {
 					cb();
 				}
-			}
+			},
+			isSync : false
 		};
 
 		var parseData = function(data) {

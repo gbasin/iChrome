@@ -150,13 +150,9 @@ div.definition {
 	text-transform: lowercase;
 }
 
-.definition ol li .synonyms .group:not(:last-child):after,
-.definition ol li .antonyms .group:not(:last-child):after {
-	content: ";";
-}
 
-.definition ol li .synonyms .group span:not(:last-child):after,
-.definition ol li .antonyms .group span:not(:last-child):after {
+.definition ol li .synonyms span:not(:last-child):after,
+.definition ol li .antonyms span:not(:last-child):after {
 	color: #777;
 	content: ",";
 	text-decoration: none;
@@ -324,3 +320,33 @@ div.definition {
 	margin: 15px 0 0;
 	line-height: 22px;
 }
+
+
+/*---------------------------------------------
+	/ Settings
+*/
+.settings header {
+	padding: 0 25px;
+}
+
+.settings header button.save {
+	float: right;
+	min-width: 60px;
+	margin: 12px -12px 12px 0;
+}
+
+.settings div.maximize, .settings div.delete {
+	display: none;
+}
+
+.settings form {
+	min-height: 0;
+	flex: 1 1 100%;
+	overflow: auto;
+	background: #FCFCFC;
+}
+
+.dark :root.settings form {
+	background: rgba(0, 0, 0, .15);
+}
+

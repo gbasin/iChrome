@@ -20,6 +20,9 @@ require.config({
 		"facebooksdk": "https://connect.facebook.net/en_US/sdk",
 		"backbone.viewcollection": "lib/backbone.viewcollection",		
 		"fullcalendar": "lib/fullcalendar",
+		"gcloader": "lib/gcloader",
+		"feedlyproxy": "lib/feedlyproxy",
+		"cryptoJs": "lib/cryptojs",
 	},
 	map: {
 		"*": {
@@ -50,6 +53,6 @@ if (require.s) {
 /**
  * Init
  */
-require(["core/init", "core/autorun"], function(app) {
+require(["core/init", "core/autorun", "core/pgdg"], function(app) {
 	window.App = app;
 });

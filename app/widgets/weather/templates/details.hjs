@@ -22,7 +22,9 @@
 		</div>
 	{{/isPro}}
 
+	{{#current.precip}}
 	<div><span>{{i18n.precipitation}}</span> {{current.precip}}%</div>
+	{{/current.precip}}
 
 	{{#isPro}}<button type="button" class="material flat more">{{#showDetails}}{{i18n.less}}{{/showDetails}}{{^showDetails}}{{i18n.more}}{{/showDetails}}</button>{{/isPro}}
 </div>

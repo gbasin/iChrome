@@ -226,7 +226,7 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 					url: url,
 					width: 560,
 					height: 600,
-					type: "popup",
+					type: "normal",
 					focused: true,
 					top: Math.round((screen.availHeight - 600) / 2),
 					left: Math.round((screen.availWidth - 560) / 2)

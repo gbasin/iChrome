@@ -48,6 +48,77 @@ define(["lodash", "./view", "moment"], function(_, MainView, moment) {
 			});
 		},
 
+		resizeImage: function(featured, e) {
+			if (!e || !e.image) {
+				return;
+			}
+
+			// The 18px is 10px padding + an 8px scrollbar
+			var containerWidth = window.innerWidth - 18;
+
+			var width;
+			if (featured === 1) {
+				// Bing identifies the subject in images, resizing them to focus appropriately
+				//
+				// We calculate the final size at 2x and request a scaled image
+				//
+				// The calculation here is a 60% flex-basis + a flex-grow of 3 (takes 0.75 of
+				// available space) times the remaining 10% of the container width (after the
+				// two flex-basis's) minus 20px combined margin from both featured articles
+				width = Math.round(((0.6 * containerWidth) + (0.75 * ((0.1 * containerWidth) - 20))) * 2);
+			}
+			else if (featured === 2) {
+				// Same thing here, just with a flex-grow of 1 and 30% basis
+				width = Math.round(((0.3 * containerWidth) + (0.25 * ((0.1 * containerWidth) - 20))) * 2);
+			}
+			else {
+				width = Math.round(((containerWidth / 5) - 10) * 2);
+			}
+
+			if (this.model.isFn()) {
+				return;
+			}
+
+			if (this.model.isNyt()) {
+				if (e.image) {
+					e.image = e.image.replace(/-moth(-v\d)?\.jpg$/, "-facebookJumbo.jpg");
+				}
+				
+				return;
+			}
+
+			if (this.model.isBbc()) {
+				if (width > 2048) {
+					width = 2048;
+				} else if (width > 1024) {
+					width = 1024;
+				} else if (width > 999) {
+					width = 999;
+				}
+
+				e.image = e.image.replace("/320/", "/" + width + "/");
+
+				return;
+			}
+			
+			if (featured === 1) {
+				// Bing identifies the subject in images, resizing them to focus appropriately
+				//
+				// We calculate the final size at 2x and request a scaled image
+				//
+				// The calculation here is a 60% flex-basis + a flex-grow of 3 (takes 0.75 of
+				// available space) times the remaining 10% of the container width (after the
+				// two flex-basis's) minus 20px combined margin from both featured articles
+				e.image = e.image.replace(".img", "_m5_w" + width + "_h800");
+			}
+			else if (featured === 2) {
+				// Same thing here, just with a flex-grow of 1 and 30% basis
+				e.image = e.image.replace(".img", "_m5_w" + width + "_h800");
+			}
+			else {
+				e.image = e.image.replace(".img", "_m5_w" + width + "_h350");
+			}
+		},
 
 		onBeforeRender: function(data) {
 			data.layout = this.layout;
@@ -62,44 +133,23 @@ define(["lodash", "./view", "moment"], function(_, MainView, moment) {
 
 				data.featured = [];
 
-				var featured = 0;
-
-				// The 18px is 10px padding + an 8px scrollbar
-				var containerWidth = window.innerWidth - 18;
+				var featured = data.layout === "cards" ? 0 : 999999;
 
 				data.items = _.compact(_.map(data.items, function(e) {
 					e = _.clone(e);
 
 					e.date = moment(e.date).fromNow();
 
+					++featured;
 					// The first two articles with images are selected as featured
-					if (e.image && data.layout === "cards" && featured < 2) {
-						featured++;
-
-						if (featured === 1) {
-							// Bing identifies the subject in images, resizing them to focus appropriately
-							//
-							// We calculate the final size at 2x and request a scaled image
-							//
-							// The calculation here is a 60% flex-basis + a flex-grow of 3 (takes 0.75 of
-							// available space) times the remaining 10% of the container width (after the
-							// two flex-basis's) minus 20px combined margin from both featured articles
-							e.image = e.image.replace(".img", "_m5_w" + Math.round(((0.6 * containerWidth) + (0.75 * ((0.1 * containerWidth) - 20))) * 2) + "_h800");
-						}
-						else {
-							// Same thing here, just with a flex-grow of 1 and 30% basis
-							e.image = e.image.replace(".img", "_m5_w" + Math.round(((0.3 * containerWidth) + (0.25 * ((0.1 * containerWidth) - 20))) * 2) + "_h800");
-						}
-
+					if (featured < 3) {
+						this.resizeImage(featured, e);
 						data.featured.push(e);
 
 						return null;
 					}
 
-					if (e.image) {
-						e.image = e.image.replace(".img", "_m5_w" + Math.round(((containerWidth / 5) - 10) * 2) + "_h350");
-					}
-
+					this.resizeImage(featured, e);
 					return e;
 				}, this));
 			}
@@ -107,22 +157,38 @@ define(["lodash", "./view", "moment"], function(_, MainView, moment) {
 
 			if (this.model.config.title) {
 				data.title = this.model.config.title;
+				if (this.model.isBbc()) {
+					if (data.title !== "BBC News") {
+						data.title += ", BBC News";
+					}
+				}
+				else if (this.model.isFn()) {
+					if (data.title !== "Fox News") {
+						data.title += ", Fox News";
+					}
+				}
+				else if (this.model.isNyt()) {
+					if (data.title && data.title !== "New York Times") {
+						data.title += ", New York Times";
+					}
+				}
 			}
 
-
-			if (this.model.data.topics) {
+			var topics = this.model.getStoredTopics();
+			var topic = this.model.getTopic();
+			if (topics) {
 				var activeTab = this.model.get("activeTab");
 
 				var defaultTab = [];
 
-				var tabs = _.compact(_.map(this.model.data.topics, function(e) {
+				var tabs = _.compact(_.map(topics, function(e) {
 					e = {
 						id: e[0],
 						name: e[1],
 						active: e[0] === activeTab
 					};
 
-					if (e.id === this.model.config.topic) {
+					if (e.id === topic) {
 						defaultTab = [e];
 
 						return;

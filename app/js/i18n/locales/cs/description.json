@@ -1,10 +1,10 @@
 {
   "lang_code":"cs",
   "line_1":"Vytvořte si svoji domovskou \/ úvodní stránku tak jak má být: rychlou, přizpůsobitelnou, dobře vypadající a produktivní!",
-  "link":"Chcete mít iChrome na každé nové kartě? Zkuste iChrome New Tab: https:\/\/ichro.me\/n",
+  "link":"Chcete mít ProductivityTab na každé nové kartě? Zkuste ProductivityTab New Tab: https:\/\/ichro.me\/n",
   "newtab_line_1":"Vytvořte si stránku pro nově otevřenou kartu \/ úvodní stránku takovou, jaká by měla být: rychlá, jednoduše nastavitelná, dobře vypadající a produktivní!",
-  "newtab_link":"Chcete aby se iChrome zobrazilo jen při startu Google Chrome? Zkuste hlavní rozšíření: https:\/\/ichro.me\/w",
-  "line_2":"iChrome obsahuje přibližně 50 nástrojů, tisíce omračujících pozadí a skvělé funkce:",
+  "newtab_link":"Chcete aby se ProductivityTab zobrazilo jen při startu Google Chrome? Zkuste hlavní rozšíření: https:\/\/ichro.me\/w",
+  "line_2":"ProductivityTab obsahuje přibližně 50 nástrojů, tisíce omračujících pozadí a skvělé funkce:",
   "features":[
     "Dozens of widgets including: Weather, Sports, News, Stocks, RSS, Bookmarks, Gmail, Recently Closed Tabs, and more!",
     "Drag and drop customization on 1-5 columns or a grid!",
@@ -12,9 +12,9 @@
     "Buy Pro and get dark and transparent themes, live backgrounds, maximizable widgets, hourly weather forecasts, and more",
     "Navigate between an unlimited number of customizable tabs, each with their own widgets",
     "Work completely offline anytime, everything (even the backgrounds) is ready whenever you are!",
-    "And hundreds more features! Install iChrome now and check them out!"
+    "And hundreds more features! Install ProductivityTab now and check them out!"
   ],
-  "line_3":"iChrome je open source projekt, podívejte se na Github: https:\/\/github.com\/AMKohn\/iChrome",
-  "line_4":"Zpětná vazba a návrhy jsou vždy vítány, na: http:\/\/ichrome.uservoice.com",
-  "line_5":"Jste otrávení z rozšíření, která Vás nenechají upravovat domovskou stránku? Otrávení z reklamy?  Stále hledáte náhradu za iGoogle? Hledáte krásnou úvodní stránku, která se stále zlepšuje? iChrome je pro vás!"
+  "line_3":"",
+  "line_4":"Zpětná vazba a návrhy jsou vždy vítány, na: https:\/\/ichrome.uservoice.com",
+  "line_5":"Jste otrávení z rozšíření, která Vás nenechají upravovat domovskou stránku? Otrávení z reklamy?  Stále hledáte náhradu za iGoogle? Hledáte krásnou úvodní stránku, která se stále zlepšuje? ProductivityTab je pro vás!"
 }

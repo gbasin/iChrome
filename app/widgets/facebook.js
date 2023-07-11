@@ -4,6 +4,7 @@
 define(["jquery", "widgets/framefix"], function($, frameFix) {
 	return {
 		id: 31,
+		sort: 240,
 		size: 5,
 		order: 13,
 		nicename: "facebook",

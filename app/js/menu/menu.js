@@ -4,15 +4,17 @@
 define(
 	[
 		"lodash", "jquery", "backbone", "browser/api", "core/auth", "core/analytics", "storage/storage", "storage/defaults", "i18n/i18n",
-		"search/search", "search/speech", "settings/proxy", "widgets/store", "core/uservoice", "core/render"
+		"search/search", "search/speech", "settings/proxy", "widgets/store", "core/uservoice", "core/render", "core/announcements"
 	],
-	function(_, $, Backbone, Browser, Auth, Track, Storage, Defaults, Translate, Search, Speech, SettingsProxy, Store, UserVoice, render) {
+	function(_, $, Backbone, Browser, Auth, Track, Storage, Defaults, Translate, Search, Speech, SettingsProxy, Store, UserVoice, render, Announcements) {
 		var Model = Backbone.Model.extend({
 				init: function() {
 					Storage.on("done updated", function(storage) {
 						this.storage = storage;
 
 						var set = _.clone(storage.settings);
+
+						set.isPro = Auth.isPro;
 
 						set.links = _.take(set.links, Auth.isPro ? 8 : 3);
 
@@ -27,6 +29,10 @@ define(
 
 						if (JSON.stringify(set) !== JSON.stringify(this.toJSON())) {
 							this.set(set);
+						}
+
+						if (Backbone.history.location.hash === "#upgrade") {
+							SettingsProxy("pro");
 						}
 					}, this);
 				}
@@ -94,9 +100,49 @@ define(
 					var elm = $(e.currentTarget);
 
 					switch (elm.attr("data-item")) {
+						case "notifications":
+							elm.closest(".menu-container").addClass("notifications", 1000);
+							e.preventDefault();
+							e.stopPropagation();
+							Track.event("Menu", "Notification", "Chrome");
+						break;
+
+						case "back":
+							elm.closest(".menu-container").removeClass("notifications", 1000);
+							e.preventDefault();
+							e.stopPropagation();
+							Track.event("Menu", "Back", "Chrome");
+						break;
+
+						case "item-announcement":
+							Announcements.showId(elm.attr("data-type"), elm.attr("data-id"), false);
+						break;
+
+						case "dismiss-announcement":
+							Announcements.showId(elm.attr("data-type"), elm.attr("data-id"), true);
+						break;
+
 						case "settings":
 							SettingsProxy();
 						break;
+
+						case "support":
+						{
+							var url = "https://ichrome.uservoice.com/knowledgebase";
+							Browser.tabs.getCurrent(function(d) {
+								Browser.tabs.create({
+									url: url,
+									index: d !== null && typeof(d) !== 'undefined' ? d.index + 1 : 0
+								});
+							});
+
+							Track.event("Menu", "Link Click", "Chrome");
+						}
+						break;
+
+						case "upgrade":
+							SettingsProxy("pro");
+							break;
 
 						case "widgets":
 							if (!this.Store) {
@@ -221,7 +267,7 @@ define(
 						elms = elms.find("*").add(elms);
 
 						$(document.body).on("click.menu", function(e) {
-							if (!elms.is(e.target)) {
+							if (!elms.is(e.target) && !$(e.target).hasClass("close")) {
 								this.toggle(false);
 							}
 						}.bind(this));
@@ -252,6 +298,8 @@ define(
 					// of attached directly to new Model() otherwise this.model might not be set yet.
 					this.model.on("change", this.render, this).init();
 
+					Announcements.on("countchange", this.render, this);
+
 					// If this was a direct link to the settings, show them
 					if (location.hash === "#settings") {
 						SettingsProxy();
@@ -272,6 +320,9 @@ define(
 
 
 				render: function() {
+					this.model.attributes.notifications = Announcements.count && Announcements.count > 0 ? Announcements.count : null;
+					this.model.attributes.notificationsList = Announcements.list;
+
 					// This enables OK Google hotword detection even when there's only a menu and no toolbar
 					if (this.model.get("ok") && !this.Speech) {
 						this.Speech = Speech();

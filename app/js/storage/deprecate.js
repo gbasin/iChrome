@@ -20,7 +20,7 @@ define(["lodash"], function(_) {
 
 			if (typeof settings.toolbar === "boolean") {
 				if (settings.toolbar) {
-					settings.toolbar = "full";
+					settings.toolbar = "full2";
 				}
 				else {
 					settings.toolbar = "button";

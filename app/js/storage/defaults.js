@@ -1,42 +1,54 @@
 /**
- * This stores the storage defaults.  It's mainly used for comparisons, unextends and resetting iChrome.
+ * This stores the storage defaults.  It's mainly used for comparisons, unextends and resetting ProductivityTab.
  */
 define(["i18n/i18n"], function(Translate) {
 	return {
 		tabs: [{
 			columns: [
 				[
-					{
+					{ 
+						id: 54,
+						size: "medium"
+					},
+					{ 
 						id: 1,
 						size: "variable"
-					}, {
-						id: 9,
+					}, 
+				], [
+					{ 
+						id: 38,
 						size: "tiny"
-					}, {
-						id: 14,
+					}, 
+					{ 
+						id: 38,
 						size: "tiny",
 						config: {
-							title: "Google, Inc."
+							color: "rgb(255, 255, 255)",
+							title: "Leave a Review?",
+							link: "https://chrome.google.com/webstore/detail/ichrome-new-tab-ultimate/###productivitytab###/related?hl=en",
+							image: "images/sitelink_logo.png"
 						}
-					}, {
-						id: 17,
-						size: "variable"
-					}
-				], [
-					{
-						id: 35,
-						size: "variable"
-					}, {
-						id: 15,
-						size: "variable"
-					}
-				], [
-					{
+					}, 
+					{ 
 						id: 4,
-						size: "large"
-					}, {
-						id: 46,
-						size: "medium"
+						size: "variable"
+					}
+				], [
+					{ 
+						id: 13,
+						size: "variable"
+					},
+					{ 
+						id: 8,
+						size: "variable",
+						config: {
+							feeds: [
+								{
+									url:  "https://lifehacker.com/rss",
+									name: "Lifehacker"
+								}
+							]
+						}
 					}
 				]
 			],
@@ -59,7 +71,7 @@ define(["i18n/i18n"], function(Translate) {
 			plus: true,
 			voice: true,
 			gmail: true,
-			toolbar: "full",
+			toolbar: "button",
 			captureFocus: true,
 			searchInNewTab: false,
 			searchEngine: "default",

@@ -2,7 +2,7 @@
  * The toolbar settings page
  */
 define(["lodash", "jquery", "core/auth", "settings/page"], function(_, $, Auth, Page) {
-	var builtInSearchEngines = ["default", "yahoo", "bing", "duckduckgo", "ask", "aol"];
+	var builtInSearchEngines = ["default", "yahoo", "bing", "duckduckgo", "ask", "aol", "startpage"];
 
 	var View = Page.extend({
 		id: "toolbar",
@@ -109,7 +109,8 @@ define(["lodash", "jquery", "core/auth", "settings/page"], function(_, $, Auth, 
 				customLinks: _.map(data.links, function(e, i) {
 					return _.assign({}, e, { i: i });
 				}),
-				canAddLinks: data.links.length < (Auth.isPro ? 8 : 3)
+				canAddLinks: data.links.length < (Auth.isPro ? 8 : 3),
+				canSelectSearch: Auth.isPro
 			};
 
 			if (ret.searchEngine === "custom") {

@@ -579,12 +579,12 @@
 	transition: transform .2s ease-in-out;
 }
 
-.clock .section.active {
+.clock .section.tab-active {
 	position: static;
 	transform: translateX(0);
 }
 
-.clock .section.active ~ .section {
+.clock .section.tab-active ~ .section {
 	transform: translateX(100%);
 }
 
@@ -728,11 +728,11 @@
 	fill: #444;
 }
 
-.dark .clock .tabs .item:not(.active):hover svg {
+.dark .clock .tabs .item:not(.tab-active):hover svg {
 	fill: #777;
 }
 
-.clock .tabs .item.active svg {
+.clock .tabs .item.tab-active svg {
 	opacity: 1;
 	fill: #2196F3;
 }
@@ -867,6 +867,7 @@
 .clock.analog {
 	height: 150px; /* Unfortunately hardcoded since I can't find a way to make the clock scale. */
 	box-shadow: none;
+	animation-fill-mode: none;	
 	background: rgba(0, 0, 0, 0)!important;
 }
 
@@ -1114,6 +1115,10 @@
 .widget.calendar {
 	padding: 0!important;
 	font-family: Roboto, sans-serif!important;
+}
+
+.fc-event > .fc-bg {
+	opacity: 0;
 }
 
 .calendar header {
