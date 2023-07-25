@@ -11,6 +11,10 @@ h2.header {
 	font-family: inherit;
 }
 
+h2.header.error-1 {
+	background-color: #EE2222;
+}
+
 .dark h2.header {
 	color: #EEE;
 }

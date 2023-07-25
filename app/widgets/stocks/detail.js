@@ -103,7 +103,7 @@ define(["lodash", "jquery", "moment", "./lib/chart", "widgets/views/main"], func
 						}));
 					}.bind(this));
 
-					this.newsInterval = setInterval(loadNews, 120000);
+					this.newsInterval = setInterval(loadNews, 15000);
 
 					this.on("before:destroy", function() {
 						clearInterval(this.newsInterval);
@@ -153,6 +153,9 @@ define(["lodash", "jquery", "moment", "./lib/chart", "widgets/views/main"], func
 		 */
 		updateData: function() {
 			var stock = this.stock;
+			if (!stock) {
+				return;
+			}
 
 			var price = this.$("header .price");
 			price
