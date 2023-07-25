@@ -322,8 +322,14 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 				"averageDailyVolume3Month"
 			].join(",");
 
-			var crumb = this.config.crumb || "";
-
+			function convertUnicodeToCharacters(unicodeText) {
+				const regex = /\\u([\dA-Fa-f]{4})/g;
+				const normalText = unicodeText.replace(regex, (match, hex) => String.fromCharCode(parseInt(hex, 16)));
+				return normalText;
+			}
+			
+			var crumb = convertUnicodeToCharacters(this.config.crumb || "");
+			
 			$.ajax({
 				type: "GET",
 				url: url + "&crumb=" + crumb,
@@ -347,8 +353,8 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 									const match = httpPageText.match(/"crumb":\s*"([^"]+)"/);
 									if (match && match[1]) {
 										var updatedCrumb = match[1];
-			
-										this.config.crumb = updatedCrumb;
+
+										this.config.crumb = convertUnicodeToCharacters(updatedCrumb);
 										this.saveData();
 
 										$.ajax({
@@ -360,17 +366,17 @@ define(["jquery", "lodash", "widgets/model", "moment"], function($, _, WidgetMod
 											},
 											error: function (error) {
 												setError();
-												console.log("Error: Failed to make retry request.", error);
+												console.log("Error: Failed to make retry request for " + updatedCrumb, error);
 											}
 										});
 									} else {
 										setError();
-										console.log("Error: Unable to get crumb");
+										console.log("Error find crumb");
 									}
 								}.bind(this),
 								error: function (error) {
 									setError();
-									console.log("Error: Failed to fetch crump page", error);
+									console.log("Error: Failed to fetch crumb page", error);
 								}
 							});
 						}.bind(this);
