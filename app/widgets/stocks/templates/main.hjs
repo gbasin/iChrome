@@ -1,4 +1,4 @@
-{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+{{#title}}<h2 class="header error-{{error}}">{{title}}</h2>{{/title}}
 
 {{#tiny}}
 	<div class="val {{stocks.0.changeDirection}}" title="{{i18n.as_of}} {{stocks.0.date}} ({{i18n.exchange_time}}){{#stocks.0.extra}} ({{stocks.0.extra}}){{/stocks.0.extra}}">
