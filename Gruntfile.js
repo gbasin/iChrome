@@ -320,7 +320,8 @@ module.exports = function (grunt) {
 	grunt.registerTask("webstore", [
 		"jshint:all",
 		"copy:build",
-		"sass:build",
+		//"sass:build",
+		//"sassjs",
 		"string-replace:htmlmin",
 		"compileWidgets",
 		"cssmin",
