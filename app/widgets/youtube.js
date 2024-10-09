@@ -38,6 +38,7 @@ define(["lodash", "jquery", "moment"], function(_, $, moment) {
 
 	return {
 		id: 29,
+		sort: 300,
 		size: 6,
 		order: 18,
 		interval: 300000,
@@ -89,47 +90,55 @@ define(["lodash", "jquery", "moment"], function(_, $, moment) {
 		data: {
 			videos: [
 				{
-					title: "Official Extended Trailer | GOTHAM | FOX BROADCASTING",
-					url: "http://www.youtube.com/watch?v=0d1zpt6k5OI&feature=youtube_gdata",
-					uploader: "FOX",
+					title: "Underwater ecosystem | DEMO",
+					url: "#",
+					uploader: "DEMO",
 					duration: "2:07",
-					thumb: "http://i1.ytimg.com/vi/0d1zpt6k5OI/0.jpg",
+					thumb: "https://ichro.me/img/youtube/coral.jpg",
 					views: 1143620
 				},
 				{
-					title: "Rick Grimes vs Walter White.  Epic Rap Battles of History Season 3.",
-					url: "http://www.youtube.com/watch?v=krQHQvtIr6w&feature=youtube_gdata",
+					title: "Mars polar ice caps | DEMO",
+					url: "#",
 					views: 2980000,
-					uploader: "ERB",
+					uploader: "DEMO",
 					duration: "2:18",
-					thumb: "http://i1.ytimg.com/vi/krQHQvtIr6w/0.jpg"
+					thumb: "https://ichro.me/img/youtube/mars.jpg"
 				},
 				{
-					title: "Usher - Good Kisser",
-					url: "http://www.youtube.com/watch?v=1lQtoRFaLsA&feature=youtube_gdata",
+					title: "The giant panda | DEMO",
+					url: "#",
 					views: 790000,
-					uploader: "UsherVEVO",
+					uploader: "DEMO",
 					duration: "5:04",
-					thumb: "http://i1.ytimg.com/vi/1lQtoRFaLsA/0.jpg"
+					thumb: "https://ichro.me/img/youtube/panda.jpg"
 				},
 				{
-					title: "Linkin Park - \"Until It's Gone\" [Official Lyric Video]",
-					url: "http://www.youtube.com/watch?v=Nym1P-BO_ws&feature=youtube_gdata",
+					title: "Sugar has been around for well over 10k years | DEMO",
+					url: "#",
 					views: 714000,
-					uploader: "Linkin Park",
+					uploader: "DEMO",
 					duration: "3:41",
-					thumb: "http://i1.ytimg.com/vi/Nym1P-BO_ws/0.jpg"
+					thumb: "https://ichro.me/img/youtube/sugar.jpg"
 				},
 				{
-					title: "Internet Citizens: Defend Net Neutrality",
-					url: "http://www.youtube.com/watch?v=wtt2aSV8wdw&feature=youtube_gdata",
+					title: "Largest living cat species | DEMO",
+					url: "#",
 					views: 368000,
-					uploader: "CGP Grey",
+					uploader: "DEMO",
 					duration: "3:34",
-					thumb: "http://i1.ytimg.com/vi/wtt2aSV8wdw/0.jpg"
+					thumb: "https://ichro.me/img/youtube/tiger.jpg"
 				}
 			]
 		},
+		resetChannelSettings: function() {
+			delete this.config.resolvedId;
+			delete this.config.resolvedUser;
+			this.config.user = "";
+			this.refresh();
+		},
+		//apiKey: "AIzaSyBWWt5WxgH6uX2Q39CkPdJqm4RVIPidJeo",
+		apiKey: "__API_KEY_youtube__",
 		refresh: function() {
 			var that = this;
 
@@ -137,21 +146,39 @@ define(["lodash", "jquery", "moment"], function(_, $, moment) {
 
 			if (this.config.user && this.config.user.trim() !== "") {
 				if (!this.config.resolvedId || this.config.resolvedUser !== this.config.user) {
-					return $.get(url + "channels?part=contentDetails&forUsername=" + encodeURIComponent(this.config.user) + "&fields=items/contentDetails/relatedPlaylists/uploads&maxResults=1&key=__API_KEY_youtube__", function(d) {
+					return $.get(url + "channels?part=contentDetails&forUsername=" + encodeURIComponent(this.config.user) + "&fields=items/contentDetails/relatedPlaylists/uploads&maxResults=1&key=" + this.apiKey, function(d) {						
 						try {
 							this.config.resolvedId = d.items[0].contentDetails.relatedPlaylists.uploads;
-
 							this.config.resolvedUser = this.config.user;
+							this.refresh();
+							return;
 						}
 						catch (e) {
-							delete this.config.resolvedId;
-
-							delete this.config.resolvedUser;
-
-							this.config.user = "";
+							//Try to search
 						}
 
-						this.refresh();
+						return $.get(url + "search?part=id&maxResults=1&q=" + encodeURIComponent(this.config.user) + "&type=channel&&fields=items/id&key=" + this.apiKey, function(c) {						
+							var channelId = '';
+							try
+							{
+								channelId = c.items[0].id.channelId;
+							}
+							catch (e) {
+								this.resetChannelSettings();
+								return;
+							}
+
+							return $.get(url + "channels?part=contentDetails&id=" + channelId + "&fields=items/contentDetails/relatedPlaylists/uploads&maxResults=1&key="  + this.apiKey, function(d2) {
+								try {
+									this.config.resolvedId = d2.items[0].contentDetails.relatedPlaylists.uploads;
+									this.config.resolvedUser = this.config.user;
+									this.refresh();
+								}
+								catch (e) {
+									this.resetChannelSettings();
+								}
+							}.bind(this));								
+						}.bind(this));								
 					}.bind(this));
 				}
 
@@ -161,7 +188,8 @@ define(["lodash", "jquery", "moment"], function(_, $, moment) {
 				url += "videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=us&fields=items(id,snippet(title,description,thumbnails/high/url,channelTitle),statistics/viewCount,contentDetails/duration)";
 			}
 
-			url += "&maxResults=6&key=__API_KEY_youtube__";
+			//url += "&maxResults=6&key=__API_KEY_youtube__";
+			url += "&maxResults=6&key="  + this.apiKey;
 
 
 			$.get(url, function(d) {

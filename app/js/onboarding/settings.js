@@ -7,6 +7,10 @@ define(["jquery", "backbone", "core/analytics", "menu/menu", "core/render"], fun
 		className: "showcase orange settings",
 
 		events: {
+			"click button.next": function() {
+				this.navigateNext();
+			},
+
 			"click button.skip": function() {
 				this.transitionOut();
 
@@ -31,7 +35,11 @@ define(["jquery", "backbone", "core/analytics", "menu/menu", "core/render"], fun
 			});
 		},
 
-		transitionOut: function() {
+		transitionOut: function(cb) {
+			if (!cb) {
+				cb = function() {};
+			}
+
 			this.el.animate([{
 				opacity: 1,
 				pointerEvents: "none"
@@ -44,6 +52,7 @@ define(["jquery", "backbone", "core/analytics", "menu/menu", "core/render"], fun
 				easing: "cubic-bezier(.4, 0, 1, 1)"
 			}).onfinish = function() {
 				this.$el.remove();
+				cb.call(this);
 			}.bind(this);
 		},
 
@@ -53,7 +62,7 @@ define(["jquery", "backbone", "core/analytics", "menu/menu", "core/render"], fun
 
 			this.menuOverlay = $('<div class="menu-tutorial-overlay"></div>').html(render("onboarding/settings", {
 				overlayCaption: true
-			})).insertBefore("body > header.toolbar");
+			})).insertBefore("body > header.add-widget-link");
 
 			this.menuOverlay[0].animate([
 				{ opacity: 0 },
@@ -89,6 +98,9 @@ define(["jquery", "backbone", "core/analytics", "menu/menu", "core/render"], fun
 		},
 
 		initialize: function() {
+			Backbone.on('widget-dropped', this.onWidgetDropped, this);
+			Backbone.on('widgets-closed', this.onStoreClosed, this);
+
 			this.render();
 
 			this.listenToOnce(Menu, "show", this.showTooltips);
@@ -100,11 +112,29 @@ define(["jquery", "backbone", "core/analytics", "menu/menu", "core/render"], fun
 			Track.pageview("Settings onboarding: Screen 1", "/onboarding/settings/screen1");
 		},
 
+		navigateNext: function() {
+			this.transitionOut(function() {
+				this.remove();
+
+				//this.$targetEl.parent().removeClass("hovered");
+
+				this.trigger("next");
+			});
+		},
+
+		onWidgetDropped: function() {
+			this.navigateNext();
+		},
+
+		onStoreClosed: function() {
+			this.navigateNext();
+		},
+
 		render: function() {
 			// The menu button/icon is always in the same place in a default setup
 			this.$el.css({
-				top: 25,
-				right: -12
+				top: 33,
+				right: 55
 			}).html(render("onboarding/settings", {
 				intro: true
 			})).find(".action-mask").on("mouseover", function(e) {

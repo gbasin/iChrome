@@ -4,6 +4,7 @@
 define(["lodash", "jquery", "moment", "browser/api"], function(_, $, moment, Browser) {
 	return {
 		id: 39,
+		sort: 250,
 		size: 1,
 		interval: 300000,
 		nicename: "stats",

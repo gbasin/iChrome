@@ -174,7 +174,7 @@ define(["lodash", "browser/api", "i18n/i18n", "modals/alert", "core/analytics", 
 		 * Prompts the user to sign in and then syncs with the server
 		 *
 		 * @api     public
-		 * @param   {Storage}  storage     The iChrome storage interface.  This will be used to
+		 * @param   {Storage}  storage     The ProductivityTab storage interface.  This will be used to
 		 *                                 save the response profile
 		 * @param   {Boolean}  [sendData]  Whether or not to send data to the server, overwriting
 		 *                                 the configurations on other computers.  Defaults to false

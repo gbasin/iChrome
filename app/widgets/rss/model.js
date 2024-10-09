@@ -1,17 +1,27 @@
-define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, WidgetModel, parseUrl) {
+define(["lodash", "jquery", "widgets/model", "lib/parseurl", "lib/feedlyproxy"], function(_, $, WidgetModel, parseUrl, feedlyProxy) {
 	return WidgetModel.extend({
-		refreshInterval: 300000,
+		widgetClassname: "tabbed-corner refreshable",
+
+		refreshInterval: 60000,
+
+		pro_tooltip: "rss",
 
 		defaults: {
 			config: {
 				title: "Lifehacker",
 				link: "",
 				number: 5,
+				cache: 5,
 				view: "default",
 				images: "true",
 				desc: "true",
 				size: "variable",
-				url: "http://feeds.gawker.com/lifehacker/full"
+				feeds: [
+					{
+						url:  "https://lifehacker.com/rss",
+						name: "Lifehacker"
+					}
+				]
 			},
 
 			data: {
@@ -70,6 +80,27 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, Wid
 				delete this.config.url;
 
 				this.saveConfig();
+			}
+			else {
+				//Migrate to new default settings
+				var isUpdated = false;
+				if (this.config.feeds) {
+					this.config.feeds.forEach(function(e) {
+						if (e.url === "http://feeds.gawker.com/lifehacker/full") {
+							e.url = "https://lifehacker.com/rss";
+							isUpdated = true;
+						}
+					});
+				}
+
+				if (this.config.url) {
+					delete this.config.url;
+					isUpdated = true;
+				}
+
+				if (isUpdated) {
+					this.saveConfig();
+				}
 			}
 
 			this.set("activeTab", 0);
@@ -130,6 +161,9 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, Wid
 			}
 			else if (html.find("iframe[data-chomp-id]").length) {
 				item.image = "http://img.youtube.com/vi/" + html.find("iframe[data-chomp-id]").attr("data-chomp-id") + "/1.jpg";
+			}
+			else if (e.enclosure && e.enclosure.length > 0 && e.enclosure[0].width && e.enclosure[0].height && e.enclosure[0].href) {
+				item.image = e.enclosure[0].href;
 			}
 
 
@@ -207,28 +241,32 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, Wid
 		/**
 		 * Fetches all articles from all feeds, emitting the 45 newest
 		 */
-		getAll: function() {
+		getAll: function(isReload) {
 			var feeds = _.uniq(_.map(this.config.feeds, function(e) {
-				return parseUrl(e.url || "http://feeds.gawker.com/lifehacker/full");
+				return parseUrl(e.url || "https://lifehacker.com/rss");
 			}));
 
 			if (!feeds.length) {
-				feeds = [this.config.url || "http://feeds.gawker.com/lifehacker/full"];
+				feeds = [this.config.url || "https://lifehacker.com/rss"];
 			}
 
+			//var numPerFeed = Math.round((45 / feeds.length) * 2);
+			var numPerFeed = 45;
 
-			var numPerFeed = Math.round((45 / feeds.length) * 2);
+			function loadFeed(feed) {
+				return function() {
+					return $.getJSON("https://cloud.feedly.com/v3/streams/contents?count=" + numPerFeed + "&streamId=feed%2F" + encodeURIComponent(feed));
+				};
+			}
 
-			_.spread($.when).call($, _.map(feeds, function(e) {
-				return $.getJSON("https://cloud.feedly.com/v3/streams/contents?count=" + numPerFeed + "&nocache=" + (new Date().getTime()) + "&streamId=feed%2F" + encodeURIComponent(e));
-			})).done(function() {
+			var processResult = function (results, errors) {
 				if (this.get("activeTab") !== "all") {
 					return;
 				}
 
-				var entries = _(arguments)
+				var entries = _(results)
 					.map(function(d) {
-						return (d && d[0] && d[0].items) || [];
+						return (d && d.items) || [];
 					})
 					.flatten()
 					.sortByOrder("published", "desc")
@@ -237,13 +275,62 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, Wid
 					.value();
 
 				this.trigger("entries:loaded", {
-					items: entries
+					items: entries,
+					errors: errors
 				});
-			}.bind(this));
+			}.bind(this);
+
+			var delay = function(timeout){
+				var $d = $.Deferred(),
+					t = timeout || 0;
+				  
+				setTimeout(function (){
+				  $d.resolve(timeout);
+				}, t);
+
+				return function() {
+					return $d.promise();
+				};
+			};
+
+			var errorCount = 0;
+			var result = [];
+			var cacheTimeout = (this.config.cache === '' ? 5 : this.config.cache) * 60000;
+			feeds.reduce(function(prevFeed, feed) {
+				var key = feed + "?count=" + numPerFeed;
+				var cached = feedlyProxy.getCached(key);
+				if (cached && !isReload) {
+					return prevFeed
+						.then(function() {
+							result.push(cached);
+						})
+						.done(function (){
+							if (feed === feeds[feeds.length - 1]) { 
+								processResult(result, errorCount); //Last feed received or failed
+							}
+						});
+				}
+
+				return prevFeed
+					.then(loadFeed(feed))
+					.then(function(data) {
+						feedlyProxy.onsent(data, feed, new Date().getTime() + cacheTimeout);
+						result.push(data);
+					})
+					.fail(function() {
+						errorCount++;
+					})
+					.done(function (){
+						if (feed === feeds[feeds.length - 1]) { 
+							processResult(result, errorCount); //Last feed received or failed
+						}
+					})
+					.then(delay(1000));
+			}, $.when());
 		},
 
 
-		refresh: function() {
+		refresh: function(isReload) {
 			// We save the active feed in case it changes before the request is finished
 			var activeTab = this.get("activeTab");
 
@@ -251,16 +338,39 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, Wid
 				return this.set("activeTab", 0);
 			}
 
-			if (activeTab === "all") {
-				return this.getAll();
+			if (this.config.feeds && activeTab >= this.config.feeds.length) {
+				//The active tab is deleted in the settings
+				return this.set("activeTab", 0);
 			}
 
-			var feedURL = (this.config.feeds && this.config.feeds[activeTab].url) || this.config.url || "http://feeds.gawker.com/lifehacker/full";
+			if (activeTab === "all") {
+				return this.getAll(isReload);
+			}
+
+			var feed = (this.config.feeds && this.config.feeds[activeTab].url) || this.config.url || "https://lifehacker.com/rss";
 
 			var maximized = this.get("state") === "maximized";
 
-			// Switch to /v3/mixes/contents to get the most popular entries instead of the newest
-			$.getJSON("https://cloud.feedly.com/v3/streams/contents?count=" + (maximized ? 45 : this.config.number) + "&nocache=" + (new Date().getTime()) + "&streamId=feed%2F" + encodeURIComponent(parseUrl(feedURL)), function(d) {
+			var count = maximized || this.config.number === '' ? 45 : this.config.number;				
+			var feedUrl = "https://cloud.feedly.com/v3/streams/contents?count=" + count + "&streamId=feed%2F" + encodeURIComponent(parseUrl(feed));
+
+			var delayMs = feedlyProxy.getDelay(isReload || false);
+			if (delayMs >= 0) {
+				var key = feed + "?count=" + count;
+				this.getSingle(feedUrl, key, isReload);
+				return;
+			}
+
+			setTimeout(function() {
+				this.getSingle(feedUrl, feed, isReload);
+			}.bind(this), delayMs);
+		},
+
+		getSingle: function(url, feed, isReload) {
+			var activeTab = this.get("activeTab");
+			var maximized = this.get("state") === "maximized";
+
+			var process = function(d) {
 				// If the active feed has changed (i.e. the user has switched tabs
 				// twice before the request finished), we don't want to emit any entries
 				if (d && d.items && this.get("activeTab") === activeTab) {
@@ -277,11 +387,32 @@ define(["lodash", "jquery", "widgets/model", "lib/parseurl"], function(_, $, Wid
 						// We only trigger the entries:loaded event if this is not the
 						// first feed so the view doesn't render twice
 						this.trigger("entries:loaded", {
-							items: items
+							items: items,
+							errors: 0
 						});
 					}
 				}
-			}.bind(this));
+			}.bind(this);
+
+			var cached = feedlyProxy.getCached(feed);
+			if (cached && !isReload) {
+				setTimeout(function() {
+					process(cached);
+				}, 0);
+				return;
+			}
+
+			var cacheTimeout = (this.config.cache === '' ? 5 : this.config.cache) * 60000;
+
+			// Switch to /v3/mixes/contents to get the most popular entries instead of the newest
+			$.getJSON(url, function(d) {
+				feedlyProxy.onsent(d, feed, new Date().getTime() + cacheTimeout);
+				process(d);
+			}.bind(this)).fail(function() {
+				this.trigger("entries:loaded", {
+					errors: 1
+				});
+			});
 		}
 	});
 });

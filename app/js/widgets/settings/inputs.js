@@ -223,8 +223,13 @@ define(["jquery", "lodash", "i18n/i18n", "core/render", "lib/jquery.spectrum"], 
 							if (typeof e !== "string" && typeof e !== "object") {
 								return;
 							}
+							
+							var dataValue = "";
+							if (!(e && e.value && e.value === "<novalue>")) {
+								dataValue = _.escape(e.value || e);
+							}
 
-							return '<li' + (i === 0 ? ' class="active"' : '') + ' data-value="' + _.escape(e.value || e) + '">' + _.escape(e.label || e) + '</li>';
+							return '<li' + (i === 0 ? ' class="active"' : '') + ' data-value="' + dataValue + '">' + _.escape(e.label || e) + '</li>';
 						}).join(""));
 					});
 				}

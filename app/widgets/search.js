@@ -4,6 +4,7 @@
 define([], function() {
 	return {
 		id: 40,
+		sort: 290,
 		size: 1,
 		nicename: "search",
 		sizes: ["tiny", "small"],

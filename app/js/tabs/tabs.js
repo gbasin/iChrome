@@ -102,7 +102,7 @@ define(
 								this.$el.before(elm);
 							}
 							else {
-								SettingsProxy("ads");
+								SettingsProxy("pro");
 							}
 						}.bind(this));
 					},
@@ -175,6 +175,15 @@ define(
 							}
 							else if (d && d.showProScreen) {
 								SettingsProxy("pro");
+							}
+							else if (d && d.adsizew && d.adsizeh) {
+								var adunit = $(".tab-container .tab > .ad-unit");
+								adunit.width(d.adsizew);
+								adunit.height(d.adsizeh);
+
+								var adframe = $("#adframe");
+								adframe.width(d.adsizew);
+								adframe.height(d.adsizeh);
 							}
 						}
 					}.bind(this), false);
@@ -348,6 +357,8 @@ define(
 							$("#originalLoc").remove();
 
 							this.serialize(true);
+
+							Backbone.trigger("widget-dropped");
 						}.bind(this),
 						afterMove: function(placeholder, container) {
 							if (container.el[0].className.indexOf("widgets-container") === -1) {

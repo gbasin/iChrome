@@ -3,7 +3,7 @@
 		"message": "Development extension description, see js/i18n/locales/en/main.json for release strings"
 	},
 	"extName": {
-		"message": "iChrome - Development Version"
+		"message": "ProductivityTab - Development Version"
 	},
 
 	"lang_code": {

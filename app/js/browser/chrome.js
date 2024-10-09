@@ -1,6 +1,6 @@
 /**
  * Implements a browser API for Chrome.  This module largely proxies Chrome's
- * API since that's what iChrome was designed around.
+ * API since that's what ProductivityTab was designed around.
  */
 define(function() {
 	/* global chrome */

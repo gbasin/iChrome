@@ -42,7 +42,7 @@
       "title":"Заголовок",
       "title_placeholder":"Google",
       "url":"URL-адрес",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"Сохранить"
     },
     "new_caption":"Создать",
@@ -176,7 +176,7 @@
   "now":{
     "name":"Google Now",
     "desc":"Отображает карточки из Google Now, включая такие как статус вашего рейса, отслеживание посылок.",
-    "authorize":"Для отображения карточек необходимо авторизовать iChrome в Google Now.",
+    "authorize":"Для отображения карточек необходимо авторизовать ProductivityTab в Google Now.",
     "authorize_btn":"Авторизовать",
     "caught_up":"Все в порядке. Здесь еще ничего нет.",
     "no_title":"Без заголовка"
@@ -194,7 +194,7 @@
     "desc":"Отображает лучшее с Reddit из любого выбранного субреддита.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Введите название субреддита без <b>/r/</b>.\n<br /><br />\nНапример полный адрес субреддита Technology выглядит так: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, однако в это поле необходимо написать только <b>technology</b>",
+      "subreddit_help":"Введите название субреддита без <b>/r/</b>.\n<br /><br />\nНапример полный адрес субреддита Technology выглядит так: <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, однако в это поле необходимо написать только <b>technology</b>",
       "subreddit_placeholder":"Введите название субреддита (напр. technology)",
       "sort":"Сортировка",
       "sort_options":{
@@ -240,8 +240,8 @@
       "source":"Отображать твиты из",
       "show":"Количество отображаемых твитов"
     },
-    "authorize":"Сначала необходимо авторизовать iChrome",
-    "authorize_msg":"Для отображения твитов необходимо авторизовать iChrome в вашем аккаунте Twitter.",
+    "authorize":"Сначала необходимо авторизовать ProductivityTab",
+    "authorize_msg":"Для отображения твитов необходимо авторизовать ProductivityTab в вашем аккаунте Twitter.",
     "authorize_btn":"Авторизовать",
     "no_tweets":"Похоже, что здесь нет твитов...",
     "home":"Главная",
@@ -304,9 +304,9 @@
     "desc":"Отображает ссылку на сайт с заголовком и миниатюрой",
     "settings":{
       "link":"Адрес ссылки",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"Адрес изображения",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"Цвет фона",
       "style":"Стиль изображения",
       "style_fill":"Заполнить",
@@ -375,7 +375,7 @@
     "by":"Автор",
     "no_links":"Ссылки не найдены",
     "grant_access":"Предоставить доступ",
-    "no_key":"Вам нужно предоставить для iChrome доступ к учетной записи Pocket для загрузки ссылок."
+    "no_key":"Вам нужно предоставить для ProductivityTab доступ к учетной записи Pocket для загрузки ссылок."
   },
   "analytics":{
     "name":"Аналитика",
@@ -423,7 +423,7 @@
       "files_shown":"Количество отображаемых файлов"
     },
     "modified_by":"изменил",
-    "authMessage":"Необходимо предоставить для iChrome разрешение на просмотр файлов в вашем Google Диске, чтобы они отобразились здесь."
+    "authMessage":"Необходимо предоставить для ProductivityTab разрешение на просмотр файлов в вашем Google Диске, чтобы они отобразились здесь."
   },
   "gmail":{
     "name":"Gmail",
@@ -434,7 +434,7 @@
     "desc":"Отображает указанную веб-страницу внутри виджета с помощью iframe.",
     "settings":{
       "url":"URL-адрес для отображения",
-      "url_placeholder":"напр. http://www.google.com/",
+      "url_placeholder":"напр. https://www.google.com/",
       "height":"Высота фрейма",
       "padding":"Отступ"
     }

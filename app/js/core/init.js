@@ -1,5 +1,5 @@
 /**
- * The main iChrome view, this initializes everything.
+ * The main ProductivityTab view, this initializes everything.
  */
 define([
 	"jquery", "lodash", "browser/api", "backbone", "core/auth", "core/status", "core/analytics", "storage/storage", "core/css",
@@ -160,6 +160,9 @@ define([
 			//Append custom CSS to body
 			this.$el.append(this.css.el);
 
+			if (Auth.isPro) {
+				this.$el.addClass("main-pro");
+			}
 
 			// requestAnimationFrame ensures this runs after everything is done
 			requestAnimationFrame(function() {

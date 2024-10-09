@@ -4,6 +4,7 @@
 define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 	return {
 		id: 38,
+		sort: 10,
 		size: 1,
 		nicename: "sitelink",
 		sizes: ["tiny", "medium"],
@@ -27,7 +28,8 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 				type: "text",
 				nicename: "image",
 				label: "i18n.settings.image",
-				placeholder: "i18n.settings.image_placeholder"
+				placeholder: "i18n.settings.image_placeholder",
+				help: "i18n.settings.image_help",
 			},
 			{
 				type: "color",
@@ -43,14 +45,25 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 					center: "i18n.settings.style_center"
 				}
 			},
+			{
+				type: "radio",
+				nicename: "target",
+				label: "i18n.settings.target.title",
+				options: {
+					def: "i18n.settings.target.default",
+					same: "i18n.settings.target.same",
+					new: "i18n.settings.target.new"
+				}
+			},
 		],
 		config: {
 			size: "tiny",
 			style: "center",
-			color: "#E62D27",
+			color: "#FFFFFF",
 			title: "YouTube",
 			link: "https://www.youtube.com/",
-			image: "images/sitelink_demo.png"
+			image: "images/sitelink_demo.png",
+			target: "def"
 		},
 		render: function() {
 			var data = _.clone(this.config);
@@ -58,6 +71,30 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 			data.hasIcon = data.image || data.color;
 
 			this.utils.render(data);
+
+			var open = function(href) {
+				var template = "###productivitytab###";
+
+				if (href.indexOf(template) > 0) {
+					href = href.replace(template, Browser.app.id);
+				}
+
+				var targetInt = this.config.target || 0;						
+				var target;
+				switch (targetInt) {
+					case "same": 
+						target = "_self";
+						break;
+					case "new": 
+						target = "_blank";
+						break;
+					default:
+						target = $("base").attr("target") || "_blank";
+						break;							
+				}
+
+				window.open(href, target);
+			}.bind(this);			
 
 			this.elm.off("click.sitelink").on("click.sitelink", "a", function(e) {
 				var href = this.getAttribute("href");
@@ -78,6 +115,10 @@ define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 							});
 						}
 					});
+				} 
+				else {
+					e.preventDefault();
+					open(href);
 				}
 			});
 		}

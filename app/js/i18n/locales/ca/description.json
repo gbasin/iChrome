@@ -1,10 +1,10 @@
 {
   "lang_code":"ca",
   "line_1":"Fes que la teva pàgina d'inici sigui com hauria de ser: ràpida, personalitzable, maca i productiva!",
-  "link":"Vols iChrome a la teva pestanya nova? Prova Pestanya nova iChrome: https:\/\/ichro.me\/n",
+  "link":"Vols ProductivityTab a la teva pestanya nova? Prova Pestanya nova ProductivityTab: https:\/\/ichro.me\/n",
   "newtab_line_1":"Fes que la teva Pestanya nova \/ Pàgina d'inici sigui com hauria de ser: ràpida, personalitzable, bonica i productiva!",
-  "newtab_link":"Vols que iChrome només aparegui en iniciar Google Chrome? Prova l'extensió principal: https:\/\/ichro.me\/w",
-  "line_2":"iChrome inclou gairebé 50 widgets, milers de fons impressionants, i característiques potents com ara:",
+  "newtab_link":"Vols que ProductivityTab només aparegui en iniciar Google Chrome? Prova l'extensió principal: https:\/\/ichro.me\/w",
+  "line_2":"ProductivityTab inclou gairebé 50 widgets, milers de fons impressionants, i característiques potents com ara:",
   "features":[
     "Dozens of widgets including: Weather, Sports, News, Stocks, RSS, Bookmarks, Gmail, Recently Closed Tabs, and more!",
     "Drag and drop customization on 1-5 columns or a grid!",
@@ -12,9 +12,9 @@
     "Buy Pro and get dark and transparent themes, live backgrounds, maximizable widgets, hourly weather forecasts, and more",
     "Navigate between an unlimited number of customizable tabs, each with their own widgets",
     "Work completely offline anytime, everything (even the backgrounds) is ready whenever you are!",
-    "And hundreds more features! Install iChrome now and check them out!"
+    "And hundreds more features! Install ProductivityTab now and check them out!"
   ],
-  "line_3":"iChrome is an open source project, check it out on Github: https:\/\/github.com\/AMKohn\/iChrome",
-  "line_4":"Feedback and suggestions are welcome anytime at: http:\/\/ichrome.uservoice.com",
-  "line_5":"Sick of homepage extensions that lock you in and don't let you customize things?  Getting blasted with ads?  Still looking for \"the\" iGoogle replacement? Looking for a beautiful start page that keeps getting better? iChrome is for you!"
+  "line_3":"",
+  "line_4":"Feedback and suggestions are welcome anytime at: https:\/\/ichrome.uservoice.com",
+  "line_5":"Sick of homepage extensions that lock you in and don't let you customize things?  Getting blasted with ads?  Still looking for \"the\" iGoogle replacement? Looking for a beautiful start page that keeps getting better? ProductivityTab is for you!"
 }

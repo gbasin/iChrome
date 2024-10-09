@@ -55,7 +55,7 @@
 			"title_placeholder": "Google",
 
 			"url": "Bookmark URL",
-			"url_placeholder": "http://www.google.com/",
+			"url_placeholder": "https://www.google.com/",
 
 			"save": "Save"
 		},
@@ -110,6 +110,15 @@
 			"range": {
 				"start": "Agenda Start Time",
 				"end": "Agenda End Time"
+			},
+			"text": {
+				"color": "Events Text Color",
+				"placeholder": "Examples: black, #000, #000000, rgb(0,0,0), ..."
+			},
+			"timezone": {
+				"title": "Events Timezone",
+				"calendar": "Calendars settings",
+				"local": "Local"
 			}
 		},
 
@@ -129,6 +138,9 @@
 		"settings": {
 			"timezone": "Time Zone",
 			"timezone_local": "Local",
+
+			"group_byregion": "Regions",
+			"group_UTC": "Universal Time",
 
 			"format": "Clock Format",
 			"format_options": {
@@ -227,7 +239,7 @@
 		"name": "Google Now",
 		"desc": "Displays cards from Google Now including flight status and package tracking.",
 
-		"authorize": "You'll need to give iChrome permission to view your Google Now cards before anything will show up here.",
+		"authorize": "You'll need to give ProductivityTab permission to view your Google Now cards before anything will show up here.",
 		"authorize_btn": "Authorize",
 
 		"caught_up": "All caught up, nothing here.",
@@ -251,7 +263,7 @@
 
 		"settings": {
 			"subreddit": "Subreddit",
-			"subreddit_help": "Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
+			"subreddit_help": "Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
 			"subreddit_placeholder": "Enter a subreddit to show links from. (i.e. technology)",
 
 			"sort": "Sort Order",
@@ -312,9 +324,9 @@
 			"show": "Tweets Shown"
 		},
 
-		"authorize": "You'll need to authorize iChrome first",
+		"authorize": "You'll need to authorize ProductivityTab first",
 
-		"authorize_msg": "You'll need to give iChrome permission to view tweets from your account before anything will show up here.",
+		"authorize_msg": "You'll need to give ProductivityTab permission to view tweets from your account before anything will show up here.",
 		"authorize_btn": "Authorize",
 
 		"no_tweets": "There don't seem to be any tweets here...",
@@ -350,7 +362,7 @@
 			},
 
 			"from": "Show Videos From",
-			"from_help": "This must be an <b>exact</b> username as shown in the URL of the page when you're viewing their profile.\n<br /><br />\nThis value never includes spaces.",
+			"from_help": "This must be an <b>exact</b> username or channel name as shown in the URL of the page when you're viewing their profile.\n<br /><br />\nThis value never includes spaces.",
 			"from_placeholder": "Leave blank to show Top Videos",
 
 			"open": "Open search results in"
@@ -386,7 +398,9 @@
 
 			"js": "JavaScript",
 
-			"height": "Widget Height"
+			"height": "Widget Height",
+
+			"refresh": "Refresh interval, secs"
 		}
 	},
 
@@ -396,16 +410,24 @@
 
 		"settings": {
 			"link": "Link URL",
-			"link_placeholder": "http://www.google.com/",
+			"link_placeholder": "https://www.google.com/",
 
 			"image": "Image URL",
-			"image_placeholder": "http://www.example.com/image.png",
+			"image_placeholder": "https://www.example.com/image.png",
+			"image_help": "Please upload your image to any image sharing service such as <a href=\"https://postimg.cc/\" target=\"_blank\">PostImage</a>, <a href=\"https://imgur.com/\" target=\"_blank\">imgur</a>, <a href=\"https://imgbb.com/\" target=\"_blank\">Imgbb</a> or share an image on file hostings like Google Drive or DropBox. Then copy the URL ending with an extension (i.e. .jpg, .gif or .png) and paste it into the field.",
 
 			"color": "Image Background Color",
 
 			"style": "Image Style",
 			"style_fill": "Fill",
-			"style_center": "Center"
+			"style_center": "Center",
+
+			"target": {
+				"title": "Target",
+				"default": "Default",
+				"same": "The same",
+				"new": "New tab"
+			}
 		}
 	},
 
@@ -496,6 +518,6 @@
 		"no_links": "No links found",
 
 		"grant_access": "Grant access",
-		"no_key": "You'll need to give iChrome access to your Pocket account before it can load your links."
+		"no_key": "You'll need to give ProductivityTab access to your Pocket account before it can load your links."
 	}
 }

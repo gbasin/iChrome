@@ -1,10 +1,12 @@
 {
   "lang_code":"ca",
   "language":"Català",
-  "extName":"iChrome - Inici ràpid i productiu",
-  "newtabName":"Nova pestanya iChrome",
-  "extDescription":"La millor pàgina d'inici per Chrome. Temes impressionants, dotzenes de widgets, ràpida com un llamp, exageradament personalitzable!",
-  "newtabDescription":"La MILLOR \"pestanya nova\" per Chrome. Temes impressionants, dotzenes de widgets, ràpida com un llamp, exageradament personalitzable!",
+  
+	"extName": "ProductivityTab — Custom Homepage Dashboard",
+	"newtabName": "ProductivityTab — Custom New Tab Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+  
   "defaults":{
     "tab":"Inici",
     "me":"Jo"
@@ -12,7 +14,7 @@
   "remove_widget":"Treure",
   "hide_banner":"Hide this banner",
   "hide_ad":{
-    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make ProductivityTab available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support ProductivityTab directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"Upgrade",
     "hide":"Hide ads"
   },
@@ -25,12 +27,12 @@
   "onboarding":{
     "modal":{
       "tagline":"Tots els llocs webs i les apps que utilitzes, en un mateix lloc",
-      "wrong_extension":"Hi vols iChrome a la pestanya nova?",
-      "wrong_extension_newtab":"Hi vols iChrome a la pestanya nova?",
+      "wrong_extension":"Hi vols ProductivityTab a la pestanya nova?",
+      "wrong_extension_newtab":"Hi vols ProductivityTab a la pestanya nova?",
       "wrong_extension_action":"Fes clic aquí",
-      "about":"Tot sobre pestanyes i widgets d'iChrome",
+      "about":"Tot sobre pestanyes i widgets d'ProductivityTab",
       "about_desc":"Les pestanyes són pàgines amb widgets - blocs que mostren coses com ara el temps, notícies i l'email. Es pot personalitzar la majoria dels widgets i afegir-ne tants com es vulgui.",
-      "terms":"Nota: Continuant, acceptes els <a href=\"https://ichro.me/tos\" target=\"_blank\">Termes</a> d' iChrome i la <a href=\"https://ichro.me/privacy\" target=\"_blank\">Política de privacitat</a>",
+      "terms":"Continuant, acceptes els <a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\">Termes</a> d' ProductivityTab i la <a href=\"https://productivitytab.co/privacy-policy\" target=\"_blank\">Política de privacitat</a>",
       "sign_in":"Inicia sessió amb el teu compte de Google",
       "sign_in_desc":"Inicia sessió amb el compte de Google abans de començar per guardar els canvis online.",
       "sign_in_desc2":"Si vols pots continuar sense registrar-te, però la teva pàgina web no es desarà online i per tant no serà accessible des d'altres ordinadors.",
@@ -42,19 +44,19 @@
     },
     "widgets":{
       "configure":"Anem a configurar un widget.",
-      "configure_desc":"Fes clic a la clau anglesa per obrir la <b>configuració</b> del widget del temps.",
-      "configure_skip":"Ometre",
-      "settings":"Substitueix <b>San Francisco, CA</b> amb la teva ubicació, a continuació, prem <b>Desar</b>.",
-      "move":"Pots <b>arrossegar</b> widgets utilitzant la maneta ressaltada per moure'ls.",
-      "remove":"En arrossegar un widget, deixa'l anar a sobre de la barra vermella (no es mostra) per <b>eliminar-lo</b>.",
+			"configure_desc": "Click the wrench to open a widget's <b>settings</b>.",
+			"configure_skip": "Skip Tutorial",
+			"settings": "Replace <b>Link URL</b> with your favorite site, then press <b>Save</b>.",
+			"move": "You can <b>reposition</b> widgets by clicking and dragging the three dots highlighted here.",
+			"remove": "To <b>delete</b>, simply click the red trash bin icon.",
       "done":"Ho tinc"
     },
     "settings":{
-      "intro":"Ara fem una ullada al <b>menú</b> i veiem què més es pot fer.",
-      "instructions":"Clica la imatge ressaltada per obrir-la.",
+			"intro": "Now let’s add a new widget. This highlighted button is where you can access the Widget Menu.",
+			"instructions": "Click the new widget button on to open the widget menu!",
       "skip":"Ometre",
       "tooltips":{
-        "settings":"Canvia l'aspecte de l' iChrome i com funciona",
+        "settings":"Canvia l'aspecte de l' ProductivityTab i com funciona",
         "widgets":"Afegir widgets nous - en pots tenir tants com vulguis",
         "editing":"Mostra o amaga els botons d'edició en els widgets",
         "links":"Això és una llista d'enllaços, afegeix-hi llocs web que utilitzes sovint en la configuració",
@@ -85,7 +87,7 @@
     "placeholder_ok":"Introdueix els termes a cercar o digues \"OK, Google\"",
     "suggestions":{
       "url_subtext":"Visit URL",
-      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+      "capture_notice":"ProductivityTab handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
     },
     "apps":{
       "search":"Cerca",
@@ -181,7 +183,7 @@
       },
       "theme":{
         "title":"Tema de l'app",
-        "desc":"El tema de la app controla per si mateix l'estil de iChrome i tots els widgets",
+        "desc":"El tema de la app controla per si mateix l'estil de ProductivityTab i tots els widgets",
         "preview":"Vista prèvia",
         "light":"Clar (predetermitat)",
         "dark":"Fosc",
@@ -225,7 +227,7 @@
     "tabs":{
       "create_new":"Crear nova",
       "make_default":"Posar per defecte",
-      "desc1":"Les pestanyes són pàgines dins iChrome. Cada pestanya té el seu propi conjunt de widgets que està completament separat de totes les altres pestanyes.",
+      "desc1":"Les pestanyes són pàgines dins ProductivityTab. Cada pestanya té el seu propi conjunt de widgets que està completament separat de totes les altres pestanyes.",
       "desc2":"Es pot canviar entre pestanyes clicant els botons que apareixen a l'esquerra i a la dreta de la pantalla quan es mou el ratolí sobre una pestanya o utilitzant les tecles de fletxa del teclat.",
       "name_placeholder":"Introduir un nom de pestanya",
       "delete_confirm":"Aquesta acció és irreversible. Totes les dades de tots els widgets de la pestanya es perdran definitivament."
@@ -245,19 +247,19 @@
     "advanced":{
       "backups":{
         "title":"Còpia de seguretat i recuperació",
-        "desc":"Les còpies de seguretat són còpies complertes de totes les teves pestanyes, configuració i widgets. Que són creades automàticament en obrir l'iChrome cada dia.",
-        "desc2":"Utilitza els botons de sota per retornar l'iChrome a una data determinada o descarregar una de les còpies de seguretat.",
+        "desc":"Les còpies de seguretat són còpies complertes de totes les teves pestanyes, configuració i widgets. Que són creades automàticament en obrir l'ProductivityTab cada dia.",
+        "desc2":"Utilitza els botons de sota per retornar l'ProductivityTab a una data determinada o descarregar una de les còpies de seguretat.",
         "backup":"Fer còpia de seguretat ara",
         "upload":"Restaurar des d'un arxiu",
         "download":"Descarregar",
         "restore":"Restaura",
-        "download_name":"Copia de seguretat d'iChrome",
+        "download_name":"Copia de seguretat d'ProductivityTab",
         "restore_confirm":"Se sobreescriuran totes les dades locals i sincronitzades. Perdràs la configuració actual a tots els ordinadors amb aquest compte.",
         "restore_error":"S'ha produït un error en intentar analitzar les dades facilitades, si us plau torna-ho a provar més tard."
       },
       "css":{
         "title":"CSS personalizat",
-        "desc":"Es pot utilitzar CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\"> definició</a>) per personalitzar gairebé qualsevol part de l'iChrome.",
+        "desc":"Es pot utilitzar CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\"> definició</a>) per personalitzar gairebé qualsevol part de l'ProductivityTab.",
         "placeholder":"Introduir fins a 1000 caràcters de CSS aquí"
       },
       "debug_tools":{
@@ -276,8 +278,8 @@
     },
     "pro":{
       "promo":{
-        "monthly_price":"2$ al mes",
-        "yearly_price":"o 20$ per any",
+        "monthly_price":"4.99$ al mes",
+        "yearly_price":"o 29.99$ per any",
         "upgrade_btn":"Actualitza ara",
         "business":"T' Interessa comprar la versió Pro per al teu negoci o per l'escola?",
         "business_contact":"Contacta amb nosaltres",
@@ -286,7 +288,7 @@
         "bgs":"Fons interactius",
         "bgs_desc":"Dona vida a la teva pàgina amb 20 fons d'alta definició",
         "widgets":"Widgets maximizables",
-        "widgets_desc":"Porta l'iChrome a un altre nivell amb widgets maximizables",
+        "widgets_desc":"Porta l'ProductivityTab a un altre nivell amb widgets maximizables",
         "more_header":"I més",
         "stocks":"La borsa en temps real amb informació ampliada i històrica",
         "rss":"Suport per a RSS múltiples per widget",
@@ -303,17 +305,17 @@
         "title":"Verificar",
         "updating_title":"Pla d'actualització",
         "payment_options":"Pagar",
-        "pay_monthly":"Mensual (2$)",
-        "pay_yearly":"Anual (20$)",
+        "pay_monthly":"Mensual (4.99$)",
+        "pay_yearly":"Anual (29.99$)",
         "cancel":"Cancelar",
         "update":"Actualitzar",
         "subscribe":"Subscriure’s",
         "braintree_notice":"Pagaments processats de manera segura per Braintree.",
-        "monthly_notice":"Subscrivint-te, autoritzes l' iChrome a cobrar 2$ cada mes fins que es cancel·li la subscripció.",
-        "yearly_notice":"Subscrivint-te, autoritzes l' iChrome a cobrar 20$ cada any fins que es cancel·li la subscripció.",
+        "monthly_notice":"Subscrivint-te, autoritzes l' ProductivityTab a cobrar 4.99$ cada mes fins que es cancel·li la subscripció.",
+        "yearly_notice":"Subscrivint-te, autoritzes l' ProductivityTab a cobrar 29.99$ cada any fins que es cancel·li la subscripció.",
         "update_notice":"Encara que els canvis als cicles de facturació tenen efecte immediat, no se't cobrarà fins que acabi el cicle actuals.",
-        "thank_you":"Gràcies per comprar l'iChrome Pro!",
-        "thank_you2":"iChrome es recarregarà d'aquí a pocs segons i estarà tot a punt!",
+        "thank_you":"Gràcies per comprar l'ProductivityTab Pro!",
+        "thank_you2":"ProductivityTab es recarregarà d'aquí a pocs segons i estarà tot a punt!",
         "error":"Alguna cosa ha sortit malament mentre s'intentava processar el pagament.",
         "error2":"Si us plau torna-ho a provar una altra vegada d'aquí a una estona o envia un email a support@ichro.me",
         "signin":"Iniciar sessió",
@@ -322,7 +324,7 @@
       },
       "plan":{
         "title":"Pla",
-        "desc":"Actualment estàs subscrit a iChrome Pro (%s)",
+        "desc":"Actualment estàs subscrit a ProductivityTab Pro (%s)",
         "types":{
           "monthly":"Mensualment",
           "yearly":"Anualment",
@@ -330,7 +332,7 @@
           "education":"Educació",
           "custom":"Personalitzat"
         },
-        "uneditable_desc":"Els plans de negocis, educació i personalitzats no es poden actualitzar des de dins de l'iChrome. Si us plau <a href=\"mailto:support@ichro.me\"> Contacti amb nosaltres</a> per actualitzar o anul·lar la seva subscripció.",
+        "uneditable_desc":"Els plans de negocis, educació i personalitzats no es poden actualitzar des de dins de l'ProductivityTab. Si us plau <a href=\"mailto:support@ichro.me\"> Contacti amb nosaltres</a> per actualitzar o anul·lar la seva subscripció.",
         "status":"Estat",
         "status_active":"Actiu",
         "status_trial":"Prova",
@@ -347,9 +349,9 @@
       }
     },
     "ads":{
-      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text1":"ProductivityTab displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
       "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
-      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from ProductivityTab wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
       "upgrade_btn":"Upgrade to ad-free",
       "already_upgraded":"It looks like you've already upgraded to ad-free",
       "signin":"Sign in",
@@ -468,7 +470,7 @@
       "name_placeholder":"Enter a theme name",
       "image":"Image URL",
       "image_placeholder":"Enter a background image URL",
-      "image_help":"Uploaded images <b>cannot be synced</b> between computers.<br /><br />If this is important to you, please upload your image to a service such as <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>. Then copy the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
+      "image_help":"Uploaded images <b>cannot be synced</b> between computers.<br /><br />If this is important to you, please upload your image to a service such as <a href=\"https://imgur.com/\" target=\"_blank\">imgur</a>. Then copy the URL ending with an extension (i.e. .jpg) and paste it into the field on the left.",
       "color":"Fallback Color",
       "color_placeholder":"Enter any color name",
       "position":"Position",

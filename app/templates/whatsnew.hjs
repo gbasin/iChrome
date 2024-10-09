@@ -1,20 +1,41 @@
-<p>You just got the latest update!</p>
+<p>Welcome to ProductivityTab version 1.45.25!</p>
 
 <section>
-   <ul>
-       <li>New features:</li>
-       <ul>
-           <li>We've added a "+" button in the top right corner for easy widget addition</li>
-           <li>We've added an easy-to-use "Delete" button in each widget toolbar. Simply hover over the top corner of each widget to see it. iChrome will ask for confirmation on deletion</li>
-           <li>It is now possible to remove the Search Bar in Settings if you’d prefer not to have it</li>
-           <li>The notification system has been redesigned to make it easier to notify you of relevant updates</li>
-       </ul>
-       <li>Fixes:</li>
-       <ul>
-           <li>Bookmark widget opening in the other tab fixed</li>
-           <li>The extension installation buttons on ichro.me work now in last Chrome browser versions</li>
-           <li>Database backup issues fixed</li>
-       </ul>
-   </ul>
+<p>What's New in Version 1.45.25:</p>
+<ul>
+<li>FIX. Stocks widget.</li>
+</ul>
 </section>
+
+<section>
+<p>What's New in Version 1.45.24:</p>
+<ul>
+<li>FIX. Added Fox News to News widget.</li>
+<li>FIX. Added NYT to News widget.</li>
+</ul>
+</section>
+
+<section>
+<p>What's New in Version 1.45.23:</p>
+<ul>
+<li>FIX. Fix RSS widget.</li>
+<li>FIX. Fix News widget for BBC.</li>
+</ul>
+</section>
+
+<section>
+<p>What's New in Version 1.45.21:</p>
+<ul>
+<li>FIX. Fix Weather widget issues.</li>
+</ul>
+</section>
+
+
+<section>
+<p>What's New in Version 1.45.20:</p>
+<ul>
+<li>FIX. Fix Facebook and Gmail.</li>
+</ul>
+</section>
+
 

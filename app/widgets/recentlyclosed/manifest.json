@@ -1,5 +1,6 @@
 {
 	"id": 32,
+	"sort": 190,
 	"name": "recentlyclosed",
 	"model": "model",
 	"css": "style.css",

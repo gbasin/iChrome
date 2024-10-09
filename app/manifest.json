@@ -36,7 +36,8 @@
 		}
 	],
 	"web_accessible_resources": [
-		"index.html"
+		"index.html",
+		"uniqueid_19548234.png"
 	],
 	"background": {
 		"scripts": ["js/background.js"]
@@ -49,7 +50,7 @@
 	"browser_action": {},
 	"options_page": "index.html#settings",
 	"chrome_settings_overrides": {
-		"homepage": "http://ichro.me/redirect"
+		"homepage": "https://ichro.me/redirect"
 	},
 	"permissions": [
 		"storage",
@@ -69,15 +70,15 @@
 		"bookmarks",
 		"management"
 	],
-	"version": "3.0.0.36",
+	"version": "3.0.45.26",
 	"manifest_version": 2,
 	"default_locale": "en",
-	"short_name": "iChrome",
+	"short_name": "ProductivityTab",
 	"offline_enabled": true,
 	"name": "__MSG_extName__",
 	"minimum_chrome_version": "39.0",
 	"description": "__MSG_extDescription__",
 	"update_url": "http://clients2.google.com/service/update2/crx",
 	"key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCNyJlz1NfUOvI1q7YiXjTvStaC99OmJCfnfo07UVF6N7/5coAGTUAASUYmdFd5LxTt4GOrODbzbbdOKO3iEuDtUZFklgvMO81tmoRPJNMf0cb1rpSfnmmB33xtgi2CWzmlVzx3pdbbkGwo2R+rwbeAQkG+zXvzgmnHDSt1a5zqjwIDAQAB",
-	"content_security_policy": "script-src 'self' 'unsafe-eval' 'sha256-hNWUbwB8ZS/vP+O4TfqZ/mmkMSYSJqGZ/4t5SSwAEk0=' 'sha256-1U43HAOlAXz6irAbXBbIpCr9fs/nLVDSCTx+uGZSAvY=' https://*.facebook.net https://*.facebook.com https://www.google-analytics.com https://*.uservoice.com https://www.google.com https://js.braintreegateway.com https://assets.braintreegateway.com https://www.paypalobjects.com https://www.geoplugin.net https://cdn.pubguru.com; object-src 'self'"
+	"content_security_policy": "script-src 'self' 'unsafe-eval' 'sha256-hNWUbwB8ZS/vP+O4TfqZ/mmkMSYSJqGZ/4t5SSwAEk0=' 'sha256-1U43HAOlAXz6irAbXBbIpCr9fs/nLVDSCTx+uGZSAvY=' https://*.facebook.net https://*.facebook.com https://www.google-analytics.com https://*.uservoice.com https://www.google.com https://js.braintreegateway.com https://assets.braintreegateway.com https://www.paypalobjects.com https://cdn.pubguru.com https://z-na.amazon-adsystem.com https://worldtimeapi.org https://www.gstatic.com; object-src 'self'"
 }

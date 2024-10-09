@@ -160,7 +160,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 		};
 	},
 	{
-		urls: ["http://ichro.me/redirect"]
+		urls: ["https://ichro.me/redirect"]
 	},
 	["blocking"]
 );
@@ -171,6 +171,148 @@ chrome.webRequest.onBeforeRequest.addListener(
 chrome.runtime.setUninstallURL("https://ichro.me/uninstall?" +
 	"extension=" + chrome.i18n.getMessage("@@extension_id") + "&version=" + chrome.runtime.getManifest().version + "&lang=" + chrome.i18n.getMessage("lang_code")
 );
+
+
+function isMe(initiator, url) {
+	if (initiator && initiator.startsWith("chrome-extension")) {
+		var ids = [
+			"iccjgbbjckehppnpajnmplcccjcgbdep",
+			"oghkljobbhapacbahlneolfclkniiami",
+			"ggnceihnaabghbfmifjmofepelnahpjb",
+			"fchofdkiekcoogalkgmhhpkokabblmog",
+			"jlmkfmonpepbnocphhcdheedjlibkbpk"
+		];
+
+		var dbg = false;
+		return dbg || ids.some(function(id) {
+			return initiator.indexOf(id) > 0;
+		});
+	}
+
+	if (initiator && (initiator.startsWith("https://m.facebook.com") || initiator.startsWith("https://ichro.me") || initiator.startsWith("https://www.linkedin.com"))) {
+		return true;
+	}
+
+	if (url && (url.startsWith("https://m.facebook.com") || url.startsWith("https://mail.google.com/mail") || url.startsWith("https://ichro.me"))) {
+		return true;
+	}
+
+	return false;
+}
+
+if (chrome.webRequest)
+{
+	chrome.webRequest.onBeforeSendHeaders.addListener(
+		function(info) {
+			var headers = info.requestHeaders || [];
+			if (isMe(info.initiator, info.url))
+			{
+				[
+					{ name:"sec-fetch-dest", value:"empty" },
+					{ name:"sec-fetch-site", value:"same-origin" }
+				].forEach(function(el) {
+					var found = false;
+					for (var i = 0; i < headers.length; i++) {
+						var header = headers[i].name.toLowerCase();
+						if (el.name === header) {
+							headers[i].value = el.value;
+							found = true;
+						}
+					}							
+	
+					if (!found) {
+						headers.push(el);
+					}
+				});
+			}
+	
+			return {
+				requestHeaders: headers
+			};
+		},
+		{
+			//tabId: tabId,
+			urls: [ "*://*/*" ],
+			types: [ "sub_frame" ]
+		},
+		["blocking", "requestHeaders"]
+	);
+	
+	
+	chrome.webRequest.onHeadersReceived.addListener(
+		function(info) {
+			var headers = info.responseHeaders || [];
+	
+			if (isMe(info.initiator, info.url))
+			{
+				for (var i = headers.length - 1; i >= 0; --i) {
+					var header = headers[i].name.toLowerCase();
+		
+					// if (header === "set-cookie") {
+					// 	var val = headers[i].value;
+					// 	if (val.indexOf("SameSite=") < 0) {
+					// 		val = val + ";SameSite=None";
+		
+					// 		val.replace("SameSite=Lax", "SameSite=None");
+					// 		val.replace("SameSite=Strict", "SameSite=None");
+		
+		
+					// 		if (val.indexOf(";Secure") < 0) {
+					// 			val = val + ";Secure";
+					// 		}
+		
+		
+					// 		headers[i].value = val;
+					// 	}
+					// }
+		
+					if (header === "x-frame-options" || header === "frame-options") {
+						headers.splice(i, 1);
+					}
+					else if (header === "content-security-policy") {
+						// Remove any frame-ancestors CSP directives, this is actually spec-compliant
+						headers[i].value = headers[i].value.split(";").filter(function(e) {
+							return e.trim().toLowerCase().indexOf("frame-ancestors") !== 0;
+						}).join(";");
+					}
+				}
+		
+				[
+					{ name:"access-control-allow-headers", value:"*" },
+					{ name:"access-control-expose-headers", value:"*" },
+					{ name:"access-control-allow-methods", value:"GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS" },
+					{ name:"access-control-allow-origin", value:"*" },
+					{ name:"x-xss-protection", value:"0" },
+				].forEach(function(el) {
+					var found = false;
+					for (var i = 0; i < headers.length; i++) {
+						var header = headers[i].name.toLowerCase();
+						if (el.name === header) {
+							headers[i].value = el.value;
+							found = true;
+						}
+					}							
+		
+					if (!found) {
+						headers.push(el);
+					}
+				});
+			}
+			
+			return {
+				responseHeaders: headers
+			};
+		},
+		{
+			//tabId: tabId,
+			urls: [ "*://*/*" ],
+			types: [ "sub_frame" ]
+		},
+		//["blocking", "responseHeaders"]
+		["blocking", "responseHeaders", "extraHeaders"]
+	);
+}
+
 
 /**
  * Feed refresh manager

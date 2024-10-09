@@ -4,7 +4,7 @@
 define([
 	"lodash", "moment", "core/auth", "core/analytics", "modals/alert", "i18n/i18n", "storage/storage", "storage/syncapi", "settings/page", "core/uservoice", "settings/checkout"
 ], function(_, moment, Auth, Track, Alert, Translate, Storage, SyncAPI, Page, UserVoice, Checkout) {
-	if (!Auth.isPro) {
+	if (!Auth.isPro || Auth.get("plan") === "trial") {
 		var PromoView = Page.extend({
 			id: "pro",
 			className: "promo",
@@ -57,6 +57,32 @@ define([
 			},
 
 			onInputChange: _.noop,
+
+			onBeforeRender: function() {
+				var plan = (Auth.get("plan") || "").replace("pro_", "").replace("-PRO", "");
+
+				var isTrial = Auth.get("isTrial") || false;
+				
+				var expiration = new Date();
+				var trialExpirationTime = Auth.get("trialExpiration");
+				if (trialExpirationTime) {
+					 expiration = new Date(Number(trialExpirationTime));
+				}
+
+				var ret = {
+					uneditable: plan && plan !== "monthly" && plan !== "yearly" && plan !== "MONTHLY" && plan !== "YEARLY",
+					desc: Translate("settings.pro.plan.desc", Translate("settings.pro.plan.types." + plan)),
+					isSubscribed: Auth.isPro && !isTrial,
+					isTrial: isTrial,
+					trialExpiration: moment.utc(expiration).format("LL")
+				};
+	
+				if (this._subscriptionInfo) {
+					_.assign(ret, this._subscriptionInfo);
+				}
+	
+				return ret;
+			},
 
 			onRender: function() {
 				Track.FB.logEvent("VIEWED_CONTENT", null, { fb_content_type: "page", fb_content_id: "pro" });
@@ -140,11 +166,12 @@ define([
 		onInputChange: _.noop,
 
 		onBeforeRender: function() {
-			var plan = (Auth.get("plan") || "").replace("pro_", "");
+			var plan = (Auth.get("plan") || "").replace("pro_", "").replace("-PRO", "");
 
 			var ret = {
-				uneditable: plan && plan !== "monthly" && plan !== "yearly",
-				desc: Translate("settings.pro.plan.desc", Translate("settings.pro.plan.types." + plan))
+				uneditable: plan && plan !== "monthly" && plan !== "yearly" && plan !== "MONTHLY" && plan !== "YEARLY",
+				desc: Translate("settings.pro.plan.desc", Translate("settings.pro.plan.types." + plan)),
+				isSubscribed: Auth.isPro
 			};
 
 			if (this._subscriptionInfo) {

@@ -333,3 +333,36 @@ header .options li.selected {
 	margin: 10px 0;
 	padding: 0 15px;
 }
+
+/*** Top visited ***/
+hr {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h6 {
+	font-weight: bold;
+}
+
+
+div.topvisited {
+	margin: 15px 10px 15px 10px;
+}
+
+div.topvisited table {
+	width: 100%;
+}
+
+div.topvisited table thead th {
+	color: gray;
+}
+
+div.topvisited table thead th, div.topvisited table tbody td {
+	border-bottom: 1px solid lightgray;
+	word-break: break-word;
+}
+
+div.topvisited table thead th:last-child, div.topvisited table tbody td:last-child {
+	text-align: right;
+	min-width: 80px;
+}

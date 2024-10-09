@@ -1,0 +1,48 @@
+{
+	"id": 53,
+	"sort": 390,
+	"name": "quicklinks",
+	"model": "model",
+	"css": "style.css",
+	"icon": "icon.png",
+	"sizes": ["variable"],
+
+	"views": {
+		"default": "view"
+	},
+
+	"templates": {
+		"desc": "templates/desc.hjs",
+		"default": "templates/main.hjs"
+	},
+
+	"settings": [{
+		"type": "text",
+		"name": "title",
+		"label": "i18n.settings.title",
+		"placeholder": "i18n.settings.title_placeholder"
+	}, {
+		"type": "radio",
+		"name": "view",
+		"label": "i18n.settings.view",
+		"options": {
+			"icons": "i18n.settings.view_options.icons",
+			"list": "i18n.settings.view_options.list"
+		}
+	}],
+
+	"strings": {
+		"en": {
+			"name": "Quick Links",
+			"desc": "Displays popular sites",
+
+			"settings": {
+				"view": "View",
+				"view_options": {
+					"list": "List",
+					"icons": "Icons"
+				}
+			}
+		}
+	}
+}

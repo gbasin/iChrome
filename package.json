@@ -1,18 +1,18 @@
 {
-  "name": "iChrome",
+  "name": "ProductivityTab",
   "version": "3.0.0",
   "description": "The BEST homepage for Chrome. Stunning themes, dozens of widgets, lightning fast, insanely customizable!",
   "main": "app/js/app.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AMKohn/iChrome.git"
+    "url": "https://github.com/gbasin/iChrome.git"
   },
   "author": "Avi Kohn",
   "license": "CC-BY-SA-3.0",
   "bugs": {
-    "url": "https://github.com/AMKohn/iChrome/issues"
+    "url": "https://github.com/gbasin/iChrome/issues"
   },
-  "homepage": "http://www.ichro.me/",
+  "homepage": "http://www.productivitytab.co/",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
@@ -22,13 +22,17 @@
     "grunt-contrib-jshint": "^0.11.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-hogan": "^0.3.0",
-    "grunt-sass": "^1.1.0",
+    "grunt-sass": "^2.1.0",
     "grunt-string-replace": "^1.0.0",
     "hogan.js": "^3.0.2",
     "jshint-stylish": "^2.0.0",
     "lodash": "^3.3.1",
+    "node-sass": "^4.11.0",
     "requirejs": "^2.1.20",
     "rework": "^1.0.1",
     "rework-assets": "AMKohn/rework-assets#patch-1"
+  },
+  "dependencies": {
+    "sass.js": "^0.11.1"
   }
 }

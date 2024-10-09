@@ -6,16 +6,16 @@ define(["lodash", "widgets/views/main", "lib/parseurl"], function(_, WidgetView,
 			"click .tabs li[data-id]": function(e) {
 				var tab = e.currentTarget.getAttribute("data-id");
 
+				this.render({
+					loading: true
+				});
+
 				// If the tab hasn't changed the model won't refresh on its own
 				if (tab === this.model.get("activeTab")) {
 					this.model.refresh();
 				}
 
 				this.model.set("activeTab", tab);
-
-				this.render({
-					loading: true
-				});
 			}
 		},
 
@@ -59,6 +59,14 @@ define(["lodash", "widgets/views/main", "lib/parseurl"], function(_, WidgetView,
 			this.listenTo(this.model, "change:config change:size change:data", _.ary(this.render, 0));
 
 			this.listenTo(this.model, "entries:loaded", _.ary(this.render, 1));
+
+			this.listenTo(this.model, "wrefresh", function() {
+				this.render({
+					loading: true
+				});
+
+				this.model.refresh(true);
+			}.bind(this));
 
 			this.render();
 		},

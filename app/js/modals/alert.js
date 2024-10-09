@@ -21,6 +21,15 @@ define(["jquery", "lodash", "backbone", "i18n/i18n", "core/render"], function($,
 				this.trigger("select", positive);
 
 				this.hide();
+			},
+
+			"click a.extlink": function(e) {
+				var type = e.currentTarget.getAttribute("data-id") || "";
+
+				// If this is a confirmation, don't call the cb on failure
+				if (this.extlink) {
+					this.extlink(type);
+				}
 			}
 		},
 

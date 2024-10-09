@@ -1,0 +1,8 @@
+.notes-container > div:nth-child(2) > div:first-child {
+	margin-left: -70px;
+}
+
+div#ognwrapper div[data-ogsr-up] {
+	display: none;
+}
+

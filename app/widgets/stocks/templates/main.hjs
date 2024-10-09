@@ -1,4 +1,4 @@
-{{#title}}<h2 class="header">{{title}}</h2>{{/title}}
+{{#title}}<h2 class="header error-{{error}}">{{title}}</h2>{{/title}}
 
 {{#tiny}}
 	<div class="val {{stocks.0.changeDirection}}" title="{{i18n.as_of}} {{stocks.0.date}} ({{i18n.exchange_time}}){{#stocks.0.extra}} ({{stocks.0.extra}}){{/stocks.0.extra}}">
@@ -17,7 +17,7 @@
 				</div>
 
 				<div class="price">
-					<span class="current">{{value}}</span>
+					<span class="current">{{value}} {{#closingPrice}}<span class="closing">({{closingPrice}})</span>{{/closingPrice}} </span>
 					<span class="change">{{change}} ({{changePercent}}%)</span>
 				</div>
 			</div>

@@ -4,7 +4,10 @@
 
 		<p>{{{i18n.onboarding.widgets.configure_desc}}}</p>
 
-		<button type="button" class="button material flat skip">{{i18n.onboarding.widgets.configure_skip}}</button>
+		<div class="tutorial-buttons">
+			<button type="button" class="button material flat next">{{i18n.onboarding.next}}</button>
+			<button type="button" class="button material flat skip">{{i18n.onboarding.widgets.configure_skip}}</button>
+		</div>
 	</div>
 {{/screenOne}}
 
@@ -14,7 +17,10 @@
 
 		<p>{{{i18n.onboarding.widgets.remove}}}</p>
 
-		<button type="button" class="button material flat done">{{{i18n.onboarding.widgets.done}}}</button>
+		<div class="tutorial-buttons">
+			<button type="button" class="button material flat done">{{i18n.onboarding.next}}</button>
+			<button type="button" class="button material flat skip">{{i18n.onboarding.widgets.configure_skip}}</button>
+		</div>
 	</div>
 {{/screenTwo}}
 

@@ -1,4 +1,4 @@
-<header>
+<header class="{{#errors}}errors{{/errors}}">
 	{{#title}}
 		{{#link}}<a href="{{link}}" class="title">{{title}}</a>{{/link}}
 		{{^link}}<span class="title">{{title}}</span>{{/link}}
