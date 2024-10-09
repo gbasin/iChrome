@@ -1,13 +1,13 @@
 /*
  * The Clock widget.
  */
-define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbone) {
+define(["jquery", "lodash", "moment", "backbone", "browser/api"], function($, _, moment, Backbone, Browser) {
 	var View = Backbone.View.extend({
 		events: {
 			"click header.tabs .item": function(e) {
 				var tab = e.currentTarget.getAttribute("data-id");
 
-				$(e.currentTarget).add(this.$(".section." + tab)).addClass("active").siblings().removeClass("active");
+				$(e.currentTarget).add(this.$(".section." + tab)).addClass("tab-active").siblings().removeClass("tab-active");
 
 				this.data.tab = tab;
 
@@ -113,12 +113,94 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 			}
 		},
 
+		isAuto: function() {
+			return this.config.timezone === "auto";
+		},
+
+		timeZoneOffset: function() {
+			var timezone = this.config.timezone;
+			if (timezone === "auto") {
+				return null;
+			}
+
+			if (!isNaN(timezone)) {
+				return parseInt(timezone);
+			}
+
+			var now = new Date();
+			var nowYYYYMMDD = now.getUTCFullYear() * 10000 + now.getUTCMonth() * 100 + now.getUTCDate();
+			var keyTimeoffset = "timeoffset" + nowYYYYMMDD;
+			var keyTimezone = "timezone" + nowYYYYMMDD;
+
+			var cachedOffset;
+
+			var cachedTimezone = this[keyTimezone];
+			if (cachedTimezone && cachedTimezone === timezone) {
+				cachedOffset = this[keyTimeoffset];
+				if (!isNaN(cachedOffset)) {
+					return cachedOffset;
+				}
+			}
+
+			var storedOffsetData = Browser.storage.clocktimezone;
+			if (storedOffsetData) {
+				var items = storedOffsetData.split(";");
+				if (items.length === 3 && items[0] === timezone && items[2] === nowYYYYMMDD + "") {
+					cachedOffset = parseInt(items[1]);
+					this[keyTimeoffset] = cachedOffset;
+					this[keyTimezone] = timezone;
+					return cachedOffset;
+				}
+			}
+
+			if (this.loadingTimeout && this.loadingTimeout > new Date().getTime()) {
+				return null;
+			}
+
+			this.loadingTimeout = new Date().getTime() + 10000;
+
+			$.ajax({
+				type: "GET",
+				url: "https://worldtimeapi.org/api/timezone/" + timezone,
+				success: function(d) {
+					if (typeof d.utc_offset !== "undefined") {
+						var hhmm = d.utc_offset.split(':');
+						cachedOffset = parseInt(hhmm[0]) * 60 + parseInt(hhmm[1]);
+						Browser.storage.clocktimezone = timezone + ";" + cachedOffset + ";" + nowYYYYMMDD;
+
+						this[keyTimeoffset] = cachedOffset;
+						this[keyTimezone] = timezone;
+
+						this.render();
+					}
+				}.bind(this),
+				complete: function() {
+					if (this.loadingTimeout) {
+						delete this.loadingTimeout;
+					}
+				}.bind(this)
+			});
+
+			return null;
+		},
+
 		updateClock: function(returnHTML) {
 			var html = '<div class="time',
 				dt = new Date();
 
-			if (this.config.timezone !== "auto") {
-				dt = new Date(dt.getTime() + dt.getTimezoneOffset() * 60000 + parseInt(this.config.timezone) * 60000);
+			if (!this.isAuto()) {
+				var timeZoneOffset = this.timeZoneOffset();
+				if (timeZoneOffset === null) {
+					if (returnHTML) {
+						return "";
+					}
+					else {
+						this.clockElm.innerHTML = "<div>Updating...</div>";
+						return;
+					}
+				}
+
+				dt = new Date(dt.getTime() + dt.getTimezoneOffset() * 60000 + timeZoneOffset * 60000);
 			}
 
 			var hours = dt.getHours(),
@@ -146,13 +228,16 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 			}
 			else if (this.config.size !== "tiny") {
 				// moment(dt) is slower so avoid it when possible
-				var date = (this.config.timezone !== "auto" ? moment(dt).format("dddd, MMMM Do YYYY") : moment().format("dddd, MMMM Do YYYY"));
+				var date = (!this.isAuto() ? moment(dt).format("dddd, MMMM Do YYYY") : moment().format("dddd, MMMM Do YYYY"));
 
 				if (this.config.format === "ampm" || this.config.format === "full") {
 					html += ":" + _.padLeft(seconds, 2, "0");
 				}
 
 				html += '</div><div class="date">' + date + "</div>";
+			}
+			else {
+				html += "</div>";
 			}
 
 			if (returnHTML) {
@@ -385,8 +470,13 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 			if (this.isAnalog) {
 				var dt = new Date();
 
-				if (this.config.timezone !== "auto") {
-					dt = new Date(dt.getTime() + dt.getTimezoneOffset() * 60000 + parseInt(this.config.timezone) * 60000);
+				if (!this.isAuto()) {
+					var timeZoneOffset = this.timeZoneOffset();
+					if (timeZoneOffset === null) {
+						return this.utils.render({ isLoading: true });
+					}
+	
+					dt = new Date(dt.getTime() + dt.getTimezoneOffset() * 60000 + this.timeZoneOffset() * 60000);
 				}
 
 				data = {
@@ -441,7 +531,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 			this.utils.render(data);
 
 			if (this.data.tab) {
-				this.$(".tabs .item[data-id=" + this.data.tab + "], .section." + this.data.tab).addClass("active").siblings().removeClass("active");
+				this.$(".tabs .item[data-id=" + this.data.tab + "], .section." + this.data.tab).addClass("tab-active").siblings().removeClass("tab-active");
 			}
 
 
@@ -467,6 +557,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 
 	return {
 		id: 2,
+		sort: 60,
 		size: 2,
 		nicename: "clock",
 		sizes: ["tiny", "small"],
@@ -484,49 +575,7 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 				type: "select",
 				nicename: "timezone",
 				label: "i18n.settings.timezone",
-				options: {
-					auto: "i18n.settings.timezone_local",
-					"-720": "UTC -12:00",
-					"-660": "UTC -11:00",
-					"-600": "UTC -10:00",
-					"-570": "UTC -09:30",
-					"-540": "UTC -09:00",
-					"-480": "UTC -08:00",
-					"-420": "UTC -07:00",
-					"-360": "UTC -06:00",
-					"-300": "UTC -05:00",
-					"-270": "UTC -04:30",
-					"-240": "UTC -04:00",
-					"-210": "UTC -03:30",
-					"-180": "UTC -03:00",
-					"-120": "UTC -02:00",
-					"-60": "UTC -01:00",
-					0: "UTC +00:00",
-					60: "UTC +01:00",
-					120: "UTC +02:00",
-					180: "UTC +03:00",
-					210: "UTC +03:30",
-					240: "UTC +04:00",
-					270: "UTC +04:30",
-					300: "UTC +05:00",
-					330: "UTC +05:30",
-					345: "UTC +05:45",
-					360: "UTC +06:00",
-					390: "UTC +06:30",
-					420: "UTC +07:00",
-					480: "UTC +08:00",
-					525: "UTC +08:45",
-					540: "UTC +09:00",
-					570: "UTC +09:30",
-					600: "UTC +10:00",
-					630: "UTC +10:30",
-					660: "UTC +11:00",
-					690: "UTC +11:30",
-					720: "UTC +12:00",
-					765: "UTC +12:45",
-					780: "UTC +13:00",
-					840: "UTC +14:00"
-				}
+				options: "getSources"
 			},
 			{
 				type: "select",
@@ -585,6 +634,87 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 			sound: "urban_beat"
 		},
 		data: {},
+		getSources: function(cb) {
+			var listAuto = {
+				auto: "i18n.settings.timezone_local",
+			};
+
+			var listUtc = {
+				label: "i18n.settings.group_UTC",
+				"-720": "UTC -12:00",
+				"-660": "UTC -11:00",
+				"-600": "UTC -10:00",
+				"-570": "UTC -09:30",
+				"-540": "UTC -09:00",
+				"-480": "UTC -08:00",
+				"-420": "UTC -07:00",
+				"-360": "UTC -06:00",
+				"-300": "UTC -05:00",
+				"-270": "UTC -04:30",
+				"-240": "UTC -04:00",
+				"-210": "UTC -03:30",
+				"-180": "UTC -03:00",
+				"-120": "UTC -02:00",
+				"-60": "UTC -01:00",
+				"0": "UTC +00:00",
+				"60": "UTC +01:00",
+				"120": "UTC +02:00",
+				"180": "UTC +03:00",
+				"210": "UTC +03:30",
+				"240": "UTC +04:00",
+				"270": "UTC +04:30",
+				"300": "UTC +05:00",
+				"330": "UTC +05:30",
+				"345": "UTC +05:45",
+				"360": "UTC +06:00",
+				"390": "UTC +06:30",
+				"420": "UTC +07:00",
+				"480": "UTC +08:00",
+				"525": "UTC +08:45",
+				"540": "UTC +09:00",
+				"570": "UTC +09:30",
+				"600": "UTC +10:00",
+				"630": "UTC +10:30",
+				"660": "UTC +11:00",
+				"690": "UTC +11:30",
+				"720": "UTC +12:00",
+				"765": "UTC +12:45",
+				"780": "UTC +13:00",
+				"840": "UTC +14:00"							
+			};
+
+			$.ajax({
+				type: "GET",
+				url: "https://worldtimeapi.org/api/timezone",
+				success: function(d) {
+					var sources = {
+						list0: listAuto,
+						list1: {
+							label: "i18n.settings.group_byregion"
+						}, 
+						list2: listUtc
+					};
+
+					if (d && d.length) {
+						d.forEach(function(e) {
+							if (e) {
+								sources.list1[e] = e;
+							}
+						});
+					}
+
+					cb(sources);
+				}.bind(this),
+				error: function() {
+					var sources = {
+						list0: listAuto,
+						list2: listUtc
+					};
+
+					cb(sources);
+				}
+			});
+		},
 		render: function() {
 			if (!this.view) {
 				this.view = new (View.extend({
@@ -600,6 +730,8 @@ define(["jquery", "lodash", "moment", "backbone"], function($, _, moment, Backbo
 			this.view.data = this.data || {};
 
 			this.view.render();
+
+			//this.elm.addClass("tabbed");
 		}
 	};
 });

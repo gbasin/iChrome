@@ -42,7 +42,7 @@
       "title":"書籤標題",
       "title_placeholder":"Google",
       "url":"書籤網址",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"儲存"
     },
     "new_caption":"新增",
@@ -166,7 +166,7 @@
   "now":{
     "name":"Google 即時資訊",
     "desc":"顯示Google即時資訊的卡片，包含航班資訊以及包裹追蹤",
-    "authorize":"你需要給予iChrome許可才能查看Google即時資訊的卡片",
+    "authorize":"你需要給予ProductivityTab許可才能查看Google即時資訊的卡片",
     "authorize_btn":"授權",
     "caught_up":"沒有新通知",
     "no_title":"無標題"
@@ -184,7 +184,7 @@
     "desc":"根據提供的reddit細目顯示Reddit上熱門話題。",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"在網址的<b>/r/</b>之後輸入任何reddit細目。\n<br /><br />\n例如，科技類的網址是<a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, 因此你需要輸入<b>technology</b>",
+      "subreddit_help":"在網址的<b>/r/</b>之後輸入任何reddit細目。\n<br /><br />\n例如，科技類的網址是<a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, 因此你需要輸入<b>technology</b>",
       "subreddit_placeholder":"輸入 reddit 細目（例如：technology）以顯示連結。",
       "sort":"排列次序",
       "sort_options":{
@@ -230,8 +230,8 @@
       "source":"從...顯示推文。",
       "show":"推文所示"
     },
-    "authorize":"你必須先授權iChrome。",
-    "authorize_msg":"在顯示任何東西之前，你必須給 iChrome 許可權來查看你帳戶裡的推文",
+    "authorize":"你必須先授權ProductivityTab。",
+    "authorize_msg":"在顯示任何東西之前，你必須給 ProductivityTab 許可權來查看你帳戶裡的推文",
     "authorize_btn":"授權",
     "no_tweets":"這裡似乎沒有任何推文...",
     "home":"主頁",
@@ -294,9 +294,9 @@
     "desc":"在頁面上顯示一個包含網站名稱與縮圖的連結",
     "settings":{
       "link":"連結網址：",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"圖像網址",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"圖片背景顏色",
       "style":"圖片樣式",
       "style_fill":"填滿",
@@ -365,7 +365,7 @@
     "by":"由",
     "no_links":"找不到連結",
     "grant_access":"授予存取權限",
-    "no_key":"你需要給 iChrome 存取 Pocket 帳戶權限, 才能載入你的連結。"
+    "no_key":"你需要給 ProductivityTab 存取 Pocket 帳戶權限, 才能載入你的連結。"
   },
   "analytics":{
     "name":"分析報表",
@@ -413,7 +413,7 @@
       "files_shown":"顯示的檔案個數"
     },
     "modified_by":"由",
-    "authMessage":"你必須先給予iChrome存取你的雲端硬碟的權限，這裡才會出現你雲端硬碟中的檔案清單"
+    "authMessage":"你必須先給予ProductivityTab存取你的雲端硬碟的權限，這裡才會出現你雲端硬碟中的檔案清單"
   },
   "gmail":{
     "name":"Gmail",
@@ -424,7 +424,7 @@
     "desc":"在 iframe 內顯示一個您選擇的網頁。",
     "settings":{
       "url":"框架位址",
-      "url_placeholder":"例如： http://www.google.com/",
+      "url_placeholder":"例如： https://www.google.com/",
       "height":"框架高度",
       "padding":"留邊距離"
     }

@@ -1,10 +1,10 @@
 /**
- * The main iChrome view, this initializes everything.
+ * The main ProductivityTab view, this initializes everything.
  */
 define([
 	"jquery", "lodash", "browser/api", "backbone", "core/auth", "core/status", "core/analytics", "storage/storage", "core/css",
-	"themes/controller", "themes/bginfo", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs"
-], function($, _, Browser, Backbone, Auth, Status, Track, Storage, CSS, Themes, BGInfo, Tooltips, Menu, Toolbar, MenuButton, Tabs) {
+	"themes/controller", "themes/bginfo", "core/tooltips", "menu/menu", "menu/toolbar", "menu/button", "tabs/tabs", "widgets/store"
+], function($, _, Browser, Backbone, Auth, Status, Track, Storage, CSS, Themes, BGInfo, Tooltips, Menu, Toolbar, MenuButton, Tabs, Store) {
 	var Model = Backbone.Model.extend({
 		init: function() {
 			this.on("change:theme", function() {
@@ -58,6 +58,15 @@ define([
 				e.currentTarget.parentNode.appendChild(new BGInfo({
 					body: this.$el
 				}).el);
+			},
+
+			"click .add-widget-link .icon": function() {
+				if (!this.Store) {
+					this.Store = new Store();
+				}
+
+				// This delays displaying the modal until after the init JS is done so the animation is smooth
+				requestAnimationFrame(this.Store.show.bind(this.Store));
 			}
 		},
 
@@ -70,11 +79,11 @@ define([
 			// This only fires on change otherwise users with the
 			// button might see a FOUT (Flash Of Unchosen Toolbar)
 			this.model.on("change:toolbar", function() {
-				if (this.model.get("toolbar") === "full") {
-					if (!this.Toolbar) {
-						this.Toolbar = new Toolbar();
-					}
+				if (!this.Toolbar) {
+					this.Toolbar = new Toolbar();
+				}
 
+				if (this.model.get("toolbar") === "full2" || this.model.get("toolbar") === "full") {
 					if (this.MenuButton) {
 						this.MenuButton.$el.detach();
 					}
@@ -82,9 +91,7 @@ define([
 						Track.event("Toolbar", "Load"); // If a menu button doesn't exist this isn't a setting change
 					}
 
-					this.$el.prepend(this.Toolbar.render().el);
-
-					this.Toolbar.trigger("inserted");
+					this.$el.removeClass("floating-toolbar");
 				}
 				else {
 					if (!this.MenuButton) {
@@ -99,8 +106,12 @@ define([
 					}
 
 					this.$el.prepend(this.MenuButton.render().el);
+
+					this.$el.addClass("floating-toolbar");
 				}
 
+				this.$el.prepend(this.Toolbar.render().el);
+				this.Toolbar.trigger("inserted");
 
 				if (!loaded) {
 					loaded = true;
@@ -146,8 +157,12 @@ define([
 				menu.navigate.apply(menu, arguments);
 			});
 
+			//Append custom CSS to body
 			this.$el.append(this.css.el);
 
+			if (Auth.isPro) {
+				this.$el.addClass("main-pro");
+			}
 
 			// requestAnimationFrame ensures this runs after everything is done
 			requestAnimationFrame(function() {

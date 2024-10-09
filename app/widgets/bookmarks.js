@@ -4,6 +4,7 @@
 define(["jquery", "lodash", "browser/api", "modals/modals", "lib/parseurl"], function($, _, Browser, Modal, parseUrl) {
 	return {
 		id: 16,
+		sort: 440,
 		size: 2,
 		order: 12,
 		unlisted: true,
@@ -49,23 +50,23 @@ define(["jquery", "lodash", "browser/api", "modals/modals", "lib/parseurl"], fun
 			bookmarks: [
 				{
 					title: "Google",
-					url: "http://www.google.com/"
+					url: "https://www.google.com/"
 				},
 				{
 					title: "Facebook",
-					url: "http://www.facebook.com/"
+					url: "https://www.facebook.com/"
 				},
 				{
 					title: "Youtube",
-					url: "http://www.youtube.com/"
+					url: "https://www.youtube.com/"
 				},
 				{
 					title: "Amazon",
-					url: "http://www.amazon.com/"
+					url: "https://www.amazon.com/"
 				},
 				{
 					title: "Wikipedia",
-					url: "http://www.wikipedia.org/"
+					url: "https://www.wikipedia.org/"
 				}
 			]
 		},

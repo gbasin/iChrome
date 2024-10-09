@@ -11,6 +11,10 @@ h2.header {
 	font-family: inherit;
 }
 
+h2.header.error-1 {
+	background-color: #EE2222;
+}
+
 .dark h2.header {
 	color: #EEE;
 }
@@ -43,11 +47,11 @@ h2.header {
 }
 
 .list .stock div.name {
-	width: 70%;
+	width: 65%;
 }
 
 .list .stock .price {
-	width: 30%;
+	width: 35%;
 	float: right;
 	text-align: right;
 }
@@ -61,6 +65,11 @@ h2.header {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
+
+.list .stock .price .closing {
+	font-weight: bold;
+}
+
 
 .dark .list .stock .name .name,
 .dark .list .stock .price .current {
@@ -170,24 +179,25 @@ h2.header {
 
 :root.detail header .top-row {
 	font-size: 13px;
-	display: inline-block;
-	width: calc(100% - 54px);
-	padding: 12px 16px 12px 0;
 	color: rgba(255, 255, 255, .9);
+	display: flex;
+	justify-content: space-between;
 }
 
-:root.detail header .top-row div {
-	display: inline-block;
-}
-
-:root.detail header .top-row div.name {
-	width: 70%;
+:root.detail header .top-row .change {
+	white-space: nowrap;
 }
 
 :root.detail header .top-row .price {
-	width: 30%;
-	float: right;
 	text-align: right;
+	padding: 12px 16px 12px 0;
+}
+
+:root.detail header .top-row .price-wrap {
+	display:flex; 
+	justify-content: space-between;
+	width: 100%;
+	align-items: baseline;
 }
 
 :root.detail header .top-row .name .name,
@@ -473,4 +483,8 @@ h2.header {
 
 .dark :root.detail .news-items .item .source {
 	color: #4CAF50;
+}
+
+:root.detail div.maximize, :root.detail div.delete {
+	display: none;
 }

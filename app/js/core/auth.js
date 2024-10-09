@@ -13,10 +13,14 @@ define(["lodash", "jquery", "backbone", "browser/api", "fbanalytics", "i18n/i18n
 		isPro: false,
 		adFree: false,
 		isSignedIn: false,
+		isTrial: false,
+		trialExpiration: "0",
 
 		initialize: function() {
 			this.on("change:isPro", function() {
 				this.isPro = this.get("isPro");
+				this.isTrial = this.get("isTrial");
+				this.trialExpiration = this.get("trialExpiration");
 			}, this).on("change:adFree", function() {
 				this.adFree = this.get("adFree");
 			}, this).on("change:user", function() {
@@ -71,7 +75,7 @@ define(["lodash", "jquery", "backbone", "browser/api", "fbanalytics", "i18n/i18n
 		signout: function(fromError) {
 			var cb = function() {
 				if (this.has("refreshToken")) {
-					$.post(API_HOST + "/oauth/v1/token/revoke?refresh_token=" + encodeURIComponent(this.get("refreshToken")));
+					$.post(API_HOST + "/oauth2/v1/token/revoke?refresh_token=" + encodeURIComponent(this.get("refreshToken")));
 				}
 
 				this.clear();
@@ -110,48 +114,74 @@ define(["lodash", "jquery", "backbone", "browser/api", "fbanalytics", "i18n/i18n
 		authorize: function(cb) {
 			var that = this;
 
-			Browser.windows.create({
-				width: 560,
-				height: 600,
-				type: "popup",
-				focused: true,
-				url: API_HOST + "/oauth/v1/authorize?extension=" + (Browser.app.newTab ? "newtab" : "main"),
-				top: Math.round((screen.availHeight - 600) / 2),
-				left: Math.round((screen.availWidth - 560) / 2)
-			}, function(win) {
-				// We cancel the final request to issue the token and make it ourselves
-				Browser.webRequest.onBeforeRequest.addListener(function(info) {
-					$.getJSON(info.url, function(d) {
-						if (!d || d.error || !d.token) {
-							return cb(d.error || true);
-						}
+			var messageHandler = function(event) {
+				if (event.origin !== "https://api.ichro.me") {
+					return;
+				}
 
-						FB.logEvent("COMPLETED_REGISTRATION");
+				if (!event.data || !event.data.token) {
+					return;
+				}
 
-						this.set({
-							token: d.token,
-							expiry: d.expiry * 1000,
-							refreshToken: d.refreshToken
-						});
+				FB.logEvent("COMPLETED_REGISTRATION");
 
-						cb(null, !!d.isNewUser);
-					}.bind(that)).fail(function() {
-						cb(true);
-					});
+				this.set({
+					token: event.data.token,
+					expiry: event.data.expiry * 1000,
+					refreshToken: event.data.refreshToken
+				});
 
-					Browser.windows.remove(win.id);
+				if (that.child) {
+					that.child.close();
+				}
 
-					return {
-						cancel: true
-					};
-				}, {
-					windowId: win.id,
-					types: ["main_frame"],
-					urls: [API_HOST + "/oauth/v1/token*"]
-				}, [
-					"blocking"
-				]);
-			});
+				cb(null, !!event.data.isNewUser);
+			}.bind(this);
+
+			var error = function(text) {
+				Alert({
+					title: "Error",
+					classes: "error",
+					html: "<p>" + text + "</p>",
+					buttons: {
+						positive: "OK",
+					}
+				});
+			};
+
+			var url = API_HOST + "/oauth2/v1/getstart?extension=" + (Browser.app.newTab ? "newtab" : "main");
+
+			this._autorizePromise = $.post(url, function(d) {
+				if (typeof d !== "object") {
+					d = JSON.parse(d);
+				}
+
+				if (!d.url) {
+					error("Cannot start authentication flow");
+					return;
+				}
+
+				window.addEventListener("message", messageHandler);
+
+				var top = Math.round((screen.availHeight - 600) / 2);
+				var left = Math.round((screen.availWidth - 560) / 2);
+	
+				var timer = setInterval(function() {   
+					if(that.child && that.child.closed) {  
+						clearInterval(timer);  
+						window.removeEventListener("message", messageHandler);
+					}  
+				}, 200); 
+	
+				that.child = window.open(d.url, "_blank", "top=" + top + ",left=" + left + ",height=600,width=560");
+
+				this._autorizePromise = null;
+			}.bind(this)).fail(function(xhr) {
+				error("Error start authentication flow. Error code: " + xhr.status.toString());
+
+				// If something fails, the next request coming through should retry
+				this._autorizePromise = null;
+			}.bind(this));
 		},
 
 
@@ -181,6 +211,8 @@ define(["lodash", "jquery", "backbone", "browser/api", "fbanalytics", "i18n/i18n
 
 			this.isPro = payload.plan && payload.plan !== "free";
 
+			this.isTrial = payload.plan && payload.plan === "trial";
+
 			this.adFree = this.isPro || !!payload.adFree;
 
 			this.set({
@@ -189,7 +221,9 @@ define(["lodash", "jquery", "backbone", "browser/api", "fbanalytics", "i18n/i18n
 				adFree: this.adFree,
 				expiry: payload.exp * 1000,
 				plan: payload.plan || "free",
-				subscription: payload.subscription
+				subscription: payload.subscription,
+				isTrial: this.isTrial,
+				trialExpiration: payload.trial
 			});
 
 			return this;
@@ -205,7 +239,7 @@ define(["lodash", "jquery", "backbone", "browser/api", "fbanalytics", "i18n/i18n
 				return;
 			}
 
-			this._refreshPromise = $.post(API_HOST + "/oauth/v1/token/refresh", "refresh_token=" + encodeURIComponent(this.get("refreshToken")), function(d) {
+			this._refreshPromise = $.post(API_HOST + "/oauth2/v1/token/refresh", "refresh_token=" + encodeURIComponent(this.get("refreshToken")), function(d) {
 				if (typeof d !== "object") {
 					d = JSON.parse(d);
 				}

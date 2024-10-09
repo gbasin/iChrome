@@ -42,7 +42,7 @@
       "title":"Tytuł zakładki",
       "title_placeholder":"Google",
       "url":"Adres URL zakładki",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"Zapisz"
     },
     "new_caption":"Nowy",
@@ -166,7 +166,7 @@
   "now":{
     "name":"Google Now",
     "desc":"Wyświetla karty z Google Now wraz ze statusem lotu i śledzeniem pakietów.",
-    "authorize":"Musisz nadać iChrome uprawnienia do wyświetlania karty Google Now, zanim cokolwiek pojawi się tutaj.",
+    "authorize":"Musisz nadać ProductivityTab uprawnienia do wyświetlania karty Google Now, zanim cokolwiek pojawi się tutaj.",
     "authorize_btn":"Przyznaj uprawnienia",
     "caught_up":"Nic tu nie ma, wszystko na czasie.",
     "no_title":"Bez tytułu"
@@ -184,7 +184,7 @@
     "desc":"Wyświetla najpopularniejsze elementy na Reddit dla dowolnego danego subreddita.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
+      "subreddit_help":"Enter any subreddit by the part past <b>/r/</b> when on Reddit.\n<br /><br />\nFor example, Technology is at: <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, therefore you would enter <b>technology</b>",
       "subreddit_placeholder":"Wprowadź subreddit aby wyświetlić łącza (np. Technologia)",
       "sort":"Kolejność sortowania",
       "sort_options":{
@@ -230,8 +230,8 @@
       "source":"Pokazuj tweety z",
       "show":"Wyświetlane Tweety"
     },
-    "authorize":"Musisz wcześniej udzielić iChrome uprawnień",
-    "authorize_msg":"Musisz udzielić iChrome uprawnień do oglądania tweetów na Twoim koncie zanim cokolwiek się tu pokaże.",
+    "authorize":"Musisz wcześniej udzielić ProductivityTab uprawnień",
+    "authorize_msg":"Musisz udzielić ProductivityTab uprawnień do oglądania tweetów na Twoim koncie zanim cokolwiek się tu pokaże.",
     "authorize_btn":"Przyznaj uprawnienia",
     "no_tweets":"Wydaje się, że nie ma tu żadnych tweetów...",
     "home":"Strona głóna",
@@ -294,9 +294,9 @@
     "desc":"Wyświetla odnośnik, opcjonalnie z tytułem i miniaturką strony",
     "settings":{
       "link":"URL odnośnika",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"Adres URL obrazu",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"Kolor tła",
       "style":"Styl obrazu",
       "style_fill":"Wypełnij",
@@ -365,7 +365,7 @@
     "by":"Przez",
     "no_links":"Brak zapisanych odnośników",
     "grant_access":"Przyznaj uprawnienia",
-    "no_key":"Musisz przyznać iChrome uprawnienia do Twojego konta Pocket zanim będzie w stanie załadować listę odnośników."
+    "no_key":"Musisz przyznać ProductivityTab uprawnienia do Twojego konta Pocket zanim będzie w stanie załadować listę odnośników."
   },
   "analytics":{
     "name":"Statystyki",
@@ -413,7 +413,7 @@
       "files_shown":"Liczba Pokazanych Plików"
     },
     "modified_by":"przez",
-    "authMessage":"Musisz udzielić iChrome uprawnień do oglądania plików na Twoim Google Drive zanim będzie można tu coś pokazać."
+    "authMessage":"Musisz udzielić ProductivityTab uprawnień do oglądania plików na Twoim Google Drive zanim będzie można tu coś pokazać."
   },
   "gmail":{
     "name":"Gmail",
@@ -424,7 +424,7 @@
     "desc":"Wyświetla wybraną stronę internetową w iframe.",
     "settings":{
       "url":"Adres URL ramki",
-      "url_placeholder":"np. http://www.google.com/",
+      "url_placeholder":"np. https://www.google.com/",
       "height":"Wysokość ramki",
       "padding":"Dopełnienie"
     }

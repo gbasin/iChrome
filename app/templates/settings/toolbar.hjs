@@ -8,17 +8,18 @@
 
 		<p class="desc">{{i18n.settings.toolbar.style.desc}}</p>
 
+	
 		<div class="input radios no-label">
-			<label>
-				<input type="radio" name="style" value="full" checked />
-
-				<span>{{i18n.settings.toolbar.style.normal}}</span>
-			</label>
-
 			<label>
 				<input type="radio" name="style" value="button" />
 
 				<span>{{i18n.settings.toolbar.style.button}}</span>
+			</label>
+
+			<label>
+				<input type="radio" name="style" value="button_ns" />
+
+				<span>{{i18n.settings.toolbar.style.button_ns}}</span>
 			</label>
 		</div>
 	</section>
@@ -28,35 +29,27 @@
 
 		<p class="desc">{{i18n.settings.toolbar.search.desc}}</p>
 
-		<div class="input select other">
-			<label>
-				<h4>{{i18n.settings.toolbar.search.engine}}</h4>
+		{{#canSelectSearch}}
+			<div class="input select other">
+				<label>
+					<h4>{{i18n.settings.toolbar.search.engine}}</h4>
 
-				<select name="search-engine">
-					<option value="default">{{i18n.settings.toolbar.search.engines_default}}</option>
-					<option value="yahoo">Yahoo!</option>
-					<option value="bing">Bing</option>
-					<option value="duckduckgo">DuckDuckGo</option>
-					<option value="ask">Ask</option>
-					<option value="aol">AOL</option>
-					<option value="custom">{{i18n.settings.toolbar.search.engines_custom}}</option>
-				</select>
-			</label>
+					<select name="search-engine">
+						<option value="default">{{i18n.settings.toolbar.search.engines_default}}</option>
+						<option value="bing">Bing</option>
+						<option value="duckduckgo">DuckDuckGo</option>
+						<option value="startpage">Startpage</option>
+						<option value="custom">{{i18n.settings.toolbar.search.engines_custom}}</option>
+					</select>
+				</label>
 
-			<label class="input other{{#customSearchURL}} visible{{/customSearchURL}}">
-				<span class="desc">{{{i18n.settings.toolbar.search.engines_custom_desc}}}</span>
+				<label class="input other{{#customSearchURL}} visible{{/customSearchURL}}">
+					<span class="desc">{{{i18n.settings.toolbar.search.engines_custom_desc}}}</span>
 
-				<input type="text" name="search-url" placeholder="i.e. https://www.bing.com/search?q=%s" value="{{customSearchURL}}" />
-			</label>
-		</div>
-
-		<label class="input switch">
-			<h4>{{i18n.settings.toolbar.search.omnibox_capture}}</h4>
-
-			<input type="checkbox" name="omnibox-capture" value="1" checked />
-
-			<span class="switch"></span>
-		</label>
+					<input type="text" name="search-url" placeholder="i.e. https://www.bing.com/search?q=%s" value="{{customSearchURL}}" />
+				</label>				
+			</div>
+		{{/canSelectSearch}}
 
 		<label class="input switch">
 			<h4>{{i18n.settings.toolbar.search.voice}}</h4>

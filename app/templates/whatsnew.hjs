@@ -1,15 +1,41 @@
-<p>You just got the latest update!</p>
+<p>Welcome to ProductivityTab version 1.45.25!</p>
+
+<section>
+<p>What's New in Version 1.45.25:</p>
+<ul>
+<li>FIX. Stocks widget.</li>
+</ul>
+</section>
+
+<section>
+<p>What's New in Version 1.45.24:</p>
+<ul>
+<li>FIX. Added Fox News to News widget.</li>
+<li>FIX. Added NYT to News widget.</li>
+</ul>
+</section>
+
+<section>
+<p>What's New in Version 1.45.23:</p>
+<ul>
+<li>FIX. Fix RSS widget.</li>
+<li>FIX. Fix News widget for BBC.</li>
+</ul>
+</section>
+
+<section>
+<p>What's New in Version 1.45.21:</p>
+<ul>
+<li>FIX. Fix Weather widget issues.</li>
+</ul>
+</section>
 
 
 <section>
-	<h3>New features and other changes:</h3>
-
-	<ul>
-		<li>The Calendar widget has been redesigned and now proposes three modes: Day, Short and List.</li>
-		<li>The Weather is improved:</li>
-		<ul>
-			<li>On adding the widget shows the user's location</li>
-			<li>Typing new location you can see the list of city names</li>
-		</ul>
-	</ul>
+<p>What's New in Version 1.45.20:</p>
+<ul>
+<li>FIX. Fix Facebook and Gmail.</li>
+</ul>
 </section>
+
+

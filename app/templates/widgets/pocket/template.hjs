@@ -5,7 +5,7 @@
 <div class="links">
 	{{#links}}
 		<a class="link" href="{{url}}">
-			<div class="image" {{#image}}style="background-image: url({{image}})"{{/image}}></div>
+			<div class="image" {{#image}}style="background-image: url('{{image}}')"{{/image}}></div>
 
 			<div class="info">
 				<h3 class="title">{{title}}</h3>

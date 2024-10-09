@@ -4,8 +4,10 @@
 define(["jquery", "lodash", "widgets/framefix"], function($, _, frameFix) {
 	return {
 		id: 37,
+		sort: 470,
 		size: 5,
 		order: 14,
+		unlisted: true,
 		nicename: "notifications",
 		sizes: ["variable"],
 		settings: [

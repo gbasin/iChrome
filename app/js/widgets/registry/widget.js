@@ -37,6 +37,8 @@ define(["lodash", "backbone", "core/auth", "browser/api", "i18n/i18n", "widgets/
 			this.enStrings = manifest.strings.en || {};
 
 			this.strings = manifest.strings[Browser.language] || manifest.strings.en || {};
+
+			this.sort = manifest.sort || 99999;
 		},
 
 

@@ -1,10 +1,12 @@
 {
   "lang_code":"nl",
   "language":"Nederlands",
-  "extName":"iChrome",
-  "newtabName":"iChrome Nieuw Tabblad",
-  "extDescription":"De BESTE startpagina voor Chrome. Adembenemende thema's, tientallen widgets, bliksemsnel en ongelooflijk aanpasbaar!",
-  "newtabDescription":"De BESTE homepage voor Chrome. Nu voor nieuwe tabs. Adembenemende thema's, tientallen widgets, bliksemsnel, ongelooflijk aanpasbaar!",
+
+	"extName": "ProductivityTab — Custom Homepage Dashboard",
+	"newtabName": "ProductivityTab — Custom New Tab Dashboard",
+	"extDescription": "A remarkably customizable personal homepage featuring 50+ widgets, breathtaking backgrounds and much more.",
+	"newtabDescription": "A customizable personal dashboard on your new tab page featuring 50+ widgets, breathtaking backgrounds and much more.",
+
   "defaults":{
     "tab":"Home",
     "me":"Ik"
@@ -12,7 +14,7 @@
   "remove_widget":"Verwijder",
   "hide_banner":"Hide this banner",
   "hide_ad":{
-    "content":"Would you like to hide ads until you use iChrome next, or upgrade to remove them permanently?",
+    "content":"Hey! We're not crazy about ads either, but we're only able to make ProductivityTab available and continue developing features for our free users (that's you!) by showing ads. If you'd like to support ProductivityTab directly and get rid of ads for free, we would really appreciate if you upgraded to our pro version",
     "upgrade":"Upgrade",
     "hide":"Hide ads"
   },
@@ -25,12 +27,12 @@
   "onboarding":{
     "modal":{
       "tagline":"Alle sites en apps die je gebruikt op één plek",
-      "wrong_extension":"Wilt u iChrome gebruiken als uw nieuw tabblad-pagina?",
-      "wrong_extension_newtab":"Wilt u iChrome instellen als uw startpagina?",
+      "wrong_extension":"Wilt u ProductivityTab gebruiken als uw nieuw tabblad-pagina?",
+      "wrong_extension_newtab":"Wilt u ProductivityTab instellen als uw startpagina?",
       "wrong_extension_action":"Klik hier",
-      "about":"Bij iChrome draait alles om tabbladen en widgets",
+      "about":"Bij ProductivityTab draait alles om tabbladen en widgets",
       "about_desc":"Tabbladen zijn pagina's gevuld met widgets - blokken die zaken zoals het weer, nieuws en uw e-mail tonen. De meeste widgets kunt u aanpassen en u kunt zoveel widgets toevoegen als u wilt.",
-      "terms":"Opmerking: Door verder te gaan, gaat u akkoord met de <a href=\"https://ichro.me/tos\" target=\"_blank\">voorwaarden</a> en het <a href=\"https://ichro.me/privacy\" target=\"_blank\">privacybeleid</a> van iChrome",
+      "terms":"Door verder te gaan, gaat u akkoord met de <a href=\"https://productivitytab.co/terms-of-service\" target=\"_blank\">voorwaarden</a> en het <a href=\"https://productivitytab.co/privacy-policy\" target=\"_blank\">privacybeleid</a> van ProductivityTab",
       "sign_in":"Log in met Google account",
       "sign_in_desc":"Meld u aan met uw Google-account voordat u begint, om uw aanpassingen veilig online op te kunnen slaan.",
       "sign_in_desc2":"U kunt uitgelogd blijven als u wilt, maar uw pagina zal dan niet online opgeslagen worden en zal niet beschikbaar zijn op andere computers.",
@@ -42,19 +44,19 @@
     },
     "widgets":{
       "configure":"Laten we een widget instellen.",
-      "configure_desc":"Klik op de moersleutel om de <b>instellingen</b> van de weerwidget te openen.",
-      "configure_skip":"Overslaan",
-      "settings":"Vervang <b>San Francisco, CA</b> door uw locatie en druk daarna op <b>Opslaan</b>.",
-      "move":"U kunt widgets <b>verslepen</b> door ze met het gemarkeerde handvat te verplaatsen.",
-      "remove":"Sleep de widget naar de rode balk (niet weergegeven) om deze te <b>verwijderen</b>.",
+			"configure_desc": "Click the wrench to open a widget's <b>settings</b>.",
+			"configure_skip": "Skip Tutorial",
+			"settings": "Replace <b>Link URL</b> with your favorite site, then press <b>Save</b>.",
+			"move": "You can <b>reposition</b> widgets by clicking and dragging the three dots highlighted here.",
+			"remove": "To <b>delete</b>, simply click the red trash bin icon.",
       "done":"Oké, ik snap het"
     },
     "settings":{
-      "intro":"Laten we nu een kijkje nemen naar <b>het menu</b> om te zien wat u nog meer kunt doen.",
-      "instructions":"Klik op de gemarkeerde afbeelding om deze te openen.",
+			"intro": "Now let’s add a new widget. This highlighted button is where you can access the Widget Menu.",
+			"instructions": "Click the new widget button on to open the widget menu!",
       "skip":"Overslaan",
       "tooltips":{
-        "settings":"Het uiterlijk en de functionaliteit van iChrome aanpassen",
+        "settings":"Het uiterlijk en de functionaliteit van ProductivityTab aanpassen",
         "widgets":"Nieuwe widgets toevoegen - u kunt er zoveel toevoegen als u wilt",
         "editing":"De bewerkingsknoppen op widgets tonen of verbergen",
         "links":"Dit is een lijst met links, voeg in de instellingen sites toe die u regelmatig gebruikt",
@@ -85,7 +87,7 @@
     "placeholder_ok":"Vul uw zoekopdracht in of zeg \"OK, Google\"",
     "suggestions":{
       "url_subtext":"Visit URL",
-      "capture_notice":"iChrome handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
+      "capture_notice":"ProductivityTab handles searches you normally make from the Omnibox. You can disable this at any time from the settings"
     },
     "apps":{
       "search":"Zoeken",
@@ -181,7 +183,7 @@
       },
       "theme":{
         "title":"App-thema",
-        "desc":"Het app-thema bepaalt de stijl van iChrome zelf en alle widgets",
+        "desc":"Het app-thema bepaalt de stijl van ProductivityTab zelf en alle widgets",
         "preview":"Voorbeeld",
         "light":"Licht (standaard)",
         "dark":"Donker",
@@ -225,7 +227,7 @@
     "tabs":{
       "create_new":"Nieuwe aanmaken",
       "make_default":"Standaard maken",
-      "desc1":"Tabbladen zijn pagina's binnen iChrome. Elk tabblad heeft zijn eigen set van widgets die volledig los staat van elke andere tabblad.",
+      "desc1":"Tabbladen zijn pagina's binnen ProductivityTab. Elk tabblad heeft zijn eigen set van widgets die volledig los staat van elke andere tabblad.",
       "desc2":"U kunt schakelen tussen tabbladen door te klikken op de knoppen die aan de linker- en rechterkant van het scherm worden weergegeven wanneer u uw muis over een tabblad beweegt of met behulp van de pijltoetsen op uw toetsenbord.",
       "name_placeholder":"Voer een naam in voor het tabblad",
       "delete_confirm":"Deze actie is onomkeerbaar. Alle gegevens van alle widgets in het tabblad zullen permanent verloren gaan."
@@ -245,19 +247,19 @@
     "advanced":{
       "backups":{
         "title":"Backup maken en terugzetten",
-        "desc":"Back-ups zijn volledige kopieën van al uw tabbladen, instellingen en widgets. Ze worden automatisch elke dag gemaakt wanneer u voor het eerst iChrome opent.",
-        "desc2":"Gebruik de onderstaande knoppen om iChrome terug te zetten naar een bepaalde datum of om één van uw back-ups te downloaden.",
+        "desc":"Back-ups zijn volledige kopieën van al uw tabbladen, instellingen en widgets. Ze worden automatisch elke dag gemaakt wanneer u voor het eerst ProductivityTab opent.",
+        "desc2":"Gebruik de onderstaande knoppen om ProductivityTab terug te zetten naar een bepaalde datum of om één van uw back-ups te downloaden.",
         "backup":"Nu een back-up maken",
         "upload":"Vanuit bestand terugzetten",
         "download":"Downloaden",
         "restore":"Terugzetten",
-        "download_name":"iChrome back-up",
+        "download_name":"ProductivityTab back-up",
         "restore_confirm":"Dit overschrijft alle lokale en gesynchroniseerde gegevens. U verliest uw gehele huidige configuratie op alle computers die gekoppeld zijn aan dit account.",
         "restore_error":"Er is een fout opgetreden tijdens het verwerken van de verstrekte gegevens, probeer het later opnieuw."
       },
       "css":{
         "title":"Aangepaste CSS",
-        "desc":"U kunt CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\"> definitie</a>) gebruiken om bijna elk onderdeel van iChrome aan te passen.",
+        "desc":"U kunt CSS (<a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\" target=\"blank\"> definitie</a>) gebruiken om bijna elk onderdeel van ProductivityTab aan te passen.",
         "placeholder":"Voer hier CSS van maximaal 1000 regels in"
       },
       "debug_tools":{
@@ -276,8 +278,8 @@
     },
     "pro":{
       "promo":{
-        "monthly_price":"$2 per maand",
-        "yearly_price":"of $20 per jaar",
+        "monthly_price":"$4.99 per maand",
+        "yearly_price":"of $29.99 per jaar",
         "upgrade_btn":"Upgrade nu",
         "business":"Geïnteresseerd in het kopen van Pro voor uw bedrijf of school?",
         "business_contact":"Neem contact met ons op",
@@ -286,7 +288,7 @@
         "bgs":"Bewegende achtergronden",
         "bgs_desc":"Breng uw pagina tot leven met 20 live HD-achtergronden",
         "widgets":"Maximaliseer widgets",
-        "widgets_desc":"Neem iChrome naar een hoger niveau met maximaliseerbare widgets",
+        "widgets_desc":"Neem ProductivityTab naar een hoger niveau met maximaliseerbare widgets",
         "more_header":"En meer",
         "stocks":"Realtime beursinformatie met uitgebreide en historische informatie",
         "rss":"Ondersteuning voor meerdere RSS-feeds per widget",
@@ -303,17 +305,17 @@
         "title":"Uitchecken",
         "updating_title":"Abonnement bijwerken",
         "payment_options":"Betalen",
-        "pay_monthly":"Maandelijks ($2)",
-        "pay_yearly":"Jaarlijks ($20)",
+        "pay_monthly":"Maandelijks ($4.99)",
+        "pay_yearly":"Jaarlijks ($29.99)",
         "cancel":"Annuleren",
         "update":"Update",
         "subscribe":"Abonneer",
         "braintree_notice":"Betalingen veilig verwerkt door Braintree.",
-        "monthly_notice":"Door u te abonneren, machtigt u iChrome om $2 per maand in rekening te brengen totdat u uw abonnement opzegt.",
-        "yearly_notice":"Door u te abonneren, machtigt u iChrome om $20 per jaar in rekening te brengen totdat u uw abonnement opzegt.",
+        "monthly_notice":"Door u te abonneren, machtigt u ProductivityTab om $4.99 per maand in rekening te brengen totdat u uw abonnement opzegt.",
+        "yearly_notice":"Door u te abonneren, machtigt u ProductivityTab om $29.99 per jaar in rekening te brengen totdat u uw abonnement opzegt.",
         "update_notice":"Hoewel de facturering cyclus onmiddellijk gewijzigd wordt, wordt er niets afgeschreven tot de huidige cyclus eindigt.",
-        "thank_you":"Dank u voor de aankoop van iChrome Pro!",
-        "thank_you2":"iChrome zal binnen enkele seconden opnieuw worden geladen. Daarna bent u klaar!",
+        "thank_you":"Dank u voor de aankoop van ProductivityTab Pro!",
+        "thank_you2":"ProductivityTab zal binnen enkele seconden opnieuw worden geladen. Daarna bent u klaar!",
         "error":"Er ging iets fout bij het verwerken van uw betaling.",
         "error2":"Probeer het later opnieuw of email ons op support@ichro.me",
         "signin":"Aanmelden",
@@ -322,7 +324,7 @@
       },
       "plan":{
         "title":"Abonnement",
-        "desc":"U bent momenteel geabonneerd op iChrome Pro (%s)",
+        "desc":"U bent momenteel geabonneerd op ProductivityTab Pro (%s)",
         "types":{
           "monthly":"Maandelijks",
           "yearly":"Jaarlijks",
@@ -330,7 +332,7 @@
           "education":"Onderwijs",
           "custom":"Custom"
         },
-        "uneditable_desc":"Bedrijfsleven, onderwijs, en aangepaste abonnementen kunnen niet worden bijgewerkt binnen iChrome. Gelieve <a href=\"mailto:support@ichro.me\">Neem contact met ons op</a> om uw abonnement bij te werken of te annuleren.",
+        "uneditable_desc":"Bedrijfsleven, onderwijs, en aangepaste abonnementen kunnen niet worden bijgewerkt binnen ProductivityTab. Gelieve <a href=\"mailto:support@ichro.me\">Neem contact met ons op</a> om uw abonnement bij te werken of te annuleren.",
         "status":"Status",
         "status_active":"Actief",
         "status_trial":"Proefperiode",
@@ -347,9 +349,9 @@
       }
     },
     "ads":{
-      "text1":"iChrome displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer iChrome free to everyone.",
+      "text1":"ProductivityTab displays a few small ads to pay for server, support and development costs. With these ads, we can afford to offer ProductivityTab free to everyone.",
       "text2":"Here you can choose where those ads are shown, or buy ad-free to permanently remove them.",
-      "text3":"Ad-free is a one-time purchase that permanently removes ads from iChrome wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
+      "text3":"Ad-free is a one-time purchase that permanently removes ads from ProductivityTab wherever you're signed in. You can also upgrade to Pro for extra features in addition to an ad-free experience.",
       "upgrade_btn":"Upgrade to ad-free",
       "already_upgraded":"It looks like you've already upgraded to ad-free",
       "signin":"Aanmelden",
@@ -468,7 +470,7 @@
       "name_placeholder":"Voer de naam van een thema in",
       "image":"Afbeelding-URL",
       "image_placeholder":"Voer een URL in voor een achtergrondplaatje",
-      "image_help":"Afbeeldingen die zijn geüpload <b>kunnen niet worden gesynchroniseerd</b> tussen computers.<br /><br />Als dit belangrijk is voor u, gelieve uw afbeelding te uploaden naar een service zoals <a href=\"http://imgur.com/\" target=\"_blank\">imgur</a>. Kopieer en plak de URL die eindigt met de extentie (bv., .jpg) en plak deze in het veld aan de linkerkant.",
+      "image_help":"Afbeeldingen die zijn geüpload <b>kunnen niet worden gesynchroniseerd</b> tussen computers.<br /><br />Als dit belangrijk is voor u, gelieve uw afbeelding te uploaden naar een service zoals <a href=\"https://imgur.com/\" target=\"_blank\">imgur</a>. Kopieer en plak de URL die eindigt met de extentie (bv., .jpg) en plak deze in het veld aan de linkerkant.",
       "color":"Achtergrondkleur",
       "color_placeholder":"Voer een kleurnaam in",
       "position":"Positie",

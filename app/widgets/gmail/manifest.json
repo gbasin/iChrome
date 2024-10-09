@@ -1,11 +1,13 @@
 {
 	"id": 25,
+	"sort": 160,
 	"tabbed": true,
 	"name": "gmail",
 	"model": "model",
 	"css": "style.css",
 	"icon": "icon.png",
 	"sizes": ["variable"],
+	"listed": true,
 
 	"views": {
 		"default": "view",
@@ -23,19 +25,35 @@
 		"label": "i18n.settings.account",
 		"help": "i18n.settings.account_help",
 		"placeholder": "i18n.settings.account_placeholder"
-	},
-	{
+	},{
 		"type": "number",
 		"label": "i18n.settings.height",
 		"name": "height",
 		"min": 100,
 		"max": 800
+	},{
+		"type": "radio",
+		"name": "type",
+		"label": "i18n.settings.type.name",
+		"help": "i18n.settings.type.help",
+		"options": {
+			"new": "i18n.settings.type.new",
+			"old": "i18n.settings.type.old"
+		}
 	}],
 
 	"strings": {
 		"en": {
 			"name": "Gmail",
-			"desc": "Displays your Gmail inbox where you can manage your email."
+			"desc": "Displays your Gmail inbox where you can manage your email.",
+			"settings": {
+				"type": {
+					"name": "Version",
+					"new": "Basic",
+					"old": "Original",
+					"help": "The Basic is the default version which works in all browser versions.\n<br /><br />\nYou can also choose the Original version which proposes more functionality but it can be unstable in some new browser versions and possibly requires the disabling of the new \"SameSite by default cookies\" feature on the chrome://flags web page."
+				}
+			}
 		}
 	}
 }

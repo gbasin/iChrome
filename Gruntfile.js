@@ -36,7 +36,9 @@ module.exports = function (grunt) {
 				latedef: true,
 				loopfunc: true,
 				futurehostile: true,
-				reporter: require("jshint-stylish")
+				reporter: require("jshint-stylish"),
+				esnext: true
+
 			},
 			all: ["**/*.js", "!node_modules/**/*.js", "!app/js/lib/*.js"]
 		},
@@ -318,7 +320,8 @@ module.exports = function (grunt) {
 	grunt.registerTask("webstore", [
 		"jshint:all",
 		"copy:build",
-		"sass:build",
+		//"sass:build",
+		//"sassjs",
 		"string-replace:htmlmin",
 		"compileWidgets",
 		"cssmin",

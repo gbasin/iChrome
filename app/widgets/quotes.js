@@ -4,6 +4,7 @@
 define(["jquery", "lodash", "browser/api"], function($, _, Browser) {
 	return {
 		id: 35,
+		sort: 40,
 		size: 2,
 		order: 12,
 		nicename: "quotes",

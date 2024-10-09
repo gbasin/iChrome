@@ -42,7 +42,7 @@
       "title":"Titolo Segnalibro",
       "title_placeholder":"Google",
       "url":"URL Segnalibro",
-      "url_placeholder":"http://www.google.com/",
+      "url_placeholder":"https://www.google.com/",
       "save":"Salva"
     },
     "new_caption":"Nuovo",
@@ -166,7 +166,7 @@
   "now":{
     "name":"Google Now",
     "desc":"Visualizza le schede di Google Now, tra cui lo stato dei voli e il tracciamento dei pacchi.",
-    "authorize":"Avrete bisogno di dare iChrome il permesso di visualizzare le schede di Google Now prima che venga visualizzata qui qualsiasi cosa.",
+    "authorize":"Avrete bisogno di dare ProductivityTab il permesso di visualizzare le schede di Google Now prima che venga visualizzata qui qualsiasi cosa.",
     "authorize_btn":"Autorizza",
     "caught_up":"Hai visto tutto, niente qui.",
     "no_title":"Senza titolo"
@@ -184,7 +184,7 @@
     "desc":"Mostra i migliori elementi di Reddit per ogni subreddit dato.",
     "settings":{
       "subreddit":"Subreddit",
-      "subreddit_help":"Inserire un subreddit inserendo soltanto la parte dell'URL di quel subreddit a partire da <b>/r/</b>.\n<br /><br />\nPer esempio, Technology si trova su: <a href=\"http://www.reddit.com/r/technology\">http://www.reddit.com/r/technology</a>, quindi va inserito soltanto <b>technology</b>",
+      "subreddit_help":"Inserire un subreddit inserendo soltanto la parte dell'URL di quel subreddit a partire da <b>/r/</b>.\n<br /><br />\nPer esempio, Technology si trova su: <a href=\"https://www.reddit.com/r/technology\">https://www.reddit.com/r/technology</a>, quindi va inserito soltanto <b>technology</b>",
       "subreddit_placeholder":"Inserisci un subreddit di per poter vedere i links. (es: technology)",
       "sort":"Ordinamento",
       "sort_options":{
@@ -230,8 +230,8 @@
       "source":"Mostra i tweet da",
       "show":"Tweet mostrati"
     },
-    "authorize":"Devi prima autorizzare iChrome",
-    "authorize_msg":"È necessario dare il permesso ad iChrome per accedere ai tuoi tweet per visualizzare i tuoi tweet qui.",
+    "authorize":"Devi prima autorizzare ProductivityTab",
+    "authorize_msg":"È necessario dare il permesso ad ProductivityTab per accedere ai tuoi tweet per visualizzare i tuoi tweet qui.",
     "authorize_btn":"Autorizza",
     "no_tweets":"Non sembrano esserci tweet qui...",
     "home":"Home",
@@ -294,9 +294,9 @@
     "desc":"Mostra un link, facoltativamente con un titolo e una miniatura",
     "settings":{
       "link":"URL Link",
-      "link_placeholder":"http://www.google.com/",
+      "link_placeholder":"https://www.google.com/",
       "image":"URL dell'immagine",
-      "image_placeholder":"http://www.example.com/image.png",
+      "image_placeholder":"https://www.example.com/image.png",
       "color":"Colore di sfondo dell'immagine",
       "style":"Stile dell'immagine",
       "style_fill":"Riempi",
@@ -365,7 +365,7 @@
     "by":"di",
     "no_links":"Nessun link trovato",
     "grant_access":"Concedi accesso",
-    "no_key":"Dovete dare l'accesso ad iChrome al vostro account Pocket prima di poter caricare il vostro link."
+    "no_key":"Dovete dare l'accesso ad ProductivityTab al vostro account Pocket prima di poter caricare il vostro link."
   },
   "analytics":{
     "name":"Analytics",
@@ -413,7 +413,7 @@
       "files_shown":"Numero di file mostrati"
     },
     "modified_by":"di",
-    "authMessage":"Per visualizzare i file in Drive devi prima dare l'autorizzazione ad iChrome."
+    "authMessage":"Per visualizzare i file in Drive devi prima dare l'autorizzazione ad ProductivityTab."
   },
   "gmail":{
     "name":"Gmail",
@@ -424,7 +424,7 @@
     "desc":"Consente di visualizzare una pagina web a vostra scelta all'interno di un iframe.",
     "settings":{
       "url":"Frame URL",
-      "url_placeholder":"i.e. http://www.google.com/",
+      "url_placeholder":"i.e. https://www.google.com/",
       "height":"Altezza frame",
       "padding":"Rientro"
     }

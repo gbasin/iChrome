@@ -4,6 +4,7 @@
 define(["jquery", "moment"], function($, moment) {
 	return {
 		id: 18,
+		sort: 210,
 		size: 6,
 		order: 30,
 		interval: 300000,
@@ -75,7 +76,7 @@ define(["jquery", "moment"], function($, moment) {
 			links: [
 				{
 					id: "t3_1u5nzu",
-					link: "http://imgur.com/pa5X7gH",
+					link: "https://imgur.com/pa5X7gH",
 					user: "BigGulpsHuh7",
 					score: 1740,
 					title: "Worst lady of 2013 (fixed) (fixed)",
@@ -150,7 +151,7 @@ define(["jquery", "moment"], function($, moment) {
 				},
 				{
 					id: "t3_1u5dj5",
-					link: "http://imgur.com/ISzszsN",
+					link: "https://imgur.com/ISzszsN",
 					user: "cp3woo",
 					score: 2910,
 					title: "Mike Tyson just posted this on twitter with the caption, \"Happy New Ears\"",
@@ -275,6 +276,7 @@ define(["jquery", "moment"], function($, moment) {
 			}
 
 			this.utils.render(data);
+			this.elm.addClass("tabbed");
 		}
 	};
 });

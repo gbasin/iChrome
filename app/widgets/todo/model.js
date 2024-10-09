@@ -1,5 +1,7 @@
 define(["widgets/model"], function(WidgetModel) {
 	return WidgetModel.extend({
+		widgetClassname: "tabbed",
+		
 		defaults: {
 			config: {
 				title: "i18n.title",

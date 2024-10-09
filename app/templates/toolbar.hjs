@@ -1,3 +1,13 @@
+{{^isFull}}
+	<div class="search"></div>
+
+	<div class="add-widget-link">
+		<span class="icon m-icon">add_circle</span>
+	</div>
+
+{{/isFull}}
+
+{{#isFull}}
 <div class="logo"></div>
 
 <div class="search"></div>
@@ -73,7 +83,7 @@
 					</a>
 				</div>
 
-				<a href="http://www.google.com/about/products/" class="more">{{i18n.toolbar.apps.more}}</a>
+				<a href="https://www.google.com/about/products/" class="more">{{i18n.toolbar.apps.more}}</a>
 			</nav>
 		</div>
 	</div>
@@ -84,3 +94,4 @@
 
 	<nav class="menu"></nav>
 </div>
+{{/isFull}}

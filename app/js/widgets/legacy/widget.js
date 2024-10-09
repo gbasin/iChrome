@@ -35,6 +35,7 @@ define(["lodash", "browser/api", "i18n/i18n", "widgets/registry/css", "widgets/r
 
 			this.strings = strings[this.name] || enStrings[this.name] || {};
 
+			this.sort = widget.sort || 99999;
 
 			CSSManager.registeredWidgets[this.name] = true;
 		},

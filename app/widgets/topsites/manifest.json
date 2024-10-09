@@ -1,5 +1,6 @@
 {
 	"id": 12,
+	"sort": 220,
 	"name": "topsites",
 	"model": "model",
 	"css": "style.css",
