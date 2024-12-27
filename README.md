@@ -8,6 +8,7 @@ This is the full source for ProductivityTab except for API secrets which have be
 ## Jump to Section
 
 * [Setup](#setup)
+* [Architecture](#Architecture)
 * [Road Map](#road-map)
 * [Contributing](#contributing)
 * [Style Guide](#style-guide)
@@ -24,6 +25,10 @@ Follow these steps to run ProductivityTab in Google Chrome as a developer.
 - Browse to the location where ProductivityTab repo is installed, and select the sub-directory `ProductivityTab/app` as the extension source.
 
 > If you already have ProductivityTab installed from the Google Play store, then remove the extension before doing the above.
+
+## Architecture
+![CleanShot 2024-12-27 at 09 05 33@2x](https://github.com/user-attachments/assets/57b561e2-dd0d-4069-afec-eeaef3dcb738)
+[https://gitdiagram.com/gbasin/iChrome](https://gitdiagram.com/gbasin/iChrome)
 
 ## Road Map
 [[Back To Top]](#jump-to-section)
